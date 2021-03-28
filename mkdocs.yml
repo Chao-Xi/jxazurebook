@@ -1,1 +1,32 @@
-site_name: My Docs
+site_name: Jacob Azure103&900 tutorial Book
+site_description: "Jacob's Azure 103&900 教程"
+site_author: "Jacob Xi"
+copyright: "Copyright &copy; 2020-9999 Jacob Xi"
+
+plugins:
+  - search # necessary for search to work
+  - awesome-pages
+
+nav:
+  - 'Welcome': "index.md"
+  - 'AZ103 Tutorial':
+    - 'L1 Azure Administration: Manage Subscriptions and Resources' : 'chap1/6az103_ad_sub_resource.md'
+  
+
+repo_url: https://github.com/Chao-Xi/jxazurebook.git
+repo_name: "jxes7book"
+
+theme: 
+  language: zh
+  name: 'material'
+  include_sidebar: true
+  logo: 'images/logo.png'
+  favicon: 'images/logo.png'
+  feature:
+    tabs: false
+  palette:
+    primary: 'light blue'
+    accent: 'light blue'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
