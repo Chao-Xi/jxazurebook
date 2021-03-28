@@ -667,7 +667,7 @@ The move was successfully validated.
 
 **Manage role-based access control**
 
-![Alt Image Text](../images/1_18.png "Body image")
+![Alt Image Text](../images/az103_1_18.png "Body image")
 
 **Azure AD Admin Roles vs. RBAC (difference)**
 
@@ -728,7 +728,7 @@ The move was successfully validated.
 * Actions 
 * Not actions 
 
-![Alt Image Text](../images/1_20.png "Body image")
+![Alt Image Text](../images/az103_1_20.png "Body image")
 
 **Scope**
 
@@ -739,11 +739,11 @@ The move was successfully validated.
 * **Parent-child relationship — Roles are inherited**
 
 
-![Alt Image Text](../images/1_21.png "Body image")
+![Alt Image Text](../images/az103_1_21.png "Body image")
 
 **Putting it together**
 
-![Alt Image Text](../images/1_22.png "Body image")
+![Alt Image Text](../images/az103_1_22.png "Body image")
 
 
 ### **4-2 Assign an RBAC role**
