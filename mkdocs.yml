@@ -9,8 +9,9 @@ plugins:
 
 nav:
   - 'Welcome': "index.md"
-  - 'AZ103 Tutorial':
+  - 'AZ103 Adv Tutorial（Eng)':
     - 'L1 Azure Administration: Manage Subscriptions and Resources' : 'chap1/6az103_ad_sub_resource.md'
+    - 'L2 Azure Administration: Implement and Manage Storage' : 'chap1/7az103_storage.md'
   
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
