@@ -13,7 +13,7 @@ nav:
     - 'L1 Azure Administration: Manage Subscriptions and Resources' : 'chap1/6az103_ad_sub_resource.md'
     - 'L2 Azure Administration: Implement and Manage Storage' : 'chap1/7az103_storage.md'
     - 'L3 Deploy and Manage Virtual Machines' : 'chap1/8az103_Vms.md'
-    - 'L4 Configure and Manage Virtual Networks : 'chap1/9az103_vn.mgit'
+    - 'L4 Configure and Manage Virtual Networks : 'chap1/9az103_vn.md
 
   
 
