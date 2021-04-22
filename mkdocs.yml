@@ -14,6 +14,7 @@ nav:
     - 'L2 Azure Administration: Implement and Manage Storage' : 'chap1/7az103_storage.md'
     - 'L3 Deploy and Manage Virtual Machines' : 'chap1/8az103_Vms.md'
     - 'L4 Configure and Manage Virtual Networks' : 'chap1/9az103_vn.md'
+    - 'L5 Azure Administration: Manage Identities': 'chap1/10az103_ad.md'
 
   
 
