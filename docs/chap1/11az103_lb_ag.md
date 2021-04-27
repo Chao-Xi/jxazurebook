@@ -36,7 +36,7 @@
 
 **9. Load-Balanced Communication**
 
-![Alt Image Text](../../images/az103_11_1.png "Body image")
+![Alt Image Text](../images/az103_11_1.png "Body image")
 
 ### **1-2 External and internal load balancers**
 
