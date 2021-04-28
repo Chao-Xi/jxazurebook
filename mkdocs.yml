@@ -16,6 +16,8 @@ nav:
     - 'L4 Configure and Manage Virtual Networks' : 'chap1/9az103_vn.md'
     - 'L5 Azure Administration: Manage Identities': 'chap1/10az103_ad.md'
     - 'L6 Load Balancers and Application Gateways': 'chap1/11az103_lb_ag.md'
+  - 'AZ103 Adv Tutorial（Chn)':
+    - 'Azure Administrator认证学习 （1）': 'chap2/12az_admin1.md'
 
   
 
