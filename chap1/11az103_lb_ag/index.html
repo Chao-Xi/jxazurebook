@@ -1,0 +1,1154 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>L6 Load Balancers and Application Gateways - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#l6-load-balancers-and-application-gateways" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              L6 Load Balancers and Application Gateways
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Chao-Xi/jxazurebook.git/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxes7book
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Chao-Xi/jxazurebook.git/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxes7book
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        AZ103 Adv Tutorial（Eng)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AZ103 Adv Tutorial（Eng)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          AZ103 Adv Tutorial（Eng)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6az103_ad_sub_resource/" class="md-nav__link">
+        L1 Azure Administration: Manage Subscriptions and Resources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az103_storage/" class="md-nav__link">
+        L2 Azure Administration: Implement and Manage Storage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az103_Vms/" class="md-nav__link">
+        L3 Deploy and Manage Virtual Machines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9az103_vn/" class="md-nav__link">
+        L4 Configure and Manage Virtual Networks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10az103_ad/" class="md-nav__link">
+        L5 Azure Administration: Manage Identities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          L6 Load Balancers and Application Gateways
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        L6 Load Balancers and Application Gateways
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-implementing-azure-load-balancers" class="md-nav__link">
+    1. Implementing Azure Load Balancers
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Implementing Azure Load Balancers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-load-balancer-overview" class="md-nav__link">
+    1-1 Load balancer overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-external-and-internal-load-balancers" class="md-nav__link">
+    1-2 External and internal load balancers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-configure-a-load-balancer-front-end" class="md-nav__link">
+    1-3 Configure a load balancer front-end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-configure-a-load-balancer-back-end" class="md-nav__link">
+    1-4 Configure a load balancer back-end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-configure-a-load-balancer-health-probe" class="md-nav__link">
+    1-5 Configure a load balancer health probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-configure-load-balancing-rules" class="md-nav__link">
+    1-6 Configure load balancing rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-configure-nat-port-forwarding-rules" class="md-nav__link">
+    1-7 Configure NAT port-forwarding rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-create-a-load-balancer-using-powershell" class="md-nav__link">
+    1-8 Create a load balancer using PowerShell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-configure-a-load-balancer-using-powershell" class="md-nav__link">
+    1-9 Configure a load balancer using PowerShell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-implementing-azure-application-gateways" class="md-nav__link">
+    2. Implementing Azure Application Gateways
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Implementing Azure Application Gateways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-application-gateway-overview" class="md-nav__link">
+    2-1 Application gateway overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-create-an-application-gateway-using-the-portal" class="md-nav__link">
+    2-2 Create an application gateway using the portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-implement-an-application-gateway-ip-configuration" class="md-nav__link">
+    2-3 Implement an application gateway IP configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-configure-an-application-gateway-backend-pool" class="md-nav__link">
+    2-4 Configure an application gateway backend pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-configure-an-application-gateway-listener" class="md-nav__link">
+    2-5 Configure an application gateway listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-configure-an-application-gateway-health-probe" class="md-nav__link">
+    2-6 Configure an application gateway health probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-configure-application-gateway-routing-rules" class="md-nav__link">
+    2-7 Configure application gateway routing rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-create-an-application-gateway-using-powershell" class="md-nav__link">
+    2-8 Create an application gateway using PowerShell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-9-configure-an-application-gateway-using-powershell" class="md-nav__link">
+    2-9 Configure an application gateway using PowerShell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10-web-application-firewall-overview" class="md-nav__link">
+    2-10 Web application firewall overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-11-configure-a-web-application-firewall" class="md-nav__link">
+    2-11 Configure a web application firewall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-12-configure-a-web-application-firewall-using-powershell" class="md-nav__link">
+    2-12 Configure a web application firewall using PowerShell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        AZ103 Adv Tutorial（Chn)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AZ103 Adv Tutorial（Chn)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          AZ103 Adv Tutorial（Chn)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        Azure Administrator认证学习 （1）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        Azure Administrator认证学习 （2）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        Azure Administrator认证学习 （3）
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-implementing-azure-load-balancers" class="md-nav__link">
+    1. Implementing Azure Load Balancers
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Implementing Azure Load Balancers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-load-balancer-overview" class="md-nav__link">
+    1-1 Load balancer overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-external-and-internal-load-balancers" class="md-nav__link">
+    1-2 External and internal load balancers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-configure-a-load-balancer-front-end" class="md-nav__link">
+    1-3 Configure a load balancer front-end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-configure-a-load-balancer-back-end" class="md-nav__link">
+    1-4 Configure a load balancer back-end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-configure-a-load-balancer-health-probe" class="md-nav__link">
+    1-5 Configure a load balancer health probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-configure-load-balancing-rules" class="md-nav__link">
+    1-6 Configure load balancing rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-configure-nat-port-forwarding-rules" class="md-nav__link">
+    1-7 Configure NAT port-forwarding rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-create-a-load-balancer-using-powershell" class="md-nav__link">
+    1-8 Create a load balancer using PowerShell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-configure-a-load-balancer-using-powershell" class="md-nav__link">
+    1-9 Configure a load balancer using PowerShell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-implementing-azure-application-gateways" class="md-nav__link">
+    2. Implementing Azure Application Gateways
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Implementing Azure Application Gateways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-application-gateway-overview" class="md-nav__link">
+    2-1 Application gateway overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-create-an-application-gateway-using-the-portal" class="md-nav__link">
+    2-2 Create an application gateway using the portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-implement-an-application-gateway-ip-configuration" class="md-nav__link">
+    2-3 Implement an application gateway IP configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-configure-an-application-gateway-backend-pool" class="md-nav__link">
+    2-4 Configure an application gateway backend pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-configure-an-application-gateway-listener" class="md-nav__link">
+    2-5 Configure an application gateway listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-configure-an-application-gateway-health-probe" class="md-nav__link">
+    2-6 Configure an application gateway health probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-configure-application-gateway-routing-rules" class="md-nav__link">
+    2-7 Configure application gateway routing rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-create-an-application-gateway-using-powershell" class="md-nav__link">
+    2-8 Create an application gateway using PowerShell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-9-configure-an-application-gateway-using-powershell" class="md-nav__link">
+    2-9 Configure an application gateway using PowerShell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10-web-application-firewall-overview" class="md-nav__link">
+    2-10 Web application firewall overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-11-configure-a-web-application-firewall" class="md-nav__link">
+    2-11 Configure a web application firewall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-12-configure-a-web-application-firewall-using-powershell" class="md-nav__link">
+    2-12 Configure a web application firewall using PowerShell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Chao-Xi/jxazurebook.git/edit/master/docs/chap1/11az103_lb_ag.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="l6-load-balancers-and-application-gateways"><strong>L6 Load Balancers and Application Gateways</strong></h1>
+<h2 id="1-implementing-azure-load-balancers"><strong>1. Implementing Azure Load Balancers</strong></h2>
+<h3 id="1-1-load-balancer-overview"><strong>1-1 Load balancer overview</strong></h3>
+<p><strong>1. What Is a Load Balancer</strong></p>
+<ul>
+<li>Azure resource </li>
+<li>Distribute inbound requests to pools of systems </li>
+<li>Check for service health </li>
+</ul>
+<p><strong>2. How Do Load Balancers Work?</strong></p>
+<ul>
+<li>Front-end and back-end </li>
+<li><strong>Layer 4 (transport) rules</strong> </li>
+<li>Network Address Translation (NAT) rules </li>
+<li>Basic and standard SKUs </li>
+<li>
+<p><strong>TCP, HTTP, and HTTPS health probes</strong> </p>
+</li>
+<li>
+<p><strong>3. The front end</strong> </p>
+<ul>
+<li>Public IP</li>
+<li>Private Azure IP that could be used as a <strong>private load balancer</strong>. </li>
+</ul>
+</li>
+<li>
+<p><strong>4. The back end（Receive the requests from the client）</strong> </p>
+<ul>
+<li>Pool of servers,</li>
+<li>App services</li>
+<li>Scale sets</li>
+</ul>
+</li>
+<li>
+<p><strong>6. Set of layer 4 (transport) rules</strong> which the load balancer uses to decide to which servers those requests should be sent to</p>
+</li>
+<li>
+<p><strong>7. Network Address Translation rules</strong> let the load balancer decide when a request is sent to a specific port, if it should be sent to one of the servers specifically in the back end.</p>
+</li>
+<li>
+<p><strong>8. HTTPS health probes to check</strong> if the back end servers are up and running or if they should be not used for traffic redirection</p>
+</li>
+</ul>
+<p><strong>9. Load-Balanced Communication</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_11_1.png" title="Body image" /></p>
+<h3 id="1-2-external-and-internal-load-balancers"><strong>1-2 External and internal load balancers</strong></h3>
+<p><strong>1. External load balancers</strong></p>
+<ul>
+<li><strong>Maps public IP address and ports to internal tagrets</strong></li>
+<li>Applies load balancing rules</li>
+<li>Uses Port Address Translation(PAT)</li>
+<li><strong>Typically used for websites and similar services</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_2.png" title="Body image" /></p>
+<ul>
+<li>ELB  will receive communications from the different clients that are on the internet, and send those requests to internal targets like a <strong>web server, or a scale set</strong>.</li>
+<li><strong>Port Address Translation</strong> which lets the load balancer modify the port where the client is connecting. </li>
+<li>So on the external side where the load balancer has the public IP address, <strong>it could be receiving connections to the Port 80 but then those connections could be re-sent to the Port 8080 on the back-end</strong>.</li>
+</ul>
+<p><strong>2. Internal Load Balancers</strong> </p>
+<ul>
+<li>Directs traffic only between internal resources </li>
+<li>There is no outgoing IP address translation </li>
+<li>Typical uses include <ul>
+<li>Connections between virtual machines (VMs) in the same virtual network (vnet)</li>
+<li>Multitier applications </li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_3.png" title="Body image" /></p>
+<h3 id="1-3-configure-a-load-balancer-front-end"><strong>1-3 Configure a load balancer front-end</strong></h3>
+<p><strong>Add frontend IP Address</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_11_4.png" title="Body image" /></p>
+<h3 id="1-4-configure-a-load-balancer-back-end"><strong>1-4 Configure a load balancer back-end</strong></h3>
+<ul>
+<li><strong>Availability Set</strong></li>
+<li><strong>Single Virtual Machine</strong></li>
+<li><strong>Virtual Machine scale set</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_5.png" title="Body image" /></p>
+<h3 id="1-5-configure-a-load-balancer-health-probe"><strong>1-5 Configure a load balancer health probe</strong></h3>
+<blockquote>
+<p>health probe used to check if the backend pools are working correctly</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az103_11_6.png" title="Body image" /></p>
+<h3 id="1-6-configure-load-balancing-rules"><strong>1-6 Configure load balancing rules</strong></h3>
+<p><strong>forend Port =&gt; Backend Port</strong> </p>
+<p><img alt="Alt Image Text" src="../../images/az103_11_7.png" title="Body image" /></p>
+<h3 id="1-7-configure-nat-port-forwarding-rules"><strong>1-7 Configure NAT port-forwarding rules</strong></h3>
+<p><strong>Add inbound NAT rule</strong></p>
+<ul>
+<li>Protocol</li>
+<li>Port: 3389</li>
+<li>Target virtual machine</li>
+<li>Network Ip configuration</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_8.png" title="Body image" /></p>
+<h3 id="1-8-create-a-load-balancer-using-powershell"><strong>1-8 Create a load balancer using PowerShell</strong></h3>
+<pre><code>$RG = New-AzResourceGroup -ResourceGroupName &quot;LoadBalancer-RG&quot; -Location &quot;WestUS&quot; 
+$IP = New-AzPublicIpAddress -ResourceGroupName &quot;LoadBalancer-RG&quot; -Location &quot;WestUS&quot; -Name &quot;LoadBalancerPubIP&quot; 
+
+$frontEnd = New-AzLoadBalancerFrontendlpConfig -Name &quot;FrontEnd1&quot; -PubliclPAddress $IP 
+
+$backEnd New-AzLoadBalancer8ackendAddressPoolConfig -Name &quot;BackEnd1&quot; 
+
+$healthProbe New-AzLoadBalancerProbeConfig -Name &quot;HTTP-Probe&quot; `
+    -RequestPath &quot;/&quot; -Protocol HTTP -Port 80 -IntervalInSeconds 30 -ProbeCount 2 
+
+$loadbBalancerRule = Now-AzLoadBalancerRuleConfig -Name &quot;LBRulel&quot; `
+    -FrontendlpConfiguration $frontEnd -BackendAddressPool $backEnd `
+    -Protocol TCP -FrontendPort 80 -BackendPort 80 -Probe $healthProbe 
+
+$LoadBalancer = New-AzLoadBalancer -Name &quot;PS-LoadBalancer&quot; -ResourceGroupName &quot;LoadBalancer-RG&quot; -Location &quot;WestUS&quot; `
+    -FrontEndIpConfiguration $frontEnd -BackendAddressPool $backEnd -Probe $healthProbe -LoadBalancingRule $loadbBalancerRule 
+</code></pre>
+<h3 id="1-9-configure-a-load-balancer-using-powershell"><strong>1-9 Configure a load balancer using PowerShell</strong></h3>
+<pre><code>$loadBalancer = get-azloadbalancer -Name &quot;PS-Loadbalancer&quot; 
+
+$backend = Get-AzLoadBalancerBackendAddressPoolConfig -Name &quot;BackEnd1&quot; -LoadBalancer $loadBalancer 
+
+$loadBalancer | Add-AzLoadBalancerInboundNatRuleConfig -Name &quot;RemoteDesktopVMlRule&quot; `
+    -FrontendIpConfiguration $loadBalancer.FrontendIpConfigurations[0] -Protocol &quot;Tcp&quot; `
+    -FrontendPort 33890 -BackendPort 3389 
+
+$availabilitySet = Get-AzAvailabilitySet -ResourceGroupName &quot;IIS-ScaleSet-RG&quot; -Name &quot;Availability1&quot; 
+
+ForEach ($vm in $availabilitySet.VirtualMachinesReferences) { 
+    $networkInterface = Get-AzNetworklnterface | Where-Object {$_.VirtualMachine.id - like $vm.id}  
+    $networkInterface.IpConfigurations[0].LoadBalancerBackendAddressPools = $backend 
+
+    Set-AzNetworkInterface -NetworkInterface $networkInterface 
+}
+
+
+$loadBalancer | Set-AzLoadBalancer 
+$loadBalancer | Remove-AzLoadBalancer 
+</code></pre>
+<h2 id="2-implementing-azure-application-gateways"><strong>2. Implementing Azure Application Gateways</strong></h2>
+<h3 id="2-1-application-gateway-overview"><strong>2-1 Application gateway overview</strong></h3>
+<p><strong>1. What Is an Application Gateway?</strong> </p>
+<ul>
+<li>Web traffic load balancer </li>
+<li><strong>Operates on OSI Layer 7 (application)</strong> <ul>
+<li>Which means they understand the packets that go from the clients to the servers. And they see, for example, the URL paths that they are using </li>
+</ul>
+</li>
+<li><strong>Route requests based on URI path and host headers</strong> </li>
+</ul>
+<p><strong>2. Some Application Gateway Features</strong> </p>
+<ul>
+<li>Redirection, multihosting, and URL-based routing <ul>
+<li>Also multihosting and URL-based routing, in case an Application Gateway is hosting more than a single website</li>
+</ul>
+</li>
+<li><strong>SSL/TLS termination</strong> </li>
+<li>Autoscaling and zone redundancy (<strong>Prevent downtime in the case an actual data center fails</strong>)</li>
+<li>Session affinity (attach a client to a specific server in the back end)</li>
+<li>AKS ingress controller (<strong>In the case you are using Kubernetes in your deployments</strong>)</li>
+</ul>
+<h3 id="2-2-create-an-application-gateway-using-the-portal"><strong>2-2 Create an application gateway using the portal</strong></h3>
+<p><strong>Tier:</strong></p>
+<ul>
+<li>Stanard1 WAF1</li>
+<li>Stanard2 WAF2</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_9.png" title="Body image" /></p>
+<ul>
+<li>FrontEnds</li>
+<li>Routing Rules</li>
+<li>Backend pools</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_10.png" title="Body image" /></p>
+<h3 id="2-3-implement-an-application-gateway-ip-configuration"><strong>2-3 Implement an application gateway IP configuration</strong></h3>
+<p><strong>1. AppGW - Configuration</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_11_11.png" title="Body image" /></p>
+<ul>
+<li>Maximum: <strong>125 instances</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_12.png" title="Body image" /></p>
+<ul>
+<li><strong>The cookie based afinity</strong>: Which means all of the clients that come with the same cookie will be directed to the same servers.</li>
+<li><strong>Connection draining</strong>: Prevent that servers are keeping certain connections open for too long. </li>
+<li>Enable or disable HTTPS and use it for the app service</li>
+<li>The time out for the connections and the back in path, in case one connection comes from a specific port.</li>
+</ul>
+<h3 id="2-4-configure-an-application-gateway-backend-pool"><strong>2-4 Configure an application gateway backend pool</strong></h3>
+<ul>
+<li>Ip address or hostname</li>
+<li>Virtual Machine</li>
+<li>VMSS</li>
+<li>App services</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_11_13.png" title="Body image" /></p>
+<h3 id="2-5-configure-an-application-gateway-listener"><strong>2-5 Configure an application gateway listener</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_11_14.png" title="Body image" /></p>
+<p><strong>Enable SSL</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_11_15.png" title="Body image" /></p>
+<h3 id="2-6-configure-an-application-gateway-health-probe"><strong>2-6 Configure an application gateway health probe</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_11_16.png" title="Body image" /></p>
+<h3 id="2-7-configure-application-gateway-routing-rules"><strong>2-7 Configure application gateway routing rules</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_11_17.png" title="Body image" /></p>
+<h3 id="2-8-create-an-application-gateway-using-powershell"><strong>2-8 Create an application gateway using PowerShell</strong></h3>
+<pre><code>$vnet = Get-AzVirtualNetwork -Name &quot;ScaleSet-Vnet&quot; -ResourceGroupName &quot;IIS-ScaleSet-RG&quot; 
+$subnet = Get-AzVirtualNetworkSubnetConfig -Name &quot;AppGW-subnet&quot; -VirtualNetwork $vnet 
+
+$VMinterface1 = Get-AzNetworklnterface -ResourceGroupName &quot;IIS-ScaleSet-RG&quot; -Name &quot;vm1338&quot; 
+$VMinterface1IP = $VMinterface1.IpConfigurations[0].PrivateIpAddress 
+
+$VMinterface2 = Get-AzNetworkInterface -ResourceGroupName &quot;IIS-ScaleSet-RG&quot; -Name &quot;vm2683&quot; 
+$VMinterface2IP = $VMinterface2.IpConfigurations[0].PrivateIpAddress 
+
+## 
+
+$RG = New-AzResourceGroup -ResourceGroupName &quot;AppGW-RG&quot; -Location &quot;WestUS&quot; 
+
+$IP = New-AzPublicIpAddress -ResourceGroupName &quot;AppGW-RG&quot; -Location &quot;WestUS&quot; -Name &quot;AppGW-PIP&quot; 
+
+$internalIP = New-AzApplicationGatewayIPConfiguration -Name &quot;internalIP&quot; -Subnet $subnet 
+
+$frontend = New-AzApplicationGatewayFrontendIPConfig -Name &quot;Frontend1&quot; -PublicIPAddress $IP 
+
+$frontendPort = New-AzApplicationGatewayFrontendPort -Name &quot;FrontendPort1&quot; -Port 80 
+
+$backend = New-AzApplicationGatewayBackendAddressPool -Name &quot;Backend1&quot; -BackendIPAddresses $VMinterface1IP, $VMinterface2IP 
+
+$backendSettings = New-AzApplicationGatewayBackendkttpSetting -Name &quot;backendlSettings&quot;  `
+    -Port 80 -Protocol Http -CookieBasedAffinity Disabled -RequestTimeout 60 
+
+$listener = New-AzApplicationGatewayHttpListener -Name &quot;listener1&quot; -Protocol HTTP ` 
+    -FrontendIPConfiguration $frontend -FrontendPort $frontendPort 
+
+$frontendRule = New-AzApplicationGatewayRequestRoutingRule -Name &quot;rule1&quot; -RuleType Basic `
+    HttpListener $listener -BackendAddressPool $backend -BackendHttpSettings $backendSettings 
+
+##
+
+$appGatewaySKU = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2 -Capacity 2 
+
+$appGateway = New-AzApplicationGateway -Name &quot;PS-AppGW&quot; -ResourceGroupName &quot;AppGW-RG&quot; -Location &quot;WestUS&quot; `
+    -FrontEndIpConfiguration $frontEnd -FrontendPorts $frontendPort -RequestRoutingRules $frontendRule  `
+    -GatewaylPConfigurations $internalIP -BackendAddressPool $backEnd -HttpListeners $listener -Sku $appGatewaySKU -backendhttpsettingscollection $backendsettings 
+</code></pre>
+<h3 id="2-9-configure-an-application-gateway-using-powershell"><strong>2-9 Configure an application gateway using PowerShell</strong></h3>
+<pre><code>$appGw = Get-AzApplicationGateway -Name &quot;PS-AppGW&quot; 
+
+$appGw | Add-AzApplicatiomGatewayProbeConfig -Name &quot;probel&quot; -Protocol Http `
+    -PickHostNameFromeackendHttp5ettings -Path &quot;/&quot; -UnhealthyThreshold S -Interval 60 -Timeout 60 
+
+$appGw | Set-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2 
+$appGw | Set-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 3 -MaxCapacity 15 
+
+$appGw | Set-AzApplicationGateway 
+</code></pre>
+<h3 id="2-10-web-application-firewall-overview"><strong>2-10 Web application firewall overview</strong></h3>
+<p><strong>What Is a Web Application Firewall?</strong> </p>
+<ul>
+<li>Special version of an application gateway </li>
+<li>Prevents common exploits of web applications </li>
+<li>Based on OWASP (Open Web Application Security Project) core rule sets </li>
+<li>Detection and prevention modes </li>
+</ul>
+<h3 id="2-11-configure-a-web-application-firewall"><strong>2-11 Configure a web application firewall</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_11_18.png" title="Body image" /></p>
+<h3 id="2-12-configure-a-web-application-firewall-using-powershell"><strong>2-12 Configure a web application firewall using PowerShell</strong></h3>
+<pre><code>$appGw = Get-AzApplicationGateway -Name &quot;PS-AppGW&quot; 
+
+$appGw | Set-AzApplicationGatewaySku -Name WAF_v2 -Tier WAF_v2 
+
+Set-AzApplicationGatewayWebApplicationFirewallConfiguration -ApplicationGateway $appGw `
+    -Enabled $true -FirewallMode &quot;Detection&quot; -RuleSetType &quot;OWASP&quot; -RuleSetVersion &quot;3.0&quot; 
+
+$appGw | Set-AzApplicationGateway 
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../10az103_ad/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              L5 Azure Administration: Manage Identities
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../chap2/12az_admin1/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Azure Administrator认证学习 （1）
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020-9999 Jacob Xi
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
