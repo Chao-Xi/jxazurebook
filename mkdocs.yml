@@ -20,9 +20,10 @@ nav:
     - 'Azure Administrator认证学习 （1）': 'chap2/12az_admin1.md'
     - 'Azure Administrator认证学习 （2）': 'chap2/13az103_admin2.md'
     - 'Azure Administrator认证学习 （3）': 'chap2/14az103_admin3.md'
-
+  - 'Azure 103 interview':
+    - 'L1 Manage Azure Subscriptions and Resources': 'chap3/1az103_sub_resource.md'
+    - 'L2 Managing Azure storage': 'chap3/2az103_storage_accounts.md'
   
-
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxes7book"
 
