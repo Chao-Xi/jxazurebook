@@ -25,6 +25,7 @@ nav:
     - 'L2 Managing Azure storage': 'chap3/2az103_storage_accounts.md'
     - 'L3 Deploy and Manage Virtual Machines (VMs)': 'chap3/3az103_vms.md'
     - 'L4 Configure and Manage Virtual Networks': 'chap3/4az103_VN.md'
+    - 'L5 Manage Identities': 'chap3/5az103_ad.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxes7book"
