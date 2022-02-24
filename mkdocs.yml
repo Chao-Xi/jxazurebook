@@ -27,6 +27,8 @@ nav:
     - 'L4 Configure and Manage Virtual Networks': 'chap3/4az103_VN.md'
     - 'L5 Manage Identities': 'chap3/5az103_ad.md'
     - 'L6 Azure Review 103': 'chap3/6azure_review.md'
+  - 'Azure 900 and int':
+    - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxes7book"
