@@ -29,6 +29,7 @@ nav:
     - 'L6 Azure Review 103': 'chap3/6azure_review.md'
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
+    - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxes7book"
