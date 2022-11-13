@@ -9,6 +9,8 @@ plugins:
 
 nav:
   - 'Welcome': "index.md"
+  - 'Azure Arch':
+    - 'Azure Well Architecture Review': 'arch/1Well_arch_viw.md'
   - 'AZ103 Adv Tutorial（Eng)':
     - 'L1 Azure Administration: Manage Subscriptions and Resources' : 'chap1/6az103_ad_sub_resource.md'
     - 'L2 Azure Administration: Implement and Manage Storage' : 'chap1/7az103_storage.md'
@@ -30,6 +32,14 @@ nav:
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
+  - 'Azure DP900':
+    - 'Module 1 Explore core data': 'chap5/dp1.md'
+    - 'Module 2 Explore fundamental relational data concepts': 'chap5/dp2.md'
+    - 'Module 3 Non-relational data in Azure': 'chap5/dp3.md'
+    - 'Module 4 Large-scale data warehousing': 'chap5/dp4.md'
+    - 'Module 5 data visualization': 'chap5/dp5.md'
+    - 'DP900 Real Exam': 'chap5/dp900_qa.md'
+    - 'DP900 Learn (Cont.)': 'chap5/dp900_learn.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxes7book"
