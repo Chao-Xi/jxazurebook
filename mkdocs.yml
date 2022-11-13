@@ -42,7 +42,7 @@ nav:
     - 'DP900 Learn (Cont.)': 'chap5/dp900_learn.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
-repo_name: "jxes7book"
+repo_name: "jxazurebook"
 
 theme: 
   language: zh
