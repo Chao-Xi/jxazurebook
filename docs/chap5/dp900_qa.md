@@ -136,8 +136,8 @@ Customer is ( )
 **Address** is [answer]
 
 * a nested array
-* a nested object
-* **a root object**. (v)
+* **a nested object(v)**
+* a root object. 
 
 Social media is [answer choice]
 
@@ -160,7 +160,7 @@ Social media is [answer choice]
 
 Normalization is the process of organizing data in a database. 
 
-**This includes creating tables and establishing relationships between those tables according to rules designed both to protect the data** and to **make the database more flexible by eliminatinq redundancy and inconsistent dependency**.
+**This includes creating tables and establishing relationships between those tables according to rules designed both to protect the data** and to **make the database more flexible by eliminating redundancy and inconsistent dependency**.
 
 
 14
@@ -296,7 +296,7 @@ Relational data uses  ( )  to enforce **relationships between different tables**
 
 * ( **Firewall** ) Prevent access to an Azure SQL database from another network.
 * ( **Authentication** ) Support Azure Active Directory (Azure AD) sign-ins to an Azure SQL database.
-* ( **Encryption** ) Support Azure Active Directory (Azure AD) sign-ins to an Azure SQL database.
+* ( **Encryption** ) Ensure that sensitive data never appears as plain text in an Azure SQL database.
 
 27
 
@@ -491,7 +491,7 @@ Which type of analysis is shown in the fourth quarter?
 * **a tabular form of rows and columns. (V)**
 * comma-separated value (CSV) files.
 
-44 Your company needs to impiement a rerational database in Azure. The SQLution must minimize ongoing
+44 Your company needs to impiement a rerational database in Azure. The solution must minimize ongoing
 maintenance.
 
 Which Azure service should you use?
@@ -596,9 +596,7 @@ Which type of processing does the application use?
 * C. Online Analytical Processing (OLAP)
 * **D. Online Transaction Processina (OLTP)**
 
-53 What are two benefits of platform as a service (PaaS) relational
-database offerings in Azure, such as Azure SQL Database? Each
-correct answer presents a complete SQLution.
+53 What are two benefits of platform as a service (PaaS) relational database offerings in Azure, such as Azure SQL Database? Each correct answer presents a complete solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -684,7 +682,7 @@ What should you create first?
 
 61 What is the primary purpose of a data warehouse?
 
-* **A. to provide answers to complex queries that rely on data rom multiple sources (V)**
+* **A. to provide answers to complex queries that rely on data from multiple sources (V)**
 * B. to provide transformation services between source and target data stores
 * C. to provide read-only storage of relational and non-relational historical data
 * D. to provide storage for transactional line-of-business (LOB) applications
@@ -761,7 +759,7 @@ Processing (OLTP) workload? Choose three!
 * e) Schema on read
 * **f) Normalized data (V)**
 
-68 Which two activities can be performed entirely by using the Microsoft Power Bl service without relaying on Power BI desktop?
+68 Which two activities can be performed entirely by using the Microsoft Power Bl service **without relaying on Power BI desktop**?
 
 * **a） A report and dashboard creation （v)**
 * b) Report sharing and distribution
@@ -847,7 +845,7 @@ The following figure shows a business application that manages data about users,
 * Azure Data Factory and Azure Synapse
 * Azure COSMOS DB/Graph Database
 
-1.Your company needs to implement a relational database in Azure. The SQLution must minimize ongoing maintenance. Which Azure service should you use?
+1.Your company needs to implement a relational database in Azure. The soution must minimize ongoing maintenance. Which Azure service should you use?
 
 * A. Azure HDlnsight
 * **B. Azure SQL Database （V)**
@@ -927,7 +925,7 @@ What is a possible cause of the issue?
 * (**Authentication**)    Support Azure Active Directory (Azure AD) sign-ins to an Azure SQL database.
 * (**Encryption**)   Ensure that sensitive data never appears as plain text in an Azure SQL database.
 
-12 Your company has a reporting SQLution that haspaginated reports. The reports query a dimensional model in a data warehouse. Which type of processing does the reporting SQLution use?
+12 Your company has a reporting solution that haspaginated reports. The reports query a dimensional model in a data warehouse. Which type of processing does the reporting SQLution use?
 
 * A. stream processing
 * B. batch processing
@@ -988,7 +986,7 @@ content.
 
 NOTE: Each correct match is worth one point.
 
-* Extract:  **(Transform)**
+* The data warehouse:  **(Transform)**
 * The CRM system     **Extract:**
 * The data warehouse   **Load**
 
@@ -1029,7 +1027,7 @@ NOTE: Each correct selection is worth one point.
 * Platform as a service (PaS) database offerings in Azure provide administrators with the ability to control and update the operating system version.      **(No)**
 * All platform as a service (PaaS) database offerings in Azure can be paused to reduce costs.    **(No)**
 
-24 What are two uses of data visualization? Each correct answer presents a complete SQLution. NOTE: Each correct selection is worth one point.
+24 What are two uses of data visualization? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
 
 * **A. Represent trends and patterns over time (V)**
 * B. Implement machine learning to predict future values
@@ -1056,7 +1054,7 @@ NOTE: Each correct selection is worth one point.
 
 27 At which two levels can you set the throughput for
 an Azure Cosmos DB account? Each correct answer
-presents a complete SQLution. (Choose two.)
+presents a complete solution. (Choose two.)
 NOTE: Each correct selection is worth one point.
 
 * **A. database  （V)**
@@ -1107,16 +1105,16 @@ configure multiple write regions and read regions?
 
 33
 
-* The Azure Cosmos DB API is configured separately for each database in an Azure Cosmos B account.   **(No)**
+* The Azure Cosmos DB API is configured separately for each database in an Azure CosmosDB account.   **(No)**
 * Partition keys are used in Azure Cosmos DB to optimize queries    **(YES)**
-* Items contained in the same Azure Cosmos B logical partition can have different partition keys.   (**NO**)
+* Items contained in the same Azure CosmosDB logical partition can have different partition keys.   (**NO**)
 
 34
 
 * Azure Table storage supports multiple read replicas.  (**YES**)
 * Azure Table storage supports multiple write regions. (**NO**)
 * The Azure Cosmos DB Table API supports multiple read replicas.   (**YES**)
-* The Azure Cosmos B Table API supports multiple write regions.   (**YES**)
+* The Azure Cosmos DB Table API supports multiple write regions.   (**YES**)
 
 35 Match the datastore services to the appropriate
 descriptions.
@@ -1327,14 +1325,14 @@ Answer Area:
 
 ### **Azure Data Factory components:**
 
-* Pipelines
-* Activities
-* Datasets
-* Linked services
-* Data Flows
-* Integration Runtimes
-* Triggers
-* Control flow
+* **Pipelines**: a logical grouping of activites that perform a unit of work and can be scheduled
+* **Activities**: Processing step
+* **Datasets**: A representation of data structure whith data stores
+* **Linked services**: The information used to connect to external service
+* **Data Flows**
+* **Integration Runtimes** Computer Environment
+* **Triggers**: Initiates the executions of a pipeline
+* **Control flow** Orchestrate pipeline activites
 
 57 Which Azure Data Factory component provides the compute environment for activities?
 
