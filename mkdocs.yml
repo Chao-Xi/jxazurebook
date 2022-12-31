@@ -41,6 +41,8 @@ nav:
     - 'DP900 Real Exam': 'chap5/dp900_qa.md'
     - 'DP900 Learn (Cont.)': 'chap5/dp900_learn.md'
     - 'DP900 Exam Points': 'chap5/dp900_sum.md'
+  - 'Azure UBS':
+    - '1 Implementing Hybrid Infrastructure': 'chap6/1azure_hybird.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
