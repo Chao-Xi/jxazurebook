@@ -43,6 +43,7 @@ nav:
     - 'DP900 Exam Points': 'chap5/dp900_sum.md'
   - 'Azure UBS':
     - '1 Implementing Hybrid Infrastructure': 'chap6/1azure_hybird.md'
+    - '2 微软Azure高韧性': 'chap6/2azure_sla.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
