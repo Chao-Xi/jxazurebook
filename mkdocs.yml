@@ -44,6 +44,7 @@ nav:
   - 'Azure UBS':
     - '1 Implementing Hybrid Infrastructure': 'chap6/1azure_hybird.md'
     - '2 微软Azure高韧性': 'chap6/2azure_sla.md'
+    - '3 Hybrid Connectivity': 'chap6/3azure_hybird_conn.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
