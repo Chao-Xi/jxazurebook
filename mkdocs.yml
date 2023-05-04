@@ -45,6 +45,7 @@ nav:
     - '1 Implementing Hybrid Infrastructure': 'chap6/1azure_hybird.md'
     - '2 微软Azure高韧性': 'chap6/2azure_sla.md'
     - '3 Hybrid Connectivity': 'chap6/3azure_hybird_conn.md'
+    - 'Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施': 'ubsaz/1azhci_intro.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
