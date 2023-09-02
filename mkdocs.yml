@@ -1,0 +1,29 @@
+site_name: Jacob AI Book
+site_description: "Jacob AI学习笔记"
+site_author: "Jacob Xi"
+copyright: "Copyright &copy; 2023-9999 Jacob Xi"
+
+plugins:
+  - search # necessary for search to work
+  - awesome-pages
+
+nav:
+  - 'Welcome': "index.md"
+
+repo_url: https://github.com/Chao-Xi/jxaibook.git
+repo_name: "jxaibook"
+
+theme: 
+  language: zh
+  name: 'material'
+  include_sidebar: true
+  logo: 'images/logo.png'
+  favicon: 'images/logo.png'
+  feature:
+    tabs: false
+  palette:
+    primary: 'teal'
+    accent: 'teal'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
