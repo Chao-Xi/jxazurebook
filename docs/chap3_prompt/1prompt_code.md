@@ -1,6 +1,6 @@
 # Prompts & Use ChatGPT as a Powerful Tool for Programming
 
-> The AI will not replace developer, but the developer with AI will replace the developer without without AI
+> The AI will not replace developer, but the developer with AI will replace the developer without AI
 
 ## How do LLMs work?
 
