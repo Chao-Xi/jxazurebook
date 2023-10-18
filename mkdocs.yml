@@ -12,12 +12,15 @@ nav:
   - 'AI大模型应用':
     - '1 大模型的理论与技术的演进' : 'chap1_ba/1intro.md'
     - '2 大模型开发基础：OpenAIEmbedding': 'chap1_ba/2embedding_openai.md'
+  
   - 'AWS AI 应用':
     - '1 AWS AI 词汇表': 'chap2_aws/1aws_term.md'
     - '2 使用 LangChain搭建基于Amazon DynamoDB 的大语言模型应用': 'chap2_aws/2langchain_dynamodb.md'
   - 'Prompt Engineering':
     - '1 Prompts & Use ChatGPT as a Powerful Tool for Programming': 'chap3_prompt/1prompt_code.md'
-
+  - 'Python GPT':
+    - 'Creating an automated meeting minutes generator with Whisper and GPT-4' : 'chap4_python/1Meeting_minutes.md'
+    - 'chatGPT API basics.': 'chap4_python/2API_Basic.md' 
 repo_url: https://github.com/Chao-Xi/jxaibook.git
 repo_name: "jxaibook"
 
