@@ -1,4 +1,4 @@
-# **L3 Hybrid Connectivity**
+# **3 Hybrid Connectivity**
 
 ## Azure VPN Gateways
 
