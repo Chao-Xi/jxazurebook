@@ -471,6 +471,29 @@ Similar to AAD joined, however these device identities exist both onpremises an
 
 > **NOTE: Requires Azure AD P1 license or Microsoft 365 Business license**
 
+![Alt Image Text](../images/az104_3_31.png "Body image")
+
+**Join Device to AD**
+
+
+![Alt Image Text](../images/az104_3_32.png "Body image")
+
+**On window server**
+
+![Alt Image Text](../images/az104_3_33.png "Body image")
+
+* **VM1 Azure AD registered**
+
+![Alt Image Text](../images/az104_3_34.png "Body image")
+
+* **Azure AD joined**
+
+![Alt Image Text](../images/az104_3_35.png "Body image")
+
+![Alt Image Text](../images/az104_3_36.png "Body image")
+
+
+
 ### **Common Signal Types**
 
 1. **User or Group**: Provides fine-grained access to resources based on user identity or group membership.

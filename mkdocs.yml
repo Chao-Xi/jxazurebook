@@ -33,6 +33,8 @@ nav:
     - '1 Azure Administration': 'az104/1az_admin.md'
     - '2 Governance and Compliance': 'az104/2az_gc.md'
     - '3 AZ Identity': 'az104/3indentity.md'
+    - '4 Role-Based Access Control': 'az104/4rbac.md'
+    - '5 Azure Storage': 'az104/5az_storage.md'
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
