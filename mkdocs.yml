@@ -36,6 +36,7 @@ nav:
     - '4 Role-Based Access Control': 'az104/4rbac.md'
     - '5 Azure Storage': 'az104/5az_storage.md'
     - '6 Virtual Networking': 'az104/6network.md'
+    - '7 Intersite Connectivity': 'az104/7IntersiteConnectivity.md'
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
