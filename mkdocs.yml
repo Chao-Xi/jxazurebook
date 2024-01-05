@@ -40,6 +40,7 @@ nav:
     - '8 Azure Virtual Machines': 'az104/8vm.md'
     - '9 Network Traffic Management': 'az104/9LB.md'
     - '10 Web Apps and Containers': 'az104/10webapp.md'
+    - '11 Monitoring': 'az104/11monitor.md'
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
