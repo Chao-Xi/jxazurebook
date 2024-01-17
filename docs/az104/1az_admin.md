@@ -9,9 +9,9 @@ Resources
 * An entity managed by Azure
 * **Virtual machines, storage accounts, and virtual networks**
 * Logically grouped into a resource group
-	* lifecycle
-	* security
-	* environments(dev/test/production)
+	* **lifecycle**
+	* **security**
+	* **environments**(dev/test/production)
 
 ![Alt Image Text](../images/az104_1_1.png "Body image")
 
@@ -45,9 +45,9 @@ Interact with these resources
 * Azure PowerShell
 
 
-Azure Resource Manager is not interacting with the resources themselves, but rather, **it's interacting with and connecting to these resource providers that are associated with specific resources**
+**Azure Resource Manager** is not interacting with the resources themselves, but rather, **it's interacting with and connecting to these resource providers that are associated with specific resources**
 
-So we know that we use some REST API endpoints to interact with the Azure Resource Manager, and we make requests for specific operations, and then the Resource Manager forwards these requests to the appropriate resource providers depending on the resource that we're trying to perform in operation on. 
+So we know that **we use some REST API endpoints to interact with the Azure Resource Manager**, and we make **requests for specific operations, and then the Resource Manager forwards these requests to the appropriate resource providers** depending on the resource that we're trying to perform in operation on. 
 
 ![Alt Image Text](../images/az104_1_3.png "Body image")
 
@@ -63,11 +63,11 @@ So we know that we use some REST API endpoints to interact with the Azure Resour
 
 ![Alt Image Text](../images/az104_1_4.png "Body image")
 
-Now, Azure approaches everything from a identity-centric security method, and we're using Azure AD, Azure AD is our identity and access management resource inside of Azure. 
+Now, Azure approaches everything from a **identity-centric security method**, and we're using Azure AD, Azure AD is our identity and access management resource inside of Azure. 
 
 >  Our subscription here has a trust relationship between TenantA
 > 
-> If there is another tenantB out there, it won't be able to do anything because it doesn't have the trust relationship that the tenant that we've established a trust relationship between our subscription does.
+> If there is another tenant B out there, it won't be able to do anything because **it doesn't have the trust relationship that the tenant that we've established a trust relationship** between our subscription does.
 
 
 **Exam Tips**
@@ -84,9 +84,9 @@ Now, Azure approaches everything from a identity-centric security method, and we
 
 What is the Azure Portal?
 
-* Login portal for the Azure cloud
-* Create and manage Azure resources
-* Uses Cloud Shell
+* **Login portal for the Azure cloud**
+* **Create and manage Azure resources**
+* **Uses Cloud Shell**
 	* Using Azure CLI and PowerShell
 
 
@@ -98,7 +98,7 @@ What is the Azure Portal?
 
 **Power shell**
 
-Azure PowerShell cmdlets: Get-AzResourceGroup.
+Azure PowerShell cmdlets: **Get-AzResourceGroup**.
 
 ![Alt Image Text](../images/az104_1_8.png "Body image")
 
@@ -118,9 +118,9 @@ Azure PowerShell cmdlets: Get-AzResourceGroup.
 
 Using Azure CLI and PowerShel？
 
-* A command-line utility for managing  Azure resources
-* Create and manage resources without logging into the Azure Portal
-* Create scripts to automate tasks
+* **A command-line utility for managing Azure resources**
+* **Create and manage resources without logging into the Azure Portal**
+* **Create scripts to automate tasks**
 
 ![Alt Image Text](../images/az104_1_9.png "Body image")
 
@@ -220,19 +220,18 @@ Explaining Azure Resource Manager (ARM) Templates
 
 ![Alt Image Text](../images/az104_1_18.png "Body image")
 
-* Infrastructure as Code (IaC)
+* **Infrastructure as Code (IaC)**
 	* Azure Resource Manager templates, so we create these JSON files that are known as ARM templates, and this provides us Infrastructure as Code.
-* Deploy environments quickly
+* **Deploy environments quickly**
 	*  So we codify our infrastructure, and **using this ARM template, we can pass it into the Azure Resource Manager for deployment,** it will find the necessary providers, and it will quickly deploy our environments at **various scopes, such as a subscription or a resource group**.
-* Repeatable deployments
+* **Repeatable deployments**
 
 
-
-**Components of ARM Templates**
+### **Components of ARM Templates**
 
 ![Alt Image Text](../images/az104_1_19.png "Body image")
 
-* The <mark>parameters and variables</mark> components are used to pass information to the template
+* The **<mark>parameters and variables</mark>** components are used to pass information to the template
 	* Such as a username or maybe a VM SKU that we want to use for the virtual machine deployment that we're running in an ARM template.
 	* Variables are a little bit different in that they're not dynamic, **these are things that we just hardcode into the template**.
 * The **resources component** is used to define resources in the template

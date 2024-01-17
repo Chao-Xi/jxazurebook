@@ -2,19 +2,19 @@
 
 ## 1 Managing Subscriptions
 
-**Describing Subscriptions**
+### **Describing Subscriptions**
 
 ![Alt Image Text](../images/az104_2_1.png "Body image")
 
 What are subscriptions? 
 
 * **Billing unit that aggregates all costs of underlying resources**
-* Contain resource groups and their associated resources
+* Contain **resource groups** and **their associated resources**
 	* Such as virtual machines, virtual networks, and storage accounts.
 	* Resource groups don't cost us anything, but some resources do, like virtual machines, storage accounts, virtual networks, public IP addresses
 * **Scoping level for governance and security**
 
-**Describing Subscriptions**
+### **Describing Subscriptions**
 
 ![Alt Image Text](../images/az104_2_2.png "Body image")
 
@@ -24,15 +24,15 @@ What are subscriptions?
 
 **Subscription Naming Conventions**
 
-**Prod/Dev/Staging**
+* **Prod/Dev/Staging**
 
 Subscriptions named based on whether or not they are production, development, or staging environments.
 
-**Department/Teams**
+* **Department/Teams**
 
 Subscriptions named based on the department or team the subscription is intended for, so that billing can then be easily associated with a given business unit.
 
-**Region**
+* **Region**
 
 Subscriptions named based on the region of the business that uses the subscription.
 
@@ -43,7 +43,7 @@ Subscriptions named based on the region of the business that uses the subscripti
 
 
 * Billing unit that aggregates all costs of underlying resources
-* Scoping level for governance and security
+* Scoping level for **governance and security**
 * Contain resource groups and their associated resources
 * **Can only be associated with a single organization (Azure AD tenant) at a time**
 
@@ -52,11 +52,11 @@ Subscriptions named based on the region of the business that uses the subscripti
 
 ### 2-1 **Defining Management Groups**
 
-Managing Subscriptions
+* **Managing Subscriptions**
 
 Organize and manage subscriptions by logically grouping them into management subscriptions.
 
-* Organizational hierarchy
+* **Organizational hierarchy**
 * **Provides another scope for enforcing governance and compliance**
 
 ![Alt Image Text](../images/az104_2_5.png "Body image")
@@ -161,8 +161,8 @@ Defining Azure Policy
 	* The scope **could be a management group, subscription, resource group, or resource**.
 
 * **Initiative Defintion**
-
-A collection of policies that are tailored to achieving a singular high-level goal together. 
+**
+A collection of policies that are tailored to achieving a singular high-level goal together. **
 
 **For example, ensuring that VMs meet standards.**
 
