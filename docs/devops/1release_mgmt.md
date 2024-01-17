@@ -15,8 +15,6 @@
 “business” at the moment they prefer
 
 
-
-
 1. **Importance of Separating Build and Release Processes**:
    - Need to separate build and release processes, suggesting that it is better **to have distinct phases for build and release management.**
 
