@@ -14,7 +14,6 @@
 * This provides better stability to the deployment, better validation of the deployment and makes releasing a feature a functional operation, preferably done by the 
 “business” at the moment they prefer
 
-
 1. **Importance of Separating Build and Release Processes**:
    - Need to separate build and release processes, suggesting that it is better **to have distinct phases for build and release management.**
 
@@ -42,8 +41,6 @@ This provides better stability to the deployment, better
 validation of the deployment and makes releasing a 
 feature a functional operation, preferably done by the 
 “business” at the moment they prefer
-
-≈
 
 * Deploy your product
 * See if it operates in a stable fashion
@@ -100,7 +97,7 @@ Clean separation in the different stages of delivery
 
 4. Separation of Concerns:
    - **Focusing on product quality**
-   - **Product stability **
+   - **Product stability**
    - **Feature usage**, 
    - **Combined with technical characteristics such as performance**.
 

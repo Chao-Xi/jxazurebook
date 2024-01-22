@@ -62,6 +62,7 @@ nav:
     - 'Azure Linux OSS Database Migration': 'ubsaz/2Migration.md'
   - 'Azure DevOps: Release Pipelines':
     - '1 Introduction to Release Management': 'devops/1release_mgmt.md'
+    - '2 Infrastructure as Code' : 'devops/2iac.md
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
