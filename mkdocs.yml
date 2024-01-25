@@ -63,6 +63,7 @@ nav:
   - 'Azure DevOps: Release Pipelines':
     - '1 Introduction to Release Management': 'devops/1release_mgmt.md'
     - '2 Infrastructure as Code': 'devops/2iac.md'
+    - '3 Security, Approval, and Audit Trails': 'devops/3secuirty.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
