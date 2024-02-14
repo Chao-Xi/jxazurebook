@@ -64,6 +64,9 @@ nav:
     - '1 Introduction to Release Management': 'devops/1release_mgmt.md'
     - '2 Infrastructure as Code': 'devops/2iac.md'
     - '3 Security, Approval, and Audit Trails': 'devops/3secuirty.md'
+    - '4 Azure DevOps的Azure资源IaC编排实战': 'devops/4Devops_IAC.md'
+    - '5 基于Azure Devops的Golang项目云主机CI/CD实战': 'devops/5Devops_go_host.md'
+    - '6 基于Azure DevOps的Golang项目容器化CI/CD实战': 'devops/6Devops_go_container.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
