@@ -1,6 +1,6 @@
 # 10 Web Apps and Containers
 
-## Creating an App Service Plan
+## 1 Creating an App Service Plan
 
 App Service plan defines a set of computing resources and the features that are available to a web application that is running on this App Service plan.
 
@@ -12,19 +12,19 @@ An App Service plan is comprised of various components, and these are:
 
 ### **What Is an App Service Plan?**
 
-**App Service Plan**
+* **App Service Plan**
 
 An App Service plan defines a set of compute resources for a web app to run on
 
-**Pricing Tier**
+* **Pricing Tier**
 
 Free, Shared, Basic, Standard, Premium, PremiumV2, PremiumV3, and Isolated
 
-**Size of VMs**
+* **Size of VMs**
 
 The size of virtual machine instances (Small, Medium, Large)
 
-**Number of VMs**
+* **Number of VMs**
 
 The number of virtual machine instances running under a plan
 
@@ -37,20 +37,20 @@ Azure geolocation where app is deployed (e.g. East US, West US, South Central US
 
 The pricing tier of an App Service plan determines the features you get and what you pay. There are three core compute types across the plans.
 
-**Shared**
+#### **Shared**
 
 Less expensive
 
 Run apps on the same VM as other apps, including apps of other customers. (Cannot scale out because of shared compute.)
 
 
-**Dedicated**
+#### **Dedicated**
 
-Run only apps using the same App Service Plan on a dedicated VM. (Isolated compute.)
+Run only apps using the same App Service Plan on a dedicated VM. **(Isolated compute.)**
 
-**Isolated**
+#### **Isolated**
 
-Run apps using dedicated VMs and dedicated VNets. (Isolated compute and networking.)
+**Run apps using dedicated VMs and dedicated VNets. (Isolated compute and networking.)**
 
 So it provides us the isolated computing, so that we have scaling, and provides us isolated networking for our web applications running on this type of compute type App Service plan
 
@@ -60,7 +60,7 @@ So it provides us the isolated computing, so that we have scaling, and provides 
 **Traditionally**, data center; 
 
 * we would have server racks; 
-* On these server racks would exist virtual machines 
+* **On these server racks would exist virtual machines**
 * Compute resources that host our solution. 
 
 Load balancer that use to be one endpoint for our users, and then the traffic is then balanced between this load balancing endpoint to the backend solution.
@@ -129,7 +129,7 @@ Pricing tier, size of VM instances, number of VM instances, and region.
 
 **3 App Service Plan Compute Types**
 
-Shared, dedicated, and isolated. Each provides a different level of compute isolation, network isolation, and features like scaling.
+**Shared, dedicated, and isolated**. Each provides a different level of compute isolation, network isolation, and features like scaling.
 
 **4 App Service Plans and Web Apps**
 
@@ -139,11 +139,11 @@ Provides a Platform as a Service (PaaS) to configure and host applications, rath
 ### Summary from chatgpt
 
 1. App Service Plan Overview:
-   - An App Service plan defines the computing resources and features available to a web application running on the plan, comprising components such as region, number and size of virtual machines, and selected pricing tier (Free, Shared, Basic, Standard, Premium, or Isolated).
+   - An App Service plan defines the **computing resources and features available to a web application running on the plan, comprising components such as region, number and size of virtual machines, and selected pricing tier** (Free, Shared, Basic, Standard, Premium, or Isolated).
 
 2. Compute Types in App Service Plans:
    - Shared compute type allows running apps on the same virtual machine as other apps, offering cost-efficiency but limited scalability due to shared compute.
-   - Dedicated compute type enables running multiple applications on the same App Service plan with isolated compute, providing scaling capabilities at a higher cost.
+   - **Dedicated compute type enables running multiple applications on the same App Service plan with isolated compute, providing scaling capabilities at a higher cost**.
    - Isolated compute type is the most expensive, offering dedicated virtual machines and networking for web applications, ensuring isolated compute and scaling.
 
 3. Comparison with Traditional Deployment:
@@ -161,24 +161,23 @@ Provides a Platform as a Service (PaaS) to configure and host applications, rath
    - Knowledge of the abstraction provided by App Service plans compared to traditional deployment, simplifying infrastructure management for web applications.
    - Practical experience in creating and managing an App Service plan in Azure Cloud Sandbox, including resource group selection, operating system choice, region selection, and pricing tier configuration.
 
-Certainly! Here are some additional exam-specific details related to Azure App Service plans:
-
 7. **Scaling in App Service Plans:**
-   - Understanding scaling options is crucial for the AZ-104 exam. App Service plans offer manual scaling options where you can change the instance count manually, and autoscaling, allowing Azure to automatically adjust the instance count based on predefined rules and metrics.
+   - Understanding scaling options is crucial for the AZ-104 exam. App Service plans offer **manual scaling options where you can change the instance count manually, and autoscaling, allowing Azure to automatically adjust the instance count based on predefined rules and metrics.**
 
 8. **Cost Management and Monitoring:**
-   - AZ-104 exam candidates should be familiar with cost management features in App Service plans, including options to set budgets, analyze cost trends, and configure alerts for cost overruns. Additionally, monitoring and logging capabilities for App Service plans, such as integration with Azure Monitor for performance and usage insights, are important areas to study.
+   - AZ-104 exam candidates should be familiar with cost management features in App Service plans, including options to set budgets, analyze cost trends, and configure alerts for cost overruns. Additionally, monitoring and logging capabilities for App Service plans, such as integration with Azure Monitor for performance and usage insights
 
 9. **Security and Compliance Considerations**:
    - The exam may cover security aspects related to App Service plans, including features for SSL certificates, custom domains, and the integration of Azure Active Directory for authentication and authorization. Awareness of compliance standards such as GDPR, HIPAA, and ISO within the context of Azure App Service plans is also valuable.
 
 10. **Availability and Disaster Recovery:**
-   - Knowledge of high availability and disaster recovery options in App Service plans is essential. This includes understanding how deployment slots can be used for staging and testing, and how traffic management and failover can be configured for production environments.
+   - Knowledge of high availability and disaster recovery options in App Service plans is essential. 
+   - This includes understanding how deployment slots can be used for staging and testing, and how traffic management and failover can be configured for production environments.
 
 11. Integration with Azure Services:
    - The AZ-104 exam may cover integrations with other Azure services, such as Azure SQL Database, Azure Storage, Azure Functions, and Azure Active Directory. Understanding how App Service plans can work in conjunction with these services for data storage, processing, and user authentication is important for the exam.
 
-## Creating Web Apps
+## 2 Creating Web Apps
 
 ### Web App Service Features
 
@@ -216,7 +215,6 @@ App Service integrates several Azure services, such as Azure AD as an identity p
 
 ![Alt Image Text](../images/az104_10_8.png "Body image")
 
-Than traditional on-premise methods of deploying an application solution, with Web Apps, we simply have our App Service plan, and inside of that App Service plan, we're going to deploy our web application. 
 
 Our web application is going to have underlying compute nodes that we don't have to manage because they're going to be managed for us, providing us a Platform as a Service to host our application. 
 
@@ -357,26 +355,26 @@ From the provided article, we can extract and summarize the following key points
 14. Monitoring and Troubleshooting:
    - Monitoring the performance and availability of web applications in Azure, as well as troubleshooting common issues, are important areas of knowledge for the exam. Candidates should understand how to use Azure Monitor and Application Insights for monitoring web app performance and diagnosing issues.
 
-## Configuring Web Apps
+## 3 Configuring Web Apps
 
 ### Configuration Options
 
-**Custom Domain**
+#### **Custom Domain**
 
-Provide a custom domain to be used by the web application. For example, www.abc.com.
+**Provide a custom domain to be used by the web application**. For example, www.abc.com.
 
-**Scaling**
+#### **Scaling**
 
 Specify scaling options to scale up/scale out compute resources for your web apps.
 
 
-**Deployment**
+#### **Deployment**
 
 Deploy applications using DevOps strategies like deployment slots for a staging slot and a production slot
 
-**Network**
+#### **Network**
 
-Manage network settings and integration by doing things such as connecting web apps with VNets, CDN, etc
+Manage network settings and integration by doing things **such as connecting web apps with VNets, CDN, etc**
 
 ### Web App Custom Domain
 
@@ -384,7 +382,7 @@ Manage network settings and integration by doing things such as connecting web a
 
 Using custom domains, **rather than using the Azure-provided domain name**, which is our `appname.azurewebsites.net`
 
-`appname.azurewebsites.net`, which is our Azure-provided domain name. Don't want our users to access this, because **it's not a common name add an A record and assign that A record the value of the public IP address of our web application.** A
+`appname.azurewebsites.net`, which is our Azure-provided domain name. Don't want our users to access this, because **it's not a common name add an A record and assign that A record the value of the public IP address of our web application.** 
 
 Use the Azure-provided TXT record, and this TXT record is going to validate our ownership of this domain. 
 
@@ -407,7 +405,7 @@ Scale up our compute resources for our web application by upgrading our App Serv
 * Swap Deployment Slots
 * Secondary Web App
 
-Using deployment slots, can create slots that will help us deploy our applications, providing some DevOps-like strategies. 
+Using** deployment slots, can create slots that will help us deploy our applications, providing some DevOps-like strategies**. 
 
 For example, our application can be running in a production slot, and this is the application our end users are going to access. And then we have a **staging slot**, and this is **going to provide a secondary web app resource that's not going to cost us anything, and we're going to stage new versions of our application here**. 
 
@@ -507,9 +505,9 @@ Back up our web applications using full archival backups or our incremental poin
 
 Key points and knowledge for the AZ-104 exam extracted from the article:
 
-1. Custom Domain:
+1. **Custom Domain:**
    - Understanding the use of custom domains to provide memorable domain names for web applications in Azure rather than using Azure-provided domain names.
-   - Knowledge of configuring A records and TXT records in the DNS zone of the DNS provider to associate the custom domain with the public IP address of the web application.
+   - Knowledge of **configuring A records and TXT records in the DNS zone of the DNS provider to associate the custom domain with the public IP address of the web application**.
 
 2. Scaling:
    - Knowledge of scaling options available for web applications, including scaling out compute resources within the App Service plan and scaling up by upgrading the App Service plan to provide more compute resources and features.
@@ -523,7 +521,7 @@ Key points and knowledge for the AZ-104 exam extracted from the article:
    - Familiarity with Azure CDN for content delivery and providing geographically-specific experiences.
 
 5. Backup Configurations:
-   - Knowledge of creating backups for web applications, including full archival backups and incremental point-in-time restore snapshots stored in a storage account as blobs.
+   - **Knowledge of creating backups for web applications, including full archival backups and incremental point-in-time restore snapshots stored in a storage account as blobs**.
 
 6. Use of Azure Cloud Sandbox:
    - Practical hands-on experience in the Azure Cloud Sandbox for visualizing and understanding web app configuration options and settings.
@@ -542,14 +540,14 @@ Key points and knowledge for the AZ-104 exam extracted from the article:
     - Understanding scaling policies to allow web applications to scale out within the confines of the App Service plan, along with the ability to specify scaling policies for web applications.
 
 11. Compliance and Security Features:
-    - Understanding how Azure App Service provides compliance certifications, such as ISO, SOC, and PCI DSS, to ensure regulatory compliance and adherence to industry standards.
-    - Knowledge of integrating Azure Key Vault with web applications to securely store and manage sensitive information, such as connection strings and certificates.
+    - **Understanding how Azure App Service provides compliance certifications, such as ISO, SOC, and PCI DSS, to ensure regulatory compliance and adherence to industry standards**.
+    - **Knowledge of integrating Azure Key Vault with web applications to securely store and manage sensitive information, such as connection strings and certificates**.
 
 12. Application Insights Integration:
     - Familiarity with integrating web applications with Azure Application Insights to monitor the application's performance, availability, and usage, and gathering insights for debugging and optimization.
 
 13. Auto-scaling:
-    - Understanding auto-scaling for web applications, enabling automatic adjustment of compute resources based on predefined metrics like CPU percentage, memory usage, or custom metrics.
+    - Understanding auto-scaling for web applications, e**nabling automatic adjustment of compute resources based on predefined metrics like CPU percentage, memory usage, or custom metrics.**
 
 14. WebJobs and Azure Functions:
     - Understanding the use of WebJobs and Azure Functions for executing background tasks, processing queues, and handling event-driven scenarios within web applications.
@@ -564,10 +562,10 @@ Key points and knowledge for the AZ-104 exam extracted from the article:
     - Familiarity with configuring application logging, implementing log retention policies, and using Azure Monitor to create custom alerts and dashboards for web application monitoring.
 
 18. Disaster Recovery and High Availability:
-    - Knowledge of configuring High Availability and Disaster Recovery (HADR) options for web applications, including regional failover and backup/restore strategies.
+    - Knowledge of configuring **High Availability and Disaster Recovery (HADR) options for web applications, including regional failover and backup/restore strategies.**
 
 
-## Describing Containers in Azure
+## 4 Describing Containers in Azure
 
 ### What Are Containers?
 

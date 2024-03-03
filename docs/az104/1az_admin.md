@@ -124,7 +124,7 @@ Using Azure CLI and PowerShel？
 
 ![Alt Image Text](../images/az104_1_9.png "Body image")
 
-What is the Azure PowerShell?
+**What is the Azure PowerShell?**
 
 * A set of cmdlets for managing Azure resources
 * Create and manage resources without logging into the Azure Portal

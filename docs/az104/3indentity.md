@@ -11,20 +11,20 @@
 
 **Azure AD Users**
 
-* Define users, types of users, methods of creating users, and architecture; 
+* **Define users, types of users, methods of creating users, and architecture;** 
 * Create and delete users; 
-* perform bulk user updates; 
+* **perform bulk user updates;** 
 * invite guest accounts.
 
 **Azure AD Groups**
 
-* Define groups, group and membership types, and role-based access control (RBAC); 
+* **Define groups, group and membership types, and role-based access control (RBAC);** 
 * Create dynamic groups; 
 * and assign access to resources.
 
 **Administrative Units**
 
-* Define Multi-Factor Authentication (MFA) and self-service password reset (SSPR); 
+* **Define Multi-Factor Authentication (MFA) and self-service password reset (SSPR);** 
 * enable MFA; 
 * and enable SSPR. 
 
@@ -38,27 +38,27 @@
 
 ## 2 Conceptualizing Azure Active Directory
 
-### IAM Basics
+### 2-1 IAM Basics
 
-**Principal**
+**1 Principal**
 
-An unauthenticated entity that will seek to authenticate as an identity
+An **unauthenticated entity that will seek to authenticate as an identity**
 
-**Identity**
+**2 Identity**
 
-A identity profile that is authenticated against using credentials.
+A identity profile that is authenticated **against using credentials.**
 
-**Authorizations**
+**3 Authorizations**
 
 Actions that are permitted/prohibited for an identity to perform.
 
-### What is Azure AD?
+### 2-2 What is Azure AD?
 
 ![Alt Image Text](../images/az104_3_1.png "Body image")
 
 **Identity and Access Management (IAM)**
 
-Global cloud-based identity service for Azure that provides an identity repository.
+Global cloud-based identity service for Azure that provides an **identity repository**.
 
 **Create Identity Resources**
 
@@ -66,9 +66,9 @@ Create users and groups.
 
 **Manage Identity Security**
 
-Enable MFA, control resource access, and provide policy-based controls.
+**Enable MFA, control resource access, and provide policy-based controls**.
 
-### Azure AD Tenant Architecture
+### 2-3 Azure AD Tenant Architecture
 
 Azure AD is **identity and access management solution for the cloud.** It provides our cloud-based identities that it contains, and it allows them to access resources.
 
@@ -83,38 +83,38 @@ If we create our tenant in the United States, it's because we were in the United
 
 ![Alt Image Text](../images/az104_3_3.png "Body image")
 
-Azure Active Directory tenant
+### 2-4 Azure Active Directory tenant
 
 Default domain name for tenant. typically follows a form of, for example, **atld.onmicrosoft.com**. and it's always going to follow this format of our **prefix.onmicrosoft.com**
 
-Those identity resources have role assignments to perform actions on subscriptions that our Azure Active Directory is associated with, and this can happen for multiple subscriptions. 
+Those identity resources have role assignments to perform actions on subscriptions that our Azure Active Directory is associated with, and this **can happen for multiple subscriptions.** 
 
 
-Trust relationship that we establish **between our tenant and our Azure subscriptions is a one-to-many relationship**
+<mark>Trust relationship that we establish **between our tenant and our Azure subscriptions is a one-to-many relationship**</mark>
 
-**One tenant can be associated with multiple subscriptions at a time**, providing those identities that exist within it, access to Azure resources in those subscriptions, **but a subscription can only be associated with a single Azure Active Directory tenant at a time.**
+**<mark>One tenant can be associated with multiple subscriptions at a time**, providing those identities that exist within it, access to Azure resources in those subscriptions, **but a subscription can only be associated with a single Azure Active Directory tenant at a time.</mark>**
 
-### Azure AD Features
+### 2-5 Azure AD Features
 
 * **IAM Platform**： Identity and Access Management (IAM) for Azure cloud-based resources.
 * **Enterprise Access**： Additional security for applications and devices both on-premises and in the cloud
-* **Identity Integration**： Hybrid identity and single sign-on (SSO) using Azure AD Connect and Azure AD Domain Services.
-* **Identity Security**： Additional security with Multi-Factor Authentication (MFA) and  Privileged Identity Management (PIM）
+* **Identity Integration**： **Hybrid identity and single sign-on (SSO) using Azure AD Connect and Azure AD Domain Services**.
+* **Identity Security**： Additional security with <mark>Multi-Factor Authentication (MFA) and  Privileged Identity Management (PIM）</mark>
 * **Collaboration and Development**  Azure AD B2B for collaboration  and Azure AD B2C to support development.
-* **Monitoring**： Audit logs, security monitoring, identity protection, and risk management.
+* **Monitoring**： **Audit logs, security monitoring, identity protection, and risk management**.
 	*  Audit logging where can **perform audit logs of sign-ins or security events based on identities**. 
 	*  We also have some identity protection and risk management functionalities, such as user sign-in risks, and can determine things like risky behaviors of users that are signing in, for example, **from untrusted IPs or for example, things even like impossible travel**.
 
 
 We can integrate these services using something known as **<mark>Azure AD Connect</mark>,** and we can also provide those users that are being **synced from our on-premises environments into the cloud with the ability to use single sign-on** so that we don't have to sign in to various things multiple times, **we can just sign in once and access all of our resources.** 
 
-### Azure AD Features
+### 2-6 Azure AD Features
 
 **Azure Licensing Features**
 
 ![Alt Image Text](../images/az104_3_4.png "Body image")
 
-### Azure AD vs. Active Directory
+### 2-7 Azure AD vs. Active Directory
 
 **Active Directory**
 
@@ -137,7 +137,7 @@ We can integrate these services using something known as **<mark>Azure AD Connec
 
 **we can extend the functionality between Azure Active Directory and Active Directory on-prem using Azure AD Connect**
 
-### Key Takeaways
+### 2-8 Key Takeaways
 
 ![Alt Image Text](../images/az104_3_5.png "Body image")
 
@@ -155,17 +155,20 @@ Enable MFA, control resource access, and provide policy-based controls
 
 ## 3 Managing Tenants
 
-hybrid identity where we're connecting our Azure AD tenant to our **on-premises domain solutions, like Active Directory Domain Services so that we can sync those identities up into our Azure cloud environments using Azure AD Connect.**
+Hybrid identity where we're connecting our Azure AD tenant to our **on-premises domain solutions, like Active Directory Domain Services so that we can sync those identities up into our Azure cloud environments using Azure AD Connect.**
  
-### Planning Our Organization
+### 3-1 Planning Our Organization
 
 **Designing Tenants**： Planning out the design of our tenant 
 
-* **Monitor and Automate**： Monitor administrators, perform access reviews, and automate user lifecycles.
-	*  Resetting the password after a period of time automatically so that **users are always prompted to create a new password**
+* **Monitor and Automate**： 
+	* **Monitor administrators**
+	* **Perform access reviews**
+	* **Automate user lifecycles**.
+	* Resetting the password after a period of time automatically so that **users are always prompted to create a new password**
 * **Manage Apps**： Identify apps to be used from App Gallery and register apps from on-prem.
 * **Populate Identity Resources**： Add users, create groups, add devices, and set up hybrid identity.
-* **Build Secure Foundations**： Set up best practices like SSPR, MFA, backup global admin, and privileged users for specific tasks.
+* **Build Secure Foundations**： Set up best practices **like SSPR, MFA, backup global admin, and privileged users for specific tasks**.
 
 ### Key Takeaways
 
@@ -174,25 +177,28 @@ hybrid identity where we're connecting our Azure AD tenant to our **on-premises 
 * Azure Active Directory is a global service that spans the Azure cloud.
 * Create instance of that service known as a tenant inside of geographical regions like the United States.
 * Tenant of Azure Active Directory will be running on servers allocated for Azure Active Directory global service inside of that geographical region.
-*  identity objects, like users and groups, devices, and applications are all going to exist.
+*  **Identity objects, like users and groups, devices, and applications are all going to exist**.
 
 ## 3 Creating and Managing Users
 
-### Describing Users
+### 3-1 Describing Users
 
 Azure AD tenant,  **like users, and these users are just identity objects with a set of permissions**, and that's what defines the type of user it is, and also where the user originates from whether it originated inside of our Azure AD tenant, or it originated from someone outside of our Azure AD tenant.
 
 **Azure AD**
 
-* **Administrators**:  Global admins / billing administrators / User administrators
-* **Members**
-	*  members of our tenant can be **support enginee**r that needs to manage virtual machine workloads
+* **1 Administrators**:  
+	* Global admins 
+	* billing administrators 
+	* User administrators
+* **2 Members**
+	*  Members of our tenant can be **support engineer** that needs to manage virtual machine workloads
 	*  Could be our organization's **data engineering team**, and they may have access to a specific set of services inside of Azure, at various scopes. 
-* **Guests**
+* **3 Guests**
 
 ### Describing Users
 
-* Members have default permissions
+* **Members have default permissions**
 * These identities are JSON objects
 * **Each user can have role assignments**
 	* which is the thing that provides them the access to perform specific operations at various scopes inside of our Azure environments.
@@ -276,9 +282,9 @@ Apps, devices, groups, and resources that are owned
 The key takeaways from this article are:
 
 * Users in Azure AD are identity objects with a set of permissions, and they can originate from within or outside the Azure AD tenant.
-* Administrative users have specific roles assigned to them, while tenant members can be employees or specific teams with access to Azure services.
+* **Administrative users have specific roles assigned to them, while tenant members can be employees or specific teams with access to Azure services**.
 * Guest users are external users invited to collaborate within the Azure AD tenant.
-* Users have default permissions and properties that can be modified, such as job title, display name, and usage location.
+* **Users have default permissions and properties that can be modified, such as job title, display name, and usage location**.
 * Role assignments provide users with access to perform specific operations within Azure environments.
 * Users can have **object ownership, allowing them to manage apps, devices, groups, and resources they own within Azure**.
 
@@ -290,7 +296,7 @@ The key takeaways from this article are:
 ### Describing Groups
 
 * **Owner and Members**: An owner of the group or a member of the group
-* **Type of Group** A security group or a Microsoft 365 group
+* **Type of Group** A **security group** or a **Microsoft 365 group**
 * **Membership Type** Assigned, dynamic user, or dynamic device
 
 
@@ -308,7 +314,7 @@ Add a query that will dynamically manage group membership by adding guest accoun
 
 ### Group Types
 
-* **Security** Security groups are used to manage access to shared resources for a group of users
+* **Security** **Security groups are used to manage access to shared resources for a group of users**
 * **Microsoft 365**  Microsoft 365 groups are used to give members access to a shared mailbox, calendar, files, etc.
 
 ![Alt Image Text](../images/az104_3_11.png "Body image")
@@ -320,9 +326,9 @@ Add a query that will dynamically manage group membership by adding guest accoun
 
 ### **Membership Types**
 
-* **Assigned** Users are specifically selected to be members of a group.
-* **Dynamic User** Membership rules are created that automate group membership via **user attributes.**
-* **Dynamic Device**  Membership rules are created that automate group membership via **device attributes**.
+* **Assigned Users** are specifically selected to be members of a group.
+* **Dynamic User** *Membership rules* are created that automate group membership via **user attributes.**
+* **Dynamic Device**  *Membership rules* are created that automate group membership via **device attributes**.
 
 First and foremost, we can directly assign members to a group, so add those users or devices directly to the groups by manually assigning it. 
 
@@ -347,23 +353,20 @@ Plan the organization and evaluate its needs to determine the value that adminis
 
 ![Alt Image Text](../images/az104_3_15.png "Body image")
 
-* Create an administrative unit to logically
-* Divide the organization and allow for scoping.
+* **Create an administrative unit to logically**
+* **Divide the organization and allow for scoping.**
 
 ![Alt Image Text](../images/az104_3_16.png "Body image")
-
-
-**Key Takeaways**
 
 ![Alt Image Text](../images/az104_3_17.png "Body image")
 
 
 **Summary from ChatGPT**
 
-* Administrative units act as a logical container within a flat data structure of Azure Active Directory, allowing for organization and scoping of Azure AD identity objects.
-* They enable control of the scope of administrative users, **preventing them from having default tenant-level access and allowing for specific scoping to manage specific identity objects**.
+* **Administrative units** act as a logical container within a flat data structure of **Azure Active Directory, allowing for organization and scoping of Azure AD identity objects**.
+* <mark>They enable control of the scope of administrative users</mark>, **preventing them from having default tenant-level access and allowing for specific scoping to manage specific identity objects**.
 * Common use-case examples include **geographical locations, business departments, and subsidiary organizations** of a parent organization using the **same Azure Active Directory to manage all entities.**
-* **Administrative units** can be used to **manage users, groups, and devices**, and can be assigned specific administrative roles tailored to the needs of the organization.
+* **Administrative units** can be used to **manage users, groups, and devices**, and **can be assigned specific administrative roles tailored to the needs of the organization**.
 * Azure AD P1 and P2 licensing allows for the management of membership types to administrative units, **including Assigned, Dynamic User, and Dynamic Device, which can be used to manage identity objects within the administrative units**.
 
 ## 6 Configuring SSPR
@@ -463,7 +466,7 @@ Device is owned by the organization and accesses AAD through a work account. The
 
 * **Hybrid Azure AD Joined**
 
-Similar to AAD joined, however these device identities exist both onpremises and in the cloud.  Supports Windows 7, 8.1, 10, and Server 2008 or late
+Similar to AAD joined, however these device identities exist both on premises and in the cloud.  Supports Windows 7, 8.1, 10, and Server 2008 or late
 
 ### Conditional Access Policies
 
@@ -518,11 +521,11 @@ Similar to AAD joined, however these device identities exist both onpremises an
 
 ### **Summary from ChatGPT**
 
-* Azure Active Directory is the identity solution inside of the Azure Cloud.
+* Azure Active Directory is the **identity solution** inside of the Azure Cloud.
 * Identity objects are used to authenticate into Azure environments.
 * **Devices need to be managed and registered in Azure Active Directory to control access to resources, assets, and data.**
 * Three registration options for devices in Azure Active Directory: **Azure AD Registered, Azure AD Joined, and Hybrid Azure AD Joined**.
-* **<mark>Azure AD Registered is for devices owned by employees, while Azure AD Joined is for organization-owned devices.M/mark>**
+* **<mark>Azure AD Registered is for devices owned by employees, while Azure AD Joined is for organization-owned devices.</mark>**
 * **Device settings** in Azure AD can be managed at the tenant level to control device join and registration.
 * **Hybrid Azure AD Joined is a device that exists both on-premises and in the cloud**.
 * Registering and joining devices in Azure Active Directory provides improved user experience with features like single sign-on.
@@ -537,7 +540,7 @@ Similar to AAD joined, however these device identities exist both onpremises an
 
 **Management Options**
 
-Choosing between Mobile Device Management (MDM)-only or co-management options for device management
+Choosing between Mobile Device Management (MDM)-only or co-management options for device management
 
 **MDM-Only**
 
@@ -593,11 +596,11 @@ Define Azure AD Join, device settings, and conditional access; join Windows 10 t
 
 ### **Summary from ChatGPT**
 
-1. Azure AD tenants are the instance of the Azure AD service.
+1. **Azure AD tenants are the instance of the Azure AD service**.
 2. Azure AD architecture was discussed to understand its structure.
 3. Comparison between Azure Active Directory and Active Directory was made to highlight the differences.
 4. The creation and management of user accounts were demonstrated, including member, administrative, and guest users.
 5. **Use of groups to manage users and administrative units to limit administrative control was discussed**.
 6. Self-service password reset (SSPR) was highlighted as a feature to reduce password reset workload for administrators.
-7. Device settings and management in Azure AD, including joining devices to the network using Azure AD join, were covered.
-8. The importance of Azure AD in identity and access management, including user roles, permissions, groups, and device identities, in the Azure cloud.
+7. **Device settings and management in Azure AD, including joining devices to the network using Azure AD join, were covered**.
+8. The importance of Azure AD in identity and **access management, including user roles, permissions, groups, and device identities, in the Azure cloud.**

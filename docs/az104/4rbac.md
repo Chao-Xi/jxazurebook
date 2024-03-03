@@ -36,9 +36,9 @@
 
 ![Alt Image Text](../images/az104_4_3.png "Body image")
 
-* **Global Administrator** Can manage Azure AD resources
-* **Billing Administrator** Can perform billing tasks
-* **User Administrator**  Can manage users and groups
+* **Global Administrator** Can manage **Azure AD resources**
+* **Billing Administrator** Can **perform billing tasks**
+* **User Administrator**  Can **manage users and groups**
 * **Helpdesk Administrator**  Can reset passwords for users
 
 ### Azure Roles vs. Azure AD Roles
@@ -113,7 +113,7 @@
 * Built-in roles for Azure AD roles include **Global Admin, User Administrator, Billing Administrator, and Helpdesk Administrator.**
 * Both Azure roles and Azure AD roles **support custom roles for more specific access control**.
 * **Azure roles can be assigned at various scopes such as management groups, subscriptions, resource groups, and individual resources**.
-* Azure AD roles have a scope set at the Azure AD tenant level, but can use administrative units as a logical container for scoping.
+* <mark>Azure AD roles have a scope set at the Azure AD tenant level, but can use administrative units as a logical container for scoping</mark>.
 * It's important to understand the differences between Azure roles and Azure AD roles and how they impact access control within the Azure environment.
 
 ## 2 Assigning Access to Resources
@@ -138,7 +138,7 @@ Identity objects inside of Azure AD tenants is that by default, an **implicit de
 > For example, setting a role assignment on this user and providing them access at the **subscription level, which means they can access all of the resources inside of those subscription as well, such as a storage account here**. 
 
 
-If we want to deny access specifically to just this storage account.  that's where we provide an **explicit deny, which overrules our explicit allow using a deny assignment**, and this **deny assignment will outline some denied actions for this user on the storage account.**
+If we want to <mark>deny access specifically to just this storage account.  that's where we provide an **explicit deny, which overrules our explicit allow using a deny assignment**, and this **deny assignment will outline some denied actions for this user on the storage account.**</mark>
 
 ### Understanding Role Definitions
 
@@ -206,11 +206,11 @@ This Case:
 
 * **Provide identities with access to Azure resources**
 
-Providing access to the resources for our Azure AD tenant, those identity resources like users, groups, and applications, or those Azure resources inside of our subscriptions, inside of things like resource groups where we have virtual machines and virtual networks, that will determine whether or not we use Azure AD roles, or Azure RBAC roles, but in the grand scheme of things, 
+**Providing access to the resources for our Azure AD tenant**, those **identity resources like users, groups, and applications, or those Azure resources inside of our subscriptions**, inside of things like resource groups where we have virtual machines and virtual networks, that will determine whether or not we use Azure AD roles, or Azure RBAC roles, but in the grand scheme of things, 
 
 
 
-* Roles are a collection of permissions
+* **<mark>Roles are a collection of permissions</mark>**
 
 
 **Roles are a collective of permissions,** meaning that whenever you have multiple role assignments, **there's going to be an additive property, and it's going to be inherited down the scope, because there is a scoping hierarchy for these role assignments,** as we saw in our demonstration at the storage account level, it was inherited because we had a role assignment at the resource group level. 
@@ -218,23 +218,27 @@ Providing access to the resources for our Azure AD tenant, those identity resour
 
 * Scoping hierarchy for role assignments
 
-**Implicit Deny  -> Explicit Allow -> Explicit Deny**
+**<mark>Implicit Deny  -> Explicit Allow -> Explicit Deny<mark>**
 
 ![Alt Image Text](../images/az104_4_7.png "Body image")
 
-Inside of Azure for role assignments, by default, we have that implicit deny, and then we have to create role assignments to explicitly allow actions. And then if we wanted to, we could create deny assignments where we're then taking away some actions from a user at a specific scope.
+Inside of Azure for role assignments,**by default, we have that implicit deny**, and then we have to create role assignments to **explicitly allow actions**. And then if we wanted to, we could **create deny assignments where we're then taking away some actions from a user at a specific scope.**
 
 
 ### Chatgpt summary
 
 **Summary and Exam Points for Azure AZ104 test:**
 
-* The article discusses the components of an authorization system for Azure RBAC, including defining the "who" to authorize (security principal), defining the actions to authorize, and setting the scope of authorization.
+* The article discusses the components of an authorization system for Azure RBAC, including defining the **"who" to authorize (security principal), defining the actions to authorize, and setting the scope of authorization**.
 * It explains that Azure **AD tenants have an implicit deny by default, meaning that they cannot perform any actions unless access is explicitly provided via role assignments.**
 * Role definitions in Azure RBAC consist of **actions, not actions, data actions, not data actions, and assignable scope**.
 * The article highlights the additive properties of **role assignments, where multiple roles assigned to a user are added together to determine the effective permissions**.
 * The demonstration in the article shows how to assign access to resources in the Azure portal**, including selecting a user, determining the role and scope of the assignment, and making the role assignment.**
-* The key takeaways for the exam include understanding the collective permissions of role assignments, the scoping hierarchy for role assignments, the implicit deny by default for Azure AD tenants, and the concept of explicit allow and deny assignments.
+* The key takeaways for the exam include understanding 
+	* the collective permissions of role assignments, 
+	* the scoping hierarchy for role assignments,
+	* **the implicit deny by default for Azure AD tenants**, 
+	* the concept of explicit allow and deny assignments.
 
 Key Exam Points:
 
@@ -328,19 +332,19 @@ az role definition create --role-definition helpDeskAdminRole.json
 
 ### Creating Custom Roles
 
-* Provide identities with access to Azure resources
-* Roles are a collection of permissions
-* Scoping hierarchy for role assignments
-* Custom role definition
+* **Provide identities with access to Azure resources**
+* **Roles are a collection of permissions**
+* **Scoping hierarchy for role assignments**
+* **Custom role definition**
 * No built-in role meets requirements
-* User Access Administrator or Owner role for the account
+* **User Access Administrator or Owner role for the account**
 
 ### Summary from ChatGPT
 
-* Custom roles are not much different than built-in roles, but they are created by making a custom role definition
-* It's important to have User Access Administrator or Owner role to create custom roles
-* Custom roles can be created for both Azure AD and Azure RBAC roles
-* Role definitions include Actions, NotActions, DataActions, NotDataActions, and AssignableScope
+* Custom roles are not much different than built-in roles, **but they are created by making a custom role definition**
+* It's important to have **User Access Administrator** or **Owner role** to create custom roles
+* **Custom roles can be created for both Azure AD and Azure RBAC roles**
+* Role definitions include Actions, NotActions, DataActions, NotDataActions, and **AssignableScope**
 * A demonstration is given on how to create and assign a custom role using JSON in the Azure portal
 * Custom roles are used when built-in roles do not meet the specific requirements
 * JSON is used to define the custom role in the Azure portal

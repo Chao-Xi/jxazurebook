@@ -32,8 +32,8 @@ The process of recovering from a disaster, such as a datacenter power outage. Ev
 **Disaster Recovery Methods**
 
 * **Backup**: A copy of business critical data
-* **Cold Site**: A copy of critical infrastructure that needs preparation before disaster recovery is complete
-* **Hot Site** A copy of critical infrastructure and data that is ready to be swapped in as the production workload
+* **Cold Site**: A copy of critical infrastructure that **needs preparation before disaster recovery is complete**
+* **Hot Site** A copy of critical infrastructure and data that **is ready to be swapped in as the production workload**
 
 
 ### Summary from Chatgpt
@@ -56,13 +56,13 @@ The process of recovering from a disaster, such as a datacenter power outage. Ev
 
 
 
-## Configuring Azure Backup
+## 2 Configuring Azure Backup
 
 ### Describing Azure Backup
 
-**Backup as a Service**
+#### **Backup as a Service**
 
-Azure Backup is a managed service for backing up and recovering workloads.
+Azure Backup is a managed service for **backing up and recovering workloads**.
 
 **<mark>Running in Azure and on-premises.</mark>**
 
@@ -71,7 +71,7 @@ On-premises workloads,
 * Hyper-V workloads 
 * VMware workloads running on-premises. 
 
-**Requires an Azure Recovery Services vault.**
+#### **Requires an Azure Recovery Services vault.**
 
 Supported workloads:
 
@@ -90,7 +90,7 @@ Supported workloads:
 
 
 1. Compute workload, (the cloud or on-premises, Azure virtual machines, Hyper-V virtual machines, or VMware SQL servers), have to create our Recovery Services vault. 
-2. Inside Recovery Services vault, to create our Azure Backup policy. can use the Azure Backup features of our Recovery Services vault and **this backup policy to run scheduled backups and start those backups of those workloads that we have either in cloud or on-premises**. 
+2. Inside **Recovery Services vault**, to create our **Azure Backup policy**. can use the Azure Backup features of our Recovery Services vault and **this backup policy to run scheduled backups and start those backups of those workloads that we have either in cloud or on-premises**. 
 3. Once done the backup job, the data is going to be received by our Recovery Services vault, providing us data to be able to recover our workloads. 
 
 ### Demo
@@ -111,14 +111,19 @@ Supported workloads:
 
 ![Alt Image Text](../images/az104_12_7.png "Body image")
 
-* backup workloads
+* **backup workloads**
 
-	* Virtual machine
-	* Azure file share
-	* soL SQL Server in Azure VM
-	* SAP HANA in Azure VM
+	* **Virtual machine**
+	* **Azure file share**
+	* **soL SQL Server in Azure VM**
+	* **SAP HANA in Azure VM**
+
+
+* **Azure**
 
 ![Alt Image Text](../images/az104_12_8.png "Body image")
+
+* **On prem**
 
 ![Alt Image Text](../images/az104_12_9.png "Body image")
 
@@ -139,7 +144,7 @@ Restore points：
 
 ![Alt Image Text](../images/az104_12_14.png "Body image")
 
-Backup Jobs from retore points (Sever must stopped)
+**Backup Jobs from retore points (Sever must stopped)**
 
 ![Alt Image Text](../images/az104_12_15.png "Body image")
 
@@ -194,7 +199,7 @@ Performing restoration operations with the backup data that we've taken, whether
 
 4. Backup and Restoration:
    - Backup jobs can be initiated for workloads, and the progress of these jobs can be monitored within the Recovery Services vault.
-   - Restoring a virtual machine involves creating a storage account for a staging location, selecting the restore point, and configuring the restoration.
+   - **Restoring a virtual machine involves creating a storage account for a staging location, selecting the restore point, and configuring the restoration**.
 
 5. Key Takeaways:
    - Azure Backup is configured for various supported workloads, and it requires a Recovery Services vault to store and manage backup data.
@@ -202,20 +207,20 @@ Performing restoration operations with the backup data that we've taken, whether
 
 
 6. Integration with Azure Services:
-   - Azure Backup integrates with Azure Virtual Machines, Azure SQL Database, Azure Files, and Azure Blob Storage for backing up and restoring data.
+   - **Azure Backup integrates with Azure Virtual Machines, Azure SQL Database, Azure Files, and Azure Blob Storage for backing up and restoring data**.
 
 7. Security and Compliance:
-   - Azure Backup encrypts data at rest and in transit to meet security and compliance requirements.
+   - **Azure Backup encrypts data at rest and in transit to meet security and compliance requirements**.
    - It supports role-based access control (RBAC) for managing access and permissions.
 
 8. Monitoring and Reporting:
-   - Azure Backup provides monitoring and reporting capabilities, including backup health monitoring, job status reports, and alerts for backup issues.
+   - Azure Backup provides monitoring and reporting capabilities, including **backup health monitoring, job status reports, and alerts for backup issues**.
 
-9. Cross-region and Cross-subscription Backup:
-   - It allows the configuration of backup policies for cross-region and cross-subscription data protection, providing flexibility for data redundancy and disaster recovery.
+9. **Cross-region and Cross-subscription Backup:**
+   - It allows the configuration of backup policies for cross-region and cross-subscription data protection, **providing flexibility for data redundancy and disaster recovery**.
 
 10. Cost Management:
-   - Azure Backup offers cost management features such as backup storage consumption monitoring and the ability to define data retention policies to optimize backup storage costs.
+   - Azure Backup offers cost management features such as **backup storage consumption monitoring** and **the ability to define data retention policies to optimize backup storage costs**.
 
 11. Azure Site Recovery:
    - While not a direct part of Azure Backup, Azure Site Recovery can be integrated with Azure Backup to provide disaster recovery as well as backup.
@@ -230,7 +235,7 @@ Performing restoration operations with the backup data that we've taken, whether
 
 **Disaster Recovery Solution**
 
-Azure Site Recovery is our disaster recovery solution that allows us to automate the process of recovering from a primary location to a secondary location. 
+**Azure Site Recovery is our disaster recovery solution** that allows us to automate the process of recovering from a primary location to a secondary location. 
 
 
 Requires an Azure Recovery Services vault
@@ -247,8 +252,8 @@ Requires an Azure Recovery Services vault
  
 1. Use Azure Site Recovery with our on-premises solutions, but the components that go into Azure Site Recovery solutions start, with the first physical location in a resource group in East Us that has a virtual network and virtual machines. 
 2. These virtual machines use managed disks that are inside of a storage account.
-3. Have a disaster recovery solution that will failover to a target resource group inside of the same geography in East US 2.
-4. Cached data is getting stored inside of a storage account, and then we then replicate this data to the target location where we then have the ability to failover and provide replication of this data into a target region, providing us that disaster recover solution. 
+3. **Have a disaster recovery solution that will failover to a target resource group inside of the same geography in East US 2.**
+4. **Cached data is getting stored inside of a storage account**, and then we then **replicate this data to the target location where we then have the ability to failover and provide replication of this data into a target region, providing us that disaster recover solution**. 
 
 ![Alt Image Text](../images/az104_12_21.png "Body image")
 
@@ -289,11 +294,11 @@ Select items
 
 * **Replicated Items**
 
-The workload that will be replicated site-to-site by Azure Site Recovery.
+The workload that will be r**eplicated site-to-site by Azure Site Recovery**.
 
 * **Replication Policy**
 
-Defines the frequency of snapshots and retention period of recovery points. Can be app-consistent or crash-consistent.
+Defines the **frequency of snapshots and retention period of recovery points**. **Can be app-consistent or crash-consistent**.
 
 * **Recovery Plan**
 
@@ -309,15 +314,15 @@ Automate and run test failover events with protected items and pre-and/or post-s
 ### Summary from chatgpt
 
 1. Azure Site Recovery Overview:
-   - Azure Site Recovery (ASR) is a disaster recovery solution that automates the process of recovering from a primary location to a secondary location within Azure.
+   - Azure Site Recovery (ASR) is a disaster recovery solution that **automates the process of recovering from a primary location to a secondary location within Azure**.
    - ASR is a feature of the Azure Recovery Services vault, which is required to use Azure Site Recovery.
 
 2. Disaster Recovery Solutions:
    - ASR provides disaster recovery solutions for cross-zone recovery and cross-region recovery within the same geography.
-   - It can also be used with on-premises solutions, allowing for replication to Azure.
+   - **It can also be used with on-premises solutions, allowing for replication to Azure.**
 
 3. Components of ASR:
-   - The components of an Azure Site Recovery solution include the primary location, virtual machines, m**anaged disks within a storage account,** and a target resource group in the secondary location.
+   - The components of an Azure Site Recovery solution include **the primary location, virtual machines, managed disks within a storage account, and a target resource group in the secondary location**.
 
 4. Provisioning ASR Solution in Azure Portal:
    - Creation of an ASR solution involves enabling replication by selecting a source location, configuring the target location, and customizing the replication policy.
@@ -328,11 +333,11 @@ Automate and run test failover events with protected items and pre-and/or post-s
    - Recovery plans can be created to automate failover events for multiple protected items with pre- and post-scripts options.
 
 6. **Key Takeaways for Azure Site Recovery:**
-  - ASR provides disaster recovery solutions within Azure, involving replicating compute workloads and managing the frequency of snapshots and retention periods.
-   - Recovery plans automate and orchestrate failover events for multiple protected items with additional scripting capabilities.
+  - ASR provides disaster recovery solutions within Azure, **involving replicating compute workloads and managing the frequency of snapshots and retention periods**.
+   - R**ecovery plans automate and orchestrate failover events for multiple protected items with additional scripting capabilities**.
 
 
-## Backup Reports
+## 4 Backup Reports
 
 ### Describing Backup Reports
 
@@ -342,14 +347,13 @@ Provides insight on backups from Azure Backup, and those insights can be used to
 
 
 * **Forecasts for cloud storage consumption**
-* Audits of backup and restore 
-
+* **Audits of backup and restore**
 * Can determine 
-	* what backups have taken place 
-	* What restores have taken place 
+	* **what backups have taken place** 
+	* **What restores have taken place** 
 	* Whether or not they were intended and figure out how we can best optimize our backup solution using Azure Backup.
 
-Uses Log Analytics as its logging service.
+**Uses Log Analytics as its logging service.**
 
 > such as the restore operations and backup operations.
 
@@ -363,7 +367,7 @@ Configure Recovery Services vault with diagnostics to be able to point all the d
 Azure Backup enabled and running, capturing data, in order to be able to log that data and generate reports from those backups. 
 
 
-1. Create a Log Analytics workspace as this is going to act as the store for all of our logging data. 
+1. Create a **Log Analytics workspace** as this is going to act as the store for all of our logging data. 
 2. Configure the **diagnostic settings on the Recovery Services vault to be able to send all of the data** that trying to capture related to Azure Backup to our Log Analytics workspace so that can view in our Backup Reports all of the data, 
 	* all of the events, 
 	* all of the operations that are taking place for our backup jobs 

@@ -3,7 +3,7 @@
 ## 1 Understanding Storage Accounts
 
 
-### Understanding Storage Accounts
+### 1-1 Understanding Storage Accounts
 
 **Storage Account**
 
@@ -16,28 +16,28 @@ Sub-services:
 * Azure Table： **Non-relational, semi-structured data storage service**
 * Azure Blob: **Object-oriented storage solution**
 
-### Components of Storage Accounts
+### 1-2 Components of Storage Accounts
 
-**Account Type**: Determines features and costs
+**Account Type**: Determines **features and costs**
 
-**Performance Tier**: Determines performance levels
+**Performance Tier**: Determines **performance levels**
 
-**Replication** Determines infrastructure redundancy
+**Replication** Determines **infrastructure redundancy**
 
 **Access Tier** Determines access levels and data costs
 
 
-### Redundancy for Azure Storage
+### 1-3 Redundancy for Azure Storage
 
 ![Alt Image Text](../images/az104_5_1.png "Body image")
 
-**LRS: Store all 3 copies of data inside of the same availability zone**
+**LRS: <mark>Store all 3 copies of data</mark> inside of the same availability zone**
 
 If this availability zone were to go down, we would lose this data, and this option is known as **locally redundant storage**
 
 ![Alt Image Text](../images/az104_5_2.png "Body image")
 
-Put a copy of our data in each availability zone within a region, and this is known as **zone-redundant storage** 
+<mark>Put a copy of our data in each availability zone within a region</mark>, and this is known as **zone-redundant storage** 
 
 Even if 1 of these availability zones goes down, we still have 2 more copies of our data. We could stand up to 2 availability zone failures
 
@@ -45,16 +45,16 @@ Even if 1 of these availability zones goes down, we still have 2 more copies of 
 
 Secondary region, and it has its own availability zones and inside of those availability zones, their own datacenters, and we have independent cooling, power, and network here as well. 
 
-This option we would use here would provide us 3 copies of our data in a single availability zone in 2 different regions, as you see here. And this option would be known as **geo-redundant storage.** 
+This option we would use here would <mark>provide us 3 copies of our data in a single availability zone in 2 different regions</mark>. And this option would be known as **<mark>geo-redundant storage.</mark>** 
 
 
 ![Alt Image Text](../images/az104_5_4.png "Body image")
 
-**Store a single copy of our data in each availability zone in the home region and then store 3 copies of our data inside of an availability zone in a secondary region**, and this is known as **geo-zonal redundant storage**.
+**Store a single copy of our data in each availability zone in the home region and then store 3 copies of our data inside of an availability zone in a secondary region**, and this is known as **<mark>geo-zonal redundant storage</mark>**.
 
 ![Alt Image Text](../images/az104_5_5.png "Body image")
 
-Same thing as the geo-zonal redundant storage, except for that the data stored in the **secondary region is read-access, and this is read-access geo-zonal redundant storage**.
+Same thing as the geo-zonal redundant storage, except for that **the data stored in the secondary region is read-access, and this is read-access <mark>geo-zonal redundant storage</mark>**.
 
 ### Demo
 
@@ -82,7 +82,7 @@ Same thing as the geo-zonal redundant storage, except for that the data stored i
 * **General Purpose v1**
 	* Legacy for blobs, files, queues, and tables
 * **General Purpose v2**
-	* Recommended for blobs, files, queues, and tables
+	* **Recommended for blobs, files, queues, and tables**
 
 
 #### **Performance Tier**
@@ -121,16 +121,16 @@ Same thing as the geo-zonal redundant storage, except for that the data stored i
 **Summary**
 
 * Storage accounts in Azure are top-level resources for storage purposes.
-* Each storage account can have multiple subservices with their own storage purposes, such as Azure Queue, Azure Tables, Azure Files, and Azure Blob.
+* Each storage account can have multiple subservices with their own storage purposes, such as **Azure Queue, Azure Tables, Azure Files, and Azure Blob.**
 * Components of a storage account include **account type, performance tier, replication, and access tier**.
-* Account type determines the features and costs available for the storage account.
-* Performance tier determines the performance level of the storage account.
-* Replication determines the infrastructure redundancy and data redundancy options.
-* Access tier determines the access levels and costs for retrieving stored data.
+	* Account type determines the **features and costs available for the storage account**.
+	* Performance tier determines the performance level of the storage account.
+	* Replication determines the infrastructure redundancy and data redundancy options.
+	* Access tier **determines the access levels and costs for retrieving stored data**.
 * Azure storage redundancy involves storing multiple copies of data.
-* Redundancy options include locally-redundant storage, zone-redundant storage, geo-redundant storage, geo-zonal redundant storage, and read-access geo-zonal redundant storage.
+* Redundancy options include **locally-redundant storage, zone-redundant storage, geo-redundant storage, geo-zonal redundant storage, and read-access geo-zonal redundant storage**.
 * Creating a storage account involves configuring its details, such as account name, region, performance tier, replication, and access tier, through the Azure portal.
-* Storage accounts have different subservices accessible through their endpoints, each with its own resource ID and public endpoint.
+* Storage accounts have different sub-services accessible through their endpoints, each with its own resource ID and public endpoint.
 
 
 **Exam Points:**
@@ -149,7 +149,7 @@ Same thing as the geo-zonal redundant storage, except for that the data stored i
 
 **Blob Storage**
 
-Azure Blob is a sub-service/subresource of Azure Storage (storage  accounts)
+Azure Blob is a sub-service/sub-resource of Azure Storage (storage  accounts)
 
 
 **Blob storage is our object-based storage. Easily accessible from HTTP/REST.**
@@ -165,7 +165,7 @@ Azure Blob is a sub-service/subresource of Azure Storage (storage  accounts)
 
 ![Alt Image Text](../images/az104_5_12.png "Body image")
 
-All of these things store inside of our Azure Blob Storage inside of a container, which acts like a bucket. And inside of this we have a **virtualization prefix** that **allows it to appear as though it is a file system, but it's actually a flat file structure**. 
+All of these things store inside of our Azure Blob Storage inside of a container, which acts like a bucket. And inside of this we have a **virtualization prefix** that **allows it to appear as though it is a file system, but <mark>it's actually a flat file structure**</mark>. 
 
 ### Components of Blob Architecture
 
@@ -184,7 +184,7 @@ containers.
 
 
 * **Block Blob**: Storing images or videos. Best suited for streaming
-* **Append Blob**: Logs files.
+* **Append Blob**: **Logs files**.
 * **Page Blobs**: Virtual Machine disks
 
 
@@ -199,7 +199,7 @@ By default **<mark>public access to blobs are granted at the storage account lev
 * **Container (anonymous access to container and blobs it contains)**
 
 
-## Demo: Configuring Blob Storage
+### Demo: Configuring Blob Storage
  
  
 * **Log In to Azure Portal**: Use an Azure sandbox inCloud Playground.
@@ -236,10 +236,10 @@ By default **<mark>public access to blobs are granted at the storage account lev
 ### Gpt summary
 
 * Azure Blob Storage is a sub-service of a storage account in Azure.
-* Blob Storage is an object-based storage service that stores items such as image and video files, text files, log files, and VHD files.
-* Blobs are stored inside containers, which act as logical containers for blobs.
-* Blobs can be of different types, including block blobs, append blobs, and page blobs.
-* Access to blobs is controlled through container access levels, which can be private, blob-level, or container-level.
+* Blob Storage is an object-based storage service that stores items such as **image and video files, text files, log files, and VHD files**.
+* **Blobs are stored inside containers, which act as logical containers for blobs**.
+* Blobs can be of different types, **including block blobs, append blobs, and page blobs**.
+* **Access to blobs is controlled through container access levels, which can be private, blob-level, or container-level**.
 * Public access to blobs is granted at the storage account level by default.
 * Blob containers have URLs that can be used to access them and the blobs they contain.
 * Access levels can be modified after the containers and blobs are created.
@@ -248,27 +248,27 @@ By default **<mark>public access to blobs are granted at the storage account lev
 **Exam Point**
 
 * Azure Blob Storage is a sub-service of a storage account in Azure.
-* Blob Storage is an object-based storage service for storing files such as images, videos, text files, log files, and VHD files.
-* Blobs are stored inside containers, which act as logical containers for blobs.
-* Blobs can be of different types, including block blobs, append blobs, and page blobs.
-* Access to blobs is controlled through container access levels, which can be private, blob-level, or container-level.
-* Public access to blobs is granted at the storage account level by default.
+* Blob Storage is an object-based storage service for storing files such as i**mages, videos, text files, log files, and VHD files**.
+* **<MARK>Blobs are stored inside containers, which act as logical containers for blobs</mark>**.
+* Blobs can be of different types, including **block blobs, append blobs, and page blobs**.
+* Access to blobs is controlled through container access levels, which can be **private, blob-level, or container-level**.
+* **<mark>Public access to blobs is granted at the storage account level by default.</mark>**
 * Blob containers have URLs that can be used to access them and the blobs they contain.
-* Access levels can be modified after the containers and blobs are created.
+* **<mark>PAccess levels can be modified after the containers and blobs are created.</mark>**
 * Azure portal can be used to create and configure blob containers and upload blobs.
 * Blob containers can have different access levels, including private, blob-level, and container-level access.
-* Blobs can be accessed using their container's URL.
-* Access levels can be modified after the creation of the blobs and containers.
+* **Blobs can be accessed using their container's URL**.
+* **Access levels can be modified after the creation of the blobs and containers**.
 * Azure Blob service provides different types of blobs, including block blobs, append blobs, and page blobs.
-* Block blobs are suitable for streaming services, such as video streaming platforms.
-* Append blobs are used for logging operations and offloading logs from virtual machines.
-* Page blobs are used for creating golden images for virtual machines.
+* **Block blobs are suitable for streaming services, such as video streaming platforms**.
+* **Append blobs are used for logging operations and offloading logs from virtual machines.**
+* **Page blobs are used for creating golden images for virtual machines.**
 * Blob access can be controlled through container access levels, which can be private, blob-level, or container-level access.
 * Public access to blobs is granted at the storage account level by default.
 
-## Configuring Blob Object Replication
+## 4 Configuring Blob Object Replication
 
-### Object Replication
+### 4-1 Object Replication
 
 Object replication **asynchronously (not immediately)** copies block blobs and their versions, **between a source storage account, and a destination account**
 
@@ -291,8 +291,8 @@ Conceptualizing Object Replication
 
 **Create a src storage account**:   acqaz104demostgsrc
 
-* Enable versioning for blobs
-* Enable blob change feed
+* **<mark>Enable versioning for blobs</mark>**
+* **<mark>Enable blob change feed</mark>**
 
 ![Alt Image Text](../images/az104_5_23.png "Body image")
 
@@ -344,7 +344,7 @@ Upload to source blob "prefix folder"
 
 * **Versioning**
 
-Versioning must be enabled on both the s**ource and destination accounts to perform replication**.
+Versioning must be enabled on both the **source and destination accounts to perform replication**.
 
 * **Change Feed**
 
@@ -357,7 +357,7 @@ Object replication is supported **across subscriptions and Azure AD tenants**
 
 * **Replication Policy**
 
-A storage account can be a source for up to two destination accounts. **Each policy supports only a single pairing using a Policy**
+A storage account can be a source for up to <mark>two destination accounts</mark>. **Each policy supports only a single pairing using a Policy**
 
 * **Account Kind, Access Tier, & Blob Types**
 
@@ -368,19 +368,19 @@ A storage account can be a source for up to two destination accounts. **Each pol
 Summary and Exam Points:
 
 * Object replication is a feature of Azure storage accounts that allows for asynchronous copying of block blobs between storage accounts.
-* Both the source and destination storage accounts must have versioning enabled.
-* The source storage account must have the blob change feed enabled to inform the asynchronous copy operations.
-	* Object replication can be done between storage accounts in the same region, across regions, across subscriptions, and across different Azure AD tenants.
-	* Object replication minimizes latency by replicating blobs to a storage account closer to the consumers.
-	* It increases processing efficiency by replicating blobs to storage accounts where they are needed.
+* **Both the source and destination storage accounts must have versioning enabled**.
+* **The source storage account must have the blob change feed enabled to inform the asynchronous copy operations**.
+	* Object replication can be done between storage accounts in the **<mark>same region, across regions, across subscriptions, and across different Azure AD tenants</mark>**.
+	* Object replication **minimizes latency** by replicating blobs to a storage account closer to the consumers.
+	* It **increases processing efficiency** by replicating blobs to storage accounts where they are needed.
 	* It allows for data distribution and analysis in one location and replication to other storage accounts.
-* Object replication can optimize storage costs by moving replicated data to the archived tier for reduced costs.
+	* Object replication can **optimize storage costs by moving replicated data to the archived tier for reduced costs**.
 * Replication can be configured through the Azure portal by setting up replication policies and rules.
-* Both the source and destination storage accounts must be created with the necessary configurations for versioning and change feed.
+* Both the source and destination storage accounts must be created with the necessary configurations for **versioning and change feed**.
 * Replication status can be monitored and managed through the Azure portal.
 * Important concepts:
-	* Versioning and change feed
-	* Replication policies and rules
+	* **Versioning and change feed**
+	* **Replication policies and rules**
 	* Replication between different regions, subscriptions, and Azure AD tenants
 * Object replication can act as a source for up to two destination storage accounts.
 
@@ -394,7 +394,7 @@ Summary and Exam Points:
 * Understand how to monitor and manage replication status.
 
 
-## Configuring Blob Lifecycle Management
+## 5 Configuring Blob Lifecycle Management
 
 ### Defining Lifecycle Management
 
@@ -420,11 +420,11 @@ Save money by decreasing admin overhead and tiering blobs based on usage require
 
 Lifecycle management helps us set up the ability to move blobs between access tiers to meet our access and usage needs. 
 
-For example, if the blobs reach a certain age, we can move them to the cool tier, so that **they're still accessible** but they're less frequently accessed. So we can **save on money here for our storage account** by moving them from the hot to the cool tier; and we can still keep our tier that is the default tier for our blobs at hot.
+For example, if the blobs reach a certain age, we can **move them to the cool tier**, so that **they're still accessible** but they're less frequently accessed. So we can **save on money here for our storage account** by **moving them from the hot to the cool tier**; and we can still keep our tier that is the default tier for our blobs at hot.
 
 Just after time of not being used, we set the criteria and they'll move to cool. 
 
-Once they've not been used for an even longer amount of time, w**e can move these blobs from cool to archive** so that we don't have to access them as frequently, but we are saving on cost. 
+Once they've not been used for an even longer amount of time, **we can move these blobs from cool to archive** so that we don't have to access them as frequently, but we are saving on cost. 
 
 Once we've gone through the archival phase and we're no longer needing the data for our organization, we can then **move these blobs to delete**.
 
@@ -486,8 +486,8 @@ Filtering blobs in the rule using prefix or blob index matches. (Blob index feat
 * **Lifecycle Management rules can be created to specify the conditions under which blobs should be moved.**
 * **<mark>Rules can be applied to all blobs or limited to specific filters such as blob type or prefix.</mark>**
 * **Filters can be based on properties like last modified or creation date.**
-* Actions such as moving blobs to a different tier or deleting them can be performed based on the defined rules.
-* Blob Index Match, a key-value tagging system, can be used for additional filtering and organization of blobs.
+* **Actions such as moving blobs to a different tier or deleting them can be performed based on the defined rules**.
+* **Blob Index Match, a key-value tagging system, can be used for additional filtering and organization of blobs**.
 * Lifecycle Management provides scoping options to limit the application of rules to specific storage accounts or blob containers.
 * Important concepts:
 	* Blob access tiers (hot, cool, archive)
@@ -508,7 +508,7 @@ Filtering blobs in the rule using prefix or blob index matches. (Blob index feat
 * Understand how to apply scoping options to Policies for specific storage accounts or blob containers.
 
 
-## Configuring Azure Files
+## 6 Configuring Azure Files
 
 ### Describing Azure Files
 
@@ -518,9 +518,9 @@ Azure Files is a managed file share service.
 
 Features：
 
-* SMB connectivity
+* **SMB connectivity**
 * Supports Windows, Linux, and macOS
-* Extended by Azure File Sync
+*** Extended by Azure File Sync**
 * Traditional file structure
 
 ![Alt Image Text](../images/az104_5_39.png "Body image")
@@ -560,10 +560,10 @@ The files and folders that exist in the file share.
 
 **Transaction Tier**
 
-* Premium
-* Transaction optimized
-* Hot
-* Cool
+* **Premium**
+* **Transaction optimized**
+* **Hot**
+* **Cool**
 
 ![Alt Image Text](../images/az104_5_43.png "Body image")
 
@@ -622,13 +622,13 @@ Windows, Linux, and macOS support
 * Know the different tiers available for Azure File shares and their use cases.
 * Understand how to create and configure file shares, including quotas and resizing.
 
-## Configuring Azure File Sync
+## 7 Configuring Azure File Sync
 
 ### Describing Azure File Sync
 
 **Azure File Sync**
 
-Azure File Sync is an extension of Azure Files that allows you to **extend the capabilities of on-premises file servers.**
+Azure File Sync is an extension of Azure Files that allows you to **<mark>extend the capabilities of on-premises file servers</mark>.**
 
 Features:
 
@@ -652,7 +652,7 @@ Features:
 ![Alt Image Text](../images/az104_5_51.png "Body image")
 
 * **Extends On-Premises File Share**: Increases storage capacity through cloud tiering
-* **Windows Only**: Windows 2012 R2 or later file servers only
+* **Windows Only**: <mark>Windows 2012 R2 or later file servers only</mark>
 * **Requires File Sync Agent**: Download Azure File Sync agent onto local file server 
 
 ![Alt Image Text](../images/az104_5_52.png "Body image")
@@ -663,11 +663,11 @@ Features:
 
 ![Alt Image Text](../images/az104_5_53.png "Body image")
 
-**Create new VM and Enable: 443 / 80 / 3389**
+**Create new VM and Enable: 443 / 80 / 3389(RDP)**
 
 ![Alt Image Text](../images/az104_5_54.png "Body image")
 
-**Create  file sync service**
+### **Create file sync service**
 
 > **Azure File Sync extends on-premises files servers into Azure providing cloud benefits while maintaining performance and compatibility.**
 
@@ -723,28 +723,28 @@ Turn all off
 
 ### Summary from Chatgpt
 
-**for synchronization**. The key components of Azure File Sync are the Storage Sync Service, cloud endpoint, registered server, server endpoint, and sync group. 
+**for synchronization**. The key components of Azure File Sync are the **<mark>Storage Sync Service, cloud endpoint, registered server, server endpoint, and sync group</mark>**. 
 
 **We can prepare a virtual machine by configuring IE security and creating a new volume, then install and register the Azure File Sync agent and create a sync group.**
 
 Cloud tiering allows on-premise file **shares to locally cache frequently accessed files and maintain mappings to less frequently accessed files on the Azure file share**.
 
 * Azure File Sync is a service that extends the capabilities of Azure Files into on-premise file servers.
-* It allows for increased storage capacity by locally caching frequently accessed files on-prem and mapping less frequently accessed files to the Azure file share.
+* It allows for **increased storage capacity** by locally caching frequently accessed files on-prem and mapping less frequently accessed files to the Azure file share.
 * **It is only supported with Windows 2012 R2 or later and supports SMB, NFS, and FTPS protocols**.
-* **The key components of Azure File Sync are the Storage Sync Service, cloud endpoint, registered server, server endpoint, and sync group**.
-* Cloud tiering enables on-prem file shares to locally cache frequently accessed files and maintain mappings for less frequently accessed files on the Azure file share.
-* **To set up Azure File Sync, a file sync agent must be installed on the Windows machine and registered with the Storage Sync Service**.
+* **<mark>The key components of Azure File Sync are the Storage Sync Service, cloud endpoint, registered server, server endpoint, and sync group</mark>**.
+* Cloud tiering enables **on-prem file shares to locally cache frequently accessed files** and **maintain mappings for less frequently accessed files on the Azure file share**.
+* **<mark>To set up Azure File Sync, a file sync agent must be installed on the Windows machine and registered with the Storage Sync Service</mark>**.
 * **To prepare a virtual machine for Azure File Sync, configure IE security and create a new volume**
 * Install and register the Azure File Sync agent on the virtual machine.
 * The process includes creating a virtual machine, creating a Storage Sync Service, preparing the virtual machine by configuring IE security and creating a new volume, **installing the Azure file sync agent, and registering the server with the Storage Sync Service**.
-* Finally, a **sync group is created to allow for syncing between the cloud endpoint and server endpoint**.
+* <mark>Finally, a **sync group is created to allow for syncing between the cloud endpoint and server endpoint</mark>**.
 
-## Storage Network Access
+## 8 Storage Network Access
 
 ### Storage Access Options
 
-* **Public Endpoint**： All services are public by default using the service’s 
+* **Public Endpoint**： All services are public **by default** using the service’s 
 * **Restricted Access**： Storage account access can be restricted to virtual networks, **IP address ranges via the storage account’s firewall, and via specific resource instances.**
 * **Private Endpoints**： Allow private IP access for resources in an associated virtual network.
 
@@ -766,8 +766,8 @@ Blob URL:
 
 **Change access public level for containers**
 
-* Private (no anonymous access)
-* Blob (anonymous read access for blobs only)
+* **Private (no anonymous access)**
+* **Blob (anonymous read access for blobs only)**
 * **Container (anonymous read access for containers and blobs)**
 
 ![Alt Image Text](../images/az104_5_69.png "Body image")
@@ -796,11 +796,11 @@ Each sub-service has an endpoint.
 
 ### Summary by Chatgpt
 
-* Storage access options for services and resources inside storage accounts in Azure include public endpoints, restricted access, and access through specific virtual networks.
-* Public endpoints are accessible by default and can be used to access services and resources using the service's public endpoint URL.
-* Access to services and resources can be restricted by creating a firewall and specifying allowed IP address ranges or virtual networks.
-* Private endpoints allow for private IP access to resources in an associated virtual network.
-* Each service in a storage account has its own specific public endpoint URL.
+* Storage access options for services and resources inside storage accounts in Azure include **public endpoints, restricted access, and access through specific virtual networks**.
+	* Public endpoints are accessible by default and can be used to access services and resources using the service's public endpoint URL.
+	* Access to services and resources can be restricted by creating a firewall and **specifying allowed IP address ranges or virtual networks**.
+	* **<mark>Private endpoints allow for private IP access to resources in an associated virtual network.</mark>**
+	* Each service in a storage account has its own specific public endpoint URL.
 * **Storage account firewall settings can be modified to restrict access to selected networks and specify allowed IP address ranges.**
 * Private endpoint connections allow for private connectivity to storage accounts.
 * **Custom domains can be used to provide custom domain names for public endpoints.**
@@ -822,15 +822,15 @@ By default, all data stored (data at rest) in any Azure Storage service is secur
 
 ### Azure Storage Authentication
 
-**Access Keys**
+* **Access Keys**
 
 Azure-generated keys that provide unlimited access to both the management and data layer of an Azure Storage solution
 
-**Shared Access Signature (SAS)**
+* **Shared Access Signature (SAS)**
 
 An access signature, generated from access keys, that provides limited access at either the account level or the service level
 
-**Azure AD Authentication**
+* **Azure AD Authentication**
 
 Uses Azure role-based access control (RBAC) and Azure Active Directory (AD) identities to provide authentication (instead of access keys).
 
@@ -866,7 +866,7 @@ Uses Azure role-based access control (RBAC) and Azure Active Directory (AD) iden
 
 ![Alt Image Text](../images/az104_5_79.png "Body image")
 
-**Acess Control (lAM)**
+**Acess Control (IAM)**
 
 Access Control (lAM): build-in role
 
@@ -905,7 +905,7 @@ Access Control (lAM): build-in role
 
 ### **Chatgpt summary**
 
-- **Storage Service Encryption is used to protect data at rest in Azure storage accounts.**
+- **<mark>Storage Service Encryption is used to protect data at rest in Azure storage accounts.</mark>**
 - Secure transfer should be enabled to **ensure that data in transit is protected over HTTPS connections.**
 - **Infrastructure encryption** provides an additional layer of encryption for the underlying infrastructure in Azure data centers.
 - Access to storage account services and data can be managed using access keys, which provide **unlimited access to both the management and data layers**.
@@ -917,15 +917,15 @@ Access Control (lAM): build-in role
 - The activity log can be used to audit operations and activities within a storage account.
 - Encryption, access control, and monitoring are key security features for protecting storage accounts.
 
-## Using AzureJobs
+## Using Azure Jobs
 
 ### Azure Jobs
 
-Move large amounts of data between on-premises and Azure Storage.
+Move large amounts of data between **on-premises and Azure Storage**.
 
-* Move to/from Blob service
+* **Move to/from Blob service**
 * Move to Files service 
-* Transport self-supplied drive
+* **Transport self-supplied drive**
 
 Supported drive types:
 
@@ -981,9 +981,9 @@ Supported drive types:
 
 ### Key Takeaways
 
-**Import Jobs**： Send large amounts of data to the Azure cloud when network bandwidth won’t support data migration.
+**Import Jobs**： <mark>Send large amounts of data to the Azure cloud when network bandwidth won’t support data migration</mark>.
 
-**Export Jobs**： Receive large amounts of data on=premises from the Azure cloud when network bandwidth won’t support data migration.
+**Export Jobs**： <mark>Receive large amounts of data on-premises from the Azure cloud when network bandwidth won’t support data migration</mark>.
 
 * **WAImportExport CLI Tool**
 
@@ -995,15 +995,18 @@ Use to prepare disks for data and to estimate number of disks needed.
 
 ### Summary from Chatgpt
 
-- Azure jobs are used to move large amounts of data between on-premises environments and Azure storage accounts.
+- Azure jobs are used to move large amounts of data between **on-premises environments and Azure storage accounts**.
 - **The import job is used to move data from on-premises to Azure, supporting both blobs and files**.
 - **The export job is used to move data from Azure to on-premises, supporting only blobs**.
-- Supported drive types for Azure jobs include SATA, HDD, and SSD drives.
-- The WAImportExport tool is used to **prepare the drives for import or export jobs and is only supported on Windows devices**.
+- Supported drive types for Azure jobs include **SATA, HDD, and SSD drives**.
+- The **WAImportExport** tool is used to **prepare the drives for import or export jobs and is only supported on Windows devices**.
 - The WAImportExport tool also estimates the number of disks needed for the data being moved.
-- Import jobs require preparing the disks, **putting the data on the disks, creating the job, and providing carrier and journal file information**.
+- Import jobs require preparing the disks, 
+	- **putting the data on the disks** 
+	- creating the job, 
+	- **providing carrier and journal file information.**
 - Export jobs require creating the job, providing carrier information, preparing the disks, and checking the job status for downloading the data.
-- Import jobs move data to the Azure cloud, while export jobs receive data from the Azure cloud.
+- **<mark>Import jobs move data to the Azure cloud, while export jobs receive data from the Azure cloud</mark>**.
 - **Azure jobs use physical ground shipping methods to transfer data when the network bandwidth is insufficient**.
 - Azure jobs are a solution for moving large amounts of data when network limitations exist.
 
@@ -1063,8 +1066,8 @@ Use to prepare disks for data and to estimate number of disks needed.
 
 **Storage Explorer**
 
-* Manage storage accounts
-* Use Azure Active Directory (AD) or Shared Access Signature (SAS)
+* **Manage storage accounts**
+* **Use Azure Active Directory (AD) or Shared Access Signature (SAS)**
 * GUI-provided
 * Uses AzCopy under the hood
 
@@ -1079,7 +1082,7 @@ Use to prepare disks for data and to estimate number of disks needed.
 - Storage Explorer is a graphical user interface tool for working with Azure storage accounts.
 - Storage Explorer can be used within the Azure portal or downloaded as a client for Windows, Linux, and macOS.
 - Azure Storage Explorer can be authenticated using **Azure account credentials, connection strings, or shared access signatures**.
-- It provides capabilities to upload/download files, **generate SAS tokens, create snapshots, and manage access policies**.
+- It provides capabilities to **upload/download files**, **generate SAS tokens, create snapshots, and manage access policies**.
 - AzCopy is a command-line utility for working with Azure storage accounts.
 - **AzCopy supports Windows, Linux, and macOS**.
 - AzCopy can be authenticated using Azure AD credentials or shared access tokens.

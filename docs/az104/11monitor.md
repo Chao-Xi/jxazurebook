@@ -1,6 +1,6 @@
 # Monitoring
 
-## Using Azure Monitor
+## 1 Using Azure Monitor
 
 ### Describing Azure Monitor
 
@@ -10,8 +10,6 @@
 Azure Monitor is a full‑stack monitoring service inside of Azure that gives us **end‑to‑end monitoring for applications and underlying infrastructure.** 
 
 **Captures metrics and logs on monitored resources.**
-
-**Capturing the metrics and the logs on the monitored resources that are acting as our data sources.** 
 
 * Monitor Azure resources
 * Monitor on-premises resources, **such as custom resources;**
@@ -24,21 +22,21 @@ Azure Monitor is a full‑stack monitoring service inside of Azure that gives us
 
 ### Metrics vs. Logs
 
-**Metrics**
+#### **Metrics**
 
-* Short, time-based data
+* **Short, time-based data**
 * Frequently updated
-* Near real-time data
-* Alerts based on numeric values
+* **Near real-time data**
+* **Alerts based on numeric values**
 * Visualization via Metrics Explorer
-	* using Azure Monitor
+	* **using Azure Monitor**
 
-**Logs**
+#### **Logs**
 
-* Long, event-based data
+* L**ong, event-based data**
 * Sporadically updated
-* Free-form and/or structured
-* Stored in Log Analytics workspace
+* **Free-form and/or structured**
+* **Stored in Log Analytics workspace**
 * Built-in query language (Kusto)
 
 ### Monitoring Explained
@@ -47,12 +45,12 @@ Azure Monitor is a full‑stack monitoring service inside of Azure that gives us
 
 Metrics and logs that we are capturing from monitored resources, and we can take these data sources of metrics and logs and we can actually store them and view them in a few places: 
 
-* Azure Monitor
-* Log Analytics
+* **Azure Monitor**
+* **Log Analytics**
 	* Logs can sent to Log Analytics (Kusto query language)
-* Storage accounts
+* **Storage accounts**
 	* 	For log archive
-* Event Hub
+* **Event Hub**
 	* Send this data outside of Azure, to be able to use it in other tools, to be able to get a deeper understanding of the data. 
 
 ### Demo
@@ -74,19 +72,19 @@ A diagnostic setting specifies a list of categories of platform logs and/or metr
 
 ### Key Takeaways
 
-**Metrics**
+#### **Metrics**
 
 Metrics are gathered on a per-resource basis
 
 How to use metrics?
 
-* View metrics in Metrics Explorer
-* Query in Log Analytics
-* Alert and take action
-* Export and archive
+* **View metrics in Metrics Explorer**
+* **Query in Log Analytics**
+* **Alert and take action**
+* **Export and archive**
 
 
-**Logs**
+#### **Logs**
 
 Logs are not gathered by default by the Azure platform.
 
@@ -106,19 +104,18 @@ Define how and where metrics and logs will be stored on a per-resource basis
 
 ### Summary from Chatgpt
 
-Key points and knowledge relevant to the AZ-104 exam from the provided article include:
 
 1. Azure Monitor:
    - **Azure Monitor is a full-stack monitoring service within Azure that provides end-to-end monitoring for applications and underlying infrastructure**.
 
 2. Metrics vs. Logs:
    - Metrics are short, time-based data, frequently updated, and provided in near real-time. They are used for visualization, alerting, and can be sent to Azure Monitor, Log Analytics, Storage accounts, and the Event Hub.
-   - Logs are long, event-based data that can be updated sporadically and can be either free-form or structured. Diagnostic settings enable the capture of logs, and they can be sent to Log Analytics, Storage accounts for archiving, and the Event Hub.
+   - Logs are long, e**vent-based data that can be updated sporadically and can be either free-form or structured.** Diagnostic settings enable the capture of logs, and they can be sent to Log Analytics, Storage accounts for archiving, and the Event Hub.
 
 3. Metric Exploration and Configuration:
-   - The Metrics Explorer within Azure Monitor allows the visualization and selection of specific metrics associated with monitored resources. It also facilitates metric interpretation and configuration, such as aggregating and scoping to specific resources.
+   - **The Metrics Explorer within Azure Monitor allows the visualization and selection of specific metrics associated with monitored resources**. It also facilitates metric interpretation and configuration, such as aggregating and scoping to specific resources.
 
-4. Log Analytics and Diagnostic Settings:
+4. **Log Analytics and Diagnostic Settings**:
    - Log Analytics workspace captures and stores logs from diagnostic settings, facilitating the use of the Kusto query language to analyze and derive insights from log data.
    - Diagnostic settings allow the configuration of where metrics and logs are stored on a per-resource basis, **including specifying Log Analytics workspaces, storage accounts for archiving, and streaming to the Event Hub**.
 
@@ -139,24 +136,24 @@ Key points and knowledge relevant to the AZ-104 exam from the provided article i
 
 8. **Alerting and Notification**:
    - Set up an alert rule within Azure Monitor to trigger an alert if the CPU usage of the Virtual Machine exceeds a specified threshold for a sustained period.
-   - Configure an action group to send notifications via email or integrate with Microsoft Teams for alert notifications and possible automated remediation.
+   - **Configure an action group to send notifications via email or integrate with Microsoft Teams for alert notifications and possible automated remediation**.
 
 
-## Setting Up Alerts and Actions
+## 2 Setting Up Alerts and Actions
  
 ### Describing Azure Monitor Alerts
 
-**Azure Monitor Alerting**
+* **Azure Monitor Alerting**
 
 Alerts on signals that prompt you to **take proactive actions and help automate monitoring and diagnostics**
 
 What we can do is actually watch for **signal types inside of these alerts** that we create, where we're **determining metrics, activity logs, and log signals, and providing logic so that we can take action**. 
 
-**Signal Types**
+* **Signal Types**
 
 Metric, activity, and log signals
 
-**Action Group**
+* **Action Group**
 
 The actions that will take place when an alert has been triggered
 
@@ -174,10 +171,10 @@ The actions that will take place when an alert has been triggered
 
 An action group
 		
-* run a Logic App, 
-* Azure Functions, 
-* run an Azure Automation account, 
-* webhooks
+* **run a Logic App**, 
+* **Azure Functions**, 
+* **run an Azure Automation account**, 
+* **webhooks**
 * etc.
 
 **Azure Monitor alerting**, it's important for us to understand where this data is coming from for our alerts.
@@ -244,11 +241,10 @@ Send notifications or invoke actions when the alert rule triggers, by selecting 
 
 ### Summary from Chatgpt
 
-Based on the provided text, here are the key points and knowledge relevant to the AZ-104 exam for Azure Monitor, alerting, and actions:
 
 1. Azure Monitor Alerting and Action Groups:
    - **Azure Monitor provides capabilities to set up alerts and prompt actions based on specific signals. Alerts can be triggered based on metrics, activity logs, and other log signals**.
-   - Action groups allow for custom actions to be performed when an alert is triggered, such as sending notifications, running Logic Apps, Azure Functions, or Automation Runbooks.
+   - Action groups allow for custom actions to be performed when an alert is triggered, such as **sending notifications, running Logic Apps, Azure Functions, or Automation Runbooks**.
 
 2. **Alert Rule Configuration:**
    - Alert rules are created within Azure Monitor and can be scoped to specific resources, such as virtual machines. 
@@ -419,7 +415,7 @@ An extension installed on resources to allow for telemetry to be gathered into t
 
 ## 3 Understanding Monitor Insights
 
-With Azure Insights, what we have are service-specific monitoring features that are built into Azure Monitor, and this includes things like our VM Insights, Network Insights, Container Insights, as well as Application Insights. 
+With Azure Insights, what we have are service-specific monitoring features that are built into Azure Monitor, and this includes things **like our VM Insights, Network Insights, Container Insights, as well as Application Insights**. 
 
 
 ### Describing Insights
@@ -440,7 +436,7 @@ Service-specific monitoring features built into Azure Monitor
 
 ### VM and Network Insights
 
-* **VM Insights**
+#### **VM Insights**
 
 
 Monitoring service specific to **virtual machines and virtual machine scale sets (VMSS)**.
@@ -449,9 +445,9 @@ Monitoring service specific to **virtual machines and virtual machine scale sets
 * **Requires Log Analytics agent (installed when connected)**
 * Also known as Azure Monitor for VMs
 
-**Network Insights**
+#### **Network Insights**
 
-Monitoring service specific to virtual network resources.
+Monitoring service specific to **virtual network resources**.
 
 * **No agent installation required**
 * Works in tandem with Network Watcher if enabled
@@ -460,14 +456,14 @@ Monitoring service specific to virtual network resources.
 
 ### Container and Application Insights
 
-**Container Insights**
+#### **Container Insights**
 
 Monitoring service specific to containers or AKS clusters
 
 * Requires Log Analytics workspace
 * Requires Log Analytics agent
 
-**Application Insights**
+#### **Application Insights**
 
 Monitoring service specific to application code
 
@@ -491,19 +487,19 @@ Monitoring service specific to application code
 
 ### Key Takeaways
 
-**VM Insights**
+* **VM Insights**
 
 Virtual machine and VMSS-specific monitoring service
 
-**Network Insight**
+* **Network Insight**
 
 Virtual network-specific monitoring service
 
-**Container Insights**
+* **Container Insights**
 
 Container or AKS cluster-specific monitoring service
 
-**Application Insights**
+* **Application Insights**
 
 Application code-specific monitoring service
 
@@ -511,23 +507,23 @@ Application code-specific monitoring service
 ### Chatgpt summary
 
 
-1. Azure Monitor and Service-Specific Insights:
+1. **Azure Monitor and Service-Specific Insights**:
    - Azure Monitor incorporates service-specific monitoring features called Insights for different resources.
-   - VM Insights monitors virtual machines and scale sets, requiring a Log Analytics workspace and the Log Analytics agent.
-   - Network Insights monitors virtual networks and works with Network Watcher if enabled in the region.
-   - Container Insights monitors containers or AKS clusters, needing a Log Analytics workspace and an agent for containers.
-   - Application Insights monitors application code and requires an Application Insights resource and instrumented code.
+   - **VM Insights monitors virtual machines and scale sets, requiring a Log Analytics workspace and the Log Analytics agent**.
+   - Network Insights monitors **virtual networks and works with Network Watcher if enabled in the region**.
+   - Container Insights **monitors containers or AKS clusters, needing a Log Analytics workspace and an agent for containers**.
+   - Application Insights monitors application code and requires an **Application Insights resource and instrumented code**.
 
 2. **Azure Cloud Sandbox Demonstration**:
-   - Inside the Azure Cloud Sandbox, various resources like storage accounts, network interfaces, virtual networks, and virtual machines can be used to explore and enable Azure Monitor Insights.
-   - The Azure Monitor service provides Insights for different resources like applications, virtual machines, networks, and containers.
+   - Inside the Azure Cloud Sandbox, various resources like **storage accounts, network interfaces, virtual networks, and virtual machines can be used to explore and enable Azure Monitor Insights.**
+   - The Azure Monitor service provides Insights for different resources **like applications, virtual machines, networks, and containers**.
    - Enabling Insights for specific resources involves selecting and creating a Log Analytics workspace or related resources.
 
 3. **Azure Monitor Insight Capabilities:**
    - VM Insights provides performance data, maps, and dependencies for virtual machines.
-   - Network Insights offers information on connectivity, traffic flow logs, and the ability to create connection monitors.
+   - Network Insights **offers information on connectivity, traffic flow logs, and the ability to create connection monitors**.
    - Further information and categorization of traffic can be obtained from specific network resources.
-   - Container Insights provides monitoring capabilities for containers and AKS clusters.
+   - **Container Insights provides monitoring capabilities for containers and AKS clusters**.
    - Application Insights focuses on monitoring application code to gain insights into resource performance.
 
 4. Understanding Azure Monitor Insights:
@@ -543,8 +539,8 @@ Application code-specific monitoring service
 A full-stack application monitoring solution that developers can use to monitor applications.
 
 * Supports any application instrumented with Application Insights
-* Repository for events and metrics data
-* Telemetry data is streamed into an Application Insight resource
+* **Repository for events and metrics data**
+* **Telemetry data is streamed into an Application Insight resource**
 
 
 ![Alt Image Text](../images/az104_11_35.png "Body image")
@@ -644,27 +640,30 @@ Key for implementing instrumentation in applications. Stored in Application Insi
 **Application Insights** is a **full-stack monitoring solution** for applications that allow to **gather data from the client-side, the server-side, and our dependencies**, so that **have tons of telemetry data streamed into a single pane for developers to be able to view that data**, so that **it can drive the development of our applications in a positive direction that increases the performance and the user-base for our applications**. 
 
 
-Runtime instrumentation, which is to be our codeless approach with Application Insights, where don't have to use any specific packages inside of our application code to implement the Application Insights resource. 
+### Runtime instrumentation
 
+**Runtime instrumentation, which is to be our codeless approach with Application Insights, where don't have to use any specific packages inside of our application code to implement the Application Insights resource.** 
 
-The build-time instrumentation is a coded approach with Application Insights, going to implement the SDK for Application Insights into our application's code and then we're going to pass the instrumentation key as an environment variable in our applications, use the application to gather as much data as possible
+#### build-time instrumentation
+
+The build-time instrumentation is a coded approach with Application Insights, **going to implement the SDK for Application Insights into our application's code and then we're going to pass the instrumentation key as an environment variable in our applications,** use the application to gather as much data as possible
 
 ### Summary from Chatgpt
 
 
 1. Overview of Application Insights:
-   - Application Insights is a full-stack application monitoring solution focused on developers and supported by any instrumented application.
+   - **Application Insights is a full-stack application monitoring solution focused on developers and supported by any instrumented application**.
    - It provides a repository for events and metrics data, allowing monitoring of user usage and interaction with the application.
 
 2. Features of Application Insights:
    - Metrics: Live metrics for real-time understanding of application performance.
    - Alerts: Allows alerting on metrics or events to notify administrators of potential issues.
-   - Profiler: Helps in understanding how requests are delivered and the performance of page elements in web applications.
+   - Profiler: **Helps in understanding how requests are delivered and the performance of page elements in web applications**.
    - Application map: Provides a topology and view of application dependencies to identify issues and bottlenecks.
    - Usage analytics: Allows gathering and analysis of user metrics from client-side events and interactions.
 
 3. Architectural Components and Instrumentation:
-   - Application Insights collects telemetry data from the client-side, the application, and its dependencies, providing a full-stack monitoring service.
+   - Application Insights **collects telemetry data from the client-side, the application, and its dependencies, providing a full-stack monitoring service**.
    - Instrumentation can be done using runtime or code-based approaches, with the latter enabling more robust data gathering and other features.
 
 4. Demonstration in Azure portal:
@@ -676,7 +675,7 @@ The build-time instrumentation is a coded approach with Application Insights, go
 
 6. Key Takeaways:
    - Application Insights provides developers with telemetry data to improve application performance and drive application usage.
-   - Two approaches for instrumentation: runtime and build-time, with the latter providing more data and access to additional features. 
+   - Two approaches for instrumentation: **runtime and build-time, with the latter providing more data and access to additional features**. 
 
 
 ## 5 Using Network Watcher

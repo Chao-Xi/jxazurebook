@@ -17,37 +17,37 @@ A network allows you to have an isolated network where resources can communicate
 
 ![Alt Image Text](../images/az104_6_1.png "Body image")
 
-virtual network is an isolated network space on the Azure cloud that we can utilize to provide private and public addressing for our resources. Now, inside of the Azure cloud, we have this isolated network, and it is isolated specifically from other users of virtual networks inside of the Azure cloud
+virtual network is an **<mark>isolated network space</mark>** on the Azure cloud that we can utilize to provide **private and public addressing for our resources.** Now, inside of the Azure cloud, we have this isolated network, and it is isolated specifically from other users of virtual networks inside of the Azure cloud
 
 ### Describing Virtual Networks (VNets)
 
 **Main goal in networks**
 
-* Provide both an isolated network space where resources can communicate privately, but also to provide public connectivity to the outside internet and outside networks in cases in which we want to peer networks between different data centers, **so that we can have multiple private networks that our organization is using**. 
+* Provide both an **isolated network space where resources can communicate privately**, but also to provide public connectivity to the outside internet and outside networks in cases in which we want to peer networks between different data centers, **so that we can have multiple private networks that our organization is using**. 
 
-**virtual network**
+### **virtual network**
 
 * Network address space and break subnet it down into different subnets, breaking it into subnet address spaces that allow us to then put resources like **virtual machines inside of this address space**.
-* Virtual machines will have private IP addresses, and potentially public IP addresses, depending on the **IP configurations of the network interface card that is associated with the virtual machine**.
-* Control traffic by allowing or denying specific traffic using network security groups that we can place on the subnet or on the network interface of a resource.
+* Virtual machines will have **<mark>private IP addresses**, and potentially **public IP addresses</mark>**, depending on the **IP configurations of the network interface card that is associated with the virtual machine**.
+* Control traffic by allowing or denying specific traffic using <mark>network security groups</mark> that we can place on the subnet or on the network interface of a resource.
 * **Network security groups can be used to control both the private networking and the public networking traffic that is occurring on this network**.
 * Public IP address for resources. can put a public IP address for these resources and associate it with the configurations on the **network interface card** so that we have a publicly routable address so that provides **both the private networking and the public networking for our virtual network**.
-* By default, with virtual networks is **routes that allow access both for public connectivity and routes that allow access for private connectivity within our networks**
-* 
+* **By default,** with virtual networks is **routes that allow access both for public connectivity and routes that allow access for private connectivity within our networks**
+
 
 ![Alt Image Text](../images/az104_6_2.png "Body image")
 
-**Isolated Network**
+* **Isolated Network**
 
 VNets are isolated networks on the Azure cloud
 
-**Private Network Access**
+* **Private Network Access**
 
 Provides private connectivity between resources like VMs or App Service
 
-**Network Integration**
+* **Network Integration**
 
-Allows connectivity between VNets, on-prem networks, and remote user devices
+Allows connectivity between VNets, on-prem networks, and remote user devices
 
 ### Components of Virtual Networks
 
@@ -91,24 +91,24 @@ Allows connectivity between VNets, on-prem networks, and remote user devices
 
 ### Summary from Chatgpt
 
-- The purpose of a network in Azure is to provide an isolated space for communication between resources.
+- The purpose of a network in Azure is to provide an **isolated space for communication between resources**.
 - Networks can provide private connectivity between resources within the network, as well as public connectivity to the internet or outside networks.
 - Azure virtual networks are similar to traditional on-premises networks and provide the same capabilities but in the Azure cloud.
 - **Virtual networks in Azure allow for subnetting, traffic control with network security groups, and the provision of public IP addresses**.
-- Virtual networks are isolated from other users and utilize the Microsoft backbone infrastructure.
+- Virtual networks are isolated from other users and **utilize the Microsoft backbone infrastructure**.
 - They enable private networking between resources and can integrate with on-premises networks and remote user devices through VPN gateways and peerings.
 - The components of a virtual network include an address space, the virtual network itself, and subnets for isolating resources.
 - With virtual networks, resources can communicate privately within the network and with other Azure services.
 
 
-## Creating Virtual Networks
+## 2 Creating Virtual Networks
 
    
 ### Designing a Network
 
 **Determine IP CIDR**
 
-Select a **Classless Inter-Domain Routing (CIDR)** notation that allows for growth and integration
+Select a **Classless Inter-Domain Routing (CIDR)** notation that allows for **growth and integration**
 
 **Subnetting Requirements**
  
@@ -116,7 +116,7 @@ Determine how to segment the solution to meet your needs, such as segmenting for
 
 **Connectivity Needs**
 
-Determine what type of connectivity is needed: Internet, resource to resource, resource to service, etc.
+Determine what type of connectivity is needed: **Internet, resource to resource, resource to service**, etc.
 
 ![Alt Image Text](../images/az104_6_7.png "Body image")
 
@@ -131,7 +131,7 @@ Determine what type of connectivity is needed: Internet, resource to resource, r
 
 Azure VNet uses subnets to segment address spaces. Reserved IP addresses are  **x.x.x.0-3 and x.x.x.255**.
 
-> 5 total IP addresses being the first four in the network with the last being zero, one, two, or three. And then the last IP address with the last octet being 255. These 5 total IPS addresses are going to be reserved within our network
+> 5 total IP addresses being the first four in the network **with the last being zero, one, two, or three. And then the last IP address with the last octet being 255. These 5 total IPS addresses are going to be reserved within our network**
 
 **Private Networking**
 
@@ -201,11 +201,11 @@ Azure reserved IPs are `X.X.X.0-3` and `X.X.X.255`
 
 ![Alt Image Text](../images/az104_6_9.png "Body image")
 
-**DNS and DHCP**
+* **DNS and DHCP**
 
-Azure-provided DNS or custom DNS. For VNets, DHCP is built-in.
+**Azure-provided DNS or custom DNS**. For VNets, DHCP is built-in.
 
-**Network Integration**
+* **Network Integration**
 
 VNets are built for integration with one another, hybrid connectivity using VPNs, and ExpressRoute.
 
@@ -222,11 +222,11 @@ The article discusses several key points and knowledge related to virtual networ
 
 1. Determining IP address space: When designing a network, **the first step is to determine the IP address space (IP CIDR) needed based on the number of available IP addresses required for the network**.
 
-2. Segmenting IP address space: After determining the IP CIDR, the next step is to **decide how to segment the IP address space**. This can involve separating different tiers of applications or creating subnets for different purposes.
+2. Segmenting IP address space: After determining the IP CIDR, the next step is to **decide how to segment the IP address space**. This can involve **separating different tiers of applications or creating subnets for different purposes.**
 
 3. **Connectivity needs**: It is important to determine the connectivity needs of the virtual network, such as allowing specific traffic over public IP addresses or controlling private IP addressing between front-end and back-end applications.
 
-4. **Virtual network features**: Azure virtual networks offer features such as subnetting, private networking through private IP assignment, public networking through separate public IP resources, network integration with peers and VPN gateway, and monitoring capabilities.
+4. **Virtual network features**: Azure virtual networks offer features such as subnetting, private networking through private IP assignment, public networking through separate public IP resources, **network integration with peers and VPN gateway, and monitoring capabilities**.
 
 5. **Creating a virtual network**: The article provides a demonstration of creating a virtual network with a specific IP address space and subnet, and then provisioning a virtual machine within the network.
 
@@ -238,7 +238,7 @@ The article discusses several key points and knowledge related to virtual networ
 
 9. **Monitoring features**: Virtual networks provide monitoring capabilities, such as viewing logs, monitoring connectivity between resources, and visualizing the network topology.
 
-## Deploying Network Resources
+## 3 Deploying Network Resources
 
 ### IP Addressing
 
@@ -262,7 +262,7 @@ Plan networks to prevent overlap in network address space to allow for network i
 
 ### Types of IPs
 
-* **Private IPs**：  Statically or dynamically assigned addresses that allow private connectivity between resources.
+* **Private IPs**：  Statically or dynamically assigned addresses that allow **private connectivity between resources**.
 * **Public IPs**： Statically or dynamically assigned addresses that allow public connectivity from the internet to a resource.
 
 > Modify the IP configurations of things like a **Network Interface Card for our virtual machine**, so that it has a public IP address in those IP configurations
@@ -271,11 +271,11 @@ Plan networks to prevent overlap in network address space to allow for network i
 
 **Basic SKU**
 
-Statically or dynamically assignable PIP(public IP) that is accessible by default and requires an NSG to restrict traffic. **Does not support availability zone deployments**.
+Statically or dynamically assignable PIP(public IP) that is accessible by default and requires an NSG to restrict traffic. **<mark>Does not support availability zone deployments</mark>**.
 
 **Standard SKU**
 
-Statically assignable PIP that is not accessible by default and requires an NSG to allow traffic. **Supports availability zone deployments**.
+Statically assignable PIP that is not accessible by default and requires an NSG to allow traffic. **<mark>Supports availability zone deployments</mark>**.
 
 ![Alt Image Text](../images/az104_6_19.png "Body image")
 
@@ -345,21 +345,19 @@ Two types of public IP SKUs:
 
 ### Summary from Chatgpt
 
-
- 
 - Private IP addresses are used for internal communication within a virtual network.
 - Public IP addresses provide connectivity from the internet to resources in the virtual network.
-- IP CIDR planning is important to ensure that IP address spaces do not overlap in peer networks.
+- **<mark>IP CIDR planning is important to ensure that IP address spaces do not overlap in peer networks</mark>**.
 - Private IP addresses can be statically or dynamically assigned to resources.
 - Public IP addresses have different SKUs, including Basic and Standard.
 - **Basic SKUs are accessible by default and require manual security configuration**.
-- **Standard SKUs are not publicly accessible by default and support availability zone deployments**.
+- **<mark>Standard SKUs are not publicly accessible by default and support availability zone deployments</mark>**.
 - Network interfaces and public IP addresses can be created in Azure to configure network resources.
 - **Network interface configurations include private and public IP addresses**.
 - **Public IP addresses can be associated with network interfaces**.
 - Network resources need to be properly planned and configured to ensure secure and efficient network communication.
 
-## Routing Virtual Networks
+## 4 Routing Virtual Networks
 
 ### Describing Routing
 
@@ -381,7 +379,7 @@ For example, a route allowing virtual machines to communicate with the internet 
 
 * **Custom Routes**
 
-**User-defined routes** or **border gateway protocol (BGP) routes** that **override** system routes.
+<mark>**User-defined routes**</mark> or <mark>***border gateway protocol (BGP) routes**</mark> that **override** system routes.
 
 ![Alt Image Text](../images/az104_6_28.png "Body image")
 
@@ -484,10 +482,10 @@ Default routes built-in to virtual networks that cannot be modified.
 - **BGP routes are exchanged between integrated networks and can also override system routes**.
 - Effective routes can be viewed on network interfaces to see the active routes in place.
 - **Route tables can be created and associated with subnets to manage custom routes**.
-- Custom routes take precedence over system routes, and user-defined routes take precedence over BGP routes.
+- **Custom routes take precedence over system routes, and user-defined routes take precedence over BGP routes**.
 
 
-## Network Security Groups(NSGs)
+## 5 Network Security Groups(NSGs)
 
 **network security groups(nsg) are the resource that we use to secure what traffic is allowed or denied to flow through those pathways.** 
 
@@ -498,13 +496,13 @@ Default routes built-in to virtual networks that cannot be modified.
 A network security group (NSG) controls the traffic 
 flowing through a virtual network. This is done so by:
 
-* Creating rules that define what is allowed/denied
-* Controlling security at the subnet or NIC network 
-layers
+* **Creating rules that define what is allowed/denied**
+* **Controlling security at the subnet or NIC network 
+layers**
 * Specifying rule priority
 
 
-**Implementing network security groups at the subnet, or the network interface card level, for resources like a virtual machine.**
+**Implementing network security groups at the <mark>subnet</mark>, or the <mark>network interface card level</mark>, for resources like a virtual machine.**
 
 Specify which rule is going to take priority, inside of the security rules, that we have for inbound and outbound traffic on our **network security group**. 
 
@@ -554,7 +552,7 @@ An NSG has no effect unless associated to either a subnet or network interface c
 
 * Web virtual machine that is the front end of our application. 
 * Back end of our application
-* Have NSG1 here on the subnet level, and we have NSG2 on the NIC level of the database VM.
+* **Have NSG1 here on the subnet level**, and we have **NSG2 on the NIC level of the database VM**.
 * Send some traffic like HTTP, into our subnet, have to traverse NSG1 first, cause it's at the subnet level. 
 * **DenyAllInbound** rule on our NSG2. And that traffic, while it made it through NSG1, still has to make it through NSG2 at the NIC level.
 * Can have multiple layers, of being able to control **what traffic is allowed or denied inside of our networks**.
@@ -567,9 +565,9 @@ An NSG has no effect unless associated to either a subnet or network interface c
 
 **outbound security rules**
 
-* Would deny all outbound traffic
+* **<mark>Would deny all outbound traffic</mark>**
 * Network security groups(NSG), is that we're allowed to access with outbound internet traffic, **because there is a lower number, a lower priority number**, for the allow internet outbound, and because the priority of the rule is lower, **it is going to be evaluated first, so we will by default, allow outbound internet traffic.**
-* Lower priority of 100. 100 to 4096 for our user-defined security rules.
+* **Lower priority of 100. 100 to 4096 for our user-defined security rules**.
 
 
 Traffic is going to be allowed, because both the NSG2 and NSG1 allow that internet outbound. 
@@ -654,7 +652,7 @@ Evaluate rules by following the traffic.
 - Understanding the direction and flow of traffic is important for configuring NSG rules effectively.
 
 
-## Using Azure DNS
+## 6 Using Azure DNS
 
 Describing Azure DNS
 
@@ -738,9 +736,9 @@ Add virtual network link
 
 ### Chatgpt summary
 
-- DNS allows mapping between domain names and IP addresses.
+- DNS allows mapping between **domain names and IP addresses**.
 - **Azure DNS is the DNS service in Azure for name resolution**.
-- Azure DNS supports public and private DNS zones.
+- **Azure DNS supports public and private DNS zones**.
 - DNS zones can be filled with records such as A, CNAME, TXT, MX, PTR, SRV, and SOA records.
 - Public DNS zones are publicly accessible and can be used to route traffic to resources.
 - Private DNS zones are only accessible within a network.
@@ -751,7 +749,7 @@ Add virtual network link
 - **Alias records can be used to avoid issues with dynamically-assigned public IP addresses**.
 
 
-## Using Azure Firewall
+## 7 Using Azure Firewall
 
 ### Using Azure Firewall
 
@@ -762,12 +760,12 @@ Add virtual network link
 
 ![Alt Image Text](../images/az104_6_72.png "Body image")
 
-Using Azure Firewall, the one thing we do have to **manage is a subnet inside of our virtual network.**
+<mark>Using Azure Firewall, the one thing we do have to **manage is a subnet inside of our virtual network.**</mark>
 
 
 **Create an Azure Firewall subnet with a /26 or lower on the prefix number for our virtual network**, in order for us to provision our firewall inside of this virtual network using Azure Firewall.
 
-Firewall itself is going to be taking up some of the IP addresses within our network, and we need a `/26` to be able to allow the scaling of using those IP addresses. 
+**Firewall itself is going to be taking up some of the IP addresses within our network, and we need a `/26` to be able to allow the scaling of using those IP addresses.** 
 
 
 ### Azure Firewall Features
@@ -777,7 +775,7 @@ On that firewall, we can control our traffic using NAT rules, application rules,
 
 * **DNAT and SNAT**
 
-Configure outbound/inbound NAT rules for your networks.
+**Configure outbound/inbound NAT rules for your networks.**
 
 * **Network Rules**
 
@@ -794,7 +792,7 @@ Configure rules for filter websites visited from your network.
 
 Identify malicious IPs and domains.
 
-> Provides that threat intelligence to our Azure Firewalls.
+> Provides that **threat intelligence to our Azure Firewalls**.
 
 * **Monitoring**
 
@@ -850,26 +848,26 @@ Associate subnet with Route table
 
 ### Chatgpt Summary
 
-- Azure Firewall is a Platform as a Service firewall available in Azure cloud.
+- Azure Firewall is a **Platform as a Service firewall **available in Azure cloud.
 - **It eliminates the need for manual setup and management of infrastructure for firewalls**.
 - Azure Firewall supports FQDN (fully qualified domain name) support.
 - A subnet dedicated to Azure Firewall must be created within the virtual network, with a prefix of /26 or lower.
 - **NAT rules, application rules, and network rules can be used to control traffic in Azure Firewall**.
-- Threat intel provides threat intelligence to Azure Firewalls.
+- **Threat intel provides threat intelligence to Azure Firewalls**.
 - Azure Firewall can be integrated with Azure Monitor for monitoring firewall traffic.
-- Steps to implement Azure Firewall include creating a virtual network, creating an Azure Firewall subnet, creating Azure Firewall, and configuring routes to route traffic through the firewall.
+- Steps to implement Azure Firewall include c**reating a virtual network, creating an Azure Firewall subnet, creating Azure Firewall, and configuring routes to route traffic through the firewall**.
 - **Azure Firewall can be used to route all traffic, including SSH traffic, through the firewall using NAT rules**.
 - NAT collections can be used to define priorities and multiple rules for NAT.
 - Testing and verification can be done by SSHing into the public IP of the firewall to ensure traffic is routed to the desired destination.
 
 
-## Using Service Endpoints
+## 9 Using Service Endpoints
 
 ### What is public endpoints
 
-By default, what we have is a **public endpoint** for all of the sub-resources like Azure Files, Azure Blob, Tables, and Queue inside of Azure Storage. 
+By default, what we have is a **public endpoint** for all of the sub-resources **like Azure Files, Azure Blob, Tables, and Queue inside of Azure Storage**. 
 
-**Public endpoint**, is allowing things like our virtual machine inside of our virtual network to transit the public internet to access the public endpoint of that service.
+<mark>**Public endpoint**, is allowing things like our virtual machine inside of our virtual network to transit the public internet to access the **public endpoint of that service**.</mark>
 
 
 ### Accessing PaaS Services
@@ -887,7 +885,7 @@ For example, a VM will access an Azure file share from a storage account using a
 
 **Service Endpoint**
 
-Using service endpoints, you can provide private connectivity to a service from inside your virtual network.
+Using service endpoints, you can **provide private connectivity to a service from inside your virtual network**.
 
 > This will allow us to do is connect from our virtual machines into the Microsoft backbone, and then connect from the backbone of Microsoft into the service over a private connection. 
 
@@ -905,7 +903,7 @@ For example, **a VM will access an Azure file share from a storage account using
 * Supported services **differ per region**
 * **<mark>Does not give services a private IP</mark>**
 * Provides source IP as private IP
-* Firewalls can enhance security (optional)
+* **Firewalls can enhance security (optional)**
 
 ![Alt Image Text](../images/az104_6_84.png "Body image")
 
@@ -962,30 +960,30 @@ PS /home/cloud> az network service-endpoint list --location southcentralus
 * Enhanced routing
 
 
-* Service endpoint is something that we use to enable that private connectivity to our services from our virtual networks on a per-subnet basis. 
-* Allows us to do is decrease our attack surface because we're not going to be going over the public internet, using public endpoints to access those services, we're going to be using the Microsoft backbone to access those services privately. 
-* Also use things like service endpoint policies and network security group rules to restrict what specific storage accounts we'll be accessing. 
-* network security group rules to allow specific access for traffic, with rules that allow things like a service tag to, say, Microsoft Storage service. 
+* **Service endpoint is something that we use to enable that private connectivity to our services from our virtual networks on a per-subnet basis**. 
+* Allows us to do is decrease our attack surface because we're not going to be going over the public internet, **using public endpoints to access those services, we're going to be using the Microsoft backbone to access those services privately**. 
+* Also use things like **service endpoint policies and network security group rules to restrict what specific storage accounts we'll be accessing**. 
+* network security group rules to allow specific access for traffic, with rules that allow things like a service tag Microsoft Storage service. 
 
-<mark>It's important to keep in mind that these service endpoints do not give our services, like Microsoft Storage, a private IP, but rather a route for private connectivity.<mark> 
+<mark>**It's important to keep in mind that these service endpoints do not give our services, like Microsoft Storage, a private IP, but rather a route for private connectivity**.<mark> 
 
 
 ### Chatgpt summary
 
 
-- Service endpoints provide private connectivity to PaaS services from virtual networks on a per-subnet basis.
+- Service endpoints provide private connectivity to **PaaS services from virtual networks on a per-subnet basis**.
 - By using service endpoints, the traffic to PaaS services **does not go over the public internet, decreasing the attack surface**.
 - Service endpoints **are enabled and configured on a per-subnet basis.**
 - Service endpoint availability varies per region.
-- Service endpoints do not provide private IP addresses to PaaS services, but rather a route for private connectivity.
+- Service endpoints do not provide private IP addresses **to PaaS services, but rather a route for private connectivity**.
 - **Service endpoint policies can be used to restrict access to specific Azure resources over service endpoints.**
 - Network security group rules can be used to allow or deny traffic to specific service endpoints.
 - **Service endpoints enhance routing using the Microsoft backbone**.
-- Service endpoints can be used with Azure Storage accounts and other PaaS services.
+- **Service endpoints can be used with Azure Storage accounts and other PaaS services**.
 
 
 
-## Using Private Endpoints
+## 10 Using Private Endpoints
 
 ### Describing Private Endpoints
 
@@ -1056,7 +1054,7 @@ hybrid network environments
 
 ### Key Takeaways
 
-* A private IP for your connected services
+* **A private IP for your connected services**
 * Connectivity to Azure services
 * Connectivity to customer/partner services
 * Direct service (sub-resource) mapping
@@ -1074,10 +1072,77 @@ Build and allow private connections between resources with Private Link
 - **Private endpoints provide private connectivity via a private IP address.**
 - Private endpoints can be used with **Azure services, customer services, and partner services**.
 - Private endpoints provide a **direct mapping to specific sub-resources of a service.**
-- Private endpoints can be used to connect to services over a private IP address in hybrid network environments.
+- Private endpoints can be used to **connect to services over a private IP address in hybrid network environments**.
 - **Private endpoints can be created using the Private Link feature in the Azure portal**.
 - Private endpoints **require a virtual network and subnet to be specified during configuration**.
 - Private endpoints can be used with network security groups to control access to specific services.
 - Private endpoints **enhance security by providing private connectivity over a private IP address**.
 - Private endpoints **can be used with various Azure services and sub-resources, such as Azure Files**.
+
+## Comparison table between Service Endpoints/Private Endpoints
+
+
+
+  | Service endpoints  | Private endpoints
+------------- | ------------- | ------
+scope     | Per service           |  Per instance
+Connectivity   | Azure PaaS public IP is still used, the traffic between VNET and the public IP of Azure PaaS service goes over the Azure backbone network.  |  Azure PaaS service receives a private IP from your networks used for communication with your VNET 
+Data security  | Traffic leaves virtual network to Azure backbone  | No data exfiltration
+On-premises connectivity | No native support for OnPrem integrations. Build mainly for Azure VNETs.  | Yes, ExpressRoute and VPN tunnels provide support to extend the private Azure PaaS connectivity to the OnPrem networks.
+UDRs and NSGs | No specific overlaps exist. | The traffic can bypass the Private Endpoint of you use UDRs and NSGs. Special configuration might be required.
+Data protection | Needs to be integrated with a Network Virtual Appliance/Firewall of exfiltration protection is required. | Built-in data protection
+Cost | No additional cost (free of use) | The cost is based on inbound, outbound traffic and number of endpoints. Depending on the total traffic, the total cost can grow easily.
+Complexity  | Easy to configure and setup from Azure Portal | Involves updates to DNS (Azure Private DNS) and where the service will attach to your VNET.
+Cross-region support | No native support for cross-region support | Has full support for access resources across regions and across Azure AD tenants
+
+
+### Which to Pick?
+
+Assuming you can use either option for your service, then the decision is probably going to come down to complexity. 
+
+
+**Service Endpoints are more straightforward and easier** to set up than Private Link. You can enable Service Endpoints with a couple of clicks in the portal, and there is no requirement for any additional services
+
+
+**Private Link**
+
+requires you to **implement DNS changes and possibly use Azure Private DNS, it also requires deciding where the service will attach to your Virtual Network.** 
+
+So, if you need some additional access restriction for your PaaS Services quickly, or don’t have the rights or knowledge to make changes to DNS, then Service Endpoints are probably the way to go.
+
+Other than complexity, **Private Link is superior to Service Endpoints in nearly every other way**. If you can set this up, and your service supports it, then I would recommend you use Private Link over Service Endpoints.
+
+**In particular with Private Link, you can:**
+
+* Join your PaaS resource to your VNET and give it a private IP.
+* **Ensure traffic stays within your virtual network**.
+* Limit your egress to only your specific PaaS services and prevent data leakage.
+* **Support access from on-premises and peered networks**.
+* Connect to resource across regions and even Azure AD tenants.
+
+
+### Conclusion
+
+**service Endpoint**
+
+If you only need a **secure connection between the virtual network and another resource, you should use a service endpoint**, which **means your resources will still have public exposure and you will be accessing those resources using the <mark>public endpoint</mark> of the resource.**
+
+**Private Endpoint**
+
+
+However, if you need to access your azure resources from 
+	
+* on-premises through an Azure gateway, 
+* a regionally peered virtual network, 
+* a globally peered virtual network, use a private endpoint. 
+
+
+**The private endpoint will allow connection using the private IP of the resources, eliminating the public exposure completely.**
+
+ 
+
+
+
+
+
 

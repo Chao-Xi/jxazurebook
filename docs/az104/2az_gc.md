@@ -6,7 +6,7 @@
 
 ![Alt Image Text](../images/az104_2_1.png "Body image")
 
-What are subscriptions? 
+**<mark>What are subscriptions? </mark>**
 
 * **Billing unit that aggregates all costs of underlying resources**
 * Contain **resource groups** and **their associated resources**
@@ -45,7 +45,7 @@ Subscriptions named based on the region of the business that uses the subscripti
 * Billing unit that aggregates all costs of underlying resources
 * Scoping level for **governance and security**
 * Contain resource groups and their associated resources
-* **Can only be associated with a single organization (Azure AD tenant) at a time**
+* **<mark>Can only be associated with a single organization (Azure AD tenant) at a time</mark>**
 
 
 ## 2 Using Management Groups
@@ -69,8 +69,8 @@ Organize and manage subscriptions by logically grouping them into management sub
 
 **Parent-Child Relationships**
 
-* Root management group is the top level
-* Management groups and subscriptions can have a single parent
+* <mark>Root management group is the top level</mark>
+* <mark>Management groups and subscriptions can have a single parent</mark>
 * **Supports 6 levels of hierarchy**
 
 
@@ -158,11 +158,11 @@ Defining Azure Policy
 * **Policy Assignment**
 
 	* The scope at which we will assign our policy. 
-	* The scope **could be a management group, subscription, resource group, or resource**.
+	* <mark>The scope **could be a management group, subscription, resource group, or resource**</mark>.
 
 * **Initiative Defintion**
-**
-A collection of policies that are tailored to achieving a singular high-level goal together. **
+
+**A collection of policies that are tailored to achieving a singular high-level goal together.**
 
 **For example, ensuring that VMs meet standards.**
 
@@ -299,14 +299,14 @@ Move a virtual machine from one resource group to another
 
 moving resources, we can also **move them between subscriptions in Azure for cross-subscription movement and also move them between regions.**
 
-**Supported Resources**
+**<mark>Supported Resources</mark>**
 	
 * Virtual Machines
 * Storage Accounts
 * Virtual Networks
 
 
-**Unsupported Resources**
+**<mark>Unsupported Resources</mark>**
 
 * **Azure Active Directory Domain Services**
 * **Azure Backup Vaults**
@@ -319,13 +319,15 @@ moving resources, we can also **move them between subscriptions in Azure for cro
 
 **On-premise resources**
 
-And we're only paying for how much we use this resource. And that's things such as the CPU, the memory, the disk size. We're also paying for things like traffic for our network. We are not paying for the underlying infrastructure, nor are we paying to have people manage the underlying infrastructure of the Azure cloud. 
+And we're only paying for how much we use this resource. And that's things such as the CPU, the memory, the disk size. We're also paying for things like traffic for our network. 
+
+We are not paying for the underlying infrastructure, nor are we paying to have people manage the underlying infrastructure of the Azure cloud. 
 
 **So we're minimizing our costs and minimizing our responsibility in the shared responsibility model.** 
 
 ### What Affects Cost?
 
-* **Subscription Type**： **Free, pay-as-you-go**, Enterprise Agreement, and Cloud Solution Provider (CSP)
+* **Subscription Type**： **Free, pay-as-you-go**, **Enterprise Agreement**, and **Cloud Solution Provider (CSP)**
 
 > There are free subscriptions, where you're going to get only specific services for free, or you'll get free up to a limited point.
 > 
@@ -343,8 +345,8 @@ And we're only paying for how much we use this resource. And that's things such 
 
 * Select the appropriate resource for use case
 * Understand resource needs (sizing)
-* Deallocate resources when not needed
-* Use cloud capabilities where possible (Scalability, Elasticity)
+* **Deallocate resources when not needed**
+* **Use cloud capabilities where possible (Scalability, Elasticity)**
 * **Plan costs prior to purchase**
 
 **Cost Tools**
@@ -352,8 +354,8 @@ And we're only paying for how much we use this resource. And that's things such 
 * **Pricing Calculator**：
 	* Can be used to **create quotes of workloads that we define so that we understand** how much they will cost us before we actually provision any of these resources inside of Azure. 
 * **Total Cost of Ownership (TCO)  Calculator**
-	* This tool will help us understand how much workloads we have running on-prem would cost us if we were to run the equivalent workloads on Azure services.
-	* This is a tool that we can utilize to perform some cost analysis once we actually have our Azure resources running, and this is the Microsoft Cost Management tool.
+	* **This tool will help us understand how much workloads we have running on-prem would cost us if we were to run the equivalent workloads on Azure services**.
+	* This is a tool that we can utilize to perform some **cost analysis once we actually have our Azure resources running, and this is the Microsoft Cost Management tool**.
 * **Cost Management**
 	*  Allows us to analyze our costs by performing specific cost analysis functions
 
@@ -374,24 +376,23 @@ And we're only paying for how much we use this resource. And that's things such 
 
 ![Alt Image Text](../images/az104_2_31.png "Body image")
 
-Maybe we want to look at our costs on a DailyCosts basis to see how much we're spending on a daily basis inside of Azure so that we can identify a specific point in which our costs have gone up or down to understand what was taking place at that time. 
+Maybe we want to look at our **costs on a DailyCosts basis to see how much we're spending on a daily basis** inside of Azure so that we can identify a specific point in which our costs have gone up or down to understand what was taking place at that time. 
 
 
 ![Alt Image Text](../images/az104_2_32.png "Body image")
 
-We also see we have other views that allow us to break out our costs into services, for example, Azure Bastion, Application Gateway, Storage, Virtual Machines. We can break out our cost into location, resource group name. 
+We also see we have other views that **allow us to break out our costs into services, for example, Azure Bastion, Application Gateway, Storage, Virtual Machines**. We can break out our cost into <mark>location, resource group name</mark>. 
 
 * For example, Compute, Networking, Storage. And we can build out a quote by selecting specific workloads. 
-* Then maybe we're going to need a networking resource, such as a virtual network, to have this VM running inside of that.
-* VPN gateway to connect that virtual network into our on-premise environment. 
+* Then maybe we're going to need a networking resource, such as a virtual network, to have this VM running inside of that. VPN gateway to connect that virtual network into our on-premise environment. 
 
 
 
 ### Key Takeaways
 
-* Pricing Calculator： Estimate workload costs for prospective workloads
-* TCO Calculator： Compare costs to determine cost savings between on-premises and TCO cloud solutions
-* **Cost Management： Analyze costs, apply filtering, and create budgets**
+* <mark>Pricing Calculator： Estimate workload costs for prospective workloads</mark>
+* <mark>TCO Calculator： Compare costs to determine cost savings between on-premises and TCO cloud solutions</mark>
+* <mark>**Cost Management： Analyze costs, apply filtering, and create budgets**</mark>
 
 ## 7 Building a Cloud Governance Strategy
 
@@ -404,8 +405,7 @@ Defining Governance
 > Policies and standards: Data sovereignty, such as GDPR
 > 
 > Regulatory compliance, such as PCI or HIPAA
-> 
-> 
+
 
 ### Planning Cloud Strategy
 
@@ -461,7 +461,7 @@ Lock resources to prevent deletion and tag resources to categorize
 
 
 * Management groups as container like subscriptions to help us create some hierarchal structure for organizations. 
-	* These subscriptions are that **billing entity** that contains our resource groups and the resources that they contain. 
+	* These subscriptions are that **billing entity** that **contains our resource groups** and the resources that they contain. 
 	* Can perform some sort of **cost analysis** on these resources from our subscriptions. 
 * The **governance tooling** of also using **Azure Policies to enforce compliance standards**, 
 	* such as a tagging name convention for resources inside of Azure.  
