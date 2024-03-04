@@ -501,7 +501,7 @@ Back up our web applications using full archival backups or our incremental poin
 
 
 
-### Key summary from Chatgot
+### Key summary from Chatgpt
 
 Key points and knowledge for the AZ-104 exam extracted from the article:
 
@@ -742,7 +742,7 @@ Here are the key points and knowledge for the AZ-104 exam extracted from the pro
 11. Monitoring and Logging:
     - Understanding the importance of monitoring and logging in containerized environments and the use of tools such as Azure Monitor and Azure Log Analytics for monitoring and managing containerized applications in Azure.
 
-## Using Azure Container Instances for Containers
+## 5 Using Azure Container Instances for Containers
 
 ### Describing Azure Container Instances
 
@@ -1006,7 +1006,7 @@ Based on the provided article, the key points and knowledge relevant to the AZ-1
    - Allocation of resources in the form of vCPUs and memory sizes can impact the cost, and understanding the pricing model is essential for effective cost management.
 
 
-## Using Azure Kubernetes Service
+## 6 Using Azure Kubernetes Service
 
 ### Traditional Azure Container Instances (ACI) Solution
  
@@ -1186,17 +1186,6 @@ Key points and knowledge relevant to the AZ-104 exam from the provided article i
 
 11. Cost Management:
    - Optimizing costs associated with AKS clusters by utilizing features such as virtual node scaling, right-sizing node pools, and leveraging reserved instances for compute resources.
-
-
-
-
-
-
-
-
-
-
-
 
 
 

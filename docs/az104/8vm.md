@@ -309,12 +309,16 @@ ProgressMessage          Encryption succeeded for data volumes
 
 ### Summary from chatgpt
 
-1. Understanding virtual machine disks (Azure disks) as virtual hard disks used to store data for Azure virtual machines.
-2. Familiarity with the purpose of Azure disks, **including OS disks, temporary disks, and data disks, and their storage as page blobs within Microsoft's storage infrastructure**.
-3. Differentiation between **unmanaged and managed disks**, identifying managed disks as **Azure Resource Manager-managed resources, providing availability, role-based access control, and snapshot and backup support**.
-4. Knowledge of disk types including Ultra Disk, Premium disks, Standard SSD, and Standard HDD, with awareness of their use cases for I/O intensive, production, web servers, and backup workloads.
-5. Understanding of disk encryption in Azure, i**ncluding Storage Service Encryption for physical disk encryption in data centers and Azure Disk Encryption for optional encryption of virtual hard disks using OS tools like BitLocker or DM-Crypt for Linux**.
-6. Practical application of adding a data disk to a virtual machine, enabling Azure Disk Encryption by creating a key vault, generating a key, and selecting encryption settings, followed by validation using PowerShell in the Cloud Shell.
+### Exam Tips
+
+![Alt Image Text](../images/az104_8_12.png "Body image")
+
+* Azure Disks are really just virtual hard disks: **a virtualized hard disk, much like a physical hard disk on a physical machine**. 
+* Azure Disks to provide the **OS disk** and **the temporary disk by default** to our virtual machines, **to provide the operating system, which is our root disk**; 
+* **Temporary disk that is localized to the underlying hardware, and this is great for non-persistent storage like swap files**. 
+* Data disks that we can create and attach to these virtual machines. And these are managed as a separate resource and these provide **persistent data storage for virtual machines**. 
+* Azure Disks are utilizing the **underlying Microsoft storage infrastructure and storing our disks as page blobs.** And we don't have to necessarily keep track of all of this if we're using managed disks, because Microsoft is going to do it for us. 
+* encryption on our **physical hardware on the physical disks inside of the data center**.
 
 ## 3 Configuring Virtual Machine Availability and Scale Sets
 

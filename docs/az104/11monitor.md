@@ -1,4 +1,4 @@
-# Monitoring
+# 11 Monitoring
 
 ## 1 Using Azure Monitor
 
@@ -284,7 +284,7 @@ Send notifications or invoke actions when the alert rule triggers, by selecting 
    -  This includes considerations such as defining appropriate thresholds, managing alert noise, and implementing effective actions to respond to alerts.
 
 
-## Configuring Azure Monitor Logs
+## 3 Configuring Azure Monitor Logs
 
 Log Analytics is a service for aggregating log data in a single pane, where we can **analyze it, visualize it, and query it using the built-in Kusto query language for Log Analytics**. 
 

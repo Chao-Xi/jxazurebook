@@ -143,7 +143,7 @@ Same thing as the geo-zonal redundant storage, except for that **the data stored
 * Redundancy options **include locally-redundant storage, zone-redundant storage, geo-redundant storage, geo-zonal redundant storage, and read-access geo-zonal redundant storage**.
 * A demonstration of creating a storage account is provided.
 
-## 3 Conceptualizing Azure Blob Storage
+## 2 Conceptualizing Azure Blob Storage
 
 ### Describing Azure Blob Storage
 
@@ -740,7 +740,7 @@ Cloud tiering allows on-premise file **shares to locally cache frequently access
 * The process includes creating a virtual machine, creating a Storage Sync Service, preparing the virtual machine by configuring IE security and creating a new volume, **installing the Azure file sync agent, and registering the server with the Storage Sync Service**.
 * <mark>Finally, a **sync group is created to allow for syncing between the cloud endpoint and server endpoint</mark>**.
 
-## 8 Storage Network Access
+## 7 Storage Network Access
 
 ### Storage Access Options
 
@@ -808,7 +808,7 @@ Each sub-service has an endpoint.
 * The key takeaways are that public endpoints are accessible by default, access can be restricted through the storage account firewall, and private endpoints can provide private connectivity within a virtual network.
 * **Private endpoints provide private connectivity to services within virtual networks**.
 
-## Securing Storage Accounts
+## 8 Securing Storage Accounts
 
 ### Azure Storage Encryption
 
@@ -917,7 +917,7 @@ Access Control (lAM): build-in role
 - The activity log can be used to audit operations and activities within a storage account.
 - Encryption, access control, and monitoring are key security features for protecting storage accounts.
 
-## Using Azure Jobs
+## 9 Using Azure Jobs
 
 ### Azure Jobs
 
@@ -1010,7 +1010,7 @@ Use to prepare disks for data and to estimate number of disks needed.
 - **Azure jobs use physical ground shipping methods to transfer data when the network bandwidth is insufficient**.
 - Azure jobs are a solution for moving large amounts of data when network limitations exist.
 
-## Storage Utilities
+## 10 Storage Utilities
 
 **Storage Explorer**  A Graphical User Interface (GUI) tool for working with storage accounts. Supported for Windows, Linux, and MacOS.
 

@@ -116,7 +116,7 @@ Peering connections are non-transitive
 - VNet peering provides low-latency, high-bandwidth connections for cross-network communication.
 - VNet peering is non-transitive, meaning that peering connections between two virtual networks do not enable communication between other virtual networks.
 - Reciprocity is required for VNet peering, with peering connections needed on both virtual networks.
-- O**verlapping IP CIDRs cannot be used between virtual networks for VNet peering.**
+- **Overlapping IP CIDRs cannot be used between virtual networks for VNet peering.**
 - VNet peering can be managed through the Azure portal.
 - Global virtual network peering allows for peering connections between virtual networks in different regions.
 

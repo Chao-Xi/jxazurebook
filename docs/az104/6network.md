@@ -861,7 +861,7 @@ Associate subnet with Route table
 - Testing and verification can be done by SSHing into the public IP of the firewall to ensure traffic is routed to the desired destination.
 
 
-## 9 Using Service Endpoints
+## 8 Using Service Endpoints
 
 ### What is public endpoints
 
@@ -880,8 +880,6 @@ For example, a VM will access an Azure file share from a storage account using a
 ![Alt Image Text](../images/az104_6_82.png "Body image")
 
 ### Describing Service Endpoints
-
-
 
 **Service Endpoint**
 
@@ -983,7 +981,7 @@ PS /home/cloud> az network service-endpoint list --location southcentralus
 
 
 
-## 10 Using Private Endpoints
+## 9 Using Private Endpoints
 
 ### Describing Private Endpoints
 

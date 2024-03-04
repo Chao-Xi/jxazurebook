@@ -79,6 +79,27 @@ Now, Azure approaches everything from a **identity-centric security method**, an
 * Azure Resource Manager is a management service.
 * Each **resource** has a **resource provider**.
 
+### Chatgpt summary
+
+
+
+1. **Azure Resources**: Resources are the smallest units in the Azure cloud, managed entities like virtual machines, storage accounts, and virtual networks that provide functionality for tasks such as compute, data storage, and networking.
+
+2. **Resource Groups**: Logical containers for grouping resources in Azure based on factors like lifecycle, security, or environment (e.g., dev, test, production) to manage and organize resources efficiently.
+
+3. **Subscriptions**: Boundaries for actual resources in Azure, grouping resource groups and associated resources, used as billing units to determine Azure Cloud costs based on accumulated costs within the subscription.
+
+4. **Azure Resource Manager**: Top-level resource in Azure, an orchestration layer that allows management of Azure resources using tools like Azure portal, CLI, and PowerShell through REST API endpoints, interacting with resource providers for specific operations.
+
+5. **Identity and Access Management**: Azure adopts an identity-centric security approach using Azure AD, a standalone identity and access management resource separate from subscriptions, where tenants (e.g., TenantA) with trust relationships manage resources securely across subscriptions.
+
+Key Takeaways:
+
+- Understanding Azure resources, resource groups, and subscriptions as essential components in managing Azure services and costs.
+- Utilizing REST API endpoints to interact with Azure resources through Azure Resource Manager, the top-level management service in Azure.
+- Identity and access management through Azure AD ensures secure resource management across subscriptions.
+
+
 
 ## 2 Using Azure Portal and Cloud Shell
 
@@ -110,6 +131,22 @@ Azure PowerShell cmdlets: **Get-AzResourceGroup**.
 * Manage Azure via Cloud Shell
 * Manage billing
 * Log support tickets
+
+### Summary
+
+Summary of key points for the AZ-104 exam from the article:
+
+1. The Azure portal is a graphical user interface accessed via a web browser to create and manage resources in Azure.
+2. It interacts with Azure Resource Manager and resource providers to manage Azure resources.
+3. Components of the Azure portal include the toolbar, search bar, Cloud Shell for programmatically managing resources, and user profile settings.
+4. Key features of the toolbar include creating resources, accessing dashboards, managing directories, notifications, and portal settings.
+5. The search bar allows searching for resources, services, and documentation related to specific terms.
+6. Cloud Shell allows using Azure CLI and Azure PowerShell to interact with Azure resources through a web-based cloud terminal.
+7. Demonstrated creating a virtual machine in the Azure portal and configuring Cloud Shell with advanced settings.
+8. Additional features in the Azure portal include managing appearance and startup views, support options, leaving feedback, and user profile settings.
+9. Use Azure portal for managing resources, performing management operations, and logging support tickets.
+10. Azure portal can also be used for managing billing and understanding costs in Azure.
+
 
 
 ## 3 Using Azure CLI and PowerShell
@@ -213,6 +250,61 @@ New-AzResourceGroup `
 -ResourceGroupName $rg `
 -Location $location
 ```
+
+
+### Chatgpt summary
+
+
+1. **Azure CLI**:
+   - Command-line utility for managing Azure resources.
+   - Contains various Azure CLI commands for managing services in Azure.
+   - Can be used in Cloud Shell or installed locally on machines.
+   - Requires authentication both in Cloud Shell and on local machines.
+   - Bash-esque scripting allows for automation of tasks on Azure resources.
+
+2. **Azure PowerShell**:
+   - Set of cmdlets within PowerShell for managing Azure resources.
+   - Can create and manage Azure resources without logging into the Azure portal.
+   - Object-oriented nature allows for scripting, automation, and robust functionality.
+   
+3. **Basic Operations**:
+   - Creation of resource groups, virtual machines, and other Azure resources.
+   - Interaction with Azure services through appropriate commands and cmdlets.
+   
+4. **Demonstration**:
+   - Logging into Azure portal using Azure Cloud Sandbox credentials.
+   - Setting up Cloud Shell instance by mapping it to a storage account file share.
+   - Using Azure CLI and Azure PowerShell to create Azure resources and run commands/cmdlets.
+   
+5. **Azure CLI Commands**:
+   - Examples: `az group list` to list resource groups.
+   - Provides information in JSON format about resources.
+   
+6. **Azure PowerShell Cmdlets**:
+   - Examples: `Get-AzResourceGroup` to get information about resource groups.
+   - Object-oriented approach allows for saving objects to variables and accessing properties.
+   
+7. **Creating a Virtual Machine with Azure CLI**:
+   - Example: `az vm create` command to create and configure a VM.
+   - Specifies resource group, location, name, image, admin username, and SSH keys.
+   
+8. **Managing Cloud Shell**:
+   - Using cmdlets like `Get-CloudDrive` to get information about the mapped storage account.
+   - Scripting operations to manage resources efficiently.
+   
+9. **Resource Management**:
+   - Using cmdlets like `Get-AzResource` to view and manage Azure resources.
+   - Using piped cmdlets to format and display resource information.
+   
+10. **Clean-up Script**:
+    - Demonstrating a script to clean up resources using Azure CLI commands.
+    - Cautioning against running destructive scripts in production environments.
+   
+11. **Key Takeaways**:
+    - Understanding the use of Azure CLI and Azure PowerShell for managing Azure resources.
+    - Ability to install and use these tools locally or within the Azure portal's Cloud Shell.
+    - Leveraging scripting and automation for managing Azure resources efficiently.
+    - Being aware of the 20-minute timeout in Cloud Shell for interactive sessions.
 
 ## 4 Using ARM Templates
 
@@ -528,3 +620,28 @@ Add parameters
  "outputs": { }
 }
 ```
+
+### Gpt summary
+
+Summary of the key points from the article regarding ARM templates:
+
+1. ARM templates are JSON files used in Azure Resource Manager to provide Infrastructure as Code.
+2. They allow for codifying infrastructure, enabling repeatable deployments at various scopes like subscription or resource group.
+3. Parameters and variables are components used to pass information into the template, with parameters being dynamic and variables being hardcoded.
+4. The resources section defines the resources to deploy, including their properties that can be defined using parameters or variables.
+5. The outputs component returns information from the template execution, such as returning IP addresses.
+6. ARM templates enable quick deployment of modular environments in Azure and support nested templates for deploying resources efficiently.
+7. Demonstrations involve obtaining a template from a repository, deploying it in the Azure portal, configuring parameters, validating the deployment, and reviewing the created resources.
+
+List of exam points from the article:
+
+- Definition of ARM templates and their role in Infrastructure as Code.
+- Explanation of parameters and variables in ARM templates.
+- Importance of the resources section for defining resources to deploy.
+- Use of the outputs component to return information from the template execution.
+- Deployment process in Azure portal, including configuration and validation steps.
+- Scope of ARM template deployment at various levels such as subscription or resource group.
+- Ability to create repeatable and modular environments using ARM templates.
+- Support for nested ARM templates for efficient deployment of resources.
+
+This summary covers the key concepts and exam points related to ARM templates as discussed in the article.

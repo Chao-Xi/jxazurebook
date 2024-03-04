@@ -435,11 +435,3 @@ With Azure Monitor Logs you can easily store, retain, and query data collected f
 5. **Key Takeaways for Backup Reports:**
    - Backup Reports allow for capturing and monitoring backup and restore operations to determine cloud storage usage for Azure Backup.
    - **Configuration with a Log Analytics workspace enables view and analysis of backup policies, backup jobs, and backup items within Backup Reports.**
-
-
-
-
-
-
-
-
