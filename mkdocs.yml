@@ -45,7 +45,8 @@ nav:
     - '13 AZ104 Gpt Summary': 'az104/13summary.md'
     - 'Administrator Certification (AZ-104) CheatSheet': 'az104/14exam_cheatsheet.md'
     - 'Administrator Certification (AZ-104) CheatSheet 2': 'az104/15exam_cheatsheet2.md'
-    - 'Azure Active Directory CheatSheet': 'az104/16cheatsheet_all.md'
+    - 'Azure 104 CheatSheet': 'az104/16cheatsheet_all.md'
+    - 'AZ104 - 原题1': 'az104/17az104QA.md'
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
