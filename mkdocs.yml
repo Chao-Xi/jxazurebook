@@ -54,6 +54,9 @@ nav:
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
+  - 'Azure AI 900':
+    - '1 Azure AI Fundamentals Certification 2024 (AI-900)': 'ai900/1ai900_ba.md'
+    - '2 Azure AI Fundamentals certification': 'ai900/2ai_900.md'
   - 'Azure DP900':
     - 'Module 1 Explore core data': 'chap5/dp1.md'
     - 'Module 2 Explore fundamental relational data concepts': 'chap5/dp2.md'
