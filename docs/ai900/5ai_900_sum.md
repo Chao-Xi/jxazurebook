@@ -1,5 +1,5 @@
 1. Data transformation modules
-	* **Split Data **
+	* **Split Data**
 	* Clean Missing Data
 	* **Only Split Data and Clean Missing Data are data transformation modules**. 
 	* Data transformation modules are used to prepare data before a machine learning experiment.
