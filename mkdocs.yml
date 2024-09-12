@@ -58,7 +58,8 @@ nav:
     - '1 Azure AI Fundamentals Certification 2024 (AI-900)': 'ai900/1ai900_ba.md'
     - '2 Azure AI Fundamentals certification': 'ai900/2ai_900.md'
     - '3 AI900 Practice exam': 'ai900/3ai_900.md'
-    - 'Real Exam - Chap 3': 'ai900/4ai_900.md'
+    - '4 Real Exam - Chap 3': 'ai900/4ai_900.md'
+    - '5 AI900 Exam summary': 'ai900/5ai_900_sum.md'
   - 'Azure DP900':
     - 'Module 1 Explore core data': 'chap5/dp1.md'
     - 'Module 2 Explore fundamental relational data concepts': 'chap5/dp2.md'
