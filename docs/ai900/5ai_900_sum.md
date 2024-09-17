@@ -184,19 +184,26 @@ used to train the model.  (No)**
 	* **PDF, DOC, and TXT.**
 
 37. **key phrase extraction**： C. identifying which documents provide information about the same topics
+	* Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into pre-defined classes or types such as: person, location, event, product, and organization.
 
 38. **Language Understanding (LUIS)**： AI service can you use to **interpret the meaning** of a user input such as Call me back later
 
-39. **A. There were 35 false negatives**.
+39. False native + False positive
+	* **A. There were 35 false negatives**.
+		* **Predicted (No) + actual (Yes) => false negatives**
 	* **C. There were 11 false positives.**
+		* **predicted (True) + actual (False) => false positive**
 
 40. **Utterances are input from the user that your app needs to interpret.**
+	* **The question Which act is playing on the main stage?" is an example of which type of element? => B. an utterance**
 
 41. Build a QnA Maker bot by using a frequently asked questions (FAQ) page. 
 	* Greetings and other responses to make the bot more user friendly=> **Add chit-chat**
 
 41. You need to ensure that the model detects when utterances are outside the intended scope of the model.
 	* **B. Add utterances to the None intent**
+
+  ---
 
 42. **Named Entity Recognition (NER)** used to extract dates, quantities, and locations from text.
 	* **The NER feature can identify and categorize entities in unstructured text.** 
@@ -215,6 +222,7 @@ used to train the model.  (No)**
 
 46. Azure Bot Service can import frequently asked questions (FAQ) **to question and answer sets**.  **（No）**
 	* **The QnA Maker service creates knowledge base, not question and answers sets.**
+	* **Azure Bot Service <= knowledge base**
 
 47. Need to identify what the bot that use the knowledge base can perform without adding additional skills. =>  **C. Answer questions from multiple users simultaneously**.
 
@@ -300,3 +308,21 @@ used to train the model.  (No)**
 70. Which service should you use to create a knowledge base for bots? => **Question Answering**
 
 71. When might you see NaN returned for a score in Language Detection? => **When the language is ambiguous**
+
+* （explanation of an indexer and an index） **Azure's indexer exports incoming documents into JSON and pushes the JSON to an index for storage**.
+	* Specifying granularity in JSON data object is used to **indicate the recording pattern of the data. (Yes)**
+	* You can query a search index even if you **set up a search index without including any AI skillsets. (Yes)**
+	* **XML data format is accepted by Azure Cognitive Search when you are pushing data to the index? (No)**
+	* JSON data object is used to indicate the recording pattern of the data. (Yes)
+
+**AI-based app Which two principles should you follow**
+
+* b) Implement a process of Al model validation as part of the software review process
+* c) Establish a risk governance committee that includes members of the legal team, members of the risk management team, and a privacy officer
+
+* **Automated machine learnin**g
+	* Automated machine learning can automatically infer the training data from the use case provided. （N）
+	* Automated machine learning enables you to specify a dataset and **will automatically understand which label to predict （Y)**
+
+	
+* **QnA Maker (now Language) = creates the Knowledge Base**
