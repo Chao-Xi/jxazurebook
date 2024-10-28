@@ -51,7 +51,7 @@ nav:
     - 'AZ104 - 原题3': 'az104/19az104QA3.md'
     - 'AZ104 - 原题 Summary': 'az104/20az103QA4.md'
     - 'Az104 final test': 'az104/21az104Qs.md'
-  - 'Az 305 test':
+  - 'Azure 305 test':
     - '1 Azure Solution Architect & Identity and Access Management': 'az305/1az305.md'
     - '2 Identity Security / Design a Compute Strategy': 'az305/2az305.md'
   - 'Azure 900 and int':
