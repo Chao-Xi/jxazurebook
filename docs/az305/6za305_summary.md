@@ -1,4 +1,4 @@
-## Azure Monitor
+##  Azure Monitor - Summary 2
 
 ### Introduction to Azure Monitor
 
@@ -470,3 +470,389 @@ Billed a fixed fee based on the selected tier, enabling a predictable total cost
 **Pay-As-You-Go:**
 
 Billed per gigabyte (GB) for the volume of data ingested for analysis in Microsoft Sentinel and stored in the Azure Monitor Log Analytics workspace.
+
+## The principle of least privilege
+
+The principle of least privilege is a security principle that states that **users, applications, and services** should be granted only the **<mark>minimum access necessary</mark>** to perform their assigned tasks, and no more. 
+
+In Microsoft Azure, the principle of least privilege is a critical aspect of security that helps prevent unauthorized access, data breaches, and other security incidents.
+
+The principle of least privilege in Azure involves limiting access to Azure resources such as **virtual machines, storage accounts, and databases, as well as Azure services such as Azure Active Directory and Azure Key Vault**.
+
+Azure role-based access control (RBAC) permits administrators to grant roles to users, groups, and apps based on their access levels.
+
+![Alt Image Text](../images/az305_6_22.png "Body image")
+
+Following the principle of least privilege helps minimize unauthorized access risks and potential harm from compromised credentials, thus reducing the Azure environment's attack surface.
+
+### The principle of least privilege
+
+Following the principle of least privilege can help organizations comply with regulatory requirements and best practices for security.
+
+To implement the principle of least privilege in Azure, administrators should follow these best practices:
+
+1. Assign roles based on the least amount of privilege needed to perform the task.
+2. Monitor role assignments and permissions regularly to ensure they align with business requirements.
+3. Limit the use of shared accounts and use individual user accounts where possible.
+4. Implement **multi-factor authentication (MFA)** to prevent unauthorized access to user accounts.
+5. Use **Azure Policy** to enforce compliance with organizational policies and industry regulations.
+6. Implement **network security groups (NSGs) and firewalls** to control traffic to and from Azure
+resources.
+7. Regularly **review access control policies** and adjust as necessary to ensure that they remain effective.
+
+### Azure AD Identity Protection
+
+**Identity Protection** is a feature of Azure AD that let's you to **detect, investigate, remediate**, and **export identity-based risks** for future analysis.
+
+Microsoft analyses 6.5 trillion signals per day to identify and protect customers from threats.
+
+Identity Protection notices:
+
+* Risky Users
+* Risky Sign-ins
+* Risk Detections
+
+![Alt Image Text](../images/az305_6_23.png "Body image")
+
+### Identity Protection - Detection and Remediation
+
+Identity Protection identifies for the following risks:
+
+* **Anonymous IP address** - Sign in from an anonymous IP address (e.g., Tor browser, anonymizer VPNs)
+* **Atypical travel** - Sign in from an atypical location based on the user's recent sign-ins
+* **Malware linked IP address** - Sign in from a malware linked IP address
+* **Unfamiliar sign-in properties** - Sign in with properties that haven't been seen recently for the given user
+* **Leaked Credentials** - Indicates that the user's valid credentials have been leaked
+* **Password spray** - Multiple usernames being attacked using common passwords in a unified, brute-force manner
+* **Azure AD threat intelligence** - Microsoft's internal and external threat intelligence sources have identified a known attack pattern
+* **New country** - This detection is discovered by Microsoft Defender for Cloud Apps
+* **Activity from anonymous IP address** - This detection is discovered by Microsoft Defender for Cloud Apps
+* **Suspicious inbox forwarding** - This detection is discovered by Microsoft Defender for Cloud Apps
+
+The **risk signals can trigger remediation efforts** such as requiring users:
+
+Azure AD Multi-Factor Authentication, reset their password using self-service
+password reset, or blocking until an administrator takes action
+
+### Identity Protection - Investigation
+
+Identity Protection categorizes risk into three tiers: **low, medium, and high.**
+
+Admins can use key reports for investigations in Identity Protection, **Risky users, Risky sign-ins, Risk detections**
+
+**Risky users**
+
+* Details about detections
+* History of all risky sign-ins
+* Risk history
+
+
+**Risky sign-ins**
+
+* Which sign-ins are classified as at risk, confirmed compromised,
+* confirmed safe, dismissed, or remediated.
+* Real-time and aggregate risk levels with sign-in attempts.
+* Detection types triggered
+* Conditional Access policies applied
+* MFA details
+* Device, Application, Location information
+
+
+**Risk detections**
+
+* Contains filterable data for up to the past 90 days
+* Information about each risk detection including type.
+* Other risks triggered at the same time
+* Sign-in attempt location
+
+**Admin follow up actions:**
+
+* Reset the user password
+* Confirm user compromise
+* Dismiss user risk
+* Block user from signing in
+* Investigate further using Azure ATP
+
+## Introduction to Azure Key Vault
+
+**Azure Key Vault** helps you **safeguard cryptographic keys** and **other secrets** used by cloud apps and services.
+
+Azure Key Vault focuses on three things:
+
+**Certificate Management**
+
+Easily provision, manage, and deploy public and private **SSL certificates** for use with Azure and internal connected resources
+
+**Key Management**
+
+Create and control the encryption keys used to encrypt your data
+
+**Secrets Management**
+
+Store and tightly control access to **tokens, passwords, certificates, API keys, and other secrets**
+
+> Certificates contain key pair (key and secret). This is not to be
+confused with Key Management and Secrets Management
+
+### HSM and FIPS
+
+An HSM is a Hardware Security Module.
+
+Its a piece of hardware designed to store encryption keys.
+
+#### Federal Information Processing Standard (FIPS)
+
+US and Canadian government standard that specifies the security requirements for
+cryptographic modules that protect sensitive information.
+
+HSM's that are **multi-tenant are FIPS 140-2 Level 2 Compliant**(multiple customers virtually isolated on an HSM)
+
+HSM's that are **single-tenant are FIPS 140-2 Level 3 Compliant** (single customer on a dedicated HSM)
+
+
+### Azure Key Vault - Vault
+
+**A Vault** stores secrets and keys, that can be safeguarded by software or **FIPS 140-2 Level 2 validated HSMs**
+
+Azure Key Vaults provides two types of containers:
+
+* **Vaults** - supports, software and HSM backed keys
+* **HSM pools** - only supports HM backed keys
+
+To activate your HSM, you will need to:
+
+* provide a minimum of three RSA key-pairs (up to a maximum of 10)
+* specify the minimum number of keys required to decrypt the security domain (called a quorum)
+
+> You do not choose the container on creation; you just choose between **Standard and Premium.**
+> 
+> 
+> When you choose Premium and create enough RSA key pairs you will begin to use HSM pools.
+
+### Azure Key Vault - Recovery Options
+
+
+* **Soft Delete** allows you to recover or permanently delete a key vault and secrets for the duration of the retention period. (It's enabled by default on creation)
+* **Mandatory retention period** and prevents the permanent deletion of key vaults or secrets prior to the retention period elapsing
+* **Purge protection** when enabled, prevents secrets to be purged by users or by Microsoft.
+
+![Alt Image Text](../images/az305_6_24.png "Body image")
+
+### Azure Key Vault - Pricing
+
+**Azure has two pricing tiers:**
+
+* **Standard**
+* **Premium** (Allows for both software and HSM-protected keys)
+
+![Alt Image Text](../images/az305_6_25.png "Body image")
+
+### Azure Key Vault - Double Encryption
+
+Microsoft has a two layered approach each for **Data At-Rest and Data In-Transit**
+
+**Data-at-Rest**
+
+1. Disk encryption using customer-managed keys
+2. Infrastructure encryption using platform-managed keys
+
+**Data-in-Transit**
+
+1. Transit encryption using Transport Layer Security (TLS) 1.2
+2. Additional layer of encryption provided at the infrastructure layer
+
+### Azure Key Vault - Keys
+
+When creating a key, there are three options:
+
+* **Generate** - Azure will generate the key
+* **Import** - Import an existing RSA key
+* **Restore Backup** - Restore a key from 
+
+For keys generated by Azure, you can use either RSA or EC.
+
+**RSA (Rivest-Shamir-Adleman): 2048.3072,4096**
+
+**EC (Elliptic-curve cryptography): P-256. P-384.P-521.p-256K**
+
+For keys generated by Azure, you can set an **Activation and Expiration date**
+
+![Alt Image Text](../images/az305_6_26.png "Body image")
+
+* You can create **new versions** of keys
+* You can download backups of keys. Backups can onlv be restored within the same Azure subscription and within Azure Kev Vault
+
+![Alt Image Text](../images/az305_6_27.png "Body image")
+
+### Azure Key Vault - Keys
+
+When you have a **Premium Vault**, you'll key options for HSM:
+
+![Alt Image Text](../images/az305_6_28.png "Body image")
+
+* **Generate** an RSA or EC for HSM
+* **Import** an RSA key for HSM
+
+### Azure Key Vault - Keys
+
+**Microsoft Managed Key (MMK)** are keys managed by Microsoft. They do not appear in your vault and in most cases are used by default for many azure services.
+
+**Customer Managed Key (CMK)** are keys you create in Azure Key Vault.
+You need to **select a key from a vault** for various services.
+
+
+Sometimes "customer managed" means that the customer has imported cryptographic material.
+
+Generated or imported keys are considered CMK in Azure.
+
+In order to use a key, an Azure service needs an identity (within Azure AD) **for permission to access the key from the vault**
+
+**Infrastructure encryption** is sometimes an option.
+
+* By default, Azure encrypts storage account data at rest.
+* Infrastructure encryption adds a second layer of encryption to your storage account's data.
+
+![Alt Image Text](../images/az305_6_29.png "Body image")
+
+### Azure Key Vault - Secrets
+
+**Azure Key Vault Secrets** provides **secure storage of generic secrets**,
+
+such as **passwords and database connection strings**.
+
+* Key Vault APls accept and return secret values as strings
+* Internally, Key Vault stores and manages secrets:
+
+	* As sequences of octets (8-bit bytes),
+	* Each secret with a maximum size of 25k bytes
+
+* Key Vault service doesn't provide semantics for secrets
+	* **accepts the data, encrypts it, stores it, and returns a secret identifier ("id").**
+
+	
+> For highly sensitive data, **clients should consider additional layers of protection for data**. For example, encrypting your data using a separate protection key before storing it in the Key Vault.
+
+Key Vault also supports a **contentType** field for secrets
+
+* Clients may specify the content type of a secret to assist in interpreting the secret data when it's retrieved
+* maximum length of this field is 255 characters
+
+![Alt Image Text](../images/az305_6_30.png "Body image")
+
+### Azure Key Vault - Secrets
+
+Every secret stored in your Key Vault is encrypted.
+
+Key Vault encrypts secrets at rest with a hierarchy of encryption keys
+
+* All keys in that hierarchy are protected by modules that are FIPS 140-2 compliant
+* The encryption leaf key is unique to each Key Vault, while the root key is unique to the entire security world.
+* Protection level may vary between regions
+	* E.g., China uses FIPS 140-2 Level 1, and all other regions use Level 2 or higher
+
+**Secret Attributes**
+
+* **exp** - expiration time, after which the secret data should not be retrieved
+* **Nbf** - not before (default value is **now**） the time before which the secret data should not be retrieved
+* **enabled** - whether the secret data can be retrieved, (default true)
+
+There are also read-only attributes for **created and update**
+
+In order to access secrets within your application code, you can would use the Azure SDK e.g., .NET example
+
+```
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Core;
+
+SecretClientOptions options = new SecretClientOptions(){
+	Retry = {
+	Delay= TimeSpan.FromSeconds(2),
+	MaxDelay = TimeSpan.FromSeconds(16),
+	MaxRetries = 5,
+	Mode = RetryMode.Exponential
+	},
+};
+
+var uri = new Uri("https://<your-unique-key-vault-name>.vault.azure.net/");
+var creds = new DefaultAzureCredential();
+var client = new SecretClient(uri, options);
+
+KeyVaultSecret secret = client.GetSecret("<mySecret>");
+
+string secretValue = secret.Value;
+```
+
+Or you can use the Azure CLI
+
+```
+az keyvault secret show [--id]
+							[--name]
+							[--subscription]
+							[--vault-name]
+							[--version]
+```
+
+### X.509 Certificates
+
+**What is Public key infrastructure (PKI)?**
+
+PKI is a set of roles, policies, hardware, software and procedures needed to create, manage,
+distribute, use, store and revoke digital certificates and manage public-key encryption.
+
+**What is an X.509 certificate?**
+
+A standard defined by the **International Telecommunication Union (ITU)** for **public key certifications**.
+X.509 certificates are used in many Internet protocols including:
+
+* SSL/TLS and HTTPS
+* Signed and encrypted email
+* Code Signing and Document Signing
+
+**A certificate contains**
+
+* An identity - hostname, organization or individual
+* A public key - RSA, DSA, ECDA, etc.
+
+**What is a Certificate Authority (CA)?**
+
+An entity that issues digital certificates
+
+A CA acts as a trusted third party-trusted both by the subject (owner) of the certificate and by the party relying upon the certificate
+
+**Intermediate Certificate Authority (ICA)**
+
+![Alt Image Text](../images/az305_6_31.png "Body image")
+
+* Intermediate Certificates are signed by the root private key and act as entities that can issue certificates
+* They protect the root certificate because the root certificate does not have to sign every issued certificate
+
+**End Entity Certificate**
+
+* A certificate issued by the ICA used by the end entity
+* The entity in the case is an SSL certificate for a website
+
+### X.509 Certificates - Certificate Format
+
+A certificate contains a metadata about:
+
+* **Version Number**: The version of the X.509 standard.
+* **Serial Number**: A unique serial number assigned to the certificate by the Certificate Authority (CA).
+* **Signature Algorithm ID**: The algorithm used to sign the certificate, e.g., RSA or DSA.
+* **Issuer**: The name of the Certificate Authority that issued this certificate.
+* **Validity Period**: The start and end dates during which the certificate is valid.
+* **Subject**: The identifier for the individual or organization to whom the certificate was
+* issued.
+* **Subject Public Key**: The public key that is authenticated by this certificate. 
+* sThis field also names the algorithm used for public-key generation.
+* **Issuer Unique Identifier**: Allows multiple CAs to operate as a single logical CA.
+* **Subject Unique Identifier**: Allows multiple certificate holders to act as a single logical entity.
+* **Extensions**: Allows a CA to associate additional private information with a certificate.
+
+> All the metadata publicly readable (anyone can view it)
+
+
+![Alt Image Text](../images/az305_6_32.png "Body image")
+
+
+

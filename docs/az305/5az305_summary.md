@@ -1,4 +1,4 @@
-# AZ305 Summary - 1
+# AZ305 AD - Summary 1
 
 
 * 25-30% Design identity, governance, and monitoring solutions
@@ -63,7 +63,7 @@ Azure Active Directory comes in four editions
 ### Active Directory vs Azure Active Directory
 
 
-Microsoft introduced **Active Directory **Domain Services in Windows 2000 to give organizations the ability to manage multiple on-premises infrastructure components and systems using a single identity per user.
+Microsoft introduced **Active Directory** Domain Services in Windows 2000 to give organizations the ability to manage multiple on-premises infrastructure components and systems using a single identity per user.
 
 Azure AD takes this approach to the next level by providing organizations with an **Identity as a Service (IDaaS)** solution for all their apps **across cloud and on-premises**.
 
