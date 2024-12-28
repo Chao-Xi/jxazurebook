@@ -1,0 +1,3540 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../7az305_summary/">
+      
+      
+        <link rel="next" href="../../chap4/1az_900_int/">
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>8 AZ305 Summary - 4 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#az305-summary-4" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8 AZ305 Summary - 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure Arch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Azure Arch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Well Architecture Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AZ103 Adv Tutorial（Eng)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AZ103 Adv Tutorial（Eng)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L1 Azure Administration: Manage Subscriptions and Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L2 Azure Administration: Implement and Manage Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L3 Deploy and Manage Virtual Machines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L4 Configure and Manage Virtual Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L5 Azure Administration: Manage Identities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L6 Load Balancers and Application Gateways
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AZ103 Adv Tutorial（Chn)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AZ103 Adv Tutorial（Chn)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Administrator认证学习 （1）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Administrator认证学习 （2）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Administrator认证学习 （3）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure 103 interview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Azure 103 interview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L1 Manage Azure Subscriptions and Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L2 Managing Azure storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L3 Deploy and Manage Virtual Machines (VMs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L4 Configure and Manage Virtual Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L5 Manage Identities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L6 Azure Review 103
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure 104 Test
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Azure 104 Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Azure Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Governance and Compliance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 AZ Identity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Role-Based Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Azure Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 Virtual Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 Intersite Connectivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 Azure Virtual Machines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9 Network Traffic Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10 Web Apps and Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11 Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12 Backup and Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13 AZ104 Gpt Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administrator Certification (AZ-104) CheatSheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administrator Certification (AZ-104) CheatSheet 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 104 CheatSheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ104 - 原题1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ104 - 原题2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ104 - 原题3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AZ104 - 原题 Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Az104 final test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure 305 test
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Azure 305 test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Azure Solution Architect & Identity and Access Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Identity Security / Design a Compute Strategy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3az305/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Networking Strateg / Connectivity & Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az305_summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 AZ305 Summary - 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6za305_summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 AZ305 Summary - 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az305_summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 AZ305 Summary - 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8 AZ305 Summary - 4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    8 AZ305 Summary - 4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-offerings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Offerings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database-service-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database service tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database-elastic-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database elastic pools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database-elastic-pools_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database elastic pools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-managed-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Managed Instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-managed-instance-service-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Managed Instance service tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Scalability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-scalability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Scalability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-data-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic data masking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic data masking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-data-masking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic data masking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-storage-security-and-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Storage security and encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-storage-security-and-encryption_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Storage security and encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-storage-security-and-encryption_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Storage security and encryption
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-synapse-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Synapse Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Synapse Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synapse-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synapse SQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-sql-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated SQL Pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverless-sql-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serverless SQL Pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark-for-synapse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Spark for Synapse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark-with-data-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Spark with Data Lake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-synapse-link-for-azure-cosmos-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Synapse Link for Azure Cosmos DB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-synapse-link-for-azure-cosmos-db_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Synapse Link for Azure Cosmos DB
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-azure-data-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Azure Data Factory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Azure Data Factory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory-core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Factory - Core Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory-data-orchestration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Factory - Data Orchestration Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server-integration-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft SQL Server Integration Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server-integration-services_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft SQL Server Integration Services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Databricks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Databricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-databricks-pricing-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Databricks - Pricing tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-databricks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Databricks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-data-lakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Data Lakes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Data Lakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-azure-data-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Azure Data Lake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-lake-storage-gen2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Lake Storage Gen2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-lake-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Lake Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-lake-analytics-u-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Lake Analytics - U-SQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure 900 and int
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Azure 900 and int
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Az900 Fundamentals + Jam Azure Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure900 面试名词解释面试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure AI 900
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Azure AI 900
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Azure AI Fundamentals certification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 AI900 Practice exam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Real Exam - Chap 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 AI900 Exam summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 AI900 finaL SUMMARY
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure DP900
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Azure DP900
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module 1 Explore core data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module 2 Explore fundamental relational data concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module 3 Non-relational data in Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module 4 Large-scale data warehousing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module 5 data visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DP900 Real Exam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DP900 Learn (Cont.)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DP900 Exam Points
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure UBS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Azure UBS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Implementing Hybrid Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 微软Azure高韧性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Hybrid Connectivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Linux OSS Database Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure DevOps: Release Pipelines
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Azure DevOps: Release Pipelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Introduction to Release Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Infrastructure as Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Security, Approval, and Audit Trails
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Azure DevOps的Azure资源IaC编排实战
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-offerings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Offerings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database-service-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database service tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database-elastic-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database elastic pools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-database-elastic-pools_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Database elastic pools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-managed-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Managed Instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-sql-managed-instance-service-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure SQL Managed Instance service tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Scalability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-scalability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Scalability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-data-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic data masking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic data masking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-data-masking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic data masking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-storage-security-and-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Storage security and encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-storage-security-and-encryption_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Storage security and encryption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-storage-security-and-encryption_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Storage security and encryption
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-synapse-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Synapse Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Synapse Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synapse-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synapse SQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-sql-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated SQL Pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverless-sql-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serverless SQL Pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark-for-synapse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Spark for Synapse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark-with-data-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Spark with Data Lake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-synapse-link-for-azure-cosmos-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Synapse Link for Azure Cosmos DB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-synapse-link-for-azure-cosmos-db_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Synapse Link for Azure Cosmos DB
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-azure-data-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Azure Data Factory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Azure Data Factory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory-core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Factory - Core Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory-data-orchestration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Factory - Data Orchestration Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server-integration-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft SQL Server Integration Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server-integration-services_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft SQL Server Integration Services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Databricks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Databricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-databricks-pricing-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Databricks - Pricing tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-databricks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Databricks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-data-lakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Data Lakes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Data Lakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-azure-data-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Azure Data Lake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-lake-storage-gen2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Lake Storage Gen2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-lake-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Lake Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-lake-analytics-u-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Data Lake Analytics - U-SQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="az305-summary-4">Az305 - Summary 4</h1>
+<h2 id="azure-sql">Azure SQL</h2>
+<h3 id="azure-sql-offerings">Azure SQL Offerings</h3>
+<p><strong>SQL Server on Azure VMs</strong></p>
+<ul>
+<li>Provides SQL Server and OS-level access.</li>
+<li>Supports various SQL Server and OS versions.</li>
+<li>Best for migrations and applications requiring OS interaction.</li>
+</ul>
+<p><strong>Managed Instances</strong></p>
+<ul>
+<li>
+<p><strong>Single instance</strong></p>
+<ul>
+<li>Gives SQL Server and OS access for robust needs.</li>
+<li>Supports various SQL and OS versions.</li>
+<li>Best for isolated SQL workloads needing dedicated resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Instance pool</strong></p>
+<ul>
+<li>Enables pre-provisioning of resources for efficient migration.</li>
+<li>Hosts smaller, cost-effective instances.</li>
+<li>Suitable for batch migration of smaller databases.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Databases</strong></p>
+<ul>
+<li>
+<p><strong>Single database</strong></p>
+<ul>
+<li>Offers hyperscale storage up to 100TB.</li>
+<li>Features demand-based serverless compute.</li>
+<li>Best for cloud applications needing a fully managed service.</li>
+</ul>
+</li>
+<li>
+<p><strong>Elastic pool</strong></p>
+<ul>
+<li>Enables resource sharing among databases.</li>
+<li>Simplifies performance management with multiple databases.</li>
+<li>Best for managing and scaling databases with variable usage patterns.</li>
+</ul>
+</li>
+</ul>
+<h3 id="azure-sql-database">Azure SQL Database</h3>
+<p>Azure SQL Database is a fully managed <strong>relational database</strong> service provided by Microsoft Azure.</p>
+<p>It is a cloud-based database service that offers a high level of <strong>scalability, availability, and security</strong>.</p>
+<p>Azure SQL Database is based on the latest version of Microsoft SQL Server, and it is designed to
+handle various workloads ranging from small web applications to large enterprise workloads.</p>
+<p>Azure SQL Database supports popular relational database engines, such as <strong>SQL Server, MySQL, and
+PostgreSQL</strong>, and offers a variety of deployment options, including single database and elastic pool.</p>
+<p>Azure SQL Database offers several benefits that make it a popular choice for businesses looking to
+migrate their <strong>on-premises databases</strong> to the cloud.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_1.png" title="Body image" /></p>
+<p>Some of the key <strong>benefits</strong> include:</p>
+<p><strong>Fully Managed Service</strong>: Azure handles administrative tasks like patching and backups, freeing businesses to focus on core tasks.</p>
+<p><strong>High Availability</strong>: Built-in automatic failover and disaster
+recovery capabilities ensure data access, even during outages.</p>
+<p><strong>Scalability</strong>: Azure SQL Database easily scales resources according to workload, optimizing costs.</p>
+<p><strong>Security</strong>: Advanced features like threat protection and data encryption ensure secure data storage.</p>
+<p><strong>Integration</strong>: Azure SQL Database integrates seamlessly with other Azure services, supporting the development of modern data-driven applications.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_2.png" title="Body image" /></p>
+<h3 id="azure-sql-database-service-tiers">Azure SQL Database service tiers</h3>
+<p><img alt="Alt Image Text" src="../../images/az305_8_3.png" title="Body image" /></p>
+<h3 id="azure-sql-database-elastic-pools">Azure SQL Database elastic pools</h3>
+<p>Azure SQL Database elastic pools are a simple, cost-effective solution for managing and scaling <strong>multiple databases</strong> that have varying and <strong>unpredictable usage demands.</strong></p>
+<p>The databases in an elastic pool are on a <strong>single</strong> server and share a set number of resources at a set price.</p>
+<p>The concept of "<strong>elastic pools</strong>" refers to a <strong>shared pool of resources - such as CPU, memory, and storage</strong> - allocated to a group of databases. This shared set of resources can be automatically adjusted and distributed among the databases based on their varying demand.</p>
+<p>Azure SQL Database Elastic Pools is ideal for businesses with many databases experiencing varying workloads.</p>
+<p>Instead of allocating dedicated resources per database, an elastic pool shares resources across databases for efficient use and cost reduction.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_4.png" title="Body image" /></p>
+<h3 id="azure-sql-database-elastic-pools_1">Azure SQL Database elastic pools</h3>
+<p><strong>Benefits of Azure SQL Database Elastic Pools:</strong></p>
+<ol>
+<li><strong>Cost-Effective</strong>: Share resources across databases, pay only for what you use.</li>
+<li><strong>Performance Management</strong>: Resources are auto-managed across a pool, no manual adjustment required.</li>
+<li><strong>Flexibility and Scalability</strong>: Auto-scales to meet demand, handling traffic spikes smoothly.</li>
+<li><strong>Simplified Administration</strong>: Easier management with shared resources across databases.</li>
+</ol>
+<p><strong>Use Cases for Azure SQL Database Elastic Pools:</strong></p>
+<ol>
+<li><strong>SaaS Providers</strong>: Manage varying customer database activity cost-effectively.</li>
+<li><strong>Development and Test Environments</strong>: Efficient, less expensive process for regular database setup and teardown.</li>
+<li><strong>Businesses with Multiple Apps</strong>: Optimize resource usage and cost by sharing resources among databases with varying activity.</li>
+</ol>
+<h3 id="azure-sql-managed-instance">Azure SQL Managed Instance</h3>
+<p>Azure SQL Managed Instance is a fully managed database service offered by Microsoft Azure, designed to provide an easy <strong>migration path for SQL Server workloads to Azure.</strong></p>
+<ul>
+<li>It provides a managed instance of SQL Server in the cloud, allowing you to run your existing applications with minimal changes.</li>
+</ul>
+<p>Azure SQL Managed Instance is built on top of the latest SQL Server engine and supports all its features including complex <strong>queries and user-defined functions.</strong></p>
+<ul>
+<li>It offers various deployment options, including standalone, <strong>automatic failover configurations, and cross-region replication for disaster recovery.</strong></li>
+</ul>
+<p>Azure SQL Managed Instance is ideal for <strong>modernizing</strong> SQL Server workloads, consolidating multiple SQL Server instances, and building <strong>new cloud-native applications.</strong></p>
+<p>Some of the main <strong>benefits</strong> of Azure SQL Managed Instance include:</p>
+<ul>
+<li><strong>Easy Migration</strong>: Provides a swift, simple migration path for SQL Server workloads to Azure with minimal application changes.</li>
+<li><strong>Fully Managed</strong>: Microsoft handles maintenance, backups, and updates, allowing focus on applications.</li>
+<li><strong>High Availability</strong>: Built-in capabilities for automatic failover and disaster recovery ensure constant application availability.</li>
+<li><strong>Security</strong>: Offers features like data encryption and threat detection for data protection.</li>
+<li><strong>Performance</strong>: Supports large databases, high transaction rates, and low-latency queries.</li>
+<li><strong>Integration</strong>: Seamlessly integrates with other Azure services for easy cloud-native application deployment.</li>
+</ul>
+<h3 id="azure-sql-managed-instance-service-tiers">Azure SQL Managed Instance service tiers</h3>
+<p>Azure SQL Managed Instance has <strong>two</strong> service tiers:</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_5.png" title="Body image" /></p>
+<h3 id="database-scalability">Database Scalability</h3>
+<p>Both Azure SQL Database and Azure SQL Managed Instance enable you to scale database resources with minimal downtime, adjusting quickly to workload or traffic changes.</p>
+<p>To dynamically scale database resources, you can use the following options:</p>
+<p><strong>Horizontal scaling</strong>: This involves adding or removing replicas to adjust the capacity of your database. Both Azure SQL Database and Azure SQL Managed Instance support horizontal scaling.</p>
+<p><strong>Vertical scaling</strong>: This involves adjusting the resources allocated to your database, such as CPU or memory. Both Azure SQL Database and Azure SQL Managed Instance support vertical scaling.</p>
+<h3 id="database-scalability_1">Database Scalability</h3>
+<p>The exact process for scaling your database resources may vary depending on which service you are using, but in general, the steps are as follows:</p>
+<ol>
+<li><strong>Determine</strong> the resource needs of your database, such as the required CPU and memory, and the expected workload or traffic.</li>
+<li><strong>Decide</strong> on the scaling option that best meets your needs, whether that be horizontal or vertical scaling.</li>
+<li>Use the <strong>Azure portal, PowerShell, or the Azure CLI</strong> to configure the scaling settings for your database.</li>
+<li><strong>Monitor</strong> the performance of your database to ensure that the scaling changes are providing the expected improvements.</li>
+</ol>
+<p>The <strong>difference between Azure SQL Database and Azure SQL Managed Instance</strong> when it comes to dynamically scaling database resources:</p>
+<ul>
+<li>Azure SQL Database offers a wide range of service tiers, each with varying levels of performance and capabilities. </li>
+<li>These service tiers allow you to choose the level of resources that best meets your needs, and to easily scale up or down as needed.</li>
+</ul>
+<p>Azure SQL Managed Instance offers two service tiers: <strong>General Purpose and Business Critical</strong>.</p>
+<p>These service tiers are designed to meet different needs, with General Purpose offering a balance of price and performance, and <strong>Business Critical offering higher performance and availability for mission-critical workloads.</strong></p>
+<h2 id="dynamic-data-masking">Dynamic data masking</h2>
+<p><strong>Dynamic Data Masking (DDM)</strong> in Azure is a feature that helps <strong>prevent unauthorized access to sensitive data</strong>. </p>
+<p>It is a security feature of <strong>Azure SQL Database, Azure Synapse Analytics (SQL DW), and SQL Server</strong> that automatically conceals sensitive data in the result set of a query</p>
+<blockquote>
+<p>For example, if you have a credit card number stored as <strong>'1234-5678-9101-1121'</strong>, a dynamic data masking rule might display this as '<strong>XXXX-XXXX-XXXX-1121</strong>' in the query results, thereby hiding the majority of the credit card number.</p>
+</blockquote>
+<p>Dynamic data masking is useful for scenarios where you want to provide a level of data security without needing to modify database operations. It's often used in scenarios like:</p>
+<ol>
+<li><strong>Reducing the exposure of sensitive data</strong> in your database when users are running reports or analytics.</li>
+<li><strong>Preventing accidental exposure of sensitive data</strong>, especially when data is being used for development or testing purposes.</li>
+</ol>
+<pre><code>XXX XXX X348
+XXX XXX X692
+XXX XXX X925
+XXX XXX X099
+</code></pre>
+<h3 id="dynamic-data-masking_1">Dynamic data masking</h3>
+<p><strong>Key features:</strong></p>
+<ol>
+<li><strong>Real-Time Masking</strong>: Data is masked in real-time and does not affect the underlying data stored in the database. The actual data remains intact and is not physically changed.</li>
+<li>Customizable Masking Patterns: You can define different types of masks depending on the nature of the data. From partially hiding email addresses to fully masking credit card numbers, except the last four digits, the choices are vast and flexible.</li>
+<li><strong>Role-Based Access Control</strong>: Unmasking permissions can be granted to users who need to
+access the actual data.</li>
+<li><strong>Ease of Use</strong>: Dynamic Data Masking is simple to set up and doesn't require changes to the database or applications.</li>
+</ol>
+<blockquote>
+<p>Common use cases for Dynamic Data Masking include protecting <strong>Personally
+Identifiable Information (PI), financial data, and other sensitive data types</strong> in non-production environments or in applications with user roles that require access to a database but not all of its sensitive data.</p>
+</blockquote>
+<h3 id="azure-storage-security-and-encryption">Azure Storage security and encryption</h3>
+<p>Azure Storage provides several security and encryption features to ensure the confidentiality, integrity, and availability of your data.</p>
+<p>Here are some of the <strong>key features:</strong></p>
+<ol>
+<li><strong>Encryption at rest</strong>: Azure Storage automatically encrypts all data at rest using Azure Storage Service Encryption (SSE) or customer-managed keys using <strong>Azure Key Vault</strong>.</li>
+<li><strong>Encryption in transit</strong>: All data transferred to and from Azure Storage is encrypted using <strong>SSL/TLS</strong>.</li>
+<li><strong>Role-based access control (RBAC)</strong>: Azure Storage provides RBAC, which enables you to grant
+permissions to users, groups, and applications at a fine-grained level.</li>
+<li><strong>Access keys and shared access signatures (SAS)</strong>: Azure Storage provides two types of authentication mechanisms for accessing storage accounts - <strong>access keys</strong> and <strong>shared access signatures (SAS)</strong>. <ul>
+<li>Access keys are account keys that allow full access to a storage account, while SAS provides granular access control to specific resources within a storage account.</li>
+</ul>
+</li>
+</ol>
+<h3 id="azure-storage-security-and-encryption_1">Azure Storage security and encryption</h3>
+<p><strong>Azure Private Link:</strong> Azure Private Link enables you to access Azure Storage resources over a <strong>private endpoint</strong> in your Virtual Network. This ensures that traffic between our Virtual Network and Azure Storage remains on the Microsoft Azure backbone network.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_6.png" title="Body image" /></p>
+<p><strong>Azure Virtual Network Service Endpoints:</strong></p>
+<p>Azure Virtual Network Service Endpoints enable you to extend your Virtual Network to Azure Storage.</p>
+<p>This ensures that traffic between your Virtual Network and Azure Storage remains on the Microsoft Azure backbone network.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_7.png" title="Body image" /></p>
+<h3 id="azure-storage-security-and-encryption_2">Azure Storage security and encryption</h3>
+<p><strong>Azure Firewall</strong>: Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources. You can use Azure Firewall to secure traffic between your Virtual Network and Azure Storage.</p>
+<p><strong>Azure Monitor and Azure Security Center:</strong></p>
+<p>Azure Monitor and Azure Security Center provide monitoring and security features for Azure Storage.</p>
+<p>Azure Monitor allows you to monitor storage account metrics and logs. </p>
+<p>Azure Security Center provides security recommendations and threat detection for Azure Storage.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_8.png" title="Body image" /></p>
+<h2 id="azure-synapse-analytics">Azure Synapse Analytics</h2>
+<p><strong>Azure Synapse Analytics</strong> is a <strong>data warehouse</strong> and <strong>unified analytics platform</strong></p>
+<p>Build ETL/ELT processes:</p>
+<ul>
+<li>in a code-free visual environment</li>
+<li>easily ingest data from more than 95 native connector</li>
+</ul>
+<p>Deeply integrated Apache Spark </p>
+<p>Use T-SQL queries on both your data warehouse and Spark engines</p>
+<p>Supports multiple languages: T-SQL, Python, Scala, Spark SQL, and .NET</p>
+<p>Integrated with Artificial Intelligence (AI) and
+Business Intelligence tools (BI)</p>
+<ul>
+<li>Azure Machine Learning</li>
+<li>Azure Cognitive Services</li>
+<li>Microsoft Power BI</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_8_9.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_10.png" title="Body image" /></p>
+<ul>
+<li><strong>On-premises data</strong>: You can ingest data from many data sources</li>
+<li><strong>Studio</strong>:  You can manage Azure Synapse Analytics via the Synapse Studio interface</li>
+<li>Azure Data Lake Storage Genz: The data is stored in Object Storage Via Data Lake Storage Gen 2</li>
+<li>Power BI: You can output the data to various Azure Services</li>
+</ul>
+<h3 id="synapse-sql">Synapse SQL</h3>
+<p><strong>Synapse SQL</strong> is a distributed version of T-SQL designed for data warehouse workloads</p>
+<ul>
+<li>Extends T-SQL to address streaming and machine learning scenario</li>
+<li>Use built-in <strong>streaming</strong> capabilities to land data from cloud data sources into SQL tables</li>
+<li>Integrate Al with SQL by using ML models to score data using the T-SQL PREDICT function</li>
+<li>
+<p>Offers both <strong>serverless and dedicated resource models</strong></p>
+</li>
+<li>
+<p>For <strong>unpredictable</strong> workloads (unplanned or burst)</p>
+</li>
+</ul>
+<p>use the <strong>always-available, serverless SQL endpoint</strong>.</p>
+<ul>
+<li>For <strong>predictable</strong> workloads</li>
+</ul>
+<p>create <strong>dedicated SQL pools</strong> to reserve processing power for data stored in SQL tables</p>
+<h3 id="dedicated-sql-pool">Dedicated SQL Pool</h3>
+<p>Dedicated SQL pool is a query service over the data in your <strong>data warehouse</strong></p>
+<p>The unit of scale is an abstraction of compute power that is known <strong>as a data warehouse unit (DWU)</strong>.</p>
+<p>Once your dedicated SQL pool is created, you can import big data with simple <strong>PolyBase T-SQL queries</strong>, and then use the power of the distributed query engine to run high-performance analytics</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_11.png" title="Body image" /></p>
+<h3 id="serverless-sql-pool">Serverless SQL Pool</h3>
+<p>Serverless SQL pool is a query service over the data in your <strong>data lake</strong></p>
+<p>Scaling done automatically to accommodate
+query resource requirements.</p>
+<p>Whether you're adding nodes, removing them, or managing failovers, the <strong>Serverless SQL Pool</strong> is resilient.</p>
+<p>It constantly adapts to ensure every query receives the resources it needs, guaranteeing successful execution.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_12.png" title="Body image" /></p>
+<h3 id="apache-spark-for-synapse">Apache Spark for Synapse</h3>
+<p><strong>Azure Synapse can deeply and seamlessly integrate</strong> with Apache Spark, which is the most popular open-source big data engine used for </p>
+<ul>
+<li>data preparation, </li>
+<li>data engineering, </li>
+<li>ET, </li>
+<li><strong>and machine learning</strong>.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_8_13.png" title="Body image" /></p>
+<ul>
+<li>ML models with SparkML algorithms and AzureML integration for Apache Spark 3.1 with built-in support for Linux Foundation Delta Lake.</li>
+<li>Simplified resource model that frees you from having to worry about managing clusters.</li>
+<li>Fast Spark start-up and aggressive autoscaling.</li>
+<li>Built-in support for .NET for Spark allowing you to reuse your C# expertise and existing .NET code within a Spark application.</li>
+</ul>
+<h3 id="apache-spark-with-data-lake">Apache Spark with Data Lake</h3>
+<p><strong>Azure Synapse</strong> removes the traditional technology barriers between using SQL and Spark together. You can seamlessly mix, and match based on your needs and expertise.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_14.png" title="Body image" /></p>
+<ul>
+<li>Tables defined on files in the data lake are seamlessly consumed by either Spark or Hive.</li>
+<li>SQL and Spark can directly explore and analyze Parquet, CSV, TSV, and JSON files stored in the data lake.</li>
+<li>Fast, scalable data loading between SQL and Spark databases</li>
+</ul>
+<h3 id="azure-synapse-link-for-azure-cosmos-db">Azure Synapse Link for Azure Cosmos DB</h3>
+<p>Azure Synapse Link is a feature in Azure Synapse Analytics that provides <strong>seamless integration and real-time analytics</strong> capabilities between <strong>Azure Synapse Analytics and operational data stored in Azure Cosmos DB</strong>.</p>
+<h3 id="azure-synapse-link-for-azure-cosmos-db_1">Azure Synapse Link for Azure Cosmos DB</h3>
+<p>Azure Synapse Link is a feature in Azure Synapse Analytics that provides <strong>seamless integration and real-time analytics</strong> capabilities between <strong>Azure Synapse Analytics</strong> and operational data stored in <strong>Azure Cosmos DB</strong>.</p>
+<p>It creates a tight integration between Azure Cosmos B and Azure Synapse Analytics, allowing users to explore and analyze their data with no extraction, transformation, and loading (ETL) process required, no data duplication, and no impact on the performance of transactional workloads.</p>
+<p>Azure Synapse Link forms a connection between Azure Cosmos DB's transactional database and Azure Svnapse Analvtics' analytical capabilities. </p>
+<p>It accomplishes this by creating a real-time updated. <strong>columnar-based analytical store within Cosmos DB</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_15.png" title="Body image" /></p>
+<p><strong>Benefits of Azure Synapse Link for Azure Cosmos DB</strong></p>
+<ol>
+<li><strong>Real-time Analytics</strong>: Azure Synapse Link enables real-time analytics by allowing direct querying of live operational data in Azure Cosmos DB, without impacting its performance.</li>
+<li><strong>Operational and Analytical Data Cohesion</strong>: It eliminates the need for complex ETL (Extract, Transform, Load) processes. This simplifies the data architecture as it provides immediate and seamless access to analyze operational data.</li>
+<li><strong>Cost Efficiency</strong>: Azure Synapse Link reduces costs by avoiding the need for additional storage and compute resources that are typically required for ETL processes.</li>
+<li><strong>Increased Productivity</strong>: By removing the need for manual data extraction or synchronization processes, Azure Synapse Link saves time and increases productivity for data scientists and developers.</li>
+<li><strong>Improved Data Freshness</strong>: With Azure Synapse Link, the most up-to-date data from Azure Cosmos DB can be accessed for analytics and reporting in real-time. This ensures data freshness and accuracy.</li>
+</ol>
+<p><strong>When to use Azure Synapse Link for Azure Cosmos DB?</strong></p>
+<p>You should consider using Azure Synapse Link for Azure Cosmos DB when:</p>
+<ol>
+<li>You are an Azure Cosmos DB user wanting to conduct analytics, Business Intelligence (BI), and machine learning on your operational data.</li>
+<li>You are currently running analytics or Bl on your Azure Cosmos DB operational data using separate connectors, or</li>
+<li>You are executing EL processes to transfer operational data into a distinct analytics system.</li>
+</ol>
+<p>In such cases, Azure Synapse Link offers a seamless analytics experience without impacting the performance of your transactional store.</p>
+<p>However, it's not ideal if you require traditional data warehouse capabilities like high concurrency, workload management, and persisting aggregates across multiple data sources.</p>
+<h2 id="introduction-to-azure-data-factory">Introduction to Azure Data Factory</h2>
+<p><strong>Azure Data Factory</strong> is a managed service for <strong>ETL (Extract, Transform, Load), ELT (Extract, Load, Transform) and data integration</strong>.</p>
+<p>Create <strong>data-driven workflows</strong> for orchestrating <strong>data movement and transforming data at scale</strong></p>
+<ul>
+<li>Create Pipelines to schedule data-driven workflows</li>
+<li>Build complex ET processes that transform data visually with data flows</li>
+<li>Use compute services such as <strong>Azure HDInsight Hadoop, Azure Databricks, and Azure SQL Database</strong></li>
+<li>Publish your transformed data to data stores such as Azure Synapse Analytics</li>
+<li>Raw data can be organized into meaningful data stores and data lakes</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_8_16.png" title="Body image" /></p>
+<h3 id="azure-data-factory-core-components">Azure Data Factory - Core Components</h3>
+<p><strong>Pipelines</strong></p>
+<p>A logical grouping of activities that performs a unit of work</p>
+<p><strong>Activities</strong></p>
+<p>A processing step in a pipeline</p>
+<p><strong>Datasets</strong></p>
+<p>Data structures within the data store</p>
+<p><strong>Linked services</strong></p>
+<p>Define the connection information for data sources to connect to Data 
+Factorv</p>
+<p><strong>Data Flows</strong>
+Logic to determine how data moves through a pipeline or is transformed</p>
+<p><strong>Integration Runtimes (RI)</strong></p>
+<p>Compute infrastructure used by Azure Data Factory</p>
+<p><strong>Control flow</strong></p>
+<p>Orchestration of pipeline activities that includes chaining activities in a sequence, branching</p>
+<h3 id="azure-data-factory-data-orchestration-process">Azure Data Factory - Data Orchestration Process</h3>
+<ol>
+<li>
+<p><strong>Data Ingestion</strong>: ADF ingests data from varied sources, like on-premises <strong>SQL Server databases or external data</strong>. Data is pulled in using connectors in either batch or real-time modes.</p>
+</li>
+<li>
+<p><strong>Data Storage and Transformation</strong>: Post ingestion, data is stored for processing in <strong>Azure Blob Storage or Azure Synapse Analytics</strong> for more structured data. ADF pipelines transform this data by cleaning and enriching it.</p>
+</li>
+<li>
+<p><strong>Analysis</strong>: The processed data is loaded into <strong>Azure Analysis Services</strong> for analysis, providing a unified view of your business data.</p>
+</li>
+<li>
+<p><strong>Visualization</strong>: The analyzed data is leveraged by tools like <strong>Power BI</strong> to generate insightful visualizations and reports.</p>
+</li>
+<li>
+<p><strong>Security and Authentication: Azure AD</strong> is used throughout this process for user authentication and authorization, securing your resources and data.</p>
+</li>
+</ol>
+<p><img alt="Alt Image Text" src="../../images/az305_8_17.png" title="Body image" /></p>
+<h3 id="microsoft-sql-server-integration-services">Microsoft SQL Server Integration Services</h3>
+<p><strong>Microsoft SQL Server Integration Services (SSIS)</strong> is a platform for building enterprise-level data integration and data transformation solutions</p>
+<p>You can perform the following tasks with SSIS</p>
+<ul>
+<li>Copy files or download files</li>
+<li>Load data into data warehouses</li>
+<li>Cleanse data for better accuracy</li>
+<li>Dive into mining data</li>
+<li>Manage SQL Server objects and data</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>SIS can be used to automate SQL Server databases</li>
+<li>SIS can be used as an integration runtime in Azure Data Factory</li>
+</ul>
+<p><strong>SSIS has...</strong></p>
+<ul>
+<li>Built-in tasks and transformations</li>
+<li>Graphical tools for building packages</li>
+<li>Integration Services Catalog database<ul>
+<li>where you store, run, and manage packages</li>
+</ul>
+</li>
+</ul>
+<p>Perform ET with variety of sources:</p>
+<ul>
+<li>XML</li>
+<li>Flat files</li>
+<li>Relational data sources   </li>
+</ul>
+<p>Use <strong>Graphical Integration Services</strong> tools to integrate and
+transform data without having to write code</p>
+<p><strong>SIS Designer</strong> is a graphical tool that you can use to create and
+maintain Integration Services packages.</p>
+<h3 id="microsoft-sql-server-integration-services_1">Microsoft SQL Server Integration Services</h3>
+<p>SSIS allows vou to drag out data transformations</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_18.png" title="Body image" /></p>
+<p>Design different kinds of control or data flows</p>
+<h2 id="azure-databricks">Azure Databricks</h2>
+<p>Azure Databricks is an <strong>Apache Spark-based analytics platform</strong>
+optimized for the Microsoft Azure cloud services platform</p>
+<p>It is designed to simplify the process of building <strong>big data</strong> and <strong>artificial intelligence</strong> solutions by providing a unified analytics platform that accelerates the preparation of data for analytics and machine learning.</p>
+<h3 id="azure-databricks-pricing-tiers">Azure Databricks - Pricing tiers</h3>
+<p>Azure Databricks offers two pricing tiers: <strong>Premium</strong> and <strong>Standard</strong>.</p>
+<p><strong>1. Premium SKU:</strong> The Premium tier offers a full set of advanced Databricks features such as role-based access control, integration with Azure Active Directory for identity management, and Databricks Delta Engine which is a high-performance engine for large-scale data lakes. </p>
+<p>It is the most appropriate for <strong>big data analytics workloads and organizations requiring advanced security and team-based workflows</strong>.</p>
+<p><strong>2. Standard SKU</strong>: The Standard tier offers a subset of the Databricks platform features and is more cost-effective for <strong>smaller workloads or development/test environments.</strong> </p>
+<p>It includes the basic Databricks runtime and the collaborative workspace but does not include role-based access control or Azure AD integration.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_19.png" title="Body image" /></p>
+<h3 id="azure-databricks_1">Azure Databricks</h3>
+<p>Key Features:</p>
+<ol>
+<li><strong>Collaborative Environment</strong>: It provides a shared workspace for collaboration among data
+professionals. It facilitates dashboard creation and project sharing across various languages.</li>
+<li><strong>Azure Integration</strong>: As a native service, it integrates smoothly with Azure services like <strong>Data Factory, Synapse Analytics, Machine Learning, and Power BI</strong>, simplifying analytics pipeline creation.</li>
+<li><strong>Apache Spark Integration</strong>: It incorporates an optimized runtime for superior performance, offering a serverless Apache Spark experience with auto-configurability and integrated Azure security.</li>
+<li><strong>Auto-Scaling and Performance</strong>: It offers <strong>auto-scaling</strong> and speed optimization for faster processing of big data workloads, scaling to thousands of nodes and handling diverse workloads.</li>
+<li><strong>Robust Security</strong>: It delivers enterprise-grade security with data encryption, <strong>Active Directory integration</strong>, role-based access control, private network connectivity, and industry-standard compliance.</li>
+</ol>
+<h3 id="use-cases">Use Cases:</h3>
+<ol>
+<li><strong>Big Data Analytics</strong>: Azure Databricks can process large volumes of data in parallel,
+making it suitable for big data processing and analytics.</li>
+<li><strong>Machine Learning:</strong> It provides a platform for preparing data and developing, training, and deploying machine learning models.</li>
+<li><strong>Real-time Analytics</strong>: Azure Databricks supports streaming analytics, allowing for real-time insights from data.</li>
+<li><strong>ET Processes</strong>: Azure Databricks can be used for building robust ETL pipelines.</li>
+<li><strong>Data Exploration and Visualization</strong>: The collaborative workspace in Azure Databricks allows for data exploration and visualization, enabling data scientists and analysts to derive insights from data.</li>
+</ol>
+<p><strong><mark>Azure Databricks focuses on analytics, big data, and machine learning, while Azure Data Factory primarily handles data integration and pipeline orchestration in the cloud</strong></mark>.</p>
+<h2 id="introduction-to-data-lakes">Introduction to Data Lakes</h2>
+<p>A data lake is a <strong>centralized, scalable data repository that stores raw, unstructured and semi-structured data</strong></p>
+<p>A Data Lake is intended to store vast amounts of data</p>
+<p>Data lakes generally use object (blobs) or files as its storage medium.</p>
+<h3 id="introduction-to-azure-data-lake">Introduction to Azure Data Lake</h3>
+<p>Azure Data Lake is a scalable and secure data lake that allows you to store and analyze large amounts of data. It is composed of <strong>two</strong> main components: <strong>Azure Data Lake Storage and Azure Data Lake Analytics.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_20.png" title="Body image" /></p>
+<ol>
+<li>
+<p><strong>Azure Data Lake Storage</strong>: This is a massively scalable and secure data lake that allows you to store all types of data. There are <strong>two</strong> generations of Azure Data Lake Storage:</p>
+</li>
+<li>
+<p><strong>Azure Data Lake Storage Gen1</strong>: It provides a single repository where you can capture data of any size, type, and speed without forcing changes to your application as the data scales.</p>
+</li>
+<li><strong>Azure Data Lake Storage Gen2</strong>: This is a set of capabilities dedicated to big data analytics, built on Azure Blob storage. It combines the scalability and cost benefits of object storage with the reliability
+and performance of the big data file system capabilities.</li>
+</ol>
+<p><strong>2. Azure Data Lake Analytics:</strong> This is an on-demand analytics job service that simplifies big data.</p>
+<p>Instead of deploying, configuring, and tuning hardware, you write queries to transform your data and extract valuable insights.</p>
+<p>It includes <strong>U-SQL</strong>, a language that unifies the benefits of SQL with the expressive power of your own code.</p>
+<p>It also allows you to dynamically scale the resources you need for your jobs, making it cost-effective.</p>
+<blockquote>
+<p>Azure Data Lake Storage Gen1 (deprecated)</p>
+<p>The first version of Data Lake Storage and will be retired in 2024. New users should use Gen2</p>
+</blockquote>
+<p><strong>Azure Data Lake Storage Gen2</strong></p>
+<p>Data Lake Storage is Azure Blog storage which is has been extended to support big data analytics workloads</p>
+<ul>
+<li>Designed to handle <strong>petabytes of data and hundreds of gigabits of throughput</strong></li>
+<li>In order to efficiently access data, Data Lake Storage adds a <strong>hierarchical namespace</strong> to Azure Blob Storage</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_8_21.png" title="Body image" /></p>
+<h3 id="azure-data-lake-storage-gen2">Azure Data Lake Storage Gen2</h3>
+<p>Azure Data Lake Storage Gen2 plays a vital role in Azure Data Lake by providing a secure, scalable platform to store large data volumes. It is tailored to support high-performance analytics and machine learning operations.</p>
+<p>Here are some of its core features:</p>
+<ol>
+<li><strong>Hierarchical Namespace</strong>: Enables organizing and managing data in a hierarchical file and folder structure similar to traditional file systems, simplifying data organization and transformations.</li>
+<li><strong>Scalability</strong>: Designed to handle enormous amounts of data, from petabytes to exabytes, with high throughput and low latency. It can also manage high volumes of small writes, common in big data scenarios.</li>
+<li><strong>Security</strong>: Incorporates Azure Active Directory for identity and access management, role-based access control, firewall rules, and virtual network service endpoints, along with encryption at rest and in transit. It also supports <strong><mark>Azure Private Link<mark></strong>, ensuring data travels over a private network.</li>
+<li><strong>Cost-Effectiveness</strong>: Offers low-cost storage, with lifecycle management policies that automatically move data to cheaper storage tiers or delete it after a specified period, lowering costs.</li>
+<li><strong>Performance</strong>: Provides the high-performance computing needed for big data analytics and allows choosing the best performance characteristics for specific workloads through its performance tiers.</li>
+</ol>
+<h3 id="azure-data-lake-analytics">Azure Data Lake Analytics</h3>
+<p><strong>Azure Data Lake Analytics is an on-demand analytics job service</strong> that simplifies big data</p>
+<p>Instead of deploying, configuring, and tuning hardware...</p>
+<p>You <strong>write queries (via U-SQL) to transform your data and extract valuable insights</strong>.</p>
+<p><strong>Exporting</strong> approximately 2.8 billion rows of TPC-DS store <strong>sales data (~500 GB)</strong> into a CV file took less than <strong>7 minutes</strong></p>
+<p><strong>Importing the full 1 TB</strong> set of source data into Azure Analysis Services by using the Azure Data Lake connector took less than 6 hour</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_22.png" title="Body image" /></p>
+<h3 id="azure-data-lake-analytics-u-sql">Azure Data Lake Analytics  - U-SQL</h3>
+<p>U-SQL is a structured query language included within Data Lake Analytics to <strong>perform queries</strong> on your data lake.</p>
+<p>U-SQL can query and combine data from a variety of data sources, including:</p>
+<ul>
+<li>Azure Data Lake Storage</li>
+<li>Azure Blob Storage</li>
+<li>Azure SQL DB</li>
+<li>Azure SQL Data Warehouse.</li>
+<li>SQL Server instances running in Azure VMs</li>
+</ul>
+<p>You can install Azure Data Lake Tools for Visual Studio to perform U-SQL jobs on your Azure Data Lake</p>
+<p><img alt="Alt Image Text" src="../../images/az305_8_23.png" title="Body image" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
