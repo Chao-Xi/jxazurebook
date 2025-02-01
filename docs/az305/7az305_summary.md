@@ -1,21 +1,21 @@
 # Az305 - Summary 3
 
-## Azure AD Connect
+## 1 Azure AD Connect
 
 **Azure AD Connect** is a tool provided by Microsoft that enables organizations to **synchronize on-premises Active Directory with Azure Active Directory (Azure AD).**
 
-This synchronization enables organizations to extend their on-premises identities and security policies to the cloud and enable seamless access to cloud-based applications.
+**This synchronization enables organizations to extend their on-premises identities and security policies to the cloud and enable seamless access to cloud-based applications.**
 
 ![Alt Image Text](../images/az305_7_1.png "Body image")
  
 
-### Azure AD Connect
+### 1-1 Azure AD Connect
 
 Azure AD Connect has the following features:
 
 **Password Hash Synchronization** - This feature syncs user password hashes from on-premises AD to Azure AD, enabling the same sign-in method for both.
 
-**Pass-through Authentication** - This allows users to maintain the same password across on-premises and cloud platforms without needing a separate federated environment setup.
+**Pass-through Authentication** - This allows users to maintain the **same password across on-premises and cloud platforms without needing a separate federated environment setup**.
 
 **Federation Integration** - An optional feature, it facilitates a hybrid setup using on-premises AD FS
 infrastructure and provides management tools like certificate renewal and server deployment.
@@ -28,7 +28,7 @@ Azure portal section to review this data.
 
 ![Alt Image Text](../images/az305_7_2.png "Body image")
 
-### Azure AD Connect - Install
+### 1-2 Azure AD Connect - Install
 
 Here are the steps for installing, configuring, and synchronizing on-premises Active
 Directory with Azure AD using Azure AD Connect:
@@ -49,7 +49,7 @@ changes from source to target.
 
 ![Alt Image Text](../images/az305_7_3.png "Body image")
 
-### Azure AD Application Proxy(Entra Application Proxy)
+### 1-3 Azure AD Application Proxy(Entra Application Proxy)
 
 **Azure AD Application Proxy**
 
@@ -78,7 +78,7 @@ the Azure AD service.
 
 It also routes traffic to the appropriate backend servers and enforces policies set by the organization.
 
-### Azure AD Application Proxy Architecture
+### 1-4 Azure AD Application Proxy Architecture
 
 ![Alt Image Text](../images/az305_7_5.png "Body image")
 
@@ -92,23 +92,21 @@ policies are checked.
 6. **Server Response**: The application's response is sent back through the connector to the **Application Proxy service**.
 7. **Response Delivery**: Finally, the Application Proxy service delivers the response to the **user's device.**
 
-### Azure AD Application Proxy - Use cases
+### 1-5 Azure AD Application Proxy - Use cases
 
 ![Alt Image Text](../images/az305_7_5.png "Body image")
 
 
 
-* **Remote Access**: Azure AD Application Proxy is commonly used to provide secure remote access to on-premise applications. Employees working from home or other remote locations can
-* securely access their internal applications just as if they were in the office.
-* **Single Sign-On (SSO)**: Application Proxy can integrate with Azure AD to provide Single Sign-On
-* capabilities. This allows users to authenticate once and then access multiple applications without needing to sign in again.
+* **Remote Access**: Azure AD Application Proxy is commonly used to provide secure remote access to on-premise applications. Employees working from home or other remote locations can securely access their internal applications just as if they were in the office.
+* **Single Sign-On (SSO)**: Application Proxy can integrate with Azure AD to provide Single Sign-On capabilities. This allows users to authenticate once and then access multiple applications without needing to sign in again.
 * **Conditional Access**: With Application Proxy, you can leverage **Azure AD's Conditional Access** policies for your on-premise applications. This provides granular control over access based on user, location, device status, and other factors.
 * **Legacy Application Modernization**: Application Proxy can help organizations expose legacy on-premise applications to the internet in a secure manner, without changing the application code.This can be a key part of a strategy to modernize legacy applications.
 * **Scalability and Performance**: Azure AD Application Proxy scales automatically to meet your organization's usage patterns and provides a **global reach** without needing to open additional firewall ports. This can help improve the performance and availability of your applications.
 
-## Storage Accounts
+## 2 Storage Accounts
 
-### Introduction to Storage Accounts
+### 2-1 Introduction to Storage Accounts
 
 **Azure Storage offers several types of storage accounts.**
 
@@ -117,11 +115,11 @@ Azure Storage offers **several types of storage accounts**.
 
 Each with **different features and their own pricing models**
 
-* Standard general-purpose v1 (legacy)
-* Standard general-purpose v2
-* BlobStorage (legacy)
-* BlockBlobStorage
-* FileStorage
+* **Standard general-purpose v1 (legacy)**
+* **Standard general-purpose v2**
+* **BlobStorage (legacy)**
+* **BlockBlobStorage**
+* **FileStorage**
 
 Storage accounts vary with the following features:
 
@@ -135,19 +133,19 @@ Standard and Premium
 
 * Access Tiers (How often do I need quick access to files?)
 
-Hot, Cool, Archive
+**Hot, Cool, Archive**
 
 * Replication (How many redundant copies should be made and where?)
 
-LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS
+**LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS**
 
 * **Deployment model**(Who should deploy the supported services?)
 
-Resource Manager, Classic
+**Resource Manager, Classic**
 
 ![Alt Image Text](../images/az305_7_6.png "Body image")
 
-### Core Storage Service
+### 2-2 Core Storage Service
 
 **Azure has 5 core storage services**
 
@@ -176,7 +174,7 @@ A **NoSQL store** for schema-less storage of structured data.
 ![Alt Image Text](../images/az305_7_7.png "Body image")
 
 
-### Azure Blob storage
+### 2-3 Azure Blob storage （LRS, GRS, RA-GRS) 
 
 Blob storage is an **object-store** that is optimized for **storing massive amounts of unstructured data**.
 
@@ -193,79 +191,66 @@ A unique namespace in Azure for your data
 
 **Containers**
 
-Similar to a folder in a file system
+<mark>Similar to a folder in a file system</mark>
 
 **Blobs**
 
 The actual data being stored
 
-### Azure Blob storage
+### 2-4 Azure Blob storage
 
 Azure Storage supports 3 types of blobs:
 
-**1. Block blobs**
+#### **1. Block blobs**
 
 * store text and binary data
 * made up of blocks of data that can be managed individually
 * store up to about 4.75 TiB of data
 
-**2. Append blobs**
+#### **2. Append blobs**
 
 * Optimized for append operations
 * ideal for scenarios such as logging data from virtual machine
 
-**3. Page blobs**
+#### **3. Page blobs**
 
 * store random access files up to 8 TB in size.
-* store virtual hard drive (VHD) files and serve as disks for Azure virtual machine
+* **store virtual hard drive (VHD) files and serve as disks for Azure virtual machine**
 
-### Azure Blob storage
+### 2-5 Azure Blob storage
 
 There are **multiple ways** to move data into Azure Blob Storage
 
-* **AzCopy**
+* **AzCopy** Easy-to-use command-line tool for Windows and Linux
 
-Easy-to-use command-line tool for Windows and Linux
+* **Azure Storage Data Movement library** .NET library (uses AzCopy underneath)
 
-* **Azure Storage Data Movement library**
+* **Azure Data Factory** An ETL service by Azure
 
-.NET library (uses AzCopy underneath)
+* **Blobfuse**: **<mark>Virtual file system driver. Access data through Linux file system**</mark>
 
-* **Azure Data Factory**
+* **Azure Data Box** A robust, physical device designed to transport data to Azure securely.
 
-An ETL service by Azure
+* **Azure Import/Export service** A service where you ship your physical disks for data transfer onto Azure
 
-* **Blobfuse**
-
-Virtual file system driver. Access data through Linux file system
-
-* **Azure Data Box**
-
-A robust, physical device designed to transport data to Azure securely.
-
-* **Azure Import/Export service**
-
-A service where you ship your physical disks for data transfer onto Azure
-
-### Performance Tiers (Blob Storage)
+### 2-6 Performance Tiers (Blob Storage)
 
 There are **2 types** of performance tiers for storage accounts: **Standard and Premium**
 
 ![Alt Image Text](../images/az305_7_9.png "Body image")
 
 **IOPS** stands for Input/Output Operations Per Second
+
 The higher the IOPS, the faster a drive can read and write
 
 #### **Premium Performance**
 
-* Stored on Solid State Drives (**SSDs**)
+* <mark>Stored on Solid State Drives (**SSDs**)</mark>
 * Optimize for low-latency
 * Higher throughput
 * Use cases:
 
-An SSD has **no moving parts** and data is
-distributed randomly. This is why it can read
-and write so fast.
+<mark>An SSD has **no moving parts** and data is distributed randomly. This is why it can read and write so fast.</mark>
 
 #### Standard Performance
 
@@ -276,7 +261,7 @@ and write so fast.
 	* Media content
 	* Bulk data processing
 
-An HDD **has moving parts**, an arm that needs to read and write data sequential to a disk. It is very good a writing or reading large amounts of data that is close together
+<mark>An HDD **has moving parts**, an arm that needs to read and write data sequential to a disk. It is very good a writing or reading large amounts of data that is close together</mark>
 
 #### Access Tiers (Blob Storage)
 
@@ -288,34 +273,34 @@ There are **3 types** of access tiers for **Standard storage: Cool, Hot and Arch
 * Data that's **accessed frequently**.
 * Highest storage cost, lowest access cost
 
-**Use Case**
+* **Use Case**
 
-* Data that's in active use or expected to be accessed frequently.
-* Data that's staged for processing and eventual migration to the cool access tier
+	* Data that's in active use or expected to be accessed frequently.
+	* Data that's staged for processing and eventual migration to the cool access tier
 
 **Cool**
 
 * Data that's **infrequently accessed** and stored for at least **30 days.**
 * Lower storage cost, higher access cost
 
-**Use Case**
+* **Use Case**
 
-* Short-term backup and disaster recovery datasets
-* Older media content not viewed frequently anymore but is expected to be available immediately when accessed
-* Large data sets that need to be stored cost effectively while more data is being gathered for future processing.
+	* Short-term backup and disaster recovery datasets
+	* Older media content not viewed frequently anymore but is expected to be available immediately when accessed
+	* Large data sets that need to be stored cost effectively while more data is being gathered for future processing.
 
 **Archive**
 
 * Data that's **rarely accessed** and stored for at least **180 days**
 * Lowest storage cost, highest access cost
 
-**Use Case**
+* **Use Case**
 
-* Long-term backup, secondary backup, and archival datasets
-* Original (raw) data that must be preserved, even after it has been processed into final usable form.
-* Compliance and archival data that needs to be stored for a long time and is hardly ever accessed.
+	* Long-term backup, secondary backup, and archival datasets
+	* Original (raw) data that must be preserved, even after it has been processed into final usable form.
+* Compliance and archival data that needs to be stored for a long time and is 	hardly ever accessed.
 
-### Access Tiers (Blob Storage)
+### 2-7 Access Tiers (Blob Storage)
 
 **Account Level Tiering**
 
@@ -327,7 +312,7 @@ Any blob that doesn't have an explicitly assigned tier infers the tier from the 
 * Changing tiers happens instantly with the exception from moving out of archive
 
 
-**Rehydrating a Blob**
+<mark>**Rehydrating a Blob**</mark>
 
 When moving a blob out of archive into another tier it can take several hours. This is known as "**rehydrating**"
 
@@ -344,13 +329,13 @@ When a blob is uploaded or **moved to another tier**
 It's charged at the new tier's rate **immediately** upon tier change.
 
 
-When moving from a **cooler tier**:
+When moving **from a** **cooler tier**:
 
-* The operation is billed as a **write operation** to the destination tier.
+* <mark>The operation is billed as a **write operation** to the destination tier.</mark>
 * Where the write operation (per 10,000) and data write (per GB) charges of the destination tier apply.
 
 
-When moving from a **hotter tier**
+When moving **from a** **hotter tier**
 
 * The operation is billed as a read from the source tier
 * Where the **read operation** (per 10,000) and data retrieval (per GB) charges of the source tier apply 
@@ -363,7 +348,7 @@ Any blob that is moved into the cool tier (GPv2 accounts only) is subject to a c
 
 Any blob that is moved into the archive tier is subject to an archive early deletion period of 180 days. This charge is prorated.
 
-### Replication and Data Redundancy
+### 2-8 Replication and Data Redundancy
 
 When you create a Storage Account, You need to choose a **Replication Type**
 
@@ -400,7 +385,7 @@ Replication stores multiple copies of your data so that it is **protected from:*
 
 > Read Replicas
 
-### Replication and Data Redundancy
+### 2-9 Replication and Data Redundancy
 
 #### **Redundancy in the Primary Region**
 
@@ -459,7 +444,7 @@ Replication stores multiple copies of your data so that it is **protected from:*
 
 ![Alt Image Text](../images/az305_7_14.png "Body image")
 
-### AZCopy
+### 2-10 AZCopy
 
 **AZCopy is a command-line utility** that you can use to copy blobs or files to or from a storage account.
 
@@ -511,7 +496,7 @@ azcopy copy
 'C: \StarTrek\jodri.txt'
 ```
 
-### Lifecycle Management
+### 2-11 Lifecycle Management
 
 **Azure Storage lifecycle management offers a rule-based policy** that you can use to transition blob data to the appropriate access tiers or to expire data at the end of the data lifecycle.
 
@@ -524,7 +509,7 @@ With the **lifecycle management policy**, you can:
 * Apply rules to containers or to a subset of blobs, using name **prefixes or blob index** tags as filters.
 
 
-### Lifecycle Management
+### 2-12 Lifecycle Management
 
 To manage the lifecycle of our Blobs inside containers, a **lifecycle management rule** must be created.
 

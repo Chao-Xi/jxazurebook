@@ -1,8 +1,8 @@
 # Az305 - Summary 2
 
-##  Azure Monitor 
+##  1 Azure Monitor 
 
-### Introduction to Azure Monitor
+### 1-1 Introduction to Azure Monitor
 
 Azure Monitor comprehensive solution **for collecting, analyzing, and acting on telemetry** from your cloud and on-premises environments
 
@@ -13,11 +13,11 @@ Azure Monitor comprehensive solution **for collecting, analyzing, and acting on 
 * **Automated Actions**: Set automation based on certain triggers.
 * **Log Monitoring**: Track and analyze event logs.
 
-Many Azure services by default are already sending telemetry data to Azure Monitor
+<mark>Many Azure services by default are already sending telemetry data to Azure Monitor</mark>
 
 ![Alt Image Text](../images/az305_6_1.png "Body image")
 
-### The Pillars of Observability
+### 1-2 The Pillars of Observability
 
 **What is Observability?**
 
@@ -37,13 +37,15 @@ A text file where each line contains event data about what happened at a certain
 
 **Traces**
 
-**A historv of request that is travels through multiple Apps/services** so we can pinpoint performance or failure.
+**A history of request that is travels through multiple Apps/services** so we can pinpoint performance or failure.
 
 ![Alt Image Text](../images/az305_6_2.png "Body image")
 
-### Anatomy of Azure Monitor
+### 1-3 Anatomy of Azure Monitor
 
-The **sources of common monitoring data** to populate datastores Order by (Highest to Lowest)
+The **sources of common monitoring data** to populate datastores Order by (**Highest to Lowest**)
+
+**Application -> Operating system -> Azure Resouce -> Azure Subscription -> Azure Tenant -> Custom resources**
 
 > The functions that Azure monitor can performed
 
@@ -51,14 +53,14 @@ The **sources of common monitoring data** to populate datastores Order by (Highe
 
 The two fundamental data stores are **Metrics** and **Logs**
 
-### Azure Monitor - Sources
+### 1-4 Azure Monitor - Sources
 
 **Application Code**: Performance and functionality of application and code.
 Performance traces, application logs, and user telemetry.
 
 You need to install **Instrumentation Package** to collect data for Application Insights
 
-* **Metrics** Descriptive data regarding your application's performance, operation, and custom metrics.
+* **Metrics** **Descriptive data regarding your application's performance, operation, and custom metrics**.
 
 * **Availability Tests** responsiveness of your application from different locations on the public Internet
 
@@ -71,11 +73,11 @@ You need to install **Instrumentation Package** to collect data for Application 
 
 ![Alt Image Text](../images/az305_6_4.png "Body image")
 
-### Azure Monitor - Sources
+### 1-5 Azure Monitor - Sources
 
 * **Log Analytics** Agent is installed for comprehensive monitoring.
 * **Dependency Agent** collects discovered data about processes running on the virtual machine and external process dependencies.
-* Agents can be installed on the OS for VMs running in Azure, On-premises or other cloud providers.
+	* Agents can be installed on the OS for VMs running in Azure, On-premises or other cloud providers.
 
 
 **Diagnostics Extension** collect performance counters and store them in **Metrics**
@@ -89,7 +91,7 @@ collect logs and performance counters from the compute resource supporting your 
 * **Azure diagnostics extension** always writes to an **Azure Storage** account.
 * Azure Monitor for VMs uses the Log Analytics agent to store heath state information in a custom location.
 
-**Diagnostics Extension** can also stream data to other locations using Event Hubs
+**Diagnostics Extension** can also stream data to other locations using **Event Hubs**
 
 * **Resource Logs**
 
@@ -125,7 +127,6 @@ Analytics and the Azure Monitor metrics database.
 
 Azure Monitor collects **two fundamental types** of data from sources : **Logs and Metrics**
 
-Azure Monitor collects two fundamental types of data from sources: **Logs and Metrics**
 
 #### **Azure Monitor Logs**
 
@@ -142,14 +143,13 @@ Azure Monitor collects two fundamental types of data from sources: **Logs and Me
 * **Lightweight**: Metrics are designed to be lightweight, allowing for near real-time data analysis. This makes them particularly useful for alerting and the rapid detection of issues.
 * **Metrics Explorer:** The **Metrics Explorer** tool allows for interactive analysis of metric data.
 
-### Azure Monitor Logs
+### 1-6 Azure Monitor Logs
 
 **Data retention and archive policies**
 
 In Azure Monitor Logs, you can control how long your log data stays stored.
 
-By default, in the Azure portal, you can set this retention time anywhere from **30 to 730 days**
-for the whole workspace.
+By default, in the Azure portal, you can set this retention time anywhere from **30 to 730 days** for the whole workspace.
 
 You can also specify different storage durations for certain **tables** within your workspace,
 letting you manage different types of data as needed.
@@ -186,18 +186,13 @@ To tweak these retention settings, you have to be on the **paid tier** of Azure 
 
 #### **Benefits**
 
-1. **Centralized Log Management**: Collect and analyze data from multiple sources, both on-
-premises and in the cloud, in a centralized location.
-2. **Powerful Analytics:** Utilize the Kusto Query Language (KQL) to run advanced analytics on
-large amounts of fast-streaming data in real time.
-3. **Custom Dashboards**: Create custom dashboards and visualizations to display real-time
-data and trends.
-4. **Integration**: Seamless integration with other Azure services and Microsoft solutions, such
-as Power Bl and Azure Automation.
-5. **Alerting**: Set up alerts based on specific criteria to proactively identify and respond to
-potential issues before they affect your users.
+1. **Centralized Log Management**: Collect and analyze data from multiple sources, both on-premises and in the cloud, in a centralized location.
+2. **Powerful Analytics:** Utilize the **Kusto Query Language (KQL)** to run advanced analytics on large amounts of fast-streaming data in real time.
+3. **Custom Dashboards**: Create custom dashboards and visualizations to display real-time data and trends.
+4. **Integration**: Seamless integration with other Azure services and Microsoft solutions, such as Power BI and Azure Automation.
+5. **Alerting**: Set up alerts based on specific criteria to proactively identify and respond to potential issues before they affect your users.
 
-### Log Analytics Workspaces
+### 1-7 Log Analytics Workspaces
 
 **Log Analytics workspace** is a unique environment for Azure Monitor log data
 
@@ -205,7 +200,7 @@ Each **workspace** has its own data repository and configuration, and data sourc
 
 ![Alt Image Text](../images/az305_6_10.png "Body image")
 
-### Log Analytics agent
+### 1-8 Log Analytics agent
 
 The Log Analytics agent is a lightweight agent that can be installed on **Windows** and **Linux**
 machines to collect and send log data to **Azure Monitor.**
@@ -220,7 +215,7 @@ It supports both agent-based and agentless data collection and can be configured
 ![Alt Image Text](../images/az305_6_11.png "Body image")
 
 
-### Log Analytics agent
+### 1-9 Log Analytics agent
 
 The Log Analytics agent is set up to monitor certain **Windows event logs** like Security, System, or Application logs
 
@@ -234,24 +229,24 @@ It collects data from these sources and sends it to Log Analytics, allowing for 
 
 Both methods for collecting log data allow for centralized management and analysis of log data from multiple sources, **which can help to improve visibility and streamline troubleshooting and issue resolution.**
 
-## Application Insights
+## 2 Application Insights
 
-**Application Insights is an Application Performance Management (APM)** service
+**Application Insights is an Application Performance Management (APM)** service 
+
 It is a sub-service of Azure Monitor.
 
-### What is an APM?
+### 2-1 What is an APM?
 
 Monitoring and management of **performance and availability of software apps**. APM strives to detect and diagnose complex application performance problems to maintain an expected level of service.
 
 * **Automatic Detection of Performance Anomalies:** Application Insights automatically identifies performance anomalies in your system.
 *  **Powerful Analytics Tools**: It comes with robust analytics tools to help you diagnose issues and understand what users do with your app.
-* **Continuous Improvement**: It is designed to help you continuously improve performance and
-* usability of your applications.
+* **Continuous Improvement**: It is designed to help you continuously improve performance and usability of your applications.
 * **Platform Agnostic**: It works for apps on .NET, Node.js, Java, and Python, hosted on-premises, hybrid, or any public cloud.
 * **DevOps Integration**: It can be integrated into your DevOps process.
 * **Mobile App Monitoring:** It can monitor and analyze telemetry from mobile apps by integrating with Visual Studio App Center.
 
-### Application Insights
+### 2-2 Application Insights
 
 To use Application Insights, **you need to instrument your application.**
 
@@ -297,7 +292,7 @@ The resource is identified by an instrumentation key (ikey)
 * REST API
 * Continuous Export
 
-### Application Insights - Instrumentation
+### 2-3 Application Insights - Instrumentation
 
 You Instrument your application by adding the Azure Application Insights SDK and implementing traces.
 
@@ -369,7 +364,7 @@ Application Insights without changing your code.
 
 ![Alt Image Text](../images/az305_6_14.png "Body image")
 
-### Microsoft Sentinel 
+### 2-4 Microsoft Sentinel 
 
 Microsoft Sentinel is a scalable, cloud-native:
 
@@ -381,7 +376,7 @@ collecting and analyzing security-related data
 
 collection of tools that enable an organization to define, standardize, measure, and automate to define, standardize, measure, and automate
 
-Microsoft Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for:
+**<mark>Microsoft Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for:</mark>**
 
 * Alert Detection
 * Threat visibility
@@ -392,13 +387,13 @@ Microsoft Sentinel delivers intelligent security analytics and threat intelligen
 
 ![Alt Image Text](../images/az305_6_16.png "Body image")
 
-### Microsoft Sentinel - Data Sources
+### 2-5 Microsoft Sentinel - Data Sources
 
 Microsoft Sentinel comes with several connectors for Microsoft solutions:
 
 * Microsoft 365 Defender
 * Office 365
-* Azure AD (Microsoft Entra ID)
+* **Azure AD (Microsoft Entra ID)**
 * Microsoft Defender for Identity
 * Microsoft Defender for Cloud Apps
 
@@ -410,7 +405,7 @@ Microsoft Sentinel comes with several connectors for Microsoft solutions:
 * Common Event Format (CEF)
 * Trusted Automated eXchange of Indicator Information (TAXII)
 
-### Microsoft Sentinel - Azure Monitor Workbooks
+### 2-6 Microsoft Sentinel - Azure Monitor Workbooks
 
 From Microsoft Sentinel you can create **Azure Monitor Workbooks**
 
@@ -425,7 +420,7 @@ It tells a story about the performance and availability about your applications 
 Workbooks are temporary workspaces to define a document-like format with visualization intertwined
 to help investigate and discuss performance.
 
-### Microsoft Sentinel - Analytics
+### 2-7 Microsoft Sentinel - Analytics
 
 Microsoft Sentinel uses analytics to correlate alerts into **incidents**
 
@@ -433,25 +428,24 @@ Microsoft Sentinel uses analytics to correlate alerts into **incidents**
 
 ![Alt Image Text](../images/az305_6_18.png "Body image")
 
-### Microsoft Sentinel - Automation and Orchestration
+### 2-8 Microsoft Sentinel - Automation and Orchestration
 
-Microsoft Sentinel's automation and orchestration solution provides a highly-extensible architecture that enables scalable automation as new technologies and threats emerge
+Microsoft Sentinel's automation and orchestration solution provides a **highly-extensible architecture that enables scalable automation as new technologies and threats emerge**
 
 Built on the foundation of **Azure Logic Apps**
 
 ![Alt Image Text](../images/az305_6_19.png "Body image")
 
-### Microsoft Sentinel - Investigation
+### 2-9 Microsoft Sentinel - Investigation
 
-Microsoft Sentinel has deep investigation tools that help you to understand the scope and find
-the root cause of a potential security threat.
+Microsoft Sentinel has deep investigation tools that help you to understand the scope and find the root cause of a potential security threat.
 
 You can choose an entity on the interactive graph to ask interesting questions for a specific entity,
 and drill down into that entity and its connections to get to the root cause of the threat.
 
 ![Alt Image Text](../images/az305_6_20.png "Body image")
 
-### Microsoft Sentinel - Hunting
+### 2-10 Microsoft Sentinel - Hunting
 
 Microsoft Sentinel's powerful hunting **search-and-query tools, based on the MITRE framework**, enable you to proactively hunt for security threats across your organization's  data sources, before an alert is triggered
 
@@ -461,7 +455,7 @@ While hunting, you can create bookmarks for interesting events, enabling you to 
 
 ![Alt Image Text](../images/az305_6_21.png "Body image")
 
-### Microsoft Sentinel - Pricing
+### 2-11 Microsoft Sentinel - Pricing
 
 Microsoft Sentinel has two different pricing models
 
@@ -473,11 +467,11 @@ Billed a fixed fee based on the selected tier, enabling a predictable total cost
 
 Billed per gigabyte (GB) for the volume of data ingested for analysis in Microsoft Sentinel and stored in the Azure Monitor Log Analytics workspace.
 
-## The principle of least privilege
+## 3 The principle of least privilege
 
 The principle of least privilege is a security principle that states that **users, applications, and services** should be granted only the **<mark>minimum access necessary</mark>** to perform their assigned tasks, and no more. 
 
-In Microsoft Azure, the principle of least privilege is a critical aspect of security that helps prevent unauthorized access, data breaches, and other security incidents.
+In Microsoft Azure, the principle of least privilege is a critical aspect of security that helps **prevent unauthorized access, data breaches, and other security incidents.**
 
 The principle of least privilege in Azure involves limiting access to Azure resources such as **virtual machines, storage accounts, and databases, as well as Azure services such as Azure Active Directory and Azure Key Vault**.
 
@@ -487,7 +481,7 @@ Azure role-based access control (RBAC) permits administrators to grant roles to 
 
 Following the principle of least privilege helps minimize unauthorized access risks and potential harm from compromised credentials, thus reducing the Azure environment's attack surface.
 
-### The principle of least privilege
+### 3-1 The principle of least privilege
 
 Following the principle of least privilege can help organizations comply with regulatory requirements and best practices for security.
 
@@ -497,12 +491,12 @@ To implement the principle of least privilege in Azure, administrators should fo
 2. Monitor role assignments and permissions regularly to ensure they align with business requirements.
 3. Limit the use of shared accounts and use individual user accounts where possible.
 4. Implement **multi-factor authentication (MFA)** to prevent unauthorized access to user accounts.
-5. Use **Azure Policy** to enforce compliance with organizational policies and industry regulations.
+5. <mark>Use **Azure Policy** to enforce compliance with organizational policies and industry regulations.</mark>
 6. Implement **network security groups (NSGs) and firewalls** to control traffic to and from Azure
 resources.
 7. Regularly **review access control policies** and adjust as necessary to ensure that they remain effective.
 
-### Azure AD Identity Protection
+### 3-2 Azure AD Identity Protection
 
 **Identity Protection** is a feature of Azure AD that let's you to **detect, investigate, remediate**, and **export identity-based risks** for future analysis.
 
@@ -516,7 +510,7 @@ Identity Protection notices:
 
 ![Alt Image Text](../images/az305_6_23.png "Body image")
 
-### Identity Protection - Detection and Remediation
+### 3-3 Identity Protection - Detection and Remediation
 
 Identity Protection identifies for the following risks:
 
@@ -533,10 +527,9 @@ Identity Protection identifies for the following risks:
 
 The **risk signals can trigger remediation efforts** such as requiring users:
 
-Azure AD Multi-Factor Authentication, reset their password using self-service
-password reset, or blocking until an administrator takes action
+Azure AD Multi-Factor Authentication, reset their password using self-service password reset, or blocking until an administrator takes action
 
-### Identity Protection - Investigation
+### 3-4 Identity Protection - Investigation
 
 Identity Protection categorizes risk into three tiers: **low, medium, and high.**
 
@@ -575,7 +568,7 @@ Admins can use key reports for investigations in Identity Protection, **Risky us
 * Block user from signing in
 * Investigate further using Azure ATP
 
-## Introduction to Azure Key Vault
+## 3 Introduction to Azure Key Vault
 
 **Azure Key Vault** helps you **safeguard cryptographic keys** and **other secrets** used by cloud apps and services.
 
@@ -596,23 +589,22 @@ Store and tightly control access to **tokens, passwords, certificates, API keys,
 > Certificates contain key pair (key and secret). This is not to be
 confused with Key Management and Secrets Management
 
-### HSM and FIPS
+### 3-1 HSM and FIPS
 
-An HSM is a Hardware Security Module.
+**An HSM is a Hardware Security Module.**
 
 Its a piece of hardware designed to store encryption keys.
 
 #### Federal Information Processing Standard (FIPS)
 
-US and Canadian government standard that specifies the security requirements for
-cryptographic modules that protect sensitive information.
+**US and Canadian government standard that specifies the security requirements for cryptographic modules that protect sensitive information.**
 
 HSM's that are **multi-tenant are FIPS 140-2 Level 2 Compliant**(multiple customers virtually isolated on an HSM)
 
 HSM's that are **single-tenant are FIPS 140-2 Level 3 Compliant** (single customer on a dedicated HSM)
 
 
-### Azure Key Vault - Vault
+### 3-2 Azure Key Vault - Vault
 
 **A Vault** stores secrets and keys, that can be safeguarded by software or **FIPS 140-2 Level 2 validated HSMs**
 
@@ -631,7 +623,7 @@ To activate your HSM, you will need to:
 > 
 > When you choose Premium and create enough RSA key pairs you will begin to use HSM pools.
 
-### Azure Key Vault - Recovery Options
+### 3-3 Azure Key Vault - Recovery Options
 
 
 * **Soft Delete** allows you to recover or permanently delete a key vault and secrets for the duration of the retention period. (It's enabled by default on creation)
@@ -640,7 +632,7 @@ To activate your HSM, you will need to:
 
 ![Alt Image Text](../images/az305_6_24.png "Body image")
 
-### Azure Key Vault - Pricing
+### 3-4 Azure Key Vault - Pricing
 
 **Azure has two pricing tiers:**
 
@@ -649,21 +641,21 @@ To activate your HSM, you will need to:
 
 ![Alt Image Text](../images/az305_6_25.png "Body image")
 
-### Azure Key Vault - Double Encryption
+### 3-5 Azure Key Vault - Double Encryption
 
 Microsoft has a two layered approach each for **Data At-Rest and Data In-Transit**
 
 **Data-at-Rest**
 
-1. Disk encryption using customer-managed keys
+1. **Disk encryption using customer-managed keys**
 2. Infrastructure encryption using platform-managed keys
 
 **Data-in-Transit**
 
-1. Transit encryption using Transport Layer Security (TLS) 1.2
+1. Transit encryption **using Transport Layer Security (TLS) 1.2**
 2. Additional layer of encryption provided at the infrastructure layer
 
-### Azure Key Vault - Keys
+### 3-6 Azure Key Vault - Keys
 
 When creating a key, there are three options:
 
@@ -673,7 +665,7 @@ When creating a key, there are three options:
 
 For keys generated by Azure, you can use either RSA or EC.
 
-**RSA (Rivest-Shamir-Adleman): 2048.3072,4096**
+**RSA (Rivest-Shamir-Adleman): 2048,3072,4096**
 
 **EC (Elliptic-curve cryptography): P-256. P-384.P-521.p-256K**
 
@@ -686,7 +678,7 @@ For keys generated by Azure, you can set an **Activation and Expiration date**
 
 ![Alt Image Text](../images/az305_6_27.png "Body image")
 
-### Azure Key Vault - Keys
+### 3-7 Azure Key Vault - Keys
 
 When you have a **Premium Vault**, you'll key options for HSM:
 
@@ -716,13 +708,13 @@ In order to use a key, an Azure service needs an identity (within Azure AD) **fo
 
 ![Alt Image Text](../images/az305_6_29.png "Body image")
 
-### Azure Key Vault - Secrets
+### 3-8 Azure Key Vault - Secrets
 
 **Azure Key Vault Secrets** provides **secure storage of generic secrets**,
 
 such as **passwords and database connection strings**.
 
-* Key Vault APls accept and return secret values as strings
+* Key Vault APIs accept and return secret values as strings
 * Internally, Key Vault stores and manages secrets:
 
 	* As sequences of octets (8-bit bytes),
@@ -741,7 +733,7 @@ Key Vault also supports a **contentType** field for secrets
 
 ![Alt Image Text](../images/az305_6_30.png "Body image")
 
-### Azure Key Vault - Secrets
+### 3-9 Azure Key Vault - Secrets
 
 Every secret stored in your Key Vault is encrypted.
 
@@ -750,7 +742,7 @@ Key Vault encrypts secrets at rest with a hierarchy of encryption keys
 * All keys in that hierarchy are protected by modules that are FIPS 140-2 compliant
 * The encryption leaf key is unique to each Key Vault, while the root key is unique to the entire security world.
 * Protection level may vary between regions
-	* E.g., China uses FIPS 140-2 Level 1, and all other regions use Level 2 or higher
+	* E.g., **China uses FIPS 140-2 Level 1, and all other regions use Level 2 or higher**
 
 **Secret Attributes**
 
@@ -795,20 +787,20 @@ az keyvault secret show [--id]
 							[--version]
 ```
 
-### X.509 Certificates
+### 3-10 X.509 Certificates
 
 **What is Public key infrastructure (PKI)?**
 
-PKI is a set of roles, policies, hardware, software and procedures needed to create, manage,
-distribute, use, store and revoke digital certificates and manage public-key encryption.
+<mark>PKI is a set of roles, policies, hardware, software and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption.</mark>
 
 **What is an X.509 certificate?**
 
 A standard defined by the **International Telecommunication Union (ITU)** for **public key certifications**.
+
 X.509 certificates are used in many Internet protocols including:
 
-* SSL/TLS and HTTPS
-* Signed and encrypted email
+* **SSL/TLS and HTTPS**
+* **Signed and encrypted email**
 * Code Signing and Document Signing
 
 **A certificate contains**
@@ -818,7 +810,7 @@ X.509 certificates are used in many Internet protocols including:
 
 **What is a Certificate Authority (CA)?**
 
-An entity that issues digital certificates
+**An entity that issues digital certificates**
 
 A CA acts as a trusted third party-trusted both by the subject (owner) of the certificate and by the party relying upon the certificate
 
@@ -834,7 +826,7 @@ A CA acts as a trusted third party-trusted both by the subject (owner) of the ce
 * A certificate issued by the ICA used by the end entity
 * The entity in the case is an SSL certificate for a website
 
-### X.509 Certificates - Certificate Format
+### 3-11 X.509 Certificates - Certificate Format
 
 A certificate contains a metadata about:
 

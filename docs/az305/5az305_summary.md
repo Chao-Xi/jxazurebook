@@ -16,15 +16,15 @@ There are 40-60 Questions
 * Active Screen /  Hot Area Case Study / Exhibits (tabs on a question)
 
 
-## Microsoft Entra ID Name Change
+## 1 Microsoft Entra ID Name Change
 
-### Azure Active Directory (AD)
+### 1-1 Azure Active Directory (AD)
 
 cloud-based **identity and access management** service 
 
 **Manage users, Sign-Ins and access to AD-related resources**
 
-### Introduction to Azure AD
+### 1-2 Introduction to Azure AD
 
 **Azure Active Directory (Azure AD)** is Microsoft's cloud-based **<mark>identity and access management service</mark>**, which helps your employees sign in and access resources
 
@@ -36,10 +36,10 @@ cloud-based **identity and access management** service
 
 **Internal Resources**
 
-* Applications within your internal networking
-* Access to workstations on-premise
+* **Applications within your internal networking**
+* **Access to workstations on-premise**
 
-Use Azure AD to implement **<mark>iSingle-Sign On (SSO)</mark>**
+Use Azure AD to implement **<mark>Single-Sign On (SSO)</mark>**
 
 Azure Active Directory comes in four editions
 
@@ -48,7 +48,7 @@ Azure Active Directory comes in four editions
 3. **Premium 1** Hybrid Architecture, Advanced Group Access, Conditional Access
 4. **Premium 2** Identity Protection, Identity Governance
 
-### Azure AD - Use Case
+### 1-3 Azure AD - Use Case
 
 **Azure AD** can **authorize** and **authenticate** to multiple sources.
 
@@ -60,7 +60,7 @@ Azure Active Directory comes in four editions
 
 ![Alt Image Text](../images/az305_5_1.png "Body image")
 
-### Active Directory vs Azure Active Directory
+### 1-4 Active Directory vs Azure Active Directory
 
 
 Microsoft introduced **Active Directory** Domain Services in Windows 2000 to give organizations the ability to manage multiple on-premises infrastructure components and systems using a single identity per user.
@@ -72,7 +72,7 @@ Azure AD takes this approach to the next level by providing organizations with a
 * **Active Directory** The on-premise version
 * **Azure AD** The cloud version
 
-### **Azure Active Directory Domain Services (AD DS)**
+### 1-5 **Azure Active Directory Domain Services (AD DS)**
 
 In some cases you'll need to setup your own domain controller(s).
 
@@ -81,20 +81,20 @@ When doing a **lift-and-shift from on-premise** to Microsoft Azure and migrating
 
 **Azure Active Directory Domain Services (AD DS)** provides managed domain service such as:
 
-* Domain joins
-* Group policies
-* Lightweight directory access protocol (LDAP)
-* and Kerberos / NTLM authentication.
+* **Domain joins**
+* **Group policies**
+* **Lightweight directory access protocol (LDAP)**
+* and **Kerberos / NTLM authentication**.
 
 You use can these domain services **without the need to**:
 
-deploy, manage, and patch domain controllers (DCs) in the cloud
+deploy, manage, and patch **domain controllers (DCs)** in the cloud
 
-### Azure AD - Tenant
+### 1-6 Azure AD - Tenant
 
-**<mark>A tenant represents an organization</mark>** in Azure Active Directory.
+**<mark>A tenant represents an organization</mark>** in **Azure Active Directory**.
 
-A tenant is a dedicated Azure AD Service instance.
+**A tenant is a dedicated Azure AD Service instance.**
 
 **A tenant is automatically created when you sign up for either**
 
@@ -107,9 +107,9 @@ AD tenants.
 
 ![Alt Image Text](../images/az305_5_2.png "Body image")
 
-### Active Directory - Users
+### 1-7 Active Directory - Users
 
-**Users** represent an i**dentity for an person or employee** in your domain.
+**Users** represent an **identity for an person or employee** in your domain.
 
 A user has login credentials and can use them to log into the Azure Portal
 
@@ -125,7 +125,7 @@ Azure AD has two kinds of users:
 * **Users** - A user belongs to your organization
 * **Guest Users** - A guest user belongs to another organization
 
-### Azure AD - Groups
+### 1-8 Azure AD - Groups
 
 **Groups** lets the resource owner (or Azure AD directory owner), assign a set of access permissions to all the members of the group, instead of having to provide the rights one-by-one.
 
@@ -137,8 +137,8 @@ Groups contain:
 
 **Assignment**
 
-* You can assign roles directly to a group
-* You can assign applications directly to a group
+* You can **assign roles directly to a group**
+* You can **assign applications directly to a group**
 
 **Request to Join Groups**
 
@@ -148,31 +148,32 @@ The owner can also set up the group to automatically accept all users that join 
 
 ![Alt Image Text](../images/az305_5_3.png "Body image")
 
-### Azure AD - Assign Access Rights
+### 1-9 Azure AD - Assign Access Rights
 
 There are **four ways to assign resource access rights** to your users:
 
-**Direct assignment.** The resource owner directly assigns the user to the resource.
+1 **Direct assignment.** The resource owner directly assigns the user to the resource.
 
-**Group assignment**. The resource owner assigns an Azure AD group to the resource, which automatically gives all of the group members access to the resource
+2 **Group assignment**. The resource owner assigns an **Azure AD group to the resourc**e, which automatically gives all of the group members access to the resource
 
-**Rule-based assignment.** The resource owner creates a group and uses a rule to define which users are assigned to a specific resource.
+3 **Rule-based assignment.** The resource owner creates a group and uses a rule to define **which users are assigned to a specific resource.**
 
-**External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app.
+4 **External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app.
 
-### Managed Identities
+### 1-10 Managed Identities
 
-**Managed Identities** is a concept in **Microsoft Entra ID (Azure AD)** that associates **identities with internal resources**, where these identities have their own **roles and tokens**.
+**Managed Identities** is a concept in <mark>**Microsoft Entra ID (Azure AD)** that associates **identities with internal resources**, where these identities have their own **roles and tokens**</mark>.
 
 Managed Identities increases security by allowing you to **link** directly resources to other resources **without** having to share any security information over the network.
 
 
 Those resources will be **authenticated** against **Entra ID (Azure AD)** to see if they have the necessary **permissions** to manipulate other resources.
 
-For example, we can allow our applications to access **Azure Key Vault** in order to retrieve a **secret** without **exposing any passwords.**
+<mark>For example, we can allow our applications to access **Azure Key Vault** in order to retrieve a **secret** without **exposing any passwords.** </mark>.
 
 
-### System-assigned vs User-assigned
+
+### 1-11 System-assigned vs User-assigned
 
 **Managed Identities is available in two types:**
 
@@ -196,12 +197,12 @@ For example, we can allow our applications to access **Azure Key Vault** in orde
 
 #### **User-assigned**
 
-* Creation：    Created as a standalone Azure resource.
+* Creation：    **Created as a standalone Azure resource.**
 * Lifecycle： Independent life cycle.
-* Deletion： Must be explicitly deleted.
+* Deletion： **Must be explicitly deleted.**
 * Sharing across Azure resources： 
-	* Can be shared.
-	* Can be associated with more than one Azure resource.
+	* **Can be shared.**
+	* **Can be associated with more than one Azure resource.**
 
 ![Alt Image Text](../images/az305_5_4.png "Body image")
 
@@ -209,7 +210,7 @@ For example, we can allow our applications to access **Azure Key Vault** in orde
 * You assign roles to **provide permissions** to a Managed Identity
 
 
-### Azure AD - External Identities
+### 1-12 Azure AD - External Identities
 
 **External Identities** in Azure AD, allow people outside your organization to access your apps and resources, while letting them sign in using whatever identity they prefer.
 
@@ -221,16 +222,14 @@ Supports Logins from **Google** and **Facebook**
 * **Develop apps intended for other Azure AD tenants (single-tenant or multi-tenant)**
 * **Develop white-labeled apps for consumers and customers (Azure AD B2C)**
 
-### Microsoft Entra ID - Access reviews
+### 1-13 Microsoft Entra ID - Access reviews
 
 
-Access reviews in **Microsoft Entra ID (Azure AD)** allow you to regularly review and manage access to resources in your organization.
+**Access reviews** in **Microsoft Entra ID (Azure AD)** allow you to **regularly review and manage access to resources in your organization.**
 
 
-* With access reviews, you can review who has access to resources and determine whether
-their access is still necessary.
-* Access reviews are useful in maintaining security and compliance by ensuring that only
-**authorized individuals have access to sensitive resources**
+* With access reviews, you can review who has access to resources and determine whether their access is still necessary.
+* Access reviews are useful in maintaining security and compliance by ensuring that only **authorized individuals have access to sensitive resources**
 
 
 Access reviews can be conducted for various types of resources, such as **applications, groups, and SharePoint Online sites**.
@@ -243,9 +242,6 @@ Reviewers can be **internal** or **external** to your organization.
 
 **Microsoft Entra ID - Access reviews**
 
-During an access review, the reviewer will be presented with a list of people who have access to the resource being reviewed. They can choose to **approve** or **revoke access** for each individual.
-
-### Microsoft Entra ID - Access reviews
 
 During an access review, the reviewer will be presented with a list of people who have access to the resource being reviewed. They can choose to **approve** or **revoke** access for each individual.
 
@@ -258,34 +254,33 @@ They ensure resources are accessed only by necessary users and that access is re
 
 ![Alt Image Text](../images/az305_5_6.png "Body image")
 
-### Single Sign-On (SSO) in EntraID
+### 1-14 Single Sign-On (SSO) in EntraID
 
 **Single Sign-On (SSO) in Entra ID (Azure AD)** is a feature that allows users to **authenticate once** with Azure AD and then access **multiple applications and services without having to authenticate again.**
 
 When a user signs into Entra ID with their credentials, Entra ID creates a **security token** that can be used to access other **resources** within the same organization.
 
-This token can be used to authenticate the user to other cloud-based or on-premises
-applications that have been integrated with EntraID.
+This token can be used to authenticate the user to other cloud-based or on-premises applications that have been integrated with EntraID.
 
-SO supports a wide range of applications, including cloud-based applications **such as Microsoft 365, Salesforce, and Dropbox**, as well as on-premises applications such as SharePoint and SAP.
+SSO supports a wide range of applications, including cloud-based applications **such as Microsoft 365, Salesforce, and Dropbox**, as well as on-premises applications such as SharePoint and SAP.
 
-SO can also be used with custom-built applications using industry-standard protocols **such as SAML, OpenID Connect, and OAuth.**
+SSO can also be used with custom-built applications using industry-standard protocols **such as SAML, OpenID Connect, and OAuth.**
 
-### Single Sign-On (SSO) in Entra ID
+> Single Sign-On (SSO) in Entra ID
 
 There are several ways you can configure an application for SSO
 
-Choosing an SO method depends on how the application is configured for authentication.
+Choosing an SSO method depends on how the application is configured for authentication.
 
 Cloud applications can use **OpenID Connect, OAth, SAML, password-based, or linked** for SSO. Single sign-on can also be disabled.
 
-On-premises applications can use **password-based, Integrated Windows Authentication, header-based**, or linked for SO. The on-premises choices work when applications are configured for **Application Proxy**.
+On-premises applications can use **password-based, Integrated Windows Authentication, header-based**, or linked for SSO. The on-premises choices work when applications are configured for **Application Proxy**.
 
 ![Alt Image Text](../images/az305_5_7.png "Body image")
 
-### Single Sign-On (SSO) protocols
+### 1-15 Single Sign-On (SSO) protocols
 
-**The main SO protocols supported in Azure include:**
+**The main SSO protocols supported in Azure include:**
 
 1. **OpenID Connect and OAth:** OpenID Connect is an identity laver built on top of OAuth 2.0.  It allows for authentication and authorization of users in a secure and standardized manner. sIt is widely used for **web and mobile applications.**
 
@@ -299,7 +294,7 @@ On-premises applications can use **password-based, Integrated Windows Authentica
 
 6. **Header-based authentication**: In this method, the application accepts an authentication token in the form of a header in each request. The token is validated by the application to authenticate the user.
 
-### Multi-Factor Authentication
+### 1-16 Multi-Factor Authentication
 
 **What is Multi-Factor Authentication (MFA)?**
 
@@ -311,19 +306,15 @@ MFA is an option in most cloud providers and even social media websites such as 
 
 ![Alt Image Text](../images/az305_5_8.png "Body image")
 
-### Conditional Access
+### 1-17 Conditional Access
 
-**Conditional Access **provides an extra layer of security before allowing authenticated
-users to access data or other assets.
+**Conditional Access** provides an extra layer of security before allowing authenticated users to access data or other assets.
 
-Conditional Access is implemented via **Conditional Access policies**, which are **a set of
-rules** that specify the **conditions** under which sign-ins are **evaluated and allowed.**
+Conditional Access is implemented via **Conditional Access policies**, which are **a set of rules** that specify the **conditions** under which sign-ins are **evaluated and allowed.**
 
 For example, you can create a **Conditional Access policy** that states:
 
-""If the user account name is a member of a group for users that are assigned the
-Exchange, user, password, security, SharePoint, or global administrator roles,
-**require MFA before allowing access.'**
+If the user account name is a member of a group for users that are assigned the Exchange, user, password, security, SharePoint, or global administrator roles, **require MFA before allowing access.'**
 
 
 **This policy enables MFA enforcement based on group membership,** simplifying the process compared to configuring MFA for individual users when roles change.
@@ -331,7 +322,6 @@ Exchange, user, password, security, SharePoint, or global administrator roles,
 ![Alt Image Text](../images/az305_5_9.png "Body image")
 
 
-### Conditional Access
 
 **Conditional Access policy** analyzes:
 
@@ -345,7 +335,7 @@ Require MFA, Block access, and Allow access
 
 ![Alt Image Text](../images/az305_5_10.png "Body image")
 
-### Conditional Access - Signals
+### 1-18 Conditional Access - Signals
 
 **Signals** are metadata associated with an identity attempting to gain access
 
@@ -378,13 +368,14 @@ Cloud apps or actions can include or exclude cloud applications or user actions 
 * For customers with Identity Protection, user risk can be evaluated as part of a Conditional Access policy.
 * User risk represents the probability that a given identity or account is compromised.
 
-### Conditional Access  - Common Decisions
+### 1-19 Conditional Access  - Common Decisions
 
 **Common decisions** define the access controls that decide **what level of access based on Signal information**
 
-**Block access**： Most restrictive decision
+* **Block access**： Most restrictive decision
+* **Grant access**： Least restrictive decision, still require one or more of the following options:
 
-**Grant access**： Least restrictive decision, still require one or more of the following options:
+---
 
 * Require multi-factor authentication
 * Require device to be marked as compliant
@@ -398,7 +389,7 @@ You can use Conditional Access policies with:
 * Microsoft 365 E3 and E5
 * Azure AD Premium P1 and Azure AD Premium P2 licenses
 
-### Types of Azure roles
+### 1-20 Types of Azure roles
 
 Roles can be confusing because Azure has three types of roles that can serve the same purpose.
 
@@ -409,7 +400,7 @@ This authorization system is also known as **Role-Based Access Controls (RBAC)**
 
 **Azure Active Directory (Azure AD) roles**
 
-Azure AD roles are used to manage Azure AD resources in a directory
+<mark>Azure AD roles are used to manage Azure AD resources in a directory<mark>
 
 Azure Active Directory (AD) roles are used to manage **Azure AD resources** in a directory such as creating or editing users, assigning administrative roles to others, resetting user passwords, managing user licenses, and managing domains, among other tasks.
 
@@ -420,7 +411,7 @@ Azure Active Directory (AD) roles are used to manage **Azure AD resources** in a
 
 Classic subscription administrator roles refer to the older model of Azure access control and include three types: **Account Administrator, Service Administrator, and Co-Administrator**.
 
-### Access Controls (IAM)
+### 1-21 Access Controls (IAM)
 
 **Identity Access Management (IAM)** allows you to **<mark>screate and assign roles</mark>** to users
 
@@ -428,8 +419,8 @@ Classic subscription administrator roles refer to the older model of Azure acces
 
 Roles **restrict access** to resource actions (also known as operations). There are **two** types of roles:
 
-1. **BuiltinRole** - Refer to the set of predefined roles offered by Microsoft in Azure. Read-only and cannot be altered
-2. **CustomRole** - Represent user-defined roles in Azure with your own custom logic based on specific requirements.
+1. **BuiltinRole** - Refer to the set of predefined roles offered by Microsoft in Azure. **Read-only and cannot be altered**
+2. **CustomRole** - Represent user-defined roles i**n Azure with your own custom logic based on specific requirements**.
 
 ![Alt Image Text](../images/az305_5_12.png "Body image")
 
@@ -446,7 +437,7 @@ Is when you apply a role to a **service principal**
 
 Block users from performing specific actions even if a role assignment grants them access. The only way to apply Deny assignments is through **Azure Blueprints**
 
-### Classic Aldministrators
+### 1-22 Classic Administrators
 
 **Classic Administrators** refer to the **<mark>original role system in Azure</mark>**. Despite the legacy status of Classic Administrators, understanding these roles can still be beneficial, like when working with older Azure setups.
 
@@ -454,13 +445,13 @@ However, it's recommended to use the new **RBAC** system for managing access to 
 
 **Classic Administrators have three types of roles:**
 
-1. **Account Administrator** The billing owner of the subscription. Has no access to the Azure portal.
+1. **Account Administrator** <mark>The billing owner of the subscription. Has no access to the Azure portal<、mark>.
 2. **Service Administrator** same access of a user assigned the **Owner** role at subscription scope. Full access to the Azure portal.
 3. **Co-Administrator** same access of a user who is assigned the **Owner** role at the subscription scope
 
 > Classic resources and classic administrators will be retired on August 31, 2024
 
-### Azure Role- Based Access Control (RBAC)
+### 1-23 Azure Role- Based Access Control (RBAC)
 
 **Azure role-based access control (Azure RBAC)** helps you manage who has access to Azure resources,
 
@@ -470,9 +461,9 @@ what actions they can perform on resources, and in what scope (areas they have a
 
 A Role Assignment consists of these three elements
 
-1. Scop
-2. Role Definition
-3. Security Principal
+1. **Scope**
+2. **Role Definition**
+3. **Security Principal**
 
 There are **four fundamental** Azure roles
 
@@ -484,7 +475,7 @@ Azure RBAC includes over **70 built-in roles**
 
 **Scope** is the **set of resources** that access for the Role Assignment applies to.
 
-Scope Access Controls at the Management, Subscription, Resource Group, and resource level.
+Scope Access Controls at the **Management, Subscription, Resource Group, and resource level**.
 
 * **Management Group** Inherits across **all associated subscriptions and resources.**
 
@@ -496,7 +487,7 @@ Scope Access Controls at the Management, Subscription, Resource Group, and resou
 
 * **Resource**： Applies only to that **specific resource**
 
-### Azure Role-Based Access Control (RBAC)
+### 1-24 Azure Role-Based Access Control (RBAC)
 
 A **Role Definition** is a set of permissions that determines what actions can be performed such as **read, write, or delete on various resources**.
 
@@ -514,11 +505,11 @@ Azure has built-in roles, and you can define **custom roles**
 
 * **Group** A set of users created in Azure Active Directory.
 
-* **Service Principal** A security identity used by applications or services to access specific Azure resources.
+* **Service Principal** <mark>A security identity used by applications or services to access specific Azure resources</mark>.
 
-* **Managed Identity** An identity in Azure Active Directory that is automatically managed by Azure.
+* **Managed Identity** <mark>An identity in Azure Active Directory that is automatically managed by Azure</mark>.
 
-### Azure AD Roles
+### 1-25 Azure AD Roles
 
 **Azure AD roles** are used to **manage Azure AD resources** in a directory such as:
 
@@ -532,7 +523,7 @@ Azure has built-in roles, and you can define **custom roles**
 A few important Built-In Azure AD roles you should know:
 
 * **Global Administrator** Full access to everything Users
-* **User Administrator** Full access to create and manage users
+* **User Administrator** **Full access to create and manage users**
 * **Billing Administrator** Make purchases, manage subscriptions and support tickets
 
 You can create **custom roles**, which are very flexible and can define the exact set of permissions that you need.
@@ -543,7 +534,7 @@ You can create **custom roles**, which are very flexible and can define the exac
 
 ![Alt Image Text](../images/az305_5_17.png "Body image")
 
-### Anatomu of an Azure Role
+### 1-26 Anatomuy of an Azure Role
 
 The **property** names in an **Azure Role Definition** will change whether you're using **Azure PowerShell** or **Azure CLI.**
 
@@ -577,12 +568,12 @@ The two different interfaces use different **syntax** and terminology.
 }
 ```
 
-* **Name (roleName) **The display name of the custom role
-* **Id (name)** The unique ID of the custom role. This is autogenerated for you •
-* **IsCustom (roleType) **Indicates whether this is a custom role. (true or false) '
-* **Description (description) **The description of the custom role
+* **Name (roleName)** The display name of the custom role
+* **Id (name)** The unique ID of the custom role. This is autogenerated for you 
+* **IsCustom (roleType)** Indicates whether this is a custom role. (true or false) 
+* **Description (description)** The description of the custom role
 * **Actions (actions)** An array of strings that specify the management 
-	* operations that the role is allowed to perform
+	* **operations that the role is allowed to perform**
 * **NotAtions (notAtions**) An array of strings that specify the management operations that are excluded from the allowed Actions
 * **DataActions (dataActions)** An array of strings that specify data operations the role is allowed perform to your data within that object.
 * **NotDataActions (notDataActions)** An array of strings that specify the data operations that are excluded from the allowed DataActions
@@ -606,13 +597,13 @@ Microsoft.CostManagement/exports/run/action
 
 This means that the role is granted the permission to perform **read operations on all resource types under the Microsoft.Storage resource provider**.
 
-### Azure AD Roles vs  Azure Roles (RBAC)
+### 1-27 Azure AD Roles vs Azure Roles (RBAC)
 
 * **Azure AD Roles**
 
 They are used for managing **Azure AD resources**
 
-AD resources being:
+**AD resources being:**
 
 * Users
 * Groups
@@ -635,11 +626,11 @@ Azure resources being:
 
 ![Alt Image Text](../images/az305_5_18.png "Body image")
 
-* By default, Azure roles and Azure AD roles are separate, and **do not span Azure and Azure AD**
+* By default, Azure roles and Azure AD roles are separate, and **<mark>Pdo not span Azure and Azure AD</mark>**
 * By default, the **Global Administrator** **doesn't have permissions** to manage Azure resources.
 * Global Administrator can gain access to Azure resource if granted the **User Access Administrator** role (an Azure role)
 
-### Introduction to Azure Policies
+### 1-28 Introduction to Azure Policies
 
 **Azure Policies** enforce organizational standards and to assess **compliance** at-scale 
 
@@ -666,7 +657,7 @@ to enforce **PCI-DSS compliance**
 
 ![Alt Image Text](../images/az305_5_19.png "Body image")
 
-### Viewing Non-Compliant Resources
+### 1-29  Viewing Non-Compliant Resources
 
 Once a policy is assigned, it will evaluate for the compliance state periodically
 
@@ -674,7 +665,7 @@ We can see how compliant we are on the **Compliance tab**
 
 ![Alt Image Text](../images/az305_5_20.png "Body image")
 
-### Azure Policy Scope
+### 1-30 Azure Policy Scope
 
 #### Management groups
 
@@ -689,7 +680,7 @@ This could be as broad as a management group or as specific as a single resource
 
 The hierarchy of scopes in Azure are like other scopes, like **Azure Resource Manager or RBAC**. It moves from broad to specific in the following order:
 
-**Management Group > Subscription > Resource Group > Resource.**
+**Management Group > Subscription > Resource Group > Resource**
 
 #### Resource groups
 
@@ -701,15 +692,15 @@ Policies applied at higher levels of the hierarchy (like a management group or a
 
 This structure provides a powerful mechanism for applying broad organizational policies while still allowing for flexibility and customization at lower levels.
 
-### Anatomy of an Azure Policy Definition File
+### 1-31 Anatomy of an Azure Policy Definition File
 
 **Display Name** Identifies the policy (128-character limit)
 
 **Type (ReadOnly)**
 
-* Builtin - Maintained by Microsoft
-* Custom - Created by you
-* Static - Microsoft Owned, A Regulatory Compliance
+* **Builtin** - Maintained by Microsoft
+* **Custom** - Created by you
+* **Static** - Microsoft Owned, A Regulatory Compliance
 
 **Description** Provides the context of the policy
 
@@ -735,7 +726,7 @@ Determines which resource types are evaluated. Changes whether Resource Provider
 ![Alt Image Text](../images/az305_5_21.png "Body image")
 
 
-### Anatomy of an Azure Policy Definition File
+### 1-32 Anatomy of an Azure Policy Definition File
 
 **Parameters**
 
@@ -797,15 +788,14 @@ You can apply **logical operators** to these conditions to precisely define the 
 * **Deny** - If a resource's creation or update doesn't adhere to the policy, it fails.
 * **Audit** - Creates a warning event in the activity log when evaluating a **non-compliant resource**, but it doesn't stop the request.
 * **Append** - Adds extra parameters/fields to the resource during its creation or update. For example, it could append tags on resources like 'Cost Center' or specify allowed IP addresses for a storage resource.
-* **Audit If Not Exists** - Creates a warning event in the activity log when evaluating a non-compliant resource, but it doesn't stop the request. "**Audit"** is used to audit the **properties** of a resource, while "**AuditIfNotExists**" is used to audit the **existence
-* of a related resource**.
+* **Audit If Not Exists** - Creates a warning event in the activity log when evaluating a non-compliant resource, but it doesn't stop the request. "**Audit"** is used to audit the **properties** of a resource, while "**AuditIfNotExists**" is used to audit the **existence of a related resource**.
 * **Deploy If Not Exists** - Executes a template deployment when a specific condition is met. For example, if SQL encryption is enabled on a database, then it can run a template after the DB is created to set it up a specific way.
 * **Disabled** - The policy rule is ignored (disabled). Often used for testing.
 
 ![Alt Image Text](../images/az305_5_25.png "Body image")
 
 
-### Introduction to Azure Resource Manager
+## 2 Introduction to Azure Resource Manager
 
 **Azure Resource Manager (ARM)** is a service that allows you to manage Azure resources.
 
@@ -814,17 +804,17 @@ Azure Resource Manager is a collection of services in the Azure Portal, **so you
 It is a management layer that allows you to:
 
 * Create, Update, Delete Resources
-* Apply Management features e.g., Access Controls, Locks, Tags
-* Write Infrastructure as Code (laC) via JSON templates.
+* Apply Management features e.g., **Access Controls, Locks, Tags**
+* Write **Infrastructure as Code (IaC) via JSON templates**.
 
 We will be examining the following key components that form the **Azure Resource Manager (ARM) layer:**
 
 * Subscriptions
 * Management Groups
 * Resource Groups
-* Resource Providers
-* Resource Tags
-* Resource Locks
+* **Resource Providers**
+* **Resource Tags**
+* **Resource Locks**
 * Azure Blueprints
 * Access Control (IAM)
 * Role-Based Access Controls (RBAC)
@@ -833,7 +823,7 @@ We will be examining the following key components that form the **Azure Resource
 
 ![Alt Image Text](../images/az305_5_26.png "Body image")
 
-### Azure Resource Manager - Use Case
+### 2-1 Azure Resource Manager - Use Case
 
 ![Alt Image Text](../images/az305_5_27.png "Body image")
 
@@ -841,7 +831,7 @@ Think of Azure Resource Manager (ARM) as a "**gatekeeper**"
 
 All **requests** flow through ARM, and it decides whether that request can be performed on a **resource**
 
-E.g., creation, updating, and deletion of a virtual machine
+**E.g., creation, updating, and deletion of a virtual machine**
 
 ARM uses Azure's RBAC to determine whether a user has the necessary permissions to carry out a request.
 
@@ -849,14 +839,13 @@ ARM uses Azure's RBAC to determine whether a user has the necessary permissions 
 When a request is made, ARM checks the user's assigned roles and the permissions associated with those roles.
 If the user has the necessary permissions, the request is **allowed**; otherwise, it is **denied**.
 
-### Azure Resource Manager - Scope
+### 2-2 Azure Resource Manager - Scope
 
 **What is scope?**
 
 Scope is a **boundary of control** for azure resources. It is a way to **govern** your resource by placing resources
 
-* within a logical grouping
-* and applying logical restrictions in the form of rules.
+* within a logical grouping and applying logical restrictions in the form of rules.
 
 **Management Groups**
 
@@ -876,14 +865,13 @@ An azure service e.g., Azure VMs
 
 ![Alt Image Text](../images/az305_5_28.png "Body image")
 
-### **Azure Management Groups**
+### 2-3 **Azure Management Groups**
 
-Managing multiple subscriptions (accounts) into a hierarchal structure.
+**Managing multiple subscriptions (accounts) into a hierarchal structure.**
 
 Each directory is given a single top-level management group called the "Root" management group.
 
-All subscriptions within a management group automatically **inherit the conditions** applied to
-the management group.
+All subscriptions within a management group automatically **inherit the conditions** applied to the management group.
 
 **Important facts about management groups**
 
@@ -895,7 +883,7 @@ the management group.
 
 ![Alt Image Text](../images/az305_5_29.png "Body image")
 
-### Subscriptions
+### 2-4 Subscriptions
 
 Before you can do anything in your Azure account. You'll need to have a subscription
 
@@ -913,14 +901,14 @@ e.g., If you wanted Developer support, You would add a Developer Support Subscri
 
 At the subscription level you'll have the ability to set:
 
-* Resource Tags
+* **Resource Tags**
 * **Access Controls**
-* Resources Groups
-* Cost Management and Billing
+* **Resources Groups**
+* **Cost Management and Billing**
 
 ![Alt Image Text](../images/az305_5_31.png "Body image")
 
-### Resources Groups
+### 2-5 Resources Groups
 
 **Resource Group**
 
@@ -944,37 +932,37 @@ A service that supplies Azure resources.
 
 > E.g., Microsoft.Compute
 
-### Resources Providers
+### 2-6 Resources Providers
 
 In order to **use** Azure resources, you have to **register Resource Providers**
 
 Many Resource Providers are registered by default for you with your Subscription.
 
-However, for certain resources, you may need to manually register the Resource Provider.
+However, for certain resources, **you may need to manually register the Resource Provider.**
 
 **You can register Resource Providers under your subscription in the Azure portal, through Azure PowerShell, or Azure CLI**
 
 ![Alt Image Text](../images/az305_5_33.png "Body image")
 
-### Resource Tags
+### 2-7 Resource Tags
 
 **A tag** is a **key and value pair** that you can assign to azure resources.
 
 Tags allow you to organize your resources in the following ways:
 
-**Resource management**
+**1 Resource management**
 
 Specific workloads, environments e.g., Developer Environments
 
-**Cost management and optimization**
+**2 Cost management and optimization**
 
 Cost tracking, Budgets, Alerts
 
-**Operations management**
+**3 Operations management**
 
 Business commitments and SLA operations e.g., Mission-sCritical Services
 
-**Security**
+**4 Security**
 
 Classification of data and security impact
 
@@ -992,7 +980,7 @@ Classification of data and security impact
 * Project = Enterprise
 * Location = West US
 
-### **Resource Locks**
+### **2-8 Resource Locks**
 
 As an admin, you may need to **lock a subscription, resource group, or resource** to **prevent other users from accidentally deleting or modifying critical resources.**
 
@@ -1010,7 +998,7 @@ authorized users can read a resource, but they **can't delete or update** the re
 ![Alt Image Text](../images/az305_5_34.png "Body image")
 
 
-### Resource Locks
+### 2-9 Resource Locks
 
 **Managing Locks:**
 
@@ -1019,17 +1007,16 @@ authorized users can read a resource, but they **can't delete or update** the re
 * Azure CLI: Commands like az lock create help manage locks.
 * **Azure Resource Manager templates**: You can also define locks in your ARM templates.
 
-### Azure Blueprints
+### 2-10 Azure Blueprints
 
-**Azure Blueprints** enable **quick creation** of **governed subscriptions**.
+<mark>**Azure Blueprints** enable **quick creation** of **governed subscriptions**.</mark>
 
 Compose artifacts based on common or organization-based patterns into re-usable blueprints.
 
 The service is designed to help with **environment setup**
 
 
-Blueprints are a declarative way to orchestrate the deployment of various resource templates
-and other artifacts such as:
+**Blueprints are a declarative way to orchestrate the deployment of various resource templates and other artifacts such as:**
 
 * Role Assignments
 * Policy Assignments
@@ -1040,7 +1027,7 @@ Azure Blueprint service is powered by the globally distributed Azure Cosmos DB,
 
 ensuring blueprint objects are replicated across multiple regions, providing **redundancy and resilience. **
 
-### ARM Templates
+###  2-11 ARM Templates
 
 #### What is Infrastructure As Code? (IaC)
 
@@ -1099,7 +1086,7 @@ With ARM templates you can:
 }
 ```
 
-#### ARM Template - Resoyrce
+#### ARM Template - Resource
 
 **Resource**
 
@@ -1176,7 +1163,7 @@ Allows you to pass variables to your ARM template
 * **maxLength** the maximum length of characters or array
 * description the description that will be displayed to the in the Azure Portal
 
-### ARM Template - Functions
+### 2-12 ARM Template - Functions
 
 **Functions**
 
@@ -1204,7 +1191,7 @@ Functions are called using **parentheses e.g. ()**:
 * **Resource**: extensionResourceld, listAccountSas, listKeys, listSecrets, list*, pickZones, providers, reference, resourceld, subscriptionResourceld, tenantResourceld
 * **String**: base64, base64ToJson, base64ToString, concat, contains, dataUri, dataUriToString, empty, endsWith, first, format, guid, indexOf, join, last, lastlndexOf, length, newGuid, padLeft, replace, skip, split, startsWith, string, substring, take, toLower, topper, trim, uniqueString, uri, uriComponent, uriComponentToString
 
-### ARM Template - Variables
+### 2-13 ARM Template - Variables
 
 **Variables**
 
@@ -1271,7 +1258,7 @@ Using params to **choose the environment**
 "[variables('environmentSettinas' ) [parameters( 'environmentName")].instanceSize]"
 ```
 
-### ARM Template - Outputs
+### 2-14 ARM Template - Outputs
 
 
 **Outputs**
