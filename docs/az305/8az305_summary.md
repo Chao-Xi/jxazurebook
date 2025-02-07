@@ -146,7 +146,7 @@ To dynamically scale database resources, you can use the following options:
 
 **Vertical scaling**: **This involves adjusting the resources allocated to your database, such as CPU or memory**. Both Azure SQL Database and Azure SQL Managed Instance support vertical scaling.
 
-### Database Scalability
+### 1-9 Database Scalability
 
 The exact process for scaling your database resources may vary depending on which service you are using, but in general, the steps are as follows:
 
@@ -673,7 +673,7 @@ These NoSQL engines offer two specific **capacities**:
 
 ![Alt Image Text](../images/az305_8_28.png "Body image")
 
-### What is Cosmos DB?
+### 7-1 What is Cosmos DB?
 
 **Cosmos DB is a NoSQL Database** with an incredibly **fast** response time and string support for **scalability**.
 
@@ -682,7 +682,7 @@ Cosmos DB is a fully managed service, which means Azure handles all of Cosmos DB
 **Main Advantages of Azure Cosmos DB**
 
 
-* Integrates with many **Azure Services** e.g., Azure Functions, Azure Kubernetes Services, Azure App Services
+* <mark>Integrates with many **Azure Services** e.g., Azure Functions, Azure Kubernetes Services, Azure App Services</mark>
 * Integrates with many databases APIs like the native **Core SQL, MongoDB, Cassandra, Gremlin**
 * Support for multiple development SDKs, spanning .Net, Java, Python, and Node.Js.
 * Offers a schema-less service with automatic indexing of data, ensuring rapid queries
@@ -692,7 +692,7 @@ Cosmos DB is a fully managed service, which means Azure handles all of Cosmos DB
 * **Autoscale** is provided to handle a variety of workload sizes.
 
 
-### Cosmos DB APIs
+### 7-2 Cosmos DB APIs
 
 Different types of APls are available in Azure Cosmos DB to support a wider range of applications.
 
@@ -706,7 +706,7 @@ These APIs allow data to be delivered **via documents, key-value pairs, wide-col
 * Azure Table API - used to communicate with **Azure Table Storages** and allows indexes in the partition and row keys.
 * **Gremlin API - used to create a graph-based** data view that can be queried using graph traversal language
 
-### Cosmos DB Explorer
+### 7-3 Cosmos DB Explorer
 
 Cosmos DB Explorer is **a web interface** to explore and interact with your Cosmos DB accounts
 
@@ -714,7 +714,7 @@ Cosmos DB Explorer is **a web interface** to explore and interact with your Cosm
 
 ![Alt Image Text](../images/az305_8_30.png "Body image")
 
-### Cosmos DB Explorer
+### 7-4 Cosmos DB Explorer
 
 When navigating within Azure to a  Cosmos DB Account under **Data Explorer**, it's the same as Cosmos DB Explorer
 
@@ -724,7 +724,7 @@ Using Cosmos DB Explorer with a Graph Database (Gremlin)
 
 ![Alt Image Text](../images/az305_8_32.png "Body image")
 
-### Partitioning Schemas in Cosmos DB
+### 7-5 Partitioning Schemas in Cosmos DB
 
 Partitioning in Azure Cosmos DB plays an important role in **optimizing performance.**
 
@@ -739,19 +739,19 @@ Data in Cosmos DB indexes is grouped by partition keys, ensuring quick and effic
 * **Replica-Sets** are made up of a group of **physical partitions** that are materialized as a self-managed, dynamically load-balanced group of replicas that **span across multiple fault domains.**
 
 
-### Partitioning Schemas in Cosmos DB
+### 7-6 Partitioning Schemas in Cosmos DB
 
-Each physical **partition consists** of a set of **replicas**, aka a **replica set**.
+<mark>Each physical **partition consists** of a set of **replicas**, aka a **replica set**.</mark>
 
 
-**Logical partitions** are mapped to **physical partitions** that are distributed globally.
+<mark>**Logical partitions** are mapped to **physical partitions** that are distributed globally</mark>.
 
 **Partition set** in the image refers to a group of **physical partitions** that manage the **same logical partition keys** across multiple **regions**
 
 
 ![Alt Image Text](../images/az305_8_33.png "Body image")
 
-### Choosing a partition key
+### 7-7 Choosing a partition key
 
 A partition key has two components: **partition key path** and the **partition key value.**
 
@@ -781,9 +781,9 @@ Your partition key for all containers should be:
 
 ![Alt Image Text](../images/az305_8_34.png "Body image")
 
-### Choosing a unique keys
+### 7-8 Choosing a unique keys
 
-Unique keys provide developers with the ability to add a layer of data integrity to their database.
+**Unique keys provide developers with the ability to add a layer of data integrity to their database.**
 
 By creating a unique key policy when a container is created, you ensure the uniqueness of **one or more values per partition key.**
 
@@ -802,7 +802,7 @@ Unique key names are case-sensitive
 
 ![Alt Image Text](../images/az305_8_35.png "Body image")
 
-### Properties of Cosmos DB Containers
+### 7-9 Properties of Cosmos DB Containers
 
 An **Azure Cosmos container has a set of system-defined properties.**
 
@@ -812,7 +812,7 @@ The following table describes the list of **system-defined properties:**
 
 ![Alt Image Text](../images/az305_8_36.png "Body image")
 
-### Cosmos DB Containers - Capacity
+### 7-10 Cosmos DB Containers - Capacity
 
 **What is capacity?**
 
@@ -844,12 +844,12 @@ You run your database operations against your containers without having to provi
 * Easy to configure, with limitations
 
 
-### Cosmos B Containers - Capacity
+### 7-11 Cosmos B Containers - Capacity
 
 ![Alt Image Text](../images/az305_8_38.png "Body image")
 
 
-### Consistency levels in Cosmos DB
+### 7-12 Consistency levels in Cosmos DB
 
 Azure Cosmos DB provides **five different consistency levels** to maintain data availability and querying performance depending on your requirements
 
@@ -857,7 +857,7 @@ Azure Cosmos DB provides **five different consistency levels** to maintain data 
 
 1. **Strong** - Linearizability. Reads are guaranteed to return the most recent version of an item
 2. **Bounded Staleness** - Consistent Prefix. Reads lag behind writes by at most k prefixes or t interval
-3. **Session** - Consistent Prefix. Monotonic reads, monotonic writes, read-your-writes, write-follows-reads
+3. <mark>**Session** - Consistent Prefix. Monotonic reads, monotonic writes, read-your-writes, write-follows-reads</mark>
 4. **Consistent Prefix** - Updates returned are some prefix of all the updates, with no gaps
 5. **Eventual** - Out of order reads
 
@@ -870,7 +870,7 @@ You set the default consistently at the Cosmos DB account-level under Default Co
 #### **1. Strong Consistency**
 
 * Read operations ensure that the most recent data is **returned**.
-* Read operations costs the same as **Bounded Staleness but more than session and eventual consistencies**
+* <mark>Read operations costs the same as **Bounded Staleness but more than session and eventual consistencies**</mark>
 * Write operations can only be **read** after the data has been replicated by most replicas
 
 #### **2. Bounded Staleness**
@@ -888,7 +888,7 @@ You set the default consistently at the Cosmos DB account-level under Default Co
 
 * Read operations ensure that written data is consistent within the **same session**.
 * Consistency is user-session specific, and other users might see "**dirty**" data from recent writes.
-* Default consistencv level used to newly created databases.
+* Default consistency level used to newly created databases.
 * Reading cost are lower than **Bounded Staleness and Strong Consistency**, but higher than **Eventual Consistency**.
 
 
@@ -905,9 +905,9 @@ You set the default consistently at the Cosmos DB account-level under Default Co
 * **Lowest latency** and best performance among the consistency levels
 * **Least expensive** read operations cost compared to an other consistency levels
 
-## Azure Cache for Redis
+## 8 Azure Cache for Redis
 
-### Reds Introduction
+### 8-1 Reds Introduction
 
 **What is Redis?**
 
@@ -918,8 +918,7 @@ Since all data is stored in memory, its highly volatile, meaning data loss is po
 Redis is very fast that it can deliver content from its store with single to double digit milliseconds, e.g., 10 ms
 
 
-Despite its in-memory nature, Redis provides options for data persistence, allowing
-you to balance performance with durability.
+**Despite its in-memory nature, Redis provides options for data persistence, allowing you to balance performance with durability.**
 
 It can periodically save data snapshots to disk or append each command to a log.
 
@@ -945,13 +944,14 @@ redis 127.0.0.1:6379> get mykey
 "somevalue"
 ```
 
-### Azure Cache for Redis
+### 8-2 Azure Cache for Redis
 
 **Azure Redis Cache** is based on the popular open-source Redis cache.
 
 It gives you access to a secure, dedicated Redis cache that Microsoft manages and that you can access from any Azure application.
 
 Azure Redis Cache is an in-memory database that caches data in key-value pairs.
+
 It helps your application become more **responsive** even as the customer load increases.
 
 It takes advantage of the Redis engine's **low-latency, high-throughput** capabilities.
@@ -969,7 +969,7 @@ Using the **cache-aside pattern**, you can store and share database query result
 
 ![Alt Image Text](../images/az305_8_41.png "Body image")
 
-### Azure Redis Cache - Diagram
+### 8-3 Azure Redis Cache - Diagram
 
 Diagram of **Cache-Aside Pattern** on **Azure Storage**
 
@@ -981,10 +981,9 @@ If not, pull the item from the **Table storage**, re-cache it in Redis, and then
 
 ![Alt Image Text](../images/az305_8_42.png "Body image")
 
-### Caching Expiring Policies
+### 8-4 Caching Expiring Policies
 
-Azure Redis Caches expiration policies are configured per each request, so we
-could have an expiration policy different for each cache key.
+Azure Redis Caches expiration policies are configured per each request, so we could have an expiration policy different for each cache key.
 
 For Redis Distributed cache, those expiration policies are as follows:
 
@@ -996,7 +995,7 @@ For Redis Distributed cache, those expiration policies are as follows:
 	* unaccessed for a set duration (e.g., 10 minutes), it expires.
 
 
-## Azure Table Storage
+## 9 Azure Table Storage
 
 **Azure Table storage** is a **NoSQL key/value datastore** within Azure Storage Accounts
 
@@ -1004,14 +1003,14 @@ Azure Table stores vast amount of **unstructured or semi-structured data** with 
 
 There are two ways to interact with Azure Tables:
 
-**Azure Table Storage API**. A robust tool for developers to seamlessly integrate, query, and manage their data.
+* **Azure Table Storage API**. A robust tool for developers to seamlessly integrate, query, and manage their data.
 
-**Microsoft Azure Storage Explorer.** It offers a user-friendly interface to browse, manipulate, and manage your data without code.
+* **Microsoft Azure Storage Explorer.** It offers a user-friendly interface to browse, manipulate, and manage your data without code.
 
 
 ![Alt Image Text](../images/az305_8_43.png "Body image")
 
-### Azure Storage Explorer
+### 9-1 Azure Storage Explorer
 
 A **standalone app** that makes it easy to work with Azure Storage data on Windows, macOS, and Linux.
 
@@ -1019,7 +1018,7 @@ You can create Blob containers, upload files, create snapshots of Disk, and more
 
 ![Alt Image Text](../images/az305_8_44.png "Body image")
 
-### Azure Table Storage
+### 9-2 Azure Table Storage
 
 1. **Large Amounts of Semi-Structured Data**: If you have massive volumes of semi-
 structured or unstructured data, but don't need the complexities of a relational database
@@ -1028,7 +1027,7 @@ structured or unstructured data, but don't need the complexities of a relational
 4. **Scalability Requirements**: For applications that need to scale out by adding more data entities but don't require complex joins, stored procedures, or secondary indexes
 5. **Fast Access and High Throughput**: If you need a storage solution with low-latency and high-availability characteristics for quick access to data.
 
-### Azure Table Storage - Adding Entries
+### 9-3 Azure Table Storage - Adding Entries
 
 When you enter data, you must provide a
 
@@ -1040,7 +1039,7 @@ When you enter data, you must provide a
 
 * String
 * Boolean
-* Binarv
+* Binary
 * DateTime
 * Double
 * Guid
@@ -1048,11 +1047,11 @@ When you enter data, you must provide a
 
 ![Alt Image Text](../images/az305_8_45.png "Body image")
 
-### Azure Table Storage - Querying
+### 9-4 Azure Table Storage - Querying
 
 When you need to retrieve data, you can perform **queries** using **both Partition and Row Keys**.
 
-This dual-key system allows for robust and flexible data retrieval operations.
+**This dual-key system allows for robust and flexible data retrieval operations.**
 
 Azure Table Storage allows you to apply additional **filters** to your queries.
 
@@ -1062,10 +1061,9 @@ a particular category, you can easily set up filters to refine your search.
 
 ![Alt Image Text](../images/az305_8_46.png "Body image")
 
-## Azure Queue Storage
+## 10 Azure Queue Storage
 
-Azure Queue Storage is a robust **messaging broker** that facilitates smooth and
-secure message exchange between various applications and services within Azure.
+Azure Queue Storage is a robust **messaging broker** that facilitates smooth and secure message exchange between various applications and services within Azure.
 
 Key Features
 
@@ -1077,21 +1075,17 @@ Key Features
 * **Message Size**: It can hold messages up to **64KB in size**, accommodating a wide range of data types and sizes.
 
 
-### Storage and Access
+### 10-1 Storage and Access
 
-**Storage Account**: Queue Storage is stored within an Azure Storage Account,
-ensuring a secure and unified setting for all storage needs.
+**Storage Account**: Queue Storage is stored within an Azure Storage Account, ensuring a secure and unified setting for all storage needs.
 
-**Access Keys and Connection Strings**: Utilize the same access keys and connection
-strings for Queue Storage as with other resources in the Storage Account, ensuring streamlined and consistent access management.
+**Access Keys and Connection Strings**: Utilize the same access keys and connection strings for Queue Storage as with other resources in the Storage Account, ensuring streamlined and consistent access management.
 
 **Azure Queue Storage** offers **3 ways** of handling messages on the queue:
 
-* **1. Peek**: This option allows you to preview a message in the queue without deleting or
-* locking it. It's useful for determining the next message to process.
-* **2. Delete**: After successfully processing a message, an application will typically delete the
-* message to ensure it isn't processed again.
-* **3. Receive and Lock**: By "locking" a message, it ensures that other parts of the system can't process the message simultaneously. After processing, the lock is either renewed or the message is deleted.
+* **1. Peek**: This option allows you to **preview a message in the queue without deleting or locking it**. It's useful for determining the next message to process.
+* **2. Delete**: After successfully processing a message, an application will typically delete the message to ensure it isn't processed again.
+* **3. Receive and Lock**: By "locking" a message, **it ensures that other parts of the system can't process the message simultaneously**. After processing, the lock is either renewed or the message is deleted.
 
 
 **Azure Portal**: Easily create a queue and **send messages** through the **user-friendly interface of the Azure Portal.**
@@ -1108,7 +1102,7 @@ queue = QueueClient.from connection string(self.connection string, "myqueue")
 queue.send message(u"message1")
 ```
 
-### Azure Queve Storage - Key Concepts
+### 10-2 Azure Queve Storage - Key Concepts
 
 
 Queues can be accessed by using the following URL format:
@@ -1133,7 +1127,7 @@ https://myaccount.queue.core.windows.net/images-to-download
 * The default time-to-live is **seven days** if this parameter is not specified.
 
 
-### Azure Queve Storage - CLI Commands
+### 10-3 Azure Queve Storage - CLI Commands
 
 You can interact with the queue via the Azure CLI subcommand: az storage message **<action>**
 
@@ -1144,7 +1138,7 @@ You can interact with the queue via the Azure CLI subcommand: az storage message
 * **put** - Adds a new message to the back of the message queue.
 * **update** - Updates the visibility timeout of a message.
 
-## Azure Files
+## 11 Azure Files
 
 **Azure Files** is a fully **managed file** share in the cloud.
 
@@ -1162,7 +1156,7 @@ To connect to the file share, a **network protocol** is used:
 
 When a connection is established, the file share's filesystem will be accessible in the specific directory within your own directory tree. This is process is known as **mounting**
 
-### Azure Files - Features
+### 11-1 Azure Files - Features
 
 #### **Backups**
 
@@ -1191,31 +1185,31 @@ An additional layer of security intelligence that provides alerts when it detect
 * **Cool** - Stored on HDD for cost-efficient storage optimized for online archive storage scenarios.
 
 
-### Azure Files - Features
+### 11-2 Azure Files - Features
 
-**Types of Storage**
+#### **Types of Storage**
 
 * **General purpose version 2 (GPv2)** - deployed on to HDD
 * **FileStorage** - deployed onto SSD
 
-**Identity**
+#### **Identity**
 
 * **On-Premises:** - Azure Storage can integrate with an on-premises Active Directory Domain Service.
 * **Managed** - Azure Storage can be joined to Microsoft managed Active Directory Domain Service
 * **Store Account Key** - A username (storage account name) and password (account key) can be used to mount
 
-**Networking**
+#### **Networking**
 
 * Azure Files can be accessed from anywhere, both inside and outside your Azure account, through the
-* storage account's **public endpoint.**
+	* storage account's **public endpoint.**
 * SMB uses **port 445**. If you face connection issues, check if this port is open in your organization to mount your file share.
 
-**Encryption**
+#### **Encryption**
 
 * Azure Files is **encrypted-at-rest** using Azure Storage Service Encryption (SSE)
 * Azure Files is **encrypted-in-transit** with SMB 3.0+ with encryption or HTTPS
 
-### Azure Files - Use Cases
+### 11-2  Azure Files - Use Cases
 
 * Completely **replace or supplement** on-premises file servers Network Attached Storage (NAS) devices
 * **Lift-and-Shift** your on-premises storage to the cloud via Classic Lift or Hybrid Lift
@@ -1224,7 +1218,7 @@ An additional layer of security intelligence that provides alerts when it detect
 	* Classic Lift - where both the application and its data are moved to Azure
 	* Hybrid Lift - where the application data is moved to Azure Files, and the application continues to run on-premises
 
-**Simplify cloud development**
+#### **Simplify cloud development**
 
 
 * Shared application settings - Multiple VMs and developer workstations need to access the same config files.
@@ -1232,7 +1226,7 @@ An additional layer of security intelligence that provides alerts when it detect
 * Dev/Test/Debug - Developers can quickly share essential tools needed for local environments.
 
 
-**Containerization**
+#### **Containerization**
 
 You can use Azure Files to persist volumes for stateful containers
 
@@ -1244,7 +1238,7 @@ You can use Azure Files to persist volumes for stateful containers
 * **Scripting and Tooling** - You can automate the management and creation of file shared with **Azure API and PowerShell**
 * **Resiliency** - Azure Files is built for durability, ensuring that your data is always safe and accessible.
 
-### Azure File Sync
+### 11-3 Azure File Sync
 
 **Azure File Sync** is a service that allows you to **cache** Azure file shares on an **on-premises Windows Server or cloud VM.**
 
@@ -1257,9 +1251,9 @@ You can use Azure Files to persist volumes for stateful containers
 
 ![Alt Image Text](../images/az305_8_49.png "Body image")
 
-## Azure Site Recovery
+## 12 Azure Site Recovery
 
-### Azure Site Recovery
+### 12-1 Azure Site Recovery
 
 **Azure Site Recovery (ASR)** is a **hybrid** (on-premises to cloud) backup solution for **site-to-site recovery.**
 
@@ -1278,13 +1272,12 @@ Azure Site Recovery can replicate:
 * Between other Cloud Service Providers e.g., AWS to Azure
 * VMWare, Hyper-V or Physical Machines
 
-* **Recovery Time Objectives (RTO)** This is the **amount of time** your business can afford to have its **systems unavailable or offline** before it significantly impacts your business.
-* **Recovery Point Objectives (RPO)** This is the **maximum amount of data loss** your business can tolerate, measured in time before a disaster occurs.
+	* <mark>**Recovery Time Objectives (RTO)** This is the **amount of time** your business can afford to have its **systems unavailable or offline** before it significantly impacts your business.</mark>
+	*  <mark>**Recovery Point Objectives (RPO)** This is the **maximum amount of data loss** your business can tolerate, measured in time before a disaster occurs.</mark>
 
-### Recovery Solution
+### 12-2 Recovery Solution
 
-When recommending a recovery solution for Azure, hybrid, and on-premises workloads, the
-following factors should be considered:
+When recommending a recovery solution for Azure, hybrid, and on-premises workloads, the following factors should be considered:
 
 
 1. **Business requirements**: The recovery solution should align with the business requirements,
@@ -1297,7 +1290,7 @@ replication**, to ensure that the data can be recovered in case of an outage.
 5. **Testing**: The recovery solution should be tested regularly to ensure that it meets the RTO, RLO,
 and PO objectives. Testing should be conducted in a controlled environment to avoid any negative impact on production systems.
 
-### Azure Site Recovery Example Architecture
+### 12-3 Azure Site Recovery Example Architecture
 
 This disaster recovery solution utilizes Azure Site Recovery and other managed services like Traffic Manager and Virtual Network, providing an inexpensive and high-availability environment for small and medium businesses.
 
@@ -1313,7 +1306,7 @@ It can be used in portable healthcare clinics, restaurant chains, and local logi
 
 ![Alt Image Text](../images/az305_8_50.png "Body image")
 
-### Azure Backup Service
+### 12-4 Azure Backup Service
 
 **Azure Backup Service** is a cloud solution from Microsoft that offers secure, scalable, and simple **data backup and recovery across** various Azure services.
 
@@ -1323,7 +1316,7 @@ The five core components of Azure Backup:
 
 1. **MARS Agent (Microsoft Azure Recovery Services Agent)**
 2. **Recovery Services Vault**
-3. Azure Backup Server/MABS (Microsoft Azure Backup Server)
+3. **Azure Backup Server/MABS (Microsoft Azure Backup Server)**
 4. VM Extension (Azure VM Backup)
 5. Backup Policy
 
@@ -1347,7 +1340,7 @@ The five core components of Azure Backup:
 * Offload on-premises backups
 * Back up Azure laaS VMs
 * Scale easily
-* Get unlimited data transfer (no limit and no charge)
+* **Get unlimited data transfer (no limit and no charge)**
 * Keep data secure (built-in security at-rest and in-transit)
 * Centralized monitoring and management
 * App Consistent Backups (restore apps back to an exact state)
@@ -1356,11 +1349,9 @@ The five core components of Azure Backup:
 
 ![Alt Image Text](../images/az305_8_53.png "Body image")
 
-### Azure Recovery Services Vault
+### 12-5 Azure Recovery Services Vault
 
-Azure Recovery Services (ARS) Vault is a **storage entity** in Azure that stores **backup copies of data
-and configuration** information over time. This data can be related to various Azure resources like
-virtual machines (VMs), workloads, servers, or workstations.
+Azure Recovery Services (ARS) Vault is a **storage entity** in Azure that stores **backup copies of data and configuration** information over time. This data can be related to various Azure resources like virtual machines (VMs), workloads, servers, or workstations.
 
 
 **Backup for Azure Services**: ARS Vault protects data from various Azure services, including laS VMs (Linux and Windows), Azure SQL databases, Azure Blob Storage, Azure File shares, and Azure Functions.
@@ -1373,7 +1364,7 @@ Recovery Services vault supports various platforms:
 
 ![Alt Image Text](../images/az305_8_54.png "Body image")
 
-### Azure Recovery Services Vault
+### 12-6 Azure Recovery Services Vault features
 
 Recovery Services vaults has the following **features**:
 
@@ -1388,7 +1379,7 @@ Recovery Services vaults has the following **features**:
 **Cross Region Restore (CRR)**: CRR enables data restoration in a secondary region during a disaster in the primary region, ensuring business continuity.
 
 
-### MARS agent
+### 12-7 MARS agent
 
 Microsoft Azure Recovery Services (MARS) agent can back up **files, folders, and system state** from Windows **on-premises machines and Azure VMs**
 
@@ -1409,7 +1400,7 @@ To install the agent and perform backups you'll need to:
 ![Alt Image Text](../images/az305_8_55.png "Body image")
 
 
-### Azure Backup Policy
+### 12-8 Azure Backup Policy
 
 Azure Backup Policy allows users to define and configure how data backups are managed on the Azure platform
 
@@ -1417,11 +1408,11 @@ It lets you set the **frequency, retention duration, and type of backups** to en
 
 ![Alt Image Text](../images/az305_8_56.png "Body image")
 
-### Azure VM Backup
+### 12-9 Azure VM Backup
 
-Azure VM Backup is a solution for backing up and restoring virtual machines (VMs) running on
-Azure. It allows organizations to protect their virtual machines and their data against various
-issues such as accidental deletion, hardware failure, ransomware, and other forms of data loss.
+Azure VM Backup is a solution for backing up and restoring virtual machines (VMs) running on Azure. 
+
+It allows organizations to protect their virtual machines and their data against various issues such as accidental deletion, hardware failure, ransomware, and other forms of data loss.
 
 **How It Works:**
 
