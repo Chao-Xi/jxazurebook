@@ -13,26 +13,26 @@ Azure will manage for you the:
 You only have to maintain the **agent nodes**
 
 * AKS service is **free**
-* You only pay for the agent nodes within the cluster, not the masters
+* **You only pay for the agent nodes within the cluster, not the masters**
 
 When you deploy an AKS cluster, the Kubernetes master and all nodes are deployed and configured for you
 
 During the deployment process, you can also configure additional features such as:
 
-* Advanced networking
+* **Advanced networking**
 * Azure Active Directory integration to use Kubernetes role-based access control (Kubernetes RBAC)
-* Monitoring
-* Windows Server containers are supported in AKS
+* **Monitoring**
+* **Windows Server containers are supported in AKS**
 
 You should use AKS for scenarios where you need **full container orchestration:**
 
 * service discovery across multiple containers
 * automatic scaling
-* coordinated application upgrades
+* **coordinated application upgrades**
 
-### Bridge to Kubernetes
+### 1-1 Bridge to Kubernetes
 
-**Bridge to Kubernetes** is an **extension** in **Visual Studio and Visual Studio Code** that allows developers to write, test and debug microservice code on their development workstations.
+**Bridge to Kubernetes** is an **extension** in **Visual Studio and Visual Studio Code** that allows developers to write, test, and debug microservice code on their development workstations.
 
 ![Alt Image Text](../images/az305_9_1.png "Body image")
 
@@ -44,7 +44,7 @@ When you disconnect, the application deployment will revert to using the **origi
 
 ![Alt Image Text](../images/az305_9_2.png "Body image")
 
-### Recovery solutions for AKS
+### 1-2 Recovery solutions for AKS
 
 **Best practices for business continuity and disaster recovery in Azure Kubernetes Service (AKS):**
 
@@ -59,15 +59,15 @@ When you create a new AKS cluster, you can choose to create it across multiple a
 
 #### **2. Implement backup and restore:**
 
-
 Backing up your AKS cluster ensures that you have a copy of your application and data in case of data loss or corruption. 
 
-Azure AKS supports backing up your application data and Kubernetes resources, such as deployments and services, using the **Velero** backup and restore tool.
+Azure AKS supports backing up your application data and Kubernetes resources, such as deployments and services, using the **Velero** backup and **restore tool**.
 
 #### **3. Use Azure Site Recovery:**
 
+Azure Site Recovery is a disaster recovery solution that **replicates** your AKS cluster to a secondary location. 
 
-Azure Site Recovery is a disaster recovery solution that **replicates** your AKS cluster to a secondary location. This can be useful in the event of a disaster or outage, as you can **failover** to the secondary location and resume operations.
+This can be useful in the event of a disaster or outage, as you can **failover** to the secondary location and resume operations.
 
 
 #### **4. Monitor your AKS cluster:** 
@@ -85,9 +85,9 @@ To ensure that your disaster recovery plan is effective, it is important to test
 
 Azure Arc enables you to manage your AKS cluster and other Kubernetes clusters **across multiple clouds** and on-premises environments from a single control plane. This provides greater flexibility and resilience in the event of a disaster or outage.
 
-## Azure Regions and Availability Zones
+## 2 Azure Regions and Availability Zones
 
-### Azure Regions
+### 2-1 Azure Regions
 
 Azure regions are **physical locations** around the world where Microsoft has data centers to provide cloud services. 
 
@@ -96,7 +96,7 @@ dispersed to provide redundancy, resilience, and high availability to customers.
 
 **Key facts about Azure Regions:**
 
-Multiple Data Centers: Each region is made up of at least one data center, but many regions have **multiple** data centers for added redundancy and availability.
+Multiple Data Centers: **Each region is made up of at least one data center**, but many regions have **multiple** data centers for added redundancy and availability.
 
 **Global Presence**: Azure regions are distributed around the world, covering almost every major continent and country.
 
@@ -104,23 +104,24 @@ Multiple Data Centers: Each region is made up of at least one data center, but m
 ![Alt Image Text](../images/az305_9_3.png "Body image")
 
 
-**Unique Identifiers**: Each Azure region is designated by a distinct name, such as **'East US' or 'West Europe',** which indicates its geographical location.
+1. **Unique Identifiers**: Each Azure region is designated by a distinct name, such as **'East US' or 'West Europe',** which indicates its geographical location.
 
 
-**Resource Deployment**: When creating resources in Azure, you can choose which region to deploy them to, based on factors such as proximity to users, data sovereignty requirements, and service availability.
+2. **Resource Deployment**: When creating resources in Azure, you can choose which region to deploy them to, based on factors such as proximity to users, data sovereignty requirements, and service availability.
 
 
-**Data Residency:** Data in a region stays within that region, unless explicitly copied or replicated to another region for redundancy or disaster recovery purposes.
+3. **Data Residency:** Data in a region stays within that region, unless explicitly copied or replicated to another region for redundancy or disaster recovery purposes.
 
-**Continuous Expansion**: Microsoft continually expands its Azure footprint, adding new regions to cater to emerging markets and customer needs.
+4. **Continuous Expansion**: Microsoft continually expands its Azure footprint, adding new regions to cater to emerging markets and customer needs.
 
-### Azure availability zones
+### 2-2 Azure availability zones
 
 **Azure Availability Zones** are **physical datacenter locations within an Azure region** that are typically located in separate buildings or regions, but still close enough to provide low-latency network connectivity.
 
 These zones help protect applications and data from **datacenter-level failures** by providing redundant power, cooling, and networking.
 
 An Azure region is a geographic location that contains **one or more datacenters**.
+
 An Availability Zone is a **unique physical location within an Azure region.**
 
 **Key Points of Azure availability zones**
@@ -132,44 +133,43 @@ An Availability Zone is a **unique physical location within an Azure region.**
 
 
 * Availability Zones are designed to provide **high availability** for critical applications by distributing them across different zones.
-* By deploying applications across multiple zones, it is possible to achieve a higher level of redundancy and fault tolerance.
+* By deploying applications across multiple zones, **it is possible to achieve a higher level of redundancy and fault tolerance.**
 * **Virtual machines, storage accounts, and other Azure resources can be deployed** to specific Availability Zones within a region to ensure high availability.
-* Azure Traffic Manager can be used to route traffic between different zones based on various criteria such as geographic location, latency, and performance.
+* **Azure Traffic Manager can be used to route traffic between different zones based on various criteria** such as geographic location, latency, and performance.
 
 
-## Availability options for Azure Virtual Machines
+## 3 Availability options for Azure Virtual Machines
 
-### Availability options for Azure Virtual Machines
+### 3-1 Availability options for Azure Virtual Machines
 
 Azure Virtual Machines provide several options for achieving high availability and ensuring business continuity. Here are the primary strategies:
 
-**Availability Sets:**
-
+#### **Availability Sets:**
 
 * An availability set is a logical grouping that informs Azure about application redundancy and availability requirements.
-* Ideallv, to ensure high availabilitv and meet Azure's **99.95% SLA**. place at least two VMs within an availability set.
-* There are no charges for the Availability Set itself: costs arise only for the individual VM instances created within.
+* Ideally, to ensure high availability and meet Azure's **99.95% SLA**. place **at least two VMs within an availability set**.
+* There are no charges for the Availability Set itself: **costs arise only for the individual VM instances created within**.
 
-**Virtual Machine Scale Sets:**
+#### **Virtual Machine Scale Sets:**
 
-* These sets enable the automatic deplovment and scalabilitv of identical VMs.
-* VMs can auto-adjust their capacity as per demand, facilitating autoscaline for applications.
+* These sets enable the automatic deployment and scalability of identical VMs.
+* VMs can auto-adjust their capacity as per demand, facilitating autoscaling for applications.
 * VM Scale Sets are built to integrate with **Azure Load Balancer and Application Gateway**, ensuring traffic is evenly distributed across VM instances.
 
-**Azure Site Recovery:**
+#### **Azure Site Recovery:**
 
-* This service delivers disaster recovery capabilities for VMs.
+* **This service delivers disaster recovery capabilities for VMs**.
 * It facilitates VM replication to a secondary location, which could be another Azure region, a different data center, or an on-premises site.
-* Both physical servers and virtual ones, including those on **Hyper-V and VMware**, can be replicated using Site Recovery.
+* Both physical servers and virtual ones, including those on **Hyper-V and VMware**, **can be replicated using Site Recovery**.
 
-**Azure Backup:**
+#### **Azure Backup:**
 
 * Azure Backup offers backup solutions for VMs, their applications, and data.
-* You can back up to the cloud, ensuring backups are application-consistent, meaning they're usable and can be restored as needed.
+* You can **back up to the cloud, ensuring backups are application-consistent, meaning they're usable and can be restored as needed.**
 * These backups can either be retained in the originating region or transferred to another for disaster recovery.
 * Additionally, Azure Backup provides extensive retention periods and backup archiving, aligning with regulator compliance needs.
 
-### Introduction to Azure VMs
+### 3-3 Introduction to Azure VMs
 
 **Azure Virtual Machines (VMs)** is a highly configurable server.
 
@@ -188,7 +188,7 @@ Virtual Machines still require maintenance such as:
 * **Subscription Limits**: The current limit on a per subscription basis is **20 VMs per region.**
 * **Billing**: Azure VMs are billed at an hourly rate
 * **Availability**: A single instance VMs has an availability of 99.9% (when all storage disks are premium)
-	* Two instances deployed in Availability Set will give you 99.95% availability
+	* Two instances deployed in **Availability Set** will give you 99.95% availability
 
 	
 When you **launch** an Azure Virtual Machine, other **networking components** will be either created or associated to your Virtual Machine.
@@ -196,14 +196,14 @@ When you **launch** an Azure Virtual Machine, other **networking components** wi
 ![Alt Image Text](../images/az305_9_5.png "Body image")
 
 *  **Network Security Group (NSG)** - Attached to the NIC, virtual firewall with rules around ports and protocols
-*  **Network Interface (NIC)** - A device that handle IP protocols and network communication
+*  **Network Interface (NIC)** - A device that **handle IP protocols and network communication**
 *  **Virtual Machine instance** - The actual running server
 *  **Public IP Address** - The address that you will use publicly access your VM
 *  **Virtual Network (Vet)** - The network where your VM will reside
 
 ![Alt Image Text](../images/az305_9_6.png "Body image")
 
-### Azure VMs - Operation Systems
+### 3-4 Azure VMs - Operation Systems
 
 **What is an Operation System (OS)?**
 
@@ -235,7 +235,7 @@ You can **Bring Your Own** Linux by creating a Linux Virtual Hard Disk (VHD)
 
 ![Alt Image Text](../images/az305_9_7.png "Body image")
 
-### Azure VMs - Sizes
+### 3-5 Azure VMs - Sizes
 
 Azure VMs come in a variety of sizes that are also optimized for specific use cases.
 
@@ -270,22 +270,23 @@ Available with single or multiple GPUs.
 
 >  SKUs: HB, HBV2, HC, H
 
-### Azure VMS
+### 3-6 Azure VMS
 
 ![Alt Image Text](../images/az305_9_9.png "Body image")
 
 
-### Azure Compute Units
+### 3-7 Azure Compute Units
 
-Azure Compute Unit (ACU) provides a way of comparing compute (CPU) performance across Azure SKUs.
+**Azure Compute Unit (ACU) provides a way of comparing compute (CPU) performance across Azure SKUs.**
 
 ACU is currently standardized on a **Small (Standard A1)** VM with the value of 100
+
 All other SKUs then represent approximately how much faster that SKU can run a standard benchmark
 
 
 ![Alt Image Text](../images/az305_9_10.png "Body image")
 
-### Hyper-V and Generation 1 vs 2
+### 3-8 Hyper-V and Generation 1 vs 2
 
 **Hyper-V** is Microsoft's **hardware virtualization product.**
 
@@ -315,9 +316,9 @@ Key Differences Between Azure Gen 1 and Gen 2:
 * Hard Disk formats: VHD or VHDX files
 
 
-## SSH, RDP, and Bastions
+## 4 SSH, RDP, and Bastions
 
-### Secure Shell (SSH)
+### 4-1 Secure Shell (SSH)
 
 It is very common to use **SSH key pairs** as a means to authenticate to your VMs.
 
@@ -329,7 +330,7 @@ It is very common to use **SSH key pairs** as a means to authenticate to your VM
 
 * **A Private Key.**
 
-The private key should remain on your local system and not be shared with others.
+<mark>The private key should remain on your local system and not be shared with others.</mark>
 
 * **A Public Key**
 
@@ -347,7 +348,7 @@ ssh-i~/.ssh/id_rsa.pub azureuser@10.111.12.123
 * **Convenience**: Once set up, users can connect without needing to remember and input a password each time.
 * **Automation**: Automated scripts and services can use key pairs to establish connections without human intervention.
 
-### SSH, RDP, and Bastion
+### 4-2 SSH, RDP, and Bastion
 
 ![Alt Image Text](../images/az305_9_11.png "Body image")
 
@@ -363,20 +364,20 @@ is a protocol to establish a secure connection between a client and server.
 
 #### **Remote Desktop Protocol (RDP)** 
 
-is a proprietary protocol developed by Microsoft which provides a user with a graphical interface to connect to another computer over a network connection.
+is a proprietary protocol developed by Microsoft that provides a user with a graphical interface to connect to another computer over a network connection.
 
 * This is how you can remotely connect to Windows Server via Virtual Desktop
 * RDP happens on Port 3389 via TCP and UDP
 
 #### **Bastion**
 
-Azure Bastion is a service you deploy that lets you connect to a virtual machine using your browser and the Azure portal.
+Azure Bastion is a service you deploy that lets you connect to a virtual machine **using your browser and the Azure portal**.
 
 * It provides **secure and seamless RDP/SSH** connectivity to your virtual machines directly from the Azure portal over TLS
 * A bastion is a hardened instance that is monitored. Users connect to this VM which then establishes a connection to the target instance. Sometimes known as jump box since you have one extra security step.
 
 
-### Remote Desktop Protocol (RDP)
+### 4-3 Remote Desktop Protocol (RDP)
 
 RDP is a protocol developed by Microsoft that allows users to remotely connect to Windows systems.
 
@@ -391,7 +392,7 @@ Once you **open the RDP file**, you will use the **Username and Password** durin
 
 ![Alt Image Text](../images/az305_9_13.png "Body image")
 
-### Azure Bastion
+### 4-4 Azure Bastion
 
 Azure Bastion serves as a **secure bridge**, enabling you to connect to your server via SSH or RDP without exposing it to the public. It will provision a web-based interface for both RDP and SSH eliminating the need for external clients.
 
@@ -401,7 +402,7 @@ This can be especially useful for devices like Google Chromebooks, which might *
 
 When you create an Azure Bastion,
 
-You need to add a Subnet to your Virtual Network (Vnet) called **AzureBastionSubnet** with at least a size of /27, (32 addresses).
+You need to add a Subnet to your Virtual Network (Vnet) called **AzureBastionSubnet** with at least a size of **/27, (32 addresses)**.
 
 ![Alt Image Text](../images/az305_9_14.png "Body image")
 
@@ -413,33 +414,33 @@ If you have a **Windows Server** which requires RDP and have a Bastion in the sa
 You simply enter in your Username and Password as you normally would
 
 
-### Windows vs Linux Servers
+### 4-5 Windows vs Linux Servers
 
 Azure VMs offer the flexibility to run both **Windows and Linux-based servers.**
 
 #### **Windows**
 
 
-**Licensing**: To run Windows, you'll need a valid license. If you don't activate it, certain features may be restricted. Azure does offer a way to leverage existing licenses through its **Hybrid Benefit program**
+* **Licensing**: To run Windows, you'll need a valid license. If you don't activate it, certain features may be restricted. Azure does offer a way to leverage existing licenses through its **Hybrid Benefit program**
 
-**Authentication**: Typically, you set up a username and password during the VM creation.
+* **Authentication**: Typically, you set up a username and password during the VM creation.
 
-**Instance Size**: To smoothly operate Windows, you'd typically need a larger VM size, starting at least with a B2 due to its comprehensive desktop environment.
+* **Instance Size**: To smoothly operate Windows, you'd typically need a larger VM size, starting at least with a B2 due to its comprehensive desktop environment.
 
-**Environment**: Windows provides a full desktop environment, complete with a graphical user interface, making it more intuitive for those familiar with the Windows ecosystem.
+* **Environment**: Windows provides a full desktop environment, complete with a graphical user interface, making it more intuitive for those familiar with the Windows ecosystem.
 
 
 #### Linux
 
-**Licensing**: Most Linux distributions are open-source and don't require any licensing fees.
+* **Licensing**: Most Linux distributions are open-source and don't require any licensing fees.
 
-**Authentication**: You can set up a username and password or use **SSH key pairs** for a more secure connection.
+* **Authentication**: You can set up a username and password or use **SSH key pairs** for a more secure connection.
 
-**Instance Size**: Linux servers have **minimal system requirements**. This means you can run them on smaller VM sizes, conserving resources and costs.
+* **Instance Size**: Linux servers have **minimal system requirements**. This means you can run them on smaller VM sizes, conserving resources and costs.
 
-**Environment**: Traditionally, Linux systems operate with a terminal-based environment, although there are distributions with graphical interfaces.
+* **Environment**: Traditionally, Linux systems operate with a terminal-based environment, although there are distributions with graphical interfaces.
 
-### Update Management
+### 4-6 Update Management
 
 **Update Management** allows you to **manage and install operating system updates and patches** for both Windows and Linux virtual machines that are deployed in Azure, on-premises, or with other cloud providers
 
@@ -447,7 +448,7 @@ When you launch an Azure VM, you can go to Operations and turn on **'Guest + Hos
 
 > Azure Automations is the underlying service that is installed the agent.
 
-* Update Management will perform a scan for update compliance
+* **Update Management will perform a scan for update compliance**
 * By default, a compliance scan is performed every **12 hours on Windows and every 3 hours** on Linux.
 * It can take between **30 minutes and 6 hours** for the dashboard to display updated data from managed computers.
 
@@ -455,7 +456,7 @@ In Azure Automation, you can enable the Update Management, Change Tracking and I
 
 These features have a dependency on a **Log Analytics workspace**, and therefore require linking the workspace with an Automation account.
 
-### Azure Virtual Desktop
+### 4-7 Azure Virtual Desktop
 
 Azure Virtual Desktop on Microsoft Azure is a desktop and app virtualization service that runs on the cloud.
 
@@ -468,7 +469,7 @@ You can use most modern browsers to access Azure Virtual Desktop-hosted experien
 Use Azure Virtual Desktop for specific needs like when security is a concern because all data is saved on the server and cannot be left on the device of a user.
 
 
-### Azure Virtual Desktop - Advantages
+### 4-8 Azure Virtual Desktop - Advantages
 
 **Enable secure and productive remote work on any device**
 
@@ -489,15 +490,14 @@ Azure Backup technologies.
 
 **Simplify IT management**
 
-Windows Virtual Desktop manages the virtual desktop infrastructure for you, so you can
-focus on users, apps, and OS images instead of hardware and maintenance.
+Windows Virtual Desktop manages the virtual desktop infrastructure for you, so you can focus on users, apps, and OS images instead of hardware and maintenance.
 
 **Keep application and user data secure**
 
 Easily apply the right access controls to users and devices with Azure Active Directory Conditional Access.
 
 
-## Introduction to Azure App Service
+## 5 Introduction to Azure App Service
 
 **Azure App Service is an HTTP-based platform** for web apps, RESTful APIs, and mobile backend services.
 
@@ -532,9 +532,9 @@ You pay based on an Azure App Service Plan:
 
 You can also deploy single or multi-container Docker applications.
 
-### Introduction to Azure App Service
+### 5-1 Introduction to Azure App Service
 
-**Azure App Service** is an **HTTP-based platform** for web apps, RESTful APIs, and mobile backend services.
+**Azure App Service** is an **HTTP-based platform** for <mark>web apps, RESTful APIs, and mobile backend services.</mark>
 
 You can choose your programming language in Python, Java, or any other language, and run it in either a Windows or Linux environment.
 
@@ -571,13 +571,13 @@ When you create your app, you have to choose a unique name, since it becomes a f
 
 ![Alt Image Text](../images/az305_9_16.png "Body image")
 
-### Azure App Service - Runtimes
+### 5-2 Azure App Service - Runtimes
 
 **What is a Runtime Environment?**
 
-A "Runtime Environment" refers to the software and settings needed for a program to run in a defined way at runtime.
+**A "Runtime Environment" refers to the software and settings needed for a program to run in a defined way at runtime.**
 
-A runtime generally means what programming language and libraries and framework you are using.
+<mark>A runtime generally means what programming language and libraries and framework you are using.</mark>
 
 A runtime for Azure App Services will be a pre-defined container that has your programming language and commonly used library for that language installed.
 
@@ -597,7 +597,7 @@ Its common for a cloud provider to stop supporting older versions, so you keep c
 
 ![Alt Image Text](../images/az305_9_18.png "Body image")
 
-### Azure App Service - Custom Container
+### 5-3 Azure App Service - Custom Container
 
 Azure App Service gives you the flexibility to use **custom containers for both Windows and Linux.**
 
@@ -622,9 +622,11 @@ Deploy your container image directly to the **Azure App Service**.
 
 Once deployed, Azure takes care of scaling, maintenance, and updates.
 
-### Azure App Service - Deployment Slots
+### 5-4 Azure App Service - Deployment Slots
 
-**Deployments Slots allow you to create different environments** of your web-application associated to a different hostname. This is useful when you require a testing, staging, or QA environment alongside your production setup.
+**Deployments Slots allow you to create different environments** of your web-application associated to a different hostname. 
+
+This is useful when you require a testing, staging, or QA environment alongside your production setup.
 
 Deployment Slots let you swiftly **replicate** your production setting for various purposes, ensuring consistent testing environments.
 
@@ -638,7 +640,7 @@ You can promote our staging to production by swapping, if something goes wrong y
 
 
 
-### Azure App Service - App Service Environment
+### 5-5 Azure App Service - App Service Environment
 
 **App Service Environment (ASE)** is an Azure App Service feature that provides **a fully isolated and dedicated environment** for securely running App Service apps at high scale
 
@@ -647,12 +649,12 @@ This allow you to host:
 * Windows and Linux web apps
 * Docker containers
 * Mobile apps
-* Functions
+* **Functions**
 
 App Service environments (ASEs) are appropriate for application workloads that require:
 
-* Very high scale
-* Isolation and secure network access.
+* **Very high scale**
+* **Isolation and secure network access**.
 * High memory utilization
 
 Customers can create multiple ASEs within a single Azure region or across multiple Azure regions making ASEs
@@ -665,8 +667,8 @@ ideal for **horizontally scaling stateless application tiers in support of high 
 
 There **are 2 deployment types** for an App Service environment (ASE):
 
-1. External ASE
-2. ILB ASE
+1. **External ASE**
+2. **ILB ASE**
 
 External ASE exposes the ASE-hosted apps on an **internet-accessible IP address.**
 
@@ -674,7 +676,7 @@ External ASE exposes the ASE-hosted apps on an **internet-accessible IP address.
 
 If the VNet is connected to your on-premises network, apps in your ASE also have access to resources there without additional configuration.
 
-Because the ASE is within the Net, it can also access resources within the Vet without any additional configuration.
+**Because the ASE is within the Net, it can also access resources within the Vet without any additional configuration**.
 
 ![Alt Image Text](../images/az305_9_42.png "Body image")
 
@@ -682,7 +684,7 @@ Because the ASE is within the Net, it can also access resources within the Vet w
 
 The internal endpoint is an **internal load balancer (ILB)**
 
-### Azure App Service - Deployment
+### 5-6 Azure App Service - Deployment
 
 **What is Deployment?**
 
@@ -738,9 +740,9 @@ curl -X POST -u <deployment_user> --data-binary @"<zip_file_path>" https://<app_
 Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <zip-file-path>
 ```
 
-### Azure App Service - Deployment
+### 5-7 Azure App Service - Deployment
 
-You can use (File Transfer Protocol) FTP protocol to upload files.
+**You can use (File Transfer Protocol) FTP protocol to upload files.**
 
 You will need your own FTP client. You just drag and upload your files.
 
@@ -748,7 +750,7 @@ Go to the Deployment Center
 
 ![Alt Image Text](../images/az305_9_43.png "Body image")
 
-### Azure App Service - Deployment
+### 5-8 Azure App Service - Deployment
 
 **ZIP and WAR file deployment** uses the same **Kudu service** that powers continuous integration-based deployments.
 
@@ -756,7 +758,7 @@ Kudu is the engine behind **git deployments in Azure App Service**.
 
 It's an open-source project that can also run outside of Azure
 
-### Azure App Service - Deployment
+### 5-9 Azure App Service - Deployment
 
 You can use **Dropbox or OneDrive** to deploy using a cloud sync.
 
@@ -771,7 +773,7 @@ This will sync with your **/home/site/wwwroot**, so you just update files in tha
 
 ![Alt Image Text](../images/az305_9_44.png "Body image")
 
-### Azure App Service - AutoScale
+### 5-10 Azure App Service - AutoScale
 
 **Autoscaling** is the process of adjusting a server infrastructure capability to fulfill incoming requests from your web application. 
 
@@ -787,7 +789,7 @@ It usually takes seconds for the changes to take effect and can be done automati
 ![Alt Image Text](../images/az305_9_45.png "Body image")
 
 
-### Azure App Service Plan
+### 5-11 Azure App Service Plan
 
 **Azure App Service Plan** determines the region (Datacenter) of the physical server where your web application will be hosted and defines the **amount of storage, RAM, and CPU your application will use**. It offers several pricing tiers:
 
@@ -847,7 +849,7 @@ Basic, Standard, Premium, PremiumV2, PremiumV3
 * Availability SLA of 99.95%
 
 
-## Enable diagnostics logging
+## 6 Enable diagnostics logging
 
 **Azure provides built-in diagnostics** to assist with debugging an **App Service app**
 
@@ -863,7 +865,7 @@ It allows you to troubleshoot **exceptions, non-exception errors, alerts**, and
 * **Failed request tracing,** with detailed information regarding failed requests. Only available for the Windows platform.
 * **Deployment logging**, logging detailed information about the deployment process in order to troubleshoot when a deployment fails.
 
-### Enable application logging (Windows)
+### 6-1 Enable application logging (Windows)
 
 To enable **application logging** for Windows apps in the Azure portal, navigate to your app and select **App Service logs**.
 
@@ -879,7 +881,7 @@ You can also set the **Level** of details included in the log as shown in the ta
 
 ![Alt Image Text](../images/az305_9_21.png "Body image")
 
-### Enable application logging (Linux/Container)
+### 6-2 Enable application logging (Linux/Container)
 
 **Enable application logging for Linux/Container**
 
@@ -890,9 +892,9 @@ In **App Service logs** set the **Application logging** option to **File System*
 
 When finished, select Save.
 
-## Configuring Azure Web App Settings
+## 7 Configuring Azure Web App Settings
 
-### Configuring Azure Web App Settings
+### 7-1 Configuring Azure Web App Settings
 
 **Azure Web Apps settings** can be configured via **Azure CLI or Azure Portal**, which can also be edited in **bulk** via the Azure Portal.
 
@@ -908,9 +910,9 @@ The main settings that may be configured for your Azure Web App are the followin
 ![Alt Image Text](../images/az305_9_22.png "Body image")
 
 
-## Azure Container Instances (ACIs)
+## 8 Azure Container Instances (ACIs)
 
-### Introduction to ACI
+### 8-1 Introduction to ACI
 
 **Azure Container Instances (ACIs)** allow you to **launch containers** without the need to worry about configuring or managing the underlying virtual machine
 
@@ -940,10 +942,10 @@ Azure provides Quickstart images to start launching example applications, but yo
 
 The containers in a container group share:
 
-* lifecycle
-* Resources
-* local network
-* storage volumes
+* **lifecycle**
+* **Resources**
+* **local network**
+* **storage volumes**
 
 > Container Groups are similar to a Kubernetes pod
 
@@ -956,23 +958,23 @@ There are two ways to deploy a multi-container group:
 * **Resource Manager Template (ARM template)** - when you need to deploy additional Azure service resources
 * **YAM File** - when your deployment includes only container instances.
 
-### Container Restart Policies
+### 8-2 Container Restart Policies
 
 **A container restart policy** specifies what a container should do when their process has completed.
 
 Azure Container Instances has 3 restart-policy options:
 
-* **Always (default) **Containers are **always restarted**. Suited for long running tasks e.g., web-servers
+* **Always (default)** Containers are **always restarted**. Suited for long running tasks e.g., web-servers
 * **Never** Containers **do no restart once they've completed their execution**. Suited for one off tasks. e.g.,**batch jobs, scheduled tasks.**
 * **OnFailure** Containers will only **restart if they stop due to an error** or unexpected termination
 
 ![Alt Image Text](../images/az305_9_25.png "Body image")
 
-### Container Environment Variables
+### 8-3 Container Environment Variables
 
 Environment variables are **key-value pairs** that can be used to configure and manage the behavior of applications running inside containers.
 
-Environment variables (En Vars) allow you to pass **configuration details** to your containers.
+<mark>Environment variables (En Vars) allow you to pass **configuration details** to your containers.</mark>
 
 Environment variables can be set via the Azure Portal, CLI or PowerShell
 
@@ -995,9 +997,9 @@ az container create \
 STRIPE_SECRET_KEY=$STRIPE_SECRET_KEY
 ```
 
-### Container Troubleshooting
+### 8-4 Container Troubleshooting
 
-**az container logs**: This command lets you fetch logs from your container. These logs can provide insights into application behavior and possible errors.
+* **az container logs**: This command lets you fetch logs from your container. These logs can provide insights into application behavior and possible errors.
 
 ```
 az container logs \
@@ -1006,7 +1008,9 @@ az container logs \
 ```
 
 
-**az container attach:** If you need diagnostic data during container startup, use this command. It helps in understanding issues that might arise during the **initialization phase** of a container.
+* **az container attach:** If you need diagnostic data during container startup, use this command. 
+
+It helps in understanding issues that might arise during the **initialization phase** of a container.
 
 ```
 az container attach \
@@ -1014,7 +1018,9 @@ az container attach \
 --name prod-web-app
 ```
 
-**az container exec**: This command starts an **interactive session**. This is useful for live debugging and to inspect the container's current state.
+* **az container exec**: This command starts an **interactive session**. 
+
+This is useful for live debugging and to inspect the container's current state.
 
 ```
 az container exec
@@ -1023,7 +1029,7 @@ az container exec
 --exec-command/bin/sh
 ```
 
-**a monitor metrics list**: This command gives you **metrics** related to your container, such as **CPU usage**, which can be essential for performance tuning or **identifying bottlenecks**.
+* **a monitor metrics list**: This command gives you **metrics** related to your container, such as **CPU usage**, which can be essential for performance tuning or **identifying bottlenecks**.
 
 ```
 a monitor metrics list \
@@ -1032,7 +1038,7 @@ a monitor metrics list \
 --output table
 ```
 
-## Azure Container Registry
+## 9 Azure Container Registry
 
 
 **Azure Container Registry** is a managed, private **Docker registry service** based on the **open-source Docker Registry 2.0** used to **build** and **store** the containerized applications/images.
@@ -1068,7 +1074,7 @@ Many ways to work with ACR via:
 * Azure SDK
 * Docker Extension for Visual Studio Code
 
-### Azure Container Registry Tasks
+### 9-1 zure Container Registry Tasks
 
 **AC Tasks** allow you to **automate OS and framework patching** for your Docker containers.
 
@@ -1097,7 +1103,7 @@ The location of a set of source files used to build a container image or other a
 
 Reuse task definitions and standardize tags for images and artifact
 
-## Introduction to Docker
+## 10 Introduction to Docker
 
 Docker is a powerful platform designed for automating the deployment, scaling, and management of applications using **containerization**.
 
@@ -1107,7 +1113,7 @@ We can install **Docker Images** into those Docker Containers, with each Docker 
 
 ![Alt Image Text](../images/az305_9_27.png "Body image")
 
-### Docker - Overview
+### 10-1 Docker - Overview
 
 The machine on which **Docker** is installed and running is usually referred to as a **Docker Host or Host**.
 
@@ -1123,7 +1129,7 @@ This allows each container to be **isolated** This allows each container to be i
 
 ![Alt Image Text](../images/az305_9_28.png "Body image")
 
-### Docker - Key Benefits
+### 10-2 Docker - Key Benefits
 
 Docker supports **multiple applications** with different requirements and dependencies to be hosted on the same host if the OS requirements are the same.
 
@@ -1140,7 +1146,7 @@ Docker supports **multiple applications** with different requirements and depend
 
 * **Faster configuration with consistency**. You can just put your **configurations** into code and deploy it. Saves a lot of **time** from preparing the setup and deployment documentation
 
-### Docker - Dockerfile
+### 10-3 Docker - Dockerfile
 
 A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
 
@@ -1156,13 +1162,13 @@ Key points of an example Dockerfile
 ![Alt Image Text](../images/az305_9_29.png "Body image")
 
 
-## What is Serverless?
+## 11 What is Serverless?
 
-### What is Serverless?
+### 11-1 What is Serverless?
 
 Serverless architecture generally describes fully managed cloud services.
 
-The classification of a cloud service being serverless is not a Boolean answer (ves or no), but an answer on a scale where a cloud service has a degree of serverless.
+The classification of a cloud service as being serverless is not a Boolean answer (yes or no), but an answer on a scale where a cloud service has a degree of serverless.
 
 A serverless service could have all or most of the following characteristics:
 
@@ -1172,13 +1178,13 @@ An analogy of serverless could be similar to an energy rating labels which allow
 
 Some services are more serverless than others.
 
-### Function as a Service
+### 11-2 Function as a Service
 
 **What is Function as a Service (FaaS)?**
 
 FaaS empowers developers to concentrate on crafting specific pieces of code, known as functions.
 
-These functions can be event-driven, meaning they either trigger based on events or produce event data. 
+These functions can be event-driven, meaning they **either trigger based on events or produce event data. **
 
 Typically, several functions are interwoven to form a serverless application, and these functions are activated only when called upon.
 
@@ -1187,7 +1193,7 @@ Typically, several functions are interwoven to form a serverless application, an
 
 ![Alt Image Text](../images/az305_9_31.png "Body image")
 
-### Azure Functions
+### 11-3 Azure Functions
 
 **Azure Functions** is a Function as Service (FaaS) offering that allows developers to focus on writing code and not worry about maintaining the underlying computing infrastructure.
 
@@ -1200,7 +1206,7 @@ A **trigger** is the chosen event data that will cause function to execute
 
 There are four versions of Azure Functions 1.x, 2.x, 3.x and 4.x. We are currently using 4.x
 
-### Azure Functions - Storage Considerations
+### 11-4 Azure Functions - Storage Considerations
 
 Every function app requires a storage account to operate.
 
@@ -1225,17 +1231,17 @@ Azure Functions uses the following storage types in the Storage Account
 
 **Table Storage** Used by task hubs in Durable Functions.
 
-### Azure Functions - Anatomy of a Function
+### 11-5 Azure Functions - Anatomy of a Function
 
-![Alt Image Text](../images/az305_9_34.png "Body image")
+![Alt Image Text](../images/az305_9_34ypng "Body image")
 
 * **function.json** - configuration of a single function defining bindings
 * **Code** - The code for your function
-* **.funcignore** - files to ignore
+* **uncignore** - files to ignore
 * **host.json** - global configuration of all functions at the function app level
 * **Local Project** - a place to locally store code
 
-### Azure Functions HTTP Authorization Levels
+### 11-6 Azure Functions HTTP Authorization Levels
 
 **Authorization level** determines what keys, if any, need to be present on the request in order to invoke the function.
 
@@ -1249,7 +1255,7 @@ The authorization level can be one of the following values:
 
 Authorization level can usually be **changed** after creation in the portal, and is set on the trigger
 
-### Azure Functions Debugging
+### 11-7 Azure Functions Debugging
 
 You can **enable streaming** logs for Azure Functions to see near real
 time logging when an error occurs
@@ -1269,7 +1275,7 @@ when your function app is connected to Application Insights, you can view log da
  
 > Log streams can be viewed both in the portal and in most local development environments.
 
-### Azure Functions Key Concepts
+### 11-8 Azure Functions Key Concepts
 
 **Lightweight & Serverless**: Azure Functions are compact and potentially serverless, removing the need for heavy infrastructure.
 
@@ -1292,13 +1298,13 @@ when your function app is connected to Application Insights, you can view log da
 
 **Interoperability:** Using industry-standard protocols, Azure Functions can seamlessly communicate with various **APIs, databases, and libraries**.
 
-### Azure Functions - Use Cases
+### 11-9 Azure Functions - Use Cases
 
 **Business Use-Cases**
 
-* Scheduled Tasks
+* **Scheduled Tasks**
 * Reminders and Notifications
-* Lightweight Web API
+* **Lightweight Web API**
 * Sending background emails
 * Running background backup tasks
 * Doing backend calculations
@@ -1317,7 +1323,7 @@ when your function app is connected to Application Insights, you can view log da
 
 > Azure functions are best suited for smaller apps have events that can work independently of other websites.
 
-### Azure Functions - Templates
+### 11-10 Azure Functions - Templates
 
 Azure provides function **templates** to get you started with common function scenarios:
 
@@ -1334,7 +1340,7 @@ Azure provides function **templates** to get you started with common function sc
 * **Service Bus Topics** - triggered by an event from Bus Topic (pub/sub)
 * **SendGrid** - triggered by an email event in third-party service SendGrid
 
-### Azure Functions - Functions Configuration
+### 11-11 Azure Functions - Functions Configuration
 
 Every function contains a function configuration file **called function.json**
 
@@ -1363,7 +1369,7 @@ The function.json file defines the function's trigger, bindings, and other confi
 }
 ```
 
-### Azure Functions - Host Configuration
+### 11-12 Azure Functions - Host Configuration
 
 Every **function app has a host configuration file named host.json**
 
@@ -1417,24 +1423,24 @@ The host has lot of configuration options:
 }
 ```
 
-### Azure Functions - Plan Services
+### 11-13 Azure Functions - Plan Services
 
 **Azure Functions has 3 available of plans**
 
-**Consumption Plan (Serverless) Cold-Starts**
+**1 Consumption Plan (Serverless) Cold-Starts**
 
 * You only pay for the time your code or application is running.
 * Billing is based on the number of executions, the duration of each execution, and the amount of memory used.
 * Just pay while you have functions running and scale-out automatically, even through long loading times.
 
-**Premium Plan (Functions Premium) Pre-Warmed**
+**2 Premium Plan (Functions Premium) Pre-Warmed**
 
 * The user has designated a set of pre-warmed cases, which are already online and ready to react instantly.
 * Azure provides any additional computing services that are required when your function is running.
 * You pay for the constantly pre-warmed instances including any additional instances needed to scale the Azure app in/out.
 * Azure Functions host instances are added and removed based on the number of incoming events.
 
-**Dedicated Plan (App service plan) VM sharing**
+**3 Dedicated Plan (App service plan) VM sharing**
 
 * When you use App Service for other apps, your functions will run on the same plan (VMs) at no extra cost.
 * You may scale it out manually by adding more VM instances for an App Service plan.
@@ -1444,7 +1450,7 @@ The host has lot of configuration options:
 
 ![Alt Image Text](../images/az305_9_36.png "Body image")
 
-### Azure Functions - Triggers and Bindings
+### 11-14 Azure Functions - Triggers and Bindings
 
 **Triggers and bindings** lets you avoid hardcoding access to other services and
 abstracting away boilerplate code keeping your functions lean.
@@ -1463,7 +1469,7 @@ abstracting away boilerplate code keeping your functions lean.
 * The data from bindings is provided to the function as parameters.
 * Bindings are optional, and **a function can have multiple input and output bindings**
 
-### Azure Functions - Supported Bindings
+### 11-15 Azure Functions - Supported Bindings
 
 
 ![Alt Image Text](../images/az305_9_38.png "Body image")
@@ -1505,11 +1511,11 @@ The Trigger is defined alongside the Input and Output bindings.
 }
 ```
 
-### Azure Functions - Triggers and Bindings Scenario
+### 11-16 Azure Functions - Triggers and Bindings Scenario
 
 **Scenario**
 
-Every hour you want to read new log files delivered by your application, and you need to transform the data to be ingested in your No SQL database that resides in Cosmos DB
+Every hour, you want to read new log files delivered by your application, and you need to transform the data to be ingested in your No SQL database that resides in Cosmos DB
 
 ![Alt Image Text](../images/az305_9_40.png "Body image")
 
