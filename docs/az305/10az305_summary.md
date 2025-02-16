@@ -1,8 +1,8 @@
 # Az305 - Summary 6
 
-## Azure Front Door
+## 1 Azure Front Door
 
-Azure Front Door is a Traffic Manager, Traffic Accelerator, Global Load Balancer and Content Distribution Network (CDN).
+**Azure Front Door is a Traffic Manager, Traffic Accelerator, Global Load Balancer and Content Distribution Network (CDN).**
 
 > Azure Front Door is a **modern application delivery network platform providing a secure**, scalable
 CDN, dynamic site acceleration, and global HTTP(s) load balancing for your global web applications.
@@ -23,22 +23,22 @@ Azure Front Door features:
 
 * **URL rewrite**, with a powerful engine for rewriting income requests to a different back-end request.
 
-### Azure Front Door
+### 1-1 Azure Front Door
 
 * An Azure Front Door is made up of **Frontends/Domains**.
 * These Frontends/Domains are connected to  **Backend Pools** where those connections are filtered by routing rules
 
 ![Alt Image Text](../images/az305_10_1.png "Body image")
 
-### Azure Front Door - Core Components
+### 1-2 Azure Front Door - Core Components
 
 ![Alt Image Text](../images/az305_10_2.png "Body image")
 
-### Azure Front Door - Tiers
+### 1-3 Azure Front Door - Tiers
 
 Azure offers two tiers for Azure Front Door
 
-**Standard (Delivery Optimized)**
+#### **Standard (Delivery Optimized)**
 
 * Content delivery optimized
 * Offering both static and dynamic content acceleration
@@ -48,7 +48,7 @@ Azure offers two tiers for Azure Front Door
 * Enhanced traffic analvtics
 * Basic security capabilities
 
-**Premium (Security Optimized)**
+#### **Premium (Security Optimized)**
 
 * Everything in Standard
 * Extensive security capabilities across WAF
@@ -56,7 +56,7 @@ Azure offers two tiers for Azure Front Door
 * Private Link support
 * Integration with Microsoft Threat Intelligence and security analytics.
 
-### Azure Front Door Routing
+### 1-4 Azure Front Door Routing
 
 Routing it the path an HTTP request from the user will take to reach a Backend service configured in Azure Front Door
 
@@ -81,7 +81,7 @@ requests from the same end user get sent to the same backend (for stateful backe
 
 ![Alt Image Text](../images/az305_10_3.png "Body image")
 
-### Azure Front Door - Origin
+### 1-5 Azure Front Door - Origin
 
 The origin is what Azure Front Door **will point at** (serve up) to the end user 
 
@@ -95,7 +95,7 @@ Supported Origins for Azure Front Door
 * Cloud service
 * App services
 * Static Web App
-* API Management (APIM)
+* **API Management (APIM)**
 * Application Gateway
 * Public IP Address
 * Azure Traffic Manager
@@ -110,8 +110,8 @@ Supported Origins for Azure Front Door
 **Priority** determines who to send traffic to first.
 
 * A number between 1-5,
-* lower number is higher priority.
-* Backends can have the same priority number
+* **lower number is higher priority.**
+* **Backends can have the same priority number**
 
 
 **Weights** allow you to determine the split of traffic distribution between origins of the same priority.
@@ -136,11 +136,11 @@ Origins Groups allow you to apply:
 
 ![Alt Image Text](../images/az305_10_6.png "Body image")
 
-### Azure Front Door - Health Checks
+### 1-6 Azure Front Door - Health Checks
 
-Origin Group **Health Probes** allow you to ping a backend to determine if a healthy response is returned.
+Origin Group **Health Probes** allow you to **ping a backend to determine if a healthy response is returned**.
 
-A healthy response is determined by Status 200 (OK).
+**A healthy response is determined by Status 200 (OK).**
 
 If a backend fails to produce a healthy response, Azure Front Door will redirect the traffic to other available and healthy backends (assuming other origins are configured).
 
@@ -160,7 +160,7 @@ A Response Code is number that coordinates to what happened:
 
 ![Alt Image Text](../images/az305_10_7.png "Body image")
 
-### Azure Front Door. - Load Balancing Settings
+### 1-7 Azure Front Door. - Load Balancing Settings
 
 Origin Group **Load Balancing Settings**
 
@@ -171,20 +171,20 @@ Allows you to define what sample set is needed to be used to call the backend as
 
 > When the latency sensitivity is set to zero (0), Azure Front Door prioritizes and routes traffic to the quickest available backend. If it's set to any other value, the system adopts a round-robin approach, distributing traffic between the fastest backend and subsequent ones, all within the bounds of the pre-configured latency sensitivity.
 
-### Azure Front Door Routes
+### 1-8 Azure Front Door Routes
 
 Routes in Azure Front Door serve as mapping tools, **linking your domains and
 corresponding URL path patterns** to **specific origin groups**.
 
 ![Alt Image Text](../images/az305_10_9.png "Body image")
 
-### Azure Front Door - Traffic acceleration
+### 1-9 Azure Front Door - Traffic acceleration
 
 Azure Front Door is capable of **traffic acceleration**.
 
 Without requiring to make any modifications to your application code,
 
-Azure Front Door can speed up global delivery of your application
+**Azure Front Door can speed up global delivery of your application**
 
 
 Azure achieves this traffic acceleration by directing traffic to the nearest edge location to **onramp** into the Azure Network.
@@ -197,14 +197,13 @@ at accelerated speed while also taking the most direct path.
 
 > Think of it as an expressway
 
-### Azure Front Door - Rule Sets
+### 1-10 Azure Front Door - Rule Sets
 
-Azure Front Door Rules Engine allows you to customize how HTTP requests gets
-handled at the edge and provides a more controlled behavior to your web application
+**Azure Front Door Rules Engine allows you to customize how HTTP requests gets handled** at the edge and provides a more controlled behavior to your web application
 
 ![Alt Image Text](../images/az305_10_11.png "Body image")
 
-**Azure Front Door - Rule Sets**
+#### **Azure Front Door - Rule Sets**
 
 **Conditions:**
 
@@ -258,7 +257,7 @@ handled at the edge and provides a more controlled behavior to your web applicat
 	
 **Origin group override**
 
-## Azure CDN
+## 2 Azure CDN
 
 **Azure Content Delivery Network** is an Azure service that provides your applications with **a distributed network of servers.**
 
@@ -267,7 +266,7 @@ with caching strategies**, and speed up responsiveness with compressed files.
 
 Azure CDNs centralizes requests from your origin into a single location, making it easier to manage your inbound and outbound traffic with features such as:
 
-* **Caching Strategies**, which define which requests should be **cached** and when they should expire.
+* **Caching Strategies**, <mark>which define which requests should be **cached** and when they should expire.</mark>
 * **Compressed files**, reducing the size of static files in order to save **bandwidth** when requested.
 * **Geo-Filtering**, blocking or allowing **requests** from specific countries.
 * **Global distribution**, Azure Regions are distributed **globally**
@@ -294,13 +293,13 @@ Azure CDN is ideal when you're **developing or managing:**
 ![Alt Image Text](../images/az305_10_13.png "Body image")
 
 
-Akamai is one of the world's largest CDN provider with a large distributed network of servers around the world.
+**Akamai is one of the world's largest CDN provider with a large distributed network of servers around the world**.
 
-Verizon Media operates a global CDN platform with a focus on media streaming, delivery and security.
+**Verizon Media operates a global CDN platform with a focus on media streaming, delivery and security.**
 
 > The CDN features greatly vary based on the chosen option, and it requires exploring a large feature table comparison
 
-### Azure CDN  - Purge
+### 2-1 Azure CDN  - Purge
 
 The purge feature enables the **removal of cached content** from all edge **Points of Presence (POPs)**, ensuring that the latest assets are fetched directly from the origin when requested.
 
@@ -311,21 +310,21 @@ You can use wildcards represented by an asterisk to select all files to be purge
 
 > Purge all and Wildcard purge are not supported by Azure CDN from Akamai
 
-## Azure Service Bus
+## 3 Azure Service Bus
 
 **Service Bus** is a fully managed enterprise message broker that allows you to
 **publish/subscribe to topics and queue messages**.
 
 It can scale your applications with asynchronous messages and built-in integration with Azure Services
 
-Azure Service Bus allows for **single or batch messaging**, message load balancing, topic subscriptions, message sessions, and transactions, ensuring compliance with industry standards. 
+Azure Service Bus allows for **single or batch messaging**, **message load balancing**, **topic subscriptions**, **message sessions**, and transactions, ensuring compliance with industry standards. 
 
 This includes protocols such as **AMQP 1.0, with JMS 2.0 available for Premium SKU and JMS 1.1 for Standard SKU.**
 
 ![Alt Image Text](../images/az305_10_15.png "Body image")
 
 
-### Azure Service Bus - Key Concepts
+### 3-1 Azure Service Bus - Key Concepts
 
 Service Bus Key Concepts
 
@@ -340,26 +339,25 @@ Service Bus Key Concepts
 * **Session** allows you to use FIFO and group your messages in a queue.
 * **Peek** returns a message to the queue without removing it.
 * **Dead-letter queue**: a queue for messages that were unable to be delivered through the normal queue.
-* **Peek & Lock** retrieves a message from the queue without removing it and locks it so other receivers
-* cannot receive it.
+* **Peek & Lock** retrieves a message from the queue without removing it and locks it so other receivers cannot receive it.
 * **Receive & Delete** retrieves and delete a message from the queue.
 * **Auto delete on idle** sets a time span to delete the queue if it is not used
 * **Duplicate detection history checks** if the message was not sent earlier before sending a message it
 
-### Azure Service Bus - Namespace
+### 3-2 Azure Service Bus - Namespace
 
-An Azure Service Bus namespace serves as a container for all messaging components, including both **queues and topics**.
+<mark>**An Azure Service Bus namespace serves as a container**</mark> for all messaging components, including both **queues and topics**.
 
 * **Container for Messaging Components**: One namespace can house **multiple** queues and topics, making them versatile structures within the Azure Service Bus. They're commonly used as **application containers**.
 * **Capacity Slice**: Think of a Service Bus namespace as a segment of a large-scale cluster.
-* This cluster comprises numerous all-active virtual machines that fall under your control.
+	* This cluster comprises numerous all-active virtual machines that fall under your control.
 * **Azure Availability Zones:** A namespace can potentially span up to three Azure availability zones, offering enhanced availability and resilience.
 * **Benefits at Scale**: Using Azure Service Bus means you're using a messaging system built for large-scale operations, offering high reliability and strength.
 * **Serverless Messaging**: With Azure Service Bus, it is **serverless** messaging. This means you get to use the messaging service without getting bogged down by the intricacies of the underlying infrastructure.
 
 ![Alt Image Text](../images/az305_10_16.png "Body image")
 
-### Azure Service Bus - Queues
+### 3-3 Azure Service Bus - Queues
 
 **Queues** are used to send and receive messages.
 
@@ -378,17 +376,17 @@ How long a message stays in the queue before it is removed from the queue or mov
 
 **Lock Duration**
 
-How long a message remains locked. Locking avoids more than one user from reading and processing the same message.
+**How long a message remains locked. Locking avoids more than one user from reading and processing the same message.**
 
 You can define rules on a subscription.
 
 A subscription rule has a **filter** that specifies a **condition** for a message to be copied into the subscription, as well as an optional action that modifies message **metadata**.
 
-### Azure Service Bus - Subscription
+### 3-4 Azure Service Bus - Subscription
 
 A subscription in Azure Service Bus is a named entity associated with a topic that allows subscribers to receive copies of messages sent to that topic.
 
-In a publish/subscribe model of Azure Service Bus, topics can be thought of as the channels to send messages, subscriptions are like the virtual queues to receive those messages
+In a publish/subscribe model of Azure Service Bus, **topics can be thought of as the channels to send messages, subscriptions are like the virtual queues to receive those messages**
 
 
 * Max delivery count can be between 1-2000
@@ -398,14 +396,15 @@ delivery of messages
 
 ![Alt Image Text](../images/az305_10_18.png "Body image")
 
-### Azure Service Bus - Pricing
+### 3-5 Azure Service Bus - Pricing
 
 Azure Service Bus has three different pricing tiers Basic, Standard and Premium.
-More expensive tiers provide more functionality.
+
+**More expensive tiers provide more functionality.**
 
 ![Alt Image Text](../images/az305_10_19.png "Body image")
 
-### Dead Letter Queue
+### 3-6 Dead Letter Queue
 
 **The Dead Letter Queue (DLQ)** in Azure Service Bus is a specialized queue that **stores messages that couldn't be delivered or processed** successfully.
 
@@ -425,7 +424,7 @@ Dead Letter Queues provide several **benefits**, including:.
 * **Requeuing messages** for another attempt at processing, especially after resolving the reason for the initial failure.
 * Initiating **follow-up actions, such as alerting, remediation**, or alternative processing paths when specific failure patterns are detected.
 
-### Azure Service Bus - Command CLI
+### 3-7 Azure Service Bus - Command CLI
 
 Azure CLI has the following
 
@@ -470,35 +469,35 @@ az servicebus namespace authorization-rule keys list \
 
 ```
 
-### Azure Event Grid
+## 4 Azure Event Grid
 
-**Azure Event Grid** is a service that allows you to **manage event routing** from any source to any destination.
+<mark>**Azure Event Grid** is a service that allows you to **manage event routing** from any source to any destination.</mark>
 
 Event Grid provides a simple and strong customizable event delivery process that allows you to manage at a **minimum level which types** of events will be received as well as which subscribers will receive those events.
 
 ![Alt Image Text](../images/az305_10_20.png "Body image")
 
-* It supports event fan-out with 24-hour retry reliability to ensure that events are delivered.
+* **It supports event fan-out with 24-hour retry reliability to ensure that events are delivered.**
 * It is a **low-cost** serverless product that supports dynamic scalability.
 
 Event Grid is ideal for event-driven architectures, where you can subscribe to Azure resource events and publish them to an event handler or webhook.
  
-You can also use Custom Topics to create custom events that will be published in vour Event Grid.
+**You can also use Custom Topics to create custom events that will be published in vour Event Grid.**
 
-### Azure Event Grid - Event Sources and Handlers
+### 4-1 Azure Event Grid - Event Sources and Handlers
 
 **Azure Event Grid** is divided into two categories: **Event Sources and Event Handlers.**
 
 ![Alt Image Text](../images/az305_10_21.png "Body image")
 
-### Azure Event Grid - Key Concepts
+### 4-2 Azure Event Grid - Key Concepts
 
 * **Events** are the event that occurred in the service.
 * **Publishers** is the service that published the event.
 * **Event Sources** are where the event took place.
 * **Event Subscriptions** are the mechanism the routes the events.
 * **Event Subscriptions Expiration** is where you set an expiration for event subscriptions
-* **Event Handlers** is the app or service that receives the events
+* **Event Handlers** is the **app or service that receives the events**
 * **Event Delivery** is the delivery of events in batches or as single events
 * **Batching** is the sending of a group of events in a single request.
 
@@ -509,13 +508,15 @@ You can also use Custom Topics to create custom events that will be published in
 * **Custom Topics** are applications and third-party topics.
 * **Partner Events** provide a way for third parties SaaS to publish events.
 
-### Azure Event Hub
+## 5 Azure Event Hub
 
-**Azure Event Hub** is an event **ingestor** that can consume millions of events from anywhere and process them in **real-time or micro-batching**. Its potent **auto-inflate** feature automatically **scales** throughput units (TUs) to accommodate varying demands, ensuring seamless processing even during traffic spikes.
+**Azure Event Hub** is an event **ingestor** that can consume millions of events from anywhere and process them in **real-time or micro-batching**. 
+
+Its potent **auto-inflate** feature automatically **scales** throughput units (TUs) to accommodate varying demands, ensuring seamless processing even during traffic spikes.
 
 ![Alt Image Text](../images/az305_10_23.png "Body image")
 
-### Azure Event Hub  - Key Concepts
+### 5-1 Azure Event Hub  - Key Concepts
 
 **Azure Event Hub** helps you build your **big data pipeline** to analyze logging, anomalies, user, and device telemetry where you only pay for what you use.
 
@@ -534,7 +535,7 @@ You can also use Custom Topics to create custom events that will be published in
 * **Stream Offset** holds the position of an event inside a partition.
 * **Checkpointing** is the process of distinguishing between **read and unread events**.
 
-### Azure Event Hub  - scaling
+### 5-2 Azure Event Hub  - scaling
 
 **Auto-Inflate:**
 
@@ -544,7 +545,7 @@ You can also use Custom Topics to create custom events that will be published in
 
 ![Alt Image Text](../images/az305_10_24.png "Body image")
 
-### Azure Event Hub - Producer
+### 5-3 Azure Event Hub - Producer
 
 A producer (aka publisher) emits data to the stream.
 
@@ -558,8 +559,8 @@ Generally, you'll be using the **Azure SDK** to publish events.
 
 You can publish event either:
 
-* One-at-a-time
-* Batches
+* **One-at-a-time**
+* **Batches**
 
 > There is a limit of 1 MB, regardless of whether it's a single event or a batch, beyond 1MB events will be rejected
 
@@ -645,7 +646,7 @@ console.log(`Error: ${err}`);
 );
 ```
 
-### Azure Event Hub - consumer group
+### 5-2 Azure Event Hub - consumer group
 
 A **consumer group** is a view (state, position, or offset) of an entire event hub
 
@@ -657,14 +658,13 @@ There's always a default consumer group in an event hub, and you can create up t
 
 There can be at most 5 concurrent readers on a partition per consumer group; however, **it's recommended that there's only one active receiver on a partition per consumer group**.
 
-Some clients offered by the Azure SDKs are intelligent consumer agents that automatically manage the details of ensuring that each partition has a single reader and that all partitions
-for an event hub are being read from. This allows your code to focus on processing the events being read from the event hub so it can ignore many of the details of the partitions.
+Some clients offered by the Azure SDKs are intelligent consumer agents that automatically manage the details of ensuring that each partition has a single reader and that all partitions for an event hub are being read from. This allows your code to focus on processing the events being read from the event hub so it can ignore many of the details of the partitions.
 
-### Azure Event Hub - Offsets
+### 5-3 Azure Event Hub - Offsets
 
-An **offset** is the position of an event within a partition.
+<mark>An **offset** is the position of an event within a partition.</mark>
 
-Offsets enables a Consumer (reader) to specify a **point** in the event stream from which they want to **begin reading events**.
+<mark>Offsets enables a Consumer (reader) to specify a **point** in the event stream from which they want to **begin reading events**.</mark>
 
 * You can specify the offset as a **timestamp or as an offset value**.
 * Consumers are responsible for storing their own offset values outside of the Event Hubs service
@@ -673,19 +673,21 @@ Offsets enables a Consumer (reader) to specify a **point** in the event stream f
 ![Alt Image Text](../images/az305_10_25.png "Body image")
 
 
-### Azure Event Hub - Checkpointing
+### 5-4 Azure Event Hub - Checkpointing
 
-**Checkpointing** is a process by which readers **mark or commit
-their position within a partition event sequence**
+**Checkpointing** is a process by which readers **mark or commit their position within a partition event sequence**
 
 Checkpointing is the responsibility of the **consumer** and occurs on a **per-partition** basis within a consumer group
 
-The consumer is fully responsible for checkpointing. This means that for each consumer group, every individual partition reader must:
+**The consumer is fully responsible for checkpointing.**
+
+
+This means that for each consumer group, every individual partition reader must:
 
 * **Monitor** its ongoing position within the event stream.
 * **Notify the Event Hubs service** once it recognizes the data stream to be complete or processed.
 
-### Azure Event Hub - Event Retention
+### 5-5 Azure Event Hub - Event Retention
 
 Published events are removed from an event hub based on a configurable, timed-based retention policy
 
@@ -702,33 +704,33 @@ If you need to archive events beyond the allowed retention period, you can have 
 
 If you need to search or analyze such deep archives, you can easily import them into **Azure Synapse** or other similar stores and analytics platforms.
 
-### Event Grid vs Event Hubs vs Service Bus
+## 6 Event Grid vs Event Hubs vs Service Bus
 
 Event Grid, Event Hub and Service Bus all are event driven services for **application integration and use an event bus** as means to work with event data
 
 ![Alt Image Text](../images/az305_10_26.png "Body image")
 
 
-#### Azure Event Grid
+### 6-1 Azure Event Grid
 
 **Serverless Event Bus**
 
-Azure service-to-service communication
+**Azure service-to-service communication**
 
 * Dynamically scalable
 * Cost-efficient
 * Guarantees at least once delivery of an event.
 
-**Azure Event Hub**
+### 6-2 **Azure Event Hub**
 
-* **Streaming data** 
+* **<mark>Streaming data</mark>** 
 * **Low latency**
 * Can receive and process millions of events per second
 * At least once delivery of an event
 
-**Azure Service Bus**
+### 6-3 **Azure Service Bus**
 
-* Queue or Pub/Sub for web applications
+* **Queue or Pub/Sub for web applications**
 * Reliable asynchronous message delivery that requires polling
 * Advanced messaging features like:
 
