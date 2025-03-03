@@ -1,8 +1,8 @@
 # Az305 - Summary 7
 
-## Migration solutions
+## 1 Migration solutions
 
-### Azure Cloud Adoption Framework
+### 1-1 Azure Cloud Adoption Framework
 
 Cloud Adoption Framework is a whitepaper that is **a step-by-step process** to help organizations plan and migrate their workloads to Azure
 
@@ -16,10 +16,10 @@ Cloud Adoption Framework is a whitepaper that is **a step-by-step process** to h
 
 Azure Well-Architected Framework describe **best practices for building workloads on Azure categorized into 5 pillars**
 
-* Cost Optimization
-* Operational Excellence
+* **Cost Optimization**
+* **Operational Excellence**
 * Performance
-* Efficiency
+* **Efficiency**
 * Reliability
 * Security
 
@@ -27,40 +27,38 @@ Azure Well-Architected Framework describe **best practices for building workload
 
 
 * **Cost Optimization** - Managing costs to maximize the value delivered.
-* **Operational Excellence** - Operations processes that keep a system running in production.
-* **Performance Efficiency** - The ability of a system to adapt to changes in load.
+* <mark>**Operational Excellence** - Operations processes that keep a system running in production</mark>.
+* **Performance Efficiency** - **The ability of a system to adapt to changes in load**.
 * **Reliability** - The ability of a system to recover from failures and continue to function.
 * **Security** - Protecting applications and data from threats.
 
-### Azure Migrate
+### 1-2 Azure Migrate
 
 **Azure Migrate** offers a streamlined service for **migration, modernization, and optimization on Azure**
 
-
-It simplifies the pre-migration processes like discovering, assessing, and appropriately sizing on-
-premises resources for infrastructure, data, and applications.
+It simplifies the pre-migration processes like discovering, assessing, and appropriately sizing on-premises resources for infrastructure, data, and applications.
 
 With an extensible framework, Azure Migrate easily integrates with **third-party tools**, broadening its
 range of supported scenarios. Here's what it offers:
 
 * **Unified Migration Platform**: A centralized portal to initiate, execute, and monitor your Azure migration journey.
-* **Diverse Toolset**: Azure Migrate provides a suite of tools for both assessment and migration. It features tools such as **"Azure Migrate: Discovery and Assessment" and "Migration and Modernization."** It seamlessly integrates with other Azure services, tools, and third-party offerings from **independent software vendors (ISVs).**
+* **Diverse Toolset**: Azure Migrate provides a suite of tools for both assessment and migration. 
+	* It features tools such as **"Azure Migrate: Discovery and Assessment" and "Migration and Modernization."** It seamlessly integrates with other Azure services, tools, and third-party offerings from **independent software vendors (ISVs).**
 
 **Comprehensive Migration and Modernization Capabilities**: In the Azure Migrate hub, you can **assess, migrate, and modernize:**
 
 **Servers, Databases, and Web Apps**: Assess and migrate on-premises servers, web apps, and SQL Server instances to Azure.
 
 * **Databases**: Analyze on-premises SQL Server instances and databases, and migrate them to **Azure SQL on a VM, Azure SQL Managed Instance, or Azure SQL Database.**
-* **Web Applications**: Evaluate on-premises web applications and transition them to the Azure
-* App Service or Azure Kubernetes Service.
+* **Web Applications**: Evaluate on-premises web applications and transition them to the Azure App Service or Azure Kubernetes Service.
 * **Virtual Desktops**: Review your on-site **virtual desktop infrastructure (VDI)** and move it to Azure Virtual Desktop.
 * **Data Transfer**: Efficiently and affordably transfer vast data volumes to Azure using **Azure Data Box products.**
 
-### Azure Migrate - Integrated tools
+### 1-3 Azure Migrate - Integrated tools
 
 ![Alt Image Text](../images/az305_11_4.png "Body image")
 
-###  Azure Database Migration Service (DMS)
+### 1-4 Azure Database Migration Service (DMS)
 
 Azure Database Migration Service (DMS) is a fully managed service that **enables seamless migrations from various database sources to Azure data platforms** with minimal downtime.
 
@@ -71,9 +69,7 @@ The service supports various source database engines, such as **SQL Server, MySQ
 
 Azure Database Migration Service currently offers two versions:
 
-
-1. **Database Migration Service** - via Azure SQL migration extension for Azure Data
-Studio, Azure portal, PowerShell and Azure CLI.
+1. **Database Migration Service** - via Azure SQL migration extension for **Azure Data Studio, Azure portal, PowerShell and Azure CLI**.
 2. **Database Migration Service (classic)** - via Azure portal, PowerShell and Azure CLI.
 
 **Use cases:**
@@ -88,12 +84,12 @@ Studio, Azure portal, PowerShell and Azure CLI.
 * Automated schema and data migration with minimal downtime.
 * Migration assessment to identify potential issues and guidance for a successful migration.
 * Real-time migration monitoring and error notifications.
-* Pre- and post-migration validation and cleanup tools.
+* Pre-and post-migration validation and cleanup tools.
 * Integration with Azure services such as Azure Security Center and Azure Monitor for enhanced
 * security and monitoring capabilities.
 
 
-### Azure Database Migration Service (DMS)
+### 1-4 Azure Database Migration Service (DMS)
 
 How it works:
 
@@ -102,19 +98,17 @@ How it works:
 3. **Start the migration**: Start the migration and monitor the progress in the **Azure DMS portal**. The service automatically replicates the source database to the target environment, and tracks the changes that occur during the migration.
 4. **Perform cutover and post-migration tasks**: After replication, initiate the cutover to transition the application to the target environment. Azure MS offers validation and cleanup tools post-migration.
 
-### Storage Migration Service
+### 1-5 Storage Migration Service
 
 The Storage Migration Service simplifies the process of **migrating storage to Windows Server or Azure.**
 
 It comes with a user-friendly graphical tool that takes stock of data on **Windows, Linux, and NetApp CIFS servers** and facilitates its transfer to newer servers or **Azure virtual machines**.
 
-
-
 The service also enables the migration of a **server's identity** to the destination server, ensuring that applications and users can access their data **without any changes to links or paths.**
 
 ![Alt Image Text](../images/az305_11_5.png "Body image")
 
-### Storage Migration Service
+### 1-6 Storage Migration Service
 
 Why use Storage Migration Service
 
@@ -136,7 +130,7 @@ Although the source servers retain their files, they enter a maintenance mode an
 
 ![Alt Image Text](../images/az305_11_6.png "Body image")
 
-## Azure Databox
+## 2 Azure Databox
 
 The Microsoft Azure Data Box cloud solution lets you send **terabytes of data into and out of Azure** in a quick, inexpensive, and reliable way.
 
@@ -168,14 +162,14 @@ For **exporting** from Azure, Data Box is used for:
 5. Once the data transfer is complete, customers ship **the Data Box back to Azure.**
 6. Azure copies the data from the **Data Box to the customer's Azure storage account**.
 
-## Azure Virtual Network (VNet)
+## 3 Azure Virtual Network (VNet)
 
 **Virtual Network (Net)** is a logically isolated section of the Azure Network where you launch your Azure resources.
 
 ![Alt Image Text](../images/az305_11_8.png "Body image")
 
 
-### Private Links
+### 3-1 Private Links
 
 **Azure Private Links allows you to establish secure connections** between Azure resources so traffic **remains within the Azure Network**
 
@@ -183,38 +177,36 @@ For **exporting** from Azure, Data Box is used for:
 
 **Private Link Endpoint** is an **Network Interface** that connects you privately and securely to a service powered by Azure Private Link. Private Endpoint uses a private IP address from your VNet
 
-
 **Many Azure services by default work with Private Link eg. Azure Storage, CosmoDB, SQL**
 
 Third-Party provides can be powered by Private Link
 
-### VNET - Subnets
+### 3-2 VNET - Subnets
 
 A subnet is **a logical division of an address space**. Subnets help you **define different kinds of workloads** and
-allows you to apply virtual isolation within your network. When you launch an Azure resource you choose the
-subnet you want to launch within and an IP from that subnet is assigned to your resource
+allows you to apply virtual isolation within your network. When you launch an Azure resource you choose the subnet you want to launch within and an IP from that subnet is assigned to your resource
 
-**Associating a Route Table**
+1 **Associating a Route Table**
 
 A subnet needs a Route Table so it can access
 
-**Public vs Private Subnet**
+2 **Public vs Private Subnet**
 
 Public and Private subnet describes whether a subnet is reachable from the internet or not.
 
-**Azure has no concept of private and public subnets** and its up to you to configure our subnets to have ensure they do no reach the internet by ensuring they have no route via the their route table to the Internet Gateway
+**Azure has no concept of private and public subnets** and its up to you to configure our subnets to have ensure they do no reach the internet by ensuring they **have no route via the their route table to the Internet Gateway**
 
-**Associating Network Security Gateways (NSG)**
+3 **Associating Network Security Gateways (NSG)**
 
 You can associate an NSG to protect traffic entering and leaving your subnet by applying security rules that can
 Allow or deny access based on IP address, port and protocol.
 
-**Gateway Subnet**
+4 **Gateway Subnet**
 
 Azure has a special type of Gateway Subnet that is used by **Azure Virtual Network Gateway** and that service
 Launches specialized VMs into that subnet.
 
-### Virtual Network Gateway?
+### 3-3 Virtual Network Gateway?
 
 **What is a (Virtual Private Network) VPN?**
 
@@ -230,7 +222,7 @@ shared or public networks** as if their computing devices were directly connecte
 
 ![Alt Image Text](../images/az305_11_10.png "Body image")
 
-### VPN Gateway Designs
+### 3-4 VPN Gateway Designs
 
 When you create a VPN Gateway you are generally designing for one of the following topologies:
 
@@ -239,9 +231,9 @@ When you create a VPN Gateway you are generally designing for one of the followi
 * **Site-to-Site (S2S)** When you connect Azure to an On-Premise Data Center
 * **Multi-Site** When you connect Azure to multiple On-Premise Data Centers
 * **Point-to-Site (P2S)** When you connect Azure to multiple individual computers
-* **VNet-to-VNet** When you connect two Vets in different regions, subscriptions or deployment models
+* **VNet-to-VNet** When you connect two Vets in different regions, **subscriptions or deployment models**
 
-### Azure ExpressRoute
+### 3-5 Azure ExpressRoute
 
 **Azure ExpressRoutes** creates private connections between Azure datacenters and infrastructure on our premises or in a colocation environment
 
@@ -252,8 +244,7 @@ Connectivitv can be from an:
 * a point-to-point Ethernet network
 * virtual cross-connection
 
-ExpressRoute connections don't go over the public Internet
-and as a result can offer: **more reliability, faster speeds,
+ExpressRoute connections don't go over the public Internet and as a result can offer: **more reliability, faster speeds,
 consistent latencies, higher security**
 
 ![Alt Image Text](../images/az305_11_12.png "Body image")
@@ -266,7 +257,7 @@ consistent latencies, higher security**
 
 Ideal where for hybrid solutions with massive amounts of data or where latency matter
 
-### Azure Firewall
+### 3-6 Azure Firewall
 
 **Azure Firewall** is a managed, **cloud-based network security service that protects your Azure Vets resources**
 
@@ -287,7 +278,7 @@ originating from your virtual network. The service is fully integrated with Azur
 
 ![Alt Image Text](../images/az305_11_13.png "Body image")
 
-### Network Security Groups (NSG)
+### 3-7 Network Security Groups (NSG)
 
 **Network security group (NSG) filter network traffic** to and from Azure resources in a VNet
 
@@ -316,31 +307,31 @@ Security Rules has **a lot of logic** to determine how to apply its rules
 * You can have 5000 NSG per subscription, 1000 NSG rules per NSG
 
 
-**Priority**
+1 **Priority**
 
-* Rules are processed in priority order, with lower numbers processed before higher number
-* Network security group security rules are evaluated by priority using the 5-tuple information to allow or deny
+* Rules are processed in priority order, **<mark>with lower numbers processed before higher number</mark>**
+* Network security group security rules are evaluated by priority using the 5-tuple information to **allow or deny**
 * traffic: 1] source 2] source port 3] Destination 4] destination port 5] protocol
 
-**Flow Records**
+2 **Flow Records**
 
 * The flow record allows a network security group to be stateful.
 * A flow record is created for existing connections
 * Communication is allowed or denied based on the connection state of the flow record.
 
-**Statefulness**
+3 **Statefulness**
 
 * If you specific an outbound security port you don't need to set the inbound port since it will be set for you.
 * You only need to specify an inbound security rule if communication is initiated externally.
 * The opposite is also true. If inbound traffic is allowed over a port, it's not necessary to specify an outbound
 * security rule to respond to traffic over the port.
 
-**Interruption**
+4 **Interruption**
 
 * Existing connections may not be interrupted when you remove a security rule that enabled the flow.
 * Traffic flows are interrupted when connections are stopped and no traffic is flowing in either direction, for at least a few minutes.
 
-## Azure DoS Protection
+## 4 Azure DoS Protection
 
 **What is a DDoS (Distributed Denial of Service) Attack?**
 
@@ -378,7 +369,7 @@ Most frequent types of DoS attacks:
 * HTTP floods, SQL injections, cross-site scripting (XSS) , parameter tampering, Slowloris attacks
 * Web Application Firewalls (WAFs) are used as means of protection
 
-### Azure DoS Protection - Tiers
+### 4-1 Azure DoS Protection - Tiers
 
 Azure offers **two tiers of DoS Protection**
 
@@ -390,10 +381,9 @@ It's **automatically tuned to help protect your specific Azure resources in a vi
 
 * **DDoS IP Protection**
 
-DoS IP Protection is a **pay-per-protected IP model**. DoS IP Protection contains the same core engineering features as DoS Network Protection, but will differ in the following value-
-added services: **DoS rapid response support, cost protection, and discounts on WAF.**
+DoS IP Protection is a **pay-per-protected IP model**. DoS IP Protection contains the same core engineering features as DoS Network Protection, but will differ in the following value-added services: **DoS rapid response support, cost protection, and discounts on WAF.**
 
-## Introduction to Application Gateway
+## 5 Introduction to Application Gateway
 
 **Azure Application Gateway** is **application-level routing and load balancing service.**
 
@@ -434,7 +424,7 @@ You need to **configure Routing Rules**
 
 ![Alt Image Text](../images/az305_11_19.png "Body image")
 
-### Application Gateway - Routing Rules
+### 5-1 Application Gateway - Routing Rules
 
 **Listeners**
 
@@ -444,7 +434,7 @@ If the listener criteria are met, the application gateway will apply this routin
 
 There are 2 types of listeners:
 
-Basic
+**Basic**
 
 1. **Basic** - forward all requests for any domain to backend pools
 2. **Multi-site** - forward requests to different backend pools based on **host header and host name**
@@ -464,7 +454,7 @@ Chooses where a route should go either **Backend Pool or Redirection**
 
 ![Alt Image Text](../images/az305_11_20.png "Body image")
 
-### Application Gateway - Routing Rules
+### 5-2 Application Gateway - Routing Rules
 
 
 * **Backend Port**
@@ -482,18 +472,18 @@ Chooses where a route should go either **Backend Pool or Redirection**
 
 ![Alt Image Text](../images/az305_11_21.png "Body image")
 
-## Azure Scale Sets
+## 6 Azure Scale Sets
 
 Azure Scale Sets allows you to **automatically increase or decrease your VM capacity**.
 
 ![Alt Image Text](../images/az305_11_22.png "Body image")
 
-* Create Scaling Policies to automatically add or remove based on Host Metrics
+* Create **Scaling Policies to automatically add or remove based on Host Metrics**
 * Create Health checks and set a Repair Policy to replace unhealthy instances
 * Associate A Load Balancer to distribute VMs across AZs
 * You can scale to 100s or even 1000s of VMs using scale sets
 
-### Azure Scale Sets - Load Balancer
+### 6-1 Azure Scale Sets - Load Balancer
 
 A Load Balancer can be associated with a Scale Set.
 
@@ -507,7 +497,7 @@ You have the choice between 2 different load balancers:
 1. **Application Gateway is an HTTP/HTTPS** web traffic load balancer with URL-based routing, SSL termination, session persistence, and web application firewall.
 2. **Azure Load Balancer supports all TCP/UDP network traffic**, port-forwarding, and outbound flows.
 
-### Azure Scale Sets - Scaling Policy
+### 6-2 Azure Scale Sets - Scaling Policy
 
 **A Scaling Policy** determine when a VMs should be added or
 removed to meet current capacity requirements
@@ -531,7 +521,7 @@ When you are creating a Scale Set you have very limited options for your Scaling
 ![Alt Image Text](../images/az305_11_23.png "Body image")
 
 
-### Azure Scale Sets - Scaling Policy
+### 6-3 Azure Scale Sets - Scaling Policy
 
 After you create your ScaleSet you have a-lot more options available to configure the rules of your Scaling Policy
 
@@ -548,7 +538,7 @@ If you want more metrics there are 2 ways to collect more information:
 
 ![Alt Image Text](../images/az305_11_25.png "Body image")
 
-## Health Montoring
+## 7 Health Montoring
 
 **Azure Scale Sets - Scaling Policy**
 
@@ -579,7 +569,7 @@ If you want more metrics there are 2 ways to collect more information:
 **Automatic OS upgrades** can be enabled helps to ease update management by safely and automatically upgrading the OS disk for all instances
 
 
-### Azure Scale Sets - Health Monitoring
+### 7-1 Azure Scale Sets - Health Monitoring
 
 **Health monitoring** can be enabled to determine if you server is **healthy or unhealthy,**
 
