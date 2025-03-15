@@ -1,1558 +1,612 @@
-# AZ305 - 1 
-
-### Topic 1 - Question Set 1
+### Topic 3 - Question Set 3
 
 #### Question 1
 
-You have an Azure subscription that contains a custom application named Application1. Application1 was developed by an external company
-named Fabrikam Ltd. Developers at Fabrikam were assigned role-based access control (RBAC) permissions to the Application1 components. All users are licensed for the Microsoft 365 E5 plan.
+You have SQL Server on an Azure virtual machine. The databases are written to nightly as part of a batch process. 
 
-You need to recommend a solution to verify whether the Fabrikam developers still require permissions to Application1. The solution must meet the following requirements:
+You need to recommend a disaster recovery solution for the data. 
 
-* To the manager of the developers, send a monthly email message that lists the access permissions to Application1.
-* If the manager does not verify an access permission, automatically revoke that permission.
-* Minimize development effort.
+The solution must meet the following requirements: 
 
-What should you recommend?
+* ✑ Provide the ability to recover in the event of a **regional outage**. 
+* ✑ Support a recovery time objective (RTO) of 15 minutes. 
+* ✑ Support a recovery point objective (RPO) of 24 hours. 
+* ✑ Support automated recovery. 
+* ✑ Minimize costs. 
 
-* **<mark>A. In Azure Active Directory (Azure AD) create an access review of Application</mark>**.   ✅ 
-* B. Create an Azure Automation runbook that runs the **Get-AzRoleAssignment cmdlet.**
-* C. In Azure Active Directory (Azure AD) Privileged Identity Management, create a custom role assignment for the Application1 resources.
-* D. Create an Azure Automation runbook that runs the **Get-AzureADUserAppRoleAssignment** cmdlet
+What should you include in the recommendation?
 
-An access review in an Azure AD feature that allows an admin to evaluate and verify user access to certain roles and resources.
+* A. Azure virtual machine availability sets 
+* B. Azure Disk Backup 
+* C. an Always On availability group 
+* **D. Azure Site Recovery**   ✅
 
-Based on the question's requirements, with an Access Review, we can configure periodic notifications about permissions and enable auto-revocation of access, all through a configuration-based approach.
+
+Replication with Azure Site Recover:
+
+* ✑ RTO is typically less than 15 minutes. 
+* ✑ RPO: One hour for application consistency and five minutes for crash consistency.
+
+
+Incorrect Answers:
+
+* B: Too slow. 
+* C: Always On availability group RPO: Because replication to the secondary replica is asynchronous, there's some data loss.
+
+Replication with Azure Site Recovery. RTO is typically less than 15 minutes. RPO: One hour for application consistency and five minutes for crash consistency.
 
 #### Question 2
 
-You have an Azure subscription. The subscription has a blob container that contains multiple blobs. 
+You plan to deploy the backup policy shown in the following exhibit.
 
-Ten users in the nance department of your company plan to access the blobs during the month of April. 
+![Alt Image Text](../images/az305_12_55.png "Body image")
 
-You need to recommend a solution to enable access to the blobs during the month of April only.
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
 
-Which security solution should you include in the recommendation
+![Alt Image Text](../images/az305_12_56.png "Body image")
 
-* **<mark>A. shared access signatures (SAS)</mark>**  ✅
-* B. Conditional Access policies 
-* C. certificates
-* D. access keys  
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
 
-Shared Access Signatures (SAS) allows for limited-time fine grained access control to resources. So you can generate URL, specify duration (for month of April) and disseminate URL to 10 team members. On May 1, the SAS token is automatically invalidated, denying team members
-continued access.
+![Alt Image Text](../images/az305_12_57.png "Body image")
 
-To enable access to blobs in a container during the month of April only, use shared access signatures (SAS). SAS tokens can be generated with an expiration time and can be scoped to provide granular access control. 
-
-SAS tokens can easily be generated and distributed to the ten finance department users who need access to the blobs during the month of April. 
-
-SAS tokens will no longer be valid once they expire, fulfilling the requirement to restrict access to the blobs during the month of April only. Conditional Access policies and certificates/access keys are not suitable for this task.
+**Answer is correct - 36 weeks and 1 day**
 
 #### Question 3
 
-You have an Azure Active Directory (Azure AD) tenant that syncs with an on-premises Active Directory domain.
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution. After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen. 
 
-You have an internal web app named WebApp1 that is hosted on-premises. WebApp1 uses Integrated Windows authentication.
+You need to deploy resources to host a stateless web app in an Azure subscription. The solution must meet the following requirements: 
 
-Some users work remotely and do NOT have VPN access to the on-premises network.
+* ✑ Provide access to the full .NET framework. 
+* ✑ Grant administrators access to the operating system to install custom application dependencies.
 
-You need to provide the remote users with single sign-on (SSO) access to WebApp1.
+Solution: You deploy two Azure virtual machines to two Azure regions, and you create an Azure Traffic Manager profile. Does this meet the goal?
 
-Which two features should you include in the solution? Each correct answer presents part of the solution.
+* **A. Yes**   ✅
+* B. No  
 
-NOTE: Each correct selection is worth one point
+Provide redundancy if an Azure region fails.
 
-* **A. Azure AD Application Proxy** ✅
-* B. Azure AD Privileged Identity Management (PIM)
-* C. Conditional Access policies
-* D. Azure Arc
-* **E. Azure AD enterprise applications** ✅
-* F. Azure Application Gateway
-
-
-A: Application Proxy is a feature of Azure AD that enables users to access on-premises web applications from a remote client. **Application
-Proxy includes both the Application Proxy service which runs in the cloud, and the Application Proxy connector which runs on an on-premises server.**
-
-You can configure single sign-on to an Application Proxy application
-
-**E: Add an on-premises app to Azure AD**
-
-Now that you've prepared your environment and installed a connector, you're ready to add on-premises applications to Azure AD.
-
-1. Sign in as an administrator in the Azure portal.
-2. In the left navigation panel, select Azure Active Directory.
-3. Select Enterprise applications, and then select New application.
-4. **Select Add an on-premises application button which appears about halfway down the page in the On-premises applications section** Alternatively, you can select Create your own application at the top of the page and then select Configure Application Proxy for secure remote
-access to an on-premise application.
-5. In the Add your own on-premises application section, provide the following information about your application.
-6. Etc.
+Azure Traffic Manager is a DNS-based traffic load balancer that enables you to distribute traffic optimally to services across global Azure regions, while providing high availability and responsiveness
 
 #### Question 4
 
-You have an Azure Active Directory (Azure AD) tenant named contoso.com that has a security group named Group1. Group1 is configured for
-assigned membership. Group1 has 50 members, including 20 guest users.
-You need to recommend a solution for evaluating the membership of Group1. The solution must meet the following requirements:
+You need to deploy resources to host a stateless web app in an Azure subscription. The solution must meet the following requirements:
 
-* ✑ The evaluation must be repeated automatically every three months.
-* ✑ Every member must be able to report whether they need to be in Group1.
-* ✑ Users who report that they do not need to be in Group1 must be removed from Group1 automatically.
-* ✑ Users who do not report whether they need to be in Group1 must be removed from Group1 automatically.
+✑ Provide access to the full .NET framework. 
+✑ Provide redundancy if an Azure region fails. 
+✑ Grant administrators access to the operating system to install custom application dependencies
 
-What should you include in the recommendation
+Solution: You deploy two Azure virtual machines to two Azure regions, and you deploy an Azure Application Gateway. Does this meet the goal?
 
-* A. Implement Azure AD Identity Protection.
-* B. Change the Membership type of Group1 to Dynamic User.
-* **C. Create an access review**.   ✅
-* D. Implement Azure AD Privileged Identity Management (PIM).
+* A. Yes 
+* **B. No**  ✅
 
-Azure Active Directory (Azure AD) access reviews enable organizations to efficiently manage group memberships, access to enterprise applications, and role assignments. User's access can be reviewed on a regular basis to make sure only the right people have continued access.
+App Gateway will balance the traffic between VMs deployed in the same region. 
 
-#### Question 5 
+Create an Azure Traffic Manager profile instead.
 
-You plan to deploy Azure Databricks to support a machine learning application. **Data engineers will mount an Azure Data Lake Storage account to the Databricks file system.**
+While Azure Application Gateway is a powerful tool for handling application traffic at the application layer and can assist with routing, load balancing, and other functions, it operates within a single region. It doesn't automatically provide geo-redundancy across multiple Azure regions.
 
-Permissions to folders are granted directly to the data engineers.
+For redundancy across regions, Azure Traffic Manager or Azure Front Door would be more suitable. They operate at the DNS level and are designed to route traffic across different regions for high availability and failover purposes. 
 
-You need to recommend a design for the planned Databrick deployment. The solution must meet the following requirements:
+So, in this case, deploying two Azure virtual machines to two Azure regions and deploying an Azure Application Gateway would not fully meet the stated goals due to the lack of a regional failover strategy
 
-* ✑ Ensure that the data engineers can only access folders to which they have permissions.
-* ✑ Minimize development effort.
-* ✑ Minimize costs.
+Azure Application Gateway can load balance traffic to multiple backend servers or virtual machines, including those in different regions. However, you need to consider the following:
 
-What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+#### Question 5
 
-![Alt Image Text](../images/az305_12_1.png "Body image")
 
-* **Premium**:  Premium Databricks SKU is required for credential passhtrough.
-* **Credential passthrough**
+You plan to create an Azure Storage account that will host file shares. The shares will be accessed from on-premises applications that are transaction intensive. 
 
-Athenticate automatically to Azure Data Lake Storage Gen1 (ADLS Gen1) and Azure Data Lake Storage Gen2 (ADLS Gen2) from Azure Databricks clusters using the same Azure Active Directory (Azure AD) identity that you use to log into Azure Databricks. **When you enable Azure Data Lake Storage credential passthrough** for your cluster, commands that you run on that cluster can read and write data in Azure Data Lake Storage without requiring you to configure service principal credentials for access to storage.
+You need to recommend a solution to minimize latency when accessing the file shares. 
 
-Databricks SKU should be a Premium plan. As the doc states both cloud storage access and credential passthrough features will need a Premium
-plan.
+The solution must provide the highest-level of resiliency for the selected storage tie
 
-**Premium SKU** for Azure Databricks provides enhanced security features, including integration with Azure Active Directory (Azure AD). By using
-Azure AD, you can enforce role-based access control (RBAC) and allow for directory-based authentication.
+![Alt Image Text](../images/az305_12_58.png "Body image")
 
-**Cluster Configuration: Credential Passthrough**
+**Box 1: Premium** - Premium: Premium file shares are backed by solid-state drives (SSDs) and provide consistent high performance and low latency, within single- digit milliseconds for most IO operations, for IO-intensive workloads
 
-**Credential passthrough allows users to authenticate to Azure Data Lake Storage using their personal Azure Active Directory (Azure AD) credentials**
-.
-As a result, they will only be able to access the folders and data to which they have been granted permission.
+**Incorrect Answers:**
 
-> NOTE: Credential passthrough is a legacy data governance model. Databricks recommends that you upgrade to Unity Catalog.
+* ✑ Hot: Hot file shares offer storage optimized for general purpose file sharing scenarios such as team shares. Hot file shares are offered on the standard storage hardware backed by HDDs. 
+
+* ✑ Transaction optimized: Transaction optimized file shares enable transaction heavy workloads that don't need the latency offered by premium file shares.
+
+Transaction optimized file shares are offered on the standard storage hardware backed by hard disk drives (HDDs). Transaction optimized has historically been called "standard", however this refers to the storage media type rather than the tier itself (the hot and cool are also "standard" tiers, because they are on standard storage hardware).
+
+**Box 2: Zone-redundant storage (ZRS):**
+
+Premium Azure file shares only support LRS and ZRS. Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.
+
+1. **Storage Tier**: For transaction-intensive applications, **it is recommended to use the "Premium" tier, which provides the highest performance and lowest latency**.
+2. **Redundancy**: **Zone Redundant Storage (ZRS) replicates data across multiple zones within a single region, providing high availability and resiliency in case of a zone failure**. It also offers low latency access to the file shares, which is essential for transaction-intensive applications. Premium Azure file shares only support LRS and ZRS.
 
 
 #### Question 6
 
-You plan to deploy an Azure web app named App1 that will use Azure Active Directory (Azure AD) authentication.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen. You need to deploy resources to host a stateless web app in an Azure subscription. The solution must meet the following requirements:
 
-App1 will be accessed from the internet by the users at your company. All the users have computers that run Windows 10 and are joined to Azure AD.
+* ✑ Provide access to the full .NET framework. 
+* ✑ Provide redundancy if an Azure region fails. 
+* ✑ Grant administrators access to the operating system to install custom application dependencie
 
-You need to recommend a solution to ensure that the users **can connect to App1 without being prompted for authentication and can access App1
-only from company-owned computers**.
+**Solution: You deploy an Azure virtual machine scale set that uses autoscaling. Does this meet the goal?**
 
-
-What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
-
-NOTE: Each correct selection is worth one point
-
-![Alt Image Text](../images/az305_12_2.png "Body image")
-
-**Box 1: An Azure AD app registration**
-
-Azure active directory (AD) provides cloud based directory and identity management services.**You can use azure AD to manage users of your
-application and authenticate access to your applications using azure active directory**.
-
-**You register your application with Azure active directory tenant.**
-
-**Box 2: A conditional access policy**
-
-Conditional Access policies at their simplest are if-then statements, if a user wants to access a resource, then they must complete an action.
-By using Conditional Access policies, you can apply the right access controls when needed to keep your organization secure and stay out of
-your user's way when not needed.
-
-
-Correct Answer - 1: Azure AD app registration - Azure AD app registration is essential to integrate the web application (App1) with Azure AD.
-
-By doing this, you can leverage Azure AD's authentication mechanisms, including SSO. Once App1 is registered in Azure AD and configured for
-SSO, users who are already signed in to their Azure AD account can access the application without being prompted for authentication again.
-
-
-**Correct Answer - 2: Conditional Access policy**
-
-- Azure AD Conditional Access policies allow you to define and enforce specific conditions under which users can access applications.
-
-In this scenario, you can create a Conditional Access policy that specifies that App1 can only be accessed from devices that are Azure.
-
-#### Question 7
-
-Your company deploys several virtual machines on-premises and to Azure. ExpressRoute is deployed and configured for on-premises to Azure connectivity.
-
-Several virtual machines exhibit network connectivity issues.
-
-You need to analyze the network traffic to identify whether packets are being allowed or denied to the virtual machines.
-
-Solution: **Use Azure Traffic Analytics in Azure Network Watcher to analyze the network traffic**
-
-Does this meet the goal?
-
-* A. Yes
-* **B. No**   ✅
-
-Instead use Azure Network Watcher IP Flow Verify, which allows you to detect trafficc filtering issues at a VM level.
-
-Note: **IP flow verify checks if a packet is allowed or denied to or from a virtual machine**.
-
-The information consists of direction, protocol, local IP , remote IP , local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. While any source or destination IP can be chosen, IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment.
-
-(Traffic Analytics) under (Network Watcher) gives you statistical data and traffic visualization like total inbound and outbound flows and the number of deployed NSGs. However, it doesn't give you information if packets are allows of denied.
-
-(IP Flow Verify) under (Network Watcher) gives you option to verify if traffic is allowed or denied.
-
-**B: No, Azure Traffic Analytics (CORRECT ANSWER IS IP FLOW VERIFY)**
-
-Azure Traffic Analytics provides insights into the network traffic through Azure resources. It can help you understand traffic flow patterns, identify security and networking issues, and optimize your network deployments
-
-To analyze the network traffic in the described scenario, tools like Azure Network Watcher, specifically its IP flow verify feature, would be more appropriate
-
-Azure Traffic Analytics is designed to help diagnose performance and connectivity issues in Azure virtual networks. 
-
-It uses network flow data collected by Azure Network Watcher's flow logs, and provides insights into network activity and patterns. However, it does not provide the ability to identify whether packets are being allowed or denied to specific virtual machines.
-
-#### Question 8
-
-Your company deploys several virtual machines on-premises and to Azure. ExpressRoute is deployed and configured for on-premises to Azure connectivity.
-
-Several virtual machines exhibit network connectivity issues.
-
-You need to analyze the network traffic to identify whether packets are being allowed or denied to the virtual machines.
-Solution: Use Azure Advisor to analyze the network traffic.
-Does this meet the goal
-
-* A. Yes
-* **B. No** ✅
-
-Instead use Azure Network Watcher IP Flow Verify, which allows you to detect traffic filtering issues at a VM level.
-
-Note: IP flow verify checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP, remote IP , local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. 
-
-While any source or destination IP can be chosen, IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment
-
-#### Question 9 
-
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
-
-Your company deploys several virtual machines on-premises and to Azure. ExpressRoute is deployed and configured for on-premises to Azure connectivity.
-
-Several virtual machines exhibit network connectivity issues.
-
-You need to analyze the network traffic to identify whether packets are being allowed or denied to the virtual machines.
-Solution: Use Azure Network Watcher to run IP flow verify to analyze the network traffic.
-
-Does this meet the goal
-
-* **A. Yes** ✅
-* B. No
-
-
-Azure Network Watcher IP Flow Verify allows you to detect traffic filtering issues at a VM level.
-
-IP flow verify checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP , remote IP , local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. While any source or destination IP can be chosen,
-
-IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment.
-
-#### Question 10 
-
-You have an Azure subscription. The subscription contains Azure virtual machines that run Windows Server 2016 and Linux.
-
-You need to use Azure Monitor to design an alerting strategy for security-related events.
-
-Which Azure Monitor Logs tables should you query? To answer, drag the appropriate tables to the correct log types. Each table may be used once,
-more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
-
-![Alt Image Text](../images/az305_12_3.png "Body image")
-
-**Windows: Events**
-
-For Windows logs, we'll need to query the Event table in Azure Monitor Logs. Windows event logs data are collected into the Event table when you
-
-**Correct Answer - Linux: Syslogs**
-
-For Linux logs, we'll need to query the Syslog table. The Linux system logs (syslog data) are collected into the Syslog table when you use the Log Analytics agent on Linux VMs.
-
-#### Question 11
-
-You are designing a large Azure environment that will contain many subscriptions.
-
-
-You plan to use **Azure Policy as part of a governance solution**.
-
-To which three scopes can you assign Azure Policy definitions? Each correct answer presents a complete solution.
-
-NOTE: Each correct selection is worth one point.
-
-* A. Azure Active Directory (Azure AD) administrative units
-* B. Azure Active Directory (Azure AD) tenants
-* **C. subscriptions**   ✅
-* D. compute resources 
-* **E. resource groups**  ✅
-* **F. management groups**  ✅
-
-#### Question 12
-
-Your on-premises network contains a server named Server1 that runs an ASP .NET application named App1.
-
-**You have a hybrid deployment of Azure Active Directory (Azure AD)**.
-
-You need to recommend a solution to ensure that users sign in by **using their Azure AD account and Azure Multi-Factor Authentication (MFA) when they connect to App1 from the internet**.
-
-**Which three features should you recommend be deployed and configured in sequence**? To answer, move the appropriate features from the list of features to the answer area and arrange them in the correct order.
-
-![Alt Image Text](../images/az305_12_4.png "Body image")
-
-**Step 1: Azure AD Application Proxy**
-
-Start by enabling communication to Azure data centers to prepare your environment for Azure AD Application Proxy.
-
-
-**Step 2: an Azure AD enterprise application**
-
-Add an on-premises app to Azure AD.
-
-Now that you've prepared your environment and installed a connector, you're ready to add on-premises applications to Azure AD.
-1. Sign in as an administrator in the Azure portal.
-2. In the left navigation panel, select Azure Active Directory.
-3. Select Enterprise applications, and then select New application.
-4. Etc.
-
-Application Proxy is a feature of Enterprise Applications, so yeah, you would need to register an Enterprise Application before enabling an Application Proxy for it.
-
-1. Enterprise Application
-2. Application Proxy
-3. Conditional Access
-
-
-#### Question 13
-
-You need to recommend a solution to **generate a monthly report of all the new Azure Resource Manager (ARM) resource deployments** in your Azure subscription.
-
-What should you include in the recommendation?
-
-* **A. Azure Activity Log**
-* B. Azure Advisor
-* C. Azure Analysis Services
-* D. Azure Monitor action groups
-
-**Correct Answer: A**
-
-
-Activity logs are kept for 90 days. You can query for any range of dates, as long as the starting date isn't more than 90 days in the past.
-
-Through activity logs, you can determine:
-
-* ✑ what operations were taken on the resources in your subscription
-* ✑ who started the operation
-* ✑ when the operation occurred
-* ✑ the status of the operation
-* ✑ the values of other properties that might help you research the operation
-
-
-#### Question 14
-
-Your company deploys several virtual machines on-premises and to Azure. **ExpressRoute is deployed and configured for on-premises to Azure connectivity.**
-
-Several virtual machines exhibit network connectivity issues.
-
-**You need to analyze the network traffic to identify whether packets are being allowed or denied to the virtual machines.**
-
-Solution: **Install and configure the Azure Monitoring agent and the Dependency Agent on all the virtual machines.** Use VM insights in Azure Monitor to analyze the network traffic.
-
-Does this meet the goal?
-
-* A. Yes
+* A. Yes 
 * **B. No**  ✅
 
 
-Use the Azure Monitor agent if you need to:
+Instead, you should **deploy two Azure virtual machines to two Azure regions, and you create a Traffic Manager profile**
 
-Collect guest logs and metrics from any machine in Azure, in other clouds, or on-premises.
 
-Use the Dependency agent if you need to:
+Note: Azure Traffic Manager is a DNS-based traffic load balancer that enables you to distribute traffic optimally to services across global Azure regions while providing high availability and responsiveness.
 
-**Use the Map feature VM insights or the Service Map solution.**
+#### Question 7
 
-Note: **<mark>Instead use Azure Network Watcher IP Flow Verify allows you to detect traffic filtering issues at a VM level.</mark>**
+You need to recommend an Azure Storage account configuration for two applications named Application1 and Application2. The configuration must meet the following requirements:
 
-IP flow verify checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP , remote IP , local port, and remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned. 
+* ✑ Storage for Application1 must provide the highest possible transaction rates and the lowest possible latency. 
+* ✑ Storage for Application2 must provide the lowest possible storage costs per GB. 
+* ✑ Storage for both applications must be available in an event of datacenter failure. 
+* ✑ Storage for both applications must be optimized for uploads and downloads.
 
-While any source or destination IP can be chosen,
-IP flow verify helps administrators quickly diagnose connectivity issues from or to the internet and from or to the on-premises environment.
+What should you recommend? To answer, select the appropriate options in the answer area
 
-**Azure Network Watcher IP Flow Verify, which allows you to detect traffic filtering issues at a VM level.**
+![Alt Image Text](../images/az305_12_59.png "Body image")
+
+**Box 1: BlobStorage with Premium Performance,** ✅
+
+Application1 requires high transaction rates and the lowest possible latency. We need to use Premium, not Standard.
+
+**Box 2: General purpose v2 with Standard Performance,.** ✅
+
+General Purpose v2provides access to the latest Azure storage features, including Cool and Archive storage, with pricing optimized for the lowestGB storage prices. 
+
+These accounts provide access to Block Blobs, Page Blobs, Files, and Queues. Recommended for most scenarios using Azure Storage.
+
+Application 2: Blobstorage with standard performance VS General purpose V2 with standard performance - General purpose V2 is always recommended since Blobstorage with a legacy
+
+
+#### Question 8
+
+You plan to develop a new app that will store business critical data. The app must meet the following requirements:
+
+* ✑ Prevent new data from being modified for one year. 
+* ✑ Maximize data resiliency.
+*  ✑ Minimize read latency
+
+![Alt Image Text](../images/az305_12_60.png "Body image")
+
+* **Box 1: Premium Block Blobs**   ✅
+
+* **Box 2: Zone-redundant storage (ZRS)** ✅ 
+
+
+
+* ✑ Prevent new data from being modified for one year. (Both Standard + Premium) 
+* ✑ Maximize data resiliency. (ZRS) 
+* ✑ Minimize read latency. (Premium)
+
+#### Question 9
+
+You plan to deploy 10 applications to Azure. The applications will be deployed to two Azure Kubernetes Service (AKS) clusters. Each cluster will be deployed to a separate Azure region
+
+The application deployment must meet the following requirements:
+
+* ✑ Ensure that the applications remain available if a single AKS cluster fails. 
+* ✑ Ensure that the connection traffic over the internet is encrypted by using SSL without having to configure SSL on each container. 
+
+Which service should you include in the recommendation?
+
+* **A. Azure Front Door**    ✅
+* B. Azure Traffic Manager 
+* C. AKS ingress controller 
+* D. Azure Load Balancer
+
+
+Correct Answer: A  ✅
+
+
+Azure Front Door supports SSL.
+
+Azure Front Door, which focuses on global load-balancing and site acceleration, and Azure CDN Standard, which offers static content caching and acceleration.
+
+The new Azure Front Door brings together security with CDN technology for a cloud-based CDN with threat protection and additional capabilities
+
+Front Door is an application delivery network that provides global load balancing and site acceleration service for web applications. It offers Layer 7 capabilities for your application like SSL offload, path-based routing, fast failover, caching, etc. to improve performance and high-availability of your applications.
+
+
+#### Question 10
+
+You have an on-premises file server that stores 2 TB of data files. 
+
+You plan to move the data files to Azure Blob Storage in the West Europe Azure region. 
+
+You need to recommend a storage account type to store the data files and a replication solution for the storage account. The solution must meet the following requirements:
+
+* ✑ Be available if a single Azure datacenter fails. 
+* ✑ Support storage tiers.
+*  ✑ Minimize cost.
+
+What should you recommend? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_61.png "Body image")
+
+**Box 1: Standard general-purpose v2 Standard general-purpose v2 meets the requirements and minimizes the costs.**  ✅
+
+
+**Box 2: Zone-redundant storage (ZRS) ZRS protects against a Datacenter failure, while minimizing the costs**.   ✅
+
+#### Question 11
+
+You have an Azure web app named App1 and an Azure key vault named KV1. App1 stores database connection strings in KV1. 
+
+App1 performs the following types of requests to KV1:
+
+✑ Get ✑ List ✑ Wrap ✑ Delete
+
+Unwrap
+
+✑ Backup ✑ Decrypt ✑ Encrypt
+
+You are evaluating the continuity of service for App1. You need to identify the following if the Azure region that hosts KV1 becomes unavailable:
+
+* ✑ To where will KV1 fail over? 
+* ✑ During the failover, which request type will be unavailable?
+
+What should you identify? To answer, select the appropriate options in the answer area
+
+![Alt Image Text](../images/az305_12_62.png "Body image")
+
+1. kv - failover to server in paired region  ✅
+2. during failover, delete is unaviailable  ✅
+
+
+**Box 1: A server in the paired region**
+
+The contents of your key vault are replicated within the region and to a secondary region at least 150 miles away, but within the same geography to maintain high durability of your keys and secrets. Regions are paired for cross-region replication based on proximity and other factors.
+
+**Box 2: Delete -**
+
+During failover, your key vault is in read-only mode. Requests that are supported in this mode are:
+
+List / certificates /Get / certificates /List / secrets / Get / secrets / List keys / Get (properties of) keys / Encrypt / Decrypt / Wrap / Unwrap / Verify / Sign / Backup
+
+#### Question 12
+
+Your company identifies the following business continuity and disaster recovery objectives for virtual machines that host sales, finance, and reporting applications in the company's on-premises data center:
+
+* ✑ The sales application must be able to fail over to a second on-premises data center. 
+* ✑ The reporting application must be able to recover point-in-time data at a daily granularity. The RTO is eight hours. 
+* ✑ The finance application requires that data be retained for seven years. In the event of a disaster, the application must be able to run from Azure. The recovery time objective (RTO) is 10 minutes
+
+You need to recommend which services meet the business continuity and disaster recovery objectives. **The solution must minimize costs**. What should you recommend for each application? To answer, drag the appropriate services to the correct applications. Each service may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content
+
+![Alt Image Text](../images/az305_12_63.png "Body image")
+
+**Box 1: Azure Site Recovery -**  ✅
+
+
+* Coordinates virtual-machine and physical-server replication, failover, and fullback. 
+* DR solutions have low Recovery point objectives; 
+* DR copy can be behind by a few seconds/minutes. DR needs only operational recovery data, which can take hours to a day. 
+* Using DR data for long-term retention is not recommended because of the fine-grained data capture. 
+* Disaster recovery solutions have smaller Recovery time objectives because they are more in sync with the source. 
+* Remote monitor the health of machines and create customizable recovery plans.
+
+**Box 2: Azure Site Recovery and Azure Backup**  ✅
+
+Backup ensures that your data is safe and recoverable while Site Recovery keeps your workloads available when/if an outage occurs.
+
+**Box 3: Azure Backup only**
+
+Azure Backup - 
+
+* Backs up data on-premises and in the cloud
+* Have wide variability in their acceptable Recovery point objective. VM backups usually one day while database backups as low as 15 minutes. Backup data is typically retained for 30 days or less. From a compliance view, data may need to be saved for years. Backup data is ideal for archiving in such instances. 
+* Because of a larger Recovery point objective, the amount of data a backup solution needs to process is usually much higher, which leads to a longer Recovery time objective.
+
+
+* Sales: ASR only
+* Finance: ASR and Azure Backup 
+* Reporting: Azure Backup only
+
+#### Question 13
+
+You need to design a highly available Azure SQL database that meets the following requirements:
+
+* ✑ Failover between replicas of the database must occur without any data loss. 
+* ✑ The database must remain available in the event of a zone outage. 
+* ✑ Costs must be minimized.
+
+Which deployment option should you use?
+
+* A. Azure SQL Managed Instance Business Critical 
+* **B. Azure SQL Database Premium**  ✅
+* C. Azure SQL Database Basic 
+* D. Azure SQL Managed Instance General Purpose
+
+Zone-redundant configuration is not available in SQL Managed Instance. In SQL Database this feature is only available when the Gen5 hardware is selected.
+
+To prevent Data Loss, Premium/Business Critical is required:
+
+The primary node constantly pushes changes to the secondary nodes in order and ensures that the data is persisted to at least one secondary replica before committing each transaction. This process guarantees that if the primary node crashes for any reason, there is always a fully synchronized node to fail over to.
+
+**B is the correct answer.**
+
+Zone-redundant is currently in preview for SQL Managed Instance, and is only available for the Business Critical service tier.
+
+D - SQL Managed Instance General Purpose does not support Zone-redundant as of now. So it is out of the question.
+
+#### Question 14
+
+Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution. 
+
+After you answer a question in this section, you will NOT be able to return to it. 
+
+As a result, these questions will not appear in the review screen. You need to deploy resources to host a stateless web app in an Azure subscription. The solution must meet the following requirements:
+
+* ✑ Provide access to the full .NET framework. 
+* ✑ Provide redundancy if an Azure region fails. 
+* ✑ Grant administrators access to the operating system to install custom application dependencies.
+
+Solution: You deploy a web app in an Isolated App Service plan. 
+
+Does this meet the goal?
+
+* A. Yes 
+* **B. No** ✅
+
+Correct Answer: B
+
+Instead: **You deploy two Azure virtual machines to two Azure regions, and you create an Azure Traffic Manager profile.** 
+
+Note: Azure Traffic Manager is a DNS-based traffic load balancer that enables you to distribute traffic optimally to services across global Azure regions, while providing high availability and responsiveness.
+
+You deploy two Azure virtual machines to two Azure regions, and you create an Azure Traffic Manager profile.
 
 #### Question 15
 
-You need to design an architecture to capture the creation of users and the assignment of roles. **The captured data must be stored in Azure Cosmos DB**.
+You need to design a highly available Azure SQL database that meets the following requirements: 
 
-Which services should you include in the design? To answer, drag the appropriate services to the correct targets. 
+* ✑ Failover between replicas of the database must occur without any data loss. 
+* ✑ The database must remain available in the event of a zone outage. 
+* ✑ Costs must be minimized. 
 
-Each service may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content
+Which deployment option should you use?
 
-![Alt Image Text](../images/az305_12_5.png "Body image")
+* **A. Azure SQL Database Serverless**   ✅
+* B. Azure SQL Database Business Critical 
+* C. Azure SQL Database Basic 
+* D. Azure SQL Database Standard
 
-**Box 1: Azure Event Hubs -**
+Zone-redundant configuration for the General Purpose service tier is offered for both serverless and provisioned compute for databases in vCore purchasing model.
 
-**You can route Azure Active Directory (Azure AD) activity logs to several endpoints for long term retention and data insights.**
+**Azure Database Serverless.**
 
-The Event Hub is used for streaming.
+This question appears a lot of time, with differents options as answer. Always the answers are (in this order):
 
-**Box 2: Azure Function -**
-
-Use an Azure Function along with a cosmos DB change feed, and store the data in Cosmos DB.
-
-1. **Event Hub: You can export AD logs to an Azure Event Hub (even you can cherry picking which ones)**
-2. Azure Function: You easily create a serverless function to **read events from the Event Hub and store them in a CosmosDB.**
-
-Azure Event Hub is responsible for the ingestion of data without sending data back to the publishers.
-
-Azure event grid is -> Responsible for notifying the events that occurred on the publisher’s end with the help of HTTP requests.
+1. Azure SQL Database Serverless 
+2. Azure SQL Database Premium 
+3. Azure SQL Database Business Critical
 
 #### Question 16
 
-Your company, named Contoso, Ltd., implements several Azure logic apps that have HTTP triggers. The logic apps provide access to an on- premises web service.
+You have an on-premises Microsoft SQL Server database named SQL1.
 
-Contoso establishes a partnership with another company named Fabrikam, Inc.
+You plan to migrate SQL1 to Azure
 
-Fabrikam does not have an existing Azure Active Directory (Azure AD) tenant and uses third-party OAuth 2.0 identity management to authenticate its users.
+You need to recommend a hosting solution for SQL1. The solution must meet the following requirements:
 
-**Developers at Fabrikam plan to use a subset of the logic apps to build applications that will integrate with the on-premises web service of Contoso.**
+* Support the deployment of multiple secondary, read-only replicas. 
+* Support automatic replication between primary and secondary replicas. 
+* Support failover between primary and secondary replicas within a 15-minute recovery time objective (RTO)
 
-You need to design a solution to provide the Fabrikam developers with access to the logic apps. The solution must meet the following
+What should you include in the solution? 
 
-requirements
+To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
-* ✑ Requests to the logic apps from the developers must be limited to lower rates than the requests from the users at Contoso.
-* ✑ The developers must be able to rely on their existing OAuth 2.0 provider to gain access to the logic apps.
-* ✑ The solution must NOT require changes to the logic apps.
-* ✑ The solution must NOT use Azure AD guest accounts.
+![Alt Image Text](../images/az305_12_64.png "Body image")
 
-What should you include in the solution?
+1. Azure SQL DB     ✅
+2. Active geo-replication   ✅
 
-* A. Azure Front Door
-* B. Azure AD Application Proxy
-* C. Azure AD business-to-business (B2B)
-* **D. Azure API Management**  ✅
-
-Many APIs support OAuth 2.0 to secure the API and ensure that only valid users have access, and they can only access resources to which
-they're entitled. 
-
-To use Azure API Management's interactive developer console with such APIs, the service allows you to configure your service instance to work with your OAuth 2.0 enabled API
-
-Incorrect:
-
-* Azure AD business-to-business (B2B) uses guest accounts.
-* Azure AD Application Proxy is for on-premises scenarios
-
-The given answer is correct. **API management can use Oauth2 for authorization:**
-
-
-**D. Azure API Management**
-
-To provide access to the logic apps for Fabrikam developers while limiting their requests to lower rates than the users at Contoso and allowing them to rely on their existing OAuth 2.0 provider, you should use Azure API Management.
+- Failover groups = Only 1 replica in different region (SQL + SQL MI) 
+- Geo-replication = Up to 4 replicas (same region or not) (SQL MI is not supported)
 
 
 #### Question 17
 
-You have an Azure subscription that contains 300 virtual machines that run Windows Server 2019.
 
-**You need to centrally monitor all warning events in the System logs of the virtual machines.**
+You have two on-premises Microsoft SQL Server 2017 instances that host an Always On availability group named AG1. AG1 contains a single database named DB1.
 
-What should you include in the solution? To answer, select the appropriate options in the answer area.
+You have an Azure subscription that contains a virtual machine named VM1. VM1 runs Linux and contains a SQL Server 2019 instance. 
 
-![Alt Image Text](../images/az305_12_6.png "Body image")
+**You need to migrate DB1 to VM1. The solution must minimize downtime on DB1.**
 
-**Box 1: A Log Analytics workspace**
+What should you do? To answer, select the appropriate options in the answer area
 
-Send resource logs to a Log Analytics workspace to enable the features of Azure Monitor Logs.
+![Alt Image Text](../images/az305_12_65.png "Body image")
 
-You must create a diagnostic setting for each Azure resource to send its resource logs to a Log Analytics workspace to use with Azure Monitor Logs.
+First one should be A: Prepare For the migration by: 
 
-**Box 2: Install the Azure Monitor agent**
+**A. Adding a secondary replica to AG1**  ✅
 
-Use the Azure Monitor agent if you need to:
+Reason: Creating an Always On availability group on VM1 would not be necessary, as you already have an availability group (AG1) in place on your on-premises SQL Server instances
 
-Collect guest logs and metrics from any machine in Azure, in other clouds, or on-premises.
+By adding a secondary replica to AG1, you can provide a copy of DB1 that can be used for the migration. This will allow you to minimize downtime on DB1 by performing the migration on the secondary replica, while the primary replica remains available for use.
 
-Manage data collection configuration centrally
+Perform the migration by using:
+
+**B. Azure migrate** ✅
 
 #### Question 18
 
-You have several Azure App Service web apps that use Azure Key Vault to store data encryption keys.
+You are building an Azure web app that will store the Personally Identifiable Information (PII) of employees. 
 
-Several departments have the following requests to support the web app:
+You need to recommend an Azure SQL. Database solution for the web app. The solution must meet the following requirements:
 
-![Alt Image Text](../images/az305_12_7.png "Body image")
+* Maintain availability in the event of a single datacenter outage. 
+* Support the encryption of specific columns that contain PII. 
+* Automatically scale up during payroll operations. 
+* Minimize costs.
 
-Which service should you recommend for each department's request? To answer, configure the appropriate options in the answer area.
+What should you include in the recommendations? To answer, select the appropriate options in the answer area
 
-![Alt Image Text](../images/az305_12_8.png "Body image")
+![Alt Image Text](../images/az305_12_66.png "Body image")
 
-**Box 1: Azure AD Privileged Identity Management**
+**1. Service tier and compute tier?**  : **b. General Purpose service tier and serverless compute tier**  ✅
 
-Privileged Identity Management provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions on resources that you care about. Here are some of the key features of Privileged 
 
-Identity Management:
+The General Purpose service tier with serverless compute tier provides a cost-effective solution that meets the requirements. 
 
-* Provide just-in-time privileged access to Azure AD and Azure resources 
-* Assign time-bound access to resources using start and end dates Require approval to activate privileged roles
-* Enforce multi-factor authentication to activate any role
-* Use justification to understand why users activate
-* Get notifications when privileged roles are activated
-* Conduct access reviews to ensure users still need roles
-* Download audit history for internal or external audit
-* Prevents removal of the last active Global Administrator role assignment
+General Purpose tier supports zone-redundant configurations, which can maintain availability in the event of a single datacenter outage. The serverless compute tier automatically scales up or down based on workload, which is ideal for handling the increased load during payroll operations. 
 
-**Box 2: Azure Managed Identity -**
+**2. Encryption method?**  : **a. Always Encrypted**  ✅
 
-Managed identities provide an identity for applications to use when connecting to resources that support Azure Active Directory (Azure AD) authentication.
+Always Encrypted is the recommended encryption method for this scenario because it allows you to encrypt specific columns that contain PII. This ensures that sensitive data is encrypted both at rest and in transit, providing a higher level of security for PII. 
 
-Applications may use the managed identity to obtain Azure AD tokens. With Azure Key Vault, developers can use managed identities to access resources. 
+Transparent Data Encryption (TDE) encrypts the entire database at rest but does not provide column-level encryption, and Microsoft SQL Server and database encryption keys would involve additional manual configuration and management of keys.
 
-Key Vault stores credentials in a secure manner and gives access to storage accounts.
+####  Question 19
 
-**Box 3: Azure AD Privileged Identity Management**
+You plan to deploy an Azure Database for MySQL flexible server named Server1 to the East US Azure region. 
 
-Privileged Identity Management provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions on resources that you care about. 
+You need to implement a business continuity solution for Server1. 
 
-Here are some of the key features of Privileged Identity Management: Provide just-in-time privileged access to Azure AD and Azure resources Assign time-bound access to resources using start and end dates
+The solution must minimize downtime in the event of a failover to a paired region. What should you do?
 
-**PIM / MI / PIM**
+* A. Create a read replica. 
+* B. Store the database files in Azure premium file shares. 
+* **C. Implement Geo-redundant backup**.   ✅
+* D. Configure native MySQL replication.
 
-#### Question 19
+**C. Implement Geo-redundant backup.**
 
-Your company has the divisions shown in the following table.
 
-![Alt Image Text](../images/az305_12_9.png "Body image")
+The Geo-redundant backup (GRB) feature in Azure Database for MySQL allows automatic backups to be stored in a different geographic region
+(geography). 
 
-You plan to deploy a custom application to each subscription. The application will contain the following:
+In the event of a region-wide service disruption, you can restore the database from the geo-redundant backup, which helps minimize downtime. Other options do not provide business continuity in case of regional failures.
 
-* ✑ A resource group
-* ✑ An Azure web app
-* ✑ Custom role assignments
-* ✑ An Azure Cosmos DB account
+**Option A, creating a read replica, primarily helps with read-heavy workloads and not for disaster recovery.** 
 
-You need to use Azure Blueprints to deploy the application to each subscription.
+Option B, storing the database files in Azure premium file shares, might **improve performance but does not specifically provide a disaster recovery solution**.
 
-What is the minimum number of objects required to deploy the application? To answer, select the appropriate options in the answer area.
+Option D, configuring native MySQL replication, isn't supported directly within Azure Database for MySQL. Instead, you would use Azure's built-in business continuity features, such as Geo-redundant backup.
 
-![Alt Image Text](../images/az305_12_10.png "Body image")
+####  Question 20
 
-**Box 1: 2 - ✅**
+You have an Azure subscription that contains the resources shown in the following table
 
-**One management group for each Azure AD tenant**
+![Alt Image Text](../images/az305_12_67.png "Body image")
 
-Azure management groups provide a level of scope above subscriptions.
+**You need to recommend a load balancing solution that will distribute incoming traffic for VMSS1 across NVA1 and NVA2.**
 
-All subscriptions within a management group automatically inherit the conditions applied to the management group.
+The solution must minimize administrative effort. What should you include in the recommendation?
 
-All subscriptions within a single management group must trust the same Azure Active Directory tenant.
+* **A. Gateway Load Balancer** ✅
+* B. Azure Front Door 
+* C. Azure Application Gateway 
+* D. Azure Traffic Manager
 
-**Box 2: 1 -  ✅**
+Gateway Load Balancer is a SKU of the Azure Load Balancer portfolio catered for high performance and high availability scenarios with third-party Network Virtual Appliances (NVAs). 
 
-**One single blueprint definition can be assigned to different existing management groups or subscriptions.**
+With the capabilities of Gateway Load Balancer, you can easily deploy, scale, and manage NVAs. 
 
-When creating a blueprint definition, you'll define where the blueprint is saved. Blueprints can be saved to a management group or subscription that you have Contributor access to. 
+Chaining a Gateway Load Balancer to your public endpoint only requires one selection.
 
-If the location is a management group, the blueprint is available to assign to any child subscription of that management group.
-
-**Box 3: 2 -  ✅**
-
-**Each Published Version of a blueprint can be assigned (with a max name length of 90 characters) to an existing management group or
-subscription.**
-
-Assigning a blueprint definition to a management group means the assignment object exists at the management group. The deployment of
-artifacts still targets a subscription.
-
-
-#### Question 20
-
-You need to design an Azure policy that will implement the following functionality:
-
-* For new resources, assign tags and values that match the tags and values of the resource group to which the resources are deployed.
-* For existing resources, identify whether the tags and values match the tags and values of the resource group that contains the resources.
-* For any non-compliant resources, trigger auto-generated remediation tasks to create missing tags and values.
-
-**The solution must use the principle of least privilege.**·
-
-What should you include in the design? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_11.png "Body image")
-
-* **Azure Policy effect to use:  Modify**
-* **Azure Active Directory (Azure AD) object and role-based access control (RBAC) role to use for the remediation tasks: A managed identity with the Contributor role**
-
-Box 1: Modify -
-
-**Modify is used to add, update, or remove properties or tags on a subscription or resource during creation or update**. A common example is updating tags on resources such as costCenter. Existing non-compliant resources can be remediated with a remediation task. A single Modify rule can have any number of operations. Policy assignments with effect set as Modify require a managed identity to do remediation
-
-Incorrect:
-
-* The following effects are deprecated: EnforceOPAConstraint EnforceRegoPolicy
-* Append is used to add additional fields to the requested resource during creation or update. A common example is specifying allowed IPs for a storage resource.
-
-Append is intended for use with non-tag properties. While Append can add tags to a resource during a create or update request, it's
-recommended to use the Modify effect for tags instead.
-
-**Box 2: A managed identity with the Contributor role**
-
-The managed identity needs to be granted the appropriate roles required for remediating resources to grant the managed identity.
-Contributor - Can create and manage all types of Azure resources but can't grant access to others
-
-* 1- Modify
-* 2- RBAC of the remediation task
-  * Microsoft says: "As a prerequisite, the policy definition must define the roles that deployIfNotExists and modify need to successfully deploy the content of the included template.
-  
-#### Question 21
-
-You have an Azure subscription that contains the resources shown in the following table.
-
-![Alt Image Text](../images/az305_12_12.png "Body image")
-
-You create an Azure SQL database named DB1 that is hosted in the East US Azure region.
-
-**To DB1, you add a diagnostic setting named Settings1. Settings1 archive SQLInsights to storage1 and sends SQLInsights to Workspace1**.
-
-For each of the following statements, select Yes if the statement is true. Otherwise, select No
-
-![Alt Image Text](../images/az305_12_13.png "Body image")
-
-**Box 1: Yes -**  ✅
-
-**A single diagnostic setting can define no more than one of each of the destinations**. 
-
-If you want to send data to more than one of a particular destination type (for example, two different Log Analytics workspaces) , then create multiple settings.
-
-Each resource can have up to 5 diagnostic settings.
-Note: This diagnostic telemetry can be streamed to one of the following Azure resources for analysis.
-
-* Log Analytics workspace
-* Azure Event Hubs
-* Azure Storage
-
-* Box 2: Yes -  ✅
-* Box 3: Yes -  ✅
-
-#### Question 22
-
-You plan to deploy an Azure SQL database that will store Personally Identifiable Information (PII).
-
-You need to ensure that only privileged users can view the PII.
-
-What should you include in the solution?
-
-* **A. dynamic data masking**  ✅
-* B. role-based access control (RBAC)
-* C. Data Discovery & Classification
-* D. Transparent Data Encryption (TDE)
-
-**Dynamic data masking limits sensitive data exposure by masking it to non-privileged users**.
-
-Dynamic data masking helps prevent unauthorized access to sensitive data by enabling customers to designate how much of the sensitive data to reveal with minimal impact on the application layer.
-
-It's a policy-based security feature that hides the sensitive data in the result set of a query over designated database fields, while the data in the database is not changed
-
-#### Question 23
-
-You plan to deploy an app that will use an Azure Storage account.
-
-You need to deploy the storage account. The storage account must meet the following requirements:
-
-* Store the data for multiple users.
-* Encrypt each user's data by using a separate key.
-* Encrypt all the data in the storage account by using customer-managed keys.
-
-What should you deploy?
-
-* A. files in a premium file share storage account
-* **B. blobs in a general purpose v2 storage account** ✅
-* C. blobs in an Azure Data Lake Storage Gen2 account
-* D. files in a general purpose v2 storage account
-
-You can specify a customer-provided key on Blob storage operations. **A client making a read or write request against Blob storage can include an encryption key on the request for granular control over how blob data is encrypted and decrypted**.
-
-#### Question 24
-
-You have an Azure App Service web app that uses a system-assigned managed identity.
-
-**You need to recommend a solution to store the settings of the web app as secrets in an Azure key vault.** The solution must meet the following requirements:
-
-* ✑ Minimize changes to the app code.
-* ✑ Use the principle of least privilege.
-
-What should you include in the recommendation? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_14.png "Body image")
-
-* Key Vault integration method: **Key Vault references in Application settings**
-* Key Vault permissions for the managed identity: **Secrets: Get**
-
-**Box 1: Key Vault references in Application settings**
-
-**Source Application Settings from Key Vault**.
-
-Key Vault references can be used as values for Application Settings, allowing you to keep secrets in Key Vault instead of the site config.
-
-Application Settings are securely encrypted at rest, but if you need secret management capabilities, they should go into Key Vault.
-To use a Key Vault reference for an app setting, set the reference as the value of the setting. Your app can reference the secret through its key as normal. No code changes are required.
-
-**Box 2: Secrets: Get -**
-
-In order to read secrets from Key Vault, you need to have a vault created and give your app permission to access it.
-
-1. Create a key vault by following the Key Vault quickstart.
-2. Create a managed identity for your application.
-3. Key Vault references will use the app's system assigned identity by default, but you can specify a user-assigned identity.
-4. Create an access policy in Key Vault for the application identity you created earlier. Enable the "Get" secret permission on this policy.
-
-#### Question 25
-
-You plan to deploy an application named **App1 that will run on five Azure virtual machines**. Additional virtual machines will be deployed later to run App1.
-
-You need to recommend a solution to meet the following requirements for the virtual machines that will run App1:
-
-
-* ✑ Ensure that the virtual machines can authenticate to Azure Active Directory (Azure AD) to gain access to an Azure key vault, Azure Logic Apps
-instances, and an Azure SQL database.
-* ✑ Avoid assigning new roles and permissions for Azure services when you deploy additional virtual machines.
-* ✑ Avoid storing secrets and certificates on the virtual machines.
-* ✑ Minimize administrative effort for managing identities.
-
-Which type of identity should you include in the recommendation?
-
-
-* A. a system-assigned managed identity
-* B. a service principal that is configured to use a certificate
-* C. a service principal that is configured to use a client secret
-* **D. a user-assigned managed identity**  ✅
-
-Managed identities provide an identity for applications to use when connecting to resources that support Azure Active Directory (Azure AD)  authentication.
-
-A user-assigned managed identity:
-
-* Can be shared.
-* The same user-assigned managed identity can be associated with more than one Azure resource.
-
-Common usage:
-
-- Workloads that run on multiple resources and can share a single identity.
-- For example, a workload where multiple virtual machines need to access the same resource.
-
-Incorrect:
-
-Not A: A system-assigned managed identity can't be shared. It can only be associated with a single Azure resource.
-
-Typical usage:
-
-- Workloads that are contained within a single Azure resource.
-- Workloads for which you need independent identities.
-
-For example, an application that runs on a single virtual machine.
-
-#### Question 26
-
-You have the resources shown in the following table:
-
-![Alt Image Text](../images/az305_12_15.png "Body image")
-
-CDB1 hosts a container that stores continuously updated operational data.
-
-You are designing a solution that will use AS1 to analyze the operational data daily.
-
-You need to recommend a solution to analyze the data without affecting the performance of the operational data store.  What should you include in the recommendation?
-
-* A. Azure Cosmos DB change feed
-* B. Azure Data Factory with Azure Cosmos DB and Azure Synapse Analytics connectors
-* **C. Azure Synapse Link for Azure Cosmos DB**   ✅
-* D. Azure Synapse Analytics with PolyBase data loading
-
-Azure Synapse Link for Azure Cosmos DB creates a tight integration between Azure Cosmos DB and Azure Synapse Analytics. **It enables customers to run near real-time analytics over their operational data with full performance isolation from their transactional workloads and without an ETL pipeline.**
-
-#### Question 27
-
-You deploy several Azure SQL Database instances.
-
-You plan to configure the Diagnostics settings on the databases as shown in the following exhibit.
-
-![Alt Image Text](../images/az305_12_16.png "Body image")
-
-Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
-
-![Alt Image Text](../images/az305_12_17.png "Body image")
-
-**Box 1: 90 days -  As per exhibit.**  ✅
-
-**Box 2: 730 days -**  ✅
-
-How long is the data kept?
-
-Raw data points (that is, items that you can query in Analytics and inspect in Search) are kept for up to 730 days.
-
-#### Question 28
-
-You have an application that is used by 6,000 users to validate their vacation requests. The application manages its own credential store.
-Users must enter a username and password to access the application. The application does NOT support identity providers.
-
-You plan to upgrade the application to use single sign-on (SSO) authentication by using an Azure Active Directory (Azure AD) application
-registration.
-
-Which SSO method should you use?
-
-- [ ] A. header-based
-- [ ] B. SAML
-- [x] C. password-based  ✅
-- [ ] D. OpenID Connect
-
-**Password** - On-premises applications can use a password-based method for SSO. This choice works when applications are configured for
-Application Proxy.
-
-With password-based SSO, users sign in to the application with a username and password the first time they access it. 
-
-After the first sign-on, Azure AD provides the username and password to the application. Password-based SSO enables secure application password storage and replay using a web browser extension or mobile app. This option uses the existing sign-in process provided by the application, enables an
-administrator to manage the passwords, and doesn't require the user to know the password.
-
-**Incorrect:**
-
-Choosing an SSO method depends on how the application is configured for authentication. Cloud applications can use federation-based
-options, such as OpenID Connect, OAuth, and SAML.
-
-**<mark>Federation - When you set up SSO to work between multiple identity providers, it's called federation.</mark>**
-
-#### Question 29
-
-You have an Azure subscription that contains a virtual network named VNET1 and 10 virtual machines. The virtual machines are connected to VNET1.
-
-You need to design a solution to manage the virtual machines from the internet. The solution must meet the following requirements:
-
-- ✑ Incoming connections to the virtual machines must be authenticated by using Azure Multi-Factor Authentication (MFA) before network connectivity is allowed.
-- ✑ Incoming connections must use TLS and connect to TCP port 443.
-- ✑ The solution must support RDP and SSH.
-
-What should you include in the solution? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_18.png "Body image")
-
-**1. Answer is Azure Bastion**.   ✅
-
-It provides secure and seamless RDP/SSH connectivity to your virtual machines directly from the Azure portal over TLS.
-While JIT access allows access via RDP or SSH, incoming connections is not TLS tcp 443 (but RDP or SSH when the inbound port is temporarily
-
-
-**2. Second is correct**   
-
-**A conditional Access policy that has Cloud Apps assignment set to Azure Windows VM Sign-In** ✅
-
-Enforce Conditional Access policies
-
-You can enforce Conditional Access policies, such as multifactor authentication or user sign-in risk check, before you authorize access to Windows
-VMs in Azure that are enabled with Azure AD login. To apply a Conditional Access policy, you must select the Azure Windows VM Sign-In app from
-the cloud apps or actions assignment option. Then use sign-in risk as a condition and/or require MFA as a control for granting access.
-
-
-The JIT VM access page opens listing the ports that Defender for Cloud recommends protecting:
-
-- 22 - SSH
-- 3389 - RDP
-- 5985 - WinRM
-- 5986 - WinRM
-
-#### Question 30
-
-You are designing an Azure governance solution.
-
-All Azure resources must be easily identifiable based on the following operational information: environment, owner, department and cost center.
-You need to ensure that you can use the operational information when you generate reports for the Azure resources.
-
-What should you include in the solution?
-
-- [ ] A. an Azure data catalog that uses the Azure REST API as a data source
-- [ ] B. an Azure management group that uses parent groups to create a hierarchy
-- [x] C. **an Azure policy that enforces tagging rules**  ✅
-- [ ] D. Azure Active Directory (Azure AD) administrative units 
-
-**You apply tags to your Azure resources, resource groups, and subscriptions to logically organize them into a taxonomy. Each tag consists of a name and a value pair.**
-
-You use Azure Policy to enforce tagging rules and conventions. By creating a policy, you avoid the scenario of resources being deployed to your subscription that don't have the expected tags for your organization. Instead of manually applying tags or searching for resources that aren't
-compliant, you create a policy that automatically applies the needed tags during deployment.
-
-#### Question 31
-
-A company named Contoso, Ltd. has an Azure Active Directory (Azure AD) tenant that is integrated with Microsoft 365 and an Azure subscription.
-Contoso has an on-premises identity infrastructure. The infrastructure includes servers that run Active Directory Domain Services (AD DS) and
-Azure AD Connect.
-
-Contoso has a partnership with a company named Fabrikam. Inc. Fabrikam has an Active Directory forest and a Microsoft 365 tenant. Fabrikam
-has the same on-premises identity infrastructure components as Contoso.
-
-A team of 10 developers from Fabrikam will work on an Azure solution that will be hosted in the Azure subscription of Contoso. The developers
-must be added to the Contributor role for a resource group in the Contoso subscription.
-
-You need to recommend a solution to ensure that Contoso can assign the role to the 10 Fabrikam developers. The solution must ensure that the
-Fabrikam developers use their existing credentials to access resources
-
-What should you recommend
-
-- [ ] A. In the Azure AD tenant of Contoso. create cloud-only user accounts for the Fabrikam developers.
-- [ ] B. Configure a forest trust between the on-premises Active Directory forests of Contoso and Fabrikam.
-- [ ] C. Configure an organization relationship between the Microsoft 365 tenants of Fabrikam and Contoso.
-- [X] D. **In the Azure AD tenant of Contoso, create guest accounts for the Fabnkam developers**.   ✅
-
-You can use the capabilities in Azure Active Directory B2B to collaborate with external guest users and you can use Azure RBAC to grant just
-the permissions that guest users need in your environment.
-
-
-**Incorrect:**
-
-Not B: Forest trust is used for internal security, not external access.
-
-Collaborate with any partner using their identities
-
-With Azure AD B2B, the partner uses their own identity management solution, so there is no external administrative overhead for your
-organization. Guest users sign in to your apps and services with their own work, school, or social identities.
-
-The partner uses their own identities and credentials, whether or not they have an Azure AD account.
-
-#### Question 32
-
-Your company has the divisions shown in the following table.
-
-![Alt Image Text](../images/az305_12_19.png "Body image")
-
-
-Sub1 contains an Azure App Service web app named App1. App1 uses Azure AD for single-tenant user authentication. Users from contoso.com
-can authenticate to App1.
-
-You need to recommend a solution to enable users in the fabrikam.com tenant to authenticate to App1.
-
-What should you recommend?
-
-- [ ] A. Configure the Azure AD provisioning service. 
-- [ ] B. Enable Azure AD pass-through authentication and update the sign-in endpoint.
-- [X] C. **Use Azure AD entitlement management to govern external users.**  ✅
-- [ ] D. Configure Azure AD join.
-
-The app is single tenant authentication so users must be present in contoso directory.
-
-With Azure AD B2B, external users authenticate to their home directory, but have a representation in your directory.
-
-* A is wrong because its to automate provisioning to third party SaaS app.
-* B. is wrong because the application would need to switch to multi tenant..
-
-
-There are three ways that entitlement management lets you specify the users that form a connected organization. It could be
-
-- users in another Azure AD directory (from any Microsoft cloud),
-- users in another non-Azure AD directory that has been configured for direct federation, or
-- users in another non-Azure AD directory, whose email addresses all have the same domain name in common.
-
-#### Question 33
-
-Your company has 20 web APIs that were developed in-house.
-
-The company is developing 10 web apps that will use the web APIs. **The web apps and the APIs are registered in the companys Azure Active
-Directory (Azure AD) tenant. The web APIs are published by using Azure API Management.**
-
-You need to recommend a solution to block unauthorized requests originating from the web apps from reaching the web APIs. The solution must
-meet the following requirements:
-
-✑ Use Azure AD-generated claims.
-
-Minimize configuration and management effort.
-
-What should you include in the recommendation? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_20.png "Body image")
-
-**Box 1: Azure AD** -
-
-Grant permissions in Azure AD.
-
-**Box 2: Azure API Management**-
-
-- Configure a JWT validation policy to pre-authorize requests.
-- Pre-authorize requests in API Management with the Validate JWT policy, by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it
-
-#### Question 34
-
-You need to recommend a solution to generate a **monthly report** of all the **new Azure Resource Manager (ARM) resource deployments in your
-Azure subscription**.
-
-What should you include in the recommendation?
-
-- [X] A. **Azure Log Analytics**    ✅
-- [ ] B. Azure Arc
-- [ ] C. Azure Analysis Services
-- [ ] D. Application Insights
-
-Correct Answer: A
-
-The Activity log is a platform log in Azure that provides insight into subscription-level events. Activity log includes such information as when a
-resource is modified or when a virtual machine is started.
-
-**Activity log events are retained in Azure for 90 days and then deleted.**
-
-For more functionality, you should create a diagnostic setting to send the Activity log to one or more of these locations for the following
-reasons: **to Azure Monitor Logs for more complex querying and alerting, and longer retention (up to two years) to Azure Event Hubs to forward
-outside of Azure to Azure Storage for cheaper, long-term archiving**
-
-Note: Azure Monitor builds on top of Log Analytics, the platform service that gathers log and metrics data from all your resources. The easiest
-way to think about it is that Azure Monitor is the marketing name, whereas Log Analytics is the technology that powers it.
-
-
-#### Question 35
-
-You are developing an app that will read activity logs for an Azure subscription by using Azure Functions.
-
-**You need to recommend an authentication solution for Azure Functions**. **The solution must minimize administrative effort.**
-
-What should you include in the recommendation?
-
-- [ ] A. an enterprise application in Azure AD
-- [x] B. **system-assigned managed identities  ✅**
-- [ ] C. shared access signatures (SAS)
-- [ ] D. application registration in Azure AD
-
-
-**System-assigned managed identities provide a way for Azure Functions to authenticate to other Azure services, such as Activity Logs, without the
-need for storing or managing secrets.** 
-
-
-This approach minimizes administrative effort because the identity is tied directly to the Azure Functions
-service and is automatically managed by Azure. When the Azure Functions instance is deleted, the associated managed identity will also be
-removed. This simplifies the authentication process and helps improve the security posture of your app.
-
-A common challenge for developers is the management of secrets, credentials, certificates, and keys used to secure communication between
-services. Managed identities eliminate the need for developers to manage these credential
-
-System-assigned. Some Azure resources, such as virtual machines allow you to enable a managed identity directly on the resource. When you
-enable a system-assigned managed identity:
-
-- A service principal of a special type is created in Azure AD for the identity. The service principal is tied to the lifecycle of that Azure resource. When the Azure resource is deleted, Azure automatically deletes the service principal for you.
-- By design, only that Azure resource can use this identity to request tokens from Azure AD.
-- You authorize the managed identity to have access to one or more services.
-- The name of the system-assigned service principal is always the same as the name of the Azure resource it is created for.
-
-#### Question 36
-
-You have an Azure subscription that contains an Azure key vault named KV1 and a virtual machine named VM1. VM1 runs Windows Server 2022:
-Azure Edition.
-
-You plan to deploy an ASP .Net Core-based application named App1 to VM1.
-
-You need to configure App1 to use a system-assigned managed identity to retrieve secrets from KV1. The solution must minimize development
-effort.
-
-What should you do? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_21.png "Body image")
-
-1. Client credentials grant flows  ✅
-2. Azure Instance Metadata (IMDS) endpoint  ✅
-
-The key difference in this scenario is that we are using a Managed Identity, which is a feature of Azure AD, and in that case, access tokens are
-obtained through the Azure Instance Metadata Service (IMDS) API. The managed identity is responsible for managing the lifecycle of these
-credentials.
-
-**Therefore, for the case of an application in an Azure VM that uses a managed identity to authenticate with Key Vault, the IMDS would be used, not
-an OAuth 2.0 endpoint directly.**
-
-#### Question 37
-
-Your company has the divisions shown in the following table.
-
-![Alt Image Text](../images/az305_12_19.png "Body image")
-
-**Sub1 contains an Azure App Service web app named App1. App1 uses Azure AD for single-tenant user authentication. Users from contoso.com
-can authenticate to App1**.
-
-You need to recommend a solution to enable users in the fabrikam.com tenant to authenticate to App1.
-
-What should you recommend?
-
-- [ ] A. Configure Azure AD join.
-- [ ] B. Configure Azure AD Identity Protection.
-- [ ] C. Configure a Conditional Access policy.
-- [x] D. Configure Supported account types in the application registration and update the sign-in endpoint.  ✅
-
-It can be **Use Azure AD entitlement management to govern external users** OR Configure Supported account types in the application registration and update the sign-in endpoint,
-
-
-#### Question 38
-
-You have an Azure subscription named Sub1 that is linked to an Azure AD tenant named contoso.com.
-
-You plan to implement two ASP .NET Core apps named App1 and App2 that will be deployed to 100 virtual machines in Sub1. Users will sign in to
-App1 and App2 by using their contoso.com credentials.
-
-App1 requires read permissions to access the calendar of the signed-in user. App2 requires write permissions to access the calendar of the
-signed-in user.
-
-You need to recommend an authentication and authorization solution for the apps. The solution must meet the following requirements:
-
-- Use the principle of least privilege.
-- Minimize administrative effort.
-
-What should you include in the recommendation? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_22.png "Body image")
-
-
-Important point here is that both apps are deployed to the same machines. So Managed identitied will violate the principle of least privelege. As a
-user/system managed identity will have to be assigned both read and write permission to user's calendar.
-
-- App registeration will provide ability to use the service principal per app to set the correct permission required for the app.
-- Use delegated permissions to access user's data as admin allowed/forces users to delegate the permission to the app.
-
-- Authentication: Application registration in Azure AD
-- Authorization: Azure role-based access control (Azure RBAC) for least privilege and minimal administrative effort.
-
-
-#### Question 39
-
-You have an Azure AD tenant that contains a management group named MG1.
+####  Question 21
 
 You have the Azure subscriptions shown in the following table.
 
-![Alt Image Text](../images/az305_12_23.png "Body image")
+![Alt Image Text](../images/az305_12_68.png "Body image")
 
-- Assign User3 the Contributor role for Sub1.
-- Assign Group1 the Virtual Machine Contributor role for MG1.
-- Assign Group3 the Contributor role for the Tenant Root Group.
+Contoso.onmicrosft.com contains a user named User1.
 
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+You need to deploy a solution to protect against ransomware attacks. The solution must meet the following requirements:
 
-![Alt Image Text](../images/az305_12_24.png "Body image")
-
-
-- Since Group 1 is assigned VM contributor to MG1, it will be able to create a new VM in RG1.
-- User 2 is not able to grant permission to Group 2 because it is just a member with contributor role.
-- Since Group 3 has Contributor role for the Tenant Root Group, User3 can create storage account in RG2
-
-#### Question 40
-
-You have an Azure subscription that contains 1,000 resources.
-
-You need to generate compliance reports for the subscription. The solution must ensure that the resources can be grouped by department.
-
-What should you use to organize the resources?
-
-
-- [ ] A. application groups and quotas
-- [X] B. **Azure Policy and tags**  ✅
-- [ ] C. administrative units and Azure Lighthouse
-- [ ] D. resource groups and role assignments
-
-To organize the resources in your Azure subscription and generate compliance reports, you should use Azure Policy and tags.
-
-
-#### Question 41
-
-You have an Azure AD tenant that contains an administrative unit named MarketingAU. MarketingAU contains 100 users.
-You create two users named User1 and User2.
-
-You need to ensure that the users can perform the following actions in MarketingAU:
-
-- User1 must be able to create user accounts.
-- User2 must be able to reset user passwords.
-
-Which role should you assign to each user? To answer, drag the appropriate roles to the correct users. Each role may be used once, more than
-once, or not at all. You may need to drag the split bar between panes or scroll to view content.
-
-![Alt Image Text](../images/az305_12_25.png "Body image")
-
-![Alt Image Text](../images/az305_12_26.png "Body image")
-
-The roles that you need to assign are:
-
-- User1: User Administrator for the MarketingAU administrative unit.   ✅
-- User2: Password Administrator or Helpdesk Administrator for the MarketingAU administrative unit.   ✅
-
-The User Administrator role provides permissions to manage user accounts, including creating new users. The Password Administrator and Helpdesk Administrator roles provide permissions to reset user passwords.
-
-
-- Therefore **User1 needs the User Administrator role for the MarketingAU administrative unit to be able to create new user accounts**. 
-- **User2 needs either the Password Administrator or Helpdesk Administrator role for the MarketingAU administrative unit to be able to reset user passwords**.
-
-Note that assigning Helpdesk Administrator for the tenant role to User2 would provide permissions to reset passwords for all users in the Azure AD
-tenant, not just in the MarketingAU administrative unit.
-
-
-#### Question 42
-
-You are designing an app that will be hosted on Azure virtual machines that run Ubuntu. **The app will use a third-party email service to send email
-messages to users. The third-party email service requires that the app authenticate by using an API key.**
-
-You need to recommend an Azure Key Vault solution for storing and accessing the API key. The solution must minimize administrative effort.
-
-What should you recommend using to store and access the key? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_27.png "Body image")
-
-
-**1. Storage: c. Secret.**
-
-API keys are typically stored as secrets in Azure Key Vault. The key vault can store and manage secrets like API keys, passwords, or database connection strings.
-
-**2. Access: b. A managed service identity (MSI)**.
-
-A managed service identity (MSI) is used to give your VM access to the key vault. The advantage of using MSI is that you do not have to manage
-credentials yourself. 
-
-Azure takes care of rolling the credentials and ensuring their lifecycle. 
-
-The application running on your VM can use its managed service identity to get a token to Azure AD, and then use that token to authenticate to Azure Key Vault.
-
-#### Question 43
-
-You have two app registrations named App1 and App2 in Azure AD. App1 supports role-based access control (RBAC) and includes a role named
-Writer.
-
-**You need to ensure that when App2 authenticates to access App1, the tokens issued by Azure AD include the Writer role claim.**
-
-Which blade should you use to modify each app registration? To answer, drag the appropriate blades to the correct app registrations. Each blade
-may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
-
-![Alt Image Text](../images/az305_12_28.png "Body image")
-
-1. App1: B. **App roles**: This app is already configured with a custom role, which is defined under the "App Roles" section.
-2. App2: C. **API Permissions**
-
-To allow App 2 to authenticate to App1, it is necessary to assign the appropriate permissions. These can be configured under "API Permissions"
-
-#### Question 44
-
-You have an Azure subscription.
-
-You plan to deploy a monitoring solution that will include the following:
-
-- Azure Monitor Network Insights
-- Application Insights
-- Microsoft Sentinel
-- VM insights
-
-The monitoring solution will be managed by a single team.
-
-What is the **minimum number of Azure Monitor workspaces** required?
-
-
-- [X] A. **1**  ✅
-- [ ] B. 2
-- [ ] C. 3
-- [ ] D. 4
-
-You can use a single workspace for all your data collection. You can also create multiple workspaces based on requirements such as:
-
-- The geographic location of the data.
-- Access rights that define which users can access data.
-- Configuration settings like pricing tiers and data retention.
-
-#### Question 45
-
-**Case Study**
-
-This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However,
-there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions
-included on this exam in the time provided.
-
-
-To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might
-contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is
-independent of the other questions in this case study.
-
-
-At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to
-the next section of the exam. After you begin a new section, you cannot return to this section.
-
-**To start the case study**
-
-To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study
-before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem
-statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the
-subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
-
-**Overview**
-
-Fabrikam, Inc. is an engineering company that has offices throughout Europe. The company has a main office in London and three branch offices in Amsterdam, Berlin, and Rome.
-
-Existing Environment: Active Directory Environment
-
-The network contains two Active Directory forests named corp.fabrikam.com and rd.fabrikam.com. There are no trust relationships between the
-forests.
-
-Corp.fabrikam.com is a production forest that contains identities used for internal user and computer authentication.
-Rd.fabrikam.com is used by the research and development (R&D) department only. The R&D department is restricted to using on-premises
-resources only.
-
-Existing Environment: Network Infrastructure
-
-Each office contains at least one domain controller from the corp.fabrikam.com domain. The main office contains all the domain controllers for
-the rd.fabrikam.com forest.
-
-All the offices have a high-speed connection to the internet.
-
-An existing application named WebApp1 is hosted in the data center of the London office. 
-
-WebApp1 is used by customers to place and track orders. WebApp1 has a web tier that uses Microsoft Internet Information Services (IIS) and a database tier that runs Microsoft SQL Server 2016. The web tier and the database tier are deployed to virtual machines that run on Hyper-V.
-
-The IT department currently uses a separate Hyper-V environment to test updates to WebApp1
-
-Fabrikam purchases all Microsoft licenses through a Microsoft Enterprise Agreement that includes Software Assurance.
-
-**Existing Environment: Problem Statements**
-
-The use of WebApp1 is unpredictable. At peak times, users often report delays. At other times, many resources for WebApp1 are underutilized.
-
-**Requirements: Planned Changes**
-
-Fabrikam plans to move most of its production workloads to Azure during the next few years, including virtual machines that rely on Active
-Directory for authentication.
-
-As one of its first projects, the company plans to establish a hybrid identity model, facilitating an upcoming Microsoft 365 deployment.
-All R&D operations will remain on-premises.
-
-Fabrikam plans to migrate the production and test instances of WebApp1 to Azure.
-
-**Requirements: Technical Requirements**
-
-Fabrikam identifies the following technical requirements:
-
-- Website content must be easily updated from a single point.
-- User input must be minimized when provisioning new web app instances.
-- Whenever possible, existing on-premises licenses must be used to reduce cost.
-- Users must always authenticate by using their corp.fabrikam.com UPN identity.
-- Any new deployments to Azure must be redundant in case an Azure region fails.
-- Whenever possible, solutions must be deployed to Azure by using the Standard pricing tier of Azure App Service.
-- An email distribution group named IT Support must be notified of any issues relating to the directory synchronization services.
-- In the event that a link fails between Azure and the on-premises network, ensure that the virtual machines hosted in Azure can authenticate to Active Directory.
-- Directory synchronization between Azure Active Directory (Azure AD) and corp.fabrikam.com must not be affected by a link failure between Azure and the on-premises network.
-
-**Requirements: Database Requirements**
-
-Fabrikam identifies the following database requirements:
-
-
-- Database metrics for the production instance of WebApp1 must be available for analysis so that database administrators can optimize the performance settings.
-- To avoid disrupting customer access, database downtime must be minimized when databases are migrated.
-- Database backups must be retained for a minimum of seven years to meet compliance requirements.
-
-**Requirements: Security Requirements**
-
-Fabrikam identifies the following security requirements:
-
-- Company information including policies, templates, and data must be inaccessible to anyone outside the company.
-- Users on the on-premises network must be able to authenticate to corp.fabrikam.com if an internet link fails.
-- Administrators must be able authenticate to the Azure portal by using their corp.fabrikam.com credentials.
-- All administrative access to the Azure portal must be secured by using multi-factor authentication (MFA).
-- The testing of WebApp1 updates must not be visible to anyone outside the company.
-
-To meet the authentication requirements of Fabrikam, what should you include in the solution? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_29.png "Body image")
-
-1. AAD now Microsoft Entra ID
-2. Conditional access policies :
-
-
-- Conditional Access Policy for Admin Access to the Azure Portal
-- Conditional Access Policy for Testing WebApp1 Updates
-
-**All administrative access to the Azure portal must be secured by using multi-factor authentication (MFA)**.
-
-**The testing of WebApp1 updates must not be visible to anyone outside the company.**
-
-#### Question 46
-
-You have an Azure subscription that contains 10 web apps. The apps are integrated with Azure AD and are accessed by users on different project
-teams.
-
-The users frequently move between projects.
-
-You need to recommend an access management solution for the web apps. The solution must meet the following requirements:
-
-- The users must only have access to the app of the project to which they are assigned currently.
-- Project managers must verify which users have access to their project’s app and remove users that are no longer assigned to their project.
-- Once every 30 days, the project managers must be prompted automatically to verify which users are assigned to their projects.
-
-What should you include in the recommendation?
-
-- [ ] A. Azure AD Identity Protection
-- [ ] B. Microsoft Defender for Identity
-- [ ] C. Microsoft Entra Permissions Management
-- [X] D. **Azure AD Identity Governance**   ✅
-
-
-**Azure AD Identity Governance.** ✅
-
-<mark>This is an updated version, in the old questions the right answers was "Access Review” , but this options is not available here</mark>
-
-Azure AD Identity Governance provides a comprehensive solution for managing identity and access lifecycle, ensuring that access is granted in line
-with the principle of least privilege and is revoked when no longer needed1. It allows project managers to verify which users have access to their
-project’s app and remove users that are no longer assigned to their project.
-
-#### Question 47
-
-ou have an Azure subscription that contains 50 Azure SQL databases.
-
-**You create an Azure Resource Manager (ARM) template named Template1 that enables Transparent Data Encryption (TDE).**
-
-You need to create an Azure Policy definition named Policy1 that will use Template1 to enable TDE for any noncompliant Azure SQL databases.
-
-**How should you configure Policy1?** To answer, select the appropriate options in the answer area.
+- Ensure that all the resources in Sub1 are backed up by using Azure Backup.
+- Require that User1 first be assigned a role for Sub2 before the user can make major changes to the backup configuration
 
 NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/az305_12_30.png "Body image")
+![Alt Image Text](../images/az305_12_69.png "Body image")
 
-**Box 1: DeployIfNotExists**
+####  Question 22
 
-- DeployIfNotExists policy definition executes a template deployment when the condition is met. Policy assignments with effect set as
-- DeployIfNotExists require a managed identity to do remediation.
+You have 10 on-premises servers that run Windows Server.
 
-**Box 2: The role-based access control (RABC) roles required to perform the remediation task**
+You need to perform daily backups of the servers to a Recovery Services vault. The solution must meet the following requirements:
 
-- The question is what you have to "Include in the definition:" of the policy.
-- Refer to list of DeployIfNotExists properties, among them is roleDefinitionIds (required) - This property must include an array of strings that match role-based access control role ID accessible by the subscription.
+- Back up all the files and folders on the servers.
+- Maintain three copies of the backups in Azure.
+- Minimize costs.
 
-#### Question 48
+What should you configure? To answer, select the appropriate options in the answer area.
 
-You have an Azure subscription. The subscription contains a tiered app named App1 that is distributed across multiple containers hosted in Azure
-Container Instances.
+![Alt Image Text](../images/az305_12_70.png "Body image")
 
-You need to deploy an Azure Monitor monitoring solution for App. The solution must meet the following requirements:
+**Box 1: The Microsoft Azure Recovery Services (MARS) agent**
 
-- Support using synthetic transaction monitoring to monitor traffic between the App1 components.
-- Minimize development effort.
-
-What should you include in the solution?
-
-- [ ] A. Network insights
-- [X] B. Application Insights
-- [ ] C. Container insights
-- [ ] D. Log Analytics Workspace insights
-
-#### Question 49
-
-You have an Azure subscription that contains the resources shown in the following table:
-
-![Alt Image Text](../images/az305_12_31.png "Body image")
-
-Log files from App1 are registered to App1Logs. An average of 120 GB of log data is ingested per day.
-
-You configure an Azure Monitor alert that will be triggered if the App1 logs contain error messages.
-
-You need to minimize the Log Analytics costs associated with App1. The solution must meet the following requirements:
-
-- **Ensure that all the log files from App1 are ingested to App1Logs.**
-- **Minimize the impact on the Azure Monitor alert**.
-
-Which resource should you modify, and which modification should you perform? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_32.png "Body image")
-
-"In addition to the pay-as-you-go model, Log Analytics has commitment tiers, which can save you as much as 30 percent compared to the pay-as-
-you-go price. With commitment tier pricing, you can commit to buy data ingestion for a workspace, starting at 100 GB per day, at a lower price
-than pay-as-you-go pricing."
-
-Since you have an average of 120GB of log data per day, to minimize costs and impact you should to change the "Workspace1" plan from "pay-as-you-go" to "commitment pricing tier";
-
-the "commitment pricing tier" is good starting at 100GB per day of logs.
-
-#### Question 50
-
-You have **12 Azure subscriptions and three project**s. Each project uses resources across multiple subscriptions.
-
-You need to use Microsoft Cost Management to monitor costs on a per project basis. The solution must minimize administrative effort.
-
-Which two components should you include in the solution? Each correct answer presents part of the solution.
-
-NOTE: Each correct selection is worth one point.
-
-- [x] A. **budgets**  ✅
-- [X] B. **resource tags**  ✅
-- [ ] C. custom role-based access control (RBAC) roles
-- [ ] D. management groups
-- [ ] E. Azure boards
-
-**We first create tags on the resources per project, afterwards we create a budget for monitoring the costs.**
-
-#### Question 51
-
-You have an Azure subscription that contains multiple storage accounts.
-
-You assign Azure Policy definitions to the storage accounts.
-
-You need to recommend a solution to meet the following requirements:
-
-- Trigger on-demand Azure Policy compliance scans.
-- Raise Azure Monitor non-compliance alerts by querying logs collected by Log Analytics.
-
-What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/az305_12_33.png "Body image")
-
-**box1: CLI is correct.** 
+The MARS agent is a free and easy-to-use agent that can be installed on Windows servers to back up files and folders to Azure.
+Volume Shadow Copy Service (VSS) is a Windows service that provides a snapshot of the server's file system, which is used to create consistent
+backups. The VSS service is already installed and enabled on Windows Server by default, so it is not necessary to select it as a configuration option
 
 
-box2: I first set the diagnostic setting on activity log so that all policy related messages are sent to log analytic workspace. And then on log analytic workspace setup alert rules that send alert whenever non-informative messages are found. Simply speaking, diagnostic setting is on activity log, alert rule setup is on log analytic workspace
+**Box 2: Locally-redundant storage (LRS)**
 
-#### Question 52
 
-You have an Azure subscription.
+LRS is the most cost-effective storage option for Azure Backup. It replicates data three times within a single data center in the primary region,
+which provides sufficient durability for most workloads.
 
-You plan to deploy five storage accounts that will store block blobs and five storage accounts that will host file shares. The file shares will be
-accessed by using the SMB protocol
+####  Question 23
 
-You need to recommend an access authorization solution for the storage accounts. The solution must meet the following requirements:
+You plan to deploy a containerized web-app that will be hosted in five Azure Kubernetes Service (AKS) clusters. Each cluster will be hosted in a
+different Azure region.
 
-- Maximize security.
-- Prevent the use of shared keys.
-- Whenever possible, support time-limited access.
+You need to provide access to the app from the internet. The solution must meet the following requirements:
+
+- Incoming HTTPS requests must be routed to the cluster that has the lowest network latency.
+- HTTPS traffc to individual pods must be routed via an ingress controller.
+- In the event of an AKS cluster outage, failover time must be minimized.
 
 What should you include in the solution? To answer, select the appropriate options in the answer area.
 
-**1. For the blobs - a user delegation SAS only**
 
-To maximize security it's better to use a user delegation SAS:
+NOTE: Each correct selection is worth one point.
 
-From docs: As a security best practice, **we recommend that you use Azure AD credentials when possible**, rather than the account key, which can be
-more easily compromised. When your application design requires shared access signatures, use Azure AD credentials to create a user delegation
-SAS to help ensure better security.
+![Alt Image Text](../images/az305_12_71.png "Body image")
 
-This also prevents using shared keys & supports time-limited access. Note: user delegation SAS do not support stored access policies.
+**Box 1: Azure Front Door** ✅
 
-**2. For the file shares - Azure AD credentials**
+Both Azure Front Door and Traffic Manager are global load balancer. However, recommended traffic for Azure Front Door is HTTP(S), and
+recommended traffic for Traffic Manager is Non-HTTP(S).
 
-It fulfills the requirement to maximize security (the most secure way recommended by Microsoft), but doesn't support time-limited access, which is
-optional and has lower priority than security.
+**Box 2: Azure Application Gateway**  ✅
 
-#### Question 53
+**The Application Gateway Ingress Controller (AGIC) is a Kubernetes application, which makes it possible for Azure Kubernetes Service (AKS)**
+customers to leverage Azure's native Application Gateway L7 load-balancer to expose cloud software to the Internet.
+AGIC helps eliminate the need to have another load balancer/public IP address in front of the AKS cluster and avoids multiple hops in your
+datapath before requests reach the AKS cluster.
 
-You have an Azure subscription. The subscription contains 100 virtual machines that run Windows Server 2022 and have the Azure Monitor Agent installed.
+####  Question 24
 
-You need to recommend a solution that meets the following requirements:
+You have an Azure subscription.
 
-- Forwards JSON-formatted logs from the virtual machines to a Log Analytics workspace
-- Transforms the logs and stores the data in a table in the Log Analytics workspace
+You create a storage account that will store documents.
 
-What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+You need to configure the storage account to meet the following requirements:
 
-NOTE: Each correct selection is worth one point
+- Ensure that retention policies are standardized across the subscription.
+- Ensure that data can be purged if the data is copied to an unauthorized location.
 
-![Alt Image Text](../images/az305_12_34.png "Body image")
+Which two settings should you enable? To answer, select the appropriate settings in the answer area.
 
-- **Box1 - Azure Monitor Data collection**  ✅
-- **Box2 - KQL**    ✅
+![Alt Image Text](../images/az305_12_72.png "Body image")
 
-For those arguing XPATH over KQL, as far as I can tell, XPATH can only filter (not transform) event log data that is sent to a Log Analytics
-workspace. KQL, on the other hand, can be used for ingestion-time transformations that allow for filtering or modification of incoming data
-before it's stored in a Log Analytics workspace. So Box 2 should indeed be KQL.
+the answer should be:
+
+1. enable soft delete for blobs   ✅
+2. enable versioning for blobs   ✅
