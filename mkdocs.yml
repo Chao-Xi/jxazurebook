@@ -33,6 +33,8 @@ nav:
     - '3 AI 编程简介' : 'chap2024_zh/3prommaming.md'
     - '4 OpenAI 的 Function Calling' : 'chap2024_zh/4assistantapi.md'
     - '5 RAG和Embeddings' : 'chap2024_zh/5rag.md'
+  - 'Deepseek 模型':
+    - '1 DeepSeek 模型介绍': 'dp1/1dp1_model.md'
 
 repo_url: https://github.com/Chao-Xi/jxaibook.git
 repo_name: "jxaibook"
