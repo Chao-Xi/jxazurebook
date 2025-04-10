@@ -424,3 +424,165 @@ Which resource should you modify, and which modification should you perform? To 
 
 * Resouce: **workspace1**
 * Modification: **Change to a commitment pricing tier.**
+
+#### Question 50
+
+You have **12 Azure subscriptions and three projects**. Each project uses resources across multiple subscriptions.
+
+You need to use Microsoft Cost Management to monitor costs on a per project basis. The solution must minimize administrative effort.
+
+Which two components should you include in the solution? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+- [x] A. **budgets**  ✅
+- [X] B. **resource tags**  ✅
+
+#### Question 51
+
+You have an Azure subscription that contains multiple storage accounts.
+
+You assign Azure Policy definitions to the storage accounts.
+
+You need to recommend a solution to meet the following requirements:
+
+- Trigger on-demand Azure Policy compliance scans.
+- **Raise Azure Monitor non-compliance alerts by querying logs collected by Log Analytics.**
+
+What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_33.png "Body image")
+
+**box1: CLI is correct.** 
+
+**box2: I first set the diagnostic setting on activity log so that all policy related messages are sent to log analytic workspace.**
+
+#### Question 52
+
+You have an Azure subscription.
+
+You plan to deploy five storage accounts that will store block blobs and five storage accounts that will host file shares. The file shares will be
+accessed by using the SMB protocol
+
+You need to recommend an access authorization solution for the storage accounts. The solution must meet the following requirements:
+
+- Maximize security.
+- Prevent the use of shared keys.
+- Whenever possible, support time-limited access.
+
+**1. For the blobs - a user delegation SAS only**
+
+**2. For the file shares - Azure AD credentials**
+
+#### Question 53
+
+You have an Azure subscription. The subscription contains 100 virtual machines that run Windows Server 2022 and have the Azure Monitor Agent installed.
+
+You need to recommend a solution that meets the following requirements:
+
+- Forwards JSON-formatted logs from the virtual machines to a Log Analytics workspace
+- Transforms the logs and stores the data in a table in the Log Analytics workspace
+
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/az305_12_34.png "Body image")
+
+- **Box1 -  To forward the logs: - Azure Monitor Data collection**  ✅
+- **Box2 - To transform the logs and store the data:- KQL**    ✅
+
+## Topic 2
+
+
+
+#### Question 3
+
+You have an Azure subscription that contains two applications named App1 and App2. App1 is a sales processing application. When a transaction
+in App1 requires shipping, a message is added to an Azure Storage account queue, and then App2 listens to the queue for relevant transactions.
+
+In the future, **additional applications will be added that will process some of the shipping requests based on the specific details of the transaction**s.
+
+**You need to recommend a replacement for the storage account queue to ensure that each additional application will be able to read the relevant transactions.**
+
+What should you recommend?
+
+- [ ] A. one Azure Data Factory pipeline
+- [ ] B. multiple storage account queues
+- [ ] C. one Azure Service Bus queue
+- [X] D. **one Azure Service Bus topic**  ✅
+
+#### Question 4
+
+* **Storage account type**: BlockBlobStorage provide a very low latency(x40) (Read and Write) and Throughput (x5)
+* **Storage service:** : Blob
+
+#### Question 4
+
+**Use lifecycle management to migrate app data between storage tiers**
+
+**Box 1: Storage1 and storage3 only**
+
+* storage 1-StorageV2-Standard
+* storage 3-BlobStorage-Standard
+
+**STANDARD ==> LIFE CYCLE YES (STORAGE 1 AND STORAGE 3)**
+
+**Store app data in an Azure file share**
+
+* storage 1-StorageV2-Standard
+* storage 4-FileStorage-Premium
+
+#### Question 7
+
+**A. an elastic pool that contains 20 Azure SQL databases**  ✅
+
+SLA of 99.99% uptime: Azure SQL Database offers a high availability SLA of 99.99%. Dynamic Scaling: Elastic pools dynamically allocate compute resources across the datab
+
+#### Question 8
+
+You have an on-premises database that you plan to migrate to Azure.
+
+You need to design the database architecture to meet the following requirements:
+
+- ✑ Support scaling up and down.
+- ✑ Support geo-redundant backups.
+- ✑ Support a database of up to 75 TB.
+- ✑ **Be optimized for online transaction processing (OLTP)**.
+
+What should you include in the design? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_38.png "Body image")
+
+* **Box 1: Azure SQL Database -**
+
+* **Box 2: Hyperscale** -
+
+**The key is that only Hyperscale can deal with 75 Tb, All other have limit of 4 Tb**
+
+#### Question 9
+
+Need to find a service to store and query the data. 
+
+* A. Azure Table Storage: You can't query data. 
+* B. Azure Event Grid: You can't store or query data. 
+* C. **Azure Cosmos DB SQL API: You can store and query data**.    ✅
+* D. **Azure Time Series Insights: You can store and query data**   ✅
+
+#### Question 10
+
+**You are designing an application that will aggregate content for users**.
+
+You need to recommend a database solution for the application. The solution must meet the following requirements:
+
+- ✑ Support SQL commands.
+- ✑ Support multi-master writes.
+- ✑ Guarantee low latency read operations.
+
+What should you include in the recommendation?
+
+- [X] **A. Azure Cosmos DB SQL API** ✅
+
+
