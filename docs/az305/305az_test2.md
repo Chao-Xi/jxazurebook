@@ -585,4 +585,193 @@ What should you include in the recommendation?
 
 - [X] **A. Azure Cosmos DB SQL API** ✅
 
+- Azure Cosmos DB for NoSQL 
+- Azure Cosmos DB for PostgreSQL ✅
 
+#### Question 11
+
+You have an **Azure subscription that contains the SQL servers** on Azure shown in the following table.
+
+![Alt Image Text](../images/az305_12_39.png "Body image")
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+![Alt Image Text](../images/az305_12_40.png "Body image")
+
+- Box 1: Yes - Auditing works fine for a Standard account.
+- Box 2: No - **Auditing limitations: Premium storage is currently not supported**.
+- Box 3: No - **Auditing limitations: Premium storage is currently not supported**.
+
+#### Question 13
+
+You need to recommend an automated process to upload the data to Azure SQL Database every month.
+
+**D. Azure Data Factory**  ✅
+
+#### Question 14
+
+B. **Azure SQL Database Premium** ✅
+
+- **Not A: Hyperscale is more expensive than Premium.**
+- Not C: Need Premium for Availability Zones.
+- **Not D: Zone redundant configuration that is free on Azure SQL Premium is not available on Azure SQL Managed Instance.**
+
+#### Question 17
+
+**Box 1: General purpose v2 with Hot access tier for blobs**
+
+**Hot tier has higher storage costs, but lower access and transaction costs.**
+
+**2. Configuration to prevent the modification and deletions: Container access policy.**
+
+The Container access policy is indeed the place to configure Azure's Immutable Blob Storage to ensure data is retained without modifications or deletions for a specified amount of time, which suits your needs.
+
+#### Question 18
+
+1. **Data store for the ingestion data: b. Azure Data Lake Storage Gen2.**
+2.  **Data store for the data warehouse: c. Azure SQL Database Hyperscale**.
+
+#### Question 19
+
+You need to recommend a service to **store and query the data**.
+
+* **C. Azure Cosmos DB for NoSQL**
+* **D. Azure Time Series Insights**
+
+* A. Azure Table Storage -> Throughput: scalability limit of 20,000 operations/s. -> Not enough for this question 
+* **B. Azure Event Grid -> It is only a broker, not a storage solution**
+
+#### Question 22
+
+You need to recommend Azure Synapse pools to meet the following requirements:
+
+- Ingest data from Data Lake Storage into hash-distributed tables.
+
+**A dedicated SQL pool** ✅
+
+- Implement query, and update data in Delta Lake.
+
+**A serverless Apache Spark pool**   ✅
+
+#### Question 23
+
+The solution must support Hadoop Distributed File System (HDFS)
+
+=> **A. Azure Data Lake Storage Gen2**
+
+#### Question 23
+
+* Support SQL commands. 
+* Support multi-master writes. 
+* Guarantee low latency read operations.
+
+**A. Azure Cosmos DB for NoSQL**
+
+- **cosmos for the multi writer**
+- postgre is not good at reading
+
+#### Question 24
+
+You need to recommend a solution for the Azure Database for MySQL Flexible Server configuration.
+
+* The databases must be accessible if a datacenter fails. 
+* Costs must be minimized.
+
+**B. General Purpose**  ✅
+
+#### Question 25
+
+* Support SQL queries. 
+* Support geo-replication. 
+* Store and access data relationally.
+
+**B. PostgreSQL**
+
+#### Question 28
+
+You need to identify which type of Azure storage must be provisioned to support Event Hubs Capture, **and which inbound data format the reporting system must support.**
+
+1. **Storage Type: Azure Data Lake Storage Gen2**
+
+2. **Data format: Avro**
+
+#### Question 29
+
+You need to recommend a solution that meets the following requirements: 
+
+* Supports immutable storage 
+* Disables anonymous access to the storage account 
+* Supports access control list (ACL)-based Azure AD permissions
+
+**B. Azure Data Lake Storage** ✅
+
+#### Question 30
+
+The analyzed data will be off loaded to Azure Data Lake Storage Gen2 for long-term retention.
+
+**For storage and interactive analytics:**
+
+> Data Explorer
+
+**Query language:**
+
+> KQL
+
+#### Question 31
+
+You need to recommend an Azure SQL product and service tier that meets the following requirements: 
+
+* Automatically scales compute resources based on the workload demand 
+* Provides per second billing
+
+**Azure SQL product: A single Azure SQL database**   ✅
+
+**Service tier:  General Purpose**    ✅
+
+A single Azure SQL database: Provides the flexibility to scale compute resources independently. 
+
+General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing.
+
+
+#### Question 34
+
+Your company, named Contoso, Ltd., has an Azure subscription that contains the following resources:
+
+* An Azure Synapse Analytics workspace named contosoworkspace1 
+* An Azure Data Lake Storage account named contosolake1 
+* An Azure SQL database named contososql1
+
+
+**The product data of Contoso is copied from contososql1 to contosolake1**
+
+Contoso plans to upload the research data on FabrikamVM1 to contosolake1. During the upload, the research data must be transformed to the data formats used by Contoso.
+
+
+The data in contosolake1 will be analyzed by using contosoworkspace1. 
+
+You need to recommend a solution that meets the following requirements:
+
+* Upload and transform the FabrikamVM1 research data. 
+* Provide Fabrikam with restricted access to snapshots of the data in contosoworkspace1.
+
+What should you recommend for each requirement? To answer, select the appropriate options in the answer area. 
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/az305_12_53.png "Body image")
+
+
+**For ETL operations use Azure Data Factory and Azure Synapse Pipelines are based on Azure Data Factory.**   ✅
+
+**For restricted access use Azure Data Share:**  ✅
+
+
+#### Question 35
+
+![Alt Image Text](../images/az305_12_54.png "Body image")
+
+**To implement the data warehouse: An Azure Synapse Analytics dedicated SQL pool-**
+
+**To implement the serving layer: Azure Analysis Services**
+
+- Synapse Analytics - massive parallel - processing Analysis Services - OLAP
