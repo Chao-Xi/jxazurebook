@@ -797,4 +797,170 @@ What should you use? To answer, select the appropriate options in the answer are
 
 **In Premium and Business Critical service tiers, only one of the read-only replicas is accessible at any given time. Hyperscale supports multiple read-only replicas.**
 
+## Topic 3
+
+#### Question 3
+
+*You deploy two Azure virtual machines to two Azure regions, and you create an Azure Traffic Manager profile**.    ✅
+
+**Azure Traffic Manager is a DNS-based traffic load balancer that enables you to distribute traffic optimally to services across global Azure regions, while providing high availability and responsiveness**
+
+**App Gateway will balance the traffic between VMs deployed in the same region.** 
+
+#### Question 5
+
+You plan to create an Azure Storage account that will host file shares. **The shares will be accessed from on-premises applications that are transaction intensive**. 
+
+You need to recommend a solution to minimize latency when accessing the file shares. 
+
+The solution must provide the highest-level of resiliency for the selected storage tie
+
+![Alt Image Text](../images/az305_12_58.png "Body image")
+
+**Box 1: Premium** - Premium: **Premium file shares are backed by solid-state drives (SSDs) and provide consistent high performance and low latency**, within single-digit milliseconds for most IO operations, for IO-intensive workloads
+
+**Premium Azure file shares only support LRS and ZRS. Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.**
+
+#### Question 4
+
+**Application 1: BlockBlobStorage with Premium performance and Zone-redundant storage (ZRS) replication**
+
+**Application 2: BlobStorage with Standard performance, Cool access tier, and Geo-redundant storage (GRS) replication**
+
+
+#### Question 5
+
+* ✑ Prevent new data from being modified for one year. 
+* ✑ Maximize data resiliency.
+* ✑ Minimize read latency
+  
+* **Box 1: Premium Block Blobs**   ✅
+
+* **Box 2: Zone-redundant storage (ZRS)** ✅ 
+
+* ✑ **Prevent new data from being modified for one year. (Both Standard + Premium)** 
+
+#### Question 6
+
+**Front Door， It offers Layer 7 capabilities for your application like SSL offload, path-based routing, fast failover, caching, etc. to improve performance and high-availability ofyour applications.**
+
+**Traffic Manager does not provide SSL Offloading.**
+
+#### Question 13
+
+* ✑ Failover between replicas of the database must occur without any data loss. 
+* ✑ The database must remain available in the event of a **zone outage**. 
+* ✑ Costs must be minimized.
+
+* **B. Azure SQL Database Premium**  ✅
+
+**Zone-redundant configuration is not available in SQL Managed Instance**.
+
+**To prevent Data Loss, Premium/Business Critical** is required:
+
+Costs must be minimized => B. Azure SQL Database Premium
+
+**A. Azure SQL Database Serverless**   ✅
+
+1. Azure SQL Database Serverless
+2. Azure SQL Database Premium
+3. Azure SQL Database Business Critical
+
+#### Question 16
+
+You have an on-premises Microsoft SQL Server database named SQL1.
+
+You plan to migrate SQL1 to Azure
+
+You need to recommend a hosting solution for SQL1. The solution must meet the following requirements:
+
+* Support the deployment of multiple secondary, read-only replicas. 
+* Support automatic replication between primary and secondary replicas. 
+* Support failover between primary and secondary replicas within a 15-minute recovery time objective (RTO)
+
+What should you include in the solution? 
+
+**Azure service or service tier:  Azure SQL DB**     ✅
+
+Replication mechanism: Active geo-replication   ✅
+
+
+#### Question 17
+
+You have two on-premises Microsoft SQL Server 2017 instances that host an Always On availability group named AG1. AG1 contains a single database named DB1.
+
+You have an Azure subscription that contains a virtual machine named VM1. VM1 runs Linux and contains a SQL Server 2019 instance. 
+
+**You need to migrate DB1 to VM1. The solution must minimize downtime on DB1.**
+
+What should you do? To answer, select the appropriate options in the answer area
+
+![Alt Image Text](../images/az305_12_65.png "Body image")
+
+First one should be A: Prepare For the migration by: 
+
+**A. Adding a secondary replica to AG1**  ✅
+
+**B. Azure migrate** ✅
+
+
+####  Question 20
+
+You need to recommend a load balancing solution that will distribute incoming traffic for VMSS1 across NVA1 and NVA2. The solution must minimize administrative effort.
+
+* **A. Gateway Load Balancer** ✅
+
+A. Gateway Load Balancer seems to be correct as it balances the load between two NVAs internally.
+
+
+####  Question 21
+
+You have the Azure subscriptions shown in the following table.
+
+![Alt Image Text](../images/az305_12_68.png "Body image")
+
+Contoso.onmicrosft.com contains a user named User1.
+
+You need to deploy a solution to protect against ransomware attacks. The solution must meet the following requirements:
+
+- Ensure that all the resources in Sub1 are backed up by using Azure Backup.
+- Require that User1 first be assigned a role for Sub2 before the user can make major changes to the backup configuration
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_69.png "Body image")
+
+**A Recovery Services vault**   ✅
+
+**A Resource Guard**   ✅
+
+####  Question 22
+
+**Box 1: Azure Front Door** ✅
+
+**Both Azure Front Door and Traffic Manager are global load balancer. However, recommended traffic for Azure Front Door is HTTP(S), and
+recommended traffic for Traffic Manager is Non-HTTP(S).**
+
+**Box 2: Azure Application Gateway**  ✅
+
+**The Application Gateway Ingress Controller (AGIC) is a Kubernetes application, which makes it possible for Azure Kubernetes Service (AKS)**
+
+####  Question 24
+
+You have an Azure subscription.
+
+You create a storage account that will store documents.
+
+You need to configure the storage account to meet the following requirements:
+
+- **Ensure that retention policies are standardized across the subscription**.
+- Ensure that data can be purged if the data is copied to an unauthorized location.
+
+Which two settings should you enable? To answer, select the appropriate settings in the answer area.
+
+![Alt Image Text](../images/az305_12_72.png "Body image")
+
+1. **Enable operational backup with Azure Backup**  ✅
+2. **Enable permanent delete for soft deleted items**  ✅
+
 
