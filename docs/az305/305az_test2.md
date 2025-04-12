@@ -774,4 +774,27 @@ NOTE: Each correct selection is worth one point
 
 **To implement the serving layer: Azure Analysis Services**
 
-- Synapse Analytics - massive parallel - processing Analysis Services - OLAP
+- Synapse Analytics - massive parallel 
+- processing Analysis Services - OLAP
+
+#### Question 36
+
+You have an Azure subscription.
+
+You need to deploy a relational database. The solution must meet the following requirements:
+
+- Support multiple read-only replicas.
+- Automatically load balance read-only requests across all the read-only replicas.
+- Minimize administrative effort
+
+What should you use? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_541.png "Body image")
+
+**Service - A single Azure SOL database**
+
+**Service tier - Hyperscale**
+
+**In Premium and Business Critical service tiers, only one of the read-only replicas is accessible at any given time. Hyperscale supports multiple read-only replicas.**
+
+
