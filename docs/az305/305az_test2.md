@@ -866,6 +866,8 @@ Costs must be minimized => B. Azure SQL Database Premium
 2. Azure SQL Database Premium
 3. Azure SQL Database Business Critical
 
+**D. Azure SQL Managed Instance Business Critical**  ✅
+
 #### Question 16
 
 You have an on-premises Microsoft SQL Server database named SQL1.
@@ -1063,6 +1065,9 @@ Each service may be used once, more than once, or not at all.
 
 **asynchronously communicate => Azure Service Bus**
 
+**asynchronously communicate => Azure Queue Storage**
+
+
 #### Question 14
 
 You need to recommend how many and what size Azure virtual machines will be required to move the current workloads to Azure. The solution must minimize administrative effort.
@@ -1255,9 +1260,88 @@ Level at which to create the blueprint assignments:
 - [x] **E. Enable parallel task execution on compute nodes.**.   ✅
 
 
-#### Question50
+#### Question 50
 
 **You need to migrate the application data to Azure.**
 
 - [X] B. **SQL Server on an Azure virtual machine.**   ✅
 - [X] D. **Azure SQL Managed Instance**.  ✅
+
+#### Question 51
+
+ SQL Server databases to Azure. You need to recommend a deployment and resiliency solution that meets the following requirements: 
+ 
+ * ✑ Supports user-initiated backups 
+ * ✑ Supports multiple automatically replicated instances across Azure regions 
+ * ✑ Minimizes administrative effort to implement and maintain business continuity
+
+* **Deployment solution: Azure SQL Managed Instance** 
+* **Resiliency solution: Auto-failover group**
+
+#### Question 52
+
+You plan to back up the keys in KeyVault1.
+
+- [x] **D. the same geography only**   ✅
+
+#### Question 54
+
+You plan to migrate the on-premises SQL Server instance to Azure virtual machines.
+
+* **Minimizes costs**
+* Minimizes failover time if a single server fails
+
+**C. an Always On availability group that has premium storage disks and a distributed network name (DNN)**  ✅
+
+#### Question #59
+
+You need to recommend a storage solution to ensure that updated container images are replicated automatically to all the Azure regions hosting the AKS clusters.
+
+- [X] **B. Premium SKU Azure Container Registry**   ✅
+
+#### Question #60
+
+You need to recommend a solution to provide **specific Azure AD user accounts with read access to the Cosmos DB databases.**
+
+**D. a resource token and an Access control (IAM) role assignment** ✅
+
+#### Question #60
+
+- ✑ The storage must support 1 PB of data.
+- ✑ The data must be stored in blob storage.
+- ✑ **The storage must support three levels of subfolders**.
+- ✑ The storage must support access control lists (ACLs).
+
+- [x] B. **a general purpose v2 storage account that has hierarchical namespace enabled**   ✅
+
+* Default maximum storage account capacity: 5 PiB
+
+#### Question #61
+
+You need to deploy 50 databases. The solution must meet the following requirements:
+
+- ✑ Support automatic scaling.
+- ✑ Minimize Microsoft SQL Server licensing costs.
+
+**Purchase model: Box 1: vCore -**  ✅
+
+**Deployment option: Box 2: An Azure SQL Database elastic pool**  ✅
+
+#### Question 63
+
+You plan to use Azure Databricks to transform and load data from App1 to an Azure Synapse Analytics instance.
+
+**C. Azure Data Lake Storage**  ✅
+
+**E. Azure Data Factory**  ✅
+
+#### Question 64
+
+The first job type will consist of short-running tasks for a development environment. 
+
+The second job type will consist of long-running Message Passing Interface (MPI) applications for a production environment that requires timely job completion.
+
+**Box 1: User subscription and low-priority virtual machines**
+
+**Box 2: Batch service and dedicate virtual machines**
+
