@@ -63,6 +63,7 @@ nav:
     - '10 AZ305 Summary - 6': 'az305/10az305_summary.md'
     - '11 AZ305 Summary - 7': 'az305/11az305_summary.md'
     - '12 AZ305 Test1': 'az305/12az305_test1.md'
+    - '13 AZ305 Test2': 'az305/12az305_test2.md'
   - 'Azure 900 and int':
     - 'Az900 Fundamentals + Jam Azure Terraform': 'chap4/1az_900_int.md'
     - 'Azure900 面试名词解释面试': 'chap4/2azure_term_int.md'
