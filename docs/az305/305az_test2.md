@@ -963,4 +963,301 @@ Which two settings should you enable? To answer, select the appropriate settings
 1. **Enable operational backup with Azure Backup**  ✅
 2. **Enable permanent delete for soft deleted items**  ✅
 
+## Topic 4 
 
+### Question #1
+
+**A basic Azure virtual WAN does not support express route. You have to upgrade to standard.**  ✅
+
+### Question #2
+
+**B. Azure Logic Apps and Azure Functions**
+
+When you want to run code that performs a specific job in your logic apps, you can create your own function by using Azure Functions.
+
+### Question #3
+
+**D. Azure AD Domain Services (Azure AD DS)** 
+
+Azure Active Directory Domain Services (Azure AD DS) provides managed domain services such as domain join, group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication.
+
+You can use Azure AD DS and sync identities needed from Azure AD to Azure AD DS to use legacy protocols like LDAP.
+
+### Question #4
+
+You need to design a solution that will execute custom C# code in response to an event routed to **Azure Event Grid**. The solution must meet the following requirements:
+
+* ✑ The executed code must be able to access the private IP address of a Microsoft SQL Server instance that runs on an Azure virtual machine. 
+* ✑ **Costs must be minimized.**
+
+What should you include in the solution?
+
+* A. Azure Logic Apps in the Consumption plan 
+* **B. Azure Functions in the Premium plan**  ✅
+
+**Virtual connectivity is included in the Premium plan.**
+
+**Azure Functions in the Consumption plan does not support virtual network integration, which is necessary for accessing the private IP address of the SQL Server instance**. 
+
+### Question #6
+
+**Box 1: An on-premises data gateway**  ✅
+
+**Box 2: A connection gateway resource**   ✅
+
+### Question #7
+
+- The API is available to partners over the internet.  ✅  Yes
+- The APIM instance can access real-time data from VM1.   ✅  Yes
+- A VPN gateway is required for partner access.   No
+
+#### Question 8
+
+Your company has an existing web app that runs on Azure virtual machines. 
+
+You need to ensure that the app is protected from SQL injection attempts and **uses a layer-7 load balancer. The solution must minimize disruptions to the code of the app.** 
+
+What should you recommend? To answer, drag the appropriate services to the correct targets. 
+
+Each service may be used once, more than once, or not at all. 
+
+![Alt Image Text](../images/az305_12_79.png "Body image")
+
+**Box 1: Azure Application Gateway**  ✅
+
+**The Azure Application Gateway Web Application Firewall (WAF) provides protection for web applications.** These protections are provided by the Open Web Application Security Project (OWASP) Core Rule Set (CRS). 
+
+**Box 2: Web Application Firewall (WAF)**   ✅
+
+#### Question 9
+
+* ✑ Ingress access to the microservices must be restricted to a single private IP address and protected by using mutual TLS authentication.
+* ✑ The number of incoming microservice calls must be rate-limited.
+* ✑ Costs must be minimized.
+
+**D. Azure API Management Premium tier with virtual network connection**   ✅
+
+* A. Azure App Gateway with Azure Web Application Firewall (WAF)  
+  * **No rate limited**
+* B. Azure API Management Standard tier with a service endpoint   
+  * **Does not have Private Endpoint integration**
+* C. Azure Front Door with Azure Web Application Firewall (WAF)
+  * Does not make sense, and does not rate limited
+  
+#### Question 11
+
+**The new policy will be configured as a parent policy for the existing policies**. 
+
+* **D. 3**  ✅
+
+* **The parent policy is required to be in the same region as the child policy.** 
+	* Each of the three regions must have a new parent policy
+
+#### Question 12
+
+* **A. vCore-based General Purpose**   ✅
+
+**See Serverless compute tier below. The vCore based purchasing model.**
+
+#### Question 13
+
+**asynchronously communicate => Azure Service Bus**
+
+#### Question 14
+
+You need to recommend how many and what size Azure virtual machines will be required to move the current workloads to Azure. The solution must minimize administrative effort.
+
+**C. Azure Migrate**
+
+#### Question 15
+
+**You need to recommend a solution to provision and manage the HPC cluster node. => B. Azure CycleCloud**
+
+#### Question 16
+
+* ✑ **Support rate limiting.** 
+* ✑ Balance requests between all instances. 
+* ✑ **Ensure that users can access the app in the event of a regional outage**.
+
+
+**Solution: You use Azure Traffic Manager to provide access to the app.**   **B. No**   ✅
+
+**Solution: You use Azure Load Balancer to provide access to the app.**  **B. No**   ✅
+
+Solution: You use **Azure Application Gateway** to provide access to the app.  **B. No**   ✅
+
+You use Azure Front Door to provide access to the app.  **A. Yes** ✅
+
+**Traffic Manager also provides your public endpoints with high availability and quick responsiveness. It does not provide rate limiting**
+
+* **Note: Azure Front Door would meet the requirements, The Azure Web Application Firewall (WAF) rate limit rule for Azure Front Door controls the number of requests allowed from clients during a one-minute duration.**
+* **Use Azure Front Door with WAF**
+
+#### Question 20
+
+**Routing from the virtual networks to the on-premises locations must be configured by using:  Border Gateway Protocol (BGP)**
+
+**The automatic routing configuration following a failover must be handled by using:  Border Gateway Protocol (BGP)**
+
+#### Question 21
+
+* **Storage:Standar V2 Gen** ✅ 
+* **Data Redundancy: GRS (Geo-Redundant Storage)** ✅
+* **Networking: Private Endpoint** ✅
+
+#### Question 22
+
+**Box 1: GET only** - Get for read-only- ✅
+
+**Box 2: Anonymous** - Anonymous for public operations.  ✅
+
+#### Question 23
+
+
+* ✑ Only allow the **creation of the virtual machines in specific regions**. 
+* ✑ Only allow the **creation of specific sizes of virtual machines**
+
+* **B. Azure Policy**    ✅
+
+#### Question 24
+
+**You need to use Azure Data Factory to copy the data from Server1 to Azure Storage.**
+
+From Server1:  **Box 1: Install a self-hosted integration runtime.**  ✅
+
+From the data factory:  **Box 2: Create a pipeline.**  ✅
+
+#### Question 28
+
+**cluster autoscaler** for windows
+
+**Virtual Nodes** for Linux
+
+#### Question 29
+
+* ✑ **An integration component will process the message, and then trigger either Function1 or Function2 depending on the type of order.** 
+
+* **B. an Azure Data Factory pipeline**   ✅
+
+#### Question 30
+
+**You plan to migrate the 10 on-premises databases to Azure SQL Database.** 
+
+**You need to recommend a solution to create Azure-SQL Server Integration Services (SSIS) packages.** 
+
+* **B. Azure Data Factory**   ✅
+
+Migrate on-premises SSIS workloads to SSIS using ADF (Azure Data Factory).
+
+#### Question 31
+
+You are designing a solution that will use Azure Data Factory to transform the data files, and then load the files to Azure Data Lake Storage. 
+
+What should you deploy on VM1 to support the design?
+
+* **C. the self-hosted integration runtime**   ✅
+
+**The integration runtime (IR) is the compute infrastructure that Azure Data Factory and Synapse pipelines use to provide data-integration capabilities across different network environments.**
+
+#### Question 31
+
+You need to implement SAML single sign-on (SSO) and enforce multi-factor authentication (MFA) when users attempt to access the application from an unknown location.
+
+* * **C. Azure AD enterprise applications**  ✅
+* **E. Conditional Access policies**   ✅
+
+#### Question 32
+
+What is a difference between using Azure Blueprints and Azure Resource Manager (ARM) templates?
+
+* **D. Blueprints remain connected to the deployed resources**  ✅
+
+#### Question 32
+
+**Box 1: Azure Resource Mover -**  ✅
+
+To move Azure VMs to another region, Microsoft now recommends using Azure Resource Mover.
+
+**Box 2: Azure Migrate-**
+
+**BOX Two: Correct Azure migrate for moving the resource on-premises to a resource group**
+
+#### Question 35
+
+* ✑ Maintain access to the app in the event of a regional outage. 
+* ✑ Support Azure Web Application Firewall (WAF). 
+* ✑ Support cookie-based affinity. 
+* ✑ Support URL routing.
+
+What should you include in the recommendation?
+
+* **A. Azure Front Door** ✅
+
+**Azure Front Door = Supports URL routing.**
+
+#### Question 36
+
+Box 1 **should be "configure vm1 to forward contoso.com to the azure provided dns at 168.63.129.16" to convert VM1 to a DNS forwarder.** ✅
+
+**Box 2** Forward contoso.com to VM1  ✅
+
+#### Question 37
+
+
+* ✑ Deploy the solution on-premises and to Azure. Support low-latency and hyper-scale operations. 
+* ✑ Allow independent upgrades to each microservice. 
+* ✑ Set policies for performing automatic repairs to the microservices. 
+
+* **C. Azure Service Fabric** ✅
+
+* **Azure Service Fabric enables you to create Service Fabric clusters on premises or in other clouds.** 
+
+#### Question 42
+
+You need to recommend a solution to continually copy the performance data to the Azure SQL database.
+
+**A. Azure Data Factory**
+
+#### Question 43
+
+mission critical application => D. Azure Cosmos DB ✅
+
+#### Question 44
+
+* ✑ Support at least 500 requests per second. 
+* ✑ Support a large image, video, and audio streams. 
+
+* **B. premium block blobs**   ✅
+
+#### Question 45
+
+From Server1:  **Box 1: Azure AD -**   ✅
+
+From the data factory:  **Box 2: A web API -**    ✅
+
+#### Question 47
+
+Level at which to define the blueprints:
+
+- Define: **Root Management Groups**  ✅
+
+Level at which to create the blueprint assignments:
+
+- Assignments: **Subscriptons.**  ✅
+
+#### Question 49
+
+- ✑ Performs calculations in Azure.
+- ✑ Ensures that each node can communicate data to every other node.
+- ✑ Maximizes the number of nodes to calculate multiple scenes as fast as possible.
+
+- [x] **D. Create a render farm that uses Azure Batch.**.    ✅
+- [x] **E. Enable parallel task execution on compute nodes.**.   ✅
+
+
+#### Question50
+
+**You need to migrate the application data to Azure.**
+
+- [X] B. **SQL Server on an Azure virtual machine.**   ✅
+- [X] D. **Azure SQL Managed Instance**.  ✅
