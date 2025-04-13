@@ -866,6 +866,8 @@ Costs must be minimized => B. Azure SQL Database Premium
 2. Azure SQL Database Premium
 3. Azure SQL Database Business Critical
 
+Premium > Serverless > Business Critical
+
 **D. Azure SQL Managed Instance Business Critical**  ✅
 
 #### Question 16
@@ -1344,4 +1346,58 @@ The second job type will consist of long-running Message Passing Interface (MPI)
 **Box 1: User subscription and low-priority virtual machines**
 
 **Box 2: Batch service and dedicate virtual machines**
+
+#### Question 71
+
+You need to recommend a networking solution for the new Azure infrastructure
+
+
+* The Point-to-Site (P2S) VPN connections of mobile users must **connect automatically to the closest Azure region**. 
+* The offices in each region must connect to their local Azure region by using an ExpressRoute circuit. 
+* Transitive routing between virtual networks and on-premises networks must be supported. 
+* The network traffic between virtual networks must be filtered by using FQDNs
+
+* **A. Azure Virtual WAN with a secured virtual hub**    ✅
+
+#### Question 72
+
+You need to configure the authentication method that will be used by the app to access the workspace. The solution must minimize the administrative effort associated with staff turnover and credential management.
+
+* **B. a service principal**  ✅
+
+**A managed identity is a type of service principal.**
+
+
+#### Question 79
+
+* Support 15,000 disk IOPS. 
+* Support SR-IOV. 
+* Minimize costs.
+
+* **1. DS**   **DS= Dedicated series**
+* **2. Premium SSD**
+
+#### Question 80
+
+* Supports estimates of request processing runtimes 
+* Supports event-driven autoscaling for the app 
+
+* **D. Premium**  ✅
+
+#### Question 83
+
+- Use the same scaling mechanism as the current deployment.
+- Support kubenet and Azure Container Networking Interface (CNI) networking.
+
+- [X] **A. Configure the horizontal pod autoscaler.** ✅
+- [x] **E. Install Kubernetes-based Event Driven Autoscaling (KEDA).** ✅
+
+#### Question 85
+
+**You need to migrate the database to an Azure SQL managed instance. The solution must minimize downtime.**
+
+- [X] **B. Azure Data Studio**    ✅
+
+
+
 
