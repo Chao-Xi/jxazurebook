@@ -1398,6 +1398,87 @@ You need to configure the authentication method that will be used by the app to 
 
 - [X] **B. Azure Data Studio**    ✅
 
+**You need to perform an online migration of SQL1. The solution must minimize administrative effort.**
+
+**B. Azure Database Migration Service**
 
 
+#### Question 84
 
+* Support virtual machines deployed to four availability zones across two Azure regions. 
+* Minimize costs by accumulating CPU credits during periods of low utilization
+
+
+* **Number of Virtual networks:  ✔ 2**   ✅
+
+* **Virtual machine size  ✔ B-Series**  ✅
+
+#### Question 85
+
+- **FrontDoor => Protect against OWASP Vulnerabilities**   ✅
+- **API Management => Validation token JWT**   ✅
+
+#### Question 85
+
+- The solution must run multiple instances of App1.
+- The number of instances must be managed automatically depending on the load.
+- Administrative effort must be minimized.
+
+- [X] **B. Azure App Service**  ✅
+
+#### Question 91
+
+You have an Azure App Service web app named Webapp1 that connects to an Azure SQL database named DB1. Webapp1 and DB1 are deployed to
+the East US Azure region.
+
+You need to ensure that all the traffic between Webapp1 and DB1 is sent via a private connection.
+
+
+**Box 1: 2 subnets**  ✅
+
+**Create a virtual network that contains at least 2 subnets. One for the Azure App Service VNet Integration and another for the Azure Private Link**
+
+**Box 2: a private DNS zone**  ✅
+
+Configure name resolution to use a private DNS zone. This is necessary for the web app to work with Azure DNS private zones.
+
+#### Question 92
+
+You need to ensure that the remote users can access App1 without using a VPN. The solution must meet the following requirements:
+
+- • Ensure that the users authenticate by using Azure Multi-Factor Authentication (MFA).
+- • Minimize administrative effort.
+
+- box1: An enterprise app (required for MFA in conditional access)
+- box2: azure ad app proxy
+	-  **A server that runs Windows Server and has the Azure AD Application Proxy connector installed**
+
+#### Question 93
+
+You need to ensure that the AKS1 APIs are accessible to APIM1. The solution must meet the following requirements:
+
+- Implement MTLS authentication between APIM1 and AKS1.
+- Minimize development effort.
+- Minimize costs.
+
+- [X] **D. Deploy an ingress controller to AKS1.**  ✅
+
+#### Question 94
+
+You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
+
+- Traffic from an Azure Synapse workspace to the Azure Cosmos DB account must be **sent via the Microsoft backbone network.**
+- Traffic from the Azure Synapse workspace to the Azure Cosmos DB account **must NOT be routed over the internet.**
+- Implementation effort must be minimized.
+
+**Box 1: Configure a dedicated managed virtual network**
+
+**Box 2: Managed private endpoints**
+
+#### Question 94
+
+- **A. Apache Spark**   ✅
+
+Apache Spark is a distributed processing framework that can handle near-real-time processing and is well-integrated with Azure Synapse Analytic It can directly access data stored in Azure Cosmos DB analytical store without needing to move the data around. This minimizes data movement and provides efficient processing capabilities
+
+Synapse had Apache Spark
