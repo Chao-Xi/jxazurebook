@@ -62,13 +62,17 @@ Management groups can't span AAD tenant, so you need 2 management groups.
 
 **Blueprints definition can be saved within management group which, in turn, means you need 2 blueprint definitions.** 
 
-**Blueprint assignments are at subscription level, therefore you need 4.**#### Question 20
+**Blueprint assignments are at subscription level, therefore you need 4.**
+
+#### Question 20
 
 You need to design an Azure policy that will implement the following functionality:
 
 * For new resources, **assign tags and values that match the tags and values** of the resource group to which the resources are deployed.
 * For existing resources, **identify whether the tags and values match the tags and values of the resource group that contains the resources**.
 * For any non-compliant resources, trigger auto-generated remediation tasks to create missing tags and values.
+
+#### Question 20
 
 **The solution must use the principle of least privilege.**·
 
@@ -163,6 +167,18 @@ Application Proxy.
 
 #### Question 29
 
+You have an Azure subscription that contains a virtual network named VNET1 and 10 virtual machines. The virtual machines are connected to VNET1.
+
+You need to design a solution to manage the virtual machines from the internet. The solution must meet the following requirements:
+
+- ✑ Incoming connections to the virtual machines must be authenticated by using Azure Multi-Factor Authentication (MFA) before network connectivity is allowed.
+- ✑ Incoming connections must use TLS and connect to TCP port 443.
+- ✑ The solution must support RDP and SSH.
+
+What should you include in the solution? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_18.png "Body image")
+
 **1. Answer is Azure Bastion**.   ✅
 
 **2. Second is correct**   
@@ -196,8 +212,6 @@ What should you include in the recommendation? To answer, select the appropriate
 **Grant permissions in Azure AD.**
 
 **Box 2: Azure API Management**-
-
-**Box 2: Azure API Management** - 
 
 Configure a JWT validation policy to pre-authorize requests. Pre-authorize requests in API Management with the Validate JWT policy, by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it
 
@@ -327,21 +341,6 @@ Which blade should you use to modify each app registration?
 
 To allow App 2 to authenticate to App1, it is necessary to assign the appropriate permissions. These can be configured under "API Permissions"
 
-#### Question 43
-
-You have two app registrations named App1 and App2 in Azure AD. App1 supports role-based access control (RBAC) and includes a role named Writer.
-
-**You need to ensure that when App2 authenticates to access App1, the tokens issued by Azure AD include the Writer role claim.**
-
-Which blade should you use to modify each app registration? 
-
-![Alt Image Text](../images/az305_12_28.png "Body image")
-
-1. App1: B. **App roles**: This app is already configured with a custom role, which is defined under the "App Roles" section.
-2. App2: C. **API Permissions**
-
-To allow App 2 to authenticate to App1, it is necessary to assign the appropriate permissions. These can be configured under "API Permissions"
-
 #### Question 44
 
 You have an Azure subscription.
@@ -365,6 +364,9 @@ What is the **minimum number of Azure Monitor workspaces** required?
 #### Question 45
 
 **Case Study**
+
+
+![Alt Image Text](../images/az305_12_29.png "Body image")
 
 **Minimum number of Azure AD tenants:**
 
