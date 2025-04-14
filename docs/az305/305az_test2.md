@@ -1481,6 +1481,20 @@ You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 
 - **A. Apache Spark**   ✅
 
-Apache Spark is a distributed processing framework that can handle near-real-time processing and is well-integrated with Azure Synapse Analytic It can directly access data stored in Azure Cosmos DB analytical store without needing to move the data around. This minimizes data movement and provides efficient processing capabilities
+#### Question 96
 
-Synapse had Apache Spark
+You have an on-premises datacenter named Site1. Site1 contains a VMware vSphere cluster named Cluster1 that hosts 100 virtual machines. Cluster1 is managed by using VMware vCenter.
+
+You have an Azure subscription named Sub1. 
+
+**You plan to migrate the virtual machines from Cluster1 to Sub1.**
+
+You need to identify which resources are required to run the virtual machines in Azure. The solution must minimize administrative effort.
+
+
+![Alt Image Text](../images/az305_12_961.png "Body image")
+
+**Sub1: An Azure VMware Solution private cloud**
+
+**Cluster1: An Azure Migrate project**
+
