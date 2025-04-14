@@ -1524,7 +1524,79 @@ You need to recommend a solution that uses role assignment conditions based on t
 
 **Assign permissions to: Blobs**
 
+### Topic 5
 
 
+**Overview - Litware, Inc**. is a medium-sized finance company that has a main office in Boston.
 
+#### Question #1
 
+![Alt Image Text](../images/az305_12_114.png "Body image")
+
+**To register the users for Azure MFA, use: Azure AD Identity Protection**
+
+**To enforce Azure MFA authentication, configure: Grant control in capolicy1**
+
+#### Question #2
+
+After you migrate App1 to Azure, you need to enforce the data modification requirements to meet the security and compliance requirements. What should you do?
+
+* **A. Create an access policy for the blob service.**  ✅
+
+### Topic 6
+
+**Overview - Contoso, Ltd**. is a research company that has a main office in Montreal
+
+#### Question #1
+
+You need to recommend a solution for the App1 maintenance task. The solution must minimize costs. What should you include in the recommendation?
+
+* **B. an Azure function** ✅
+
+#### Question #2
+
+You need to recommend a solution that meets the application development requirements. What should you include in the recommendation?
+
+* **C. deployment slots**     ✅
+
+#### Question #3
+
+You need to recommend an **App Service architecture that meets the requirements for App1**. The solution must minimize costs. What should you recommend?
+
+#### Question #4
+
+You need to recommend an App Service architecture that meets the requirements for App1. **The solution must minimize costs**. What should you recommend?
+
+* **C. one App Service plan per region**   ✅
+
+#### Question #5
+
+You need to recommend a solution to **ensure that App1 can access the third-party credentials and access strings**. The solution must meet the security requirements.
+
+What should you include in the recommendation? 
+
+![Alt Image Text](../images/az305_12_115.png "Body image")
+
+**1 Authenticate App1 by using**: 
+
+A system-assigned managed identity**
+
+**2 Authorize App1 to retrieve Key Vault secrets by using:**
+
+**A role assignment**
+
+### Topic 7
+
+**Overview - Fabrikam, Inc.** is an engineering company that has offices throughout Europe. The company has a main office in London and three branch offices in Amsterdam, Berlin, and Rome.
+
+#### Question #1
+
+You are evaluating the components of the migration to Azure that require you to provision an Azure Storage account. For each of the following statements,
+
+![Alt Image Text](../images/az305_12_116.png "Body image")
+
+You must provision an Azure Storage account for the **SQL Server database migration.**  **Y**
+
+You must provision an Azure Storage account **for the Web site content storage**.  **Y**
+
+You must provision an Azure Storage account for the Database metric monitoring.   **N**
