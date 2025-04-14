@@ -1498,3 +1498,33 @@ You need to identify which resources are required to run the virtual machines in
 
 **Cluster1: An Azure Migrate project**
 
+#### Question 97
+
+You need to recommend a solution that will process the data stored in Contained in near-real-time (NRT) and output the results to a data warehouse in Workspace1 by using a runtime engine in the workspace. The solution must minimize data movemen
+
+Which pool in Workspace1 should you use?
+
+- **A. Apache Spark**   ✅
+
+#### Question 98
+
+**Minimum number of Azure Monitor Private Link Scope (AMPLS) objects: 1**
+
+**Minimum number of private endpoints: 2**
+
+#### Question 99
+
+You have 100 Azure Storage accounts. 
+
+Access to the accounts is restricted by using Azure role-based access control (Azure RBAC) assignments. 
+
+You need to recommend a solution that uses role assignment conditions based on the tags assigned to individual resources within the storage accounts.
+
+**Implement role assignment conditions by using: Attribute-based access contro（ABAC)**
+
+**Assign permissions to: Blobs**
+
+
+
+
+
