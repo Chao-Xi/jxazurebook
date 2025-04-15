@@ -1526,8 +1526,7 @@ You need to recommend a solution that uses role assignment conditions based on t
 
 **Assign permissions to: Blobs**
 
-### Topic 5
-
+### Topic 5 - Litware, Inc
 
 **Overview - Litware, Inc**. is a medium-sized finance company that has a main office in Boston.
 
@@ -1545,7 +1544,101 @@ After you migrate App1 to Azure, you need to enforce the data modification requi
 
 * **A. Create an access policy for the blob service.**  ✅
 
-### Topic 6
+#### Question 3
+
+You plan to migrate App1 to Azure. You need to recommend a high-availability solution for App1
+
+The solution must meet the resiliency requirements
+
+![Alt Image Text](../images/az305_12_117.png "Body image")
+
+**Number of host groups:  Box 1: 3 -**  ✅
+
+Need three host groups to meet the third scenario requirement below.
+
+Scenario: App1 must meet the following requirements: 
+
+* Be hosted in an Azure region that supports availability zones. 
+* Be hosted on Azure virtual machines that support automatic scaling. 
+* Maintain availability if two availability zones in the local Azure region fail.
+
+**Number of virtual machine scale sets: Box 2: 3 -**  ✅
+
+**The availability setting of your host group should match your scale set**
+
+* The host group and the scale set must be using the same availability zone. 
+* The fault domain count for the host group level should match the fault domain count for your scale set.
+
+#### Question 4
+
+You plan to migrate App1 to Azure. 
+
+**You need to recommend a storage solution for App1 that meets the security and compliance requirements.** 
+
+Which type of storage should you recommend, and how should you recommend configuring the storage? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_118.png "Body image")
+
+**Box 1 Storag Account Type: Standard general-purpose v2**  ✅
+
+**Box 2 Configuration: Hierarchical namespace -**
+
+#### Question 5
+
+You plan to migrate App1 to Azure. 
+
+**You need to recommend a network connectivity solution for the Azure Storage account that will host the App1 data.**
+
+The solution must meet the security and compliance requirements. What should you include in the recommendation?
+
+* A. Microsoft peering for an ExpressRoute circuit 
+* B. Azure public peering for an ExpressRoute circuit 
+* C. a service endpoint that has a service endpoint policy 
+* **D. a private endpoint**  ✅
+
+#### Question 6
+
+**You need to implement the Azure RBAC role assignments for the Network Contributor role**. The solution must meet the authentication and authorization requirements. What is the minimum number of assignments that you must use?
+
+* A. 1 
+* **B. 2** 
+* C. 5 
+* D. 10 
+* E. 15
+
+**Litware has two Azure tenants.**
+
+One tenant with 10 subscriptions and one tenant with five subscriptions. 
+
+#### Question 7
+
+**You need to configure an Azure policy to ensure that the Azure SQL databases have Transparent Data Encryption (TDE) enabled.** The solution must meet the security and compliance requirements
+
+Which three actions should you perform in sequence? 
+
+![Alt Image Text](../images/az305_12_119.png "Body image")
+
+**Step 1: Create an Azure policy definition that uses the deployIfNotExists**
+
+**Step 2: Create an Azure policy assignment** ✅
+
+**Step 3: Invoke a remediation task.** ✅
+
+#### Question 8
+
+You plan to migrate DB1 and DB2 to Azure. 
+
+You need to ensure that the Azure database and the service tier meet the resiliency and business requirements.
+
+**What should you configure?** 
+
+![Alt Image Text](../images/az305_12_124.png "Body image")
+
+**Box 1: An Azure SQL Database elastic pool** ✅
+
+**Box 2: Business Critical** ✅
+
+### Topic 6 - Contoso, Ltd
 
 **Overview - Contoso, Ltd**. is a research company that has a main office in Montreal
 
@@ -1581,13 +1674,34 @@ What should you include in the recommendation?
 
 **1 Authenticate App1 by using**: 
 
-A system-assigned managed identity**
+**A system-assigned managed identity**
 
 **2 Authorize App1 to retrieve Key Vault secrets by using:**
 
 **A role assignment**
 
-### Topic 7
+#### Question #6
+
+**What should you implement to meet the identity requirements?**
+
+![Alt Image Text](../images/az305_12_122.png "Body image")
+
+
+**Service： Box 1: Azure AD Identity Governance**  ✅
+
+**Feature Box 2: Access reviews**  ✅
+
+#### Question 7
+
+What should you recommend to meet the monitoring requirements for App2?
+
+* A. VM insights 
+* **B. Azure Application Insights** ✅
+* C. Microsoft Sentinel 
+* D. Container insights
+
+
+### Topic 7 Fabrikam, Inc. 
 
 **Overview - Fabrikam, Inc.** is an engineering company that has offices throughout Europe. The company has a main office in London and three branch offices in Amsterdam, Berlin, and Rome.
 
@@ -1602,3 +1716,60 @@ You must provision an Azure Storage account for the **SQL Server database migrat
 You must provision an Azure Storage account **for the Web site content storage**.  **Y**
 
 You must provision an Azure Storage account for the Database metric monitoring.   **N**
+
+#### Question #2
+
+What should you include in the identity management strategy to support the planned changes?
+
+* **A. Deploy domain controllers for corp.fabrikam.com to virtual networks in Azure.**  ✅
+* B. Move all the domain controllers from corp.fabrikam.com to virtual networks in Azure. 
+* C. Deploy a new Azure AD tenant for the authentication of new R&D projects. 
+* D. Deploy domain controllers for the rd.fabrikam.com forest to virtual networks in Azure
+
+#### Question 3
+
+**To meet the authentication requirements of Fabrikam, what should you include in the solution?**
+
+To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_120.png "Body image")
+
+* 1=1:Single tenant creation required only due to RD restrictions implemented. 
+* 2=1:Need to add custom domain due to default .onmicrosoft.com domain on tenant creation
+* 3=2 Two policies requires, can't have multiple actions to block + allow on single conditional access policies. 
+
+
+#### Question 4
+
+You need to recommend a notification solution for the IT Support distribution group. 
+
+What should you include in the recommendation?
+
+* A. a SendGrid account with advanced reporting 
+* B. an action group 
+* C. Azure Network Watcher 
+* **D. Azure AD Connect Health** ✅
+
+#### Question 5
+
+You need to recommend a solution to meet the database retention requirements. What should you recommend?
+
+* **A. Configure a long-term retention policy for the database.**  ✅
+* B. Configure Azure Site Recovery. 
+* C. Use automatic Azure SQL Database backups. 
+* D. Configure geo-replication of the database.
+
+#### Question 6
+
+
+You need to recommend a data storage strategy for WebApp1. 
+
+What should you include in the recommendation?
+
+* A. an Azure virtual machine that runs SQL Server 
+* B. a fixed-size DTU Azure SQL database 
+* C. an Azure SQL Database elastic pool 
+* **D. a vCore-based Azure SQL database**  ✅
+
+
+
