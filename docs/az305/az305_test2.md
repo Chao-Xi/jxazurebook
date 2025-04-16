@@ -1140,6 +1140,10 @@ What should you include in the solution?
 
 #### Question #6
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 You have an Azure subscription named Subscription1 that is linked to a hybrid Azure Active Directory (Azure AD) tenant. 
 
 You have an on-premises datacenter that does NOT have a VPN connection to Subscription1. The datacenter contains a computer named Server1 that has Microsoft SQL Server 2016 installed. Server is prevented from accessing the internet.
@@ -1428,8 +1432,8 @@ Level at which to create the blueprint assignments:
  * ✑ Supports multiple automatically replicated instances across Azure regions 
  * ✑ Minimizes administrative effort to implement and maintain business continuity
 
-* **Deployment solution: Azure SQL Managed Instance** 
-* **Resiliency solution: Auto-failover group**
+	* **Deployment solution: Azure SQL Managed Instance**   ✅
+	* **Resiliency solution: Auto-failover group**   ✅
 
 #### Question 52
 
@@ -1538,10 +1542,20 @@ You need to configure the authentication method that will be used by the app to 
 
 #### Question 80
 
+**You are developing an app that will use Azure Functions to process Azure Event Hubs events.** Request processing is estimated to take between five and 20 minutes.
+
+You need to recommend a hosting solution that meets the following requirements:
+
 * Supports estimates of request processing runtimes 
 * Supports event-driven autoscaling for the app 
 
+Which hosting plan should you recommend?
+
+* A. Dedicated 
+* B. Consumption 
+* C. App Service 
 * **D. Premium**  ✅
+
 
 #### Question 83
 
