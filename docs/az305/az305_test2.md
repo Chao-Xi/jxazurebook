@@ -1845,9 +1845,12 @@ You need to recommend a solution that meets the application development requirem
 
 You need to recommend an **App Service architecture that meets the requirements for App1**. The solution must minimize costs. What should you recommend?
 
-#### Question #4
+* A. one App Service Environment (ASE) per availability zone 
+* B. one App Service Environment (ASE) per region
+* **C. one App Service plan per region**   ✅
+* D. one App Service plan per availability zone
 
-You need to recommend an App Service architecture that meets the requirements for App1. **The solution must minimize costs**. What should you recommend?
+No need for dedicated environment. So Azure Service Plan per region is enough
 
 * **C. one App Service plan per region**   ✅
 
