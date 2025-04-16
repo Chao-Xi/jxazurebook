@@ -1638,6 +1638,16 @@ You need to ensure that the Azure database and the service tier meet the resilie
 
 **Box 2: Business Critical** ✅
 
+#### Question 9
+
+How should the migrated databases DB1 and DB2 be implemented in Azure?
+
+![Alt Image Text](../images/az305_12_127.png "Body image")
+
+**Box 1: SQL Managed Instance -**
+
+**Box 2: Business critical -**
+
 ### Topic 6 - Contoso, Ltd
 
 **Overview - Contoso, Ltd**. is a research company that has a main office in Montreal
@@ -1699,6 +1709,50 @@ What should you recommend to meet the monitoring requirements for App2?
 * **B. Azure Application Insights** ✅
 * C. Microsoft Sentinel 
 * D. Container insights
+
+#### Question 8
+
+**You need to recommend a solution that meets the file storage requirements for App2.**
+
+What should you deploy to the Azure subscription and the on-premises network? 
+
+![Alt Image Text](../images/az305_12_125.png "Body image")
+
+**Azure subscription Box 1: Azure Files -**
+
+**Azure subscription Box 2: Azure File Sync -**
+
+#### Question 9
+
+**You need to recommend a solution that meets the data requirements for App1**. 
+
+What should you recommend deploying to each availability zone that contains an instance of App1?
+
+* **A. an Azure Cosmos DB that uses multi-region writes** ✅
+* B. an Azure Data Lake store that uses geo-zone-redundant storage (GZRS) 
+* C. an Azure Storage account that uses geo-zone-redundant storage (GZRS)
+
+#### Question 10
+
+**You are evaluating whether to use Azure Traffic Manager and Azure Application Gateway to meet the connection requirements for App1.** 
+
+What is the minimum numbers of instances required for each service?
+
+![Alt Image Text](../images/az305_12_126.png "Body image")
+
+**Azure Traffic Manager: 1**
+
+App1 will only be accessible from the internet. App1 has the following connection requirements:
+
+* Connections to App1 must be active-active load balanced between instances. 
+* All connections to App1 from North America must be directed to the East US region. 
+* All other connections must be directed to the West Europe region.
+
+**Azure Application Gateway: 2**
+
+* For production workloads, run at least two gateway instances. 
+* A single Application Gateway deployment can run multiple instances of the gateway. 
+* Use one Application Gateway in East US Region, and one in the West Europe region
 
 
 ### Topic 7 Fabrikam, Inc. 
@@ -1771,5 +1825,17 @@ What should you include in the recommendation?
 * C. an Azure SQL Database elastic pool 
 * **D. a vCore-based Azure SQL database**  ✅
 
+### Question 7
 
+You design a solution for the web tier of WebApp1 as shown in the exhibit.
+
+![Alt Image Text](../images/az305_12_128.png "Body image")
+
+![Alt Image Text](../images/az305_12_129.png "Body image")
+
+**Box 1: Yes** - Any new deployments to Azure must be redundant in case an Azure region fails. Traffic Manager is resilient to failure, including the failure of an entire Azure region.
+
+* (Yes) Traffic manager distributes load to two sites (redundancy). 
+* (Yes) The graphic clearly shows an "Azure Web App", which is production. By default, production web apps support auto scale. 
+* (No) Azure Traffic manager does automatic failover, so no manual configuration is necessary
 
