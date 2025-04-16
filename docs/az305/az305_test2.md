@@ -1825,7 +1825,7 @@ What should you include in the recommendation?
 * C. an Azure SQL Database elastic pool 
 * **D. a vCore-based Azure SQL database**  ✅
 
-### Question 7
+#### Question 7
 
 You design a solution for the web tier of WebApp1 as shown in the exhibit.
 
