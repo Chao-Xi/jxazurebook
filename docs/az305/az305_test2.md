@@ -328,7 +328,9 @@ What should you recommend using to store and access the key? To answer, select t
 
 #### Question 43
 
-You have two app registrations named App1 and App2 in Azure AD. App1 supports role-based access control (RBAC) and includes a role named Writer.
+You have two app registrations named App1 and App2 in Azure AD. 
+
+**App1 supports role-based access control (RBAC) and includes a role named Writer.**
 
 **You need to ensure that when App2 authenticates to access App1, the tokens issued by Azure AD include the Writer role claim.**
 
@@ -518,6 +520,19 @@ What should you recommend?
 
 #### Question 4
 
+You need to design a storage solution for an app that will store large amounts of frequently used data. The solution must meet the following
+requirements:
+
+
+- ✑ Maximize data throughput.
+- ✑ Prevent the modification of data for one year.
+- ✑ Minimize latency for read and write operations.
+
+Which Azure Storage account type and storage service should you recommend? To answer, select the appropriate options in the answer area.
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_35.png "Body image")
+
 * **Storage account type**: BlockBlobStorage provide a very low latency(x40) (Read and Write) and Throughput (x5)
 * **Storage service:** : Blob
 
@@ -621,6 +636,21 @@ B. **Azure SQL Database Premium** ✅
 - **Not D: Zone redundant configuration that is free on Azure SQL Premium is not available on Azure SQL Managed Instance.**
 
 #### Question 17
+
+You are planning an Azure Storage solution for sensitive data. The data will be accessed daily. The dataset is less than 10 GB.
+
+You need to recommend a storage solution that meets the following requirements:
+
+- ✑ All the data written to storage must be retained for five years.
+- ✑ Once the data is written, the data can only be read. Modifications and deletion must be prevented.
+- ✑ After five years, the data can be deleted, but never modified.
+- ✑ **Data access charges must be minimized**.
+
+What should you recommend? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_43.png "Body image")
 
 **Box 1: General purpose v2 with Hot access tier for blobs**
 
@@ -805,7 +835,7 @@ What should you use? To answer, select the appropriate options in the answer are
 
 #### Question 3
 
-*You deploy two Azure virtual machines to two Azure regions, and you create an Azure Traffic Manager profile**.    ✅
+**You deploy two Azure virtual machines to two Azure regions, and you create an Azure Traffic Manager profile**.    ✅
 
 **Azure Traffic Manager is a DNS-based traffic load balancer that enables you to distribute traffic optimally to services across global Azure regions, while providing high availability and responsiveness**
 
@@ -825,7 +855,18 @@ The solution must provide the highest-level of resiliency for the selected stora
 
 **Premium Azure file shares only support LRS and ZRS. Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.**
 
-#### Question 4
+#### Question 7
+
+You need to recommend an Azure Storage account configuration for two applications named Application1 and Application2. The configuration must meet the following requirements:
+
+* ✑ **Storage for Application1 must provide the highest possible transaction rates and the lowest possible latency**. 
+* ✑ **Storage for Application2 must provide the lowest possible storage costs per GB**. 
+* ✑ Storage for both applications must be available in an event of datacenter failure. 
+* ✑ Storage for both applications must be optimized for uploads and downloads.
+
+What should you recommend? To answer, select the appropriate options in the answer area
+
+![Alt Image Text](../images/az305_12_59.png "Body image")
 
 **Application 1: BlockBlobStorage with Premium performance and Zone-redundant storage (ZRS) replication**
 
@@ -943,6 +984,23 @@ NOTE: Each correct selection is worth one point.
 **A Resource Guard**   ✅
 
 ####  Question 22
+
+You plan to deploy a containerized web-app that will be hosted in five Azure Kubernetes Service (AKS) clusters. Each cluster will be hosted in a
+different Azure region.
+
+You need to provide access to the app from the internet. The solution must meet the following requirements:
+
+- Incoming HTTPS requests must be routed to the cluster that has the lowest network latency.
+- HTTPS traffc to individual pods must be routed via an ingress controller.
+- In the event of an AKS cluster outage, failover time must be minimized.
+
+What should you include in the solution? To answer, select the appropriate options in the answer area.
+
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_71.png "Body image")
+
 
 **Box 1: Azure Front Door** ✅
 
