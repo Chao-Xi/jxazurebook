@@ -1112,7 +1112,7 @@ Which two settings should you enable? To answer, select the appropriate settings
 
 #### Question 1
 
-**A basic Azure virtual WAN does not support express route. You have to upgrade to standard.**  ✅
+**A basic Azure virtual WAN does not support express route. <mark>You have to upgrade to standard.</mark>**  ✅
 
 #### Question 2
 
@@ -1126,7 +1126,7 @@ Your company has the infrastructure shown in the following table.
 
 ![Alt Image Text](../images/az305_12_74.png "Body image")
 
-The on-premises Active Directory domain syncs with Azure Active Directory (Azure AD)
+<mark>The on-premises Active Directory domain syncs with Azure Active Directory (Azure AD)</mark>
 
 Server1 runs an application named App1 that uses LDAP queries to verify user identities in the on-premises Active Directory domain. **You plan to migrate Server1 to a virtual machine in Subscription1.**
 
@@ -1199,8 +1199,8 @@ Each service may be used once, more than once, or not at all.
 
 #### Question 9
 
-* ✑ Ingress access to the microservices must be restricted to a single private IP address and protected by using mutual TLS authentication.
-* ✑ The number of incoming microservice calls must be rate-limited.
+* ✑ Ingress access to the microservices must be restricted to a single private IP address and protected **by using mutual TLS authentication**.
+* ✑ The number of incoming microservice calls must be **rate-limited**.
 * ✑ Costs must be minimized.
 
 **D. Azure API Management Premium tier with virtual network connection**   ✅
@@ -1259,10 +1259,12 @@ Solution: You use **Azure Application Gateway** to provide access to the app.  *
 
 You use Azure Front Door to provide access to the app.  **A. Yes** ✅
 
-**Traffic Manager also provides your public endpoints with high availability and quick responsiveness. It does not provide rate limiting**
+**Traffic Manager also provides your public endpoints with high availability and quick responsiveness.** 
+
+<mark>It does not provide rate limiting</mark>
 
 * **Note: Azure Front Door would meet the requirements, The Azure Web Application Firewall (WAF) rate limit rule for Azure Front Door controls the number of requests allowed from clients during a one-minute duration.**
-* **Use Azure Front Door with WAF**
+* **<mark>Use Azure Front Door with WAF</mark>**
 
 #### Question 20
 
@@ -1292,7 +1294,7 @@ You use Azure Front Door to provide access to the app.  **A. Yes** ✅
 
 #### Question 24
 
-**You need to use Azure Data Factory to copy the data from Server1 to Azure Storage.**
+**You need to use Azure Data Factory to <mark>copy the data from Server1 to Azure Storage.</mark>**
 
 From Server1:  **Box 1: Install a self-hosted integration runtime.**  ✅
 
@@ -1300,9 +1302,9 @@ From the data factory:  **Box 2: Create a pipeline.**  ✅
 
 #### Question 28
 
-**cluster autoscaler** for windows
+<mark>**cluster autoscaler** for windows</mark>
 
-**Virtual Nodes** for Linux
+<mark>***Virtual Nodes** for Linux</mark>
 
 #### Question 29
 
@@ -1343,7 +1345,7 @@ You need to implement SAML single sign-on (SSO) and enforce multi-factor authent
 
 What is a difference between using Azure Blueprints and Azure Resource Manager (ARM) templates?
 
-* **D. Blueprints remain connected to the deployed resources**  ✅
+* **<mark>D. Blueprints remain connected to the deployed resources</mark>**  ✅
 
 #### Question 32
 
@@ -1378,7 +1380,7 @@ Box 1 **should be "configure vm1 to forward contoso.com to the azure provided dn
 
 * ✑ Deploy the solution on-premises and to Azure. Support low-latency and hyper-scale operations. 
 * ✑ Allow independent upgrades to each microservice. 
-* ✑ Set policies for performing automatic repairs to the microservices. 
+* ✑ **Set policies for performing automatic repairs to the microservices**. 
 
 * **C. Azure Service Fabric** ✅
 
@@ -1392,7 +1394,7 @@ You need to recommend a solution to continually copy the performance data to the
 
 #### Question 43
 
-mission critical application => D. Azure Cosmos DB ✅
+**mission critical application => D. Azure Cosmos DB** ✅
 
 #### Question 44
 
@@ -1699,11 +1701,11 @@ Which pool in Workspace1 should you use?
 
 #### Question 97
 
-Your on-premises datacenter contains a server named Server1 that runs Microsoft SQL Server 2022. Server1 contains a 30-TB database named DB1 that stores customer data. Server1 runs a custom application named App1 that verifies the compliance of records in DB1. App1 must run on the same server as DB1.
+Your on-premises datacenter contains a server named Server1 that runs Microsoft SQL Server 2022. Server1 contains a 30-TB database named DB1 that stores customer data. Server1 runs a custom application named App1 that verifies the compliance of records in DB1. **App1 must run on the same server as DB1**.
 
 You have an Azure subscription.
 
-**You need to migrate DB1 to Azure. The solution must minimize administrative effort.**
+**You need to migrate DB1 to Azure. <mark>The solution must minimize administrative effort.</mark>**
 
 To which service should you migrate DB1, and what should you use to perform the migration? To answer, select the appropriate options in the answer area.
 
@@ -1714,6 +1716,17 @@ To which service should you migrate DB1, and what should you use to perform the 
 **Azure Migrate** ✅
 
 #### Question 98
+
+VNet1, VNet2, and VNet3 each has multiple virtual machines connected. 
+
+The virtual machines use the Azure DNS service for name resolution. You need to recommend an Azure Monitor log routing solution that meets the following requirements:
+
+- Ensures that the logs collected from the virtual machines and sent to Workspace1 are routed over the Microsoft backbone network 
+- Minimizes administrative effort
+
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_982.png "Body image")
 
 **Minimum number of Azure Monitor Private Link Scope (AMPLS) objects: 1**
 
@@ -1727,7 +1740,7 @@ Access to the accounts is restricted by using Azure role-based access control (A
 
 You need to recommend a solution that uses role assignment conditions based on the tags assigned to individual resources within the storage accounts.
 
-**Implement role assignment conditions by using: Attribute-based access contro（ABAC)**
+**Implement role assignment conditions by using: Attribute-based access control（ABAC)**
 
 **Assign permissions to: Blobs**
 
