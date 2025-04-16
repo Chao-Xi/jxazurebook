@@ -538,6 +538,8 @@ NOTE: Each correct selection is worth one point.
 
 #### Question 4
 
+![Alt Image Text](../images/az305_12_37.png "Body image")
+
 **Use lifecycle management to migrate app data between storage tiers**
 
 **Box 1: Storage1 and storage3 only**
@@ -553,6 +555,17 @@ NOTE: Each correct selection is worth one point.
 * storage 4-FileStorage-Premium
 
 #### Question 7
+
+You are designing a SQL database solution. **The solution will include 20 databases that will be 20 GB each and have varying usage patterns**.
+You need to recommend a database platform to host the databases. The solution must meet the following requirements:
+
+- ✑ The solution must meet a Service Level Agreement (SLA) of 99.99% uptime.
+- ✑ The compute resources allocated to the databases must scale dynamically.
+- ✑ The solution must have reserved capacity.
+
+Compute charges must be minimized.
+
+What should you include in the recommendation?
 
 **A. an elastic pool that contains 20 Azure SQL databases**  ✅
 
@@ -605,7 +618,7 @@ What should you include in the recommendation?
 - [X] **A. Azure Cosmos DB SQL API** ✅
 
 - Azure Cosmos DB for NoSQL 
-- Azure Cosmos DB for PostgreSQL ✅
+- Azure Cosmos DB for PostgreSQL 
 
 #### Question 11
 
@@ -635,6 +648,21 @@ B. **Azure SQL Database Premium** ✅
 - Not C: Need Premium for Availability Zones.
 - **Not D: Zone redundant configuration that is free on Azure SQL Premium is not available on Azure SQL Managed Instance.**
 
+#### Question 15
+
+You have an app named App1 that uses two on-premises Microsoft SQL Server databases named DB1 and DB2.
+You plan to migrate DB1 and DB2 to Azure
+
+You need to recommend an Azure solution to host DB1 and DB2. The solution must meet the following requirements:
+
+- ✑ Support server-side transactions across DB1 and DB2.
+- ✑ Minimize administrative effort to update the solution.
+
+What should you recommend?
+
+- [ ] A. two Azure SQL databases in an elastic pool
+- [X] B. **two databases on the same Azure SQL managed instance**    ✅
+
 #### Question 17
 
 You are planning an Azure Storage solution for sensitive data. The data will be accessed daily. The dataset is less than 10 GB.
@@ -661,6 +689,19 @@ NOTE: Each correct selection is worth one point.
 The Container access policy is indeed the place to configure Azure's Immutable Blob Storage to ensure data is retained without modifications or deletions for a specified amount of time, which suits your needs.
 
 #### Question 18
+
+You are designing a data storage solution to support reporting.
+
+The solution will ingest high volumes of data in the JSON format by using Azure Event Hubs. As the data arrives, Event Hubs will write the data to
+storage. The solution must meet the following requirements:
+
+- ✑ Organize data in directories by date and time.
+- ✑ Allow stored data to be queried directly, transformed into summarized tables, and then stored in a data warehouse.
+- ✑ Ensure that the data warehouse can store 50 TB of relational data and support between 200 and 300 concurrent read operations.
+
+Which service should you recommend for each type of data store? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_44.png "Body image")
 
 1. **Data store for the ingestion data: b. Azure Data Lake Storage Gen2.**
 2.  **Data store for the data warehouse: c. Azure SQL Database Hyperscale**.
@@ -740,6 +781,18 @@ You need to recommend a solution that meets the following requirements:
 **B. Azure Data Lake Storage** ✅
 
 #### Question 30
+
+You are designing a storage solution that will ingest, store, and analyze petabytes (PBs) of structured, semi-structured, and unstructured text data. The analyzed data will be offloaded to Azure Data Lake Storage Gen2 for long-term retention.
+
+You need to recommend a storage and analytics solution that meets the following requirements: 
+
+* Stores the processed data 
+* Provides interactive analytics 
+* Supports manual scaling, built-in autoscaling, and custom autoscaling
+
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_50.png "Body image")
 
 The analyzed data will be off loaded to Azure Data Lake Storage Gen2 for long-term retention.
 
@@ -829,7 +882,9 @@ What should you use? To answer, select the appropriate options in the answer are
 
 **Service tier - Hyperscale**
 
-**In Premium and Business Critical service tiers, only one of the read-only replicas is accessible at any given time. Hyperscale supports multiple read-only replicas.**
+**In Premium and Business Critical service tiers,** 
+
+**<mark>only one of the read-only replicas is accessible at any given time. Hyperscale supports multiple read-only replicas.</mark>**
 
 ## Topic 3
 
