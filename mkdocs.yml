@@ -37,6 +37,7 @@ nav:
     - '1 DeepSeek 模型介绍': 'dp1/1dp1_model.md'
   - 'Agent 学习':
     - '1 AI Agents入门教程之概述': 'chap5_agents/1agant_intro.md'
+    - '2 AI Agents入门教程之从零开始构建Agent': 'chap5_agents/2agent_buildout.md'
 
 repo_url: https://github.com/Chao-Xi/jxaibook.git
 repo_name: "jxaibook"
