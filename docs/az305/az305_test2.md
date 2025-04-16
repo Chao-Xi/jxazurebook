@@ -927,6 +927,8 @@ What should you recommend? To answer, select the appropriate options in the answ
 
 **Application 2: BlobStorage with Standard performance, Cool access tier, and Geo-redundant storage (GRS) replication**
 
+**General purpose V2 is always recommended since Blobstorage with a legacy**
+
 
 #### Question 5
 
@@ -980,13 +982,15 @@ You need to recommend a hosting solution for SQL1. The solution must meet the fo
 
 * Support the deployment of multiple secondary, read-only replicas. 
 * Support automatic replication between primary and secondary replicas. 
-* Support failover between primary and secondary replicas within a 15-minute recovery time objective (RTO)
+* **Support failover between primary and secondary replicas within a 15-minute recovery time objective (RTO)**
 
 What should you include in the solution? 
 
+![Alt Image Text](../images/az305_12_64.png "Body image")
+
 **Azure service or service tier:  Azure SQL DB**     ✅
 
-Replication mechanism: Active geo-replication   ✅
+**Replication mechanism: Active geo-replication**   ✅
 
 
 #### Question 17
@@ -1004,6 +1008,8 @@ What should you do? To answer, select the appropriate options in the answer area
 First one should be A: Prepare For the migration by: 
 
 **A. Adding a secondary replica to AG1**  ✅
+
+Reason: Creating an Always On availability group on VM1 would not be necessary, as you already have an availability group (AG1) in place on your on-premises SQL Server instances
 
 **B. Azure migrate** ✅
 
