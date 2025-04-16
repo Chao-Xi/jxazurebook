@@ -1839,3 +1839,6 @@ You design a solution for the web tier of WebApp1 as shown in the exhibit.
 * (Yes) The graphic clearly shows an "Azure Web App", which is production. By default, production web apps support auto scale. 
 * (No) Azure Traffic manager does automatic failover, so no manual configuration is necessary
 
+* 1- Y - Yep all requirements are met 
+* 2- Y - All app service STD and onwards support auto-scaling 
+* 3- N - Because Traffic Manager DNS-based traffic load balancer
