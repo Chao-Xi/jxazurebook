@@ -596,7 +596,7 @@ NOTE: Each correct selection is worth one point.
 
 #### Question 9
 
-Need to find a service to store and query the data. 
+Need to find a service to **store and query the data**. 
 
 * A. Azure Table Storage: You can't query data. 
 * B. Azure Event Grid: You can't store or query data. 
@@ -617,7 +617,8 @@ What should you include in the recommendation?
 
 - [X] **A. Azure Cosmos DB SQL API** ✅
 
-- Azure Cosmos DB for NoSQL 
+- [X] **Azure Cosmos DB for NoSQL**    ✅
+
 - Azure Cosmos DB for PostgreSQL 
 
 #### Question 11
@@ -633,6 +634,8 @@ For each of the following statements, select Yes if the statement is true. Other
 - Box 1: Yes - Auditing works fine for a Standard account.
 - Box 2: No - **Auditing limitations: Premium storage is currently not supported**.
 - Box 3: No - **Auditing limitations: Premium storage is currently not supported**.
+
+**blobstorage is not recommended**
 
 #### Question 13
 
@@ -650,10 +653,11 @@ B. **Azure SQL Database Premium** ✅
 
 #### Question 15
 
-You have an app named App1 that uses two on-premises Microsoft SQL Server databases named DB1 and DB2.
+**You have an app named App1 that uses two on-premises Microsoft SQL Server databases named DB1 and DB2.**
+
 You plan to migrate DB1 and DB2 to Azure
 
-You need to recommend an Azure solution to host DB1 and DB2. The solution must meet the following requirements:
+**You need to recommend an Azure solution to host DB1 and DB2.** The solution must meet the following requirements:
 
 - ✑ Support server-side transactions across DB1 and DB2.
 - ✑ Minimize administrative effort to update the solution.
@@ -718,13 +722,13 @@ You need to recommend a service to **store and query the data**.
 
 #### Question 22
 
-You need to recommend Azure Synapse pools to meet the following requirements:
+You need to recommend **Azure Synapse pools** to meet the following requirements:
 
-- Ingest data from Data Lake Storage into hash-distributed tables.
+- Ingest data from **Data Lake Storage into hash-distributed tables**.
 
 **A dedicated SQL pool** ✅
 
-- Implement query, and update data in Delta Lake.
+- **Implement query, and update data in Delta Lake.**
 
 **A serverless Apache Spark pool**   ✅
 
@@ -740,7 +744,7 @@ The solution must support Hadoop Distributed File System (HDFS)
 * Support multi-master writes. 
 * Guarantee low latency read operations.
 
-**A. Azure Cosmos DB for NoSQL**
+**A. Azure Cosmos DB for NoSQL**  ✅ or  **A. Azure Cosmos DB SQL API** ✅
 
 - **cosmos for the multi writer**
 - postgre is not good at reading
@@ -758,19 +762,26 @@ You need to recommend a solution for the Azure Database for MySQL Flexible Serve
 
 * Support SQL queries. 
 * Support geo-replication. 
-* Store and access data relationally.
+* **Store and access data relationally.**
 
-**B. PostgreSQL**
+**B. PostgreSQL**   ✅
 
 #### Question 28
 
+You have an app that generates 50,000 events daily
+
+**You plan to stream the events to an Azure event hub and use Event Hubs Capture to implement cold path processing of the events. The output of Event Hubs Capture will be consumed by a reporting system.**
+
 You need to identify which type of Azure storage must be provisioned to support Event Hubs Capture, **and which inbound data format the reporting system must support.**
+
+![Alt Image Text](../images/az305_12_47.png "Body image")
+
 
 1. **Storage Type: Azure Data Lake Storage Gen2**
 
 2. **Data format: Avro**
 
-#### Question 29
+#### Question 30
 
 You need to recommend a solution that meets the following requirements: 
 
@@ -908,14 +919,17 @@ The solution must provide the highest-level of resiliency for the selected stora
 
 **Box 1: Premium** - Premium: **Premium file shares are backed by solid-state drives (SSDs) and provide consistent high performance and low latency**, within single-digit milliseconds for most IO operations, for IO-intensive workloads
 
-**Premium Azure file shares only support LRS and ZRS. Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.**
+**<mark>Premium Azure file shares only support LRS and ZRS</mark>**.
+
+
+ Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.
 
 #### Question 7
 
 You need to recommend an Azure Storage account configuration for two applications named Application1 and Application2. The configuration must meet the following requirements:
 
-* ✑ **Storage for Application1 must provide the highest possible transaction rates and the lowest possible latency**. 
-* ✑ **Storage for Application2 must provide the lowest possible storage costs per GB**. 
+* ✑ **Storage for Application1 must provide the highest possible transaction rates and the lowest possible latency**. => **Premium**
+* ✑ **Storage for Application2 must provide the lowest possible storage costs per GB**.  => **cool/archive**
 * ✑ Storage for both applications must be available in an event of datacenter failure. 
 * ✑ Storage for both applications must be optimized for uploads and downloads.
 
@@ -939,6 +953,9 @@ What should you recommend? To answer, select the appropriate options in the answ
 * **Box 1: Premium Block Blobs**   ✅
 
 * **Box 2: Zone-redundant storage (ZRS)** ✅ 
+
+**<mark>Premium Azure file shares only support LRS and ZRS</mark>**.
+
 
 * ✑ **Prevent new data from being modified for one year. (Both Standard + Premium)** 
 
@@ -964,11 +981,12 @@ Costs must be minimized => B. Azure SQL Database Premium
 
 **A. Azure SQL Database Serverless**   ✅
 
-1. Azure SQL Database Serverless
-2. Azure SQL Database Premium
+
+1. Azure SQL Database Premium
+2. Azure SQL Database Serverless
 3. Azure SQL Database Business Critical
 
-Premium > Serverless > Business Critical
+**<mark>Premium > Serverless > Business Critical</mark>**
 
 **D. Azure SQL Managed Instance Business Critical**  ✅
 
@@ -981,7 +999,7 @@ You plan to migrate SQL1 to Azure
 You need to recommend a hosting solution for SQL1. The solution must meet the following requirements:
 
 * Support the deployment of multiple secondary, read-only replicas. 
-* Support automatic replication between primary and secondary replicas. 
+* Support** automatic replication** between primary and secondary replicas. =>  **Active geo-replication**
 * **Support failover between primary and secondary replicas within a 15-minute recovery time objective (RTO)**
 
 What should you include in the solution? 
@@ -995,7 +1013,7 @@ What should you include in the solution?
 
 #### Question 17
 
-You have two on-premises Microsoft SQL Server 2017 instances that host an Always On availability group named AG1. AG1 contains a single database named DB1.
+You have two on-premises Microsoft SQL Server 2017 instances that host an Always On **availability group named AG1**. AG1 contains a single database named DB1. => **AG already exist**
 
 You have an Azure subscription that contains a virtual machine named VM1. VM1 runs Linux and contains a SQL Server 2019 instance. 
 
@@ -1033,8 +1051,8 @@ Contoso.onmicrosft.com contains a user named User1.
 
 You need to deploy a solution to protect against ransomware attacks. The solution must meet the following requirements:
 
-- Ensure that all the resources in Sub1 are backed up by using Azure Backup.
-- Require that User1 first be assigned a role for Sub2 before the user can make major changes to the backup configuration
+- **Ensure that all the resources in Sub1 are backed up by using Azure Backup.**
+- Require that User1 first be assigned a **role for Sub2 before the user can make major changes to the backup configuration**
 
 NOTE: Each correct selection is worth one point.
 
@@ -1140,10 +1158,6 @@ What should you include in the solution?
 
 #### Question #6
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 You have an Azure subscription named Subscription1 that is linked to a hybrid Azure Active Directory (Azure AD) tenant. 
 
 You have an on-premises datacenter that does NOT have a VPN connection to Subscription1. The datacenter contains a computer named Server1 that has Microsoft SQL Server 2016 installed. Server is prevented from accessing the internet.
