@@ -1031,17 +1031,17 @@ Which two settings should you enable? To answer, select the appropriate settings
 
 ## Topic 4 
 
-### Question #1
+#### Question #1
 
 **A basic Azure virtual WAN does not support express route. You have to upgrade to standard.**  ✅
 
-### Question #2
+#### Question #2
 
 **B. Azure Logic Apps and Azure Functions**
 
 When you want to run code that performs a specific job in your logic apps, you can create your own function by using Azure Functions.
 
-### Question #3
+#### Question #3
 
 **D. Azure AD Domain Services (Azure AD DS)** 
 
@@ -1049,7 +1049,7 @@ Azure Active Directory Domain Services (Azure AD DS) provides managed domain ser
 
 You can use Azure AD DS and sync identities needed from Azure AD to Azure AD DS to use legacy protocols like LDAP.
 
-### Question #4
+#### Question #4
 
 You need to design a solution that will execute custom C# code in response to an event routed to **Azure Event Grid**. The solution must meet the following requirements:
 
@@ -1065,13 +1065,13 @@ What should you include in the solution?
 
 **Azure Functions in the Consumption plan does not support virtual network integration, which is necessary for accessing the private IP address of the SQL Server instance**. 
 
-### Question #6
+#### Question #6
 
 **Box 1: An on-premises data gateway**  ✅
 
 **Box 2: A connection gateway resource**   ✅
 
-### Question #7
+#### Question #7
 
 - The API is available to partners over the internet.  ✅  Yes
 - The APIM instance can access real-time data from VM1.   ✅  Yes
