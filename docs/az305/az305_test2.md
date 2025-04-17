@@ -2,6 +2,25 @@
 
 ## Topic 1
 
+#### Question 5 
+
+You plan to deploy Azure Databricks to support a machine learning application. **Data engineers will mount an Azure Data Lake Storage account to the Databricks file system.**
+
+Permissions to folders are granted directly to the data engineers.
+
+You need to recommend a design for the planned Databrick deployment. The solution must meet the following requirements:
+
+* ✑ Ensure that the data engineers can only access folders to which they have permissions.
+* ✑ Minimize development effort.
+* ✑ Minimize costs.
+
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_1.png "Body image")
+
+* **Premium**:  Premium Databricks SKU is required for credential passhtrough.
+* **Credential passthrough**
+
 #### Question 12
 
 Your on-premises network contains a server named Server1 that runs an ASP .NET application named App1.
@@ -33,6 +52,10 @@ Now that you've prepared your environment and installed a connector, you're read
 1. Enterprise Application
 2. Application Proxy
 3. Conditional Access
+
+####  Question 14
+
+**Azure Network Watcher IP Flow Verify,** which allows you to detect traffic filtering issues at a VM level.
 
 
 #### Question 19
@@ -119,6 +142,23 @@ What should you deploy?
 * C. blobs in an Azure Data Lake Storage Gen2 account
 * D. files in a general purpose v2 storage account
 
+#### Question 24
+
+You have an Azure App Service web app that uses a system-assigned managed identity.
+
+**You need to recommend a solution to store the settings of the web app as secrets in an Azure key vault.** The solution must meet the following requirements:
+
+* ✑ Minimize changes to the app code.
+* ✑ Use the principle of least privilege.
+
+What should you include in the recommendation? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_14.png "Body image")
+
+* Key Vault integration method: **Key Vault references in Application settings**
+* Key Vault permissions for the managed identity: **Secrets: Get**
+
+
 #### Question 25
 
 You plan to deploy an application named **App1 that will run on five Azure virtual machines**. Additional virtual machines will be deployed later to run App1.
@@ -143,6 +183,13 @@ A user-assigned managed identity:
 
 * Can be shared.
 * **The same user-assigned managed identity can be associated with more than one Azure resource**.
+
+#### Question 27
+
+The amount of time that SQLInsights data will be stored in blob storage is **90 days**  ✅
+
+The maximum amount of time that SQLInsights data can be stored in Azure Log Analytics is **730 days**  ✅
+
 
 #### Question 28
 
@@ -269,7 +316,7 @@ What should you recommend?
 - [ ] A. Configure Azure AD join.
 - [ ] B. Configure Azure AD Identity Protection.
 - [ ] C. Configure a Conditional Access policy.
-- [x] D. Configure Supported account types in the application registration and update the sign-in endpoint.  ✅
+- [x] D. **Configure Supported account types in the application registration** and **update the sign-in endpoint.**  ✅
 
 It can be **Use Azure AD entitlement management to govern external users** ✅ OR **Configure Supported account types in the application registration and update the sign-in endpoint** ✅
 
@@ -296,6 +343,8 @@ What should you include in the recommendation? To answer, select the appropriate
 * **Authentication: Application registration in Azure AD**
 
 * **Authorization: Delegated permissions**
+
+**Important point here is that both apps are deployed to the same machines. So Managed identitied will violate the principle of least privelege. As a user/system managed identity will have to be assigned both read and write permission to user's calendar**
 
 #### Question 39
 
@@ -495,8 +544,19 @@ NOTE: Each correct selection is worth one point
 - **Box1 -  To forward the logs: - Azure Monitor Data collection**  ✅
 - **Box2 - To transform the logs and store the data:- KQL**    ✅
 
-## Topic 2
+#### Question 55
 
+- Collects event logs from multiple subscriptions 
+- Supports the use of data collection rules (DCRs) to define  which events to collect
+
+![Alt Image Text](../images/az305_12_341.png "Body image")
+
+**To collect the event logs:**
+
+1. **Azure Lighthouse**:  To send data across tenants, you must first enable Azure Lighthouse 
+2. **Azure Monitor Agent**
+
+## Topic 2
 
 
 #### Question 3
