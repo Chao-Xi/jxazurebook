@@ -72,8 +72,6 @@ You need to design an Azure policy that will implement the following functionali
 * For existing resources, **identify whether the tags and values match the tags and values of the resource group that contains the resources**.
 * For any non-compliant resources, trigger auto-generated remediation tasks to create missing tags and values.
 
-#### Question 20
-
 **The solution must use the principle of least privilege.**·
 
 What should you include in the design? To answer, select the appropriate options in the answer area.
