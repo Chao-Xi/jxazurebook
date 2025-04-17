@@ -115,7 +115,7 @@ You need to deploy the storage account. The storage account must meet the follow
 What should you deploy?
 
 * A. files in a premium file share storage account
-* **B. blobs in a general purpose v2 storage account** ✅
+* **B. <mark>blobs</mark> in a general purpose v2 storage account** ✅
 * C. blobs in an Azure Data Lake Storage Gen2 account
 * D. files in a general purpose v2 storage account
 
@@ -217,7 +217,7 @@ Configure a JWT validation policy to pre-authorize requests. Pre-authorize reque
 
 You are developing an app that will read activity logs for an Azure subscription by using Azure Functions. 
 
-You need to recommend an authentication solution for Azure Functions. 
+**You need to recommend an authentication solution for Azure Functions**. 
 
 The solution must minimize administrative effort. 
 
@@ -246,13 +246,12 @@ What should you do? To answer, select the appropriate options in the answer area
 
 ![Alt Image Text](../images/az305_12_21.png "Body image")
 
-1. **Configure App1 to use OAuth 2.0:**
 
-**Configure App1 to use Auth 2.0: Client credentials grant flows**  ✅
+**<mark>1 Configure App1 to use Auth 2.0: Client credentials grant flows</mark>**  ✅
 
 2. **Configure App1 to use a REST API call to retrieve an authentication token from the**
 
-**Configure App1 to use a REST API call to retrieve an authentication token from the: Azure Instance Metadata (IMDS) endpoint**  ✅
+**Configure App1 to use a REST API call to retrieve an authentication token from the: <mark>Azure Instance Metadata (IMDS) endpoint</mark>**  ✅
 
 #### Question 37
 
