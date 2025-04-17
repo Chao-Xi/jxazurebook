@@ -381,7 +381,7 @@ What is the **minimum number of Azure Monitor workspaces** required?
 
 #### Question 46
 
-**Azure AD Identity Governance.** ✅
+**Azure AD Identity Governance.** ✅ <=>  **Access Review** ✅ 
 
 <mark>This is an updated version, in the old questions the right answers was "Access Review” , but this options is not available here</mark>
 
