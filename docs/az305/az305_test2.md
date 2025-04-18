@@ -611,6 +611,19 @@ NOTE: Each correct selection is worth one point.
 * storage 1-StorageV2-Standard
 * storage 4-FileStorage-Premium
 
+You are designing an application that will be hosted in Azure.
+
+The application will host video files that range from 50 MB to 12 GB. The application will use certificate-based authentication and will be available to users on the internet.
+
+You need to recommend a storage option for the video files. The solution must provide the fastest read performance and must minimize storage
+costs.
+
+What should you recommend?
+
+- [ ] A. Azure Files
+- [ ] B. Azure Data Lake Storage Gen2
+- [X] C. **Azure Blob Storage**
+
 #### Question 7
 
 You are designing a SQL database solution. **The solution will include 20 databases that will be 20 GB each and have varying usage patterns**.
@@ -694,6 +707,22 @@ For each of the following statements, select Yes if the statement is true. Other
 
 **blobstorage is not recommended**
 
+#### Question 12
+
+You plan to import data from your on-premises environment to Azure. The data is shown in the following table.
+
+![Alt Image Text](../images/az305_12_41.png "Body image")
+
+**What should you recommend using to migrate the data? To answer, drag the appropriate tools to the correct data sources.** 
+
+Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+![Alt Image Text](../images/az305_12_42.png "Body image")
+
+**Box 1: Data Migration Assistant -**  ✅
+
+**Box 2: Azure Cosmos DB Data Migration Tool** ✅
+
 #### Question 13
 
 You need to recommend an automated process to upload the data to Azure SQL Database every month.
@@ -721,7 +750,6 @@ You plan to migrate DB1 and DB2 to Azure
 
 What should you recommend?
 
-- [ ] A. two Azure SQL databases in an elastic pool
 - [X] B. **two databases on the same Azure SQL managed instance**    ✅
 
 #### Question 17
@@ -848,6 +876,10 @@ You need to recommend a solution that meets the following requirements:
 
 **B. Azure Data Lake Storage** ✅
 
+**In terms of supporting immutable storage, both Azure Data Lake storage and Azure Blob storage are correct.** 
+
+**But ACL is supported by Azure Data Lake storage, not supported by Azure Blob storage.**
+
 #### Question 30
 
 You are designing a storage solution that will ingest, store, and analyze petabytes (PBs) of structured, semi-structured, and unstructured text data. The analyzed data will be offloaded to Azure Data Lake Storage Gen2 for long-term retention.
@@ -879,13 +911,34 @@ You need to recommend an Azure SQL product and service tier that meets the follo
 * Automatically scales compute resources based on the workload demand 
 * Provides per second billing
 
+![Alt Image Text](../images/az305_12_51.png "Body image")
+
 **Azure SQL product: A single Azure SQL database**   ✅
 
 **Service tier:  General Purpose**    ✅
 
 A single Azure SQL database: Provides the flexibility to scale compute resources independently. 
 
-General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing.
+**General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing**.
+
+#### Question 33
+
+You have an Azure subscription. 
+
+**You need to deploy a solution that will provide point-in-time restore for blobs in storage accounts that have blob versioning and blob soft delete enabled.** 
+
+**Which type of blob should you create, and what should you enable for the accounts?**
+
+To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az305_12_52.png "Body image")
+
+Only **block blobs** in a standard general-purpose **v2 storage account can be restored as part of a point-in-time restore operation**. 
+
+Append blobs, page blobs, and premium block blobs aren't restored.
+
+**Change feed is a prerequisite feature for Object Replication and Point-in-time restore for block blobs**
+
 
 
 #### Question 34
@@ -921,13 +974,15 @@ NOTE: Each correct selection is worth one point
 **For restricted access use Azure Data Share:**  ✅
 
 
+
+
 #### Question 35
 
 ![Alt Image Text](../images/az305_12_54.png "Body image")
 
-**To implement the data warehouse: An Azure Synapse Analytics dedicated SQL pool-**
+To implement the data warehouse: **An Azure Synapse Analytics dedicated SQL pool-** ✅
 
-**To implement the serving layer: Azure Analysis Services**
+To implement the serving layer:  **AAzure Analysis Services** ✅
 
 - Synapse Analytics - massive parallel 
 - processing Analysis Services - OLAP
