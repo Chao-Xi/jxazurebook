@@ -1077,6 +1077,31 @@ What should you recommend? To answer, select the appropriate options in the answ
 
 **Traffic Manager does not provide SSL Offloading.**
 
+
+#### Question 10
+
+You have an on-premises file server that stores 2 TB of data files. 
+
+You plan to move the data files to Azure Blob Storage in the West Europe Azure region. 
+
+You need to recommend a storage account type to store the data files and a replication solution for the storage account. The solution must meet the following requirements:
+
+* ✑ Be available if a single Azure datacenter fails. =>  **Zone-redundant storage (ZRS) ZRS**
+* ✑ Support storage tiers.
+* ✑ **Minimize cost**.  =>    **v2 Standard** 
+
+What should you recommend? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_61.png "Body image")
+
+**Box 1: Standard general-purpose v2 Standard general-purpose v2 meets the requirements and minimizes the costs.**  ✅
+
+
+**Box 2: Zone-redundant storage (ZRS) ZRS protects against a Datacenter failure, while minimizing the costs**.   ✅
+
+
+
+
 #### Question 13
 
 * ✑ Failover between replicas of the database must occur without any data loss. 
@@ -1144,13 +1169,46 @@ Reason: Creating an Always On availability group on VM1 would not be necessary, 
 **B. Azure migrate** ✅
 
 
+#### Question 18
+
+You are building an Azure web app that will store the Personally Identifiable Information (PII) of employees. 
+
+You need to recommend an Azure SQL. Database solution for the web app. The solution must meet the following requirements:
+
+* Maintain availability in the event of a single datacenter outage. 
+* Support the encryption of specific columns that contain PII. 
+* Automatically scale up during payroll operations. 
+* **Minimize costs**.  =>   **b. General Purpose service tier and serverless compute tier**  ✅
+
+What should you include in the recommendations? To answer, select the appropriate options in the answer area
+
+![Alt Image Text](../images/az305_12_66.png "Body image")
+
+**1. Service tier and compute tier?**  : **b. General Purpose service tier and serverless compute tier**  ✅
+
+
+**The General Purpose service tier with serverless compute tier provides a cost-effective solution that meets the requirements.**
+
+####  Question 19
+
+You plan to deploy an Azure Database for MySQL flexible server named Server1 to the East US Azure region. 
+
+**You need to implement a business continuity solution for Server1.** 
+
+The solution must minimize downtime in the event of a **failover to a paired region**. What should you do?
+
+* A. Create a read replica. 
+* B. Store the database files in Azure premium file shares. 
+* **C. Implement Geo-redundant backup**.   ✅
+
+
 ####  Question 20
 
 You need to recommend a load balancing solution that will distribute incoming traffic for VMSS1 across NVA1 and NVA2. The solution must minimize administrative effort.
 
 * **A. Gateway Load Balancer** ✅
 
-A. Gateway Load Balancer seems to be correct as it balances the load between two NVAs internally.
+**A. Gateway Load Balancer seems to be correct as it balances the load between two NVAs internally.**
 
 
 ####  Question 21
@@ -1202,6 +1260,22 @@ recommended traffic for Traffic Manager is Non-HTTP(S).**
 
 **The Application Gateway Ingress Controller (AGIC) is a Kubernetes application, which makes it possible for Azure Kubernetes Service (AKS)**
 
+####  Question 22
+
+You have 10 on-premises servers that run Windows Server.
+
+You need to perform daily backups of the servers to a Recovery Services vault. The solution must meet the following requirements:
+
+- Back up all the files and folders on the servers.
+- Maintain three copies of the backups in Azure.
+- **Minimize costs**.
+
+![Alt Image Text](../images/az305_12_70.png "Body image")
+
+**Box 1: The Microsoft Azure Recovery Services (MARS) agent**
+
+**Box 2: Locally-redundant storage (LRS)**
+
 ####  Question 24
 
 You have an Azure subscription.
@@ -1219,6 +1293,20 @@ Which two settings should you enable? To answer, select the appropriate settings
 
 1. **Enable operational backup with Azure Backup**  ✅
 2. **Enable permanent delete for soft deleted items**  ✅
+
+####  Question 25
+
+You plan to use Azure Storage to store data assets. 
+
+You need to identify the procedure to fail over a general-purpose v2 account as part of a disaster recovery plan. The solution must meet the following requirements: 
+
+* Apps must be able to access the storage account after a failover. 
+* You must be able to fail back the storage account to the original location. 
+* Downtime must be minimized.
+
+![Alt Image Text](../images/az305_12_723.png "Body image")
+
+**Failover only supports GRS, GZRS, and RA-GZRS** => No ZRS
 
 ## Topic 4 
 
