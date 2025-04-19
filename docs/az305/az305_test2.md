@@ -639,7 +639,9 @@ What should you include in the recommendation?
 
 **A. an elastic pool that contains 20 Azure SQL databases**  ✅
 
-SLA of 99.99% uptime: Azure SQL Database offers a high availability SLA of 99.99%. Dynamic Scaling: Elastic pools dynamically allocate compute resources across the datab
+SLA of 99.99% uptime: Azure SQL Database offers a high availability SLA of 99.99%. 
+
+**Dynamic Scaling: Elastic pools dynamically allocate compute resources across the databbases**
 
 #### Question 8
 
@@ -649,7 +651,7 @@ You need to design the database architecture to meet the following requirements:
 
 - ✑ Support scaling up and down.
 - ✑ Support geo-redundant backups.
-- ✑ Support a database of up to 75 TB.
+- ✑ Support a database of up to **75 TB**.
 - ✑ **Be optimized for online transaction processing (OLTP)**.
 
 What should you include in the design? To answer, select the appropriate options in the answer area.
