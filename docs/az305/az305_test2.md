@@ -1358,7 +1358,7 @@ What should you include in the solution?
 
 **Azure Functions in the Consumption plan does not support virtual network integration, which is necessary for accessing the private IP address of the SQL Server instance**. 
 
-#### Question #6
+#### Question #6  *** 
 
 You have an Azure subscription named Subscription1 that is linked to a hybrid Azure Active Directory (Azure AD) tenant. 
 
@@ -1375,13 +1375,13 @@ What should you recommend deploying on-premises and in Azure? To answer, select 
 
 **Box 2: A connection gateway resource**   ✅
 
-#### Question 7
+#### Question 7  
 
 - The API is available to partners over the internet.  ✅  Yes
 - The APIM instance can access real-time data from VM1.   ✅  Yes
 - A VPN gateway is required for partner access.   No
 
-#### Question 8
+#### Question 8  ***
 
 Your company has an existing web app that runs on Azure virtual machines. 
 
@@ -1436,7 +1436,7 @@ Each service may be used once, more than once, or not at all.
 **asynchronously communicate => Azure Queue Storage**
 
 
-#### Question 14
+#### Question 14  💩
 
 You plan to move all the virtual machines to Azure.
 
@@ -1510,7 +1510,7 @@ From the data factory:  **Box 2: Create a pipeline.**  ✅
 
 <mark>***Virtual Nodes** for Linux</mark>
 
-#### Question 29
+#### Question 29 *** 
 
 * ✑ **An integration component will process the message, and then trigger either Function1 or Function2 depending on the type of order.** 
 
@@ -1518,7 +1518,7 @@ Which type of resource should you recommend for the integration component?
 
 * **B. an Azure Data Factory pipeline**   ✅
 
-#### Question 30
+#### Question 30  💩
 
 **You plan to migrate the 10 on-premises databases to Azure SQL Database.** 
 
@@ -1528,7 +1528,7 @@ Which type of resource should you recommend for the integration component?
 
 Migrate on-premises SSIS workloads to SSIS using ADF (Azure Data Factory).
 
-#### Question 31
+#### Question 31  💩
 
 **You are designing a solution that will use Azure Data Factory to transform the data files, and then load the files to Azure Data Lake Storage.**
 
@@ -1580,9 +1580,9 @@ Box 1 **should be "configure vm1 to forward contoso.com to the azure provided dn
 
 **Box 2** **Forward contoso.com to VM1**  ✅
 
-#### Question 37
+#### Question 37 💩
 
-* ✑ Deploy the solution on-premises and to Azure. Support low-latency and hyper-scale operations. 
+* ✑ Deploy the solution on-premises and to Azure. **Support low-latency and hyper-scale operations**. 
 * ✑ Allow independent upgrades to each microservice. 
 * ✑ **Set policies for performing automatic repairs to the microservices**. 
 
@@ -1600,7 +1600,7 @@ You need to recommend a solution to continually copy the performance data to the
 
 **mission critical application => D. Azure Cosmos DB** ✅
 
-#### Question 44
+#### Question 44 💩
 
 * ✑ Support at least 500 requests per second. 
 * ✑ Support a large image, video, and audio streams. 
@@ -1610,7 +1610,7 @@ You need to recommend a solution to continually copy the performance data to the
 * C. premium page blobs 
 * D. premium file shares
 
-#### Question 45
+#### Question 45 
 
 You need to recommend a data storage solution that meets the following requirements:
 
@@ -1646,7 +1646,7 @@ Level at which to create the blueprint assignments:
 
 - Assignments: **Subscriptons.**  ✅
 
-#### Question 49
+#### Question 49  💩
 
 - ✑ Performs calculations in Azure.
 - ✑ Ensures that each node can communicate data to every other node.
@@ -1663,7 +1663,7 @@ Level at which to create the blueprint assignments:
 - [X] B. **SQL Server on an Azure virtual machine.**   ✅
 - [X] D. **Azure SQL Managed Instance**.  ✅
 
-#### Question 51
+#### Question 51  💩
 
  SQL Server databases to Azure. You need to recommend a deployment and resiliency solution that meets the following requirements: 
  
@@ -1692,7 +1692,7 @@ You plan to migrate the on-premises SQL Server instance to Azure virtual machine
 **C. an Always On availability group that has premium storage disks and a distributed network name (DNN)**  ✅
 
 
-#### Question 58
+#### Question 58   💩
 
 You plan to move a web app named App1 from an on-premises datacenter to Azure.
 
@@ -1701,7 +1701,7 @@ App1 depends on a custom COM component that is installed on the host server.
 You need to recommend a solution to host App1 in Azure. The solution must meet the following requirements:
 
 - ✑ **App1 must be available to users if an Azure datacenter becomes unavailable**.
-- ✑ Costs must be minimized.
+- ✑ Costs must be minimized.  (*No need two regions setup)*
 
 What should you include in the recommendation?
 
@@ -1727,7 +1727,7 @@ What should you include in the recommendation?
 
 **D. a resource token and an Access control (IAM) role assignment** ✅
 
-#### Question #61
+#### Question #61  
 
 - ✑ The storage must support 1 PB of data.
 - ✑ The data must be stored in blob storage.
@@ -1738,7 +1738,7 @@ What should you include in the recommendation?
 
 * Default maximum storage account capacity: 5 PiB
 
-#### Question #61
+#### Question #61   💩
 
 You need to deploy 50 databases. The solution must meet the following requirements:
 
@@ -1757,7 +1757,7 @@ You plan to use Azure Databricks to transform and load data from App1 to an Azur
 
 **E. Azure Data Factory**  ✅
 
-<mark>Data Lake - as it's the only storage generally supported by Databricks/mark>
+<mark>Data Lake - as it's the only storage generally supported by Databricks</mark>
 
 #### Question 64
 
@@ -1769,7 +1769,7 @@ The second job type will consist of long-running Message Passing Interface (MPI)
 
 **Box 2: Batch service and dedicate virtual machines**
 
-#### Question 71
+#### Question 71  💩
 
 You need to recommend a networking solution for the new Azure infrastructure
 
@@ -1781,7 +1781,7 @@ You need to recommend a networking solution for the new Azure infrastructure
 
   * **A. Azure Virtual WAN with a secured virtual hub**    ✅
 
-#### Question 72
+#### Question 72  💩
 
 You need to configure the authentication method that will be used by the app to access the workspace. The solution must minimize the administrative effort associated with staff turnover and credential management.
 
@@ -1801,7 +1801,7 @@ You need to configure the authentication method that will be used by the app to 
 * **1. DS**   **DS= Dedicated series**
 * **2. Premium SSD**
 
-#### Question 80
+#### Question 80  💩
 
 **You are developing an app that will use Azure Functions to process Azure Event Hubs events.** Request processing is estimated to take between five and 20 minutes.
 
@@ -1826,16 +1826,16 @@ Which hosting plan should you recommend?
   - [X] **A. Configure the horizontal pod autoscaler.** ✅
   - [x] **E. Install Kubernetes-based Event Driven Autoscaling (KEDA).** ✅
 
-#### Question 85
+#### Question 85   💩
 
 **You need to migrate the database to an Azure SQL managed instance. The solution must minimize downtime.**
 
-- [X] **B. Azure Data Studio**    ✅
+- [X] **B. Azure Data Studio**    ✅    💩
 
 **You need to perform an online migration of SQL1. The solution must minimize administrative effort.**
 
-**B. Azure Database Migration Service**
-
+**B. Azure Database Migration Service**  💩 （ADMS)
+ 
 
 #### Question 84
 
@@ -1852,7 +1852,7 @@ Which hosting plan should you recommend?
 - **FrontDoor => Protect against OWASP Vulnerabilities**   ✅
 - **API Management => Validation token JWT**   ✅
 
-#### Question 90
+#### Question 90  💩 
 
 - The solution must run multiple instances of App1.
 - The number of instances must be managed automatically depending on the load.
@@ -1876,7 +1876,7 @@ You need to ensure that all the traffic between Webapp1 and DB1 is sent via a pr
 
 Configure name resolution to use a private DNS zone. This is necessary for the web app to work with Azure DNS private zones.
 
-#### Question 92
+#### Question 92  💩 
 
 You need to ensure that the remote users can access App1 without using a VPN. The solution must meet the following requirements:
 
@@ -1884,7 +1884,7 @@ You need to ensure that the remote users can access App1 without using a VPN. Th
 - Minimize administrative effort.
 
 - **box1: An enterprise app (required for MFA in conditional access)**
-- **box2: azure ad app proxy**
+- **box2: azure AD app proxy**
 	-  **A server that runs Windows Server and has the Azure AD Application Proxy connector installed**
 
 #### Question 93
@@ -1897,7 +1897,7 @@ You need to ensure that the AKS1 APIs are accessible to APIM1. The solution must
 
 - [X] **D. Deploy an ingress controller to AKS1.**  ✅
 
-#### Question 94
+#### Question 94   💩 
 
 You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 
@@ -1919,9 +1919,9 @@ Which pool in Workspace1 should you use?
 
 - **A. Apache Spark**   ✅
 
-Apache Spark: Spark pools in Azure Synapse Analytics provide a distributed data processing framework capable of processing large volumes of data in near-real-time. S
+Apache Spark: Spark pools in Azure Synapse Analytics provide a distributed data processing framework capable of processing large volumes of data in near-real-time.
 
-#### Question 96
+#### Question 96  💩 
 
 You have an on-premises datacenter named Site1. Site1 contains a VMware vSphere cluster named Cluster1 that hosts 100 virtual machines. Cluster1 is managed by using VMware vCenter.
 
@@ -1946,7 +1946,7 @@ Which pool in Workspace1 should you use?
 
 - **A. Apache Spark**   ✅
 
-#### Question 97
+#### Question 97   💩 
 
 Your on-premises datacenter contains a server named Server1 that runs Microsoft SQL Server 2022. Server1 contains a 30-TB database named DB1 that stores customer data. Server1 runs a custom application named App1 that verifies the compliance of records in DB1. **App1 must run on the same server as DB1**.
 
@@ -1962,7 +1962,7 @@ To which service should you migrate DB1, and what should you use to perform the 
 
 **Azure Migrate** ✅
 
-#### Question 98
+#### Question 98   💩 
 
 VNet1, VNet2, and VNet3 each has multiple virtual machines connected. 
 
@@ -2063,7 +2063,7 @@ Which type of storage should you recommend, and how should you recommend configu
 
 **Box 2 Configuration: Hierarchical namespace -**
 
-#### Question 5
+#### Question 5   💩 
 
 You plan to migrate App1 to Azure. 
 
@@ -2076,7 +2076,7 @@ The solution must meet the security and compliance requirements. What should you
 * C. a service endpoint that has a service endpoint policy 
 * **D. a private endpoint**  ✅
 
-#### Question 6
+#### Question 6  💩 
 
 **You need to implement the Azure RBAC role assignments for the Network Contributor role**. The solution must meet the authentication and authorization requirements. What is the **minimum number of assignments** that you must use?
 
@@ -2104,7 +2104,7 @@ Which three actions should you perform in sequence?
 
 **Step 3: Invoke a remediation task.** ✅
 
-#### Question 8
+#### Question 8  💩 
 
 You plan to migrate DB1 and DB2 to Azure. 
 
@@ -2132,7 +2132,7 @@ How should the migrated databases DB1 and DB2 be implemented in Azure?
 
 **Overview - Contoso, Ltd**. is a research company that has a main office in Montreal
 
-#### Question #1
+#### Question #1  💩 
 
 You need to recommend a solution for the App1 maintenance task. The solution must minimize costs. What should you include in the recommendation?
 
@@ -2142,7 +2142,7 @@ You need to recommend a solution for the App1 maintenance task. The solution mus
 
 **Logic app can be created centrally and executed for both region as per given requirement. "The PowerShell script will run from a central location."**
 
-#### Question #2
+#### Question #2  💩 
 
 You need to recommend a solution that meets the application development requirements. What should you include in the recommendation?
 
@@ -2150,7 +2150,7 @@ You need to recommend a solution that meets the application development requirem
 
 Whenever possible, use deployment slots when deploying a new production build. When using a Standard App Service Plan tier or better, you ca deploy your app to a staging environment, validate your changes, and do smoke tests. When you are ready, you can swap your staging and production slots.
 
-#### Question #3
+#### Question #3   💩 
 
 You need to recommend an **App Service architecture that meets the requirements for App1**. The solution must minimize costs. What should you recommend?
 
@@ -2159,11 +2159,11 @@ You need to recommend an **App Service architecture that meets the requirements 
 * **C. one App Service plan per region**   ✅
 * D. one App Service plan per availability zone
 
-**<mark>*No need for dedicated environment. So Azure Service Plan per region is enough</mark>**
+**<mark>No need for dedicated environment. So Azure Service Plan per region is enough</mark>**
 
 * **C. one App Service plan per region**   ✅
 
-#### Question #5
+#### Question  5
 
 You need to recommend a solution to **ensure that App1 can access the third-party credentials and access strings**. The solution must meet the security requirements.
 
@@ -2179,7 +2179,7 @@ What should you include in the recommendation?
 
 **A role assignment**
 
-#### Question #6
+#### Question 6
 
 **What should you implement to meet the identity requirements?**
 
@@ -2217,7 +2217,7 @@ Scenario: App2 has the following file storage requirements:
 
 **Azure subscription Box 2: Azure File Sync -**
 
-#### Question 9
+#### Question 9   💩 
 
 **You need to recommend a solution that meets the data requirements for App1**. 
 
@@ -2227,7 +2227,7 @@ What should you recommend deploying to each availability zone that contains an i
 * B. an Azure Data Lake store that uses geo-zone-redundant storage (GZRS) 
 * C. an Azure Storage account that uses geo-zone-redundant storage (GZRS)
 
-#### Question 10
+#### Question 10   💩 
 
 **You are evaluating whether to use Azure Traffic Manager and Azure Application Gateway to meet the connection requirements for App1.** 
 
@@ -2274,7 +2274,7 @@ You must provision an Azure Storage account for the Database metric monitoring. 
 
 2 of 3 do not need a dedicated Azure Storage account.. It is not REQUIRED to create a storage account to fulfill requirements.
 
-#### Question #2
+#### Question #2   💩 
 
 What should you include in the identity management strategy to support the planned changes?
 
@@ -2285,7 +2285,7 @@ What should you include in the identity management strategy to support the plann
 
 Directory synchronization between Azure Active Directory (Azure AD) and corp.fabrikam.com must not be affected by a link failure between Azure and the on- premises network. (This requires domain controllers in Azure).
 
-#### Question 3
+#### Question 3   💩 
 
 **To meet the authentication requirements of Fabrikam, what should you include in the solution?**
 
@@ -2323,7 +2323,7 @@ You need to recommend a solution to meet the database retention requirements. Wh
 * C. Use automatic Azure SQL Database backups. 
 * D. Configure geo-replication of the database.
 
-#### Question 6
+#### Question 6   💩 
 
 
 You need to recommend a data storage strategy for WebApp1. 
@@ -2335,7 +2335,7 @@ What should you include in the recommendation?
 * C. an Azure SQL Database elastic pool 
 * **D. a vCore-based Azure SQL database**  ✅
 
-#### Question 7
+#### Question 7  💩 
 
 You design a solution for the web tier of WebApp1 as shown in the exhibit.
 
