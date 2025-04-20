@@ -2005,11 +2005,20 @@ You need to recommend a solution that uses role assignment conditions based on t
 
 **To enforce Azure MFA authentication, configure: Grant control in capolicy1**
 
+1. To register the users for Azure MFA, use: a. Azure AD identity Protection. Azure AD Identity Protection is a tool that allows organizations to discover, investigate, and remediate identity-based risks in their environment. It can help you manage the roll-out of Multi-Factor Authentication (MFA) registration by prompting users for registration during risk sign-in attempts. 
+
+
+2. To enforce Azure MFA authentication, configure: a. Grant control in capolicy1. Grant controls are used to enforce additional requirements that a user must meet before they are granted access. You can enforce Azure MFA by setting it as a requirement in the Grant control settings of Capolicy1.
+
 #### Question #2
 
 After you migrate App1 to Azure, you need to enforce the data modification requirements to meet the security and compliance requirements. What should you do?
 
 * **A. Create an access policy for the blob service.**  ✅
+* B. Implement Azure resource locks. 
+* C. Create Azure RBAC assignments. 
+* D. Modify the access level of the blob service.
+
 
 #### Question 3
 
@@ -2021,6 +2030,8 @@ The solution must meet the resiliency requirements
 
 **Number of host groups:  Box 1: 3 -**  ✅
 
+**- You must create a host group in each zone.**
+
 Need three host groups to meet the third scenario requirement below.
 
 Scenario: App1 must meet the following requirements: 
@@ -2030,6 +2041,8 @@ Scenario: App1 must meet the following requirements:
 * Maintain availability if two availability zones in the local Azure region fail.
 
 **Number of virtual machine scale sets: Box 2: 3 -**  ✅
+
+**- You must create a VMSS in each zone where the host group is deployed.**
 
 **The availability setting of your host group should match your scale set**
 
@@ -2065,10 +2078,10 @@ The solution must meet the security and compliance requirements. What should you
 
 #### Question 6
 
-**You need to implement the Azure RBAC role assignments for the Network Contributor role**. The solution must meet the authentication and authorization requirements. What is the minimum number of assignments that you must use?
+**You need to implement the Azure RBAC role assignments for the Network Contributor role**. The solution must meet the authentication and authorization requirements. What is the **minimum number of assignments** that you must use?
 
 * A. 1 
-* **B. 2** 
+* **B. 2**   two tenants two MG
 * C. 5 
 * D. 10 
 * E. 15
@@ -2111,7 +2124,7 @@ How should the migrated databases DB1 and DB2 be implemented in Azure?
 
 ![Alt Image Text](../images/az305_12_127.png "Body image")
 
-**Box 1: SQL Managed Instance -**
+**Box 1: An Azure SQL Database elastic pool-**
 
 **Box 2: Business critical -**
 
@@ -2123,13 +2136,19 @@ How should the migrated databases DB1 and DB2 be implemented in Azure?
 
 You need to recommend a solution for the App1 maintenance task. The solution must minimize costs. What should you include in the recommendation?
 
-* **B. an Azure function** ✅
+* **A. an Azure logic app** ✅
+
+**Azure function will need to be run from every region. This will need 2 functions.** 
+
+**Logic app can be created centrally and executed for both region as per given requirement. "The PowerShell script will run from a central location."**
 
 #### Question #2
 
 You need to recommend a solution that meets the application development requirements. What should you include in the recommendation?
 
 * **C. deployment slots**     ✅
+
+Whenever possible, use deployment slots when deploying a new production build. When using a Standard App Service Plan tier or better, you ca deploy your app to a staging environment, validate your changes, and do smoke tests. When you are ready, you can swap your staging and production slots.
 
 #### Question #3
 
@@ -2140,7 +2159,7 @@ You need to recommend an **App Service architecture that meets the requirements 
 * **C. one App Service plan per region**   ✅
 * D. one App Service plan per availability zone
 
-No need for dedicated environment. So Azure Service Plan per region is enough
+**No need for dedicated environment. So Azure Service Plan per region is enough**
 
 * **C. one App Service plan per region**   ✅
 
@@ -2190,6 +2209,12 @@ What should you deploy to the Azure subscription and the on-premises network?
 
 **Azure subscription Box 1: Azure Files -**
 
+Scenario: App2 has the following file storage requirements:
+
+* ✑ Save files to an Azure Storage account. 
+* ✑ Replicate files to an on-premises location. 
+* ✑ Ensure that on-premises clients can read the files over the LAN by using the SMB protocol.
+
 **Azure subscription Box 2: Azure File Sync -**
 
 #### Question 9
@@ -2237,9 +2262,17 @@ You are evaluating the components of the migration to Azure that require you to 
 
 You must provision an Azure Storage account for the **SQL Server database migration.**  **Y**
 
-You must provision an Azure Storage account **for the Web site content storage**.  **Y**
+You must provision an Azure Storage account **for the Web site content storage**.  **N**
+
+**Single point source: GitHub Repository can be configured as source for continous Deployment**
 
 You must provision an Azure Storage account for the Database metric monitoring.   **N**
+
+* a) Log Analytics workspace in Azure Monitor 
+* b) Azure Event Hub 
+* c) Azure Storage 
+
+2 of 3 do not need a dedicated Azure Storage account.. It is not REQUIRED to create a storage account to fulfill requirements.
 
 #### Question #2
 
@@ -2250,6 +2283,8 @@ What should you include in the identity management strategy to support the plann
 * C. Deploy a new Azure AD tenant for the authentication of new R&D projects. 
 * D. Deploy domain controllers for the rd.fabrikam.com forest to virtual networks in Azure
 
+Directory synchronization between Azure Active Directory (Azure AD) and corp.fabrikam.com must not be affected by a link failure between Azure and the on- premises network. (This requires domain controllers in Azure).
+
 #### Question 3
 
 **To meet the authentication requirements of Fabrikam, what should you include in the solution?**
@@ -2258,9 +2293,14 @@ To answer, select the appropriate options in the answer area. NOTE: Each correct
 
 ![Alt Image Text](../images/az305_12_120.png "Body image")
 
-* 1=1:Single tenant creation required only due to RD restrictions implemented. 
-* 2=1:Need to add custom domain due to default .onmicrosoft.com domain on tenant creation
-* 3=2 Two policies requires, can't have multiple actions to block + allow on single conditional access policies. 
+**Box 1: 1 - One single Azure AD tenant is needed as only the Corp tenant is migrated.**
+
+
+
+* 1=1:Single tenant creation required only due to RD restrictions implemented.    ✅ 
+* 2=1:Need to add custom domain due to default .onmicrosoft.com domain on tenant creation   ✅
+* 3=2 Two policies requires, can't have multiple actions to block + allow on single conditional access policies.    ✅
+	* One conditional access policy for** Multi-Factor Authentication (MFA) will be used for administative access**, and a **second conditional access policy in order to prevent external access**.
 
 
 #### Question 4
