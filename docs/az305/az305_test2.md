@@ -1438,7 +1438,9 @@ Each service may be used once, more than once, or not at all.
 
 #### Question 14
 
-You need to recommend how many and what size Azure virtual machines will be required to move the current workloads to Azure. The solution must minimize administrative effort.
+You plan to move all the virtual machines to Azure.
+
+**You need to recommend how many and what size Azure virtual machines will be required to move the current workloads to Azure.** The solution must minimize administrative effort.
 
 **C. Azure Migrate**
 
@@ -1528,7 +1530,7 @@ Migrate on-premises SSIS workloads to SSIS using ADF (Azure Data Factory).
 
 #### Question 31
 
-You are designing a solution that will use Azure Data Factory to transform the data files, and then load the files to Azure Data Lake Storage. 
+**You are designing a solution that will use Azure Data Factory to transform the data files, and then load the files to Azure Data Lake Storage.**
 
 What should you deploy on VM1 to support the design?
 
@@ -1538,7 +1540,7 @@ What should you deploy on VM1 to support the design?
 
 #### Question 31
 
-You need to implement SAML single sign-on (SSO) and enforce multi-factor authentication (MFA) when users attempt to access the application from an unknown location.
+You need to implement SAML single sign-on (SSO) and enforce multi-factor authentication (MFA) when **users attempt to access the application from an unknown location.**
 
 * **C. Azure AD enterprise applications**  ✅
 * **E. Conditional Access policies**   ✅
@@ -1603,7 +1605,26 @@ You need to recommend a solution to continually copy the performance data to the
 * ✑ Support at least 500 requests per second. 
 * ✑ Support a large image, video, and audio streams. 
 
+* A. standard general-purpose v2 
 * **B. premium block blobs**   ✅
+* C. premium page blobs 
+* D. premium file shares
+
+#### Question 45
+
+You need to recommend a data storage solution that meets the following requirements:
+
+* ✑ Ensures that applications can access the data by using a REST connection 
+* ✑ Hosts 20 independent tables of varying sizes and usage patterns 
+* ✑ **Automatically replicates the data to a second Azure region**
+* ✑ Minimizes costs
+
+What should you recommend?
+
+* A. an Azure SQL Database elastic pool that uses active geo-replication 
+* **B. tables in an Azure Storage account that use geo-redundant storage (GRS)** ✅
+* C. tables in an Azure Storage account that use read-access geo-redundant storage (RA-GRS) 
+* D. an Azure SQL database that uses active geo-replication
 
 #### Question 45
 
@@ -1653,6 +1674,8 @@ Level at which to create the blueprint assignments:
 	* **Deployment solution: Azure SQL Managed Instance**   ✅
 	* **Resiliency solution: Auto-failover group**   ✅
 
+**Active geo-replication is not supported by Azure SQL Managed Instance.**
+
 #### Question 52
 
 You plan to back up the keys in KeyVault1.
@@ -1667,6 +1690,24 @@ You plan to migrate the on-premises SQL Server instance to Azure virtual machine
 * Minimizes failover time if a single server fails
 
 **C. an Always On availability group that has premium storage disks and a distributed network name (DNN)**  ✅
+
+
+#### Question 58
+
+You plan to move a web app named App1 from an on-premises datacenter to Azure.
+
+App1 depends on a custom COM component that is installed on the host server.
+
+You need to recommend a solution to host App1 in Azure. The solution must meet the following requirements:
+
+- ✑ **App1 must be available to users if an Azure datacenter becomes unavailable**.
+- ✑ Costs must be minimized.
+
+What should you include in the recommendation?
+
+- [ ] A. In two Azure regions, deploy a load balancer and a web app.
+- [ ] B. In two Azure regions, deploy a load balancer and a virtual machine scale set.
+- [X] C. **Deploy a load balancer and a virtual machine scale set across two availability zones**. ✅
 
 #### Question #59
 
@@ -1715,6 +1756,8 @@ You plan to use Azure Databricks to transform and load data from App1 to an Azur
 **C. Azure Data Lake Storage**  ✅
 
 **E. Azure Data Factory**  ✅
+
+Data Lake - as it's the only storage generally supported by Databricks
 
 #### Question 64
 
@@ -1876,6 +1919,8 @@ Which pool in Workspace1 should you use?
 
 - **A. Apache Spark**   ✅
 
+Apache Spark: Spark pools in Azure Synapse Analytics provide a distributed data processing framework capable of processing large volumes of data in near-real-time. S
+
 #### Question 96
 
 You have an on-premises datacenter named Site1. Site1 contains a VMware vSphere cluster named Cluster1 that hosts 100 virtual machines. Cluster1 is managed by using VMware vCenter.
@@ -1933,6 +1978,8 @@ What should you include in the recommendation? To answer, select the appropriate
 **Minimum number of Azure Monitor Private Link Scope (AMPLS) objects: 1**
 
 **Minimum number of private endpoints: 2**
+
+**One for VNet1 and VNet 2, since they are peered. And one for VNet3. It isolated from VNet1 and VNet2.**
 
 #### Question 99
 
