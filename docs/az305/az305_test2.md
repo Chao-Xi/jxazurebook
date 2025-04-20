@@ -1674,7 +1674,7 @@ Level at which to create the blueprint assignments:
 	* **Deployment solution: Azure SQL Managed Instance**   ✅
 	* **Resiliency solution: Auto-failover group**   ✅
 
-**Active geo-replication is not supported by Azure SQL Managed Instance.**
+**<mark>Active geo-replication is not supported by Azure SQL Managed Instance.</mark>**
 
 #### Question 52
 
@@ -1757,7 +1757,7 @@ You plan to use Azure Databricks to transform and load data from App1 to an Azur
 
 **E. Azure Data Factory**  ✅
 
-Data Lake - as it's the only storage generally supported by Databricks
+<mark>Data Lake - as it's the only storage generally supported by Databricks/mark>
 
 #### Question 64
 
@@ -2138,7 +2138,7 @@ You need to recommend a solution for the App1 maintenance task. The solution mus
 
 * **A. an Azure logic app** ✅
 
-**Azure function will need to be run from every region. This will need 2 functions.** 
+<mark>**Azure function will need to be run from every region. This will need 2 functions.</mark>** 
 
 **Logic app can be created centrally and executed for both region as per given requirement. "The PowerShell script will run from a central location."**
 
@@ -2159,7 +2159,7 @@ You need to recommend an **App Service architecture that meets the requirements 
 * **C. one App Service plan per region**   ✅
 * D. one App Service plan per availability zone
 
-**No need for dedicated environment. So Azure Service Plan per region is enough**
+**<mark>*No need for dedicated environment. So Azure Service Plan per region is enough</mark>**
 
 * **C. one App Service plan per region**   ✅
 
