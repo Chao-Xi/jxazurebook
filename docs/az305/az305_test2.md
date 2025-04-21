@@ -300,7 +300,7 @@ What should you do? To answer, select the appropriate options in the answer area
 
 **Configure App1 to use a REST API call to retrieve an authentication token from the: <mark>Azure Instance Metadata (IMDS) endpoint</mark>**  ✅  💩
 
-#### Question 37
+#### Question 37 💩
 
 Your company has the divisions shown in the following table.
 
@@ -354,7 +354,7 @@ Y N Y
 - User 2 is not able to grant permission to Group 2 because it is just a member with contributor role.   💩
 - **Since Group 3 has Contributor role for the Tenant Root Group, User3 can create storage account in RG2**  💩
 
-#### Question 42
+#### Question 42  💩
 
 You are designing an app that will be hosted on Azure virtual machines that run Ubuntu. **The app will use a third-party email service to send email messages to users. The third-party email service requires that the app authenticate by using an API key.**
 
