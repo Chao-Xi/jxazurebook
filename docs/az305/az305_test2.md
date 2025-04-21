@@ -1021,11 +1021,11 @@ What should you use? To answer, select the appropriate options in the answer are
 
 **App Gateway will balance the traffic between VMs deployed in the same region.** 
 
-#### Question 5
+#### Question 5    💩
 
 You plan to create an Azure Storage account that will host file shares. **The shares will be accessed from on-premises applications that are transaction intensive**. 
 
-You need to recommend a solution to minimize latency when accessing the file shares. 
+You need to recommend a solution to **minimize latency**  💩 when accessing the file shares. 
 
 The solution must provide the highest-level of resiliency for the selected storage tie
 
@@ -1033,7 +1033,7 @@ The solution must provide the highest-level of resiliency for the selected stora
 
 **Box 1: Premium** - Premium: **Premium file shares are backed by solid-state drives (SSDs) and provide consistent high performance and low latency**, within single-digit milliseconds for most IO operations, for IO-intensive workloads
 
-**<mark>Premium Azure file shares only support LRS and ZRS</mark>**.
+**<mark>Premium Azure file shares only support LRS and ZRS</mark>**.   💩
 
 
  Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.
@@ -1058,21 +1058,6 @@ What should you recommend? To answer, select the appropriate options in the answ
 **General purpose V2 is always recommended since Blobstorage with a legacy**
 
 
-#### Question 5
-
-* ✑ Prevent new data from being modified for one year. 
-* ✑ Maximize data resiliency.
-* ✑ Minimize read latency
-  
-* **Box 1: Premium Block Blobs**   ✅
-
-* **Box 2: Zone-redundant storage (ZRS)** ✅ 
-
-**<mark>Premium Azure file shares only support LRS and ZRS</mark>**.
-
-
-* ✑ **Prevent new data from being modified for one year. (Both Standard + Premium)** 
-
 #### Question 6
 
 **Front Door， It offers Layer 7 capabilities for your application like SSL offload, path-based routing, fast failover, caching, etc. to improve performance and high-availability ofyour applications.**
@@ -1080,7 +1065,7 @@ What should you recommend? To answer, select the appropriate options in the answ
 **Traffic Manager does not provide SSL Offloading.**
 
 
-#### Question 10
+#### Question 10 💩 **comparing to Qestion 5** 
 
 You have an on-premises file server that stores 2 TB of data files. 
 
@@ -1090,7 +1075,7 @@ You need to recommend a storage account type to store the data files and a repli
 
 * ✑ Be available if a single Azure datacenter fails. =>  **Zone-redundant storage (ZRS) ZRS**
 * ✑ Support storage tiers.
-* ✑ **Minimize cost**.  =>    **v2 Standard** 
+* ✑ **Minimize cost**.  =>    **v2 Standard**   💩
 
 What should you recommend? To answer, select the appropriate options in the answer area.
 
@@ -1129,7 +1114,7 @@ Costs must be minimized => B. Azure SQL Database Premium
 
 **D. Azure SQL Managed Instance Business Critical**  ✅
 
-#### Question 16
+#### Question 16   💩
 
 You have an on-premises Microsoft SQL Server database named SQL1.
 
@@ -1138,17 +1123,18 @@ You plan to migrate SQL1 to Azure
 You need to recommend a hosting solution for SQL1. The solution must meet the following requirements:
 
 * Support the deployment of multiple secondary, read-only replicas. 
-* Support** automatic replication** between primary and secondary replicas. =>  **Active geo-replication**
+* Support automatic replication  between primary and secondary replicas.
 * **Support failover between primary and secondary replicas within a 15-minute recovery time objective (RTO)**
 
 What should you include in the solution? 
 
 ![Alt Image Text](../images/az305_12_64.png "Body image")
 
-**Azure service or service tier:  Azure SQL DB**     ✅
+- **Azure service or service tier:  Azure SQL DB**     ✅
 
-**Replication mechanism: Active geo-replication**   ✅
+- **Auto failover groups**  ✅
 
+**Active geo-replication is not supported by Azure SQL Managed Instance.**
 
 #### Question 17
 
@@ -1164,7 +1150,7 @@ What should you do? To answer, select the appropriate options in the answer area
 
 First one should be A: Prepare For the migration by: 
 
-**A. Adding a secondary replica to AG1**  ✅
+**A. Adding a secondary replica to AG1**  ✅  💩
 
 Reason: Creating an Always On availability group on VM1 would not be necessary, as you already have an availability group (AG1) in place on your on-premises SQL Server instances
 
@@ -1180,18 +1166,18 @@ You need to recommend an Azure SQL. Database solution for the web app. The solut
 * Maintain availability in the event of a single datacenter outage. 
 * Support the encryption of specific columns that contain PII. 
 * Automatically scale up during payroll operations. 
-* **Minimize costs**.  =>   **b. General Purpose service tier and serverless compute tier**  ✅
+* **Minimize costs**.  =>   **b. General Purpose service tier and serverless compute tier**  ✅   💩
 
 What should you include in the recommendations? To answer, select the appropriate options in the answer area
 
-![Alt Image Text](../images/az305_12_66.png "Body image")
+![Alt Image Text](../images/az305_12_66.png "Body image")   💩
 
 **1. Service tier and compute tier?**  : **b. General Purpose service tier and serverless compute tier**  ✅
 
 
 **The General Purpose service tier with serverless compute tier provides a cost-effective solution that meets the requirements.**
 
-####  Question 19
+####  Question 19   💩
 
 You plan to deploy an Azure Database for MySQL flexible server named Server1 to the East US Azure region. 
 
@@ -1201,10 +1187,10 @@ The solution must minimize downtime in the event of a **failover to a paired reg
 
 * A. Create a read replica. 
 * B. Store the database files in Azure premium file shares. 
-* **C. Implement Geo-redundant backup**.   ✅
+* **C. Implement Geo-redundant backup**.   ✅  💩
 
 
-####  Question 20
+####  Question 20   💩
 
 You need to recommend a load balancing solution that will distribute incoming traffic for VMSS1 across NVA1 and NVA2. The solution must minimize administrative effort.
 
@@ -1255,8 +1241,7 @@ NOTE: Each correct selection is worth one point.
 
 **Box 1: Azure Front Door** ✅
 
-**Both Azure Front Door and Traffic Manager are global load balancer. However, recommended traffic for Azure Front Door is HTTP(S), and
-recommended traffic for Traffic Manager is Non-HTTP(S).**
+**Both Azure Front Door and Traffic Manager are global load balancer. However, recommended traffic for Azure Front Door is HTTP(S), and recommended traffic for Traffic Manager is Non-HTTP(S).**
 
 **Box 2: Azure Application Gateway**  ✅
 
@@ -1276,7 +1261,7 @@ You need to perform daily backups of the servers to a Recovery Services vault. T
 
 **Box 1: The Microsoft Azure Recovery Services (MARS) agent**
 
-**Box 2: Locally-redundant storage (LRS)**
+**Box 2: Locally-redundant storage (LRS)**  💩
 
 ####  Question 24
 
@@ -1308,7 +1293,7 @@ You need to identify the procedure to fail over a general-purpose v2 account as 
 
 ![Alt Image Text](../images/az305_12_723.png "Body image")
 
-**Failover only supports GRS, GZRS, and RA-GZRS** => No ZRS
+**Failover only supports GRS, GZRS, and RA-GZRS** => No ZRS   💩
 
 ## Topic 4 
 
