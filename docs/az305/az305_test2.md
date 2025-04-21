@@ -155,8 +155,8 @@ What should you include in the recommendation? To answer, select the appropriate
 
 ![Alt Image Text](../images/az305_12_14.png "Body image")
 
-* Key Vault integration method: **Key Vault references in Application settings**
-* Key Vault permissions for the managed identity: **Secrets: Get**
+* Key Vault integration method: **Key Vault references in Application settings** 💩
+* Key Vault permissions for the managed identity: **Secrets: Get** 💩
 
 
 #### Question 25
@@ -609,6 +609,8 @@ NOTE: Each correct selection is worth one point.
 * storage 1-StorageV2-Standard
 * storage 4-FileStorage-Premium
 
+#### Question 6 💩
+
 You are designing an application that will be hosted in Azure.
 
 The application will host video files that range from 50 MB to 12 GB. The application will use certificate-based authentication and will be available to users on the internet.
@@ -620,7 +622,10 @@ What should you recommend?
 
 - [ ] A. Azure Files
 - [ ] B. Azure Data Lake Storage Gen2
-- [X] C. **Azure Blob Storage**
+- [X] C. **Azure Blob Storage**   💩
+- [ ] D. Azure SQL Database   
+
+Blob Storage: Stores large amounts of unstructured data, such as text or binary data, that can be accessed from anywhere in the world via HTTP or HTTPS. You can use Blob storage to expose data publicly to the world, or to store application data privately.
 
 #### Question 7
 
@@ -635,13 +640,13 @@ Compute charges must be minimized.
 
 What should you include in the recommendation?
 
-**A. an elastic pool that contains 20 Azure SQL databases**  ✅
+**A. an elastic pool that contains 20 Azure SQL databases**  ✅   💩
 
 SLA of 99.99% uptime: Azure SQL Database offers a high availability SLA of 99.99%. 
 
 **Dynamic Scaling: Elastic pools dynamically allocate compute resources across the databbases**
 
-#### Question 8
+#### Question 8   💩
 
 You have an on-premises database that you plan to migrate to Azure.
 
@@ -658,9 +663,9 @@ NOTE: Each correct selection is worth one point.
 
 ![Alt Image Text](../images/az305_12_38.png "Body image")
 
-* **Box 1: Azure SQL Database -**
+* **Box 1: Azure SQL Database -**   💩
 
-* **Box 2: Hyperscale** -
+* **Box 2: Hyperscale** -   💩
 
 **The key is that only Hyperscale can deal with 75 Tb, All other have limit of 4 Tb**
 
@@ -685,9 +690,9 @@ You need to recommend a database solution for the application. The solution must
 
 What should you include in the recommendation?
 
-- [X] **A. Azure Cosmos DB SQL API** ✅
+- [X] **A. Azure Cosmos DB SQL API** ✅    💩
 
-- [X] **Azure Cosmos DB for NoSQL**    ✅
+- [X] **Azure Cosmos DB for NoSQL**    ✅    💩
 
 - Azure Cosmos DB for PostgreSQL 
 
@@ -707,7 +712,7 @@ For each of the following statements, select Yes if the statement is true. Other
 
 **blobstorage is not recommended**
 
-#### Question 12
+#### Question 12   💩 💩
 
 You plan to import data from your on-premises environment to Azure. The data is shown in the following table.
 
@@ -719,10 +724,10 @@ Each tool may be used once, more than once, or not at all. You may need to drag 
 
 ![Alt Image Text](../images/az305_12_42.png "Body image")
 
-**Box 1: Data Migration Assistant -**  ✅
+**Box 1: Data Migration Assistant -**  ✅    💩
 
-**Box 2: Azure Cosmos DB Data Migration Tool** ✅
-
+**Box 2: Azure Cosmos DB Data Migration Tool** ✅    💩
+ 
 #### Question 13
 
 You need to recommend an automated process to upload the data to Azure SQL Database every month.
@@ -773,7 +778,7 @@ NOTE: Each correct selection is worth one point.
 
 **Hot tier has higher storage costs, but lower access and transaction costs.**
 
-**2. Configuration to prevent the modification and deletions: Container access policy.**
+**2. Configuration to prevent the modification and deletions: Container access policy.**  
 
 The Container access policy is indeed the place to configure Azure's Immutable Blob Storage to ensure data is retained without modifications or deletions for a specified amount of time, which suits your needs.
 
@@ -790,10 +795,10 @@ storage. The solution must meet the following requirements:
 
 Which service should you recommend for each type of data store? To answer, select the appropriate options in the answer area.
 
-![Alt Image Text](../images/az305_12_44.png "Body image")
+![Alt Image Text](../images/az305_12_44.png "Body image")   💩
 
-1. **Data store for the ingestion data: b. Azure Data Lake Storage Gen2.**
-2.  **Data store for the data warehouse: c. Azure SQL Database Hyperscale**.
+1. **Data store for the ingestion data: b. Azure Data Lake Storage Gen2.**    💩
+2.  **Data store for the data warehouse: c. Azure SQL Database Hyperscale**.    💩
 
 #### Question 19
 
@@ -807,7 +812,22 @@ You need to recommend a service to **store and query the data**.
 
 #### Question 22
 
-You need to recommend **Azure Synapse pools** to meet the following requirements:
+#### Question 21
+
+You are designing a data analytics solution that will use Azure Synapse and Azure Data Lake Storage Gen2.
+
+
+You need to recommend Azure Synapse pools to meet the following requirements:
+
+- Ingest data from Data Lake Storage into hash-distributed tables.
+- Implement query, and update data in Delta Lake.
+
+What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_45.png "Body image")
+
+- **Dedicated SQL pool: It's best for big and complex tasks.**   ✅
+- **SERVERLESS APACHE SPARK POOL**  ✅
 
 - Ingest data from **Data Lake Storage into hash-distributed tables**.
 
@@ -834,14 +854,14 @@ The solution must support Hadoop Distributed File System (HDFS)
 - **cosmos for the multi writer**
 - postgre is not good at reading
 
-#### Question 24
+#### Question 24   💩
 
 You need to recommend a solution for the Azure Database for MySQL Flexible Server configuration.
 
 * The databases must be accessible if a datacenter fails. 
 * Costs must be minimized.
 
-**B. General Purpose**  ✅
+**B. General Purpose**  ✅  💩
 
 #### Question 25
 
@@ -851,7 +871,7 @@ You need to recommend a solution for the Azure Database for MySQL Flexible Serve
 
 **B. PostgreSQL**   ✅
 
-#### Question 28
+#### Question 28  💩
 
 You have an app that generates 50,000 events daily
 
@@ -874,13 +894,13 @@ You need to recommend a solution that meets the following requirements:
 * Disables anonymous access to the storage account 
 * Supports access control list (ACL)-based Azure AD permissions
 
-**B. Azure Data Lake Storage** ✅
+**B. Azure Data Lake Storage** ✅  💩
 
 **In terms of supporting immutable storage, both Azure Data Lake storage and Azure Blob storage are correct.** 
 
 **But ACL is supported by Azure Data Lake storage, not supported by Azure Blob storage.**
-
-#### Question 30
+ 
+#### Question 30   💩
 
 You are designing a storage solution that will ingest, store, and analyze petabytes (PBs) of structured, semi-structured, and unstructured text data. The analyzed data will be offloaded to Azure Data Lake Storage Gen2 for long-term retention.
 
@@ -898,13 +918,13 @@ The analyzed data will be off loaded to Azure Data Lake Storage Gen2 for long-te
 
 **For storage and interactive analytics:**
 
-> Data Explorer
+> Data Explorer   💩
 
 **Query language:**
 
-> KQL
+> KQL   💩
 
-#### Question 31
+#### Question 31  💩
 
 You need to recommend an Azure SQL product and service tier that meets the following requirements: 
 
@@ -913,15 +933,15 @@ You need to recommend an Azure SQL product and service tier that meets the follo
 
 ![Alt Image Text](../images/az305_12_51.png "Body image")
 
-**Azure SQL product: A single Azure SQL database**   ✅
+**Azure SQL product: A single Azure SQL database**   ✅  💩
 
-**Service tier:  General Purpose**    ✅
+**Service tier:  General Purpose**    ✅  💩
 
 A single Azure SQL database: Provides the flexibility to scale compute resources independently. 
 
 **General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing**.
 
-#### Question 33
+#### Question 33  💩
 
 You have an Azure subscription. 
 
@@ -933,15 +953,15 @@ To answer, select the appropriate options in the answer area. NOTE: Each correct
 
 ![Alt Image Text](../images/az305_12_52.png "Body image")
 
-Only **block blobs** in a standard general-purpose **v2 storage account can be restored as part of a point-in-time restore operation**. 
+Only **block blobs** in a standard general-purpose **v2 storage account can be restored as part of a point-in-time restore operation**.    💩
 
 Append blobs, page blobs, and premium block blobs aren't restored.
 
-**Change feed is a prerequisite feature for Object Replication and Point-in-time restore for block blobs**
+**Change feed   💩 is a prerequisite feature for Object Replication and Point-in-time restore for block blobs**
 
 
 
-#### Question 34
+#### Question 34   💩
 
 Your company, named Contoso, Ltd., has an Azure subscription that contains the following resources:
 
@@ -969,25 +989,25 @@ NOTE: Each correct selection is worth one point
 ![Alt Image Text](../images/az305_12_53.png "Body image")
 
 
-**For ETL operations use Azure Data Factory and Azure Synapse Pipelines are based on Azure Data Factory.**   ✅
+**For ETL operations use Azure Data Factory and Azure Synapse Pipelines are based on Azure Data Factory.**   ✅  💩
 
-**For restricted access use Azure Data Share:**  ✅
-
-
+**For restricted access use Azure Data Share:**  ✅  💩
 
 
-#### Question 35
+
+
+#### Question 35   💩
 
 ![Alt Image Text](../images/az305_12_54.png "Body image")
 
-To implement the data warehouse: **An Azure Synapse Analytics dedicated SQL pool-** ✅
+To implement the data warehouse: **An Azure Synapse Analytics dedicated SQL pool-** ✅   💩
 
-To implement the serving layer:  **AAzure Analysis Services** ✅
+To implement the serving layer:  **AAzure Analysis Services** ✅   💩
 
 - Synapse Analytics - massive parallel 
 - processing Analysis Services - OLAP
 
-#### Question 36
+#### Question 36  💩
 
 You have an Azure subscription.
 
@@ -1001,9 +1021,9 @@ What should you use? To answer, select the appropriate options in the answer are
 
 ![Alt Image Text](../images/az305_12_541.png "Body image")
 
-**Service - A single Azure SOL database**
+**Service - A single Azure SOL database**   💩
 
-**Service tier - Hyperscale**
+**Service tier - Hyperscale**   💩
 
 **In Premium and Business Critical service tiers,** 
 
