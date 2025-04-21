@@ -2,7 +2,7 @@
 
 ## Topic 1
 
-#### Question 5 
+#### Question 5  💩
 
 You plan to deploy Azure Databricks to support a machine learning application. **Data engineers will mount an Azure Data Lake Storage account to the Databricks file system.**
 
@@ -18,7 +18,7 @@ What should you include in the recommendation? To answer, select the appropriate
 
 ![Alt Image Text](../images/az305_12_1.png "Body image")
 
-* **Premium**:  Premium Databricks SKU is required for credential passhtrough.
+* **Premium**:  Premium Databricks SKU is required for credential passhtrough. 💩
 * **Credential passthrough**
 
 #### Question 12
@@ -49,13 +49,13 @@ Now that you've prepared your environment and installed a connector, you're read
 
 **Application Proxy is a feature of Enterprise Applications, so yeah, you would need to register an Enterprise Application before enabling an Application Proxy for it.**
 
-1. Enterprise Application
-2. Application Proxy
+1. Application Proxy
+2. Enterprise Application
 3. Conditional Access
 
-####  Question 14
+####  Question 14  💩
 
-**Azure Network Watcher IP Flow Verify,** which allows you to detect traffic filtering issues at a VM level.
+**Azure Network Watcher IP Flow Verify,**  💩 which allows you to detect traffic filtering issues at a VM level.
 
 
 #### Question 19
@@ -77,11 +77,11 @@ What is the minimum number of objects required to deploy the application? To ans
 
 ![Alt Image Text](../images/az305_12_10.png "Body image")
 
-* **2 Mgmt Group** 
-* **2 BluePrint Def** 
-* **4 - Assignment for subcription**
+* **2 Mgmt Group**  💩
+* **2 BluePrint Def**  💩
+* **4 - Assignment for subcription** 
 
-Management groups can't span AAD tenant, so you need 2 management groups. 
+Management groups can't span AAD tenant, so you need 2 management groups.  💩
 
 **Blueprints definition can be saved within management group which, in turn, means you need 2 blueprint definitions.** 
 
@@ -125,7 +125,7 @@ Note: This diagnostic telemetry can be streamed to one of the following Azure re
 * **Azure Event Hubs**
 * **Azure Storage**
 
-#### Question 23
+#### Question 23 💩
 
 You plan to deploy an app that will use an Azure Storage account.
 
@@ -138,7 +138,7 @@ You need to deploy the storage account. The storage account must meet the follow
 What should you deploy?
 
 * A. files in a premium file share storage account
-* **B. <mark>blobs</mark> in a general purpose v2 storage account** ✅
+* **B. <mark>blobs</mark> in a general purpose v2 storage account** ✅ 💩
 * C. blobs in an Azure Data Lake Storage Gen2 account
 * D. files in a general purpose v2 storage account
 
@@ -279,7 +279,7 @@ What should you include in the recommendation?
 
 Azure Functions provide a Managed Identity and since the question is about Azure Functions not about the App being developed, the correct answer is B.
 
-#### Question 36
+#### Question 36 💩
 
 You have an Azure subscription that contains an Azure key vault named KV1 and a virtual machine named VM1. VM1 runs Windows Server 2022:
 Azure Edition.
@@ -294,11 +294,11 @@ What should you do? To answer, select the appropriate options in the answer area
 ![Alt Image Text](../images/az305_12_21.png "Body image")
 
 
-**<mark>1 Configure App1 to use Auth 2.0: Client credentials grant flows</mark>**  ✅
+**<mark>1 Configure App1 to use Auth 2.0: Client credentials grant flows</mark>**  ✅  💩
 
 2. **Configure App1 to use a REST API call to retrieve an authentication token from the**
 
-**Configure App1 to use a REST API call to retrieve an authentication token from the: <mark>Azure Instance Metadata (IMDS) endpoint</mark>**  ✅
+**Configure App1 to use a REST API call to retrieve an authentication token from the: <mark>Azure Instance Metadata (IMDS) endpoint</mark>**  ✅  💩
 
 #### Question 37
 
@@ -320,7 +320,7 @@ What should you recommend?
 
 It can be **Use Azure AD entitlement management to govern external users** ✅ OR **Configure Supported account types in the application registration and update the sign-in endpoint** ✅
 
-#### Question 38
+#### Question 38   💩
 
 You have an Azure subscription named Sub1 that is linked to an Azure AD tenant named contoso.com.
 
@@ -340,19 +340,19 @@ What should you include in the recommendation? To answer, select the appropriate
 
 ![Alt Image Text](../images/az305_12_22.png "Body image")
 
-* **Authentication: Application registration in Azure AD**
+* **Authentication: Application registration in Azure AD**  💩
 
-* **Authorization: Delegated permissions**
+* **Authorization: Delegated permissions**  💩
 
 **Important point here is that both apps are deployed to the same machines. So Managed identitied will violate the principle of least privelege. As a user/system managed identity will have to be assigned both read and write permission to user's calendar**
 
-#### Question 39
+#### Question 39  💩
 
 Y N Y
 
-- Since Group 1 is assigned VM contributor to MG1, it will be able to create a new VM in RG1. 
-- User 2 is not able to grant permission to Group 2 because it is just a member with contributor role. 
-- **Since Group 3 has Contributor role for the Tenant Root Group, User3 can create storage account in RG2**
+- Since Group 1 is assigned VM contributor to MG1, it will be able to create a new VM in RG1.    💩
+- User 2 is not able to grant permission to Group 2 because it is just a member with contributor role.   💩
+- **Since Group 3 has Contributor role for the Tenant Root Group, User3 can create storage account in RG2**  💩
 
 #### Question 42
 
@@ -364,13 +364,13 @@ What should you recommend using to store and access the key? To answer, select t
 
 ![Alt Image Text](../images/az305_12_27.png "Body image")
 
-* 1. Storage: c. Secret.
+* 1. **Storage: c. Secret**.  💩
 	* API keys are typically stored as secrets in Azure Key Vault. The key vault can store and manage secrets like API keys, passwords, or database connection strings.
-* 2. Access: b. A managed service identity (MSI).
+* 2. **Access: b. A managed service identity (MSI).**  💩
 
-**A managed service identity (MSI) is used to give your VM access to the key vault.** 
+**A managed service identity (MSI) is used to give your VM access to the key vault.**  
 
-**The advantage of using MSI is that you do not have to manage credentials yourself.**
+**The advantage of using MSI is that you do not have to manage credentials yourself.**  
 
 #### Question 43
 
@@ -389,7 +389,7 @@ Which blade should you use to modify each app registration?
 
 To allow App 2 to authenticate to App1, it is necessary to assign the appropriate permissions. These can be configured under "API Permissions"
 
-#### Question 44
+#### Question 44  💩
 
 You have an Azure subscription.
 
@@ -407,9 +407,7 @@ What is the **minimum number of Azure Monitor workspaces** required?
 
 - [X] A. **1**  ✅
 
-
-
-#### Question 45
+#### Question 45 💩
 
 **Case Study**
 
@@ -418,11 +416,11 @@ What is the **minimum number of Azure Monitor workspaces** required?
 
 **Minimum number of Azure AD tenants:**
 
-1. **1 AAD now Microsoft Entra ID**
+1. **1 AAD now Microsoft Entra ID** 💩
 
 **Minimum number of conditional access policies to create:**
 
-2. **2 Conditional access policies** : 
+2. **2 Conditional access policies** :   💩
 
 	- Conditional Access Policy for Admin Access to the Azure Portal 
 	- Conditional Access Policy for Testing WebApp1 Updates
@@ -433,7 +431,7 @@ What is the **minimum number of Azure Monitor workspaces** required?
 
 <mark>This is an updated version, in the old questions the right answers was "Access Review” , but this options is not available here</mark>
 
-#### Question 47
+#### Question 47 💩
 
 You have an Azure subscription that contains 50 Azure SQL databases.
 
@@ -449,11 +447,11 @@ NOTE: Each correct selection is worth one point.
 
 * **Set available effects to:**
 
-	* **Box 1: DeployIfNotExists**
+	* **Box 1: DeployIfNotExists**  💩
 
 * **Include in the definition:**
 
-	* **Box 2: The role-based access control (RABC) roles required to perform the remediation task**
+	* **Box 2: The role-based access control (RABC) roles required to perform the remediation task** 💩
 
 #### Question 49
 
@@ -474,8 +472,8 @@ Which resource should you modify, and which modification should you perform? To 
 
 ![Alt Image Text](../images/az305_12_32.png "Body image")
 
-* Resouce: **workspace1**
-* Modification: **Change to a commitment pricing tier.**
+* Resouce: **workspace1**  💩
+* Modification: **Change to a commitment pricing tier.**  💩
 
 #### Question 50
 
@@ -490,7 +488,7 @@ NOTE: Each correct selection is worth one point.
 - [x] A. **budgets**  ✅
 - [X] B. **resource tags**  ✅
 
-#### Question 51
+#### Question 51 💩
 
 You have an Azure subscription that contains multiple storage accounts.
 
@@ -498,23 +496,22 @@ You assign Azure Policy definitions to the storage accounts.
 
 You need to recommend a solution to meet the following requirements:
 
-- Trigger on-demand Azure Policy compliance scans.
+- Trigger on-demand Azure Policy compliance scans. 
 - **Raise Azure Monitor non-compliance alerts by querying logs collected by Log Analytics.**
 
 What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
 
 ![Alt Image Text](../images/az305_12_33.png "Body image")
 
-**box1: CLI is correct.** 
+**box1: CLI is correct.**   💩
 
-**box2: I first set the diagnostic setting on activity log so that all policy related messages are sent to log analytic workspace.**
+**box2: Log analytic workspace.** 💩
 
-#### Question 52
+#### Question 52 💩
 
 You have an Azure subscription.
 
-You plan to deploy five storage accounts that will store block blobs and five storage accounts that will host file shares. The file shares will be
-accessed by using the SMB protocol
+You plan to deploy five storage accounts that will store block blobs and five storage accounts that will host file shares. The file shares will be accessed by using the SMB protocol
 
 You need to recommend an access authorization solution for the storage accounts. The solution must meet the following requirements:
 
@@ -522,11 +519,11 @@ You need to recommend an access authorization solution for the storage accounts.
 - Prevent the use of shared keys.
 - Whenever possible, support time-limited access.
 
-**1. For the blobs - a user delegation SAS only**
+**1. For the blobs - a user delegation SAS only**  💩
 
-**2. For the file shares - Azure AD credentials**
+**2. For the file shares - Azure AD credentials** 💩
 
-#### Question 53
+#### Question 53  💩
 
 You have an Azure subscription. The subscription contains 100 virtual machines that run Windows Server 2022 and have the Azure Monitor Agent installed.
 
@@ -541,10 +538,10 @@ NOTE: Each correct selection is worth one point
 
 ![Alt Image Text](../images/az305_12_34.png "Body image")
 
-- **Box1 -  To forward the logs: - Azure Monitor Data collection**  ✅
-- **Box2 - To transform the logs and store the data:- KQL**    ✅
+- **Box1 -  To forward the logs: - Azure Monitor Data collection**  ✅  💩
+- **Box2 - To transform the logs and store the data:- KQL**    ✅  💩
 
-#### Question 55
+#### Question 55  💩
 
 - Collects event logs from multiple subscriptions 
 - Supports the use of data collection rules (DCRs) to define  which events to collect
@@ -552,9 +549,10 @@ NOTE: Each correct selection is worth one point
 ![Alt Image Text](../images/az305_12_341.png "Body image")
 
 **To collect the event logs:**
-
-1. **Azure Lighthouse**:  To send data across tenants, you must first enable Azure Lighthouse 
-2. **Azure Monitor Agent**
+ 
+1. **Azure Lighthouse**:    💩
+	* To send data across tenants, you must first enable Azure Lighthouse 
+2. **Azure Monitor Agent**  💩
 
 ## Topic 2
 
