@@ -861,7 +861,9 @@ You need to recommend a solution for the Azure Database for MySQL Flexible Serve
 * The databases must be accessible if a datacenter fails. 
 * Costs must be minimized.
 
-**B. General Purpose**  ✅  💩
+- [ ] A. Burstable
+- [X] B. **General Purpose** ✅ 💩
+- [ ] C. Memory Optimized
 
 #### Question 25
 
@@ -1014,7 +1016,7 @@ You have an Azure subscription.
 You need to deploy a relational database. The solution must meet the following requirements:
 
 - Support multiple read-only replicas.
-- Automatically load balance read-only requests across all the read-only replicas.
+- Automatically load balance read-only requests **across all the read-only replicas.**
 - Minimize administrative effort
 
 What should you use? To answer, select the appropriate options in the answer area.
