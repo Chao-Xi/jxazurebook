@@ -453,7 +453,7 @@ NOTE: Each correct selection is worth one point.
 
 	* **Box 2: The role-based access control (RABC) roles required to perform the remediation task** 💩
 
-#### Question 49
+#### Question 49  💩
 
 You have an Azure subscription that contains the resources shown in the following table:
 
@@ -902,7 +902,7 @@ You need to recommend a solution that meets the following requirements:
 
 **But ACL is supported by Azure Data Lake storage, not supported by Azure Blob storage.**
  
-#### Question 30   💩
+#### Question 30   💩💩
 
 You are designing a storage solution that will ingest, store, and analyze petabytes (PBs) of structured, semi-structured, and unstructured text data. The analyzed data will be offloaded to Azure Data Lake Storage Gen2 for long-term retention.
 
@@ -926,7 +926,7 @@ The analyzed data will be off loaded to Azure Data Lake Storage Gen2 for long-te
 
 > KQL   💩
 
-#### Question 31  💩
+#### Question 31  💩💩
 
 You need to recommend an Azure SQL product and service tier that meets the following requirements: 
 
@@ -963,7 +963,7 @@ Append blobs, page blobs, and premium block blobs aren't restored.
 
 
 
-#### Question 34   💩
+#### Question 34   💩💩
 
 Your company, named Contoso, Ltd., has an Azure subscription that contains the following resources:
 
@@ -998,7 +998,7 @@ NOTE: Each correct selection is worth one point
 
 
 
-#### Question 35   💩
+#### Question 35   💩💩
 
 ![Alt Image Text](../images/az305_12_54.png "Body image")
 
@@ -1009,7 +1009,7 @@ To implement the serving layer:  **AAzure Analysis Services** ✅   💩
 - Synapse Analytics - massive parallel 
 - processing Analysis Services - OLAP
 
-#### Question 36  💩
+#### Question 36  💩💩
 
 You have an Azure subscription.
 
