@@ -1210,7 +1210,7 @@ The solution must minimize downtime in the event of a **failover to a paired reg
 * **C. Implement Geo-redundant backup**.   ✅  💩
 
 
-####  Question 20   💩
+####  Question 20   💩💩
 
 You need to recommend a load balancing solution that will distribute incoming traffic for VMSS1 across NVA1 and NVA2. The solution must minimize administrative effort.
 
@@ -1219,7 +1219,7 @@ You need to recommend a load balancing solution that will distribute incoming tr
 **A. Gateway Load Balancer seems to be correct as it balances the load between two NVAs internally.**
 
 
-####  Question 21
+####  Question 21  💩💩
 
 You have the Azure subscriptions shown in the following table.
 
@@ -1533,7 +1533,7 @@ Which type of resource should you recommend for the integration component?
 
 Migrate on-premises SSIS workloads to SSIS using ADF (Azure Data Factory).
 
-#### Question 31  💩
+#### Question 30  💩
 
 **You are designing a solution that will use Azure Data Factory to transform the data files, and then load the files to Azure Data Lake Storage.**
 
@@ -1543,7 +1543,7 @@ What should you deploy on VM1 to support the design?
 
 **The integration runtime (IR) is the compute infrastructure that Azure Data Factory and Synapse pipelines use to provide data-integration capabilities across different network environments.**
 
-#### Question 31
+#### Question 31  💩
 
 You need to implement SAML single sign-on (SSO) and enforce multi-factor authentication (MFA) when **users attempt to access the application from an unknown location.**
 
@@ -1910,11 +1910,11 @@ You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 - Traffic from the Azure Synapse workspace to the Azure Cosmos DB account **must NOT be routed over the internet.**
 - Implementation effort must be minimized.
 
-**Box 1: Configure a dedicated managed virtual network**
+**Box 1: Configure a dedicated managed virtual network** 💩
 
-**Box 2: Managed private endpoints**
+**Box 2: Managed private endpoints** 💩
 
-#### Question 94
+#### Question 94 💩
 
 You have an Azure subscription that contains an Azure Cosmos DB for NoSQL account named account1 and an Azure Synapse Analytics workspace named Workspace1. The account1 account contains a container named Contained that has the analytical store enabled.
 
@@ -1922,7 +1922,7 @@ You need to recommend a solution that will process the data stored in Contained 
 
 Which pool in Workspace1 should you use?
 
-- **A. Apache Spark**   ✅
+- **A. Apache Spark**   ✅ 💩
 
 Apache Spark: Spark pools in Azure Synapse Analytics provide a distributed data processing framework capable of processing large volumes of data in near-real-time.
 
