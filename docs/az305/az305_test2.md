@@ -1347,7 +1347,7 @@ Azure Active Directory Domain Services (Azure AD DS) provides managed domain ser
 
 You can use Azure AD DS and sync identities needed from Azure AD to Azure AD DS to use legacy protocols like LDAP.
 
-#### Question #4
+#### Question 4
 
 You need to design a solution that will execute custom C# code in response to an event routed to **Azure Event Grid**. The solution must meet the following requirements:
 
@@ -1363,7 +1363,7 @@ What should you include in the solution?
 
 **Azure Functions in the Consumption plan does not support virtual network integration, which is necessary for accessing the private IP address of the SQL Server instance**. 
 
-#### Question #6  *** 
+#### Question 6  💩
 
 You have an Azure subscription named Subscription1 that is linked to a hybrid Azure Active Directory (Azure AD) tenant. 
 
@@ -1380,13 +1380,13 @@ What should you recommend deploying on-premises and in Azure? To answer, select 
 
 **Box 2: A connection gateway resource**   ✅
 
-#### Question 7  
+#### Question 7   💩
 
-- The API is available to partners over the internet.  ✅  Yes
+- The API is available to partners over the internet.  ✅  Yes  
 - The APIM instance can access real-time data from VM1.   ✅  Yes
 - A VPN gateway is required for partner access.   No
 
-#### Question 8  ***
+#### Question 8  💩
 
 Your company has an existing web app that runs on Azure virtual machines. 
 
@@ -1515,7 +1515,7 @@ From the data factory:  **Box 2: Create a pipeline.**  ✅
 
 <mark>***Virtual Nodes** for Linux</mark>
 
-#### Question 29 *** 
+#### Question 29 💩
 
 * ✑ **An integration component will process the message, and then trigger either Function1 or Function2 depending on the type of order.** 
 
