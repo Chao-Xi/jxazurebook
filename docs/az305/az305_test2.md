@@ -888,7 +888,7 @@ You need to identify which type of Azure storage must be provisioned to support 
 
 2. **Data format: Avro**
 
-#### Question 30
+#### Question 30 💩
 
 You need to recommend a solution that meets the following requirements: 
 
@@ -1754,7 +1754,7 @@ You need to deploy 50 databases. The solution must meet the following requiremen
 
 **Deployment option: Box 2: An Azure SQL Database elastic pool**  ✅
 
-#### Question 63
+#### Question 63 💩
 
 You plan to use Azure Databricks to transform and load data from App1 to an Azure Synapse Analytics instance.
 
@@ -1986,7 +1986,7 @@ What should you include in the recommendation? To answer, select the appropriate
 
 **One for VNet1 and VNet 2, since they are peered. And one for VNet3. It isolated from VNet1 and VNet2.**
 
-#### Question 99
+#### Question 99 💩 
 
 You have 100 Azure Storage accounts. 
 
