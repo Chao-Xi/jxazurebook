@@ -519,7 +519,7 @@ You need to recommend an access authorization solution for the storage accounts.
 - Prevent the use of shared keys.
 - Whenever possible, support time-limited access.
 
-**1. For the blobs - a user delegation SAS only**  💩
+**1. For the blobs - <mark>a user delegation</mark>a SAS only**  💩
 
 **2. For the file shares - Azure AD credentials** 💩
 
