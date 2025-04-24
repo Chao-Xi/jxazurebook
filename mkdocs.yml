@@ -14,6 +14,7 @@ nav:
     - '2 大模型开发基础：OpenAIEmbedding': 'chap1_ba/2embedding_openai.md'
     - '3 大模型实战--OpenAI开发': 'chap1_ba/3OpenaiModels.md'
     - '4 基于 ChatGPT 开发智能翻译助手': 'chap1_ba/4chatgpt_translate.md'
+    - '5 产品经理的 5 个 AI 知识点：LLM、Agent、RAG、向量数据库、知识图谱': 'chap1_ba/5AI_PM.md'
   - 'AWS AI 应用':
     - '1 AWS AI 词汇表': 'chap2_aws/1aws_term.md'
     - '2 使用 LangChain搭建基于Amazon DynamoDB 的大语言模型应用': 'chap2_aws/2langchain_dynamodb.md'
