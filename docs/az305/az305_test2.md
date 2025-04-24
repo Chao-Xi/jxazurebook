@@ -941,7 +941,7 @@ You need to recommend an Azure SQL product and service tier that meets the follo
 
 A single Azure SQL database: Provides the flexibility to scale compute resources independently. 
 
-**General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing**.
+**<mark>General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing</mark>**.
 
 #### Question 33  💩
 
@@ -1509,7 +1509,7 @@ From Server1:  **Box 1: Install a self-hosted integration runtime.**  ✅
 
 From the data factory:  **Box 2: Create a pipeline.**  ✅
 
-#### Question 28
+#### Question 28 💩
 
 <mark>**cluster autoscaler** for windows</mark>
 
@@ -1720,7 +1720,7 @@ You need to recommend a storage solution to ensure that updated container images
 
 - [X] **B. Premium SKU Azure Container Registry**   ✅
 
-#### Question #60
+#### Question #60 💩
 
 You have an Azure Active Directory (Azure AD) tenant.
 
@@ -1732,7 +1732,7 @@ What should you include in the recommendation?
 
 **D. a resource token and an Access control (IAM) role assignment** ✅
 
-#### Question #61  
+#### Question #61  💩
 
 - ✑ The storage must support 1 PB of data.
 - ✑ The data must be stored in blob storage.
@@ -1865,7 +1865,7 @@ Which hosting plan should you recommend?
 
 - [X] **B. Azure App Service**  ✅
 
-#### Question 91
+#### Question 91 💩
 
 You have an Azure App Service web app named Webapp1 that connects to an Azure SQL database named DB1. Webapp1 and DB1 are deployed to
 the East US Azure region.
@@ -2095,7 +2095,7 @@ The solution must meet the security and compliance requirements. What should you
 
 One tenant with 10 subscriptions and one tenant with five subscriptions. 
 
-#### Question 7
+#### Question 7 💩 
 
 **You need to configure an Azure policy to ensure that the Azure SQL databases have Transparent Data Encryption (TDE) enabled.** The solution must meet the security and compliance requirements
 
@@ -2259,7 +2259,7 @@ App1 will only be accessible from the internet. App1 has the following connectio
 
 **Overview - Fabrikam, Inc.** is an engineering company that has offices throughout Europe. The company has a main office in London and three branch offices in Amsterdam, Berlin, and Rome.
 
-#### Question #1
+#### Question #1  💩 
 
 You are evaluating the components of the migration to Azure that require you to provision an Azure Storage account. For each of the following statements,
 
