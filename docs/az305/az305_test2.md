@@ -1057,7 +1057,7 @@ The solution must provide the highest-level of resiliency for the selected stora
 
  Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.
 
-#### Question 7
+#### Question 7 💩💩
 
 You need to recommend an Azure Storage account configuration for two applications named Application1 and Application2. The configuration must meet the following requirements:
 
@@ -1239,10 +1239,9 @@ NOTE: Each correct selection is worth one point.
 
 **A Resource Guard**   ✅
 
-####  Question 22
+####  Question 22   💩💩
 
-You plan to deploy a containerized web-app that will be hosted in five Azure Kubernetes Service (AKS) clusters. Each cluster will be hosted in a
-different Azure region.
+You plan to deploy a containerized web-app that will be hosted in five Azure Kubernetes Service (AKS) clusters. Each cluster will be hosted in a different Azure region.
 
 You need to provide access to the app from the internet. The solution must meet the following requirements:
 
