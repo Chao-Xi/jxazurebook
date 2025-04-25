@@ -786,8 +786,7 @@ The Container access policy is indeed the place to configure Azure's Immutable B
 
 You are designing a data storage solution to support reporting.
 
-The solution will ingest high volumes of data in the JSON format by using Azure Event Hubs. As the data arrives, Event Hubs will write the data to
-storage. The solution must meet the following requirements:
+The solution will ingest high volumes of data in the **JSON format by using Azure Event Hubs.** As the data arrives, Event Hubs will write the data to storage. The solution must meet the following requirements:
 
 - ✑ Organize data in directories by date and time.
 - ✑ Allow stored data to be queried directly, transformed into summarized tables, and then stored in a data warehouse.
@@ -810,9 +809,7 @@ You need to recommend a service to **store and query the data**.
 * A. Azure Table Storage -> Throughput: scalability limit of 20,000 operations/s. -> Not enough for this question 
 * **B. Azure Event Grid -> It is only a broker, not a storage solution**
 
-#### Question 22
-
-#### Question 21
+#### Question 21  💩
 
 You are designing a data analytics solution that will use Azure Synapse and Azure Data Lake Storage Gen2.
 
@@ -826,8 +823,8 @@ What should you recommend for each requirement? To answer, select the appropriat
 
 ![Alt Image Text](../images/az305_12_45.png "Body image")
 
-- **Dedicated SQL pool: It's best for big and complex tasks.**   ✅
-- **SERVERLESS APACHE SPARK POOL**  ✅
+- **Dedicated SQL pool: It's best for big and complex tasks.**   ✅ 
+- **SERVERLESS APACHE SPARK POOL**  ✅  💩
 
 - Ingest data from **Data Lake Storage into hash-distributed tables**.
 
