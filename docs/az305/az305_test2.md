@@ -885,7 +885,7 @@ You need to identify which type of Azure storage must be provisioned to support 
 
 2. **Data format: Avro**
 
-#### Question 30 💩
+#### Question 30 💩💩💩
 
 You need to recommend a solution that meets the following requirements: 
 
@@ -894,6 +894,8 @@ You need to recommend a solution that meets the following requirements:
 * Supports access control list (ACL)-based Azure AD permissions
 
 **B. Azure Data Lake Storage** ✅  💩
+
+A. Azure Files /  B. Azure Data Lake Storage / C. Azure NetApp Files  / D. Azure Blob Storage
 
 **In terms of supporting immutable storage, both Azure Data Lake storage and Azure Blob storage are correct.** 
 
@@ -923,7 +925,7 @@ The analyzed data will be off loaded to Azure Data Lake Storage Gen2 for long-te
 
 > KQL   💩
 
-#### Question 31  💩💩
+#### Question 31  💩💩💩
 
 You need to recommend an Azure SQL product and service tier that meets the following requirements: 
 
@@ -995,7 +997,7 @@ NOTE: Each correct selection is worth one point
 
 
 
-#### Question 35   💩💩
+#### Question 35   💩💩💩
 
 ![Alt Image Text](../images/az305_12_54.png "Body image")
 
@@ -1006,7 +1008,7 @@ To implement the serving layer:  **AAzure Analysis Services** ✅   💩
 - Synapse Analytics - massive parallel 
 - processing Analysis Services - OLAP
 
-#### Question 36  💩💩
+#### Question 36  💩💩💩
 
 You have an Azure subscription.
 
