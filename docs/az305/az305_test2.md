@@ -728,7 +728,7 @@ Each tool may be used once, more than once, or not at all. You may need to drag 
 
 **Box 2: Azure Cosmos DB Data Migration Tool** ✅    💩
  
-#### Question 13
+#### Question 13 💩 💩
 
 You need to recommend an automated process to upload the data to Azure SQL Database every month.
 
@@ -1402,13 +1402,13 @@ Each service may be used once, more than once, or not at all.
 
 **Box 2: Web Application Firewall (WAF)**   ✅
 
-#### Question 9
+#### Question 9   💩 💩 💩 💩
 
 * ✑ Ingress access to the microservices must be restricted to a single private IP address and protected **by using mutual TLS authentication**.
 * ✑ The number of incoming microservice calls must be **rate-limited**.
 * ✑ Costs must be minimized.
 
-**D. Azure API Management Premium tier with virtual network connection**   ✅
+**D. Azure API Management Premium tier with virtual network connection**    💩 ✅
 
 * A. Azure App Gateway with Azure Web Application Firewall (WAF)  
     * **No rate limited**
