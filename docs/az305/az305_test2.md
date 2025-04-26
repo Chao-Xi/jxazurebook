@@ -2,7 +2,7 @@
 
 ## Topic 1
 
-#### Question 5  💩
+#### Question 5 
 
 You plan to deploy Azure Databricks to support a machine learning application. **Data engineers will mount an Azure Data Lake Storage account to the Databricks file system.**
 
@@ -53,7 +53,7 @@ Now that you've prepared your environment and installed a connector, you're read
 2. Enterprise Application
 3. Conditional Access
 
-####  Question 14  💩
+####  Question 14 
 
 **Azure Network Watcher IP Flow Verify,**  💩 which allows you to detect traffic filtering issues at a VM level.
 
@@ -102,7 +102,7 @@ What should you include in the design? To answer, select the appropriate options
 ![Alt Image Text](../images/az305_12_11.png "Body image")
 
 * **Azure Policy effect to use:  Modify**
-* **Azure Active Directory (Azure AD) object and role-based access control (RBAC) role to use for the remediation tasks: A managed identity with the Contributor role**
+* **Azure Active Directory (Azure AD) object and role-based access control (RBAC) role to use for the remediation tasks: A managed identity with the Contributor role**  💩
 
 #### Question 21
 
@@ -125,7 +125,7 @@ Note: This diagnostic telemetry can be streamed to one of the following Azure re
 * **Azure Event Hubs**
 * **Azure Storage**
 
-#### Question 23 💩
+#### Question 23 
 
 You plan to deploy an app that will use an Azure Storage account.
 
@@ -230,7 +230,7 @@ What should you include in the solution? To answer, select the appropriate optio
 
 **A conditional Access policy that has Cloud Apps assignment set to Azure Windows VM Sign-In** ✅
 
-#### Question 31
+#### Question 31 💩
 
 D. **In the Azure AD tenant of Contoso, create guest accounts for the Fabnkam developers**.   ✅
 
@@ -320,7 +320,7 @@ What should you recommend?
 
 It can be **Use Azure AD entitlement management to govern external users** ✅ OR **Configure Supported account types in the application registration and update the sign-in endpoint** ✅
 
-#### Question 38   💩
+#### Question 38   
 
 You have an Azure subscription named Sub1 that is linked to an Azure AD tenant named contoso.com.
 
@@ -346,7 +346,7 @@ What should you include in the recommendation? To answer, select the appropriate
 
 **Important point here is that both apps are deployed to the same machines. So Managed identitied will violate the principle of least privelege. As a user/system managed identity will have to be assigned both read and write permission to user's calendar**
 
-#### Question 39  💩
+#### Question 39 
 
 Y N Y
 
@@ -389,7 +389,7 @@ Which blade should you use to modify each app registration?
 
 To allow App 2 to authenticate to App1, it is necessary to assign the appropriate permissions. These can be configured under "API Permissions"
 
-#### Question 44  💩
+#### Question 44 
 
 You have an Azure subscription.
 
@@ -431,7 +431,7 @@ What is the **minimum number of Azure Monitor workspaces** required?
 
 <mark>This is an updated version, in the old questions the right answers was "Access Review” , but this options is not available here</mark>
 
-#### Question 47 💩
+#### Question 47
 
 You have an Azure subscription that contains 50 Azure SQL databases.
 
@@ -453,7 +453,7 @@ NOTE: Each correct selection is worth one point.
 
 	* **Box 2: The role-based access control (RABC) roles required to perform the remediation task** 💩
 
-#### Question 49  💩
+#### Question 49 
 
 You have an Azure subscription that contains the resources shown in the following table:
 
@@ -488,7 +488,7 @@ NOTE: Each correct selection is worth one point.
 - [x] A. **budgets**  ✅
 - [X] B. **resource tags**  ✅
 
-#### Question 51 💩
+#### Question 51 💩💩
 
 You have an Azure subscription that contains multiple storage accounts.
 
@@ -505,9 +505,9 @@ What should you recommend for each requirement? To answer, select the appropriat
 
 **box1: CLI is correct.**   💩
 
-**box2: Log analytic workspace.** 💩
+**box2: Log analytic workspace.** 💩💩💩
 
-#### Question 52 💩
+#### Question 52 
 
 You have an Azure subscription.
 
@@ -523,7 +523,7 @@ You need to recommend an access authorization solution for the storage accounts.
 
 **2. For the file shares - Azure AD credentials** 💩
 
-#### Question 53  💩
+#### Question 53  💩💩💩
 
 You have an Azure subscription. The subscription contains 100 virtual machines that run Windows Server 2022 and have the Azure Monitor Agent installed.
 
@@ -541,7 +541,7 @@ NOTE: Each correct selection is worth one point
 - **Box1 -  To forward the logs: - Azure Monitor Data collection**  ✅  💩
 - **Box2 - To transform the logs and store the data:- KQL**    ✅  💩
 
-#### Question 55  💩
+#### Question 55 
 
 - Collects event logs from multiple subscriptions 
 - Supports the use of data collection rules (DCRs) to define  which events to collect
