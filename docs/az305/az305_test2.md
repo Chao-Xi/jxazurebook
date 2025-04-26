@@ -1599,7 +1599,7 @@ You need to recommend a solution to continually copy the performance data to the
 
 **A. Azure Data Factory**
 
-#### Question 43
+#### Question 43 💩
 
 **mission critical application => D. Azure Cosmos DB** ✅
 
@@ -1613,7 +1613,7 @@ You need to recommend a solution to continually copy the performance data to the
 * C. premium page blobs 
 * D. premium file shares
 
-#### Question 45 
+#### Question 45  💩
 
 You need to recommend a data storage solution that meets the following requirements:
 
