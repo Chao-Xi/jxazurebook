@@ -1479,7 +1479,7 @@ You use Azure Front Door to provide access to the app.  **A. Yes** ✅
 
 **The automatic routing configuration following a failover must be handled by using:  Border Gateway Protocol (BGP)**
 
-#### Question 21
+#### Question 21  💩
 
 * **Storage:Standar V2 Gen** ✅ 
 * **Data Redundancy: GRS (Geo-Redundant Storage)** ✅
@@ -1593,22 +1593,24 @@ Box 1 **should be "configure vm1 to forward contoso.com to the azure provided dn
 
 * **Azure Service Fabric enables you to create Service Fabric clusters on premises or in other clouds.** 
 
-#### Question 42
+#### Question 42 💩
 
 You need to recommend a solution to continually copy the performance data to the Azure SQL database.
 
 **A. Azure Data Factory**
 
+> D. Azure Database Migration Service (❌)
+
 #### Question 43 💩
 
 **mission critical application => D. Azure Cosmos DB** ✅
 
-#### Question 44 💩
+#### Question 44 💩 💩
 
 * ✑ Support at least 500 requests per second. 
 * ✑ Support a large image, video, and audio streams. 
 
-* A. standard general-purpose v2 
+* A. standard general-purpose v2  (❌)
 * **B. premium block blobs**   ✅
 * C. premium page blobs 
 * D. premium file shares
@@ -1741,7 +1743,7 @@ What should you include in the recommendation?
 
 * Default maximum storage account capacity: 5 PiB
 
-#### Question #61   💩
+#### Question #61   💩💩💩💩
 
 You need to deploy 50 databases. The solution must meet the following requirements:
 
@@ -1786,7 +1788,9 @@ You need to recommend a networking solution for the new Azure infrastructure
 
 #### Question 72  💩
 
-You need to configure the authentication method that will be used by the app to access the workspace. The solution must minimize the administrative effort associated with staff turnover and credential management.
+**You need to configure the authentication method that will be used by the app to access the workspace.**
+
+The solution must minimize the administrative effort associated with staff turnover and credential management.
 
 * **B. a service principal**  ✅
 
@@ -1820,6 +1824,28 @@ Which hosting plan should you recommend?
 * C. App Service 
 * **D. Premium**  ✅
 
+#### Question 82 💩💩
+
+You company has offices in New York City, Sydney, Paris, and Johannesburg.
+
+**The company has an Azure subscription.**
+
+You plan to deploy a new Azure networking solution that meets the following requirements:
+
+- Connects to ExpressRoute circuits in the Azure regions of East US, Southeast Asia, North Europe, and South Africa
+- Minimizes latency by supporting connection in three regions
+- Supports Site-to-site VPN connections
+- Minimizes costs
+
+You need to identify the minimum number of Azure Virtual WAN hubs that you must deploy, and which virtual WAN SKU to use.
+
+What should you identify? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/az305_12_107.png "Body image")
+
+**Deploy at least three Azure Virtual WAN hubs in order to minimize latency by supporting connections in three regions.**
+
+**As for the SKU, the Basic SKU does not support ExpressRoute or site-to-site VPN connections, so you would need to use the Standard SKU to meet all the requirements.**
 
 #### Question 83
 
@@ -1879,7 +1905,7 @@ You need to ensure that all the traffic between Webapp1 and DB1 is sent via a pr
 
 Configure name resolution to use a private DNS zone. This is necessary for the web app to work with Azure DNS private zones.
 
-#### Question 92  💩 
+#### Question 92  💩 💩 💩 
 
 You need to ensure that the remote users can access App1 without using a VPN. The solution must meet the following requirements:
 
@@ -1900,7 +1926,7 @@ You need to ensure that the AKS1 APIs are accessible to APIM1. The solution must
 
 - [X] **D. Deploy an ingress controller to AKS1.**  ✅
 
-#### Question 94   💩 
+#### Question 94   💩💩💩   
 
 You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 
@@ -1924,7 +1950,7 @@ Which pool in Workspace1 should you use?
 
 Apache Spark: Spark pools in Azure Synapse Analytics provide a distributed data processing framework capable of processing large volumes of data in near-real-time.
 
-#### Question 96  💩 
+#### Question 96  💩💩💩💩  
 
 You have an on-premises datacenter named Site1. Site1 contains a VMware vSphere cluster named Cluster1 that hosts 100 virtual machines. Cluster1 is managed by using VMware vCenter.
 
@@ -1937,9 +1963,9 @@ You need to identify which resources are required to run the virtual machines in
 
 ![Alt Image Text](../images/az305_12_961.png "Body image")
 
-**Sub1: An Azure VMware Solution private cloud**
+**Sub1: Azure Migrate project**
 
-**Cluster1: An Azure Migrate project**
+**Cluster1: An Azure Migrate appliance**
 
 #### Question 97
 
