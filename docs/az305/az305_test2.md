@@ -279,7 +279,7 @@ What should you include in the recommendation?
 
 Azure Functions provide a Managed Identity and since the question is about Azure Functions not about the App being developed, the correct answer is B.
 
-#### Question 36 💩
+#### Question 36
 
 You have an Azure subscription that contains an Azure key vault named KV1 and a virtual machine named VM1. VM1 runs Windows Server 2022:
 Azure Edition.
@@ -354,7 +354,7 @@ Y N Y
 - User 2 is not able to grant permission to Group 2 because it is just a member with contributor role.   💩
 - **Since Group 3 has Contributor role for the Tenant Root Group, User3 can create storage account in RG2**  💩
 
-#### Question 42  💩
+#### Question 42 
 
 You are designing an app that will be hosted on Azure virtual machines that run Ubuntu. **The app will use a third-party email service to send email messages to users. The third-party email service requires that the app authenticate by using an API key.**
 
@@ -507,7 +507,7 @@ What should you recommend for each requirement? To answer, select the appropriat
 
 **box2: Log analytic workspace.** 💩💩💩
 
-#### Question 52 
+#### Question 52  💩💩
 
 You have an Azure subscription.
 
