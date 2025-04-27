@@ -866,7 +866,7 @@ The solution must support Hadoop Distributed File System (HDFS)
 - **cosmos for the multi writer**
 - postgre is not good at reading
 
-#### Question 24   💩
+#### Question 24  
 
 You need to recommend a solution for the Azure Database for MySQL Flexible Server configuration.
 
@@ -885,7 +885,7 @@ You need to recommend a solution for the Azure Database for MySQL Flexible Serve
 
 **B. PostgreSQL**   ✅
 
-#### Question 28  💩
+#### Question 28 
 
 You have an app that generates 50,000 events daily
 
@@ -957,7 +957,7 @@ A single Azure SQL database: Provides the flexibility to scale compute resources
 
 **<mark>General Purpose: This service tier supports serverless configuration, which automatically scales compute resources based on demand and provide per-second billing</mark>**.
 
-#### Question 33  💩
+#### Question 33 
 
 You have an Azure subscription. 
 
