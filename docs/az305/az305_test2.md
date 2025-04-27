@@ -1872,7 +1872,7 @@ What should you identify? To answer, select the appropriate options in the answe
   - [X] **A. Configure the horizontal pod autoscaler.** ✅
   - [x] **E. Install Kubernetes-based Event Driven Autoscaling (KEDA).** ✅
 
-#### Question 85   💩
+#### Question 85
 
 **You need to migrate the database to an Azure SQL managed instance. The solution must minimize downtime.**
 
@@ -1953,6 +1953,8 @@ You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 - Traffic from the Azure Synapse workspace to the Azure Cosmos DB account **must NOT be routed over the internet.**
 - Implementation effort must be minimized.
 
+![Alt Image Text](../images/az305_12_112.png "Body image")
+
 **Box 1: Configure a dedicated managed virtual network** 💩
 
 **Box 2: Managed private endpoints** 💩
@@ -2029,7 +2031,7 @@ What should you include in the recommendation? To answer, select the appropriate
 
 **One for VNet1 and VNet 2, since they are peered. And one for VNet3. It isolated from VNet1 and VNet2.**
 
-#### Question 99 💩 
+#### Question 99  
 
 You have 100 Azure Storage accounts. 
 
