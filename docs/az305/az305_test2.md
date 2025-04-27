@@ -1929,6 +1929,8 @@ You need to ensure that the remote users can access App1 without using a VPN. Th
 - Ensure that the users authenticate by using Azure Multi-Factor Authentication (MFA).
 - Minimize administrative effort.
 
+![Alt Image Text](../images/az305_12_111.png "Body image")
+
 - **box1: An enterprise app (required for MFA in conditional access)**
 - **box2: azure AD app proxy**
 	-  **A server that runs Windows Server and has the Azure AD Application Proxy connector installed**
