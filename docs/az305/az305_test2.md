@@ -2126,7 +2126,7 @@ The solution must meet the security and compliance requirements. What should you
 * C. a service endpoint that has a service endpoint policy 
 * **D. a private endpoint**  ✅
 
-#### Question 6  💩 
+#### Question 6  💩 ❌ 
 
 **You need to implement the Azure RBAC role assignments for the Network Contributor role**. The solution must meet the authentication and authorization requirements. What is the **minimum number of assignments** that you must use?
 
@@ -2154,7 +2154,7 @@ Which three actions should you perform in sequence?
 
 **Step 3: Invoke a remediation task.** ✅
 
-#### Question 8  💩 
+#### Question 8  💩❌ 
 
 You plan to migrate DB1 and DB2 to Azure. 
 
@@ -2168,7 +2168,7 @@ You need to ensure that the Azure database and the service tier meet the resilie
 
 **Box 2: Business Critical** ✅
 
-#### Question 9
+#### Question 9 
 
 How should the migrated databases DB1 and DB2 be implemented in Azure?
 
@@ -2335,7 +2335,7 @@ What should you include in the identity management strategy to support the plann
 
 Directory synchronization between Azure Active Directory (Azure AD) and corp.fabrikam.com must not be affected by a link failure between Azure and the on- premises network. (This requires domain controllers in Azure).
 
-#### Question 3   💩 
+#### Question 3   💩 ❌
 
 **To meet the authentication requirements of Fabrikam, what should you include in the solution?**
 
@@ -2347,15 +2347,15 @@ To answer, select the appropriate options in the answer area. NOTE: Each correct
 
 
 
-* 1=1:Single tenant creation required only due to RD restrictions implemented.    ✅ 
-* 2=1:Need to add custom domain due to default .onmicrosoft.com domain on tenant creation   ✅
-* 3=2 Two policies requires, can't have multiple actions to block + allow on single conditional access policies.    ✅
+* 1=**1**  ✅ :Single tenant creation required only due to RD restrictions implemented.    ✅ 
+* 2=**1**  ✅ :Need to add custom domain due to default .onmicrosoft.com domain on tenant creation   ✅
+* 3=**2**  ✅ Two policies requires, can't have multiple actions to block + allow on single conditional access policies.    ✅
 	* One conditional access policy for** Multi-Factor Authentication (MFA) will be used for administative access**, and a **second conditional access policy in order to prevent external access**.
 
 
 #### Question 4
 
-You need to recommend a notification solution for the IT Support distribution group. 
+You need to recommend a **notification solution** for the IT Support distribution group. 
 
 What should you include in the recommendation?
 
