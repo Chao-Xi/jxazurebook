@@ -556,6 +556,21 @@ NOTE: Each correct selection is worth one point
 
 ## Topic 2
 
+#### Question 1  💩
+
+- ✑ Stored procedures are implemented by using CLR.
+
+What should you include in the recommendation?
+
+- [ ] A. Azure SQL Database elastic pools
+- [X] B. **Azure SQL Managed Instance**  ✅
+- [ ] C. Azure SQL Database single databases
+- [ ] D. SQL Server 2016 on Azure virtual machines
+
+CLR is supported on SQL Managed instance and not on Azure SQL Database.
+
+- Azure SQL Managed Instance
+- Common language runtime - CLR
 
 #### Question 3
 
@@ -609,7 +624,7 @@ NOTE: Each correct selection is worth one point.
 * storage 1-StorageV2-Standard
 * storage 4-FileStorage-Premium
 
-#### Question 6 💩
+#### Question 6 
 
 You are designing an application that will be hosted in Azure.
 
@@ -646,7 +661,7 @@ SLA of 99.99% uptime: Azure SQL Database offers a high availability SLA of 99.99
 
 **Dynamic Scaling: Elastic pools dynamically allocate compute resources across the databbases**
 
-#### Question 8   💩
+#### Question 8  
 
 You have an on-premises database that you plan to migrate to Azure.
 
@@ -663,9 +678,9 @@ NOTE: Each correct selection is worth one point.
 
 ![Alt Image Text](../images/az305_12_38.png "Body image")
 
-* **Box 1: Azure SQL Database -**   💩
+* **Box 1: Azure SQL Database -**  
 
-* **Box 2: Hyperscale** -   💩
+* **Box 2: Hyperscale** - 
 
 **The key is that only Hyperscale can deal with 75 Tb, All other have limit of 4 Tb**
 
@@ -712,7 +727,7 @@ For each of the following statements, select Yes if the statement is true. Other
 
 **blobstorage is not recommended**
 
-#### Question 12   💩 💩
+#### Question 12 
 
 You plan to import data from your on-premises environment to Azure. The data is shown in the following table.
 
@@ -728,7 +743,7 @@ Each tool may be used once, more than once, or not at all. You may need to drag 
 
 **Box 2: Azure Cosmos DB Data Migration Tool** ✅    💩
  
-#### Question 13 💩 💩
+#### Question 13
 
 You need to recommend an automated process to upload the data to Azure SQL Database every month.
 
@@ -782,7 +797,7 @@ NOTE: Each correct selection is worth one point.
 
 The Container access policy is indeed the place to configure Azure's Immutable Blob Storage to ensure data is retained without modifications or deletions for a specified amount of time, which suits your needs.
 
-#### Question 18
+#### Question 18  💩 💩 💩
 
 You are designing a data storage solution to support reporting.
 
@@ -794,10 +809,10 @@ The solution will ingest high volumes of data in the **JSON format by using Azur
 
 Which service should you recommend for each type of data store? To answer, select the appropriate options in the answer area.
 
-![Alt Image Text](../images/az305_12_44.png "Body image")   💩
+![Alt Image Text](../images/az305_12_44.png "Body image") 
 
 1. **Data store for the ingestion data: b. Azure Data Lake Storage Gen2.**    💩
-2.  **Data store for the data warehouse: c. Azure SQL Database Hyperscale**.    💩
+2.  **Data store for the data warehouse: c. Azure SQL Database Hyperscale**.  ✅  💩 💩 💩
 
 #### Question 19
 
@@ -809,7 +824,7 @@ You need to recommend a service to **store and query the data**.
 * A. Azure Table Storage -> Throughput: scalability limit of 20,000 operations/s. -> Not enough for this question 
 * **B. Azure Event Grid -> It is only a broker, not a storage solution**
 
-#### Question 21  💩
+#### Question 21  💩💩
 
 You are designing a data analytics solution that will use Azure Synapse and Azure Data Lake Storage Gen2.
 
@@ -840,7 +855,7 @@ The solution must support Hadoop Distributed File System (HDFS)
 
 => **A. Azure Data Lake Storage Gen2**
 
-#### Question 23
+#### Question 23 💩💩
 
 * Support SQL commands. 
 * Support multi-master writes. 
@@ -885,7 +900,7 @@ You need to identify which type of Azure storage must be provisioned to support 
 
 2. **Data format: Avro**
 
-#### Question 30 💩💩💩
+#### Question 30 
 
 You need to recommend a solution that meets the following requirements: 
 
@@ -901,7 +916,7 @@ A. Azure Files /  B. Azure Data Lake Storage / C. Azure NetApp Files  / D. Azure
 
 **But ACL is supported by Azure Data Lake storage, not supported by Azure Blob storage.**
  
-#### Question 30   💩💩
+#### Question 30  
 
 You are designing a storage solution that will ingest, store, and analyze petabytes (PBs) of structured, semi-structured, and unstructured text data. The analyzed data will be offloaded to Azure Data Lake Storage Gen2 for long-term retention.
 
@@ -925,7 +940,7 @@ The analyzed data will be off loaded to Azure Data Lake Storage Gen2 for long-te
 
 > KQL   💩
 
-#### Question 31  💩💩💩
+#### Question 31
 
 You need to recommend an Azure SQL product and service tier that meets the following requirements: 
 
