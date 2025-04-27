@@ -1055,7 +1055,7 @@ What should you use? To answer, select the appropriate options in the answer are
 
 **App Gateway will balance the traffic between VMs deployed in the same region.** 
 
-#### Question 5    💩
+#### Question 5   
 
 You plan to create an Azure Storage account that will host file shares. **The shares will be accessed from on-premises applications that are transaction intensive**. 
 
@@ -1072,7 +1072,7 @@ The solution must provide the highest-level of resiliency for the selected stora
 
  Zone-redundant storage (ZRS): With ZRS, three copies of each file stored, however these copies are physically isolated in three distinct storage clusters in different Azure availability zones.
 
-#### Question 7 💩💩
+#### Question 7 
 
 You need to recommend an Azure Storage account configuration for two applications named Application1 and Application2. The configuration must meet the following requirements:
 
@@ -1148,7 +1148,7 @@ Costs must be minimized => B. Azure SQL Database Premium
 
 **D. Azure SQL Managed Instance Business Critical**  ✅
 
-#### Question 16   💩
+#### Question 16 
 
 You have an on-premises Microsoft SQL Server database named SQL1.
 
@@ -1191,7 +1191,7 @@ Reason: Creating an Always On availability group on VM1 would not be necessary, 
 **B. Azure migrate** ✅
 
 
-#### Question 18
+#### Question 18 💩💩
 
 You are building an Azure web app that will store the Personally Identifiable Information (PII) of employees. 
 
@@ -1204,7 +1204,7 @@ You need to recommend an Azure SQL. Database solution for the web app. The solut
 
 What should you include in the recommendations? To answer, select the appropriate options in the answer area
 
-![Alt Image Text](../images/az305_12_66.png "Body image")   💩
+![Alt Image Text](../images/az305_12_66.png "Body image")  
 
 **1. Service tier and compute tier?**  : **b. General Purpose service tier and serverless compute tier**  ✅
 
@@ -1233,7 +1233,7 @@ You need to recommend a load balancing solution that will distribute incoming tr
 **A. Gateway Load Balancer seems to be correct as it balances the load between two NVAs internally.**
 
 
-####  Question 21  💩💩
+####  Question 21 
 
 You have the Azure subscriptions shown in the following table.
 
