@@ -1376,7 +1376,7 @@ What should you include in the solution?
 
 **Azure Functions in the Consumption plan does not support virtual network integration, which is necessary for accessing the private IP address of the SQL Server instance**. 
 
-#### Question 6  💩
+#### Question 6  
 
 You have an Azure subscription named Subscription1 that is linked to a hybrid Azure Active Directory (Azure AD) tenant. 
 
@@ -1393,13 +1393,13 @@ What should you recommend deploying on-premises and in Azure? To answer, select 
 
 **Box 2: A connection gateway resource**   ✅
 
-#### Question 7   💩
+#### Question 7   
 
 - The API is available to partners over the internet.  ✅  Yes  
 - The APIM instance can access real-time data from VM1.   ✅  Yes
 - A VPN gateway is required for partner access.   No
 
-#### Question 8  💩
+#### Question 8  
 
 Your company has an existing web app that runs on Azure virtual machines. 
 
@@ -1417,7 +1417,7 @@ Each service may be used once, more than once, or not at all.
 
 **Box 2: Web Application Firewall (WAF)**   ✅
 
-#### Question 9   💩 💩 💩 💩
+#### Question 9   💩 💩 
 
 * ✑ Ingress access to the microservices must be restricted to a single private IP address and protected **by using mutual TLS authentication**.
 * ✑ The number of incoming microservice calls must be **rate-limited**.
@@ -1432,7 +1432,7 @@ Each service may be used once, more than once, or not at all.
 * C. Azure Front Door with Azure Web Application Firewall (WAF)
     * Does not make sense, and does not rate limited
   
-#### Question 11
+#### Question 11 💩 
 
 **The new policy will be configured as a parent policy for the existing policies**. 
 
@@ -1454,7 +1454,7 @@ Each service may be used once, more than once, or not at all.
 **asynchronously communicate => Azure Queue Storage**
 
 
-#### Question 14  💩
+#### Question 14  
 
 You plan to move all the virtual machines to Azure.
 
@@ -1506,13 +1506,15 @@ You use Azure Front Door to provide access to the app.  **A. Yes** ✅
 
 **Box 2: Anonymous** - Anonymous for public operations.  ✅
 
-#### Question 23
+#### Question 23  💩 ❌ 
 
 
 * ✑ Only allow the **creation of the virtual machines in specific regions**. 
 * ✑ Only allow the **creation of specific sizes of virtual machines**
 
 * **B. Azure Policy**    ✅
+
+> Not  **Conditional Access policies** ❌ 
 
 #### Question 24
 
@@ -1522,13 +1524,13 @@ From Server1:  **Box 1: Install a self-hosted integration runtime.**  ✅
 
 From the data factory:  **Box 2: Create a pipeline.**  ✅
 
-#### Question 28 💩
+#### Question 28 
 
 <mark>**cluster autoscaler** for windows</mark>
 
 <mark>***Virtual Nodes** for Linux</mark>
 
-#### Question 29 💩
+#### Question 29 
 
 * ✑ **An integration component will process the message, and then trigger either Function1 or Function2 depending on the type of order.** 
 
@@ -1536,7 +1538,7 @@ Which type of resource should you recommend for the integration component?
 
 * **B. an Azure Data Factory pipeline**   ✅
 
-#### Question 30  💩
+#### Question 30  
 
 **You plan to migrate the 10 on-premises databases to Azure SQL Database.** 
 
@@ -1546,7 +1548,7 @@ Which type of resource should you recommend for the integration component?
 
 Migrate on-premises SSIS workloads to SSIS using ADF (Azure Data Factory).
 
-#### Question 30  💩
+#### Question 30  
 
 **You are designing a solution that will use Azure Data Factory to transform the data files, and then load the files to Azure Data Lake Storage.**
 
@@ -1592,13 +1594,13 @@ What should you include in the recommendation?
 
 **Azure Front Door = Supports URL routing.**
 
-#### Question 36
+#### Question 36 💩
 
 Box 1 **should be "configure vm1 to forward contoso.com to the azure provided dns at 168.63.129.16" to convert VM1 to a DNS forwarder.** ✅
 
 **Box 2** **Forward contoso.com to VM1**  ✅
 
-#### Question 37 💩
+#### Question 37
 
 * ✑ Deploy the solution on-premises and to Azure. **Support low-latency and hyper-scale operations**. 
 * ✑ Allow independent upgrades to each microservice. 
@@ -1608,7 +1610,7 @@ Box 1 **should be "configure vm1 to forward contoso.com to the azure provided dn
 
 * **Azure Service Fabric enables you to create Service Fabric clusters on premises or in other clouds.** 
 
-#### Question 42 💩
+#### Question 42 
 
 You need to recommend a solution to continually copy the performance data to the Azure SQL database.
 
@@ -1620,7 +1622,7 @@ You need to recommend a solution to continually copy the performance data to the
 
 **mission critical application => D. Azure Cosmos DB** ✅
 
-#### Question 44 💩 💩
+#### Question 44 💩 💩 ❌
 
 * ✑ Support at least 500 requests per second. 
 * ✑ Support a large image, video, and audio streams. 
@@ -1666,7 +1668,7 @@ Level at which to create the blueprint assignments:
 
 - Assignments: **Subscriptons.**  ✅
 
-#### Question 49  💩
+#### Question 49 
 
 - ✑ Performs calculations in Azure.
 - ✑ Ensures that each node can communicate data to every other node.
@@ -1683,7 +1685,7 @@ Level at which to create the blueprint assignments:
 - [X] B. **SQL Server on an Azure virtual machine.**   ✅
 - [X] D. **Azure SQL Managed Instance**.  ✅
 
-#### Question 51  💩
+#### Question 51 
 
  SQL Server databases to Azure. You need to recommend a deployment and resiliency solution that meets the following requirements: 
  
@@ -1712,7 +1714,7 @@ You plan to migrate the on-premises SQL Server instance to Azure virtual machine
 **C. an Always On availability group that has premium storage disks and a distributed network name (DNN)**  ✅
 
 
-#### Question 58   💩
+#### Question 58   💩 ❌
 
 You plan to move a web app named App1 from an on-premises datacenter to Azure.
 
@@ -1747,7 +1749,7 @@ What should you include in the recommendation?
 
 **D. a resource token and an Access control (IAM) role assignment** ✅
 
-#### Question #61  💩
+#### Question #61 
 
 - ✑ The storage must support 1 PB of data.
 - ✑ The data must be stored in blob storage.
@@ -1758,7 +1760,7 @@ What should you include in the recommendation?
 
 * Default maximum storage account capacity: 5 PiB
 
-#### Question #61   💩💩💩💩
+#### Question #61   💩💩
 
 You need to deploy 50 databases. The solution must meet the following requirements:
 
@@ -1769,7 +1771,7 @@ You need to deploy 50 databases. The solution must meet the following requiremen
 
 **Deployment option: Box 2: An Azure SQL Database elastic pool**  ✅
 
-#### Question 63 💩
+#### Question 63 
 
 You plan to use Azure Databricks to transform and load data from App1 to an Azure Synapse Analytics instance.
 
@@ -1789,7 +1791,7 @@ The second job type will consist of long-running Message Passing Interface (MPI)
 
 **Box 2: Batch service and dedicate virtual machines**
 
-#### Question 71  💩
+#### Question 71  
 
 You need to recommend a networking solution for the new Azure infrastructure
 
@@ -1801,7 +1803,7 @@ You need to recommend a networking solution for the new Azure infrastructure
 
   * **A. Azure Virtual WAN with a secured virtual hub**    ✅
 
-#### Question 72  💩
+#### Question 72  
 
 **You need to configure the authentication method that will be used by the app to access the workspace.**
 
@@ -1823,7 +1825,7 @@ The solution must minimize the administrative effort associated with staff turno
 * **1. DS**   **DS= Dedicated series**
 * **2. Premium SSD**
 
-#### Question 80  💩
+#### Question 80  
 
 **You are developing an app that will use Azure Functions to process Azure Event Hubs events.** Request processing is estimated to take between five and 20 minutes.
 
@@ -1839,7 +1841,7 @@ Which hosting plan should you recommend?
 * C. App Service 
 * **D. Premium**  ✅
 
-#### Question 82 💩💩
+#### Question 82 💩💩❌
 
 You company has offices in New York City, Sydney, Paris, and Johannesburg.
 
@@ -1881,7 +1883,7 @@ What should you identify? To answer, select the appropriate options in the answe
 **B. Azure Database Migration Service**  💩 （ADMS)
  
 
-#### Question 84
+#### Question 84 TOBSERIOUS
 
 * Support virtual machines deployed to four availability zones across two Azure regions. 
 * Minimize costs by accumulating CPU credits during periods of low utilization
@@ -1889,14 +1891,14 @@ What should you identify? To answer, select the appropriate options in the answe
 
 * **Number of Virtual networks:  ✔ 2**   ✅
 
-* **Virtual machine size  ✔ B-Series**  ✅
+* **Virtual machine size  ✔ B-Series**  ✅  T
 
 #### Question 85
 
 - **FrontDoor => Protect against OWASP Vulnerabilities**   ✅
 - **API Management => Validation token JWT**   ✅
 
-#### Question 90  💩 
+#### Question 90  
 
 - The solution must run multiple instances of App1.
 - The number of instances must be managed automatically depending on the load.
@@ -1904,7 +1906,7 @@ What should you identify? To answer, select the appropriate options in the answe
 
 - [X] **B. Azure App Service**  ✅
 
-#### Question 91 💩
+#### Question 91 
 
 You have an Azure App Service web app named Webapp1 that connects to an Azure SQL database named DB1. Webapp1 and DB1 are deployed to
 the East US Azure region.
@@ -1920,7 +1922,7 @@ You need to ensure that all the traffic between Webapp1 and DB1 is sent via a pr
 
 Configure name resolution to use a private DNS zone. This is necessary for the web app to work with Azure DNS private zones.
 
-#### Question 92  💩 💩 💩 
+#### Question 92  💩 💩 ❌
 
 You need to ensure that the remote users can access App1 without using a VPN. The solution must meet the following requirements:
 
@@ -1941,7 +1943,7 @@ You need to ensure that the AKS1 APIs are accessible to APIM1. The solution must
 
 - [X] **D. Deploy an ingress controller to AKS1.**  ✅
 
-#### Question 94   💩💩💩   
+#### Question 94   💩💩❌   
 
 You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 
@@ -1953,7 +1955,7 @@ You need to recommend a solution to integrate Azure Cosmos DB and Azure Synapse.
 
 **Box 2: Managed private endpoints** 💩
 
-#### Question 94 💩
+#### Question 94
 
 You have an Azure subscription that contains an Azure Cosmos DB for NoSQL account named account1 and an Azure Synapse Analytics workspace named Workspace1. The account1 account contains a container named Contained that has the analytical store enabled.
 
@@ -1965,7 +1967,7 @@ Which pool in Workspace1 should you use?
 
 Apache Spark: Spark pools in Azure Synapse Analytics provide a distributed data processing framework capable of processing large volumes of data in near-real-time.
 
-#### Question 96  💩💩💩💩  
+#### Question 96  💩💩❌    
 
 You have an on-premises datacenter named Site1. Site1 contains a VMware vSphere cluster named Cluster1 that hosts 100 virtual machines. Cluster1 is managed by using VMware vCenter.
 
@@ -1990,7 +1992,7 @@ Which pool in Workspace1 should you use?
 
 - **A. Apache Spark**   ✅
 
-#### Question 97   💩 
+#### Question 97  
 
 Your on-premises datacenter contains a server named Server1 that runs Microsoft SQL Server 2022. Server1 contains a 30-TB database named DB1 that stores customer data. Server1 runs a custom application named App1 that verifies the compliance of records in DB1. **App1 must run on the same server as DB1**.
 
@@ -2006,7 +2008,7 @@ To which service should you migrate DB1, and what should you use to perform the 
 
 **Azure Migrate** ✅
 
-#### Question 98   💩 
+#### Question 98  
 
 VNet1, VNet2, and VNet3 each has multiple virtual machines connected. 
 
