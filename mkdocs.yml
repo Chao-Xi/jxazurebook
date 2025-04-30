@@ -22,6 +22,7 @@ nav:
     - '4 低代码机器学习': 'chap2_aws/4ML.md'
   - 'Prompt Engineering':
     - '1 Prompts & Use ChatGPT as a Powerful Tool for Programming': 'chap3_prompt/1prompt_code.md'
+    - '2 11个顶级设计案例': 'chap3_prompt/2prompt_design.md'
   - 'Python GPT':
     - 'Creating an automated meeting minutes generator with Whisper and GPT-4' : 'chap4_python/1Meeting_minutes.md'
     - 'chatGPT API basics.': 'chap4_python/2API_Basic.md' 
