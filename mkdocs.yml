@@ -42,6 +42,7 @@ nav:
     - '2 AI Agents入门教程之从零开始构建Agent': 'chap5_agents/2agent_buildout.md'
     - '3 AI Agents入门教程之代理框架介绍': 'chap5_agents/3agent_frameworks.md'
   - 'MCP 学习':
+    - '1 MCP 介绍': 'chap6_mcp/1mcp_intro.md'
     - '2 代码讲透MCP原理': 'chap6_mcp/1mcp_code.md'
 
 repo_url: https://github.com/Chao-Xi/jxaibook.git
