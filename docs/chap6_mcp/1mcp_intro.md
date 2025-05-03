@@ -149,7 +149,7 @@ MCP 是依赖实现再使用的，官方提供了多种语言的 SDK，帮助开
 
 **安装必要环境**
 
-参考：https://github.com/mark3labs/mcphost
+参考：[https://github.com/mark3labs/mcphost](https://github.com/mark3labs/mcphost)
 
 **写一个 MCP server**
 
