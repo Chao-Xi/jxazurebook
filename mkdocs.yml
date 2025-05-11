@@ -44,6 +44,8 @@ nav:
     - '3 AI Agents入门教程之代理框架介绍': 'chap5_agents/3agent_frameworks.md'
     - '4 AI Agents入门教程之不同类型的智能体': 'chap5_agents/4agent_types.md'
     - '5 为什么行业焦点从AI Agents转向Agentic Workflows？': 'chap5_agents/5agentic_workflow.md'
+    - '6 《AI智能体入门》课程讲述内容': 'chap5_agents/6agent_school.md'
+    - '7 Agentic AI vs Generative AI: 区别与对比': 'chap5_agents/7agai_geai.md'
   - 'MCP 学习':
     - '0 MCP 介绍': 'chap6_mcp/1mcp_intro.md'
     - '1 代码讲透MCP原理': 'chap6_mcp/1mcp_code.md'
