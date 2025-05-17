@@ -46,10 +46,14 @@ nav:
     - '5 为什么行业焦点从AI Agents转向Agentic Workflows？': 'chap5_agents/5agentic_workflow.md'
     - '6 《AI智能体入门》课程讲述内容': 'chap5_agents/6agent_school.md'
     - '7 Agentic AI vs Generative AI: 区别与对比': 'chap5_agents/7agai_geai.md'
+    - 'AI Agents, and the Model Context Protocol': 'chap5_agents/8agent_mcp_intro.md'
+    - '8 爆火的Model Context Protocol是什么？': 'chap5_agents/9mcp_intro.md'
   - 'MCP 学习':
     - '0 MCP 介绍': 'chap6_mcp/1mcp_intro.md'
     - '1 代码讲透MCP原理': 'chap6_mcp/1mcp_code.md'
     - '2 一文讲透MCP的原理及实践': 'chap6_mcp/2mcp_construction_principle.md'
+  - 'A2A 学习':
+    - '1 谷歌 A2A （Agent2Agent）架构设计深度剖析': 'chap7_a2a/1a2a_intro.md'
 
 repo_url: https://github.com/Chao-Xi/jxaibook.git
 repo_name: "jxaibook"
