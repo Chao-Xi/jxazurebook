@@ -54,6 +54,7 @@ nav:
     - '2 一文讲透MCP的原理及实践': 'chap6_mcp/2mcp_construction_principle.md'
   - 'A2A 学习':
     - '1 谷歌 A2A （Agent2Agent）架构设计深度剖析': 'chap7_a2a/1a2a_intro.md'
+    - '2 关于A2A、MCP、Agent、LLM的6条极简事实': 'chap7_a2a/2a2a_intro2.md'
 
 repo_url: https://github.com/Chao-Xi/jxaibook.git
 repo_name: "jxaibook"
