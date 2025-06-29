@@ -99,6 +99,8 @@ nav:
     - '4 Azure DevOps的Azure资源IaC编排实战': 'devops/4Devops_IAC.md'
     - '5 基于Azure Devops的Golang项目云主机CI/CD实战': 'devops/5Devops_go_host.md'
     - '6 基于Azure DevOps的Golang项目容器化CI/CD实战': 'devops/6Devops_go_container.md'
+  - 'Azure Monitoring':
+    - '1 Microsoft Azure Log Analytics Workspace': 'az_mon/1log_ana.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
