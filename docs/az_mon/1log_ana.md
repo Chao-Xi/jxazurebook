@@ -100,3 +100,131 @@ Azure Log Analytics Workspace serves as a centralized repository for data ingest
 - Data organization in Azure Log Analytics involves multiple tables with unique columns and rows, allowing for structured data management. This aids in efficient querying and reporting.
 - Azure Log Analytics Workspace is crucial for Microsoft Sentinel and Defender for Cloud, which rely on it for data ingestion and functionality. This integration enhances the security monitoring capabilities.
 - The retention period for data in the Log Analytics Workspace can extend up to seven years, ensuring compliance and long-term data accessibility. Users can customize retention settings for specific tables.
+
+
+
+## 2 Microsoft Azure Log Analytics Workspace - Detail
+
+### 2-1 How to create a log analytics workspace?
+
+
+![Alt Image Text](../images/log1_1_7.png "Body image")
+
+![Alt Image Text](../images/log1_1_8.png "Body image")
+
+
+### 2-2 How to manage commitment tiers of log analytics workspace?
+
+Cost
+
+* ***There is no cost for creation of log analytics workspace, you will only be charged for the data which is ingested in log analytics**
+* **You are also charged based on the retention period that you choose**.
+* **Region selection for log analytics workspace can help you save egress cost.**
+
+
+The importance of choosing the correct region during workspace creation affects egress costs and overall efficiency. This decision can significantly impact the financial aspect of your Azure resources.
+
+
+### 2-3 What is Retention Period?
+
+#### **Daily Cap**
+
+1. Setting up daily cap for Log Analytics workspace.
+2. Whenever the threshold is reached, the collection of data is stopped for the day.
+3. Whenever daily cap limit is reached a warning is shown on azure portal, as well as an event is generated in operations table of the log analytics workspace.
+4. Every workspace will have a reset time, which will be different for each workspace.
+5. Initially, this daily cap was not affecting the collection of security data related to Microsoft sentinel and Microsoft defender for cloud.
+6. Starting from September 18th ’23 these exclusions are also removed.
+7. The reset hour for the workspace is shown, but it can be changed.
+
+**Default Tables**
+
+
+![Alt Image Text](../images/log1_1_9.png "Body image")
+
+### How to define retention settings for each table?
+
+**Data Retention**
+
+- The time for which your data will be saved.
+- For example - i**f you want to save data for 2 years then total retention period will be 2 years**.
+
+**Table Plan**
+
+**Basic and Analytics**
+
+![Alt Image Text](../images/log1_1_10.png "Body image")
+
+![Alt Image Text](../images/log1_1_11.png "Body image")
+
+![Alt Image Text](../images/log1_1_12.png "Body image")
+
+![Alt Image Text](../images/log1_1_13.png "Body image")
+
+![Alt Image Text](../images/log1_1_14.png "Body image")
+
+* Managing commitment tiers is crucial as it dictates the data ingestion capacity and associated costs. Proper planning is necessary to avoid unexpected charges during data usage.
+* **There are no upfront costs for creating a workspace; charges apply only when data is ingested. This allows for flexible budgeting as you scale your data usage**.
+* Data ingestion and retention choices in log analytics workspaces significantly impact costs and functionality. U
+* hoosing the right data retention period is crucial as it directly affects the costs associated with log analytics in Azure. Different retention options come with varying price points.
+* Setting a daily cap on data ingestion can help manage costs but requires careful planning to avoid disruptions in data collection. Users must be aware of their data usage patterns.
+* Recent changes have removed exclusions for certain Microsoft services from the daily cap, meaning all data types are now subject to ingestion limits. This impacts how security data is managed.
+* Data retention in workspaces includes two key types: **interactive retention and archival retention. The total retention period combines these two, allowing for customized settings for each table**.
+* Interactive retention determines how long data is available for queries, while archival retention is for compliance and requires specific retrieval methods. Each workspace has default settings for these.
+* Users can customize the retention settings for individual tables within a workspace, allowing for flexibility in data management according to specific requirements or compliance needs.
+* Workspace default settings can be inherited by all tables, meaning any changes made to the retention period will automatically apply to them. This ensures consistent data management.
+
+### How to manage schema for a specific table?
+
+### Monitoring log analytics workspace health
+
+
+- Data retention policies include interactive retention and archival periods, which can be customized for different table plans.
+- Interactive retention periods vary based on the chosen table plan, with basic plans offering a fixed retention of eight days. Archival periods can extend up to seven years for basic plans.
+- Analytics table plans provide more flexibility, allowing interactive retention periods from 30 days to two years. This option can significantly affect data ingestion costs and query capabilities.
+- Limitations exist for basic plans, where certain KQL queries, such as the join operator, cannot be utilized. Awareness of these restrictions is important for effective data analysis.
+
+
+### Portal Walkthrough
+
+
+1. Customizing table schemas and managing transformations are critical for effective data management. This allows for tailored data handling and better query performance in databases.
+2. Understanding the naming conventions like suffixes is essential when creating or modifying tables. These conventions help in identifying the type of tables created.
+3. Editing transformations enables the removal and updating of unnecessary columns. This customization can improve data quality and query efficiency significantly.
+4. Monitoring workspace health is vital for identifying and addressing issues. System notifications and console highlights provide immediate awareness of any potential problems.
+
+**Portal Walkthrough**
+
+Managing Table Schema
+
+```
+source 
+| project-may AppDisplayare, AutomomousSystemunher, Durations, OperationVersion, ResultType
+
+
+AADNonInteractiveUserSigninLogs
+| where TimeGenerated › ago(30d) 
+| summarize count() by Durations
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
