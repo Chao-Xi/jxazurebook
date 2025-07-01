@@ -290,10 +290,61 @@ It replaces the deprecated Microsoft Monitoring Agent, offering enhanced securit
 
 ![Alt Image Text](../images/log1_1_23.png "Body image")
 
+## 2 What is DCR - Data Collection Rule?
 
+![Alt Image Text](../images/log1_1_24.png "Body image")
 
+**Data Collection Rule**
 
+Data collection rule is basically a contiguration, which lets the azure monitor agent know, 
 
-
-
+what type of data must be captured and forwarded to data ingestion pipeline, then are here any transformation which must be applied before the data gets ingested to the workspace and where exactly the data must be ingested, precisely speaking to which table of the workspace.
           
+Data collection rules can be created for Windows, Linux and other platforms as well where you might use data ingestion API of log analytics workspace.
+
+
+**Data Collection Rule can only be applied to Azure VM or Azure Arc-enabled servers.**
+
+**Which means that you must onboard your on-prem, aws or GCP virtual machines to Azure Arc before you can deploy Azure Monitor Agent.**
+
+![Alt Image Text](../images/log1_1_25.png "Body image")
+
+![Alt Image Text](../images/log1_1_26.png "Body image")
+
+![Alt Image Text](../images/log1_1_27.png "Body image")
+
+![Alt Image Text](../images/log1_1_28.png "Body image")
+
+
+### 1 Which Platform?
+
+![Alt Image Text](../images/log1_1_29.png "Body image")
+
+### 2 Selection of Resource
+
+- Azure VM
+- Azure Arc-enabled servers
+
+![Alt Image Text](../images/log1_1_30.png "Body image")
+
+![Alt Image Text](../images/log1_1_31.png "Body image")
+
+
+- For windows servers which are non azure, you have to onboard them to azure first as azure arc enabled servers and then you can associate them to data collection rule.
+- For windows client machines a MSI package installation is required.
+- For Linux machines, **only azure arc onboarded resources can be scoped to Data collection rules**.
+- **Whenever any resource is added to data collection rule, AZURE MONITOR AGENT is installed automatically**.
+- Azure monitor agent is deployed in the form of extensions.
+
+![Alt Image Text](../images/log1_1_32.png "Body image")
+
+### How to transform the data?
+
+* Table Configuration
+* Custom KOL Query
+
+> You can implement transformation at the table instance of the workspace
+
+> As well as you can add transformation section in JSON configuration of data collection rule with the help of Azure API's
+
+![Alt Image Text](../images/log1_1_33.png "Body image")
