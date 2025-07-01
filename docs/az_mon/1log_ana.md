@@ -290,7 +290,7 @@ It replaces the deprecated Microsoft Monitoring Agent, offering enhanced securit
 
 ![Alt Image Text](../images/log1_1_23.png "Body image")
 
-## 2 What is DCR - Data Collection Rule?
+## 4 What is DCR - Data Collection Rule?
 
 ![Alt Image Text](../images/log1_1_24.png "Body image")
 
@@ -348,3 +348,103 @@ Data collection rules can be created for Windows, Linux and other platforms as w
 > As well as you can add transformation section in JSON configuration of data collection rule with the help of Azure API's
 
 ![Alt Image Text](../images/log1_1_33.png "Body image")
+
+## 5 Deploy Azure Monitor Agent on Windows Servers | Data Collection Rule
+
+- Installation of Azure Monitor Agent on Windows Servers.
+- Supported OS and Network Requirements.
+- Roles required to install Azure monitor agent.
+- How to configure a DCR for default data collection?
+- Where exactly DCR is saved on the machine?
+- Which table is used for data ingestion in log analytics workspace?
+
+**Azure Arc + Azure Monitor You need to make sure the URLs for both the services are whitelisted.**
+
+### Azure Monitor - Network Requirements
+
+![Alt Image Text](../images/log1_1_34.png "Body image")
+
+### Permissions
+
+**Monitoring Contributor**  This is required to create a DCR and create associations
+
+**Virtual Machine Contributor**  Deploy agent extension to Azure VM
+
+**Azure Connected Machine Resource Administrator** Deploy agent extensions to Azure Arc-enabled servers.
+
+
+**Where Azure Monitor Agent can be installed?**
+
+* Azure Virtual Machine
+* Virtual Machine Scale Set
+* Azure Arc-enabled servers
+	* On-Prem Data Center
+    * GCP
+    * Amazon EC2
+
+
+**Requirement**
+
+* Windows Performance logs must be ingested to a workspace named as PerformanceMonitoring.
+
+* Windows Event logs must be ingested to a workspace named as Sentinel.
+
+
+![Alt Image Text](../images/log1_1_35.png "Body image")
+
+
+![Alt Image Text](../images/log1_1_36.png "Body image")
+
+**Instead of using workspace ids and workspace key for authentication, Azure Monitor agent uses, managed identity which is created while the machine is getting onboarded to Azure Arc.**
+
+**"Azure Monitor Agent is deployed in the form of extensions"**
+
+
+**This gives you the privilege to centrally manage them from Azure portal, likewise Installing, Updating or Removing Extensions**.
+
+### Tables that are used to ingest data
+
+When the Azure monitor agent is installed on the machine, the machine sends a **heartbeat** which is recorded in the Heartbeat table of the log analytics workspace.
+
+Whenever a DCR is created to capture performance and windows event logs, the data is ingested in **perf and Event table of the** workspace.
+
+
+
+
+## Test 
+
+1. Which function type can a user modify in Azure Monitor?   **Workspace**
+2. You want to tie your company's billing system into your Azure subscription to programmatically Which APls are required?  **Rate Card APl and Usage API**
+3. During an application update, a number of application servers become unavailable. How might you use monitoring services to gain insight into the nature of the issue  **Use the Smart Groups functionality of Azure Alerts**.
+4. Which Azure feature automatically reviews your environment for cost savings based on resource utilization  **Azure Advisor**
+5. In Microsoft Defender for Cloud, which security policy applies secure settings?  **Enforce**
+6. You run a usage query in the log search page that returns seven days of data on five virtual machines (VM) want to refine the results to MyVM01 and the most recent three days. How can you change the query to accomplish this?
+   * **`Usage | where Computer == "MyVMO1" | where TimeGenerated › ago (3d)`**
+7. What must you have to export metrics to Azure Stream Analytics?
+   * **Deploy and configure an Event Hubs namespace instance**.
+8. Which resource can you use Network Watcher to monitor?
+   * **The network interface of an Azure virtual machine**
+9. Which is a requirement to set up an Azure Security Center event dashboard?
+    * S**ecurity Center's standard tier plan**
+10. You manage hundreds of Azure SQL databases that are split between elastic pools and standalone instances. Manually monitoring their performance in-depth is a considerable burden. How can you simplify the monitoring tasks?
+	* **Add Azure SQL Analytics to your Log Analytics workspace and configure the diagnostic settings for all of your databases to send logs and metrics to**
+11. You must create a report that shows all security events over the last 20 days for a Windows virtual machine (VM) in your Azure environment. What tools should you consider
+	* **Log Analytics and Power BI**
+12. What is a requirement for monitoring Azure virtual machines (VMs) from a third-party tool running outside of Azure?
+	* **Network security group (NSG) rules that allows the necessary traffic between the Virtual Network (VNet) and the monitoring TOOL**
+13. Which query will return all errors logged in the system event log for a Linux virtual machine (VM)?
+    * **`Syslog | where (SeverityLevel == "err")`**
+14. Which Azure tools can you use to establish a workload baseline for an application server running on a virtua machine?
+	* **Application Insights, metric charts**
+15. In the subscription blade, which tool can you use to view the costs for a subscription broken down by resource?
+    * **`Cost analysis`**
+16. You see a recommendation to enable "Just in time VM access". What type of threat will this protect against?
+    * **Brute-force login attacks on a virtual machine (VM) with a public IP**
+17. You must create an activity log alert rule with a JSON template. You must design the template using the Azure Resource Manager (ARM). How will you code the template's resource type?
+	* **`"resources": [ "type": "Microsoft. Insights/activityLogAlerts",`**
+18. Which service should you route metric data to for App Services performance analytics?
+    * **Application Insights**
+19. You are creating a new visualization for an Azure Kubernetes Service node in Azure Monitor Workbooks. This node consists of a hierarchy of resources. Which type of visualization is best suited for such workloads?
+    * **Trees**
+20. How can you create detailed visual reports for billing data?
+    * **Import the usage report into Power BI.**
