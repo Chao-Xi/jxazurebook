@@ -420,6 +420,39 @@ Event
 | summarize count() by EventID, EventCategory,EventLog, EventLevelName
 ```
 
+**Event Viewer**
+
+**Custom Requirement:- A specific component**
+
+### DCR-Json View on Azure Portal
+
+![Alt Image Text](../images/log1_1_39.png "Body image")
+
+#### How exactly, we should create these xpath queries, if we have to select custom logs?
+
+```
+DNS Server!*[System[ (Level=1 or Level=2 or Level=3)]]
+
+Microsoft-Windows-HelloForBusiness/Operational!*[System[ (Level=1 or Level=2 or Level=3)]]
+```
+
+![Alt Image Text](../images/log1_1_40.png "Body image")
+
+#### Requirement
+
+* Syslog's from Linux machine must be captured and ingested to **syslog table** of the workspace.
+* All the performance counter from Linux machine must be ingested to **perf** table of the workspace.
+* In this scenario, I will be using **two workspaces named as PerformanceMonitoring and Sentinel**.
+
+![Alt Image Text](../images/log1_1_41.png "Body image")
+
+### Tables that are used to ingest data
+
+When Azure Monitor agent is installed to capture to Linux OS syslog data, **the data is ingested to syslog table and performance counter data is ingested to perf table**.
+
+
+**When Azure monitor agent is installed to act as a forwarder, then the data is ingested to common security log table.
+//SentinelUseCa**se
 
 ## Test 
 
