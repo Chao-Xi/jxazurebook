@@ -409,6 +409,16 @@ When the Azure monitor agent is installed on the machine, the machine sends a **
 Whenever a DCR is created to capture performance and windows event logs, the data is ingested in **perf and Event table of the** workspace.
 
 
+## 6 Advanced Logging for Windows Using "Data Collection Rule” Azure Monitor Agent
+
+![Alt Image Text](../images/log1_1_37.png "Body image")
+
+![Alt Image Text](../images/log1_1_38.png "Body image")
+
+```
+Event
+| summarize count() by EventID, EventCategory,EventLog, EventLevelName
+```
 
 
 ## Test 
