@@ -1,6 +1,6 @@
 
 
-## 1 Azure Monitoring Fundamentals
+## 2 Azure Monitoring Fundamentals
 
 ### 1-1 Collecting Data with Azure Monitor
 
@@ -208,7 +208,9 @@ Here's a concise summary of the Azure Monitor Logs analysis demo:
 
 Here's a concise summary of the Azure diagnostics monitoring concepts:
 
-### ⚕️ **Service Health & Resource Health**
+![Alt Image Text](../images/am1_2_2.png "Body image")
+
+#### ⚕️ **Service Health & Resource Health**
 
 - **Purpose**: Personalized view of Azure platform issues affecting *your* resources (e.g., Microsoft-side outages).
 - **Key Features**:
@@ -219,7 +221,7 @@ Here's a concise summary of the Azure diagnostics monitoring concepts:
 
 ---
 
-### 📊 **Two Core Monitoring Streams**
+#### 📊 **Two Core Monitoring Streams**
 1. **Metrics**  
    - **What**: Numerical time-series data (sampled periodically).  
    - **Examples**: 
@@ -239,7 +241,7 @@ Here's a concise summary of the Azure diagnostics monitoring concepts:
 
 ---
 
-### ⚙️ **Enabling Diagnostics**
+#### ⚙️ **Enabling Diagnostics**
 - **Data Capture**: Send both metrics and logs to:
   - Azure Storage (tables/blobs).
   - Log Analytics workspace.
@@ -251,10 +253,137 @@ Here's a concise summary of the Azure diagnostics monitoring concepts:
 
 ---
 
-### 🎯 **Monitoring Goals**
+#### 🎯 **Monitoring Goals**
 1. **Break/Fix**: Rapid incident response.
 2. **Optimization**: Performance tuning (e.g., scaling based on trends).
 3. **Security**: Detect anomalies/breaches.
 4. **Proactive Management**: Address issues before they impact users.
 
 > **Key Insight**: Azure diagnostics provide critical visibility despite no physical access to datacenters. Start by defining *why* you need monitoring (e.g., SLA compliance, cost control).
+
+
+### 2-2 Enabling Azure Diagnostics Monitoring
+
+
+![Alt Image Text](../images/am1_2_3.png "Body image")
+
+
+Here's a concise summary of the Azure diagnostic settings configuration:
+
+#### ⚙️ **Key Configuration Features**
+
+1. **Flexible Setup**  
+   - Create **multiple diagnostic settings** per resource.  
+   - Configure *most resources* directly in **Azure Monitor** (except VM guest OS diagnostics, set at VM scope).  
+
+---
+
+#### 📤 **Three Output Destinations**  
+
+| **Destination**       | **Use Case**                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| **Storage Account**    | Long-term archival of raw logs/metrics (blobs/tables).                      |
+| **Event Hub**          | Real-time event streaming (handles millions of events); enables downstream processing (e.g., alerts, custom analytics). |
+| **Log Analytics**      | Advanced querying/analysis with KQL (Microsoft's recommended standard).     |
+
+> 💡 **Critical Note**: Outputs are **not mutually exclusive** – send data to *multiple destinations simultaneously*.
+
+---
+
+#### 📊 **Data Collection Options**  
+
+- **Varies by Resource Type**:  
+  - Some resources offer **both logs + metrics** (e.g., Azure SQL DB).  
+  - Others provide **only metrics** (e.g., Azure Load Balancer) or **only logs** (e.g., Azure Policy).  
+- **Selectable Categories**: Choose specific log types/metrics to collect (e.g., audit logs, performance counters).
+
+---
+
+#### 💡 **Key Takeaway**  
+
+Azure diagnostic settings offer **centralized, customizable pipelines** to route monitoring data where it’s needed – whether for compliance (storage), real-time ops (Event Hubs), or deep analysis (Log Analytics). Always verify supported data types per resource.
+
+### 2-3 Azure Monitor Data Sources
+
+Here's a concise summary of Azure Monitor's data layers and capabilities:
+
+### ⚙️ **Three Layers of Metrics Collection**
+
+Azure Monitor Metrics Data Sources
+
+**Platform metrics / Guest OS metrics / Application metrics / Custom metrics**
+
+
+1. **Platform Metrics**  
+   - Automatically collected baseline metrics (e.g., VM CPU%, network I/O).  
+   - Requires **no configuration** – available out-of-the-box.  
+
+2. **Guest OS Metrics**  
+   - Enriched via **agents** (Windows/Linux VMs):  
+     - Performance counters (Windows)  
+     - Syslogs (Linux)  
+     - Windows Event Logs  
+
+3. **Application Metrics**  
+   - Via **Application Insights** (APM):  
+     - HTTP requests, dependencies, performance issues  
+   - Custom metrics from application code
+
+4. **Custom metrics**
+
+---
+
+
+| **Tool**               | **Purpose**                                                                 | **Key Features**                                  |  
+|-------------------------|-----------------------------------------------------------------------------|--------------------------------------------------|  
+| **Metrics Explorer**    | Visualize platform/guest metrics                                            | Multi-resource charts, baselining, alert creation |  
+| **Log Analytics**       | Unify & analyze logs across resources                                       | Kusto Query Language (KQL), normalized data tables |  
+| **Application Insights**| Monitor app performance (PaaS/IaaS)                                         | End-to-end transaction tracing, instrumentation  |  
+
+> 🔍 **Log Analytics Backend**: Built on **Azure Data Explorer (ADE)** – a scalable engine for log normalization/querying.
+
+
+
+#### Monitor Log Data
+
+**Disparate data sources**  Log formats / VMs / Storage accounts
+
+**Azure Data Explorer**
+
+- Fast, highly scalable data exploration service
+- Normalized data warehouse
+- Kusto Query Language (KQL)
+
+**Log Analytics**
+
+- Based on ADE
+- On-board VMs, storage accounts, diagnostic settings
+
+#### App Insights
+
+![Alt Image Text](../images/am1_2_4.png "Body image")
+
+#### 📈 **Baselining & Proactive Monitoring**  
+
+- **Purpose**: Establish performance norms to detect anomalies.  
+- **Workflow**:  
+  1. **Collect continuous metrics/logs** 
+  2. **Define "normal" operational parameters (e.g., peak/valley trends)** 
+  3. **Alert on deviations ** 
+  4. **Trigger automated actions (e.g., scaling, notifications)**  
+- **Critical Tip**: Avoid over-instrumentation – start with critical baselines.
+
+
+
+![Alt Image Text](../images/am1_2_5.png "Body image")
+
+---
+
+#### 🔑 **Key Distinctions**  
+
+- **Log Analytics vs. Application Insights**:  
+  - *Log Analytics*: Aggregates **infrastructure/OS logs**.  
+  - *App Insights*: Tracks **application-layer performance** (code-level).  
+- **KQL (Kusto Query Language)**: SQL-like syntax for cross-resource log queries.  
+
+> 💡 **Pro Tip**: Use Metrics Explorer for real-time resource health dashboards and Log Analytics/KQL for deep forensic analysis.
