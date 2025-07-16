@@ -202,3 +202,59 @@ Here's a concise summary of the Azure Monitor Logs analysis demo:
 > **Demo Outcome**: From verifying VM health to investigating security events, Azure Monitor Logs adapts to user expertise—delivering value immediately. 🕵️♂️
 
 
+## 2 Monitoring Microsoft Azure Resources and Workloads
+
+### 2-1 Introducing Azure Diagnostics Monitoring
+
+Here's a concise summary of the Azure diagnostics monitoring concepts:
+
+### ⚕️ **Service Health & Resource Health**
+
+- **Purpose**: Personalized view of Azure platform issues affecting *your* resources (e.g., Microsoft-side outages).
+- **Key Features**:
+  - World map showing regional service status.
+  - Historical issue tracking (resolved incidents).
+  - Determines if problems are Azure-related (vs. your configuration).
+- **Use Case**: "Sanity check" before troubleshooting internal issues.
+
+---
+
+### 📊 **Two Core Monitoring Streams**
+1. **Metrics**  
+   - **What**: Numerical time-series data (sampled periodically).  
+   - **Examples**: 
+     - *Infrastructure*: VM CPU%, disk space, network I/O.  
+     - *Apps*: HTTP errors, request rates.  
+   - **Analysis Tools**: Metrics Explorer, dashboards, alerts.  
+
+2. **Logs**  
+   - **What**: Event-based records (discrete occurrences).  
+   - **Types**:  
+     - **Activity Log**: Subscription-level *control-plane* audits (e.g., "VM deleted").  
+     - **Diagnostic Logs**: Resource-level *data-plane* events (e.g., VM guest OS logs).  
+   - **Storage**:  
+     - Metrics → Tables  
+     - Logs → Blobs (e.g., IIS logs) or Log Analytics.  
+   - **Analysis Tools**: Log Analytics, KQL queries.  
+
+---
+
+### ⚙️ **Enabling Diagnostics**
+- **Data Capture**: Send both metrics and logs to:
+  - Azure Storage (tables/blobs).
+  - Log Analytics workspace.
+  - Event Hubs (streaming).
+- **Guest OS Monitoring**: Enable for VMs to collect:
+  - Performance counters (CPU/memory).
+  - IIS/application logs.
+  - System event logs.
+
+---
+
+### 🎯 **Monitoring Goals**
+1. **Break/Fix**: Rapid incident response.
+2. **Optimization**: Performance tuning (e.g., scaling based on trends).
+3. **Security**: Detect anomalies/breaches.
+4. **Proactive Management**: Address issues before they impact users.
+
+> **Key Insight**: Azure diagnostics provide critical visibility despite no physical access to datacenters. Start by defining *why* you need monitoring (e.g., SLA compliance, cost control).
