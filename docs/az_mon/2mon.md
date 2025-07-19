@@ -1,4 +1,4 @@
-
+# 2 Monitoring Microsoft Azure Resources and Workloads
 
 ## 2 Azure Monitoring Fundamentals
 
@@ -387,3 +387,972 @@ Azure Monitor Metrics Data Sources
 - **KQL (Kusto Query Language)**: SQL-like syntax for cross-resource log queries.  
 
 > 💡 **Pro Tip**: Use Metrics Explorer for real-time resource health dashboards and Log Analytics/KQL for deep forensic analysis.
+
+
+
+### 2-6 Demo: Configure Diagnostics Settings
+
+#### ⚙️ **Enabling Diagnostics**
+1. **Resource-Level Setup**  
+   - **Most Resources**: Configure via **Azure Monitor → Diagnostics settings**  
+     - *Example*: Network interface (`vm2-nic`) enabled with:  
+       - Archival to storage account (`Contosodiag1`)  
+       - Streaming to Event Hub (`pshub704/diagnostics`)  
+       - Optional Log Analytics integration  
+     - *Resource Variations*:  
+       - Network interfaces → **Metrics only**  
+       - NSGs → **Logs only** (network events/rule counters)  
+
+
+
+![Alt Image Text](../images/am1_2_6.png "Body image")
+
+2. **Virtual Machines (Special Case)**  
+   - Enabled via **VM blade → Diagnostics settings**  
+   - Installs **Azure Diagnostics Extension** (Windows/Linux):  
+     - **Windows**: Performance counters, Event Logs, IIS logs  
+     - **Linux**: Syslog, disk/CPU/memory metrics  
+   - Requires **running VM state** for configuration  
+   - Storage account mandatory for data retention  
+
+---
+
+#### 📊 **Metrics Explorer Demo**
+1. **Plotting Metrics**  
+   - Scope: Select VM resource (`vm1`)  
+   - Metric: `Percentage CPU` (host-level)  
+   - Customization:  
+     - Aggregation (Avg/Min/Max)  
+     - Time range (default 24h → adjustable)  
+     - Chart types (line/bar/area)  
+
+2. **Persistence Options**  
+   - **Pin to dashboard**: Real-time monitoring  
+   - **Copy link**: Save chart configuration (avoids recreation)  
+
+---
+
+#### 💡 **Key Insights**
+- **Automatic Baseline Metrics**: Collected for *all* resources (even without diagnostics)  
+- **Agent-Dependent Data**: Richer metrics (e.g., guest OS) require extension installation  
+- **Resource Differences**:  
+  - VMs need per-instance configuration  
+  - Non-VM resources use centralized Monitor settings  
+- **Pro Tip**: Use **Chart Link Sharing** to preserve complex metric views  
+
+> **Demo Workflow**: Enabled diagnostics → Customized VM metrics → Visualized CPU usage → Saved chart for reuse.
+
+
+###  2-7 Azure Monitor Log Search
+
+
+![Alt Image Text](../images/am1_2_7.png "Body image")
+
+#### ⚡ **Alert Rule Components**
+1. **Target Resources**  
+   - Monitored Azure resources (e.g., VMs, databases)
+2. **Signals**  
+   - Trigger events (e.g., VM restart, CPU threshold breach)
+3. **Logic/Condition**  
+   - Boolean criteria defining when to fire (e.g., *"CPU > 80% for 5 minutes"*)
+
+#### 🛠️ **Action Groups**
+- **Reusable workflows** triggered by alerts
+- **Actions beyond notifications**:
+  - Run scripts (PowerShell/Python/C#) for auto-remediation (e.g., restart VM)
+  - Integrate with ITSM tools (ServiceNow, Jira)
+  - Notify via email/SMS/push/voice
+  - Trigger Azure Functions or Logic Apps
+
+#### 📊 **Monitoring & Auditing**
+- Track alert states (fired/resolved)
+- Audit trails for all actions
+- Historical incident analysis
+
+#### 💰 **Pricing**
+- **Free tier**:  
+  - 1,000 email/push notifications monthly  
+- **Beyond free tier**:  
+  - Low-cost per notification (check [Azure Alerts Pricing](https://azure.microsoft.com/pricing/details/monitor/))
+
+
+![Alt Image Text](../images/am1_2_8.png "Body image")
+
+#### 💡 **Key Value**
+- **Proactive ops**: Transform monitoring → automated response  
+- **Unified platform**: No need for custom notification systems  
+- **Scalable**: Handles enterprise workloads with pay-as-you-go model  
+
+> Example: Auto-restart VMs when shutdowns occur, with audit logs and SMS alerts.
+
+###  2-8 Azure Monitor Log Search
+
+
+Here's a concise summary of Azure Monitor Log Analytics capabilities:
+
+#### 📊 **Core Functionality**
+1. **Workspace Architecture**  
+   - Central **Log Analytics workspace** aggregates logs from all onboarded resources  
+   - Data automatically **normalized/indexed** into virtual tables with unified schema  
+
+2. **Kusto Query Language (KQL)**  
+   - SQL-like syntax with Splunk/PowerShell similarities  
+   - Dynamic query editor in Azure portal with live visualization toggle (tables ↔ charts)  
+
+---
+
+#### 🚀 **Key Features**
+- **Export & Integration**  
+  - Save/share queries across teams  
+  - Export to CSV/Power BI for dashboards  
+  - Trigger alerts from query results  
+- **Pre-Built Solutions**  
+  - **Azure Marketplace solutions** (e.g., *Activity Log Analytics*)  
+  - Centralized views across subscriptions  
+  - Ready-made dashboards/visualizations  
+
+---
+
+#### 🔍 **Activity Log Analytics Example**
+- **Purpose**: Unified *control-plane* auditing ("who did what when")  
+- **Capabilities**:  
+  - Aggregate admin logs across **multiple subscriptions**  
+  - Run cross-subscription KQL queries  
+  - Pre-configured dashboards for access/change analysis  
+
+
+---
+
+#### 💡 **Critical Value Propositions**
+1. **Schema Normalization**  
+   - Transforms disparate log formats into query-friendly tables  
+2. **Unified Operations**  
+   - Single pane for infrastructure/app/audit logs  
+3. **Extensible Ecosystem**  
+   - Marketplace solutions accelerate monitoring setup  
+4. **Proactive Alerting**  
+   - Convert log patterns into actionable triggers  
+
+![Alt Image Text](../images/am1_2_9.png "Body image")
+
+
+> **Example Workflow**: Onboard VMs → Query failed logins (KQL) → Visualize attack patterns → Automate security alerts.
+
+### 2-9 Demo: Perform Log Searches
+
+#### 🛠️ **Workspace Setup & Configuration**
+1. **Create Workspace**:  
+   - Foundation for log aggregation (e.g., `ps-workspace`).  
+2. **Onboard Data Sources**:  
+   - Connect VMs, storage accounts, activity logs via **Diagnostic Settings**.  
+   - **Key constraint**: A VM can link to *only one* workspace at a time.  
+3. **Install Log Analytics Agent**:  
+   - Automatically deployed when connecting VMs → streams OS/resource data to workspace.  
+
+---
+
+#### 🔌 **Extending Capabilities with Solutions**
+- **Azure Marketplace Solutions**:  
+  - Pre-built tools (e.g., `AzureBackup`, `NetworkMonitoring`) add specialized dashboards/queries.  
+  - Install via **Solutions** blade → enhances workspace functionality.  
+  - *Note*: Each solution has its own pricing (check exercise files).  
+
+---
+
+#### 🔍 **Querying with KQL (Kusto Query Language)**
+1. **Access Interfaces**:  
+   - **Azure Portal**: Built-in Logs interface.  
+   - **Query Playground**: Microsoft-hosted sandbox (authenticate via Azure AD).  
+2. **Key Features**:  
+   - **IntelliSense**: Auto-complete for tables/commands (e.g., `Perf`, `SecurityEvent`).  
+   - **Cross-Table Queries**: Join data from multiple sources (e.g., `search SecurityEvent | where ...`).  
+   - **Time Filters**: Use `ago()` for dynamic time ranges (e.g., `where TimeGenerated > ago(1h)`).  
+3. **Query Examples**:  
+   ```kql
+   Perf | where TimeGenerated > ago(24h) | summarize count() by ObjectName, CounterName
+   ```
+   ```kql
+   SecurityEvent | where EventID == 4625 // Failed logins
+   ```
+```
+search in (SecurityEvent) "Cryptographic"
+take 10
+
+Perf | 
+where TimeGenerated > ago (1h)
+summarize count() by ObjectName, CounterName
+
+// comments
+
+SecurityEvent
+| where Level == 8
+| where EventID == 4672
+Event
+| where EventLog == "Application"
+| where TimeGenerated > ago (24h)
+| where RenderedDescription contains "cryptographic"
+```
+
+---
+
+#### 📊 **Visualization & Export**
+- **Dynamic Toggling**: Switch between table/chart views based on query results.  
+- **Export Options**:  
+  - **CSV**: For offline analysis.  
+  - **Power BI**: Build live dashboards.  
+  - **Alerts**: Trigger rules from query results.  
+- **Saving/Sharing**: Reuse queries across teams.  
+
+---
+
+#### 💡 **Pro Tips**
+1. **Use Sample Queries**: Built-in templates (e.g., "Computer performance") jumpstart analysis.  
+2. **Leverage Schema Pane**: Explore tables/columns under **LogManagement**.  
+3. **Playground Advantage**: Practice KQL safely using Microsoft’s demo data.  
+
+> **Demo Workflow**: Created workspace → Onboarded VMs → Installed solutions → Ran KQL queries → Exported to CSV/Power BI.  
+
+**Next Steps**: Deepen KQL skills using exercise files/Pluralsight courses.
+
+
+## 3 Monitoring Your Spend in Microsoft Azure
+
+### 3-1 Get Estimated Azure Costs Pre-deployment
+
+#### 💰 **Cost Estimation Tools**
+
+1. **Azure Pricing Calculator**  
+   - Web-based tool on azure.com for pre-deployment cost modeling  
+   - Supports most Azure services (VMs, databases, storage, etc.)
+
+2. **In-Portal Estimates**  
+   - Real-time cost displays when configuring resources:  
+     - VM size selection shows **monthly estimates**  
+     - Azure SQL DB tiers show pricing during setup  
+
+3. **Programmatic Access**  
+   - **Consumption API**: Track usage expenditures  
+   - **Rate Card API**: Look up real-time pricing per service/region  
+
+---
+
+#### 🌍 **Critical Regional Factors**  
+- **Price Variability**: Costs differ by region due to:  
+  - Local energy/operational expenses  
+  - Infrastructure availability  
+- **Service Limitations**: Not all services available in every region  
+- **Strategic Impact**: Region choice directly affects:  
+  - Deployment costs (e.g., US West vs. Southeast Asia)  
+  - Architecture decisions (e.g., geo-redundancy tradeoffs)  
+
+---
+
+#### 💡 **Key Recommendations**  
+
+- **Always Specify Region**: Use region filters in pricing tools for accuracy  
+- **Combine Tools**: Use calculator for planning + portal for real-time validation  
+- **Monitor Post-Deployment**: Pair estimates with **Cost Management** for ongoing optimization  
+
+> **Example**: A *D4s v3 VM* in **East US** = ~$299/month vs. **West Europe** = ~$327/month (illustrates regional variance).
+
+### 3-2 Get Estimated Azure Costs Pre-deployment
+
+
+Here's a concise summary of Azure cost management tools post-deployment:
+
+#### 💳 **Core Cost Tracking Tools**
+1. **Invoices**  
+   - Detailed monthly expenditure breakdowns (for PAYG subscriptions).  
+2. **Budgets & Alerts**  
+   - Set spending limits (critical for **Enterprise Agreements**).  
+   - Receive notifications at custom thresholds (e.g., 80% of budget consumed).  
+
+---
+
+#### 📊 **Deep Cost Analysis**
+- **Azure Cost Analysis Tool**:  
+  - Native portal interface for spend exploration.  
+  - Tracks costs by service/resource group/tags.  
+- **Cloudyn Integration**:  
+  - Advanced visual dashboards (easier than spreadsheets).  
+  - **Optimization Engine**:  
+    - Identifies underutilized resources (e.g., "Downsize VM X to save $Y/year").  
+    - Recommends reservations or rightsizing.  
+
+---
+
+#### ⚖️ **Cloudyn vs. Azure Advisor**
+| **Feature**               | **Azure Advisor**         | **Cloudyn**               |  
+|---------------------------|---------------------------|---------------------------|  
+| **Cost Analysis Depth**   | Baseline recommendations  | Advanced optimization     |  
+| **Visualization**         | Limited                   | Rich dashboards           |  
+| **Use Case**              | Quick checks              | Enterprise cost governance|  
+
+---
+
+#### 💡 **Key Takeaways**
+- **Proactive Controls**: Budgets/alerts prevent cost overruns.  
+- **Visual Insights**: Cloudyn transforms raw data into actionable reports.  
+- **Optimization**: Combine Advisor (quick wins) + Cloudyn (deep dives) for maximum savings.  
+- **EA Focus**: Budget tracking is essential for credit-based subscriptions.  
+
+> **Example**: Cloudyn might flag an underused $500/month VM that could be replaced with a $200/month instance → **$3,600/year saved**.
+
+### 3-3 Demo: View Subscription and Cost Data
+
+
+#### 🔐 **Access Control (IAM)**
+- **Billing Permissions**:  
+  - Assign `Billing Reader` role for read-only billing access  
+  - Initial subscription creator = default billing admin (transferable)  
+- **RBAC Principle**: Apply least privilege for cost visibility  
+
+#### 💰 **Cost Management Tools**
+1. **Budgets**  
+   - Set spend thresholds (subscription/resource group level)  
+   - Alert triggers via **Action Groups** (email/SMS)  
+   - Reset periods: Monthly/Quarterly/Yearly  
+2. **Invoices**  
+   - Download/view PAYG invoices  
+   - Email invoices directly from portal  
+
+### ⚙️ **Subscription Administration**
+- **Renaming/Organization**: Label subscriptions clearly  
+- **Directory Transfer**:  
+  - Move subscription between Azure AD tenants  
+  - *Critical note*: **Doesn’t transfer billing ownership**  
+- **Cancellation**: Directly from Overview blade  
+- **Resource Providers**:  
+  - Register/unregister services (troubleshooting API issues)  
+
+### 🤝 **Partner & External Integrations**
+- **Cloud Service Providers**: Link partner IDs for usage sharing  
+- **Network Virtual Appliances**: View external billing linkages  
+
+### 📊 **Key Workflow Highlights**
+1. **Budget Creation**:  
+   Scope → Amount → Alert conditions → Action group  
+2. **Invoice Delegation**: Use "Access Invoice" to grant billing access  
+3. **Directory Change Caveats**:  
+   - Original directory can’t be deleted until billing ownership is transferred  
+   - [Microsoft Docs](https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/change-directory) for detailed process  
+
+> **Pro Tip**: Combine budgets with Azure Monitor alerts for automated cost governance (e.g., auto-shutdown VMs at 90% budget utilization).
+
+---
+
+#### 💡 **Critical Takeaways**
+- **Filter subscriptions** to reduce portal clutter  
+- **Budgets = specialized cost alerts** (leverages Action Groups)  
+- **Billing access ≠ subscription access** (manage via IAM)  
+- Always verify **resource provider registration** for new services  
+- Directory changes require **explicit billing ownership transfer**  
+
+This setup enables granular cost control while maintaining security and operational flexibility.
+
+### 3-4 Forecast and Optimize Your Azure Spend
+
+
+#### ⚙️ **Cost Optimization via Azure Advisor**  
+
+- **Key Recommendations**:  
+  - **Resize/Shut Down** underutilized VMs  
+  - **Delete idle VPN Gateways** (high-cost if unused)  
+  - **Purchase Reserved VM Instances** (save 40-70% vs. pay-as-you-go)  
+  - **Clean up orphaned resources**: Unattached public IPs, unused disks  
+  - **Use Standard-tier snapshots** for managed disks (no premium needed for backups)  
+
+---
+
+### 📈 **Forecasting Tools**  
+
+1. **Azure Cost Management**:  
+   - Built-in portal tool for spend visualization  
+   - Projects future costs based on current usage patterns  
+   - Breaks down costs by service/resource/region  
+
+2. **Cloudyn Integration**:
+   
+   - Advanced forecasting gradually merging into Azure Cost Management  
+   - Provides richer dashboards and long-term trend analysis  
+
+---
+
+#### 💡 **Strategic Insights**  
+
+- **Proactive Savings**:  
+  - Reservations → Significant long-term discounts  
+  - Resource hygiene → Eliminates "orphaned resource tax"  
+- **Tier Optimization**:  
+  - Match storage performance to actual needs (e.g., standard snapshots)  
+- **Continuous Monitoring**:  
+  - Combine Advisor recommendations with Cost Management trends  
+
+> **Example Impact**:  
+> - Resizing 5 underused VMs: **~$15k/year saved**  
+> - Switching to reserved instances: **~60% cost reduction**  
+
+#### 🔮 **Future Outlook**  
+
+
+Microsoft is unifying Cloudyn’s depth with native Azure tools – expect:  
+
+- Enhanced forecasting algorithms  
+- Deeper cross-subscription insights  
+- Automated optimization workflows  
+
+**Next Step**: Implement Advisor recommendations + set budget alerts to lock in savings.
+
+
+Here's a concise summary of Azure cost management layers and tools:
+
+#### 🔍 **Cost Management Hierarchy**
+1. **Management Groups**  
+   - Organize subscriptions hierarchically (above subscriptions, below Azure AD tenant)  
+   - Enable cross-subscription cost analysis  
+   - *Best Practice*: Use even with single subscriptions for future scalability  
+
+2. **Scope Control**  
+   - Toggle between tenant/management group/subscription/resource views  
+
+---
+
+#### ⚙️ **Core Tools in Cost Management & Billing**
+1. **Azure Advisor (Cost Tab)**  
+   - **Free ML-powered optimization**:  
+     - Reserved instance recommendations  
+     - Underutilized resource identification  
+     - Orphaned resource cleanup (e.g., unattached IPs)  
+
+2. **Cost Analysis**  
+   - **Key Features**:  
+     - Views: Accumulated/Daily/Service/Resource costs  
+     - **Tag-based grouping**: Critical for cross-resource-group tracking  
+     - Export options: PNG/PDF/CSV  
+   - **Time Frames**: Customizable (last 7 days, calendar months, etc.)  
+
+3. **Cloudyn Transition**  
+   - Native Azure tools now replace Cloudyn  
+   - New Cloudyn registrations restricted to CSP partners  
+
+---
+
+#### 🏷️ **Strategic Importance of Tagging**
+- **Cost Allocation**: Track expenses across projects/departments  
+- **Analysis Use Case**:  
+  ```markdown
+  Cost Analysis → Group By → "Tag:ProjectX"  
+  ```
+- Solves limitation of resource-group-only tracking  
+
+---
+
+#### 📊 **Workflow Highlights**
+1. **Navigate to**:  
+   `Cost Management + Billing → Cost Management`  
+2. **Set Scope**: Management group / Subscription  
+3. **Analyze**: Use built-in views or custom tags  
+4. **Optimize**: Implement Advisor recommendations  
+5. **Export**: Share reports via PDF/CSV  
+
+> **Pro Tip**: Combine daily cost alerts with tag-based dashboards for real-time budget control.
+
+---
+
+#### 💡 **Key Takeaways**
+- **Management Groups > Subscriptions**: Foundation for enterprise cost governance  
+- **Tags Are Non-Negotiable**: Essential for accurate cost attribution  
+- **Advisor = Free Savings**: Automatically identifies waste  
+- **Cloudyn Phase-Out**: Prioritize native Azure Cost Management tools  
+
+This layered approach enables granular cost tracking from tenant-level down to individual resources.
+
+### 3-5 Demo: Work with Azure Cost Analysis
+
+
+#### 🔍 **Cost Management Hierarchy**
+1. **Management Groups**  
+   - Organize subscriptions hierarchically (above subscriptions, below Azure AD tenant)  
+   - Enable cross-subscription cost analysis  
+   - *Best Practice*: Use even with single subscriptions for future scalability  
+
+2. **Scope Control**  
+   - Toggle between tenant/management group/subscription/resource views  
+
+---
+
+#### ⚙️ **Core Tools in Cost Management & Billing**
+1. **Azure Advisor (Cost Tab)**  
+   - **Free ML-powered optimization**:  
+     - Reserved instance recommendations  
+     - Underutilized resource identification  
+     - Orphaned resource cleanup (e.g., unattached IPs)  
+
+2. **Cost Analysis**  
+   - **Key Features**:  
+     - Views: Accumulated/Daily/Service/Resource costs  
+     - **Tag-based grouping**: Critical for cross-resource-group tracking  
+     - Export options: PNG/PDF/CSV  
+   - **Time Frames**: Customizable (last 7 days, calendar months, etc.)  
+
+3. **Cloudyn Transition**  
+   - Native Azure tools now replace Cloudyn  
+   - New Cloudyn registrations restricted to CSP partners  
+
+---
+
+#### 🏷️ **Strategic Importance of Tagging**
+- **Cost Allocation**: Track expenses across projects/departments  
+- **Analysis Use Case**:  
+  ```markdown
+  Cost Analysis → Group By → "Tag:ProjectX"  
+  ```
+- Solves limitation of resource-group-only tracking  
+
+---
+
+#### 📊 **Workflow Highlights**
+1. **Navigate to**:  
+   `Cost Management + Billing → Cost Management`  
+2. **Set Scope**: Management group / Subscription  
+3. **Analyze**: Use built-in views or custom tags  
+4. **Optimize**: Implement Advisor recommendations  
+5. **Export**: Share reports via PDF/CSV  
+
+> **Pro Tip**: Combine daily cost alerts with tag-based dashboards for real-time budget control.
+
+---
+
+#### 💡 **Key Takeaways**
+- **Management Groups > Subscriptions**: Foundation for enterprise cost governance  
+- **Tags Are Non-Negotiable**: Essential for accurate cost attribution  
+- **Advisor = Free Savings**: Automatically identifies waste  
+- **Cloudyn Phase-Out**: Prioritize native Azure Cost Management tools  
+
+This layered approach enables granular cost tracking from tenant-level down to individual resources.
+
+## 4 Microsoft Monitoring Azure Updates
+
+### 4-1 Azure Cost Management
+
+Here's a concise summary of Azure spend reporting in Cost Management:
+
+#### 📊 **Core Reporting Tools**
+1. **Cost Analysis Hub**  
+   - **Views**:  
+     - Accumulated spend  
+     - Forecasted future costs  
+     - Breakdowns by service/location/resource  
+   - **Forecasting**: Predicts month-end spend based on current trends  
+
+---
+
+#### 🏷️ **Critical Features**
+- **Tag Filtering**:  
+  - Track costs across resource groups/subscriptions  
+  - Essential for multi-department/project cost allocation  
+- **Export & Sharing**:  
+  - Generate CSV reports  
+  - Share custom views with stakeholders  
+- **Alerts Integration**:  
+  - Trigger notifications at spending thresholds  
+
+---
+
+#### ⚠️ **Cloudyn Transition**
+- **Deprecation Status**:  
+  - Cloudyn (acquired by Microsoft) is being phased out  
+  - Functionality now **natively integrated** into Azure Cost Management  
+- **Action**: Use built-in tools instead of standalone Cloudyn  
+
+---
+
+#### ⚙️ **Workflow Summary**
+```mermaid
+graph TD
+A[Access Cost Analysis] --> B{Configure View}
+B --> C[Scope: Subscription/Resource Group]
+B --> D[Filter: Tags/Service/Location]
+B --> E[Select: Forecast/Accumulated View]
+C --> F[Export CSV/Share Dashboard]
+D --> G[Identify Cost Centers]
+E --> H[Track Against Budgets]
+```
+
+#### 💡 **Key Takeaways**
+1. **Forecasting > Retrospection**: Proactively manage budgets using prediction tools  
+2. **Tag Discipline**: Implement consistent tagging for accurate cost attribution  
+3. **Native Over Third-Party**: Rely on Azure's built-in cost tools (Cloudyn replacement)  
+4. **Actionable Outputs**: Export data for finance teams/audits  
+
+> **Pro Tip**: Combine daily cost alerts with tag-based dashboards for real-time budget control across projects.  
+
+**Next Step**: Set up monthly forecast vs. actual reports using exported CSV data.
+
+### 4-2 Azure Monitor Workbooks
+
+#### 📘 **Azure Monitor Workbooks**
+
+1. **Purpose**:  
+   - Solves "metric overload" by providing curated monitoring views  
+   - Combines **metrics**, **KQL queries**, and **markdown** in interactive reports  
+2. **Key Features**:  
+   - Predefined templates for common scenarios (e.g., VM performance, app health)  
+   - Custom report creation with drag-and-drop components  
+   - Real-time collaboration for teams  
+3. **Value**:  
+   - Replaces manual Metric Explorer configuration  
+   - Contextualizes data (e.g., explanations + visuals + live queries)  
+
+---
+
+#### ⚖️ **Workbooks vs. Notebooks**
+
+| **Feature**               | **Azure Monitor Workbooks**        | **Azure Notebooks**               |  
+|---------------------------|-----------------------------------|-----------------------------------|  
+| **Core Function**         | Monitoring dashboards             | Code execution + data science     |  
+| **Technology**            | Native Azure tool                 | Hosted Jupyter Notebooks          |  
+| **Components**            | Metrics + KQL + markdown          | Markdown + executable code (Python/R) |  
+| **Primary Users**         | DevOps/IT Ops                     | Data scientists/ML engineers      |  
+| **Hosting**               | Integrated in Azure Monitor       | `notebooks.azure.com`             |  
+
+---
+
+#### 💡 **Key Takeaways**
+
+1. **Use Workbooks for**:  
+   - Unified performance/health dashboards  
+   - Combining live metrics with diagnostic logs  
+   - Team-sharable operational reports  
+2. **Use Notebooks for**:  
+   - Exploratory data analysis  
+   - Machine learning prototyping  
+   - Code-heavy collaborations (e.g., Python/R scripts)  
+3. **Innovation**: Workbooks simplify monitoring by pre-packaging critical insights (no manual metric hunting).  
+
+> **Pro Tip**: Start with predefined Workbooks templates, then customize with organization-specific KQL queries.
+
+### 4-2 Azure Monitor Workbooks
+
+#### 🔍 **Core Evolution**  
+
+- **Successor to "v1" VM Monitoring**: Replaces manual guest OS diagnostics + Metrics Explorer  
+- **Unified Solution**: Integrates legacy Operations Management Suite (OMS) capabilities into Azure Monitor  
+
+---
+
+#### 🚀 **Key Features**  
+
+1. **Performance Dashboard**  
+   - Predefined views for critical metrics (CPU/memory/disk/network)  
+   - Eliminates manual chart configuration in Metrics Explorer  
+2. **Map (Service Map)**  
+   - Visualizes dependencies between VMs/services  
+   - Reveals:  
+     - Active network connections (IPs/ports/protocols)  
+     - Running processes and linked dependencies  
+3. **Bulk Configuration**  
+   - Auto-enable diagnostics across VMs via **Azure Policy**  
+   - Centralized onboarding via Log Analytics workspace  
+
+---
+
+#### ⚙️ **Requirements** 
+
+- **Log Analytics Workspace**: Mandatory foundation (future-proofs monitoring)  
+- **Agents**: Automatic deployment during onboarding  
+  - *Log Analytics agent* (data collection)  
+  - *Dependency agent* (dependency mapping)  
+
+---
+
+#### 💡 **Strategic Value**  
+- **Proactive Insights**: Detect bottlenecks/dependencies before outages  
+- **Operational Efficiency**:  
+  - Replace custom dashboards with out-of-box views  
+  - Automate monitoring at scale (via policies)  
+- **Unified Experience**: Accessible from:  
+  - Individual VM blades  
+  - Azure Monitor hub  
+
+> **Demo Highlight**: Showcases how to replace fragmented monitoring with a single-pane solution.  
+
+---
+
+#### 🔄 **Migration Note**  
+- **OMS Transition**: Original "Service Map" now fully integrated as the "Map" feature  
+- **Adoption Incentive**: Microsoft’s recommended path for VM monitoring
+
+### 4-3 Azure Monitor for VMs
+
+Here's a concise summary of **Azure Monitor for VMs (Virtual Machine Insights)**:
+
+#### 🔄 **Evolution from Legacy Monitoring**
+- Replaces "v1" VM monitoring (manual guest OS diagnostics + Metrics Explorer)
+- Integrates former **Operations Management Suite (OMS)** capabilities
+- Requires a **Log Analytics workspace** (foundation for modern monitoring)
+
+---
+
+#### 🖥️ **Core Features**
+1. **Performance Dashboard**  
+   - Predefined views for critical metrics (CPU/memory/disk/network)  
+   - Eliminates manual chart configuration  
+2. **Map (Service Map)**  
+   - Visualizes dependencies between VMs/services  
+   - Reveals:  
+     - Live network connections (IPs/ports/protocols)  
+     - Running processes and dependencies  
+
+---
+
+#### ⚡ **Key Advantages**
+- **Bulk Configuration**:  
+  - Auto-enable monitoring across VMs via **Azure Policy**  
+  - Centralized onboarding (portal/API/templates)  
+- **Unified Access**:  
+  - Available from individual VM blades *and* Azure Monitor hub  
+- **Future-Proof**:  
+  - Microsoft's strategic direction for VM monitoring  
+
+---
+
+#### ⚙️ **Deployment Workflow**
+```mermaid
+graph LR
+A[Log Analytics Workspace] --> B[Enable Insights]
+B --> C[Performance Dashboard]
+B --> D[Service Map]
+B --> E[Azure Policy Integration]
+```
+
+> **Demo Highlight**: Showcases seamless transition from legacy diagnostics to automated insights with dependency mapping.
+
+---
+
+#### 💡 **Why Adopt?**
+
+- **Proactive Optimization**: Identify bottlenecks before outages  
+- **Operational Efficiency**: Replace fragmented tools with a single pane  
+- **Enterprise Scale**: Manage 1000s of VMs via policy-driven enforcement  
+
+
+### 4-4 Demo: Enable Azure Monitor for VM
+
+#### ⚙️ **Onboarding Methods**  
+1. **Per-VM Enablement**:  
+   - Navigate to VM → **Monitoring** → **Insights** → Enable  
+   - Select **Log Analytics workspace**  
+   - Automatically deploys:  
+     - *Log Analytics agent* (metrics/logs)  
+     - *Dependency agent* (Service Map)  
+
+2. **Bulk Enablement**:  
+   - Use **Azure Monitor hub** → **Virtual Machines**  
+   - View **monitored/unmonitored VMs**  
+   - Configure **workspace assignment**  
+   - Leverage **Azure Policy/REST API/ARM templates** for automation  
+
+---
+
+#### 🔍 **Key Features Enabled**  
+| **Feature**       | **Purpose**                                                                 |  
+|-------------------|-----------------------------------------------------------------------------|  
+| **Performance**   | Prebuilt dashboards for CPU/memory/disk/network                            |  
+| **Map (Service Map)** | Visualize dependencies between VMs/services (ports/protocols/connections) |  
+
+---
+
+#### ⚠️ **Critical Notes**  
+- **Multi-Homing Support**: VMs *can* report to **multiple workspaces** (advanced scenario)  
+- **Agent Requirements**:  
+  - Windows: Event logs, IIS, crash dumps  
+  - Linux: Syslog data  
+- **Legacy vs. Modern**:  
+  - *Old method*: "Guest OS diagnostics" (storage account-based)  
+  - *New standard*: **Insights** (Log Analytics-centric)  
+
+---
+
+#### 🚀 **Workflow Comparison**  
+```mermaid
+graph LR
+A[VM Monitoring] --> B[Traditional Method]
+A --> C[Modern Method]
+B --> D[Enable Guest OS diagnostics<br>per VM]
+C --> E[Enable Insights<br>per VM or at scale]
+E --> F[Azure Monitor hub]
+E --> G[Azure Policy]
+```
+
+#### 💡 **Key Takeaways**  
+1. **Centralization**: Log Analytics workspace is now the monitoring backbone  
+2. **Scale Matters**: Use Azure Monitor hub for enterprise deployments (100s of VMs)  
+3. **Dependency Mapping**: Service Map reveals hidden infrastructure relationships  
+4. **Future-Proof**: Insights replaces legacy diagnostics (Microsoft's strategic path)  
+
+**Pro Tip**: Start with Insights onboarding via Azure Policy to enforce monitoring standards across all VMs.
+
+
+### 4-5 Demo: Integrate Azure Policy
+
+
+#### ⚙️ **Azure Policy for Monitoring Automation**
+
+1. **Purpose**:  
+   - Enforce monitoring compliance at scale  
+   - **Automate deployment of monitoring agents**  
+   - **Enable **Azure Monitor for VMs** across environments**  
+
+2. **Key Built-in Initiatives**:  
+   - **Enable Azure Monitor for VMs**:  
+     - Auto-deploys Log Analytics agent to **Windows/Linux VMs**  
+   - **Enable Azure Monitor for Scale Sets**:  
+     - Applies same monitoring to VM scale sets  
+
+---
+
+#### 🔧 **Implementation Workflow**
+
+```mermaid
+graph TD
+A[Azure Policy → Definitions] --> B{Filter:}
+B --> C[Category: Monitoring]
+B --> D[Type: Built-in]
+C --> E[Select Initiative]
+E --> F[Assign to Scope]
+```
+1. Navigate: `Policy > Authoring > Definitions`  
+2. Filter:  
+   - *Category*: `Monitoring`  
+   - *Type*: `Built-in`  
+3. Assign initiatives to:  
+   - Management groups  
+   - Subscriptions  
+   - Resource groups  
+
+---
+
+#### 📦 **Initiative Components**
+
+| **Initiative**                     | **Policies Included**                          |  
+|------------------------------------|----------------------------------------------|  
+| **Enable Azure Monitor for VMs**    | - Deploy Log Analytics agent (Windows)       |  
+|                                    | - Deploy Log Analytics agent (Linux)         |  
+| **Enable for Scale Sets**           | - Equivalent policies for VM scale sets      |  
+
+---
+
+#### 💡 **Key Benefits**
+
+- **Zero-Touch Onboarding**: Automates agent deployment  
+- **Consistency**: Ensures 100% VM monitoring coverage  
+- **Remediation**: Auto-fixes non-compliant resources  
+- **Governance Integration**: Part of broader Azure governance framework  
+
+> **Pro Tip**: Combine with Azure Monitor's "Insights" onboarding for end-to-end monitoring enforcement. Assign initiatives at **management group level** for enterprise-wide coverage.
+
+### 4-6 Demo: View Azure Monitor VM Data
+
+#### ⚙️ **Onboarding Workflow**
+
+1. **Bulk Enablement**:  
+   - From **Azure Monitor → Virtual Machines** view  
+   - Identify non-monitored VMs across subscriptions/resource groups  
+   - Select VMs → "Enable" → Choose existing Log Analytics workspace  
+   - *Critical Note*: Avoid accidentally creating new workspaces (demo mishap)  
+
+2. **Per-VM Method**:  
+   - VM blade → **Insights** → Select workspace → Enable  
+   - Auto-deploys agents (Log Analytics + Dependency agents)  
+
+---
+
+#### 📊 **Performance Dashboard**
+
+- **Prebuilt Metrics Visualization**:  
+  - CPU/Memory/Disk/Network charts across multiple VMs  
+  - Interactive tooltips show per-VM values  
+  - Aggregation options: Min/Max/Avg/Percentiles  
+- **Advantage vs. Metrics Explorer**:  
+  - No manual configuration required  
+  - Unified view of critical metrics  
+
+---
+
+#### 🌐 **Service Map (Dependency Visualization)**
+| **Feature**          | **Value**                                                                 |  
+|----------------------|---------------------------------------------------------------------------|  
+| **Connections**      | Live inbound/outbound links (IPs/ports/protocols)                        |  
+| **Processes**        | Running services (e.g., 22 processes on `spot1` in demo)                 |  
+| **Dependency Mapping** | Critical for migrations (identify all dependencies pre-move)             |  
+
+*Example*:  
+- `spot1` showed 11 external connections on port 443  
+- Azure DNS names revealed cloud dependencies  
+
+---
+
+#### 🔑 **Key Insights**
+1. **Scalability**:  
+   - Onboard 100s of VMs via Azure Monitor hub (not just per-VM)  
+2. **Migration Safety**:  
+   - Service Map prevents post-move outages by exposing hidden dependencies  
+3. **Hybrid Support**:  
+   - Works with Azure Arc-enabled on-premises servers  
+   - Includes VM scale sets  
+4. **Workbook Integration**:  
+   - All views are prebuilt Azure Workbooks (customizable)  
+
+> **Pro Tip**: Use Service Map before ANY VM migration/change to audit connections. Combine with Azure Policy for auto-remediation of unmonitored resources.
+
+### 4-8 Where You See KQL 
+
+#### 🔍 **KQL Essentials**
+
+1. **Origin & Purpose**:  
+   - Named after explorer *Jacques Cousteau* (homophone "Kusto")  
+   - Designed as a **data exploration language** for large-scale analytics  
+   - Internally used by Microsoft for years before public release  
+
+---
+
+#### ⚙️ **Key Azure Services Using KQL**
+| **Service**               | **Use Case**                                                                 |  
+|---------------------------|-----------------------------------------------------------------------------|  
+| **Azure Log Analytics**   | Query logs across Azure/hybrid resources (primary interface)               |  
+| **Application Insights**  | Analyze application performance/traces                                     |  
+| **Azure Sentinel (SIEM)** | Investigate security threats/incidents                                     |  
+| **Azure Data Explorer (ADX)** | High-speed data exploration on petabyte-scale datasets                  |  
+
+---
+
+#### 💡 **Strategic Value**
+
+1. **Certification & Career**:  
+   - Critical for Azure certification exams  
+   - High-value industry skill for cloud monitoring/security roles  
+2. **Unified Language**:  
+   - Single syntax across monitoring/security/data services  
+3. **Performance**:  
+   - Optimized for fast queries on massive datasets (billions of records)  
+
+---
+
+#### 🌐 **Azure Data Explorer (ADX) Notes**
+
+- **Web-based service** (not desktop app)  
+- Uses **compute clusters** for parallel query processing  
+- Supports both **SQL** and **KQL** interfaces  
+- Handles petabyte-scale data exploration  
+
+> 💡 **Pro Tip**: Mastering KQL unlocks deep insights across Azure's monitoring ecosystem – prioritize learning its core operators (`where`, `summarize`, `join`, `render`).  
+
+```
+StormEvents
+| limit 100
+```
+
+**Azure Data Explorer (ADX)**
+
+![Alt Image Text](../images/am1_2_10.png "Body image")
