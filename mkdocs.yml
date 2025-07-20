@@ -21,6 +21,7 @@ nav:
     - '3 Amazon Bedrock 简介': 'chap2_aws/3AmazonBedrock.md'
     - '4 低代码机器学习': 'chap2_aws/4ML.md'
   - 'Prompt Engineering':
+    - '0 Prompt Engineering 快速入门+实战案例': 'chap3_prompt/4prompt_exp.md'
     - '1 Prompts & Use ChatGPT as a Powerful Tool for Programming': 'chap3_prompt/1prompt_code.md'
     - '2 11个顶级设计案例': 'chap3_prompt/2prompt_design.md'
     - '3 Prompts for F-Analyst': 'chap3_prompt/3promt_fin_anylysis.md'
