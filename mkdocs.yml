@@ -101,7 +101,8 @@ nav:
     - '6 基于Azure DevOps的Golang项目容器化CI/CD实战': 'devops/6Devops_go_container.md'
   - 'Azure Monitoring':
     - '1 Microsoft Azure Log Analytics Workspace': 'az_mon/1log_ana.md'
-    -  '2 Azure Monitoring Fundamentals': 'az_mon/2mon.md'
+    - '2 Azure Monitoring Fundamentals': 'az_mon/2mon.md'
+    - '3 Monitoring Microsoft Azure': 'az_mon/3mon_test.md'
 
 repo_url: https://github.com/Chao-Xi/jxazurebook.git
 repo_name: "jxazurebook"
