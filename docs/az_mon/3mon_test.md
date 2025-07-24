@@ -85,3 +85,87 @@ Gradually convert the views one by one into Azure Monitor Workbooks.
 
 **Enable Network Watcher and use the VPN diagnostics tool.**
 
+21.Which dataset can you consider as part of a non-dimensional metric in Azure Monitor?
+
+**A dataset with timestamps and metric values**
+
+22.You use an Azure pay-as-you-go plan and rely on budget alerts to keep a check on your spending. Budget alerts cannot track your department spending (alert at 75% of the quota) and Azure Prepayment (alert at 90% of credit balance). What can you do to keep track of all three cost alert types?
+
+**Switch to Enterprise Agreement Azure account type**.
+
+23 During an application update, a number of application servers become unavailable. How might you use Azure monitoring services to gain insight into the nature of the issue?
+
+**Use the Smart Groups functionality of Azure Alerts.**
+
+24 You create an action group and send emails to 20 group users with the email address azure-noreply@microsoft.com. One user did not receive the email. You try sending the email to the remaining user with the email address azureemail-noreply@microsoft.com as well but it does not work. What could be true of the user
+
+**The user's email account filtering setting marked emails from microsoft.com as spam.**
+
+25 Which is a baseline policy in Microsoft Entra ID?
+
+**Require multi-factor authentication (MFA) for administrators**
+
+26 You run a usage query in the log search page that returns seven days of data on five virtual machines (VMs). You want to refine the results to MyVM01 and the most recent three days. How can you change the query to accomplish this?
+
+```
+Usage | where Computer == "MyVM01" | where TimeGenerated > ago(3d)
+
+```
+
+27 Which data is collected when resources report events in Azure?
+
+**Running processes**
+
+28 You want to automatically create work items in System Center Service Manager for activity log alerts. Which action type must you configure for this?
+
+**`IT Service Management Connector (ITSM)`**
+
+29 Upper management requested an interactive visual report on the company's Enterprise Agreement (EA) subscription. What would be an efficient way to produce this?
+
+**Install Power BI Desktop and use the Azure Consumption Insights connector.**
+
+30  Which is a requirement to set up an Azure Security Center event dashboard?
+
+**Security Center’s standard tier plan**
+
+31 What is the first step in creating a new alert in the unified alerting experience?
+
+**Navigate to Monitor and use the Create rule wizard.**
+
+
+32 Because of an increase in the number of identity-related attacks, you use the feature baseline protection in Microsoft Entra ID. What does this consist of?
+
+**Conditional access policies**
+
+33 Which payment option is available only when you are use Azure through an organization?
+
+**Check or wire transfer**
+
+34 You must query data from multiple sources in your Azure subscription and visualize them in one place for real-time insights into their resource utilization and performance. Which tool should you use?
+
+**Azure Monitor Workbooks**
+
+35 You execute a command in the Azure portal to download 1,000,000 audit activity logs for the last month. It only downloads last week's records. Why did the past records go missing?
+
+**Because the default download limit is set to 250,000 records**
+
+36 Which Azure feature automatically reviews your environment for cost savings based on resource utilization?
+
+**Azure Advisor**
+
+17 Which alert property signifies a high priority alert?
+
+**Severity 0**
+
+18 Your Azure Storage account has a requirement that, "Storage accounts should be migrated to new Azure Resource Manager resources". What should you do if a resource does not comply with this requirement?
+
+
+**Apply the Microsoft Defender for Cloud recommendation.**
+
+19 You are creating a new visualization for an Azure Kubernetes Service node in Azure Monitor Workbooks. This node consists of a hierarchy of resources. Which type of visualization is best suited for such workloads?
+
+**Trees**
+
+20 What is a requirement for monitoring Azure virtual machines (VMs) from a third-party tool running outside of Azure?
+
+**Network security group (NSG) rules that allows the necessary traffic between the Virtual Network (VNet) and the monitoring tool**
