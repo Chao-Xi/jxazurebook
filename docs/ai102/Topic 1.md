@@ -1,1060 +1,2063 @@
-## Topic 2 - Question Set 2
+## Topic 3 - Question Set 3
 
 ### Question #1
 
-You are developing an application that will use the Computer Vision client library. The application has the following code.
+You build a language model by using a Language Understanding service. The language model is used to search for information on a contact list by using an intent named FindContact.
 
-![Alt Image Text](../images/ai102_2_40.png "Body image")
+A conversational expert provides you with the following list of phrases to use for training.
 
-For each of the following statements, select Yes if the statement is true. 
+- Find contacts in London.
 
-Otherwise, select No. NOTE: Each correct selection is worth one point.
+- Who do I know in Seattle?
 
-![Alt Image Text](../images/ai102_2_41.png "Body image")
+- Search for contacts in Ukraine.
 
-- The code will perform face recognition --> No 
-- **The code will list tags and their associated confidence --> Yes** 
-- **The code will read a file from the local file system --> Yes**
+You need to implement the phrase list in Language Understanding.
 
-### **Question #2**
+**Solution: You create a new pattern in the FindContact intent.**
 
-You are developing a method that uses the Computer Vision client library. The method will perform optical character recognition (OCR) in images. The method has the following code.
-
-![Alt Image Text](../images/ai102_2_42.png "Body image")
-
-**During testing, you discover that the call to the GetReadResultAsync method occurs before the read operation is complete**. 
-
-You need to prevent the GetReadResultAsync method from proceeding until the read operation is complete.
-
-Which two actions should you perform? Each correct answer presents part of the solution.
+Does this meet the goal?
 
 
-- A. Remove the Guid.Parse(operationId) parameter.
+**A. Yes**
 
-- **B. Add code to verify the results.Status value.**
+B. No
 
-- C. Add code to verify the status of the txtHeaders.Status value.
+Using a pattern could be a good solution IMHO... ✑ Find contacts in London.
 
-- **D. Wrap the call to GetReadResultAsync within a loop that contains a delay**.
+✑ Who do I know in Seattle?
 
-```
-do { 
-	results = await client.GetReadResultAsync(Guid.Parse(operationId)); } 
-
-while ((results.Status == OperationStatusCodes.Running || results.Status == OperationStatusCodes.NotStarted));
-```
-
-### Question #3
-
-You have a **Computer Vision resource** named contoso1 that is hosted in the **West US Azure region**.
-
-You need to use contoso1 to make a different size of a product photo by using the smart cropping feature. How should you complete the API URL? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
-
-![Alt Image Text](../images/ai102_2_43.png "Body image")
-
-**https://contoso1.cognitiveservices.azure.com/**
-
-**generateThumbnail**
-
-### Question #4
-
-You are developing a webpage that will use the **Azure Video Analyzer for Media (previously Video Indexer)** service to display videos of internal company meetings.
-
-You embed the Player widget and the **Cognitive Insights widget into the page**.
-
-You need to configure the widgets to meet the following requirements:
-
-✑ Ensure that users can search for keywords.
-
-✑ Display the names and faces of people in the video.
-
-✑ Show captions in the video in English (United States).
+✑ Search for contacts in Ukraine.
 
 
-How should you complete the URL for each widget? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+**Like Where is {FormName}[?] Who authored {FormName}[?] {FormName} is published in French[?]**
 
-![Alt Image Text](../images/ai102_2_44.png "Body image")
 
-**1. people, keywords / search**
+we could do:
 
-**2. true / en-US**
+- ✑ Find contacts in {CityOrCountry}.
+- ✑ Who do I know in {CityOrCountry}[?] 
+- ✑ Search for contacts in {CityOrCountry}[?].
 
-![Alt Image Text](../images/ai102_2_45.png "Body image")
+So, to me a pattern is a Solution (A)
 
-1. widgets is **people,keywords**
 
-2. controls is **search**
+> **You create a new intent for location.**
 
-3. showcaptions is **true**
+Does this meet the goal?
 
-4. captions is **en-US**
+
+- A. Yes
+- **B. No**
+
+*The intent is for FindContact, not location really.*
+
+An utterance having wo intents? This is illogical.
+
+The model should have an Entity "Location" that will help in finding the contacts
+
+
+> **You create a new entity for the domain**.
+
+**Should be YES**
+
+We create a new location entity for domain to keep the location of FindContact intent
+
+The model should have an Entity "Location" that will help in finding the contacts.
+
+### Question #2
+
+**You develop an application to identify species of flowers by training a Custom Vision model.**
+
+You receive images of new flower species.
+
+You need to add the new images to the classifier.
+
+Solution: You add the new images, and then use the Smart Labeler tool.
+
+Does this meet the goal?
+
+
+- A. Yes
+
+- **B. No**
+
+
+**Correct Answer: B**
+
+**The model need to be extended and retrained.**
+
+**Note: Smart Labeler to generate suggested tags for images. This lets you label a large number of images more quickly when training a Custom Vision model.**
+
+The answer is B is because the limitations of the smart labeler: You should only request suggested tags for images whose tags have already been trained on once. Don't get suggestions for a new tag that you're just beginning to train. You are given new images of species that have not been seen by the model how can you expect it to suggest what they are? Also you can train the model right in the smart labeler: check the workflow
+
+**Selected Answer: B**
+
+**Smart Labeler will generate suggested tags for images. This lets you label a large number of images more quickly when you're training a Custom Vision model.**
+
+When you tag images for a Custom Vision model, the service uses the latest trained iteration of the model to predict the labels of new images. It shows these predictions as suggested tags, based on the selected confidence threshold and prediction uncertainty. You can then either confirm o change the suggestions, speeding up the process of manually tagging the images for training.
+
+**Solution: You add the new images and labels to the existing model. You retrain the model, and then publish the model.**
+
+Does this meet the goal?
+
+> **Correct Answer: A The model needs to be extended and retrained.**
+>
+> uploading, tagging, retraining and publishing the model
+
+
+**Solution: You create a new model, and then upload the new images and labels.**
+
+Does this meet the goal?
+
+
+Correct Answer: B
+
+**The model needs to be extended and retrained.**
+
+
+**Correct. Instead you need to add the new images and labels to the existing model. You retrain the model, and then publish the model**
+
 
 ### Question #5
 
-You train a **Custom Vision model to identify** a company's products by using the Retail domain.
+**You are developing a service that records lectures given in English (United Kingdom).**
 
-You plan to deploy the model as part of an app for Android phones.
+You have a method named AppendToTranscriptFile that takes translated text and a language identifier.
 
-You need to prepare the model for deployment.
+You need to develop code that will provide transcripts of the lectures to attendees in their respective language. The supported languages are **English, French, Spanish, and German**.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
 
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+![Alt Image Text](../images/ai102_2_84.png "Body image")
+
+![Alt Image Text](../images/ai102_2_85.png "Body image")
+
+**Box 1: {"fr", "de", "es"}**
 
 
-![Alt Image Text](../images/ai102_2_46.png "Body image")
+A common task of speech translation is to specify target translation languages, at least one is required but multiples are supported. The following code snippet sets both French and German as translation language targets. 
 
-**Actually the model should be retrained prior to publishing:**
+```
+static async Task TranslateSpeechAsync() { 
+var translationConfig = SpeechTranslationConfig.FromSubscription(SPEECH__SUBSCRIPTION__KEY, SPEECH__SERVICE__REGION); translationConfig.SpeechRecognitionLanguage = "it-IT";
 
-"From the top of the page, select Train to retrain using the new domain."
+// Translate to languages. See, https://aka.ms/speech/sttt-languages translationConfig.AddTargetLanguage("fr"); translationConfig.AddTargetLanguage("de"); }
+```
 
-So it should be:
 
-1. **Change the model domain**
-2. **Retrain the model**
-3. **Publish the model （Exporting the Model）**
+**Box 2: TranslationRecognizer -**
 
-**Change the model domain {Retail(compact)} / Retrain the model / Export the model**
+**After you've created a SpeechTranslationConfig, the next step is to initialize a TranslationRecognizer.**
 
-1. Change model domain
+```
+static async Task TranslateSpeechAsync() { 
+	var translationConfig = SpeechTranslationConfig.FromSubscription(SPEECH__SUBSCRIPTION__KEY, SPEECH__SERVICE__REGION); 
+    var fromLanguage = "en-US"; var toLanguages = new List<string> { "it", "fr", "de" }; 
+    translationConfig.SpeechRecognitionLanguage = fromLanguage; toLanguages.ForEach(translationConfig.AddTargetLanguage); 
+    using var recognizer = new TranslationRecognizer(translationConfig); }
+```
 
-2. Retrain model
-
-3. Test model
-
-4. Export model
 
 ### Question #6
 
-You are developing an application to recognize employees' faces by using the **Face Recognition API**. **Images of the faces will be accessible from a URI endpoint**.
 
-The application has the following code.
+You train a Custom Vision model used in a mobile app.
 
-![Alt Image Text](../images/ai102_2_47.png "Body image")
+You receive 1,000 new images that do not have any associated data.
 
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+You need to use the images to retrain the model. The solution must minimize how long it takes to retrain the model.
 
-
-![Alt Image Text](../images/ai102_2_48.png "Body image")
+Which three actions should you perform in the Custom Vision portal? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order
 
 
-- **Yes**,
-	- the code will add a face image to a person object in a person group, provided the code is corrected for syntax errors and proper API usage.
+- Upload the images by category.
+- Get suggested tags.
+- Upload all the images.
+- Group the images locally into category folders.
+- Review the suggestions and confirm the tags.
+- Tag the images manually.
 
-- **No**.
-	- The second box should be No. The given answers are correct. The second box states that the code will work for up to 10,000 people. **While this is true for S0 tier, it is false for free-tier. Since the price tier is not given, we will have to say that it is not always true, and that means it is false upvoted 10 times**
 
-- **Yes**, the add_face function can be called multiple times to add multiple face images to a person object, **subject to the limits imposed by the Azure Face API**.
+**1.) upload all the images**
 
+**2.) Get suggested tags**
+
+**3.) Review the suggestions and confirm the tags**
 
 ### Question #7
 
-You have a **Custom Vision resource** named acvdev in a development environment.
+**You are building a Conversational Language Understanding model for an e-commerce chatbot. Users can speak or type their billing address when prompted by the chatbot**.
 
-You have a **Custom Vision resource** named acvprod in a production environment.
+You need to construct an entity to capture billing addresses.
 
-**In acvdev, you build an object detection model named obj1 in a project named proj1.**
+Which entity type should you use?
 
-**You need to move obj1 to acvprod.**
+-** A. machine learned**
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+- B. Regex
 
-![Alt Image Text](../images/ai102_2_49.png "Body image")
+- C. list
 
-![Alt Image Text](../images/ai102_2_50.png "Body image")
+- D. Pattern.any
 
-1. **Use GetProjects endpoint on acvDEV**
+The link provided mentions addresses under 'ML Entities with Structure'. Will be hard to identify all possible international addresses with RegEx.
 
-2. **Use ExportProjects endpoint on acvDEV**
-
-3. **Use ImportProjects endpoint on avcPROD**
+**A - MAchine Learned**
 
 
----
+- ML Entity with Structure
 
-- First, you get the ID of the project in your source account you want to copy.
+An ML entity can be composed of smaller sub-entities, each of which can have its own properties. For example, an Address entity could have the following structure:
 
-- Then you call the ExportProject API using the project ID and the training key of your source account. You'll get a temporary token string.
-
-- Then you call the ImportProject API using the token string and the training key of your target account. The project will then be listed under your target account.
+Address: 4567 Main Street, NY, 98052, USA Building Number: 4567 Street Name: Main Street State: NY Zip Code: 98052 Country: USA
 
 
 ### Question #8
 
-You are developing an application that will recognize faults in components produced on a factory production line. The components are specific to your business.
 
-**You need to use the Custom Vision API to help detect common faults.**
+You are building an Azure WebJob that will create knowledge bases from an array of URLs.
 
+You instantiate a QnAMakerClient object that has the relevant API keys and assign the object to a variable named client. You need to develop a method to create the knowledge bases.
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which two actions should you include in the method? Each correct answer presents part of the solution.
 
+NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_51.png "Body image")
+- A. Create a list of FileDTO objects that represents data from the WebJob.
 
-![Alt Image Text](../images/ai102_2_52.png "Body image")
+- B. Call the client.Knowledgebase.CreateAsync method.
 
+- C. Create a list of QnADTO objects that represents data from the WebJob.
 
-- Step 1: Create a project Create a new project.
-
-- Step 2: Upload and tag the images Choose training images. Then upload and tag the images. 
-
-- Step 3: Train the classifier model.
-
-### Question #9
+- D. Create a CreateKbDTO object.
 
 
-You are building a model that will be used in an iOS app.
+**It should be BD.**
 
-You have images of cats and dogs. Each image contains either a cat or a dog.
+A. Create a list of FileDTO objects that represents data from the WebJob. NO - as it is from URL - so optional
 
-**You need to use the Custom Vision service to detect whether the images is of a cat or a dog**.
+**B. Call the client.Knowledgebase.CreateAsync method. YES - Mandatory to Call the Method**
 
-How should you configure the project in the Custom Vision portal? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+C. Create a list of QnADTO objects that represents data from the WebJob. NO - as it is from URL - so optional
 
-![Alt Image Text](../images/ai102_2_53.png "Body image")
-
-**Box 1: Classification**
-
-Incorrect Answers: An object detection project is for detecting which objects, if any, from a set of candidates are present in an image.
-
-**Box 2: Multiclass -**
+**D. Create a CreateKbDTO object. YES - Mandatory to Create**
 
 
-**A multiclass classification project is for classifying images into a set of tags, or target labels. An image can be assigned to one tag only**
+###  Question #9
 
-Incorrect Answers:
+HOTSPOT You are developing an application that includes language translation.
 
-A multilabel classification project is similar, but each image can have multiple tags assigned to it.
+**The application will translate text retrieved by using a function named getTextToBeTranslated. The text can be in one of many languages. The content of the text must remain within the Americas Azure geography**.
 
-The third choice should be **General compact**, **in other that the model can be exported to be used in iOS device**
+You need to develop code to translate the text to a single language.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_86.png "Body image")
 
 
-- Classification 
-- Multiclass 
-- General (compact)
+- Box 1: `api-nam/translate`
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference#base-urls
+
+- Box 2: `"?to=en";`
+
+**api-nam/translate to=en**
+
 
 ### Question #10
 
 
-**You have an Azure Video Analyzer** for Media (previously Video Indexer) service that is used to provide a search interface over company videos on your company's website.
-
-You need to be able to search for videos based on who is present in the video.
+You are building a conversational language understanding model. You need to enable active learning.
 
 What should you do?
 
 
-- **A. Create a person model and associate the model to the videos**.
+A. Add show-all-intents=true to the prediction endpoint query.
 
-- B. Create person objects and provide face images for each object.
 
-- C. Invite the entire staff of the company to Video Indexer.
+B. Enable speech priming.
 
-- D. Edit the faces in the videos.
+**C. Add log=true to the prediction endpoint query.**
 
-- E. Upload names to a language model.
+D. Enable sentiment analysis.
 
-**Correct Answer: A**
 
-Video Indexer supports multiple Person models per account. 
+Correct Answer: C
 
-**Once a model is created, you can use it by providing the model ID of a specific Person model when uploading/indexing or reindexing a video. Training a new face for a video updates the specific custom model that the video was associated with.**
-
+**"To enable active learning, you must log user queries.** This is accomplished by calling the endpoint query with the log=true query string parameter and value."
 
 ### Question #11
 
-**You use the Custom Vision service to build a classifier**.
+You run the following command.
 
-**After training is complete, you need to evaluate the classifier.**
-
-Which two metrics are available for review? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
-
-
-- **A. recall**
-
-- B. F-score
-
-- C. weighted accuracy
-
-- **D. precision**
-
-- E. area under the curve (AUC)
-
-
-Custom Vision provides three metrics regarding the performance of your model: **precision, recall, and AP**.
-
-
-### Question #12
-
-You are developing a call to the Face API. The call must find similar faces from an existing list named employee faces. **The employeefaces list contains 60,000 images**.
-
-How should you complete the body of the HTTP request? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
-
-NOTE: Each correct selection is worth one point.
-
-![Alt Image Text](../images/ai102_2_54.png "Body image")
-
-![Alt Image Text](../images/ai102_2_55.png "Body image")
-
-
-**Box 1: LargeFaceListID LargeFaceList: Add a face to a specified large face list, up to 1,000,000 faces.**
-
-Note: Given query face's faceId, to search the similar-looking faces from a faceId array, a face list or a large face list. A "faceListId" is created by FaceList - Create containing persistedFaceIds that will not expire. And a "largeFaceListId" is created by LargeFaceList - Create containing persistedFaceIds that will also not expire.
-
-Incorrect Answers:
-
-*Not "faceListId": Add a face to a specified face list, up to 1,000 faces.*
-
-
-**Box 2: matchFace**
-
-
-Find similar has two working modes, "matchPerson" and "matchFace”. **"matchPerson" is the default mode that it tries to find faces of the same person as possible by using internal same-person thresholds. It is useful to find a known person's other photos**. Note that an empty list will be returned if no faces pass the internal thresholds.
-
-
-**"matchFace" mode ignores same-person thresholds and returns ranked similar faces anyway, even the similarity is low. It can be used in the cases like searching celebrity-looking faces.**
-
-
-1. LargeFaceListId
-2. matchFace
-
-### Question #13
-
-You are developing a photo application that will find photos of a person based on a sample image by using the Face API.
-
-**You need to create a POST request to find the photos.**
-
-
-How should you complete the request? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
-
-You may need to drag the split bar between panes or scroll to view content.
-
-
-![Alt Image Text](../images/ai102_2_56.png "Body image")
-
-**1. findsimilars**
-
-**2. matchPerson**
-
-### Question #14
-
-You develop a test method to verify the results retrieved from a call to the Computer Vision API. The call is used to analyze the existence of company logos in images. The call returns a collection of brands named brands.
-
-You have the following code segment.
-
-
-![Alt Image Text](../images/ai102_2_57.png "Body image")
+![Alt Image Text](../images/ai102_2_87.png "Body image")
 
 For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_58.png "Body image")
+![Alt Image Text](../images/ai102_2_871.png "Body image")
 
-Box 1: Yes -
+**Yes** 
 
-Box 2: Yes Coordinates of a rectangle in the API refer to the top left corner.
+**No**
 
-Box 3: No -
+**Yes**
 
-**Y, Y, N**
+**Log location is not mounted.** The ET answer relates to an example provided on the given website which DOES mount a log location.
 
-- x Left-coordinate of the top left point of the area, in pixels.
-- y Top-coordinate of the top left point of the area, in pixels.
-- w Width measured from the top-left point of the area, in pixels.
-- h Height measured from the top-left point of the area, in pixels.
+
+**Going to http://localhost:5000/status will query the Azure endpoint to verify whether the API key used to start the container is valid.**
+
+Yes. Typically, Azure Cognitive Services containers provide a /status endpoint that can be used to check the status of the service, including the validity of the API key. Since the service is mapped to localhost:5000, accessing this URL should provide the status of the containerized service, including the API key's validity.
+
+The container logging provider will write log data.
+
+**No (Assuming). This statement is somewhat ambiguous and depends on the configuration of the Docker container and the Azure Cognitive Services container.**
+
+Going to http://localhost:5000/swagger will provide the details to access the documentation for the available endpoints.
+
+Yes. It is a common practice for web services and APIs, including those provided by Azure Cognitive Services, to offer a Swagger UI at a /swagger endpoint.
+
+
+### Question #12 - duplicated
+
+
+You are building a **Language Understanding model for an e-commerce platform**. You need to construct an entity to capture billing addresses.
+
+Which entity type should you use for the billing address?
+
+
+- **A. machine learned**
+
+- B. Regex
+
+- C. geographyV2
+
+- D. Pattern.any
+
+- E. list
+
+**An ML entity can be composed of smaller sub-entities, each of which can have its own properties**. For example, Address could have the following structure:
+
+- Address: 4567 Main Street, NY, 98052, USA
+- Building Number: 4567 
+- Street Name: Main 
+- Street State: NY 
+- Zip Code: 98052 
+- Country: USA
+
+
+Question #13
+
+You need to upload speech samples to a Speech Studio project for use in training. How should you upload the samples?
+
+- A. Combine the speech samples into a single audio file in the .wma format and upload the file.
+
+- **B. Upload a .zip file that contains a collection of audio files in the .wav format and a corresponding text transcript file.**
+
+- C. Upload individual audio files in the FLAC format and manually upload a corresponding transcript in Microsoft Word format.
+
+- D. Upload individual audio files in the .wma format
+
+**Correct Answer: B**
+
+To upload your data, navigate to the Speech Studio . From the portal, click Upload data to launch the wizard and create your first dataset. You'll be asked to select a speech data type for your dataset, before allowing you to upload your data.
+
+**The default audio streaming format is WAV**
+
+Use this table to ensure that your audio files are formatted correctly for use with Custom Speech:
+
+![Alt Image Text](../images/ai102_2_88.png "Body image")
+
+**The best option is B. Upload a .zip file that contains a collection of audio files in the .wav format and a corresponding text transcript file.** 
+
+This method provides a balance of audio quality (with .wav files) and organization (having audio and transcripts together), which is essential for efficient and accurate training of speech recognition models
+
+### Question #14
+
+You are developing a method for an application that uses the Translator API.
+
+
+The method will receive the content of a webpage, and then translate the content into Greek (el). The result will also contain a transliteration that uses the Roman alphabet.
+
+You need to create the URI for the call to the Translator API.
+
+You have the following URI.
+
+https://api.cognitive.microsofttranslator.com/translate?api-version=3.0 Which three additional query parameters should you include in the URI? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+- A. toScript=Cyrl
+
+- B. from=el
+
+- C. textType=html
+
+- D. to=el
+
+- E. textType=plain
+
+- F. toScript=Latn
+
+
+**CDF**
+
+- **C: textType is an optional parameter. It defines whether the text being translated is plain text or HTML text (used for web pages)**.
+
+- D: to is a required parameter. It specifies the language of the output text. The target language must be one of the supported languages included in the translation scope.
+
+- **F: toScript is an optional parameter. It specifies the script of the translated text.**
+
+**textType=html / to=el / toScript=Latn**
 
 ### Question #15
 
-You develop an application that uses the Face API.
+You have a chatbot that was built by using the Microsoft Bot Framework.
 
-**You need to add multiple images to a person group.**
+**You need to debug the chatbot endpoint remotely.**
 
-How should you complete the code? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+**Which two tools should you install on a local computer?** Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_59.png "Body image")
 
-**A - Stream (this is correct)**
+- A. Fiddler
 
-**B - AddFaceFromStreamAsync**
+- B. Bot Framework Composer
 
-```
-File.OpenRead() returns a Stream object.
+- **C. Bot Framework Emulator**
 
-using (Stream stream = File.OpenRead(imagePath)) { 
-	await faceClient.PersonGroupPerson.AddFaceFromStreamAsync(personGroupId, personId, stream); 
-  }
-```
+- D. Bot Framework CLI
 
+- **E. ngrok**
+
+- F. nginx
+
+**CE**
+
+
+**Bot Framework Emulator is a desktop application that allows bot developers to test and debug bots, either locally or remotely.** 
+
+**ngrok is a cross-platform application that "allows you to expose a web server running on your local machine to the internet."** 
+
+
+Essentially, what we'll be doing is using ngrok to forward messages from external channels on the web directly to our local machine to allow debugging, as opposed to the standard messaging endpoint configured in the Azure portal.
+
+
+C. Bot Framework Emulator: This is an essential tool for debugging Microsoft Bot Framework bots. It allows you to test and debug your bots on your local machine by emulating the Bot Framework's channels and activities. It can be very helpful in a local development environment but is les suited for remote debugging.
+
+E. ngrok: ngrok is a tool that creates a secure tunnel to your localhost. This is very useful for remote debugging because it allows you to expose your local development server to the internet, which is necessary for testing and debugging interactions with services like the Microsoft Bot Framework.
 
 ### Question #16
 
-**Your company uses an Azure Cognitive Services solution to detect faces in uploaded images**. The method to detect the faces uses the following code.
+You are building a retail chatbot that will use a QnA Maker service.
 
-![Alt Image Text](../images/ai102_2_60.png "Body image")
+You upload an internal support document to train the model. The document contains the following question: "What is your warranty period?" Users report that the chatbot returns the default QnA Maker answer when they ask the following question: "How long is the warranty coverage?" The chatbot returns the correct answer when the users ask the following question: 'What is your warranty period?" Both questions should return the same answer.
 
-**You discover that the solution frequently fails to detect faces in blurred images and in images that contain sideways faces.**
+You need to increase the accuracy of the chatbot responses.
 
-You need to increase the likelihood that the solution can detect faces in blurred images and images that contain sideways faces. What should you do?
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
-- A. Use a different version of the Face API.
+![Alt Image Text](../images/ai102_2_89.png "Body image")
 
-- B. Use the Computer Vision service instead of the Face service.
+**Step 1: Add alternative phrasing to the question and answer (QnA) pair.**
 
-- C. Use the Identify method instead of the Detect method.
-
-- **D. Change the detection model**.
-
-**D**
-
-**Evaluate different models.**
-
-The best way to compare the performances of the detection models is to use them on a sample dataset. We recommend calling the Face Detect API on a variety of images, especially images of many faces or of faces that are diffcult to see, using each detection model. Pay attention to the number of faces that each model returns.
-
-**The different face detection models are optimized for different tasks. See the following table for an overview of the differences**.
+Add alternate questions to an existing QnA pair to improve the likelihood of a match to a user query. 
 
 
-![Alt Image Text](../images/ai102_2_61.png "Body image")
+**Step 2: Retrain the model.**
 
-**use `detection_02` or `detection_03`.**
+Periodically select Save and train after making edits to avoid losing changes.
 
-### Question #17 
+**Step 3: Republish the model Note:** 
 
-You have the following Python function for creating Azure Cognitive Services resources programmatically. 
-
-```
-def create_resource (resource_name, kind, account_tier, location) : 
-
-	parameters = CognitiveServicesAccount(sku=Sku(name=account_tier), kind=kind, location=location, properties={}) 
-    	result = client.accounts.create(resource_group_name, resource_name, parameters) 
-```
-You need to call the function to create a free Azure resource in the West US Azure region. The resource will be used to generate captions of images automatically.
-
-Which code should you use?
+A knowledge base consists of question and answer (QnA) pairs. Each pair has one answer and a pair contains all the information associated with that answer.
 
 
-```
-A. create_resource("res1", "ComputerVision", "F0", "westus")
-
-B. create_resource("res1", "CustomVision.Prediction", "F0", "westus")
-
-C. create_resource("res1", "ComputerVision", "S0", "westus")
-
-D. create_resource("res1", "CustomVision.Prediction", "S0", "westus")
-```
-
-**`A. create_resource("res1", "ComputerVision", "F0", "westus")`**
+1. **Add alternative phrasing to the QnA pair.**
+2. **Retrain model**.
+3. **Republish model**.
 
 
-**Computer vision provide automatic vision solutions including captions. The key-phrase is "automatic".**
+### Question #17
 
+You are training a Language Understanding model for a user support system. 
 
-### Question #18
+You create the first intent named GetContactDetails and add 200 examples. 
 
-You are developing a method that uses the Computer Vision client library. The method will perform optical character recognition (OCR) in images. The method has the following code.
-
-![Alt Image Text](../images/ai102_2_62.png "Body image")
-
-During testing, you discover that the call to the GetReadResultAsync method occurs before the read operation is complete. 
-
-You need to prevent the GetReadResultAsync method from proceeding until the read operation is complete.
-
-Which two actions should you perform? Each correct answer presents part of the solution.
-
-NOTE: Each correct selection is worth one point
-
-
-```
-A. Remove the operation_id parameter.
-
-B. Add code to verify the read_results.status value.
-
-C. Add code to verify the status of the read_operation_location value.
-
-D. Wrap the call to get_read_result within a loop that contains a delay.
-```
-
-- **B. Add code to verify the `read_results.status` value.**
-
-- **D. Wrap the call to `get_read_result` within a loop that contains a delay.**
-
-
-In order to prevent the GetReadResultAsync method from proceeding until the read operation is complete, we need to check the status of the read operation and wait until it's completed. 
-
-
-To do this, we can add code to verify the status of the `read_results.status` value. If the status is not "succeeded", we can add a delay and then retry the operation until it's complete. 
-
-**This can be achieved by wrapping the call to `get_read_result` within a loop that contains a delay.**
-
-Removing the `operation_id` parameter or adding code to verify the status of the `read_operation_location` value will not solve the issue of waiting for the read operation to complete before proceeding with the GetReadResultAsync method.
-
-
-### Question #19
-
-**You are building an app that will enable users to upload images.** The solution must meet the following requirements: 
-
-
-* Automatically suggest alt text for the images.
-* **Detect inappropriate images and block them.**
-* Minimize development effort.
-* You need to recommend a computer vision endpoint for each requirement.
-
-What should you recommend? To answer, select the appropriate options in the answer area.
-
-NOTE: Each correct selection is worth one point
-
-![Alt Image Text](../images/ai102_2_63.png "Body image")
-
-1. **`https://westus.api.cognitive.microsoft.com/vision/v3.2/analyze/?visualFeatures=Adult,Description`**
-
-2. **`https://westus.api.cognitive.microsoft.com/vision/v3.2/analyze/?visualFeatures=Adult,Description`**
-
-Computer Vision can analyze an image and generate a human-readable phrase that describes its contents. The algorithm returns several descriptions based on different visual features, and each description is given a confidence score. 
-
-The final output is a list of descriptions ordered from highest to lowest confidence.
-
-### Question #20
-
-You need to build a solution that will use optical character recognition (OCR) to scan sensitive documents by using the Computer Vision API. The solution must **NOT be deployed to the public cloud**.
+**You need to decrease the likelihood of a false positive**.
 
 What should you do?
 
-- A. Build an on-premises web app to query the Computer Vision endpoint.
 
-- **B. Host the Computer Vision endpoint in a container on an on-premises server.**
+A. Enable active learning.
 
-- C. Host an exported Open Neural Network Exchange (ONNX) model on an on-premises server.
+B. Add a machine learned entity.
 
-- D. Build an Azure web app to query the Computer Vision endpoint.
+C. Add additional examples to the GetContactDetails intent.
 
-**One option to manage your Computer Vision containers on-premises is to use Kubernetes and Helm.**
+**D. Add examples to the None intent.**
 
-Three primary parameters for all Cognitive Services containers are required. **The Microsoft Software License Terms must be present with a value of accept. An Endpoint URI and API key are also needed**.
+You should also consider adding false positive examples to the None intent."
 
+**False positive means => The model needs examples of what it should not classify as "GetContactDetails," which is the role of the "None" intent**.
+
+Therefore, the most effective approach is to add a diverse range of examples to the "None" intent, covering various phrases and queries that are outside the scope of "GetContactDetails." 
+
+This helps create a clear boundary for the model, reducing the likelihood of it mistakenly classifying unrelated inputs as belonging to the "GetContactDetails" intent
+
+
+### Question #20 
+
+You are building a Language Understanding model for purchasing tickets.
+
+**You have the following utterance for an intent named PurchaseAndSendTickets.**
+
+Purchase [2 audit business] tickets to [Paris] [next Monday] and send tickets to [email@domain.com] You need to select the entity types. 
+
+
+The solution must use built-in entity types to minimize training data whenever possible.
+
+
+Which entity type should you use for each label? To answer, drag the appropriate entity types to the correct labels. Each entity type may be used once, more than once, or not at all.
+
+![Alt Image Text](../images/ai102_2_90.png "Body image")
+
+**Box 1: GeographyV2**
+
+The prebuilt geographyV2 entity detects places. Because this entity is already trained, you do not need to add example utterances containing GeographyV2 to the application intents.
+
+**Box 2: Email**
+
+Email prebuilt entity for a LUIS app: Email extraction includes the entire email address from an utterance. Because this entity is already trained, you do not need to add example utterances containing email to the application intents.
+
+**Box 3: Machine learned** 
+
+**The machine-learning entity is the preferred entity for building LUIS applications.**
 
 ### Question #21
 
-You have an **Azure Cognitive Search solution** and a collection of handwritten letters stored as JPEG files.
+You have the following C# method.
 
-**You plan to index the collection. The solution must ensure that queries can be performed on the contents of the letters.**
+![Alt Image Text](../images/ai102_2_91.png "Body image")
 
-You need to create an indexer that has a skillset.
+You need to deploy an Azure resource to the **East US Azure region**. The resource will be used to perform sentiment analysis. How should you call the method?
 
-Which skill should you include?
+```
+A. create_resource("res1", "ContentModerator", "S0", "eastus")
 
-- A. image analysis
+B. create_resource("res1", "TextAnalytics", "S0", "eastus")
 
-- **B. optical character recognition (OCR)**
+C. create_resource("res1", "ContentModerator", "Standard", "East US")
 
-- C. key phrase extraction
+D. create_resource("res1", "TextAnalytics", "Standard", "East US")
+```
 
-- D. document extraction
+**Correct Answer: B**
 
-**To ensure that queries can be performed on the contents of the letters, the skill that should be included in the indexer is optical character recognition (OCR).**
+**To perform sentiment analysis, we specify TextAnalytics, not ContentModerator.**
 
+Possible SKU names include: 'F0','F1','S0','S1','S2','S3','S4','S5','S6','S7','S8' Possible location names include: westus, eastus
 
-**Option B, optical character recognition (OCR), is a technology that can recognize text within an image and convert it into machine-readable text.** 
+- SKU is S0.
 
-This skill will enable the search engine to read the handwritten letters and convert them into searchable text that can be indexed by Azure Cognitive Search.
+- Region is eastus.
 
-Option A, image analysis, is a useful skill for analyzing images to extract metadata, but it does not directly enable text recognition.
-
-Option C, key phrase extraction, extracts important phrases and concepts from text, but it requires the text to be already recognized and extracted by OCR or other text extraction techniques.
-
-Option D, document extraction, is a skill that extracts specific pieces of information from documents, but it does not address the challenge of recognizing and extracting text from handwritten letters.
+- **Sentiment analysis uses TextAnalytics**
 
 ### Question #22
 
-You have a library that contains thousands of images.
+You build a Conversational Language Understanding model by using the Language Services portal. You export the model as a JSON file as shown in the following sample.
 
-You need to tag the images as photographs, drawings, or clipart.
+![Alt Image Text](../images/ai102_2_92.png "Body image")
 
-Which service endpoint and response property should you use? To answer, select the appropriate options in the answer area.
+To what does the Weather.Historic entity correspond in the utterance?
 
-NOTE: Each correct selection is worth one point.
+- **A. by month**
 
-![Alt Image Text](../images/ai102_2_64.png "Body image")
+- B. chicago
 
-- **1 - Computer Vision analyze image** 
+- C. rain
 
-- **2 - imageType**
+- D. location
 
-With the Analyze Image API, Computer Vision can analyze the content type of images, indicating whether an image is clip art or a line drawing.
 
-- **Service endpoint: Computer Vision image classification** 
-- **Property: imageType**
-
-  
-The Computer Vision image classification endpoint allows you to classify images into different categories, and the imageType property specifically provides information about the type of image, such as whether it is a photograph, drawing, or clipart.
-
+**Weather.Historic by month** 23 to 30 is by month
 
 ### Question #23
 
-You have an app that captures live video of exam candidates.
+You are examining the Text Analytics output of an application.
 
-You need to use the Face service to validate that the subjects of the videos are real people.
+The text analyzed is: `Our tour guide took us up the Space Needle during our trip to Seattle last week.` 
 
-What should you do?
-
-- A. Call the face detection API and retrieve the face rectangle by using the FaceRectangle attribute.
-
-- **B. Call the face detection API repeatedly and check for changes to the FaceAttributes.HeadPose attribute.**
-
-- C. Call the face detection API and use the FaceLandmarks attribute to calculate the distance between pupils.
-
-- D. Call the face detection API repeatedly and check for changes to the FaceAttributes.Accessories attribute.
-
-**B is the answer.**
-
-**You can detect head gestures like nodding and head shaking by tracking HeadPose changes in real time. You can use this feature as a custom liveness detector.**
-
-Liveness detection is the task of determining that a subject is a real person and not an image or video representation. A head gesture detector could serve as one way to help verify liveness, especially as opposed to an image representation of a person.
-
-### Question #24
-
-You make an API request and receive the results shown in the following exhibits.
-
-![Alt Image Text](../images/ai102_2_65.png "Body image")
-
-![Alt Image Text](../images/ai102_2_66.png "Body image")
-
-Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
-
-![Alt Image Text](../images/ai102_2_67.png "Body image")
-
-![Alt Image Text](../images/ai102_2_68.png "Body image")
-
-**1. detects**
-
-**2. 797, 201**
-
-**Each detected face corresponds to a faceRectangle field in the response**.
-
-**This is a set of pixel coordinates for the left, top, width, and height of the detected face**. Using these coordinates, you can get the location and size of the face. In the API response, faces are listed in size order from larges to smallest.
+The response contains the data shown in the following table.
 
 
-- QualityForRecognition
+![Alt Image Text](../images/ai102_2_93.png "Body image")
 
-**The overall image quality regarding whether the image being used in the detection is of sufficient quality to attempt face recognition on**. The value is an informal rating of low, medium, or high. Only "high" quality images are recommended for person enrollment, and quality at or above "medium" is recommended for identification scenarios.
+Which Text Analytics API is used to analyze the text?
+
+- A. Entity Linking
+
+- **B. Named Entity Recognition**
+
+- C. Sentiment Analysis
+
+- D. Key Phrase Extraction
+
+**Named Entity Recognition (NER) is one of the features offered by Azure Cognitive Service for Language, a collection of machine learning and AI algorithms in the cloud for developing intelligent applications that involve written language**. 
+
+
+The NER feature can identify and categorize entities in unstructured text. For example: people, places, organizations, and quantities.
+
+### Question #24 -  SIMULATION
+
+**You need to configure and publish bot12345678 to support task management. The intent must be named TaskReminder.** The LUDown for the intent is in the 
+
+**C:\Resources\LU folder.**
+
+To complete this task, use the Microsoft Bot Framework Composer.
+
+
+- Step 1: Open Microsoft Bot Framework Composer 
+- Step 2: Select the bot bot12345678 
+- Step 3: Select Import existing resources. Read the instructions on the right side of the screen and select Next.
 
 
 
-**To answer the first question see the endpoint .../face/v1.0/detect?**....
+- Step 4: Browse to the C:\Resources\LU folder and select the available .lu file 
+- Step 5: In the pop-up window Importing existing resources, modify the JSON file content based on your resources information: Name the intent TaskReminder 
+- Step 6: Select Publish from the Composer menu. In the Publish your bots pane, select the bot to publish (bot12345678), then select a publish profile from the Publish target drop-down list.
+
+![Alt Image Text](../images/ai102_2_94.png "Body image")
 
 
-**To answer the second question see the first object from the response "faceRectangle": {"TOP":201, "LEFT:"797....}**
+### Question #25 - SIMULATION
+
+You need to configure bot12345678 support the French (FR-FR) language. Export the bot to C:\Resources\Bot\Bot1.zip.
+
+To complete this task, use the Microsoft Bot Framework Composer.
 
 
-### Question #25
+- Step 1: Open Microsoft Bot Framework Composer 
+- Step 2: Select the bot bot12345678 
+- Step 3: Select Configure.
+- Step 4: Select the Azure Language Understanding tab 
+- Step 5: Select the Set up Language Understanding button. The Set up Language Understanding window will appear, shown below:
 
-You have an Azure subscription that contains an **AI enrichment pipeline in Azure Cognitive Search and an Azure Storage account that has 10 GB of scanned documents and images**.
+![Alt Image Text](../images/ai102_2_95.png "Body image")
 
-**You need to index the documents and images in the storage account.** The solution must minimize how long it takes to build the index.
+- Step 6: Select Use existing resources and then select Next at the bottom of the window.
 
-What should you do?
-
-- **A. From the Azure portal, configure parallel indexing.**
-
-- B. From the Azure portal, configure scheduled indexing.
-
-- C. Configure field mappings by using the REST API.
-
-- D. Create a text-based indexer by using the REST API.
-
-If you partition your data, you can create multiple indexer-data-source combinations that pull from each data source and write to the same search index. Because each indexer is distinct, you can run them at the same time, populating a search index more quickly than if you ran them sequentially.
+- Step 7: Now select the Azure directory, Azure subscription, and Language Understanding resource name (French). 
+- tep 8: Select Next on the bottom. Your Key and Region will appear on the next on the next window, shown below:
 
 ### Question #26
 
-You need to analyze video content to identify any mentions of specific company names.
+IMULATION You need to configure and publish bot12345678 to answer questions by using the frequently asked questions (FAQ) located at https://docs.microsoft.com/en-us/azure/bot-service/bot-service-resources-bot-framework-faq. 
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order
+The solution must use bot%@lab.LabInstance.Id-qna-qna%.
 
-![Alt Image Text](../images/ai102_2_69.png "Body image")
+To complete this task, use the Microsoft Bot Framework Composer.
+
+Correct Answer: See explanation below.
+
+- Step 1: Open Microsoft Bot Framework Composer 
+- Step 2: Select the bot bot12345678 
+- Step 3: Open the Configure page in Composer. Then select the Development resources, and scroll down to Azure QnA Maker.
+
+![Alt Image Text](../images/ai102_2_96.png "Body image")
 
 
-1. **Sign in to Azure Video Analyzer for Media website**
+Step 4: To access the Connect to QnA Knowledgebase action, you need to select + under the node you want to add the QnA knowledge base and then select Connect to QnAKnowledgeBase from the Access external resources action menu
 
-2. **From Content model customization, select Brands**
 
-3. **Add specific company names to include list**
+Step 5: Review the QnA Maker settings panel after selecting the QnA Maker dialog.
+
+
+Use:
+
+Instance: bot%@lab.LabInstance.Id-qna-qna%
+
 
 ### Question #27
 
-You have a mobile app that manages printed forms.
+**You need to measure the public perception of your brand on social media by using natural language processing**. Which Azure service should you use?
 
-You need the app to send images of the forms directly to Forms Recognizer to extract relevant information. For compliance reasons, the image files must not be stored in the cloud.
+- **A. Language service**
 
-In which format should you send the images to the Form Recognizer API endpoint?
+- B. Content Moderator
 
-- **A. raw image binary**
+- C. Computer Vision
 
-- B. form URL encoded
+- D. Form Recognizer
 
-- C. JSON
+Correct Answer: A
 
-**Selected Answer: A**
+**Azure Cognitive Service for Language is a cloud-based service that provides Natural Language Processing (NLP) features for understanding and analyzing text.**
 
-**To send images to the Form Recognizer API endpoint without storing them in the cloud, you should send the images in the following format**:
+Use this service to help build intelligent applications using the web-based Language Studio, REST APIs, and client libraries.
 
-**A. raw image binary**
+Note: Natural language processing (NLP) has many uses: sentiment analysis, topic detection, language detection, key phrase extraction, and document categorization
 
-**Sending the images as raw image binary data allows you to transmit the image directly to the Form Recognizer API without the need to store them in the cloud or convert them into other formats. This format ensures compliance with your requirements**
 
 ### Question #28
 
-You plan to build an app that will generate a list of tags for uploaded images. The app must meet the following requirements:
+You are developing an application that includes language translation.
 
-- Generate tags in a user's preferred language.
+The application will translate text retrieved by using a function named `get_text_to_be_translated`. The text can be in one of many languages. The content of the text must remain within the Americas Azure geography.
 
-- Support English, French, and Spanish.
+**You need to develop code to translate the text to a single language**.
 
-- **Minimize development effor**t.
-
-You need to build a function that will generate the tags for the app.
-
-Which Azure service endpoint should you use?
-
-- A. Content Moderator Image Moderation
-
-- B. Custom Vision image classification
-
-- **C. Computer Vision Image Analysis**
-
-- D. Custom Translator
-
-**Selected Answer: C**
-
-I think the answer should be C, because of the minimized developement effort. Since the prebuilt model of C also fits the other two requirements, so there is no need to train a custom model.
-
-
-### Question #29
-
-**You develop a test method to verify the results retrieved from a call to the Computer Vision API.** The call is used to analyze the existence of company logos in images. The call returns a collection of brands named brands
-
-You have the following code segment.
-
-![Alt Image Text](../images/ai102_2_70.png "Body image")
-
-
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
-
-![Alt Image Text](../images/ai102_2_71.png "Body image")
-
-**YYN is the answer.**
-
-
-**A bounding box for an area inside an image.**
-
-`-x: X-coordinate of the top left point of the area, in pixels`.
-
-`-y Y-coordinate of the top left point of the area, in pixels.`
-
-`-h Height measured from the top-left point of the area, in pixels.`
-
-`-w Width measured from the top-left point of the area, in pixels.`
-
-
-### Question #30
-
-**You have a factory that produces cardboard packaging for food products.** The factory has intermittent internet connectivity.
-
-The packages are required to include four samples of each product.
-
-
-**You need to build a Custom Vision model that will identify defects in packaging and provide the location of the defects to an operator**. The model must ensure that each package contains the four products.
-
-Which project type and domain should you use? To answer, drag the appropriate options to the correct targets. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
-
-
-![Alt Image Text](../images/ai102_2_72.png "Body image")
-
-
-**1. Object detection**
-
-**2. General (compact)**
-
-**Select Object Detection under Project Types.**
-
-**The models generated by compact domains can be exported to run locally.**
-
-
-### Question #31
-
-You are building a model to detect objects in images.
-
-The performance of the model based on training data is shown in the following exhibit.
-
-![Alt Image Text](../images/ai102_2_73.png "Body image")
-
-
-Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
+How should you complete the code? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_74.png "Body image")
 
-1. 0
-2. 25
+![Alt Image Text](../images/ai102_2_97.png "Body image")
 
-   
-**Precision:** Measures how precise/accurate your model is. It's the ratio between the correctly identified positives (true positives) and all identified positives. The precision metric reveals how many of the predicted classes are correctly labeled.
 
-**`Precision = #True_Positive / (#True_Positive + #False_Positive)`**
+**Box 1: ("api-nam.cognitive.microsofttranslator.com")** 
 
-**Recall:** Measures the model's ability to predict actual positive classes. **It's the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct. Recall = #True_Positive / (#True_Positive + #False_Negatives)**
+- Geography USA: **api-nam.cognitive.microsofttranslator.com**
+- Datacenters: East US, South Central US, West Central US, and West US 2
+
+**Box 2: "/translate?to=en" Must specify the language which it is being translated to. The 'to' parameter is required**
+
+
+1. api-nam.cognitive.microsofttranslator.com
+
+2. /translate?to=en
+
+To force the request to be handled within a specific geography, use the desired geographical endpoint. All requests are processed among the datacenters within the geography.
+
+
+- United States api-nam.cognitive.microsofttranslator.com
+
+- translate Translate specified source language text into the target language text.
+
+**`api-nam.cognitive.microsofttranslator.com translate?to=en`**
+
+
+### Question #29 (duplicate)
+
+You have the following data sources:
+
+- ✑ Finance: On-premises Microsoft SQL Server database 
+- ✑ Sales: Azure Cosmos DB using the Core (SQL) API 
+- ✑ Logs: Azure Table storage 
+- ✑ HR: Azure SQL database 
+
+You need to ensure that you **can search all the data by using the Azure Cognitive Search REST API**. What should you do?
+
+
+- A. Migrate the data in HR to Azure Blob storage.
+
+- B. Migrate the data in HR to the on-premises SQL server.
+
+- **C. Export the data in Finance to Azure Data Lake Storage.**
+
+- D. Ingest the data in Logs into Azure Sentinel.
+
+In Azure Cognitive Search, a data source is used with indexers, providing the connection information for ad hoc or scheduled data refresh of a target index, pulling data from supported Azure data sources.
+
+
+Note: Supported data sources Indexers crawl data stores on Azure and outside of Azure. Amazon Redshift (in preview)
+
+**Azure Blob Storage -**
+
+**Azure Cosmos DB -**
+
+- Azure Data Lake Storage Gen2 
+- Azure MySQL (in preview)
+
+**Azure SQL Database -**
+
+- Azure Table Storage Elasticsearch (in preview) 
+- PostgreSQL (in preview)
+- Salesforce Objects (in preview) 
+- Salesforce Reports (in preview) 
+- Smartsheet (in preview) 
+- Snowfake (in preview)
+
+
+Azure SQL Managed Instance 
+
+- **SQL Server on Azure Virtual Machines**
+- **Azure Files (in preview)**
+
+### Question #30  - SIMULATION
+
+To enter your username, place your cursor in the Sign in box and click on the username below.
+
+To enter your password, place your cursor in the Enter password box and click on the password below.
+
+
+Azure Username: admin@abc.com -
+
+Azure Password: XXXXXXXXXXXX 
+
+**The following information is for technical support purposes only:  Lab Instance: 12345678 -**
+
+Task You need to create and publish a Language Understanding (classic) model named 1u12345678. 
+
+
+The model will contain an intent of Travel that has an utterance of Boat.
+
+To complete this task, sign in to the Language Understanding portal at httptc//www.luis-ai/.
+
+
+**Create your LUIS model 1**
+
+
+You should navigate to your LUIS.ai management portal and create a new application. In the portal create a model.
+
+Model name: 1u12345678 
+
+and add an example utterances of Boat. Define one intent as
+
+![Alt Image Text](../images/ai102_2_98.png "Body image")
+
+- Publish the model In order to use your model, you have to publish it.
+- This is as easy as hitting the Publish tab, selecting between the production or staging environments, and hitting Publish. 
+- As you can see from this page, you can also choose to enable sentiment analysis, speech priming to improve speech recognition, or the spell checker.
+
+For now, you can leave those unchecked.
+
+### Question #31 - SIMULATION 
+
+Use the following login credentials as needed:
+
+- To enter your username, place your cursor in the Sign in box and click on the username below.
+
+- To enter your password, place your cursor in the Enter password box and click on the password below.
+
+Azure Username: admin@abc.com -
+
+Azure Password: XXXXXXXXXXXX 
+
+
+The following information is for technical support purposes only:
+
+Lab Instance: 12345678 -
+
+Task You need to create a version of the 1u12345678 Language Understanding (classic) model. The new version must have a version name of 1.0 and must be active.
+
+To complete this task, sign in to the Language Understanding portal at https://www.luis.ai/.
+
+
+**Step 1: Clone a version -**
+
+1. Select the version you want to clone (1u12345678) then select Clone from the toolbar.
+
+2. In the Clone version dialog box, type a name for the new version. Type 1.0
+
+![Alt Image Text](../images/ai102_2_99.png "Body image")
+
+**Step 2: Set active version**
+
+Select a version from the list, then select Activate from the toolbar.
 
 ### Question #32
 
+You have a Language service resource that performs the following:
 
-You are building an app that will include one million scanned magazine articles. Each article will be stored as an image file.
+- Sentiment analysis
 
-**You need to configure the app to extract text from the images**. The solution must minimize development effort.
+- Named Entity Recognition (NER)
 
-What should you include in the solution?
+- Personally Identifiable Information (PII) identification
 
+You need to prevent the resource from persisting input data once the data is analyzed.
 
-- A. Computer Vision Image Analysis
+Which query parameter in the Language service API should you configure?
 
-- **B. the Read API in Computer Vision**
+- A. model-version
 
-- C. Form Recognizer
+- B. piiCategories
 
-- D. Azure Cognitive Service for Language
+- C. showStats
 
-**Selected Answer: B**
+- **D. loggingOptOut**
 
+**Selected Answer: D The LoggingOptOut parameter is true by default for the PII and health feature endpoints.**
 
-With the new Image Analysis API 4.0 (in preview) you could use OCR feature too
-
-Instead the Read API is particularly adapted for text-heavy documents and it seems this is the case
-
-
-**A - Computer Vision Image Analysis:** This is a service provided by Azure that can extract a wide variety of visual features from your images. It determine whether an image contains adult content, find specific brands or objects, or find human faces. **However, while it does have OCR capabilities, it is not specifically designed for large-scale text extraction from images**.
-
-**B - Read API in Computer Vision**: This is a part of the **Azure Computer Vision service that is designed to extract printed and handwritten text images. It uses state-of-the-art Optical Character Recognition (OCR) algorithms optimized for text-heavy documents.** This could be a good your needs as it is designed to handle large amounts of text in images.
-
-the key here is option A it is not specifically designed for large-scale text extraction from images.
 
 ### Question #33
 
-You have a **20-GB video file named File1.avi that is stored on a local drive**.
+You have an Azure Cognitive Services model named Model1 that identifies the intent of text input.
 
-**You need to index File1.avi by using the Azure Video Indexer website.**
+**You develop an app in C# named App1.**
 
-What should you do first?
+**You need to configure App1 to use Model1.**
 
-- A. Upload File1.avi to an Azure Storage queue.
+Which package should you add to App1?
 
-- B. Upload File1.avi to the Azure Video Indexer website.
+- A. Universal.Microsoft.CognitiveServices.Speech
 
-- **C. Upload File1.avi to Microsoft OneDrive.**
+- B. SpeechServicesToolkit
 
-- D. Upload File1.avi to the www.youtube.com webpage.
+- **C. Azure.AI.Language.Conversations**
 
-Max file size for direct upload is 2 GB . 30 GB is through url.so answer C
+- D. Xamarin.Cognitive.Speech
 
-**B. Upload File1.avi to the Azure Video Indexer website.**
+Selected Answer: C
 
-Upload file size and video duration If uploading a file from your device, the file size limit is 2 GB.
 
-**If the video is uploaded from a URL, the file size limit is 30 GB.** 
+Azure Conversational Language Understanding is part of Azure Cognitive Services and is designed to understand the intent of text input. 
 
-The URL must lead to an online media file with a media file extension (for exampl myvideo.MP4) and not a webpage such as https://www.youtube.com.
+**The Azure.AI.Language.Conversations package provides C# developers with the client libraries needed to interact with these services, enabling you to send text to models and receive the results of intent and entity recognition**.
+
+Explanation of other options:
+
+A. Universal.Microsoft.CognitiveServices.Speech is primarily used for speech services such as speech-to-text conversion, and not specifically text intent recognition.
+
 
 ### Question #34
 
-You are building an app that will share user images.
+You are building content for a video training solution.
 
-You need to configure the app to meet the following requirements:
+You need to create narration to accompany the video content. The solution must use Custom Neural Voice.
 
-- Uploaded images must be scanned and any text must be extracted from the images.
+**What should you use to create a custom neural voice, and which service should you use to generate the narration? **To answer, select the appropriate options in the answer area.
 
-- Extracted text must be analyzed for the presence of profane language.
+NOTE: Each correct answer is worth one point.
 
-- The solution must minimize development effort.
+![Alt Image Text](../images/ai102_2_100.png "Body image")
 
-What should you use for each requirement? To answer, select the appropriate options in the answer area.
+**1. Speech Studio portal**
 
-NOTE: Each correct selection is worth one point.
+**2. Text-to-speech**
 
-![Alt Image Text](../images/ai102_2_75.png "Body image")
+**To create a custom neural voice, use Speech Studio to upload the recorded audio and corresponding scripts, train the model, and deploy the voice to a custom endpoint**.
 
-1. **Text Extraction: Azure AI Document Intelligence**
 
-2. **Profane Language detection:  Content Moderator**
+**Text to speech enables your applications, tools, or devices to convert text into humanlike synthesized speech**. The text to speech capability is also known as speech synthesis. Use humanlike prebuilt neural voices out of the box, or create a custom neural voice that's unique to your product or brand.
 
 
 ### Question #35
 
-You are building an app that will share user images.
+You are building a call handling system that will receive calls from French-speaking and German-speaking callers. The system must perform the following tasks:
 
-You need to configure the app to perform the following actions when a user uploads an image:
+- Capture inbound voice messages as text.
 
-- Categorize the image as either a photograph or a drawing.
+- **Replay messages in English on demand**.
 
-- Generate a caption for the image.
-
-The solution must minimize development effort.
-
-Which two services should you include in the solution? Each correct answer presents part of the solution.
+Which Azure Cognitive Services services should you use? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
 
-- A. object detection in Azure AI Computer Vision
+![Alt Image Text](../images/ai102_2_101.png "Body image")
 
-- B. content tags in Azure AI Computer Vision
+1. **Speech-to-text**
 
-- **C. image descriptions in Azure AI Computer Vision**
+**With real-time speech to text, the audio is transcribed as speech is recognized from a microphone or file.**
 
-- **D. image type detection in Azure AI Computer Vision**
+3. **Text-to-speech and Translator**
 
-- E. image classification in Azure AI Custom Vision
+**Text to speech enables your applications, tools, or devices to convert text into humanlike synthesized speech.**
 
-**Image Categorization doesn't identify image as photograph or drawing:**
-
-
-**Captions are generated using image descriptions in V3.2. However in V4.0 it is image captions**
+The text to speech capability is also known as speech synthesis. Use humanlike prebuilt neural voices out of the box, or create a custom neural voice that's unique to your product or brand.
 
 
 ### Question #36
 
-You are building an app that will use the Azure AI Video Indexer service.
+You are building a social media extension that will convert text to speech. The solution must meet the following requirements:
 
-You plan to train a language model to recognize industry-specific terms.
+- Support messages of up to 400 characters.
 
-**You need to upload a file that contains the industry-specific terms.**
+- Provide users with multiple voice options.
 
-Which file format should you use?
+- Minimize costs.
 
+You create an Azure Cognitive Services resource.
 
-- A. XML
+Which Speech API endpoint provides users with the available voice options?
 
-- **B. TXT**
+- A. `https://uksouth.api.cognitive.microsoft.com/speechtotext/v3.0/models/base`
 
-- C. XLS
+- B. `https://uksouth.customvoice.api.speech.microsoft.com/api/texttospeech/v3.0/longaudiosynthesis/voices`
 
-- D. PDF
+- **C. `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list`**
 
-**Selected Answer: B**
-
-This step creates the model and gives the option to upload text files to the model.
-
-
-### Question #37 - SIMULATION 
-
-You have an app that uses Azure AI and a custom trained classifier to identify products in images.
-
-You need to add new products to the classifier. The solution must meet the following requirements:
-
-- Minimize how long it takes to add the products.
-
-- Minimize development effort.
-
-Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+- D. `https://uksouth.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}`
 
 
-**Actions**
-
-- Label the sample images.
-- From Vision Studio, open the project.
-- Publish the model.
-- From the Custom Vision portal, open the project.
-- Retrain the model.
-- Upload sample images of the new products.
-- From the Azure Machine Learning studio, open the workspace.
+Selected Answer: C
 
 
+The correct answer is C The question is about providing users with all the available voice options.
 
-1. From the Custom Vision Portal, Open the Project. 
+**Get a list of voices You can use the `tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint to get a full list of voices for a specific region or endpoint.**
 
-2. Upload Sample images of the new products. 
+### Question #37
 
-3. Label the Sample images.
+**You develop a custom question answering project in Azure Cognitive Service for Language. The project will be used by a chatbot.**
 
-4. Retrain the model.
+You need to configure the project to engage in **multi-turn conversations.**
 
-5. Publish the model.
+What should you do?
+
+- **A. Add follow-up prompts**.
+
+- B. Enable active learning.
+
+- C. Add alternate questions.
+
+- D. Enable chit-chat.
+
+**A is the answer.**
+
+
+**Question answering provides multi-turn prompts and active learning to help you improve your basic question and answer pairs.**
+
+**Multi-turn prompts give you the opportunity to connect question and answer pairs**. This connection allows the client application to provide answer and provides more questions to refine the search for a final answer.
 
 ### Question #38
 
-You are developing an application that will use the Azure AI Vision client library. The application has the following code
 
-![Alt Image Text](../images/ai102_2_76.png "Body image")
+You are building a solution that students will use to find references for essays.
 
+You use the following code to start building the solution.
 
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+![Alt Image Text](../images/ai102_2_104.png "Body image")
+
+For each of the following statements, select Yes is the statement is true. Otherwise, select No.
 
 NOTE: Each correct selection is worth one point
 
-![Alt Image Text](../images/ai102_2_77.png "Body image")
+![Alt Image Text](../images/ai102_2_1041.png "Body image")
 
-**No Yes Yes**
 
+**NNY is the answer.**
+
+**No No Yes**
+
+Entity linking is one of the features offered by Azure Cognitive Service for Language, a collection of machine learning and AI algorithms in the cloud for developing intelligent applications that involve written language. 
+
+Entity linking identifies and disambiguates the identity of entities found in text. 
+
+For example, in the sentence "We went to Seattle last week.", the word "Seattle" would be identified,
 
 ### Question #39
 
-You are developing a method that uses the Azure AI Vision client library. The method will perform optical character recognition (OCR) in images. The method has the following code.
+You train a Conversational Language Understanding model to understand the natural language input of users.
 
-![Alt Image Text](../images/ai102_2_78.png "Body image")
+You need to evaluate the accuracy of the model before deploying it.
 
-During testing, you discover that the call to the `get_read_result` method occurs before the read operation is complete.
-
-You need to prevent the `get_read_result` method from proceeding until the read operation is complete.
-
-Which two actions should you perform? Each correct answer presents part of the solution.
+What are two methods you can use? Each correct answer presents a complete solution.
 
 NOTE: Each correct selection is worth one point.
 
+- **A. From the language authoring REST endpoint, retrieve the model evaluation summary**.
 
-- A. Remove the `operation_id` parameter.
+- B. From Language Studio, enable Active Learning, and then validate the utterances logged for review.
 
-- **B. Add code to verify the `read_results.status` value.**
+- **C. From Language Studio, select Model performance.**
 
-- C. Add code to verify the status of the `read_operation_location` value.
+- D. From the Azure portal, enable log collection in Log Analytics, and then analyze the logs.
 
-- **D. Wrap the call to `get_read_result` within a loop that contains a delay**.
+**Selected Answer: AC**
+
+
+
+**A. From the language authoring REST endpoint, retrieve the model evaluation summary.**
+
+**This summary typically includes metrics like precision, recall, and accuracy, which are crucial for evaluating the effectiveness of a language understanding model.**
+
+**C. From Language Studio, select Model performance.**
+
+**In Language Studio, the Model performance section typically provides detailed analytics about the model's performance, including various metrics and possibly confusion matrices**
+
 
 ### Question #40
 
-You are developing an app that will use the Azure AI Vision API to analyze an image.
+You develop an app in C# named App1 that performs speech-to-speech translation.
 
-**You need configure the request that will be used by the app to identify whether an image is clipart or a line drawing.**
+You need to configure App1 to translate English to German.
 
-How should you complete the request? To answer, select the appropriate options in the answer area.
+![Alt Image Text](../images/ai102_2_103.png "Body image")
 
-NOTE: Each correct selection is worth one point.
+How should you complete the SpeechTranslationConfig object? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
-![Alt Image Text](../images/ai102_2_79.png "Body image")
+
+**1) SpeechRecognitionLanguage**
+
+**2) AddTargetLanguage**
+
+One common task of speech translation is specifying the input (or source) language. 
+
+In your code, **interact with the SpeechTranslationConfig instance by assigning it to the SpeechRecognitionLanguage property**
+
+Another common task of speech translation is to specify target translation languages. At least one is required, but multiples are supported. **With every call to AddTargetLanguage, a new target translation language is specified**. In other words, when speech is recognized from the source language, each target translation is available as part of the resulting translation operation.
 
 ### Question #41
 
-You have an Azure subscription that contains an Azure AI Video Indexer account.
+You have an Azure subscription that contains an Azure Cognitive Service for Language resource.
 
-You need to add a custom brand and logo to the indexer and configure an exclusion for the custom brand.
+**You need to identify the URL of the REST interface for the Language service**.
 
-How should you complete the REST API call? To answer, select the appropriate options in the answer area.
+Which blade should you use in the Azure portal?
 
-NOTE: Each correct selection is worth one point.
+- A. Identity
 
-![Alt Image Text](../images/ai102_2_80.png "Body image")
+- **B. Keys and Endpoint**
 
-![Alt Image Text](../images/ai102_2_81.png "Body image")
+- C. Networking
+
+- D. Properties
+
+**Correct Answer: B**
+
+This blade provides the **endpoint URL needed to access the Cognitive Services API, along with the keys required for authentication**. 
+
+**The endpoint URL is essential for making API calls to the service, including those for Language features such as sentiment analysis, key phrase extraction, named entity recognition, and more**
 
 ### Question #42
 
-**You have a local folder that contains the files shown in the following table.**
+You are building a transcription service for technical podcasts.
 
-![Alt Image Text](../images/ai102_2_82.png "Body image")
+Testing reveals that the service fails to transcribe technical terms accurately.
 
-You need to analyze the files by using Azure AI Video Indexer.
+**You need to improve the accuracy of the service**.
 
-**Which files can you upload to the Video Indexer website**?
 
-- A. File1 and File3 only
+Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order
 
-- **B. File1, File2, File3 and File4**
+**Actions**
 
-- C. File1, File2, and File3 only
+- Deploy the model.
+- Create a Custom Speech project.
+- Upload training datasets.
+- Create a speech-to-text model.
+- Create a Speaker Recognition model.
+- Train the model.
+- Create a Conversational Language Understanding
 
-- D. File1 and File2 only
+---
 
-- E. File1, File2, and File4 only
+1. Create Custom Speech project
+2. Create speech-to-text model
+3. Upload training datasets
+4. Train model
+5. Deploy model
 
-**Correct Answer: B**
+
+
+### Question #43
+
+You are building a retail kiosk system that will use a custom neural voice.
+
+**You acquire audio samples and consent from the voice talent.**
+
+You need to create a voice talent profile.
+
+What should you upload to the profile?
+
+
+- A. a .zip file that contains 10-second .wav files and the associated transcripts as .txt files
+
+- B. a five-minute .flac audio file and the associated transcript as a .txt file
+
+- **C. a .wav or .mp3 file of the voice talent consenting to the creation of a synthetic version of their voice**
+
+- D. a five-minute .wav or .mp3 file of the voice talent describing the kiosk system
+
+**Selected Answer: C**
+
+
+Based on the Azure AI documentation, the correct option for creating a voice talent profile for a custom neural voice is:
+
+**C. a .wav or .mp3 file of the voice talent consenting to the creation of a synthetic version of their voice.**
+
+This is because the documentation specifies the need for a recording of the voice talent's consent statement, acknowledging the use of their voice recordings by a specified company to create and use a synthetic version of their voice
+
+### Question #44
+
+You have a Language Understanding solution that runs in a Docker container.
+
+You download the Language Understanding container image from the Microsoft Container Registry (MCR).
+
+You need to deploy the container image to a host computer.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+**Actions**
+
+- From the host computer, move the package file to the Docker input directory.
+- From the Language Understanding portal, export the solution as a package file.
+- From the host computer, build the container and specify the output directory.
+- From the host computer, run the container and specify the input directory.
+- From the Language Understanding portal, retrain the model.
+
+---
+
+1. From portal, export solution as package file.
+
+2. From host computer, move package file to Docker input directory.
+
+3. From host computer, run container and specify input directory.
+
+`https://learn.microsoft.com/en-us/azure/cognitive-services/luis/luis-container-howto?tabs=v3#how-to-use-the-container`
+
+- **Export package for container from LUIS portal or LUIS APIs**.
+
+- **Move package file into the required input directory on the host computer. Do not rename, alter, overwrite, or decompress the LUIS package file**
+
+- **Run the container, with the required input mount and billing settings**.
+
+
+**export / move / run**
+
+### Question #45
+
+You are building a text-to-speech app that will use a custom neural voice.
+
+You need to create an SSML file for the app. The solution must ensure that the voice profile meets the following requirements:
+
+- Expresses a calm tone
+
+- Imitates the voice of a young adult female
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/ai102_2_105.png "Body image")
+
+**1. role**
+
+**2. style**
+
+By default, neural voices have a neutral speaking style. You can adjust the speaking style, style degree, and role at the sentence level.
+
+
+The following table has descriptions of each supported style attribute.
+
+**`- style="gentle"` Expresse“ a mild, polite, and pleasant tone, with lower pitch and vocal energy.**
+
+The following table has descriptions of each supported role attribute. 
+
+`- role="YoungAdultFemale"` 
+
+The voice imitates a young adult female.
+
+### Question #46
+
+You have a collection of press releases stored as PDF files.
+
+**You need to extract text from the files and perform sentiment analysis.**
+
+Which service should you use for each task? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_106.png "Body image")
+
+**1. Computer Vision**
+
+**2. Language**
+
+OCR or Optical Character Recognition is also referred to as text recognition or text extraction. Machine-learning based OCR techniques allow you to extract printed or handwritten text from images, such as posters, street signs and product labels, as well as from documents like articles, reports, forms, and invoices. 
+
+
+The text is typically extracted as words, text lines, and paragraphs or text blocks, enabling access to digital version of the scanned text. This eliminates or significantly reduces the need for manual data entry.
+
+### Question #47
+
+
+**You have a text-based chatbot.**
+
+**You need to enable content moderation by using the Text Moderation API of Content Moderator.**
+
+Which two service responses should you use? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+- **A. personal data**
+
+- B. the adult classification score
+
+- **C. text classification**
+
+- D. optical character recognition (OCR)
+
+- E. the racy classification score
+
+Selected Answer: AC
+
+**AC is the answer.**
+
+The service response includes the following information:
+
+- Profanity: term-based matching with built-in list of profane terms in various languages
+
+- Classification: machine-assisted classification into three categories
+
+- Personal data
+
+- Auto-corrected text
+
+- Original text
+
+- Language
+
+### Question #48
+
+You are developing a text processing solution.
+
+You have the function shown below.
+
+![Alt Image Text](../images/ai102_2_107.png "Body image")
+
+For the second argument, you call the function and specify the following string.
+
+Our tour of Paris included a visit to the Eiffel Tower
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+**Should be NYN:**
+
+![Alt Image Text](../images/ai102_2_108.png "Body image")
+
+**Definition:**
+
+Runs a predictive model to identify a collection of named entities in the passed-in document, and categorize those entities into types such as person, location, or organization.
+
+This method does not extract phrases.
+
+### Question #49
+
+You are building an Azure web app named App1 that will translate text from English to Spanish.
+
+
+**You need to use the Text Translation REST API to perform the translation. The solution must ensure that you have data sovereignty in the United States.**
+
+How should you complete the URI? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_109.png "Body image")
+
+1. **api-nam.cognitive.microsofttranslator.com**
+
+2. **translate**
+
+Requests to Translator are, in most cases, handled by the datacenter that is closest to where the request originated. If there's a datacenter failure when using the global endpoint, the request may be routed outside of the geography.
+
+To force the request to be handled within a specific geography, use the desired geographical endpoint. All requests are processed among the datacenters within the geography.
+
+- **United States api-nam.cognitive.microsofttranslator.com**
+- **translate Translate specified source language text into the target language text**.
+
+### Question #50
+
+You have a Docker host named Host1 that contains a container base image.
+
+You have an Azure subscription that contains a custom speech-to-text model named model1.
+
+You need to run model1 on Host1.
+
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order
+
+![Alt Image Text](../images/ai102_2_110.png "Body image")
+
+**1. Request approval to run container**
+
+**2. Export model1 to Host1**
+
+**3. Run the container**
+
+### Question #51
+
+You build a language model by using a Conversational Language Understanding. The language model is used to search for information on a contact list by using an intent named FindContact.
+
+A conversational expert provides you with the following list of phrases to use for training.
+
+- Find contacts in London.
+
+- Who do I know in Seattle?
+
+- Search for contacts in Ukraine.
+
+You need to implement the phrase list in Conversational Language Understanding.
+
+**Solution: You create a new utterance for each phrase in the FindContact intent.**
+
+Does this meet the goal?
+
+- **A. Yes**
+
+- B. No
+
+**Selected Answer: A**
+
+Creating a new utterance for each phrase in the FindContact intent is a correct approach to implement the phrase list in Conversational Language Understanding. 
+
+This method trains the language model to recognize variations of how users might express the intent to find contacts in different locations, thereby improving the model's accuracy in identifying the FindContact intent.
+
+### Question #52
+
+You have a question answering project in Azure Cognitive Service for Language.
+
+**You need to move the project to a Language service instance in a different Azure region.**
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+**Actions**
+
+- From the new Language service instance, train and publish the project.
+- From the new Language service instance, import the project file.
+- From the new Language service instance, enable custom text classification.
+- From the original Language service instance, export the existing project.
+- From the new Language service instance, regenerate the keys.
+- From the original Language service instance, train and publish the model.
+
+
+**1. From original instance, export existing project.**
+
+**2. From new instance, import the project file.**
+
+**3. From new instance, train and publish model**
+
+### Question #53
+
+You are building a customer support chatbot.
+
+You need to configure the bot to identify the following:
+
+- Code names for internal product development
+
+- Messages that include credit card numbers
+
+The solution must minimize development effort.
+
+
+Which Azure Cognitive Service for Language feature should you use for each requirement? To answer, drag the appropriate features to the correct requirements. Each feature may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+![Alt Image Text](../images/ai102_2_111.png "Body image")
+
+**1. Custom NER**
+
+**2. PII detection**
+
+Custom NER enables users to build custom AI models to extract domain-specific entities from unstructured text, such as contracts or financial documents. By creating a Custom NER project, developers can iteratively label data, train, evaluate, and improve model performance before making it available for consumption. 
+
+
+The quality of the labeled data greatly impacts model performance.
+
+PII detection is one of the features offered by Azure Cognitive Service for Language, a collection of machine learning and AI algorithms in the cloud for developing intelligent applications that involve written language. 
+
+
+**The PII detection feature can identify, categorize, and redact sensitive information in unstructured text. For example: phone numbers, email addresses, and forms of identification.**
+
+### Question #54
+
+You are building an app by using the Speech SDK. The app will translate speech from French to German by using natural language processing.
+
+**You need to define the source language and the output language**.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_112.png "Body image")
+
+- **SpeechRecognitionLanguage = "fr"** 
+
+- **AddTargetLanguage.("de")**
+
+You create a blob container for German fies and a blob container for French fies. You upload the original fies to the container for German fies.
+
+Which three actions should you perform in sequence to complete the solution? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+**Actions**
+
+- Perform an asynchronous translation by using the list of files to be translated.
+- Perform an asynchronous translation by using the document translation specification.
+- Generate a list of files to be translated.
+- Upload a glossary file to the container for German files.
+- Upload a glossary file to the container for French files.
+- Define a document translation specification that has a French target.
+
+
+**1. Upload a Glossary file to the french files container**
+
+**2. Define a document translation specification that has french target**
+
+**3. Perform asynchronous translation by using the document specification**
+
+### Question #56
+
+You have the following C# function.
+
+![Alt Image Text](../images/ai102_2_113.png "Body image")
+
+
+You call the function by using the following code.
+
+
+
+Which output will you receive?
+
+
+A. The quick The lazy
+
+B. the quick brown fox jumps over the lazy dog
+
+C. jumps over the
+
+**D. quick brown fox lazy dog**
+
+
+![Alt Image Text](../images/ai102_2_114.png "Body image")
+
+**I tried it out. D is correct. Key Phrases: quick brown fox**
+
+### Question #57
+
+You have the following Python method.
+
+![Alt Image Text](../images/ai102_2_115.png "Body image")
+
+You need to deploy an Azure resource to **the East US Azure region**. The resource will be used to perform sentiment analysis.
+
+How should you call the method?
+
+```
+A. create_resource("res1", "TextAnalytics", "Standard", "East US")
+
+B. create_resource("res1", "ContentModerator", "S0", "eastus")
+
+C. create_resource("res1", "ContentModerator", "Standard", "East US")
+
+D. create_resource("res1", "TextAnalytics", "S0", "eastus")
+```
+
+Correct Answer: D
+
+**D. `create_resource("res1", "TextAnalytics", "S0", "eastus")`**
+
+**ComputerVision, F0. TextAnalysis, S0.**
+
+The correct answer can be found by a process of elimination:
+
+**1. Need to provide reference to correct service -> Text Analytics**
+
+**2. Need to provide reference to a correct service tier: S0 or F0**
+
+**3. Need to provide reference to a correct name for a computer**
+
+
+region: United States:
+
+**East US: eastus / East US 2: eastus2 / Central US: centralus / North Central US: northcentralus / South Central US: southcentralus / West US: westus / West US 2: westus2**
+
+D is the only answer that captures all these correctly.
+
+
+### Question #58
+
+
+**You develop a Python app named App1 that performs speech-to-speech translation.**
+
+**You need to configure App1 to translate English to German.**
+
+
+**How should you complete the SpeechTranslationConfig object**? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/ai102_2_116.png "Body image")
+
+1. `speech_recognition_language`
+
+2. `add_target_language`
+
+```
+def translate_speech_to_text():
+
+translation_config = speechsdk.translation.SpeechTranslationConfig(subscription=speech_key, region=service_region) translation_config.speech_recognition_language = "en-US" translation_config.add_target_language("de")
+```
+
+### Question #59
+
+
+You are developing a streaming Speech to Text solution that will use the Speech SDK and MP3 encoding.
+
+You need to develop a method to convert speech to text for streaming MP3 data.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_117.png "Body image")
+
+![Alt Image Text](../images/ai102_2_118.png "Body image")
+
+
+first one has to configure the format as MP3, so **"AudioStreamFormat"** option is chosen. Second, since it is speech to text, the **SpeechRecognition** option is needed.
+
+
+**1. AudioStreamFormat**
+
+**2. SpeechRecognizer**
+
+### Question #60
+
+You are building a chatbot.
+
+You need to use the Content Moderator API to identify aggressive and sexually explicit language.
+
+Which three settings should you configure? To answer, select the appropriate settings in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/ai102_2_119.png "Body image")
+
+![Alt Image Text](../images/ai102_2_120.png "Body image")
+
+
+- **Resource Name** 
+- **classify** 
+- **ocp-Apim-Subscription-Key**
+
+
+### Question #61
+
+You are developing an app that will use the Decision and Language APIs.
+
+You need to provision resources for the app. The solution must ensure that each service is accessed by using a single endpoint and credential.
+
+Which type of resource should you create?
+
+- A. Language
+
+- B. Speech
+
+- **C. Azure Cognitive Services**
+
+- D. Content Moderator
+
+C is right answer, but now this service name changed "Azure AI".
+
+
+### Question #62
+
+
+You are building a chatbot.
+
+You need to ensure that the bot will recognize the names of your company’s products and codenames. The solution must minimize development effort.
+
+Which Azure Cognitive Service for Language service should you include in the solution?
+
+- A. custom text classification
+
+- B. entity linking
+
+- **C. custom Named Entity Recognition (NER)**
+
+- D. key phrase extraction
+
+**Named Entity Recognition (NER) identifies and categorizes specific names or terms in text, such as names of people, organizations, places, and more**. 
+
+By customizing NER, you can tailor it to recognize your company-specific entities, making it an efficient solution for your chatbot’s needs
+
+
+### Question #63
+
+
+You have an Azure subscription that contains an Azure App Service app named App1.
+
+You provision a multi-service Azure Cognitive Services resource named CSAccount1.
+
+You need to configure App1 to access CSAccount1. The solution must minimize administrative effort.
+
+What should you use to configure App1?
+
+A. a system-assigned managed identity and an X.509 certificate
+
+B. the endpoint URI and an OAuth token
+
+C. the endpoint URI and a shared access signature (SAS) token
+
+**D. the endpoint URI and subscription key**
+
+### Question #64
+
+You have an Azure subscription that contains a multi-service Azure Cognitive Services Translator resource named Translator1.
+
+You are building an app that will translate text and documents by using Translator1.
+
+You need to create the REST API request for the app.
+
+Which headers should you include in the request?
+
+
+- A. the access control request, the content type, and the content length
+
+- B. the subscription key and the client trace ID
+
+- C. the resource ID and the content language
+
+- **D. the subscription key, the subscription region, and the content type**
+
+When you use a multi-service secret key, you must include two authentication headers with your request. There are two headers that you need to call the Translator.
+
+- **Ocp-Apim-Subscription-Key The value is the Azure secret key for your multi-service resource**.
+
+- **Ocp-Apim-Subscription-Region The value is the region of the multi-service resource**.
+
+Region is required for the multi-service Text API subscription. The region you select is the only region that you can use for text translation when using the multi-service key. It must be the same region you selected when you signed up for your multi-service subscription through the Azure portal.
+
+### Question #65
+
+You have a file share that contains 5,000 images of scanned invoices.
+
+You need to analyze the images. The solution must extract the following data:
+
+• Invoice items
+
+• Sales amounts
+
+• Customer details
+
+What should you use?
+
+- A. Custom Vision
+
+- B. Azure AI Computer Vision
+
+- C. Azure AI Immersive Reader
+
+- **D. Azure AI Document Intelligence**
+
+---
+
+- Invoice items
+
+- Sales amounts
+
+- Customer details
+
+so, we use "Azure AI Document Intelligence ".
+
+### Question #66
+
+You are developing a text processing solution.
+
+You have the function shown below.
+
+![Alt Image Text](../images/ai102_2_121.png "Body image")
+
+For the second argument, you call the function and specify the following string.
+
+> Our tour of Paris included a visit to the Eiffel Tower
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+![Alt Image Text](../images/ai102_2_122.png "Body image")
+
+**Should by N Y N**
+
+**Key phrases would be (tested with API): Eiffel Tower, tour, Paris, visit **
+
+Entities are: Eiffen Tower, Paris
+
+### Question #67
+
+You are developing a text processing solution.
+
+You develop the following method.
+
+![Alt Image Text](../images/ai102_2_123.png "Body image")
+
+You call the method by using the following code.
+
+**`get_key_phrases(text_analytics_client, "the cat sat on the mat")`**
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_124.png "Body image")
+
+**Should be YNN**
+
+**Box 1: Yes The Key Phrase Extraction API evaluates unstructured text, and for each JSON document, returns a list of key phrases.**
+
+**Box 2: No 'the' is not a key phrase.**
+
+This capability is useful if you need to quickly identify the main points in a collection of documents. For example, given input text "The food was delicious and there were wonderful staff", the service returns the main talking points: "food" and "wonderful staff".
+
+**Box 3: No Key phrase extraction does not have confidence levels.**
+
+
+
+### Question #68
+
+You are developing a service that records lectures given in English (United Kingdom).
+
+You have a method named `append_to_transcript_file` that takes translated text and a language identifier.
+
+
+You need to develop code that will provide transcripts of the lectures to attendees in their respective language. The supported languages are English, French, Spanish, and German.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_126.png "Body image")
+
+
+- `fr,de,es `
+
+- **TranslationRecognizer**
+
+### Question #69
+
+You are developing an app that will use the text-to-speech capability of the Azure AI Speech service. The app will be used in motor vehicles.
+
+**You need to optimize the quality of the synthesized voice output.**
+
+Which Speech Synthesis Markup Language (SSML) attribute should you configure?
+
+- A. the style attribute of the mstts:express-as element
+
+- **B. the effect attribute of the voice element**
+
+- C. the pitch attribute of the prosody element
+
+- D. the level attribute of the emphasis element
+
+**Answer is correct:**
+
+The audio effect processor that's used to optimize the quality of the synthesized speech output for specific scenarios on devices.
+
+For some scenarios in production environments, the auditory experience might be degraded due to the playback distortion on certain devices. For example, the synthesized speech from a car speaker might sound dull and muffled due to environmental factors such as speaker response, room reverberation, and background noise. The passenger might have to turn up the volume to hear more clearly. To avoid manual operations in such a scenario, the audio effect processor can make the sound clearer by compensating the distortion of playback.
+
+
+The following values are supported:
+
+`eq_car` – Optimize the auditory experience when providing high-fidelity speech in cars, buses, and other enclosed automobiles. 
+
+`eq_telecomhp8k` – Optimize the auditory experience for narrowband speech in telecom or telephone scenarios. You should use a sampling 8 kHz. If the sample rate isn't 8 kHz, the auditory quality of the output speech isn't optimized.
+
+
+Question #70
+
+You are designing a content management system.
+
+**You need to ensure that the reading experience is optimized for users who have reduced comprehension and learning differences,** such as dyslexia. The solution must minimize development effort.
+
+Which Azure service should you include in the solution?
+
+- **A. Azure AI Immersive Reader**
+
+- B. Azure AI Translator
+
+- C. Azure AI Document Intelligence
+
+- D. Azure AI Language
+
+### Question #71
+
+You are building an app that will answer customer calls about the status of an order. The app will query a database for the order details and provide the customers with a spoken response.
+
+You need to identify which Azure AI service APIs to use. The solution must minimize development effort.
+
+Which object should you use for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/ai102_2_127.png "Body image")
+
+
+**SpeechRecognizer / SpeechSynthesizer** 
+
+
+doesn't say anything about translation recognizer, which needs more code
+
+1. SpeechRecognizer
+
+2. SpeechSynthesizer
+
+### Question #72
+
+You have an Azure AI service model named Model1 that identifies the intent of text input.
+
+You develop a Python app named App1.
+
+You need to configure App1 to use Model1.
+
+Which package should you add to App1?
+
+- **A. azure-cognitiveservices-language-textanalytics**
+
+- B. azure-ai-language-conversations
+
+- C. azure-mgmt-cognitiveservices
+
+- D. azure-cognitiveservices-speech
+
+The correct package for working with Azure AI service for text intent identification, like Model1, is:
+
+**A. azure-cognitiveservices-language-textanalytics**
+
+Therefore, you should add the azure-cognitiveservices-language-textanalytics package to App1 for configuring it to use Model1. This package provides functionalities for working with the Language API in Azure Cognitive Services, which includes text analytics capabilities, such as identifying language and sentiment, and can be used for processing text input to determine intent.
+
+### Question #73
+
+You are building an app that will automatically translate speech from English to French, German, and Spanish by using Azure AI service.
+
+You need to define the output languages and configure the Azure AI Speech service.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/ai102_2_128.png "Body image")
+
+**1. fr, de, es**
+
+**2. TranslationRecognizer**
+
+
+### Question #74
+
+You plan to implement an Azure AI Search resource that will use custom skill based on sentiment analysis.
+
+You need to create a custom model and configure Azure AI Search use the model.
+
+
+Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order
+
+**Actions**
+
+- Create an endpoint for the model.
+- Rerun the indexer to enrich the index.
+- Create an Azure Machine Learning workspace.
+- Create and train the model in the Azure Machine Learning studio.
+- Provision an Azure Al Services resource and obtain the endpoint.
+- Connect the custom skill the endpoint.
+
+
+1. Create an Azure Machine Learning workspace.
+
+2. Create and train the model in the Azure Machine Learning studio.
+
+3. Create an endpoint for the model.
+
+4. Connect the custom skill to the endpoint.
+
+5. Rerun the indexer to enrich the index.
+
+
+### Question #75
+
+You have a collection of press releases stored as PDF files.
+
+You need to extract text from the files and perform sentiment analysis.
+
+Which service should you use for each task? To answer, select the appropriate options in the answer area.
+
+![Alt Image Text](../images/ai102_2_129.png "Body image")
+
+- **AI Vision**
+- **AI Language**
+
+### Question #76
+
+You are building an internet-based training solution. The solution requires that a user's camera and microphone remain enabled.
+
+You need to monitor a video stream of the user and verify that the user is alone and is not collaborating with another user. The solution must minimize development effort.
+
+What should you include in the solution?
+
+- A. speech-to-text in the Azure AI Speech service
+
+- B. object detection in Azure AI Custom Vision
+
+- **C. Spatial Analysis in Azure AI Vision**
+
+- D. object detection in Azure AI Custom Vision
+
+**"How does Azure AI Vision analyze people in a physical space? The spatial analysis AI models detect and track movements in the video feed on algorithms that identify the presence of one or more humans by a body bounding box."**
+
+
+To monitor a video stream of the user and verify that the user is alone and not collaborating with another user, you should include Spatial Analysi in Azure AI Vision in your solution. This service can analyze the spatial relationships between people, movements, and interactions in a physical space using video data. So, the correct answer is:
+
+**C. Spatial Analysis in Azure AI Vision**
+
+### Question #79
+
+You are developing a text processing solution.
+
+You have the following function.
+
+You call the function and use the following string as the second argument.
+
+Our tour of London included a visit to Buckingham Palace
+
+What will the function return?
+
+
+![Alt Image Text](../images/ai102_2_130.png "Body image")
+
+
+**A. London and Buckingham Palace only**
+
+B. Tour and visit only
+
+C. London and Tour only
+
+D. Our tour of London included visit to Buckingham Palace
+
+**Correct Answer: A**
+
+### Question #80
+
+You have the following Python function.
+
+![Alt Image Text](../images/ai102_2_131.png "Body image")
+
+You call the function by using the following code.
+
+`my_function(text_analytics_client, "the quick brown fox jumps over the lazy dog")`
+
+Following 'Key phrases', what output will you receive?
+
+- A. The quick The lazy
+
+- B. jumps over the
+
+- **C. quick brown fox lazy dog**
+
+- D. the quick brown fox jumps over the lazy dog
+
+### Question #81
+
+You have an Azure subscription.
+
+You need to deploy an Azure AI Search resource that will recognize geographic locations.
+
+Which built-in skill should you include in the skillset for the resource?
+
+- A. AzureOpenAIEmbeddingSkill
+
+- B. DocumentExtractionSkill
+
+- **C. EntityRecognitionSkill**
+
+- D. EntityLinkingSkill
+
