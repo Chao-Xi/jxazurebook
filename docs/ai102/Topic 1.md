@@ -1,804 +1,1354 @@
-## Topic 4 - Question Set 4
+## Topic 5 - Question Set 5
+
+### Question #1
+
+You build a bot by using the Microsoft Bot Framework SDK and the Azure Bot Service.
+
+You plan to deploy the bot to Azure.
+
+You register the bot by using the Bot Channels Registration service.
+
+Which two values are required to complete the deployment? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+
+- A. botId
+
+- B. tenantId
+
+- **C. appId**
+
+- D. objectId
+
+- **E. appSecret**
+
+**Correct Answer: CE**
+
+The identity information you need to add depends on the bot's application type. Provide the following values in your configuration file.
+
+- **MicrosoftAppId The bot's app ID.**
+
+- **MicrosoftAppPassword The bot's app password.**
+
+**appId appSecret**
+
 
 ### Question #2
 
-You deploy a web app that is used as a management portal for indexing in Azure Cognitive Search. The app is configured to use the primary admin key.
+You are building a chatbot by using the Microsoft Bot Framework Composer. 
 
-During a security review, you discover unauthorized changes to the search index. You suspect that the primary access key is compromised. You need to prevent unauthorized access to the index management endpoint. The solution must minimize downtime.
+You have the dialog design shown in the following exhibit.
 
-What should you do next?
+![Alt Image Text](../images/ai102_2_153.png "Body image")
 
-A. Regenerate the primary admin key, change the app to use the secondary admin key, and then regenerate the secondary admin key.
+For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.
 
-B. Change the app to use a query key, and then regenerate the primary admin key and the secondary admin key.
+![Alt Image Text](../images/ai102_2_154.png "Body image")
 
-**C. Regenerate the secondary admin key, change the app to use the secondary admin key, and then regenerate the primary key.**
+**Box 1: No -  User.name is a property.**
 
-D. Add a new query key, change the app to use the new query key, and then delete all the unused query keys.
+**Box 2: Yes -**
 
-logicly it should be C. A can not be the answer as you regenerated the secondry key after your already add to your app. the right order to minize downtime is to regenerate the secondary, add to your app and then regenerate the primary
+**Box 3: Yes The coalesce() function evaluates a list of expressions and returns the first non-null (or non-empty for string) expression.**
 
-**Selected Answer: C**
-
-- First you regenerate the secondary Key, which previously might have been compromised too - no downtime. 
-- **Then you switch your app to use that new uncompromised secondary Key - no downtime** 
-- Then you regenerate the compromised primary Key
+I am not sure if the correct answer for third is yes - the fields are showing examples, not the actual values typed in the boxes.
 
 ### Question #3
 
-You have an existing Azure Cognitive Search service.
+You are building a multilingual chatbot.
 
-You have an Azure Blob storage account that contains millions of scanned documents stored as images and PDFs. You need to make the scanned documents available to search as quickly as possible.
+You need to send a different answer for positive and negative messages.
 
-What should you do?
+Which two Language service APIs should you use? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
 
-A. Split the data into multiple blob containers. Create a Cognitive Search service for each container. Within each indexer definition, schedule the same runtime execution pattern.
+- A. Linked entities from a well-known knowledge base
 
-B. Split the data into multiple blob containers. Create an indexer for each container. Increase the search units. Within each indexer definition, schedule a sequential execution pattern.
+- **B. Sentiment Analysis**
 
-C. Create a Cognitive Search service for each type of document.
+- C. Key Phrases
 
-D. Split the data into multiple virtual folders. Create an indexer for each folder. Increase the search units. Within each indexer definition, schedule the same runtime execution pattern.
+- **D. Detect Language**
 
-**Correct Answer: D**
+- E. Named Entity Recognition
 
-Incorrect Answers:
+**Correct Answer: BD**
 
-A: Need more search units to process the data in parallel.
+**B: The Text Analytics API's Sentiment Analysis feature provides two ways for detecting positive and negative sentiment**. 
 
-B: Run them in parallel, not sequentially.
+If you send a Sentiment Analysis request, the API will return sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level
 
-**C: Need a blob indexer. -> Incorrect**
+**D: The Language Detection feature of the Azure Text Analytics REST API evaluates text input for each document and returns language identifiers with a score that indicates the strength of the analysis.**
 
-Note: A blob indexer is used for ingesting content from Azure Blob storage into a Cognitive Search index.
+This capability is useful for content stores that collect arbitrary text, where language is unknown.
 
+**Selected Answer: BD**
 
-**Index large datasets Indexing blobs can be a time-consuming process. In cases where you have millions of blobs to index, you can speed up indexing by partitioning your data and using multiple indexers to process the data in parallel**. Here's how you can set this up:
+- **B. Sentiment Analysis <-- different answer for positive and negative messages**
 
-- ✑ Partition your data into multiple blob containers or virtual folders 
-
-- ✑ Set up several data sources, one per container or folder.
-
-- ✑ Create a corresponding indexer for each data source. All of the indexers should point to the same target search index.
-
-- ✑ One search unit in your service can run one indexer at any given time. Creating multiple indexers as described above is only useful if they actually run in parallel.
+- **D. Detect Language <-- multilingual chatbot**
 
 ### Question #4
 
-You need to implement a table projection to generate a physical expression of an Azure Cognitive Search index.
+You plan to build a chatbot to support task tracking.
 
+You create a Language Understanding service named lu1.
 
-Which three properties should you specify in the skillset definition JSON configuration table node? Each correct answer presents part of the solution.
+You need to build a Language Understanding model to integrate into the chatbot. The solution must minimize development time to build the model.
 
-NOTE: Each correct selection is worth one point.
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
-- A. tableName
+**Actions**
 
-- B. generatedKeyName
+- Train the application.
+- Publish the application.
+- Add a new application.
+- Add example utterances.
+- Add the prebuilt domain ToDo.
 
-- C. dataSource
+![Alt Image Text](../images/ai102_2_1541.png "Body image")
 
-- D. dataSourceConnection
+---
 
-- E. source
+- **Add a new application.**
 
-**Selected Answer: ABE**
+- **Add the prebuilt domain ToDo.**
 
-Correct Answer: ABE
+- **Train the application.**
 
-Defining a table projection.
-
-Each table requires three properties:
-
-- **A. tableName: Necessary for defining where the output data should be stored.**
-
-- **B. generatedKeyName: Important for scenarios requiring unique identification of rows, though its necessity can vary**.
-
-- **E. source: Essential for specifying the input data that will be processed and projected into the table.**
-
-**Therefore, the correct answers are A (tableName), B (generatedKeyName), and E (source), as they play direct roles in the configuration of a table projection within a skillset for Azure Cognitive Search.**
-
+- **Publish the application**
 
 ### Question #5
 
-You are creating an enrichment pipeline that will use Azure Cognitive Search. The knowledge store contains unstructured JSON data and scanned PDF documents that contain text.
+You are building a bot on a local computer by using the Microsoft Bot Framework. The bot will use an existing Language Understanding model.
 
-Which projection type should you use for each data type? To answer, select the appropriate options in the answer area.
+You need to translate the Language Understanding model locally by using the Bot Framework CLI.
 
-NOTE: Each correct selection is worth one point
+What should you do first?
 
-![Alt Image Text](../images/ai102_2_132.png "Body image")
 
-**Box 1: Object projection**
+- A. From the Language Understanding portal, clone the model.
 
-Object projections are JSON representations of the enrichment tree that can be sourced from any node.
+- **B. Export the model as an .lu file.**
 
-**Box 2: File projection**
+- C. Create a new Speech service.
 
-File projections are similar to object projections and only act on the normalized_images collection.
-
-### Question #6
-
-You are building an Azure Cognitive Search custom skill. 
-
-You have the following custom skill schema definition.
-
-![Alt Image Text](../images/ai102_2_133.png "Body image")
-
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
-
-NOTE: Each correct selection is worth one point.
-
-![Alt Image Text](../images/ai102_2_134.png "Body image")
-
-![Alt Image Text](../images/ai102_2_135.png "Body image")
-
-Box 1: Yes Once you have defined a skillset, you must map the output fields of any skill that directly contributes values to a given field in your search index.
-
-Box 2: Yes The definition is a custom skill that calls a web API as part of the enrichment process.
-
-**Box 3: No For each organization identified by entity recognition, this skill calls a web API to find the description of that organization**
-
-### Question #7
-
-You have the following data sources:
-
-- ✑ Finance: On-premises Microsoft SQL Server database 
-- ✑ Sales: Azure Cosmos DB using the Core (SQL) API 
-- ✑ Logs: Azure Table storage
-
-HR: Azure SQL database -
-
-You need to ensure that you can search all the data by using the Azure Cognitive Search REST API. What should you do?
-
-- A. Configure multiple read replicas for the data in Sales.
-
-- **B. Mirror Finance to an Azure SQL database**.
-
-- C. Ingest the data in Logs into Azure Data Explorer.
-
-- D. Ingest the data in Logs into Azure Sentinel.
+- D. Create a new Language Understanding service.
 
 **Correct Answer: B**
 
-B is correct answer : Mirror Finance to an Azure SQL database.
+**B. Export the model as an .lu file.**
 
-On-premises Microsoft SQL Server database cannot be used as an index data source.
+**When you need to translate a Language Understanding (LUIS) model using the Microsoft Bot Framework CLI locally, the first step is to export the existing LUIS model as a .lu file. The .lu file format (Language Understanding file format) allows you to represent intents, entities, and other mode components in a text-based form**, enabling you to process, modify, or translate them using the Bot Framework CLI. This is a crucial step for working with and integrating LUIS models in a local environment."
 
-Note: Indexer in Azure Cognitive Search: : Automate aspects of an indexing operation by configuring a data source and an indexer that you can schedule or run on demand. This feature is supported for a limited number of data source types on Azure.
+### Question #6
 
-Indexers crawl data stores on Azure.
+You are using a Language Understanding service to handle natural language input from the users of a web-based customer agent.
 
-- ✑ Azure Blob Storage 
-- ✑ Azure Data Lake Storage Gen2 (in preview) 
-- ✑ Azure Table Storage 
-- ✑ Azure Cosmos DB 
-- ✑ Azure SQL Database 
-- ✑ SQL Managed Instance 
-- ✑ SQL Server on Azure Virtual Machines
+The users report that the agent frequently responds with the following generic response: "Sorry, I don't understand that."
 
-### Question #8
-
-You are developing a solution to generate a word cloud based on the reviews of a company's products. Which Text Analytics REST API endpoint should you use?
-
-- **A. keyPhrases**
-
-- B. sentiment
-
-- C. languages
-
-- D. entities/recognition/general
-
-**The key phrases provide us with the important words from our customer comments, not just the most common words.** Also, word sizing in the resulting cloud isn't skewed by the frequent use of a word in a relatively small number of comments.
-
-The best choice for this scenario is **A. keyPhrases**. **This endpoint extracts the main points or topics from a text document, which can be used to generate a word cloud that shows the most frequent or relevant terms in the reviews**. The other endpoints are not suitable for this task because:
-
-- B. sentiment analyzes the positive, negative, or neutral tone of a text document, which is not relevant for generating a word cloud.
-
-- C. languages detects the language of a text document, which is not relevant for generating a word cloud.
-
-- D. entities/recognition/general identifies and categorizes named entities in a text document, such as person names, locations, organizations, etc This might not capture the main points or topics of the reviews, and might include irrelevant or sensitive information in the word cloud.
-
-
-### Question #9 - STIMULATION
-
-You have a web app that uses Azure Cognitive Search.
-
-When reviewing billing for the app, you discover much higher than expected charges. You suspect that the query key is compromised.
-
-You need to prevent unauthorized access to the search endpoint and ensure that users only have read only access to the documents collection. The solution must minimize app downtime.
+**You need to improve the ability of the agent to respond to requests.**
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 **Actions**
 
-- Add a new query key.
-- Regenerate the secondary admin key.
-- Change the app to use the secondary admin key.
-- Change the app to use the new key.
-- Regenerate the primary admin key.
-- Delete the compromised key.
+- Add prebuilt domain models as required.
+- Validate the utterances logged for review and modify the model.
+- Migrate authoring to an Azure resource authoring key.
+- Enable active learning.
+- Enable log collection by using Log Analytics.
+- Train and republish the Language Understanding model.
 
-**regenerated secondary key**
+![Alt Image Text](../images/ai102_2_1542.png "Body image")
 
-**update the app to use the secondary key** 
 
-**regenarated the primary key**
+**1. Enable active learning**
 
+**2. Validate the utterances logged for review and modify the model**
+
+**3. Train and republish the language understanding model Understanding model**
+
+
+### Question #7
+
+You build a conversational bot named bot1.
+
+You need to configure the bot to use a QnA Maker application.
+
+From the Azure Portal, where can you find the information required by bot1 to connect to the QnA Maker application?
+
+- A. Access control (IAM)
+
+- B. Properties
+
+- **C.Keys and Endpoint**
+
+- D. Identity
+
+---
+
+1. In the QnA Maker site, select your knowledge base.
+
+2. With your knowledge base open, select the SETTINGS tab. Record the value shown for service name. This value is useful for finding your knowledge base of interest when using the QnA Maker portal interface. It's not used to connect your bot app to this knowledge base.
+
+3. Scroll down to find Deployment details and record the following values from the Postman sample HTTP request:
+
+4. `POST /knowledgebases/<knowledge-base-id>/generateAnswer`
+
+5. Host: <your-host-url>
+
+6. Authorization: EndpointKey <your-endpoint-key>
+
+### Question #8
+
+You are building a chatbot for a Microsoft Teams channel by using the Microsoft Bot Framework SDK. The chatbot will use the following code.
+
+![Alt Image Text](../images/ai102_2_155.png "Body image")
+
+For each of the following statements, select Yes if the statement is true. 
+
+Otherwise, select No. NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_156.png "Body image")
+
+
+**A1. Yes**
+
+`ActivityHandler.OnMembersAddedAsync(IList<ChannelAccount>, ITurnContext<IConversationUpdateActivity>, CancellationToken)` Method invoked when members other than the bot join the conversation
+
+
+
+**A2. No**
+
+Sends a message activity to the sender of the incoming activity in turncontext
+
+**A3: No**
+
+**`ActivityHandler.OnConversationUpdateActivityAsync(ITurnContext<IConversationUpdateActivity>, CancellationToken) `**
+
+Method invoked when a conversation update activity that indicates one or more users other than the bot are joining the conversation
+
+### Question #9
+
+You are reviewing the design of a chatbot. The chatbot includes a language generation file that contains the following fragment.
+
+```
+# Greet(user) 
+
+- ${Greeting()}, ${user.name}
+```
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+![Alt Image Text](../images/ai102_2_157.png "Body image")
+
+**COrrect answer is : N Y Y**
+
+**`${user.name}` retrieves the user's name using a prompt.-->No.**
+
+**In this context, ${user.name} directly retrieves the user's name from the incoming user object. It doesn't obtain the user's name through a prompt but assumes that the user object already contains the name property.**
+
+
+**`Greet()` is the name of the language generation template.-->Yes.**
+
+Greet(user) defines a language generation template named Greet. This template takes a user parameter, indicating that Greet is the template name used to generate personalized greeting messages.
+
+
+**`${Greeting()}` is a reference to a template in the language generation file.-->Yes.**
+
+**`${Greeting()}` is a reference to another template in the language generation file. This syntax indicates that Greeting is a template that will be invoked to generate all or part of a greeting when messages are generated.** This allows developers to reuse and combine templates in the language generation file to create more complex messages.
 
 ### Question #10
 
-You are developing an application that **will use Azure Cognitive Search for internal documents**.
-
-**You need to implement document-level filtering for Azure Cognitive Search.**
-
-Which three actions should you include in the solution? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
-
-- A. Send Azure AD access tokens with the search request.
-
-- B. Retrieve all the groups.
-
-- **C. Retrieve the group memberships of the user.**
-
-- **D. Add allowed groups to each index entry.**
-
-- E. Create one index per group.
-
-- **F. Supply the groups as a filter for the search requests.**
-
-**Correct Answer: CDF**
-
-**D: Add allowed groups to each index entry.**
-
-Your documents must include a field specifying which groups have access.
+You are building a chatbot by using the Microsoft Bot Framework SDK.
 
 
-**C. Retrieve the group memberships of the user. To understand which documents the user is allowed to access.**
+You use an object named UserProfile to store user profile information and an object named ConversationData to store information related to a conversation.
 
-**D. Add allowed groups to each index entry. To tag documents with the groups that can access them.**
+You create the following state accessors to store both objects in state. 
 
-**F. Supply the groups as a filter for the search requests. To ensure that search results are filtered according to the user's group memberships**
+```
+var userStateAccessors = _userState.CreateProperty<UserProfile> (nameof(UserProfile)); var conversationStateAccessors = _conversationState.CreateProperty<ConversationData>(nameof(ConversationData)); 
+```
 
-### Question #11
+The state storage mechanism is set to Memory Storage.
 
-You have an Azure Cognitive Search solution and an **enrichment pipeline that performs Sentiment Analysis on social media posts**. 
-
-
-**You need to define a knowledge store that will include the social media posts and the Sentiment Analysis results**.
-
-Which two fields should you include in the definition? Each correct answer presents part of the solution.
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
 
 NOTE: Each correct selection is worth one point.
 
+![Alt Image Text](../images/ai102_2_158.png "Body image")
 
-A. storageContainer
+**YYN is the answer.**
 
-**B. storageConnectionString**
+**Box 1: Yes**
 
-C. files
+You create property accessors using the CreateProperty method that provides a handle to the BotState object. Each state property accessor allows you to get or set the value of the associated state property.
 
-D. tables
+**Box 2: Yes -**
 
-**E. objects**
+**Box 3: No**
 
-**BE is the answer.**
+Before you exit the turn handler, you use the state management objects' SaveChangesAsync() method to write all state changes back to storage.
 
+State property accessors are used to actually read or write one of your state properties, and provide get, set, and delete methods for accessing your state properties from within a turn. To create an accessor, you must provide the property name, which usually takes place when you're initializing your bot. Then, you can use that accessor to get and manipulate that property of your bot's state.
 
-**A knowledge store is defined inside a skillset definition and it has two components:**
-
-- **A connection string to Azure Storage**
-
-- **Projections that determine whether the knowledge store consists of tables, objects or files.** The projections element is an array. You can create multiple sets of table-object-file combinations within one knowledge store.
-
-### Question #12 SIMULATION 
-
-Use the following login credentials as needed:
-
-To enter your username, place your cursor in the Sign in box and click on the username below.
-
-To enter your password, place your cursor in the Enter password box and click on the password below.
-
-Azure Username: admin@abc.com -
-
-Azure Password: XXXXXXXXXXXX 
-
-The following information is for technical support purposes only:
-
-Lab Instance: 12345678 -
-
-Task 
-
-You need to create an Azure resource named solution12345678 that will index a sample database named realestate-us-sample. The solution must ensure that users can search the index in English for people, organizations, and locations.
-
-To complete this task, sign in to the Azure portal.
+The accessors allow the SDK to get state from the underlying storage, and update the bot's state cache for you. The state cache is a local cache maintained by your bot that stores the state object for you, allowing read and write operations without accessing the underlying storage. If it isn't already in the cache, calling the accessor's get method retrieves state and also places it in the cache. Once retrieved, the state property can be manipulated just like a local variable.
 
 
-1. Create the Cognitive Search Result
+### Question #11
 
-2. Import data
+You are building a chatbot that will provide information to users as shown in the following exhibit.
 
-3. On Connect to your data choose Samples --> realestate_us_sample
+![Alt Image Text](../images/ai102_2_159.png "Body image")
 
-4. Add enrichments
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic. 
 
-5. select Extract people, organization and location names
+![Alt Image Text](../images/ai102_2_160.png "Body image")
 
-6. Select English Microsoft for each one
+**1. Adaptive Card**
 
-7. Create an indexer
+an Adaptive Card that is a JSON-serialized card object model rendered into a PNG image
 
-### Question #13
+**2. image**
 
-Question #13
+### Question #12
 
-HOTSPOT -
 
-You create a knowledge store for Azure Cognitive Search by using the following JSON.
+You are building a bot and that will use Language Understanding. You have a LUDown file that contains the following content.
 
-![Alt Image Text](../images/ai102_2_136.png "Body image")
-
+![Alt Image Text](../images/ai102_2_161.png "Body image")
 
 Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
 
 NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_137.png "Body image")
+![Alt Image Text](../images/ai102_2_162.png "Body image")
 
-- Two projection groups 
-- Be projected to azure blog storage
+**SelectItem** is the **intent**, and each item below it are example utterances that capture ways users can express this intent. 
 
-![Alt Image Text](../images/ai102_2_138.png "Body image")
+Entities in .lu files are denoted using {<entityName>=<labeled value>} notation. Taking from our sample code once again, you can find the bottom left entity within the following utterance: choose the {DirectionalReference=bottom left}.
+
+
+1. intent
+
+2. utterance
+
+**sample-utterances**
+
+Intents with their sample utterances are declared in the following way:
+
+```
+# <intent-name>
+
+- <utterance1>
+
+- <utterance2>
+
+# <intent-name> describes a new intent definition section. Each line after the intent definition are example utterances that describe that intent using the - <utterance> format.
+```
+
+### Question #13
+
+You are designing a conversation flow to be used in a chatbot.
+
+You need to test the conversation flow by using the Microsoft Bot Framework Emulator.
+
+How should you complete the .chat file? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/ai102_2_163.png "Body image")
+
+
+**1. Typing**
+
+**2. carousel**
+
+**3. adaptivecard**
+
+
+**CardCarousel**
+
+A horizontally scrollable collection of cards that allows your user to easily view a series of possible user choices.
+
+**AdaptiveCard**
+
+An open card exchange format rendered as a JSON object. Typically used for cross-channel deployment of cards. Cards adapt to the look and fee of each host channel.
+
 
 ### Question #14
 
-
-You plan create an index for an Azure Cognitive Search service by using the Azure portal. The Cognitive Search service will connect to an Azure SQL database.
-
-**The Azure SQL database contains a table named UserMessages. Each row in UserMessages has a field named MessageCopy that contains the text of social media messages sent by a user.**
-
-Users will perform full text searches against the MessageCopy field, and the values of the field will be shown to the users.
-
-You need to configure the properties of the index for the MessageCopy field to support the solution.
-
-Which attributes should you enable for the field?
-
-- A. Sortable and Retrievable
-
-- B. Filterable and Retrievable
-
-- C. Searchable and Facetable
-
-- **D. Searchable and Retrievable**
-
-**Selected Answer: D**
+You are building a chatbot by using the Microsoft Bot Framework Composer as shown in the exhibit. (Click the Exhibit tab.)
 
 
-**- retrievable**
+![Alt Image Text](../images/ai102_2_164.png "Body image")
 
-Indicates whether the field can be returned in a search result.
+**The chatbot contains a dialog named GetUserDetails. GetUserDetails contains a TextInput control that prompts users for their name. The user input will be stored in a property named name.**
 
-**- searchable**
+You need to ensure that you can dispose of the property when the last active dialog ends.
+
+Which scope should you assign to name?
 
 
-You send a request to App1 and receive the following response
-Indicates whether the field is full-text searchable and can be referenced in search queries.
+- **A. dialog**
+
+- B. user
+
+- C. turn
+
+- D. conversation
+
+**Correct Answer: A**
+
+**Dialog:  Properties associated with the active dialog. Properties in the dialog scope are kept until the dialog ends.**
+
+
+### Question #15
+
+You have a chatbot that uses a QnA Maker application.
+
+You enable active learning for the knowledge base used by the QnA Maker application.
+
+You need to integrate user input into the model.
+
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+![Alt Image Text](../images/ai102_2_165.png "Body image")
+
+**Step 1: For the knowledge base, select Show active learning suggestions.**
+
+In order to see the suggested questions, on the Edit knowledge base page, select View Options, then select Show active learning suggestions.
+
+**Step 2: Approve and reject suggestions.**
+
+Each QnA pair suggests the new question alternatives with a check mark, , to accept the question or an x to reject the suggestions. Select the check mark to add the question.
+
+**Step 3: Save and train the knowledge base.**
+
+Select Save and Train to save the changes to the knowledge base.
+
+**Step 4: Publish the knowledge base.**
+
+Select Publish to allow the changes to be available from the GenerateAnswer API.
+
+
+1. From knowledge base, select show active learning suggestions.
+
+2. Approve and reject the suggestions.
+
+3. Save and train knowledge base.
+
+4. Publish knowledge base.
 
 ### Question #16
 
-You plan to provision Azure Cognitive Services resources by using the following method.
+You need to enable speech capabilities for a chatbot.
 
-You need to create a Standard tier resource that will convert scanned receipts into text.
-
-![Alt Image Text](../images/ai102_2_139.png "Body image")
-
-How should you call the method? To answer, select the appropriate options in the answer area.
-
-NOTE: Each correct selection is worth one point.
+Which three actions should you perform? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
 
 
-![Alt Image Text](../images/ai102_2_140.png "Body image")
+- A. Enable WebSockets for the chatbot app.
 
-The current name for Form Recognizer (as of May 2024) is Document Intelligence.
+- B. Create a Speech service.
 
-1. Document Intelligence(Form Recognizer)
+- C. Register a Direct Line Speech channel.
 
-2. "S0", "eastus"
+- D. Register a Cortana channel.
+
+- E. Enable CORS for the chatbot app.
+
+- F. Create a Language Understanding service.
+
+**Correct Answer: ABC**
+
+
+You can use the Speech service to voice-enable a chat bot.
+
+The Direct Line Speech channel uses the text-to-speech service, which has neural and standard voices.
+
+You'll need to make a small configuration change so that your bot can communicate with the Direct Line Speech channel using web sockets.
+
+**A, B and C are correct answers in order shown below.**
+
+B. Create a Speech service
+
+A. Enable WebSockets for the chatbot app
 
 ### Question #17
 
-You have an app named App1 that uses Azure AI Document Intelligence to analyze medical records and provide pharmaceutical dosage recommendations for patients.
+You use the Microsoft Bot Framework Composer to build a chatbot that enables users to purchase items.
 
-You send a request to App1 and receive the following response.
+You need to ensure that the users can cancel in-progress transactions. 
 
-![Alt Image Text](../images/ai102_2_141.png "Body image")
-
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
-
-![Alt Image Text](../images/ai102_2_143.png "Body image")
+The solution must minimize development effort. What should you add to the bot?
 
 
-**The form elements were recognized with greater than 70 percent confidence: No**
+- A. a language generator
 
-> The fields object in the response is empty, which suggests that no form elements were recognized.
+- B. a custom event
 
-> Therefore, we cannot say that they were recognized with greater than 70 percent confidence.
+- **C. a dialog trigger**
 
-**N - Y - N, no form elements**
+- D. a conversation activity
 
-The chosen model is suitable for the intended use case: 
+C. a dialog trigger Dialog triggers manage conversation flow and handle user inputs, allowing users to cancel in-progress transactions efficiently.
 
-No. The model used here is “prebuilt-health InsuranceCard.us”, which is designed to extract information from health insurance cards in the US. However, the intended use case is to analyze medical records and provide pharmaceutical dosage recommendations for patients. A more suitable model would be one specifically trained for medical record analysis.
 
-**The text content was recognized with greater than 70 percent confidence: Yes. The confidence scores for the recognized words “Blood” (0.766), “Pressure” (0.716), and “118/72” (0.761) are all greater than 70 percent.**
+To ensure that users can cancel in-progress transactions with minimal development effort, you should add C. a dialog trigger to the bot. A dialog trigger allows the bot to respond to specific conditions or intents, such as a user's request to cancel a transaction, by invoking predefined dialogs that handle these scenarios efficiently.
 
 ### Question #18
 
-You have an Azure subscription that contains an Azure AI Document Intelligence resource named DI1.
+You need to create and publish a bot that will use Language Understanding and QnA Maker. The bot must be named bot12345678. You must publish the bot by using the User1-12345678@abc.com account.
 
-You build an app named App1 that analyzes PDF files for handwritten content by using DI1.
+NOTE: Complete this task first. It may take several minutes to complete the required deployment steps. While this is taking place, you can complete tasks 2-6 in this lab during the deployment.
 
-You need to ensure that App1 will recognize the handwritten content.
-
-How should you complete the code? To answer, select the appropriate options in the answer area.
-
-![Alt Image Text](../images/ai102_2_144.png "Body image")
-
-The first answer should be read:
-
-Read OCR - Extract print and handwritten text including words, locations, and detected languages.
-
-**Prebuilt-read is correct which can classify the test extracted as handwrittern or printed**
+To complete this task, use the Microsoft Bot Framework Composer.
 
 
-**1. "prebuilt-document"**
-
-**2. 0.75**
-
-**Read OCR - Extract print and handwritten text including words, locations, and detected languages.**
-
-Prebuilt-read is correct which can classify the test extracted as handwrittern or printed
-
-### Question #19
-
-You have an app named App1 that uses a **custom Azure AI Document Intelligence model to recognize contract documents**.
-
-**You need to ensure that the model supports an additional contract format. The solution must minimize development effort.**
-
-What should you do?
-
-A. Lower the confidence score threshold of App1.
-
-B. Create a new training set and add the additional contract format to the new training set. Create and train a new custom model.
-
-**C. Add the additional contract format to the existing training set. Retrain the model.**
-
-D. Lower the accuracy threshold of App1.
+Step 1: Sign in to the QnAMaker.ai portal with your Azure credentials. Use the User1-12345678@abc.com account 
 
 
-### Question #20
-
-You have an Azure subscription.
-
-You need to deploy an Azure **AI Document Intelligence resource.**
-
-How should you complete the Azure Resource Manager (ARM) template? To answer, select the appropriate options in the answer area.
-
-NOTE: Each correct selection is worth one point.
-
-![Alt Image Text](../images/ai102_2_145.png "Body image")
-
-* **“Microsoft.CognitiveServices“**
-* **FormRecognizer**
+Step 2: Publish the knowledge base. In the QnA Maker portal, select Publish. Then to confirm, select Publish on the page. The QnA Maker service is now successfully published. You can use the endpoint in your application or bot code.
 
 
-### Question #21
+![Alt Image Text](../images/ai102_2_167.png "Body image")
+
+Step 3: In the QnA Maker portal, on the Publish page, select Create bot.
+
+This button appears only after you've published the knowledge base.
+
+After publishing the knowledge base, you can create a bot from the Publish page.
+
+![Alt Image Text](../images/ai102_2_166.png "Body image")
+
+Step 4: A new browser tab opens for the Azure portal, with the Azure Bot Service's creation page. 
 
 
-You are building an app named App1 that will use Azure AI Document Intelligence to extract the following data from scanned documents:
+Configure the Azure bot service. Bot name: bot12345678 The bot will be created.
 
-- • Shipping address
+### Question #19 **SIMULATION**
 
-- • Billing address
+You need to create a QnA Maker service named QNA12345678 in the East US Azure region. QNA12345678 must contain a knowledge base that uses the questions and answers available at https://support.microsoft.com/en-us/help/12435/windows-10-upgrade-faq.
 
-- • Customer ID
+To complete this task, sign in to the Azure portal and the QnA Maker portal.
 
-- • Amount due
+**Correct Answer: See explanation below.**
 
-- • Due date
+Step 1: Sign in to the Azure portal create and a QnA Maker resource.
 
-- • Total tax
+Step 2: Select Create after you read the terms and conditions:
 
-- • Subtotal
+Step 3: In QnA Maker, select the appropriate tiers and regions.
 
-You need to identify which model to use for App1. The solution must minimize development effort.
 
-Which model should you use?
+Name: QNA12345678 In the Name field, enter a unique name to identify this QnA Maker service. This name also identifies the QnA Maker endpoint that your knowledge bases will be associated with.
 
-A. custom extraction model
+Resource Group Location: East US Azure
 
-B. contract
 
-**C. invoice**
+![Alt Image Text](../images/ai102_2_168.png "Body image")
 
-D. general document
+Step 4: After all the fields are validated, select Create. The process can take a few minutes to complete. 
 
-To extract the specified data from scanned documents with minimal development effort, you should use the invoice model. The invoice model is specifically designed to handle structured information commonly found in invoices, including shipping and billing addresses, customer IDs, amounts due, due dates, total taxes, and subtotal. Therefore, the correct choice for App1 is C. invoice
+
+After deployment is completed, you'll see the following resources created in your subscription:
+
+![Alt Image Text](../images/ai102_2_169.png "Body image")
+
+
+Remember your Azure Active Directory ID, Subscription, QnA resource name you selected when you created the resource.
+
+Step 5: When you are done creating the resource in the Azure portal, return to the QnA Maker portal, refresh the browser page.
+
+Step 6: In the QnA Maker portal, select Create a knowledge base.
+
+Step 7: Skip Step 1 as you already have your QnA Maker resource.
+
+Step 8: In Step 2, select your Active directory, subscription, service (resource), and the language for all knowledge bases created in the service.
+
+Azure QnA service: QNA12345678 -
+
+
+
+![Alt Image Text](../images/ai102_2_170.png "Body image")
 
 ### Question #22
 
-You have the following data sources:
+You are designing a conversational interface for an app that will be used to make vacation requests. The interface must gather the following data:
 
-- • Finance: On-premises Microsoft SQL Server database
+- The start date of a vacation
 
-- • Sales: Azure Cosmos DB using the Core (SQL) API
+- The end date of a vacation
 
-- • Logs: Azure Table storage
+- The amount of required paid time off
 
-- • HR: Azure SQL database
-  
-You need to ensure that you can search all the data by using the Azure AI Search REST API.
+**The solution must minimize dialog complexity.**
 
-What should you do?
+Which type of dialog should you use?
 
+A. adaptive
 
-- A. Migrate the data in HR to Azure Blob storage.
+B. skill
 
-- B. Migrate the data in HR to the on-premises SQL server.
+**C. waterfall**
 
-- **C. Export the data in Finance to Azure Data Lake Storage**.
+D. component
 
-- D. Migrate the data in Sales to the MongoDB API.
+**For designing a conversational interface that gathers data in a structured manner with minimal dialog complexity,** you should use C. waterfall dialog. 
 
-**C. migrate what is on-promises to Azure**
+Waterfall dialogs are designed to guide the user through a series of steps or questions, one after another, which is ideal for collecting specific pieces of information sequentially, like vacation start and end dates, and the amount of required paid time off.
+
 
 ### Question #23
 
-You are building an app that will process scanned expense claims and extract and label the following data:
+You build a bot by using the Microsoft Bot Framework SDK.
 
-- • Merchant information
+You need to test the bot interactively on a local machine.
 
-- • Time of transaction
 
-- • Date of transaction
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
-- • Taxes paid
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
 
-- • Total cost
 
-You need to recommend an Azure AI Document Intelligence model for the app. The solution must minimize development effort.
+![Alt Image Text](../images/ai102_2_171.png "Body image")
 
-What should you use?
+1. Build and run the bot
 
-A. the prebuilt Read model
+2. Open Bot Framework Emulator
 
-B. a custom template model
-
-C. a custom neural model
-
-**D. the prebuilt receipt model**
+3. Connect to bot endpoint
 
 ### Question #24
 
-You are building a language learning solution.
+You create a bot by using the Microsoft Bot Framework SDK.
 
-You need to recommend which Azure services can be used to perform the following tasks:
+You need to configure the bot to respond to events by using custom text responses.
 
-1. **Analyze lesson plans submitted** by teachers and extract key fields, such as lesson times and required texts.
+What should you use?
 
-2. **Analyze learning content** and provide students with pictures that represent commonly used words or phrases in the text.
+A. a dialog
 
-The solution must minimize development effort.
+**B. an activity handler**
 
-Which Azure service should you recommend for each task? To answer, select the appropriate options in the answer area.
+C. an adaptive card
 
-NOTE: Each correct selection is worth one point.
+D. a skill
 
 
-![Alt Image Text](../images/ai102_2_146.png "Body image")
+B. An activity handler is the correct choice for configuring the bot to respond to events by using custom text responses.
 
-**Analyze lesson plans: Azure AI Document Intelligence**
-
-**Analyze learning content: Immersive Reader**
+An activity handler is a class in the Bot Framework SDK that processes incoming activities (e.g., messages, events, etc.) from the user and generates outgoing activities (e.g., replies). By overriding the OnMessageActivityAsync method of the activity handler, you can provide custom logic for responding to user messages.
 
 ### Question #25
 
-You have an Azure subscription.
+You build a bot named app1 by using the Microsoft Bot Framework.
 
-You plan to build a solution that **will analyze scanned documents and export relevant fields to a database**.
+**You prepare app1 for deployment.**
 
-You need to recommend which Azure AI service to deploy for the following types of documents:
+**You need to deploy app1 to Azure.**
 
-- Internal expenditure request authorization forms
-- Supplier invoices
-
-The solution must minimize development effort.
-
-What should you recommend for each document type? To answer, select the appropriate options in the answer area.
+How should you complete the command? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_147.png "Body image")
 
-**Internal expenditure request authorization forms: An Azure Al Document Intelligence custom model**
 
-**Supplier invoices: An Azure Al Document Intelligence pre-built model**
+![Alt Image Text](../images/ai102_2_172.png "Body image")
+
+- **webapp**
+
+- **config-zip**
+
+
+```
+az webapp deployment source config-zip --resource-group "<resource-group-name>" --name "<name-of-app-service>" --src "<project-zippath>"
+```
 
 ### Question #26
 
-You have an Azure AI Search resource named Search1.
+You have a chatbot that uses question answering in Azure Cognitive Service for Language.
 
-You have an app named App1 that uses Search1 to index content.
+Users report that the responses of the chatbot lack formality when answering spurious questions.
 
-You need to add a custom skill to App1 to ensure that the app can recognize and retrieve properties from invoices by using Search1.
+You need to ensure that the chatbot provides formal responses to spurious questions.
 
-What should you include in the solution?
+**Solution: From Language Studio, you change the chitchat source to `qna_chitchat_friendly.tsv`, and then retrain and republish the model**.
 
-- A. Azure AI Immersive Reader
+Does this meet the goal?
 
-- B. Azure OpenAI
+- A. Yes
 
-- **C. Azure AI Document Intelligence**
-
-- D. Azure AI Custom Vision
-
-**Correct Answer: C**
+- **B. No**
+- 
+This file is used to provide responses suitable for a friendly or casual tone. **You need to use `qna_chitchat_professional.tsv`**.
 
 ### Question #27
 
-You have an Azure subscription.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
-You plan to build a solution that will analyze scanned documents and export relevant fields to a database.
+You have a chatbot that uses question answering in Azure Cognitive Service for Language.
 
-You need to recommend an Azure AI Document Intelligence model for the following types of documents:
+Users report that the responses of the chatbot lack formality when answering spurious questions.
 
-- Expenditure request authorization forms
+You need to ensure that the chatbot provides formal responses to spurious questions.
 
-- Structured and unstructured survey forms
+**Solution: From Language Studio, you modify the question and answer pairs for the custom intents, and then retrain and republish the model.**
 
-- Structured employment application forms
+Does this meet the goal?
 
-The solution must minimize development effort and costs.
+- A. Yes
 
-Which type of model should you recommend for each document type? To answer, select the appropriate options in the answer area.
+- **B. No**
 
-NOTE: Each correct selection is worth one point.
+**The formality of responses to spurious questions is not controlled by modifying the question and answer pairs for the custom intents in Language Studio. These pairs are used to train the model to understand and respond to specific intents, not to control the tone or formality of the responses**.
 
-![Alt Image Text](../images/ai102_2_148.png "Body image")
+To ensure that the chatbot provides formal responses to spurious questions, you would need to adjust the chatbot's response templates or script not the question and answer pairs for the custom intents. This might involve programming the chatbot to use more formal language in its responses, or to respond to unrecognized or spurious inputs with a standard, formal message
 
 ### Question #28
 
-You have an Azure subscription that contains an Azure AI Document Intelligence resource named AIdoc1 in the S0 tier.
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
-You have the files shown in the following table.
+You have a chatbot that uses question answering in Azure Cognitive Service for Language.
 
-![Alt Image Text](../images/ai102_2_149.png "Body image")
+Users report that the responses of the chatbot lack formality when answering spurious questions.
 
-You need to train a custom extraction model by using AIdoc1.
+You need to ensure that the chatbot provides formal responses to spurious questions.
 
-Which files can you upload to Document Intelligence Studio?
+**Solution: From Language Studio, you change the chitchat source to `qna_chitchat_professional.tsv`, and then retrain and republish the model.**
 
+Does this meet the goal?
 
-A. File1, File2, and File4 only
+**A. Yes**
 
-B. File2, and File5 only
+B. No
 
-C. File2, File4, and File5 only
+**Focus on "qna_chitchat_professional.tsv". **
 
-D. File1, File2, File3, File4, and File5
+**The `qna_chitchat_professional.tsv` is specifically designed to provide responses with a formal tone compared to other chitchat sources. It contains a curated set of question-and-answer pairs that are structured to reflect a professional and formal manner of communication.**
 
-**E. File1 and File2 only**
+This makes it more suitable for environments or user interactions where formal responses are preferred, ensuring that the chatbot's replies to spurious or off-topic questions maintain the desired level of professionalism.
 
-**Correct Answer: E**
 
 ### Question #29
 
-You have an Azure subscription that contains an Azure AI Document Intelligence resource named DI1. DI1 uses the Standard S0 pricing tier.
+You create five bots by using Microsoft Bot Framework Composer.
 
-You have the files shown in the following table.
+**You need to make a single bot available to users that combines the bots. The solution must support dynamic routing to the bots based on user input.**
 
-![Alt Image Text](../images/ai102_2_150.png "Body image")
+Which three actions should you perform? Each correct answer presents part of the solution.
 
-Which files can you analyze by using DI1?
+NOTE: Each correct selection is worth one point.
 
-A. File 1.pdf only
+- A. Create a composer extension.
 
-**B. File2.jpg only**
+- **B. Change the Recognizer/Dispatch type**.
 
-C. File3.tiff only
+- **C. Create an Orchestrator model**.
+
+- D. Enable WebSockets.
+
+- E. Create a custom recognizer JSON file.
+
+- **F. Install the Orchestrator package.**
 
 
-D. File2.jpg and File3.tiff only
+- Recognizer/Dispatch type 
+- double Orchestrator
 
-E. File1.pdf, File2.jpg, and File3.tiff
+**B. Change the Recognizer/Dispatch type: Adjusting the recognizer type to one that supports dispatching allows the bot to understand and route user input to the appropriate sub-bot**.
 
-**Correct Answer: B**
+================================================
+
+**C. Create an Orchestrator model: The Orchestrator is an AI-based component that helps in making decisions on routing the conversation to the most appropriate bot based on the user's intent.**
+
+================================================
+
+**F. Install the Orchestrator package: This is necessary to use the Orchestrator model within your bot, enabling it to dynamically route conversations to the correct bot based on the context and content of the user input.**
 
 ### Question #30
 
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
-You have an Azure subscription that contains an Azure AI Document Intelligence resource named DI1.
+You are building a chatbot that will use question answering in Azure Cognitive Service for Language.
 
-You build an app named App1 that analyzes PDF files for handwritten content by using DI1.
+You have a PDF named Doc1.pdf that contains a product catalogue and a price list.
 
-You need to ensure that App1 will recognize the handwritten content.
+You upload Doc1.pdf and train the model.
+
+During testing, users report that the chatbot responds correctly to the following question: What is the price of ?
+
+The chatbot fails to respond to the following question: How much does cost?
+
+You need to ensure that the chatbot responds correctly to both questions.
+
+**Solution: From Language Studio, you add alternative phrasing to the question and answer pair, and then retrain and republish the model.**
+
+Does this meet the goal?
+
+- **A. Yes**
+
+- B. No
+
+"From Language Studio, you add alternative phrasing to the question and answer pair, and then retrain and republish the model." is correct solution
+
+### Question #31
+
+
+You are building a chatbot that will use question answering in Azure Cognitive Service for Language.
+
+You have a PDF named Doc1.pdf that contains a product catalogue and a price list.
+
+You upload Doc1.pdf and train the model.
+
+During testing, users report that the chatbot responds correctly to the following question: What is the price of ?
+
+The chatbot fails to respond to the following question: How much does cost?
+
+You need to ensure that the chatbot responds correctly to both questions.
+
+**Solution: From Language Studio, you enable chit-chat, and then retrain and republish the model.**
+
+Does this meet the goal?
+
+- A. Yes
+
+- **B. No**
+
+**PDF file use for training, it is not rationale.**
+
+
+**Solution: From Language Studio, you create an entity for price, and then retrain and republish the model.**
+
+Does this meet the goal?
+
+A. Yes
+
+**B. No**
+
+here the issue is not the price that could be an entity, but very different utterances that need to be considered
+
+### Question #33
+
+You have a Conversational Language Understanding model.
+
+You export the model as a JSON file. The following is a sample of the file.
+
+
+
+![Alt Image Text](../images/ai102_2_173.png "Body image")
+
+What represents the Weather.Historic entity in the sample utterance?
+
+
+- A. last year
+
+- **B. by month**
+
+- C. amount of
+
+- D. average
+
+**Selected Answer: B**
+
+### Question #34
+
+You are building a chatbot by using Microsoft Bot Framework Composer.
+
+
+You need to configure the chatbot to present a list of available options. The solution must ensure that an image is provided for each option.
+
+Which two features should you use? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+- A. an entity
+
+- B. an Azure function
+
+- C. an utterance
+
+- **D. an adaptive card**
+
+- **E. a dialog**
+
+To configure the chatbot to present a list of available options with images, you should use the following features:
+
+D. An adaptive card: Adaptive cards are a flexible, customizable way to present rich, interactive content within a chatbot conversation. You can use adaptive cards to display a list of available options, along with images and other interactive elements, such as buttons or inputs.
+
+E. A dialog: Dialogs are used to manage and organize the conversation flow in your chatbot. You can create a dialog that is responsible for presenting the list of available options using an adaptive card. The dialog can be triggered when needed, and it can handle the user's selection of an option.
+
+
+**DE is the answer.**
+
+Modern conversational software has many different components. Bot Framework Composer integrates these pieces into dialogs, a single interface for constructing the building blocks of bot functionality.
+
+**Each dialog represents a portion of the bot's functionality and contains instructions for how the bot will react to the input. Dialogs can include custom business logic, calls to cloud APIs, training data for language processing systems, and importantly, the actual content used in conversation with the bot's end users. **
+
+Simple bots will have just a few dialogs. Sophisticated bots might have dozens or hundreds of individual dialogs.
+
+### Question #35
+
+You are building a chatbot.
+
+You need to configure the bot to guide users through a product setup process.
+
+Which type of dialog should you use?
+
+A. component
+
+B. action
+
+**C. waterfall**
+
+D. adaptive
+
+
+### Question #36
+
+You have a chatbot that was built by using Microsoft Bot Framework and deployed to Azure.
+
+You need to configure the bot to support voice interactions. The solution must support multiple client apps.
+
+Which type of channel should you use?
+
+
+A. Cortana
+
+B. Microsoft Teams
+
+**C. Direct Line Speech**
+
+**C is the answer.**
+
+**The Bot Framework offers multiple channels with the Direct Line branding. It's important that you select the version that best fits the conversational AI experience you're designing.**
+
+**Direct Line Speech. It provides text-to-speech and speech-to-text services within the channel. It allows a client to stream audio directly to the channel which will then be converted to text and sent to the bot.**
+
+**Direct Line Speech can also convert text messages from the bot into audio messages spoken by an AI-powered voice**. Combined, this makes Direct Line Speech capable of having audio only conversations with clients.
+
+### Question #37
+
+You are building a bot by using Microsoft Bot Framework.
+
+You need to configure the bot to respond to spoken requests. The solution must minimize development effort.
+
+What should you do?
+
+- **A. Deploy the bot to Azure and register the bot with a Direct Line Speech channel**.
+
+- B. Integrate the bot with Cortana by using the Bot Framework SDK.
+
+- C. Create an Azure function that will call the Speech service and connect the bot to the function.
+
+- D. Deploy the bot to Azure and register the bot with a Microsoft Teams channel.
+
+A. Deploy the bot to Azure and register the bot with a Direct Line Speech channel.
+
+To enable the bot to respond to spoken requests with minimal development effort, you should deploy the bot to Azure and register the bot with a Direct Line Speech channel. Direct Line Speech provides an integrated speech and bot experience without requiring additional development. It combines both the speech-to-text and text-to-speech capabilities with the bot's logic to handle spoken requests and generate spoken responsese
+
+### Question #38
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+
+You have a chatbot that uses question answering in Azure Cognitive Service for Language.
+
+Users report that the responses of the chatbot lack formality when answering spurious questions.
+
+You need to ensure that the chatbot provides formal responses to spurious questions.
+
+Solution: From Language Studio, you remove all the chit-chat question and answer pairs, and then retrain and republish the model.
+
+Does this meet the goal?
+
+- A. Yes
+
+- **B. No**
+
+**Selected Answer: B**  B. You need chitchat with professional personality
+
+Removing all chitchat QA pairs will not solve the problem of lack of formality.
+
+**To solve the issue, change the chitchat source to `qna_chitchat_professional.tsv`**
+
+
+### Question #39
+
+You are building a chatbot.
+
+You need to use the Content Moderator service to identify messages that contain sexually explicit language.
+
+
+Which section in the response from the service will contain the category score, and which category will be assigned to the message? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/ai102_2_174.png "Body image")
+
+**1. Classification**
+
+2. 1
+
+Content Moderator's machine-assisted text classification feature supports English only, and helps detect potentially undesired content. The flagged content may be assessed as inappropriate depending on context. It conveys the likelihood of each category. The feature uses a trained model to identify possible abusive, derogatory or discriminatory language. This includes slang, abbreviated words, offensive, and intentionally misspelled words.
+
+- **Category1 refers to potential presence of language that may be considered sexually explicit or adult in certain situations**. 
+
+- Category2 refers to potential presence of language that may be considered sexually suggestive or mature in certain situations. 
+
+- Category3 refers to potential presence of language that may be considered offensive in certain situations.
+
+### Question #40
+
+You are building a chatbot for a travel agent. The bot will ask users for a destination and must repeat the question until a valid input is received, or the user closes the conversation.
+
+Which type of dialog should you use?
+
+**A. prompt**
+
+B. input
+
+C. adaptive
+
+D. QnA Maker
+
+**Selected Answer: A**
+
+
+- prompt dialogs Ask the user for input and return the result. A prompt will repeat until it gets valid input or it's canceled. They're designed to work with waterfall dialogs.
+
+### Question #41
+
+You are building a chatbot.
+
+You need to configure the chatbot to query a knowledge base.
+
+Which dialog class should you use?
+
+**A. QnAMakerDialog**
+
+B. AdaptiveDialog
+
+C. SkillDialog
+
+D. ComponentDialog
+
+**QnA Maker dialog  Automates access to a QnA Maker knowledge base. This dialog is designed to also work as an action within Composer.**
+
+### Question #42
+
+You have a chatbot.
+
+You need to ensure that the bot conversation resets if a user fails to respond for 10 minutes.
 
 How should you complete the code? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
-![Alt Image Text](../images/ai102_2_151.png "Body image")
+![Alt Image Text](../images/ai102_2_175.png "Body image")
 
-**"prebuilt-document",**
+1. `send_activity`
 
-**0.75**
+2. `clear_state`
+
+```
+# Notify the user that the conversation is being restarted.
+
+- await turn_context.send_activity( # Clear state.
+
+- await self.conversation_state.clear_state(turn_context)
+```
+
+### Question #43
+
+You develop a Conversational Language Understanding model by using Language Studio.
+
+During testing, users receive incorrect responses to requests that do NOT relate to the capabilities of the model.
+
+You need to ensure that the model identifies spurious requests.
+
+What should you do?
+
+- A. Enable active learning.
+
+- B. Add entities.
+
+- **C. Add examples to the None intent.**
+
+- D. Add examples to the custom intents.
+
+**Selected Answer: C**
+
+**The None intent is also treated like any other intent in your project. If there are utterances that you want predicted as None, consider adding similar examples to them in your training data.** 
+
+**For example, if you would like to categorize utterances that are not important to your project as None, such as greetings, yes and no answers, responses to questions such as providing a number, then add those utterances to your intent.**
+
+**You should also consider adding false positive examples to the None inten**t. For example, in a flight booking project it is likely that the utterance "I want to buy a book" could be confused with a Book Flight intent. Adding "I want to buy a book" or "I love reading books" as None training utterances helps alter the predictions of those types of utterances towards the None intent instead of Book Flight.
+
+### Question #44
+
+You have a Speech resource and a bot that was built by using the Microsoft Bot Framework Composer.
+
+You need to add support for speech-based channels to the bot.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+- **A. Configure the language and voice settings for the Speech resource**.
+
+- **B. Add the endpoint and key of the Speech resource to the bot**.
+
+- C. Add language understanding to dialogs.
+
+- D. Add Orchestrator to the bot.
+
+- **E. Add Speech to the bot responses**.
+
+- F. Remove the setSpeak configuration.
+
+**To add support for speech-based channels to a bot built with the Microsoft Bot Framework Composer, you should perform the following actions**
+
+Add the endpoint and key of the Speech resource to the bot (B): You need to configure the bot to connect to the Speech resource, which will enable the bot to convert text into speech and vice versa.
+
+Add Speech to the bot responses (E): You should update your bot's responses to include speech output. This is important for speech-based channels, as the bot will need to generate spoken responses for users.
+
+Configure the language and voice settings for the Speech resource (A): Configuring the language and voice settings in your Speech resource important to ensure that the speech output is generated in the desired language and with the appropriate voice.
+
+The other options (C, D, and F) are not directly related to adding support for speech-based channels and can be considered unrelated to this specific task. 
+
+**A. Configure the language and voice settings for the Speech resource.**
+
+This step is crucial for ensuring that the Speech service can accurately recognize and synthesize speech in the desired language and voice.
+
+**B. Add the endpoint and key of the Speech resource to the bot.**
+
+To use the Azure Speech service with your bot, you need to authenticate your requests.
+
+**E. Add Speech to the bot responses.**
+
+To enhance the bot’s interactions over speech-based channels, you should include speech-specific responses.
+
+### Question #45
+
+You are building a bot.
+
+You need to test the bot in the Bot Framework Emulator. The solution must ensure that you can debug the bot interactively.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 
-### Question #31
+![Alt Image Text](../images/ai102_2_176.png "Body image")
 
-You have an Azure subscription that contains a storage account named sa1 and an Azure AI Document Intelligence resource named DI1.
+1. In code, create new trace activity
 
-You need to create and train a custom model in DI1 by using Document Intelligence Studio. The solution must minimize development effort.
+2. In code, send a trace activity
+
+3. Run bot app on local host
+
+A trace activity is an activity that your bot can send to the Bot Framework Emulator. You can use trace activities to interactively debug a bot, as the allow you to view information about your bot while it runs locally.
+
+Trace activities are sent only to the Emulator and not to any other client or channel. The Emulator displays them in the log but not the main chat panel.
+
+In order to see a trace activity in the Emulator, you need a scenario in which your bot will send a trace activity, such as throwing an exception and sending a trace activity from the adapter's on turn error handler.
+
+**To send a trace activity from your bot**
+
+- Create a new activity.
+
+**To view a trace activity in the Emulator:**
+
+- Run the bot locally on your machine.
+
+- Test it using the Emulator.
+
+### Question #46
+
+You have a bot that was built by using the Microsoft Bot Framework composer as shown in the following exhibit.
+
+![Alt Image Text](../images/ai102_2_177.png "Body image")
+
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_178.png "Body image")
+
+**1. identity New York as city entity**
+
+**2. Language Understanding intent recognised**
+
+Entities are a collection of objects, each consisting of data extracted from an utterance such as places, times, and people. Entities and intents are both important data extracted from utterances. 
+
+
+An utterance may include zero or more entities, while an utterance usually represents one intent. I Composer, all entities are defined and managed inline. Entities in the .lu file format are denoted using {\<entityName\>=\<labelled value\>} notation.
+
+### Question #47
+
+You are building a fiight booking bot by using the Microsoft Bot Framework SDK.
+
+The bot will ask users for the departure date. The bot must repeat the question until a valid date is given, or the users cancel the transaction.
+
+Which type of dialog should you use?
+
+- **A. prompt**
+
+- B. adaptive
+
+- C. waterfall
+
+- D. action
+
+**Selected Answer: A**
+
+- **prompt dialogs Ask the user for input and return the result. A prompt will repeat until it gets valid input or it's canceled. They're designed to work with waterfall dialogs**
+
+### Question #48
+
+You have a chatbot.
+
+
+You need to test the bot by using the Bot Framework Emulator. The solution must ensure that you are prompted for credentials when you sign in to the bot.
+
+Which three settings should you configure? To answer, select the appropriate settings in the answer area.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/ai102_2_179.png "Body image")
+
+**1. Enter the local path to ngrok.**
+
+**2. Enable Run ngrok when the Emulator starts up**.
+
+**3. Enable Use version 1.0 authentication tokens**.
+
+### Question #49
+
+You are building a chatbot by using the Microsoft Bot Framework SDK.
+
+You use an object named UserProfile to store user profile information and an object named ConversationData to store information related to a conversation.
+
+You create the following state accessors to store both objects in state.
+
+![Alt Image Text](../images/ai102_2_180.png "Body image")
+
+The state storage mechanism is set to Memory Storage.
+
+For each of the following statements, select Yes if the statement is true. Otherwise select No.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/ai102_2_181.png "Body image")
+
+**Yes Yes No**
+
+### Question #50
+
+You build a bot.
+
+You create an Azure Bot resource.
+
+You need to deploy the bot to Azure.
+
+What else should you create?
+
+
+- **A. only an app registration in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra, an Azure App Service instance, and an App Service plan**
+
+- B. only an app registration in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra, an Azure Kubernetes Service (AKS) instance, and a container image
+
+- C. only an Azure App Service instance, and an App Service plan
+
+- D. only an Azure Machine Learning workspace and an app registration in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra
+
+**Selected Answer: A**
+
+To deploy a bot to Azure, at a minimum you need:
+
+- **An app registration in Azure AD to represent the bot identity** 
+- **An App Service instance to host the bot web service** 
+- **An App Service plan which defines the pricing tier and scale for the App Service**
+
+### Question #51
+
+You are building a chatbot by using the Microsoft Bot Framework SDK. The bot will be used to accept food orders from customers and allow the customers to customize each food item.
+
+You need to configure the bot to ask the user for additional input based on the type of item ordered. The solution must minimize development effort.
+
+Which two types of dialogs should you use? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+
+A. adaptive
+
+B. action
+
+**C. waterfall**
+
+**D. prompt**
+
+E. input
+
+**Selected Answer: CD**
+
+**=======Waterfall Dialogs===========:**
+
+**Guide users through a predefined, linear sequence of steps.**
+
+**Each step prompts the user for specific input, and the bot moves to the next step based on the user's response. Useful for structured conversation where the bot needs to collect information in a specific order.**
+
+Ideal for gathering customization options for food items in a structured way.
+
+**========Prompt Dialogs===========:**
+
+Simple dialogs that present a prompt to the user and wait for their response.
+
+Can be used within waterfall dialogs or as standalone prompts.
+
+Offer flexibility in how you ask questions and collect user input.
+
+### Question #52
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+
+You are building a chatbot that will use question answering in Azure Cognitive Service for Language.
+
+You have a PDF named Doc1.pdf that contains a product catalogue and a price list.
+
+You upload Doc1.pdf and train the model.
+
+During testing, users report that the chatbot responds correctly to the following question: What is the price of ?
+
+The chatbot fails to respond to the following question: How much does cost?
+
+You need to ensure that the chatbot responds correctly to both questions.
+
+**Solution: From Language Studio, you create an entity for cost, and then retrain and republish the model.**
+
+Does this meet the goal?
+
+A. Yes
+
+**B. No**
+
+Solution: From Language Studio, you add alternative phrasing to the question and answer pair, and then retrain and republish the model. Choice is B
+
+## Topic 6
+
+### Question #1
+
+You have a monitoring solution that uses the Azure AI Anomaly Detector service.
+
+You provision a server named Server1 that has intermittent internet access.
+
+You need to deploy the Azure AI Anomaly Detector to Server1.
 
 Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
+![Alt Image Text](../images/ai102_2_182.png "Body image")
 
-**Actions**
+1. Install
 
-- Upload five sample documents.
-- Upload 50 sample documents.
-- Upload JSON files that contain the document layout and labels.
-- Train and test the model.
-- Create a custom model project and link the project to sa 1.
-- Apply labels to the sample documents.
+2. From pull
 
-**Correct Answer:**
+3. From run
 
-- Upload five sample documents.
-- Create a custom model project and link the project to sa1.
-- Apply labels to the sample documents.
-- Train and test the model.
-
-
-### Question #32
-
-You have an Azure subscription that contains an Azure AI Document Intelligence resource named DI1 and a storage account named sa1. The sa1 account contains a blob container named blob1 and an Azure Files share named share1.
-
-You plan to build a custom model named Model1 in DI1.
-
-You create sample forms and JSON files for Model1.
-
-You need to train Model1 and retrieve the ID of the model.
-
-Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
-
-NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
-
-![Alt Image Text](../images/ai102_2_152.png "Body image")
-
-**Correct Answer:**
-
-- Retrieve the access key for sa1.
-- Upload the forms and JSON files to blob1.
-- Call the Build model REST API function.
-- Call the Get model REST API function.
-
-### Question #33
-
-You have an Azure subscription that contains an Azure AI Document Intelligence resource named AIdoc1.
-
-You have an app named App1 that uses AIdoc1. App1 analyzes business cards by calling business card model v2.1.
-
-You need to update App1 to ensure that the app can interpret QR codes. The solution must minimize administrative effort.
-
-What should you do first?
-
-
-- **A. Upgrade the business card model to v3.0.**
-
-- B. Implement the read model.
-
-- C. Deploy a custom model.
-
-- D. Implement the contract model.
-
-**Correct Answer: A**
+4. Query
