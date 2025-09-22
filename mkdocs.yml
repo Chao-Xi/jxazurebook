@@ -77,6 +77,8 @@ nav:
     - '4 Real Exam - Chap 3': 'ai900/4ai_900.md'
     - '5 AI900 Exam summary': 'ai900/5ai_900_sum.md'
     - '6 AI900 finaL SUMMARY': 'ai900/6sum_fin.md'
+  - 'Azure AZ 400':
+    - '1 Azure DevOps Engineer Expert Certification (AZ-400)': 'az400/1az400_learn.md'
   - 'Azure DP900':
     - 'Module 1 Explore core data': 'chap5/dp1.md'
     - 'Module 2 Explore fundamental relational data concepts': 'chap5/dp2.md'
