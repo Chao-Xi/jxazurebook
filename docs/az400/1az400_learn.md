@@ -180,3 +180,167 @@ The key success factors for Agile development teams:
 - **Minimizing technical debt**
 
 ![Alt Image Text](../images/az400_1_3.png "Body image")
+
+### Scrum
+
+Scrum is an Agile framework designed for managing complex projects by breaking them down into **small, manageable tasks** completed in short phases called **sprints**.
+
+**Key roles in Scrum:**
+
+#### **Key roles in Scrum:**
+
+- **Product Owner**: Guides what and why the team builds, prioritizes the **work backlog**.
+- **Scrum Master**: Facilitates Scrum processes, supports team improvement, and removes obstacles.
+- **Development Team**: Engineers the product, ensuring its quality.
+
+
+In Scrum, a team self-manages its sprint tasks with daily stand-up meetings to ensure progress and address impediments. They track work using a **task board and a sprint burndown chart**, and at the sprint's end, they showcase their increment in a **review and identify improvements in a retrospective.**
+
+Scrum's short, repeatable cycles facilitate continuous learning and adaptation, making it a practical framework for teams adopting Agile principles.
+
+![Alt Image Text](../images/az400_1_4.png "Body image")
+
+### Kanban
+
+Kanban is an Agile methodology focused on **visualizing work, limiting work in progress, and maximizing efficiency (or flow)**.
+
+**Kanban boards** are used to display work at **various stages of → the process using cards to represents tasks and their stages**, highlighting work in progress and facilitating team flexibility.
+
+
+**Cumulative Flow Diagrams (CFDs)** visually **track a project's workflow over time**, showing task distribution across stages. **The horizontal axis represents time, and the vertical axis represents task volume, with each color marking a different work stage.**
+
+**CFDs highlight trends, progress, and bottlenecks.**
+
+Parallel colored areas indicate balanced workflow; bulges suggest **bottlenecks** needing attention for smooth project continuation.
+
+![Alt Image Text](../images/az400_1_5.png "Body image")
+
+### Scrum vs Kanban
+
+**Scrum and Kanban in Agile development**
+
+While broadly fitting under the umbrella of Agile development, Scrum and Kanban are quite different.
+
+- Scrum focuses on fixed **length sprints, while Kanban is a continuous flow model**.
+- Scrum has **defined roles, while Kanban doesn't define any team roles**.
+- Scrum uses **velocity** as a key metric, while Kanban uses **cycle time.**
+
+Teams often blend Scrum and Kanban features to optimize their workflow.
+
+They continuously refine their approach to find the best fit, focusing on simplicity and regular value delivery to users.
+
+
+### Flow Metrics
+
+#### Velocity
+
+**Velocity** in Azure DevOps is a **metric that tracks the amount of work a team completes during a sprint, helping teams estimate how much work they** can handle in future sprints.
+
+It's represented in a chart that visualizes work items completed over several sprints, offering insights into the team's work patterns, efficiency, and consistency.
+
+By analyzing velocity, teams can adjust their planning for **better predictability and productivity.**
+
+Consistent velocity metrics can help in identifying the impact of **process changes and guiding strategic decisions to enhance overall team performance**.
+
+![Alt Image Text](../images/az400_1_6.png "Body image")
+
+#### Sprint burn down
+
+**Sprint burndown chart**
+
+The sprint burndown is a graph that plots the **<mark>daily total of remaining work, typically shown in hours</mark>** 
+
+The burndown chart provides a visual way of **showing whether the team is on track to complete all the work by the end of the sprint.**
+
+It also helps in identifying any **bottlenecks or issues in the workflow that may need attention before the sprint’s end.**
+
+![Alt Image Text](../images/az400_1_7.png "Body image")
+
+#### Lead time and Cycle time
+
+The Lead Time and Cycle Time widgets indicate how long it takes for work to flow through your development pipeline.
+
+- **Lead time** measures the **total time elapsed from the creation of work items to their completion**.
+- **Cycle time** measures the **time it takes for your team to complete work items once they begin actively working on**
+
+---
+
+- The following diagram illustrates how lead time differs from cycle time.
+- **Lead time** is calculated from work item creation to entering a completed state.
+- **Cycle time** is calculated from first entering an In Progress or Resolved state category to entering a Completed state category.
+
+
+> These measures help teams plan, spot variations in efficiency, and identify potential process issues.
+The lower the lead and cycle times, the faster the throughput your team has.
+
+![Alt Image Text](../images/az400_1_8.png "Body image")
+
+
+### Azure Boards
+
+**Azure Boards** is a **web-based service designed for planning, tracking, and discussing work** throughout the development process, supporting agile methodologies for a customizable and efficient workflow.
+
+#### **Key Hubs in Azure Boards**
+
+Azure Boards includes several key hubs, each serving distinct project management needs:
+
+Work Items Hub: Manage work items based on specific criteria.
+
+* **Boards Hub**: Visualize workflow using cards, ideal for Kanban.
+* **Backlogs Hub**: Plan and organize work items, including backlogs for project and portfolio management.
+* **Sprints Hub**: Handle sprint-specific work items, incorporating backlogs for project and portfolio management.
+* Queries Hub: Generate **custom** work item lists and perform bulk
+* Delivery Plans Hub: Track cross-team deliverables and dependencies in a calendar view.
+* Analytics Views Hub: Create **Power BI** reports for detailed project analysis.
+
+![Alt Image Text](../images/az400_1_9.png "Body image")
+
+#### **Key benefits of Azure Boards**
+
+- **Scalable Simplicity**: Easy to start with predefined work item types, scalable for growing teams.
+- **Visual Tools**: Visualize progress with **Kanban boards, scrum boards**, and delivery plans.
+- **Customization**: Configure **boards, taskboards, and plans, including custom fields**.
+- **Built-in Communication**: Capture **real-time** communication and decisions within work item forms.
+- **Cloud Storage**: Support for rich text, inline images, attachments, and comprehensive change history.
+- **Efficient Search and Notifications**: Tools for quick work item searching and customizable **alerts**.
+- **Dashboards and Analytics**: **Access to dashboards and Analytics service for reporting.**
+
+
+**Integration and Support**
+
+- **GitHub and Office Integration:** Connects with GitHub repositories and supports import/export with Microsoft Office.
+- **Autonomous Teams Support**: Tailors to independent teams, **integrates with Microsoft Teams and Slack**, and offers a variety of marketplace extensions.
+
+![Alt Image Text](../images/az400_1_10.png "Body image")
+
+### Traceability
+
+**Traceability allows tracking connections and dependencies** among different parts of a software system. It helps teams grasp the effects of **changes, handle risks, and comply with regulations.**
+
+
+**Defining and managing requirements**
+
+- A key part of traceability is documenting and overseeing requirements effectively.
+- Azure DevOps has tools like Azure Boards for handling requirements and tracking their progress, linking requirements to related items like tasks or bugs.
+- This tracking clarifies each requirement's progress and its influence on the project.
+
+**Version control and change management**
+
+For traceability, a solid version control system to monitor modifications to code and files is essential. Azure DevOps's Git repositories let developers manage their work efficiently.
+
+By using branches for features or releases, you can track changes and understand their role in the project's bigger picture.
+
+#### Building and release management
+
+Traceability must include build and release processes. **Azure Pipelines facilitates building, testing, and deploying apps**, linking build artifacts and code changes to specific tasks, showing what changes made it into each
+
+
+#### Test management and quality assurance
+
+
+For software quality, traceability is crucial. Tools like **Azure Test Plans support detailed test management.** Linking test cases to requirements or user stories shows how well the testing process covers the initial needs, ensuring thorough validation.
+
+#### Auditing and compliance
+
+- Traceability also supports meeting standards and regulations.
+- Azure DevOps's auditing features track and log changes, providing details on who changed what and when, supporting accountability and regulatory compliance.
