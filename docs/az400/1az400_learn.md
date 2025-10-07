@@ -710,7 +710,7 @@ Once configured, it's crucial to **test the webhook** to ensure it works as expe
 
 After setting up, monitor the notifications and ensure they're firing correctly. You might need to troubleshoot or adjust settings if you're not receiving the notifications as expected.
 
-### Version Control Systems (VCS)
+## Version Control Systems (VCS)
 
 
 Version Control Systems (VCS) are **designed to track changes or revisions to code**.
@@ -780,3 +780,633 @@ GitLab was an emerging competitor to Github and at the time had unique features 
 **SourceForge**
 
 One of the oldest places to host your source code and was the first to free of charge to open-source projects
+
+
+#### Git vs Github
+
+| | Git | GitHub |
+|:----|:---:|:---:|
+| Nature| Distributed Version control system (DVCS) | Version Control as a Service (VCaaS)|
+| Functionality  | Manages source code history| Provides cloud storage for Git repositories |
+| Access | Local system installation | Accessed via web interface |
+| Scope  | Local repository management| Online collaboration and repository hosting |
+| Collaboration  | Local changes, requires manual sharing | Integrated tools for collaboration (issues, PRs) |
+| Usage  | Command-line interface| Graphical interface and additional features |
+
+
+#### Github Repo
+
+**A Github Repo is your git repo that you push upstream to GitHub**
+
+GitHub allows you access and manage your git repo with several functionality
+
+From your Github repo page you can:
+
+- • View different branches
+- • View tags
+- • View commit history
+- • Explore repo's files
+- • View releases
+- • See codebase language breakdown
+- • View the top level markdown files
+	- • Readme.md
+	- • Licence.md
+
+
+You can perform actions such as:
+
+- • Pinning
+- • Watching
+- • Forking
+- • Starring
+- • Cloning (downloading)
+
+#### Git commit
+
+A Git Commit represent incremental changes to a codebase represented with a git tree (graph) at a specific time.
+
+A git commit contains:
+
+- • Additions, modifications and deletions of files
+- • Additions and deletions of file contents.
+- **Not the whole files** themselves.
+
+![Alt Image Text](../images/az400_1_21.png "Body image")
+
+**Each Commit has a SHA hash that acts as an ID : Eg. 661a91ad3b66926c4591f9d3c73c087906945f3b**
+
+You can use this Commit SHA to checkout specific commits.
+
+> Git does not store the whole files in each commit but rather the state of changes.
+This greatly reduces the file size. To the developer the files will appear whole
+
+Components of Git Commit:
+
+- **Commit Hash**: A unique SHA-1 hash identifier for the commit.
+- **Author Information**: The name and email of the person who made the commit.
+- **Commit Message**: A description of what changes the commit contains.
+- **Timestamp**: The date and time when the commit was made.
+- **Parent Commit Hash(es)**: The SHA-1 hash of the commit(s) this commit is based on.
+- **Snapshot of Content**: A snapshot of the project at the time of the commit (not the actual files, but references to them).
+
+Commit messages are often written in a tool as its more convenient to quickly add, remote files, audit changes
+
+VS Code has that ability via the Source Control window
+
+![Alt Image Text](../images/az400_1_22.png "Body image")
+
+Common Git Commands you should know:
+
+You need add or remove files to be stage changes
+
+```
+# Files to be staged
+git add my-file
+git add . # add all files
+git rm my-other file # remove a specific file
+
+# Commits staged changes with a message
+git commit -m "Commit message"
+
+# Automatically stages all tracked, modified files before the commit
+git commit -a -m "Commit message"
+
+# Modifies the most recent commit 
+git commit --amend
+
+# Creates an empty commit, useful as a placeholder 
+git commit -m "Initial commit" --allow-empty
+
+# Commits with a specified author.
+git commit -m "Message" --author="Author Name <email@example.com>"
+
+# checkout to a specific commit based on SHA hash
+git checkout 661a91ad3b66926c4591f9d3c73c087906945{3b.
+```
+
+#### Git Branch
+
+**A git branch is a divergence of the state of the repo.**
+
+You can think of branches as being copies of a point in time that have been modified to be different.
+
+![Alt Image Text](../images/az400_1_23.png "Body image")
+
+> This type of workflow is is very close to GitHub Flow
+
+You can have branches for:
+
+> Specific environments: eg. Staging, development, production
+>
+> Specific to developers: eg. andrew, bayko, cindy
+>
+> branches per feature: eg. payment-gateway-feature
+>
+> Branches per bug eg. hotfix-blank-hoempage
+
+Common git branch commands you should know
+
+```
+#Lists all local branches git branch
+#Creates a new branch git branch [branch-name]
+
+# Checkout (switch to) a branch
+git checkout [branch-name]
+
+# Create and checkout a branch
+git checkout -b [branch name]
+
+# Deletes a branch 
+git branch -d [branch-name]:
+
+# Renames a branch
+git branch -m [old-name] [new-name]
+
+# Lists both remote and local branches
+git branch
+```
+
+A common workflow for developers is to create a branch or a feature, and they need to push their branch upstream to the remote name origin.
+
+```
+git checkout -b my-new-branch
+
+# ... makes changes to files
+git add
+git commit -m "my changes"
+git push -u origin my-new-branch
+```
+
+#### Git Remote
+
+A git remote represents **the reference to remote location** where a copy of the repository is hosted.
+
+You can have multiple remote entries for your git repo.
+
+* "origin" as a remote name almost always seen for a repo.
+* It indicates the central or golden repo everyone is working from and represents the source of truth.
+
+**The remote entries are stored in `.git/config`**
+
+```
+[remote "origin"]
+	url = https://github.com/examproco/exampro.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "production"]
+	remote = origin
+	merge = refs/heads/production
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+```
+
+Notice remote names can be **referenced**
+
+```
+# Lists all remote repositories along with their URLs.
+git remote -v
+git remote add [name] [URL]
+git remote remove [name]
+git remote rename [old-name] [new-name]
+
+#Pushes a branch and its commits to the specific remote. 
+git push [remote-name] [branch]
+
+# Pulls updates from a remote branch. 
+git pull [remote-namel [branch]
+
+# Fetch updates without pulling.
+git fetch [remote-name]
+```
+
+
+#### Git Remote - Upstream and Downstream
+
+![Alt Image Text](../images/az400_1_24.png "Body image")
+
+#### GitHub Flow
+
+**GitHub Flow is a light-weight workflow** for multiple developers working on a single repository
+
+- **Create a Branch**: For each new task or feature, create a new branch off the main branch.
+- **Add Commits**: Make changes and commit them to your branch.
+- **Open a Pull Request**: Start a discussion about your commits, reviewing code in the pull request.
+- **Discuss and Review**: Share your pull request with teammates for feedback.
+- **Deploy**: Test your changes in a production environment.
+- **Merge**: Once your changes are verified, merge them into the main branch.
+
+![Alt Image Text](../images/az400_1_25.png "Body image")
+
+
+#### GitHuo CLI
+
+**The GitHub CLI is a command line interface to interact with your GitHub Account**.
+
+You can quickly perform common GitHub actions without leaving you developer environment
+
+```
+gh auth login
+gh repo create github-examples --public
+gh issue create --title "Issue title" --body "Issue body" 
+gh pr review --comment -b "interesting"
+```
+
+The GitHub CLI can be installed on Windows, Linux, and macOS
+
+```
+brew install gh
+```
+
+You can quickly install the CLI for GitHub Codespaces via Features:
+
+```
+"features": {
+	"ghcr.io/devcontainers/features/github-cli:1": {}
+]
+```
+
+**Core commands**
+
+gh auth / gh browse / gh codespace / gh gist / gh issue / gh org / gh pr / gh project / gh release / gh repo
+
+**GitHub Actions commands**
+
+gh alias / gh api / gh completion / gh config / gh extension / gh gpg-key / gh label / gh ruleset / gh search / gh secret / gh ssh-key / gh status / gh variable
+
+**Additional commands**
+
+gh cache / gh run / gh workflow
+
+
+#### Basic Repo Navigation
+
+Within a Github repo you'll have a **navigation bar** to the various feature of your GitHub repo:
+
+![Alt Image Text](../images/az400_1_26.png "Body image")
+
+- • **Code**: The main tab where the repository's source code, files, and folders are located.
+- • **Issues**: Tracks problems or ideas for the project, allowing collaboration and discussion.
+- • **Pull Requests**: Used for managing contributions from other users, enabling code review and discussion before merging changes.
+- • **Actions**: Manages continuous integration and continuous deployment (CI/CD) workflows.
+- • **Projects**: A board for organizing and prioritizing work, similar to kanban or task management boards.
+- • **Wiki**: A space for the project's documentation.
+- • **Security**: Features security-related resources, including security policies and vulnerability reports.
+- • **Insights**: Provides statistics and insights on the project's activity and contributions.
+
+
+When you create a repo you choose a owner:
+
+* Personal account
+* An organization that you belong to
+
+![Alt Image Text](../images/az400_1_27.png "Body image")
+
+- You need to choose an available github repo name
+- Names are unique based on the scope of the owner
+
+**You repo can either be public or private**
+
+
+You can quickly add a:
+
+- Readme file
+- gitignore file
+- License file
+
+Github CLI can be used to create a GitHub repo
+
+```
+gh repo create my-project --public --clone
+```
+
+#### Maintaining a repo
+
+You can **change your repo name**, (but try not to because it can break external links and documentation pointing to a public repo)
+
+
+- You can change the base branch (default branch).
+- You can rename the default branch.
+- "main" is the unspoken best practice for naming your base branch
+
+![Alt Image Text](../images/az400_1_28.png "Body image")
+
+
+- You can **opt-in-and-out of some features for your Github Repo**
+- Features will appear in the Github repo navigation bar
+
+![Alt Image Text](../images/az400_1_29.png "Body image")
+
+The Danger Zone contains actions you need to think twice about because they cannot be undone.
+
+
+Change repo visibility
+
+When you make a private repo private
+
+- The code will be visible to everyone who can visit https://github.com
+- Anyone can fork your repository.
+- All push rulesets will be disabled.
+- Your changes will be published as activity.
+
+
+**Disable Branch Protection Rules**
+
+- Branch protect rules are strict workflow rules like disallowing anyone pushing to main.
+- You can disable all protections temporarily eg. For quick fixes
+
+**Transfer ownership**
+
+When you want someone else to be the owner of the repo.
+
+**Archive this repository**
+
+When the repo to be read-only.
+
+**Delete this repository**
+
+- When you want to delete your repo.
+- Once its gone its gone, there is not trash bin you can pull it out of.
+
+![Alt Image Text](../images/az400_1_30.png "Body image")
+
+
+#### Repo Templates
+
+**Github Repo Templates** is a feature for public repos that **allow other GitHub users to make a copy of the contents of the template repo** to use as starting point of their own repo.
+
+![Alt Image Text](../images/az400_1_31.png "Body image")
+
+> Templates are different from cloning because it's a clean repo with no previous history.
+
+#### Cloning a repo
+
+You can clone a repo programmatically three different ways:
+
+**1.HTTPS**
+
+git clone https://github.com/omenking/terraform-beginner-bootcamp-2023.git
+
+
+**2.SSH**
+
+git clone git@github.com: omenking/terraform-beginner-bootcamp-2023.git
+
+> Authorization is based on SSH keypair
+>
+>  you have to upload the Public key to your GitHub account
+
+**3.Github CLI**
+
+gh repo clone omenking/terraform-beginner-bootcamp-2023
+
+
+> Authorization is based on the credentials when did a gh login
+
+You can also:
+
+- Open in GitHub Desktop which will perform the clone for you
+- Download a ZIP containing the contents of the repo
+
+#### Creating branches
+
+
+Using git we can create a new branch from an existing branch.
+
+We then want to push upstream our branch to GitHub
+
+```
+git checkout -b staging
+# change files, create commits
+git push -u origin staging
+```
+
+- is the short hand flag for `-set-upstream`.
+
+
+- Branches can be created from Issues.
+
+- The branch and issues will be associated/link
+
+- Branches can be directly created within GitHub Ul.
+
+- Branches can be created in GitHub Desktop
+
+
+#### GitHub Releases
+
+GitHub Releases allows you to create releases with release notes and linked assets such as zip source or binaries for specific platforms
+
+![Alt Image Text](../images/az400_1_32.png "Body image")
+
+#### GitHub Packages
+
+GitHub Packages is a platform for **hosting and managing packages, including containers and other dependencies.**
+
+
+Pushing Docker container to GitHub Packages
+
+**Supported package registry:**
+
+- Javascript (npm package)
+- Ruby (gems)
+- Java (maven and gradle packages)
+- Net (don't net packages)
+- Docker images
+
+```
+GH_USERNAME=" andrew-wc-brown"
+IMAGE NAME="hello-world"
+VER="1.0.0"
+
+# Sign-in to docker
+echo $GH_TOKEN | docker login ghcr.io -u $GH_USERNAME --password-stdin
+
+# Tag docker container
+docker tag $IMAGE_NAME: $VER ghcr.io/$GH_USERNAME/$IMAGE_NAME:$VER
+
+# Push to Docker Packages
+docker push ghcr.io/$GH_USERNAME/$IMAGE_NAME:$VER
+```
+
+**GitHub Actions could be used to build and then public packages to GitHub Packages**
+
+
+```
+FROM alpine:latest
+CMD echo "Hello World!"
+```
+
+```
+docker build -t hello-world . 
+docker run hello-world
+```
+
+#### Pull Requests
+
+**A Pull Request (PR) is a formal process to put forth changes**, that can be manually or automatically reviewed before its accepted into your base (main) branch
+
+
+![Alt Image Text](../images/az400_1_33.png "Body image")
+
+**Benefits of a Pull Request**
+
+* **Collaborative Review**: Enhances code quality through team discussions and peer feedback.
+* **Change Tracking**: Provides a record of code changes and related discussions.
+* **Automated Testing**: Enables integration with tools for automated checks and tests.
+* **Controlled Integration**: Manages safe and reviewed merging of code changes.
+* **Open Source Friendly**: Simplifies contributions and collaboration in open-source projects.
+
+> A pull request is not a feature of git, but a workflow. Services like GitHub can automate the Pull Request workflow
+
+#### Creating Pull Requests
+
+
+We set the:
+
+- Base - who we are going to merge into
+- Head - the changes to pull in
+
+We can use the Github CLI to create a pull request from a branch.
+
+```
+git checkout -b cool-feature-branch 
+git commit -am "Your commit message" 
+git push -u origin cool-feature-branch
+gh pr create --base main --head cool-feature-branch
+```
+
+**In the GitHub repo we navigation to Pull Requests**
+
+
+![Alt Image Text](../images/az400_1_35.png "Body image")
+
+#### Pull Requests - Base and Compare
+
+Base and Compare determines the direction of the merge for a pull request
+
+**Base is who you want to merge into**
+
+This is usually main branch or an environment specific branch
+
+**Compare is what will be merged into Base**
+
+- Compare is choosing a Head ref
+- This usually a bug or feature branch
+
+![Alt Image Text](../images/az400_1_34.png "Body image")
+
+You can also compare across forks this is how a fork stays up to date, or how forks can suggest you to accept their changes.
+
+![Alt Image Text](../images/az400_1_36.png "Body image")
+
+#### Draft Pull Requests
+
+A Draft Pull Request on GitHub is a feature that allows you to open a pull request but mark it as a work-in-progress (WIP).
+
+
+Use case for Draft Pull Requests
+
+![Alt Image Text](../images/az400_1_37.png "Body image")
+
+> Draft Pull Requests is a feature only for Github Organizations Teams
+
+Use case for Draft Pull Requests
+
+- **Indicating Work-in-Progress:** Communicates that the pull request is not ready for review or merging.
+- **Preventing Premature Merging**: Ensures incomplete work is not accidentally merged.
+- **Facilitating Early Feedback and Collaboration:** Allows for early sharing and discussion of code changes.
+- **Continuous Integration Testing**: Enables Cl tests during the development process.
+- **Transitioning to a Ready State**: Easy switch from draft to ready for final review and merging.
+- **Organizing Work and Priorities**: Helps in managing and tracking ongoing work in large projects.
+
+
+#### Linked Activity within a Pull Request
+
+Supported Keywords
+
+**close closes closed fix fixes fixed resolve resolves resolved**
+
+> The pull request must be on the default branch.
+
+#### Pull Request Statuses
+
+**Open**
+
+The default status when a pull request is created. It's open for discussion and review.
+
+**Draft**
+
+Indicates the pull request is a work-in-progress and not yet ready for review.
+
+**Closed**
+
+The pull request has been closed without being merged. This status is used when the proposed changes are no longer needed or if the branch has been rejected.
+
+**Merged**
+
+- The pull request's changes have been merged into the target branch.
+- This status indicates a successful conclusion of the pull request process.
+
+
+**Changes Requested**
+
+
+This status is used during the review process when a reviewer requests changes before the pull request can be merged.
+
+**Review Required**
+
+- Indicates that the pull request requires a review before it can be merged.
+- This status is common in repositories where reviews are a mandatory part of the workflow.
+
+**Approved**
+
+The pull request has been reviewed and approved for merging by the required number of reviewed
+
+
+**Conflict**
+
+Indicates that there are conflicts between the pull request's branch and the target branch that ne to be resolved before merging.
+
+**Ready for Review**
+
+A pull request initially marked as draft can be changed to this status once it's ready for review.
+
+
+#### Codereviews with CODEOWNERS file
+
+**CODEOWNERS Github repo specific file to define individuals or teams that are responsible for specific code in a repository**
+
+CODEOWNER files uses **a similar syntax to .gitignore**.
+
+
+When a pull request is opened that modifies any files matching a pattern in the CODEOWNERS file, GitHub a**utomatically requests a review from the specified code owners**.
+
+
+
+![Alt Image Text](../images/az400_1_38.png "Body image")
+
+> The codeowner files goes in either the project root, github or docs directory.
+
+
+#### Required Reviewers
+
+![Alt Image Text](../images/az400_1_39.png "Body image")
+
+#### Pull Request Templates
+
+Pull Request Templates are similar to Issue Templates
+
+They will populate the pull request textarea with the specified template
+
+You create a a file in the
+
+**`.github/pull_request_template.md`**
+
+
+Technically you can create multiple Pull Request Templates in a folder called `.github/PULL_REQUEST_TEMPLATE`
+
+![Alt Image Text](../images/az400_1_39.png "Body image")
+
+
+
+> GitHub kind-of supports multiple Pull Requests Templates but you have to assemble your own URL with a querystrings, so its not as convenient to use as multiple Issue templates.
