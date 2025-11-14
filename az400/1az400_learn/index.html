@@ -1,0 +1,7234 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../../ai900/6sum_fin/">
+      
+      
+        <link rel="next" href="../../chap5/dp1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1 Azure DevOps Engineer Expert Certification (AZ-400) - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-azure-devops-engineer-expert-certification-az-400" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 Azure DevOps Engineer Expert Certification (AZ-400)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exam-guide-response-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Guide - Response Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-to-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction to DevOps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction to DevOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why DevOps?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and Technologies:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devops-vs-traditional-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps vs Traditional IT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevOps vs Traditional IT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-and-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed and data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperation-and-crunch-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recuperation and crunch time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Agile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Agile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agile-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agile Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scrum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-roles-in-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key roles in Scrum:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kanban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrum-vs-kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum vs Kanban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-burn-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint burn down
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lead-time-and-cycle-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lead time and Cycle time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-boards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Boards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Boards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-hubs-in-azure-boards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Hubs in Azure Boards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits-of-azure-boards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key benefits of Azure Boards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traceability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traceability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-and-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building and release management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-management-and-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test management and quality assurance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditing-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auditing and compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-azure-boards-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Azure Boards dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Azure Boards dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centralize-with-custom-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralize with Custom Dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customize-with-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customize with Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-backlogs-with-query-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Backlogs with Query Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-azure-boards-dashboards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Azure Boards dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Azure Boards dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#track-progress-with-burndown-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track Progress with Burndown Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize-performance-with-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize Performance with Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhance-team-engagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhance Team Engagement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-azure-boards-dashboards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Azure Boards dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Azure Boards dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#track-progress-with-burndown-charts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track Progress with Burndown Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize-performance-with-charts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize Performance with Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhance-team-engagement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhance Team Engagement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wikis-for-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wikis for Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-diagrams-for-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Diagrams for Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-release-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure release documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure release documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-release-documentation-in-azure-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Release Documentation in Azure DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automate-git-history-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automate Git History documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Webhooks?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What are Webhooks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-uses-of-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Uses of Webhooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-notifications-with-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure notifications with Webhooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-systems-vcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Systems (VCS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Control Systems (VCS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-git-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Git Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-services-vcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Services (VCS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-vs-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git vs Github
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Github Repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Remote
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-remote-upstream-and-downstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Remote - Upstream and Downstream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githuo-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHuo CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-repo-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Repo Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintaining-a-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintaining a repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repo Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-a-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloning a repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Releases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests-base-and-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Requests - Base and Compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draft-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Draft Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linked-activity-within-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linked Activity within a Pull Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Statuses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codereviews-with-codeowners-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codereviews with CODEOWNERS file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-reviewers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Reviewers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-control-strategy-authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source-Control-Strategy Authentication methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Source-Control-Strategy Authentication methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-credential-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and credential strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-credential-strategies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and credential strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-reset-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Reset Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-credential-strategies_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and credential strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and credential strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-auth-for-external-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Up Auth for External Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-personal-access-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Personal Access Tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply Role-Based Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-lfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git LFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-fat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git-fat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-scalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Scalar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-submodule-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git submodule add
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-subtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git subtree
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Hooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-hooks-with-azure-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Hooks with Azure DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-hooks-with-azure-devops_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Hooks with Azure DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branch strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-policies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-protection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Pipelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-pipelines_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Pipelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-pipelines_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exam-guide-response-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Guide - Response Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-to-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction to DevOps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction to DevOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why DevOps?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and Technologies:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devops-vs-traditional-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps vs Traditional IT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevOps vs Traditional IT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-and-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed and data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperation-and-crunch-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recuperation and crunch time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Agile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Agile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agile-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agile Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scrum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-roles-in-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key roles in Scrum:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kanban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrum-vs-kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum vs Kanban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-burn-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint burn down
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lead-time-and-cycle-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lead time and Cycle time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-boards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Boards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Boards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-hubs-in-azure-boards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Hubs in Azure Boards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits-of-azure-boards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key benefits of Azure Boards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traceability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traceability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-and-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building and release management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-management-and-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test management and quality assurance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditing-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auditing and compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-azure-boards-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Azure Boards dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Azure Boards dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centralize-with-custom-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralize with Custom Dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customize-with-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customize with Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-backlogs-with-query-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Backlogs with Query Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-azure-boards-dashboards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Azure Boards dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Azure Boards dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#track-progress-with-burndown-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track Progress with Burndown Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize-performance-with-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize Performance with Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhance-team-engagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhance Team Engagement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-azure-boards-dashboards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Azure Boards dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Azure Boards dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#track-progress-with-burndown-charts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track Progress with Burndown Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize-performance-with-charts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize Performance with Charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhance-team-engagement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhance Team Engagement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wikis-for-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wikis for Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-diagrams-for-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Diagrams for Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-release-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure release documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure release documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-release-documentation-in-azure-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Release Documentation in Azure DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automate-git-history-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automate Git History documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Webhooks?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What are Webhooks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-uses-of-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Uses of Webhooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-notifications-with-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure notifications with Webhooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-systems-vcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Systems (VCS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Control Systems (VCS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-git-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Git Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-services-vcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Services (VCS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-vs-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git vs Github
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Github Repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Remote
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-remote-upstream-and-downstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Remote - Upstream and Downstream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githuo-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHuo CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-repo-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Repo Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintaining-a-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintaining a repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repo Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-a-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloning a repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Releases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests-base-and-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Requests - Base and Compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draft-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Draft Pull Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linked-activity-within-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linked Activity within a Pull Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Statuses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codereviews-with-codeowners-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codereviews with CODEOWNERS file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-reviewers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Reviewers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-control-strategy-authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source-Control-Strategy Authentication methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Source-Control-Strategy Authentication methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-credential-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and credential strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-credential-strategies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and credential strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-reset-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Reset Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-credential-strategies_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and credential strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and credential strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-auth-for-external-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Up Auth for External Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-personal-access-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Personal Access Tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply Role-Based Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-lfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git LFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-fat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git-fat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-scalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Scalar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-submodule-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git submodule add
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-subtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git subtree
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Hooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-hooks-with-azure-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Hooks with Azure DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-hooks-with-azure-devops_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Hooks with Azure DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branch strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-policies_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-protection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Pipelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-pipelines_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Pipelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-pipelines_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-azure-devops-engineer-expert-certification-az-400">1 Azure DevOps Engineer Expert Certification (AZ-400)</h1>
+<h3 id="exam-guide-response-types">Exam Guide - Response Types</h3>
+<p>There are ~50-55 Questions</p>
+<p>You can afford to get roughly 12-14 questions wrong</p>
+<p><strong>Format of Questions</strong></p>
+<ul>
+<li>Multiple Choice</li>
+<li>Multiple Answer</li>
+<li>Drag and Drop</li>
+<li>Yes and No</li>
+<li>1 Lab with about 8 questions</li>
+</ul>
+<h2 id="1-introduction-to-devops">1 Introduction to DevOps</h2>
+<p>DevOps is an approach that brings together software development (Dev) and IT operations (Ops) with the goal to enhance the speed and reliability of software delivery. </p>
+<p><strong>It focuses on continuous improvement, automation, and collaboration between teams that were once siloed, aiming to shorten the time from development to operation.</strong></p>
+<p>The process includes frequent code versions, which allows for incremental improvements to applications and systems.</p>
+<p>The ultimate goal of DevOps is to create a culture and environment where <strong>building, testing, and releasing software can happen rapidly, frequently, and more reliably.</strong></p>
+<h4 id="why-devops">Why DevOps?</h4>
+<p>DevOps eliminates the inefficiencies, miscommunications, and delays that arise from the traditional gap between development and operations teams.</p>
+<p>It creates a collaborative culture that accelerates and improves software delivery.</p>
+<p><strong>Key Challenges Addressed by DevOps:</strong></p>
+<ul>
+<li>Miscommunication and Collaboration Gaps: Enhances communication and collaboration, reducing misunderstandings and accelerating the release process.</li>
+<li><strong>Conflicting Goals</strong>: Aligns the goals of Dev and Ops teams towards quick, reliable, and high-quality software delivery.</li>
+<li><strong>Manual Processes and Bottlenecks</strong>: Advocates for automation to decrease manual effort, errors, and delays.</li>
+<li><strong>Streamlined Processes</strong>: Automation leads to fewer errors, shorter deployment times, and improved software quality.</li>
+</ul>
+<p>The Role of a DevOps Engineer:</p>
+<p><strong>A DevOps engineer facilitates this collaboration and automation,</strong> focusing on:</p>
+<p><strong>Continuous Integration and Continuous Delivery (CI/CD)</strong>: Establishing pipelines that automate code integration, testing, and deployment, ensuring rapid, reliable software releases.</p>
+<p><strong>Infrastructure as Code (laC):</strong> Managing and provisioning infrastructure through code to increase efficiency and consistency.</p>
+<p><strong>Monitoring and Operations</strong>: Implementing monitoring solutions to track application and infrastructure performance, <strong>ensuring high availability and reliability.</strong></p>
+<p><strong>Transition to Cloud Infrastructure</strong>: Many organizations are transitioning to cloud infrastructure (AWS, Google Cloud, Azure) to cut costs and improve manageability, offering intuitive tools for network and security settings but necessitating knowledge of platform-specific features.</p>
+<h4 id="tools-and-technologies">Tools and Technologies:</h4>
+<p><strong>Version Control (e.g., Git):</strong> Essential for managing code changes and facilitating team collaboration.</p>
+<p><strong>Use Agile and Lean Techniques:</strong> For planning, sprint isolation, and capacity management.</p>
+<p><strong>Containerization (e.g., Docker):</strong> Enables scalable deployments with lightweight containers that are faster and simpler to configure than traditional virtual machines.</p>
+<p><strong>Orchestration (e.g., Kubernetes):</strong> Efficiently manages containerized applications at scale</p>
+<p>CI/CD Tools (e.g., Jenkins, GitLab CI): Automate the software delivery process, from code integration to deployment.</p>
+<p><strong>laC Tools (e.g., Terraform, Ansible):</strong> Automate the provisioning and management of infrastructure.</p>
+<p><strong>Monitoring and Logging (e.g., Prometheus):</strong> Provides insights into application performance and operational health.</p>
+<p><strong>Public and Hybrid Clouds streamline operations</strong>, offering scalable infrastructure with laas for seamless app migration and PaaS to enhance productivity through sophisticated tools.</p>
+<p>Examples of DevOps technologies across different DevOps stages include:</p>
+<p><strong>Planning:</strong></p>
+<p>Azure Boards, GitHub, Atlassian Jira</p>
+<p><strong>Continuous Integration:</strong> <strong>Azure Repos, GitHub Repos, SonarQube</strong>, Selenium, OWASP ZA, NuGet,</p>
+<p><strong>Continuous Delivery: Azure Pipelines, GitHub Actions, Bicep, Terraform</strong>, Jenkins, RedHat Ansible, Chef, Puppet</p>
+<p><strong>Operations: Azure Monitor, Azure Automation,</strong> Microsoft Power BI</p>
+<p><strong>Collaboration and feedback: Azure DevOps Wikis, GitHub Wikis</strong>, GitHub Discussions, Microsoft Teams,</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_1.png" title="Body image" /></p>
+<h3 id="devops-vs-traditional-it">DevOps vs Traditional IT</h3>
+<h4 id="time"><strong>Time</strong></h4>
+<ul>
+<li><strong>DevOps teams spend one-third more time</strong> <strong>improving systems</strong> to avoid tech issues than <strong>traditional IT.</strong></li>
+<li>Less time is needed for administrative tasks because <strong>DevOps uses more automated tools and helpful scripts</strong>.</li>
+<li>This saved time allows for a <strong>33% increase</strong> in enhancing their tech infrastructure.</li>
+<li>They also have <strong>15%</strong> more time for learning and training, boosting their</li>
+</ul>
+<h4 id="speed-and-data">Speed and data</h4>
+<ul>
+<li>DevOps groups are typically <strong>small and adaptable,</strong> driven by creativity and speed.</li>
+<li>One of the main goal of DevOps is agility, aiming for swift completion of tasks.</li>
+<li><strong>Traditional IT</strong> operations typically have less feedback data, focusing only on the immediate task.</li>
+<li>IT operations often have to handle unexpected downstream issues they didn't see coming.</li>
+<li>Cloud DevOps is more effective in <strong>delivering business applications</strong> due to its quick pace.</li>
+<li>Traditional IT must strive to keep up with the rapid changes and demands of the business world.</li>
+</ul>
+<h4 id="recuperation-and-crunch-time">Recuperation and crunch time</h4>
+<p>DevOps teams focus on <strong>readiness for failures</strong> and have strategies like ongoing testing and real-time alerts.</p>
+<p>These strategies mean they can <strong>address issues quickly and keep systems running smoothly</strong>.</p>
+<p>Traditional IT may need more time to recover from setbacks because they might not have these proactive measures in place.</p>
+<p>Fast recovery in DevOps is often helped using automated systems and flexible infrastructure setups.</p>
+<p><strong>Software distribution</strong></p>
+<ul>
+<li>DevOps teams take roughly <strong>37 minutes to deploy software</strong>.</li>
+<li>Traditional IT operations typically need about <strong>85 minutes for the same task.</strong></li>
+<li>This indicates DevOps teams can release software more than <strong>twice</strong> as quickly as traditional IT teams.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aspect</th>
+<th style="text-align: center;">DevOps Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Product Reliability</td>
+<td style="text-align: center;">Reduced likelihood of failure</td>
+</tr>
+<tr>
+<td style="text-align: left;">Adaptability</td>
+<td style="text-align: center;">Enhanced flexibility and support</td>
+</tr>
+<tr>
+<td style="text-align: left;">Market Responsiveness</td>
+<td style="text-align: center;">Decreased time to market</td>
+</tr>
+<tr>
+<td style="text-align: left;">Team Productivity</td>
+<td style="text-align: center;">Greater efficiency in teams</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vision Clarity</td>
+<td style="text-align: center;">More defined product vision within teams</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-agile">2 Agile</h2>
+<p><strong>Agile</strong> is a philosophy in software development that emphasizes <strong>incremental progress, collaboration, and flexibility</strong>. It revolves around the idea of breaking down large projects into smaller, manageable sections called <strong>iterations or sprints.</strong></p>
+<p>Teams work in these short bursts to produce tangible results regularly, allowing for frequent reassessment and adjustment.</p>
+<p>This approach enables a quick response to change and promotes continuous improvement, both in the product and the process used to create it.</p>
+<p>The term "<strong>agile methodology"</strong> refers to the specific frameworks and practices that embody the Agile philosophy, <strong>such as Scrum, and Kanban</strong>.</p>
+<p>These methodologies provide the structure and tools for teams to execute Agile principles effectively.</p>
+<p>They include techniques for planning and tracking progress, <strong>such as stand-up meetings, sprints, and visual boards, all designed to enhance team coordination and project transparency.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_2.png" title="Body image" /></p>
+<h3 id="agile-development">Agile Development</h3>
+<p><strong>Diligent Backlog Refinement</strong>: This means organizing the list of upcoming work, <strong>prioritizing the most important tasks, and clarifying them</strong>. </p>
+<p>Product owners are key in preparing for future sprints by providing <strong>clear goals.</strong></p>
+<p><strong>Integrating Early and Often:</strong> By using Continuous Integration/Continuous Delivery (Cl/CD), teams automate their workflows, which speeds up coding, testing, and deployment. <strong>This helps catch and fix problems early.</strong></p>
+<p><strong>Minimizing Technical Debt</strong>: Just like unwanted financial debt, technical debt happens when taking shortcuts, which may later require code fixes.</p>
+<p>It's important to find a good mix of adding <strong>new features and fixing these issues, needing careful planning and fixing these issues, needing careful planning and discipline.</strong></p>
+<p><strong>Agile Development encompasses various methods</strong> that follow the <strong>Agile Manifesto's core ideas.</strong></p>
+<p>It's about teams working together, managing themselves, and using practices that best suit their project's needs to gradually improve their software.</p>
+<p>In agile development, teams aim to produce fully working and high-quality parts of the software at the end of every sprint.</p>
+<p>This means they <strong><mark>must write code, test it, and make sure everything is of good quality</mark></strong> within each sprint's short timeframe.</p>
+<p>The key success factors for Agile development teams:</p>
+<ul>
+<li><strong>Diligent backlog refinement</strong></li>
+<li><strong>Integrating early and often</strong></li>
+<li><strong>Minimizing technical debt</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_3.png" title="Body image" /></p>
+<h3 id="scrum">Scrum</h3>
+<p>Scrum is an Agile framework designed for managing complex projects by breaking them down into <strong>small, manageable tasks</strong> completed in short phases called <strong>sprints</strong>.</p>
+<p><strong>Key roles in Scrum:</strong></p>
+<h4 id="key-roles-in-scrum"><strong>Key roles in Scrum:</strong></h4>
+<ul>
+<li><strong>Product Owner</strong>: Guides what and why the team builds, prioritizes the <strong>work backlog</strong>.</li>
+<li><strong>Scrum Master</strong>: Facilitates Scrum processes, supports team improvement, and removes obstacles.</li>
+<li><strong>Development Team</strong>: Engineers the product, ensuring its quality.</li>
+</ul>
+<p>In Scrum, a team self-manages its sprint tasks with daily stand-up meetings to ensure progress and address impediments. They track work using a <strong>task board and a sprint burndown chart</strong>, and at the sprint's end, they showcase their increment in a <strong>review and identify improvements in a retrospective.</strong></p>
+<p>Scrum's short, repeatable cycles facilitate continuous learning and adaptation, making it a practical framework for teams adopting Agile principles.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_4.png" title="Body image" /></p>
+<h3 id="kanban">Kanban</h3>
+<p>Kanban is an Agile methodology focused on <strong>visualizing work, limiting work in progress, and maximizing efficiency (or flow)</strong>.</p>
+<p><strong>Kanban boards</strong> are used to display work at <strong>various stages of → the process using cards to represents tasks and their stages</strong>, highlighting work in progress and facilitating team flexibility.</p>
+<p><strong>Cumulative Flow Diagrams (CFDs)</strong> visually <strong>track a project's workflow over time</strong>, showing task distribution across stages. <strong>The horizontal axis represents time, and the vertical axis represents task volume, with each color marking a different work stage.</strong></p>
+<p><strong>CFDs highlight trends, progress, and bottlenecks.</strong></p>
+<p>Parallel colored areas indicate balanced workflow; bulges suggest <strong>bottlenecks</strong> needing attention for smooth project continuation.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_5.png" title="Body image" /></p>
+<h3 id="scrum-vs-kanban">Scrum vs Kanban</h3>
+<p><strong>Scrum and Kanban in Agile development</strong></p>
+<p>While broadly fitting under the umbrella of Agile development, Scrum and Kanban are quite different.</p>
+<ul>
+<li>Scrum focuses on fixed <strong>length sprints, while Kanban is a continuous flow model</strong>.</li>
+<li>Scrum has <strong>defined roles, while Kanban doesn't define any team roles</strong>.</li>
+<li>Scrum uses <strong>velocity</strong> as a key metric, while Kanban uses <strong>cycle time.</strong></li>
+</ul>
+<p>Teams often blend Scrum and Kanban features to optimize their workflow.</p>
+<p>They continuously refine their approach to find the best fit, focusing on simplicity and regular value delivery to users.</p>
+<h3 id="flow-metrics">Flow Metrics</h3>
+<h4 id="velocity">Velocity</h4>
+<p><strong>Velocity</strong> in Azure DevOps is a <strong>metric that tracks the amount of work a team completes during a sprint, helping teams estimate how much work they</strong> can handle in future sprints.</p>
+<p>It's represented in a chart that visualizes work items completed over several sprints, offering insights into the team's work patterns, efficiency, and consistency.</p>
+<p>By analyzing velocity, teams can adjust their planning for <strong>better predictability and productivity.</strong></p>
+<p>Consistent velocity metrics can help in identifying the impact of <strong>process changes and guiding strategic decisions to enhance overall team performance</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_6.png" title="Body image" /></p>
+<h4 id="sprint-burn-down">Sprint burn down</h4>
+<p><strong>Sprint burndown chart</strong></p>
+<p>The sprint burndown is a graph that plots the <strong><mark>daily total of remaining work, typically shown in hours</mark></strong> </p>
+<p>The burndown chart provides a visual way of <strong>showing whether the team is on track to complete all the work by the end of the sprint.</strong></p>
+<p>It also helps in identifying any <strong>bottlenecks or issues in the workflow that may need attention before the sprint’s end.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_7.png" title="Body image" /></p>
+<h4 id="lead-time-and-cycle-time">Lead time and Cycle time</h4>
+<p>The Lead Time and Cycle Time widgets indicate how long it takes for work to flow through your development pipeline.</p>
+<ul>
+<li><strong>Lead time</strong> measures the <strong>total time elapsed from the creation of work items to their completion</strong>.</li>
+<li><strong>Cycle time</strong> measures the <strong>time it takes for your team to complete work items once they begin actively working on</strong></li>
+</ul>
+<hr />
+<ul>
+<li>The following diagram illustrates how lead time differs from cycle time.</li>
+<li><strong>Lead time</strong> is calculated from work item creation to entering a completed state.</li>
+<li><strong>Cycle time</strong> is calculated from first entering an In Progress or Resolved state category to entering a Completed state category.</li>
+</ul>
+<blockquote>
+<p>These measures help teams plan, spot variations in efficiency, and identify potential process issues.
+The lower the lead and cycle times, the faster the throughput your team has.</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az400_1_8.png" title="Body image" /></p>
+<h3 id="azure-boards">Azure Boards</h3>
+<p><strong>Azure Boards</strong> is a <strong>web-based service designed for planning, tracking, and discussing work</strong> throughout the development process, supporting agile methodologies for a customizable and efficient workflow.</p>
+<h4 id="key-hubs-in-azure-boards"><strong>Key Hubs in Azure Boards</strong></h4>
+<p>Azure Boards includes several key hubs, each serving distinct project management needs:</p>
+<p>Work Items Hub: Manage work items based on specific criteria.</p>
+<ul>
+<li><strong>Boards Hub</strong>: Visualize workflow using cards, ideal for Kanban.</li>
+<li><strong>Backlogs Hub</strong>: Plan and organize work items, including backlogs for project and portfolio management.</li>
+<li><strong>Sprints Hub</strong>: Handle sprint-specific work items, incorporating backlogs for project and portfolio management.</li>
+<li>Queries Hub: Generate <strong>custom</strong> work item lists and perform bulk</li>
+<li>Delivery Plans Hub: Track cross-team deliverables and dependencies in a calendar view.</li>
+<li>Analytics Views Hub: Create <strong>Power BI</strong> reports for detailed project analysis.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_9.png" title="Body image" /></p>
+<h4 id="key-benefits-of-azure-boards"><strong>Key benefits of Azure Boards</strong></h4>
+<ul>
+<li><strong>Scalable Simplicity</strong>: Easy to start with predefined work item types, scalable for growing teams.</li>
+<li><strong>Visual Tools</strong>: Visualize progress with <strong>Kanban boards, scrum boards</strong>, and delivery plans.</li>
+<li><strong>Customization</strong>: Configure <strong>boards, taskboards, and plans, including custom fields</strong>.</li>
+<li><strong>Built-in Communication</strong>: Capture <strong>real-time</strong> communication and decisions within work item forms.</li>
+<li><strong>Cloud Storage</strong>: Support for rich text, inline images, attachments, and comprehensive change history.</li>
+<li><strong>Efficient Search and Notifications</strong>: Tools for quick work item searching and customizable <strong>alerts</strong>.</li>
+<li><strong>Dashboards and Analytics</strong>: <strong>Access to dashboards and Analytics service for reporting.</strong></li>
+</ul>
+<p><strong>Integration and Support</strong></p>
+<ul>
+<li><strong>GitHub and Office Integration:</strong> Connects with GitHub repositories and supports import/export with Microsoft Office.</li>
+<li><strong>Autonomous Teams Support</strong>: Tailors to independent teams, <strong>integrates with Microsoft Teams and Slack</strong>, and offers a variety of marketplace extensions.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_10.png" title="Body image" /></p>
+<h3 id="traceability">Traceability</h3>
+<p><strong>Traceability allows tracking connections and dependencies</strong> among different parts of a software system. It helps teams grasp the effects of <strong>changes, handle risks, and comply with regulations.</strong></p>
+<p><strong>Defining and managing requirements</strong></p>
+<ul>
+<li>A key part of traceability is documenting and overseeing requirements effectively.</li>
+<li>Azure DevOps has tools like Azure Boards for handling requirements and tracking their progress, linking requirements to related items like tasks or bugs.</li>
+<li>This tracking clarifies each requirement's progress and its influence on the project.</li>
+</ul>
+<p><strong>Version control and change management</strong></p>
+<p>For traceability, a solid version control system to monitor modifications to code and files is essential. Azure DevOps's Git repositories let developers manage their work efficiently.</p>
+<p>By using branches for features or releases, you can track changes and understand their role in the project's bigger picture.</p>
+<h4 id="building-and-release-management">Building and release management</h4>
+<p>Traceability must include build and release processes. <strong>Azure Pipelines facilitates building, testing, and deploying apps</strong>, linking build artifacts and code changes to specific tasks, showing what changes made it into each</p>
+<h4 id="test-management-and-quality-assurance">Test management and quality assurance</h4>
+<p>For software quality, traceability is crucial. Tools like <strong>Azure Test Plans support detailed test management.</strong> Linking test cases to requirements or user stories shows how well the testing process covers the initial needs, ensuring thorough validation.</p>
+<h4 id="auditing-and-compliance">Auditing and compliance</h4>
+<ul>
+<li>Traceability also supports meeting standards and regulations.</li>
+<li>Azure DevOps's auditing features track and log changes, providing details on who changed what and when, supporting accountability and regulatory compliance.</li>
+</ul>
+<h3 id="custom-azure-boards-dashboards">Custom Azure Boards dashboards</h3>
+<h4 id="centralize-with-custom-dashboards"><strong>Centralize with Custom Dashboards</strong></h4>
+<p><strong>Custom dashboards</strong> in <strong>Azure Boards</strong> are crucial for presenting a comprehensive <strong>overview of your project's status and key metrics</strong>.</p>
+<blockquote>
+<p>By tailoring these dashboards to highlight crucial data, your team can streamline workflows and improve decision-making.</p>
+</blockquote>
+<h4 id="customize-with-widgets"><strong>Customize with Widgets</strong></h4>
+<p><strong>Widgets</strong> are the heart of Azure Boards dashboards, presenting diverse data from progress <strong>charts to work item queries</strong>. Select and tailor widgets that best display the team's critical information, ensuring essential insights are readily accessible.</p>
+<h4 id="monitor-backlogs-with-query-widgets"><strong>Monitor Backlogs with Query Widgets</strong></h4>
+<p>Incorporate <strong>query widgets to filter</strong> and <strong>display work items based on defined criteria, like outstanding tasks per team member</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_11.png" title="Body image" /></p>
+<p><strong>Monitor Backlogs with Query Widgets</strong></p>
+<p><strong>Incorporate query widgets to filter and display work items based on defined criteria, like outstanding tasks per team member.</strong></p>
+<p>This enables efficient task management and helps in setting clear priorities.</p>
+<h3 id="custom-azure-boards-dashboards_1">Custom Azure Boards dashboards</h3>
+<h4 id="track-progress-with-burndown-charts">Track Progress with Burndown Charts</h4>
+<p>Use <strong>burndown chart</strong> widgets to graphically <strong>track project</strong> progress, helping to identify any delays. Regular review of these charts keeps the team's progress aligned with project goals.</p>
+<h4 id="visualize-performance-with-charts">Visualize Performance with Charts</h4>
+<p>Enrich your dashboard with charts that <strong>convey performance metrics</strong>, such as <strong>bug trends or team velocity</strong>, providing a clear picture of the team's dynamics and highlighting areas for improvement.</p>
+<h4 id="enhance-team-engagement">Enhance Team Engagement</h4>
+<p><strong>Share dashboards with your team and stakeholders</strong> to offer a live view of the project's status, fostering a culture of transparency and collective accountability.</p>
+<h3 id="custom-azure-boards-dashboards_2">Custom Azure Boards dashboards</h3>
+<h4 id="track-progress-with-burndown-charts_1">Track Progress with Burndown Charts</h4>
+<p><strong>Use burndown chart widgets to graphically track project progress,</strong> helping to identify any delays. Regular review of these charts keeps the team's progress aligned with project goals.</p>
+<h4 id="visualize-performance-with-charts_1">Visualize Performance with Charts</h4>
+<p>Enrich your dashboard with charts that <strong>convey performance metrics, such as bug trends or team velocity</strong>, providing a clear picture of the team's dynamics and highlighting areas for improvement.</p>
+<h4 id="enhance-team-engagement_1">Enhance Team Engagement</h4>
+<p>Share dashboards with your team and stakeholders to offer a live view of the project's status, fostering a culture of transparency and collective accountability.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_12.png" title="Body image" /></p>
+<h3 id="wikis-for-documentation">Wikis for Documentation</h3>
+<p><strong>Wiki</strong> offers a collaborative space for team members to compile and share <strong>crucial details about a DevOps project.</strong></p>
+<p><strong>Start with an Overview Page:</strong> Begin by setting up an overview page. This should introduce the project, its goals, and the team working on it.</p>
+<p>Mention the <strong>technologies, tools, and methods your project employs, keeping it broad but informative</strong>.</p>
+<p><strong>Detail Project Requirements: Dedicate pages to outline the project's</strong></p>
+<p>Break down what the project <strong>needs to do (functional requirements) and how it should perform (non-functional requirements)</strong>, using clear and achievable language.</p>
+<p>Detail Project Requirements: Dedicate pages to outline the project's requirements.</p>
+<p>Break down what the project needs to do (functional requirements) and how it should perform (non-functional requirements), using clear and achievable</p>
+<p><strong>Add user stories</strong>, what needs to be true for the project to be considered complete (<strong>acceptance criteria</strong>), and any other elements that rely on each <strong>other (dependencies).</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_13.png" title="Body image" /></p>
+<p><strong>Architecture and Design Documentation:</strong> Use the wiki to detail the project's structure and design.</p>
+<p>Make a separate page for each part, whether <strong>it's a component, a larger section, or a service.</strong></p>
+<p>To help visualize how these parts interact, include diagrams like <strong>UML (Unified Modeling Language) or system architecture sketches</strong>.</p>
+<p>Encourage Team Input: Get your team involved in the documentation process.</p>
+<p><strong>Allowing everyone to edit and update wiki pages not only promotes teamwork but also helps keep the information current.</strong></p>
+<p>Make sure to use the wiki's version tracking to monitor changes and roll back if needed.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_14.png" title="Body image" /></p>
+<h3 id="process-diagrams-for-documentation">Process Diagrams for Documentation</h3>
+<p><strong>Process diagrams</strong> are <strong>visual guides that show the steps in a process</strong>, making it easier to see how everything connects, especially in DevOps</p>
+<p><strong>Pinpoint Essential Processes:</strong> First, identify the main processes in your DevOps project, such as <strong>managing source code, integrating changes continuously, testing automatically, deploying, and monitoring</strong>.</p>
+<p>Break down these processes into smaller parts.</p>
+<p><strong>Make Flowcharts or BPMN Diagrams:</strong></p>
+<p>Use software like Microsoft Visio, draw.io, or lucidchart, to create diagrams that map out the process.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_15.png" title="Body image" /></p>
+<p><strong>Detail What Goes In and Comes Out: For every step in your process, note down what you need to start (inputs) and what you expect to get out of it (outputs).</strong></p>
+<p>This might be <strong>code, test results, deployment packages, or anything else relevant</strong>. It's important to show how each step is linked to the next.</p>
+<p><strong>Clarify Who Does What:</strong> Make sure your diagrams indicate <strong>who is responsible for each step</strong>.</p>
+<p>This removes confusion and makes sure everyone knows their responsibilities.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_16.png" title="Body image" /></p>
+<h3 id="configure-release-documentation">Configure release documentation</h3>
+<p><strong>Release documentation</strong> is a cornerstone for the successful deployment of software releases within Azure DevOps, <strong>focusing on the non-code aspects that define the scope, quality, and functionality of the release.</strong></p>
+<p><strong>Key Elements of Release Documentation</strong></p>
+<p><strong>1 Release Notes:</strong> These should highlight what's <strong>new</strong>, what <strong>issues have been resolved</strong>, and <strong>any enhancements made</strong>, as well as outline any <strong>modifications to settings and their effects on existing features.</strong></p>
+<p><strong>2 Installation Guides:</strong> Provide clear, detailed instructions for the <strong>setup process</strong>, including a list of required <strong>software and system prerequisites, and post-installation</strong></p>
+<p><strong>3 Configuration Changes</strong>: Document updates to <strong>configuration settings</strong>, clarifying any default settings and essential changes.</p>
+<p><strong>4 Change Log</strong>: Keep an accurate record of commits or work items in the release, using a consistent tracking method.</p>
+<p><strong>5 Rollback Plan:</strong> Have a clear, predefined plan for reverting to an earlier software version if necessary.</p>
+<h4 id="creating-release-documentation-in-azure-devops"><strong>Creating Release Documentation in Azure DevOps</strong></h4>
+<p><strong>Azure Repos</strong></p>
+<ul>
+<li>Store your <strong>markdown or text files alongside your code.</strong></li>
+<li><strong>Version control</strong> your documentation for consistency and traceability.</li>
+</ul>
+<p><strong>Azure Pipelines</strong></p>
+<ul>
+<li>Automate the generation of <strong>changelogs</strong> and other documentation during the build and release processes.</li>
+</ul>
+<p><strong>Artifacts</strong></p>
+<p>Attach generated documentation to specific builds or releases as downloadable artifacts.</p>
+<p><strong>Wiki</strong></p>
+<pre><code># Release Notes - Version 2.1.0
+
+## New Features:
+- Feature A: Description and how to enable it.
+- Feature B: Steps for configuration.
+
+## Enhancements:
+- Improved performance of X functionality.
+- Enhanced security protocols for Y process.
+
+## Configuration Changes:
+- Updated default settings for Z.
+- New environmental variables to set for feature A.
+
+## Known Issues:
+- Issue 1: Temporary workaround.
+- Issue 2: Scheduled for fix in the next release.
+
+## Rollback Plan:
+- Steps to revert to version 2.0.3 in case of issues.
+
+For installation guidance, please refer to the [Installation Guide](link-to-guide).
+</code></pre>
+<h3 id="api-documentation">API documentation</h3>
+<p><strong>Steps to Generate API Documentation:</strong></p>
+<p><strong>Generate Documentation:</strong></p>
+<ul>
+<li>Utilize <strong>Visual Studio</strong> to <strong>generate API documentation</strong>. Access this feature via the <strong>Build</strong> menu.</li>
+<li>Use tools like <strong>Swagger, Azure API Management, or OpenAPI</strong> for automatic documentation generation from your codebase.</li>
+</ul>
+<p><strong>Documenting Endpoints:</strong></p>
+<ul>
+<li>Clearly define and describe each <strong>API endpoint</strong>, detailing the purpose and functionality.</li>
+<li>Include information on request and response formats, as well as any <strong>authentication</strong> requirements.</li>
+</ul>
+<p><strong>Selecting Formats and Styles:</strong></p>
+<p>Decide on your <strong>output</strong> format and style, ensuring it's readable and accessible for your target</p>
+<p><strong>Integration and Automation:</strong></p>
+<p>Integrate documentation generation into your <strong>continuous integration and deployment pipelines within Azure DevOps</strong>.</p>
+<pre><code>API Documentation - Version 1.2.3
+
+### Endpoints:
+
+- POST /api/login
+- Description: Authenticates users and returns an access token.
+
+Request Body:
+
+ ...
+ &quot;username&quot;: &quot;user@example.com&quot;,
+ &quot;password&quot;: &quot;password123&quot;
+ ...
+
+- Response:
+
+    Status: 200 0K
+    {
+    &quot;token&quot; : &quot;eyJhbGciOiJIUzIlNiIsInR5cCI6IkpXVCJ9...&quot;
+    }
+
+
+- GET /api/users
+- Description: Retrieves a list of users.
+- Response:
+
+    Status: 200 0K
+    [
+     &quot;id&quot;:
+        {&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Jane Doe&quot;},
+        {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;John Smith&quot;},
+    ]
+</code></pre>
+<h4 id="api-documentation_1"><strong>API documentation</strong></h4>
+<ul>
+<li><strong>Consistency</strong>: Use a consistent format for all <strong>API endpoints</strong> to make the documentation easy to follow.</li>
+<li><strong>Clarity</strong>: Ensure that descriptions are clear and concise, avoiding ambiguity.</li>
+<li><strong>Version Control</strong>: Manage your API documentation within Azure Repos for versioning and historical tracking.</li>
+<li><strong>Regular Updates</strong>: Keep the documentation current with every release, deprecating outdated information promptly.</li>
+<li><strong>Feedback Mechanisms</strong>: Include a process for developers and users to provide <strong>feedback</strong> on the documentation for continuous improvement.</li>
+</ul>
+<blockquote>
+<p>By focusing on these elements, your API documentation will be an invaluable resource for your team and stakeholders, supporting the effective use and integration of your software's API.</p>
+</blockquote>
+<h4 id="automate-git-history-documentation">Automate Git History documentation</h4>
+<p>With the rise of DevOps and Git's stronghold in version control, the manual slog of updating docs has given way to automation. Now, developers can create dynamic documentation straight from their Git</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>A Git repository, hosted on platforms like GitHub or Azure Repos.</li>
+<li>An Azure DevOps account connected to this repository.</li>
+</ul>
+<p><strong>Automating Documentation with Azure Pipelines:</strong></p>
+<p><strong>Step 1: Set Up Your Pipeline</strong></p>
+<ul>
+<li>In Azure DevOps, select "<strong>Pipelines</strong>" from the project menu and click "New Pipeline".</li>
+<li>Pick your code repository's platform and the repository itself.</li>
+<li>Choose the <strong>main branch</strong> as the source for your docs.</li>
+<li>Tailor your pipeline settings— pick the right agent and decide when this pipeline should run.</li>
+</ul>
+<p><strong>Step 2: Build the Code</strong></p>
+<ul>
+<li>Insert a <strong>build task</strong> into your pipeline to compile your code. E.g., NET Core, Node.js, Python, etc.</li>
+<li>Fine-tune this task to match your project —this might mean different commands or scripts, depending on what you're building.</li>
+<li>Confirm a successful build before moving on.</li>
+</ul>
+<p><strong>Step 3: Generate the Documentation</strong></p>
+<ul>
+<li>Post-build, select a tool like <strong>DocFX, tailored for .NET projects</strong>, to parse your Git history into documentation.</li>
+<li>Add a new task in your pipeline for DocFX</li>
+<li>Set this up with the correct paths and configurations, and let it craft your docs.</li>
+</ul>
+<pre><code>- task: DotNetCoreCLI@2 
+  inputs:
+    command: 'build' 
+    projects: '**/*‚csproj' 
+    arguments: '--configuration Release'
+</code></pre>
+<p><strong>Step 4: Publish Your Work</strong></p>
+<ul>
+<li>Once your documentation is ready, pick a spot to publish it. This could be Azure Blob Storage, an FTP server, or Azure Pipelines' own artifact storage.</li>
+<li>Add a publishing task to the pipeline and configure it with the necessary details.</li>
+<li>Deploy this task and see your documentation go live.</li>
+</ul>
+<p><strong>Step 5: Make It Automatic</strong></p>
+<ul>
+<li>To really put your feet up, configure triggers in Azure Pipelines to run your documentation job on autopilot.</li>
+<li>You can set these to activate on new commits, merges, or even on a schedule.</li>
+<li>Once set, your documentation updates as your code does— no extra input needed.</li>
+</ul>
+<h3 id="what-are-webhooks">What are Webhooks?</h3>
+<p><strong>How Webhooks Work</strong></p>
+<p><strong>Event Occurs</strong>: A specific event triggers the webhook.</p>
+<p>This event could be an <strong>update, a deletion, or some activity like a user action or system event</strong>.</p>
+<p><strong>HTTP Request:</strong> The source site makes an <strong>HTTP request</strong> to the webhook's URL. This request can be a<strong> POST (most common), GET, or any other HTTP method, depending on what was configured.</strong></p>
+<p><strong>Action Taken:</strong> The server that receives the webhook does something with the information,<strong> like updating a database, notifying users, or initiating other workflows.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_17.png" title="Body image" /></p>
+<h4 id="common-uses-of-webhooks">Common Uses of Webhooks</h4>
+<p><strong>Automating Workflows:</strong> Webhooks can automatically update a testing server, deploy applications, or update a backup.</p>
+<p><strong>Notifications</strong>: They can <strong>notify</strong> other systems or services in real-time when events happen.</p>
+<p>For example, if someone posts a comment on a blog, a webhook could automatically tweet the comment or send an email.</p>
+<p><strong>Integrations:</strong> Many services offer webhooks to integrate with other services without requiring a custom interface.</p>
+<p>For example, PayPal uses webhooks to notify your accounting software when you receive a payment.</p>
+<p><strong>Advantages of Webhooks</strong></p>
+<p><strong>Efficiency:</strong> Webhooks offer a more efficient method for receiving data than continually polling a service for updates. They push data as it becomes available, minimizing latency and reducing the amount of bandwidth used.</p>
+<p><strong>Real-Time Processing:</strong> Webhooks can facilitate real-time data processing by triggering a reaction immediately after the event</p>
+<h4 id="configure-notifications-with-webhooks">Configure notifications with Webhooks</h4>
+<p>Webhooks in <strong>Azure DevOps trigger HTTP notifications to a URL for events like code updates or build completions, facilitating integration with other systems.</strong></p>
+<p><strong>Select the Event:</strong></p>
+<ul>
+<li>Navigate to the 'Project Settings' and then to the 'Notifications' tab.</li>
+<li>Identify the event you want to</li>
+</ul>
+<p><strong>New Subscription:</strong></p>
+<ul>
+<li>Click on 'New subscription' to create a new webhook.</li>
+<li>Select the specific event you want, such as 'Build completes.'</li>
+</ul>
+<p><strong>Configure Action:</strong></p>
+<p>Define the action that should happen when the event occurs. This typically involves sending a notification to an external service.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_18.png" title="Body image" /></p>
+<p><strong>Customize Your Webhook:</strong></p>
+<p>You can customize what information you send along with the webhook. Azure DevOps allows you to send specific data related to the event.</p>
+<p><strong>Authentication (if needed):</strong></p>
+<p>If your endpoint requires authentication, you will need to configure the appropriate headers or payload with authentication tokens or keys.</p>
+<p><strong>Test the Subscription:</strong></p>
+<p>Once configured, it's crucial to <strong>test the webhook</strong> to ensure it works as expected. Azure DevOps typically allows you to test it through the interface.</p>
+<p><strong>Monitor and Adjust:</strong></p>
+<p>After setting up, monitor the notifications and ensure they're firing correctly. You might need to troubleshoot or adjust settings if you're not receiving the notifications as expected.</p>
+<h2 id="version-control-systems-vcs">Version Control Systems (VCS)</h2>
+<p>Version Control Systems (VCS) are <strong>designed to track changes or revisions to code</strong>.</p>
+<p>The most popular VCS is Git.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_19.png" title="Body image" /></p>
+<p>DVCS (and git specifically) became <strong>very popular for many reasons</strong>:</p>
+<ul>
+<li>• Full local history and complete a copy of the repo locally</li>
+<li>• Straightforward and efficient branching and merging</li>
+<li>• Better performance, Improved fault tolerance, flexible workflows, work fully offline</li>
+</ul>
+<blockquote>
+<p>Version Control normally represents revisions being represented as graph like structure. So you'll here terms like tree, trunk and branches</p>
+</blockquote>
+<h4 id="git">Git</h4>
+<p>Git is a distributed version control systems (DVS) created by Linus Torald </p>
+<p>Each change of your code (git commit) can be captured and tracked throughout the history of your project (git tree)</p>
+<h4 id="common-git-terms">Common Git Terms</h4>
+<ul>
+<li>Repository: Represents the logical container holding the codebase</li>
+<li>Commit: Represents a change of data in the local repository.</li>
+<li>Tree: Represent the entire history of a repo</li>
+<li>Remote: A version of your project hosted elsewhere, used for exchanging commits.</li>
+<li>Branches: Divergent paths of development, allowing isolated changes.<ul>
+<li>Main (formally known as master) the most common name for the default branch</li>
+</ul>
+</li>
+<li>Clone: Creates a complete local copy of a repository, including its history.</li>
+<li>Checkout: Switches between different branches or commits in your repo.</li>
+<li>Pull: Downloads changes from a remote repository and merges them into your branch.</li>
+<li>Push: Uploads your local repository changes to a remote repository.</li>
+<li>Fetch: Downloads data from a remote repo without integrating it into your work.</li>
+<li>Reset: Undoes local changes, with options to unstage or revert commits.</li>
+<li>Merge: Combines multiple commit histories into one.</li>
+<li>Staging files: Prepares and organizes changes for a commit.<ul>
+<li>Commit: Saves your changes as a snapshot in the local repository.</li>
+</ul>
+</li>
+<li>Add: Adds changes to the staging area for the next commit.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_20.png" title="Body image" /></p>
+<h4 id="version-control-services-vcs">Version Control Services (VCS)</h4>
+<p><strong>Version Control Services (VCS) are fully managed cloud services that hosts your version controlled repositories.</strong></p>
+<ul>
+<li>These services often have additional functionality going beyond just being a remote host for you repos.</li>
+<li>Git is the most popular and often the only choice for VCS. Often we call these services <strong>"git providers"</strong></li>
+</ul>
+<p><strong>Github</strong></p>
+<p>Owned by Microsoft. The most popular VCS offering due to ease of use and being around the longest. Github is primarly where open-source projects are hosted and offer rich functionality such as Issues Tracking, Automation pipelines and a host of other features.</p>
+<p><strong>GitLab</strong></p>
+<p>GitLab was an emerging competitor to Github and at the time had unique features such as a CI/CD pipeline and improve security measures.</p>
+<p><strong>BitBucket</strong></p>
+<ul>
+<li>Owned by Atlassian. Originally hosted Mercurial, later adding Git and then sunsetting Mercurial.</li>
+<li>Tight integration with Atlassian's industry standard agile project management software JIRA.</li>
+<li>Larger organizations commonly use BitBucket because of JIRA adoption.</li>
+</ul>
+<p><strong>SourceForge</strong></p>
+<p>One of the oldest places to host your source code and was the first to free of charge to open-source projects</p>
+<h4 id="git-vs-github">Git vs Github</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Git</th>
+<th style="text-align: center;">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Nature</td>
+<td style="text-align: center;">Distributed Version control system (DVCS)</td>
+<td style="text-align: center;">Version Control as a Service (VCaaS)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Functionality</td>
+<td style="text-align: center;">Manages source code history</td>
+<td style="text-align: center;">Provides cloud storage for Git repositories</td>
+</tr>
+<tr>
+<td style="text-align: left;">Access</td>
+<td style="text-align: center;">Local system installation</td>
+<td style="text-align: center;">Accessed via web interface</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scope</td>
+<td style="text-align: center;">Local repository management</td>
+<td style="text-align: center;">Online collaboration and repository hosting</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collaboration</td>
+<td style="text-align: center;">Local changes, requires manual sharing</td>
+<td style="text-align: center;">Integrated tools for collaboration (issues, PRs)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Usage</td>
+<td style="text-align: center;">Command-line interface</td>
+<td style="text-align: center;">Graphical interface and additional features</td>
+</tr>
+</tbody>
+</table>
+<h4 id="github-repo">Github Repo</h4>
+<p><strong>A Github Repo is your git repo that you push upstream to GitHub</strong></p>
+<p>GitHub allows you access and manage your git repo with several functionality</p>
+<p>From your Github repo page you can:</p>
+<ul>
+<li>• View different branches</li>
+<li>• View tags</li>
+<li>• View commit history</li>
+<li>• Explore repo's files</li>
+<li>• View releases</li>
+<li>• See codebase language breakdown</li>
+<li>• View the top level markdown files<ul>
+<li>• Readme.md</li>
+<li>• Licence.md</li>
+</ul>
+</li>
+</ul>
+<p>You can perform actions such as:</p>
+<ul>
+<li>• Pinning</li>
+<li>• Watching</li>
+<li>• Forking</li>
+<li>• Starring</li>
+<li>• Cloning (downloading)</li>
+</ul>
+<h4 id="git-commit">Git commit</h4>
+<p>A Git Commit represent incremental changes to a codebase represented with a git tree (graph) at a specific time.</p>
+<p>A git commit contains:</p>
+<ul>
+<li>• Additions, modifications and deletions of files</li>
+<li>• Additions and deletions of file contents.</li>
+<li><strong>Not the whole files</strong> themselves.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_21.png" title="Body image" /></p>
+<p><strong>Each Commit has a SHA hash that acts as an ID : Eg. 661a91ad3b66926c4591f9d3c73c087906945f3b</strong></p>
+<p>You can use this Commit SHA to checkout specific commits.</p>
+<blockquote>
+<p>Git does not store the whole files in each commit but rather the state of changes.
+This greatly reduces the file size. To the developer the files will appear whole</p>
+</blockquote>
+<p>Components of Git Commit:</p>
+<ul>
+<li><strong>Commit Hash</strong>: A unique SHA-1 hash identifier for the commit.</li>
+<li><strong>Author Information</strong>: The name and email of the person who made the commit.</li>
+<li><strong>Commit Message</strong>: A description of what changes the commit contains.</li>
+<li><strong>Timestamp</strong>: The date and time when the commit was made.</li>
+<li><strong>Parent Commit Hash(es)</strong>: The SHA-1 hash of the commit(s) this commit is based on.</li>
+<li><strong>Snapshot of Content</strong>: A snapshot of the project at the time of the commit (not the actual files, but references to them).</li>
+</ul>
+<p>Commit messages are often written in a tool as its more convenient to quickly add, remote files, audit changes</p>
+<p>VS Code has that ability via the Source Control window</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_22.png" title="Body image" /></p>
+<p>Common Git Commands you should know:</p>
+<p>You need add or remove files to be stage changes</p>
+<pre><code># Files to be staged
+git add my-file
+git add . # add all files
+git rm my-other file # remove a specific file
+
+# Commits staged changes with a message
+git commit -m &quot;Commit message&quot;
+
+# Automatically stages all tracked, modified files before the commit
+git commit -a -m &quot;Commit message&quot;
+
+# Modifies the most recent commit 
+git commit --amend
+
+# Creates an empty commit, useful as a placeholder 
+git commit -m &quot;Initial commit&quot; --allow-empty
+
+# Commits with a specified author.
+git commit -m &quot;Message&quot; --author=&quot;Author Name &lt;email@example.com&gt;&quot;
+
+# checkout to a specific commit based on SHA hash
+git checkout 661a91ad3b66926c4591f9d3c73c087906945{3b.
+</code></pre>
+<h4 id="git-branch">Git Branch</h4>
+<p><strong>A git branch is a divergence of the state of the repo.</strong></p>
+<p>You can think of branches as being copies of a point in time that have been modified to be different.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_23.png" title="Body image" /></p>
+<blockquote>
+<p>This type of workflow is is very close to GitHub Flow</p>
+</blockquote>
+<p>You can have branches for:</p>
+<blockquote>
+<p>Specific environments: eg. Staging, development, production</p>
+<p>Specific to developers: eg. andrew, bayko, cindy</p>
+<p>branches per feature: eg. payment-gateway-feature</p>
+<p>Branches per bug eg. hotfix-blank-hoempage</p>
+</blockquote>
+<p>Common git branch commands you should know</p>
+<pre><code>#Lists all local branches git branch
+#Creates a new branch git branch [branch-name]
+
+# Checkout (switch to) a branch
+git checkout [branch-name]
+
+# Create and checkout a branch
+git checkout -b [branch name]
+
+# Deletes a branch 
+git branch -d [branch-name]:
+
+# Renames a branch
+git branch -m [old-name] [new-name]
+
+# Lists both remote and local branches
+git branch
+</code></pre>
+<p>A common workflow for developers is to create a branch or a feature, and they need to push their branch upstream to the remote name origin.</p>
+<pre><code>git checkout -b my-new-branch
+
+# ... makes changes to files
+git add
+git commit -m &quot;my changes&quot;
+git push -u origin my-new-branch
+</code></pre>
+<h4 id="git-remote">Git Remote</h4>
+<p>A git remote represents <strong>the reference to remote location</strong> where a copy of the repository is hosted.</p>
+<p>You can have multiple remote entries for your git repo.</p>
+<ul>
+<li>"origin" as a remote name almost always seen for a repo.</li>
+<li>It indicates the central or golden repo everyone is working from and represents the source of truth.</li>
+</ul>
+<p><strong>The remote entries are stored in <code>.git/config</code></strong></p>
+<pre><code>[remote &quot;origin&quot;]
+    url = https://github.com/examproco/exampro.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch &quot;production&quot;]
+    remote = origin
+    merge = refs/heads/production
+[branch &quot;main&quot;]
+    remote = origin
+    merge = refs/heads/main
+</code></pre>
+<p>Notice remote names can be <strong>referenced</strong></p>
+<pre><code># Lists all remote repositories along with their URLs.
+git remote -v
+git remote add [name] [URL]
+git remote remove [name]
+git remote rename [old-name] [new-name]
+
+#Pushes a branch and its commits to the specific remote. 
+git push [remote-name] [branch]
+
+# Pulls updates from a remote branch. 
+git pull [remote-namel [branch]
+
+# Fetch updates without pulling.
+git fetch [remote-name]
+</code></pre>
+<h4 id="git-remote-upstream-and-downstream">Git Remote - Upstream and Downstream</h4>
+<p><img alt="Alt Image Text" src="../../images/az400_1_24.png" title="Body image" /></p>
+<h4 id="github-flow">GitHub Flow</h4>
+<p><strong>GitHub Flow is a light-weight workflow</strong> for multiple developers working on a single repository</p>
+<ul>
+<li><strong>Create a Branch</strong>: For each new task or feature, create a new branch off the main branch.</li>
+<li><strong>Add Commits</strong>: Make changes and commit them to your branch.</li>
+<li><strong>Open a Pull Request</strong>: Start a discussion about your commits, reviewing code in the pull request.</li>
+<li><strong>Discuss and Review</strong>: Share your pull request with teammates for feedback.</li>
+<li><strong>Deploy</strong>: Test your changes in a production environment.</li>
+<li><strong>Merge</strong>: Once your changes are verified, merge them into the main branch.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_25.png" title="Body image" /></p>
+<h4 id="githuo-cli">GitHuo CLI</h4>
+<p><strong>The GitHub CLI is a command line interface to interact with your GitHub Account</strong>.</p>
+<p>You can quickly perform common GitHub actions without leaving you developer environment</p>
+<pre><code>gh auth login
+gh repo create github-examples --public
+gh issue create --title &quot;Issue title&quot; --body &quot;Issue body&quot; 
+gh pr review --comment -b &quot;interesting&quot;
+</code></pre>
+<p>The GitHub CLI can be installed on Windows, Linux, and macOS</p>
+<pre><code>brew install gh
+</code></pre>
+<p>You can quickly install the CLI for GitHub Codespaces via Features:</p>
+<pre><code>&quot;features&quot;: {
+    &quot;ghcr.io/devcontainers/features/github-cli:1&quot;: {}
+]
+</code></pre>
+<p><strong>Core commands</strong></p>
+<p>gh auth / gh browse / gh codespace / gh gist / gh issue / gh org / gh pr / gh project / gh release / gh repo</p>
+<p><strong>GitHub Actions commands</strong></p>
+<p>gh alias / gh api / gh completion / gh config / gh extension / gh gpg-key / gh label / gh ruleset / gh search / gh secret / gh ssh-key / gh status / gh variable</p>
+<p><strong>Additional commands</strong></p>
+<p>gh cache / gh run / gh workflow</p>
+<h4 id="basic-repo-navigation">Basic Repo Navigation</h4>
+<p>Within a Github repo you'll have a <strong>navigation bar</strong> to the various feature of your GitHub repo:</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_26.png" title="Body image" /></p>
+<ul>
+<li>• <strong>Code</strong>: The main tab where the repository's source code, files, and folders are located.</li>
+<li>• <strong>Issues</strong>: Tracks problems or ideas for the project, allowing collaboration and discussion.</li>
+<li>• <strong>Pull Requests</strong>: Used for managing contributions from other users, enabling code review and discussion before merging changes.</li>
+<li>• <strong>Actions</strong>: Manages continuous integration and continuous deployment (CI/CD) workflows.</li>
+<li>• <strong>Projects</strong>: A board for organizing and prioritizing work, similar to kanban or task management boards.</li>
+<li>• <strong>Wiki</strong>: A space for the project's documentation.</li>
+<li>• <strong>Security</strong>: Features security-related resources, including security policies and vulnerability reports.</li>
+<li>• <strong>Insights</strong>: Provides statistics and insights on the project's activity and contributions.</li>
+</ul>
+<p>When you create a repo you choose a owner:</p>
+<ul>
+<li>Personal account</li>
+<li>An organization that you belong to</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_27.png" title="Body image" /></p>
+<ul>
+<li>You need to choose an available github repo name</li>
+<li>Names are unique based on the scope of the owner</li>
+</ul>
+<p><strong>You repo can either be public or private</strong></p>
+<p>You can quickly add a:</p>
+<ul>
+<li>Readme file</li>
+<li>gitignore file</li>
+<li>License file</li>
+</ul>
+<p>Github CLI can be used to create a GitHub repo</p>
+<pre><code>gh repo create my-project --public --clone
+</code></pre>
+<h4 id="maintaining-a-repo">Maintaining a repo</h4>
+<p>You can <strong>change your repo name</strong>, (but try not to because it can break external links and documentation pointing to a public repo)</p>
+<ul>
+<li>You can change the base branch (default branch).</li>
+<li>You can rename the default branch.</li>
+<li>"main" is the unspoken best practice for naming your base branch</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_28.png" title="Body image" /></p>
+<ul>
+<li>You can <strong>opt-in-and-out of some features for your Github Repo</strong></li>
+<li>Features will appear in the Github repo navigation bar</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_29.png" title="Body image" /></p>
+<p>The Danger Zone contains actions you need to think twice about because they cannot be undone.</p>
+<p>Change repo visibility</p>
+<p>When you make a private repo private</p>
+<ul>
+<li>The code will be visible to everyone who can visit https://github.com</li>
+<li>Anyone can fork your repository.</li>
+<li>All push rulesets will be disabled.</li>
+<li>Your changes will be published as activity.</li>
+</ul>
+<p><strong>Disable Branch Protection Rules</strong></p>
+<ul>
+<li>Branch protect rules are strict workflow rules like disallowing anyone pushing to main.</li>
+<li>You can disable all protections temporarily eg. For quick fixes</li>
+</ul>
+<p><strong>Transfer ownership</strong></p>
+<p>When you want someone else to be the owner of the repo.</p>
+<p><strong>Archive this repository</strong></p>
+<p>When the repo to be read-only.</p>
+<p><strong>Delete this repository</strong></p>
+<ul>
+<li>When you want to delete your repo.</li>
+<li>Once its gone its gone, there is not trash bin you can pull it out of.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_30.png" title="Body image" /></p>
+<h4 id="repo-templates">Repo Templates</h4>
+<p><strong>Github Repo Templates</strong> is a feature for public repos that <strong>allow other GitHub users to make a copy of the contents of the template repo</strong> to use as starting point of their own repo.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_31.png" title="Body image" /></p>
+<blockquote>
+<p>Templates are different from cloning because it's a clean repo with no previous history.</p>
+</blockquote>
+<h4 id="cloning-a-repo">Cloning a repo</h4>
+<p>You can clone a repo programmatically three different ways:</p>
+<p><strong>1.HTTPS</strong></p>
+<p>git clone https://github.com/omenking/terraform-beginner-bootcamp-2023.git</p>
+<p><strong>2.SSH</strong></p>
+<p>git clone git@github.com: omenking/terraform-beginner-bootcamp-2023.git</p>
+<blockquote>
+<p>Authorization is based on SSH keypair</p>
+<p>you have to upload the Public key to your GitHub account</p>
+</blockquote>
+<p><strong>3.Github CLI</strong></p>
+<p>gh repo clone omenking/terraform-beginner-bootcamp-2023</p>
+<blockquote>
+<p>Authorization is based on the credentials when did a gh login</p>
+</blockquote>
+<p>You can also:</p>
+<ul>
+<li>Open in GitHub Desktop which will perform the clone for you</li>
+<li>Download a ZIP containing the contents of the repo</li>
+</ul>
+<h4 id="creating-branches">Creating branches</h4>
+<p>Using git we can create a new branch from an existing branch.</p>
+<p>We then want to push upstream our branch to GitHub</p>
+<pre><code>git checkout -b staging
+# change files, create commits
+git push -u origin staging
+</code></pre>
+<ul>
+<li>
+<p>is the short hand flag for <code>-set-upstream</code>.</p>
+</li>
+<li>
+<p>Branches can be created from Issues.</p>
+</li>
+<li>
+<p>The branch and issues will be associated/link</p>
+</li>
+<li>
+<p>Branches can be directly created within GitHub Ul.</p>
+</li>
+<li>
+<p>Branches can be created in GitHub Desktop</p>
+</li>
+</ul>
+<h4 id="github-releases">GitHub Releases</h4>
+<p>GitHub Releases allows you to create releases with release notes and linked assets such as zip source or binaries for specific platforms</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_32.png" title="Body image" /></p>
+<h4 id="github-packages">GitHub Packages</h4>
+<p>GitHub Packages is a platform for <strong>hosting and managing packages, including containers and other dependencies.</strong></p>
+<p>Pushing Docker container to GitHub Packages</p>
+<p><strong>Supported package registry:</strong></p>
+<ul>
+<li>Javascript (npm package)</li>
+<li>Ruby (gems)</li>
+<li>Java (maven and gradle packages)</li>
+<li>Net (don't net packages)</li>
+<li>Docker images</li>
+</ul>
+<pre><code>GH_USERNAME=&quot; andrew-wc-brown&quot;
+IMAGE NAME=&quot;hello-world&quot;
+VER=&quot;1.0.0&quot;
+
+# Sign-in to docker
+echo $GH_TOKEN | docker login ghcr.io -u $GH_USERNAME --password-stdin
+
+# Tag docker container
+docker tag $IMAGE_NAME: $VER ghcr.io/$GH_USERNAME/$IMAGE_NAME:$VER
+
+# Push to Docker Packages
+docker push ghcr.io/$GH_USERNAME/$IMAGE_NAME:$VER
+</code></pre>
+<p><strong>GitHub Actions could be used to build and then public packages to GitHub Packages</strong></p>
+<pre><code>FROM alpine:latest
+CMD echo &quot;Hello World!&quot;
+</code></pre>
+<pre><code>docker build -t hello-world . 
+docker run hello-world
+</code></pre>
+<h4 id="pull-requests">Pull Requests</h4>
+<p><strong>A Pull Request (PR) is a formal process to put forth changes</strong>, that can be manually or automatically reviewed before its accepted into your base (main) branch</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_33.png" title="Body image" /></p>
+<p><strong>Benefits of a Pull Request</strong></p>
+<ul>
+<li><strong>Collaborative Review</strong>: Enhances code quality through team discussions and peer feedback.</li>
+<li><strong>Change Tracking</strong>: Provides a record of code changes and related discussions.</li>
+<li><strong>Automated Testing</strong>: Enables integration with tools for automated checks and tests.</li>
+<li><strong>Controlled Integration</strong>: Manages safe and reviewed merging of code changes.</li>
+<li><strong>Open Source Friendly</strong>: Simplifies contributions and collaboration in open-source projects.</li>
+</ul>
+<blockquote>
+<p>A pull request is not a feature of git, but a workflow. Services like GitHub can automate the Pull Request workflow</p>
+</blockquote>
+<h4 id="creating-pull-requests">Creating Pull Requests</h4>
+<p>We set the:</p>
+<ul>
+<li>Base - who we are going to merge into</li>
+<li>Head - the changes to pull in</li>
+</ul>
+<p>We can use the Github CLI to create a pull request from a branch.</p>
+<pre><code>git checkout -b cool-feature-branch 
+git commit -am &quot;Your commit message&quot; 
+git push -u origin cool-feature-branch
+gh pr create --base main --head cool-feature-branch
+</code></pre>
+<p><strong>In the GitHub repo we navigation to Pull Requests</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_35.png" title="Body image" /></p>
+<h4 id="pull-requests-base-and-compare">Pull Requests - Base and Compare</h4>
+<p>Base and Compare determines the direction of the merge for a pull request</p>
+<p><strong>Base is who you want to merge into</strong></p>
+<p>This is usually main branch or an environment specific branch</p>
+<p><strong>Compare is what will be merged into Base</strong></p>
+<ul>
+<li>Compare is choosing a Head ref</li>
+<li>This usually a bug or feature branch</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_34.png" title="Body image" /></p>
+<p>You can also compare across forks this is how a fork stays up to date, or how forks can suggest you to accept their changes.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_36.png" title="Body image" /></p>
+<h4 id="draft-pull-requests">Draft Pull Requests</h4>
+<p>A Draft Pull Request on GitHub is a feature that allows you to open a pull request but mark it as a work-in-progress (WIP).</p>
+<p>Use case for Draft Pull Requests</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_37.png" title="Body image" /></p>
+<blockquote>
+<p>Draft Pull Requests is a feature only for Github Organizations Teams</p>
+</blockquote>
+<p>Use case for Draft Pull Requests</p>
+<ul>
+<li><strong>Indicating Work-in-Progress:</strong> Communicates that the pull request is not ready for review or merging.</li>
+<li><strong>Preventing Premature Merging</strong>: Ensures incomplete work is not accidentally merged.</li>
+<li><strong>Facilitating Early Feedback and Collaboration:</strong> Allows for early sharing and discussion of code changes.</li>
+<li><strong>Continuous Integration Testing</strong>: Enables Cl tests during the development process.</li>
+<li><strong>Transitioning to a Ready State</strong>: Easy switch from draft to ready for final review and merging.</li>
+<li><strong>Organizing Work and Priorities</strong>: Helps in managing and tracking ongoing work in large projects.</li>
+</ul>
+<h4 id="linked-activity-within-a-pull-request">Linked Activity within a Pull Request</h4>
+<p>Supported Keywords</p>
+<p><strong>close closes closed fix fixes fixed resolve resolves resolved</strong></p>
+<blockquote>
+<p>The pull request must be on the default branch.</p>
+</blockquote>
+<h4 id="pull-request-statuses">Pull Request Statuses</h4>
+<p><strong>Open</strong></p>
+<p>The default status when a pull request is created. It's open for discussion and review.</p>
+<p><strong>Draft</strong></p>
+<p>Indicates the pull request is a work-in-progress and not yet ready for review.</p>
+<p><strong>Closed</strong></p>
+<p>The pull request has been closed without being merged. This status is used when the proposed changes are no longer needed or if the branch has been rejected.</p>
+<p><strong>Merged</strong></p>
+<ul>
+<li>The pull request's changes have been merged into the target branch.</li>
+<li>This status indicates a successful conclusion of the pull request process.</li>
+</ul>
+<p><strong>Changes Requested</strong></p>
+<p>This status is used during the review process when a reviewer requests changes before the pull request can be merged.</p>
+<p><strong>Review Required</strong></p>
+<ul>
+<li>Indicates that the pull request requires a review before it can be merged.</li>
+<li>This status is common in repositories where reviews are a mandatory part of the workflow.</li>
+</ul>
+<p><strong>Approved</strong></p>
+<p>The pull request has been reviewed and approved for merging by the required number of reviewed</p>
+<p><strong>Conflict</strong></p>
+<p>Indicates that there are conflicts between the pull request's branch and the target branch that ne to be resolved before merging.</p>
+<p><strong>Ready for Review</strong></p>
+<p>A pull request initially marked as draft can be changed to this status once it's ready for review.</p>
+<h4 id="codereviews-with-codeowners-file">Codereviews with CODEOWNERS file</h4>
+<p><strong>CODEOWNERS Github repo specific file to define individuals or teams that are responsible for specific code in a repository</strong></p>
+<p>CODEOWNER files uses <strong>a similar syntax to .gitignore</strong>.</p>
+<p>When a pull request is opened that modifies any files matching a pattern in the CODEOWNERS file, GitHub a<strong>utomatically requests a review from the specified code owners</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_38.png" title="Body image" /></p>
+<blockquote>
+<p>The codeowner files goes in either the project root, github or docs directory.</p>
+</blockquote>
+<h4 id="required-reviewers">Required Reviewers</h4>
+<p><img alt="Alt Image Text" src="../../images/az400_1_39.png" title="Body image" /></p>
+<h4 id="pull-request-templates">Pull Request Templates</h4>
+<p>Pull Request Templates are similar to Issue Templates</p>
+<p>They will populate the pull request textarea with the specified template</p>
+<p>You create a a file in the</p>
+<p><strong><code>.github/pull_request_template.md</code></strong></p>
+<p>Technically you can create multiple Pull Request Templates in a folder called <code>.github/PULL_REQUEST_TEMPLATE</code></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_40.png" title="Body image" /></p>
+<blockquote>
+<p>GitHub kind-of supports multiple Pull Requests Templates but you have to assemble your own URL with a querystrings, so its not as convenient to use as multiple Issue templates.</p>
+</blockquote>
+<h3 id="source-control-strategy-authentication-methods">Source-Control-Strategy Authentication methods</h3>
+<h4 id="authentication-and-credential-strategies">Authentication and credential strategies</h4>
+<p><strong>Credentials are specific to a user's identity.</strong></p>
+<p>For example, their individual <strong>username and password, PIN, or biometric information.</strong></p>
+<p>Every user, including IT administrators, teachers, staff persons, and students has credentials.</p>
+<p><strong>An authentication method is the way a user proves their identity to a system.</strong></p>
+<p>For example, a user inputs their credentials in a sign-in screen or via the <strong>Microsoft Authenticator app in which they have set up their account</strong>.</p>
+<p>Authentication methods can also be broken down into categories, or types, such as:</p>
+<ul>
+<li>Sign-in authentication</li>
+<li>Password reset authentication</li>
+<li>Multi-factor authentication</li>
+</ul>
+<h4 id="authentication-and-credential-strategies_1">Authentication and credential strategies</h4>
+<p><strong>Authentication Types</strong></p>
+<p>Authentication methods vary widely, from traditional to advanced:</p>
+<p>Common Types:</p>
+<ul>
+<li>Passwords and PINs: Common but can be risky for security.</li>
+<li>Picture Passwords and Pattern Locks: Offer memorability and simplicity.</li>
+</ul>
+<p><strong>Biometric Authentication:</strong></p>
+<ul>
+<li>Facial, Fingerprint, Retinal: Provide secure, unique user identification.</li>
+</ul>
+<p><strong>Passwordless Authentication</strong></p>
+<p>Emphasizes security and convenience by eliminating traditional passwords, removing the hassle of memorization and mitigating threats like phishing.</p>
+<p>Microsoft's Methods:</p>
+<ul>
+<li><strong>Windows Hello for Business</strong>: Uses biometrics/PIN for secure sign-ins and SSO.</li>
+<li><strong>Microsoft Authenticator App</strong>: Enables phone verification with notifications and biometrics/PIN.</li>
+<li><strong>FIDO2 Security Key</strong>: Allows password-free logins with external/internal keys.</li>
+</ul>
+<h4 id="password-reset-authentication">Password Reset Authentication</h4>
+<p><strong>Self-Service Password Reset (SSPR) with Microsoft Entra ID</strong> lets users <strong>change their own passwords</strong> without help desk assistance, cutting down on support costs and improving security and efficiency.</p>
+<p>Key Features:</p>
+<ul>
+<li><strong>Self-Service:</strong> Users can change or reset their passwords without administrator or help desk assistance.</li>
+<li><strong>Security Enhancement</strong>: SSPR improves organizational security by allowing users to promptly address account lockouts or compromises.</li>
+</ul>
+<p><strong>Compliance with Password Policies:</strong></p>
+<p>SSPR enforces Microsoft Entra password policies regarding complexity, length, expiration, and character use, ensuring standardized security measures across the board.</p>
+<h4 id="authentication-and-credential-strategies_2">Authentication and credential strategies</h4>
+<p><strong>Multi-factor Authentication (MFA)</strong></p>
+<p>MFA is a security measure that requires <strong>more than one piece of evidence to confirm your identity</strong> when logging into an account, like a code from your <strong>phone</strong> in addition to your password.</p>
+<p><strong>MFA Methods:</strong></p>
+<ul>
+<li><strong>SMS Text Message</strong>: A code sent to the user's phone.</li>
+<li><strong>Phone Voice Call</strong>: Answering a call to confirm identity.</li>
+<li><strong>Microsoft Authenticator App</strong>: A code or biometric verification through the app.</li>
+<li><strong>OAUTH Hardware Token</strong>: Using a physical token for authentication.</li>
+</ul>
+<h5 id="set-up-auth-for-external-services"><strong>Set Up Auth for External Services</strong></h5>
+<ul>
+<li>Outh is a protocol for authorization that lets users give third-party services like GitHub or Jenkins permission to use their information without sharing their login details.</li>
+<li>It ensures secure connections, making authentication and permissions straightforward.</li>
+</ul>
+<h5 id="use-personal-access-tokens"><strong>Use Personal Access Tokens</strong></h5>
+<p><strong>Personal Access Tokens (PATs)</strong> provide a way for users to <strong>create special tokens to access DevOps tools</strong>. They're especially handy for command-line interactions or scripts needing direct access to these services.</p>
+<h5 id="apply-role-based-access-control">Apply Role-Based Access Control</h5>
+<p><strong>Role-Based Access Control (RBAC)</strong> sets up detailed <strong>access rules based on users' roles and what they're allowed to do</strong>. It makes sure people have just the right access they need for their work, keeping sensitive information secure.</p>
+<h4 id="git-lfs">Git LFS</h4>
+<ul>
+<li><strong>Git LFS (Large File Storage) is an open-source extension for Git that helps handle large files more efficiently.</strong></li>
+<li>It does this by using small text pointers in your Git repository to represent the large files, while keeping the real file content stored elsewhere. This method keeps your repository from getting too large and slowing down.</li>
+</ul>
+<p><strong>Install Git LFS</strong></p>
+<ul>
+<li>Install: Go to the Git LFS website, download, and install it.</li>
+<li>Configure: Use the command <strong><code>git Ifs install</code></strong> to set up Git LFS on your</li>
+</ul>
+<p><strong>Setting Up Git LFS in Your Repository</strong></p>
+<ul>
+<li>Track Large Files: Decide which file types to manage as large files. E.g., <strong>Use git Ifs track "*.mp4" for MP4 files</strong></li>
+<li>Add Attributes File: <strong>Add the .gitattributes file to your repo with <code>git add .gitattributes</code></strong></li>
+</ul>
+<p><strong>Commit and Push: Save the changes with <code>git commit -m "Configure Git LFS”`` and update the remote repository using</code>git push`.</strong></p>
+<p>Managing Large Files</p>
+<p><strong>Add Files: Run <code>git add. or git add ‹filename&gt;</code> to stage large files.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_41.png" title="Body image" /></p>
+<p>Commit and Push: Use <code>git commit -m "Add large file”`` and</code>git push` to commit and send files to the repo</p>
+<h4 id="git-fat">Git-fat</h4>
+<p><strong>git-fat</strong> is another tool for managing large files in Git repositories. It's a Python script that keeps large files separate from your Git repository, while maintaining references to those files within the repository.</p>
+<p><strong>Setting Up git-fat</strong></p>
+<ul>
+<li><strong>Install Python</strong>: Make sure Python is installed on your system.</li>
+<li><strong>Install git-fat</strong>: Install git-fat using pip with pip install</li>
+</ul>
+<p><strong>Initializing git-fat in Your Repository:</strong></p>
+<ul>
+<li>Initialize git-fat: Run <code>git-fat init</code> in the root of your repository.</li>
+<li>Track Files: Define large file types in a <code>.gitfat</code> file. For example, to track mp4 files, you might add <code>*.mp4</code> to the file.</li>
+<li><strong>Commit gitfat: Add the <code>.gitfat</code> file to your repo with <code>git add .gitfat</code> and then commit it using <code>git commit -m "Initialize git-fat and track large files”</code></strong></li>
+</ul>
+<p><strong>Managing Large Files with git-fat:</strong></p>
+<ul>
+<li>Add Large Files: Use <code>git fat add &lt; file &gt;</code> to stage large files for git-fat.</li>
+<li>Commit and Push: Commit with <code>git commit -m "Add large file”`` and upload with</code>git push`</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_42.png" title="Body image" /></p>
+<h4 id="git-scalar">Git Scalar</h4>
+<p>Git Scalar is an extension that helps Git efficiently manage large repositories, addressing the slowness and space issues associated with downloading a repository's entire history and files.</p>
+<p>Git Scalar solves this by <strong>allowing you to download only the files you need. It works well with Git LFS</strong></p>
+<p><strong>Configure Git Scalar for a Specific Path</strong></p>
+<ul>
+<li><strong>Install Git LFS:</strong> Install <strong>Git LFS</strong> by following the steps provided in its official documentation.</li>
+<li><strong>Scalar Initialize Git LFS in Your Repository</strong>: In your repository's directory, run <strong>git Ifs install</strong></li>
+</ul>
+<p>Create and Configure gitattributes File: In the root directory of your repository, create a <code>.gitattributes</code> file.</p>
+<p>To enable Git Scalar for files under the <code>my/large/files/directory</code>, add the following line to <code>.gitattributes: my/large/files/* filter=Ifs diff=Ifs merge=Ifs -text</code></p>
+<p>This configuration tells Git LFS to manage files in my/large/files/, using Git Scalar for efficient handling.</p>
+<p><strong>Commit and Push the .gitattributes File:</strong></p>
+<p>Commit the gitattributes file to your repository with: <code>git add gitattributes</code></p>
+<p>Then <code>git commit -m "Configure Git LFS and Git Scalar for specific</code></p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_43.png" title="Body image" /></p>
+<p>Push the changes to your remote repository: git push</p>
+<h4 id="git-submodule-add">Git submodule add</h4>
+<p><strong>Cross-Repository Sharing with Git:</strong></p>
+<p>Sharing code across different repositories is common for <strong>reusing code, modularization, or separating components of an application</strong>. Git facilitates this with the following method:</p>
+<p><strong>Submodules:</strong></p>
+<p><strong>Git submodules let you integrate a separate Git repository within another repository's directory structure.</strong></p>
+<p>It's especially handy for incorporating a particular version of an external library or for <strong>sharing common libraries across various projects.</strong></p>
+<p><strong>To add a submodule:</strong></p>
+<p><strong><code>git submodule add &lt; repository-url&gt; &lt;path&gt;  &lt;path&gt;</code></strong></p>
+<p><strong><repository-url>: The Git URL of the repository you want to add.</strong></p>
+<p><strong><path>: The directory path within your main project where the submodule will be placed.</strong></p>
+<p>Example: <code>git submodule add https://github.com/example/lib.git externals/lib</code></p>
+<p>Advantages of Submodules:</p>
+<p>Manage shared code by referencing specific commits, and keeps the main project separate from external dependencies.</p>
+<blockquote>
+<p>Using Git submodules necessitates managing updates individually and maintaining consistency across projects that share them.</p>
+</blockquote>
+<h4 id="git-subtree">Git subtree</h4>
+<p><strong>Git subtree is a tool that helps you include code from one repository into a specific folder of another repository.</strong></p>
+<p><strong>It's a simpler alternative to submodules, which is another way to incorporate external code but can be a bit complex to handle.</strong></p>
+<p>With Git subtree, you can both bring in <strong>external code and send updates back to the original code source if needed.</strong></p>
+<p>To add a subtree, you use a command that looks like this: </p>
+<p><strong><code>git subtree add --prefix=folder-name repository-url commit-or-branch</code></strong></p>
+<ul>
+<li><code>--prefix=folder-name</code> is where you specify the folder in your main project where you want to add the external code.</li>
+<li><code>repository-url</code> is the web address of the external code you're adding.</li>
+<li><code>commit-or-branch</code> is the specific version of the external code you want to use, which can be a commit ID or a branch name.</li>
+</ul>
+<blockquote>
+<p>Git subtree streamlines project workflow by integrating external code directly, ensuring it's immediately accessible upon cloning without additional steps.</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az400_1_44.png" title="Body image" /></p>
+<h2 id="workflow-hooks">Workflow Hooks</h2>
+<p><strong>Workflow hooks</strong> are essential tools in the Microsoft DevOps ecosystem, designed to <strong>automate and refine development workflows, leading to better efficiency and productivity</strong></p>
+<p>Workflow hooks act as triggers for executing actions or scripts at <strong>specific points</strong> in a DevOps workflow, crucial for maintaining <strong>code quality, automated testing, deployment, and integrating external services into the process.</strong></p>
+<p>In the context of <strong>build and release cycles</strong>, workflow hooks are particularly valuable.</p>
+<p>They enable developers to automate tasks like <strong>unit testing, documentation compilation, or deployment</strong> to testing environments with each new build or release, streamlining these processes.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_45.png" title="Body image" /></p>
+<h3 id="workflow-hooks-with-azure-devops">Workflow Hooks with Azure DevOps</h3>
+<p>Azure DevOps stands out in offering comprehensive tools and services for managing the DevOps lifecycle, including implementing workflow hooks through service hooks.</p>
+<p>These service hooks allow for connecting your <strong>DevOps pipeline</strong> with <strong>external services or initiating custom actions in response to various events, such as new build completions, work item updates, or pull requests</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_46.png" title="Body image" /></p>
+<p><strong>Other Tools and Services for Workflow Hooks</strong></p>
+<p>Besides Azure DevOps, Microsoft offers other tools and services for implementing workflow hooks, including <strong>GitHub Actions, Azure Logic Apps, and Azure Functions.</strong></p>
+<p>The key to leveraging workflow hooks effectively is to identify the crucial events and actions within your workflow and use the appropriate tools for implementation.</p>
+<h3 id="workflow-hooks-with-azure-devops_1">Workflow Hooks with Azure DevOps</h3>
+<p><strong>Create a service hook in Azure DevOps for automating actions such as notifications after a successful build</strong></p>
+<ul>
+<li><strong>Access Project Settings</strong>: Open your project in Azure DevOps and navigate to <strong>'Project Settings'</strong> at the bottom of the project sidebar.</li>
+<li><strong>Open Service Hooks:</strong> In the 'General' section, find and click on <code>'Service Hooks’</code>.</li>
+<li><strong>Create Subscription:</strong> Initiate the creation process by clicking the `'+ Create subscription’`` button.</li>
+<li><strong>Select Notification Service</strong>: Pick the service for notifications, like <strong>Microsoft Teams or Slack,</strong> and set the event trigger to <code>'Build completed’</code> </li>
+<li><strong>Set Trigger Filters:</strong> Customize the trigger filters by setting the build status to `’succeeded'``.</li>
+<li><strong>Configure Action Details:</strong> Specify the notification message and destination, such as the <strong>recipient channel in Slack or an email address</strong>.</li>
+<li><strong>Finalize and Test:</strong> Save the service hook with the 'Finish' button and conduct a test to confirm it operates after a build is successful.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_48.png" title="Body image" /></p>
+<h3 id="branch-strategy">Branch strategy</h3>
+<p><strong>Trunk-based development (TBD) employs a single, central branch known as the "trunk" or "master,"</strong> ocusing on frequent, small updates for continuous integration and stability.</p>
+<p><strong>Steps to Implement TBD:</strong></p>
+<ol>
+<li>Establish the Trunk: Define a <strong>single branch (the "trunk")</strong> as the central code path.</li>
+<li>Direct Commits: Encourage team members to commit small changes directly to the trunk frequently.</li>
+<li>Continuous Integration: Perform builds and tests on the trunk often to catch issues early.</li>
+<li>Automate Deployment: Set up automatic deployment to streamline updates.</li>
+</ol>
+<p>Here's an example of how you can create a trunk branch using Git:</p>
+<ul>
+<li>git branch trunk </li>
+<li>git checkout trunk</li>
+</ul>
+<p>Feature branches enable developers to work independently on <strong>new features or fixes,</strong> </p>
+<p><strong>keeping changes separate from the main code until they're ready to merge</strong>. This approach allows for focused development and testing of specific functionalities without disruption.</p>
+<p>Steps to Use Feature Branches:</p>
+<ol>
+<li><strong>Create Feature Branch: Initiate a new branch for each feature or fix</strong>.</li>
+<li><strong>Naming Conventions</strong>: Assign descriptive names reflecting each branch's purpose.</li>
+<li><strong>Stay Updated: Merge updates from the main branch periodically</strong>.</li>
+<li><strong>Thorough Testing</strong>: Conduct extensive tests before merging back to the main branch.</li>
+</ol>
+<p>Here's an example of how you can create and switch to a feature branch using Git: </p>
+<ul>
+<li>
+<p>git branch feature/new-feature</p>
+</li>
+<li>
+<p>git checkout feature/new-feature</p>
+</li>
+</ul>
+<p><strong>Release branches help prepare and stabilize a codebase for a new release, focusing on bug fixes and final adjustments.</strong> They are created from the main branch, enabling ongoing development while ensuring the upcoming release is thoroughly tested and polished.</p>
+<p>Steps for Managing Release Branches:</p>
+<ol>
+<li><strong>Create a Release Branch: Start a branch from the main branch for new releases.</strong></li>
+<li><strong>Focused Adjustments</strong>: Make all necessary tweaks and bug fixes on this branch.</li>
+<li><strong>Ensure Stability</strong>: Test thoroughly and maintain continuous integration.</li>
+<li><strong>Final Merge:</strong> Merge the release branch back into the main branch once ready.</li>
+</ol>
+<p>Here's an example of how you can create a release branch using Git: </p>
+<ul>
+<li>git branch release/release-1.0</li>
+<li>git checkout release/release-1.0</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az400_1_49.png" title="Body image" /></p>
+<h4 id="branch-policies">Branch policies</h4>
+<p><strong>Branch policies</strong> in Microsoft DevOps Solutions are <strong>rules that govern how code is contributed to a repository</strong>.</p>
+<p>They enforce certain <strong>conditions that must be met for pull requests to be merged</strong>, ensuring that code is reviewed, tested, and linked to relevant project tasks.</p>
+<p><strong>Key Branch Policies to Implement</strong></p>
+<p><strong>Require Approving Reviews:</strong> Mandate that each <strong>pull request receives at least one approving review</strong> from designated reviewers before it can be completed. This guarantees that all code changes are scrutinized by another developer, promoting better code quality and reducing the risk of errors.</p>
+<p><strong>Link Work Items: Ensure that every pull request is associated with a corresponding work item.</strong></p>
+<p>This linkage provides traceability and accountability, making it easier to track why changes were made and ensuring they align with the project's goals.</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_50.png" title="Body image" /></p>
+<p><strong>Build Validation</strong>: Configure this policy to require that changes in a pull request successfully <strong>pass automated builds and tests</strong>. This helps to identify any compilation issues or test failures early, preventing problematic code from reaching the production</p>
+<h4 id="branch-policies_1">Branch policies</h4>
+<p>Additional Branch Policies for Enhanced Workflow</p>
+<ul>
+<li><strong>Enforce Minimum Review Time</strong>: Ensure pull requests remain <strong>open for a set period</strong> to prevent rushed reviews and promote thorough evaluations.</li>
+<li><strong>Require Task Completion: Require the completion of specific tasks</strong>, such as addressing code comments or updating documentation, before merging.</li>
+<li><strong>Automate Code Formatting and Style Checks: Use linters or similar tools</strong> to automatically enforce coding standards and reduce manual review efforts.</li>
+</ul>
+<p><strong>Benefits of Using Branch Policies</strong></p>
+<ul>
+<li><strong>Improved Code Quality</strong>: Automated checks and mandatory reviews help <strong>minimize bugs and errors.</strong></li>
+<li><strong>Better Team Collaboration:</strong> Mandatory reviews and work item links foster collaboration and keep team goals aligned.</li>
+<li><strong>Efficient Workflow Management</strong>: Automating parts of the review process speeds up development while maintaining high quality.</li>
+</ul>
+<h4 id="branch-protection">Branch protection</h4>
+<p>Branch protections provide an additional layer of security by enforcing rules on branch manipulation, preventing accidental modifications or unauthorized changes.</p>
+<p><strong>Key Branch Protections to Implement</strong></p>
+<p><strong>Require a Minimum Number of Reviewers:</strong> Set branches to require <strong>a specific number of reviewers for all changes</strong>. This ensures multiple evaluations of the code, which facilitates collaboration and reduces the risk of defects.</p>
+<p><strong>Restrict Who Can Push to the Branch: Limit direct push access to protected branches,</strong> allowing only authorized individuals or teams to make changes. This control helps prevent unauthorized modifications and maintains code integrity.</p>
+<p><strong>Enforce Merge Checks: Specify criteria that must be met before merging a pull request.</strong></p>
+<p>These include build validation, work item linking, and branch permissions compliance, to ensure only approved changes merge.</p>
+<h4 id="branch-protection_1">Branch protection</h4>
+<p>Pull Request Workflow with Branch Policies and Protections</p>
+<p><strong>Create a Feature Branch</strong>: Developers branch off the main branch to work on new features or fixes.</p>
+<p><strong>Implement Changes and Create a Pull Request:</strong> Developers commit changes to their branch and open a pull request to merge them into the main branch.</p>
+<p><strong>Assign Reviewers and Await Feedback</strong>: Reviewers inspect the code, provide feedback, and approve. Branch policies ensure pull requests need the required approvals to proceed.</p>
+<p><strong>Address Feedback and Iterate</strong>: Developers respond to feedback, update their code, and trigger the build validation process. Reviewers reassess the updated changes.</p>
+<p><strong>Complete the Pull Request:</strong> After securing approvals and passing merge checks like work item linkage and build validation, the pull request is completed, and changes are merged.</p>
+<h2 id="azure-pipelines">Azure Pipelines</h2>
+<h3 id="azure-pipelines_1">Azure Pipelines</h3>
+<p><strong>Azure Pipelines is a cloud service that automates the Cl/CD pipeline for software development</strong>, offering support for multiple languages, platforms, and cloud environments, and integrating with a wide range of tools and services.</p>
+<ul>
+<li>Automation for CI/CD: Azure Pipelines provides a fully featured continuous integration (CI) and continuous delivery (CD) service for applications.</li>
+<li>Platform and Language Agnostic: Supports any language, platform, and cloud. Integrates with Azure, AWS, and GCP.</li>
+<li>
+<p>Extensibility: Offers integration with popular tools and services in the software development ecosystem.</p>
+</li>
+<li>
+<p>Supports Open Source and Private Projects: Available for projects hosted on GitHub and other platforms.</p>
+</li>
+<li>Rich Integration: Integrates with GitHub Checks and offers extensive reporting capabilities.</li>
+<li>Parallel Jobs and Environments: Allows running multiple jobs in parallel and deploying to multiple environments including Kubernetes, VMs, and Azure services.</li>
+</ul>
+<p><strong>Define Your Pipeline</strong></p>
+<p>YAML Syntax: Azure Pipelines uses YAML syntax to define build, test, and deployment tasks.</p>
+<p>Step-by-Step Process: The documentation guides through the process of setting up your first pipeline, including initiating builds, packaging applications, and deploying.</p>
+<p>Key Concepts</p>
+<ul>
+<li>Pipelines: A complete CI/CD pipeline defined by stages, jobs, steps, and tasks.</li>
+<li>Stages: A way to organize jobs, typically used to separate build, test, and deploy processes.</li>
+<li>Jobs and Steps: Jobs group steps, which are individual tasks like scripts or Azure Pipeline tasks.</li>
+</ul>
+<h4 id="azure-pipelines_2">Azure Pipelines</h4>
+<p><strong>Supported Languages and Frameworks</strong></p>
+<ul>
+<li><strong>Wide Language Support</strong>: Works with any language including NET, Java, JavaScript, Node.js, Python, PHP, Ruby, C/C++, and more.</li>
+<li><strong>Framework and Platform Support</strong>: Supports Windows, Linux, and macOS builds. Can deploy to various platforms including Azure, Kubernetes, VMs, and on-premises servers.</li>
+</ul>
+<p><strong>Extensibility</strong></p>
+<ul>
+<li><strong>Marketplace Extensions</strong>: A rich marketplace of extensions to extend the functionality of Azure Pipelines.</li>
+<li><strong>Custom Tasks</strong>: Developers can create custom tasks to meet unique requirements.</li>
+</ul>
+<p><strong>Pricing</strong></p>
+<p><strong>Free Tiers Available</strong>: Offers free CI/CD minutes to projects, with additional minutes available for purchase. Pricing varies based on parallel job needs and cloud providers</p>
+<p><img alt="Alt Image Text" src="../../images/az400_1_51.png" title="Body image" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
