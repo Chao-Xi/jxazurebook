@@ -1824,3 +1824,92 @@ Key Concepts
 
 
 ![Alt Image Text](../images/az400_1_51.png "Body image")
+
+### GitHub repos with Azure Pipelines
+
+Integrating GitHub repositories with Azure Pipelines can significantly **enhance the automation of build and release processes** within a DevOps workflow.
+
+#### **Step 1: Create a New Project in Azure DevOps**
+
+**Create Project: Click the "New project" button**. Provide the necessary details for your project such as name and description, and then click on the "Create" button to finalize the project creation.
+
+
+####  **Step 2: Connect Your GitHub Repository to Azure Pipelines**
+
+**Access Pipelines:** In your new Azure DevOps project, navigate to the "Pipelines" section.
+
+**Initialize Pipeline:** Click on the "New pipeline" button.
+
+**Select Source:** Choose GitHub as the source for your pipeline. You will need to authenticate and authorize Azure Pipelines to interact with your GitHub account.
+
+**Configure Pipeline**: Select the specific branch or repository to build and deploy.
+
+**Activate**: After setting your configuration, click "Save and run" to save the settings and trigger the initial build.
+
+
+![Alt Image Text](../images/az400_1_52.png "Body image")
+
+####  Step 3: Build and Deploy Your Application
+
+**Build Configuration:** Azure Pipelines will execute the build of your application according to the directives specified in your pipeline configuration file (usually a YAML file). This may include tasks like **compiling code, running tests, and packaging artifacts.**
+
+**Release Tasks:** Post-build, configure the pipeline to deploy your application to various environments, such as staging or production. This can involve deploying to services like **Azure App Service or Azure Kubernetes Service.**
+
+Deployment Customization: Utilize features like **environment variables, secrets, and approvals** to tailor and secure your deployment process.
+
+![Alt Image Text](../images/az400_1_53.png "Body image")
+
+### GitHub repos with Azure Pipelines
+
+Benefits of Integrating GitHub with Azure Pipelines
+
+**Continuous Integration (CI):** Ensures that any changes in the connected GitHub repository **trigger automatic builds**, keeping your application updated and validated after every commit.
+
+
+**Code Visibility**: Enhances traceability by linking GitHub pull requests and commits directly to their respective build and release pipelines.
+
+
+Artifact Management: Facilitates management and storage of build artifacts in Azure Pipelines or with external services such as **Azure Artifacts and Docker registries**.
+
+
+**Continuous Delivery (CD)**: Automates the **deployment process** across different environments, minimizing manual intervention and promoting consistent releases.
+
+
+**Release Approvals**: Implements **controls and checks** through configurable approvals before promoting builds to production environments.
+
+### Configure permissions in source control repo
+
+
+Managing access and security through permissions is critical in a DevOps environment to ensure that team members have appropriate access for their roles.
+
+**Configuring Repository-Level Permissions**
+
+1. **Access Project**: In Azure DevOps, navigate to your project and go to the "**Repos**" section.
+2. **Repository Settings**: Select your repository and click on the **"Settings" tab, then "Repositories" in the submenu**.
+3. **Modify Security**: Choose the repository you want to adjust and click on the "Security" tab on the right.
+4. **Manage Access**: Add users or groups to the pre-defined security groups ("Contributors," "Readers,"
+"Administrators") or create new ones.
+5. **Set Permissions: Use the "Add"** button to grant the appropriate permissions like "Read," "Contribute," and "Administer" to selected users or groups.
+
+
+![Alt Image Text](../images/az400_1_54.png "Body image")
+
+#### Branch-Level Permissions Configuration
+
+1. **Repository Access**: Open your repository in Azure DevOps.
+2. **Branches: Go to the "Branches"** tab and choose the branch you need to configure.
+3. **Security Settings**: Click on "Security" to manage permissions for that branch.
+4. **Define Permissions**: Assign permissions to groups or users, overriding repository-level permissions if necessary.
+
+
+**Configuring File-Level Permissions**
+
+
+1. **Locate File**: Within the repository, navigate to the specific file you want to manage.
+2. **File Permissions**: Click the three-dot icon next to the file and choose "Manage permissions."
+3. **Control Access**: Add groups or users and set the desired access levels just as you would at the repository or branch level.
+
+![Alt Image Text](../images/az400_1_55.png "Body image")
+
+### Tags in source control repo
+
