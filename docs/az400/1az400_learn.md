@@ -1911,5 +1911,275 @@ Managing access and security through permissions is critical in a DevOps environ
 
 ![Alt Image Text](../images/az400_1_55.png "Body image")
 
-### Tags in source control repo
+## Tags in source control repo
+
+**Tags** in Git serve as reference points to specific commits, making it **easier to manage and track different versions of code in a repository**.
+
+**Step 1: Repository Access**
+
+Log into Azure DevOps or another Microsoft DevOps Solutions platform. Verify you have the required repository permissions.
+
+**Step 2: Navigate to the Repository**
+
+**After logging in, locate the "Repositories" or "Source Control" tab on your dashboard**.
+
+This section contains all the repositories you have access to within the platform.
+
+**Step 3: Create a Tag**
+
+Identify the commit in the repository that you wish to tag. Tags are useful for marking releases or important points in the project’s history.
+
+![Alt Image Text](../images/az400_1_56.png "Body image")
+
+Tags in Git serve as reference points to specific commits, making it easier to manage and track different versions of code in a repository.
+
+
+Step 3: Create a Tag
+
+Identify the commit in the repository that you wish to tag. Tags are useful for marking releases or important points in the project's history.
+
+1. Select the desired commit from the commit history.
+2. Look for an option labeled **"Create tag" or "Add tag,”** usually available in the commit's context menu.
+
+
+Step 4: Provide Tag Details In the tag creation dialog:
+
+1. Enter the Tag name: a unique identifier for the tag.
+2. Provide a Description: a brief note about what this tag represents.
+3. Add any Annotations or other metadata if necessary.
+
+Step 5: Save the Tag
+
+Confirm the details and save the tag. This action attaches the tag to your specified commit, marking it for future reference.
+
+
+Step 6: View and Manage Tags
+
+After creating a tag, you can view and manage it through the repository interface:
+
+1. Access the "**Tags**" section where all configured tags are listed.
+2. Here, you can rename, delete, or reassign tags to different commits if required.
+
+### Recover data using Git commands
+
+
+Git is vital for version control and teamwork, but sometimes mistakes occur, **leading to data loss or overwrites.**
+
+It's important to know how to **restore data using Git commands in these situations**.
+
+**Examining Commit History**
+
+Check Git Log: Use the command **git log to see a list of recent commits made in the repository**.
+
+This log includes the **commit hash, author, date, and the commit message**. To find a specific commit or to filter the log by author, date, or content, you can use:
+
+
+- git log --author="username"
+- git log --since="2023-04-01"
+- git log --grep="keyword"
+
+This helps in locating the exact commit hash of the changes you wish to restore.
+
+
+Revert a Specific Commit
+
+Use **`git revert COMMIT_HASH` to undo the changes made in a specific commit**
+
+while preserving the history of changes. This command creates a new commit that reverses the changes introduced by the specified commit.
+
+It's a safe way to undo changes, as it doesn't alter the existing history. For example:
+
+```
+git revert 1a2b3c4d
+```
+
+### Recover data using Git commands
+
+**Recovering Deleted Commits**
+
+Use **Reflog** to Recover Lost Commits: If you've accidentally deleted or lost commits, git reflog can be a lifesaver.
+
+It shows a log of where your **HEAD** and branch references have been, which includes deleted or orphaned commits. You can find the commit hash of a lost commit and recover it by creating a new branch from it:
+
+```
+git reflog
+
+git branch restore-branch COMMIT_HASH
+```
+
+This restores the deleted commit in a new branch called restore-branch, allowing you to access the previously lost changes
+
+**Restoring Deleted Files**
+
+Restore Deleted Files: If you've deleted a file and want to recover it from history, use:
+
+```
+git checkout COMMIT_HASH -- FILE_PATH
+```
+
+This command restores the file as it existed at the specified commit. It's useful for quickly recovering lost work without affecting other changes in the repository.
+
+
+### Purge data from source control
+
+To optimize your source control system within Microsoft DevOps environments, **regular purging of unnecessary data is crucial. This helps in improving system performance and reducing clutter.**
+
+#### **Prerequisite Checks**
+
+- **Communicate with Team**: Ensure all team members are informed of the purge to avoid any disruption.
+- **Backup Data**: Confirm that backups are in place for all critical data.
+- **Data Replication Check**: Ensure essential data is replicated to alternative repositories or backup systems.
+
+
+#### Azure DevOps REST API for Data Purging
+
+- Automate with API: Use the **Azure DevOps REST API** for API automated data deletion tasks.
+- **Delete Files/Folders/Branches: Modify the DELETE API** call as needed to target and remove specific items from the repository.
+
+#### Manual Git Garbage
+
+**Collection Trigger Garbage Collection**: Run **git gc** in your local repository to start manual garbage collection.
+
+**Non-Production Timing**: Perform this operation when it won't interfere with development activities.
+
+
+#### Git History Compression
+
+**Access Repository Settings:** In Azure DevOps, go to the repository settings to find Git configuration options.
+
+**Enable Compression**: Check the option for "**Compress Git History**" to optimize storage.
+
+
+#### Removing Unnecessary Branches
+
+**Local Branch Deletion: Use `git branch -d branch-name` to remove branches from your local machine.**
+
+**Azure DevOps Branch Removal:** Use the Azure DevOps web interface to locate and delete old or unused branches.
+
+
+
+#### Implementing Data Retention Policies
+
+**Define Policies: Set up rules** for how long data should be retained in Azure DevOps.
+
+**Automate Purging:** Configure automatic removal of aged data to streamline repository maintenance.
+
+
+
+### Dependency scanning
+
+**Dependency scanning helps you track and manage the libraries and packages your codebase depends on.**
+
+This ensures that your applications use the appropriate versions of these **dependencies**, minimizing the risk of compatibility problems.
+
+**Select a Dependency Scanning Tool**
+
+Select from various tools like OWASP Dependency-Check or Retire.js, which help identify vulnerabilities and outdated libraries in your project's dependencies.
+
+
+**Configure the Pipeline**
+
+* Integrate your selected dependency scanning tool into
+
+* Azure Pipelines by setting up a task to run the scan before the build or deployment phases to identify vulnerabilities at the earliest.
+
+**Analyze the Results**
+
+Post scan, analyze the results to identify and prioritize vulnerabilities or outdated dependencies highlighted in the scan report. Address these issues to maintain the health and security of your application.
+
+
+![Alt Image Text](../images/az400_1_57.png "Body image")
+
+
+#### Detection Process
+
+Each change in the dependency graph or after code build initiates **a new snapshot** of your components.
+
+* Vulnerable components are logged and displayed as alerts in the Advanced Security tab, based on advisories from the GitHub Advisory Database.
+* These logs detail **the severity, component, vulnerability title, and CVE.**
+
+
+**Managing Alerts**
+
+* The Advanced Security tab serves as a central hub for viewing and managing dependency alerts.
+* It allows filtering **by branch, pipeline, and severity, and provides remediation steps**.
+
+> Alerts for dependency scans on **PR branches aren't shown,** and any name changes to pipelines or branches might **take up to a day** to reflect in the results.
+
+
+
+![Alt Image Text](../images/az400_1_58.png "Body image")
+
+### Security scanning
+
+There are many security scanning tools available, **like SonarQube and Microsoft Defender for Cloud**.
+
+These tools analyze your codebase for **security flaws, coding standards violations, and potential vulnerabilities.**
+Choose the tool that meets your project's requirements.
+
+
+**SonarQube is an open-source platform for continuous inspection of code quality.**
+
+> It performs automatic reviews to detect bugs, vulnerabilities, and code smells in your code.
+
+**Microsoft Defender for Cloud (formerly Microsoft Defender ATP), offers security management and advanced threat protection services** across hybrid cloud workloads.
+
+
+![Alt Image Text](../images/az400_1_59.png "Body image")
+
+Set Up Your Pipeline: Incorporate the security scanning tool by adding the required tasks into your pipeline configuration.
+
+
+For example, **in Azure Pipelines, you can add a task that triggers the security scan during the build phase, automating the security audit**.
+
+
+**Evaluate Scan Results: After the security scan is finished, review the tool's report.**
+
+It will highlight security gaps and code quality concerns.
+
+**Address these items promptly,** giving priority to the most critical issues to fortify your codebase's security posture.
+
+
+### Code coverage
+
+**Code coverage measures the percentage of your codebase tested by automated tests,** revealing how much **code is exercised** during testing to ensure quality and detect uncovered areas.
+
+
+**Select a Code Coverage Tool**
+
+Select a tool like **JaCoCo for Java or Cobertura for NET**, ensuring it integrates well with your tech stack and test frameworks.
+
+
+**Configure the Pipeline**
+
+Incorporate your chosen tool into the pipeline to collect code coverage metrics during tests.
+
+For example, using Azure Pipelines, you can use a publish code coverage task to generate reports in popular formats **like Cobertura or JaCoCo.**
+
+
+**Analyze Code Coverage Results**
+
+Review the coverage report post-analysis to identify and improve areas with low test coverage, enhancing your code's robustness.
+
+![Alt Image Text](../images/az400_1_60.png "Body image")
+
+
+**Accessing Coverage Artifacts:** Published code coverage artifacts can be viewed in the pipeline run summary under the **Summary tab**, offering a snapshot of test coverage for each build.
+
+**Quality Metrics Enforcement**
+
+
+**Code Quality Assurance:** Leverage code coverage metrics to continuously elevate your project's quality and verify the extent of testing for new code.
+
+**Pull Request Integration**: Implement coverage data within pull requests to ensure thorough testing and pre-emptively fill testing voids before integration.
+
+
+**Setting Code Coverage Policies** 
+
+Full vs. Diff Coverage
+
+
+* **Full Coverage: Measures the total codebase's test coverage**, ensuring overall quality.
+* **Diff Coverage: Focuses on the code changes in pull requests**, ensuring new or altered lines are tested.
+
 
