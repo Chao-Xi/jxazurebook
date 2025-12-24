@@ -2183,3 +2183,1296 @@ Full vs. Diff Coverage
 * **Diff Coverage: Focuses on the code changes in pull requests**, ensuring new or altered lines are tested.
 
 
+### Quality gates
+
+**A quality gate acts as a benchmark for code quality** that must be met prior to release and ideally before **the code is committed to source control**.
+
+It ensures that only code that meets **established standards progresses** through the development pipeline.
+
+#### **Features of Quality Gates:**
+
+* **Automated Code Analysis: Tools like SonarQube** are integrated into **Azure Pipelines** to perform static code analysis, identifying potential issues such as code smells, vulnerabilities, and bugs.
+* **Performance Metrics**: Code quality metrics, including code coverage, complexity, and maintainability index, are assessed.
+* **Compliance Checks**: Gates ensure the code complies with **security standards** and governance policies before proceeding in the pipeline.
+
+![Alt Image Text](../images/az400_1_61.png "Body image")
+
+#### Best Practices for Implementing Quality Gates:
+
+**Customization**: Customize gate criteria to align with project demands and application type.
+
+**Threshold Setting:** Set clear **thresholds** for code coverage to define **pass/fail conditions** for the gate, such as minimum code coverage percentage.
+
+**Feedback Loop:** Establish immediate feedback systems for developers upon gate failure for prompt issue resolution.
+
+#### Integrating Quality Gates with Azure Pipelines
+
+**Pipeline Configuration:** Integrate quality checks in your CI/CD flow to control code progression using established metrics.
+
+**Action on Failure: Define actions** for when code fails to meet the quality gate's criteria, which may include halting the pipeline, triggering alerts, or creating tasks for remediation.
+
+
+**Visibility and Reporting:** Increase transparency through dashboards or reports showing gate outcomes for ongoing codebase **health monitoring.**
+
+
+### Security gates
+
+**Security gates** are established to verify that **code complies with security protocols** and is **free of vulnerabilities** before being pushed to production.
+
+
+#### Static Application Security Testing (SAST):
+
+Integrate a SAST tool like **SonarQube and WhiteSource Bolt** into the build process to scan for security flaws.
+
+> This proactive approach detects issues early, reducing the risk of vulnerabilities reaching the production environment.
+
+#### Dynamic Application Security Testing (DAST):
+
+Conduct **DAST** regularly on live applications to find security weaknesses.
+
+Use tools like **Azure Web Application Firewall (WAF)** to guard against common threats like **XSS and SQL injection.**
+
+
+### Governance gates
+
+**Governance gates** are checkpoints to confirm that **both code and deployment procedures are in line with company policies and industry regulations**.
+
+#### Policy Definition and Enforcement:
+
+* Identify and set governance policies required by your organization.
+* Apply these policies using tools such as Azure Policy to automatically enforce them throughout the development cycle.
+
+
+### Automated Compliance Verification:
+
+* Build automated compliance checks into your CI/CD pipeline with **Azure DevOps Compliance or similar tools.**
+* Automating these checks ensures ongoing adherence to governance standards without manual oversight.
+
+## What are pipelines
+
+In DevOps, a pipeline is a **key framework that structures the software delivery process through automated steps**. 
+
+
+It ensures each phase of the software lifecycle, from integration to deployment, is optimized for quick development, reliable releases, and scalability.
+
+**It encompasses several components and features:**
+
+#### Components of DevOps Pipelines:
+
+1. **Source Code Repository**: The starting point where **code** is stored and version-controlled.
+2. **Build Server**: Automates the compilation, building, and preliminary testing of code.
+3. **Test Server: Runs various tests (unit, integration, etc.)** to ensure code quality.
+4. **Deployment Server**: Manages the deployment of code to various **environments (staging, production)**.
+5. **Feedback and Monitoring:** Tools that provide feedback on deployment success and monitor application performance in production.
+
+![Alt Image Text](../images/az400_1_63.png "Body image")
+
+#### Features of DevOps Pipelines:
+
+1. Automation: Every stage from code commit to production is automated, minimizing manual tasks and errors.
+2. **Continuous Integration and Deployment (CI/CD)**: Ensures that changes to software are automatically tested and deployed, improving speed and quality.
+3. Modularity: Each component functions independently but collaboratively, allowing for easier troubleshooting and updates.
+
+
+#### Benefits of DevOps Pipelines:
+
+
+1. **Increased Efficiency**: Automation reduces the delivery cycles, enabling faster releases.
+2. **Improved Reliability**: Continuous integration and testing diminish the chances of defects in production.
+3. **Better Scalability**: Pipelines support scalable operations and management practices as organizational needs grow.
+
+
+#### Automated tests into pipelines
+
+Automated testing plays a vital role in ensuring the quality and reliability of software products.
+By incorporating automated tests into the pipeline, you can detect issues early in the development cycle, streamline the release process, and achieve faster time-to-market.
+
+
+#### **Key Steps for Integration**
+
+1. **Define Test Strategy**: Outline what types of **tests (unit, integration, Ul)** will be automated and set the coverage criteria.
+2. **Create Test Infrastructure:** Use Azure DevOps for provisioning resources like VMs or containers, or utilize **Azure Test Plans** for executing tests.
+3. **Choose a Test Framework**: Depending on your tech stack, select an appropriate framework **like MSTest, NUnit, or Unit.**
+4. Write Automated Tests: Develop tests that address various functional and integration aspects of your application.
+	* For example, in a shopping cart application, you could write a test to ensure items are added correctly:
+
+	
+![Alt Image Text](../images/az400_1_64.png "Body image")
+
+
+### Automated tests into pipelines
+
+
+**Version Control:** Manage your test scripts and codebase in a Git repository, using **Azure DevOps for integrations like Pull Requests and reviews.**
+
+**Configure Cl Pipeline: Set up a CI pipeline in Azure Pipelines t**o automatically run tests upon commits, helping identify issues early.
+
+**Incorporate Test Reporting:** Utilize Azure DevOps for detailed test reporting and tracking over time.
+
+
+**Implement CD Pipeline:** After passing tests in CI, deploy your application across different environments using a CD pipeline.
+
+
+#### Testing strategies
+
+
+Unit tests focus on validating the functionality of individual methods or classes in isolation, identifying bugs, and ensuring code behaves as intended.
+
+
+Microsoft DevOps Solutions supports **MSTest, NUnit, and Unit for these tests**.
+
+**Unit tests are narrowly focused, while local tests** can be broader or refer to the environment in which a variety of tests are performed.
+
+Using **NUnit**, consider a test for a service that retrieves a list of items.
+
+The test verifies that the list is not empty and contains the expected number of items.
+
+
+![Alt Image Text](../images/az400_1_65.png "Body image")
+
+
+**Integration tests assess the interaction between two or more components of the application** to ensure they work together as expected. These are important for catching issues that unit tests might miss.
+
+
+**Using NUnit,** an integration test could check the interaction between two services where one service uses
+data provided by another.
+
+
+![Alt Image Text](../images/az400_1_66.png "Body image")
+
+
+**Load tests evaluate the performance of the system under a significant load,** which could be simulated users or transactions. They help to identify the capacity limits and scalability of the application.
+
+In a **load test** scenario in Azure DevOps, you could simulate multiple users accessing a service to test its performance and capacity.
+
+
+```
+steps:
+- task: LoadTest@1 
+  inputs:
+	testPlan: 'High Demand Scenario'
+	userLoad: 100
+	duration:
+```
+
+### UI Testing
+
+**UI testing** is critical in Microsoft DevOps for ensuring that the **user interface of applications functions correctly and meets desired requirements**.
+
+This testing confirms the UI's **functionality and behavior,** identifying early issues with user interactions, layout, responsiveness, and data management.
+
+
+**Bug Detection:** Regular Ul testing identifies bugs and errors early, improving user experience quality.
+
+
+**Verification**: This testing confirms that the Ul meets functional requirements and performs as expected under various conditions.
+
+
+#### **Microsoft Test Manager (MTM)**
+
+**Microsoft Test Manager supports extensive UI testing** with capabilities tailored for managing **test cases and tracking their execution.**
+
+
+**Setting Up:** Begin by creating a new test plan and suite in MTM.
+
+**Test Cases**: Add UI test cases to your suite.
+
+**Execution and Analysis**: Use MTM's Test Runner to performed tests and review results, including screenshots and videos
+
+#### **Visual Studio Coded UI Tests**
+
+Visual Studio Coded Ul Tests provide a code-centric approach to Ul testing, suitable for automation using C# or Visual Basic. NET.
+
+
+* Create a Test Project: Start a new project and add a Coded UI Test.
+* Record and Enhance: Interact with your application's Ul to record actions, then add validation statements.
+* Execution: Run your tests locally or integrate them into your DevOps pipeline for continuous testing.
+
+
+#### Selenium WebDriver with C#
+
+Selenium WebDriver is an open-source framework ideal for automating web browsers and conducting cross-**platform UI**
+
+
+* **Setup**: Install Selenium WebDriver via the NuGet package in your Visual Studio solution.
+* **Create and Configure**: Start a new C# test project and set up Selenium WebDriver.
+*** Develop and Run Tests**: Write test methods to interact with the Ul and execute them locally or within your DevOps pipeline.
+
+
+![Alt Image Text](../images/az400_1_67.png "Body image")
+
+### GitHub Actions
+
+#### Introduction to GitHub Actions
+
+
+Go GitHub Actions is a **CI/CD pipeline directly integrated with your GitHub repository.**
+
+Github Actions allows you to automate:
+
+* • Running test suites
+* • Building images
+* • Compiling static sites
+* • Deploying code to servers
+* • and more...
+
+
+GitHub Actions files are defined as YAML files located in the `.github/workflow `folder in your repo.
+
+
+You can multiple workflows in repo triggered by different events.
+
+
+![Alt Image Text](../images/az400_1_68.png "Body image")
+
+
+When you run GitHub Actions you'll get a history of workflow runs where it will indicate if it was success a failure, and how long it took to run.
+
+
+
+Github has a repo of example workflows you can use to get you started
+
+https://github.com/actions/starter-workflows
+
+![Alt Image Text](../images/az400_1_69.png "Body image")
+
+#### Different Types of GitHub Actions
+
+Event Triggers causes a GitHub Action to run.
+
+The on attribute specifies the event trigger to be used:
+
+> Github Actions has 35+ event triggers
+
+Examples of common GitHub Actions that could be triggered:
+
+* **Pushes**: Trigger an action on any push to the repository.
+* **Pull Requests:** Run actions when pull requests are opened, updated, or merged.
+* **Issues**: Execute actions based on issue activities, like creation or labeling.
+* **Releases**: Automate workflows when a new release is published.
+* **Scheduled Events**: Schedule actions to run at specific times.
+* **Manual Triggers**: Allow manual triggering of actions through the GitHub Ul.
+
+
+![Alt Image Text](../images/az400_1_70.png "Body image")
+
+```
+name: Labeler
+on:
+	- pull_request_target
+jobs:
+	label:
+		runs-o****n: ubuntu-latest permissions:
+		contents: read pull-requests: write
+	steps:
+	- uses: actions/labeler@v5
+```
+
+
+### What is Package Management
+
+
+**Package Management** refers to a systematic approach to **handling the installation, upgrade, configuration,** and removal of software packages within a computer system.
+
+It simplifies the process of managing software applications and their dependencies, ensuring consistency and efficiency across the development lifecycle and system maintenance.
+
+**Core Functions and Benefits**
+
+**Automated Handling:** Automates the management of software applications, reducing time and effort for installation, upgrades, and removal.
+
+**Consistency Across Environments**: Ensures uniform software management across various environments, boosting efficiency and reliability.
+
+**Dependency and Configuration Management**: Automates management of dependencies and configurations, ensuring compatibility and availability for stable performance.
+
+**Scalability:** Facilitates software management across multiple systems, easing updates and rollbacks.
+
+
+### Package feeds
+
+#### What Are Package Feeds?
+
+A package feed is a **repository hosting software packages** (libraries, frameworks, modules) along with associated metadata.
+
+It supports dependency management and various application scenarios through package versioning and organization.
+
+#### Types of Package Feeds:
+
+**Public Feeds:** Hosted by **third-party providers (e.g., NuGet.org**, npmjs.com) and accessible to the broader development community.
+
+**Private Feeds:** Internal repositories **managed by organizations** to store proprietary packages and control team access.
+
+![Alt Image Text](../images/az400_1_71.png "Body image")
+
+
+**Designing a Package Feed: Key Considerations**
+
+* **Storage**: Select from local file systems, network-attached storage (NAS), or cloud-based services.
+* **Organizational Structure:** Categorize packages by type, purpose, or technology.
+* **Versioning**: Implement a versioning strategy, typically **semantic versioning (major.minor.patch)**.
+* **Access Control**: Set up authentication and authorization mechanisms for private feed security.
+
+
+Implementing a Package Feed: Tools and Platforms
+
+
+**Azure Artifacts:** A fully managed Microsoft Azure service supporting NuGet, npm, Maven, and Python packages. It simplifies the creation, publication, and management of package feeds.
+
+**GitHub Packages:** Supports various package formats, integrates with GitHub repositories, and allows direct package publishing, ideal for open-source projects.
+
+**Package Management Tools:** Tools like **NuGet, npm, and Maven** that offer capabilities to create and host **feeds with command-line or IDE integration.**
+
+![Alt Image Text](../images/az400_1_72.png "Body image")
+
+#### Key Components
+
+* **Package:** A bundle **containing software or libraries**, along with metadata that includes information like version, dependencies, and configuration details.
+* **Repository**: A centralized **storage location where packages are hosted,** allowing users to search, download, and install packages.
+* **Package Manager: The tool that interfaces with repositories to manage the installation,** upgrading, and removal of packages based on dependencies and version requirements.
+
+**Tools and Examples**
+
+Linux Package Managers:
+
+* dpkg (Debian, Ubuntu)
+* RPM (Red Hat, Fedora)
+
+
+**Language-Specific Managers:**
+
+npm for JavaScript
+pip for Python
+Maven for Java
+
+
+#### Package feeds
+
+**Using Upstream Sources**
+
+**Functionality:**
+
+
+Upstream sources extend the range of available packages by linking additional feeds, whether public, private, or both.
+
+In Azure Artifacts, upstream sources can include other Azure feeds, package registries, or public feeds. This ensures that the latest package versions are always available.
+
+
+**Configuration:**
+
+Configurable via the **Azure DevOps portal or Azure CLI**, allowing **Azure Artifacts** to search upstream sources for packages not present locally.
+
+#### Dependency management
+
+Dependency management automates the handling of software dependencies to **ensure projects run smoothly with all necessary external libraries, frameworks, and modules.**
+
+
+Key Components
+
+* **Dependencies**: Required external software components.
+* **Version Specification**: Defines compatible dependency versions.
+* **Dependency Graph**: Shows relationships among dependencies.
+* **Package Repository:** Central hub for dependencies.
+* **Dependency Resolver**: Automates dependency resolution.
+
+
+**Benefits**
+
+* **Streamlined Development**: Automates environment setup by managing dependencies.
+* **Consistent Builds**: Ensures uniform dependency versions across all development stages.
+* **Reduced Conflicts**: Manages compatibility to prevent software component conflicts.
+* **Efficient Upgrades**: Manages dependency versions for easy updates.
+
+
+Implementation
+
+* **Configuration Files**: Specify dependencies using files like **package.json or pom.xml**.
+* **Version Locking**: Uses lock files to maintain consistent dependency versions.
+* A**utomated Tooling**: Tools like npm, Maven, and pip automate dependency management tasks.
+
+#### Dependency vs Package management
+
+![Alt Image Text](../images/az400_1_73.png "Body image")
+
+
+### Azure Artifacts
+
+**Azure Artifacts** is a component of Azure DevOps Services focused on package management and collaboration. It supports sharing, versioning, and integrating packages into CI/CD
+
+**Package Management**
+
+**Supports Multiple Package Formats**: Manages **NuGet, npm, Maven, Python, and Universal Packages.**
+
+**Version Control:** Offers tools for managing package versions and dependencies effectively.
+
+**Integration and Collaboration**
+
+* **CI/CD Integration**: Integrates with Azure DevOps pipelines for streamlined package creation and deployment 
+
+* **Shared Feeds**: Allows package sharing within teams or the entire organization, supporting collaboration.
+
+
+**Access Control and Security**
+
+* **Access Control**: Offers settings to control package access, maintaining security within projects.
+* **Secure Ho****sting:** Provides a secure environment for hosting and accessing packages.
+
+
+**1. Getting Started with Azure Artifacts**
+
+An Azure subscription is required to use Azure Artifacts.
+
+**2. Creating a Feed**
+
+* Navigate to your Azure DevOps **organization or project.**
+* Select "Artifacts" from the top right menu, then "**Create Feed"**.
+* Enter the required information (like name and visibility options) and create the feed.
+
+
+![Alt Image Text](../images/az400_1_74.png "Body image")
+
+#### **Date-Based Versioning**
+
+Uses the format **YYYY.MM.DD** to reflect release dates, offering a clear timeline of updates.
+
+
+* **Consistency**: Maintain a standardized date format.
+* **Major Changes**: Mark significant updates in the version name, e.g., 2022.01.14-alpha.
+* **Combination with SemVer**: Enhance detail by combining with semantic versioning,
+	* e.g., 2022.01.14-alpha.1.2.3.
+
+	
+Sequential Versioning: **Assigns a unique sequential number to each version of a pipeline artifact, starting with version 1.**
+
+* Each update increments the version number progressively (e.g., 1.1, 1.2, 1.3, etc.).
+* It's straightforward and clearly indicates the chronological order of changes.
+
+### Implement an Agency infrastructure
+
+
+Designing and implementing an agent infrastructure is crucial for a successful DevOps solution.
+Key considerations include **cost, tool selection, licenses, connectivity, and maintainability.**
+
+
+**Cost Considerations:**
+
+* **Azure Pipelines Agents:** Hosted by Microsoft, cost-effective, billed based on parallel pipelines.
+* **Self-Hosted Agents**: More control but additional costs for hardware, maintenance, and scalability.
+
+
+**Tool Selection:**
+
+**Azure Pipelines:** Automates build, test, and deployment across platforms, supports arious languages, containerization with Docker.
+
+**Visual Studio Team Services (VSTS)**: Predecessor of Azure DevOps, integrates with Azure Pipelines, features source control, work item management, and project planning.
+
+
+**Licenses:**
+
+* **Azure Pipelines**: Free tier with limited concurrent pipelines and duration;
+paid tier for more scalability.
+* **Self-Hosted Agents**: Requires licenses for the underlying operating system (e.g., Windows Server or Azure VMs).
+
+
+**Connectivity:**
+
+* **Azure Pipelines Agents:** Secure internet communication using HTTPS, fetches source code, executes tasks, and reports results.
+* **Self-Hosted Agents:** Network access to resources like source control repositories, artifact feeds, and target environments within your infrastructure.
+
+**Maintainability:**
+
+* Azure Pipelines Agents: Automatically updated by Microsoft, no manual effort required.
+* Self-Hosted Agents: Regular updates needed for compatibility, with guidance provided by Microsoft.
+
+
+### Pipeline Trigger Rules
+
+
+Pipeline trigger rules define conditions under which a pipeline is automatically triggered, optimizing resource usage and reducing unnecessary builds and deployments.
+
+Microsoft DevOps Solutions offer flexibility in designing **custom trigger rules.**
+
+Here are key scenarios:
+
+**Branch-Based Trigger:**
+
+Trigger a pipeline only when changes are made to a specific branch.
+
+```
+trigger:
+	branches:
+		include:
+			- main
+```
+
+> This triggers the pipeline for changes in the "main" branch.
+
+**Path-Based Trigger:**
+
+Trigger a pipeline when changes occur within specific file paths.
+
+
+```
+trigger: 
+	paths:
+		include:
+			- src/*
+```
+
+> This triggers the pipeline for changes in the "src" directory.
+
+**Schedule-Based Trigger:**
+
+Run pipelines at **scheduled intervals**, regardless of code changes.
+
+```
+trigger:
+	schedules:
+		- cron: "0 0 * * *"
+```
+
+#### Pipeline Trigger Rules
+
+
+**Implementing Pipeline Trigger Rules:**
+
+1. Navigate to your project in Azure DevOps.
+2. Open the YAML file that defines your pipeline.
+3. Locate the "**trigger**" section within the YAML file.
+Define the desired trigger rules based on the scenarios above or any custom rule.
+5. Save the YAML file.
+
+**Benefits of Pipeline Trigger Rules:**
+
+
+* **Reduced Resource Consumption**: Minimizes unnecessary usage, leading to cost savings and efficient resource utilization.
+* **Improved Efficiency:** Ensures actions are performed at the right time, streamlining development and deployment processes.
+* **Enhanced Control**: Provides developers with control over pipeline execution, improving management and coordination of development efforts.
+
+
+### Types of pipelines
+
+#### **Classic Pipelines**
+
+**Classic pipelines** provide a **graphical interface for creating and configuring pipelines** using a drag-and-drop approach.
+
+This simplifies defining the stages of your pipeline, such as build, test, and deployment.
+
+**Steps to Create a Classic Pipeline**
+
+1. Select "Pipelines" from the left-side menu.
+2. Click "New pipeline" to start.
+3. Choose the repository where your source code is located.
+4. Select a pipeline template based on your application type (e.g., ASP.NET, Node.js, Java).
+5. Customize the pipeline stages, tasks, and configurations.
+	* Add tasks like building the code, running tests, and deploying the application.
+
+	
+![Alt Image Text](../images/az400_1_75.png "Body image")
+
+#### YAML pipelines
+
+YAML pipelines offer a flexible, code-centric approach to defining pipelines. Pipeline configurations are defined as code in YAML files, which can be version controlled along with your source code for easier collaboration and consistency across environments.
+
+
+Creating a YAML Pipeline
+
+1. Select the "Pipelines" option from the left-side menu.
+2. Click on the "New pipeline" button.
+3. Choose the repository where your source code is located.
+4. Select the "YAMI" option when prompted to choose the style.
+5. Create a YAML file in your repository to define your pipeline configuration. The YAML file should contain stages, jobs, and tasks as per your requirements. For example:
+6. Save the YAML file in your repository and commit the changes.
+7. Azure DevOps will automatically detect the YAML file and create the pipeline based on the configuration defined in the YAML file.
+8. Save and run the pipeline to see it in action.
+
+```
+trigger:
+  branches:
+    include:
+    - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: echo Hello, World!
+    displayName: 'Print Hello, World!'
+```
+
+### Monitoring pipeline health
+
+The failure rate of your pipeline indicates the **number of failed builds or deployments over a specific period**. 
+
+Monitoring the failure rate helps you identify potential bottlenecks or issues in your pipeline. Azure Monitor can be used for this purpose.
+
+
+**Azure Monitor provides** comprehensive monitoring for Azure resources, including pipelines.
+It collects data on pipeline failures and allows you to set up alerts based on specific failure thresholds. These alerts help you address issues proactively, maintaining pipeline health.
+
+**Configuration**
+
+* Enable **metrics and diagnostic logs**.
+* Metrics include success rate, average duration, and failure rate.
+* Diagnostic logs capture detailed information about pipeline runs, including errors and warnings.
+
+```
+az pipelines runs list --project project_name --definition-name pipeline_name --status Failed --query
+"reverse sort_by@, &startTime) | [0:10]-{BuildId:id, BuildNumber:buildNumber, Status: result,
+StartTime:startTime}" --output table
+```
+
+#### Duration Monitoring
+
+Monitoring the duration of your pipeline is crucial. Longer durations indicate performance issues that can impact overall efficiency.
+
+Azure DevOps provides built-in capabilities for this.
+
+Azure Pipelines allows tracking the duration of individual pipeline runs, identifying outliers, and analyzing performance trends over time.
+
+* **Use the Azure Pipelines REST API to retrieve the duration of pipeline runs**.
+* Custom scripts or PowerShell can automate monitoring and reporting.
+
+
+```
+GET https://dev.azure.com/{organization}/{project}/_apis/build/builds/{buildId}?api-version=6.0
+```
+
+**Flaky Tests Monitoring**
+
+Flaky tests produce inconsistent results, leading to false positives or false negatives.
+
+Monitoring and addressing flaky tests is essential for pipeline reliability.
+
+Azure DevOps supports various test frameworks and provides tools to **detect and monitor flaky tests**. 
+
+**Azure Test Plans can manage test cases, track executions, and identify flaky tests.**
+
+
+* Group test cases in test suites.
+* Schedule test runs and capture results.
+* Analyze results to identify and mark flaky tests.
+* Built-in reporting visualizes trends and tracks improvements over time.
+
+
+```
+[TestCategory( "Flaky")]
+public void MyFlakyTest()
+{
+// Test code here
+}
+```
+
+## Introduction to ACI
+
+**Azure Container Instances (ACls)** allow you to **launch containers** without the need to worry about configuring or managing the underlying virtual machine
+
+Azure Container Instances is designed for isolated containers:
+
+- Simple applications
+- Task automation
+- Build jobs
+
+---
+
+- Containers can be provisioned **within seconds** where VMs can take several minutes
+- Containers are **billed per second** where VMs are billed per hour (greater savings)
+- Containers have **granular and custom sizing of CPUs, Memory and GPUs** where VMs sizes are predetermined
+- ACI can deploy both **Windows and Linux containers**
+- You can **persist storage** with Azure Files for your ACI containers
+- ACis are accessed via a fully qualified domain name (FQDN) e.g. customlabel.azureregion.azurecontainer.io.
+
+Azure provides Quickstart images to start launching example applications, but you can also source containers from:
+
+- Azure Container Registry
+- Docker Hub
+- Privately Hosted Container Registry
+
+![Alt Image Text](../images/az400_1_76.png "Body image")
+
+
+### Introduction to ACI
+
+
+Container Groups are collection of containers that get scheduled on the same host machine.
+
+The containers in a container group share:
+
+- lifecycle
+- Resources
+- local network
+- storage volumes
+
+> Container Groups are similar to a Kubernetes pod
+
+
+
+Multi-container groups **currently support only Linux** containers.
+
+![Alt Image Text](../images/az400_1_77.png "Body image")
+
+There are two ways to deploy a multi-container group:
+
+- **Resource Manager Template (ARM template)** - when you need to deploy additional Azure service resources
+- **YAML File** — when your deployment includes only container instances.
+
+### Container Restart Policies
+
+**A container restart policy** specifies what a container should do when their process has completed.
+
+Azure Container Instances has 3 restart-policy options:
+
+
+- **Always (default) Containers are always restarted**. Suited for long running tasks e.g., web-servers
+- **Never Containers** **do no restart once they've completed their execution**. Suited for one off tasks. e.g., batch jobs, scheduled tasks.
+- OnFailure Containers will only **restart if they stop due to an error** or unexpected termination
+
+![Alt Image Text](../images/az400_1_78.png "Body image")
+
+### Container Environment Variables
+
+**Environment variables are key-value pairs** that can be used to configure and manage the behavior of applications running inside containers.
+
+Environment variables (Env Vars) allow you to pass **configuration details** to your containers.
+
+Environment variables can be set via & the Azure Portal, CLI or PowerShell
+
+![Alt Image Text](../images/az400_1_79.png "Body image")
+
+**Secured Environment Variables**
+
+- Secured Environment Variables
+- By default, Environment Variables are stored in plaintext.
+- If you need to secure your environment variables, you can use the `--secure-environment-variables` flag
+
+```
+# 1️⃣ 先在本地设置 Stripe 密钥（示例）
+export STRIPE_SECRET_KEY="sk_live_xxxxxxxxxxxxxxxxx"
+
+# 2️⃣ 创建 Azure Container Instance
+az container create \
+  --resource-group aci-resource-group \
+  --name aci-demo-secure \
+  --image exampro/rails:backend \
+  --ip-address Public \
+  --location eastus \
+  --secure-environment-variables \
+    STRIPE_SECRET_KEY=$STRIPE_SECRET_KEY
+```
+
+## Self-hosted agents
+
+**Self-hosted agents** in Azure DevOps allow you to **customize the agent environment to meet specific needs.**
+
+
+Unlike Microsoft-hosted agents, self-hosted agents run on your infrastructure, giving you more control over the environment and the tools installed on the agents.
+
+Use Cases:
+
+* **Custom Environments**: For specialized software or configurations not available in Microsoft-hosted agents.
+* **Sensitive Data:** Suitable for projects with stringent data security requirements, keeping data within your network.
+* **Resource-Intensive Builds**: Useful when builds require significant computational resources or specific hardware setups.
+
+
+Benefits:
+
+* **Customization**: Tailor the environment to specific project needs (E.g., unique tools and dependencies)
+* **Cost Efficiency:** Reduce costs by utilizing existing infrastructure.
+* **Consistent Configurations**: Ensure consistent setups across agents through templates or containerization.
+* **Scalability**: Scale based on workload by provisioning new agents
+
+### Configuring self-hosted agents with VM templates
+
+Create a virtual machine with the necessary agent software, save it as a template, and use the template to provision additional agents for consistent and simplified
+
+1. **Create and Configure a VM**: Set up a virtual machine with the necessary operating system and dependencies. Install and configure the Azure DevOps agent software.
+2. **Create a VM Template**: Capture the VM as a template, including the agent software and its configuration.
+3. **Provision New Agents**: Use the template to quickly provision new agents, ensuring each new VM has the same configuration and is ready to connect to Azure DevOps.
+
+
+### Managing Self-Hosted Agents with Containerization
+
+Containerization involves creating Docker images that include the necessary agent software and dependencies, offering a flexible and scalable solution for managing self-hosted agents.
+
+
+1. **Create a Container Image:** Develop a Docker image with the required agent software and dependencies, including configuration details.
+2. **Push to a Container Registry**: Store the container image in a registry like Azure Container Registry or Docker Hub.
+3. **Deploy and Scale Containers**: Use container orchestration tools (e.g., Docker Compose, Kubernetes) to deploy and manage agent containers, scaling up or down based on workload demands.
+
+
+### Blue-green deployment
+
+A successful deployment strategy is crucial for efficient software delivery and minimizing user impact.
+
+Microsoft DevOps Solutions offers various deployment patterns and strategies for continuous delivery and high availability.
+
+
+**Blue-green deployment is a technique that reduces risk and downtime by running two identical environments.**
+
+* These environments are called **blue and green.**
+* Only one of the environments is live, with the live environment serving all production traffic.
+
+
+In blue-green deployment, **"blue" is live, and "green" is set up for the new release.** Deploy and test the new version in green without affecting blue.
+
+After testing, switch traffic to green, making it live.
+
+This minimizes downtime and allows for quick rollback to blue if issues arise, enhancing reliability and user experience.
+
+
+![Alt Image Text](../images/az400_1_80.png "Body image")
+
+### Canary Release
+
+A canary release is a strategy where a new version **is deployed to a small subset of users or infrastructure first**
+
+This helps identify unforeseen issues under real conditions with limited impact.
+
+
+By monitoring the initial deployment's performance, teams can decide whether to **expand, halt, or roll back the update based on real-world feedback**. This phased approach ensures a safer and more controlled rollout, minimizing risks associated with new
+
+To execute a canary release:
+
+* **Feature toggles:** Selective feature activation.
+* **Traffic routing:** Manage user access to the new version
+* **Deployment slots**: Version management.
+
+
+These techniques **enable a gradual and monitored rollout**, allowing for adjustments based on user feedback and system performance. This method enhances application stability and user experience by addressing potential issues before a full-scale deployment.
+
+
+![Alt Image Text](../images/az400_1_81.png "Body image")
+
+### Ring Deployment
+
+
+Ring deployment is a strategy **where users or infrastructure components are divided into multiple groups**, called rings. Each ring receives updates sequentially, starting with the **smallest group and gradually expanding to the entire user base**.
+
+This allows for iterative releases, starting with an internal ring and progressively reaching a wider audience. This controlled rollout facilitates early feedback from different user groups or components.
+
+
+For example, in a three-group production setup:
+
+
+* **Canaries**: Voluntarily test new features as soon as they are available.-
+* **Early adopters**: Voluntarily preview releases, which are more refined than canary versions.
+* **Users**: Receive the final product after it has passed through canaries and early adopters.
+
+This approach ensures a safer, step-by-step rollout of new features or updates.
+
+
+![Alt Image Text](../images/az400_1_82.png "Body image")
+
+
+
+## Progressive Exposure
+
+Progressive exposure is a deployment technique that **gradually increases the number of users exposed to a new release.**
+
+
+Initially, a small percentage of user traffic is directed to the new release while its performance and behavior are monitored.
+
+
+If the new release performs well without issues, the traffic is gradually increased. This approach helps identify potential issues early and minimizes user impact if problems arise.
+
+
+**Continuous Integration:**
+
+**Code Check-in**: Developers check in code.
+
+**Auto-trigger：** CI pipeline triggers automatically.
+
+**Build Artifact**: Code is built, generating an artifact.
+
+
+
+**Continuous Deployment:**
+
+* Build Version 1: Approved and deployed to Ring 1 (User Set 1) for **initial testing.**
+* Build Version 2: Approved and deployed to Ring 2 (User Set 2) for **early adopters.**
+* Build Version 3: Approved and deployed to Ring 3 (All Users).
+
+
+Production Environment:
+
+* Ring 1: Canaries test new features.
+* Ring 2: Early adopters preview refined releases.
+* Ring 3: All users receive the final product.
+
+
+![Alt Image Text](../images/az400_1_83.png "Body image")
+
+### Feature flags
+
+Feature flags are **conditional statements** that let you control which features or functions are **visible and available in your application**.
+
+* Using **feature flags**, you can enable or disable features dynamically without redeploying the application.
+* This allows for testing new features, gradual rollouts, or quick deactivation if issues arise.
+* Feature flags also offer the flexibility to target specific user groups for testing or rolling out features.
+
+
+
+* **New Feature:** A new feature is introduced.
+* **Feature Flags:** Toggle switches control the visibility of the feature.
+	* **Enabled**: The feature is enabled for specific customer groups.
+	* **Disabled**: The feature remains off for other customer groups.
+* **Customers**: Different customer groups experience the feature based on the feature flag settings.
+
+
+> **This allows controlled, targeted rollouts and quick adjustments of feature availability without redeployment**.
+
+![Alt Image Text](../images/az400_1_84.png "Body image")
+
+## A/B Testing
+
+**A/B testing** is a method to compare **two versions of a feature or user interface to see which one performs better.** Users are divided into **two or more groups**, each group experiencing a different version.
+
+Data on user behavior, engagement, and other metrics are collected. This approach helps make data-driven decisions and optimize feature usability before a full rollout to all
+
+* **User Groups**: Users are divided into two groups.
+* **Version A and B: **Each group is shown a different version of a feature or user interface (A and B).
+* **Performance Comparison**: User behavior and performance metrics are collected and compared
+* **Results**: The graph shows which version (A or B) performs better based on the collected data.
+
+![Alt Image Text](../images/az400_1_85.png "Body image")
+
+
+This helps in making informed decisions about which version to implement for all users.
+
+
+## Introduction to Azure App Service
+
+**Azure App Service is an HTTP-based platform** for web apps, RESTful APIs, and mobile backend services.
+
+You can choose your programming language in Python, Java, or any other language, and run it in either a Windows or Linux environment.
+
+It is a Platform as Service, **so it's the Heroku equivalent for Azure.**
+* 
+
+Azure App Service takes care of the following underlying infrastructure:
+
+* OS and language security patches
+* Load balancing
+* Auto-scaling
+* Infrastructure management
+
+
+Azure App Service makes it easy to implement common Integrations and features such as:
+
+* Azure DevOps (For deployments)
+* GitHub and Docker Hub
+* Package Management
+* Easy to setup staging environments
+* Custom Domains
+* Attaching TLS/SSL Certificates
+
+
+When you create your app, you have to choose a unique name, since it becomes a fully qualified domain
+
+
+You pay based on an Azure App Service Plan:
+
+* Shared Tier - Free, Shared (Linux not supported)
+* Dedicated Tier - Basic, Standard, Premium, PremiumV2, PremiumV3
+* Isolated Tier
+
+
+You can also deploy single or multi-container Docker applications.
+
+
+![Alt Image Text](../images/az400_1_86.png "Body image")
+
+
+### Azure App Service - Runtimes
+
+What is a Runtime Environment?
+
+* A "Runtime Environment" refers to the software and settings needed for a program to run in a defined way at runtime.
+* A runtime generally means what programming language and libraries and framework you are using.
+
+
+A runtime for Azure App Services will be a pre-defined container that has your programming language and commonly used library for that language installed.
+
+
+With Azure App Services you choose a runtime.
+
+* NET
+* .NET Core
+* Java
+* Ruby
+* Node.js
+* PHP
+* Python
+
+
+Azure App Services will have generally multiple latest
+
+.NET versions of a programming language e.g., Ruby 2.6, 2.7
+
+
+Its common for a cloud provider to stop supporting older Node.js versions, so you keep current and forces customer to keep
+
+PHP good security practices by having latest patches.
+
+## Azure App Service - Custom Container
+
+Azure App Service gives you the flexibility to use **custom containers for both Windows and Linux**.
+
+The reason you may opt for a custom container is to use a **distinct** runtime that isn't natively supported or to incorporate specific packages and software.
+
+
+![Alt Image Text](../images/az400_1_87.png "Body image")
+
+
+**Design Your Container:**
+
+Begin by creating a Docker container tailored to your needs on your local machine.
+
+**Push to Azure:**
+
+* Once your container is ready, push it to the Azure Container Registry.
+* This centralized repository ensures that your container is easily accessible within Azure.
+
+
+**Deploy and Go Live:**
+
+* Deploy your container image directly to the **Azure App Service**.
+* Once deployed, Azure takes care of scaling, maintenance, and updates.
+
+
+### Azure App Service - Deployment Slots
+
+**Deployments Slots allow you to create different environments** of your web-application associated to a different hostname. This is useful when you require a testing, staging, or QA environment alongside your production setup.
+
+
+**Deployment Slots let you swiftly replicate** your production setting for various purposes, ensuring consistent testing environments.
+
+
+![Alt Image Text](../images/az400_1_88.png "Body image")
+
+
+**You can also Swap environments. This is useful for executing Blue/Green deployments.**
+
+By using Swap, you can promote your staging environment to production with ease.
+
+**You can promote our staging to production by swapping,** if something goes wrong you could swap them back. This capability ensures **minimal downtime** and enhances the user experience since you can introduce changes in a controlled manner, rolling them back if necessary.
+
+
+## Azure App Service - App Service Environment
+
+**App Service Environment (ASE)** is an Azure App Service feature that provides a **fully isolated and dedicated environment** for securely running App Service apps at high scale
+
+
+This allow you to host:
+
+* • Windows and Linux web apps
+* • Docker containers
+* • Mobile apps
+* • Functions
+
+
+App Service environments (ASEs) are appropriate for application workloads that require:
+
+* Very high scale
+* Isolation and secure network access.
+* High memory utilization
+
+
+Customers can create multiple ASEs within a single Azure region or across multiple Azure regions **making ASEs ideal for horizontally scaling stateless application tiers in support of high requests per second (RPS) workloads.**
+
+
+* ASE comes with its own pricing tier (Isolated Tier)
+* ASEs can be used to configure security architecture
+* Apps running on ASEs can have their access gated by upstream devices, such as web application firewalls (WAFs)
+* App Service Environments can be deployed into Availability Zones (AZ) using zone
+
+
+There are 2 deployment types for an App Service environment (ASE):
+
+1. External ASE
+2. ILB ASE
+
+
+* **External ASE exposes the ASE-hosted apps on an internet-accessible IP address.**
+
+
+![Alt Image Text](../images/az400_1_89.png "Body image")
+
+
+
+* If the VNet is connected to your on-premises network, apps in your ASE also have access to resources there without additional configuration.
+* Because the ASE is within the VNet, it can also access resources within the VNet without any additional configuration.
+* **ILB ASE exposes** the ASE-hosted apps on an IP address inside your VNet. The internal endpoint is an **internal load balancer (ILB)**
+
+
+### Azure App Service - Deployment
+
+**What is Deployment?**
+
+The action of pushing changes or updates from a local environment or repository into a remote environment.
+
+**Azure App Services provides many ways to deploy your applications:**
+
+* Run from Package
+* Deploy ZIP or WAR (Uses Kudu)
+* Deploy via FTP
+* Deploy via cloud sync (Dropbox or One Drive)
+* Deploy continuously (GitHub, BitBucket, and Azure Repos) using Kudu and Azure Pipelines Deploy using a custom container CI/CD pipeline (Deploy for Docker Hub or Azure Container Registry)
+* Deploy from local Git (Kudu build server)
+* Deploy using GitHub Actions
+* Deploy using GitHub Actions containers
+* Deploy with template (ARM templates)
+
+
+**Run from a package** is when the files in the package **are not copied to the wwwroot directory**.
+
+Instead, the ZIP package itself gets **mounted** directly as the **read-only wwwroot directory**.
+
+
+All other deployment methods in App Service have deployed to the following directory:
+
+* (Windows) D: home site \wwwroot
+* **(Linux) /home/site/wwwroot**
+
+
+Kudu is the engine behind git deployments in Azure App Service.
+It's an open-source project that can also run outside of Azure
+
+Since the same directory is used by your app at runtime, **it's possible for deployment to fail** because of **file lock conflicts**, and for the app to behave unpredictably because some of the files are not yet updated.
+
+
+#### Azure App Service - Deployment
+
+
+**ZIP and WAR file deployment uses the same Kudu service** that powers continuous integration-based deployments.
+
+Kudu supports the following functionality for ZIP file deployment:
+
+* Deletion of files left over from a previous deployment
+* Option to turn on the default build process, which includes package restore
+* Deployment customization, including running deployment scripts
+* Deployment logs
+* A file size limit of 2048 MB
+
+
+You can deploy using
+
+* Azure CLI
+* Azure APl via REST (cURL)
+* Azure Portal
+
+```
+# Azure CLI
+az webapp deployment source config-zip --resource-group <group-name> --name <app-name> --src clouddrive/<filename>.zip
+
+curl -X POST -u <deployment_user> --data-binary @"<zip_file_path»" https://<app_name>.scm.azurewebsites.net/api/zipdeploy
+
+# Azure PowerShell
+Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <zip-file-path>
+```
+
+#### Azure App Service - Deployment - FTP
+
+You can use (File Transfer Protocol) FTP protocol to upload files.
+
+**You will need your own FTP client. You just drag and upload your files.**
+
+**Go to the Deployment Center**
+
+
+![Alt Image Text](../images/az400_1_90.png "Body image")
+
+> Get the FTP credentials for your FTP client
+
+### Azure App Service - Deployment Dropbox or OneDrive
+
+You can use Dropbox or OneDrive to deploy using a cloud sync.
+
+
+You go to Deployment Center, configure for Dropbox or OneDrive.
+
+When you turn on Sync it will create a folder in your drop cloud drive:
+
+* • OneDrive: Apps\Azure Web Apps
+* • Dropbox: Apps\Azure
+
+
+This will sync with your **/home/site/wwwroot,** so you just update files in that folder.
+
+![Alt Image Text](../images/az400_1_91.png "Body image")
+
+#### Azure App Service Plan
+
+**Azure App Service Plan** determines the region (Datacenter) of the physical server where your web application will be hosted and defines the **amount of storage, RAM, and CPU** your application will use. It offers several **pricing tiers:**
+
+Shared Tiers
+
+**There are 2 shared: Free, Shared**
+
+**Free Tier provides:**
+
+* • 1 GB of disk space
+* • Up to 10 apps on a single shared instance
+* • No SLA for availability
+* • Each app has a compute quota of 60 minutes per day
+
+
+**Shared Tier provides**
+
+* Up to 100 apps on a single shared instance
+* No SLA for availability
+* Each app has a compute quota of 240 minutes per day
+
+> Shared Tier does not support Linux-based instances
+
+![Alt Image Text](../images/az400_1_92.png "Body image")
+
+
+**Dedicated Tiers**
+
+Basic, Standard, Premium, PremiumV2, PremiumV3
+
+Basic
+
+* More disk space
+* Unlimited apps
+* 3 levels in this tier that offer varying
+
+
+![Alt Image Text](../images/az400_1_93.png "Body image")
+
+### Azure App Service Plan
+
+
+Azure App Service Plan determines the region (Datacenter) of the physical server where your web application will be hosted and defines the amount of storage, RAM, and CPU your application will use. It offers several pricing tiers:
+
+Dedicated Tiers
+
+**Basic, Standard, Premium, PremiumV2, PremiumV3**
+
+Basic
+
+* More disk space
+* Unlimited apps
+* 3 levels in this tier that offer varying amounts of compute power, memory, and disk storage
+
+Standard
+
+* Scale out to three dedicated instances
+* SLA of 99.95% availability
+*  3 levels in this tier that offer varying amounts of compute power, memory, and disk storage
+
+
+Premium
+
+* Scale to 10 dedicated instances
+* Availability SLA of 99.95%
+* multiple levels of hardware
+
+![Alt Image Text](../images/az400_1_94.png "Body image")
+
+
+**Isolated Tier**
+
+* Dedicated Azure virtual network
+* Full network and compute isolation
+* Scale out to 100 instances
+* Availability SLA of 99.95%
