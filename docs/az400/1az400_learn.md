@@ -3476,3 +3476,502 @@ Premium
 * Full network and compute isolation
 * Scale out to 100 instances
 * Availability SLA of 99.95%
+
+
+## What is Infrastructure as Code?
+
+### The Problem with Manual Configuration
+
+Manually configuring your cloud infrastructure allows you easily start using new service offerings to quickly prototype architectures however it comes with many downsides:
+
+* • Its easy to mis-configure a service though human error
+* • Its hard to manage the expected state of configuration for compliance
+* • Its hard to transfer configuration knowledge to other team members
+
+
+### Infrastructure as Code (IaC)
+
+
+You write a configuration script to **automate creating, updating or destroying** cloud infrastructure.
+
+* IaC is a blueprint of your infrastructure.
+* Iac allows you to easily **share, version or inventory your cloud infrastructure**.
+
+
+
+![Alt Image Text](../images/az400_1_95.png "Body image")
+
+
+### Azure Automation State Configuration
+
+
+**Azure Automation State Configuration lets you define and enforce the desired state of your Azure VMs**, ensuring consistency across multiple machines. You can specify configuration details such as installed software, Windows features, registry settings, and file contents.
+
+**Configuration Definition**
+SimpleConfig: The configuration name targeting the node "MyVM.
+
+**File Creation: Ensures a file named hello.txt with the content "Hello, Azure!"
+exists in C:\ (Ensure = "Present").**
+
+
+By applying this configuration, you ensure that any VM assigned to the "MyVM" node will have the hello.txt file with the specified content.
+
+
+This helps maintain a consistent and desired state across your Azure VMs.
+
+
+从图片中显示的代码来看，这是一个 PowerShell Desired State Configuration (DSC) 配置文件，其中存在一些语法错误和不完整的地方。以下是完整的代码内容：
+
+```powershell
+Configuration SimpleConfig
+{
+    Import-DScResource -ModuleName PSDestredStateConfiguration
+
+    Node "MyVM"
+    {
+    # Ensure a file exists with specific content
+    File MyFile
+    {
+    DestinationPath = "C:\hello.txt"
+    Contents = "Hello, Azure!"
+    Ensure = "Present"
+    }
+    }
+
+    # Apply the configuration
+    SimpleConfig
+}
+```
+
+**注意：**  
+1. 代码中的 `Import-DScResource` 模块名称 `PSDestredStateConfiguration` 可能有拼写错误，正确的模块名应该是 `PSDesiredStateConfiguration`。  
+2. 最后一行 `SimpleConfig` 是用来调用配置的，但在完整脚本中，通常需要在定义配置后调用它来生成 MOF 文件。  
+3. 代码中的缩进不一致，且缺少配置块的闭合括号。
+
+
+### Introduction to Azure Resource Manager
+
+Azure Resource Manager (ARM) is a service that allows you to manage Azure resources.
+
+Azure Resource Manager is a collection of services in the Azure Portal, **so you can't simply type in "Azure Resource Manager"**
+
+
+![Alt Image Text](../images/az400_1_96.png "Body image")
+
+
+It is a management layer that allows you to:
+
+* Create, Update, Delete Resources
+* Apply Management features e.g., Access Controls, Locks, Tags
+* Write Infrastructure as Code (laC) via JSON templates.
+
+
+We will be examining the following key components that form the Azure Resource Manager (ARM) layer:
+
+* Subscriptions
+* Resource Tags
+* Management Groups 
+* Access Control (IAM)
+* Resource Groups
+* Role-Based Access Controls (RBAC)
+* Resource Providers 
+* Azure Policies
+* Resource Locks
+* ARM Templates
+* Azure Blueprints
+
+
+### **Azure Resource Manager - Use Case**
+
+![Alt Image Text](../images/az400_1_97.png "Body image")
+
+Think of Azure Resource Manager (ARM) as a "**gatekeeper**".
+
+**All requests flow through ARM, and it decides whether that request can be performed on a resource**E.g., creation, updating, and deletion of a virtual machine
+
+ARM uses **Azure's RBAC** to determine whether a user has the necessary permissions to carry out a request.
+
+When a request is made, ARM checks the user's assigned roles and the permissions associated with those roles.
+
+If the user has the necessary permissions, **the request is allowed; otherwise, it is denied.**
+
+
+#### Azure Resource Manager - Scope
+
+**What is scope?**
+
+Scope is a boundary of control for azure resources. It is a way to govern your resource by placing resources
+
+* within a logical grouping
+* and applying logical restrictions in the form of rules.
+
+
+![Alt Image Text](../images/az400_1_98.png "Body image")
+
+### ARM Templates
+
+**What is Infrastructure As Code? (IaC)**
+
+**The process of managing and provisioning computer data** centers (e.g., Azure) through machine-readable **definition files (e.g., JSON files)** rather than physical hardware configuration or interactive configuration tools.
+
+You write a script that will setup cloud services for you.
+
+
+IaCs can either be:
+
+* **Declarative** - You describe your desired outcome, and the system figures out how to achieve it.
+* **Imperative** - You provide specific instructions, detailing exactly how to reach the desired state.
+
+
+**ARM templates are JSON files** that define azure resources you want to provision and azure services you want to configure.
+
+
+With ARM templates you can:
+
+* **ARM templates are declarative**. (You just outline your desired setup, and the system takes care of the rest)
+* Build, remove, or share entire architectures in minutes
+* Reduce configuration mistakes
+* Know exactly what you have defined for a stack to establish an architecture baseline for compliance
+
+## Introduction to Azure Key Vault
+
+### Introduction to Azure Key Vault
+
+**Azure Key Vault helps you safeguard cryptographic keys and other secrets used by cloud apps and services.**
+
+Azure Key Vault focuses on three things:
+
+**Certificate Management**
+
+Easily provision, manage, and deploy public and private SSL certificates for use with Azure and internal connected resources.
+
+**Key Management**
+
+Create and control the encryption keys used to encrypt your data
+
+**Secrets Management**
+
+Store and tightly control access to tokens, passwords, certificates, API keys, and other secrets
+
+> Certificates contain key pair (key and secret). This is not to be confused with Key Management and Secrets Management
+
+### HSM and FIPS
+
+**An HSM is a Hardware Security Module.**
+
+Its a piece of hardware designed to store encryption keys.
+
+**Federal Information Processing Standard (FIPS)**
+
+US and Canadian government standard that specifies the security requirements for cryptographic modules that protect sensitive information.
+
+HSM's that are multi-tenant are **FIPS 140-2 Level 2 Compliant (multiple customers virtually isolated on an HSM)**
+
+HSM's that are single-tenant are **FIPS 140-2 Level 3 Compliant (single customer on a dedicated HSM)**
+
+
+A Vault stores secrets and keys, that can be safeguarded by software or FIPS 140-2 Level 2 validated HSMs
+
+Azure Key Vaults provides two types of containers:
+
+* Vaults - supports, software and HSM backed keys
+* HSM pools — only supports HSM backed keys
+
+To activate your HSM, you will need to:
+
+* provide a minimum of three RSA key-pairs (up to a maximum of 10)
+* specify the minimum number of keys required to decrypt the security domain (called a quorum)
+
+> You do not choose the container on creation; you just choose between Standard and Premium.
+> 
+> When you choose Premium and create enough RSA key pairs you will begin to use HSM pools.
+
+### Azure Key Vault - Key Vault API
+
+Azure Key Vault Rest API is used for programmatically managing Azure Key Vault resources, allowing you to perform operations such as:
+
+
+* Create a key or secret
+* Import a key or secret
+* Revoke a key or secret
+* Delete a key or secret
+* Authorize user or apps to access its keys or secrets
+* Monitor and manage key usage
+
+Azure Key Vault Rest API supports three different types of **authentication**:
+Secret
+
+![Alt Image Text](../images/az400_1_99.png "Body image")
+
+
+* **Managed Identities** — Identity managed by Azure AD (recommended as best practice)
+* **Service Principal and Certificate **— Uses a certificate for authentication
+* **Service Principal and Secret** - User identity and secret key
+
+### Azure Key Vault - Recovery Options
+
+![Alt Image Text](../images/az400_1_100.png "Body image")
+
+
+### Azure Key Vault - Pricing
+
+Azure has two pricing tiers:
+
+* Standard
+* Premium (Allows for both software and HSM-protected keys)
+
+![Alt Image Text](../images/az400_1_101.png "Body image")
+
+### Azure Key Vault - Double Encryption
+
+**Storage Accounts - Infrastructure Encryption**
+
+![Alt Image Text](../images/az400_1_102.png "Body image")
+
+* By default, Azure encrypts storage account data at rest.
+* **Infrastructure encryption adds a second layer of encryption to your storage account's data**
+
+![Alt Image Text](../images/az400_1_103.png "Body image")
+
+Double encryption is where two or more independent layers of encryption are enabled to protect against compromises of any one layer of encryption.
+
+This strategy ensures that even if one encryption layer is compromised, the data remains protected by the other.
+
+
+Microsoft has a two layered approach each for **Data At-Rest and Data In-Transit**
+
+**Data-at-Rest**
+
+1. Disk encryption using customer-managed keys
+2. Infrastructure encryption using platform-managed keys
+
+**Data-in-Transit**
+
+1. Transit encryption using Transport Layer Security (TLS) 1.2
+2. Additional layer of encryption provided at the infrastructure layer
+
+
+### Azure Key Vault - Keys
+
+When creating a key, there are three options:
+
+* **Generate** - Azure will generate the key
+* **Import** - Import an existing RSA key
+* **Restore Backup** - Restore a key from backup
+
+For keys generated by Azure, you can use either RSA or EC.
+
+**RSA (Rivest-Shamir-Adleman):  2048,3072,4096**
+
+**EC (Elliptic-curve cryptography):  P-256, P-384,P-521,P-256K**
+
+![Alt Image Text](../images/az400_1_104.png "Body image")
+
+
+When you have a Premium Vault, you'll key options for HSM:
+
+
+![Alt Image Text](../images/az400_1_105.png "Body image")
+
+**Microsoft Managed Key (MMK) are keys managed by Microsoft.** They do not appear in your vault and in most cases are used by default for many azure services.
+
+Customer Managed Key (CMK) are keys you create in Azure Key Vault.
+
+You need to select a key from a vault for various
+
+* Sometimes "customer managed" means that the customer has imported cryptographic material.
+* Generated or imported keys are considered CMK in Azure.
+
+In order to use a key, an Azure service needs an identity (within Azure AD) **for permission to access the key from the vault**
+
+* Infrastructure encryption is sometimes an option.
+* By default, Azure encrypts storage account data at rest.
+* **Infrastructure encryption adds a second layer of encryption to your storage account's data**.
+
+
+
+![Alt Image Text](../images/az400_1_106.png "Body image")
+
+
+### Azure Key Vault - Secrets
+
+**Azure Key Vault Secrets provides secure storage of generic secrets such as passwords and database connection strings.**
+
+* Key Vault APls accept and return secret values as strings
+* Internally, Key Vault stores and manages secrets:
+
+As sequences of octets (8-bit bytes),
+
+Each secret with a maximum size of 25k bytes
+
+* Key Vault service doesn't provide semantics for secrets
+
+accepts the data, encrypts it, stores it, and returns a secret identifier ("id").
+
+> For highly sensitive data, clients should consider additional layers of protection for data. For example, encrypting your data using a separate protection key before storing it in the Key Vault.
+
+**Key Vault also supports a contentType field for secrets**
+
+* Clients may specify the content type of a secret to assist in interpreting the secret data when it's retrieved
+* maximum length of this field is 255 characters
+
+
+Every secret stored in your Key Vault is encrypted.
+
+**Key Vault encrypts secrets at rest with a hierarchy of encryption keys**
+
+* • All keys in that hierarchy are protected by modules that are FIPS 140-2 compliant
+* • The encryption leaf key is unique to each Key Vault, while the root key is unique to the entire security world.
+* • Protection level may vary between regions
+* • E.g., China uses FIPS 140-2 Level 1, and all other regions use Level 2 or higher
+
+
+**Secret Attributes**
+
+* exp — expiration time, after which the secret data should not be retrieved
+* Nbf - **not before (default value is now the time before which the secret data should not be retrieved**
+* enabled — whether the secret data can be retrieved, (default true)
+
+
+There are also read-only attributes for created and update
+
+
+In order to access secrets within your application code, you can would use the Azure SDK e.g., NET example
+
+```
+az keyvault secret show [--id]
+				[--name ]
+				[--subscription] 
+				[--vault-name]
+				[--version]
+```
+
+```
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Core;
+
+SecretClientOptions options = new SecretClientOptions()
+{
+    Retry = {
+        Delay = TimeSpan.FromSeconds(2),
+        MaxDelay = TimeSpan.FromSeconds(16),
+        MaxRetries = 5,
+        Mode = RetryMode.Exponential
+    }
+};
+
+var uri = new Uri("https://<your-unique-key-vault-name>.vault.azure.net/");
+var creds = new DefaultAzureCredential();
+var client = new SecretClient(uri, creds, options);
+
+KeyVaultSecret secret = client.GetSecret("<mySecret>");
+
+string secretValue = secret.Value;
+```
+
+### Encrypted Secrets
+
+**Encrypted Secrets are variables that allow you to pass sensitive information to your GitHub Actions Workflow**
+
+> Secrets are accessed via the secrets context eg. ${{secrets.MY_SECRET}}
+
+**Organization-Level Secrets**
+
+* you can use access policies to control which repositories can use organization secrets share secrets between multiple repositories
+* Updating organization secrets propagates changes to all shared repos.
+
+**Repository-level Secrets**
+Secrets that are shared across all environments for a repo.
+
+**Environment-level Secrets**
+
+You can enable required reviewers to control access to the secrets
+
+![Alt Image Text](../images/az400_1_107.png "Body image")
+
+
+* Secret names can only contain alphanumeric characters and underscores no spaces allowed eg. Hello_world123
+* Names must not start with GITHUB_prefix 
+* Names must not start with numbers
+* Names are case-insensitive
+
+
+### Encrypted Secrets - Accessing Secrets
+
+![Alt Image Text](../images/az400_1_108.png "Body image")
+
+### Encrypted Secrets - Settings Secrets
+
+Settings Secrets at the **Repository-level**
+
+```
+# set a secret and prompt for secret value
+gh secret set SECRET_NAME
+sets a
+secrets and sets values from a text file
+gh secret set SECRET_NAME < secret. txt
+```
+
+Settings Secrets at the **Environment-level**
+
+```
+# set a secret and prompt for secret value
+gh secret set --env ENV_NAME SECRET_NAME
+# get list of secrets for an env
+gh secret list --env ENV_NAME
+```
+
+
+Settings Secrets at the **Organization-level**
+
+```
+# login with admin:org scope to managed org secrets
+gh auth login --scopes "admin:org"
+
+# set a secret only for private repos and prompt for secret alue
+gh secret set --org ORG_NAME SECRET_NAME
+
+# set a secret for public, private and internal repos
+gh secret set --org ORG_NAME SECRET_NAME --visibility all
+
+# set a secret for specific repos
+gh secret set --org ORG_NAME SECRET_NAME --repos REPO-NAME-1, REPO-NAME-2
+
+# list secrets for the org
+gh secret list --org ORG_NAME
+```
+
+### `GITHUB_TOKEN` Secret
+
+At the start of each workflow job, GitHub automatically creates a unique GITHUB_TOKEN secret to use in your workflow. You can use the GITHUB_TOKEN to authenticate in the workflow job.
+
+> When you enable GitHub Actions, GitHub installs a GitHub App on your repository.
+The GITHUB_TOKEN secret is a GitHub App installation access token.
+
+
+Example of Using GITHUB_TOKEN using the `REST_API`
+
+```
+name: Create issue on commit
+
+on: [push]
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue using REST API
+        run: |
+          curl --request POST \
+            --url https://api.github.com/repos/${{ github.repository }}/issues \
+            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+            --header 'content-type: application/json' \
+            --data '{
+              "title": "Automated issue for commit: ${{ github.sha }}",
+              "body": "Automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+            }' \
+            --fail
+```
