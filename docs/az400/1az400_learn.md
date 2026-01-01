@@ -3975,3 +3975,517 @@ jobs:
             }' \
             --fail
 ```
+
+## Introduction to Azure Monitor
+
+Azure Monitor comprehensive solution **for collecting, analyzing, and acting on telemetry from your cloud and on-premises environments**
+
+Key Features:
+
+- **Visual Dashboards**: A visual representation of your data.
+- **Smart Alerts**: Intelligent notifications based on specific conditions.
+- **Automated Actions**: Set automation based on certain triggers.
+- **Log Monitoring**: Track and analyze event logs.
+
+Many Azure services by default are already sending telemetry data to Azure Monitor
+
+![Alt Image Text](../images/az400_1_109.png "Body image")
+
+### The Pillars of Observability
+
+**What is Observability?**
+
+The ability to measure and understand how internal systems work in order to answer questions regarding performance, tolerance, security and faults with a system / application.
+
+To obtain observability you need to use **Metrics, Logs and Traces.**
+
+You have to use them together, using them in isolate does not gain you observability
+
+**Metrics**
+
+A number that is measured over period of time e.g., If we measured the CPU usage and aggerated it over a period of time we could have an **Average CPU metric**
+
+**Logs**
+
+A text file where each line contains event data about what happened at a certain time.
+
+**Traces**
+
+A history of request that is travels through multiple Apps/services so we can pinpoint performance or failure.
+
+![Alt Image Text](../images/az400_1_110.png "Body image")
+
+### Anatomy of Azure Monitor
+
+The sources of common monitoring data to populate datastores Order by (Highest to Lowest)
+
+**The functions that Azure monitor can perform**
+
+![Alt Image Text](../images/az400_1_111.png "Body image")
+
+### Azure Monitor - Sources
+
+**Application Code:** Performance and functionality of application and code. 
+
+Performance traces, application logs, and user telemetry.
+
+You need to install **Instrumentation Package** to collect data for Application Insights
+
+**Metrics** descriptive data regarding your application's performance, operation, and custom metrics.
+
+
+![Alt Image Text](../images/az400_1_112.png "Body image")
+
+
+- Send application data to **Azure Storage** for archiving.
+- Details of **availability test stored**
+- Debug snapshot data that is captured for a subset of exceptions is stored in Azure Storage.
+
+**Log Analytics Agent** is installed for comprehensive monitoring.
+
+**Dependency Agent** collects discovered data about processes running on the virtual machine and external process dependencies.
+
+Agents can be installed on the OS for VMs running in Azure, On-premises or other cloud providers.
+
+![Alt Image Text](../images/az400_1_113.png "Body image")
+
+
+![Alt Image Text](../images/az400_1_115.png "Body image")
+
+Resource Logs provide insights into the internal operation of an Azure resource and are automatically created. However, you must create a diagnostic setting to specify a destination for each resource.
+
+
+**Azure subscription:** Telemetry related to the health and operation of your Azure subscription
+
+
+**Azure Service Health** provides information about the health of the Azure services in your subscription that your application and resources rely on.
+
+
+![Alt Image Text](../images/az400_1_116.png "Body image")
+
+### Azure Monitor - Sources
+
+Telemetry related to your Azure tenant is collected from **tenant-wide services such as Azure Active Directory**.
+
+![Alt Image Text](../images/az400_1_117.png "Body image")
+
+For resources that cannot be monitored using the other data sources, write this data to either Metrics or Logs using an **Azure Monitor API**
+
+![Alt Image Text](../images/az400_1_118.png "Body image")
+
+This will allow you to collect log data from any **REST client** and store it in Log Analytics and the Azure Monitor metrics database.
+
+**Azure Monitor Logs**
+
+- collects numeric data from monitored resources into a **time series database.**
+- **Data Consolidation**: Logs can be pulled from diverse sources such as platform logs from Azure services, log and performance data from agents on virtual machines, and usage and performance data from applications.
+- **Workspaces**: All these logs are organized into workspaces, providing a centralized repository for in-depth analysis.
+- **Query Language:** Azure Monitor Logs offers a sophisticated query language, which can quickly analyze millions of records.
+- **Log Analytics**: You can interactively work with log queries and their results using Log Analytics
+
+
+#### Data retention and archive policies
+
+In Azure Monitor Logs, you can control how long your log data stays stored.
+
+By default, in the Azure portal, you can set this retention time anywhere **from 30 to 730 days for the whole workspace**.
+
+You can also specify different storage durations for certain tables within your workspace, letting you manage different types of data as needed.
+
+
+This gives you the flexibility to meet any **business or regulatory rules about data storage**.
+
+![Alt Image Text](../images/az400_1_119.png "Body image")
+
+
+To tweak these retention settings, you have to be on the **paid tier of Azure Monitor Logs**.
+
+
+#### To set retention and archive policy by table:
+
+1. Navigate to the Azure portal and go to the Log Analytics workspace where the data is stored.
+2. Under the "Settings" section, select "Usage and estimated costs".
+3. Then, select "Data Retention".
+4. In the data retention blade, you can modify the retention period for each table. By default, it is set to 31 days, but you can extend it up to 730 days.
+
+
+5. For archiving data, you can use **Azure Data Explorer**, which lets you retain data beyond the 2-year limit, and gives you a highly-scalable analytics service.
+
+![Alt Image Text](../images/az400_1_120.png "Body image")
+
+
+## Log Analytics
+
+**Log Analytics is a tool in the Azure portal used to edit and run log queries with data in Azure Monitor Logs.**
+
+
+* Log Analytics processes data from various sources and transforms it into actionable insights.
+* It ingests data from **Azure Monitor, Windows, and Linux agents, Azure services,** and other sources. 
+* Once the data is collected, you can use **Log Analytics query language to retrieve**, consolidate, and analyze the data.
+
+![Alt Image Text](../images/az400_1_121.png "Body image")
+
+**Benefits**
+
+1. **Centralized Log Management**: Collect and analyze data from multiple sources, both on-premises and in the cloud, in a centralized location.
+2. **Powerful Analytic**s: Utilize the Kusto Query Language (KQL) to run advanced analytics on large amounts of fast-streaming data in real time.
+3. **Custom Dashboards**: Create custom dashboards and visualizations to display real-time
+data and trends.
+4. **Integration**: Seamless integration with other Azure services and Microsoft solutions, such as Power Bl and Azure Automation.
+5. **Alerting**: Set up alerts based on specific criteria to proactively identify and respond to potential issues before they affect your users.
+
+
+Log Analytics workspace is a unique environment for Azure Monitor log data
+
+
+![Alt Image Text](../images/az400_1_122.png "Body image")
+
+### Log Analytics agent
+
+The Log Analytics agent is a lightweight agent that can be installed on **Windows and Linux** machines to collect and send log data to **Azure Monitor.**
+
+It provides a way to centralize logs from various sources and enables the analysis of the data using tools **like Azure Monitor Logs, Azure Dashboards, and Azure Monitor Workbooks**.
+
+
+The agent can collect logs from various sources, including **Windows event logs, custom logs, performance counters, and Syslog.**
+
+
+It supports both agent-based and agentless data collection and can be configured to collect data from on-premises and cloud-based environments.
+
+![Alt Image Text](../images/az400_1_123.png "Body image")
+
+The Log Analytics agent is set up to monitor certain **Windows event logs** like Security, System, or Application logs
+
+The data from these logs is then gathered and sent to **Log Analytics** for analysis using queries and visualizations.
+
+
+The Log Analytics agent is set up to monitor **Syslog** servers or network devices.
+
+
+It collects data from these sources and sends it to Log Analytics, allowing for detailed analysis and troubleshooting.
+
+
+**Both methods for collecting log data allow for centralized management and analysis of log data from multiple sources, which can help to improve visibility and streamline troubleshooting and issue resolution.**
+
+![Alt Image Text](../images/az400_1_124.png "Body image")
+
+## Application Insights
+
+**Application Insights is an Application Performance Management (APM)** service
+It is a sub-service of Azure Monitor.
+
+### **What is an APM?**
+
+Monitoring and management of **performance and availability** of software apps. APM strives to detect and diagnose complex application performance problems to maintain an expected level of service.
+
+**Why use Application Insights?**
+
+Automatic Detection of Performance Anomalies: **Application Insights automatically identifies performance anomalies in your system**.
+
+
+* **Powerful Analytics Tools**: It comes with robust analytics tools to help you diagnose issues and understand what users do with your app.
+* **Continuous Improvement**: It is designed to help you continuously improve performance and usability of your applications.
+* **Platform Agnostic**: It works for apps on NET, Node.js, Java, and Python, hosted on-premises, hybrid, or any public cloud.
+* **DevOps Integration**: It can be integrated into your DevOps process.
+* **Mobile App Monitoring**: It can monitor and analyze telemetry from mobile apps by integrating with Visual Studio App Center.
+
+To use Application Insights, **you need to instrument your application.**
+
+This involves installing the **instrument package (SDK), or enabling Application
+Insights using the Application Insights Agents, where supported**.
+
+![Alt Image Text](../images/az400_1_125.png "Body image")
+
+
+* Apps can be instrumented from anywhere
+* When you set up Application Insights monitoring for your web app, you create an Application Insights resource in Microsoft Azure You open this resource in the Azure portal to see and analyze the telemetry collected from your app.
+* The resource is identified by an instrumentation key (ikey)
+
+
+#### What does Application Insights Monitor?
+
+* Request rates, response times, and failure rates 
+* Dependency rates, response times, and failure rates 
+* Exceptions
+* Page views and load performance
+* AJAX calls
+* User and session counts
+* Performance counters
+* Host diagnostics
+* Diagnostic trace logs
+* Custom events and metrics
+
+#### Where do I see my telemetry?
+
+* Smart detection and manual alerts
+* Application map
+* Profiler
+* Usage Analysis
+* Diagnostic search for instance data
+* Metrics Explorer for aggerated data
+* Dashboards
+* Live Metrics Stream
+* Analytics
+* Visual Studio
+* Snapshot debugger
+* Power BI
+* REST API
+* Continuous Export
+
+### Application Insights - Instrumentation
+
+You Instrument your application by adding the Azure Application Insights SDK and implementing traces.
+
+In the case of a **Node.js application**, you can install the Azure Application Insights SDK using **npm (Node Package Manager) with the following command:**
+
+```
+npm install applicationinsights --save
+```
+
+```
+let appInsights = require("applicationinsights");
+
+// 配置要收集的内容
+appInsights.setup("<instrumentation_key>")  // 设置 Application Insights 工具密钥
+    .setAutoDependencyCorrelation(true)      // 启用自动依赖项关联
+    .setAutoCollectRequests(true)            // 自动收集 HTTP 请求
+    .setAutoCollectPerformance(true, true)   // 自动收集性能指标（第二个参数是实时指标）
+    .setAutoCollectExceptions(true)          // 自动收集异常
+    .setAutoCollectDependencies(true)        // 自动收集依赖项（数据库调用等）
+    .setAutoCollectConsole(true)             // 自动收集控制台日志
+    .setUseDiskRetryCaching(true)            // 使用磁盘重试缓存
+    .setSendLiveMetrics(false)               // 禁用实时指标发送
+    .setDistributedTracingMode(
+        appInsights.DistributedTracingModes.AI  // 设置分布式跟踪模式为 AI 模式
+    )
+    .start();                                 // 启动 Application Insights
+```
+
+
+
+**Azure supports the following languages:  NET, Java, Python, Node.js, JavaScript**
+
+```
+// 1. 跟踪自定义事件 - 用于记录业务相关事件
+client.trackEvent({
+    name: "my custom event",  // 事件名称
+    properties: {customProperty: "custom property value"}  // 自定义属性
+});
+
+// 2. 跟踪异常 - 记录已处理的异常
+client.trackException({
+    exception: new Error("handled exceptions can be logged with this method")  // Error对象
+});
+
+// 3. 跟踪自定义指标 - 记录数值型指标
+client.trackMetric({
+    name: "custom metric",  // 指标名称
+    value: 3  // 指标值
+});
+
+// 4. 跟踪跟踪消息 - 用于调试和诊断（代码中有语法错误）
+client.trackTrace({  // 注意：应该是()而不是{}，应该是client.trackTrace({
+    message: "trace message"  // 跟踪消息内容
+});
+
+// 5. 跟踪依赖项调用 - 记录外部依赖的调用情况
+client.trackDependency({
+    target: "http://dbname",           // 依赖目标
+    name: "select customers proc",     // 依赖项名称
+    data: "SELECT * FROM Customers",   // 命令/查询文本
+    duration: 231,                     // 调用持续时间(毫秒)
+    resultCode: 0,                     // 结果代码
+    success: true,                     // 是否成功
+    dependencyTypeName: "ZSQL"         // 依赖类型
+});
+
+// 6. 跟踪HTTP请求 - 记录服务器处理的请求
+client.trackRequest({
+    name: "GET /customers",            // 请求名称
+    url: "http://myserver/customers",  // 请求URL
+    duration: 309,                     // 处理时间(毫秒)
+    resultCode: 200,                   // HTTP状态码
+    success: true                      // 是否成功
+});
+```
+
+### Application Insights - Auto Instrumentation
+
+Auto-instrumentation allows you to enable application monitoring with
+
+Application Insights without changing your code.
+
+![Alt Image Text](../images/az400_1_126.png "Body image")
+
+
+## Microsoft Sentinel
+
+**Microsoft Sentinel** is a scalable, cloud-native:
+
+
+**Security information event management (SIEM)**
+
+
+collecting and analyzing security-related data
+
+**Security orchestration automated response (SOAR)**
+
+collection of tools that enable an organization to define, standardize, measure, and automate responses to security events.
+
+![Alt Image Text](../images/az400_1_127.png "Body image")
+
+Microsoft Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for:
+
+**Alert detection**
+
+Microsoft Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution
+
+* Alert detection
+* Threat visibility
+* Proactive hunting
+
+
+![Alt Image Text](../images/az400_1_128.png "Body image")
+
+
+### Microsoft Sentinel - Data Sources
+
+
+Microsoft Sentinel comes with several connectors for Microsoft solutions:
+
+* Microsoft 365 Defender
+* Office 365
+* Azure AD (Microsoft Entra ID)
+* Microsoft Defender for Identity
+* Microsoft Defender for Cloud Apps
+
+
+Use common event formats:
+
+* Syslog
+* REST-API
+* Windows Event Logs
+* Common Event Format (CEF)
+* Trusted Automated eXchange of Indicator Information (TAXII)
+
+
+### Microsoft Sentinel - Azure Monitor Workbooks
+
+
+From Microsoft Sentinel you can create Azure Monitor Workbooks
+
+
+**Workbooks provide a flexible canvas for data analysis** and the creation of rich visual reports within the Azure portal.
+
+
+They allow you to tap into multiple data sources from across Azure and combine them into unified interactive experiences
+
+
+It tells a story about the performance and availability about your applications and services.
+
+![Alt Image Text](../images/az400_1_129.png "Body image")
+
+
+Workbooks are temporary workspaces to define a document-like format with visualization intertwined
+to help investigate and discuss performance.
+
+### Microsoft Sentinel - Analytics
+
+Microsoft Sentinel uses analytics to correlate alerts into incidents
+
+
+**Incidents** are groups of related alerts that together create an actionable possible-threat that you can investigate and resolve
+
+
+![Alt Image Text](../images/az400_1_130.png "Body image")
+
+### Microsoft Sentinel - Investigation
+
+**Microsoft Sentinel has deep investigation tools** that help you to understand the scope and find the root cause of a potential security threat.
+
+
+You can choose an entity on the interactive graph to ask interesting questions for a specific entity, and drill down into that entity and its connections to get to the root cause of the threat.
+
+
+![Alt Image Text](../images/az400_1_131.png "Body image")
+
+
+### Microsoft Sentinel - Hunting
+
+
+Microsoft Sentinel's powerful **hunting search-and-query tools,** based on the **MITRE framework**, enable you to proactively hunt for security threats across your organization's data sources, before an alert is triggered.
+
+After you discover which hunting query provides high-value insights into possible attacks, you can also create custom detection rules based on your query, and surface those insights as alerts to your security incident responders.
+
+
+While hunting, you can create **bookmarks** for interesting events, enabling you to return to them later, share them with others, and group them with other correlating events to create a compelling incident for investigation.
+
+![Alt Image Text](../images/az400_1_132.png "Body image")
+
+
+### Microsoft Sentinel - Pricing
+
+
+Microsoft Sentinel has **two different pricing models**
+
+
+**Capacity Reservations:**
+
+
+Billed a fixed fee based on the selected tier, enabling a predictable total cost for Microsoft Sentinel.
+
+
+**Pay-As-You-Go:**
+
+
+Billed per gigabyte (GB) for the volume of data ingested for analysis in Microsoft Sentinel and stored in the Azure Monitor Log Analytics workspace.
+
+
+### Kusto and Kusto Query Language (KSL)
+
+**Azure Monitor Logs is based on Azure Data Explorer, and log queries are written using the same Kusto query language (KQL)**
+
+
+KQL can be used in:
+
+
+* Log Analytics
+*  Log alert rules
+* Workbooks
+*  Azure Dashboards
+* Logic Apps
+* PowerShell
+* Azure Monitor Logs API
+
+
+**Kusto is based on relational database management systems, and supports entities such as databases, tables, and columns.**
+
+
+Some query operators include
+
+* calculated columns
+* searching and filtering on rows group by-aggregates
+* join functions
+
+
+Kusto queries execute in the context of some **Kusto database that is attached to a Kusto cluster**.
+
+
+```
+StormEvents                     // 1. 从 StormEvents 表开始查询
+| where EventType == 'Flood'    // 2. 筛选事件类型为 "洪水"
+  and State == 'WASHINGTON'     //   且州名为 "华盛顿州"
+| sort by DamageProperty desc   // 3. 按财产损失金额降序排列（从高到低）
+| take 5                        // 4. 只取前 5 条记录
+| project StartTime, EndTime,   // 5. 选择要显示的字段
+         State, 
+         EventType, 
+         DamageProperty, 
+         EpisodeNarrative
+```
+
+### Kusto Entities      
+
+Kusto is generally composed of the following entities: **Clusters, Databases, Tables, Columns, Functions**
+
+![Alt Image Text](../images/az400_1_133.png "Body image")
