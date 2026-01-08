@@ -53,10 +53,10 @@ nav:
     - 'Az104 final test': 'az104/21az104Qs.md'
   - 'Azure AI 102':
     - 'Azure AI Engineer Associate Certification - AI102': 'ai102/1ai102.md'
-    - 'AI-102 Designing and Implementing a Microsoft Azure AI Solution': 'ai102/4ai102.md'
+    - 'AI-102 Designing and Implementing a Microsoft Azure AI Solution': 'ai102/2ai102.md'
     - 'AI-102 - 2': 'ai102/3ai102.md'
     - 'AI-102 Complete SDK Summary': 'ai102/3ai102-sdk.md'
-    - 'Azure AI-102 Exam Preparation: Technical Overview': 'ai102/3ai102-sdk.md'
+    - 'Azure AI-102 Exam Preparation: Technical Overview': 'ai102/4ai102.md'
   - 'Azure 305 test':
     - '1 Azure Solution Architect & Identity and Access Management': 'az305/1az305.md'
     - '2 Identity Security / Design a Compute Strategy': 'az305/2az305.md'
