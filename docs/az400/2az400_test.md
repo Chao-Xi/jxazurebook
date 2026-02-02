@@ -1069,3 +1069,484 @@ You need to verify that DB1 can handle incoming requests before users can submit
 * D. an Azure Load Balancer health probe
 
 Correct Answer: C. a readiness probe
+
+### Question-51
+
+You have several Azure Active Directory (Azure AD) accounts.
+
+You need to ensure that users use multi-factor authentication (MA) to access Azure apps from untrusted networks.
+
+What should you configure in Azure
+
+* A. access reviews
+* B. managed identities
+* C. entitlement management
+* **D. conditional access**
+
+Answer: D
+
+You can configure a Conditional Access policy that requires MFA for access from untrusted networks.
+
+### Question-52
+
+You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
+
+You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.
+
+You need to ensure that an email alert is generated whenever VMSS1 scales in or out.
+
+Solution: From Azure DevOps, configure the Notifications settings for Project1.
+
+Does this meet the goal?
+
+
+* A. Yes
+* **B. No**
+
+
+Answer: B
+
+Notifications help you and your team stay informed about activity that occurs within your projects in Azure DevOps. You can get notified when changes occur to the following items: 
+
+* work items 
+* code reviews 
+* pull requests 
+* source control files 
+* builds
+
+### Question-53
+
+You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
+
+You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.
+
+You need to ensure that an email alert is generated whenever VMSS1 scales in or out.
+
+Solution: From Azure DevOps, configure the Service hooks settings for Project1.
+
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+Answer: B
+
+### Question-54
+
+You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
+
+You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.
+
+You need to ensure that an email alert is generated whenever VMSS1 scales in or out.
+
+Solution: From Azure Monitor, create an action group.
+
+Does this meet the goal?
+
+* **A. Yes**
+* B. No
+
+Answer: A
+
+An action group is a collection of notification preferences defined by the owner of an Azure subscription. Azure Monitor, Service Health and
+Azure Advisor alerts use action groups to notify users that an alert has been triggered.
+
+Reference
+https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+
+
+### Question-55
+
+You use GitHub for source control.
+
+A file that contains sensitive data is committed accidentally to the Git repository of a project.
+
+You need to delete the file and its history form the repository.
+
+Which two tools can you use? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+* A. the git filter-branch command
+* B. BFG Repo-Cleaner
+* C. the git rebase command
+* D. GitHub Desktop
+
+
+Answer: AB
+
+To entirely remove unwanted files from a repository's history you can use either the git filter-branch command or the BFG Repo-Cleaner open source tool.
+
+Reference:
+
+https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+
+### Question-56
+
+You plan to provision a self-hosted Linux agent.
+
+Which authentication mechanism should you use to register the self-hosted agent?
+
+* **A. personal access token (PAT)**
+* B. SSH key
+* C. Alternate credentials
+* D. certificate
+
+Answer: A
+
+Note: PAT Supported only on Azure Pipelines and TFS 2017 and newer. 
+
+After you choose PAT, paste the PAT token you created into the command prompt window. 
+
+Use a personal access token (PAT) if your Azure DevOps Server or TFS instance and the agent machine are not in a trusted domain. PAT authentication is handled by your Azure DevOps Server or TFS instance instead of the domain controller.
+
+Reference:
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux
+
+### Question-57
+
+You are building a Microsoft ASP.NET application that requires authentication.
+
+You need to authenticate users by using Azure Active Directory (Azure AD).
+What should you do first?
+
+* A. Assign an enterprise application to users and groups
+* **B. Create an app registration in Azure AD**
+* C. Configure the application to use a SAML endpoint
+* D. Create a new Auth token from the application
+* E. Create a membership database in an Azure SQL database
+
+Answer: B
+
+Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.
+Reference:
+
+https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/developer-guidance-for-integrating-applications
+
+### Question-58
+
+You have an Azure DevOps organization named Contoso.
+
+You need to recommend an authentication mechanism that meets the following requirements:
+
+Supports authentication from Git
+
+Minimizes the need to provide credentials during authentication
+
+What should you recommend?
+
+* **A. personal access tokens (PATs) in Azure DevOps**
+* B. Alternate credentials in Azure DevOps
+* C. user accounts in Azure Active Directory (Azure AD)
+* D. managed identities in Azure Active Directory (Azure AD)
+
+Answer: A
+
+Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
+
+
+These tokens have an expiration date from when they're created. You can restrict the scope of the data they can access. 
+
+Use PATs to authenticate if you don't already have SSH keys set up on your system or if you need to restrict the permissions that are granted by the credential.
+
+### Question-59
+
+You have an application that consists of several Azure App Service web apps and Azure functions.
+
+You need to assess the security of the web apps and the functions.
+
+Which Azure feature can you use to provide a recommendation for the security of the application?
+
+
+* A. Security & Compliance in Azure Log Analytics
+* B. Resource health in Azure Service Health
+* C. Smart Detection in Azure Application Insights
+* **D. Compute & apps in Azure Security Center**
+
+Answer: D
+
+Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
+
+### Question-60
+
+You have a branch policy in a project in Azure DevOps. The policy requires that code always builds successfully.
+
+You need to ensure that a specific user can always merge changes to the master branch, even if the code fails to compile. The solution must use the principle of least privilege.
+
+What should you do?
+
+* A. Add the user to the Build Administrators group
+* B. Add the user to the Project Administrators group
+* C. From the Security settings of the repository, modify the access control for the user.
+* **D. From the Security settings of the branch, modify the access control for the user.**
+
+Answer: D
+
+In some cases, you need to bypass policy requirements so you can push changes to the branch directly or complete a pull request even if branch policies are not satisfied. For these situations, grant the desired permission from the previous list to a user or group. You can scope this permission to an entire project, a repo, or a single branch. Manage this permission along the with other Git permissions.
+
+Reference:
+
+https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies
+
+
+### Question-61
+
+You have an Azure Resource Manager template that deploys a multi-tier application
+
+You need to prevent the user who performs the deployment from viewing the account credentials and connection strings used by the application.
+What should you use?
+
+* **A. Azure Key Vault**
+* B. a Web.config file
+* C. an Appsettings.json file
+* D. an Azure Storage table
+* E. an Azure Resource Manager parameter file
+
+
+Answer. A
+
+When you need to pass a secure value (like a password) as a parameter during deployment, you can retrieve the value from an Azure Key Vault.
+
+You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault ID. The key vault can exist in a different subscription than the resource group you are deploying to.
+
+Reference:
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-keyvault-parameter
+ertStudyPro
+
+
+### Question-62
+
+You have an Azure DevOps organization named Contoso that contains a project named Project1.
+
+You provision an Azure key vault named Keyvault 1.
+
+You need to reference Keyvault1 secrets in a build pipeline of Praject1.
+What should you do first?
+
+* A. Add a secure file to Project1.
+* B. Create an XAML build service.
+* C. Create a variable group in Project.
+* D. Configure the security policy of Contoso.
+
+
+Answer: D
+
+Before this will work, the build needs permission to access the Azure Key Vault. This can be added in the Azure Portal.
+
+Open the Access Policies in the Key Vault and add a new one. Choose the principle used in the DevOps build.
+
+Reference:
+https://docs.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault
+
+### Question-63
+
+Your company uses Azure DevOps.
+
+Only users who have accounts in Azure Active Directory can access the Azure DevOps environment.
+
+You need to ensure that only devices that are connected to the on-premises network can access the Azure DevOps environment.
+
+What should you do?
+
+* A. Assign the Stakeholder access level to all users.
+* B. In Azure Active Directory, configure risky sign-ins.
+* C.In Azure DevOps, configure Security in Project Settings.
+* **D. In Azure Active Directory, configure conditional access.**
+
+
+**Answer: D**
+
+Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
+
+Conditional Access policies are enforced after the first-factor authentication has been completed.
+
+Reference:
+https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+
+### Question-64
+
+You have the following Azure policy.
+
+```
+if: {
+    allOf: [
+        {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+        },
+        {
+            "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+            "notEquals": "true"
+        }
+    ]
+},
+then: {
+    effect: "deny"
+}
+```
+
+
+You assign the policy to the Tenant root group.
+
+What is the effect of the policy?
+
+* A. prevents all HTTP traffic to existing Azure Storage accounts
+* B. ensures that all traffic to new Azure Storage accounts is encrypted
+* C.prevents HTTPS traffic to new Azure Storage accounts when the accounts are accessed over the Internet
+* D.ensures that all data for new Azure Storage accounts is encrypted at rest
+
+### Question-65
+
+You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
+
+You need to ensure that you can reference the values of the secrets stored in vault in all the pipelines of Project. The solution must prevent the values from being stored in the pipelines.
+
+What should you do?
+
+* **A. Create**** a variable group in Praject1.**
+* B. Add a secure file to Project.
+* C. Modify the security settings of the pipelines.
+* D. Configure the security policy of Contoso.
+
+Answer: A
+
+Use a variable group to store values that you want to control and make available across multiple pipelines.
+
+Reference:
+https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups
+
+### Question-66
+
+You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
+
+You need to ensure that all the open source libraries comply with your company's licensing standards.
+
+Which service should you use?
+
+* A. Ansible
+* B. Maven
+* **C. White Source Bolt**
+* D. Helm
+
+Answer: C
+
+### Question-67
+
+You are designing the security validation strategy for a project in Azure DevOps.
+
+You need to identify package dependencies that have known security issues and can be resolved by an update.
+
+What should you use?
+
+* **A. Octopus Deploy**
+* B. Jenkins
+* C. Gradle
+* D. SonarQube
+
+
+Answer: A
+
+
+Incorrect Answers:
+
+* B: Jenkins is a popular open-source automation server used to set up continuous integration and delivery (CI/CD) for your software projects.
+* D: SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future.
+
+Reference:
+https://octopus.com/docs/packaging-applications
+
+
+### Question-68
+
+Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
+
+You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
+
+What should you use?
+
+
+* A. Microsoft Visual SourceSafe
+* B. Code Style
+* **C. Black Duck**
+* D. Jenkins
+
+
+Answer. C
+
+Secure and Manage Open Source Software
+
+Black Duck helps organizations identify and migate open source secunty, license compliance and code-quality risks across application and container portfolios.
+
+Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the buiki process, so you can proactively manage risk. The integration allows you to receive alerts and fail bulds when any Black Duck
+
+Hub policy violations are met.
+
+There are several versions of this question in the exam. The question has two possible correct answers:
+
+* Black Duck
+* White Source Bolt
+
+Other incorrect answer options you may see on the exam include the following:
+
+* OWASP ZAP
+* PDM
+* SourceGear
+* SourceGear Vault 
+
+### Question-69
+
+
+You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
+
+You need to ensure that all the open source libraries comply with your company's licensing standards.
+
+Which service should you use?
+
+* A. NuGet
+* B. Maven
+* **C. Black Duck**
+* D. Helm
+
+
+**Answer: C**
+
+Secure and Manage Open Source Software
+
+Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios.
+
+Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the buiki process, so you can proactively manage risk. 
+
+The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
+
+Note: WhiteSource would also be a good answer, but it is not an option here.
+Reference:
+
+https://marketplace.visualstudio.com/items7itemName=black-duck-software.hub-tfs
+
+### Question-70
+
+Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
+Studio App Center.
+
+You plan to distribute a new release of the app
+
+You need to identify which certificate file you require to distribute the new release from App Center.
+
+Which file type should you upload to App Center?
+
+* A..cer
+* B..pfx
+* **C..p12**
+* D..pvk
+
+
+Answer. C
+
+A successful IOS device build will produce an ipa file. In order to install the build on a device, it needs to be signed with a valid provisioning profile and certificate.
+
+To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (mobileprovision) and a valid certificate (p12), along with the password for the certificate.
+
+Reference
+
+https://docs.microsoft.com/en-us/appcenter/build/xamarin/ios/
