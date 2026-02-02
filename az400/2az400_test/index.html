@@ -1,0 +1,5444 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>2az400 test - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#question-1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2az400 test
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#789-expanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7,8,9-Expanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -10
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -11
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-11_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -11
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -12
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -13
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -15
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -17
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -18
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -19
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -23
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -24
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -25
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -26
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -27
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -28
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -29
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question -30
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-31
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-32
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-33
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-34
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-35
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-36
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-37
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-38
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-39
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-40
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-41
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-42
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-43
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-44
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-45
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-46
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-47
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-48" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-48
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-49
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-50
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-51
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-52
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-53
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-54
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-55
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-56
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-57
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-58" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-58
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-59" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-59
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-60
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-61
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-62
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-63
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-64
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-65
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-66" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-66
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-67" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-67
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-68" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-68
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-69" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-69
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-70" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-70
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>2az400 test</h1>
+
+<h3 id="question-1">Question 1</h3>
+<p>You are configuring project metrics for dashboards in Azure DevOps. You need to configure a chart widget that measures the elapsed time to complete work items once they become active. Which of the following is the widget you should use?</p>
+<ul>
+<li>A. Cumulative Flow Diagram</li>
+<li>B. Burnup</li>
+<li><strong>C. Cycle time</strong></li>
+<li>D. Burndown</li>
+</ul>
+<hr />
+<blockquote>
+<p>Correct Answer: C- Cycle time</p>
+<p>measures the time it takes for your team to complete work items once they begin actively working on them. Use below link for more details</p>
+</blockquote>
+<p>You are configuring project metrics for dashboards in Azure DevOps. You need to configure a chart widget that measures the elapsed time to complete work items once they become active. Which of the followina is the widaet vou should use?</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Cumulative Flow Diagram</strong></td>
+<td>Graphical representation showing the flow of work items through different process stages over time.</td>
+</tr>
+<tr>
+<td><strong>B. Burnup</strong></td>
+<td>Visualization tool tracking completed work over time, often used in Agile project management.</td>
+</tr>
+<tr>
+<td><strong>C. Cycle time</strong></td>
+<td><strong>Total time for a work item to move through a process, from start to finis</strong>h.</td>
+</tr>
+<tr>
+<td><strong>D. Burndown</strong></td>
+<td>Graphical representation showing remaining work versus time, commonly used in Agile methodologies.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-2">Question 2</h3>
+<p>You need to consider the underlined segment to establish whether it is accurate. The Burnup widget measures the elapsed time from creation of work items to their completion. Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate</p>
+<ul>
+<li>A. No adjustment required.</li>
+<li><strong>B. Lead time</strong></li>
+<li>C. Test results trend</li>
+<li>D. Burndown</li>
+</ul>
+<blockquote>
+<p>Correct Answer: B. Lead time</p>
+<p>https://learn.microsoft.com/en-us/azure/devops/report/dashboards/cycle-time-and-lead-time?view=azure-devops&amp;viewFallbackFrom=vsts</p>
+</blockquote>
+<p>You need to consider the underlined segment to establish whether it is accurate. The Burnup widget measures the elapsed time from creation of work items to their completion. Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. No adjustment required</strong></td>
+<td>Indicates that no changes or modifications are necessary.</td>
+</tr>
+<tr>
+<td><strong>B. Lead time</strong></td>
+<td><strong>The total time it takes for a work item to be completed from the moment it's requested</strong>.</td>
+</tr>
+<tr>
+<td><strong>C. Test results trend</strong></td>
+<td>The pattern or direction in which test results are moving over a period of time.</td>
+</tr>
+<tr>
+<td><strong>D. Burndown</strong></td>
+<td>Graphical representation showing remaining work versus time, commonly used in Agile methodologies.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-3">Question 3</h3>
+<p>You are making use of Azure DevOps manage build pipelines, and also deploy pipelines. The development team is quite large, and is regularly added to. You have been informed that the management of users and licenses must be automated when it can be. Which of the following is a task that can't be automated?</p>
+<ul>
+<li>A. Group membership changes</li>
+<li>B. License assignment</li>
+<li>C. Assigning entitlements</li>
+<li>D. License procurement</li>
+</ul>
+<p><strong>Correct Answer: D</strong></p>
+<p>You are making use of Azure DevOps manage build pipelines, and also deploy pipelines. The development team is quite large, and is regularly added to. You have been informed that the management of users and licenses must be automated when it can be. Which of the following is a task that can't be automated?</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Group membership changes</strong></td>
+<td>Modifications or updates made to the membership of a specific group within an organization.</td>
+</tr>
+<tr>
+<td><strong>B. License assignment</strong></td>
+<td>The process of allocating or assigning software licenses to users or devices.</td>
+</tr>
+<tr>
+<td><strong>C. Assigning entitlements</strong></td>
+<td>Granting specific rights or privileges to users or entities based on their entitlements.</td>
+</tr>
+<tr>
+<td><strong>D. License procurement</strong></td>
+<td><strong>The process of obtaining or acquiring software licenses, typically through purchasin</strong>g.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-4">Question 4</h3>
+<p>You have been tasked with strengthening the security of your team's development process. You need to suggest a security tool type for the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?</p>
+<ul>
+<li>A. Penetration testing</li>
+<li><strong>B. Static code analysis</strong></li>
+<li>C. Threat modeling</li>
+<li>D. Dynamic code analysis</li>
+</ul>
+<p><strong>Correct Answer: B</strong></p>
+<p>Validation in the CI/CD begins before the developer commits his or her code. Static code analysis tools in the IDE provide the first line of defense to help ensure that security vulnerabilities are not introduced into the CI/CD process. </p>
+<p>Reference:
+https://docs.microsoft.com/en-us/azure/devops/articles/security-validation-cicd-pipeline?view=vsts</p>
+<p>You have been tasked with strengthening the security of your team's development process. You need to suggest a security tool type tor the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Penetration testing</strong></td>
+<td>A method of evaluating the security of a computer system or network by simulating an attack.</td>
+</tr>
+<tr>
+<td><strong>B. Static code analysis</strong></td>
+<td>Examination of source code to identify potential vulnerabilities without executing the code.</td>
+</tr>
+<tr>
+<td><strong>C. Threat modeling</strong></td>
+<td>A process of identifying and prioritizing potential threats to a system and assessing defenses.</td>
+</tr>
+<tr>
+<td><strong>D. Dynamic code analysis</strong></td>
+<td>Analysis of software while it is executing to identify vulnerabilities or errors in real-time.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-5">Question 5</h3>
+<p>Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure</p>
+<p>You have been tasked with supplying a migration approach that allows for the preservation of Team
+Foundation Version Control changesets dates, as well as the changes dates of work items revisions. The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release. Which of the following should also be suggested?</p>
+<ul>
+<li>A. Installing the TFS kava SDK</li>
+<li><strong>B. Using the TFS Database Import Service to perform the upgrade</strong>.</li>
+<li>C. Upgrading PowerShell Core to the latest version.</li>
+<li>D. Using the TFS Integration Platform to perform the upgrade.</li>
+</ul>
+<p><strong>Correct Answer: B</strong></p>
+<p>Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure DevOps. You have been tasked with supplying a migration approach that allows for the preservation of Team Foundation Version Control changesets dates, as well as the changes dates of work items revisions. The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release.</p>
+<p>Which of the following should also be suggested?</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Installing the TFS kava SDK</strong></td>
+<td>The process of installing the TFS (Team Foundation Server) kava SDK (Software Development Kit).</td>
+</tr>
+<tr>
+<td><strong>B. Using the TFS Database Import Service to perform the upgrade</strong></td>
+<td>Utilizing a service provided by TFS to import data from databases to upgrade the system.</td>
+</tr>
+<tr>
+<td><strong>C. Upgrading PowerShell Core to the latest version</strong></td>
+<td>Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features.</td>
+</tr>
+<tr>
+<td><strong>D. Using the TFS Integration Platform to perform the upgrade</strong></td>
+<td>Employing a platform designed for integrating and managing changes during the upgrade process in TFS.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-6">Question 6</h3>
+<p>You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for requirements, change requests, risks, and reviews to be tracked.
+Which of the following is the option you would choose?</p>
+<ul>
+<li>A. Basic</li>
+<li>B. Agile</li>
+<li>C. Scrum</li>
+<li><strong>D. CMMI</strong></li>
+</ul>
+<p>Correct Answer: D</p>
+<p>Choose CMMI when your team follows more formal project methods that require a framework for process improvement and an auditable record of decisions. With this process, you can track requirements, change requests, risks, and reviews</p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/devops/boards/work-items/guidance/choose-process?view=azure-devops</p>
+<p>You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for requirements, change requests, risks, and reviews to be tracked.</p>
+<p>Which of the following is the option you would choose?</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Basic</strong></td>
+<td>Choose Basic when your team wants the simplest model that uses Issues, Tasks, and Epics to track work.</td>
+</tr>
+<tr>
+<td><strong>B. Agile</strong></td>
+<td>This process works great if you want to track user stories and (optionally) bugs on the Kanban board, or track bugs and tasks on the task board.</td>
+</tr>
+<tr>
+<td><strong>C. Scrum</strong></td>
+<td>This process works great if you want to track product backlog items (PBIs) and bugs on the Kanban board, or break PBIs and bugs down into tasks on the task board</td>
+</tr>
+<tr>
+<td><strong>D. CMMI</strong></td>
+<td>Choose CMMI when your team follows more formal project methods that require a framework for process improvement and an auditable record of decisions. With this process, you can track requirements, change requests, risks, and reviews</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-7">Question 7</h3>
+<p>You run the Register-AzureRm AutomationDscNode command in your company's environment. </p>
+<p>You need to make sure that your company's test servers remain correctly configured, regardless of configuration drift.</p>
+<p>Solution: You set the -Configuration Mode parameter to ApplyOnly. Does the solution meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+<li><strong>B. No</strong></li>
+</ul>
+<p>Correct Answer: B</p>
+<ul>
+<li>ApplyAndMonitor: focuses on monitoring for drift without automatic correction, </li>
+<li><strong>ApplyAndAutocorrect: combines application and continuous correction of configurations</strong> </li>
+<li>ApplyOnly: is a one-time application of configurations without any ongoing monitoring or correction.</li>
+</ul>
+<h3 id="question-8">Question 8</h3>
+<p>You run the Register-AzureRm AutomationDscNode command in your company's environment. </p>
+<p>You need to make sure that your company's test servers remain correctly configured, regardless of configuration drift.</p>
+<p>Solution: You set the -ConfigurationMode parameter to ApplyAn Monitor, Does the solution meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+<li>B. No</li>
+</ul>
+<p><strong>Answer: B - No</strong></p>
+<ul>
+<li><strong>ApplyAndMonitor</strong>: focuses on monitoring for drift without automatic correction,</li>
+<li><strong>ApplyAndAutocorrect</strong>: combines application and continuous correction of configurations</li>
+<li><strong>ApplyOnly:</strong> is a one-time application of configurations without any ongoing monitoring or correction.</li>
+</ul>
+<p>Correct Answer: You set the -ConfigurationMode parameter to ApplyAndAutocorrect</p>
+<h3 id="question-9">Question 9</h3>
+<p>You run the Register-AzureRmAutomationDscNode command in your company's environment. You need to make sure that</p>
+<p>your company's test servers remain correctly configured, regardless of configuration drift.</p>
+<p>Solution: You set the -ConfigurationMode parameter to <strong>ApplyAndAutocorrect</strong>, Does the solution meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+<li>B. No</li>
+</ul>
+<p><strong>Correct Answer: A</strong></p>
+<ul>
+<li>ApplyAndMonitor: focuses on monitoring for drift without automatic correction,</li>
+<li><strong>ApplyAndAutocorrect</strong>: combines application and continuous correction of configurations</li>
+<li>ApplyOnly: is a one-time application of configurations without any ongoing monitoring or correction</li>
+</ul>
+<h3 id="789-expanation">7,8,9-Expanation</h3>
+<p><strong>ApplyAndMonitor:</strong></p>
+<ol>
+<li>This mode appliesthe desired configuration to the node and continuously monitorsit to ensure compliance.</li>
+<li>If any drift from the desired state is detected, it generates alerts or logs, notifying administrators of the noncompliance without attempting to correct the configuration automatically.</li>
+<li>It's useful for environments where administrators want to be notified of configuration changes but prefer to manually correct any deviations.</li>
+</ol>
+<p><strong>ApplyAndAutocorrect:</strong></p>
+<ol>
+<li>This mode appliesthe desired configuration to the node and continuously monitors it.</li>
+<li>If any drift from the desired state is detected, it automatically attempts to correct the configuration to bring it back into compliance.</li>
+<li>It's suitable for environments where administrators want automatic correction of configuration drift without manual intervention.</li>
+</ol>
+<p><strong>ApplyOnly:</strong></p>
+<ol>
+<li>This mode appliesthe desired configuration to the node but does not perform any monitoring or autocorrection.</li>
+<li>It's a one-time application of configuration, without any ongoing monitoring or drift correction.</li>
+<li>It's useful for scenarios where administrators want to apply configurations but do not need continuous monitoring or correction.</li>
+</ol>
+<p>Note: The choice between these modes depends on the specific requirements and preferences of the environment and administrators.</p>
+<h3 id="question-10">Question -10</h3>
+<p>Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. </p>
+<p>You are instructed to make sure that the Azure DevOps environment can only be accessed from devices connected to the company's on-premises network. Which of the following actions should you take?</p>
+<ul>
+<li>A. Assign the devices to a security group.</li>
+<li>B. Create a GPO.</li>
+<li>C. Configure Security in Project Settings from Azure DevOps.</li>
+<li><strong>D. Configure conditional access in Azure Active Directory.</strong></li>
+</ul>
+<p>Correct Answer: D - Configure conditional access in Azure Active Directory</p>
+<p>Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.</p>
+<p>Conditional Access policies are enforced after the first-factor authentication has been completed.</p>
+<h3 id="question-11">Question -11</h3>
+<p>Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. </p>
+<p>You are instructed to make sure that the Azure DevOps environment can only be accessed from devices connected to the company's on-premises network. Which of the following actions should you take?</p>
+<p>A. Assign the devices to a security group.</p>
+<p>B. Create a GPO.</p>
+<p>C. Configure Security in Project Settings from Azure DevOps.</p>
+<p><strong>D. Configure conditional access in Azure Active Directory.</strong></p>
+<blockquote>
+<p>Correct Answer: D - Configure conditional access in Azure Active Directory</p>
+</blockquote>
+<p>Conditional Access is a capability of Azure Active Directory. </p>
+<p>With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions. Conditional Access policies are enforced after the first-factor authentication has been completed.</p>
+<h3 id="question-11_1">Question -11</h3>
+<p>You are making use of Azure DevOps to configure Azure Pipelines for project, named PROJ-01. </p>
+<p>You are preparing to use a version control system that allows for source code to be stored on a managed Windows server located on the company network. Which of the following is the version control system you should use?</p>
+<ul>
+<li><strong>A. Github Enterprise</strong></li>
+<li>B. Bitbucket cloud</li>
+<li>C. Github Professional</li>
+<li>D. Git in Azure Repos</li>
+</ul>
+<p>Correct Answer: A Github Enterprise</p>
+<p>GitHub Enterprise is the on-premises version of GitHub.com. GitHub Enterprise includes the same great set of features as GitHub.com but packaged for running on your organization's local network. All repository data is stored on machines that you control, and access is integrated with your organization's authentication system (LDAP, SAML, or</p>
+<h3 id="question-12">Question -12</h3>
+<p>You scan a Node.js application using WhiteSource Bolt. The scan finds numerous libraries with invalid licenses, but are only used during development. You have to make sure that only production dependencies are scanned by WhiteSource
+Bolt. Which of the following is a command you should run?</p>
+<ul>
+<li>A. npm edit</li>
+<li>B. npm publish</li>
+<li>C. npm install</li>
+<li>D. npm update</li>
+</ul>
+<blockquote>
+<p>Correct Answer: <strong>C. npm install</strong></p>
+</blockquote>
+<h3 id="question-13">Question -13</h3>
+<p>Your company hosts a web application in Azure, and makes use of Azure Pipelines for managing the build and release of the application. When stakeholders report that system performance has been adversely affected by the most recent releases, you configure alerts in Azure Monitor. </p>
+<p>You are informed that new releases must satisfy specified performance baseline conditions in the staging environment before they can be deployed to production. </p>
+<p>You need to make sure that releases not satisfying the performance baseline are prevented from being deployed.</p>
+<p>Which of the following actions should you take?</p>
+<ul>
+<li>A. You should make use of a branch control check.</li>
+<li>B. You should make use of an alert trigger.</li>
+<li>C. You should make use of a gate.</li>
+<li>D. You should make use of an approval check.</li>
+</ul>
+<p>Correct Answer: <strong>C. You should make use of a gate.</strong></p>
+<h3 id="question-14">Question -14</h3>
+<p>You need to consider the underlined segment to establish whether it is accurate. To deploy an application to a number of Azure virtual machines, you should create a universal group. Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
+Which of the following actions should you take?</p>
+<ul>
+<li>A. No adjustment required.</li>
+<li>B. Security</li>
+<li>C. Deployment</li>
+<li>D. Resource</li>
+</ul>
+<p><strong>Correct Answer: C. Deployment</strong></p>
+<p>When authoring an Azure Pipelines or TFS Release pipeline, you can specify the deployment targets for a job using a deployment group If the target machines are Azure VMs, you can quickly and easily prepare them by installing the Azure Pipelines Agent Azure VM extension on each of the VMs, or by using the Azure Resource Group Deployment task in your release pipeline to create a deployment group dynamically.</p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deployment-groups</p>
+<h3 id="question-15">Question -15</h3>
+<p>You need to consider the underlined segment to establish whether it is accurate. To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline. </p>
+<p>Select '<strong>No adjustment required</strong>' if the underlined segment is accurate. </p>
+<p>If the underlined segment is inaccurate, select the accurate option.</p>
+<ul>
+<li>A. No adjustment required.</li>
+<li>B. SourceGear Vault</li>
+<li><strong>C. WhiteSource</strong></li>
+<li>D. OWASP ZAP</li>
+</ul>
+<p><strong>Correct Answer: C. WhiteSource</strong></p>
+<p>Azure DevOps integration with White Source Bolt will enable you to:</p>
+<ol>
+<li>Detect and remedy vulnerable open source components.</li>
+<li>Generate comprehensive open source inventory reports per projector build.</li>
+<li>Enforce open source license compliance, including dependencies' licenses.</li>
+<li>Identify outdated open source libraries with recommendationsto update.</li>
+</ol>
+<blockquote>
+<p><strong>WhiteSource</strong> is the leader in continuous open source software security and compliance management. WhiteSource integrates into your build process, irrespective of your programming languages, build tools, or development environments.</p>
+<p>It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against White Source constantly updated definitive database of open source repositories.</p>
+</blockquote>
+<h3 id="question-16">Question -16</h3>
+<p>Your company has an Azure DevOps project, which includes a build pipeline that makes use of roughly fifty open source libraries. </p>
+<p>You have been tasked with making sure that you are able to scan project for common security weaknesses in the open source libraries. </p>
+<p>Which of the following actions should you take?</p>
+<ul>
+<li><strong>A. You should create a build task and use the White Source Bolt service.</strong></li>
+<li>B. You should create a deployment task and use the WhiteSource Bolt service.</li>
+<li>C. You should create a build task and use the Chef service.</li>
+<li>D. You should create a deployment task and use the Chef service.</li>
+</ul>
+<p>Correct Answer: <strong>A. You should create a build task and use the WhiteSource Bolt service.</strong></p>
+<h3 id="question-17">Question -17</h3>
+<p>You need to consider the underlined segment to establish whether it is accurate. </p>
+<p>Black Duck can be used to make sure that all the open source libraries conform to your company's licensing criteria. </p>
+<p>Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.</p>
+<ul>
+<li><strong>A. You should create a build task and use the WhiteSource Bolt service.</strong></li>
+<li>B. You should create a deployment task and use the WhiteSource Bolt service.</li>
+<li>C. You should create a build task and use the Chef service.</li>
+<li>D. You should create a deployment task and use the Chef service.</li>
+</ul>
+<p><strong>Correct Answer: A. You should create a build task and use the White Source Bolt service.</strong></p>
+<p>Secure and Manage Open Source Software Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios. Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.</p>
+<h3 id="question-18">Question -18</h3>
+<p>Your company has an application that contains a number of Azure App Service web apps and Azure functions. You would like to view recommendations with regards to the security of the web apps and functions. </p>
+<p>You plan to navigate to Compute and Apps to achieve your goal. Which of the following should you access to make use of Compute and Apps?</p>
+<ul>
+<li>A. Azure Log Analytics</li>
+<li>B. Azure Event Hubs</li>
+<li>C. Azure Advisor</li>
+<li><strong>D. Azure Security Center</strong></li>
+</ul>
+<p>Correct Answer: D. Azure Security Center</p>
+<p>Monitor compute and app services: Compute &amp; apps include the App Services tab, which App services: list of your App service environments and current security state of each.</p>
+<h3 id="question-19">Question -19</h3>
+<p>You need to consider the underlined segment to establish whether it is accurate. Your company has a multi-tier application that has its front end hosted in Azure App Service. To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs. Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.</p>
+<ul>
+<li>A. No adjustment required.</li>
+<li>B. Azure Application Insights</li>
+<li>C. Azure Log Analytics</li>
+<li>D. Azure Advisor</li>
+</ul>
+<p><strong>Correct Answer: B. Azure Application Insights</strong></p>
+<p>Application Insights will tell you about any performance issues and exceptions, and help you find and diagnose the root causes.</p>
+<p>Application Insights can monitor both Java and ASPNET web applications and services, WCF services. They can be hosted on-premises, on virtual machines, or as Microsoft Azure websites. On the client side, Application Insights can take telemetry from web pages and a wide variety of devices including iOS, Android, and Windows Store apps.</p>
+<h3 id="question-20">Question -20</h3>
+<p>Your company makes use of Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring purposes. You have been tasked with analyzing the monitoring using ad-hoc queries. You need to utilize the correct query
+language. Solution: You use the Contextual Query Language (CQL)</p>
+<p>Does the solution meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+<li><strong>B. No</strong></li>
+</ul>
+<p><strong>Correct Answer: B</strong></p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/azure-monitor/insights/azure-sql</p>
+<h3 id="question-22">Question -22</h3>
+<p>You manage an Azure web app that supports an e-commerce website. You need to increase the logging level when the web app exceeds normal usage patterns. The solution must minimize administrative overhead.</p>
+<p>Which two resources should you include in the solution? Each correct answer presents part of the solution.</p>
+<ul>
+<li><strong>A. an Azure Automation runbook</strong></li>
+<li><strong>B. an Azure Monitoralertthat has a dynamic threshold</strong></li>
+<li>C. an Azure Monitoralert that has a static threshold</li>
+<li>D. the Azure Monitorautoscale settings</li>
+<li>E. an Azure Monitoralert that uses an action group that has an email action</li>
+</ul>
+<p><strong>Correct Answer: AB</strong></p>
+<p>A: You can use Azure Monitor to monitor base-level metrics and logs for most services in Azure. You can call Azure Automation runbooks by using action groups or by using classic alerts to automate tasks based on</p>
+<p>B: Metric Alert with Dynamic Thresholds detection leverages advanced machine learning (ML) to learn metrics' historical behavior, identify patterns and anomalies that indicate possible service issues. It provides support of both a simple Ul and operations at scale by allowing users to configure alert rules through the Azure Resource Manager API, in a fully automated manner.</p>
+<h3 id="question-23">Question -23</h3>
+<p>You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. You need to run a URL ping test once every five minutes and create an alert when the web app is unavailable from specific Azure regions. The solution must minimize development time. What should you do?</p>
+<ul>
+<li>A. Create an Azure Monitor Availability metric and alert.</li>
+<li><strong>B. Create an Azure Application Insights availability test and alert.</strong></li>
+<li>C. Write an Azure function and deploy the function to the specific regions.</li>
+<li>D. Create an Azure Service Health alert for the specific regions.</li>
+</ul>
+<p><strong>Correct Answer: B. Create an Azure Application Insights availability test and alert.</strong></p>
+<p>There are three types of Application Insights availability tests:</p>
+<ul>
+<li>1) URL ping test a simple test that you can create in the Azure portal. </li>
+<li>2) Multi-step webtest. </li>
+<li>3) Custom Track Availability Test.</li>
+</ul>
+<p>Note: After you've deployed your web app/website, you can set up recurring tests to monitor availability and responsiveness. Azure Application Insights sends web requests to your application at regular intervals from points around the world. It can alert you if your application isn't responding, or if it responds too slowly. You can set up availability tests for any HTTP or HTTPS endpoint that is accessible from the public internet. You don't have to make any changes to the website you're testing. In fact, it doesn't even have to be a site you own. You can test the availability of a REST API that your service depends on</p>
+<h3 id="question-24">Question -24</h3>
+<p>You have a multi-tier application. The front end of the application is hosted in Azure App Service.</p>
+<p>You need to identify the average load times of the application pages. What should you use?</p>
+<ul>
+<li><strong>A. Azure Application Insights</strong></li>
+<li>B. the activity log of the App Service</li>
+<li>C. the diagnostics logs of the App Service</li>
+<li>D. Azure Advisor</li>
+</ul>
+<p><strong>Correct Answer: A. Azure Application Insights</strong></p>
+<p>Application Insights will tell you about any performance issues and exceptions, and help you find and diagnose the root causes. Application Insights can monitor both Java and ASP.NET web applications and services, WCF services. They can be hosted on-premises, on virtual machines, or as Microsoft Azure websites. On the client side, Application Insights can take telemetry from web pages and a wide variety of devices including ios, Android, and Windows Store apps.</p>
+<h3 id="question-25">Question -25</h3>
+<p>Your company uses ServiceNow for incident management. You develop an application that runs on Azure.</p>
+<p>The company needs to generate a ticket in ServiceNow when the application fails to authenticate.
+Which Azure Log Analytics solution should you use?</p>
+<ul>
+<li>A. Application Insights Connector</li>
+<li>B. Automation &amp; Control</li>
+<li><strong>C. IT Service Management Connector (ITSM)</strong></li>
+<li>D. Insight &amp; Analytics</li>
+</ul>
+<p>Correct Answer: C. IT Service Management Connector (ITSM)</p>
+<p>The IT Service Management Connector (ITSMC) allows you to connect Azure and a supported IT Service Management (ITSM) product/service. ITSM supports connections with the following ITSM tools: ServiceNow, System Center Service Manager, Provance, Cherwell With ITSMC, you can Create work items in ITSM tool, based on your Azure alerts (metric alerts, Activity Log alerts and Log Analytics alerts). Optionally, you can sync your incident and change request data from your ITSM tool to an Azure Log Analytics workspace.</p>
+<h3 id="question-26">Question -26</h3>
+<p>You use Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring.</p>
+<p>You need to write ad-hoc queries against the monitoring data. Which query language should you use?</p>
+<ul>
+<li><strong>A. Kusto Query Language (KQL)</strong></li>
+<li>B. PL/pgSQL</li>
+<li>C. PL/SQL</li>
+<li>D. Transact-SQL</li>
+</ul>
+<p><strong>Correct Answer: A. Kusto Query Language (KQL)</strong></p>
+<p>Azure Monitor Logs is based on Azure Data Explorer, and log queries are written using the same Kusto query language (KQL). This is a rich language designed to be easy to read and author, and you should be able to start using it with minimal guidance.</p>
+<h3 id="question-27">Question -27</h3>
+<p>Your company creates a web application. You need to recommend a solution that automatically sends to Microsoft Teams a daily summary of the exceptions that occur in the application. </p>
+<p>Which two Azure services should you recommend?</p>
+<p>Each correct answer presents part of the solution.</p>
+<ul>
+<li><strong>A. Azure Logic Apps</strong></li>
+<li>B. Azure Pipelines</li>
+<li>C. Microsoft Visual Studio App Center</li>
+<li>D. Azure DevOps Project</li>
+<li><strong>E. Azure Application Insights</strong></li>
+</ul>
+<p>Correct Answer: <strong>AE (Azure Logic Apps and Azure Application Insights)</strong></p>
+<p>A: You can programmatically query Application Insights data to generate custom reports on a schedule. The following options can help you get started quickly: Automate reports with Microsoft Flow, Automate reports with Logic Apps</p>
+<p>E: Exceptions in your live web app are reported by Application Insights.</p>
+<p>Note: Periodical reports help keep a team informed on how their business critical services are doing. Developers, DevOps/SRE teams, and their managers can be productive with automated reports reliably delivering insights without requiring everyone to sign in the portal. Such reports can also help identify gradual increases in latencies, load or failure rates that may not trigger any alert rules.</p>
+<h3 id="question-28">Question -28</h3>
+<p>You are monitoring the health and performance of an Azure web app by using Azure Application Insights.</p>
+<p>You need to ensure that an alert is sent when the web app has a sudden rise in performance issues and failures.</p>
+<p>What should you use?</p>
+<ul>
+<li>A. Custom events</li>
+<li>B. Application Insights Profiler</li>
+<li>C. Usage analysis</li>
+<li><strong>D. Smart Detection</strong></li>
+<li>E. Continuous export</li>
+</ul>
+<p>Correct Answer: D. Smart Detection</p>
+<p>Smart Detection automatically warns you of potential performance problems and failure anomalies in your web application. It performs proactive analysis of the telemetry that your app sends to Application Insights. If there is a sudden rise in failure rates, or abnormal patterns in client or server performance, you get an alert.</p>
+<h3 id="question-29">Question -29</h3>
+<p>You have a private GitHub repository. You need to display the commit status of the repository on Azure Boards.</p>
+<p>What should you do first?</p>
+<ul>
+<li>A. Configure multi-factor authentication (MFA) for your GitHub account.</li>
+<li>B. Add the Azure Pipelines app to the GitHub repository.</li>
+<li><strong>C. Add the Azure Boards app to the repository.</strong></li>
+<li>D. Create a GitHub action in GitHub.</li>
+</ul>
+<p>Correct Answer: C. Add the Azure Boards app to the repository.</p>
+<p>To connect Azure Boards to GitHub.com,</p>
+<p>connect and configure from Azure Boards. Or, alternatively, install and configure the Azure Boards app from GitHub.</p>
+<p>Both methods have been streamlined and support authenticating and operating via the app rather than an individual.</p>
+<h3 id="question-30">Question -30</h3>
+<p>You have a web app hosted on Azure App Service. The web app stores data in an Azure SQL database. </p>
+<p>You need to generate an alert when there are 10,000 simultaneous connections to the database. </p>
+<p>The solution must minimize development effort. Which option should you select in the Diagnostics settings of the database?</p>
+<ul>
+<li><strong>A. Send to Log Analytics</strong></li>
+<li>B. Stream to an event hub</li>
+<li>C. Archive to a storage account</li>
+</ul>
+<p>Correct Answer: A. Send to Log Analytics</p>
+<p>HOW TO ENABLE DIAGNOSTICS TO LOG ANALYTICS (This configuration is done PER DATABASE)</p>
+<ol>
+<li>Click on Diagnostics Settings and then Turn On Diagnostics</li>
+<li>Selectto Sendto Log Analytics and selectthe Log Analytics workspace. For this sample I will selected only Errors</li>
+</ol>
+<h3 id="question-31">Question-31</h3>
+<p>You have an Azure virtual machine that is monitored by using Azure Monitor, The virtual machine has the Azure Log Analytics agent installed, You plan to deploy the Service Map solution from the Azure Marketplace What should you deploy to the virtual machine to support the Service Map solution?</p>
+<ul>
+<li>A. the Dependency agent</li>
+<li>B. the Telegraf agent</li>
+<li>C. the Windows Azure diagnostics extension (WAD)</li>
+<li>D. the Azure monitor agent</li>
+</ul>
+<p>irtStudyPro</p>
+<p><strong>Correct Answer: A. the Dependency agent</strong></p>
+<p>Use the Dependency agent if you need to use the Map feature VM insights or the Service Map solution.
+Note: Consider the following when using the Dependency agent:</p>
+<p>The Dependency agent requires the Log Analytics agent to be installed on the same machine. On Linux computers, the Log Analytics agent must be installed before the Azure Diagnostic Extension. On both the Windows and Linux versions of the Dependency Agent, data collection is done using a user-space service and a kernel driver.</p>
+<h3 id="question-32">Question-32</h3>
+<p>You have multiple teams that work on multiple projects in Azure DevOps. You need to plan and manage the consumers and producers for each project. The solution must provide an overview of all the projects. What should you do?</p>
+<ul>
+<li>A. Add a Predecessor or Successor link to the feature or user story for the items of each project.</li>
+<li>B. Add a Parent or Child link to the feature or user story for the items of each project.</li>
+<li>C. Install the Dependency Tracker extension and create dependencies for each project.</li>
+<li>D. Create a custom query to show the consumers and producers and add a widget to a dashboard</li>
+</ul>
+<p>Correct Answer: C</p>
+<h3 id="question-33">Question-33</h3>
+<p>Your company has multiple microservices-based apps that use the following tracing libraries:</p>
+<p>Open Telemetry | OpenCensus | OpenTracing | Honeycomb | Jaeger</p>
+<p>The company purchases an Azure subscription and implements Application Insights in Azure Monitor.</p>
+<p>You plan to centralize distributed tracing for the apps. You need to identify which libraries can 
+integrate directly with Application Insights.</p>
+<p>Which two libraries should you identify? Each correct answer presents a complete solution.</p>
+<ul>
+<li>A. Honeycomb</li>
+<li>B. Open Tracing</li>
+<li>C. Jaeger</li>
+<li><strong>D. Open Telemtry</strong></li>
+<li><strong>E. OpenCensus</strong></li>
+</ul>
+<p>Correct Answer: DE</p>
+<h3 id="question-34">Question-34</h3>
+<p>You have an Azure web app named webapp1 that uses the NET Core runtime stack. </p>
+<p>You have an Azure Application Insights resource named AppInsights1. Webapp1 sends telemetry data to Applnsights1. You need to ensure that webapp1 sends the telemetry data at a fixed sampling rate.</p>
+<p>What should you do?</p>
+<ul>
+<li>A. From the code repository of webapp1, modify the Applicationinsights.config file.</li>
+<li><strong>B. From the code repository of webapp1, modify the Startup.cs file.</strong></li>
+<li>C. From Applnsights1, modify the Usage and estimated costs settings.</li>
+<li>D. From Appinsights1, configure the Continuous export settings.</li>
+</ul>
+<p><strong>Correct Answer: B</strong></p>
+<h3 id="question-35">Question-35</h3>
+<p>You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. You need to configure App1 to use Al1. Which file should you modify?</p>
+<ul>
+<li><strong>A. appsettings.json</strong></li>
+<li>B. launchSettings.json</li>
+<li>C. startup.cs</li>
+<li>D. project.json</li>
+</ul>
+<p><strong>Correct Answer: A. appsettings.json</strong></p>
+<h3 id="question-36">Question-36</h3>
+<p>You have an Azure subscription that contains multiple Azure services. You need to send an SMS alert when scheduled maintenance is planned for the Azure services.</p>
+<p>Which two actions should you perform? Each correct answer presents part of the solution.</p>
+<ul>
+<li>A. Enable Azure Security Center.</li>
+<li>B. Create and configure an Azure Monitor alert rule.</li>
+<li>C. Create an Azure Service Health alert.</li>
+<li>D. Create and configure an action group.</li>
+</ul>
+<p><strong>Correct Answer: CD</strong></p>
+<p>Creating planned maintenance alerts using Azure Service Health</p>
+<ol>
+<li>Login into the Azure portal and select Service Health.</li>
+<li>Select Health alerts followed by + Create service health alert from the top of the window on the right.</li>
+<li>In the Edit Alert blade, give the alert a Name, Description, check the subscription is correct and choose a resource group.</li>
+<li>The next step is to work through the Criteria section choosing which services, regions and types of event alerts should be monitored. For the purpose of this article all services and regions have been checked but only planned maintenance events.</li>
+<li>Selector create an Action group. (An Action group is a group of actions to be taken, should an event be logged.)</li>
+<li>Configure the actions to be taken. We are only configuring an email alert, so we first name the action, then chose Email/SMS/Push/Voice from the drop down list.</li>
+</ol>
+<p>Reference: https://www.techkb.onl/azure-using-service-health-to-alert-against-planned-maintenance/</p>
+<h3 id="question-37">Question-37</h3>
+<p>You are designing a strategy to monitor the baseline metrics of Azure virtual machines that run Windows Server. </p>
+<p>You need to collect detailed data about the processes running in the guest operating system.</p>
+<p>Which two agents should you deploy? Each correct answer presents part of the solution.</p>
+<ul>
+<li>A. the Telegraf agent</li>
+<li><strong>B. the Azure Log Analytics agent</strong></li>
+<li>C. the Azure Network Watcher Agent for Windows</li>
+<li><strong>D. the Dependency agent</strong></li>
+</ul>
+<p>Correct Answer: BD</p>
+<h3 id="question-38">Question-38</h3>
+<p>You configure Azure Application Insights and the shared service plan tier for a web app. You enable Smart Detection. You confirm that standard metrics are visible in the logs, but when you test a failure, you do not receive a Smart Detection notification. </p>
+<p>What prevents the Smart Detection notification from being sent?</p>
+<ul>
+<li>A. You must enable the Snapshot Debugger for the web app.</li>
+<li><strong>B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app</strong>.</li>
+<li>C. The web app is configured to use the shared service plan tier.</li>
+<li>D. You must restart the web app before Smart Detection is enabled.</li>
+</ul>
+<p><strong>Correct Answer: B</strong></p>
+<p>After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.</p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/azure-monitor/app/proactive-failure-diagnostics</p>
+<h3 id="question-39">Question-39</h3>
+<p>You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling. You use Azure DevOps to build a web app named App1 and deploy App1 to VMSS1. App1 is used heavily and has usage patterns that vary on a weekly basis. You need to recommend a solution to detect an abnormal rise in the rate of failed requests to App1. The solution must minimize administrative effort.
+What should you include in the recommendation?</p>
+<ul>
+<li><strong>A. the Smart Detection feature in Azure Application Insights</strong></li>
+<li>B. the Failures feature in Azure Application Insights</li>
+<li>C. an Azure Service Health alert</li>
+<li>D. an Azure Monitor alert that uses an Azure Log Analytics query</li>
+</ul>
+<p><strong>Correct Answer: A</strong></p>
+<p>After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.</p>
+<h3 id="question-40">Question-40</h3>
+<p>You are automating the testing process for your company.</p>
+<p>You need to automate Ul testing of a web application.</p>
+<p>Which framework should you use?</p>
+<ul>
+<li>A. JaCoco</li>
+<li><strong>B. Selenium</strong></li>
+<li>C. Xamarin.UlTest</li>
+<li>D. Microsoft.CodeAnalysis</li>
+</ul>
+<p>Correct Answer: B. Selenium</p>
+<h3 id="question-41">Question-41</h3>
+<p>You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 and an Azure Standard Load Balancer named LB1. </p>
+<p>LB1 distributes incoming requests across VMSS1 instances. You use Azure DevOps to build a web app named App1 and deploy App1 to VMSS1. </p>
+<p>App1 is accessible via HTTPS only and configured to require mutual authentication by using a client certificate. </p>
+<p>You need to recommend a solution for implementing a health check of App1.</p>
+<p>The solution must meet the following requirements:</p>
+<p>1- Identify whether individual instances of VMSS1 are eligible for an upgrade operation.</p>
+<p>2- Minimize administrative effort.</p>
+<p>What should you include in the recommendation?</p>
+<ul>
+<li>A. an Azure Load Balancer health probe</li>
+<li>B. Azure Monitor autoscale</li>
+<li>C. the Custom Script Extension</li>
+<li><strong>D. the Application Health extension</strong></li>
+</ul>
+<p><strong>Correct Answer: D. the Application Health extension</strong></p>
+<p>Monitoring your application health is an important signal for managing and upgrading your deployment. </p>
+<p>Azure virtual machine scale sets provide support for rolling upgrades including automatic OS-image upgrades, which rely on health monitoring of the individual instances to upgrade your deployment. You can also use health extension to monitor the application health of each instance in your scale set and perform instance repairs using automatic instance repairs.</p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension</p>
+<h3 id="question-42">Question-42</h3>
+<p>You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. </p>
+<p>You need to prevent the build pipeline from failing due to the test.</p>
+<p>Which two actions should you perform? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>A. Set Flaky test detection to Off.</li>
+<li><strong>B. Clear Flaky tests included in test pass percentage.</strong></li>
+<li>C. Enable Test Impact Analysis (TIA).</li>
+<li><strong>D. Manually mark the test as flaky.</strong></li>
+<li>E. Enable test slicing.</li>
+</ul>
+<p>Correct Answer: BD</p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/devops/pipelines/test/flaky-test-management</p>
+<h3 id="question-43">Question-43</h3>
+<p>Your company hosts a web application in Azure. </p>
+<p>The company uses Azure Pipelines for the build and release
+Stakeholders management of the application. Stakeholders report that the past few releases have negatively affected system performance. You configure alerts in Azure Monitor.</p>
+<p>You need to ensure that new releases are only deployed to production if the releases meet defined performance</p>
+<p>baseline criteria in the staging environment first.</p>
+<p>What should you use to prevent the deployment of releases that fall to meet the performance baseline?</p>
+<ul>
+<li>A. an Azure Scheduler job</li>
+<li>B. a trigger</li>
+<li><strong>C. a gate</strong></li>
+<li>D. an Azure function</li>
+</ul>
+<p>Correct Answer: C. a gate</p>
+<p>Scenarios and use cases for gates include: Quality validation. </p>
+<p>Query metrics from tests on the build artifacts such as pass rate or code coverage and deploy only if they are within required thresholds. Use Quality Gates to integrate monitoring into your pre-deployment or post-leployment. This ensures that you are meeting the key health/performance metrics (KPls) as your applications move from dev to production and any differences in the infrastructure environment or scale is not negatively impacting your KPIs.</p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/azure-monitor/continuous-monitoring</p>
+<p>https://docs.microsoft.com/enus/azure/devops/pipelines/release/approvals/gates?view=azure-devops</p>
+<h3 id="question-44">Question-44</h3>
+<p>You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.</p>
+<p>Solution: Pertorm a subscription Health scan when packages are created </p>
+<p>Does this meet the goal?</p>
+<p>A. Yes</p>
+<p>B. No</p>
+<p>Correct Answer: B. No</p>
+<p><strong>Instead implement Continuous Assurance for the project.</strong></p>
+<blockquote>
+<p>Incorrect Options presents in part of this series Questions are</p>
+</blockquote>
+<p>1- Implement Continuous Integration for the project   (wrong)</p>
+<p>2- Add a code coverage step to the build pipelines.    (wrong)</p>
+<p>3- Perform a Subscription Health scan when packages are created.   (wrong)</p>
+<p>Correct Option is Implement Continuous Assurance for the project</p>
+<blockquote>
+<p>Note: The Subscription Security health check features in ASK contains a set of scripts that examines a subscription and flags off security issues, </p>
+<p>misconfigurations or obsolete artifacts/settings which can put your subscription at higher risk.</p>
+</blockquote>
+<p>Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html</p>
+<h3 id="question-45">Question-45</h3>
+<p>You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.</p>
+<p>Solution: Add a code coverage step to the build pipelines.</p>
+<p>Does this meet the goal?</p>
+<p>A. Yes</p>
+<p>B. No</p>
+<p>Correct Answer: B. No</p>
+<p>Instead implement Continuous Assurance for the project.</p>
+<p>Note: The Subscription Security health check features in AzSK contains a set of scripts that examines a subscription and flags off security issues, misconfigurations or obsolete artifacts/settings which can put your subscription at higher risk.</p>
+<p>Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html</p>
+<p>incorrect Options presents in part of this series Questions are</p>
+<ul>
+<li>1- Implement Continuous Integration for the project</li>
+<li>2- Add a code coverage step to the build pipelines.</li>
+<li>3- Perform a Subscription Health scan when packages are created.</li>
+</ul>
+<p>Correct Option is Implement Continuous Assurance for the project</p>
+<h3 id="question-46">Question-46</h3>
+<p>You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.</p>
+<p>Solution: Implement Continuous Integration for the project</p>
+<p>Does this meet the goal?</p>
+<p>A. Yes</p>
+<p>B. No</p>
+<p>Correct Answer: B. No</p>
+<p><strong>Instead implement Continuous Assurance for the project.</strong></p>
+<ul>
+<li>1- Implement Continuous Integration for the project</li>
+<li>2- Add a code coverage step to the build pipelines.</li>
+<li>3- Perform a Subscription Health scan when packages are created.</li>
+</ul>
+<blockquote>
+<p>Note: The Subscription Security health check features in ASK contains a set of scripts that examines a subscription and flags off security issues, misconfigurations or obsolete artifacts/settings which can put your subscription at higher risk.</p>
+</blockquote>
+<p>Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html</p>
+<h3 id="question-47">Question-47</h3>
+<p>You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.</p>
+<p><strong>Solution: Implement Continuous Assurance for the project</strong></p>
+<p>Does this meet the goal?</p>
+<p>A. Yes</p>
+<p>B. No</p>
+<p>Correct Answer: A-Yes</p>
+<p>incorrect Options presents in part of this series Questions are</p>
+<ul>
+<li>1- Implement Continuous Integration for the project</li>
+<li>2- Add a code coverage step to the build pipelines.</li>
+<li>3- Perform a Subscription Health scan when packages are created.</li>
+</ul>
+<p><strong>Correct Option is Implement Continuous Assurance for the project</strong></p>
+<blockquote>
+<p>The basic idea behind Continuous Assurance (CA) is to setup the ability to check for "drift" from what is considered a secure snapshot of a system. Support for Continuous Assurance lets us treat security truly as a 'state' as opposed to a 'point in time' achievement.</p>
+</blockquote>
+<p>Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html</p>
+<h3 id="question-48">Question-48</h3>
+<p>You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. You have an app named App1. Dependabot detects a dependency in App1 that requires an update. What should you do first to apply the update?</p>
+<ul>
+<li>A. Create a pull request.</li>
+<li>B. Approve the pull request.</li>
+<li>C. Create a branch.</li>
+<li>D. Perform a commit.</li>
+</ul>
+<p><strong>Correct Answer: B. Approve the pull request.</strong></p>
+<p>DependaBot is a useful tool to regularly check for dependency updates. By helping to keep your project up to date, DependaBot can reduce technical debt and immediately apply security vulnerabilities when patches are released. How does DependaBot work? </p>
+<ol>
+<li>DependaBot regularly checks dependencies for updates </li>
+<li>If an update is found, DependaBot creates a new branch with this upgrade and Pull Request for approval </li>
+<li>You review the new Pull Request, ensure the tests passed, review the code, and decide if you can merge the change</li>
+</ol>
+<h3 id="question-49">Question-49</h3>
+<p>You are designing a configuration management solution to support five apps hosted on Azure Ap Service. Each app is available in the following three environments: development, test, and production</p>
+<p>You need to recommend a configuration management solution that meets the following requirements </p>
+<p>Supports teature flags, Tracks contiguration changes from the past 30 days, Stores hierarchically structured contiguratio values, Controls access to the configurations by using role-based access control (RBAC) permissions, Stores shared valur as keyivalue pairs that can be used by all the apps</p>
+<p>Which Azure service should you recommend as the configuration management solution?</p>
+<ul>
+<li>A. Azure Cosmos DB</li>
+<li>B. Azure App Service</li>
+<li>C. Azure App Configuration</li>
+<li>D. Azure Key Vault</li>
+</ul>
+<p><strong>Correct Answer: C - Azure App Configuration</strong></p>
+<p>Reference: https://docs.microsoft.com/en-us/azure/azure-app-confiquration/overview</p>
+<h3 id="question-50">Question-50</h3>
+<p>You have a containerized solution that runs in Azure Container Instances. </p>
+<p>The solution contains a frontend container named App1 and a backend container named DB1. DB1 loads a large amount of data during startup. </p>
+<p>You need to verify that DB1 can handle incoming requests before users can submit requests to App1. What should you configure?</p>
+<ul>
+<li>A. a liveness probe</li>
+<li>B. a performance log</li>
+<li><strong>C. a readiness probe</strong></li>
+<li>D. an Azure Load Balancer health probe</li>
+</ul>
+<p>Correct Answer: C. a readiness probe</p>
+<h3 id="question-51">Question-51</h3>
+<p>You have several Azure Active Directory (Azure AD) accounts.</p>
+<p>You need to ensure that users use multi-factor authentication (MA) to access Azure apps from untrusted networks.</p>
+<p>What should you configure in Azure</p>
+<ul>
+<li>A. access reviews</li>
+<li>B. managed identities</li>
+<li>C. entitlement management</li>
+<li><strong>D. conditional access</strong></li>
+</ul>
+<p>Answer: D</p>
+<p>You can configure a Conditional Access policy that requires MFA for access from untrusted networks.</p>
+<h3 id="question-52">Question-52</h3>
+<p>You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.</p>
+<p>You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.</p>
+<p>You need to ensure that an email alert is generated whenever VMSS1 scales in or out.</p>
+<p>Solution: From Azure DevOps, configure the Notifications settings for Project1.</p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+<li><strong>B. No</strong></li>
+</ul>
+<p>Answer: B</p>
+<p>Notifications help you and your team stay informed about activity that occurs within your projects in Azure DevOps. You can get notified when changes occur to the following items: </p>
+<ul>
+<li>work items </li>
+<li>code reviews </li>
+<li>pull requests </li>
+<li>source control files </li>
+<li>builds</li>
+</ul>
+<h3 id="question-53">Question-53</h3>
+<p>You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.</p>
+<p>You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.</p>
+<p>You need to ensure that an email alert is generated whenever VMSS1 scales in or out.</p>
+<p>Solution: From Azure DevOps, configure the Service hooks settings for Project1.</p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+<li><strong>B. No</strong></li>
+</ul>
+<p>Answer: B</p>
+<h3 id="question-54">Question-54</h3>
+<p>You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.</p>
+<p>You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.</p>
+<p>You need to ensure that an email alert is generated whenever VMSS1 scales in or out.</p>
+<p>Solution: From Azure Monitor, create an action group.</p>
+<p>Does this meet the goal?</p>
+<ul>
+<li><strong>A. Yes</strong></li>
+<li>B. No</li>
+</ul>
+<p>Answer: A</p>
+<p>An action group is a collection of notification preferences defined by the owner of an Azure subscription. Azure Monitor, Service Health and
+Azure Advisor alerts use action groups to notify users that an alert has been triggered.</p>
+<p>Reference
+https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups</p>
+<h3 id="question-55">Question-55</h3>
+<p>You use GitHub for source control.</p>
+<p>A file that contains sensitive data is committed accidentally to the Git repository of a project.</p>
+<p>You need to delete the file and its history form the repository.</p>
+<p>Which two tools can you use? Each correct answer presents a complete solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>A. the git filter-branch command</li>
+<li>B. BFG Repo-Cleaner</li>
+<li>C. the git rebase command</li>
+<li>D. GitHub Desktop</li>
+</ul>
+<p>Answer: AB</p>
+<p>To entirely remove unwanted files from a repository's history you can use either the git filter-branch command or the BFG Repo-Cleaner open source tool.</p>
+<p>Reference:</p>
+<p>https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository</p>
+<h3 id="question-56">Question-56</h3>
+<p>You plan to provision a self-hosted Linux agent.</p>
+<p>Which authentication mechanism should you use to register the self-hosted agent?</p>
+<ul>
+<li><strong>A. personal access token (PAT)</strong></li>
+<li>B. SSH key</li>
+<li>C. Alternate credentials</li>
+<li>D. certificate</li>
+</ul>
+<p>Answer: A</p>
+<p>Note: PAT Supported only on Azure Pipelines and TFS 2017 and newer. </p>
+<p>After you choose PAT, paste the PAT token you created into the command prompt window. </p>
+<p>Use a personal access token (PAT) if your Azure DevOps Server or TFS instance and the agent machine are not in a trusted domain. PAT authentication is handled by your Azure DevOps Server or TFS instance instead of the domain controller.</p>
+<p>Reference:</p>
+<p>https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux</p>
+<h3 id="question-57">Question-57</h3>
+<p>You are building a Microsoft ASP.NET application that requires authentication.</p>
+<p>You need to authenticate users by using Azure Active Directory (Azure AD).
+What should you do first?</p>
+<ul>
+<li>A. Assign an enterprise application to users and groups</li>
+<li><strong>B. Create an app registration in Azure AD</strong></li>
+<li>C. Configure the application to use a SAML endpoint</li>
+<li>D. Create a new Auth token from the application</li>
+<li>E. Create a membership database in an Azure SQL database</li>
+</ul>
+<p>Answer: B</p>
+<p>Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.
+Reference:</p>
+<p>https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/developer-guidance-for-integrating-applications</p>
+<h3 id="question-58">Question-58</h3>
+<p>You have an Azure DevOps organization named Contoso.</p>
+<p>You need to recommend an authentication mechanism that meets the following requirements:</p>
+<p>Supports authentication from Git</p>
+<p>Minimizes the need to provide credentials during authentication</p>
+<p>What should you recommend?</p>
+<ul>
+<li><strong>A. personal access tokens (PATs) in Azure DevOps</strong></li>
+<li>B. Alternate credentials in Azure DevOps</li>
+<li>C. user accounts in Azure Active Directory (Azure AD)</li>
+<li>D. managed identities in Azure Active Directory (Azure AD)</li>
+</ul>
+<p>Answer: A</p>
+<p>Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.</p>
+<p>These tokens have an expiration date from when they're created. You can restrict the scope of the data they can access. </p>
+<p>Use PATs to authenticate if you don't already have SSH keys set up on your system or if you need to restrict the permissions that are granted by the credential.</p>
+<h3 id="question-59">Question-59</h3>
+<p>You have an application that consists of several Azure App Service web apps and Azure functions.</p>
+<p>You need to assess the security of the web apps and the functions.</p>
+<p>Which Azure feature can you use to provide a recommendation for the security of the application?</p>
+<ul>
+<li>A. Security &amp; Compliance in Azure Log Analytics</li>
+<li>B. Resource health in Azure Service Health</li>
+<li>C. Smart Detection in Azure Application Insights</li>
+<li><strong>D. Compute &amp; apps in Azure Security Center</strong></li>
+</ul>
+<p>Answer: D</p>
+<p>Monitor compute and app services: Compute &amp; apps include the App Services tab, which App services: list of your App service environments and current security state of each.</p>
+<h3 id="question-60">Question-60</h3>
+<p>You have a branch policy in a project in Azure DevOps. The policy requires that code always builds successfully.</p>
+<p>You need to ensure that a specific user can always merge changes to the master branch, even if the code fails to compile. The solution must use the principle of least privilege.</p>
+<p>What should you do?</p>
+<ul>
+<li>A. Add the user to the Build Administrators group</li>
+<li>B. Add the user to the Project Administrators group</li>
+<li>C. From the Security settings of the repository, modify the access control for the user.</li>
+<li><strong>D. From the Security settings of the branch, modify the access control for the user.</strong></li>
+</ul>
+<p>Answer: D</p>
+<p>In some cases, you need to bypass policy requirements so you can push changes to the branch directly or complete a pull request even if branch policies are not satisfied. For these situations, grant the desired permission from the previous list to a user or group. You can scope this permission to an entire project, a repo, or a single branch. Manage this permission along the with other Git permissions.</p>
+<p>Reference:</p>
+<p>https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies</p>
+<h3 id="question-61">Question-61</h3>
+<p>You have an Azure Resource Manager template that deploys a multi-tier application</p>
+<p>You need to prevent the user who performs the deployment from viewing the account credentials and connection strings used by the application.
+What should you use?</p>
+<ul>
+<li><strong>A. Azure Key Vault</strong></li>
+<li>B. a Web.config file</li>
+<li>C. an Appsettings.json file</li>
+<li>D. an Azure Storage table</li>
+<li>E. an Azure Resource Manager parameter file</li>
+</ul>
+<p>Answer. A</p>
+<p>When you need to pass a secure value (like a password) as a parameter during deployment, you can retrieve the value from an Azure Key Vault.</p>
+<p>You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault ID. The key vault can exist in a different subscription than the resource group you are deploying to.</p>
+<p>Reference:
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-keyvault-parameter
+ertStudyPro</p>
+<h3 id="question-62">Question-62</h3>
+<p>You have an Azure DevOps organization named Contoso that contains a project named Project1.</p>
+<p>You provision an Azure key vault named Keyvault 1.</p>
+<p>You need to reference Keyvault1 secrets in a build pipeline of Praject1.
+What should you do first?</p>
+<ul>
+<li>A. Add a secure file to Project1.</li>
+<li>B. Create an XAML build service.</li>
+<li>C. Create a variable group in Project.</li>
+<li>D. Configure the security policy of Contoso.</li>
+</ul>
+<p>Answer: D</p>
+<p>Before this will work, the build needs permission to access the Azure Key Vault. This can be added in the Azure Portal.</p>
+<p>Open the Access Policies in the Key Vault and add a new one. Choose the principle used in the DevOps build.</p>
+<p>Reference:
+https://docs.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault</p>
+<h3 id="question-63">Question-63</h3>
+<p>Your company uses Azure DevOps.</p>
+<p>Only users who have accounts in Azure Active Directory can access the Azure DevOps environment.</p>
+<p>You need to ensure that only devices that are connected to the on-premises network can access the Azure DevOps environment.</p>
+<p>What should you do?</p>
+<ul>
+<li>A. Assign the Stakeholder access level to all users.</li>
+<li>B. In Azure Active Directory, configure risky sign-ins.</li>
+<li>C.In Azure DevOps, configure Security in Project Settings.</li>
+<li><strong>D. In Azure Active Directory, configure conditional access.</strong></li>
+</ul>
+<p><strong>Answer: D</strong></p>
+<p>Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.</p>
+<p>Conditional Access policies are enforced after the first-factor authentication has been completed.</p>
+<p>Reference:
+https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview</p>
+<h3 id="question-64">Question-64</h3>
+<p>You have the following Azure policy.</p>
+<pre><code>if: {
+    allOf: [
+        {
+            &quot;field&quot;: &quot;type&quot;,
+            &quot;equals&quot;: &quot;Microsoft.Storage/storageAccounts&quot;
+        },
+        {
+            &quot;field&quot;: &quot;Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly&quot;,
+            &quot;notEquals&quot;: &quot;true&quot;
+        }
+    ]
+},
+then: {
+    effect: &quot;deny&quot;
+}
+</code></pre>
+<p>You assign the policy to the Tenant root group.</p>
+<p>What is the effect of the policy?</p>
+<ul>
+<li>A. prevents all HTTP traffic to existing Azure Storage accounts</li>
+<li>B. ensures that all traffic to new Azure Storage accounts is encrypted</li>
+<li>C.prevents HTTPS traffic to new Azure Storage accounts when the accounts are accessed over the Internet</li>
+<li>D.ensures that all data for new Azure Storage accounts is encrypted at rest</li>
+</ul>
+<h3 id="question-65">Question-65</h3>
+<p>You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.</p>
+<p>You need to ensure that you can reference the values of the secrets stored in vault in all the pipelines of Project. The solution must prevent the values from being stored in the pipelines.</p>
+<p>What should you do?</p>
+<ul>
+<li><strong>A. Create</strong><strong> a variable group in Praject1.</strong></li>
+<li>B. Add a secure file to Project.</li>
+<li>C. Modify the security settings of the pipelines.</li>
+<li>D. Configure the security policy of Contoso.</li>
+</ul>
+<p>Answer: A</p>
+<p>Use a variable group to store values that you want to control and make available across multiple pipelines.</p>
+<p>Reference:
+https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups</p>
+<h3 id="question-66">Question-66</h3>
+<p>You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.</p>
+<p>You need to ensure that all the open source libraries comply with your company's licensing standards.</p>
+<p>Which service should you use?</p>
+<ul>
+<li>A. Ansible</li>
+<li>B. Maven</li>
+<li><strong>C. White Source Bolt</strong></li>
+<li>D. Helm</li>
+</ul>
+<p>Answer: C</p>
+<h3 id="question-67">Question-67</h3>
+<p>You are designing the security validation strategy for a project in Azure DevOps.</p>
+<p>You need to identify package dependencies that have known security issues and can be resolved by an update.</p>
+<p>What should you use?</p>
+<ul>
+<li><strong>A. Octopus Deploy</strong></li>
+<li>B. Jenkins</li>
+<li>C. Gradle</li>
+<li>D. SonarQube</li>
+</ul>
+<p>Answer: A</p>
+<p>Incorrect Answers:</p>
+<ul>
+<li>B: Jenkins is a popular open-source automation server used to set up continuous integration and delivery (CI/CD) for your software projects.</li>
+<li>D: SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future.</li>
+</ul>
+<p>Reference:
+https://octopus.com/docs/packaging-applications</p>
+<h3 id="question-68">Question-68</h3>
+<p>Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.</p>
+<p>You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.</p>
+<p>What should you use?</p>
+<ul>
+<li>A. Microsoft Visual SourceSafe</li>
+<li>B. Code Style</li>
+<li><strong>C. Black Duck</strong></li>
+<li>D. Jenkins</li>
+</ul>
+<p>Answer. C</p>
+<p>Secure and Manage Open Source Software</p>
+<p>Black Duck helps organizations identify and migate open source secunty, license compliance and code-quality risks across application and container portfolios.</p>
+<p>Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the buiki process, so you can proactively manage risk. The integration allows you to receive alerts and fail bulds when any Black Duck</p>
+<p>Hub policy violations are met.</p>
+<p>There are several versions of this question in the exam. The question has two possible correct answers:</p>
+<ul>
+<li>Black Duck</li>
+<li>White Source Bolt</li>
+</ul>
+<p>Other incorrect answer options you may see on the exam include the following:</p>
+<ul>
+<li>OWASP ZAP</li>
+<li>PDM</li>
+<li>SourceGear</li>
+<li>SourceGear Vault </li>
+</ul>
+<h3 id="question-69">Question-69</h3>
+<p>You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.</p>
+<p>You need to ensure that all the open source libraries comply with your company's licensing standards.</p>
+<p>Which service should you use?</p>
+<ul>
+<li>A. NuGet</li>
+<li>B. Maven</li>
+<li><strong>C. Black Duck</strong></li>
+<li>D. Helm</li>
+</ul>
+<p><strong>Answer: C</strong></p>
+<p>Secure and Manage Open Source Software</p>
+<p>Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios.</p>
+<p>Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the buiki process, so you can proactively manage risk. </p>
+<p>The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.</p>
+<p>Note: WhiteSource would also be a good answer, but it is not an option here.
+Reference:</p>
+<p>https://marketplace.visualstudio.com/items7itemName=black-duck-software.hub-tfs</p>
+<h3 id="question-70">Question-70</h3>
+<p>Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
+Studio App Center.</p>
+<p>You plan to distribute a new release of the app</p>
+<p>You need to identify which certificate file you require to distribute the new release from App Center.</p>
+<p>Which file type should you upload to App Center?</p>
+<ul>
+<li>A..cer</li>
+<li>B..pfx</li>
+<li><strong>C..p12</strong></li>
+<li>D..pvk</li>
+</ul>
+<p>Answer. C</p>
+<p>A successful IOS device build will produce an ipa file. In order to install the build on a device, it needs to be signed with a valid provisioning profile and certificate.</p>
+<p>To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (mobileprovision) and a valid certificate (p12), along with the password for the certificate.</p>
+<p>Reference</p>
+<p>https://docs.microsoft.com/en-us/appcenter/build/xamarin/ios/</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
