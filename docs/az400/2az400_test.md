@@ -1550,3 +1550,2473 @@ To sign the builds produced from a branch, enable code signing in the configurat
 Reference
 
 https://docs.microsoft.com/en-us/appcenter/build/xamarin/ios/
+
+
+### Question-71
+
+Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
+You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
+
+What should you use?
+
+- A. OWASP ZAP
+- B. Jenkins
+- C. Code Style
+- **D. White Source Bolt**
+
+Answer: D
+
+WhiteSource provides WhiteSource Bolt, a lightweight open source security and management solution developed specifically for integration with Azure DevOps and Azure DevOps Server.
+
+
+Note: White Source is the leader in continuous open source software security and compliance management. WhiteSource integrates into your build process, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated definitive database of open source repositories.
+
+There are several versions of this question in the exam. The question has fwo possible correct answers:
+
+1. Black Duck
+2. White Source Bolt
+
+Other incorrect answer options you may see on the exam include the following:
+
+1. Microsoft Visual SourceSafe
+2. PDM
+3. SourceGear
+4. SourceGear Vault
+
+
+### Question-72
+
+You plan to use a NuGet package in a project in Azure DevOps. The NuGet package is in a feed that requires authentication.
+
+You need to ensure that the project can restore the NuGet package automatically.
+
+What should the project use to automate the authentication?
+
+- A. an Azure Automation account
+- **B. an Azure Artifacts Credential Provider**
+- C.an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
+- D. an Azure Active Directory (Azure AD) service principal
+
+
+Answer. B
+
+The Azure Artifacts Credential Provider automates the acquisition of credentials needed to restore NuGet packages as part of your NET development workfiow. It integrates with MSBuild, dotnet, and NuGet exe) and works on Windows, Mac, and Linux. Any time you want to use packages from an Azure Artifacts feed,
+
+the Credential Provider will automatically acquire and securely store a token on behalf of the NuGet client you’re using.
+
+
+### Question-73
+
+You use Azure Pipelines to manage project builds and deployments.
+
+You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release.
+
+You need to configure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams.
+
+What should you turn on?
+
+- **A. Third-party application access via Auth**
+- B. Azure Active Directory Conditional Access Policy Validation
+- C.Alternate authentication credentials
+- D. SSH authentication
+
+
+Answer. A
+
+The Azure Pipelines app uses the Auth authentication protocol, and requires Third-party application access via Auth for the organization to be enabled. 
+
+To enable this setting, navigate to Organization Settings > Security> Policies, and set the Third-party application access via Auth for the organization setting to On.
+
+### Question-74
+
+You have an existing project in Azure DevOps.
+
+You plan to integrate Github as the repository for the project
+
+You need to ensure that Azure Pipelines runs under the Azure Pipelines identity.
+
+Which authentication mechanism should you use?
+
+- A. personal access token (PAT)
+- **B. GitHub App**
+- C.Azure Active Directory (Azure AD)
+- D. DAuth
+
+Answer. B
+
+GitHub App uses the Azure Pipelines identity.
+
+**Incorrect Answers:**
+
+A: Personal access token and Auth use your personal GitHub identity
+
+### Question-75
+
+You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
+
+Logging of commands is enabled for the Azure Pipelines agent.
+
+You need to prevent the values of the secrets from being logged.
+
+What should you do?
+
+
+- **A. Store the secrets in the environment variables instead of the pipeline variables.**
+- B. Pass the secrets on the command line instead of in the pipeline variables.
+- C.Apply a prefix of secret to the name of the variables.
+- D.Echo the values of the secrets to the command line.
+
+Answer: A
+
+Don't set secret variables in your YAML file. Operating systems often log commands for the processes that they run, and you wouldn't want the log to include a secret that you passed in as an input. 
+
+Use the script's environment or map the variable within the variables block to pass secrets to your pipeline.
+
+Incorrect Answers:
+
+- B: Never pass secrets on the command line
+- C: Adding a prefix does not make the variable a secret. The issecret property makes it secret but does not prevent logging of the secret.
+- D: Never echo secrets as output.
+
+### Question-76
+
+You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
+
+A security review indicates that too many users have privileged access to resources.
+
+You need to deploy a privileged access management solution that meets the following requirements:
+
+- Enforces time limits on the use of privileged access
+- Requires approval to activate privileged access
+- Minimizes costs
+
+What should you do first?
+
+- A. Configure notifications when privileged roles are activated.
+- B. Configure alerts for the activation of privleged roles
+- C. Enforce Azure Multi-Factor Authentication (MFA) for role activation.
+- **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.**
+
+Answer: D
+
+
+### Question-77
+
+You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
+
+You need to recommend a solution to store and encrypt the secret. The secret value must be accessible only to the workflow. The solution must minimize administrative effort
+
+What should you recommend?
+
+- A. Store the secret in the organization-level GitHub secrets.
+- B. Store the secret in the repository-level GitHub secrets.
+- **C. Encrypt the secret value and store the value in the repository. Store the decryption key in the repository-level Github secrets.**
+- D.Encrypt the secret value and store the value in the repository. Store the decryption key in the organization-level GitHub secrets.
+
+Answer: C
+
+### Question-78
+
+You have a GitHub Enterprise account.
+
+You need to enable push pratection for secret scanning of the account repositories.
+
+What should you do first?
+
+- **A. Purchase a GitHub Advanced Security license.**
+- B. Purchase Premium Plus support.
+- C. Enforce multi-factor authentication (MFA).
+- D. Create an access policy for secrets.
+
+Answer: A
+
+
+### Question-79
+
+You have an Azure subscription that contains four Azure virtual machines.
+
+You need to configure the virtual machines to use a single identity. The solution must meet the following requirements:
+
+- Ensure that the credentials for the identity are managed automatically.
+- Support granting privileges to the identity.
+
+Which type of identity should you use?
+
+- A. a system-assigned managed identity
+- B. a user-assigned managed identity
+- **C. a service principal**
+- D. a user account
+
+Answer: C
+
+### Question-8O
+
+You have a GitHub repository that contains multiple workflows and a secret stored at the environment level.
+
+You need to ensure that the secret can be used by all the workflows.
+
+What should you do first?
+
+- A. Recreate the secret at the organization level.
+- **B. Recreate the secret at the repository level.**
+- C. Enable required reviewers.
+
+Answer:B
+
+### Question-B1
+
+You are designing the development process for your company.
+
+You need to recommend a solution for continuous inspection of the company's code base to locate common code patterns that are known to be problematic.
+What should you include in the recommendation?
+
+- A. Microsoft Visual Studio test plans
+- B. Gradle wrapper scripts
+- **C. SonarCloud analysis**
+- D. the JavaScript task runner
+
+Answer. C
+
+SonarCloud is a cloud service offered by SonarSource and based on SonarQube. SonarQube is a widely adopted open source platform to inspect continuously the quality of source code and detect bugs, vulnerabilities and code smells in more than 20 different languages.
+
+Note: The SonarCloud Azure DevOps extension brings everything you need to have your projects analyzed on SonarCloud very quickly.
+Incorrect Answers:
+
+A: Test plans are used to group together test suites and individual test cases. This includes static test suites, requirement-based suites, and query-based suites.
+
+### Question-82
+
+The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
+
+You need to recommend changes to reduce the accumulated technical debt.
+
+Sclution: You recommend reducing the code coupling and the dependency cycles?
+
+Does this meet the goal?
+
+- A. Yes
+- **B. No**
+
+Answer: B
+
+Instead reduce the code complexity.
+
+Note: Technical debt is the accumulation of sub-optimal technical decisions made over the lifetime of an application. Eventually, it gets harder and harder to change things: it's the 'sand in the gears" that sees IT initiatives grind to a halt.
+
+### Question-83
+
+Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
+
+You need to recommend a strategy for managing technical debt.
+
+Which two actions should you include in the recommendation? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+- **A. Configure post-deployment approvals in the deployment pipeline**.
+- B. Configure pre-deployment approvals in the deployment pipeline.
+- C. Integrate Azure DevOps and SonarQube
+- **D.Integrate Azure DevOps and Azure DevTest Labs.**
+
+Answer: BC
+
+- B: With SonarQube pre-approval, you can set quality gate.
+- C: You can manage technical debt with SonarQube and Azure DevOps.
+
+Note: Technical debt is the set of problems in a development effort that make forward progress on customer value inefficient. 
+
+Technical debt saps productivity by making code hard to understand, fragile, time-consuming to change, difficult to validate, and creates unplanned work that blocks progress. Unless they are managed, technical debt can accumulate and hurt the overall quality of the software and the productivity of the development team in the long term
+
+SonarQube an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to:
+
+- Detect Bugs
+- Code Smells
+- Security Vulnerabilities
+- Centralize Quality
+
+### Question-84
+
+Your company is building a new solution in Java.
+
+The company currently uses a SonarQube server to analyze the code of NET solutions.
+
+You need to analyze and monitor the code quality of the Java solution.
+
+Which task types should you add to the build pipeline?
+
+- **A. Gradle**
+- B. CocoaPods
+- C. Grunt
+- D. Gulp
+
+
+Answer. A
+
+
+SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps Services build task.
+
+
+Prepare Analysis Configuration task, to configure all the required settings before executing the build.
+
+This task is mandatory.
+
+In case of NET solutions or Java projects, it helps to integrate seamlessly with MSBuild, Maven and Gradle tasks.
+
+Incorrect Answers:
+
+B: CocoaPods is the dependency manager for Swift and Objective-C Cocoa projects.
+
+Note: There are several versions of this question in the exam. The question can have three correct answers:
+
+* MSBuild
+* Maven Gradle
+
+The question can also have different incorrect options, including:
+
+* Chef
+* Octopus xCODE
+* CocoaPods
+
+
+### Question-85
+
+Your company is building a new solution in Java.
+
+The company currently uses a SonarQube server to analyze the code of .NET solutions.
+
+You need to analyze and monitor the code quality of the Java solution.
+
+Which task types should you add to the buld pipeline?
+
+* A. Grunt
+* B. Octopus
+* C. Maven
+* D. Gulp
+
+
+Answer. C
+
+SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical bt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps Services build task.
+
+Prepare Analysis Configuration task, to configure all the required settings before executing the build.
+
+This task is mandatory.
+
+In case of NET solutions or Java projects, it helps to integrate seamlessly with MSBuiki, Maven and Gradle tasks.
+
+Note: There are several versions of this question in the exam. The question can have three correct 
+
+answers:
+
+* MSBuild
+* Maven
+* Gradle
+
+The question can also have different incorrect options, including:
+
+* Chef 
+* xCODE
+* CocoaPods
+
+### Question-86
+
+Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
+
+You need to recommend a strategy for managing technical debt.
+
+Which action should you include in the recommendation?
+
+* A. Configure post-deployment approvals in the deployment pipeline.
+* **B. Integrate Azure DevOps and SonarQube.**
+* C. Integrate Azure DevOps and Azure DeTest Labs.
+
+
+Answer: B
+
+You can manage technical debt with SonarQube and Azure DevOps.
+
+Note: Technical debt is the set of problems in a development effort that make forward progress on customer value inefficient. Technical debt saps productivity by making code hard to understand, fragile, time-consuming to change, difficult to validate, and creates unplanned work that blocks progress. Unless they are managed, technical debt can accumulate and hurt the overall quality of the software and the productivity of the development team in the long term
+
+SonarQube an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to:
+
+* Detect Bugs
+* Code Smells
+* Security Vulnerabilities
+* Centralize Quality
+
+
+### Question-87
+
+During a code review, you discover many quality issues. Many modules contain unused variables and empty catch blocks.
+
+You need to recommend a solution to improve the quality of the code.
+
+What should you recommend?
+
+* A. In a Grunt build task, select Enabled from Control Options.
+* **B. In a Maven buiki task, select Run PMD**
+* C. In a Xcode build task, select Use xepretty from Advanced.
+* D.In a Gradle buld task, select Run Checkstyle.
+
+
+**Answer. B**
+
+### Question-88
+
+
+Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
+
+You need to make a custom package available to all the developers. The package must be managed centrally, and the latest version must be available for consumption in Visual Studio automatically.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+NOTE: Each correct selection is worth one point.
+
+* **A. Publish the package to a feed**.
+* **B. Create a new feed in Azure Artifacts.**
+* C. Upload a package to a Git repository.
+* D. Add the package URL to the Environment settings in Visual Studio.
+* **E. Add the package URL to the NuGet Package Manager settings in Visual Studio.**
+* F. Create a Git repository in Azure Repos
+
+Answer: ABE
+
+B: By using your custom NuGet package feed within your Azure DevOps (previously VSTS) instance, youll be able to distribute your packages within your organization with ease.
+Start by creating a new feed.
+
+A: We can publish, pack and push the built project to our NuGet feed
+
+E: Consume your private NuGet Feed
+
+Go back to the Packages area in Azure DevOps, select your feed and hit Connect to feed. You'll see some instructions for your feed, but it's fairly simple to set up.
+
+Just copy your package source URL, go to Visual Studio, open the NuGet Package Manager, go to its settings and add a new source. Choose a fancy name, insert the source URL. Done
+
+
+Search for your package in the NuGet Package Manager and it should appear there, ready for installation. Make sure to select the appropriate feed (or just all feeds) from the top right select box.
+
+### Question-89
+
+You have a GitHub repository.
+
+You create a new repository in Azure DevOps.
+
+You need to recommend a procedure to clone the repository from GitHub to Azure DevOps.
+What should you recommend?
+
+* • A. Create a pull request.
+* • B. Create a webhook.
+* • C. Create a service connection for GitHub
+* • **D. From Import a Git repository, click Import.**
+* • E. Create a personal access token in Azure DevOps.
+
+Answer: D
+
+You can import an existing Git repo from GitHub, Bitbucket, GitLab, or other location into a new or empty existing repo in your project in Azure DevOps.
+
+
+### Question-90
+
+after you answer a question in this section, you wil NOT be able to return to it. As a result, these questions will not appear in the review screen The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
+
+You need to recommend changes to reduce the accumulated technical debt.
+
+Solution: You recommend increasing the code duplication.
+
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+**Answer. B**
+
+Instead reduce the code complexity.
+
+Note: Technical debt is the accumulation of sub-optimal technical decisions made over the lifetime of an application. 
+
+Eventually, it gets harder and harder to change things: it's the 'sand in the gears" that sees IT initiatives grind to a halt.
+
+### Question-91
+
+
+The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
+
+You need to recommend changes to reduce the accumulated technical debt.
+
+Solution: You recommend increasing the test coverage.
+
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+**Answer: B**
+
+
+### Question-92
+
+The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
+
+You need to recommend changes to reduce the accumulated technical debt.
+
+Solution: You recommend reducing the code complexity.
+
+Does this meet the goal?
+
+
+* **A. Yes**
+* B. No
+
+**Answer: A**
+
+### Question-93
+
+During a code review, you discover quality issues in a Java application.
+
+You need to recommend a solution to detect quality issues including unused variables and empty catch blocks.
+
+What should you recommend?
+
+* **A. In a Maven build task, select Run PMD**
+* B. In an Xcode build task, select Use xepretty from Advanced.
+* C. In a Gulp build task, specify a custom condition expression.
+* D. In a Grunt build task, select Enabled from Control Options.
+
+
+Answer: A
+
+### Question-94
+
+You use Azure Artifacts to host NuGet packages that you create.
+
+You need to make one of the packages available to anonymous users outside your organization. The solution must minimize the number of publication points.
+
+What should you do?
+
+* A. Change the feed URL of the package
+* **B. Create a new feed for the package**
+* C. Promote the package to a release view.
+* D. Publish the package to a public NuGet repository.
+
+Answer: B
+
+### Question-95
+
+You have an Azure Automation account that contains a runbook. The runbook is used to configure the application infrastructure of an Azure subscription.
+
+You have a project in Azure DevOps named Project. Project contains a repository that stores code for the runbook.
+
+You need to ensure that every committed change to the code will update automatically and publish the runbook to Azure Automation.
+
+What should you configure?
+
+* A. the Service hooks settings for Project1
+* B. the Connections settings for the Automation account
+
+* **C. the Source control settings for the Automation account**
+* D. the Service connections settings for Project1
+
+
+**Answer: C**
+
+### Question-96
+
+You have a GitHub repository that contains multiple versions of an Azure Pipelines template
+
+You plan to deploy multiple pipelines that will use a template stored in the repository.
+
+You need to ensure that you use a fixed version of the template.
+
+What should you use to reference which version of the template repository to use?
+
+* A. the serial
+* B. the SHA-based hashes
+* C. the runner
+* **D. the branch**
+
+Answer: D
+
+
+### Question-97
+
+You manage source code control and versioning by using GitHub.
+
+You need to ensure that a PowerShell script is executed automatically before rebase operations are performed.
+
+What should you use?
+
+* A. a package
+* B. GitHub Copilot
+* **C. a webhook**
+* D. a gist
+
+
+Answer: C
+
+### Question-98
+
+You use GitHub to host container packages that use Semantic Versioning (SemVer).
+
+You have an app named App1. The current version of App1 is 11.2.0.
+
+You change the code of App1 to fix a bug that was introduced in version 10.5.1.
+
+Which version number should you assign to the release?
+
+* A. 10.5.1-PATCH
+* **B. 11.2.1**
+* C. 10.5.2
+* D. 10.6.0
+
+
+Answer: B
+
+### Question-99
+
+You manage code by using GitHub.
+
+You need to ensure that repository owners are notified if a new vulnerable dependency or malware is found in their repository.
+
+What should you do?
+
+* A. Configure CodeQL scanning actions.
+* **B. Configure Dependabot alerts.**
+* C. Configure branch protection rules for each repository.
+* D. Subscribe all the repository owners to the GitHub Advisory Database.
+
+
+**Answer: B**
+
+### Question-100
+
+
+You have a 1-TB Azure Repos repository named repo1.
+
+You need to clone repo1. The solution must meet the following requirements:
+
+- You must be able to search the commit history of the /src directory
+- The amount of time it takes to clone the repository must be minimized
+
+Which command should you run?
+
+* A. git clone -depth-1 git@ssh.dev.azure.com:v3/org/Project1/repo1
+* **B. git clone - filter=blob:none git@ssh.dev.azure.comv3/org/Project1/repo1**
+* C. git clone git@ssh.dev.azure.com.com.v3/org/Project1/repo1
+* D. git clone -filter=true:0 git@ssh.dev.azure.com:v3/org/Project1/repo1
+
+
+Answer: B
+
+
+### Question-101
+
+You use GitHub for source control.
+
+You are evaluating whether to use proxying to add a private upstream MyGet package feed to your MyGet feed.
+What are two possible advantages of this approach? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+* A. minimizes the impact of upstream source availability issues
+* B. minimizes latency when accessing the package
+* **C. provides automatic authentication**
+* **D. minimizes the impact on your storage quota**
+
+
+Answer: CD
+
+
+### - Question-102
+
+You manage source code control and versioning by using GitHub.
+
+A large file is committed to a repository accidentally.
+
+You need to reduce the size of the repository. The solution must remove the file from the repository.
+What should you use?
+
+
+* **A. bfg**
+
+* B. Its
+
+* C. gvfs
+
+* D. init
+
+
+Answer: A
+
+### Question-103
+
+Your company creates a new Azure DevOps team You plan to use Azure DevOps for sprint planning.
+
+You need to visualize the flow of your work by using an agile methodology.
+
+Which Azure DevOps component should you use?
+
+* **A. Kanban boards**
+* B. sprint planning
+* C. delivery plans
+* D. portfolio backlogs
+
+
+Answer: A
+
+### Question-104
+
+Your team uses an agile development approach.
+
+You need to recommend a branching strategy for the team's Git repository. The strategy must meet the following requirements.
+
+Provide the ability to work on multiple independent tasks in parallel.
+
+Ensure that checked-in code remains in a releasable state always.
+
+Ensure that new features can be abandoned at any time.
+
+Encourage experimentation.
+
+What should you recommend?
+
+* A. a single long-running branch without forking
+* B. multiple long-running branches
+* C. a single fork per team member
+* **D. a single long-running branch with multiple short-lived feature branches**
+
+Answer: D
+
+### Question-105
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+
+Solution: You create a service hook subscription that uses the build completed event.
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+****
+Answer: B
+
+### Question-106
+
+You have a project in Azure DevOps that has a release pipeline.
+
+You need to integrate work item tracking and an Agile project management system to meet the following requirements:
+
+Ensure that developers can track whether their commits are deployed to production.
+
+Report the deployment status.
+
+Minimize integration effort.
+
+Which system should you use?
+
+* A. Asana
+* B. Basecamp
+* C. Trello
+* D. Jira
+
+**Answer: D**
+
+
+### Question-108
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+
+Solution: You create an email subscription to an Azure DevOps notification.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+### - Question-109
+
+
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+
+Solution: You create a service hook subscription that uses the code pushed event.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+
+Answer: A
+
+### - Question-110
+
+You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
+
+You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+
+Solution: You add a trigger to the build pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+
+Answer: B
+
+### Question-111
+
+You plan to create in Azure DevOps. Multiple developers will work on the project. 
+
+The developers will work offline frequently and will require access to the full project history while they are offline.
+
+Which version control solution should you use?
+
+* A. Team Foundation Version Control
+* B. Git
+* C. TortoiseSVN
+* D. Subversion
+
+**Answer: B**
+
+### Question-112
+
+You have an Azure DevOps project that uses many package feeds.
+
+You need to simplity the project by using a single feed that stores packages produced by your company and packages consumed from remote feeds. The solution must support public feeds and authenticated feeds.
+
+What should you enable in DevOps?
+
+* A. Universal Packages
+* **B. upstream sources**
+* C. views in Azure Artifacts
+* D. a symbol server
+
+**Answer: B**
+
+### Question-113
+
+
+You plan to onboard 10 new developers.
+
+You need to recommend a development environment that meets the following requirements:
+Integrates with GitHub
+
+Provides integrated debugging tools
+
+Supports remote workers and hot-desking environments
+
+Supports developers who use browsers, tablets, and Chromebooks What should you recommend?
+
+
+* A. VS Code
+* B. Xamarin Studio
+* C. MonoDevelop
+* **D. Github Codespaces**
+
+Answer: D
+
+
+### Question-114
+
+You have an Azure DevOps organization named Contoso and an Azure subscription.
+
+You use Azure DevOps to build and deploy a web app named App1. Azure Monitor is configured to generate an email notification in response to alerts generated whenever App1 generates a server-side error.
+
+You need to receive notifications in Microsoft Teams whenever an Azure Monitor alert is generated.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+
+* A. Create an Azure Monitor workbook.
+* **B. Create an Azure logic app that has an HTTP request trigger.**
+* C. Create an Azure logic app that has an Azure DevOps trigger.
+* **D. Modify an action group in Azure Monitor.**
+* E. Modify the Diagnostics settings in Azure Monitor,
+
+
+Answer: BD
+
+### Question-115
+
+
+You have an Azure DevOps organization that contains a project named Project1
+
+You need to create a published wiki in Project1.
+
+What should you do first?
+
+
+* A. Modify the Storage settings of Project1.
+* B. In Project, create an Azure DevOps pipeline.
+* **C. In Project1, create an Azure DevOps repository**.
+* D. Modify the Team configuration settings of Project1.
+
+
+Answer: C
+
+### Question-116
+
+Your company plans to use an agile approach to software development.
+
+You need to recommend an application to provide communication between members of the development team who work in locations around the world. The applications must meet the following requirements
+Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.
+
+
+Be available on Windows 10, Mac OS, iOS, and Android operating systems.
+
+Provide the ability to add external contractors and suppliers to projects.
+
+Integrate directly with Azure DevOps.
+
+What should you recommend?
+
+* A. Microsoft Project
+* B. Bamboo
+* C. Microsoft Lync
+* D. Microsoft Teams
+
+
+**Answer: D**
+
+### Question-117
+
+Your company plans to use an agile approach to software development.
+
+You need to recommend an application to provide communication between members of the development team who work in locations around the world. The applications must meet the following requirements:
+
+* Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.
+* Be available on Windows 10, Mac OS, iOS, and Android operating systems.
+* Provide the ability to add external contractors and suppliers to projects.
+
+Integrate directly with Azure DevOps.
+
+What should you recommend?
+
+* A. Skype for Business
+* B. Bamboo
+* C. Octopus
+* **D. Slack**
+
+Answer: D
+
+### Question-118
+
+
+You are designing a YAML template for use with Azure Pipelines. The template will include the outputfile parameter.
+
+Which two methods can you use to reference the parameter? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+
+* A. `${{parameters.outputfile})`
+* B. `$(parameters'outputfile)`
+* C. `$(parameters.outputfile)`
+* D. `$(parameters[outputfile])`
+* E. `${{parameters|'outputfile']))`
+
+Answer: AE
+
+
+### _Question-119
+
+You have a pipeline named Pipeline1 in Azure Pipelines.
+
+You need to create a service connection to enable Pipeline1 to download a public container image.
+
+Which type of service connection should you create?
+
+* A. a Docker host
+* B. a Docker registry
+* C. Azure Service Fabric
+* D. Azure Kubernetes Service (AKS)
+
+
+Answer: B
+
+
+### Question-120
+
+You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
+
+You create a Microsoft Teams channel and add the Azure Boards app to the channel.
+
+You need to ensure that users can create work items in Board1 from Microsoft Teams.
+
+Which command should you run?
+
+* A. @azure boards subscriptions
+* B. @azure boards create
+* C. @azure boards sign in
+* **D. @azure boards** 
+
+
+**Answer: D**
+
+
+### Question-121
+
+You have an Azure subscription that contains a storage account and 20 virtual machines
+
+You plan to use LogRhythm for aggregation and analysis of the virtual machine logs.
+
+You need to configure AzLog to export the logs and push them to the storage account.
+
+In which format should you export the logs?
+
+
+* A. JSON
+* B. EVTX
+* C. EVT
+* D. binary
+
+
+**Answer: A**
+
+### Question-123
+
+You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
+
+You plan to create a pull request in GitHub.
+
+You need to automatically link the request to an existing Azure Boards work item by using the text of AB#.
+
+To which two elements can you add the text? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+
+* A. milestone
+* B. label
+* **C. title**
+* D. comment
+* **E. description**
+
+Answer: CE
+
+
+### Question-124
+
+You are integrating an Azure Boards project and a GitHub repository.
+
+You need to authenticate Azure Boards to GitHub.
+Which two authentication methods can you use? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+* A. a publisher certificate
+* B. a trusted root certificate
+* C. Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra
+* **D. GitHub user credentials**
+* **E. a personal access token (PAT)**\
+
+
+Answer: DE
+
+### Question-125
+
+You have a GitHub repository that is integrated with Azure Boards. Azure Boards has a work item that has the number 715.
+
+You need to ensure that when you commit source code in GitHub, the work item is updated automatically.
+
+What should you include in the commit comments?
+
+* A. the URL of the work item
+* **B. AB#715**
+* C. @715
+* D. #715
+
+
+Answer: B
+
+### Question-126
+
+You are creating a dashboard in Azure Boards.
+
+You need to visualize the time from when work starts on a work item until the work item is closed.
+
+Which type of widget should you use?
+
+* **A. cycle time**
+* B. velocity
+* C. cumulative flow
+* D. lead time
+
+
+**Answer: A**
+
+### Question-127
+
+You manage code by using GitHub.
+
+You plan to ensure that all GitHub Actions are validated by a security team.
+
+You create a branch protection rule requiring that code changes be reviewed by code owners.
+
+You need to create the CODEOWNERS file.
+
+Where should you create the file?
+
+* A.. github/actions/
+* B. .github/
+* **C.`.git/`**
+* D. .github/workflows/
+
+
+Answer: C
+
+### Question-131
+
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+
+The builds must access an on-premises dependency management system.
+
+The build outputs must be stored as Server artifacts in Azure DevOps.
+
+The source code must be stored in a Git repository in Azure DevOps.
+
+Solution: Configure the build pipeline to use a Hosted VS 2019 agent pool. Include the Java Tool Installer task in the build pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+
+Answer: B
+
+
+### Question-132
+
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+
+The builds must access an on-premises dependency management system.
+
+The build outputs must be stored as Server artifacts in Azure DevOps.
+
+The source code must be stored in a Git repository in Azure DevOps.
+
+Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+### Question-133
+
+Your company uses a Git repository in Azure Repos to manage the source code of a web application. The master branch is protected from direct updates.
+
+Developers work on new features in the topic branches.
+
+Because of the high volume of requested features, it is difficult to follow the history of the changes to the master branch.
+
+You need to enforce a pull request merge strategy. The strategy must meet the following requirements:
+
+Consolidate commit histories.
+
+Merge the changes into a single commit.
+
+Which merge strategy should you use in the branch policy?
+
+* **A. squash merge**
+* B. fast-forward merge
+* C. Git fetch
+* D. no-fast-forward merge
+
+
+**Answer: A**
+
+
+### Question-134
+
+You are automating the build process for a Java-based application by using Azure DevOps.
+You need to add code coverage testing and publish the outcomes to the pipeline.
+What should you use?
+
+* A. Bullseye Coverage
+* B. JUnit
+* **C. JaCoCo**
+* D. MSTest
+
+
+Answer: C
+
+### Question-135
+
+You are automating the build process for a Java-based application by using Azure DevOps.
+
+You need to add code coverage testing and publish the outcomes to the pipeline.
+
+What should you use?
+
+* **A. Cobertura**
+* B. Bullseye Coverage
+* C. MSTest
+* D. Coverlet
+
+**Answer: A**
+
+### Question-136
+
+You have an existing build pipeline in Azure Pipelines.
+
+You need to use incremental builds without purging the environment between pipeline executions.
+
+What should you use?
+
+* A. a self-hosted agent
+* B. Microsoft-hosted parallel jobs
+* C. a File Transform task
+
+**Answer: A**
+
+### Question-137
+
+You have a private project in Azure DevOps.
+
+You need to ensure that a project manager can create custom work item queries to report on the project's progress. The solution must use the principle of least privilege.
+
+To which security group should you add the project manager?
+
+* A. Reader
+* B. Project Collection Administrators
+* C. Project Administrators
+* **D. Contributor**
+
+
+Answer: D
+
+### Question-138
+
+
+You use a Git repository in Azure Repos to manage the source code of a web application. Developers commit changes directly to the default branch.
+
+You need to implement a change management procedure that meets the tollowing requirements:
+
+* The detault branch must be protected, and new changes must be built in the feature branches first.
+* Changes must be reviewed and approved by at least one release manager before each merge.
+* Changes must be brought into the default branch by using pull requests.
+
+What should you configure in Azure Repos?
+
+
+* **A. branch policies of the default branch**
+* B. Services in Project Settings
+* C. Deployment pools in Project Settings
+* D. branch security of the default branch
+
+**Answer: A**
+
+### Question-139
+
+Your company uses Azure DevOps to manage the build and release processes for applications.
+
+You use a Git repository for applications source control
+
+You need to implement a pull request strategy that reduces the history volume in the master branch.
+
+Solution: You implement a pull request strategy that uses an explicit merge.
+
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+
+Answer: B
+
+
+### Question-141
+
+You need to recommend a Docker container build strategy that meets the following requirements:
+
+Minimizes image sizes
+
+Minimizes the security surface area of the final image What should you include in the recommendation?
+
+* A. multi-stage builds
+* B. PowerShell Desired State Configuration (DSC)
+* C. Docker Swarm
+* D. single-stage builds
+
+
+**Answer: A**
+
+### Question-142
+
+
+Your company has a project in Azure DevOps for a new web application.
+
+You need to ensure that when code is checked in, a build runs automatically.
+
+Solution: From the Triggers tab of the build pipeline, you select Batch changes while a build is in progress.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+Answer: B
+
+### Question-143
+
+You have 50 Node.js-based projects that you scan by using WhiteSource. Each project includes Package.json, Package-lock.json, and Npm-shrinkwrap.json files.
+
+You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference.
+
+What should you do?
+
+* A. Configure the File System Agent plug-in.
+* **B. Add a devDependencies section to Package-lock.json.**
+* C. Configure the Artifactory plug-in.
+* D. Delete Package-lock.json.
+
+Answer: B
+
+### Question-144
+
+Your company deploys applications in Docker containers.
+
+You want to detect known exploits in the Docker images used to provision the Docker containers.
+
+You need to integrate image scanning into the application lifecycle. The solution must expose the exploits as early as possible during the application lifecycle.
+
+What should you configure?
+
+* **A. a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry**
+* B. manual tasks performed during the planning phase and the deployment phase
+* C. a task executed in the continuous deployment pipeline and a scheduled task against a running production container
+* D. a task executed in the continuous integration pipeline and a scheduled task that analyzes the production container
+
+**Answer: A**
+
+### Question-145
+
+Your company has a hybrid cloud between Azure and Azure Stack.
+
+The company uses Azure DevOps for its full CI/CD pipelines. Some applications are built by using Erlang and Hack.
+
+You need to ensure that Erlang and Hack are supported as part of the build strategy across the hybrid cloud. The solution must minimize nanagement overhead.
+
+Nhat should you use to execute the build
+
+* A. a Microsoft-hosted agent
+* B. Azure DevOps self-hosted agents on Azure DeTest Labs virtual machines.
+* C. Azure DevOps self-hosted agents on Hyper-V virtual machines
+* **D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack**
+
+Answer: D
+
+### Question-146
+
+
+You are designing an Azure DevOps strategy for your company's development team.
+
+You suspect that the team's productivity is low due to accumulate technical debt.
+
+You need to recommend a metric to assess the amount of the team's technical debt.
+
+What should you recommend?
+
+* A. the number of code modules in an application
+* B. the number of unit test failures
+* C. the percentage of unit test failures
+* **D. the percentage of overall time spent on rework**
+
+Answer: D
+
+### Question-147
+
+You are developing an open source solution that uses a GitHub repository.
+
+You create a new public project in Azure DevOps.
+
+
+You plan to use Azure Pipelines for continuous build. The solution will use the GitHub Checks API.
+Which authentication type should you use?
+
+* A. OpenID
+* B. GitHub App
+* C. a personal access token (PAT)
+* D. SAML
+
+Answer: B
+
+### Question-148
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen
+
+Your company has a project in Azure DevOps for a new web application.
+
+You need to ensure that when code is checked in, a build runs automatically.
+
+Solution: From the Continuous deployment trigger settings of the release pipeline, you enable the Pull request trigger setting.
+
+Does this meet the goal?
+
+
+* A. Yes
+* **B. No**
+
+Answer: B
+
+### Question-149
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+
+Your company has a project in Azure DevOps for a new web application.
+
+You need to ensure that when code is checked in, a build runs automatically.
+
+Solution: From the Pre-deployment conditions settings of the release pipeline, you select After stage.
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+Anewer B
+
+### Question-150
+
+Your company has a project in Azure DevOps for a new web application.
+
+You need to ensure that when code is checked in, a build runs automatically.
+
+Solution: From the Pre-deployment conditions settings of the release pipeline, you select Batch changes while a build is in progress.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+
+### Question-151
+
+Your company has a project in Azure DevOps for a new web application You need to ensure that when code is checked in, a build runs automatically.
+
+Solution: From the Triggers tab of the build pipeline, you select Enable continuous integration.
+
+Does this meet the goal?
+
+* **A. Yes**
+* B. No
+
+Answer: A
+
+### Question-152
+
+Your company has a project in Azure DevOps.
+
+You need to ensure that when there are multiple builds pending deployment, only the most recent build is deployed
+
+What should you use?
+
+* A. deployment conditions
+* **B. deployment queue settings**
+* C. release gates
+* D. pull request triggers
+
+Answer: B
+
+### Question-153
+
+You use Azure Pipelines to build and test a React js application.
+You have a pipeline that has a single job
+
+You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
+
+You need to recommend a solution to reduce the pipeline execution time.
+
+Solution: You recommend defining a container job that uses a custom container that has the JavaScript packages preinstalled.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+### Question-154
+
+You use Azure Pipelines to build and test a React.js application.
+You have a pipeline that has a single job.
+
+You discover that installing Java Script packages from npm takes approximately five minutes each time you run the pipeline
+
+You need to recommend a solution to reduce the pipeline execution time.
+
+Solution: You recommend enabling pipeline caching.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer. A**
+
+### Question-155
+
+
+You use Azure Pipelines to build and test a React js application.
+You have a pipeline that has a single job.
+
+You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
+
+You need to recommend a solution to reduce the pipeline execution time.
+
+Solution: You recommend enabling parallel jobs for the pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+### Question-156
+
+
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+
+Two resource groups
+
+Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+
+You need to recommend a solution to deploy the resources.
+
+Solution: Create two standalone templates, each of which will deploy the resources in its respective group.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+### Question-157
+
+
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+
+Two resource groups
+
+Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+You need to recommend a solution to deploy the resources.
+
+Solution: Create a single standalone template that will deploy all the resources.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+Answer: B
+
+### Question-158
+
+
+You have an Azure DevOps project.
+
+Your build process creates several artifacts.
+
+You need to deploy the artifacts to on-premises servers.
+
+Solution: You deploy a Kubernetes cluster on-premises. You deploy a Helm agent to the cluster. You add a Download Build Artifacts task to the deployment pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+Answer. B
+
+### Question-159
+
+
+You have an Azure DevOps project.
+
+Your build process creates several artifacts.
+
+You need to deploy the artifacts to on-premises servers.
+
+Solution: You deploy a Docker build to an on-premises server. You add a Download Build Artifacts task to the deployment pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer. B**
+
+### Question-160
+
+
+You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1
+
+to an Azure container registry named ACR1. Image uses a base image stored in Docker Hub.
+
+You need to ensure that Image1 is updated automatically whenever the base image is updated.
+What should you do?
+
+* A. Enable the Azure Event Grid resource provider and subscribe to registry events.
+* B. Add a Docker Hub service connection to Azure Pipelines.
+* **C. Create and run an Azure Container Registry task.**
+* D. Create a service hook in Project.
+
+**Answer: C**
+
+### Question-161
+
+You have an Azure DevOps project.
+
+Your build process creates several artifacts.
+
+You need to deploy the artifacts to on-premises servers.
+
+Solution: You deploy an Octopus Deploy server. You deploy a polled Tentacle agent to an on-premises server. You add an Octopus task to the deployment pipeline.
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+Answer: B
+
+### Question-162
+
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+
+Two resource groups
+
+Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+
+You need to recommend a solution to deploy the resources.
+
+Solution: Create a main template that will deploy the resources in one resource group and a nested template that will deploy the resources in the other resource group.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+Answer: B
+
+### Question-163
+
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create
+
+the following resources:
+Two resource groups
+
+
+Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+
+You need to recommend a solution to deploy the resources.
+
+Solution: Create a main template that has two linked templates, each of which will deploy the resources in its respective group
+
+Does this meet the goal?
+
+* **A. Yes**
+* B. No
+
+Answer: A
+
+### Question-164
+
+You have a project in Azure DevOps named Project. Project contains a build pipeline named Pipe1 that builds an application named App1.
+
+You have an agent pool
+ named Pool1 that contains a Windows Server 2019-based self-hosted agent. Pipe1 uses Pool1.
+You plan to implement another project named Project2. Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+
+App1 and App2 have conflicting dependencies.
+
+You need to minimize the possibility that the two build pipelines will conflict with each other. The solution must minimize infrastructure costs.
+
+What should you do?
+
+* A. Add another self-hosted agent.
+* B. Add a Docker Compose task to the build pipelines.
+* C. Change the self-hosted agent to use Red Hat Enterprise Linux (RHEL) 8.
+* **D. Create two container jobs.**
+
+
+Answer: D
+
+### -Question-165
+
+You manage build pipelines and deployment pipelines by using Azure DevOps.
+
+Your company has a team of 500 developers. New members are added continually to the team.
+
+You need to automate the management of users and licenses whenever possible.
+
+Which task must you perform manually?
+
+* A. modifying group memberships
+* B. adding users
+* C. assigning entitlements
+* **D. procuring licenses**
+
+
+Answer: D
+
+### -Question-166
+
+Your company is building a new solution in Java.
+
+The company currently uses a SonarQube server to analyze the code of NET solutions.
+
+You need to analyze and monitor the code quality of the Java solution.
+
+Which task types should you add to the build pipeline?
+
+* A. Octopus
+* B. Chef
+* C. CocoaPods
+* **D. Gradle**
+
+**Answer: D**
+
+### Question-167
+
+
+Your company is building a new solution in Java.
+
+The company currently uses a SonarQube server to analyze the code of NET solutions.
+
+You need to analyze and monitor the code quality of the Java solution.
+
+Which task types should you add to the build pipeline?
+
+* **A. Maven**
+* B. CocoaPods
+* C.Xcode
+* D. Gulp
+
+Answer: A
+
+### -Question-168
+
+You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. Policy is an audit policy that monitors
+
+naming convention compliance for the resources deployed to Subscription1.
+
+You have a pipeline named Pipeline 1 in Azure Pipelines. Pipeline 1 deploys Azure Resource Manager (ARM) resources to Subscription1.
+
+You need to ensure that the resources deployed by Pipeline 1 comply with Policy1.
+What should you add to Pipeline 1?
+
+* **A. a pre-deployment task that runs a security and compliance assessment**
+* B. a post-deployment task that runs a security and compliance assessment
+* C. an ARM template deployment task to assign Policy1 to Subscription 1
+* D. an ARM template deployment task to deploy Policy1 to Subscription1
+
+Answer: A
+
+### Question-169
+
+You have a project in Azure DevOps.
+
+You need to push notifications about pull requests to a Microsoft Teams channel. The solution must minimize development effort.
+
+What should you do?
+
+* A. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in the channel.
+* B. Use Azure Automation to connect to the Azure DevOps REST API and send messages to Teams.
+* **C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel**.
+* D. Use an Azure function to connect to the Azure DevOps REST API and send messages to Teams.
+
+
+**Answer: C**
+
+### Question-170
+
+
+You have an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
+
+You need to configure Azure Artifacts to ensure that both the latest and pre-release versions of the packages are available for consumption.
+
+What should you do?
+
+* A. Create two feed views named @prerelease and @release, Set @release as the default view. Configure a release pipeline that tags the packages as release after successful testing.
+* B. Create a feed view named @prerelease. Configure a release pipeline that tags the packages as release after successful testing.
+* C. Create two feed views named @prerelease and @default. Configure a release pipeline that promotes a package to the @default view after successful testing.
+* **D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing**.
+
+
+**Answer: D**
+
+### Question-171
+
+```
+Name  Type
+  
+Feed1   Azure Artifacts feed
+Project1 Project in Azure DevOps
+```
+
+Project produces pm packages that are published to Feed. Feed1 is consumed by multiple projects.
+
+You need to ensure that only tested packages are available for consumption. The solution must minimize development effort.
+
+
+What should you do?
+
+* **A. Create a feed view named @release and set @release as the default view. After the pm packages test successfully, configure a release pipeline that promotes a package to the @release view.**
+* B. Create a feed view named @release and set @release as the default view. Affer the npm packages test successfully, configure a release
+* pipeline that tags the packages as release.
+* C. Create a feed view named @default. After the nom packages test successfully configure a release pipeline that tags the packages as
+* release.
+* D. Create a feed view named @default. After the npm packages test successfully, configure a release pipeline that promotes a package to the @default view
+
+**Answer: A**
+
+### Question-172
+
+Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
+
+You need to minimize the amount of disk space used by older packages in Azure Artifacts.
+What should you modify?
+
+* A. the retention settings of the project's release
+* **B. the retention settings of the project's pipeline**
+* C. the retention settings of the project's tests
+* D. the retention settings of the company pipeline
+
+Answer: B
+
+
+### Question-173
+
+
+Your company builds a multi-tier web application.
+
+You use Azure DevOps and host the production application on Azure virtual machines.
+
+Your team prepares an Azure Resource Manager template of the virtual machine that you will use to test new features.
+
+You need to create a staging environment in Azure that meets the following requirements:
+
+* Minimizes the cost of Azure hosting
+* Provisions the virtual machines automatically
+* Uses the custom Azure Resource Manager template to provision the virtual machines
+
+What should you do?
+
+* A. In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
+* B. In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services
+* C. From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
+* **D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DeTest Labs**.
+
+Answer: D
+
+### Question-174
+
+Your company uses Azure DevOps to manage the build and release processes for applications.
+
+You use a Git repository for applications source control.
+
+You plan to create a new branch from an existing pull request. Later, you plan to merge the new branch and the target branch of the pull request.
+
+You need to use a pull request action to create the new branch. The solution must ensure that the branch uses only a portion of the code in the pull request
+
+Which pull request action should you use?
+
+
+* A. Set as default branch
+* B. Approve with suggestions
+* **C. Cherry-pick**
+* D. Reactivate
+* E. Revert
+
+Answer: C
+
+### Question-175
+
+You are designing a build pipeline in Azure Pipelines.
+
+The pipeline requires a self-hosted agent. The build pipeline will run once daily and will take 30 minutes to complete.
+
+You need to recommend a compute type for the agent. The solution must minimize costs.
+
+What should you recommend?
+
+* A. an Azure Kubernetes Service (AKS) cluster
+* **B. Azure Container Instances**
+* C. an Azure virtual machine scale set
+* D. Azure virtual machines
+
+Answer: B
+
+
+### Question-176
+
+You have a project in Azure DevOps. 
+
+You have an Azure Resource Group deployment project in Microsoft Visual Studio that is checked in to the Azure DevOps project.
+
+You need to create a release pipeline that will deploy resources by using Azure Resource Manager templates. 
+
+The solution must minimize administrative effort.
+
+Which task type should you include in the solution?
+
+* A. Azure Cloud Service Deployment
+* B. Azure RM Web App Deployment
+* **C. Azure PowerShell**
+* D. Azure App Service Manage
+
+**Answer: C**
+
+
+### Question-177
+
+You have an Azure DevOps project that contains a release pipeline and a Git repository.
+
+When a new code revision is committed to the repository, a build and release is triggered.
+
+You need to ensure that release information for the pipeline is added automatically to the work items associated to the Git commit.
+
+
+What should you do?
+
+* A. Modify the Integrations options for the pipeline.
+* **B. Modify the post-deployment conditions for the last stage of the pipeline.**
+* C. Add an agentless job to the pipeline.
+* D. Modify the service hooks for the project.
+
+Answer: B
+
+Configure your release definition to post deployment information to Work items.
+
+
+Open Pipelines> Releases, choose to edit your release pipeline, then choose Options> Integrations.
+
+
+### Question-178
+
+Your company has a release pipeline in an Azure DevOps project.
+
+You plan to deploy to an Azure Kubernetes Services (AKS) cluster by using the Helm package and deploy task.
+
+You need to install a service in the AKS namespace for the planned deployment.
+
+Which service should you install?
+
+* A. Azure Container Registry
+* B. Chart
+* C. Kubectl
+* D. Tiller
+
+Answer: D
+
+### Question-179
+
+You plan to use Terraform to deploy an Azure resource group from a Windows system.
+
+You need to install the required frameworks to support the planned deployment.
+
+Which two frameworks should you install? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+* A. Vault
+* **B. Terratest**
+* C. Node.js
+* **D. Yeoman**
+* E. Tiller
+
+
+Answer: BD
+
+### Question-180
+
+
+You have an approval process that contains a condition. The condition requires that releases be approved by a team leader before they are deployed.
+
+You have a policy stating that approvals must occur within eight hours.
+
+You discover that deployment fail if the approvals take longer than two hours
+
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+
+Solution: From Post-deployment conditions, you modify the Time between re-evaluation of gates option.
+Does this meet the goal?
+
+* A. Yes
+* **B. No**
+
+**Answer: B**
+
+
+### Question-181
+
+
+You have a policy stating that approvals must occur within eight hours.
+
+You discover that deployment fail if the approvals take longer than two hours.
+
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+
+Solution: From Post-deployment conditions, you modify the Timeout setting tor post-deployment approvals.
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Answer: B**
+
+### Question-183
+
+Your company has a project in Azure DevOps for a new web application.
+
+The company uses ServiceNow for change management.
+
+You need to ensure that a change request is processed before any components can be deployed to the production environment What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? 
+
+Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+* A. Define a deployment control that invokes the ServiceNow REST API.
+* B. Define a pre-deployment gate before the deployment to the Prod stage.
+* C. Define a deployment control that invokes the ServiceNow SOAP API.
+* D. Define a post-deployment gate after the deployment to the QA stage.
+
+
+**Answer: BD**
+
+### Question-184
+
+Your company develops an application named App1 that is deployed in production.
+
+As part of an application update, a new service is being added to App1. The new service requires access to an application named App2 that is currently in development.
+
+You need to ensure that you can deploy the update to App1 before App2 becomes available. You must be able to enable the service in App1 once 
+
+App2 is deployed.
+
+What should you do?
+
+* **A. Implement a feature flag**
+* B. Create a fork in the build
+* C. Create a branch in the build
+* D. Implement a branch policy.
+
+
+Answer: A
+
+### Question-185
+
+You have a private distribution group that contains provisioned and unprovisioned devices.
+
+You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
+
+What should you do?
+
+* A. Request the Apple ID associated with the user of each device.
+* **B. Register the devices on the Apple Developer portal.**
+* C. Create an active subscription in App Center Test.
+* D. Add the device owner to the organization in App Center.
+
+Answer: B
+
+
+### Question-186
+
+You have a private distribution group that contains provisioned and unprovisioned devices.
+
+You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
+
+What should you do?
+
+* **A. Select Register devices and sign my app.**
+* B. Create an active subscription in App Center Test.
+* C. Create an unsigned build.
+* D. Add the device owner to the collaborators group.
+
+**Answer: A**
+
+### Question-187
+
+Your company has an on-premises Bitbucket Server that is used for Git-based source control. The server is protected by a firewall that blocks inbound Internet traffic.
+
+You plan to use Azure DevOps to manage the build and release processes.
+
+Which two components are required to integrate Azure DevOps and Bitbucket? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+
+* A. a deployment group
+* B. a Microsoft-hosted agent
+* C. service hooks
+* D. a self-hosted agent
+* E. an External Git service connection
+
+**Answer: DE**
+
+
+### Question-188
+
+
+You have a project in Azure DevOps.
+
+You plan to deploy a self-hosted agent by using an unattended configuration script.
+
+Which two values should you define in the configuration script? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+* **A. authorization credentials**
+* B. the project name
+* C. the deployment group name
+* **D. the organization URL**
+* E. the agent pool name
+
+**Answer: AD**
+
+### -Question-189
+
+
+You have Azure Pipelines and GitHub integrated as a source code repository.
+
+The build pipeline has continuous integration enabled.
+
+You plan to trigger an automated build whenever code changes are committed to the repository.
+
+You need to ensure that the system will wait until a build completes before queuing another build.
+What should you implement?
+
+* A. path filters
+* **B. batch changes**
+* C. scheduled builds
+* D. branch filters
+
+Answer: B
+
+### Question-190
+
+You are using GitHub as a source code repository.
+
+You create a client-side Git hook on the commit-msg event. The hook requires that each commit message contain a custom work item tag.
+
+You need to make a commit that does not have a work item tag.
+
+Which git commit parameter should you use?
+
+
+* A. `--squash`
+* B. `--no-verify`
+* C. `--message`
+* D. `--no-post-rewrite`
+
+**Answer: B**
+
+
+### Question-191
+
+You have a private distribution group that contains provisioned and unprovisioned devices.
+
+You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
+
+What should you do?
+
+* **A. Select Register devices and sign my app.**
+* B. Create an active subscription in App Center Test.
+* C. Add the device owner to the organization in App Center.
+* D. Create an unsigned build.
+
+**Answer: A**
+
+### Question-192
+
+You have a private distribution group that contains provisioned and unprovisioned devices.
+
+You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
+
+What should you do?
+
+* **A. Register the devices on the Apple Developer portal.**
+* B. Add the device owner to the organization in App Center.
+* C. Create an unsigned build.
+* D. Add the device owner to the collaborators group.
+
+Answer: A
+
+### Question-193
+
+
+Your company uses Azure Artifacts for package management.
+
+You need to configure an upstream source in Azure Artifacts for Python packages.
+
+Which repository type should you use as an upstream source?
+
+* A. npmjs.org
+* B. PyPI
+* C. Maven Central
+* D. third-party trusted Python
+
+**Answer: B**
+
+
+### - Question-194
+
+
+You have a GitHub repository that contains workflows. The workflows contain steps that execute predefined actions. Each action has one or more versions.
+
+You need to request the specific version of an action to execute.
+
+Which three attributes can you use to identify the version? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+* **A. the SHA-based hashes**
+* **B. the tag**
+* C. the runner
+* **D. the branch**
+* E. the serial
+
+
+Answer: ABD
+
+### -Question-195
+
+You have an Azure subscription that contains multiple Azure pipelines.
+
+You need to deploy a monitoring solution for the pipelines. The solution must meet the following requirements:
+
+* Parse logs from multiple sources.
+* Identify the root cause of issues.
+
+What advanced feature of a monitoring tool should you include in the solution?
+
+* **A. analytics**
+* B. synthetic monitoring
+* C. directed monitoring
+* D. Alert Management
+
+
+Answer: A
+
+
+### Question-196
+
+You have an on-premises app named App1 that accesses Azure resources by using credentials stored in a configuration file.
+
+You plan to upgrade App1 to use an Azure service principal.
+
+What is required for App1 to programmatically sign in to Azure Active Directory (Azure AD)?
+
+* A. the application ID, a client secret, and the object ID
+* B. a client secret, the object ID, and the tenant ID
+* **C. the application ID, a client secret, and the tenant ID**
+* D. the application ID, a client secret, and the subscription ID
+
+**Answer: C**
+
+
+### Question-197
+
+Your team uses Azure Pipelines to deploy applications.
+
+You need to ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams.
+
+The solution must minimize development effort.
+
+What should you do?
+
+* A. Install the Azure Boards app for Teams and configure a subscription to receive notifications in a channel.
+* B. Use Azure Automation to connect to the Azure DevOps REST API and notify the team members.
+* C. Use an Azure function to connect to the Azure DevOps REST API and notify the team members.
+* **D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel**.
+
+Answer. D
+
+### Question-198
+
+You use Calendar Versioning (CalVer) for code assets.
+
+You need to store an optional tag of beta as part of the version.
+
+Which part of the version should you use for the tag?
+
+* A. minor
+* B. major
+* C. micro
+* D. modifier
+
+Answer: D
+
+### Question-199
+
+
+You have a project in Azure DevOps named Project1.
+
+You need to ensure that all new pipelines in Project1 execute three specific tasks during pipeline execution.
+
+What should you create?
+
+* **A. a task group**
+* B. a JSON template
+* C. a YAML template
+* D. a PowerShell task
+
+Answer: A
+
+
+### Question-200
+
+You use Azure DevOps processes to build and deploy code.
+
+You need to compare how much time is spent troubleshooting issues found during development and how much time is spent troubleshooting
+
+issues found in released code.
+
+Which KPI should you use?
+
+* **A. defect escape rate**
+* B. unplanned work rate
+* C. defect rate
+* D. rework rate
+
+Answer: A
+
+
+### - Question-201
+
+You have a project in Azure DevOps named Project1.
+
+You implement a Continuous Integration/Continuous Deployment (CI/CD) pipeline that uses PowerShell Desired State
+Configuration (DSC) to configure the application infrastructure.
+
+You need to perform a unit test and an integration test of the configuration before Project is deployed.
+What should you use?
+
+* A. the PSScriptAnalyzer tool
+* **B. the Pester test framework**
+* C. the PSCodeHealth module
+* D. the Test-DscConfiguration cmdlet
+
+
+Answer: B
+
+### - Question-202
+
+
+You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
+
+You need to ensure that all comments on pull requests are resolved before the pull requests are included in a build.
+
+The solution must minimize administrative effort.
+
+What should you include in the solution?
+
+* A. a custom action
+* B. a post-deployment gate
+* C. a branch policy
+* **D. a pre-deployment gate**
+
+
+Answer: D
+
+### - Question-203
+
+You have a project in Azure DevOps named Project. Project1 contains a build pipeline named Pipe1 that builds an application named App1.
+
+You have an agent pool named Pool1 that contains a Windows Server 2022-based self-hosted agent. Pipe 1 uses Pool1.
+
+You plan to implement another project named Project. Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+
+App 1 and App2 have conflicting dependencies.
+
+You need to minimize the possibility that the two build pipelines will conflict with each other. The solution must minimize infrastructure costs.
+
+What should you do?
+
+* A. Add another self-hosted agent
+* B. Add a Docker Compose task to the build pipelines.
+* C. Change the self-hosted agent to use Red Hat Enterprise Linux (RHEL) 9.
+* **D. Create two container jobs.**
+
+Answer: D
+
+### -Question-205
+
+
+You have an app named App1 that you release by using Azure Pipelines. App1 has the versions shown in the following table.
+
+
+```
+Number   Description
+
+3.4.7   Previous release
+
+4.0.0   Current release
+
+```
+
+You complete a code change to fix a bug that was introduced in version 3.4.3.
+
+Which version number should you assign to the release?
+
+
+* A. 3.4.4
+* B. 3.4.8
+* C. 3.5.0
+* **D. 4.0.1**
+
+**Answer: D**
+
+### Question-206
+
+You are automating the testing process for your company.
+
+You need to automate Ul testing of a web application.
+
+Which framework should you use?
+
+* A. JaCoco
+* B. Playwright
+* C. Xamarin. UlTest
+* D. Microsoft.CodeAnalysis
+
+Answer: B
+
+
+### Question-207
+
+You use Azure Pipelines to build and test code projects.
+
+You notice an increase in cycle times.
+
+You need to identify whether agent pool exhaustion is causing the issue.
+
+What are two possible ways to achieve this goal? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+* A. Query the PipelineRun/PipelineRuns endpoint.
+* **B. Query the TaskAgentPoolSizeSnapshots endpoint**.
+* C. View the Pipeline duration report.
+* **D. View the pool consumption report at the organization level.**
+
+**Answer: BD**
