@@ -1,6 +1,8 @@
+## Azure AZ400 Test
+
 ### Question 1
 
-You are configuring project metrics for dashboards in Azure DevOps. You need to configure a chart widget that measures the elapsed time to complete work items once they become active. Which of the following is the widget you should use?
+You are configuring project metrics for dashboards in Azure DevOps. You need to configure a chart widget that measures the **elapsed time** to **complete work items once they become active**. Which of the following is the widget you should use?
 
 * A. Cumulative Flow Diagram
 * B. Burnup
@@ -8,6 +10,24 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 * D. Burndown
 
 ---
+
+The correct answer is:
+
+**C. Cycle time**
+
+Why:
+
+The **Cycle time** widget in Azure DevOps measures the **elapsed time from when a work item becomes active until it is completed** — exactly matching your requirement.
+
+Quick comparison:
+
+* **A. Cumulative Flow Diagram** → Shows work distribution across states over time (bottlenecks, WIP), not individual elapsed time.
+* **B. Burnup** → Tracks scope completed vs total scope over time.
+* **C. Cycle time** ✅ → Measures time from *Active → Done*.
+* **D. Burndown** → Tracks remaining work over time.
+
+So for tracking how long it takes to complete work after activation → **Cycle time** is the correct widget.
+
 
 > Correct Answer: C- Cycle time
 > 
@@ -34,8 +54,27 @@ You need to consider the underlined segment to establish whether it is accurate.
 * D. Burndown
 
 > Correct Answer: B. Lead time
-> 
-> https://learn.microsoft.com/en-us/azure/devops/report/dashboards/cycle-time-and-lead-time?view=azure-devops&viewFallbackFrom=vsts
+
+The correct answer is:
+
+**B. Lead time**
+
+**Explanation:**
+
+The statement is **inaccurate**.
+
+* The **Burnup** widget **does not** measure elapsed time from creation to completion.
+* That metric is called **Lead time**, which measures the time from **work item creation → completion**.
+
+**Why the others are wrong:**
+
+* **A. No adjustment required** ❌ → The statement is incorrect.
+* **B. Lead time** ✅ → Correct metric for creation → completion time.
+* **C. Test results trend** ❌ → QA/testing metrics only.
+* **D. Burndown** ❌ → Tracks remaining work over time, not elapsed time.
+
+✅ Final answer: **B. Lead time**
+
 
 
 You need to consider the underlined segment to establish whether it is accurate. The Burnup widget measures the elapsed time from creation of work items to their completion. Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
@@ -57,7 +96,22 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 * C. Assigning entitlements
 * D. License procurement
 
-**Correct Answer: D**
+
+The correct answer is:
+
+**D. License procurement**
+
+Explanation:
+
+In Azure DevOps, many user and access management tasks **can be automated** via APIs, scripts, or Azure AD integration:
+
+* **A. Group membership changes** ✅ → Can be automated (Azure AD groups, scripts, APIs).
+* **B. License assignment** ✅ → Can be automated via Azure DevOps REST APIs and Azure AD.
+* **C. Assigning entitlements** ✅ → Can be automated (entitlements API, Azure AD integration).
+* **D. License procurement** ❌ → **Cannot be automated** — purchasing licenses/subscriptions requires manual business/financial processes.
+
+So the task that **can’t be automated** is **License procurement**.
+
 
 You are making use of Azure DevOps manage build pipelines, and also deploy pipelines. The development team is quite large, and is regularly added to. You have been informed that the management of users and licenses must be automated when it can be. Which of the following is a task that can't be automated?
 
@@ -79,6 +133,27 @@ You have been tasked with strengthening the security of your team's development 
 * **B. Static code analysis**
 * C. Threat modeling
 * D. Dynamic code analysis
+
+The correct answer is:
+
+**B. Static code analysis**
+
+Explanation:
+
+For the **Continuous Integration (CI)** phase, the best security tool type is **Static Code Analysis** because it:
+
+* Analyzes source code **without executing it**
+* Can be **automated in build pipelines**
+* Detects vulnerabilities early (e.g., insecure patterns, secrets, injection risks)
+* Fits naturally into CI workflows (pre-build or build steps)
+
+Why the others are less suitable for CI:
+
+* **A. Penetration testing** ❌ → Manual/heavyweight, suited for later stages (pre-release, production).
+* **C. Threat modeling** ❌ → Design-phase activity, not CI.
+* **D. Dynamic code analysis** ❌ → Requires running the application, more suited for CD/testing environments.
+
+✅ **Final answer: B. Static code analysis**
 
 
 **Correct Answer: B**
@@ -140,6 +215,28 @@ Which of the following is the option you would choose?
 * C. Scrum
 * **D. CMMI**
 
+The correct answer is:
+
+**D. CMMI**
+
+Explanation:
+
+The **CMMI (Capability Maturity Model Integration)** process in Azure DevOps is specifically designed for **formal, enterprise-style project management** and includes built-in support for tracking:
+
+* **Requirements**
+* **Change requests**
+* **Risks**
+* **Reviews**
+
+This makes it the **best fit** for clients needing structured governance and comprehensive work item tracking.
+
+Why the others are not suitable:
+
+* **A. Basic** ❌ → Very limited, simple tracking only.
+* **B. Agile** ❌ → Focused on user stories, epics, features — not formal risk/change tracking.
+* **C. Scrum** ❌ → Sprint-based, product backlog focus, no native risk/review/change request structure.
+
+✅ **Final answer: D. CMMI**
 
 Correct Answer: D
 
@@ -178,6 +275,40 @@ Correct Answer: B
 * **ApplyAndAutocorrect: combines application and continuous correction of configurations** 
 * ApplyOnly: is a one-time application of configurations without any ongoing monitoring or correction.
 
+**No, the solution does NOT meet the goal.**
+
+Explanation:
+
+Setting the DSC **ConfigurationMode** to **`ApplyOnly`** means:
+
+* The configuration is applied **once**
+* **No monitoring** for drift
+* **No automatic correction** if configuration changes
+
+So if configuration drift occurs, the servers will **not be remediated automatically** ❌
+
+What is required instead:
+
+To ensure servers **remain correctly configured despite drift**, you must use:
+
+**`ApplyAndAutoCorrect`** ✅
+This mode:
+
+* Continuously monitors configuration
+* Automatically re-applies configuration if drift is detected
+
+Summary:
+
+| Mode                    | Drift Detection | Auto-Fix |
+| ----------------------- | --------------- | -------- |
+| ApplyOnly               | ❌ No            | ❌ No     |
+| ApplyAndMonitor         | ✅ Yes           | ❌ No     |
+| **ApplyAndAutoCorrect** | ✅ Yes           | ✅ Yes    |
+
+✅ **Correct answer: No**
+The solution does **not** meet the goal.
+
+
 
 ### Question 8
 
@@ -201,6 +332,53 @@ Solution: You set the -ConfigurationMode parameter to ApplyAn Monitor, Does the 
 Correct Answer: You set the -ConfigurationMode parameter to ApplyAndAutocorrect
 
 
+**B. No**
+
+Explanation:
+
+`ApplyAndMonitor` mode:
+
+* ✅ Applies the configuration
+* ✅ Monitors for configuration drift
+* ❌ **Does NOT automatically fix drift**
+
+Your requirement is that servers **remain correctly configured regardless of drift**, which implies **automatic remediation**.
+
+That requires:
+
+➡️ **`ApplyAndAutoCorrect`**
+
+So:
+
+* **ApplyAndMonitor** → Detects drift but does not fix it ❌
+* **ApplyAndAutoCorrect** → Detects and auto-fixes drift ✅
+
+✅ **Correct answer: B. No**
+
+**B. No**
+
+Explanation:
+
+`ApplyAndMonitor` mode:
+
+* ✅ Applies the configuration
+* ✅ Monitors for configuration drift
+* ❌ **Does NOT automatically fix drift**
+
+Your requirement is that servers **remain correctly configured regardless of drift**, which implies **automatic remediation**.
+
+That requires:
+
+➡️ **`ApplyAndAutoCorrect`**
+
+So:
+
+* **ApplyAndMonitor** → Detects drift but does not fix it ❌
+* **ApplyAndAutoCorrect** → Detects and auto-fixes drift ✅
+
+✅ **Correct answer: B. No**
+
+
 ### Question 9
 
 You run the Register-AzureRmAutomationDscNode command in your company's environment. You need to make sure that
@@ -218,6 +396,26 @@ Solution: You set the -ConfigurationMode parameter to **ApplyAndAutocorrect**, D
 * ApplyAndMonitor: focuses on monitoring for drift without automatic correction,
 * **ApplyAndAutocorrect**: combines application and continuous correction of configurations
 * ApplyOnly: is a one-time application of configurations without any ongoing monitoring or correction
+
+
+**A. Yes**
+
+Explanation:
+
+Setting the DSC **`-ConfigurationMode`** to **`ApplyAndAutoCorrect`**:
+
+* ✅ Applies the desired configuration
+* ✅ Continuously monitors for configuration drift
+* ✅ **Automatically re-applies the configuration when drift is detected**
+
+This exactly meets the requirement:
+
+> ensure test servers remain correctly configured, regardless of configuration drift
+
+So the solution **does meet the goal**.
+
+✅ **Correct answer: A. Yes**
+
 
 ### 7,8,9-Expanation
 
@@ -252,6 +450,16 @@ You are instructed to make sure that the Azure DevOps environment can only be ac
 * B. Create a GPO.
 * C. Configure Security in Project Settings from Azure DevOps.
 * **D. Configure conditional access in Azure Active Directory.**
+
+
+Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users.
+
+You are instructed to make sure that the Azure DevOps environment can only be accessed from devices connected to the company's on-premises network. Which of the following actions should you take?
+
+* A. Assign the devices to a security group.
+* B. Create a GPO.
+* C. Configure Security in Project Settings from Azure DevOps.
+* D. Configure conditional access in Azure Active Directory.
 
 
 Correct Answer: D - Configure conditional access in Azure Active Directory
@@ -297,7 +505,37 @@ You are preparing to use a version control system that allows for source code to
 Correct Answer: A Github Enterprise
 
 
-GitHub Enterprise is the on-premises version of GitHub.com. GitHub Enterprise includes the same great set of features as GitHub.com but packaged for running on your organization's local network. All repository data is stored on machines that you control, and access is integrated with your organization's authentication system (LDAP, SAML, or
+The correct answer is:
+
+**A. GitHub Enterprise**
+
+**Explanation:**
+
+You need a version control system that allows source code to be stored on a **managed Windows server located on the company’s on-premises network**.
+
+**GitHub Enterprise** (specifically GitHub Enterprise Server) is designed for exactly this scenario:
+
+* Self-hosted on **on-premises infrastructure**
+* Can run on **Windows Server**
+* Fully managed internally by the company
+* Integrates with Azure DevOps pipelines
+
+Why the others are incorrect:
+
+* **B. Bitbucket Cloud** ❌ → Cloud-hosted only (Atlassian-managed).
+* **C. GitHub Professional** ❌ → SaaS cloud version, not self-hosted.
+* **D. Git in Azure Repos** ❌ → Hosted in Azure DevOps (cloud), not on an on-prem Windows server.
+
+**Summary:**
+
+| Option              | On-prem | Windows Server | Managed internally |
+| ------------------- | ------- | -------------- | ------------------ |
+| GitHub Enterprise   | ✅       | ✅              | ✅                  |
+| Bitbucket Cloud     | ❌       | ❌              | ❌                  |
+| GitHub Professional | ❌       | ❌              | ❌                  |
+| Azure Repos Git     | ❌       | ❌              | ❌                  |
+
+✅ **Final answer: A. GitHub Enterprise**
 
 
 ### Question -12
@@ -311,6 +549,41 @@ Bolt. Which of the following is a command you should run?
 * D. npm update
 
 > Correct Answer: **C. npm install**
+
+The correct answer is:
+
+**C. `npm install`** ✅
+
+**Explanation:**
+
+WhiteSource Bolt for Node.js scans the **installed `node_modules` folder**. By default, if you run:
+
+```bash
+npm install
+```
+
+without the `--dev` flag, only **production dependencies** (those listed under `"dependencies"` in `package.json`) are installed. Development dependencies (under `"devDependencies"`) are skipped.
+
+This ensures that **WhiteSource Bolt only scans production dependencies**, ignoring dev-only libraries that might have invalid licenses.
+
+---
+
+Why the other options are incorrect:
+
+* **A. `npm edit`** ❌ → Opens package.json in an editor, does not affect installed dependencies.
+* **B. `npm publish`** ❌ → Publishes the package to npm registry, irrelevant for scanning dependencies.
+* **D. `npm update`** ❌ → Updates packages to latest versions; doesn’t control which dependencies are scanned.
+
+---
+
+✅ **Command to use:**
+
+```bash
+npm install --production
+```
+
+This installs only production dependencies for WhiteSource Bolt scanning.
+
 
 ### Question -13
 
@@ -330,6 +603,35 @@ Which of the following actions should you take?
 
 Correct Answer: **C. You should make use of a gate.**
 
+The correct answer is:
+
+**C. You should make use of a gate.** ✅
+
+---
+
+Explanation:
+
+In **Azure Pipelines**, if you want to **prevent a release from being deployed to production unless certain conditions are met** (such as satisfying a performance baseline in the staging environment), the appropriate mechanism is a **gate**.
+
+**Gates** allow you to:
+
+* Automatically evaluate **predefined conditions** before a deployment proceeds.
+* Pull data from **Azure Monitor, Application Insights, REST APIs, or other sources**.
+* Stop the deployment if conditions (like performance thresholds) are **not met**.
+
+---
+
+Why the other options are incorrect:
+
+* **A. Branch control check** ❌ → Used to enforce policies on source code branches, not release deployment conditions.
+* **B. Alert trigger** ❌ → Alerts notify you when something happens; they don’t automatically **block a release**.
+* **D. Approval check** ❌ → Requires **manual approval**; you want **automated enforcement** of performance baselines.
+
+---
+
+✅ **Final answer: C. You should make use of a gate.**
+
+
 ### Question -14
 
 You need to consider the underlined segment to establish whether it is accurate. To deploy an application to a number of Azure virtual machines, you should create a universal group. Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
@@ -341,11 +643,40 @@ Which of the following actions should you take?
 * D. Resource
 
 
+The correct answer is:
+
+**C. Deployment** ✅
+
+---
+
+Explanation:
+
+The statement:
+
+> "To deploy an application to a number of Azure virtual machines, you should create a **universal group**."
+
+is **inaccurate**.
+
+In Azure:
+
+* **Deployment groups** are used to **target a set of virtual machines** for application deployment in Azure Pipelines.
+* A **universal group** is an Active Directory concept and is **not used for deployment purposes**.
+
+Correct terminology:
+
+* **Deployment group** → A collection of target machines for deployment tasks.
+
+---
+
+✅ **Final answer: C. Deployment**
+
+
+
 **Correct Answer: C. Deployment**
 
 When authoring an Azure Pipelines or TFS Release pipeline, you can specify the deployment targets for a job using a deployment group If the target machines are Azure VMs, you can quickly and easily prepare them by installing the Azure Pipelines Agent Azure VM extension on each of the VMs, or by using the Azure Resource Group Deployment task in your release pipeline to create a deployment group dynamically.
 
-Reference: https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deployment-groups
+
 
 
 ### Question -15
@@ -362,7 +693,42 @@ If the underlined segment is inaccurate, select the accurate option.
 * D. OWASP ZAP
 
 
-**Correct Answer: C. WhiteSource**
+The correct answer is:
+
+**C. WhiteSource**
+
+
+
+**Explanation:**
+
+The statement is **inaccurate**.
+
+> “To find when common open source libraries are added to the code base, you should add **Jenkins** to the build pipeline.”
+
+**Jenkins** is a CI/CD automation server — it does **not** analyze dependencies or detect open source libraries.
+
+To detect and track when **open-source libraries** are added (including license and vulnerability scanning), you should use:
+
+**WhiteSource** (now known as Mend)
+
+WhiteSource:
+
+* Scans dependencies
+* Detects open-source components
+* Tracks when libraries are introduced
+* Monitors licenses and vulnerabilities
+
+
+
+**Why the others are wrong:**
+
+* **A. No adjustment required** ❌ → Jenkins is not the correct tool
+* **B. SourceGear Vault** ❌ → Version control system, not OSS scanning
+* **C. WhiteSource** ✅ → Correct tool
+* **D. OWASP ZAP** ❌ → Dynamic web app security scanner, not dependency analysis
+
+✅ **Final answer: C. WhiteSource**
+
 
 Azure DevOps integration with White Source Bolt will enable you to:
 
@@ -390,6 +756,34 @@ Which of the following actions should you take?
 
 Correct Answer: **A. You should create a build task and use the WhiteSource Bolt service.**
 
+
+The correct answer is:
+
+**A. You should create a build task and use the WhiteSource Bolt service.** ✅
+
+**Explanation:**
+
+To scan **open source libraries** for **common security weaknesses** (such as known vulnerabilities and license issues), you should integrate **WhiteSource Bolt** into your **build pipeline** in Azure DevOps.
+
+**WhiteSource Bolt** is designed specifically for:
+
+* Scanning open-source dependencies
+* Detecting CVEs and vulnerabilities
+* License compliance checks
+* Running automatically during **CI builds**
+
+
+
+**Why the others are incorrect:**
+
+* **B. Deployment task + WhiteSource Bolt** ❌ → Scanning should happen in the **build stage**, not during deployment.
+* **C. Chef service** ❌ → Chef is configuration management, not security scanning.
+* **D. Deployment task + Chef** ❌ → Wrong tool + wrong stage.
+
+
+✅ **Final answer: A. You should create a build task and use the WhiteSource Bolt service.**
+
+
 ### Question -17
 
 You need to consider the underlined segment to establish whether it is accurate. 
@@ -399,12 +793,24 @@ Black Duck can be used to make sure that all the open source libraries conform t
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
 
-* **A. You should create a build task and use the WhiteSource Bolt service.**
-* B. You should create a deployment task and use the WhiteSource Bolt service.
-* C. You should create a build task and use the Chef service.
-* D. You should create a deployment task and use the Chef service.
+The statement is **accurate**.
 
-**Correct Answer: A. You should create a build task and use the White Source Bolt service.**
+**Black Duck** is specifically designed to:
+
+* Scan open-source libraries
+* Enforce **license compliance policies**
+* Detect license violations and risks
+* Ensure OSS usage aligns with **company licensing criteria**
+
+So the correct logical choice is:
+
+> ✅ **No adjustment required**
+
+
+⚠️ **Note:**
+
+The provided options (A–D) are unrelated to the statement and appear to be from a different question. Since the statement about **Black Duck** is correct, the proper answer conceptually is **No adjustment required**, even though it is not listed.
+
 
 
 Secure and Manage Open Source Software Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios. Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
@@ -422,7 +828,46 @@ You plan to navigate to Compute and Apps to achieve your goal. Which of the foll
 * **D. Azure Security Center**
 
 
-Correct Answer: D. Azure Security Center
+The correct answer is:
+
+**D. Azure Security Center** ✅
+
+(now known as **Microsoft Defender for Cloud**)
+
+
+**Explanation:**
+
+To view **security recommendations** for:
+
+* **Azure App Service web apps**
+* **Azure Functions**
+* Other compute and application resources
+
+You should use **Azure Security Center** (Microsoft Defender for Cloud).
+
+It provides:
+
+* Security posture management
+* Vulnerability assessments
+* Security recommendations
+* A dedicated **“Compute and Apps”** section for:
+
+  * App Services
+  * Functions
+  * VMs
+  * Containers
+
+This is exactly where **Compute and Apps** is located.
+
+
+**Why the others are incorrect:**
+
+* **A. Azure Log Analytics** ❌ → Monitoring and logs, not security recommendations
+* **B. Azure Event Hubs** ❌ → Event streaming platform
+* **C. Azure Advisor** ❌ → Cost, performance, reliability recommendations (not deep security posture for apps)
+
+
+✅ **Final answer: D. Azure Security Center**
 
 
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
@@ -437,10 +882,45 @@ You need to consider the underlined segment to establish whether it is accurate.
 * C. Azure Log Analytics
 * D. Azure Advisor
 
-**Correct Answer: B. Azure Application Insights**
+
+
+The correct answer is:
+
+**B. Azure Application Insights** ✅
+
+
+**Explanation:**
+
+The statement is **inaccurate**.
+
+> “To pinpoint the average load times of the application pages, you should make use of **Azure Event Hubs**.”
+
+**Azure Event Hubs** is used for **event streaming and ingestion**, not performance monitoring or page load analytics.
+
+To measure **average page load times**, performance, and user experience for an **Azure App Service** application, you should use:
+
+**Azure Application Insights**
+
+Application Insights provides:
+
+* Page load times
+* Request/response times
+* Application performance metrics
+* End-user experience monitoring
+* Dependency tracking
+
+
+Why the others are incorrect:
+
+* **A. No adjustment required** ❌ → Event Hubs is not correct
+* **C. Azure Log Analytics** ❌ → Log aggregation/analysis, not page performance focus
+* **D. Azure Advisor** ❌ → Optimization recommendations, not telemetry analytics
+
+
+✅ **Final answer: B. Azure Application Insights**
+
 
 Application Insights will tell you about any performance issues and exceptions, and help you find and diagnose the root causes.
-
 
 Application Insights can monitor both Java and ASPNET web applications and services, WCF services. They can be hosted on-premises, on virtual machines, or as Microsoft Azure websites. On the client side, Application Insights can take telemetry from web pages and a wide variety of devices including iOS, Android, and Windows Store apps.
 
@@ -457,7 +937,36 @@ Does the solution meet the goal?
 
 **Correct Answer: B**
 
-Reference: https://docs.microsoft.com/en-us/azure/azure-monitor/insights/azure-sql
+
+Explanation:
+
+The solution does **not** meet the goal.
+
+Azure monitoring services such as:
+
+* **Azure Application Insights**
+* **Azure SQL Database Intelligent Insights**
+
+use **KQL (Kusto Query Language)** for ad-hoc querying and analytics.
+
+❌ **CQL (Contextual Query Language)** is **not used** in Azure monitoring services.
+
+Correct query language:
+
+* ✅ **KQL (Kusto Query Language)** → Used by:
+
+  * Azure Monitor
+  * Application Insights
+  * Log Analytics
+  * Intelligent Insights
+  * Microsoft Sentinel
+
+
+Conclusion:
+
+Since **CQL** is incorrect and **KQL** is required, the solution does **not** meet the goal.
+
+✅ **Correct answer: B. No**
 
 
 ### Question -22
@@ -468,7 +977,7 @@ Which two resources should you include in the solution? Each correct answer pres
 
 
 * **A. an Azure Automation runbook**
-* **B. an Azure Monitoralertthat has a dynamic threshold**
+* **B. an Azure Monitor alert that has a dynamic threshold**
 * C. an Azure Monitoralert that has a static threshold
 * D. the Azure Monitorautoscale settings
 * E. an Azure Monitoralert that uses an action group that has an email action
@@ -478,8 +987,49 @@ Which two resources should you include in the solution? Each correct answer pres
 A: You can use Azure Monitor to monitor base-level metrics and logs for most services in Azure. You can call Azure Automation runbooks by using action groups or by using classic alerts to automate tasks based on
 
 
-
 B: Metric Alert with Dynamic Thresholds detection leverages advanced machine learning (ML) to learn metrics' historical behavior, identify patterns and anomalies that indicate possible service issues. It provides support of both a simple Ul and operations at scale by allowing users to configure alert rules through the Azure Resource Manager API, in a fully automated manner.
+
+The correct answers are:
+
+**A. an Azure Automation runbook**
+**B. an Azure Monitor alert that has a dynamic threshold**
+
+
+
+Explanation:
+
+To **automatically increase the logging level** when the web app exceeds **normal usage patterns**, and to **minimize administrative overhead**, you need:
+
+#### ✅ **B. Azure Monitor alert with a dynamic threshold**
+
+* Detects **abnormal behavior** automatically (baseline-driven)
+* Adapts to changing traffic patterns (perfect for e-commerce workloads)
+* No manual tuning required → low admin overhead
+
+#### ✅ **A. Azure Automation runbook**
+
+* Executes automated actions (e.g., **change logging level** in the web app)
+* Can be triggered via an **Azure Monitor alert action group**
+* Fully automated response
+
+
+#### Why the others are incorrect:
+
+* **C. Static threshold alert** ❌ → Requires manual tuning and maintenance
+* **D. Azure Monitor autoscale settings** ❌ → Scales resources, not logging levels
+* **E. Email action group** ❌ → Not automation, increases manual work
+
+
+#### Architecture Flow:
+
+1. **Dynamic threshold alert** detects abnormal usage
+2. Alert triggers **Action Group**
+3. Action Group triggers **Azure Automation runbook**
+4. Runbook increases **logging level automatically**
+
+
+✅ **Final answer: A and B**
+
 
 ### Question -23
 
@@ -3259,7 +3809,7 @@ What should you do?
 
 Answer: D
 
-### -Question-165
+### Question-165
 
 You manage build pipelines and deployment pipelines by using Azure DevOps.
 
@@ -3277,7 +3827,7 @@ Which task must you perform manually?
 
 Answer: D
 
-### -Question-166
+### Question-166
 
 Your company is building a new solution in Java.
 
@@ -3312,7 +3862,7 @@ Which task types should you add to the build pipeline?
 
 Answer: A
 
-### -Question-168
+### Question-168
 
 You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. Policy is an audit policy that monitors
 
@@ -3693,7 +4243,7 @@ NOTE: Each correct selection is worth one point.
 
 **Answer: AD**
 
-### -Question-189
+### Question-189
 
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
@@ -3798,7 +4348,7 @@ NOTE: Each correct selection is worth one point.
 
 Answer: ABD
 
-### -Question-195
+### Question-195
 
 You have an Azure subscription that contains multiple Azure pipelines.
 
@@ -3959,7 +4509,7 @@ What should you do?
 
 Answer: D
 
-### -Question-205
+### Question-205
 
 
 You have an app named App1 that you release by using Azure Pipelines. App1 has the versions shown in the following table.
