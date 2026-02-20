@@ -1636,7 +1636,7 @@ Why the others are incorrect:
 Summary Table:
 
 | Library       | Direct Integration with Application Insights? |
-|  |  |
+| --- | --- |
 | OpenTelemetry | ✅                                             |
 | OpenCensus    | ✅                                             |
 | OpenTracing   | ❌                                             |
@@ -2008,11 +2008,62 @@ What should you include in the recommendation?
 
 **Correct Answer: D. the Application Health extension**
 
+The correct answer is:
+
+**D. the Application Health extension** ✅
+
+
+Explanation:
+
+You need to implement a **health check for App1** running on a **VMSS behind an Azure Standard Load Balancer**, with the following requirements:
+
+1. Identify whether **individual VMSS instances are eligible for an upgrade operation**
+2. Minimize **administrative effort**
+
+**Azure VMSS Application Health Extension** is specifically designed for this scenario:
+
+* **Monitors the health of application endpoints** on each VM in the scale set
+* Integrates with **VMSS automatic upgrades**, marking instances as healthy/unhealthy for rolling upgrades
+* Supports **HTTPS and mutual authentication** configurations
+* Requires minimal setup compared to custom scripts
+
+
+
+Why the others are incorrect:
+
+* **A. Azure Load Balancer health probe** ❌
+
+  * Can monitor endpoints for traffic distribution
+  * **Cannot directly integrate with VMSS upgrade eligibility** in the context of application-level health
+
+* **B. Azure Monitor autoscale** ❌
+
+  * Scales VMSS instances based on metrics, not application health for upgrades
+
+* **C. Custom Script Extension** ❌
+
+  * Can implement health checks manually, but **higher administrative overhead** compared to the built-in Application Health extension
+
+
+
+Summary:
+
+| Requirement                 | Solution Fit                   |
+| --------------------------- | ------------------------------ |
+| App-level health monitoring | ✅ Application Health extension |
+| VMSS upgrade eligibility    | ✅ Application Health extension |
+| Minimize admin effort       | ✅ Application Health extension |
+
+
+
+✅ **Final answer: D. the Application Health extension**
+
+
+
 Monitoring your application health is an important signal for managing and upgrading your deployment. 
 
 Azure virtual machine scale sets provide support for rolling upgrades including automatic OS-image upgrades, which rely on health monitoring of the individual instances to upgrade your deployment. You can also use health extension to monitor the application health of each instance in your scale set and perform instance repairs using automatic instance repairs.
 
-Reference: https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension
 
 ### Question-42
 
@@ -2032,7 +2083,48 @@ NOTE: Each correct selection is worth one point.
 
 Correct Answer: BD
 
-Reference: https://docs.microsoft.com/en-us/azure/devops/pipelines/test/flaky-test-management
+The correct answers are:
+
+**D. Manually mark the test as flaky** ✅
+**B. Clear Flaky tests included in test pass percentage** ✅
+
+
+
+Explanation:
+
+The scenario:
+
+* A **build pipeline fails** because a **response-time test intermittently fails**.
+* Goal: **Prevent the build from failing due to this flaky test**.
+
+Azure Pipelines provides **flaky test management**:
+
+1. **Mark the test as flaky (D)**
+
+   * Manually mark the test so Azure DevOps knows **failures in this test shouldn’t fail the build**.
+
+2. **Clear “Flaky tests included in test pass percentage” (B)**
+
+   * This ensures that **flaky tests are excluded from the pass/fail calculations** of the build.
+
+
+Why the others are incorrect:
+
+* **A. Set Flaky test detection to Off** ❌
+
+  * Turns off automated detection but doesn’t prevent the build from failing for already flaky tests
+
+* **C. Enable Test Impact Analysis (TIA)** ❌
+
+  * Optimizes test execution by running only impacted tests; doesn’t prevent failures
+
+* **E. Enable test slicing** ❌
+
+  * Distributes tests across multiple agents; doesn’t prevent build failure due to flakiness
+
+
+✅ **Final answer: D and B**
+
 
 
 ### Question-43
@@ -2055,14 +2147,40 @@ What should you use to prevent the deployment of releases that fall to meet the 
 
 Correct Answer: C. a gate
 
+The correct answer is:
+
+**C. a gate** ✅
+
+
+
+Explanation:
+
+In **Azure Pipelines**, if you want to **prevent a release from being deployed to production unless it meets defined performance baseline criteria** in a staging environment, the correct mechanism is a **gate**.
+
+**Gates** in Azure Pipelines:
+
+* Automatically evaluate **predefined conditions** before a deployment proceeds
+* Can use **Azure Monitor metrics, Application Insights telemetry, or REST APIs** as evaluation criteria
+* Stop deployments if **performance thresholds** are not met
+* Minimize manual intervention (low administrative effort)
+
+
+Why the other options are incorrect:
+
+* **A. Azure Scheduler job** ❌ → Only runs scheduled tasks, doesn’t enforce release gates
+* **B. Trigger** ❌ → Starts a pipeline or release; cannot block based on performance criteria
+* **D. Azure Function** ❌ → Could implement custom logic, but requires manual integration and more overhead; gates provide **native support**
+
+
+✅ **Final answer: C. a gate**
+
+
+
 Scenarios and use cases for gates include: Quality validation. 
 
 
 Query metrics from tests on the build artifacts such as pass rate or code coverage and deploy only if they are within required thresholds. Use Quality Gates to integrate monitoring into your pre-deployment or post-leployment. This ensures that you are meeting the key health/performance metrics (KPls) as your applications move from dev to production and any differences in the infrastructure environment or scale is not negatively impacting your KPIs.
 
-Reference: https://docs.microsoft.com/en-us/azure/azure-monitor/continuous-monitoring
-
-https://docs.microsoft.com/enus/azure/devops/pipelines/release/approvals/gates?view=azure-devops
 
 
 ### Question-44
@@ -2077,7 +2195,31 @@ A. Yes
 
 B. No
 
-Correct Answer: B. No
+The correct answer is:
+
+**B. No** ✅
+
+
+Explanation:
+
+The goal is to **prevent the configuration of the Azure DevOps project from changing over time**.
+
+Performing a **subscription health scan when packages are created**:
+
+* Only checks the **health or compliance** of resources or packages
+* Does **not prevent configuration changes**
+* It is **reactive**, not preventive
+
+To actually **prevent configuration drift**, you would need solutions such as:
+
+* **Azure Policy** → enforce rules on resources
+* **Locking project settings or using process templates** → restrict changes
+* **Automation/CI/CD pipelines** → enforce desired state
+
+
+✅ **Final answer: B. No**
+
+
 
 **Instead implement Continuous Assurance for the project.**
 
@@ -2110,7 +2252,28 @@ A. Yes
 
 B. No
 
-Correct Answer: B. No
+The correct answer is:
+
+**B. No** ✅
+
+
+Explanation:
+
+Adding a **code coverage step** to a build pipeline:
+
+* Measures **how much of your code is tested**
+* Improves **quality metrics** and testing insight
+* **Does not prevent project configuration changes** in Azure DevOps
+
+To **prevent configuration drift**, you would need approaches like:
+
+* **Process templates / inherited processes** → lock work item types, states, and fields
+* **Azure Policy** → enforce rules on Azure resources
+* **Automation / CI enforcement** → maintain desired state of project settings
+
+
+✅ **Final answer: B. No**
+
 
 Instead implement Continuous Assurance for the project.
 
@@ -2139,7 +2302,29 @@ A. Yes
 B. No
 
 
-Correct Answer: B. No
+The correct answer is:
+
+**B. No** ✅
+
+
+
+Explanation:
+
+**Continuous Integration (CI)**:
+
+* Automates **building and testing code** whenever changes are pushed
+* Ensures **code quality** and detects errors early
+* **Does not prevent changes to project configuration** in Azure DevOps (such as process templates, work item types, permissions, or settings)
+
+To **prevent project configuration from changing**, you would need:
+
+* **Process templates / inherited processes** → lock work item types, states, fields
+* **Automation scripts or Azure DevOps REST API enforcement** → maintain desired state
+* **Policies or approvals** for configuration changes
+
+
+✅ **Final answer: B. No**
+
 
 **Instead implement Continuous Assurance for the project.**
 
@@ -2151,8 +2336,6 @@ Correct Answer: B. No
 
 > Note: The Subscription Security health check features in ASK contains a set of scripts that examines a subscription and flags off security issues, misconfigurations or obsolete artifacts/settings which can put your subscription at higher risk.
 
-
-Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
 
@@ -2168,7 +2351,25 @@ A. Yes
 
 B. No
 
-Correct Answer: A-Yes
+
+The correct answer is:
+
+**A. Yes** ✅
+
+
+Explanation:
+
+**Continuous Assurance** in Azure DevOps refers to practices and tooling that **continuously monitor and enforce the desired state of a project’s configuration**:
+
+* Ensures **project settings, processes, and policies** remain consistent over time
+* Detects **configuration drift** and can automatically remediate deviations
+* Helps maintain compliance and governance for DevOps projects
+
+By implementing **Continuous Assurance**, you can effectively **prevent unintended changes to project configuration** over time.
+
+
+✅ **Final answer: A. Yes**
+
 
 incorrect Options presents in part of this series Questions are
 
@@ -2181,7 +2382,6 @@ incorrect Options presents in part of this series Questions are
 
 > The basic idea behind Continuous Assurance (CA) is to setup the ability to check for "drift" from what is considered a secure snapshot of a system. Support for Continuous Assurance lets us treat security truly as a 'state' as opposed to a 'point in time' achievement.
 
-Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
 ### Question-48
@@ -2195,6 +2395,27 @@ You use Azure Pipelines to manage build pipelines, Github to store source code, 
 
 
 **Correct Answer: B. Approve the pull request.**
+
+The correct answer is:
+
+**A. Create a pull request.** ✅
+
+
+Explanation:
+
+When **Dependabot detects a dependency that requires an update**:
+
+1. Dependabot **automatically creates a pull request (PR)** in GitHub with the proposed update.
+2. The pull request can then be **reviewed, tested in CI/CD (Azure Pipelines)**, and merged.
+
+**Key points:**
+
+* **Creating the PR** is the first step to apply the update.
+* **Approving the PR** (B) and **merging** happen **after the PR is created**.
+* **Creating a branch** (C) or **performing a commit** (D) is handled by Dependabot automatically for the PR.
+
+
+✅ **Final answer: A. Create a pull request.**
 
 
 DependaBot is a useful tool to regularly check for dependency updates. By helping to keep your project up to date, DependaBot can reduce technical debt and immediately apply security vulnerabilities when patches are released. How does DependaBot work? 
@@ -2225,7 +2446,39 @@ Which Azure service should you recommend as the configuration management solutio
 
 **Correct Answer: C - Azure App Configuration**
 
-Reference: https://docs.microsoft.com/en-us/azure/azure-app-confiquration/overview
+The correct answer is:
+
+**C. Azure App Configuration** ✅
+
+
+Explanation:
+
+You need a **configuration management solution** for multiple apps and environments with the following requirements:
+
+1. **Supports feature flags** → Enable/disable features per environment or user segment.
+2. **Tracks configuration changes from the past 30 days** → Provides **history and versioning**.
+3. **Stores hierarchically structured configuration values** → Organizes settings logically per app/environment.
+4. **Controls access using RBAC** → Can assign **read/write permissions** per app or user.
+5. **Stores shared key-value pairs usable by all apps** → Provides **centralized, reusable configuration**.
+
+**Azure App Configuration** meets all these requirements:
+
+* Centralized configuration store for multiple apps
+* Built-in **feature flags**
+* **Versioning and history** for configuration changes
+* Hierarchical keys and labels for environment-specific values
+* Supports **RBAC and managed identities** for secure access
+
+
+Why the others are incorrect:
+
+* **A. Azure Cosmos DB** ❌ → A database for structured/unstructured data, not specialized for configuration management or feature flags.
+* **B. Azure App Service** ❌ → Hosting platform, not a configuration management service.
+* **D. Azure Key Vault** ❌ → Stores **secrets, keys, certificates**, not full-featured hierarchical configuration or feature flags.
+
+
+✅ **Final answer: C. Azure App Configuration**
+
 
 ### Question-50
 
@@ -2240,7 +2493,33 @@ You need to verify that DB1 can handle incoming requests before users can submit
 * **C. a readiness probe**
 * D. an Azure Load Balancer health probe
 
-Correct Answer: C. a readiness probe
+The correct answer is:
+
+**C. a readiness probe** ✅
+
+
+Explanation:
+
+In **containerized applications** (like **Azure Container Instances** or Kubernetes):
+
+* **Readiness probes** are used to indicate whether a container is **ready to serve traffic**.
+* The frontend container (**App1**) should only send requests to the backend (**DB1**) **after DB1 is ready**.
+* Since DB1 **loads a large amount of data on startup**, a readiness probe ensures:
+
+  * Requests are only routed when DB1 has **finished initialization**
+  * Prevents errors from early traffic
+
+
+
+Why the others are incorrect:
+
+* **A. Liveness probe** ❌ → Checks if a container is **alive**; restarts it if unhealthy. Does not control traffic routing.
+* **B. Performance log** ❌ → For monitoring, does not affect request routing.
+* **D. Azure Load Balancer health probe** ❌ → Monitors VM/container health from the load balancer perspective, but readiness probes are more precise for container **startup dependencies**.
+
+
+✅ **Final answer: C. a readiness probe**
+
 
 ### Question-51
 
