@@ -1042,6 +1042,49 @@ You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. Y
 
 **Correct Answer: B. Create an Azure Application Insights availability test and alert.**
 
+The correct answer is:
+
+**B. Create an Azure Application Insights availability test and alert.** ✅
+
+---
+
+Explanation:
+
+To run a **URL ping test every five minutes** and generate **alerts when the app is unavailable from specific Azure regions**, with **minimal development time**, the best solution is to use **Azure Application Insights availability tests**.
+
+**Application Insights Availability Tests** provide:
+
+* Built-in **URL ping tests**
+* Configurable **test frequency** (e.g., every 5 minutes)
+* Ability to select **specific Azure regions**
+* Native **alerting integration**
+* **No custom code** required → minimal development effort
+
+
+
+Why the other options are incorrect:
+
+* **A. Azure Monitor Availability metric and alert** ❌
+  Azure Monitor alone doesn’t provide built-in multi-region URL ping testing.
+
+* **C. Write an Azure Function** ❌
+  Requires custom development, deployment, and maintenance → high overhead.
+
+* **D. Azure Service Health alert** ❌
+  Monitors Azure service outages, **not your specific web app URL availability**.
+
+
+**Best-practice solution flow:**
+
+**Application Insights → Availability Test → Multi-region probes → Alert rule**
+
+
+
+✅ **Final answer: B. Create an Azure Application Insights availability test and alert.**
+
+
+---
+
 There are three types of Application Insights availability tests:
 
 * 1) URL ping test a simple test that you can create in the Azure portal. 
@@ -1069,6 +1112,38 @@ You need to identify the average load times of the application pages. What shoul
 
 Application Insights will tell you about any performance issues and exceptions, and help you find and diagnose the root causes. Application Insights can monitor both Java and ASP.NET web applications and services, WCF services. They can be hosted on-premises, on virtual machines, or as Microsoft Azure websites. On the client side, Application Insights can take telemetry from web pages and a wide variety of devices including ios, Android, and Windows Store apps.
 
+The correct answer is:
+
+**A. Azure Application Insights** ✅
+
+---
+
+Explanation:
+
+To identify **average page load times** and performance metrics for a web application hosted in **Azure App Service**, you should use **Azure Application Insights**.
+
+Application Insights provides:
+
+* **Page load time metrics**
+* End-user performance monitoring
+* Request/response times
+* Dependency tracking
+* Application performance analytics
+* Real-time telemetry and dashboards
+
+---
+
+Why the others are incorrect:
+
+* **B. Activity log of the App Service** ❌ → Tracks management operations (start/stop, config changes), not performance metrics.
+* **C. Diagnostics logs of the App Service** ❌ → Logs requests/errors, not user-experience performance analytics.
+* **D. Azure Advisor** ❌ → Provides recommendations, not performance telemetry.
+
+---
+
+✅ **Final answer: A. Azure Application Insights**
+
+
 ### Question -25
 
 
@@ -1084,7 +1159,38 @@ Which Azure Log Analytics solution should you use?
 
 Correct Answer: C. IT Service Management Connector (ITSM)
 
-The IT Service Management Connector (ITSMC) allows you to connect Azure and a supported IT Service Management (ITSM) product/service. ITSM supports connections with the following ITSM tools: ServiceNow, System Center Service Manager, Provance, Cherwell With ITSMC, you can Create work items in ITSM tool, based on your Azure alerts (metric alerts, Activity Log alerts and Log Analytics alerts). Optionally, you can sync your incident and change request data from your ITSM tool to an Azure Log Analytics workspace.
+The correct answer is:
+
+**C. IT Service Management Connector (ITSM)** ✅
+
+
+Explanation:
+
+To automatically **create a ticket in ServiceNow** when an application running on Azure fails to authenticate, you should use the **IT Service Management Connector (ITSM)** in Azure Log Analytics / Azure Monitor.
+
+**IT Service Management Connector**:
+
+* Integrates Azure Monitor and Log Analytics with **ServiceNow**
+* Automatically creates **incidents, problems, and change requests**
+* Supports alert-based ticket creation
+* Designed specifically for **ITSM workflows**
+
+
+
+Why the others are incorrect:
+
+* **A. Application Insights Connector** ❌ → Integrates telemetry, not ITSM ticketing.
+* **B. Automation & Control** ❌ → Focuses on automation/config management, not ServiceNow integration.
+* **D. Insight & Analytics** ❌ → Analytics/visualization, not incident ticket creation.
+
+
+Flow:
+
+**Azure Logs / Alerts → Azure Monitor → ITSM Connector → ServiceNow Ticket**
+
+
+✅ **Final answer: C. IT Service Management Connector (ITSM)**
+
 
 ### Question -26
 
@@ -1100,7 +1206,32 @@ You need to write ad-hoc queries against the monitoring data. Which query langua
 
 **Correct Answer: A. Kusto Query Language (KQL)**
 
-Azure Monitor Logs is based on Azure Data Explorer, and log queries are written using the same Kusto query language (KQL). This is a rich language designed to be easy to read and author, and you should be able to start using it with minimal guidance.
+The correct answer is:
+
+**A. Kusto Query Language (KQL)** ✅
+
+
+Explanation:
+
+Both **Azure Application Insights** and **Azure SQL Database Intelligent Insights** store and analyze telemetry data using **Azure Monitor / Log Analytics**, which uses:
+
+👉 **Kusto Query Language (KQL)** for **ad-hoc querying and analytics**.
+
+KQL is designed for:
+
+* Log and telemetry analysis
+* Time-series data
+* Monitoring and diagnostics
+* Security and performance analytics
+
+Why the others are incorrect:
+
+* **B. PL/pgSQL** ❌ → PostgreSQL procedural language
+* **C. PL/SQL** ❌ → Oracle database language
+* **D. Transact-SQL** ❌ → SQL Server query language (used for relational data, not Azure Monitor logs)
+
+
+✅ **Final answer: A. Kusto Query Language (KQL)**
 
 
 ### Question -27
@@ -1123,7 +1254,49 @@ A: You can programmatically query Application Insights data to generate custom r
 
 E: Exceptions in your live web app are reported by Application Insights.
 
-Note: Periodical reports help keep a team informed on how their business critical services are doing. Developers, DevOps/SRE teams, and their managers can be productive with automated reports reliably delivering insights without requiring everyone to sign in the portal. Such reports can also help identify gradual increases in latencies, load or failure rates that may not trigger any alert rules.
+The correct answers are:
+
+**A. Azure Logic Apps**
+**E. Azure Application Insights** ✅
+
+
+Explanation:
+
+To **automatically send a daily summary of application exceptions to Microsoft Teams**, you need:
+
+✅ **E. Azure Application Insights**
+
+Use **Azure Application Insights** to:
+
+* Collect application telemetry
+* Track **exceptions, failures, and errors**
+* Store monitoring data
+* Query exceptions using KQL
+
+✅ **A. Azure Logic Apps**
+
+Use **Azure Logic Apps** to:
+
+* Run on a **daily schedule**
+* Query Application Insights
+* Format the exception summary
+* Send the report to **Microsoft Teams** via a connector
+
+
+Why the others are incorrect:
+
+* **B. Azure Pipelines** ❌ → CI/CD, not monitoring or notifications
+* **C. Visual Studio App Center** ❌ → Mobile/dev analytics, not Azure production telemetry automation
+* **D. Azure DevOps Project** ❌ → Project scaffolding, not monitoring automation
+
+
+Solution architecture:
+
+**Application → Application Insights → Logic App (daily trigger) → Microsoft Teams message**
+
+
+✅ **Final answer: A and E**
+
 
 ### Question -28
 
@@ -1140,6 +1313,42 @@ What should you use?
 * **D. Smart Detection**
 * E. Continuous export
 
+The correct answer is:
+
+**D. Smart Detection** ✅
+
+
+
+Explanation:
+
+To automatically send an alert when there is a **sudden rise in performance issues and failures** in an Azure web app monitored by Application Insights, you should use **Azure Application Insights Smart Detection**.
+
+**Smart Detection**:
+
+* Uses built-in **machine learning**
+* Detects **anomalies** such as sudden spikes in:
+
+  * Failures
+  * Exceptions
+  * Response times
+  * Performance degradation
+* Automatically generates **alerts**
+* Requires **no custom configuration**
+* Minimizes administrative overhead
+
+
+Why the others are incorrect:
+
+* **A. Custom events** ❌ → Used for custom telemetry, not anomaly detection
+* **B. Application Insights Profiler** ❌ → Performance profiling, not alerting
+* **C. Usage analysis** ❌ → User behavior analytics, not failure detection
+* **E. Continuous export** ❌ → Data export mechanism, not alerting
+
+
+
+✅ **Final answer: D. Smart Detection**
+
+
 Correct Answer: D. Smart Detection
 
 Smart Detection automatically warns you of potential performance problems and failure anomalies in your web application. It performs proactive analysis of the telemetry that your app sends to Application Insights. If there is a sudden rise in failure rates, or abnormal patterns in client or server performance, you get an alert.
@@ -1155,6 +1364,47 @@ What should you do first?
 * B. Add the Azure Pipelines app to the GitHub repository.
 * **C. Add the Azure Boards app to the repository.**
 * D. Create a GitHub action in GitHub.
+
+
+The correct answer is:
+
+**C. Add the Azure Boards app to the repository.** ✅
+
+
+Explanation:
+
+To display **GitHub commit status and link commits/work items** in **Azure Boards**, the first required step is to integrate the repository with Azure Boards by installing the **Azure Boards app** in GitHub.
+
+Specifically, you must add the:
+
+**Azure Boards app**
+to your **GitHub repository.
+
+This enables:
+
+* Linking commits and PRs to work items
+* Displaying commit status in Azure Boards
+* Traceability between code and project management
+
+
+
+Why the others are incorrect:
+
+* **A. Configure MFA** ❌ → Security best practice, but unrelated to Azure Boards integration.
+* **B. Add the Azure Pipelines app** ❌ → Used for CI/CD, not work item/commit tracking in Azure Boards.
+* **D. Create a GitHub Action** ❌ → Automation workflow, not required for Azure Boards commit visibility.
+
+
+
+Correct integration order:
+
+1. **Add Azure Boards app to GitHub repo** ✅
+2. (Optional next steps) Configure pipelines, policies, etc.
+
+
+
+✅ **Final answer: C. Add the Azure Boards app to the repository.**
+
 
 Correct Answer: C. Add the Azure Boards app to the repository.
 
@@ -1177,6 +1427,40 @@ The solution must minimize development effort. Which option should you select in
 * **A. Send to Log Analytics**
 * B. Stream to an event hub
 * C. Archive to a storage account
+
+The correct answer is:
+
+**A. Send to Log Analytics** ✅
+
+---
+
+### Explanation:
+
+To generate an **alert when there are 10,000 simultaneous connections** to an **Azure SQL Database**, with **minimal development effort**, you should send diagnostics data to **Log Analytics**.
+
+**Azure Log Analytics** enables you to:
+
+* Collect **diagnostic and performance metrics** from Azure SQL Database
+* Run **Kusto Query Language (KQL)** queries on connection metrics
+* Create **Azure Monitor alert rules** directly from queries
+* Trigger alerts automatically when thresholds (e.g., 10,000 connections) are reached
+
+This is the **native, low-code Azure monitoring + alerting path**.
+
+
+
+Why the others are incorrect:
+
+* **B. Stream to an event hub** ❌ → For real-time streaming/integration, requires custom processing and code.
+* **C. Archive to a storage account** ❌ → For long-term storage/compliance, not alerting or real-time monitoring.
+
+Minimal-effort architecture:
+
+**Azure SQL Diagnostics → Log Analytics → Azure Monitor Alert Rule**
+
+
+✅ **Final answer: A. Send to Log Analytics**
+
 
 Correct Answer: A. Send to Log Analytics
 
