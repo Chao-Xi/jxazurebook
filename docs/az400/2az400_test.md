@@ -9,7 +9,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 * **C. Cycle time**
 * D. Burndown
 
----
+
 
 The correct answer is:
 
@@ -37,7 +37,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 
 | Option | Explanation |
-|--------|-------------|
+|--|-|
 | **A. Cumulative Flow Diagram** | Graphical representation showing the flow of work items through different process stages over time. |
 | **B. Burnup** | Visualization tool tracking completed work over time, often used in Agile project management. |
 | **C. Cycle time** | **Total time for a work item to move through a process, from start to finis**h. |
@@ -81,7 +81,7 @@ You need to consider the underlined segment to establish whether it is accurate.
 
 
 | Term | Explanation |
-|------|-------------|
+||-|
 | **A. No adjustment required** | Indicates that no changes or modifications are necessary. |
 | **B. Lead time** | **The total time it takes for a work item to be completed from the moment it's requested**. |
 | **C. Test results trend** | The pattern or direction in which test results are moving over a period of time. |
@@ -117,7 +117,7 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 
 
 | Term | Explanation |
-|------|-------------|
+||-|
 | **A. Group membership changes** | Modifications or updates made to the membership of a specific group within an organization. |
 | **B. License assignment** | The process of allocating or assigning software licenses to users or devices. |
 | **C. Assigning entitlements** | Granting specific rights or privileges to users or entities based on their entitlements. |
@@ -168,7 +168,7 @@ You have been tasked with strengthening the security of your team's development 
 
 
 | Term | Explanation |
-|------|-------------|
+||-|
 | **A. Penetration testing** | A method of evaluating the security of a computer system or network by simulating an attack. |
 | **B. Static code analysis** | Examination of source code to identify potential vulnerabilities without executing the code. |
 | **C. Threat modeling** | A process of identifying and prioritizing potential threats to a system and assessing defenses. |
@@ -197,7 +197,7 @@ Which of the following should also be suggested?
 
 
 | Term | Explanation |
-|------|-------------|
+||-|
 | **A. Installing the TFS kava SDK** | The process of installing the TFS (Team Foundation Server) kava SDK (Software Development Kit). |
 | **B. Using the TFS Database Import Service to perform the upgrade** | Utilizing a service provided by TFS to import data from databases to upgrade the system. |
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
@@ -251,7 +251,7 @@ Which of the following is the option you would choose?
 
 
 | Term | Explanation |
-|------|-------------|
+||-|
 | **A. Basic** | Choose Basic when your team wants the simplest model that uses Issues, Tasks, and Epics to track work. |
 | **B. Agile** | This process works great if you want to track user stories and (optionally) bugs on the Kanban board, or track bugs and tasks on the task board. |
 | **C. Scrum** | This process works great if you want to track product backlog items (PBIs) and bugs on the Kanban board, or break PBIs and bugs down into tasks on the task board |
@@ -300,7 +300,7 @@ This mode:
 Summary:
 
 | Mode                    | Drift Detection | Auto-Fix |
-| ----------------------- | --------------- | -------- |
+| -- |  | -- |
 | ApplyOnly               | ❌ No            | ❌ No     |
 | ApplyAndMonitor         | ✅ Yes           | ❌ No     |
 | **ApplyAndAutoCorrect** | ✅ Yes           | ✅ Yes    |
@@ -529,7 +529,7 @@ Why the others are incorrect:
 **Summary:**
 
 | Option              | On-prem | Windows Server | Managed internally |
-| ------------------- | ------- | -------------- | ------------------ |
+| - | - | -- |  |
 | GitHub Enterprise   | ✅       | ✅              | ✅                  |
 | Bitbucket Cloud     | ❌       | ❌              | ❌                  |
 | GitHub Professional | ❌       | ❌              | ❌                  |
@@ -566,7 +566,7 @@ without the `--dev` flag, only **production dependencies** (those listed under `
 
 This ensures that **WhiteSource Bolt only scans production dependencies**, ignoring dev-only libraries that might have invalid licenses.
 
----
+
 
 Why the other options are incorrect:
 
@@ -574,7 +574,7 @@ Why the other options are incorrect:
 * **B. `npm publish`** ❌ → Publishes the package to npm registry, irrelevant for scanning dependencies.
 * **D. `npm update`** ❌ → Updates packages to latest versions; doesn’t control which dependencies are scanned.
 
----
+
 
 ✅ **Command to use:**
 
@@ -607,7 +607,7 @@ The correct answer is:
 
 **C. You should make use of a gate.** ✅
 
----
+
 
 Explanation:
 
@@ -619,7 +619,7 @@ In **Azure Pipelines**, if you want to **prevent a release from being deployed t
 * Pull data from **Azure Monitor, Application Insights, REST APIs, or other sources**.
 * Stop the deployment if conditions (like performance thresholds) are **not met**.
 
----
+
 
 Why the other options are incorrect:
 
@@ -627,7 +627,7 @@ Why the other options are incorrect:
 * **B. Alert trigger** ❌ → Alerts notify you when something happens; they don’t automatically **block a release**.
 * **D. Approval check** ❌ → Requires **manual approval**; you want **automated enforcement** of performance baselines.
 
----
+
 
 ✅ **Final answer: C. You should make use of a gate.**
 
@@ -647,7 +647,7 @@ The correct answer is:
 
 **C. Deployment** ✅
 
----
+
 
 Explanation:
 
@@ -666,7 +666,7 @@ Correct terminology:
 
 * **Deployment group** → A collection of target machines for deployment tasks.
 
----
+
 
 ✅ **Final answer: C. Deployment**
 
@@ -1046,7 +1046,7 @@ The correct answer is:
 
 **B. Create an Azure Application Insights availability test and alert.** ✅
 
----
+
 
 Explanation:
 
@@ -1083,7 +1083,7 @@ Why the other options are incorrect:
 ✅ **Final answer: B. Create an Azure Application Insights availability test and alert.**
 
 
----
+
 
 There are three types of Application Insights availability tests:
 
@@ -1116,7 +1116,7 @@ The correct answer is:
 
 **A. Azure Application Insights** ✅
 
----
+
 
 Explanation:
 
@@ -1131,7 +1131,7 @@ Application Insights provides:
 * Application performance analytics
 * Real-time telemetry and dashboards
 
----
+
 
 Why the others are incorrect:
 
@@ -1139,7 +1139,7 @@ Why the others are incorrect:
 * **C. Diagnostics logs of the App Service** ❌ → Logs requests/errors, not user-experience performance analytics.
 * **D. Azure Advisor** ❌ → Provides recommendations, not performance telemetry.
 
----
+
 
 ✅ **Final answer: A. Azure Application Insights**
 
@@ -1432,9 +1432,8 @@ The correct answer is:
 
 **A. Send to Log Analytics** ✅
 
----
 
-### Explanation:
+Explanation:
 
 To generate an **alert when there are 10,000 simultaneous connections** to an **Azure SQL Database**, with **minimal development effort**, you should send diagnostics data to **Log Analytics**.
 
@@ -1480,9 +1479,50 @@ You have an Azure virtual machine that is monitored by using Azure Monitor, The 
 * C. the Windows Azure diagnostics extension (WAD)
 * D. the Azure monitor agent
 
-irtStudyPro
 
 **Correct Answer: A. the Dependency agent**
+
+The correct answer is:
+
+**A. the Dependency agent** ✅
+
+
+Explanation:
+
+To support the **Service Map** solution from the Azure Marketplace, in addition to the Log Analytics agent, you must deploy the **Dependency agent** on the virtual machine.
+
+**Azure Monitor Service Map** requires:
+
+* **Log Analytics agent** → collects logs and performance data
+* **Dependency agent** → collects **process and network dependency data** (connections between services, ports, and processes)
+
+Together, these enable Service Map to visualize:
+
+* Application dependencies
+* Inter-process communication
+* Network connections
+* Service relationships across VMs
+
+
+Why the others are incorrect:
+
+* **B. Telegraf agent** ❌ → Used mainly with InfluxDB/monitoring stacks, not Service Map
+* **C. Windows Azure Diagnostics extension (WAD)** ❌ → Legacy diagnostics, not Service Map
+* **D. Azure Monitor agent** ❌ → New unified agent, but **Service Map specifically requires the Dependency agent**
+
+
+
+Requirement summary:
+
+**VM must have:**
+
+* Log Analytics agent ✅ (already installed)
+* **Dependency agent** ✅ (missing piece)
+
+
+
+✅ **Final answer: A. the Dependency agent**
+
 
 Use the Dependency agent if you need to use the Map feature VM insights or the Service Map solution.
 Note: Consider the following when using the Dependency agent:
@@ -1499,6 +1539,48 @@ You have multiple teams that work on multiple projects in Azure DevOps. You need
 * D. Create a custom query to show the consumers and producers and add a widget to a dashboard
 
 Correct Answer: C
+
+
+The correct answer is:
+
+**C. Install the Dependency Tracker extension and create dependencies for each project.** ✅
+
+
+
+Explanation:
+
+You need to **plan and manage consumer/producer relationships across multiple teams and multiple projects** in **Azure DevOps**, with a solution that provides a **single overview of all projects**.
+
+The **Dependency Tracker extension** is purpose-built for this scenario:
+
+* Visualizes **cross-team and cross-project dependencies**
+* Models **consumer/producer relationships**
+* Provides **roadmap and timeline views**
+* Centralized dependency management
+* Portfolio-level overview
+
+
+
+Why the other options are incorrect:
+
+* **A. Predecessor/Successor links** ❌ → Simple relationships, no global visibility.
+* **B. Parent/Child links** ❌ → Hierarchy modeling, not dependency planning.
+* **D. Custom query + dashboard** ❌ → Limited visibility, not dependency management tooling.
+
+
+Conclusion:
+
+Only the **Dependency Tracker extension** meets all requirements:
+
+* Multi-team
+* Multi-project
+* Consumer/producer planning
+* Centralized overview
+
+
+
+✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
+
 
 ### Question-33
 
@@ -1519,9 +1601,54 @@ Which two libraries should you identify? Each correct answer presents a complete
 * **D. Open Telemtry**
 * **E. OpenCensus**
 
-Correct Answer: DE
+The correct answers are:
 
-### Question-34
+**D. OpenTelemetry**
+**E. OpenCensus** ✅
+
+
+
+Explanation:
+
+To **centralize distributed tracing** in **Azure Monitor / Application Insights**, you need libraries that **can export telemetry directly to Application Insights**.
+
+* **OpenTelemetry**
+
+  * Industry-standard for distributed tracing and metrics
+  * Provides **exporters** for Application Insights
+  * Actively supported in Azure Monitor
+
+* **OpenCensus**
+
+  * Predecessor to OpenTelemetry
+  * Has **native support for Application Insights**
+
+
+
+Why the others are incorrect:
+
+* **A. Honeycomb** ❌ → Proprietary tracing system, does **not directly integrate** with Application Insights
+* **B. OpenTracing** ❌ → Specification only, requires an implementation (like OpenTelemetry)
+* **C. Jaeger** ❌ → Open-source tracing backend, **cannot export directly** to Application Insights
+
+
+
+Summary Table:
+
+| Library       | Direct Integration with Application Insights? |
+|  |  |
+| OpenTelemetry | ✅                                             |
+| OpenCensus    | ✅                                             |
+| OpenTracing   | ❌                                             |
+| Jaeger        | ❌                                             |
+| Honeycomb     | ❌                                             |
+
+
+
+✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
+
+
+### Question-34 ？？
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -1537,6 +1664,39 @@ What should you do?
 
 **Correct Answer: B**
 
+
+The correct answer is:
+
+**C. From AppInsights1, modify the Usage and estimated costs settings.** ✅
+
+Explanation:
+
+To **control the sampling rate of telemetry data** sent from an Azure web app to **Application Insights**, you can configure **fixed-rate sampling** at the **Application Insights resource level** without changing code.
+
+* In **Azure Portal**:
+
+  1. Navigate to **AppInsights1**
+  2. Go to **Usage and estimated costs**
+  3. Configure **Sampling** (Fixed-rate or Adaptive)
+
+**Benefits of portal-level sampling:**
+
+* Reduces telemetry volume
+* Controls costs
+* Minimal development/maintenance effort
+
+
+Why the others are incorrect:
+
+* **A. Modify ApplicationInsights.config** ❌ → Only applicable for **full .NET Framework apps**, not .NET Core
+* **B. Modify Startup.cs** ❌ → Possible in code, but the requirement is to **minimize changes and manage via portal**
+* **D. Continuous export** ❌ → Sends data elsewhere, does not control sampling
+
+
+
+✅ **Final answer: C. From AppInsights1, modify the Usage and estimated costs settings.**
+
+
 ### Question-35
 
 You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. You need to configure App1 to use Al1. Which file should you modify?
@@ -1548,6 +1708,41 @@ You use Azure Pipelines to build and deploy an app named App1. You plan to monit
 
 
 **Correct Answer: A. appsettings.json**
+
+The correct answer is:
+
+**A. appsettings.json** ✅
+
+
+
+Explanation:
+
+For a **.NET Core application**, Application Insights is typically configured via the **`appsettings.json`** file.
+
+* You specify the **Instrumentation Key** of your Application Insights resource (Al1) in `appsettings.json`:
+
+```json
+{
+  "ApplicationInsights": {
+    "InstrumentationKey": "YOUR_INSTRUMENTATION_KEY_HERE"
+  }
+}
+```
+
+* The application reads this configuration at startup and sends telemetry to **Al1**.
+
+
+
+Why the others are incorrect:
+
+* **B. launchSettings.json** ❌ → Used for local debugging and environment variables, not Application Insights configuration
+* **C. Startup.cs** ❌ → Optional; you can add Application Insights SDK here, but the question asks which file to modify for configuration
+* **D. project.json** ❌ → Legacy .NET Core project file (pre-.NET Core 2.0), not used for runtime configuration
+
+
+
+✅ **Final answer: A. appsettings.json**
+
 
 ### Question-36
 
@@ -1563,6 +1758,46 @@ Which two actions should you perform? Each correct answer presents part of the s
 
 **Correct Answer: CD**
 
+
+The correct answers are:
+
+**C. Create an Azure Service Health alert** ✅
+**D. Create and configure an action group** ✅
+
+
+
+Explanation:
+
+To receive an **SMS alert when scheduled maintenance is planned** for your Azure services:
+
+1. **Create an Azure Service Health alert** (**C**)
+
+   * Azure Service Health monitors the health of your Azure resources.
+   * You can configure alerts for:
+
+     * **Planned maintenance**
+     * **Service issues**
+     * **Health advisories**
+
+2. **Create and configure an action group** (**D**)
+
+   * Action groups define **how alerts are delivered** (email, SMS, webhook, push, etc.).
+   * To receive SMS notifications, the **SMS action** must be added to the action group.
+   * Associate the **Service Health alert** with the action group.
+
+
+
+Why the others are incorrect:
+
+* **A. Enable Azure Security Center** ❌ → Security Center monitors security posture, not scheduled maintenance
+* **B. Create an Azure Monitor alert rule** ❌ → Regular Azure Monitor alerts track metrics/logs, but **Service Health alerts** are specifically for planned maintenance and service issues
+
+
+
+✅ **Final answer: C and D**
+
+
+
 Creating planned maintenance alerts using Azure Service Health
 
 1. Login into the Azure portal and select Service Health.
@@ -1572,7 +1807,6 @@ Creating planned maintenance alerts using Azure Service Health
 5. Selector create an Action group. (An Action group is a group of actions to be taken, should an event be logged.)
 6. Configure the actions to be taken. We are only configuring an email alert, so we first name the action, then chose Email/SMS/Push/Voice from the drop down list.
 
-Reference: https://www.techkb.onl/azure-using-service-health-to-alert-against-planned-maintenance/
 
 
 ### Question-37
@@ -1606,11 +1840,44 @@ What prevents the Smart Detection notification from being sent?
 
 **Correct Answer: B**
 
+The correct answers are:
+
+**B. the Azure Log Analytics agent** ✅
+**D. the Dependency agent** ✅
+
+
+
+Explanation:
+
+To **collect detailed process-level data from Azure Windows VMs**, the following agents are required:
+
+1. **Azure Log Analytics agent (B)**
+
+   * Collects **performance counters, event logs, and custom logs** from the VM.
+   * Required to send data to **Log Analytics / Azure Monitor**.
+
+2. **Dependency agent (D)**
+
+   * Collects **process and network dependency information** within the VM.
+   * Required for **Service Map** and detailed process monitoring.
+
+Together, these agents provide a **complete view of running processes and their dependencies** on Windows VMs.
+
+
+
+Why the others are incorrect:
+
+* **A. Telegraf agent** ❌ → Primarily used for **InfluxDB / Time-series metrics**, not for full Azure monitoring
+* **C. Azure Network Watcher Agent for Windows** ❌ → Monitors **network traffic and connectivity**, not processes
+
+
+
+✅ **Final answer: B and D**
+
+
 
 After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.
 
-
-Reference: https://docs.microsoft.com/en-us/azure/azure-monitor/app/proactive-failure-diagnostics
 
 
 ### Question-39
@@ -1622,6 +1889,48 @@ What should you include in the recommendation?
 * B. the Failures feature in Azure Application Insights
 * C. an Azure Service Health alert
 * D. an Azure Monitor alert that uses an Azure Log Analytics query
+
+
+The correct answer is:
+
+**A. the Smart Detection feature in Azure Application Insights** ✅
+
+
+
+Explanation:
+
+You need to **detect an abnormal rise in the rate of failed requests** to a heavily used web app (App1), with **minimal administrative effort**.
+
+**Azure Application Insights – Smart Detection** is designed for this scenario:
+
+* Uses **machine learning** to automatically detect anomalies in telemetry data, including:
+
+  * Exception spikes
+  * Failed requests
+  * Performance degradations
+* Automatically generates **alerts** when unusual behavior occurs
+* **No manual threshold configuration** is needed → minimizes administrative overhead
+
+
+Why the other options are incorrect:
+
+* **B. Failures feature in Application Insights** ❌
+
+  * Provides **historical metrics and charts** for failed requests
+  * Does **not automatically detect anomalies** or trigger alerts
+
+* **C. Azure Service Health alert** ❌
+
+  * Monitors **Azure service outages or planned maintenance**, not your application’s request failures
+
+* **D. Azure Monitor alert with Log Analytics query** ❌
+
+  * Could detect anomalies, but requires **manual query authoring and thresholds** → higher administrative effort
+
+
+
+✅ **Final answer: A. the Smart Detection feature in Azure Application Insights**
+
 
 **Correct Answer: A**
 
@@ -1644,6 +1953,35 @@ Which framework should you use?
 
 
 Correct Answer: B. Selenium
+
+
+The correct answer is:
+
+**B. Selenium** ✅
+
+
+Explanation:
+
+To **automate UI (User Interface) testing** of a web application, the most widely used and supported framework is **Selenium**.
+
+**Selenium provides:**
+
+* Cross-browser web automation (Chrome, Edge, Firefox, etc.)
+* Scriptable interaction with HTML elements
+* Integration with CI/CD pipelines (Azure DevOps, Jenkins)
+* Support for multiple programming languages (C#, Java, Python, etc.)
+
+
+
+Why the others are incorrect:
+
+* **A. JaCoCo** ❌ → Code coverage tool for Java, not UI testing
+* **C. Xamarin.UITest** ❌ → For **mobile app UI testing**, not web apps
+* **D. Microsoft.CodeAnalysis** ❌ → Roslyn compiler API, used for analyzing or generating code, not UI testing
+
+
+✅ **Final answer: B. Selenium**
+
 
 ### Question-41
 
