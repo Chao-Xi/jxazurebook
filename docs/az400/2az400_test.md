@@ -3272,6 +3272,44 @@ What should you do?
 * C.In Azure DevOps, configure Security in Project Settings.
 * **D. In Azure Active Directory, configure conditional access.**
 
+The correct answer is:
+
+**D. In Azure Active Directory, configure conditional access.** ✅
+
+
+Explanation:
+
+To restrict access to **Azure DevOps** so that it’s **only accessible from devices connected to your on-premises network**, you must use **Azure Active Directory Conditional Access**.
+
+With Conditional Access, you can:
+
+* Define **named locations** (e.g., on-premises IP ranges)
+* Create policies that:
+
+  * Allow access **only from trusted network locations**
+  * Block access from external/untrusted networks
+* Enforce device/network-based access control
+
+This is exactly what Conditional Access is designed for. ✅
+
+
+Why the other options are incorrect:
+
+❌ **A. Assign the Stakeholder access level**
+→ Only controls permissions inside Azure DevOps, not network access
+
+❌ **B. Configure risky sign-ins**
+→ Related to identity risk detection, not network location restrictions
+
+❌ **C. Configure Security in Project Settings**
+→ Project-level permissions, not device/network access control
+
+
+
+Final Answer:
+
+**D. In Azure Active Directory, configure conditional access.** ✅
+
 
 **Answer: D**
 
@@ -3279,8 +3317,7 @@ Conditional Access is a capability of Azure Active Directory. With Conditional A
 
 Conditional Access policies are enforced after the first-factor authentication has been completed.
 
-Reference:
-https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+
 
 ### Question-64
 
@@ -3314,6 +3351,72 @@ What is the effect of the policy?
 * C.prevents HTTPS traffic to new Azure Storage accounts when the accounts are accessed over the Internet
 * D.ensures that all data for new Azure Storage accounts is encrypted at rest
 
+
+The correct answer is:
+
+**B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
+
+
+Explanation:
+
+This Azure Policy targets the resource type:
+
+* `Microsoft.Storage/storageAccounts`
+
+and checks the property:
+
+* `supportsHttpsTrafficOnly`
+
+The rule says:
+
+```json
+"notEquals": "true"
+```
+
+with effect:
+
+```json
+"effect": "deny"
+```
+
+So:
+
+👉 **Any new Storage Account that does NOT have `supportsHttpsTrafficOnly = true` will be denied**
+
+This means:
+
+* New storage accounts **must enforce HTTPS-only traffic**
+* HTTP (unencrypted) access is **blocked at creation time**
+* Only **encrypted (HTTPS) traffic** is allowed
+
+
+Why the other options are incorrect:
+
+❌ **A. prevents all HTTP traffic to existing Azure Storage accounts**
+→ Azure Policy does **not** retroactively modify existing resources
+
+❌ **C. prevents HTTPS traffic to new Azure Storage accounts**
+→ This is the opposite of what the policy does
+
+❌ **D. ensures data is encrypted at rest**
+→ This policy controls **encryption in transit (HTTPS)**, not encryption at rest
+
+
+Correct Interpretation:
+
+This policy enforces:
+
+* 🔐 **Encryption in transit**
+* 🆕 **Only for new storage accounts**
+* ❌ Blocks creation if HTTPS-only is not enabled
+
+
+
+Final Answer:
+
+**B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
+
+
 ### Question-65
 
 You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
@@ -3322,17 +3425,62 @@ You need to ensure that you can reference the values of the secrets stored in va
 
 What should you do?
 
-* **A. Create**** a variable group in Praject1.**
+* **A. Create a variable group in Praject1.**
 * B. Add a secure file to Project.
 * C. Modify the security settings of the pipelines.
 * D. Configure the security policy of Contoso.
+
+
+The correct answer is:
+
+**A. Create a variable group in Project1** ✅
+
+
+
+Explanation:
+
+To reference **Azure Key Vault secrets** in **Azure DevOps pipelines** without storing them directly in the pipelines:
+
+1. **Create a Variable Group** in the Azure DevOps project.
+2. **Link the Variable Group to Vault1** by authorizing a **service connection** to the Key Vault.
+3. **Reference the Variable Group** in your build or release pipelines.
+
+**Advantages:**
+
+* Secrets are **retrieved at runtime** from Azure Key Vault.
+* Secrets are **never stored in the pipeline YAML** or logs.
+* You can share the Variable Group across multiple pipelines in the project.
+* Supports **RBAC for secure access**.
+
+
+
+Why the other options are incorrect:
+
+❌ **B. Add a secure file to Project**
+
+* Secure files are for storing **certificates or key files**, not key-value secrets.
+
+❌ **C. Modify the security settings of the pipelines**
+
+* Controls who can access the pipeline but **does not allow runtime secret retrieval**.
+
+❌ **D. Configure the security policy of Contoso**
+
+* Too broad; policies do not provide a mechanism to securely reference Key Vault secrets in pipelines.
+
+
+
+Final Answer:
+
+**A. Create a variable group in Project1** ✅
+
+
 
 Answer: A
 
 Use a variable group to store values that you want to control and make available across multiple pipelines.
 
-Reference:
-https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups
+
 
 ### Question-66
 
@@ -3347,9 +3495,47 @@ Which service should you use?
 * **C. White Source Bolt**
 * D. Helm
 
-Answer: C
+The correct answer is:
 
-### Question-67
+**C. WhiteSource Bolt** ✅
+
+
+
+Explanation:
+
+**WhiteSource Bolt** is a **free Azure DevOps extension** that:
+
+* Scans your project’s **open source libraries**
+* Detects **license compliance issues**
+* Identifies **security vulnerabilities**
+* Integrates directly into **build pipelines** for automated checks
+
+This is the correct tool to **ensure open source libraries comply with licensing standards** in Azure DevOps.
+
+
+
+Why the other options are incorrect:
+
+❌ **A. Ansible**
+
+* Automation/configuration management tool, not for license scanning
+
+❌ **B. Maven**
+
+* Build tool for Java, manages dependencies, but **does not enforce license compliance by itself**
+
+❌ **D. Helm**
+
+* Kubernetes package manager, unrelated to license compliance for build libraries
+
+
+
+Final Answer:
+
+**C. WhiteSource Bolt** ✅
+
+
+### Question-67 ？？？
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -3371,8 +3557,44 @@ Incorrect Answers:
 * B: Jenkins is a popular open-source automation server used to set up continuous integration and delivery (CI/CD) for your software projects.
 * D: SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future.
 
-Reference:
-https://octopus.com/docs/packaging-applications
+The correct answer is:
+
+**D. SonarQube** ✅
+
+
+
+ Explanation:
+
+**SonarQube** is a static analysis tool that can:
+
+* Analyze code quality and security vulnerabilities
+* Identify **open source/package dependencies with known security issues**
+* Suggest fixes or updates for the vulnerable dependencies
+* Integrate with **Azure DevOps pipelines** for automated scanning
+
+This makes it ideal for detecting **security issues in dependencies**.
+
+
+
+ Why the other options are incorrect:
+
+❌ **A. Octopus Deploy**
+
+* Deployment automation tool; does **not scan dependencies for vulnerabilities**
+
+❌ **B. Jenkins**
+
+* CI/CD automation server; can run scans but does **not inherently analyze dependency security**
+
+❌ **C. Gradle**
+
+* Build tool for Java/Kotlin; manages dependencies but does **not check security vulnerabilities by itself**
+
+
+
+Final Answer:
+
+**D. SonarQube** ✅
 
 
 ### Question-68
@@ -3388,6 +3610,44 @@ What should you use?
 * B. Code Style
 * **C. Black Duck**
 * D. Jenkins
+
+The correct answer is:
+
+**C. Black Duck** ✅
+
+
+Explanation:
+
+**Black Duck** is a widely used **software composition analysis (SCA) tool** that:
+
+* Detects **open source libraries** added to a code base
+* Checks **license compliance** for each library
+* Identifies **known vulnerabilities** in open source components
+* Integrates into **build pipelines** for automated checks
+
+This makes it ideal for **automating the detection of new open source libraries and enforcing licensing compliance**.
+
+
+
+Why the other options are incorrect:
+
+❌ **A. Microsoft Visual SourceSafe**
+
+* Old source control system; does **not analyze licenses**
+
+❌ **B. Code Style**
+
+* Ensures coding conventions, **not open source license checks**
+
+❌ **D. Jenkins**
+
+* CI/CD server; can run scans but does **not inherently detect license issues**
+
+
+
+Final Answer:
+
+**C. Black Duck** ✅
 
 
 Answer. C
@@ -3426,6 +3686,41 @@ Which service should you use?
 * **C. Black Duck**
 * D. Helm
 
+The correct answer is:
+
+**C. Black Duck** ✅
+
+Explanation:
+
+**Black Duck** is a **software composition analysis (SCA) tool** that:
+
+* Scans your project for **open source libraries**
+* Identifies **license compliance issues**
+* Detects **known security vulnerabilities**
+* Can be integrated directly into **Azure DevOps build pipelines**
+
+This makes it ideal for ensuring **all open source libraries comply with company licensing standards**.
+
+Why the other options are incorrect:
+
+❌ **A. NuGet**
+
+* Package manager for .NET; manages packages but **does not enforce license compliance**
+
+❌ **B. Maven**
+
+* Build tool for Java; manages dependencies but **does not check licenses automatically**
+
+❌ **D. Helm**
+
+* Kubernetes package manager; unrelated to license compliance for application libraries
+
+
+
+Final Answer:
+
+**C. Black Duck** ✅
+
 
 **Answer: C**
 
@@ -3437,12 +3732,8 @@ Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to aut
 
 The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
-Note: WhiteSource would also be a good answer, but it is not an option here.
-Reference:
 
-https://marketplace.visualstudio.com/items7itemName=black-duck-software.hub-tfs
-
-### Question-70
+### Question-70 ？？？
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -3458,6 +3749,47 @@ Which file type should you upload to App Center?
 * **C..p12**
 * D..pvk
 
+The correct answer is:
+
+**B. .pfx** ✅
+
+
+
+Explanation:
+
+For distributing **iOS apps** via **Microsoft Visual Studio App Center** (private distribution):
+
+* You need a **signing certificate** that includes the **private key**, which is required to sign the app for deployment.
+* The **.pfx file** contains both the **certificate** and the **private key**, and is the standard format used for iOS app distribution.
+
+**Steps in App Center:**
+
+1. Upload the `.pfx` file for the iOS distribution certificate.
+2. Provide the associated password.
+3. App Center can then sign and distribute the app to the private distribution group.
+
+
+
+Why the other options are incorrect:
+
+❌ **A. .cer**
+
+* Contains only the public certificate, **does not include the private key**, cannot sign the app
+
+❌ **C. .p12**
+
+* Similar to `.pfx`, sometimes used interchangeably on macOS, but **App Center specifically expects `.pfx` for Windows environments**
+
+❌ **D. .pvk**
+
+* Private key only, not a full certificate bundle
+
+
+
+Final Answer:
+
+**B. .pfx** ✅
+
 
 Answer. C
 
@@ -3465,9 +3797,6 @@ A successful IOS device build will produce an ipa file. In order to install the 
 
 To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (mobileprovision) and a valid certificate (p12), along with the password for the certificate.
 
-Reference
-
-https://docs.microsoft.com/en-us/appcenter/build/xamarin/ios/
 
 
 ### Question-71
