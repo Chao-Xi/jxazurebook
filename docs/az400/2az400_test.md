@@ -4720,7 +4720,40 @@ Which action should you include in the recommendation?
 * C. Integrate Azure DevOps and Azure DeTest Labs.
 
 
-Answer: B
+The correct answer is:
+
+**B. Integrate Azure DevOps and SonarQube.** ✅
+
+Explanation:
+
+To manage **technical debt** effectively in **Java-based projects** using **Azure DevOps**, the most impactful action is to integrate with **SonarQube**.
+
+**SonarQube provides:**
+
+* Technical debt metrics
+* Code smells
+* Maintainability ratings
+* Security vulnerabilities
+* Reliability issues
+* Dependency analysis
+* Quality gates to block builds
+
+This directly supports:
+
+> **Managing, measuring, and reducing technical debt**
+
+Why the other options are incorrect:
+
+❌ **A. Configure post-deployment approvals**
+→ Governance control, not technical debt management
+
+❌ **C. Integrate Azure DevTest Labs**
+→ Environment management/testing, not technical debt analysis
+
+Final Answer:
+
+**B. Integrate Azure DevOps and SonarQube.** ✅
+
 
 You can manage technical debt with SonarQube and Azure DevOps.
 
@@ -4743,12 +4776,54 @@ You need to recommend a solution to improve the quality of the code.
 What should you recommend?
 
 * A. In a Grunt build task, select Enabled from Control Options.
-* **B. In a Maven buiki task, select Run PMD**
+* **B. In a Maven build task, select Run PMD**
 * C. In a Xcode build task, select Use xepretty from Advanced.
 * D.In a Gradle buld task, select Run Checkstyle.
 
 
-**Answer. B**
+The correct answer is:
+
+**B. In a Maven build task, select *Run PMD*.** ✅
+
+Explanation:
+
+The issues you described — **unused variables** and **empty catch blocks** — are classic **static code quality problems** that are best detected by **PMD**, a Java static analysis tool.
+
+**PMD** specifically detects:
+
+* ❌ Unused variables
+* ❌ Empty catch blocks
+* ❌ Dead code
+* ❌ Duplicate code
+* ❌ Bad practices
+* ❌ Code smells
+
+When integrated into a **Maven build pipeline**, PMD automatically analyzes the code and reports these quality issues.
+
+Why the other options are incorrect:
+
+❌ **A. Grunt build task**
+→ Grunt is for JavaScript, not Java
+
+❌ **C. Xcode build task**
+→ Xcode is for iOS/macOS development, not Java
+
+❌ **D. Gradle – Run Checkstyle**
+→ Checkstyle focuses mainly on **formatting and coding standards**, not semantic issues like unused variables or empty catch blocks
+
+Tool comparison:
+
+| Tool       | Best for                                               |
+| ---------- | ------------------------------------------------------ |
+| **PMD**    | Logic issues, unused code, empty blocks, code smells ✅ |
+| Checkstyle | Formatting, naming conventions, style rules            |
+| SonarQube  | Aggregated analysis platform                           |
+| PMD        | Static defect detection (best match here) ✅            |
+
+Final Answer:
+
+**B. In a Maven build task, select *Run PMD*.** ✅
+
 
 ### Question-88
 
@@ -4767,7 +4842,63 @@ NOTE: Each correct selection is worth one point.
 * **E. Add the package URL to the NuGet Package Manager settings in Visual Studio.**
 * F. Create a Git repository in Azure Repos
 
-Answer: ABE
+The correct answers are:
+
+* **A. Publish the package to a feed.** ✅
+* **B. Create a new feed in Azure Artifacts.** ✅
+* **E. Add the package URL to the NuGet Package Manager settings in Visual Studio.** ✅
+
+Explanation:
+
+To make a **custom package**:
+
+* 📦 **Centrally managed**
+* 🔄 **Automatically updated**
+* 👥 **Available to all developers**
+* ⚙️ **Consumable directly in Visual Studio**
+
+You should use **Azure Artifacts** with **NuGet integration**.
+
+Correct workflow:
+
+1️⃣ **Create a feed in Azure Artifacts**
+→ Central package repository for your organization (**B**)
+
+2️⃣ **Publish the package to the feed**
+→ Makes the package available centrally (**A**)
+
+3️⃣ **Add the feed URL to NuGet Package Manager in Visual Studio**
+→ Enables developers to consume packages automatically (**E**)
+
+This ensures:
+
+* Centralized package management
+* Versioning support
+* Automatic discovery in Visual Studio
+* Easy updates
+* Enterprise-grade access control
+
+Why the other options are wrong:
+
+❌ **C. Upload a package to a Git repository**
+→ Git is not a package registry
+
+❌ **D. Add the package URL to Environment settings**
+→ Not how NuGet feeds are configured
+
+❌ **F. Create a Git repository in Azure Repos**
+→ Source control ≠ package management
+
+Architecture:
+
+```
+Developers → Visual Studio → NuGet → Azure Artifacts Feed
+```
+
+Final Answer:
+
+**A, B, and E** ✅
+
 
 B: By using your custom NuGet package feed within your Azure DevOps (previously VSTS) instance, youll be able to distribute your packages within your organization with ease.
 Start by creating a new feed.
@@ -4798,9 +4929,42 @@ What should you recommend?
 * • **D. From Import a Git repository, click Import.**
 * • E. Create a personal access token in Azure DevOps.
 
-Answer: D
+The correct answer is:
 
-You can import an existing Git repo from GitHub, Bitbucket, GitLab, or other location into a new or empty existing repo in your project in Azure DevOps.
+**D. From *Import a Git repository*, click *Import*.** ✅
+
+Explanation:
+
+To **clone (copy) an existing GitHub repository into Azure DevOps**, the supported and intended method is to use the built-in import feature in **Azure DevOps**.
+
+Recommended procedure:
+
+1. Go to your Azure DevOps project
+2. Open **Repos**
+3. Select **Import a Git repository**
+4. Paste the **GitHub repository URL**
+5. Click **Import**
+
+This performs a **full clone** (history, branches, commits, tags) into **Azure Repos**.
+
+ Why the other options are wrong:
+
+❌ **A. Create a pull request**
+→ PRs work within a repo or between connected repos, not for cloning/mirroring
+
+❌ **B. Create a webhook**
+→ Webhooks trigger events, they don’t copy repositories
+
+❌ **C. Create a service connection for GitHub**
+→ Used for pipelines integration, not repo cloning
+
+❌ **E. Create a personal access token in Azure DevOps**
+→ PAT is for authentication, not repository import
+
+Final Answer:
+
+**D** ✅
+
 
 
 ### Question-90
@@ -4818,13 +4982,29 @@ Does this meet the goal?
 
 **Answer. B**
 
-Instead reduce the code complexity.
+**B. No** ❌
 
-Note: Technical debt is the accumulation of sub-optimal technical decisions made over the lifetime of an application. 
+Increasing **code duplication** makes technical debt **worse**, not better. It:
 
-Eventually, it gets harder and harder to change things: it's the 'sand in the gears" that sees IT initiatives grind to a halt.
+* Increases maintenance cost
+* Creates inconsistency risks
+* Makes refactoring harder
+* Slows down feature development even more
 
-### Question-91
+To reduce technical debt, you would instead recommend things like:
+
+* Reducing duplication (DRY principle)
+* Improving modularity
+* Refactoring legacy code
+* Reducing coupling
+* Breaking dependency cycles
+* Improving test coverage
+* Enforcing static code analysis
+
+So the proposed solution **does not meet the goal**.
+
+
+### Question-91 ？？
 
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
@@ -4839,6 +5019,19 @@ Does this meet the goal?
 * **B. No**
 
 **Answer: B**
+
+**A. Yes** ✅
+
+Increasing **test coverage** helps reduce technical debt because it:
+
+* Makes refactoring safer and faster
+* Reduces fear of breaking existing functionality
+* Improves code reliability and maintainability
+* Encourages cleaner design and modular code
+* Speeds up future feature development
+
+So recommending increased test coverage **does meet the goal** of reducing accumulated technical debt.
+
 
 
 ### Question-92
@@ -4855,7 +5048,18 @@ Does this meet the goal?
 * **A. Yes**
 * B. No
 
-**Answer: A**
+**A. Yes** ✅
+
+Reducing **code complexity** directly helps reduce technical debt because it:
+
+* Improves code readability and maintainability
+* Makes debugging and changes easier
+* Reduces coupling and hidden dependencies
+* Speeds up onboarding for new developers
+* Lowers the risk of introducing defects
+
+This directly supports faster development of new features, so it **does meet the goal**.
+
 
 ### Question-93
 
@@ -4871,9 +5075,31 @@ What should you recommend?
 * D. In a Grunt build task, select Enabled from Control Options.
 
 
-Answer: A
+**Correct answer: A. In a Maven build task, select Run PMD** ✅
 
-### Question-94
+**PMD** is a static code analysis tool specifically designed to detect common Java code quality issues, including:
+
+* Unused variables
+* Empty `catch` blocks
+* Dead code
+* Unused imports
+* Overly complex methods
+* Bad coding practices
+
+Integrating **PMD in a Maven build task** is the correct and standard solution for automated Java code quality checks in CI pipelines.
+
+
+
+Why the others are wrong:
+
+* **B. Xcode / xepretty** → iOS/macOS tooling, not Java ❌
+* **C. Gulp** → JavaScript build tool, not Java ❌
+* **D. Grunt control options** → Build control setting, not static analysis ❌
+
+✅ PMD is purpose-built for Java static analysis and quality enforcement.
+
+
+### Question-94 ？？
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -4886,7 +5112,33 @@ What should you do?
 * C. Promote the package to a release view.
 * D. Publish the package to a public NuGet repository.
 
-Answer: B
+**Correct answer: D. Publish the package to a public NuGet repository** ✅
+
+To make a NuGet package available to **anonymous users outside your organization**, you must publish it to a **public NuGet feed**, such as **NuGet (nuget.org)**.
+
+This satisfies both requirements:
+
+* ✅ **Anonymous access** (no authentication required)
+* ✅ **Minimizes publication points** (single public distribution location)
+
+
+
+Why the others are incorrect:
+
+* **A. Change the feed URL of the package** ❌
+  Azure Artifacts feeds cannot be made public/anonymous by changing URLs.
+
+* **B. Create a new feed for the package** ❌
+  Azure Artifacts feeds always require authentication.
+
+* **C. Promote the package to a release view** ❌
+  Views are for internal lifecycle management, not for public access.
+
+
+Final Answer:
+
+👉 **D. Publish the package to a public NuGet repository.**
+
 
 ### Question-95
 
@@ -4922,7 +5174,40 @@ What should you use to reference which version of the template repository to use
 * C. the runner
 * **D. the branch**
 
-Answer: D
+The correct answer is:
+
+**C. the Source control settings for the Automation account** ✅
+
+
+
+Explanation:
+
+To **automatically update and publish a runbook** in an **Azure Automation account** whenever code changes are committed to a repository in Azure DevOps, you should configure **source control integration** for the Automation account.
+
+* Azure Automation supports **linking a runbook to a source control repository** (GitHub or Azure DevOps Git).
+* Once configured:
+
+  * Any commit or merge to the configured branch can automatically **update and publish the runbook**.
+* This ensures **continuous delivery of runbooks** from source control.
+
+
+Why the other options are incorrect:
+
+* **A. Service hooks for Project1** ❌
+  → Service hooks can trigger events but don’t directly sync runbook code.
+
+* **B. Connections for the Automation account** ❌
+  → Connections store credentials for resources, not source code.
+
+* **D. Service connections for Project1** ❌
+  → Service connections allow pipelines to access Azure resources, not automated source sync of runbooks.
+
+
+
+Final Answer:
+
+**C. the Source control settings for the Automation account** ✅
+
 
 
 ### Question-97
@@ -4939,7 +5224,36 @@ What should you use?
 * D. a gist
 
 
-Answer: C
+The correct answer is:
+
+**C. a webhook** ✅
+
+Explanation:
+
+To **automatically execute a script in response to Git operations** (like a `rebase`) in a **GitHub repository**, you can use **webhooks**:
+
+* **Webhooks** allow GitHub to send HTTP POST requests to a specified endpoint when events occur (commits, pushes, pull requests, etc.).
+* You can configure a webhook to **trigger a server or service** that executes your PowerShell script **before or after certain Git operations**.
+* This is the standard way to automate actions in response to GitHub repository events.
+
+
+Why the other options are incorrect:
+
+* **A. a package** ❌
+  → Packages are for distributing code/libraries, not triggering scripts.
+
+* **B. GitHub Copilot** ❌
+  → Copilot is an AI coding assistant, not an automation mechanism.
+
+* **D. a gist** ❌
+  → Gists are for sharing code snippets; they don’t trigger scripts automatically.
+
+=
+
+Final Answer:
+
+**C. a webhook** ✅
+
 
 ### Question-98
 
