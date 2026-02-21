@@ -3811,7 +3811,41 @@ What should you use?
 - C. Code Style
 - **D. White Source Bolt**
 
-Answer: D
+The correct answer is:
+
+**D. WhiteSource Bolt** ✅
+
+Explanation:
+
+**WhiteSource Bolt** (now part of Mend/WhiteSource) is a **software composition analysis (SCA)** tool designed to:
+
+* Automatically **detect open source libraries** in your codebase
+* Identify **license compliance issues**
+* Detect **known vulnerabilities** in dependencies
+* Integrate directly into **Azure DevOps build pipelines** for automated scanning
+
+This makes it the ideal solution to:
+
+> add an automated process to detect when common open source libraries are added to the code base and ensure licensing compliance.
+
+Why the other options are incorrect:
+
+❌ **A. OWASP ZAP**
+
+* Security testing tool for **web application vulnerabilities**, not license compliance
+
+❌ **B. Jenkins**
+
+* CI/CD server; can run tools but **does not perform license scanning itself**
+
+❌ **C. Code Style**
+
+* Enforces coding conventions, **not open source license compliance**
+
+Final Answer:
+
+**D. WhiteSource Bolt** ✅
+
 
 WhiteSource provides WhiteSource Bolt, a lightweight open source security and management solution developed specifically for integration with Azure DevOps and Azure DevOps Server.
 
@@ -3844,6 +3878,42 @@ What should the project use to automate the authentication?
 - C.an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
 - D. an Azure Active Directory (Azure AD) service principal
 
+The correct answer is:
+
+**B. an Azure Artifacts Credential Provider** ✅
+
+Explanation:
+
+When restoring a **NuGet package** from an **authenticated feed** in **Azure DevOps**, the recommended and supported way to automate authentication is the:
+
+👉 **Azure Artifacts Credential Provider**
+
+It automatically:
+
+* Handles authentication to **Azure Artifacts feeds**
+* Works with `nuget restore`, `dotnet restore`, `msbuild`
+* Uses existing Azure DevOps credentials
+* Requires **no manual login**
+* Is designed for **CI/CD automation**
+
+
+
+Why the other options are incorrect:
+
+❌ **A. Azure Automation account**
+→ Used for runbooks, not NuGet feed authentication
+
+❌ **C. Azure AD account with MFA**
+→ MFA blocks automation and cannot be used non-interactively
+
+❌ **D. Azure AD service principal**
+→ Not how NuGet feed auth is handled in Azure DevOps
+
+
+
+Final Answer:
+
+**B. an Azure Artifacts Credential Provider** ✅
 
 Answer. B
 
@@ -3874,6 +3944,47 @@ The Azure Pipelines app uses the Auth authentication protocol, and requires Thir
 
 To enable this setting, navigate to Organization Settings > Security> Policies, and set the Third-party application access via Auth for the organization setting to On.
 
+
+The correct answer is:
+
+**A. Third-party application access via OAuth** ✅
+
+
+
+Explanation:
+
+To integrate **Azure Pipelines** with **Microsoft Teams** (using the *Azure Pipelines for Microsoft Teams* app), **Azure DevOps** must allow external apps to authenticate via OAuth.
+
+So in **Organization Settings → Policies**, you must enable:
+
+👉 **Third-party application access via OAuth**
+
+This allows:
+
+* Microsoft Teams app to authenticate to Azure DevOps
+* Build/release notifications to Teams channels
+* Secure API access using OAuth tokens
+
+
+
+Why the other options are incorrect:
+
+❌ **B. Azure AD Conditional Access Policy Validation**
+→ For identity security testing, not app integrations
+
+❌ **C. Alternate authentication credentials**
+→ Legacy auth method, not used for Teams integration
+
+❌ **D. SSH authentication**
+→ Used for Git access, not service integrations
+
+
+
+Final Answer:
+
+**A. Third-party application access via OAuth** ✅
+
+
 ### Question-74
 
 You have an existing project in Azure DevOps.
@@ -3887,9 +3998,44 @@ Which authentication mechanism should you use?
 - A. personal access token (PAT)
 - **B. GitHub App**
 - C.Azure Active Directory (Azure AD)
-- D. DAuth
+- D. OAuth
 
-Answer. B
+The correct answer is:
+
+**B. GitHub App** ✅
+
+Explanation:
+
+To integrate **GitHub** as the repository for an **Azure DevOps** project **and ensure Azure Pipelines runs under the Azure Pipelines identity**, you must use:
+
+👉 **GitHub App authentication**
+
+This provides:
+
+* Native integration between Azure DevOps and GitHub
+* Secure, scoped permissions
+* Pipeline execution under the **Azure Pipelines identity**
+* Automatic token management
+* No user credentials or PATs required
+* Enterprise-grade security model
+
+This is the **modern, recommended** integration method.
+
+Why the other options are incorrect:
+
+❌ **A. personal access token (PAT)**
+→ Uses a **user identity**, not Azure Pipelines identity
+
+❌ **C. Azure Active Directory (Azure AD)**
+→ GitHub does not authenticate repositories via Azure AD
+
+❌ **D. OAuth**
+→ Legacy integration model; GitHub App replaces this method for Azure DevOps integration
+
+Final Answer:
+
+**B. GitHub App** ✅
+
 
 GitHub App uses the Azure Pipelines identity.
 
@@ -3897,7 +4043,7 @@ GitHub App uses the Azure Pipelines identity.
 
 A: Personal access token and Auth use your personal GitHub identity
 
-### Question-75
+### Question-75 ？？？
 
 You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
 
@@ -3944,10 +4090,75 @@ What should you do first?
 - C. Enforce Azure Multi-Factor Authentication (MFA) for role activation.
 - **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.**
 
-Answer: D
+The correct answer is:
+
+**D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
+
+Explanation:
+
+The requirements describe **Privileged Identity Management (PIM)**:
+
+* ⏱ **Time-limited privileged access**
+* ✅ **Approval-based role activation**
+* 💰 **Cost minimization**
+
+These features are provided by **Azure AD Privileged Identity Management**, which is part of:
+
+> 🔐 **Azure Active Directory Premium Plan 2 (P2)**
+
+Current situation:
+
+You are on **Azure AD Premium Plan 1 (P1)** ❌
+P1 does **not** include PIM.
+
+So before you can configure:
+
+* approvals
+* time-bound access
+* just-in-time elevation
+* access reviews
+* role activation workflows
+
+👉 You **must first upgrade to Azure AD Premium P2**.
 
 
-### Question-77
+
+Why the other options are wrong as the *first* step:
+
+❌ **A. Configure notifications**
+→ Requires PIM (P2) to already be enabled
+
+❌ **B. Configure alerts**
+→ Requires PIM (P2) to already be enabled
+
+❌ **C. Enforce MFA for role activation**
+→ Requires PIM (P2) to exist first
+
+All of these are **configuration steps after PIM is available**.
+
+
+
+Correct sequence:
+
+1. ✅ **Upgrade Azure AD to Premium P2**
+2. Enable **Privileged Identity Management (PIM)**
+3. Configure:
+
+   * Approval workflows
+   * Time limits
+   * MFA
+   * Alerts
+   * Notifications
+
+
+
+Final Answer:
+
+**D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
+
+
+
+### Question-77 ？？？
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -3961,6 +4172,53 @@ What should you recommend?
 - D.Encrypt the secret value and store the value in the repository. Store the decryption key in the organization-level GitHub secrets.
 
 Answer: C
+
+The correct answer is:
+
+**B. Store the secret in the repository-level GitHub secrets.** ✅
+
+Explanation:
+
+For **GitHub Actions** workflows, the best practice for storing secrets that must be:
+
+* 🔐 **Encrypted**
+* 👤 **Accessible only to the workflow**
+* 🧩 **Scoped to a single repository**
+* ⚙️ **Minimal administrative overhead**
+
+is to use:
+
+👉 **Repository-level GitHub Secrets**
+
+Why this is the best solution:
+
+Repository-level secrets:
+
+* Are **encrypted at rest**
+* Are **only accessible to workflows in that repository**
+* Are **not visible to users**
+* Require **no custom encryption**
+* Require **no key management**
+* Are **native to GitHub Actions**
+* Support secrets well above 256 KB
+* Are automatically injected into workflows securely
+
+This perfectly meets all requirements.
+
+Why the other options are worse:
+
+❌ **A. Organization-level GitHub secrets**
+→ Broader scope than required (accessible by multiple repos unless restricted)
+
+❌ **C. Encrypt + store in repo + key in repo secrets**
+→ Unnecessary complexity, manual crypto, more admin overhead
+
+❌ **D. Encrypt + store in repo + key in org secrets**
+→ Even more complexity + broader access scope
+Final Answer:
+
+**B. Store the secret in the repository-level GitHub secrets.** ✅
+
 
 ### Question-78
 
@@ -3977,8 +4235,50 @@ What should you do first?
 
 Answer: A
 
+The correct answer is:
 
-### Question-79
+**A. Purchase a GitHub Advanced Security license.** ✅
+
+Explanation:
+
+To enable **push protection for secret scanning** in a **GitHub Enterprise** account, you must first have:
+
+👉 **GitHub Advanced Security (GHAS)**
+
+**Push protection** is a feature of **GitHub Advanced Security**, not standard GitHub Enterprise.
+
+GHAS provides:
+
+* 🔍 Secret scanning
+* 🚫 **Push protection** (blocks secrets before commit/push)
+* 🔐 Code scanning
+* 📦 Dependency scanning
+
+Why the other options are incorrect:
+
+❌ **B. Purchase Premium Plus support**
+→ Support plan only, no security features
+
+❌ **C. Enforce MFA**
+→ Security best practice, but **does not enable secret scanning**
+
+❌ **D. Create an access policy for secrets**
+→ GitHub does not use access policies for secret scanning features
+
+Correct activation sequence:
+
+1. ✅ Purchase **GitHub Advanced Security**
+2. Enable **Secret scanning**
+3. Enable **Push protection**
+4. Configure org/repo policies
+
+Final Answer:
+
+**A. Purchase a GitHub Advanced Security license.** ✅
+
+
+
+### Question-79 ？？？
 
 You have an Azure subscription that contains four Azure virtual machines.
 
@@ -3996,7 +4296,64 @@ Which type of identity should you use?
 
 Answer: C
 
-### Question-8O
+
+The correct answer is:
+
+**B. a user-assigned managed identity** ✅
+
+Explanation:
+
+To configure **multiple Azure virtual machines** to use a **single identity** while ensuring:
+
+* 🔄 **Credentials are managed automatically**
+* 🔐 **Centralized privilege/role assignment**
+* 🧩 **One identity shared across multiple resources**
+
+you must use a:
+
+👉 **User-assigned managed identity**
+
+Why this is correct:
+
+A **Azure Managed Identity** (user-assigned):
+
+* Can be **attached to multiple VMs**
+* Has **automatic credential rotation** by Azure
+* Supports **RBAC role assignments**
+* Is lifecycle-independent of VMs
+* Provides **centralized access control**
+* Requires **no secrets, no passwords, no certificates**
+
+This exactly matches all requirements.
+
+Why the other options are wrong:
+
+❌ **A. system-assigned managed identity**
+→ Each VM gets its **own unique identity** (cannot share one identity across multiple VMs)
+
+❌ **C. service principal**
+→ Requires **manual secret/cert management** ❌
+→ Does not meet "credentials managed automatically"
+
+❌ **D. user account**
+→ Not designed for application/service authentication
+→ Violates least privilege and automation principles
+
+Comparison:
+
+| Feature                    | System-assigned | User-assigned |
+| -------------------------- | --------------- | ------------- |
+| Auto credential management | ✅               | ✅             |
+| Shared across multiple VMs | ❌               | ✅             |
+| Central RBAC               | ❌               | ✅             |
+| Lifecycle independent      | ❌               | ✅             |
+
+Final Answer:
+
+**B. a user-assigned managed identity** ✅
+
+
+### Question-80
 
 You have a GitHub repository that contains multiple workflows and a secret stored at the environment level.
 
@@ -4022,6 +4379,46 @@ What should you include in the recommendation?
 - **C. SonarCloud analysis**
 - D. the JavaScript task runner
 
+
+The correct answer is:
+
+**B. Recreate the secret at the repository level.** ✅
+
+Explanation:
+
+In **GitHub**, secrets have different scopes:
+
+* **Environment-level secrets** → Only available to workflows/jobs that explicitly reference that **environment**
+* **Repository-level secrets** → Available to **all workflows in the repository**
+* **Organization-level secrets** → Shared across multiple repositories (broader scope)
+
+Since your requirement is:
+
+> ensure that the secret can be used by **all workflows** in the repository
+
+👉 The correct solution is to **store the secret at the repository level**.
+
+This provides:
+
+* 🔐 Encryption at rest
+* ⚙️ Automatic availability to all workflows
+* 🧩 No environment dependency
+* 🧑‍💻 Minimal administrative effort
+* 🎯 Correct scope (not too broad, not too narrow)
+
+ Why the other options are wrong:
+
+❌ **A. Recreate the secret at the organization level**
+→ Over-scoped (available to multiple repositories unnecessarily)
+
+❌ **C. Enable required reviewers**
+→ This is for environment approvals, not secret visibility
+
+Final Answer:
+
+**B. Recreate the secret at the repository level.** ✅
+
+
 Answer. C
 
 SonarCloud is a cloud service offered by SonarSource and based on SonarQube. SonarQube is a widely adopted open source platform to inspect continuously the quality of source code and detect bugs, vulnerabilities and code smells in more than 20 different languages.
@@ -4031,7 +4428,7 @@ Incorrect Answers:
 
 A: Test plans are used to group together test suites and individual test cases. This includes static test suites, requirement-based suites, and query-based suites.
 
-### Question-82
+### Question-82 ？？？
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -4050,7 +4447,35 @@ Instead reduce the code complexity.
 
 Note: Technical debt is the accumulation of sub-optimal technical decisions made over the lifetime of an application. Eventually, it gets harder and harder to change things: it's the 'sand in the gears" that sees IT initiatives grind to a halt.
 
-### Question-83
+
+The correct answer is:
+
+**A. Yes** ✅
+
+
+Explanation:
+
+**Technical debt** refers to the **extra work caused by choosing a quick or suboptimal solution** instead of a clean, maintainable one. High technical debt can slow down feature development.
+
+Two major contributors to technical debt are:
+
+1. **High code coupling** – when components are tightly dependent, changes in one area require changes in many other areas.
+2. **Dependency cycles** – circular dependencies make the code harder to modify, test, and maintain.
+
+By **reducing coupling** and **eliminating dependency cycles**:
+
+* The code becomes **more modular**
+* Features can be added or modified **faster**
+* Maintenance is easier, reducing ongoing technical debt
+
+This directly addresses the goal of **reducing accumulated technical debt**.
+
+Final Answer:
+
+**A. Yes** ✅
+
+
+### Question-83 ？？？
 
 Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
 
@@ -4064,6 +4489,47 @@ NOTE: Each correct selection is worth one point.
 - B. Configure pre-deployment approvals in the deployment pipeline.
 - C. Integrate Azure DevOps and SonarQube
 - **D.Integrate Azure DevOps and Azure DevTest Labs.**
+
+
+The correct answers are:
+
+**C. Integrate Azure DevOps and SonarQube** ✅
+**D. Integrate Azure DevOps and Azure DevTest Labs** ✅
+
+Explanation:
+
+To **manage technical debt** in Java-based projects using Azure DevOps:
+
+1. **Integrate Azure DevOps and SonarQube (C)**
+
+   * **SonarQube** analyzes code for:
+
+     * Code smells
+     * Bugs
+     * Security vulnerabilities
+     * Technical debt
+   * Integrating it into the **build pipeline** provides **automatic detection and measurement of technical debt**.
+
+2. **Integrate Azure DevOps and Azure DevTest Labs (D)**
+
+   * DevTest Labs allows you to create **clean test environments** quickly.
+   * Reduces **environment-related technical debt**, ensures consistent testing, and improves reliability of deployment verification.
+
+Why the other options are incorrect:
+
+❌ **A. Configure post-deployment approvals**
+
+* Controls release, **does not directly manage technical debt**
+
+❌ **B. Configure pre-deployment approvals**
+
+* Ensures approval before deployment, **does not reduce technical debt**
+
+Final Answer:
+
+**C. Integrate Azure DevOps and SonarQube** ✅
+**D. Integrate Azure DevOps and Azure DevTest Labs** ✅
+
 
 Answer: BC
 
@@ -4096,6 +4562,43 @@ Which task types should you add to the build pipeline?
 - C. Grunt
 - D. Gulp
 
+The correct answer is:
+
+**A. Gradle** ✅
+
+Explanation:
+
+You want to **analyze and monitor Java code quality** in **Azure DevOps pipelines**.
+
+**Key points:**
+
+1. **Gradle** is a **build automation tool for Java**.
+
+   * It integrates with **SonarQube** via the **SonarQube Gradle plugin**.
+   * You can add a **Gradle task** to your build pipeline to:
+
+     * Compile the Java code
+     * Run tests
+     * Perform static code analysis with SonarQube
+
+2. **Other options** are not suitable for Java:
+
+| Option           | Description                      | Relevance to Java |
+| ---------------- | -------------------------------- | ----------------- |
+| **B. CocoaPods** | Dependency manager for iOS/macOS | ❌ Not for Java    |
+| **C. Grunt**     | JavaScript task runner           | ❌ Not for Java    |
+| **D. Gulp**      | JavaScript task runner           | ❌ Not for Java    |
+
+
+Recommended pipeline setup:
+
+* **Task:** Gradle
+* **Action:** Run `sonarqube` Gradle task
+* **Purpose:** Analyze Java code quality and send results to SonarQube
+
+Final Answer:
+
+**A. Gradle** ✅
 
 Answer. A
 
@@ -4141,7 +4644,46 @@ Which task types should you add to the buld pipeline?
 * D. Gulp
 
 
-Answer. C
+The correct answer is:
+
+**C. Maven** ✅
+
+Explanation:
+
+You need to **analyze and monitor Java code quality** in **Azure DevOps pipelines**.
+
+**Key points:**
+
+1. **Maven** is a **build automation and dependency management tool for Java**.
+
+   * Integrates easily with **SonarQube** via the **SonarQube Maven plugin**.
+   * Typical pipeline task includes:
+
+     * `mvn clean install` (build & test)
+     * `mvn sonar:sonar` (static code analysis to SonarQube)
+
+2. **Other options are incorrect for Java**:
+
+| Option         | Description                | Relevance for Java         |
+| -------------- | -------------------------- | -------------------------- |
+| **A. Grunt**   | JavaScript task runner     | ❌ Not for Java             |
+| **B. Octopus** | Deployment automation tool | ❌ Not a build/analyze task |
+| **D. Gulp**    | JavaScript task runner     | ❌ Not for Java             |
+
+Recommended pipeline setup for Java:
+
+* **Task type:** Maven
+* **Purpose:** Build, test, and analyze Java code using SonarQube
+* **Command example:**
+
+```bash
+mvn clean verify sonar:sonar -Dsonar.projectKey=MyJavaApp
+```
+
+Final Answer:
+
+**C. Maven** ✅
+
 
 SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical bt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps Services build task.
 
