@@ -5271,7 +5271,47 @@ Which version number should you assign to the release?
 * D. 10.6.0
 
 
-Answer: B
+The correct answer is:
+
+**B. 11.2.1** ✅
+
+Explanation (Semantic Versioning – SemVer)
+
+Semantic Versioning format:
+**MAJOR.MINOR.PATCH**
+
+* **MAJOR** → breaking changes
+* **MINOR** → new features (backward compatible)
+* **PATCH** → bug fixes (backward compatible)
+
+ Given:
+
+* Current version: **11.2.0**
+* Change type: **Bug fix**
+* Bug origin: version **10.5.1** (historical info, not the release base)
+
+Releases are always based on the **current version**, not the version where the bug was introduced.
+
+So:
+
+* Bug fix → increment **PATCH**
+* `11.2.0` → `11.2.1`
+
+Why the others are wrong:
+
+* **A. 10.5.1-PATCH** ❌
+  → Invalid SemVer format and wrong base version.
+
+* **C. 10.5.2** ❌
+  → Would only be valid if releasing a hotfix branch from 10.5.x (not stated).
+
+* **D. 10.6.0** ❌
+  → Minor version increase = new features, not a bug fix.
+
+ ✅ Final Answer:
+
+**11.2.1**
+
 
 ### Question-99
 
@@ -5287,7 +5327,38 @@ What should you do?
 * D. Subscribe all the repository owners to the GitHub Advisory Database.
 
 
-**Answer: B**
+The correct answer is:
+
+**B. Configure Dependabot alerts.** ✅
+
+Why this is correct:
+
+**Dependabot alerts** automatically:
+
+* Scan dependencies for **known vulnerabilities**
+* Detect **malicious packages (malware)**
+* **Notify repository owners** when new issues are found
+* Continuously monitor dependency graphs
+
+This is exactly what the requirement describes:
+
+> “notified if a new vulnerable dependency or malware is found”
+
+ Why the others are wrong:
+
+* **A. Configure CodeQL scanning actions** ❌
+  → Focuses on **code security analysis** (SAST), not dependency vulnerabilities or malware packages.
+
+* **C. Configure branch protection rules** ❌
+  → Controls merges and reviews, not vulnerability detection.
+
+* **D. Subscribe all the repository owners to the GitHub Advisory Database** ❌
+  → Provides information access, but **no automated detection or notifications per repo**.
+
+ ✅ Final Answer:
+
+**B. Configure Dependabot alerts.**
+
 
 ### Question-100
 
@@ -5307,10 +5378,45 @@ Which command should you run?
 * D. git clone -filter=true:0 git@ssh.dev.azure.com:v3/org/Project1/repo1
 
 
-Answer: B
+The correct answer is:
+
+**B. `git clone --filter=blob:none git@ssh.dev.azure.com:v3/org/Project1/repo1`** ✅
+
+Why this is correct:
+
+This uses **Git partial clone** with a **blob filter**, which means:
+
+* ✅ **Full commit history is cloned**
+  → You can search commit history of `/src` (`git log`, `git blame`, etc.)
+* ❌ **File contents (blobs) are not downloaded initially**
+  → Drastically reduces clone time and bandwidth for a **1-TB repository**
+* 📥 Blobs are fetched **on-demand** only when files are accessed
+
+This perfectly matches the requirements:
+
+| Requirement                     | Met?                                  |
+| ------------------------------- | ------------------------------------- |
+| Search commit history of `/src` | ✅ Yes (full history is cloned)        |
+| Minimize clone time             | ✅ Yes (no blobs downloaded initially) |
+
+ Why the others are wrong:
+
+* **A. `--depth=1`** ❌
+  → Shallow clone → **no commit history**, fails history search requirement
+
+* **C. Normal clone** ❌
+  → Downloads **everything** → very slow for 1-TB repo
+
+* **D. `--filter=true:0`** ❌
+  → Invalid / nonstandard Git filter syntax
+
+Final Answer:
+
+**B. `git clone --filter=blob:none git@ssh.dev.azure.com:v3/org/Project1/repo1`** ✅
 
 
-### Question-101
+
+### Question-101 ？？？
 
 You use GitHub for source control.
 
@@ -5325,10 +5431,36 @@ NOTE: Each correct selection is worth one point.
 * **D. minimizes the impact on your storage quota**
 
 
-Answer: CD
+The correct answers are:
+
+**A. minimizes the impact of upstream source availability issues** ✅
+**B. minimizes latency when accessing the package** ✅
+
+ Why these are correct:
+
+Using **proxying (upstream sources) in MyGet** means your feed acts as a **cache** for the private upstream feed:
+
+* **A. Availability resilience**
+  Packages already cached in your MyGet feed remain available even if the upstream feed goes down.
+
+* **B. Lower latency**
+  Cached packages are served directly from MyGet, making access faster than pulling from the upstream source every time.
+
+ Why the others are wrong:
+
+* **C. provides automatic authentication** ❌
+  Authentication to the upstream must still be configured; it’s not an inherent advantage of proxying for consumers.
+
+* **D. minimizes the impact on your storage quota** ❌
+  Proxying **increases storage usage** because packages are cached locally.
+
+Final Answer:
+
+**A and B** ✅
 
 
-### - Question-102
+
+### Question-102
 
 You manage source code control and versioning by using GitHub.
 
@@ -5347,7 +5479,31 @@ What should you use?
 * D. init
 
 
-Answer: A
+The correct answer is:
+
+**A. bfg** ✅
+
+Explanation:
+
+**BFG Repo-Cleaner** is specifically designed to:
+
+* Remove large files from Git history
+* Rewrite repository history safely
+* Reduce repository size
+* Permanently delete sensitive or accidental files
+
+It’s much faster and safer than manual `git filter-branch` for large repos.
+
+Why the others are incorrect:
+
+* **B. Its** ❌ → Not a Git tool
+* **C. gvfs** ❌ → Git Virtual File System (now VFS for Git) is for large repo performance, not history cleanup
+* **D. init** ❌ → `git init` only initializes a repo
+
+Final Answer:
+
+**A. bfg** ✅
+
 
 ### Question-103
 
@@ -5363,7 +5519,30 @@ Which Azure DevOps component should you use?
 * D. portfolio backlogs
 
 
-Answer: A
+The correct answer is:
+
+**A. Kanban boards** ✅
+
+Explanation:
+
+To **visualize the flow of work using an agile methodology**, Azure DevOps **Kanban boards** are designed specifically for this purpose. They provide:
+
+* Visual workflow columns (e.g., To Do → Doing → Done)
+* Work-in-progress (WIP) limits
+* Flow tracking
+* Continuous delivery visualization
+* Agile and Lean workflow support
+
+Why the others are incorrect:
+
+* **B. sprint planning** ❌ → Used for planning iterations, not visualizing flow
+* **C. delivery plans** ❌ → Used for cross-team planning and timelines
+* **D. portfolio backlogs** ❌ → Used for high-level planning and hierarchy management
+
+Final Answer:
+
+**A. Kanban boards** ✅
+
 
 ### Question-104
 
@@ -5386,7 +5565,52 @@ What should you recommend?
 * C. a single fork per team member
 * **D. a single long-running branch with multiple short-lived feature branches**
 
-Answer: D
+The correct answer is:
+
+**D. a single long-running branch with multiple short-lived feature branches** ✅
+
+Why this is the best fit:
+
+This is the classic **feature-branch workflow**, which perfectly matches all requirements:
+
+✅ Parallel work
+
+* Multiple developers can work on **independent feature branches** simultaneously.
+
+✅ Always releasable main branch
+
+* The main branch (e.g., `main` / `mainline`) stays **stable and releasable**.
+* Only reviewed and tested code is merged.
+
+✅ Features can be abandoned safely
+
+* If a feature is no longer needed → simply **delete the feature branch**.
+* No impact on the main codebase.
+
+✅ Encourages experimentation
+
+* Developers can freely experiment in isolated branches without risk.
+
+Why the others are wrong:
+
+* **A. single long-running branch without forking** ❌
+  → No isolation, no parallel safe development, unstable codebase
+
+* **B. multiple long-running branches** ❌
+  → Leads to merge complexity, integration hell, and unstable releases
+
+* **C. a single fork per team member** ❌
+  → Heavy process, poor collaboration model for agile teams
+
+Recommended Strategy Name:
+
+**Trunk-based development with short-lived feature branches**
+(or simply **Feature Branch Workflow**)
+
+Final Answer:
+
+**D. a single long-running branch with multiple short-lived feature branches** ✅
+
 
 ### Question-105
 
@@ -5402,8 +5626,41 @@ Does this meet the goal?
 * A. Yes
 * **B. No**
 
-****
-Answer: B
+
+**Answer: B. No** ❌
+
+Explanation
+
+The goal is to notify **Jenkins when a developer commits code** to a branch in **Azure Repos**.
+
+The proposed solution uses:
+
+> **Service hook with the *build completed* event**
+
+That event only triggers **after a build finishes**, not when code is committed.
+
+Correct approach would be:
+
+Use a **Service Hook** with a **code-related event**, such as:
+
+* **Code pushed**
+* **Pull request created/updated**
+* **Git push event**
+
+These events fire **on commit**, which is what Jenkins needs to start a job.
+
+Why this fails the requirement:
+
+| Requirement                | Status |
+| -------------------------- | ------ |
+| Trigger on commit          | ❌ No   |
+| Notify Jenkins immediately | ❌ No   |
+| Event timing correct       | ❌ No   |
+
+Final Answer:
+
+**B. No** ❌
+
 
 ### Question-106
 
@@ -5424,7 +5681,32 @@ Which system should you use?
 * C. Trello
 * D. Jira
 
-**Answer: D**
+**Correct answer: D. Jira** ✅
+
+Why **Jira** is the right choice
+
+**Jira** has **native integration** with **Azure DevOps**, which directly satisfies all requirements:
+
+✅ Requirements mapping
+
+| Requirement                                      | How Jira satisfies it                                                              |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Track whether commits are deployed to production | Azure DevOps ↔ Jira integration links commits, builds, and releases to Jira issues |
+| Report deployment status                         | Deployment info can be synced and shown in Jira issues                             |
+| Minimize integration effort                      | Built-in connectors + marketplace integrations (no custom glue code)               |
+
+Why the others are wrong
+
+| Option       | Reason                                                        |
+| ------------ | ------------------------------------------------------------- |
+| **Asana**    | Task management only, no native DevOps deployment integration |
+| **Basecamp** | Project management, not Agile DevOps-integrated               |
+| **Trello**   | Boards only, no deployment tracking integration               |
+
+Final Answer:
+
+**D. Jira** ✅
+
 
 
 ### Question-108
@@ -5442,9 +5724,38 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer: B**
+**Correct answer: B. No** ❌
 
-### - Question-109
+Explanation
+
+An **email subscription** in **Azure DevOps** only sends notifications to **people**, not systems.
+
+**Jenkins** cannot consume email notifications as an automated trigger for builds or jobs.
+
+What is actually required
+
+To notify Jenkins when code is committed to Azure Repos, you must use:
+
+✅ **Azure DevOps Service Hooks**
+
+with a **webhook** integration
+and the **"Code pushed"** event
+
+This allows Azure DevOps to send an HTTP POST directly to Jenkins.
+
+Summary
+
+| Method                 | Works for Jenkins automation? |
+| ---------------------- | ----------------------------- |
+| Email notification     | ❌ No                          |
+| Service hook (webhook) | ✅ Yes                         |
+
+Final Answer:
+
+**B. No** ❌
+
+
+### Question-109
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
@@ -5459,9 +5770,27 @@ Does this meet the goal?
 * B. No
 
 
-Answer: A
+**Answer: A. Yes** ✅
 
-### - Question-110
+
+Explanation
+
+The goal is to notify **Jenkins** whenever a developer **commits changes** to a branch in **Azure Repos**.
+
+By creating a **service hook subscription** in Azure DevOps that uses the ***Code pushed*** event:
+
+* ✅ Azure DevOps triggers the webhook immediately after a push.
+* ✅ Jenkins can receive the notification and start a build automatically.
+* ✅ No extra manual steps are required.
+
+This **fully meets the requirement** to integrate Azure DevOps with Jenkins for automated builds on commits.
+
+Final Answer:
+
+**A. Yes** ✅
+
+
+### Question-110
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -5475,7 +5804,22 @@ Does this meet the goal?
 * B. No
 
 
-Answer: B
+**Answer: A. Yes** ✅
+
+Explanation:
+
+Creating a **service hook subscription** in Azure DevOps with the ***Code pushed*** event:
+
+* Triggers automatically whenever a developer pushes commits to a branch.
+* Sends a notification (usually via **webhook**) to Jenkins.
+* Jenkins can then start the appropriate job or pipeline based on the push.
+
+This **directly satisfies the requirement**: Azure DevOps notifies Jenkins on every commit to a branch.
+
+Final Answer:
+
+**A. Yes** ✅
+
 
 ### Question-111
 
@@ -5490,7 +5834,38 @@ Which version control solution should you use?
 * C. TortoiseSVN
 * D. Subversion
 
-**Answer: B**
+The correct answer is:
+
+**B. Git** ✅
+
+Explanation
+
+The requirements are:
+
+1. **Multiple developers working offline**
+   → Developers need a **local copy of the full repository**, including history.
+
+2. **Access to full project history while offline**
+   → Requires a **distributed version control system (DVCS)**.
+
+Why Git is the best fit
+
+* **Git** is a distributed version control system (DVCS).
+* Every developer has a **full clone** of the repository with complete history.
+* Supports offline commits, branching, merging, and history inspection.
+
+Why the others are wrong
+
+| Option                                        | Reason                                                                                        |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **A. Team Foundation Version Control (TFVC)** | Centralized; requires a server connection for full history access. Offline access is limited. |
+| **C. TortoiseSVN**                            | SVN client, centralized; full history not available offline.                                  |
+| **D. Subversion (SVN)**                       | Centralized; only partial history available offline, not fully distributed.                   |
+
+Final Answer:
+
+**B. Git** ✅
+
 
 ### Question-112
 
@@ -5505,7 +5880,38 @@ What should you enable in DevOps?
 * C. views in Azure Artifacts
 * D. a symbol server
 
-**Answer: B**
+The correct answer is:
+
+**B. upstream sources** ✅
+
+Explanation
+
+The goal is to **simplify package management** by using **a single feed** that can:
+
+* Store **internal packages** produced by your company.
+* Consume packages from **remote feeds** (both public and private/authenticated).
+
+**Upstream sources** in **Azure Artifacts** allow exactly this:
+
+* You configure a feed to have **upstream sources**, such as NuGet.org, Maven Central, or other private feeds.
+* When a package is requested from your feed:
+
+  * If it exists locally, it’s served from the feed.
+  * If it exists upstream, it’s cached and served automatically.
+* Supports **authenticated feeds** and **public feeds** transparently.
+
+Why the other options are incorrect
+
+| Option                          | Reason                                                                                                    |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **A. Universal Packages**       | Used to store generic binary artifacts; does **not manage upstream package sources**.                     |
+| **C. Views in Azure Artifacts** | Views allow controlling **visibility of packages** (e.g., pre-release vs release), not upstream sourcing. |
+| **D. a symbol server**          | Used for storing debugging symbols, not packages.                                                         |
+
+Final Answer:
+
+**B. upstream sources** ✅
+
 
 ### Question-113
 
@@ -5527,7 +5933,42 @@ Supports developers who use browsers, tablets, and Chromebooks What should you r
 * C. MonoDevelop
 * **D. Github Codespaces**
 
-Answer: D
+The correct answer is:
+
+**D. GitHub Codespaces** ✅
+
+Explanation
+
+The requirements:
+
+1. **Integrates with GitHub**
+
+   * Codespaces is a **cloud-hosted development environment built by GitHub**, fully integrated.
+
+2. **Provides integrated debugging tools**
+
+   * Codespaces provides **VS Code in the browser**, with full debugging, extensions, and IntelliSense.
+
+3. **Supports remote workers and hot-desking**
+
+   * Developers can access their environment from **any machine with a browser**; no local setup required.
+
+4. **Supports browsers, tablets, and Chromebooks**
+
+   * Codespaces is **browser-based**, so it works on laptops, tablets, and Chromebooks.
+
+Why the others are incorrect
+
+| Option                | Reason                                                                                          |
+| --------------------- | ----------------------------------------------------------------------------------------------- |
+| **A. VS Code**        | Local IDE; requires installation on each machine; doesn’t fully support tablets or Chromebooks. |
+| **B. Xamarin Studio** | Focused on mobile app development; not ideal for general cloud-hosted environments.             |
+| **C. MonoDevelop**    | Desktop IDE; requires installation; limited browser support.                                    |
+
+Final Answer:
+
+**D. GitHub Codespaces** ✅
+
 
 
 ### Question-114
@@ -5550,7 +5991,39 @@ NOTE: Each correct selection is worth one point.
 * E. Modify the Diagnostics settings in Azure Monitor,
 
 
-Answer: BD
+The correct answers are:
+
+**B. Create an Azure Logic App that has an HTTP request trigger** ✅
+**D. Modify an action group in Azure Monitor** ✅
+
+Explanation
+
+The goal is to **send Azure Monitor alerts to Microsoft Teams**.
+
+Step 1: Logic App to send messages to Teams
+
+* Microsoft Teams doesn’t directly accept Azure Monitor alerts.
+* You can create an **Azure Logic App** that posts messages to a Teams channel.
+* Use an **HTTP request trigger** so Azure Monitor can call the Logic App when an alert occurs.
+
+Step 2: Configure the action group
+
+* **Azure Monitor action groups** define what happens when an alert is triggered.
+* Modify the **action group** to **call the Logic App via the HTTP trigger**.
+* This ensures that every alert triggers the Logic App, which sends the Teams notification.
+
+Why the other options are wrong
+
+| Option                                     | Reason                                                                            |
+| ------------------------------------------ | --------------------------------------------------------------------------------- |
+| **A. Create an Azure Monitor workbook**    | Workbooks are for visualization and reporting, not for sending alerts.            |
+| **C. Logic App with Azure DevOps trigger** | The alert comes from Azure Monitor, not DevOps; trigger would not fire.           |
+| **E. Modify Diagnostics settings**         | Diagnostics settings are for logging metrics and events, not alert notifications. |
+
+Final Answer:
+
+**B and D** ✅
+
 
 ### Question-115
 
@@ -5568,7 +6041,34 @@ What should you do first?
 * D. Modify the Team configuration settings of Project1.
 
 
-Answer: C
+The correct answer is:
+
+**C. In Project1, create an Azure DevOps repository** ✅
+
+Explanation
+
+In **Azure DevOps**, a **wiki** can be backed by either:
+
+1. **Project wiki** – stored in a special Git repository created automatically when you publish a wiki.
+2. **Code wiki** – stored in an **existing Git repository** in the project.
+
+To **create a published wiki**:
+
+* You must have a **repository** to store the wiki content (if it’s a code wiki).
+* Once the repository exists, you can **publish it as a wiki** from the repository.
+
+Why the other options are incorrect
+
+| Option                                        | Reason                                                                   |
+| --------------------------------------------- | ------------------------------------------------------------------------ |
+| **A. Modify the Storage settings**            | Wiki content is stored in Git, not directly in project storage settings. |
+| **B. Create an Azure DevOps pipeline**        | Pipelines are for builds and releases, not wiki creation.                |
+| **D. Modify the Team configuration settings** | Team settings control permissions and area paths, not wiki creation.     |
+
+Final Answer:
+
+**C. In Project1, create an Azure DevOps repository** ✅
+
 
 ### Question-116
 
@@ -5592,7 +6092,43 @@ What should you recommend?
 * D. Microsoft Teams
 
 
-**Answer: D**
+The correct answer is:
+
+**D. Microsoft Teams** ✅
+
+Explanation
+
+The requirements:
+
+1. **Isolated channels for different project teams**
+
+   * Teams allows creating **channels** for projects, teams, or topics.
+   * Each channel keeps a **history of chats and files**.
+
+2. **Cross-platform support**
+
+   * Teams is available on **Windows 10, MacOS, iOS, and Android**.
+
+3. **External access for contractors/suppliers**
+
+   * Teams supports **guest access**, so external collaborators can participate in selected channels.
+
+4. **Integration with Azure DevOps**
+
+   * Teams can integrate with **Azure DevOps** to receive notifications, track work items, and create tasks directly from chat.
+
+Why the other options are incorrect
+
+| Option                   | Reason                                                                                                                                  |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **A. Microsoft Project** | Project management tool; does not provide persistent team chat or channel-based communication.                                          |
+| **B. Bamboo**            | CI/CD tool from Atlassian; not a communication platform.                                                                                |
+| **C. Microsoft Lync**    | Legacy instant messaging tool (now part of Skype for Business); lacks modern Teams features like channels and Azure DevOps integration. |
+
+Final Answer:
+
+**D. Microsoft Teams** ✅
+
 
 ### Question-117
 
@@ -5613,9 +6149,45 @@ What should you recommend?
 * C. Octopus
 * **D. Slack**
 
-Answer: D
+The correct answer is:
 
-### Question-118
+**D. Slack** ✅
+
+Explanation
+
+The requirements:
+
+1. **Isolated channels with chat history**
+
+   * Slack supports **channels** for each project, topic, or team.
+   * All messages and files in a channel are **persistently stored**, so the history is available.
+
+2. **Cross-platform availability**
+
+   * Slack works on **Windows 10, MacOS, iOS, and Android**.
+
+3. **External collaborators**
+
+   * Slack supports **guest access** and shared channels, allowing contractors or suppliers to participate.
+
+4. **Integration with Azure DevOps**
+
+   * Slack can integrate with Azure DevOps to **receive notifications about work items, builds, and releases** in channels.
+
+Why the other options are incorrect
+
+| Option                    | Reason                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------ |
+| **A. Skype for Business** | Legacy IM tool; lacks persistent channels and modern Azure DevOps integration. |
+| **B. Bamboo**             | CI/CD tool from Atlassian; not a communication platform.                       |
+| **C. Octopus**            | Deployment automation tool; not for team communication.                        |
+
+Final Answer:
+
+**D. Slack** ✅
+
+
+### Question-118 ？？
 
 
 You are designing a YAML template for use with Azure Pipelines. The template will include the outputfile parameter.
@@ -5631,8 +6203,41 @@ NOTE: Each correct selection is worth one point.
 
 Answer: AE
 
+The correct answers are:
 
-### _Question-119
+* **A. ${{ parameters.outputfile }}** ✅
+* **C. $(parameters.outputfile)** ✅
+
+Explanation
+
+In **Azure Pipelines YAML templates**, parameters can be referenced in two main ways depending on **compile-time vs runtime**:
+
+1. **Compile-time (template expression)**
+
+   * Syntax: `${{ parameters.parameterName }}`
+   * Example: `${{ parameters.outputfile }}`
+   * Evaluated **before the pipeline runs**, usually for template expansion.
+
+2. **Runtime (macro expression)**
+
+   * Syntax: `$(parameters.parameterName)`
+   * Example: `$(parameters.outputfile)`
+   * Evaluated **during the pipeline run**, often used in scripts or tasks.
+
+Why the other options are incorrect
+
+| Option                           | Reason                                                                 |                                                            |
+| -------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **B. $(parameters'outputfile)**  | Invalid syntax; single quotes aren’t used here.                        |                                                            |
+| **D. $(parameters[outputfile])** | Incorrect for parameters; this syntax is for **variables** in runtime. |                                                            |
+| **E. ${{parameters.outputfile'}})**                                                      | Invalid syntax; extra characters and pipe are not allowed. |
+
+Final Answer:
+
+**A and C** ✅
+
+
+### Question-119
 
 You have a pipeline named Pipeline1 in Azure Pipelines.
 
@@ -5646,10 +6251,32 @@ Which type of service connection should you create?
 * D. Azure Kubernetes Service (AKS)
 
 
-Answer: B
+The correct answer is:
+
+**B. a Docker registry** ✅
+
+Explanation
+
+You want **Pipeline1** to **download a public container image**. In Azure Pipelines:
+
+* **Docker registry service connection** is used to connect to **Docker registries**, whether **public (Docker Hub)** or **private**.
+* This allows your pipeline tasks to **pull or push container images**.
+
+Why the other options are incorrect
+
+| Option                                | Reason                                                                                              |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **A. Docker host**                    | Used to connect to a Docker **daemon on a remote host**; not for pulling images from a registry.    |
+| **C. Azure Service Fabric**           | Used for deploying services to a Service Fabric cluster; unrelated to downloading container images. |
+| **D. Azure Kubernetes Service (AKS)** | Used to deploy containers to AKS; not needed just to pull an image in a pipeline.                   |
+
+Final Answer:
+
+**B. a Docker registry** ✅
 
 
-### Question-120
+
+### Question-120 ？？
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -5664,8 +6291,36 @@ Which command should you run?
 * C. @azure boards sign in
 * **D. @azure boards** 
 
+D
 
-**Answer: D**
+The correct answer is:
+
+**B. `@azure boards create`** ✅
+
+Explanation
+
+When you integrate **Azure Boards** with **Microsoft Teams**, you can manage work items directly from Teams using **commands in the channel**.
+
+* To **create a new work item** from Teams, you use the **`@azure boards create`** command.
+* Example usage in the Teams chat:
+
+  ```
+  @azure boards create Bug "Fix login error" --assigned-to @John
+  ```
+* This will create a work item in the selected **Board1** in your Azure DevOps project.
+
+Why the other options are incorrect
+
+| Option                             | Reason                                                                                |
+| ---------------------------------- | ------------------------------------------------------------------------------------- |
+| **A. @azure boards subscriptions** | Used to manage **notifications or subscriptions** in Teams, not to create work items. |
+| **C. @azure boards sign in**       | Used to **sign in** to Azure DevOps from Teams; required only once.                   |
+| **D. @azure boards**               | Shows a **list of commands/help**, but doesn’t create a work item directly.           |
+
+Final Answer:
+
+**B. @azure boards create** ✅
+
 
 
 ### Question-121
