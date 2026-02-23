@@ -6291,7 +6291,6 @@ Which command should you run?
 * C. @azure boards sign in
 * **D. @azure boards** 
 
-D
 
 The correct answer is:
 
@@ -6340,7 +6339,39 @@ In which format should you export the logs?
 * D. binary
 
 
-**Answer: A**
+The correct answer is:
+
+**A. JSON** ✅
+
+Explanation
+
+**AzLog** (Azure Log Integration) exports logs in **JSON format**, which is the required and supported format for:
+
+* Azure diagnostics logs
+* Azure activity logs
+* VM logs
+* Storage-based log export
+* SIEM integrations (including **LogRhythm**)
+
+JSON is:
+
+* Structured
+* Machine-readable
+* Easily parsed by SIEM tools
+* The standard format for Azure log exports and integrations
+
+Why the others are incorrect
+
+| Option        | Reason                                                             |
+| ------------- | ------------------------------------------------------------------ |
+| **B. EVTX**   | Windows Event Viewer native format, not used for Azure log exports |
+| **C. EVT**    | Legacy Windows event log format                                    |
+| **D. binary** | Not supported for Azure log streaming or SIEM ingestion            |
+
+Final Answer:
+
+**A. JSON** ✅
+
 
 ### Question-123
 
@@ -6361,7 +6392,32 @@ NOTE: Each correct selection is worth one point.
 * D. comment
 * **E. description**
 
-Answer: CE
+The correct answers are:
+
+**C. title**
+**E. description** ✅
+
+Explanation
+
+When **GitHub** and **Azure Boards** are integrated, adding the text format `AB#<workitemID>` will automatically link the pull request to the Azure Boards work item when it appears in:
+
+* **PR title**
+* **PR description (body)**
+
+These are the officially supported and reliable auto-linking locations for pull requests.
+
+Why the others are incorrect
+
+| Option           | Reason                                                                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **A. milestone** | Not parsed for Azure Boards linking                                                                                    |
+| **B. label**     | Labels are not processed for AB# linking                                                                               |
+| **D. comment**   | Comments can link work items, but the question is specifically about **automatically linking the pull request itself** |
+
+Final Answer:
+
+**C and E** ✅
+
 
 
 ### Question-124
@@ -6382,6 +6438,33 @@ NOTE: Each correct selection is worth one point.
 
 Answer: DE
 
+The correct answers are:
+
+**D. GitHub user credentials**
+**E. a personal access token (PAT)** ✅
+
+Explanation
+
+When integrating **Azure Boards** with **GitHub**, authentication can be done using:
+
+* **GitHub user credentials (OAuth)** → Standard OAuth-based sign-in flow
+* **GitHub Personal Access Token (PAT)** → Token-based authentication for secure API access
+
+These are the two supported and valid authentication mechanisms for Azure Boards ↔ GitHub integration.
+
+Why the others are incorrect
+
+| Option                            | Reason                                              |
+| --------------------------------- | --------------------------------------------------- |
+| **A. publisher certificate**      | Not used for GitHub authentication                  |
+| **B. trusted root certificate**   | Not applicable to GitHub/Azure Boards integration   |
+| **C. Azure AD (Microsoft Entra)** | GitHub authentication is not performed via Azure AD |
+
+Final Answer:
+
+**D and E** ✅
+
+
 ### Question-125
 
 You have a GitHub repository that is integrated with Azure Boards. Azure Boards has a work item that has the number 715.
@@ -6395,8 +6478,38 @@ What should you include in the commit comments?
 * C. @715
 * D. #715
 
-
 Answer: B
+
+The correct answer is:
+
+**B. AB#715** ✅
+
+Explanation
+
+When **GitHub** is integrated with **Azure Boards**, you can automatically link commits to work items by including the special syntax in the commit message:
+
+```
+AB#715
+```
+
+This will:
+
+* Link the commit to work item **715**
+* Automatically update the work item in Azure Boards
+* Create traceability between code and work tracking
+
+Why the others are incorrect
+
+| Option                      | Reason                         |
+| --------------------------- | ------------------------------ |
+| **A. URL of the work item** | Not parsed automatically       |
+| **C. @715**                 | Not recognized syntax          |
+| **D. #715**                 | Not recognized by Azure Boards |
+
+ ✅ Final Answer:
+
+**B. AB#715**
+
 
 ### Question-126
 
@@ -6412,9 +6525,35 @@ Which type of widget should you use?
 * D. lead time
 
 
-**Answer: A**
+The correct answer is:
 
-### Question-127
+**A. cycle time** ✅
+
+Explanation
+
+In **Azure Boards** dashboards:
+
+* **Cycle time** measures the time **from when work actually starts** on a work item (e.g., moved to *Active/In Progress*) **until it is completed/closed**.
+* This is exactly what the question describes.
+
+Why the others are incorrect
+
+| Option                 | Measures                                                           |
+| ---------------------- | ------------------------------------------------------------------ |
+| **B. velocity**        | Amount of work completed per sprint (story points/items), not time |
+| **C. cumulative flow** | Work in different states over time (bottlenecks/flow health)       |
+| **D. lead time**       | Time from **creation** of the work item until completion           |
+
+✅ Final Answer:
+
+**A. cycle time**
+
+If you'd like, I can also explain when to use **lead time vs cycle time** — it's a common Agile reporting confusion.
+
+
+
+
+### Question-127 ？？
 
 You manage code by using GitHub.
 
@@ -6431,8 +6570,43 @@ Where should you create the file?
 * **C.`.git/`**
 * D. .github/workflows/
 
+The correct answer is:
 
-Answer: C
+**B. `.github/`** ✅
+
+Explanation
+
+To enforce **code owner reviews** in **GitHub**, the `CODEOWNERS` file must be placed in one of these supported locations:
+
+1. **Repository root** → `/CODEOWNERS`
+2. **`.github/` directory** → `/.github/CODEOWNERS` ✅
+3. **`docs/` directory** → `/docs/CODEOWNERS`
+
+From the given options, only **`.github/`** is valid.
+
+Why the others are wrong
+
+| Option               | Reason                                              |
+| -------------------- | --------------------------------------------------- |
+| `.github/actions/`   | ❌ Not a supported CODEOWNERS location               |
+| `.git/`              | ❌ Internal Git directory, not for repo config files |
+| `.github/workflows/` | ❌ Used for GitHub Actions YAML files                |
+
+Result
+
+Placing `CODEOWNERS` in `.github/` ensures that:
+
+* Branch protection rules can enforce **mandatory reviews**
+* Your **security team must approve changes**
+* All **GitHub Actions** modifications require validation
+
+✅ Final Answer:
+
+**B. `.github/`**
+
+If you'd like, I can also provide a sample `CODEOWNERS` file for securing GitHub Actions.
+
+
 
 ### Question-131
 
@@ -6472,7 +6646,46 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer: B**
+**Correct answer: B. No** ❌
+
+Why this does **not** meet the goal
+
+The solution proposes using a **hosted agent pool (Hosted VS 2019)** in **Azure DevOps**, but this fails one of the key requirements:
+
+❌ Requirement not met:
+
+> **The builds must access an on-premises dependency management system**
+
+**Hosted agents cannot access on-premises resources** because:
+
+* They run in Microsoft-managed infrastructure
+* They have no network connectivity to your internal network
+* No VPN / ExpressRoute / private network integration is available
+
+What *is* correct in the solution
+
+These parts are fine, but incomplete:
+
+* ✅ Storing build outputs as **Server artifacts**
+* ✅ Using Git repository in Azure DevOps
+* ✅ Using **Java Tool Installer** for Java setup
+
+ ✅ Correct strategy (for full solution)
+
+To meet **all requirements**, you must use:
+
+* **Self-hosted agent pool (on-premises agent)**
+* ✔ Can access on-premises dependency systems
+* ✔ Can publish Server artifacts to Azure DevOps
+* ✔ Can build Java apps
+* ✔ Uses Git repos in Azure DevOps
+
+Final Verdict:
+
+**B. No**
+
+Because a **hosted agent** cannot access **on-premises dependency management systems**.
+
 
 ### Question-133
 
@@ -6496,7 +6709,36 @@ Which merge strategy should you use in the branch policy?
 * D. no-fast-forward merge
 
 
-**Answer: A**
+**Correct answer: A. squash merge** ✅
+
+Why **squash merge** is the right choice
+
+The requirements are:
+
+* ✔ **Consolidate commit histories**
+* ✔ **Merge changes into a single commit**
+
+A **squash merge** does exactly this:
+
+* Takes all commits from the topic branch
+* Combines them into **one single commit**
+* Keeps the **master branch history clean and readable**
+* Makes it easy to track features as single logical changes
+
+Why the others are wrong
+
+* **B. fast-forward merge** ❌
+  Preserves full commit history → does not consolidate
+
+* **C. Git fetch** ❌
+  Not a merge strategy
+
+* **D. no-fast-forward merge** ❌
+  Creates a merge commit but still preserves all commits → not a single commit
+
+Final Answer:
+
+**A. squash merge** 🟢
 
 
 ### Question-134
@@ -6511,7 +6753,28 @@ What should you use?
 * D. MSTest
 
 
-Answer: C
+**Correct answer: C. JaCoCo** ✅
+
+Why JaCoCo?
+
+**JaCoCo (Java Code Coverage)** is the standard tool for Java applications to:
+
+* Measure **code coverage**
+* Integrate with **Maven/Gradle**
+* Publish results to **Azure DevOps pipelines**
+* Generate reports (HTML, XML, CSV)
+* Work seamlessly with tools like **SonarQube**
+
+Why the others are incorrect
+
+* **A. Bullseye Coverage** ❌ → Primarily for C/C++ projects
+* **B. JUnit** ❌ → Testing framework, **not** a coverage tool
+* **D. MSTest** ❌ → .NET testing framework, not Java
+
+Final Answer:
+
+**C. JaCoCo** 🟢
+
 
 ### Question-135
 
@@ -6526,7 +6789,27 @@ What should you use?
 * C. MSTest
 * D. Coverlet
 
-**Answer: A**
+**Correct answer: A. Cobertura** ✅
+
+Why Cobertura?
+
+**Cobertura** is a **Java code coverage** tool that:
+
+* Integrates with **Maven** and **Gradle**
+* Produces coverage reports (XML/HTML)
+* Is supported by **Azure DevOps** for publishing coverage results in pipelines
+* Is commonly used in CI/CD for Java projects
+
+Why the others are incorrect
+
+* **B. Bullseye Coverage** ❌ → C/C++ coverage tool
+* **C. MSTest** ❌ → .NET testing framework
+* **D. Coverlet** ❌ → .NET Core coverage tool
+
+Final Answer:
+
+**A. Cobertura** 🟢
+
 
 ### Question-136
 
@@ -6540,7 +6823,30 @@ What should you use?
 * B. Microsoft-hosted parallel jobs
 * C. a File Transform task
 
-**Answer: A**
+**Correct answer: A. a self-hosted agent** ✅
+
+Explanation
+
+The requirement is to **use incremental builds** and **retain the environment between pipeline runs**.
+
+* **Self-hosted agents** run on machines that you manage.
+
+  * They **keep the workspace between builds** unless explicitly cleaned.
+  * This allows **incremental builds** (e.g., only compiling changed files).
+
+* **Microsoft-hosted agents** ❌
+
+  * Are **ephemeral**; the environment is **reset after each run**, so incremental builds are not possible.
+
+* **File Transform task** ❌
+
+  * Used for modifying configuration files (e.g., appsettings.json) during deployment.
+  * Does **not** preserve the build workspace.
+
+Final Answer:
+
+**A. a self-hosted agent** 🟢
+
 
 ### Question-137
 
@@ -6556,7 +6862,30 @@ To which security group should you add the project manager?
 * **D. Contributor**
 
 
-Answer: D
+**Correct answer: D. Contributor** ✅
+
+Explanation
+
+The requirements:
+
+1. **Project manager can create custom work item queries**
+2. **Principle of least privilege**
+
+In **Azure DevOps**:
+
+| Security Group                        | Permissions                                                                   |
+| ------------------------------------- | ----------------------------------------------------------------------------- |
+| **Reader**                            | View work items, dashboards, code. Cannot create queries. ❌                   |
+| **Contributor**                       | Can **create and modify work items and queries**, contribute to the project ✅ |
+| **Project Administrators**            | Full control over project settings (too much privilege) ❌                     |
+| **Project Collection Administrators** | Full control over all projects (way too much) ❌                               |
+
+So, the **Contributor** role provides just enough permissions for the project manager to **create and run queries**, without granting unnecessary administrative rights.
+
+✅ Final Answer:
+
+**D. Contributor**
+
 
 ### Question-138
 
@@ -6577,7 +6906,36 @@ What should you configure in Azure Repos?
 * C. Deployment pools in Project Settings
 * D. branch security of the default branch
 
-**Answer: A**
+**Correct answer: A. branch policies of the default branch** ✅
+
+Explanation
+
+The requirements:
+
+1. **Protect the default branch** → prevent direct commits
+2. **Build changes in feature branches first** → enforce validation builds
+3. **Require review and approval by at least one release manager** → enforce code review
+4. **Use pull requests to merge into default branch** → control how changes enter mainline
+
+In **Azure DevOps**, this is accomplished by **configuring branch policies** on the default branch:
+
+* Require pull requests for merges
+* Require **minimum number of reviewers** (e.g., release manager)
+* Require **successful build validation** before merging
+* Enforce other policies such as work item linking, comment resolution, etc.
+
+Why the others are incorrect
+
+| Option                                       | Reason                                                                                                            |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **B. Services in Project Settings**          | Used for external service connections, not branch protection                                                      |
+| **C. Deployment pools in Project Settings**  | Used for organizing deployment targets for release pipelines, unrelated to code merge control                     |
+| **D. branch security of the default branch** | Controls permissions (read/write/contribute) but **cannot enforce pull request requirements or build validation** |
+
+✅ Final Answer:
+
+**A. branch policies of the default branch**
+
 
 ### Question-139
 
@@ -6595,7 +6953,38 @@ Does this meet the goal?
 * **B. No**
 
 
-Answer: B
+**Correct answer: B. No** ❌
+
+Explanation
+
+The goal:
+
+* **Reduce history volume in the master branch**
+  → Keep the master branch history **clean and concise**
+
+**Explicit merge** (a regular merge commit) **does not reduce commit history**:
+
+* It preserves **all commits from the feature/topic branch**
+* Adds a **merge commit**
+* Master branch history becomes longer, especially with many feature branches
+
+Correct approach
+
+To meet the goal, use:
+
+* **Squash merge** ✅
+
+  * Combines all commits from the feature branch into **a single commit** on master
+  * Keeps master branch history **concise**
+
+* **Rebase and fast-forward** can also reduce unnecessary merge commits if used carefully
+
+Final Verdict:
+
+**B. No**
+
+Because an explicit merge **does not consolidate commit history**.
+
 
 
 ### Question-141
@@ -6612,7 +7001,34 @@ Minimizes the security surface area of the final image What should you include i
 * D. single-stage builds
 
 
-**Answer: A**
+**Correct answer: A. multi-stage builds** ✅
+
+Explanation
+
+The requirements:
+
+1. **Minimize image sizes**
+2. **Minimize security surface area**
+
+**Multi-stage builds** in Docker allow you to:
+
+* Use **one stage for building** (with all build tools and dependencies)
+* Use **a separate final stage** for the runtime environment
+* Copy only the **necessary artifacts** into the final image
+* Result: **smaller, leaner images** with fewer tools → **reduced attack surface**
+
+Why the others are incorrect
+
+| Option                     | Reason                                                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| **B. PowerShell DSC**      | Used for configuring Windows machines, not for building Docker images                           |
+| **C. Docker Swarm**        | Orchestration tool, not related to image size or security surface                               |
+| **D. single-stage builds** | Builds everything into one image → larger images with unnecessary tools → bigger attack surface |
+
+ ✅ Final Answer:
+
+**A. multi-stage builds**
+
 
 ### Question-142
 
@@ -6628,7 +7044,29 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-Answer: B
+**Correct answer: B. No** ❌
+
+Explanation
+
+The goal:
+
+* **Ensure that a build runs automatically when code is checked in** → Continuous Integration (CI)
+
+**What “Batch changes while a build is in progress” does:**
+
+* It **delays triggering a new build** if a build is already running
+* It **does not enable automatic builds on check-in by itself**
+
+To meet the goal:
+
+1. Go to the **Triggers** tab of the pipeline
+2. **Enable Continuous Integration (CI)** by checking **“Enable continuous integration”** or selecting the branches to trigger on
+3. Optionally, **batch changes** can be used to combine multiple pushes into a single build, but this **alone does not enable CI**
+
+ ✅ Final Answer:
+
+**B. No**
+
 
 ### Question-143
 
