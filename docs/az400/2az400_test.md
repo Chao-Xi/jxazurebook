@@ -4365,9 +4365,46 @@ What should you do first?
 - **B. Recreate the secret at the repository level.**
 - C. Enable required reviewers.
 
-Answer:B
+The correct answer is:
 
-### Question-B1
+**B. Recreate the secret at the repository level.** ✅
+
+Explanation:
+
+In **GitHub**, secrets have different scopes:
+
+* **Environment-level secrets** → Only available to workflows/jobs that explicitly reference that **environment**
+* **Repository-level secrets** → Available to **all workflows in the repository**
+* **Organization-level secrets** → Shared across multiple repositories (broader scope)
+
+Since your requirement is:
+
+> ensure that the secret can be used by **all workflows** in the repository
+
+👉 The correct solution is to **store the secret at the repository level**.
+
+This provides:
+
+* 🔐 Encryption at rest
+* ⚙️ Automatic availability to all workflows
+* 🧩 No environment dependency
+* 🧑‍💻 Minimal administrative effort
+* 🎯 Correct scope (not too broad, not too narrow)
+
+Why the other options are wrong:
+
+❌ **A. Recreate the secret at the organization level**
+→ Over-scoped (available to multiple repositories unnecessarily)
+
+❌ **C. Enable required reviewers**
+→ This is for environment approvals, not secret visibility
+
+Final Answer:
+
+**B. Recreate the secret at the repository level.** ✅
+
+
+### Question-81
 
 You are designing the development process for your company.
 
