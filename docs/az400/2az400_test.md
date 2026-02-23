@@ -7105,7 +7105,7 @@ To meet the goal:
 **B. No**
 
 
-### Question-143
+### Question-143 ？？？
 
 You have 50 Node.js-based projects that you scan by using WhiteSource. Each project includes Package.json, Package-lock.json, and Npm-shrinkwrap.json files.
 
@@ -7119,6 +7119,36 @@ What should you do?
 * D. Delete Package-lock.json.
 
 Answer: B
+
+**Correct answer: D. Delete `Package-lock.json`.** ✅
+
+Explanation
+
+WhiteSource (now Mend) analyzes dependency files to determine **all libraries** in a project, including **transitive dependencies**.
+
+If your goal is to **minimize reports to only the libraries you explicitly reference**, you must remove files that define the full dependency tree.
+
+Key files:
+
+* `package.json` → **direct dependencies only** (what you explicitly reference)
+* `package-lock.json` → **full resolved dependency tree (direct + transitive)**
+* `npm-shrinkwrap.json` → **full resolved dependency tree (direct + transitive)**
+
+By **deleting `package-lock.json`**, WhiteSource will rely on `package.json`, which contains **only explicitly referenced libraries**, thus minimizing the reported libraries.
+
+Why the others are wrong
+
+| Option                                          | Reason                                                                          |
+| ----------------------------------------------- | ------------------------------------------------------------------------------- |
+| **A. File System Agent plug-in**                | Controls scanning scope, not dependency resolution                              |
+| **B. Add devDependencies to package-lock.json** | `package-lock.json` is auto-generated — not meant to be edited                  |
+| **C. Artifactory plug-in**                      | Used for repository integration, not dependency filtering                       |
+| **D. Delete `package-lock.json`**               | ✅ Removes transitive dependency resolution → only explicit dependencies scanned |
+
+✅ Final Answer:
+
+**D. Delete `Package-lock.json`.**
+
 
 ### Question-144
 
@@ -7135,7 +7165,36 @@ What should you configure?
 * C. a task executed in the continuous deployment pipeline and a scheduled task against a running production container
 * D. a task executed in the continuous integration pipeline and a scheduled task that analyzes the production container
 
-**Answer: A**
+**Correct answer: A. a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry** ✅
+
+Why this is correct
+
+To expose known exploits **as early as possible** in the application lifecycle, you must scan:
+
+1. **During build time (CI pipeline)** → catches vulnerabilities before images are even deployed
+2. **Continuously in the registry** → detects newly discovered CVEs in already-built images
+
+This gives **shift-left security** + **continuous vulnerability monitoring**.
+
+Lifecycle coverage
+
+| Stage                    | Purpose                                               |
+| ------------------------ | ----------------------------------------------------- |
+| **CI pipeline scanning** | Detects vulnerabilities immediately after image build |
+| **Registry scanning**    | Detects new CVEs in stored images over time           |
+
+Why the others are wrong
+
+| Option | Problem                                                       |
+| ------ | ------------------------------------------------------------- |
+| **B**  | Manual tasks = late detection + unreliable                    |
+| **C**  | CD + production scanning = too late (already deployed)        |
+| **D**  | Production container scanning = reactive, not early lifecycle |
+
+Final Answer
+
+**A. a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry**
+
 
 ### Question-145
 
@@ -7152,7 +7211,41 @@ Nhat should you use to execute the build
 * C. Azure DevOps self-hosted agents on Hyper-V virtual machines
 * **D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack**
 
-Answer: D
+**Correct answer: D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack** ✅
+
+Why this is correct
+
+Your requirements are:
+
+* **Hybrid cloud** → Azure + **Azure Stack**
+* **Custom languages** → **Erlang** and **Hack** (not supported natively by Microsoft-hosted agents)
+* **Minimize management overhead**
+* **Unified CI/CD across hybrid environment**
+
+Using **self-hosted agents on VMs running in Azure Stack** gives you:
+
+✅ Full control over runtime environments (install Erlang, Hack, custom toolchains)
+✅ Works natively in **hybrid cloud** (on-prem Azure Stack + Azure)
+✅ Centralized management via Azure DevOps
+✅ No dependency on Microsoft-hosted agent limitations
+✅ Consistent build environment across hybrid infrastructure
+
+Why the others are wrong
+
+| Option                        | Why it's wrong                                           |
+| ----------------------------- | -------------------------------------------------------- |
+| **A. Microsoft-hosted agent** | ❌ Does not support Erlang and Hack environments natively |
+| **B. Azure DevTest Labs VMs** | ❌ Extra management layer, not hybrid-cloud optimized     |
+| **C. Hyper-V VMs**            | ❌ Not integrated with Azure Stack hybrid model           |
+
+Key principle
+
+> **Hybrid cloud + nonstandard build languages = self-hosted agents on your hybrid infrastructure**
+
+Final Answer
+
+**D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack**
+
 
 ### Question-146
 
@@ -7170,7 +7263,50 @@ What should you recommend?
 * C. the percentage of unit test failures
 * **D. the percentage of overall time spent on rework**
 
-Answer: D
+**Correct answer: D. the percentage of overall time spent on rework** ✅
+
+Why this is the right metric
+
+**Technical debt** is best reflected by how much effort is wasted fixing existing problems instead of building new value.
+The most meaningful indicator is:
+
+> **How much time the team spends reworking old code instead of delivering new features**
+
+So:
+
+**✔ Percentage of overall time spent on rework** directly measures:
+
+* Refactoring effort
+* Bug fixing
+* Architectural cleanup
+* Maintenance overhead
+* Debt interest (cost of past poor decisions)
+
+This is a **true technical debt KPI**.
+
+Why the others are wrong
+
+| Option                                  | Why it's not a good metric                   |
+| --------------------------------------- | -------------------------------------------- |
+| **A. number of code modules**           | ❌ Size ≠ debt                                |
+| **B. number of unit test failures**     | ❌ Quality signal, not debt measurement       |
+| **C. percentage of unit test failures** | ❌ Testing quality metric, not technical debt |
+
+Best-practice metrics for technical debt
+
+In real DevOps environments, technical debt is tracked via:
+
+* % time spent on rework ✅
+* SonarQube Technical Debt Ratio
+* Code smells
+* Cyclomatic complexity trends
+* Refactoring backlog size
+* Mean time to change (MTTC)
+
+Final Answer
+
+**D. the percentage of overall time spent on rework**
+
 
 ### Question-147
 
@@ -7187,7 +7323,45 @@ Which authentication type should you use?
 * C. a personal access token (PAT)
 * D. SAML
 
-Answer: B
+**Correct answer: B. GitHub App** ✅
+
+Explanation
+
+To use the **GitHub Checks API** with **Azure Pipelines** for a public GitHub repository, the correct authentication mechanism is:
+
+> **GitHub App**
+
+This is because:
+
+* The **Checks API** is designed to work with **GitHub Apps** (not PATs or OAuth tokens).
+* Azure Pipelines integrates with GitHub using a **GitHub App** to:
+
+  * Create check runs
+  * Update build statuses
+  * Report CI results
+* It is the **modern, secure, supported integration model** for CI/CD tools.
+
+Why the others are wrong
+
+| Option        | Reason                                              |
+| ------------- | --------------------------------------------------- |
+| **A. OpenID** | ❌ Used for identity federation, not GitHub API auth |
+| **C. PAT**    | ❌ PATs do **not support the Checks API**            |
+| **D. SAML**   | ❌ Enterprise SSO auth, not API integration          |
+
+Key concept to remember for exams & real-world use:
+
+| Feature                   | Required Auth      |
+| ------------------------- | ------------------ |
+| GitHub Checks API         | **GitHub App** ✅   |
+| Webhooks                  | GitHub App / OAuth |
+| REST API basic operations | PAT                |
+| CI/CD integrations        | GitHub App         |
+
+Final Answer
+
+**B. GitHub App** ✔️
+
 
 ### Question-148
 
@@ -7221,7 +7395,41 @@ Does this meet the goal?
 * A. Yes
 * **B. No**
 
-Anewer B
+**Correct answer: B. No** ❌
+
+Explanation
+
+Enabling a **Pull request trigger** in the **Continuous deployment trigger settings of a *release pipeline*** does **not** cause a build to run automatically when code is checked in.
+
+Why:
+
+* **Build pipelines** handle:
+
+  * CI triggers
+  * Automatic builds on commit (push)
+* **Release pipelines** handle:
+
+  * Deployment after artifacts are produced
+  * They do **not** trigger builds
+
+What is actually required
+
+To ensure a build runs automatically when code is checked in, you must configure:
+
+👉 **Continuous Integration (CI) trigger** in the **build pipeline**
+(e.g. YAML trigger or classic pipeline trigger)
+
+Summary
+
+| Action                         | Result                     |
+| ------------------------------ | -------------------------- |
+| PR trigger in release pipeline | ❌ Does not trigger builds  |
+| CI trigger in build pipeline   | ✅ Triggers build on commit |
+
+Final Answer
+
+**B. No** ❌
+
 
 ### Question-150
 
@@ -7236,7 +7444,38 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer: B**
+**Correct answer: B. No** ❌
+
+Explanation
+
+Selecting **“Batch changes while a build is in progress”** in the **Pre-deployment conditions of a release pipeline** does **not** configure automatic builds when code is checked in.
+
+Why this fails the requirement:
+
+* **Pre-deployment conditions** belong to the **release pipeline**, not the build pipeline.
+* This setting only controls **how deployments are queued**, not **when builds are triggered**.
+* It does **not** trigger builds on code commits.
+
+ What actually meets the goal
+
+To ensure a build runs automatically when code is checked in, you must configure:
+
+👉 **Continuous Integration (CI) trigger** in the **build pipeline**
+
+Examples:
+
+* Classic pipeline: Enable **Continuous Integration**
+* YAML pipeline:
+
+  ```yaml
+  trigger:
+    - main
+  ```
+
+Final Answer
+
+**B. No** ❌
+
 
 
 ### Question-151
@@ -7250,7 +7489,31 @@ Does this meet the goal?
 * **A. Yes**
 * B. No
 
-Answer: A
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+Enabling **Continuous Integration (CI)** from the **Triggers tab of the build pipeline** is exactly how you configure Azure DevOps to:
+
+👉 Automatically run a build **whenever code is checked in**.
+
+This directly meets the requirement:
+
+> "ensure that when code is checked in, a build runs automatically."
+
+Summary
+
+| Action                              | Result                 |
+| ----------------------------------- | ---------------------- |
+| Enable CI trigger in build pipeline | ✅ Auto-build on commit |
+| Release pipeline triggers           | ❌ Not for builds       |
+| Pre-deployment conditions           | ❌ Not for builds       |
+
+
+**Final Answer:**
+
+**A. Yes** ✅
+
 
 ### Question-152
 
@@ -7265,9 +7528,36 @@ What should you use?
 * C. release gates
 * D. pull request triggers
 
-Answer: B
+**Correct answer: B. deployment queue settings** ✅
 
-### Question-153
+Explanation
+
+In **Azure DevOps release pipelines**, **deployment queue settings** allow you to control how multiple pending deployments are handled.
+
+There is a specific option:
+
+> **“Deploy latest and cancel the others”**
+
+This ensures that:
+
+* When multiple builds are waiting for deployment
+* Only the **most recent build** is deployed
+* Older pending builds are automatically canceled
+
+Why the others are wrong
+
+| Option                   | Reason                                                         |
+| ------------------------ | -------------------------------------------------------------- |
+| A. deployment conditions | Controls *when* a deployment can run, not queue behavior       |
+| C. release gates         | Used for validations/approvals (e.g., queries, alerts, checks) |
+| D. pull request triggers | Only affects CI/build triggering, not deployment behavior      |
+
+Final Answer
+
+**B. deployment queue settings** ✅
+
+
+### Question-153 ？？？
 
 You use Azure Pipelines to build and test a React js application.
 You have a pipeline that has a single job
@@ -7284,6 +7574,36 @@ Does this meet the goal?
 * B. No
 
 **Answer: B**
+
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+Using a **container job with a custom container image** that already has the required JavaScript packages (npm dependencies) preinstalled **will significantly reduce pipeline execution time** because:
+
+* It avoids repeated `npm install` on every pipeline run
+* Dependencies are baked into the image layer
+* Docker layer caching makes builds much faster
+* Startup time is faster than downloading packages each run
+
+This is a valid optimization strategy for CI pipelines, especially when:
+
+* Dependency install time is high
+* Dependencies are stable
+* You have a single-job pipeline
+
+Additional (best-practice note)
+
+While this solution works, the **most common Azure DevOps optimization** is:
+
+* `Cache@2` task for npm/yarn (`node_modules` or npm cache)
+
+But your proposed solution **does meet the goal** as stated.
+
+Final Answer
+
+**A. Yes** ✅
+
 
 ### Question-154
 
@@ -7302,6 +7622,32 @@ Does this meet the goal?
 * B. No
 
 **Answer. A**
+
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+Enabling **pipeline caching** in Azure Pipelines can significantly reduce the time spent installing npm packages because:
+
+* The cache stores previously downloaded packages (or `node_modules` directories) between runs.
+* When the cache is available, the pipeline can reuse the packages instead of running `npm install` from scratch.
+* This is a **standard optimization for JavaScript/Node.js pipelines**.
+
+How it works
+
+1. Define a cache key (e.g., `package-lock.json` or `yarn.lock`)
+2. Use the `Cache@2` task in your pipeline:
+3. Restore cached packages at the start of the job → faster builds
+
+Comparison to alternative
+
+* **Custom container with preinstalled packages**: also works, but harder to maintain if dependencies change frequently.
+* **Pipeline caching**: flexible, minimal maintenance, works across agents.
+
+Final Answer
+
+**A. Yes** ✅
+
 
 ### Question-155
 
@@ -7322,6 +7668,29 @@ Does this meet the goal?
 
 **Answer: B**
 
+**Correct answer: B. No** ❌
+
+Explanation
+
+Enabling **parallel jobs** in Azure Pipelines allows multiple jobs or pipelines to run **simultaneously**, but it does **not** reduce the time taken by a **single job** to execute.
+
+In your scenario:
+
+* The pipeline has a **single job**
+* The **bottleneck** is the `npm install` step (five minutes)
+* Parallel jobs **won’t speed up a single job**
+
+Correct approaches to reduce npm install time:
+
+1. **Pipeline caching** – cache `node_modules` or npm cache between runs
+2. **Custom container** – preinstall dependencies in a container image
+3. **Package lock optimization** – ensure deterministic installs
+
+Final Answer
+
+**B. No** ❌
+
+
 ### Question-156
 
 
@@ -7340,7 +7709,35 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer: B**
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+In Azure Resource Manager (ARM) deployments, you can deploy resources either in a **single template** or split them into **multiple templates**.
+
+In your scenario:
+
+* You have **two resource groups**:
+
+  1. One with **four VMs**
+  2. One with **two SQL databases**
+* Creating **two standalone templates**, each targeting a specific resource group, is a valid and recommended approach because:
+
+  * ARM templates are **scoped to a single resource group** (or subscription/management group)
+  * This approach **isolates deployments per resource group**
+  * Makes deployment **modular and easier to maintain**
+
+Alternative approaches
+
+* **Nested templates / linked templates**: Useful if you want to deploy all resources in a single coordinated run.
+* **Single template with multiple resource groups**: Possible using **subscription-level deployments**, but more complex.
+
+Your solution **meets the goal** and is simpler to implement.
+
+Final Answer
+
+**A. Yes** ✅
+
 
 ### Question-157
 
@@ -7359,7 +7756,29 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-Answer: B
+**Correct answer: B. No** ❌
+
+Explanation
+
+In **Azure Resource Manager (ARM) templates**, a **standalone template scoped to a resource group** can only deploy resources **within that specific resource group**.
+
+In your scenario:
+
+* You have **two resource groups**:
+
+  1. One with **four VMs**
+  2. One with **two SQL databases**
+* A **single standalone template scoped to a single resource group** cannot deploy resources to the **second resource group**.
+
+To deploy resources across multiple resource groups, you must use:
+
+1. **Two separate templates** – each scoped to its respective resource group ✅
+2. **A single template with linked templates** – using **`Microsoft.Resources/deployments` at the subscription level** to target multiple resource groups
+
+Final Answer
+
+**B. No** ❌
+
 
 ### Question-158
 
@@ -7377,7 +7796,31 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-Answer. B
+**Correct answer: B. No** ❌
+
+Explanation
+
+The solution does **not meet the goal** because:
+
+* The requirement is to **deploy build artifacts to on-premises servers** (physical or virtual machines).
+* Deploying a **Kubernetes cluster and a Helm agent** targets **containerized workloads**, not traditional on-premises servers.
+* Adding a **Download Build Artifacts task** only fetches artifacts; it does **not handle deployment** to standard on-premises servers.
+
+Correct approach
+
+To deploy artifacts to on-premises servers, you should use:
+
+1. **Azure Pipelines self-hosted agent** installed on the target on-premises servers or a management server.
+2. Tasks in the pipeline such as:
+
+   * **Copy files / Windows Machine File Copy**
+   * **PowerShell / Bash scripts** to deploy artifacts
+3. Optionally, configure **deployment groups** in Azure DevOps to manage multiple on-premises servers.
+
+Final Answer
+
+**B. No** ❌
+
 
 ### Question-159
 
@@ -7395,9 +7838,33 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer. B**
+**Correct answer: B. No** ❌
 
-### Question-160
+Explanation
+
+The solution does **not meet the goal** because:
+
+* The requirement is to **deploy build artifacts to on-premises servers**, which may include applications, configuration files, or other outputs from the build.
+* Simply deploying a **Docker build** only works if your application is containerized and intended to run as a container.
+* Using **Download Build Artifacts** only downloads artifacts to the agent—it does **not automatically deploy** them to the server.
+
+Correct approach
+
+To deploy artifacts to on-premises servers:
+
+1. Install a **self-hosted agent** on the on-premises servers.
+2. Use a **release pipeline** with tasks such as:
+
+   * **Copy Files** / **Windows Machine File Copy**
+   * **PowerShell / Bash** deployment scripts
+3. Optionally, configure **Deployment Groups** in Azure DevOps to manage multiple on-premises servers.
+
+Final Answer
+
+**B. No** ❌
+
+
+### Question-160 ？？？
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1
@@ -7413,6 +7880,40 @@ What should you do?
 * D. Create a service hook in Project.
 
 **Answer: C**
+
+**Correct answer: B. Add a Docker Hub service connection to Azure Pipelines** ✅
+
+Explanation
+
+The scenario:
+
+* You have a **container image (Image1)** built in Azure Pipelines.
+* **Image1 uses a base image from Docker Hub**.
+* You want **Image1 to rebuild automatically whenever the base image changes**.
+
+How to achieve this in Azure Pipelines:
+
+1. **Connect to Docker Hub**:
+
+   * Add a **Docker Hub service connection** in Azure DevOps.
+   * This allows the pipeline to authenticate with Docker Hub and detect new versions of the base image.
+
+2. **Trigger pipeline on base image update**:
+
+   * You can use a **pipeline trigger based on a schedule** or **webhook from Docker Hub** (via the service connection) to rebuild your image when the base image is updated.
+
+Why other options are less appropriate
+
+| Option                              | Reason                                                                                                                                                |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A. Enable Azure Event Grid on ACR   | Event Grid triggers notify **ACR events**, not Docker Hub base image updates                                                                          |
+| C. Create and run an ACR task       | ACR tasks can rebuild images on **ACR base images**, not automatically detect external Docker Hub base image changes without additional configuration |
+| D. Create a service hook in Project | Service hooks are for **Azure DevOps events**, not Docker Hub base image updates                                                                      |
+
+Final Answer
+
+**B. Add a Docker Hub service connection to Azure Pipelines** ✅
+
 
 ### Question-161
 
