@@ -7915,7 +7915,7 @@ Final Answer
 **B. Add a Docker Hub service connection to Azure Pipelines** ✅
 
 
-### Question-161
+### Question-161 ？？
 
 You have an Azure DevOps project.
 
@@ -7931,7 +7931,32 @@ Does this meet the goal?
 
 Answer: B
 
-### Question-162
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+This solution **does meet the goal**:
+
+* **Octopus Deploy server** → Acts as the deployment orchestrator
+* **Polled Tentacle agent on on-premises server** → Allows secure outbound connection from on-prem to Octopus (works behind firewalls/NAT)
+* **Octopus task in Azure DevOps pipeline** → Integrates Azure DevOps with Octopus to push and deploy build artifacts
+
+This setup is a **standard enterprise CI/CD pattern** for deploying build artifacts from Azure DevOps to **on-premises infrastructure**.
+
+Why this works
+
+* ✔ Supports on-prem deployments
+* ✔ Secure connectivity (polled Tentacle = no inbound firewall rules needed)
+* ✔ Native Azure DevOps integration
+* ✔ Designed specifically for artifact deployment workflows
+* ✔ Scalable and production-grade
+
+Final Answer
+
+**A. Yes** ✅
+
+
+### Question-162 ？？
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
 
@@ -7948,7 +7973,33 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-Answer: B
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+This solution **does meet the goal**.
+
+Using a **main (parent) ARM template** with a **nested template** is a valid and recommended pattern for deploying resources across **multiple resource groups**.
+
+With nested deployments, you can specify the target scope, for example:
+
+* One deployment targets **Resource Group A** (VMs)
+* The nested deployment targets **Resource Group B** (SQL databases)
+
+ARM supports this via `Microsoft.Resources/deployments` with a different `resourceGroup` scope.
+
+Why this is correct
+
+* ✔ Supports multiple resource groups
+* ✔ Clean separation of concerns
+* ✔ Modular design
+* ✔ Scalable and maintainable
+* ✔ Best-practice ARM architecture pattern
+
+Final Answer
+
+**A. Yes** ✅
+
 
 ### Question-163
 
@@ -7971,6 +8022,33 @@ Does this meet the goal?
 
 Answer: A
 
+
+**Correct answer: A. Yes** ✅
+
+Explanation
+
+This solution **does meet the goal**.
+
+Using a **main ARM template** with **two linked templates**, where each linked template targets a **different resource group**, is a valid and supported deployment strategy in Azure Resource Manager.
+
+Each linked template can be scoped to a specific resource group using `Microsoft.Resources/deployments` with a `resourceGroup` property, for example:
+
+* Linked template 1 → deploys VMs to Resource Group A
+* Linked template 2 → deploys SQL databases to Resource Group B
+
+Why this works
+
+* ✔ Supports deployment across multiple resource groups
+* ✔ Clean modular architecture
+* ✔ Separation of responsibilities
+* ✔ Reusable templates
+* ✔ Azure best practice for complex deployments
+
+Final Answer
+
+**A. Yes** ✅
+
+
 ### Question-164
 
 You have a project in Azure DevOps named Project. Project contains a build pipeline named Pipe1 that builds an application named App1.
@@ -7991,7 +8069,42 @@ What should you do?
 * **D. Create two container jobs.**
 
 
-Answer: D
+**Correct answer: D. Create two container jobs.** ✅
+
+Why this is the best solution
+
+You need to:
+
+* Prevent **dependency conflicts** between App1 and App2
+* **Minimize infrastructure costs**
+* Keep using the same **self-hosted agent pool**
+
+Using **container jobs** in Azure Pipelines allows each pipeline to run inside its **own isolated Docker container environment**, even when using the **same self-hosted agent**.
+
+Benefits of container jobs
+
+* ✔ Full dependency isolation
+* ✔ No conflict between App1 and App2
+* ✔ No need for extra VMs or agents
+* ✔ Minimal infrastructure cost
+* ✔ Clean, repeatable, reproducible builds
+* ✔ Best practice for multi-app environments
+
+Why the others are wrong
+
+* **A. Add another self-hosted agent** ❌
+  → Works, but increases infrastructure cost (extra VM, maintenance, licensing)
+
+* **B. Add a Docker Compose task** ❌
+  → Not for pipeline isolation; used for multi-container app orchestration
+
+* **C. Change OS to RHEL** ❌
+  → OS change does not solve dependency conflicts
+
+Final Answer
+
+**D. Create two container jobs.** ✅
+
 
 ### Question-165
 
@@ -8009,7 +8122,39 @@ Which task must you perform manually?
 * **D. procuring licenses**
 
 
-Answer: D
+**Correct answer: D. procuring licenses** ✅
+
+Explanation
+
+In **Azure DevOps**, you can automate most user and access management tasks, but **license procurement cannot be automated**.
+
+Here’s what can be automated:
+
+* **A. Modifying group memberships** ✅
+  → Can be automated via Azure AD groups, scripts, and APIs
+
+* **B. Adding users** ✅
+  → Can be automated using Azure AD sync, APIs, or group-based assignment
+
+* **C. Assigning entitlements** ✅
+  → Can be automated with group rules in Azure DevOps + Azure AD
+
+What must be manual
+
+* **D. Procuring licenses** ❌ (Manual task)
+  Licenses must be **purchased manually** through:
+
+  * Azure Portal
+  * Microsoft 365 Admin Center
+  * Enterprise Agreement
+  * CSP provider
+
+This process involves **billing and procurement**, which cannot be automated via DevOps or Azure APIs.
+
+Final Answer
+
+**D. procuring licenses** ✅
+
 
 ### Question-166
 
@@ -8028,6 +8173,37 @@ Which task types should you add to the build pipeline?
 
 **Answer: D**
 
+**Correct answer: D. Gradle** ✅
+
+Explanation
+
+To analyze and monitor **Java code quality** with **SonarQube**, you must integrate the build tool that SonarQube supports for Java projects.
+
+For Java, SonarQube commonly integrates with:
+
+* **Gradle** ✅
+* Maven
+
+Among the options given:
+
+* **A. Octopus** ❌ → Deployment tool, not for Java builds or code analysis
+* **B. Chef** ❌ → Configuration management, not a build system
+* **C. CocoaPods** ❌ → iOS/macOS dependency manager
+* **D. Gradle** ✅ → Java build tool with native SonarQube integration
+
+Why Gradle works
+
+Gradle supports SonarQube via:
+
+* `sonarqube` plugin
+* `gradle build sonarqube` task
+* Native integration with CI/CD pipelines (including Azure DevOps)
+
+Final Answer
+
+**D. Gradle** ✅
+
+
 ### Question-167
 
 
@@ -8044,7 +8220,28 @@ Which task types should you add to the build pipeline?
 * C.Xcode
 * D. Gulp
 
-Answer: A
+**Correct answer: A. Maven** ✅
+
+Explanation
+
+To analyze and monitor **Java code quality** using **SonarQube**, you must use a Java build tool that integrates natively with SonarQube.
+
+SonarQube supports Java analysis through:
+
+* **Maven** ✅
+* Gradle
+
+Option analysis
+
+* **A. Maven** ✅ → Native SonarQube integration for Java (`mvn sonar:sonar`)
+* **B. CocoaPods** ❌ → iOS/macOS dependency manager
+* **C. Xcode** ❌ → Apple development environment
+* **D. Gulp** ❌ → JavaScript task runner, not a Java build tool
+
+Final Answer
+
+**A. Maven** ✅
+
 
 ### Question-168
 
@@ -8078,7 +8275,39 @@ What should you do?
 * D. Use an Azure function to connect to the Azure DevOps REST API and send messages to Teams.
 
 
-**Answer: C**
+**Correct answer: C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel.** ✅
+
+Why this is correct
+
+To get **pull request notifications** into **Microsoft Teams** with **minimal development effort**, the built-in integration is the best solution:
+
+* The **Azure Repos app for Teams** natively supports:
+
+  * Pull request events
+  * Code push notifications
+  * Repository activity
+  * Subscriptions per channel
+
+No custom code, automation, or APIs required.
+
+Option breakdown
+
+* **A. Azure Pipelines app** ❌
+  → Focused on build/release notifications, not pull requests
+
+* **B. Azure Automation + REST API** ❌
+  → Custom development, high effort
+
+* **C. Azure Repos app for Teams** ✅
+  → Native PR notifications, low effort, designed for this use case
+
+* **D. Azure Function + REST API** ❌
+  → Custom integration, unnecessary complexity
+
+Final Answer
+
+**C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel.** ✅
+
 
 ### Question-170
 
@@ -8095,7 +8324,53 @@ What should you do?
 * **D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing**.
 
 
-**Answer: D**
+**Correct answer: D**
+
+Here’s why:
+
+In **Azure Artifacts**, best practice for handling *release vs pre-release* packages is to use **feed views** with **promotion**, not tagging:
+
+Proper design
+
+* Create two views:
+
+  * `@prerelease` → for preview/unstable builds
+  * `@release` → for stable production-ready builds
+* Set `@release` as the **default view**
+* Use a **release pipeline** to **promote** packages from `@prerelease` → `@release` after validation/testing
+
+Why option D is correct
+
+> **D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing.**
+
+This matches Azure Artifacts' intended workflow:
+
+* CI publishes packages to `@prerelease`
+* Consumers who want previews explicitly reference `@prerelease`
+* Stable consumers automatically get packages from `@release` (default view)
+* Promotion = official release process
+
+ Why the others are wrong
+
+* **A / B** ❌ → Azure Artifacts does not use *tagging* for release management — it uses **views + promotion**
+* **C** ❌ → `@default` is not a user-created view name; default view is a property, not a view
+
+Visual flow
+
+```
+CI build → publish → @prerelease
+                  ↓
+           release pipeline validation
+                  ↓
+              promote → @release (default)
+```
+
+
+
+This is the standard enterprise pattern for npm feeds in **Azure DevOps** with multi-project consumption.
+
+✅ **Final Answer: D**
+
 
 ### Question-171
 
@@ -8120,9 +8395,83 @@ What should you do?
 * release.
 * D. Create a feed view named @default. After the npm packages test successfully, configure a release pipeline that promotes a package to the @default view
 
-**Answer: A**
+**Correct answer: A**
 
-### Question-172
+> **A. Create a feed view named `@release` and set `@release` as the default view. After the npm packages test successfully, configure a release pipeline that promotes a package to the `@release` view.**
+
+Why this is correct
+
+In **Azure Artifacts**, the *official and supported mechanism* to control package availability is:
+
+👉 **Feed views + promotion**
+
+This design ensures:
+
+* Untested packages are **not visible** to consumers
+* Only **validated packages** appear in the default feed
+* **Minimal development effort** (no custom versioning, no tagging logic, no consumer changes)
+
+Correct architecture
+
+* CI publishes packages → default/internal view (e.g. `@prerelease`)
+* Tests run
+* Release pipeline:
+
+  * **promotes** package → `@release`
+* `@release` is the **default view**
+* All consuming projects automatically get **only tested packages**
+
+
+Why the others are wrong
+
+❌ B
+
+> uses **tagging**
+
+Azure Artifacts does **not use tags for consumption control**
+Tags are metadata only → consumers can still pull untested packages
+
+❌ C
+
+> `@default` + tagging
+
+* `@default` is not a user-created view
+* Tagging still does nothing for access control
+
+❌ D
+
+> `@default` + promotion
+
+* You **cannot create `@default`**
+* Default is a property, not a promotable view
+
+Azure Artifacts best-practice model
+
+```text
+CI build
+   ↓
+publish → internal view
+   ↓
+tests pass
+   ↓
+release pipeline
+   ↓
+PROMOTE → @release (default view)
+```
+
+ Key principle
+
+> ✅ **Views + promotion = controlled consumption**
+> ❌ Tags = labels only (no enforcement)
+
+
+
+This is the enterprise-standard pattern in **Azure DevOps** for secure multi-project feed consumption.
+
+✅ **Final Answer: A**
+
+
+### Question-172 ？？
 
 Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
 
@@ -8134,7 +8483,33 @@ What should you modify?
 * C. the retention settings of the project's tests
 * D. the retention settings of the company pipeline
 
-Answer: B
+The correct answer is: **B. the retention settings of the project's pipeline** ✅
+
+Explanation
+
+In **Azure DevOps**, npm packages published to Azure Artifacts are **often tied to pipeline builds**. Older builds and their artifacts (including npm packages) consume storage.
+
+To automatically clean up unused packages and minimize disk space usage:
+
+* Configure the **pipeline retention settings** in the project.
+* Retention rules determine how long builds and their associated artifacts (npm packages) are kept.
+* When a build is deleted according to retention rules, its packages can also be cleaned up automatically.
+
+Why the other options are incorrect
+
+* **A. Retention settings of the project's release** ❌
+  Releases control deployment artifacts, **not npm packages** in Azure Artifacts. Deleting a release does not free package storage.
+
+* **C. Retention settings of the project's tests** ❌
+  Test retention only affects test results, not build artifacts or packages.
+
+* **D. Retention settings of the company pipeline** ❌
+  There is no global “company pipeline” retention; retention is managed **per pipeline** in each project.
+
+
+
+✅ **Answer: B**
+
 
 
 ### Question-173
@@ -8159,7 +8534,45 @@ What should you do?
 * C. From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
 * **D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DeTest Labs**.
 
-Answer: D
+The correct answer is: **D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs** ✅
+
+Explanation
+
+The scenario requires:
+
+1. **Minimize cost** → avoid keeping staging VMs running constantly.
+2. **Automatic provisioning** → integrate with CI/CD.
+3. **Use a custom ARM template** → ensure the staging VMs match production configuration.
+
+Why **Azure DevTest Labs** is ideal
+
+**Azure DevTest Labs** is designed specifically for:
+
+* Creating **temporary or short-lived environments**.
+* Using **custom ARM templates** to provision VMs.
+* **Automating creation and deletion** via pipelines or scripts.
+* Reducing cost by **shutting down or deleting unused VMs automatically**.
+
+This matches **all the requirements**.
+
+Why the other options are less suitable
+
+* **A / C (Azure CLI / PowerShell in Cloud Shell)** ❌
+
+  * Manual scripts could create and delete VMs, but require **manual execution or custom automation**, which is more effort.
+  * No built-in cost optimization like DevTest Labs.
+
+* **B (Azure Cloud Services)** ❌
+
+  * Azure Cloud Services is **legacy PaaS**; it doesn’t allow you to use custom ARM templates for VM provisioning.
+
+
+
+**Key takeaway:**
+For staging environments that **minimize cost, use custom templates, and can be automated**, **Azure DevTest Labs integrated with Azure DevOps** is the recommended solution.
+
+✅ **Answer: D**
+
 
 ### Question-174
 
@@ -8180,9 +8593,34 @@ Which pull request action should you use?
 * D. Reactivate
 * E. Revert
 
-Answer: C
+The correct answer is: **C. Cherry-pick** ✅
 
-### Question-175
+Explanation
+
+You want to:
+
+1. Create a **new branch** from an existing pull request (PR).
+2. Ensure the new branch contains **only a portion of the code** in the original PR.
+
+Why **Cherry-pick** is the right action
+
+* **Cherry-pick** allows you to **select specific commits** from one branch (or PR) and apply them to another branch.
+* This means you can **take only part of the changes** from the original pull request into a new branch.
+* After cherry-picking, you can **merge the new branch** back into the target branch without including unwanted changes.
+
+Why the other options are incorrect
+
+* **A. Set as default branch** ❌ → Changes which branch is considered the default, does **not** select code.
+* **B. Approve with suggestions** ❌ → Used for code review feedback; it **doesn’t create a branch** or pick commits.
+* **D. Reactivate** ❌ → Reopens a closed PR; it does **not control which code is used**.
+* **E. Revert** ❌ → Creates a commit that **undoes changes**, opposite of what you want.
+
+
+
+✅ **Answer: C**
+
+
+### Question-175 ？？？
 
 You are designing a build pipeline in Azure Pipelines.
 
@@ -8197,7 +8635,36 @@ What should you recommend?
 * C. an Azure virtual machine scale set
 * D. Azure virtual machines
 
-Answer: B
+The correct answer is: **D. Azure virtual machines** ✅
+
+Explanation
+
+The scenario requirements:
+
+1. **Self-hosted agent** → the agent must run on infrastructure you manage, not Microsoft-hosted.
+2. **Runs once daily** → low frequency.
+3. **Build duration ~30 minutes** → moderate runtime.
+4. **Minimize costs** → avoid over-provisioned or always-on infrastructure.
+
+ Analysis of options
+
+| Option                           | Pros                                                                            | Cons                                                                      | Suitability                                        |
+| -------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------- |
+| **A. AKS cluster**               | Can run containerized agents at scale                                           | Complex, always-on cluster, higher cost for a single daily build          | ❌ Overkill for 1 build/day                         |
+| **B. Azure Container Instances** | Quick startup, pay per use                                                      | Limited management options for self-hosted agents, may need orchestration | ❌ Not ideal for persistent self-hosted agent setup |
+| **C. VM scale set**              | Autoscaling VMs                                                                 | Designed for multiple simultaneous agents / high throughput               | ❌ Overkill for 1 agent running once daily          |
+| **D. Azure virtual machines**    | Easy to set up, self-hosted agent can be installed, can stop VM when not in use | Pay only for running time if VM is deallocated                            | ✅ Best cost/effort balance for 1 build/day         |
+
+Recommended approach to minimize cost
+
+* Use an **Azure VM** for the self-hosted agent.
+* **Deallocate the VM** when not running builds (e.g., using Azure Automation or pipeline pre/post tasks).
+* Only start the VM for the daily build → pay for ~30–60 minutes instead of 24/7.
+
+
+
+✅ **Answer: D. Azure virtual machines**
+
 
 
 ### Question-176
@@ -8217,10 +8684,43 @@ Which task type should you include in the solution?
 * **C. Azure PowerShell**
 * D. Azure App Service Manage
 
-**Answer: C**
+The correct answer is: **C. Azure PowerShell** ✅
+
+Explanation
+
+You need to:
+
+* Deploy **resources using Azure Resource Manager (ARM) templates**.
+* Minimize administrative effort.
+* Use an **Azure DevOps release pipeline**.
+
+Analysis of options
+
+| Option                                | Purpose                                                                              | Suitability                                                                  |
+| ------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **A. Azure Cloud Service Deployment** | Deploys classic Cloud Services (web/worker roles)                                    | ❌ Not ARM template-based                                                     |
+| **B. Azure RM Web App Deployment**    | Deploys web apps to Azure App Service                                                | ❌ Only web apps, not general ARM resources                                   |
+| **C. Azure PowerShell**               | Runs PowerShell scripts, including `New-AzResourceGroupDeployment` for ARM templates | ✅ Allows automated deployment of **any ARM resources**, minimal manual steps |
+| **D. Azure App Service Manage**       | Starts/stops App Service instances                                                   | ❌ Only manages app services, not resource deployments                        |
 
 
-### Question-177
+How it works
+
+1. In the release pipeline, add an **Azure PowerShell** task.
+2. Configure the task to run `New-AzResourceGroupDeployment` with your ARM template.
+3. This approach:
+
+   * Works with **any Azure resource**.
+   * Requires minimal administrative effort.
+   * Integrates fully with **Azure DevOps**.
+
+
+
+✅ **Answer: C. Azure PowerShell**
+
+
+
+### Question-177 ？？？
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -8242,6 +8742,37 @@ Configure your release definition to post deployment information to Work items.
 
 
 Open Pipelines> Releases, choose to edit your release pipeline, then choose Options> Integrations.
+
+The correct answer is: **A. Modify the Integrations options for the pipeline** ✅
+
+Explanation
+
+You want to:
+
+* Automatically associate **release information** with **work items** linked to a Git commit.
+* Do this in an **Azure DevOps release pipeline**.
+
+How it works in Azure DevOps
+
+1. Azure DevOps has a **built-in integration** that links builds/releases to work items.
+2. In the **release pipeline settings → Integrations**, you can enable:
+
+   * **Associate work items** with releases.
+   * **Update work items** automatically when a release succeeds.
+3. Once enabled, any **work items linked to commits included in the release** are updated automatically with release details.
+
+Why the other options are incorrect
+
+* **B. Post-deployment conditions** ❌ → Controls stage execution (e.g., gates, approvals), not work item updates.
+* **C. Agentless job** ❌ → Used for calling services or running tasks that don’t require an agent; doesn’t update work items automatically.
+* **D. Service hooks** ❌ → Useful for external integrations (Slack, Jira, etc.), but **not needed** to update Azure DevOps work items.
+
+
+
+**Key point:**
+Enabling **pipeline integrations** is the standard way to ensure that **release information is automatically added to associated work items** in Azure DevOps.
+
+✅ **Answer: A**
 
 
 ### Question-178
@@ -8278,7 +8809,33 @@ NOTE: Each correct selection is worth one point.
 * E. Tiller
 
 
-Answer: BD
+The correct answers are: **C. Node.js** and **D. Yeoman** ✅✅
+
+Explanation
+
+When you want to **use Terraform to deploy Azure resources from a Windows system**, especially **ARM templates or Terraform modules that integrate with Azure**, some supporting frameworks are often required if you plan to use **Azure-specific Terraform tools or scaffolding**.
+
+Analysis of the options
+
+| Option           | Purpose                                                                                                       | Needed?                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **A. Vault**     | Secret management tool by HashiCorp                                                                           | ❌ Not required for basic Terraform deployment                              |
+| **B. Terratest** | Go library for testing Terraform code                                                                         | ❌ Optional, only for automated tests                                       |
+| **C. Node.js**   | Required by some Azure Terraform scaffolding tools (e.g., `@azure/terraform`) and Azure DevOps pipeline tasks | ✅ Required for running Terraform templates that include JavaScript tooling |
+| **D. Yeoman**    | Scaffolding tool for creating Terraform modules or Azure Resource Manager templates                           | ✅ Needed if using Yeoman generators for Terraform templates                |
+| **E. Tiller**    | Part of Helm v2 for Kubernetes                                                                                | ❌ Not needed for deploying Azure Resource Groups                           |
+
+Key points
+
+* **Node.js**: Needed because some Azure Terraform tools (like `azurerm` Terraform templates with Node.js-based scripts or generators) rely on Node.js runtime.
+* **Yeoman**: Often used to generate Terraform module scaffolds and ARM template skeletons for Azure.
+
+> Vault, Terratest, and Tiller are **optional or unrelated** for deploying an Azure resource group from Windows.
+
+
+
+✅ **Answer: C and D**
+
 
 ### Question-180
 
@@ -8297,10 +8854,33 @@ Does this meet the goal?
 * A. Yes
 * **B. No**
 
-**Answer: B**
+The correct answer is: **B. No** ✅
+
+Explanation
+
+In **Azure DevOps release pipelines**, the scenario involves:
+
+* An **approval process** with a time limit (policy: 8 hours).
+* Current deployment fails if approvals take longer than **2 hours**.
+* Goal: allow approvals up to **8 hours** without failing the deployment.
+
+Why modifying **“Time between re-evaluation of gates”** does **not** help
+
+* The **Time between re-evaluation of gates** controls **how frequently a deployment checks the status of a gate** (e.g., monitoring external conditions or metrics).
+* It **does not control the timeout for approvals**.
+* Approval timeouts are controlled by the **“Timeout” setting in the pre-deployment approval configuration**, not gate evaluation.
+
+Correct approach
+
+* Modify the **pre-deployment approval timeout** for the stage to **8 hours**.
+* This ensures that the deployment waits up to 8 hours for team leader approval before failing.
 
 
-### Question-181
+✅ **Answer: B. No**
+
+
+
+### Question-181 ？？
 
 
 You have a policy stating that approvals must occur within eight hours.
@@ -8315,9 +8895,34 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer: B**
+The correct answer is: **A. Yes** ✅
 
-### Question-183
+Explanation
+
+In **Azure DevOps release pipelines**:
+
+* **Pre- or post-deployment approvals** have a **Timeout setting** that defines how long the system waits for the approval before automatically failing the deployment.
+
+* In your case:
+
+  * Current timeout = 2 hours → deployment fails if approval takes longer than 2 hours.
+  * Policy requires approval within 8 hours.
+
+* By **modifying the Timeout for post-deployment approvals to 8 hours**, you ensure:
+
+  1. Deployments will **wait up to 8 hours** for approval.
+  2. Deployment only fails if approvals exceed **8 hours**.
+
+Key point
+
+> The **Timeout setting on approval** is the correct control for aligning approval time limits with organizational policies.
+
+
+
+✅ **Answer: A. Yes**
+
+
+### Question-183 ？？？
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -8337,6 +8942,36 @@ NOTE: Each correct selection is worth one point.
 
 **Answer: BD**
 
+The correct answers are: **A. Define a deployment control that invokes the ServiceNow REST API** and **B. Define a pre-deployment gate before the deployment to the Prod stage** ✅✅
+
+Explanation
+
+The requirement:
+
+> Ensure that a **change request is approved in ServiceNow before deploying to production**.
+
+Analysis of options
+
+| Option                                                     | Explanation                                                                                                                                                                              | Correct?                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| **A. Deployment control that invokes ServiceNow REST API** | Azure DevOps allows you to use **service hooks or scripts** to call ServiceNow’s REST API to verify change requests. This enforces that a valid change request exists before deployment. | ✅ Correct                   |
+| **B. Pre-deployment gate before Prod stage**               | Pre-deployment gates run **before the stage starts**. You can configure a gate to call the ServiceNow REST API and block the deployment until the change request is approved.            | ✅ Correct                   |
+| **C. Deployment control invoking ServiceNow SOAP API**     | SOAP API is legacy and not natively supported; requires custom scripts. REST API is the standard integration approach.                                                                   | ❌ Not recommended           |
+| **D. Post-deployment gate after QA stage**                 | Post-deployment gates run **after a stage completes**, which is too late for controlling production deployment.                                                                          | ❌ Does not meet requirement |
+
+
+
+Recommended integration approach
+
+1. **Configure a pre-deployment gate** on the **Production stage**.
+2. Use **ServiceNow REST API** in the gate to verify that the change request is approved.
+3. Deployment proceeds only if the change request is processed successfully.
+
+
+
+✅ **Answer: A and B**
+
+
 ### Question-184
 
 Your company develops an application named App1 that is deployed in production.
@@ -8355,7 +8990,39 @@ What should you do?
 * D. Implement a branch policy.
 
 
-Answer: A
+The correct answer is: **A. Implement a feature flag** ✅
+
+
+Explanation
+
+The scenario:
+
+* **App1** is in production.
+* A new service in App1 depends on **App2**, which is **not yet available**.
+* You want to **deploy App1 now**, but only **enable the new service later**, once App2 is ready.
+
+Why **feature flags** are the solution
+
+* A **feature flag** allows you to **deploy code but disable new functionality** until you’re ready to turn it on.
+* You can ship App1 to production without breaking functionality, because the new service is **disabled by default**.
+* Once App2 is available, you simply **toggle the feature flag** to enable the service.
+
+Why the other options are incorrect
+
+| Option                              | Why it’s wrong                                                                                                                |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **B. Create a fork in the build**   | Forks are for source control branching; they don’t control runtime features.                                                  |
+| **C. Create a branch in the build** | Branching allows parallel development, but you **cannot deploy unfinished code** to production safely without a feature flag. |
+| **D. Implement a branch policy**    | Branch policies enforce code quality and merge rules; they **do not control deployment behavior**.                            |
+
+
+
+**Key point:**
+
+> Feature flags are the standard approach for **deploying code in advance of dependencies** while retaining the ability to safely enable new features later.
+
+✅ **Answer: A. Implement a feature flag**
+
 
 ### Question-185
 
@@ -8370,7 +9037,32 @@ What should you do?
 * C. Create an active subscription in App Center Test.
 * D. Add the device owner to the organization in App Center.
 
-Answer: B
+The correct answer is: **B. Register the devices on the Apple Developer portal** ✅
+
+Explanation
+
+When distributing an **iOS app outside the App Store** using **Microsoft Visual Studio App Center**:
+
+* **iOS apps require devices to be provisioned** (UDID added to a provisioning profile) because of Apple’s security model.
+* **Unprovisioned devices** cannot install the app until they are registered in the **Apple Developer portal** and included in a provisioning profile used to sign the app.
+* Once devices are registered and the provisioning profile updated, you can distribute the app to the private group via App Center.
+
+Why the other options are incorrect
+
+| Option                                                        | Reason                                                                                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **A. Request the Apple ID for each device**                   | Not needed; iOS distribution via provisioning profiles is **device-based**, not Apple ID–based.                          |
+| **C. Create an active subscription in App Center Test**       | App Center Test is for automated UI testing, **not required for app distribution**.                                      |
+| **D. Add the device owner to the organization in App Center** | App Center accounts are for access control, but adding the owner **does not provision the device** for iOS installation. |
+
+
+
+**Key point:**
+
+> For iOS **ad-hoc distribution**, devices must be **registered in Apple Developer portal** and included in the app’s provisioning profile before App Center can distribute the app.
+
+✅ **Answer: B. Register the devices on the Apple Developer portal**
+
 
 
 ### Question-186
@@ -8386,7 +9078,38 @@ What should you do?
 * C. Create an unsigned build.
 * D. Add the device owner to the collaborators group.
 
-**Answer: A**
+The correct answer is: **A. Select Register devices and sign my app** ✅
+
+**Explanation**
+
+For **iOS ad-hoc distribution** via **Microsoft Visual Studio App Center**:
+
+* **Provisioned devices** can install apps signed with a provisioning profile that includes their UDIDs.
+* **Unprovisioned devices** cannot install the app until they are **registered in the Apple Developer portal** and added to a provisioning profile.
+* App Center provides a **“Register devices and sign my app”** option to:
+
+  1. Register new devices with Apple.
+  2. Update the provisioning profile.
+  3. Sign the app so it can be installed on those devices.
+
+This ensures that all devices in the private distribution group—both previously provisioned and new—can receive the app.
+
+**Why the other options are incorrect**
+
+| Option                                                  | Reason                                                                                                                    |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **B. Create an active subscription in App Center Test** | App Center Test is for automated UI testing, not for distribution.                                                        |
+| **C. Create an unsigned build**                         | iOS apps must be **signed with a valid provisioning profile** to install on devices. Unsigned builds cannot be installed. |
+| **D. Add the device owner to the collaborators group**  | Adding a user does not provision the device or sign the app; it only gives account access to App Center.                  |
+
+
+
+**Key point:**
+
+> For iOS distribution via App Center, you must **register unprovisioned devices and sign the app** before distribution.
+
+✅ **Answer: A. Select Register devices and sign my app**
+
 
 ### Question-187
 
@@ -8405,7 +9128,43 @@ NOTE: Each correct selection is worth one point.
 * D. a self-hosted agent
 * E. an External Git service connection
 
-**Answer: DE**
+The correct answers are: **D. a self-hosted agent** and **E. an External Git service connection** ✅✅
+
+Explanation
+
+You want to **integrate an on-premises Bitbucket Server** with **Azure DevOps** for CI/CD. Key constraints:
+
+* Bitbucket Server is **on-premises** and **behind a firewall**, so **Azure DevOps cannot reach it directly**.
+
+Required components
+
+1. **Self-hosted agent (D)**
+
+   * Runs **inside the network** where Bitbucket Server is accessible.
+   * Can **pull code from the on-premises Git repository** because it is behind the firewall.
+   * Microsoft-hosted agents **cannot access repositories blocked by a firewall**.
+
+2. **External Git service connection (E)**
+
+   * Azure DevOps uses a **service connection** to connect to external Git repositories.
+   * For Bitbucket Server, you create an **“External Git” service connection** with the repository URL and credentials.
+
+Why the others are incorrect
+
+| Option                        | Reason                                                                                                   |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **A. Deployment group**       | Used for targeting machines for deployment; not required for source control integration.                 |
+| **B. Microsoft-hosted agent** | Cannot access on-premises Bitbucket behind a firewall.                                                   |
+| **C. Service hooks**          | Optional for triggering Azure DevOps on repository events; **not required** for basic CI/CD integration. |
+
+
+
+**Key point:**
+
+> For on-premises Git repositories behind a firewall, you need a **self-hosted agent** inside the network and an **External Git service connection** in Azure DevOps.
+
+✅ **Answer: D and E**
+
 
 
 ### Question-188
@@ -8425,7 +9184,38 @@ NOTE: Each correct selection is worth one point.
 * **D. the organization URL**
 * E. the agent pool name
 
-**Answer: AD**
+The correct answers are: **A. authorization credentials** and **D. the organization URL** ✅✅
+
+Explanation
+
+When you deploy an **Azure DevOps self-hosted agent** using an **unattended (non-interactive) configuration script**, you must provide the following key information so the agent can register with Azure DevOps:
+
+1. **Authorization credentials (A)**
+
+   * Typically a **personal access token (PAT)**.
+   * This allows the agent to authenticate to Azure DevOps and communicate securely with the organization.
+
+2. **Organization URL (D)**
+
+   * The URL of your Azure DevOps organization (e.g., `https://dev.azure.com/YourOrg`).
+   * Required so the agent knows **which Azure DevOps instance to connect to**.
+
+Why the other options are not required in the unattended script
+
+| Option                           | Reason                                                                                                                                          |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **B. The project name**          | Optional; the agent is registered to an **agent pool**, not a specific project.                                                                 |
+| **C. The deployment group name** | Only required if you are registering the agent as part of a **deployment group**, not for a standard agent pool.                                |
+| **E. The agent pool name**       | Can be included, but in many unattended setups, the **default pool** can be used. The **mandatory items** are credentials and organization URL. |
+
+
+
+**Key point:**
+
+> For unattended agent configuration, the script must at least include **credentials and the organization URL** so the agent can register automatically.
+
+✅ **Answer: A and D**
+
 
 ### Question-189
 
@@ -8444,7 +9234,40 @@ What should you implement?
 * C. scheduled builds
 * D. branch filters
 
-Answer: B
+The correct answer is: **B. batch changes** ✅
+
+Explanation
+
+The scenario:
+
+* **Azure Pipelines** integrated with **GitHub**.
+* **Continuous integration (CI)** is enabled.
+* Requirement: When multiple commits are pushed quickly, **the system should wait for the current build to finish before queuing the next build**, rather than triggering multiple builds in parallel.
+
+How **batch changes** works
+
+* **Batch changes** is a setting in **CI triggers** in Azure Pipelines.
+* When enabled:
+
+  1. If a build is **already running**, additional commits **are batched together** into a single build that runs after the current build finishes.
+  2. This **prevents multiple builds from queuing unnecessarily** and reduces resource usage.
+
+Why the other options are incorrect
+
+| Option                  | Reason                                                                          |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| **A. Path filters**     | Restrict CI triggers based on changed file paths; **does not control queuing**. |
+| **C. Scheduled builds** | Triggers builds at specific times, not automatically on commits.                |
+| **D. Branch filters**   | Restrict CI triggers to certain branches; **does not control queuing**.         |
+
+---
+
+**Key point:**
+
+> **Batch changes** ensures that Azure Pipelines waits for a build to complete before queuing another one, combining multiple commits into a single build.
+
+✅ **Answer: B. batch changes**
+
 
 ### Question-190
 
@@ -8462,7 +9285,42 @@ Which git commit parameter should you use?
 * C. `--message`
 * D. `--no-post-rewrite`
 
-**Answer: B**
+The correct answer is: **B. --no-verify** ✅
+
+Explanation
+
+The scenario:
+
+* You have a **client-side Git hook** on `commit-msg` that enforces a rule: every commit message must include a **custom work item tag**.
+* You want to **bypass this hook** for a particular commit.
+
+How it works
+
+* The **`--no-verify`** parameter tells Git to **skip all pre-commit and commit-msg hooks** when making a commit.
+* Example:
+
+```bash
+git commit --no-verify -m "Commit without work item tag"
+```
+
+* This allows the commit to succeed **even if it violates the commit-msg hook**.
+
+ Why the other options are incorrect
+
+| Option                   | Reason                                                                                          |
+| ------------------------ | ----------------------------------------------------------------------------------------------- |
+| **A. --squash**          | Used to combine changes from another commit into the current commit; does **not bypass hooks**. |
+| **C. --message (-m)**    | Used to provide the commit message; does **not bypass hooks**.                                  |
+| **D. --no-post-rewrite** | Skips `post-rewrite` hooks; unrelated to `commit-msg`.                                          |
+
+
+
+**Key point:**
+
+> **`--no-verify`** is the standard way to bypass client-side Git hooks for a commit.
+
+✅ **Answer: B. --no-verify**
+
 
 
 ### Question-191
@@ -8478,7 +9336,36 @@ What should you do?
 * C. Add the device owner to the organization in App Center.
 * D. Create an unsigned build.
 
-**Answer: A**
+The correct answer is: **A. Select Register devices and sign my app** ✅
+
+Explanation
+
+When distributing an **iOS app** to a private distribution group via **Microsoft Visual Studio App Center**:
+
+* **Provisioned devices** can install apps signed with a provisioning profile that includes their UDIDs.
+* **Unprovisioned devices** cannot install the app until they are **registered in Apple Developer portal** and included in a provisioning profile.
+* App Center provides the **“Register devices and sign my app”** option to:
+
+  1. Register unprovisioned devices.
+  2. Update the provisioning profile.
+  3. Sign the app so all devices in the distribution group can install it.
+
+Why the other options are incorrect
+
+| Option                                                        | Reason                                                                                                   |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **B. Create an active subscription in App Center Test**       | App Center Test is for automated UI testing, not distribution.                                           |
+| **C. Add the device owner to the organization in App Center** | Gives account access, **does not provision the device or sign the app**.                                 |
+| **D. Create an unsigned build**                               | iOS apps must be **signed with a provisioning profile** to install; unsigned builds cannot be installed. |
+
+
+
+**Key point:**
+
+> For iOS ad-hoc distribution, **all devices must be provisioned and the app must be signed** before it can be installed via App Center.
+
+✅ **Answer: A. Select Register devices and sign my app**
+
 
 ### Question-192
 
@@ -8493,7 +9380,31 @@ What should you do?
 * C. Create an unsigned build.
 * D. Add the device owner to the collaborators group.
 
-Answer: A
+The correct answer is: **A. Register the devices on the Apple Developer portal** ✅
+
+Explanation
+
+For **iOS ad-hoc distribution** via **Microsoft Visual Studio App Center**:
+
+* **Provisioned devices** can install apps that are signed with a provisioning profile containing their UDIDs.
+* **Unprovisioned devices** cannot install the app until they are **registered in the Apple Developer portal** and included in the app’s provisioning profile.
+* Once the devices are registered, you can **update the provisioning profile, sign the app, and distribute it** through App Center.
+
+Why the other options are incorrect
+
+| Option                                                        | Reason                                                                                           |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **B. Add the device owner to the organization in App Center** | Gives the user access to App Center, **but does not provision the device** for iOS installation. |
+| **C. Create an unsigned build**                               | iOS apps **must be signed** with a provisioning profile to install on devices.                   |
+| **D. Add the device owner to the collaborators group**        | Provides collaboration access, **does not provision devices**.                                   |
+
+
+**Key point:**
+
+> For iOS ad-hoc distribution, all devices must be **registered in Apple Developer portal** before the app can be installed.
+
+✅ **Answer: A. Register the devices on the Apple Developer portal**
+
 
 ### Question-193
 
@@ -8509,10 +9420,38 @@ Which repository type should you use as an upstream source?
 * C. Maven Central
 * D. third-party trusted Python
 
-**Answer: B**
+The correct answer is: **B. PyPI** ✅
+
+Explanation
+
+In **Azure Artifacts**, an **upstream source** allows you to proxy and cache packages from external public repositories.
+
+For **Python packages**:
+
+* The standard public repository is **PyPI (Python Package Index)**.
+* By configuring PyPI as an upstream source:
+
+  * Your Python projects can consume public packages directly through Azure Artifacts.
+  * Packages are **cached locally**, improving reliability and speed.
+
+Why the other options are incorrect
+
+| Option                            | Reason                                                                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **A. npmjs.org**                  | This is the **JavaScript/Node.js** package repository. Not for Python.                                                    |
+| **C. Maven Central**              | This is for **Java/Scala/Kotlin** packages. Not Python.                                                                   |
+| **D. third-party trusted Python** | There is no standard repository type called “third-party trusted Python” in Azure Artifacts; PyPI is the official source. |
 
 
-### - Question-194
+
+**Key point:**
+
+> For Python packages in Azure Artifacts, the correct upstream source is **PyPI**.
+
+✅ **Answer: B. PyPI**
+
+
+### Question-194
 
 
 You have a GitHub repository that contains workflows. The workflows contain steps that execute predefined actions. Each action has one or more versions.
@@ -8530,7 +9469,55 @@ NOTE: Each correct selection is worth one point.
 * E. the serial
 
 
-Answer: ABD
+The correct answers are: **A. the SHA-based hashes**, **B. the tag**, and **D. the branch** ✅✅✅
+
+Explanation
+
+In **GitHub Actions**, when you reference an action in a workflow, you can specify **which version** of the action to use. GitHub allows three ways to pin the action version:
+
+1. **SHA-based hash (A)**
+
+   * Pin to a **specific commit SHA** for maximum security and immutability.
+   * Example:
+
+     ```yaml
+     uses: actions/checkout@a1b2c3d4e5f6g7h8i9j0
+     ```
+
+2. **Tag (B)**
+
+   * Pin to a **tag** that represents a version.
+   * Common practice: use **release tags** like `v2`.
+   * Example:
+
+     ```yaml
+     uses: actions/checkout@v2
+     ```
+
+3. **Branch (D)**
+
+   * You can reference the **branch name** if you want to track the latest commit in that branch (less stable).
+   * Example:
+
+     ```yaml
+     uses: actions/checkout@main
+     ```
+
+Why the other options are incorrect
+
+| Option            | Reason                                                                    |
+| ----------------- | ------------------------------------------------------------------------- |
+| **C. the runner** | Refers to the machine executing the workflow, **not the action version**. |
+| **E. the serial** | No such attribute exists in GitHub Actions for specifying versions.       |
+
+---
+
+**Key point:**
+
+> To request a specific version of a GitHub Action, you can use a **commit SHA**, a **tag**, or a **branch**. Using a SHA is the most precise and recommended method for production workflows.
+
+✅ **Answer: A, B, D**
+
 
 ### Question-195
 
@@ -8549,7 +9536,48 @@ What advanced feature of a monitoring tool should you include in the solution?
 * D. Alert Management
 
 
-Answer: A
+The correct answer is: **A. analytics** ✅
+
+Explanation
+
+The scenario:
+
+* You have **multiple Azure pipelines**.
+* Requirement:
+
+  1. **Parse logs from multiple sources** (build logs, release logs, errors).
+  2. **Identify the root cause of issues**.
+
+
+Why **analytics** is the right choice
+
+* **Analytics** in monitoring tools (like **Azure Monitor / Application Insights**) allows you to:
+
+  * Collect and **aggregate logs** from multiple sources.
+  * Perform **queries and correlation** across pipelines, builds, and releases.
+  * **Detect patterns** and help determine the **root cause** of failures.
+
+* Example features:
+
+  * Kusto Query Language (KQL) queries for logs.
+  * Correlation of errors across pipelines.
+  * Trend analysis and dashboards.
+
+Why the other options are incorrect
+
+| Option                      | Reason                                                                                                         |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **B. Synthetic monitoring** | Used to **simulate user actions** and monitor app performance; not for parsing pipeline logs.                  |
+| **C. Directed monitoring**  | Not a standard Azure Monitor / DevOps feature; does not provide log analytics or root cause analysis.          |
+| **D. Alert Management**     | Useful for **sending notifications** when issues occur, but does **not analyze logs** or identify root causes. |
+
+
+**Key point:**
+
+> To parse logs from multiple pipelines and identify root causes, the **analytics** feature of a monitoring tool is required.
+
+✅ **Answer: A. analytics**
+
 
 
 ### Question-196
@@ -8567,6 +9595,43 @@ What is required for App1 to programmatically sign in to Azure Active Directory 
 
 **Answer: C**
 
+The correct answer is: **C. the application ID, a client secret, and the tenant ID** ✅
+
+Explanation
+
+When an application uses a **service principal** to authenticate to Azure AD, it needs the following credentials to sign in programmatically:
+
+1. **Application ID (Client ID)**
+
+   * Uniquely identifies the **service principal / app registration**.
+
+2. **Client secret**
+
+   * A password-like credential used to authenticate the service principal.
+
+3. **Tenant ID**
+
+   * Identifies the **Azure AD tenant** where the service principal exists.
+
+With these three values, the application can request an **OAuth token** from Azure AD to access Azure resources.
+
+
+Why the other options are incorrect
+
+| Option                                                | Reason                                                                                                  |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **A. application ID, client secret, object ID**       | Object ID identifies the service principal object in Azure AD but is **not needed for authentication**. |
+| **B. client secret, object ID, tenant ID**            | Missing the **application ID** (Client ID), which is required to identify the application.              |
+| **D. application ID, client secret, subscription ID** | Subscription ID is used for resource management, but **not required for authentication** with Azure AD. |
+
+
+
+**Key point:**
+
+> To authenticate a service principal programmatically, an app needs **Application ID (Client ID)**, **Client Secret**, and **Tenant ID**.
+
+✅ **Answer: C. the application ID, a client secret, and the tenant ID**
+
 
 ### Question-197
 
@@ -8583,7 +9648,42 @@ What should you do?
 * C. Use an Azure function to connect to the Azure DevOps REST API and notify the team members.
 * **D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel**.
 
-Answer. D
+The correct answer is: **D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel** ✅
+
+Explanation
+
+The scenario:
+
+* You are using **Azure Pipelines** for build and release.
+* Requirement: Notify the team in **Microsoft Teams** whenever a **pipeline fails**.
+* Minimize **development effort**.
+
+Why **Azure Pipelines app for Teams** is the solution
+
+* The **Azure Pipelines app** for Teams allows you to:
+
+  1. Connect your **Azure DevOps pipelines** to Teams channels.
+  2. **Subscribe to events**, such as build/release failures, completions, or approvals.
+  3. Automatically post **notifications to Teams** without custom coding.
+
+* Minimal effort: just install the app and configure the subscription.
+
+Why the other options are incorrect
+
+| Option                             | Reason                                                                         |
+| ---------------------------------- | ------------------------------------------------------------------------------ |
+| **A. Azure Boards app for Teams**  | Azure Boards handles **work item notifications**, not build/release events.    |
+| **B. Azure Automation + REST API** | Works, but requires **custom scripting and development**, not minimal effort.  |
+| **C. Azure Function + REST API**   | Also requires **custom coding**; more complex than using the native Teams app. |
+
+
+
+**Key point:**
+
+> To notify a team in Teams about pipeline failures with minimal development, use the **Azure Pipelines app for Teams** and configure a channel subscription.
+
+✅ **Answer: D**
+
 
 ### Question-198
 
@@ -8598,9 +9698,53 @@ Which part of the version should you use for the tag?
 * C. micro
 * D. modifier
 
-Answer: D
+The correct answer is: **D. modifier** ✅
 
-### Question-199
+Explanation
+
+When using **Calendar Versioning (CalVer)**:
+
+* Version format is typically:
+
+  ```
+  YYYY.MM.DD[-modifier]
+  ```
+
+  or
+
+  ```
+  YYYY.MM[-modifier]
+  ```
+
+* The **modifier** (sometimes called a **pre-release tag**) is used to indicate **optional tags** such as `beta`, `alpha`, `rc1`, etc.
+
+* Example:
+
+  ```
+  2026.02.24-beta
+  2026.02.24-alpha
+  ```
+
+  Here, `beta` is stored in the **modifier** portion of the version.
+
+
+Why the other options are incorrect
+
+| Option       | Reason                                                                         |
+| ------------ | ------------------------------------------------------------------------------ |
+| **A. minor** | Represents the month or minor version number in CalVer, not for optional tags. |
+| **B. major** | Represents the year or major version, cannot store tags.                       |
+| **C. micro** | Represents day, patch, or build number, not for tags.                          |
+
+
+**Key point:**
+
+> In CalVer, use the **modifier** field for optional pre-release tags like `beta` or `alpha`.
+
+✅ **Answer: D. modifier**
+
+
+### Question-199 ？？
 
 
 You have a project in Azure DevOps named Project1.
@@ -8615,6 +9759,61 @@ What should you create?
 * D. a PowerShell task
 
 Answer: A
+
+The correct answer is: **C. a YAML template** ✅
+
+Explanation
+
+Scenario:
+
+* You want **all new pipelines** in **Project1** to automatically include **three specific tasks**.
+* You want **reusability and minimal duplication**.
+
+Why a YAML template is the solution
+
+* In **Azure Pipelines**, **YAML templates** allow you to define **reusable steps, jobs, or stages**.
+* You can create a **template containing the three specific tasks**.
+* New pipelines can **reference the YAML template**, ensuring the tasks are executed consistently.
+
+Example:
+
+```yaml
+# file: templates/common-tasks.yml
+steps:
+- task: Task1@1
+- task: Task2@1
+- task: Task3@1
+```
+
+Reference in a pipeline:
+
+```yaml
+# azure-pipelines.yml
+trigger:
+- main
+
+extends:
+  template: templates/common-tasks.yml
+```
+
+* This ensures all pipelines **reuse the same tasks** without redefining them.
+
+
+Why the other options are incorrect
+
+| Option                 | Reason                                                                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **A. Task group**      | Task groups work only in **classic pipelines**, not YAML pipelines. Modern pipelines should use templates.                      |
+| **B. JSON template**   | Azure Pipelines does **not support JSON templates** for steps/tasks.                                                            |
+| **D. PowerShell task** | A PowerShell task could execute commands, but it **cannot enforce inclusion of multiple tasks in all pipelines** automatically. |
+
+
+
+**Key point:**
+
+> Use **YAML templates** in Azure Pipelines to define a set of tasks that can be reused across multiple pipelines.
+
+✅ **Answer: C. a YAML template**
 
 
 ### Question-200
@@ -8632,10 +9831,50 @@ Which KPI should you use?
 * C. defect rate
 * D. rework rate
 
-Answer: A
+The correct answer is: **A. defect escape rate** ✅
+
+Explanation
+
+The scenario:
+
+* You want to **compare time spent troubleshooting issues** found during **development** vs **after release**.
+* This is a measure of **quality and defect detection efficiency**.
 
 
-### - Question-201
+
+What is **Defect Escape Rate**?
+
+* **Defect escape rate (DER)** measures **the proportion of defects found in production compared to defects found during development**.
+* Formula:
+
+[
+\text{Defect Escape Rate} = \frac{\text{Defects found in production}}{\text{Defects found in development + production}} \times 100
+]
+
+* A **high escape rate** indicates that many defects are **escaping development testing**, requiring troubleshooting in production.
+* Tracking DER helps compare **effort spent fixing issues in development vs post-release**.
+
+
+
+Why the other options are incorrect
+
+| Option                     | Reason                                                                                                |
+| -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **B. Unplanned work rate** | Measures time spent on **tasks outside the planned backlog**, not specific to defect troubleshooting. |
+| **C. Defect rate**         | Measures **number of defects**, but does not differentiate between development vs production.         |
+| **D. Rework rate**         | Measures time spent on **rework of planned tasks**, not necessarily defects escaping to production.   |
+
+
+
+**Key point:**
+
+> **Defect escape rate** is the KPI that helps you compare troubleshooting effort **before and after release**.
+
+✅ **Answer: A. defect escape rate**
+
+
+
+###  Question-201
 
 You have a project in Azure DevOps named Project1.
 
@@ -8651,9 +9890,52 @@ What should you use?
 * D. the Test-DscConfiguration cmdlet
 
 
-Answer: B
+The correct answer is: **B. the Pester test framework** ✅
 
-### - Question-202
+Explanation
+
+Scenario:
+
+* You are using **PowerShell Desired State Configuration (DSC)** in a CI/CD pipeline.
+* You want to **perform both unit tests and integration tests** on the DSC configuration **before deployment**.
+
+Why **Pester** is the right choice
+
+* **Pester** is the **PowerShell testing framework** for writing **unit tests and integration tests**.
+* With DSC, you can write **Pester tests** to validate that:
+
+  * Configuration scripts produce the expected **MOF (Managed Object Format)** files.
+  * Resources are configured correctly.
+* Pester is the **standard way to test PowerShell scripts and DSC configurations** in CI/CD pipelines.
+
+Example:
+
+```powershell
+Describe "DSC Configuration" {
+    It "Should have IIS installed" {
+        (Get-WindowsFeature -Name Web-Server).Installed | Should -BeTrue
+    }
+}
+```
+
+Why the other options are incorrect
+
+| Option                       | Reason                                                                                                                                           |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **A. PSScriptAnalyzer**      | Static code analysis tool; checks **style and syntax**, **not unit/integration behavior**.                                                       |
+| **C. PSCodeHealth**          | Checks **code quality metrics**; not used for executing unit/integration tests.                                                                  |
+| **D. Test-DscConfiguration** | Verifies that a system is currently compliant with a DSC configuration; **does not perform pre-deployment tests of the DSC scripts themselves**. |
+
+
+
+**Key point:**
+
+> For **unit and integration testing** of PowerShell DSC configurations in CI/CD, **Pester** is the standard framework.
+
+✅ **Answer: B. the Pester test framework**
+
+
+### Question-202
 
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
@@ -8672,7 +9954,43 @@ What should you include in the solution?
 
 Answer: D
 
-### - Question-203
+The correct answer is: **C. a branch policy** ✅
+
+Explanation
+
+Scenario:
+
+* You are using **Azure Repos** and **pull requests (PRs)**.
+* Requirement: **All comments on a pull request must be resolved before it is included in a build**.
+* Solution must **minimize administrative effort**.
+
+Why **branch policy** is the right solution
+
+* **Branch policies** in Azure Repos allow you to enforce rules before a PR can be merged.
+* You can configure policies to require:
+
+  * **All comments resolved** before completing the PR.
+  * **Build validation** (ensure CI pipeline passes).
+  * **Minimum number of reviewers**.
+* Once set, this enforcement is **automatic for all PRs**, requiring **no manual or custom intervention**.
+
+Why the other options are incorrect
+
+| Option                      | Reason                                                                   |
+| --------------------------- | ------------------------------------------------------------------------ |
+| **A. Custom action**        | Would require development effort; not minimal effort.                    |
+| **B. Post-deployment gate** | Runs **after a deployment stage**, not before merging code.              |
+| **D. Pre-deployment gate**  | Runs **before deploying to a stage**, not before PR completion or build. |
+
+
+**Key point:**
+
+> Use a **branch policy** to enforce that all PR comments are resolved before the PR is merged and included in a build.
+
+✅ **Answer: C. a branch policy**
+
+
+### Question-203
 
 You have a project in Azure DevOps named Project. Project1 contains a build pipeline named Pipe1 that builds an application named App1.
 
@@ -8691,9 +10009,59 @@ What should you do?
 * C. Change the self-hosted agent to use Red Hat Enterprise Linux (RHEL) 9.
 * **D. Create two container jobs.**
 
-Answer: D
+The correct answer is: **D. Create two container jobs** ✅
 
-### Question-205
+Explanation
+
+Scenario:
+
+* You have **two build pipelines** (Pipe1 and Pipe2) for **two applications** (App1 and App2).
+* App1 and App2 have **conflicting dependencies**.
+* Current setup: **one self-hosted Windows agent** in Pool1.
+* Requirement: **minimize conflicts** and **minimize infrastructure costs**.
+
+Why **container jobs** are the solution
+
+* **Container jobs** in Azure Pipelines allow each job to run inside a **separate container image**.
+* Benefits:
+
+  1. **Isolate dependencies** for each application, avoiding conflicts.
+  2. **Reuses the same agent**, so you **don’t need additional agents** (cost-effective).
+  3. Works on **any agent** that supports Docker (self-hosted or Microsoft-hosted).
+
+Example:
+
+```yaml id="h8xl38"
+jobs:
+- job: BuildApp1
+  container: mcr.microsoft.com/dotnet/sdk:7.0
+  steps:
+    - script: dotnet build App1.sln
+
+- job: BuildApp2
+  container: mcr.microsoft.com/dotnet/sdk:6.0
+  steps:
+    - script: dotnet build App2.sln
+```
+
+Why the other options are incorrect
+
+| Option                               | Reason                                                                                                                      |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| **A. Add another self-hosted agent** | Works, but **increases infrastructure cost** unnecessarily.                                                                 |
+| **B. Add a Docker Compose task**     | Docker Compose sets up multi-container environments, but **you only need isolated jobs**, not a full multi-container setup. |
+| **C. Change agent OS to RHEL 9**     | OS change **does not solve dependency conflicts** between the apps.                                                         |
+
+
+
+**Key point:**
+
+> **Container jobs** allow each pipeline to run in an **isolated environment**, minimizing conflicts without adding extra agents.
+
+✅ **Answer: D. Create two container jobs**
+
+
+### Question-205 ??
 
 
 You have an app named App1 that you release by using Azure Pipelines. App1 has the versions shown in the following table.
@@ -8720,6 +10088,8 @@ Which version number should you assign to the release?
 
 **Answer: D**
 
+
+
 ### Question-206
 
 You are automating the testing process for your company.
@@ -8734,6 +10104,53 @@ Which framework should you use?
 * D. Microsoft.CodeAnalysis
 
 Answer: B
+
+The correct answer is: **B. Playwright** ✅
+
+Explanation
+
+Scenario:
+
+* You want to **automate UI testing** for a **web application**.
+* The solution must support modern browsers and web interactions.
+
+Why **Playwright** is the right choice
+
+* **Playwright** is a **modern open-source framework** for automating browser interactions.
+* Supports:
+
+  * Chrome, Firefox, Edge, and WebKit (Safari)
+  * **End-to-end UI testing**
+  * Multi-language support: C#, JavaScript, Python, Java
+* Can be easily integrated into **CI/CD pipelines** for automated web testing.
+
+Example:
+
+```csharp
+using Microsoft.Playwright;
+
+using var playwright = await Playwright.CreateAsync();
+var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = true });
+var page = await browser.NewPageAsync();
+await page.GotoAsync("https://example.com");
+await page.ClickAsync("text=Login");
+```
+
+Why the other options are incorrect
+
+| Option                        | Reason                                                                     |
+| ----------------------------- | -------------------------------------------------------------------------- |
+| **A. JaCoco**                 | Code coverage tool for Java; **not for UI testing**.                       |
+| **C. Xamarin.UITest**         | Used for **mobile app UI testing**, not web applications.                  |
+| **D. Microsoft.CodeAnalysis** | Known as Roslyn; **used for analyzing C# and VB code**, not UI automation. |
+
+
+
+**Key point:**
+
+> For **automated UI testing of web applications**, the recommended framework is **Playwright**.
+
+✅ **Answer: B. Playwright**
 
 
 ### Question-207
@@ -8754,3 +10171,45 @@ NOTE: Each correct selection is worth one point.
 * **D. View the pool consumption report at the organization level.**
 
 **Answer: BD**
+
+The correct answers are: **B. Query the TaskAgentPoolSizeSnapshots endpoint** and **D. View the pool consumption report at the organization level** ✅✅
+
+
+Explanation
+
+Scenario:
+
+* You notice **increased cycle times** in Azure Pipelines.
+* You want to determine if **agent pool exhaustion** (i.e., not enough agents available) is causing delays.
+
+
+Option analysis
+
+1. **B. Query the TaskAgentPoolSizeSnapshots endpoint** ✅
+
+   * This **REST API endpoint** provides snapshots of **agent pool usage** over time.
+   * You can see **how many agents are busy, idle, or offline**, helping identify if builds are delayed due to **insufficient available agents**.
+
+2. **D. View the pool consumption report at the organization level** ✅
+
+   * Azure DevOps provides **built-in reports for agent pools**, showing:
+
+     * Agent usage trends
+     * Queued jobs
+     * Pool saturation
+   * Useful for spotting **bottlenecks caused by agent shortages**.
+
+Why the other options are incorrect
+
+| Option                                             | Reason                                                                                                     |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **A. Query the PipelineRun/PipelineRuns endpoint** | Shows details about **pipeline runs**, but does not indicate **agent pool saturation**.                    |
+| **C. View the Pipeline duration report**           | Shows **pipeline execution times**, but cannot distinguish **agent availability issues** from slow builds. |
+
+
+
+**Key point:**
+
+> To detect **agent pool exhaustion**, you need **metrics on agent pool usage**, either via the **TaskAgentPoolSizeSnapshots API** or the **pool consumption report**.
+
+✅ **Answer: B and D**
