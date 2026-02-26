@@ -9,7 +9,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 * **C. Cycle time**
 * D. Burndown
 
-
+---
 
 The correct answer is:
 
@@ -37,7 +37,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 
 | Option | Explanation |
-|--|-|
+|---|---|
 | **A. Cumulative Flow Diagram** | Graphical representation showing the flow of work items through different process stages over time. |
 | **B. Burnup** | Visualization tool tracking completed work over time, often used in Agile project management. |
 | **C. Cycle time** | **Total time for a work item to move through a process, from start to finis**h. |
@@ -52,6 +52,8 @@ You need to consider the underlined segment to establish whether it is accurate.
 * **B. Lead time**
 * C. Test results trend
 * D. Burndown
+
+---
 
 > Correct Answer: B. Lead time
 
@@ -81,7 +83,7 @@ You need to consider the underlined segment to establish whether it is accurate.
 
 
 | Term | Explanation |
-||-|
+|----|----|
 | **A. No adjustment required** | Indicates that no changes or modifications are necessary. |
 | **B. Lead time** | **The total time it takes for a work item to be completed from the moment it's requested**. |
 | **C. Test results trend** | The pattern or direction in which test results are moving over a period of time. |
@@ -96,6 +98,7 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 * C. Assigning entitlements
 * D. License procurement
 
+---
 
 The correct answer is:
 
@@ -117,7 +120,7 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 
 
 | Term | Explanation |
-||-|
+|---|---|
 | **A. Group membership changes** | Modifications or updates made to the membership of a specific group within an organization. |
 | **B. License assignment** | The process of allocating or assigning software licenses to users or devices. |
 | **C. Assigning entitlements** | Granting specific rights or privileges to users or entities based on their entitlements. |
@@ -133,6 +136,8 @@ You have been tasked with strengthening the security of your team's development 
 * **B. Static code analysis**
 * C. Threat modeling
 * D. Dynamic code analysis
+
+---
 
 The correct answer is:
 
@@ -160,15 +165,13 @@ Why the others are less suitable for CI:
 
 Validation in the CI/CD begins before the developer commits his or her code. Static code analysis tools in the IDE provide the first line of defense to help ensure that security vulnerabilities are not introduced into the CI/CD process. 
 
-Reference:
-https://docs.microsoft.com/en-us/azure/devops/articles/security-validation-cicd-pipeline?view=vsts
 
 You have been tasked with strengthening the security of your team's development process. You need to suggest a security tool type tor the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?
 
 
 
 | Term | Explanation |
-||-|
+|---|---|
 | **A. Penetration testing** | A method of evaluating the security of a computer system or network by simulating an attack. |
 | **B. Static code analysis** | Examination of source code to identify potential vulnerabilities without executing the code. |
 | **C. Threat modeling** | A process of identifying and prioritizing potential threats to a system and assessing defenses. |
@@ -188,6 +191,8 @@ Foundation Version Control changesets dates, as well as the changes dates of wor
 * C. Upgrading PowerShell Core to the latest version.
 * D. Using the TFS Integration Platform to perform the upgrade.
 
+---
+
 **Correct Answer: B**
 
 Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure DevOps. You have been tasked with supplying a migration approach that allows for the preservation of Team Foundation Version Control changesets dates, as well as the changes dates of work items revisions. The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release.
@@ -195,9 +200,8 @@ Your company is currently making use of Team Foundation Server 2013 (TFS 2013), 
 Which of the following should also be suggested?
 
 
-
 | Term | Explanation |
-||-|
+|---|---|
 | **A. Installing the TFS kava SDK** | The process of installing the TFS (Team Foundation Server) kava SDK (Software Development Kit). |
 | **B. Using the TFS Database Import Service to perform the upgrade** | Utilizing a service provided by TFS to import data from databases to upgrade the system. |
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
@@ -214,6 +218,8 @@ Which of the following is the option you would choose?
 * B. Agile
 * C. Scrum
 * **D. CMMI**
+
+---
 
 The correct answer is:
 
@@ -251,7 +257,7 @@ Which of the following is the option you would choose?
 
 
 | Term | Explanation |
-||-|
+|---|---|
 | **A. Basic** | Choose Basic when your team wants the simplest model that uses Issues, Tasks, and Epics to track work. |
 | **B. Agile** | This process works great if you want to track user stories and (optionally) bugs on the Kanban board, or track bugs and tasks on the task board. |
 | **C. Scrum** | This process works great if you want to track product backlog items (PBIs) and bugs on the Kanban board, or break PBIs and bugs down into tasks on the task board |
@@ -268,6 +274,8 @@ Solution: You set the -Configuration Mode parameter to ApplyOnly. Does the solut
 
 * A. Yes
 * **B. No**
+
+---
 
 Correct Answer: B
 
@@ -321,6 +329,7 @@ Solution: You set the -ConfigurationMode parameter to ApplyAn Monitor, Does the 
 * A. Yes
 * B. No
 
+---
 
 **Answer: B - No**
 
@@ -391,6 +400,8 @@ Solution: You set the -ConfigurationMode parameter to **ApplyAndAutocorrect**, D
 * A. Yes
 * B. No
 
+---
+
 **Correct Answer: A**
 
 * ApplyAndMonitor: focuses on monitoring for drift without automatic correction,
@@ -417,7 +428,7 @@ So the solution **does meet the goal**.
 ✅ **Correct answer: A. Yes**
 
 
-### 7,8,9-Expanation
+### Question 7,8,9-Explain
 
 **ApplyAndMonitor:**
 
