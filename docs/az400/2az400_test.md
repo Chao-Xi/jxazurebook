@@ -2142,7 +2142,7 @@ Azure virtual machine scale sets provide support for rolling upgrades including 
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
-You need to prevent the build pipeline from failing due to the test.
+**You need to prevent the build pipeline from failing due to the test.**
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -2205,7 +2205,8 @@ Why the others are incorrect:
 Your company hosts a web application in Azure. 
 
 The company uses Azure Pipelines for the build and release
-Stakeholders management of the application. Stakeholders report that the past few releases have negatively affected system performance. You configure alerts in Azure Monitor.
+
+Stakeholders management of the application. **Stakeholders report that the past few releases have negatively affected system performance.** You configure alerts in Azure Monitor.
 
 You need to ensure that new releases are only deployed to production if the releases meet defined performance
 
@@ -2304,7 +2305,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
  
 3- Perform a Subscription Health scan when packages are created.   (wrong)
 
-Correct Option is Implement Continuous Assurance for the project
+<mark>Correct Option is Implement Continuous Assurance for the project</mark>
 
 > Note: The Subscription Security health check features in ASK contains a set of scripts that examines a subscription and flags off security issues, 
 
@@ -2469,33 +2470,23 @@ You use Azure Pipelines to manage build pipelines, Github to store source code, 
 
 **Correct Answer: B. Approve the pull request.**
 
-The correct answer is:
+The correct answer is **B. Approve the pull request.**
 
-**A. Create a pull request.** ✅
+**Explanation:**
 
+Dependabot is designed to automate the dependency management process. When Dependabot is used to **manage** dependencies (as stated in the scenario), it follows an automated workflow:
 
-Explanation:
+1.  **Detection:** Dependabot scans your repository and detects an outdated or vulnerable dependency.
+2.  **Creation:** It automatically **creates a new branch** and **performs a commit** with the updated version.
+3.  **Pull Request:** It automatically **creates a pull request (PR)** that includes the changes needed to update the dependency.
 
-When **Dependabot detects a dependency that requires an update**:
+Since Dependabot has already performed the detection and created the PR, the first action you (the developer/user) must take to "apply" the update to your codebase is to **review and approve the pull request** (or merge it). This allows your CI/CD pipeline (Azure Pipelines) to run tests and eventually deploy the update.
 
-1. Dependabot **automatically creates a pull request (PR)** in GitHub with the proposed update.
-2. The pull request can then be **reviewed, tested in CI/CD (Azure Pipelines)**, and merged.
+**Why other options are incorrect:**
 
-**Key points:**
-
-* **Creating the PR** is the first step to apply the update.
-* **Approving the PR** (B) and **merging** happen **after the PR is created**.
-* **Creating a branch** (C) or **performing a commit** (D) is handled by Dependabot automatically for the PR.
-
-
-✅ **Final answer: A. Create a pull request.**
-
-
-DependaBot is a useful tool to regularly check for dependency updates. By helping to keep your project up to date, DependaBot can reduce technical debt and immediately apply security vulnerabilities when patches are released. How does DependaBot work? 
-
-1. DependaBot regularly checks dependencies for updates 
-2. If an update is found, DependaBot creates a new branch with this upgrade and Pull Request for approval 
-3. You review the new Pull Request, ensure the tests passed, review the code, and decide if you can merge the change
+*   **A. Create a pull request:** Dependabot does this automatically when it detects the update. You do not need to do this manually.
+*   **C. Create a branch:** Dependabot creates the branch for the update automatically.
+*   **D. Perform a commit:** Dependabot performs the version-bump commit within the branch it creates.
 
 
 ### Question-49
@@ -2506,7 +2497,7 @@ You are designing a configuration management solution to support five apps hoste
 You need to recommend a configuration management solution that meets the following requirements 
 
 
-Supports teature flags, Tracks contiguration changes from the past 30 days, Stores hierarchically structured contiguratio values, Controls access to the configurations by using role-based access control (RBAC) permissions, Stores shared valur as keyivalue pairs that can be used by all the apps
+**Supports teature flags, Tracks configuration changes from the past 30 days, Stores hierarchically structured contiguration values, Controls access to the configurations by using role-based access control (RBAC) permissions, Stores shared valur as key-value pairs that can be used by all the apps**
 
 
 Which Azure service should you recommend as the configuration management solution?
@@ -2649,9 +2640,9 @@ You have an Azure DevOps organization named Contoso and an Azure subscription. T
 
 You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.
 
-You need to ensure that an email alert is generated whenever VMSS1 scales in or out.
+**You need to ensure that an email alert is generated** whenever VMSS1 scales in or out.
 
-Solution: From Azure DevOps, configure the Notifications settings for Project1.
+Solution: From Azure DevOps, configure **the Notifications settings for Project1**.
 
 Does this meet the goal?
 
@@ -2698,7 +2689,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-Notifications help you and your team stay informed about activity that occurs within your projects in Azure DevOps. You can get notified when changes occur to the following items: 
+**Notifications** help you and your team stay informed about activity that occurs within your projects in Azure DevOps. You can get notified when changes occur to the following items: 
 
 * work items 
 * code reviews 
@@ -2757,7 +2748,7 @@ This approach directly monitors **VMSS autoscaling events** and sends emails as 
 ✅ **Final answer: B. No**
 
 
-### Question-54 ？？
+### Question-54 ？
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
 
@@ -2765,11 +2756,11 @@ You have a project in Azure DevOps named Project. Project is used to build a web
 
 You need to ensure that an email alert is generated whenever VMSS1 scales in or out.
 
-Solution: From Azure Monitor, create an action group.
+**Solution: From Azure Monitor, create an action group**.
 
 Does this meet the goal?
 
-* **A. Yes**
+* A. Yes
 * B. No
 
 Answer: A
@@ -2780,7 +2771,6 @@ Azure Advisor alerts use action groups to notify users that an alert has been tr
 The correct answer is:
 
 **B. No** ✅
-
 
 Explanation:
 
@@ -2806,7 +2796,13 @@ Only then will **VMSS scaling events trigger emails**.
 
 ✅ **Final answer: B. No**
 
+Why the solution fails
 
+> “From Azure Monitor, create an action group”
+
+❌ Missing alert rule
+❌ No trigger condition
+❌ No scale-event detection
 
 ### Question-55
 
@@ -2877,7 +2873,7 @@ To entirely remove unwanted files from a repository's history you can use either
 
 You plan to provision a self-hosted Linux agent.
 
-Which authentication mechanism should you use to register the self-hosted agent?
+**Which authentication mechanism should you use to register the self-hosted agent?**
 
 * **A. personal access token (PAT)**
 * B. SSH key
@@ -2932,6 +2928,7 @@ Use a personal access token (PAT) if your Azure DevOps Server or TFS instance an
 You are building a Microsoft ASP.NET application that requires authentication.
 
 You need to authenticate users by using Azure Active Directory (Azure AD).
+
 What should you do first?
 
 * A. Assign an enterprise application to users and groups
@@ -3002,9 +2999,9 @@ You have an Azure DevOps organization named Contoso.
 
 You need to recommend an authentication mechanism that meets the following requirements:
 
-Supports authentication from Git
+**Supports authentication from Git**
 
-Minimizes the need to provide credentials during authentication
+**Minimizes the need to provide credentials during authentication**
 
 What should you recommend?
 
@@ -3036,8 +3033,8 @@ PATs meet **both requirements**:
 
 * PATs can be:
 
-  * Stored in Git credential managers
-  * Cached securely
+  * **Stored in Git credential managers**
+  * **Cached securely**
   * Used non-interactively in scripts and CI/CD pipelines
     ➡️ No repeated username/password prompts
 
@@ -3082,7 +3079,7 @@ You have an application that consists of several Azure App Service web apps and 
 
 You need to assess the security of the web apps and the functions.
 
-Which Azure feature can you use to provide a recommendation for the security of the application?
+Which Azure feature can you use to provide a recommendation **for the security of the application?**
 
 
 * A. Security & Compliance in Azure Log Analytics
@@ -3103,7 +3100,10 @@ Explanation:
 * Vulnerability assessments
 * Security recommendations
 * Threat protection
+  
   for:
+
+  
 * **Azure App Service web apps**
 * **Azure Functions**
 * Virtual machines
