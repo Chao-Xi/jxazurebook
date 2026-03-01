@@ -46,7 +46,11 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 ### Question 2
 
-You need to consider the underlined segment to establish whether it is accurate. The Burnup widget measures the elapsed time from creation of work items to their completion. Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate
+You need to consider **the underlined segment** to **establish whether it is accurate.** 
+
+**The Burnup widget measures the elapsed time from creation of work items to their completion**. 
+
+Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate
 
 * A. No adjustment required.
 * **B. Lead time**
@@ -66,7 +70,7 @@ The correct answer is:
 The statement is **inaccurate**.
 
 * The **Burnup** widget **does not** measure elapsed time from creation to completion.
-* That metric is called **Lead time**, which measures the time from **work item creation → completion**.
+* <mark>That metric is called **Lead time**, which measures the time from **work item creation → completion**.</mark>
 
 **Why the others are wrong:**
 
@@ -76,7 +80,6 @@ The statement is **inaccurate**.
 * **D. Burndown** ❌ → Tracks remaining work over time, not elapsed time.
 
 ✅ Final answer: **B. Lead time**
-
 
 
 You need to consider the underlined segment to establish whether it is accurate. The Burnup widget measures the elapsed time from creation of work items to their completion. Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
@@ -184,7 +187,9 @@ You have been tasked with strengthening the security of your team's development 
 Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure
 
 You have been tasked with supplying a migration approach that allows for the preservation of Team
-Foundation Version Control changesets dates, as well as the changes dates of work items revisions. The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release. Which of the following should also be suggested?
+Foundation Version Control changesets dates, as well as the changes dates of work items revisions.
+
+ The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release. Which of the following should also be suggested?
 
 * A. Installing the TFS kava SDK
 * **B. Using the TFS Database Import Service to perform the upgrade**.
@@ -211,7 +216,7 @@ Which of the following should also be suggested?
 
 ### Question 6
 
-You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for requirements, change requests, risks, and reviews to be tracked.
+You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for **requirements, change requests, risks, and reviews to be tracked.**
 Which of the following is the option you would choose?
 
 * A. Basic
@@ -268,7 +273,7 @@ Which of the following is the option you would choose?
 
 You run the Register-AzureRm AutomationDscNode command in your company's environment. 
 
-You need to make sure that your company's test servers remain correctly configured, regardless of configuration drift.
+**You need to make sure that your company's test servers remain correctly configured, regardless of configuration drift.**
 
 Solution: You set the -Configuration Mode parameter to ApplyOnly. Does the solution meet the goal?
 
@@ -281,7 +286,7 @@ Correct Answer: B
 
 * ApplyAndMonitor: focuses on monitoring for drift without automatic correction, 
 * **ApplyAndAutocorrect: combines application and continuous correction of configurations** 
-* ApplyOnly: is a one-time application of configurations without any ongoing monitoring or correction.
+* *ApplyOnly: is a one-time application of configurations without any ongoing monitoring or correction.*
 
 **No, the solution does NOT meet the goal.**
 
@@ -308,7 +313,7 @@ This mode:
 Summary:
 
 | Mode                    | Drift Detection | Auto-Fix |
-| -- |  | -- |
+| --- | --- | -- |
 | ApplyOnly               | ❌ No            | ❌ No     |
 | ApplyAndMonitor         | ✅ Yes           | ❌ No     |
 | **ApplyAndAutoCorrect** | ✅ Yes           | ✅ Yes    |
@@ -324,7 +329,7 @@ You run the Register-AzureRm AutomationDscNode command in your company's environ
 
 You need to make sure that your company's test servers remain correctly configured, regardless of configuration drift.
 
-Solution: You set the -ConfigurationMode parameter to ApplyAn Monitor, Does the solution meet the goal?
+Solution: You set the -ConfigurationMode parameter to **ApplyAndMonitor**, Does the solution meet the goal?
 
 * A. Yes
 * B. No
@@ -334,7 +339,7 @@ Solution: You set the -ConfigurationMode parameter to ApplyAn Monitor, Does the 
 **Answer: B - No**
 
 
-* **ApplyAndMonitor**: focuses on monitoring for drift without automatic correction,
+* <mark>**ApplyAndMonitor**: focuses on monitoring for drift without automatic correction,</mark>
 * **ApplyAndAutocorrect**: combines application and continuous correction of configurations
 * **ApplyOnly:** is a one-time application of configurations without any ongoing monitoring or correction.
 
@@ -365,28 +370,6 @@ So:
 ✅ **Correct answer: B. No**
 
 **B. No**
-
-Explanation:
-
-`ApplyAndMonitor` mode:
-
-* ✅ Applies the configuration
-* ✅ Monitors for configuration drift
-* ❌ **Does NOT automatically fix drift**
-
-Your requirement is that servers **remain correctly configured regardless of drift**, which implies **automatic remediation**.
-
-That requires:
-
-➡️ **`ApplyAndAutoCorrect`**
-
-So:
-
-* **ApplyAndMonitor** → Detects drift but does not fix it ❌
-* **ApplyAndAutoCorrect** → Detects and auto-fixes drift ✅
-
-✅ **Correct answer: B. No**
-
 
 ### Question 9
 
@@ -455,7 +438,7 @@ Note: The choice between these modes depends on the specific requirements and pr
 
 Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. 
 
-You are instructed to make sure that the Azure DevOps environment can only be accessed from devices connected to the company's on-premises network. Which of the following actions should you take?
+You are instructed to make sure that the Azure DevOps environment **can only be accessed from devices connected to the company's on-premises network**. Which of the following actions should you take?
 
 * A. Assign the devices to a security group.
 * B. Create a GPO.
@@ -473,7 +456,7 @@ You are instructed to make sure that the Azure DevOps environment can only be ac
 * D. Configure conditional access in Azure Active Directory.
 
 
-Correct Answer: D - Configure conditional access in Azure Active Directory
+**Correct Answer: D - Configure conditional access in Azure Active Directory**
 
 Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
 
@@ -512,6 +495,7 @@ You are preparing to use a version control system that allows for source code to
 * C. Github Professional
 * D. Git in Azure Repos
 
+---
 
 Correct Answer: A Github Enterprise
 
@@ -540,7 +524,7 @@ Why the others are incorrect:
 **Summary:**
 
 | Option              | On-prem | Windows Server | Managed internally |
-| - | - | -- |  |
+| --- | --- | --- | --- |
 | GitHub Enterprise   | ✅       | ✅              | ✅                  |
 | Bitbucket Cloud     | ❌       | ❌              | ❌                  |
 | GitHub Professional | ❌       | ❌              | ❌                  |
@@ -551,13 +535,20 @@ Why the others are incorrect:
 
 ### Question -12
 
-You scan a Node.js application using WhiteSource Bolt. The scan finds numerous libraries with invalid licenses, but are only used during development. You have to make sure that only production dependencies are scanned by WhiteSource
+You scan a Node.js application using WhiteSource Bolt. 
+
+**The scan finds numerous libraries with invalid licenses**, but are only used during development. 
+
+You have to make sure that only production dependencies are scanned by WhiteSource
+
 Bolt. Which of the following is a command you should run?
 
 * A. npm edit
 * B. npm publish
 * C. npm install
 * D. npm update
+
+---
 
 > Correct Answer: **C. npm install**
 
@@ -611,6 +602,8 @@ Which of the following actions should you take?
 * C. You should make use of a gate.
 * D. You should make use of an approval check.
 
+----
+
 
 Correct Answer: **C. You should make use of a gate.**
 
@@ -620,7 +613,7 @@ The correct answer is:
 
 
 
-Explanation:
+**Explanation:**
 
 In **Azure Pipelines**, if you want to **prevent a release from being deployed to production unless certain conditions are met** (such as satisfying a performance baseline in the staging environment), the appropriate mechanism is a **gate**.
 
@@ -682,9 +675,6 @@ Correct terminology:
 ✅ **Final answer: C. Deployment**
 
 
-
-**Correct Answer: C. Deployment**
-
 When authoring an Azure Pipelines or TFS Release pipeline, you can specify the deployment targets for a job using a deployment group If the target machines are Azure VMs, you can quickly and easily prepare them by installing the Azure Pipelines Agent Azure VM extension on each of the VMs, or by using the Azure Resource Group Deployment task in your release pipeline to create a deployment group dynamically.
 
 
@@ -716,11 +706,11 @@ The statement is **inaccurate**.
 
 > “To find when common open source libraries are added to the code base, you should add **Jenkins** to the build pipeline.”
 
-**Jenkins** is a CI/CD automation server — it does **not** analyze dependencies or detect open source libraries.
+<mark>**Jenkins** is a CI/CD automation server — it does **not** analyze dependencies or detect open source libraries.</mark>
 
 To detect and track when **open-source libraries** are added (including license and vulnerability scanning), you should use:
 
-**WhiteSource** (now known as Mend)
+<mark>**WhiteSource** (now known as Mend)</mark>
 
 WhiteSource:
 
@@ -754,9 +744,9 @@ Azure DevOps integration with White Source Bolt will enable you to:
 
 ### Question -16
 
-Your company has an Azure DevOps project, which includes a build pipeline that makes use of roughly fifty open source libraries. 
+Your company has an Azure DevOps project, which includes a build pipeline that **makes use of roughly fifty open source libraries.** 
 
-You have been tasked with making sure that you are able to scan project for common security weaknesses in the open source libraries. 
+You have been tasked with making sure that you are able to **scan project for common security weaknesses in the open source libraries**. 
 
 Which of the following actions should you take?
 
@@ -778,9 +768,9 @@ To scan **open source libraries** for **common security weaknesses** (such as kn
 
 **WhiteSource Bolt** is designed specifically for:
 
-* Scanning open-source dependencies
-* Detecting CVEs and vulnerabilities
-* License compliance checks
+* **Scanning open-source dependencies**
+* **Detecting CVEs and vulnerabilities**
+* **License compliance checks**
 * Running automatically during **CI builds**
 
 
@@ -809,8 +799,8 @@ The statement is **accurate**.
 **Black Duck** is specifically designed to:
 
 * Scan open-source libraries
-* Enforce **license compliance policies**
-* Detect license violations and risks
+* <mark>Enforce **license compliance policies**</mark>
+* **Detect license violations and risks**
 * Ensure OSS usage aligns with **company licensing criteria**
 
 So the correct logical choice is:
@@ -823,13 +813,15 @@ So the correct logical choice is:
 The provided options (A–D) are unrelated to the statement and appear to be from a different question. Since the statement about **Black Duck** is correct, the proper answer conceptually is **No adjustment required**, even though it is not listed.
 
 
+> Secure and Manage Open Source Software Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios. 
 
-Secure and Manage Open Source Software Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios. Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
+
+Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
 ### Question -18
 
-Your company has an application that contains a number of Azure App Service web apps and Azure functions. You would like to view recommendations with regards to the security of the web apps and functions. 
+Your company has an application that contains a number of Azure App Service web apps and Azure functions. **You would like to view recommendations with regards to the security of the web apps and functions.**
 
 You plan to navigate to Compute and Apps to achieve your goal. Which of the following should you access to make use of Compute and Apps?
 
@@ -886,7 +878,12 @@ Monitor compute and app services: Compute & apps include the App Services tab, w
 
 ### Question -19
 
-You need to consider the underlined segment to establish whether it is accurate. Your company has a multi-tier application that has its front end hosted in Azure App Service. To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs. Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
+You need to consider the underlined segment to establish whether it is accurate. 
+
+Your company has a multi-tier application that has its front end hosted in Azure App Service. To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs. 
+
+
+Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
 * A. No adjustment required.
 * B. Azure Application Insights
@@ -915,9 +912,9 @@ To measure **average page load times**, performance, and user experience for an 
 Application Insights provides:
 
 * Page load times
-* Request/response times
-* Application performance metrics
-* End-user experience monitoring
+* **Request/response times**
+* **Application performance metrics**
+* **End-user experience monitoring**
 * Dependency tracking
 
 
@@ -939,7 +936,9 @@ Application Insights can monitor both Java and ASPNET web applications and servi
 ### Question -20
 
 Your company makes use of Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring purposes. You have been tasked with analyzing the monitoring using ad-hoc queries. You need to utilize the correct query
-language. Solution: You use the Contextual Query Language (CQL)
+language. 
+
+Solution: You use the Contextual Query Language (CQL)
 
 Does the solution meet the goal?
 
@@ -989,7 +988,7 @@ Which two resources should you include in the solution? Each correct answer pres
 
 * **A. an Azure Automation runbook**
 * **B. an Azure Monitor alert that has a dynamic threshold**
-* C. an Azure Monitoralert that has a static threshold
+* C. an Azure Monitor alert that has a static threshold
 * D. the Azure Monitorautoscale settings
 * E. an Azure Monitoralert that uses an action group that has an email action
 
@@ -1011,27 +1010,26 @@ Explanation:
 
 To **automatically increase the logging level** when the web app exceeds **normal usage patterns**, and to **minimize administrative overhead**, you need:
 
-#### ✅ **B. Azure Monitor alert with a dynamic threshold**
+✅ **B. Azure Monitor alert with a dynamic threshold**
 
 * Detects **abnormal behavior** automatically (baseline-driven)
 * Adapts to changing traffic patterns (perfect for e-commerce workloads)
 * No manual tuning required → low admin overhead
 
-#### ✅ **A. Azure Automation runbook**
+✅ **A. Azure Automation runbook**
 
 * Executes automated actions (e.g., **change logging level** in the web app)
 * Can be triggered via an **Azure Monitor alert action group**
 * Fully automated response
 
-
-#### Why the others are incorrect:
+Why the others are incorrect:
 
 * **C. Static threshold alert** ❌ → Requires manual tuning and maintenance
 * **D. Azure Monitor autoscale settings** ❌ → Scales resources, not logging levels
 * **E. Email action group** ❌ → Not automation, increases manual work
 
 
-#### Architecture Flow:
+Architecture Flow:
 
 1. **Dynamic threshold alert** detects abnormal usage
 2. Alert triggers **Action Group**
@@ -1109,7 +1107,7 @@ Note: After you've deployed your web app/website, you can set up recurring tests
 
 You have a multi-tier application. The front end of the application is hosted in Azure App Service.
 
-You need to identify the average load times of the application pages. What should you use?
+You need to **identify the average load times** of the application pages. What should you use?
 
 
 * **A. Azure Application Insights**
@@ -1136,7 +1134,7 @@ To identify **average page load times** and performance metrics for a web applic
 Application Insights provides:
 
 * **Page load time metrics**
-* End-user performance monitoring
+* **End-user performance monitoring**
 * Request/response times
 * Dependency tracking
 * Application performance analytics
@@ -1161,6 +1159,7 @@ Why the others are incorrect:
 Your company uses ServiceNow for incident management. You develop an application that runs on Azure.
 
 The company needs to generate a ticket in ServiceNow when the application fails to authenticate.
+
 Which Azure Log Analytics solution should you use?
 
 * A. Application Insights Connector
@@ -1168,7 +1167,7 @@ Which Azure Log Analytics solution should you use?
 * **C. IT Service Management Connector (ITSM)**
 * D. Insight & Analytics
 
-Correct Answer: C. IT Service Management Connector (ITSM)
+Correct Answer: **C. IT Service Management Connector (ITSM)**
 
 The correct answer is:
 
@@ -1205,7 +1204,7 @@ Flow:
 
 ### Question -26
 
-You use Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring.
+You use **Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring**.
 
 You need to write ad-hoc queries against the monitoring data. Which query language should you use?
 
@@ -1247,7 +1246,7 @@ Why the others are incorrect:
 
 ### Question -27
 
-Your company creates a web application. You need to recommend a solution that automatically sends to Microsoft Teams a daily summary of the exceptions that occur in the application. 
+Your company creates a web application. You need to recommend a solution that **automatically sends to Microsoft Teams a daily summary of the exceptions that occur in the application**. 
 
 Which two Azure services should you recommend?
 
@@ -1313,7 +1312,7 @@ Solution architecture:
 
 You are monitoring the health and performance of an Azure web app by using Azure Application Insights.
 
-You need to ensure that an alert is sent when the web app has a sudden rise in performance issues and failures.
+You need to ensure that an alert is sent when **the web app has a sudden rise in performance issues and failures**.
 
 What should you use?
 
@@ -1388,14 +1387,13 @@ To display **GitHub commit status and link commits/work items** in **Azure Board
 
 Specifically, you must add the:
 
-**Azure Boards app**
-to your **GitHub repository.
+**Azure Boards app** to your **GitHub repository**.
 
 This enables:
 
 * Linking commits and PRs to work items
 * Displaying commit status in Azure Boards
-* Traceability between code and project management
+* **Traceability between code and project management**
 
 
 
@@ -1417,8 +1415,6 @@ Correct integration order:
 ✅ **Final answer: C. Add the Azure Boards app to the repository.**
 
 
-Correct Answer: C. Add the Azure Boards app to the repository.
-
 To connect Azure Boards to GitHub.com,
 
 connect and configure from Azure Boards. Or, alternatively, install and configure the Azure Boards app from GitHub.
@@ -1432,7 +1428,7 @@ You have a web app hosted on Azure App Service. The web app stores data in an Az
 You need to generate an alert when there are 10,000 simultaneous connections to the database. 
 
 
-The solution must minimize development effort. Which option should you select in the Diagnostics settings of the database?
+**The solution must minimize development effort**. Which option should you select in the Diagnostics settings of the database?
 
 
 * **A. Send to Log Analytics**
@@ -1483,7 +1479,7 @@ HOW TO ENABLE DIAGNOSTICS TO LOG ANALYTICS (This configuration is done PER DATAB
 ### Question-31
 
 
-You have an Azure virtual machine that is monitored by using Azure Monitor, The virtual machine has the Azure Log Analytics agent installed, You plan to deploy the Service Map solution from the Azure Marketplace What should you deploy to the virtual machine to support the Service Map solution?
+You have an Azure virtual machine that is monitored by using Azure Monitor, The virtual machine has the Azure Log Analytics agent installed, You plan to **deploy the Service Map solution from the Azure Marketplace** What should you deploy to the virtual machine to support the Service Map solution?
 
 * A. the Dependency agent
 * B. the Telegraf agent
@@ -1542,12 +1538,15 @@ The Dependency agent requires the Log Analytics agent to be installed on the sam
 
 ### Question-32
 
-You have multiple teams that work on multiple projects in Azure DevOps. You need to plan and manage the consumers and producers for each project. The solution must provide an overview of all the projects. What should you do?
+**You have multiple teams that work on multiple projects in Azure DevOps**. You need to plan and manage the consumers and producers for each project. The solution must provide an overview of all the projects. What should you do?
 
 * A. Add a Predecessor or Successor link to the feature or user story for the items of each project.
 * B. Add a Parent or Child link to the feature or user story for the items of each project.
 * C. Install the Dependency Tracker extension and create dependencies for each project.
 * D. Create a custom query to show the consumers and producers and add a widget to a dashboard
+
+
+---
 
 Correct Answer: C
 
@@ -1557,8 +1556,7 @@ The correct answer is:
 **C. Install the Dependency Tracker extension and create dependencies for each project.** ✅
 
 
-
-Explanation:
+**Explanation:**
 
 You need to **plan and manage consumer/producer relationships across multiple teams and multiple projects** in **Azure DevOps**, with a solution that provides a **single overview of all projects**.
 
@@ -1572,7 +1570,7 @@ The **Dependency Tracker extension** is purpose-built for this scenario:
 
 
 
-Why the other options are incorrect:
+**Why the other options are incorrect:**
 
 * **A. Predecessor/Successor links** ❌ → Simple relationships, no global visibility.
 * **B. Parent/Child links** ❌ → Hierarchy modeling, not dependency planning.
@@ -1601,8 +1599,7 @@ Open Telemetry | OpenCensus | OpenTracing | Honeycomb | Jaeger
 
 The company purchases an Azure subscription and implements Application Insights in Azure Monitor.
 
-You plan to centralize distributed tracing for the apps. You need to identify which libraries can 
-integrate directly with Application Insights.
+You plan to centralize distributed tracing for the apps. You need to identify which libraries can  integrate directly with Application Insights.
 
 Which two libraries should you identify? Each correct answer presents a complete solution.
 
@@ -1659,7 +1656,7 @@ Summary Table:
 ✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-34 ？？
+### Question-34
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -1675,42 +1672,41 @@ What should you do?
 
 **Correct Answer: B**
 
-
-The correct answer is:
-
-**C. From AppInsights1, modify the Usage and estimated costs settings.** ✅
+The correct answer is **B. From the code repository of webapp1, modify the Startup.cs file.**
 
 Explanation:
 
-To **control the sampling rate of telemetry data** sent from an Azure web app to **Application Insights**, you can configure **fixed-rate sampling** at the **Application Insights resource level** without changing code.
+For **.NET Core** applications, Application Insights configuration is handled primarily through code rather than external configuration files like `ApplicationInsights.config` (which is used for classic ASP.NET Framework apps).
 
-* In **Azure Portal**:
+1.  **Adaptive vs. Fixed Sampling:** By default, .NET Core apps use **Adaptive Sampling**, which automatically adjusts the volume of telemetry sent to stay within quota limits.
+2.  **Configuring Fixed Sampling:** To use a fixed sampling rate in .NET Core, you must explicitly disable the default adaptive sampling and configure the sampling telemetry processor in the `ConfigureServices` method of the **Startup.cs** file (or `Program.cs` in newer versions of .NET).
 
-  1. Navigate to **AppInsights1**
-  2. Go to **Usage and estimated costs**
-  3. Configure **Sampling** (Fixed-rate or Adaptive)
+**Example of the code change required in Startup.cs:**
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Disable Adaptive Sampling
+    var options = new ApplicationInsightsServiceOptions();
+    options.EnableAdaptiveSampling = false;
+    services.AddApplicationInsightsTelemetry(options);
 
-**Benefits of portal-level sampling:**
+    // Set Fixed Rate Sampling (e.g., 50%)
+    services.AddApplicationInsightsTelemetryProcessor<SamplingTelemetryProcessor>(next => 
+        new SamplingTelemetryProcessor(next) { SamplingPercentage = 50 });
+}
+```
 
-* Reduces telemetry volume
-* Controls costs
-* Minimal development/maintenance effort
+Why other options are incorrect:
 
+*   **A. Applicationinsights.config:** This file is not used by .NET Core. It is only used by ASP.NET Framework applications.
+*   **C. Usage and estimated costs:** This is where you configure **Ingestion Sampling**. Ingestion sampling happens at the Azure service endpoint *after* the data has been sent from the app. The question asks to ensure the web app **sends** the data at a fixed rate (SDK-side sampling), which reduces network traffic and is configured in code.
+*   **D. Continuous export:** This feature is used to export telemetry data to Azure Storage or SQL for long-term retention or analysis; it does not control the rate at which telemetry is collected or sent.
 
-Why the others are incorrect:
-
-* **A. Modify ApplicationInsights.config** ❌ → Only applicable for **full .NET Framework apps**, not .NET Core
-* **B. Modify Startup.cs** ❌ → Possible in code, but the requirement is to **minimize changes and manage via portal**
-* **D. Continuous export** ❌ → Sends data elsewhere, does not control sampling
-
-
-
-✅ **Final answer: C. From AppInsights1, modify the Usage and estimated costs settings.**
 
 
 ### Question-35
 
-You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. You need to configure App1 to use Al1. Which file should you modify?
+You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. **You need to configure App1 to use Al1.** Which file should you modify?
 
 * **A. appsettings.json**
 * B. launchSettings.json
@@ -1757,7 +1753,7 @@ Why the others are incorrect:
 
 ### Question-36
 
-You have an Azure subscription that contains multiple Azure services. You need to send an SMS alert when scheduled maintenance is planned for the Azure services.
+You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -1822,7 +1818,7 @@ Creating planned maintenance alerts using Azure Service Health
 
 ### Question-37
 
-You are designing a strategy to monitor the baseline metrics of Azure virtual machines that run Windows Server. 
+You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
 You need to collect detailed data about the processes running in the guest operating system.
 
@@ -1836,10 +1832,64 @@ Which two agents should you deploy? Each correct answer presents part of the sol
 
 Correct Answer: BD
 
+The correct answers are:
+
+✅ **B. the Azure Log Analytics agent**
+✅ **D. the Dependency agent**
+
+Why these are correct
+
+To collect **detailed process-level data** from inside the **guest operating system** of Azure VMs, you need the agents used by **VM insights**:
+
+🧩 Azure Log Analytics agent
+
+* Collects:
+
+  * Performance counters
+  * Event logs
+  * Syslogs
+  * Process data (basic telemetry)
+* Sends data to **Log Analytics workspace**
+
+🔍 Dependency agent
+
+* Collects:
+
+  * **Detailed process information**
+  * Process dependencies
+  * Network connections between processes
+* Enables:
+
+  * **Service maps**
+  * Deep process-level visibility
+
+👉 Together, these two agents provide **full process monitoring and dependency mapping**.
+
+Why the others are wrong
+
+| Option                           | Reason                                                               |
+| -------------------------------- | -------------------------------------------------------------------- |
+| A. Telegraf agent ❌              | Open-source monitoring agent, not native Azure VM process monitoring |
+| C. Azure Network Watcher Agent ❌ | Used for **network diagnostics**, not process-level OS monitoring    |
+
+Exam principle
+
+> **VM guest process monitoring = Log Analytics agent + Dependency agent**
+
+This combo is required for:
+
+* VM Insights
+* Service Map
+* Process dependency tracking
+
+✅ Final Answer:
+
+**B and D**
+
 
 ### Question-38
 
-You configure Azure Application Insights and the shared service plan tier for a web app. You enable Smart Detection. You confirm that standard metrics are visible in the logs, but when you test a failure, you do not receive a Smart Detection notification. 
+You configure Azure Application Insights and the shared service plan tier for a web app. **You enable Smart Detection**. You confirm that standard metrics are visible in the logs, but when you test a failure, you do not receive a Smart Detection notification. 
 
 What prevents the Smart Detection notification from being sent?
 
@@ -1851,49 +1901,61 @@ What prevents the Smart Detection notification from being sent?
 
 **Correct Answer: B**
 
-The correct answers are:
+The correct answer is:
 
-**B. the Azure Log Analytics agent** ✅
-**D. the Dependency agent** ✅
+✅ **B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app.**
 
+Why this is correct
 
+**Azure Application Insights Smart Detection** uses **machine learning** to detect anomalies.
+To do that, it must first:
 
-Explanation:
+* Collect baseline telemetry
+* Learn what “normal” behavior looks like
+* Build a statistical model of request rates, failures, performance, etc.
 
-To **collect detailed process-level data from Azure Windows VMs**, the following agents are required:
+This **baseline learning period takes up to 24 hours**.
+During this time:
 
-1. **Azure Log Analytics agent (B)**
+* Metrics are visible ✅
+* Logs are available ✅
+* **Smart Detection alerts are NOT triggered yet** ❌
 
-   * Collects **performance counters, event logs, and custom logs** from the VM.
-   * Required to send data to **Log Analytics / Azure Monitor**.
+So test failures during this learning window **will not generate notifications**.
 
-2. **Dependency agent (D)**
+ Why the other options are wrong
 
-   * Collects **process and network dependency information** within the VM.
-   * Required for **Service Map** and detailed process monitoring.
+| Option                        | Reason                                               |
+| ----------------------------- | ---------------------------------------------------- |
+| A. Snapshot Debugger ❌        | Used for debugging exceptions, not anomaly detection |
+| C. Shared service plan tier ❌ | Does not affect Smart Detection                      |
+| D. Restart the web app ❌      | Not required for Smart Detection to function         |
 
-Together, these agents provide a **complete view of running processes and their dependencies** on Windows VMs.
+ Key exam rule
 
+> **Smart Detection requires a baseline learning period (≈ 24 hours) before alerts are generated.**
 
+✅ Final Answer:
 
-Why the others are incorrect:
+**B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app.**
 
-* **A. Telegraf agent** ❌ → Primarily used for **InfluxDB / Time-series metrics**, not for full Azure monitoring
-* **C. Azure Network Watcher Agent for Windows** ❌ → Monitors **network traffic and connectivity**, not processes
-
-
-
-✅ **Final answer: B and D**
-
-
-
-After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.
 
 
 
 ### Question-39
 
-You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling. You use Azure DevOps to build a web app named App1 and deploy App1 to VMSS1. App1 is used heavily and has usage patterns that vary on a weekly basis. You need to recommend a solution to detect an abnormal rise in the rate of failed requests to App1. The solution must minimize administrative effort.
+You have an Azure DevOps organization named Contoso and an Azure subscription. 
+
+The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling. 
+
+You use Azure DevOps to build a web app named App1 and deploy App1 to VMSS1. 
+
+**App1 is used heavily and has usage patterns that vary on a weekly basis.** 
+
+You need to recommend a solution to detect an abnormal rise in the rate of failed requests to App1. 
+
+**The solution must minimize administrative effort.**
+
 What should you include in the recommendation?
 
 * **A. the Smart Detection feature in Azure Application Insights**
