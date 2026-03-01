@@ -1,0 +1,4328 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../3secuirty/">
+      
+      
+        <link rel="next" href="../5Devops_go_host/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>4 Azure DevOps的Azure资源IaC编排实战 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-devopsazureiac" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4 Azure DevOps的Azure资源IaC编排实战
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实战
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建敏感信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建敏感信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraformbackend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为terraform创建backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Stages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline Stages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-checkov-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Checkov Scan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-apply-auto-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Apply (Auto Approval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-apply-manual-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Apply (Manual Approval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运行Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实战
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建敏感信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建敏感信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraformbackend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为terraform创建backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Stages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline Stages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-checkov-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Checkov Scan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-apply-auto-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Apply (Auto Approval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-terraform-apply-manual-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage: Terraform Apply (Manual Approval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运行Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="azure-devopsazureiac">Azure DevOps的Azure资源IaC编排实战</h1>
+<h2 id="_1">摘要</h2>
+<p>Azure DevOps和Terraform来编排和管理Azure云平台上的资源。</p>
+<p>Azure DevOps是微软提供的一套持续交付和协作工具，而Terraform是一种基础设施即代码工具，可以帮助我们定义和管理基础架构资源。通过结合使用这两个工具，我们可以实现自动化的资源创建、更新和销毁，提高开发和部署的效率。</p>
+<p><strong>将详细介绍如何配置Azure DevOps和Terraform，以及如何使用它们来编排Azure资源。</strong></p>
+<ul>
+<li><strong>Checkov扫描，这个阶段运行Checkov，这是bridgeecrew的一个工具，它可以扫描Terraform配置，在部署之前发现常见的错误配置</strong>。扫描的结果被上传到Pipeline运行中，并作为报告提供。</li>
+<li>Terraform Validate，此阶段运行Terraform Validate命令检查Terraform文件是否有效，如果有问题则管道错误。<strong>规划，这个阶段运行规划命令。根据资源的状态，它会设置变量，这些变量用于确定执行的下一个阶段。地形计划命令的输出也上传到Azure DevOps。</strong></li>
+<li>Terraform Apply (Auto Approval)，如果计划阶段确定对状态的唯一更改是添加，则运行此阶段，它执行地形应用并影响更改</li>
+<li><strong>Terraform Apply(手动审批)，如果Terraform Plan阶段确定对状态的更改包括任何被破坏的资源，则运行此阶段，它将触发手动审批任务，提示某人在执行Terraform Apply命令之前进行检查</strong>。</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_1.png" title="Body image" /> </p>
+<h2 id="_2">实战</h2>
+<p>创建仓库</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_2.png" title="Body image" /> </p>
+<p>生成仓库密钥信息</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_3.png" title="Body image" /> </p>
+<p>上传代码</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_4.png" title="Body image" /> </p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_5.png" title="Body image" /> </p>
+<p>配置azure pipeline</p>
+<p>代码仓库选择Azure Repos Git</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_6.png" title="Body image" /> </p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_7.png" title="Body image" /> </p>
+<p>插件安装，确保仅安装一个插件</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform">Terraform Azure DevOps extension by Charles Zipp.</a></p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_8.png" title="Body image" /> </p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_9.png" title="Body image" /> </p>
+<p>创建azure devops与azure的链接</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_10.png" title="Body image" /> </p>
+<h2 id="_3">创建敏感信息</h2>
+<p>由于使用azurerm，针对敏感信息，Library用于存储。</p>
+<pre><code>export ARM_CLIENT_ID=&quot;8a68xxxxxxxxxxxxxx700&quot;
+export ARM_CLIENT_SECRET=&quot;oEBAyo-xxxxxxxxxxxxxxRhRY&quot;
+export ARM_SUBSCRIPTION_ID=&quot;7b431969xxxxxxxxxxxxxx27cc80cd&quot;
+export ARM_TENANT_ID=&quot;ea640xxxxxxxxxxxxxxf0909ddf9a&quot;
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_11.png" title="Body image" /> </p>
+<p>后期变量引用可以使用 <code>$(ARM_CLIENT_ID)</code>使用变量</p>
+<h3 id="terraformbackend">为terraform创建backend</h3>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_12.png" title="Body image" /> </p>
+<p>创建容器</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops4_13.png" title="Body image" /> </p>
+<h2 id="pipeline-stages">Pipeline Stages</h2>
+<h3 id="stage-checkov-scan">Stage: Checkov Scan</h3>
+<p>运行的第一阶段是下载并使用<a href="https://www.checkov.io/">Checkov</a>执行Terraform文件的扫描，您将注意到下面的YAML，我们正在从C<a href="https://hub.docker.com/r/bridgecrew/checkov">heckov container from Dockerhub</a>拉出Checkov容器并运行它;</p>
+<pre><code>- stage: &quot;runCheckov&quot;
+    displayName: &quot;Checkov - Scan Terraform files&quot;
+    jobs:
+      - job: &quot;runCheckov&quot;
+        displayName: &quot;Checkov &gt; Pull, run and publish results of Checkov scan&quot;
+        steps:
+          - bash: |
+              docker pull bridgecrew/checkov
+            workingDirectory: $(System.DefaultWorkingDirectory)
+            displayName: &quot;Pull &gt; bridgecrew/checkov&quot;
+          - bash: |
+              docker run --volume $(pwd):/tf bridgecrew/checkov --directory /tf --output junitxml --soft-fail &gt; $(pwd)/CheckovReport.xml
+            workingDirectory: $(System.DefaultWorkingDirectory)
+            displayName: &quot;Run &gt; checkov&quot;
+          - task: PublishTestResults@2
+            inputs:
+              testRunTitle: &quot;Checkov Results&quot;
+              failTaskOnFailedTests: true
+              testResultsFormat: &quot;JUnit&quot;
+              testResultsFiles: &quot;CheckovReport.xml&quot;
+              searchFolder: &quot;$(System.DefaultWorkingDirectory)&quot;
+            displayName: &quot;Publish &gt; Checkov scan results&quot;
+</code></pre>
+<p>在你自己的机器上使用Docker本地运行Checkov扫描的命令如下，只要确保它和你的Terraform代码在同一个文件夹中运行即可;</p>
+<pre><code>docker run \
+    --volume $(pwd):/tf \
+    bridgecrew/checkov \
+    --directory /tf \
+    --output junitxml \
+    --soft-fail \
+    &gt; $(pwd)/CheckovReport.xml
+</code></pre>
+<p>正如您所看到的，我们正在挂载当前<strong>文件夹<code>((pwd)变量)</code></strong>，<strong>因为我们已经使用(pwd)变量)，因为我们已经使用(pwd)变量)，因为我们已经使用<code>(System.DefaultWorkingDirectory)</code>变量将工作目录设置为代码签出的位置</strong>。</p>
+<p>我们还将——<strong><code>output</code>设置为<code>junitxml</code>，然后将输出管道输出到一个名为<code>CheckovReport.xml</code>的文件</strong>。</p>
+<p>使用——<code>soft-fail</code>标志的原因是，如果我们不这样做，并且Checkov要发现任何问题，则容器将以导致此任务失败的状态退出。相反，一旦发布了扫描结果，如果报告中有任何错误，我们希望使任务失败。</p>
+<p>我们使用内置的<a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/publish-test-results-v2?view=azure-pipelines&amp;viewFallbackFrom=azure-devops&amp;tabs=trx%2Ctrxattachments%2Cyaml">PublishTestResult任务发布测试结果</a>，<strong>并将failTaskOnFailedTests选项设置为true</strong>。 我们将在稍后的帖子中设置当或如果此阶段失败时会发生什么。</p>
+<h3 id="stage-terraform-validate">Stage: Terraform Validate</h3>
+<p>这个阶段运行<code>terraform validate</code>命令，如果有任何问题，它将失败。正如你从下面的YAML中看到的，这个阶段依赖于runCheckov阶段，我们也在安装Terraform并在执行Terraform validate命令之前运行<code>Terraform init</code>;</p>
+<pre><code>- stage: &quot;validateTerraform&quot;
+    displayName: &quot;Terraform - Validate&quot;
+    dependsOn:
+      - &quot;runCheckov&quot;
+    jobs:
+      - job: &quot;TerraformJobs&quot;
+        displayName: &quot;Terraform &gt; install, init and validate&quot;
+        continueOnError: false
+        steps:
+          - task: TerraformInstaller@0
+            inputs:
+              terraformVersion: &quot;$(tf_version)&quot;
+            displayName: &quot;Install &gt; terraform&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;init&quot;
+              backendType: &quot;azurerm&quot;
+              backendServiceArm: &quot;$(SUBSCRIPTION_NAME)&quot;
+              ensureBackend: true
+              backendAzureRmResourceGroupName: &quot;$(tf_environment)-$(tf_state_rg)&quot;
+              backendAzureRmResourceGroupLocation: &quot;$(tz_state_location)&quot;
+              backendAzureRmStorageAccountName: &quot;$(tf_state_sa_name)&quot;
+              backendAzureRmStorageAccountSku: &quot;$(tf_state_sku)&quot;
+              backendAzureRmContainerName: $(tf_state_container_name)
+              backendAzureRmKey: &quot;$(tf_environment).terraform.tstate&quot;
+            displayName: &quot;Run &gt; terraform init&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;validate&quot;
+              environmentServiceName: &quot;$(SUBSCRIPTION_NAME)&quot;
+            displayName: &quot;Run &gt; terraform validate&quot;
+</code></pre>
+<p>This YAML code snippet defines a pipeline stage for validating Terraform configurations. Here's an analysis of the code:</p>
+<p><strong>1. Stage Definition:</strong></p>
+<ul>
+<li>Name: validateTerraform</li>
+<li>Display Name: Terraform - Validate</li>
+<li>Dependencies: It depends on the completion of the "runCheckov" job before it can run.</li>
+</ul>
+<p><strong>2. Jobs within the Stage:</strong></p>
+<ul>
+<li>Job Name: TerraformJobs</li>
+<li>Display Name: Terraform &gt; install, init and validate</li>
+<li>Continue On Error: If set to false, the job will stop the pipeline if any step fails.</li>
+</ul>
+<p><strong>3. Steps within the Job:</strong></p>
+<ul>
+<li>
+<p><strong>Step 1: Install Terraform</strong></p>
+<ul>
+<li>Task: <strong>TerraformInstaller@0</strong></li>
+<li>Input: terraformVersion is set to <code>"$(tf_version)"</code></li>
+<li>Display Name: Install &gt; terraform</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 2: Initialize Terraform Backend</strong></p>
+<ul>
+<li>Task: TerraformCLI@0</li>
+<li>Input:<ul>
+<li>Command: "init"</li>
+<li>Backend Type: "azurerm"</li>
+<li>Backend Configuration:</li>
+<li>Resource Group: <code>"$(tf_environment)-$(tf_state_rg)"</code></li>
+<li>Location: "<code>$(tz_state_location)</code>"</li>
+<li>Storage Account Name: "<code>$(tf_state_sa_name)</code>"</li>
+<li>Storage Account SKU: "<code>$(tf_state_sku)</code>"</li>
+<li>Container Name: <code>$(tf_state_container_name)</code></li>
+<li>Key: "<code>$(tf_environment).terraform.tstate</code>"</li>
+</ul>
+</li>
+<li>Display Name: Run &gt; terraform init</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 3: Validate Terraform Configuration</strong></p>
+<ul>
+<li>Task: TerraformCLI@0</li>
+<li>Input:<ul>
+<li>Command: "validate"</li>
+<li>Environment Service Name: <code>"$(SUBSCRIPTION_NAME)"</code></li>
+<li>Display Name: Run &gt; terraform validate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>当这个阶段执行时，会发生的另一件事是作为terraform init任务的一部分，因为我们将ensureBackend设置为true，任务将检查我们希望用于存储terraform状态文件的Azure存储帐户是否存在，如果不存在，那么任务将帮助我们创建它。</p>
+<p>一旦你的代码被验证，我们就可以进入下一个阶段。</p>
+<h3 id="stage-terraform-plan">Stage: Terraform Plan</h3>
+<p>这个阶段是事情变得更有趣的地方，因为我们的环境不会在各个阶段之间持续存在，我们需要安装Terraform并再次运行<code>Terraform init</code>。</p>
+<p>一旦完成了这些，我们就可以运行terraform plan命令，由于Charles Zipp的<code>terraform Azure DevOps</code>扩展中的一些特性，我们可以通过设置<code>publishPlanResults</code>选项将运行terraform plan的结果发布到我们的管道运行中。</p>
+<p>在我们看这个阶段的最后一个任务之前，让我们看一下整个阶段的代码;</p>
+<pre><code>- stage: &quot;planTerraform&quot;
+    displayName: &quot;Terraform - Plan&quot;
+    dependsOn:
+      - &quot;validateTerraform&quot;
+    jobs:
+      - job: &quot;TerraformJobs&quot;
+        displayName: &quot;Terraform &gt; install, init &amp; plan&quot;
+        steps:
+          - task: TerraformInstaller@0
+            inputs:
+              terraformVersion: &quot;$(tf_version)&quot;
+            displayName: &quot;Install &gt; terraform&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;init&quot;
+              backendType: &quot;azurerm&quot;
+              backendServiceArm: &quot;$(SUBSCRIPTION_NAME)&quot;
+              ensureBackend: true
+              backendAzureRmResourceGroupName: &quot;$(tf_environment)-$(tf_state_rg)&quot;
+              backendAzureRmResourceGroupLocation: &quot;$(tz_state_location)&quot;
+              backendAzureRmStorageAccountName: &quot;$(tf_state_sa_name)&quot;
+              backendAzureRmStorageAccountSku: &quot;$(tf_state_sku)&quot;
+              backendAzureRmContainerName: $(tf_state_container_name)
+              backendAzureRmKey: &quot;$(tf_environment).terraform.tstate&quot;
+            displayName: &quot;Run &gt; terraform init&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;plan&quot;
+              environmentServiceName: &quot;$(SUBSCRIPTION_NAME)&quot;
+              publishPlanResults: &quot;PlanResults&quot;
+              commandOptions: &quot;-out=$(System.DefaultWorkingDirectory)/terraform.tfplan -detailed-exitcode&quot;
+            name: &quot;plan&quot;
+            displayName: &quot;Run &gt; terraform plan&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;show&quot;
+              environmentServiceName: &quot;$(SUBSCRIPTION_NAME)&quot;
+              inputTargetPlanOrStateFilePath: &quot;$(System.DefaultWorkingDirectory)/terraform.tfplan&quot;
+            displayName: &quot;Run &gt; terraform show&quot;
+
+          - bash: |
+              if [ &quot;$TERRAFORM_PLAN_HAS_CHANGES&quot; = true ] &amp;&amp; [ &quot;$TERRAFORM_PLAN_HAS_DESTROY_CHANGES&quot; = false ] ; then
+                echo &quot;##vso[task.setvariable variable=HAS_CHANGES_ONLY;isOutput=true]true&quot;
+                echo &quot;##vso[task.logissue type=warning]Changes with no destroys detected, it is safe for the pipeline to proceed automatically&quot;
+                fi
+              if [ &quot;$TERRAFORM_PLAN_HAS_CHANGES&quot; = true ] &amp;&amp; [ &quot;$TERRAFORM_PLAN_HAS_DESTROY_CHANGES&quot; = true ] ; then
+                echo &quot;##vso[task.setvariable variable=HAS_DESTROY_CHANGES;isOutput=true]true&quot;
+                echo &quot;##vso[task.logissue type=warning]Changes with Destroy detected, pipeline will require a manual approval to proceed&quot;
+                fi
+              if [ &quot;$TERRAFORM_PLAN_HAS_CHANGES&quot; != true ] ; then
+                echo &quot;##vso[task.logissue type=warning]No changes detected, terraform apply will not run&quot;
+              fi
+            name: &quot;setvar&quot;
+            displayName: &quot;Vars &gt; Set Variables for next stage&quot;
+</code></pre>
+<p>Here is an analysis of the provided YAML code snippet:</p>
+<ol>
+<li><strong>Stage Definition:</strong></li>
+<li>Name: planTerraform</li>
+<li>Display Name: Terraform - Plan</li>
+<li>
+<p>Dependencies: It depends on the completion of the "validateTerraform" stage before it can run.</p>
+</li>
+<li>
+<p><strong>Jobs within the Stage:</strong></p>
+</li>
+<li>Job Name: TerraformJobs</li>
+<li>
+<p>Display Name: Terraform &gt; install, init &amp; plan</p>
+</li>
+<li>
+<p><strong>Steps within the Job:</strong></p>
+</li>
+<li>
+<p><strong>Step 1: Install Terraform</strong></p>
+<ul>
+<li>Task: TerraformInstaller@0</li>
+<li>Input: terraformVersion is set to "$(tf_version)"</li>
+<li>Display Name: Install &gt; terraform</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 2: Initialize Terraform Backend</strong></p>
+<ul>
+<li>Task: TerraformCLI@0</li>
+<li>Input:</li>
+<li>Command: "init"</li>
+<li>Backend Type: "azurerm"</li>
+<li>Backend Configuration:<ul>
+<li>Resource Group: "$(tf_environment)-$(tf_state_rg)"</li>
+<li>Location: "$(tz_state_location)"</li>
+<li>Storage Account Name: "$(tf_state_sa_name)"</li>
+<li>Storage Account SKU: "$(tf_state_sku)"</li>
+<li>Container Name: $(tf_state_container_name)</li>
+<li>Key: "<code>$(tf_environment).terraform.tstate</code>"</li>
+</ul>
+</li>
+<li>Display Name: Run &gt; terraform init</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 3: Generate Terraform Plan</strong></p>
+<ul>
+<li>Task: TerraformCLI@0</li>
+<li>Input:</li>
+<li>Command: "plan"</li>
+<li>Environment Service Name: "$(SUBSCRIPTION_NAME)"</li>
+<li>Publish Plan Results: "PlanResults"</li>
+<li>Command Options: "-out=$(System.DefaultWorkingDirectory)/terraform.tfplan -detailed-exitcode"</li>
+<li>Name: plan</li>
+<li>Display Name: Run &gt; terraform plan</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 4: Show Terraform Plan</strong></p>
+<ul>
+<li>Task: TerraformCLI@0</li>
+<li>Input:</li>
+<li>Command: "show"</li>
+<li>Environment Service Name: "<code>$(SUBSCRIPTION_NAME)</code>"</li>
+<li>Input Target Plan or State File Path: "<code>$(System.DefaultWorkingDirectory)/terraform.tfplan</code>"</li>
+<li>Display Name: Run &gt; terraform show</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 5: Set Variables for Next Stage</strong></p>
+<ul>
+<li>Bash Script:</li>
+<li>The script checks the Terraform plan for changes and sets variables accordingly.</li>
+<li>If changes are detected without destroy changes, it sets a variable and logs a warning.</li>
+<li>If changes with destroy changes are detected, it sets a different variable and logs a warning.</li>
+<li>If no changes are detected, it logs a warning that Terraform apply will not run.</li>
+<li>Name: setvar</li>
+<li>Display Name: Vars &gt; Set Variables for next stage</li>
+</ul>
+</li>
+</ol>
+<p>This pipeline stage sets up Terraform by installing it, initializing the backend configuration for Azure, generating a Terraform plan, showing the plan, and then setting variables based on the changes detected in the plan for use in the next stage of the pipeline.</p>
+<p>在我们运行了terraform计划之后，我们立即使用terraform运行terraform显示。我们刚刚生成的Tfplan文件。</p>
+<p>当使用Charles Zipp的Terraform Azure DevOps扩展时，它实际上设置了一些非常有用的变量。</p>
+<p>首先，如果由于<code>TERRAFORM_PLAN_HAS_CHANGES</code>命令而有任何更改，则将名为<code>TERRAFORM_PLAN_HAS_CHANGES</code>的变量设置为true。</p>
+<p>当对.tfplan执行<code>terraform show</code>命令时，如果.tfplan包含任何正在被销毁的资源，则第二个变量名为<code>terraform_plan_has_destroy_changes</code>将被设置为true。</p>
+<p>在该阶段的最后一个任务中，我们将使用bash设置一些变量，这些变量将帮助决定执行下面哪个阶段(如果有的话)。</p>
+<p>因此，如果一下配置设置</p>
+<ul>
+<li><code>TERRAFORM_PLAN_HAS_CHANGES = true</code></li>
+<li><code>TERRAFORM_PLAN_HAS_DESTROY_CHANGES = false</code></li>
+</ul>
+<p>然后安全地继续自动执行下一阶段，所以我们可以在下一阶段中选择它，我们将名为<code>HAS_CHANGES_ONLY</code>的变量设置为true。</p>
+<h3 id="stage-terraform-apply-auto-approval">Stage: Terraform Apply (Auto Approval)</h3>
+<p>只有在满足以下条件时才执行此阶段;</p>
+<pre><code>condition: |
+and
+(
+succeeded(),
+eq(dependencies.planTerraform.outputs['TerraformJobs.setvar.HAS_CHANGES_ONLY'], 'true')
+)
+</code></pre>
+<p>正如您所看到的，我们正在引用在前一阶段使用以下echo命令设置的变量;</p>
+<pre><code>echo &quot;##vso[task.setvariable variable=HAS_CHANGES_ONLY;isOutput=true]true&quot;
+</code></pre>
+<p>然后通过添加阶段、作业、任务和变量本身的名称来引用变量，因此类似于;</p>
+<pre><code>dependencies.STAGE_NAME.outputs['JOB_NAME.TASK_NAME.VARIABLE_NAME']
+</code></pre>
+<p>整个阶段是这样的:</p>
+<pre><code>  - stage: &quot;autoTerraform&quot;
+    displayName: &quot;Terraform - Auto Approval&quot;
+    dependsOn:
+      - &quot;planTerraform&quot;
+    condition: |
+      and
+        (
+          succeeded(),
+          eq(dependencies.planTerraform.outputs['TerraformJobs.setvar.HAS_CHANGES_ONLY'], 'true')
+        )
+    jobs:
+      - job: &quot;TerraformAuto&quot;
+        displayName: &quot;Terraform &gt; install, init &amp; apply&quot;
+        steps:
+          - task: TerraformInstaller@0
+            inputs:
+              terraformVersion: &quot;$(tf_version)&quot;
+            displayName: &quot;Install &gt; terraform&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;init&quot;
+              backendType: &quot;azurerm&quot;
+              backendServiceArm: &quot;$(SUBSCRIPTION_NAME)&quot;
+              ensureBackend: true
+              backendAzureRmResourceGroupName: &quot;$(tf_environment)-$(tf_state_rg)&quot;
+              backendAzureRmResourceGroupLocation: &quot;$(tz_state_location)&quot;
+              backendAzureRmStorageAccountName: &quot;$(tf_state_sa_name)&quot;
+              backendAzureRmStorageAccountSku: &quot;$(tf_state_sku)&quot;
+              backendAzureRmContainerName: $(tf_state_container_name)
+              backendAzureRmKey: &quot;$(tf_environment).terraform.tstate&quot;
+            displayName: &quot;Run &gt; terraform init&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;apply&quot;
+              environmentServiceName: &quot;$(SUBSCRIPTION_NAME)&quot;
+            displayName: &quot;Run &gt; terraform apply&quot;
+</code></pre>
+<p>在最后运行Terraform apply之前，我们再次安装了Terraform并运行了Terraform init</p>
+<h3 id="stage-terraform-apply-manual-approval">Stage: Terraform Apply (Manual Approval)</h3>
+<p>除了包含一个在Terraform作业之前运行的作业之外，这个阶段几乎与自动审批完全相同;</p>
+<pre><code> - stage: &quot;approveTerraform&quot;
+    displayName: &quot;Terraform - Manual Approval&quot;
+    dependsOn:
+      - &quot;planTerraform&quot;
+    condition: |
+      and
+        (
+          succeeded(),
+          eq(dependencies.planTerraform.outputs['TerraformJobs.setvar.HAS_DESTROY_CHANGES'], 'true')
+        )
+    jobs:
+      - job: &quot;waitForValidation&quot;
+        displayName: &quot;Wait &gt; Wait for manual appoval&quot;
+        pool: &quot;server&quot;
+        timeoutInMinutes: &quot;4320&quot; # job times out in 3 days
+        steps:
+          - task: ManualValidation@0
+            timeoutInMinutes: &quot;1440&quot; # task times out in 1 day
+            inputs:
+              notifyUsers: |
+                azure@mckendrick.io
+              instructions: &quot;There are resources being destroyed as part of this deployment, please review the output of Terraform plan before approving.&quot;
+              onTimeout: &quot;reject&quot;
+
+      - job: &quot;TerraformApprove&quot;
+        displayName: &quot;Terraform &gt; install, init &amp; apply&quot;
+        dependsOn: &quot;waitForValidation&quot;
+        steps:
+          - task: TerraformInstaller@0
+            inputs:
+              terraformVersion: &quot;$(tf_version)&quot;
+            displayName: &quot;Install &gt; terraform&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;init&quot;
+              backendType: &quot;azurerm&quot;
+              backendServiceArm: &quot;$(SUBSCRIPTION_NAME)&quot;
+              ensureBackend: true
+              backendAzureRmResourceGroupName: &quot;$(tf_environment)-$(tf_state_rg)&quot;
+              backendAzureRmResourceGroupLocation: &quot;$(tz_state_location)&quot;
+              backendAzureRmStorageAccountName: &quot;$(tf_state_sa_name)&quot;
+              backendAzureRmStorageAccountSku: &quot;$(tf_state_sku)&quot;
+              backendAzureRmContainerName: $(tf_state_container_name)
+              backendAzureRmKey: &quot;$(tf_environment).terraform.tstate&quot;
+            displayName: &quot;Run &gt; terraform init&quot;
+
+          - task: TerraformCLI@0
+            inputs:
+              command: &quot;apply&quot;
+              environmentServiceName: &quot;$(SUBSCRIPTION_NAME)&quot;
+            displayName: &quot;Run &gt; terraform apply&quot;
+</code></pre>
+<p>该作业基本上会使管道执行暂停24小时，在此之后，如果没有人批准运行，则作业将失败。该作业使用ManualValidation@0任务，有关该任务的更多详细信息，请参见</p>
+<p><a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/manual-validation-v0?view=azure-pipelines&amp;viewFallbackFrom=azure-devops&amp;tabs=yaml">https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/manual-validation-v0?view=azure-pipelines&amp;viewFallbackFrom=azure-devops&amp;tabs=yaml</a></p>
+<p>一旦批准，将执行Terraform作业，这将最终运行Terraform应用程序，这将导致您的Terraform状态文件中至少有一个资源被销毁。</p>
+<h3 id="pipeline">运行Pipeline</h3>
+<p>现在让我们看看如何运行管道，首先让我们签入一些添加基本资源组的代码。 为此，Terraform代码如下所示;</p>
+<pre><code>resource &quot;azurecaf_name&quot; &quot;rg_example&quot; {
+  name          = &quot;demogroup&quot;
+  resource_type = &quot;azurerm_resource_group&quot;
+  prefixes      = [&quot;dev&quot;]
+  clean_input   = true
+}
+
+resource &quot;azurerm_resource_group&quot; &quot;resource_group&quot; {
+  name     = azurecaf_name.rg_example.result
+  location = &quot;uksouth&quot;
+  tags     = merge(var.default_tags, tomap({ &quot;type&quot; = &quot;resource&quot; }))
+}
+</code></pre>
+<p>我使用<a href="https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/azurecaf_name">Azure CAF Name provider</a> 提供程序来生成资源组的名称，然后使用<a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">AzureRM provider</a> 提供程序来创建它。</p>
+<p><a href="https://github.com/russmckendrick/DevOpsTerraformPipeline/blob/main/azure-pipelines-destroy.yml">https://github.com/russmckendrick/DevOpsTerraformPipeline/blob/main/azure-pipelines-destroy.yml</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

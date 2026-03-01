@@ -1,0 +1,5158 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../9az305_summary/">
+      
+      
+        <link rel="next" href="../11az305_summary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>10 AZ305 Summary - 6 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#az305-summary-6" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10 AZ305 Summary - 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-azure-front-door" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Azure Front Door
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Azure Front Door">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-azure-front-door" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Azure Front Door
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-azure-front-door-core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Azure Front Door - Core Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-azure-front-door-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Azure Front Door - Tiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 Azure Front Door - Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-delivery-optimized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard (Delivery Optimized)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premium-security-optimized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Premium (Security Optimized)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-azure-front-door-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Azure Front Door Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-azure-front-door-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Azure Front Door - Origin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-azure-front-door-health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Azure Front Door - Health Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-azure-front-door-load-balancing-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Azure Front Door. - Load Balancing Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-azure-front-door-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Azure Front Door Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-azure-front-door-traffic-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Azure Front Door - Traffic acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-azure-front-door-rule-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Azure Front Door - Rule Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-10 Azure Front Door - Rule Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-front-door-rule-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Front Door - Rule Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-azure-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Azure CDN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Azure CDN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-azure-cdn-purge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Azure CDN - Purge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-azure-service-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Azure Service Bus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Azure Service Bus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-azure-service-bus-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Azure Service Bus - Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-azure-service-bus-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Azure Service Bus - Namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-service-bus-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure Service Bus - Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-azure-service-bus-subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Azure Service Bus - Subscription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-azure-service-bus-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Azure Service Bus - Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-dead-letter-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 Dead Letter Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-7-azure-service-bus-command-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-7 Azure Service Bus - Command CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Azure Event Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Azure Event Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-azure-event-grid-event-sources-and-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Azure Event Grid - Event Sources and Handlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-azure-event-grid-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Azure Event Grid - Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-azure-event-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Azure Event Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Azure Event Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-azure-event-hub-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1 Azure Event Hub - Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-azure-event-hub-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Azure Event Hub - scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-azure-event-hub-producer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Azure Event Hub - Producer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-azure-event-hub-consumer-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Azure Event Hub - consumer group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-azure-event-hub-offsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Azure Event Hub - Offsets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4-azure-event-hub-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-4 Azure Event Hub - Checkpointing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5-azure-event-hub-event-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-5 Azure Event Hub - Event Retention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-event-grid-vs-event-hubs-vs-service-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Event Grid vs Event Hubs vs Service Bus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Event Grid vs Event Hubs vs Service Bus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1 Azure Event Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2-azure-event-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2 Azure Event Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-3-azure-service-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-3 Azure Service Bus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-azure-front-door" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Azure Front Door
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Azure Front Door">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-azure-front-door" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Azure Front Door
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-azure-front-door-core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Azure Front Door - Core Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-azure-front-door-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Azure Front Door - Tiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 Azure Front Door - Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-delivery-optimized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard (Delivery Optimized)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premium-security-optimized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Premium (Security Optimized)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-azure-front-door-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Azure Front Door Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-azure-front-door-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Azure Front Door - Origin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-azure-front-door-health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Azure Front Door - Health Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-azure-front-door-load-balancing-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Azure Front Door. - Load Balancing Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-azure-front-door-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Azure Front Door Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-azure-front-door-traffic-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Azure Front Door - Traffic acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-azure-front-door-rule-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Azure Front Door - Rule Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-10 Azure Front Door - Rule Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-front-door-rule-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Front Door - Rule Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-azure-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Azure CDN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Azure CDN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-azure-cdn-purge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Azure CDN - Purge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-azure-service-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Azure Service Bus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Azure Service Bus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-azure-service-bus-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Azure Service Bus - Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-azure-service-bus-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Azure Service Bus - Namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-service-bus-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure Service Bus - Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-azure-service-bus-subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Azure Service Bus - Subscription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-azure-service-bus-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Azure Service Bus - Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-dead-letter-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 Dead Letter Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-7-azure-service-bus-command-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-7 Azure Service Bus - Command CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Azure Event Grid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Azure Event Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-azure-event-grid-event-sources-and-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Azure Event Grid - Event Sources and Handlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-azure-event-grid-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Azure Event Grid - Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-azure-event-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Azure Event Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Azure Event Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-azure-event-hub-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1 Azure Event Hub - Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-azure-event-hub-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Azure Event Hub - scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-azure-event-hub-producer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Azure Event Hub - Producer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-azure-event-hub-consumer-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Azure Event Hub - consumer group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-azure-event-hub-offsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Azure Event Hub - Offsets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4-azure-event-hub-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-4 Azure Event Hub - Checkpointing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5-azure-event-hub-event-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-5 Azure Event Hub - Event Retention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-event-grid-vs-event-hubs-vs-service-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Event Grid vs Event Hubs vs Service Bus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Event Grid vs Event Hubs vs Service Bus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1 Azure Event Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2-azure-event-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2 Azure Event Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-3-azure-service-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-3 Azure Service Bus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="az305-summary-6">Az305 - Summary 6</h1>
+<h2 id="1-azure-front-door">1 Azure Front Door</h2>
+<p><strong>Azure Front Door is a Traffic Manager, Traffic Accelerator, Global Load Balancer and Content Distribution Network (CDN).</strong></p>
+<blockquote>
+<p>Azure Front Door is a <strong>modern application delivery network platform providing a secure</strong>, scalable
+CDN, dynamic site acceleration, and global HTTP(s) load balancing for your global web applications.</p>
+</blockquote>
+<p>Azure Front Door features:</p>
+<ul>
+<li><strong>Caching</strong>, like CDNs with rules and expiring policies.</li>
+<li><strong>Resiliency</strong>, by distributing incoming traffic across multiple or different Azure Regions.</li>
+<li><strong>Cookie-based session affinity</strong>, for restful applications when traffic needs to be redirected back to the same back-end.</li>
+<li><strong>Health probe</strong>, to determine the healthiest and closest back-end to the client request.</li>
+<li><strong>Web Application Firewall (WAF)</strong>, protecting your back-ends from malicious attacks and vulnerabilities.</li>
+<li>
+<p><strong>URL redirect</strong>, redirecting traffic based on:</p>
+<ul>
+<li>Protocol. HTTP or HTTPS.</li>
+<li>Hostname.</li>
+<li>Path.</li>
+<li>QuervString.</li>
+</ul>
+</li>
+<li>
+<p><strong>URL rewrite</strong>, with a powerful engine for rewriting income requests to a different back-end request.</p>
+</li>
+</ul>
+<h3 id="1-1-azure-front-door">1-1 Azure Front Door</h3>
+<ul>
+<li>An Azure Front Door is made up of <strong>Frontends/Domains</strong>.</li>
+<li>These Frontends/Domains are connected to  <strong>Backend Pools</strong> where those connections are filtered by routing rules</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_1.png" title="Body image" /></p>
+<h3 id="1-2-azure-front-door-core-components">1-2 Azure Front Door - Core Components</h3>
+<p><img alt="Alt Image Text" src="../../images/az305_10_2.png" title="Body image" /></p>
+<h3 id="1-3-azure-front-door-tiers">1-3 Azure Front Door - Tiers</h3>
+<p>Azure offers two tiers for Azure Front Door</p>
+<h4 id="standard-delivery-optimized"><strong>Standard (Delivery Optimized)</strong></h4>
+<ul>
+<li>Content delivery optimized</li>
+<li>Offering both static and dynamic content acceleration</li>
+<li>Global load balancing</li>
+<li>SSL offload</li>
+<li>Domain and certificate management</li>
+<li>Enhanced traffic analvtics</li>
+<li>Basic security capabilities</li>
+</ul>
+<h4 id="premium-security-optimized"><strong>Premium (Security Optimized)</strong></h4>
+<ul>
+<li>Everything in Standard</li>
+<li>Extensive security capabilities across WAF</li>
+<li>BOT protection</li>
+<li>Private Link support</li>
+<li>Integration with Microsoft Threat Intelligence and security analytics.</li>
+</ul>
+<h3 id="1-4-azure-front-door-routing">1-4 Azure Front Door Routing</h3>
+<p>Routing it the path an HTTP request from the user will take to reach a Backend service configured in Azure Front Door</p>
+<p>There are four <strong>traffic routing methods available:</strong></p>
+<p>1.<strong>Latency</strong></p>
+<p>requests are sent to the lowest latency backends acceptable within a sensitivity range</p>
+<p><strong>2. Priority</strong></p>
+<p>requests are sent based on a user-defined number</p>
+<p><strong>3. Weighted</strong>
+requests are distributed to backends according to the weight coefficients</p>
+<p><strong>4. Session Affinity</strong></p>
+<p>requests from the same end user get sent to the same backend (for stateful backends)</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_3.png" title="Body image" /></p>
+<h3 id="1-5-azure-front-door-origin">1-5 Azure Front Door - Origin</h3>
+<p>The origin is what Azure Front Door <strong>will point at</strong> (serve up) to the end user </p>
+<p>Origin <strong>is the endpoint that points to your backend</strong></p>
+<p>Supported Origins for Azure Front Door</p>
+<ul>
+<li>Azure Blob Storage</li>
+<li>Azure Storage (static website hosting)</li>
+<li>Cloud service</li>
+<li>App services</li>
+<li>Static Web App</li>
+<li><strong>API Management (APIM)</strong></li>
+<li>Application Gateway</li>
+<li>Public IP Address</li>
+<li>Azure Traffic Manager</li>
+<li>Azure Spring Cloud</li>
+<li>Azure Container Instances (ACI)</li>
+<li>Custom (provide a host name)</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_4.png" title="Body image" /></p>
+<p><strong>Priority</strong> determines who to send traffic to first.</p>
+<ul>
+<li>A number between 1-5,</li>
+<li><strong>lower number is higher priority.</strong></li>
+<li><strong>Backends can have the same priority number</strong></li>
+</ul>
+<p><strong>Weights</strong> allow you to determine the split of traffic distribution between origins of the same priority.</p>
+<ul>
+<li>A number between 1-1000</li>
+<li>The default value is 50</li>
+</ul>
+<p><strong>Origin groups</strong> are collection of origins.</p>
+<ul>
+<li>Origins must belong to an Origin group.</li>
+<li>Azure FrontDoor Profile have by default an origin group called default-origin-group</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_5.png" title="Body image" /></p>
+<p>Origins Groups allow you to apply:</p>
+<ul>
+<li>Health Probes - the health of vour origins</li>
+<li>Load Balancing Settings - the balancing of your origins</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_6.png" title="Body image" /></p>
+<h3 id="1-6-azure-front-door-health-checks">1-6 Azure Front Door - Health Checks</h3>
+<p>Origin Group <strong>Health Probes</strong> allow you to <strong>ping a backend to determine if a healthy response is returned</strong>.</p>
+<p><strong>A healthy response is determined by Status 200 (OK).</strong></p>
+<p>If a backend fails to produce a healthy response, Azure Front Door will redirect the traffic to other available and healthy backends (assuming other origins are configured).</p>
+<p><strong>What is a HTTP Response Code?</strong></p>
+<p>When a user sends an HTTP request, a HTTP response is return.</p>
+<p>An HTTP responses will have a response code to communicate how a backend/server interpreted the request.</p>
+<p>A Response Code is number that coordinates to what happened:</p>
+<ul>
+<li>200 - OK</li>
+<li>403 - Forbidden</li>
+<li>404 - Not Found</li>
+<li>500 - Internal Server Error</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_7.png" title="Body image" /></p>
+<h3 id="1-7-azure-front-door-load-balancing-settings">1-7 Azure Front Door. - Load Balancing Settings</h3>
+<p>Origin Group <strong>Load Balancing Settings</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_8.png" title="Body image" /></p>
+<p>Allows you to define what sample set is needed to be used to call the backend as healthy or unhealthy.</p>
+<blockquote>
+<p>When the latency sensitivity is set to zero (0), Azure Front Door prioritizes and routes traffic to the quickest available backend. If it's set to any other value, the system adopts a round-robin approach, distributing traffic between the fastest backend and subsequent ones, all within the bounds of the pre-configured latency sensitivity.</p>
+</blockquote>
+<h3 id="1-8-azure-front-door-routes">1-8 Azure Front Door Routes</h3>
+<p>Routes in Azure Front Door serve as mapping tools, <strong>linking your domains and
+corresponding URL path patterns</strong> to <strong>specific origin groups</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_9.png" title="Body image" /></p>
+<h3 id="1-9-azure-front-door-traffic-acceleration">1-9 Azure Front Door - Traffic acceleration</h3>
+<p>Azure Front Door is capable of <strong>traffic acceleration</strong>.</p>
+<p>Without requiring to make any modifications to your application code,</p>
+<p><strong>Azure Front Door can speed up global delivery of your application</strong></p>
+<p>Azure achieves this traffic acceleration by directing traffic to the nearest edge location to <strong>onramp</strong> into the Azure Network.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_10.png" title="Body image" /></p>
+<p>Traffic that is following within the internal Azure Network travels
+at accelerated speed while also taking the most direct path.</p>
+<blockquote>
+<p>Think of it as an expressway</p>
+</blockquote>
+<h3 id="1-10-azure-front-door-rule-sets">1-10 Azure Front Door - Rule Sets</h3>
+<p><strong>Azure Front Door Rules Engine allows you to customize how HTTP requests gets handled</strong> at the edge and provides a more controlled behavior to your web application</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_11.png" title="Body image" /></p>
+<h4 id="azure-front-door-rule-sets"><strong>Azure Front Door - Rule Sets</strong></h4>
+<p><strong>Conditions:</strong></p>
+<ul>
+<li>Device Type</li>
+<li>HTTP Version</li>
+<li>Request Cookies</li>
+<li>Post args</li>
+<li>Query string</li>
+<li>Remote address</li>
+<li>Request body</li>
+<li>Request file name</li>
+<li>Request file extension</li>
+<li>Request header</li>
+<li>Request method</li>
+<li>Request path</li>
+<li>Request protocol</li>
+<li>Request URL</li>
+</ul>
+<p><strong>Operators:</strong></p>
+<ul>
+<li>Equal</li>
+<li>Contains</li>
+<li>Less Than</li>
+<li>Greater Than</li>
+<li>Less Than or Equal</li>
+<li>Greater Than or Equal</li>
+<li>Begins With</li>
+<li>Ends With</li>
+<li>RegEx</li>
+<li>(all previous operators have a NOT variant)</li>
+</ul>
+<p><strong>Action:</strong></p>
+<ul>
+<li>
+<p><strong>Cache expiration</strong></p>
+<ul>
+<li><strong>Cache Behaviour</strong>: Bypass, Override, Set if Missing</li>
+</ul>
+</li>
+<li>
+<p><strong>Cache key query string</strong></p>
+<ul>
+<li>Behaviour: Include, Cache every unique URL, Exclude, Ignore query string</li>
+</ul>
+</li>
+<li>
+<p><strong>Modify request header / Modify response header</strong></p>
+<ul>
+<li>Operator: Append, Overwrite, Delete</li>
+</ul>
+</li>
+<li>
+<p><strong>URL redirect</strong></p>
+<ul>
+<li>Redirect type: Found (302), Moved (301), Temporary redirect (307), Permanent redirect (308)</li>
+<li>Redirect protocol: Match request, HTTP, HTTPS</li>
+</ul>
+</li>
+<li>
+<p><strong>URL rewrite</strong></p>
+<ul>
+<li>Source pattern</li>
+<li>Destination</li>
+</ul>
+</li>
+</ul>
+<p><strong>Origin group override</strong></p>
+<h2 id="2-azure-cdn">2 Azure CDN</h2>
+<p><strong>Azure Content Delivery Network</strong> is an Azure service that provides your applications with <strong>a distributed network of servers.</strong></p>
+<blockquote>
+<p>With Azure CDN, you can improve your application's <strong>load time, save bandwidth
+with caching strategies</strong>, and speed up responsiveness with compressed files.</p>
+</blockquote>
+<p>Azure CDNs centralizes requests from your origin into a single location, making it easier to manage your inbound and outbound traffic with features such as:</p>
+<ul>
+<li><strong>Caching Strategies</strong>, <mark>which define which requests should be <strong>cached</strong> and when they should expire.</mark></li>
+<li><strong>Compressed files</strong>, reducing the size of static files in order to save <strong>bandwidth</strong> when requested.</li>
+<li><strong>Geo-Filtering</strong>, blocking or allowing <strong>requests</strong> from specific countries.</li>
+<li><strong>Global distribution</strong>, Azure Regions are distributed <strong>globally</strong></li>
+<li><strong>Integration</strong>, Azure CDNs have complete integration with your Azure services.</li>
+<li><strong>High-level security</strong> at no additional <strong>cost</strong>.</li>
+<li><strong>Scalability with load-balancing</strong> makes <strong>scaling</strong> your applications much easier.</li>
+</ul>
+<p><strong>Azure CDN</strong> can help you reduce load times, save bandwidth, and improve responsiveness.</p>
+<p>Azure CDN is ideal when you're <strong>developing or managing:</strong></p>
+<ul>
+<li>websites or mobile apps</li>
+<li>encoding and distributing streaming media</li>
+<li>gaming software</li>
+<li>firmware updates</li>
+<li>IoT endpoints.</li>
+</ul>
+<p><strong>Azure CDN is used to cache static content</strong> such as images, CSS, or HTML</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_12.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_13.png" title="Body image" /></p>
+<p><strong>Akamai is one of the world's largest CDN provider with a large distributed network of servers around the world</strong>.</p>
+<p><strong>Verizon Media operates a global CDN platform with a focus on media streaming, delivery and security.</strong></p>
+<blockquote>
+<p>The CDN features greatly vary based on the chosen option, and it requires exploring a large feature table comparison</p>
+</blockquote>
+<h3 id="2-1-azure-cdn-purge">2-1 Azure CDN  - Purge</h3>
+<p>The purge feature enables the <strong>removal of cached content</strong> from all edge <strong>Points of Presence (POPs)</strong>, ensuring that the latest assets are fetched directly from the origin when requested.</p>
+<p>You can use wildcards represented by an asterisk to select all files to be purged within a directory:</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_14.png" title="Body image" /></p>
+<blockquote>
+<p>Purge all and Wildcard purge are not supported by Azure CDN from Akamai</p>
+</blockquote>
+<h2 id="3-azure-service-bus">3 Azure Service Bus</h2>
+<p><strong>Service Bus</strong> is a fully managed enterprise message broker that allows you to
+<strong>publish/subscribe to topics and queue messages</strong>.</p>
+<p>It can scale your applications with asynchronous messages and built-in integration with Azure Services</p>
+<p>Azure Service Bus allows for <strong>single or batch messaging</strong>, <strong>message load balancing</strong>, <strong>topic subscriptions</strong>, <strong>message sessions</strong>, and transactions, ensuring compliance with industry standards. </p>
+<p>This includes protocols such as <strong>AMQP 1.0, with JMS 2.0 available for Premium SKU and JMS 1.1 for Standard SKU.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_15.png" title="Body image" /></p>
+<h3 id="3-1-azure-service-bus-key-concepts">3-1 Azure Service Bus - Key Concepts</h3>
+<p>Service Bus Key Concepts</p>
+<ul>
+<li>The <strong>namespace</strong> works like a server, with N queues and topics.</li>
+<li><strong>Oueue</strong> contains the messages.</li>
+<li><strong>Sender</strong> is who sends the message.</li>
+<li><strong>Receiver</strong> is who receives the message</li>
+<li><strong>Topic</strong> is a queue with multiple receivers that works like a queue.</li>
+<li><strong>Subscription</strong> is a receiver in a topic</li>
+<li>A Batch is a group of messages</li>
+<li><strong>Safe-batch</strong> validates if each message can be included the batch.</li>
+<li><strong>Session</strong> allows you to use FIFO and group your messages in a queue.</li>
+<li><strong>Peek</strong> returns a message to the queue without removing it.</li>
+<li><strong>Dead-letter queue</strong>: a queue for messages that were unable to be delivered through the normal queue.</li>
+<li><strong>Peek &amp; Lock</strong> retrieves a message from the queue without removing it and locks it so other receivers cannot receive it.</li>
+<li><strong>Receive &amp; Delete</strong> retrieves and delete a message from the queue.</li>
+<li><strong>Auto delete on idle</strong> sets a time span to delete the queue if it is not used</li>
+<li><strong>Duplicate detection history checks</strong> if the message was not sent earlier before sending a message it</li>
+</ul>
+<h3 id="3-2-azure-service-bus-namespace">3-2 Azure Service Bus - Namespace</h3>
+<p><mark><strong>An Azure Service Bus namespace serves as a container</strong></mark> for all messaging components, including both <strong>queues and topics</strong>.</p>
+<ul>
+<li><strong>Container for Messaging Components</strong>: One namespace can house <strong>multiple</strong> queues and topics, making them versatile structures within the Azure Service Bus. They're commonly used as <strong>application containers</strong>.</li>
+<li><strong>Capacity Slice</strong>: Think of a Service Bus namespace as a segment of a large-scale cluster.<ul>
+<li>This cluster comprises numerous all-active virtual machines that fall under your control.</li>
+</ul>
+</li>
+<li><strong>Azure Availability Zones:</strong> A namespace can potentially span up to three Azure availability zones, offering enhanced availability and resilience.</li>
+<li><strong>Benefits at Scale</strong>: Using Azure Service Bus means you're using a messaging system built for large-scale operations, offering high reliability and strength.</li>
+<li><strong>Serverless Messaging</strong>: With Azure Service Bus, it is <strong>serverless</strong> messaging. This means you get to use the messaging service without getting bogged down by the intricacies of the underlying infrastructure.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_16.png" title="Body image" /></p>
+<h3 id="3-3-azure-service-bus-queues">3-3 Azure Service Bus - Queues</h3>
+<p><strong>Queues</strong> are used to send and receive messages.</p>
+<p>Messages are stored in queues until the receiving application is ready to accept and process them.</p>
+<p><strong>Messages</strong> in queues are ordered and timestamped on arrival.</p>
+<p>Once accepted by the broker, the message is always held durably in <strong>triple-redundant</strong> storage, spread across availability zones if the namespace is zone-enabled.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_17.png" title="Body image" /></p>
+<p><strong>Time to Live (TTL)</strong></p>
+<p>How long a message stays in the queue before it is removed from the queue or moved to the dead letter queue</p>
+<p><strong>Lock Duration</strong></p>
+<p><strong>How long a message remains locked. Locking avoids more than one user from reading and processing the same message.</strong></p>
+<p>You can define rules on a subscription.</p>
+<p>A subscription rule has a <strong>filter</strong> that specifies a <strong>condition</strong> for a message to be copied into the subscription, as well as an optional action that modifies message <strong>metadata</strong>.</p>
+<h3 id="3-4-azure-service-bus-subscription">3-4 Azure Service Bus - Subscription</h3>
+<p>A subscription in Azure Service Bus is a named entity associated with a topic that allows subscribers to receive copies of messages sent to that topic.</p>
+<p>In a publish/subscribe model of Azure Service Bus, <strong>topics can be thought of as the channels to send messages, subscriptions are like the virtual queues to receive those messages</strong></p>
+<ul>
+<li>Max delivery count can be between 1-2000</li>
+<li><strong>Message Sessions</strong><ul>
+<li>With sessions enabled a subscription can guarantee first-in-first-out (FIFO)
+delivery of messages</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_18.png" title="Body image" /></p>
+<h3 id="3-5-azure-service-bus-pricing">3-5 Azure Service Bus - Pricing</h3>
+<p>Azure Service Bus has three different pricing tiers Basic, Standard and Premium.</p>
+<p><strong>More expensive tiers provide more functionality.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_19.png" title="Body image" /></p>
+<h3 id="3-6-dead-letter-queue">3-6 Dead Letter Queue</h3>
+<p><strong>The Dead Letter Queue (DLQ)</strong> in Azure Service Bus is a specialized queue that <strong>stores messages that couldn't be delivered or processed</strong> successfully.</p>
+<p>These messages might fail due to various reasons:</p>
+<ul>
+<li>Message that is sent to a queue that <strong>does not exist.</strong></li>
+<li>The queue has reached its length limit.</li>
+<li>The message exceeds the allowable size limit.</li>
+<li>The message is declined by another queue or exchange.</li>
+<li>The message isn't consumed after reaching a certain read threshold, often referred to as the "<strong>back out queue</strong>."</li>
+<li>The message's <strong>Time to Live (TTL) expires.</strong></li>
+<li>Message is not processed successfully</li>
+</ul>
+<p>Dead Letter Queues provide several <strong>benefits</strong>, including:.</p>
+<ul>
+<li><strong>Monitoring</strong> failed message deliveries to understand and address the underlying issues.</li>
+<li><strong>Requeuing messages</strong> for another attempt at processing, especially after resolving the reason for the initial failure.</li>
+<li>Initiating <strong>follow-up actions, such as alerting, remediation</strong>, or alternative processing paths when specific failure patterns are detected.</li>
+</ul>
+<h3 id="3-7-azure-service-bus-command-cli">3-7 Azure Service Bus - Command CLI</h3>
+<p>Azure CLI has the following</p>
+<p>subcommands for Azure Service Bus</p>
+<ul>
+<li>a servicebus georecovery-alias</li>
+<li>a servicebus migration</li>
+<li>az servicebus namespace</li>
+<li>a servicebus queue</li>
+<li>az servicebus topic</li>
+</ul>
+<p>Azure Service Bus does not have CLI commands to send messages to the queue or topics (unlike Azure Storage Queue)</p>
+<pre><code>pm install @azure/service-bus
+</code></pre>
+<pre><code class="language-text"># create resource group
+az group create --name ContosoRG --location eastus
+
+# create servicebus namespace
+az servicebus namespace create \
+--resource-group ContosoRG \
+--name ContosoSBusNS \
+--location eastus
+
+# create servicebus queue
+az servicebus queue create \
+--resource-group ContosoRG \
+--namespace-name ContosoSBusNS \
+--name ContosoOrdersQueue
+
+# create servicebus authorization rule
+az servicebus namespace authorization-rule keys list \
+--resource-group ContosoRG \
+--namespace-name ContosoSBusNS \
+--name RootManageSharedAccessKey \
+--query primaryConnectionString \
+--output tsv
+
+</code></pre>
+<h2 id="4-azure-event-grid">4 Azure Event Grid</h2>
+<p><mark><strong>Azure Event Grid</strong> is a service that allows you to <strong>manage event routing</strong> from any source to any destination.</mark></p>
+<p>Event Grid provides a simple and strong customizable event delivery process that allows you to manage at a <strong>minimum level which types</strong> of events will be received as well as which subscribers will receive those events.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_20.png" title="Body image" /></p>
+<ul>
+<li><strong>It supports event fan-out with 24-hour retry reliability to ensure that events are delivered.</strong></li>
+<li>It is a <strong>low-cost</strong> serverless product that supports dynamic scalability.</li>
+</ul>
+<p>Event Grid is ideal for event-driven architectures, where you can subscribe to Azure resource events and publish them to an event handler or webhook.</p>
+<p><strong>You can also use Custom Topics to create custom events that will be published in vour Event Grid.</strong></p>
+<h3 id="4-1-azure-event-grid-event-sources-and-handlers">4-1 Azure Event Grid - Event Sources and Handlers</h3>
+<p><strong>Azure Event Grid</strong> is divided into two categories: <strong>Event Sources and Event Handlers.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_21.png" title="Body image" /></p>
+<h3 id="4-2-azure-event-grid-key-concepts">4-2 Azure Event Grid - Key Concepts</h3>
+<ul>
+<li><strong>Events</strong> are the event that occurred in the service.</li>
+<li><strong>Publishers</strong> is the service that published the event.</li>
+<li><strong>Event Sources</strong> are where the event took place.</li>
+<li><strong>Event Subscriptions</strong> are the mechanism the routes the events.</li>
+<li><strong>Event Subscriptions Expiration</strong> is where you set an expiration for event subscriptions</li>
+<li><strong>Event Handlers</strong> is the <strong>app or service that receives the events</strong></li>
+<li><strong>Event Delivery</strong> is the delivery of events in batches or as single events</li>
+<li><strong>Batching</strong> is the sending of a group of events in a single request.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_22.png" title="Body image" /></p>
+<ul>
+<li><strong>System Topics</strong> are built-in topics provided by Azure Services.</li>
+<li><strong>Custom Topics</strong> are applications and third-party topics.</li>
+<li><strong>Partner Events</strong> provide a way for third parties SaaS to publish events.</li>
+</ul>
+<h2 id="5-azure-event-hub">5 Azure Event Hub</h2>
+<p><strong>Azure Event Hub</strong> is an event <strong>ingestor</strong> that can consume millions of events from anywhere and process them in <strong>real-time or micro-batching</strong>. </p>
+<p>Its potent <strong>auto-inflate</strong> feature automatically <strong>scales</strong> throughput units (TUs) to accommodate varying demands, ensuring seamless processing even during traffic spikes.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_23.png" title="Body image" /></p>
+<h3 id="5-1-azure-event-hub-key-concepts">5-1 Azure Event Hub  - Key Concepts</h3>
+<p><strong>Azure Event Hub</strong> helps you build your <strong>big data pipeline</strong> to analyze logging, anomalies, user, and device telemetry where you only pay for what you use.</p>
+<p><strong>Azure Event Hub Key Concepts</strong></p>
+<ul>
+<li><strong>Namespace</strong> is an endpoint for receiving and distributing events to event hubs.</li>
+<li><strong>Event Hub</strong> is where your events will be delivered</li>
+<li><strong>Event Hub Cluster</strong> is a dedicated Event Hub with a 99 99% SLA</li>
+<li><strong>Event Hub Capture</strong> allows you to automatically <strong>capture and save streaming events.</strong></li>
+<li><strong>Events Hubs for Apache Kafka</strong>, Event Hub endpoints are <strong>compatible with Apache Kafka.</strong></li>
+<li><strong>Event Publishers</strong> are applications or services that publish events to an Event Hub</li>
+<li><strong>Publisher Policy</strong> is a unique ID used to <strong>identify</strong> publishers.</li>
+<li><strong>Partitions</strong> are used to organize the <strong>sequence</strong> of events in an Event Hub.</li>
+<li><strong>Event Consumers</strong> are applications or services that read events from an Event Hub.</li>
+<li><strong>Consumer Group</strong> enable consuming applications to each have a separate view of the event stream</li>
+<li><strong>Stream Offset</strong> holds the position of an event inside a partition.</li>
+<li><strong>Checkpointing</strong> is the process of distinguishing between <strong>read and unread events</strong>.</li>
+</ul>
+<h3 id="5-2-azure-event-hub-scaling">5-2 Azure Event Hub  - scaling</h3>
+<p><strong>Auto-Inflate:</strong></p>
+<ul>
+<li>Automatically scale up to the maximum</li>
+<li>TUs based on traffic demand</li>
+<li>Not available for basic pricing tier</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_24.png" title="Body image" /></p>
+<h3 id="5-3-azure-event-hub-producer">5-3 Azure Event Hub - Producer</h3>
+<p>A producer (aka publisher) emits data to the stream.</p>
+<p>Publishers can publish events using the follow protocols:</p>
+<ul>
+<li><strong>HTTPS</strong>: Most Azure SDKs prefer HTTPs.</li>
+<li><strong>AMQP1.0</strong>: Advanced Message Queuing Protocol.</li>
+<li><strong>Kafka Protocol</strong>: Compatible with the Apache Kafka ecosystem</li>
+</ul>
+<p>Generally, you'll be using the <strong>Azure SDK</strong> to publish events.</p>
+<p>You can publish event either:</p>
+<ul>
+<li><strong>One-at-a-time</strong></li>
+<li><strong>Batches</strong></li>
+</ul>
+<blockquote>
+<p>There is a limit of 1 MB, regardless of whether it's a single event or a batch, beyond 1MB events will be rejected</p>
+</blockquote>
+<p>For authorization, publishers use either:</p>
+<ul>
+<li>Azure AD with OAuth2-issued JWT tokens</li>
+<li>Shared Access Signature (SAS)</li>
+</ul>
+<pre><code>const { EventHubProducerClient } = require(&quot;@azure/event-hubs&quot;);  
+
+const connectionString = &quot;EVENT HUBS NAMESPACE CONNECTION STRING&quot;;  
+const eventHubName = &quot;EVENT HUB NAME&quot;;  
+
+async function main() {  
+// Create a producer client to send messages to the event hub.  
+    const producer = new EventHubProducerClient(  
+    connectionString,  
+    eventHubName  
+);  
+
+// Prepare a batch of three events.  
+const batch = await producer.createBatch();  
+batch.tryAdd({ body: &quot;First event&quot; });  
+batch.tryAdd({ body: &quot;Second event&quot; });  
+batch.tryAdd({ body: &quot;Third event&quot; });  
+
+    // Send the batch to the event hub.  
+    await producer.sendBatch(batch);  
+
+    // Close the producer client.  
+    await producer.close(); 
+}  
+
+    main().catch((err) =&gt; {  
+        console.log(&quot;Error occurred: &quot;, err);  
+});
+</code></pre>
+<p>The Azure Event Hub Consumer, also commonly referred to as a <strong>reader, is responsible for receiving and processing data from the stream.</strong></p>
+<p><strong>Connection Protocol</strong>: All Event Hubs consumers connect using the AMQP 1.0 protocol. As events become available, they are delivered through this session.</p>
+<p>This eliminates the need for the client to continuously check or "poll" for the availability of new data.</p>
+<pre><code>const { EventHubConsumerClient, earliestEventPosition } = require(&quot;@azure/event-hubs&quot;);  
+const { ContainerClient } = require(&quot;@azure/storage-blob&quot;);  
+const { BlobCheckpointStore } = require(&quot;@azure/eventhubs-checkpointstore-blob&quot;);  
+async function main() {  
+// Create a blob container client and a blob checkpoint store using the client.  
+const containerClient = new ContainerClient(storageConnectionString, containerName);  
+const checkpointStore = new BlobCheckpointStore(containerClient);  
+
+// Create a consumer client for the event hub by specifying the checkpoint store.  
+const consumerClient = new EventHubConsumerClient(  
+consumerGroup,  
+connectionString,  
+eventHubName,  
+checkpointStore);  
+
+// Subscribe to the events, and specify handlers for processing the events and errors.  
+const subscription = consumerClient.subscribe({  
+processEvents: async (events, context) =&gt; {  
+if (events.length === 0) {  
+console.log('No events received within wait time. Waiting for next interval');  
+return;  
+}  
+for (const event of events) {  
+console.log('Received event: `${event.body}`');  
+}  
+
+// Update the checkpoint.  
+await context.updateCheckpoint(events[events.length - 1]);  
+},  
+processError: async (err, context) =&gt; {  
+console.log(`Error: ${err}`);  
+},  
+},  
+{ startPosition: earliestEventPosition }  
+);
+</code></pre>
+<h3 id="5-2-azure-event-hub-consumer-group">5-2 Azure Event Hub - consumer group</h3>
+<p>A <strong>consumer group</strong> is a view (state, position, or offset) of an entire event hub</p>
+<p>Consumer groups enable <strong>multiple consuming applications</strong> to each have a separate view of the event stream, and to read the stream independently at their own pace and with their own offsets.</p>
+<blockquote>
+<p>In a stream processing architecture, each downstream application equates to a consumer group.</p>
+</blockquote>
+<p>There's always a default consumer group in an event hub, and you can create up to the maximum number of consumer groups for the corresponding pricing tier.</p>
+<p>There can be at most 5 concurrent readers on a partition per consumer group; however, <strong>it's recommended that there's only one active receiver on a partition per consumer group</strong>.</p>
+<p>Some clients offered by the Azure SDKs are intelligent consumer agents that automatically manage the details of ensuring that each partition has a single reader and that all partitions for an event hub are being read from. This allows your code to focus on processing the events being read from the event hub so it can ignore many of the details of the partitions.</p>
+<h3 id="5-3-azure-event-hub-offsets">5-3 Azure Event Hub - Offsets</h3>
+<p><mark>An <strong>offset</strong> is the position of an event within a partition.</mark></p>
+<p><mark>Offsets enables a Consumer (reader) to specify a <strong>point</strong> in the event stream from which they want to <strong>begin reading events</strong>.</mark></p>
+<ul>
+<li>You can specify the offset as a <strong>timestamp or as an offset value</strong>.</li>
+<li>Consumers are responsible for storing their own offset values outside of the Event Hubs service</li>
+<li><strong>Every event</strong> situated within a partition comes equipped with an offset.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_10_25.png" title="Body image" /></p>
+<h3 id="5-4-azure-event-hub-checkpointing">5-4 Azure Event Hub - Checkpointing</h3>
+<p><strong>Checkpointing</strong> is a process by which readers <strong>mark or commit their position within a partition event sequence</strong></p>
+<p>Checkpointing is the responsibility of the <strong>consumer</strong> and occurs on a <strong>per-partition</strong> basis within a consumer group</p>
+<p><strong>The consumer is fully responsible for checkpointing.</strong></p>
+<p>This means that for each consumer group, every individual partition reader must:</p>
+<ul>
+<li><strong>Monitor</strong> its ongoing position within the event stream.</li>
+<li><strong>Notify the Event Hubs service</strong> once it recognizes the data stream to be complete or processed.</li>
+</ul>
+<h3 id="5-5-azure-event-hub-event-retention">5-5 Azure Event Hub - Event Retention</h3>
+<p>Published events are removed from an event hub based on a configurable, timed-based retention policy</p>
+<ul>
+<li>The <strong>default</strong> value and <strong>shortest</strong> possible retention period is <strong>1 hour</strong>.</li>
+<li>For Event Hubs <strong>Standard</strong>, the maximum retention period is <strong>7 days</strong>.</li>
+<li>For Event Hubs <strong>Premium and Dedicated</strong>, the maximum retention period is <strong>90 days</strong>.</li>
+<li>If you change the retention period, it applies to all messages including messages that are already in the event hub.</li>
+<li>You cannot explicitly delete events</li>
+</ul>
+<blockquote>
+<p>The reason for Event Hubs' limit on data retention based on time is to prevent large volumes of historic customer
+data getting trapped in a deep store that is only indexed by a timestamp and only allows for sequential access.</p>
+</blockquote>
+<p>If you need to archive events beyond the allowed retention period, you can have them automatically stored in <strong>Azure Storage or Azure Data Lake by turning on the Event Hubs Capture feature.</strong></p>
+<p>If you need to search or analyze such deep archives, you can easily import them into <strong>Azure Synapse</strong> or other similar stores and analytics platforms.</p>
+<h2 id="6-event-grid-vs-event-hubs-vs-service-bus">6 Event Grid vs Event Hubs vs Service Bus</h2>
+<p>Event Grid, Event Hub and Service Bus all are event driven services for <strong>application integration and use an event bus</strong> as means to work with event data</p>
+<p><img alt="Alt Image Text" src="../../images/az305_10_26.png" title="Body image" /></p>
+<h3 id="6-1-azure-event-grid">6-1 Azure Event Grid</h3>
+<p><strong>Serverless Event Bus</strong></p>
+<p><strong>Azure service-to-service communication</strong></p>
+<ul>
+<li>Dynamically scalable</li>
+<li>Cost-efficient</li>
+<li>Guarantees at least once delivery of an event.</li>
+</ul>
+<h3 id="6-2-azure-event-hub">6-2 <strong>Azure Event Hub</strong></h3>
+<ul>
+<li><strong><mark>Streaming data</mark></strong> </li>
+<li><strong>Low latency</strong></li>
+<li>Can receive and process millions of events per second</li>
+<li>At least once delivery of an event</li>
+</ul>
+<h3 id="6-3-azure-service-bus">6-3 <strong>Azure Service Bus</strong></h3>
+<ul>
+<li><strong>Queue or Pub/Sub for web applications</strong></li>
+<li>Reliable asynchronous message delivery that requires polling</li>
+<li>
+<p>Advanced messaging features like:</p>
+<ul>
+<li>First-in and first-out (FIFO)</li>
+<li>Batching/sessions</li>
+<li>Transactions</li>
+<li>Dead-lettering</li>
+<li>Temporal control</li>
+<li>Routing and filtering</li>
+<li>Duplicate detection</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

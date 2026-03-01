@@ -1,0 +1,4252 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>305az 1 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-entra-id-overview" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              305az 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-entra-id-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Entra ID Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Entra ID Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-features-entra-id-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Features Entra ID Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-exploring-your-entra-id-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Exploring your Entra ID Tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-free-azure-subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About the Free Azure Subscription
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-and-entra-id-tenants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Create and Entra ID Tenants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Create and Entra ID Tenants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switching-between-tenants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching between tenants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching directories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-domains-for-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Domains for Entra ID
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-entra-id-user-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Entra ID User Identities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-manage-user-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create and Manage User Identities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-create-user-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bulk Create User Identities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-entra-id-application-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication| Entra ID Application Identities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entra-id-application-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra ID Application Identities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entra-id-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra ID Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entra ID Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entra-id-tenant-user-identities-security-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra ID Tenant - (User Identities - Security Groups）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-365-groups-entra-id-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft 365 Groups Entra ID Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entra-id-dynamic-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra ID Dynamic Groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entra-id-administrative-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entra ID Administrative Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-studay-design-identity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Studay - Design Identity Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Studay - Design Identity Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-state-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State - Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOLUTION
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-role-based-access-control-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Role-Based Access Control (RBAC)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>305az 1</h1>
+
+<h3 id="1-entra-id-overview">1 Entra ID Overview</h3>
+<p>Entry ID is a crucial identity management product within the Microsoft ecosystem, providing clarity in identity services. It offers features that simplify management and enhance security for users.</p>
+<p><strong>Key Features</strong></p>
+<ul>
+<li>Identity as a Service</li>
+<li>Single Sign-On</li>
+<li>Identity Security</li>
+<li>Enterprise Capabilities</li>
+<li>Hybrid and Cloud</li>
+<li>Flexible OS Support</li>
+</ul>
+<p>Entry ID is role as an identity-as-a-service solution. </p>
+<p>Entry ID encompasses many additional features beyond identity management,<strong>including single sign-on capabilities. This allows users to access various services with one secure identity</strong>.</p>
+<p>The product also includes security features that help identify risks associated with different identities. This ensures that identities and credentials remain secure and protected.</p>
+<h4 id="identity-platform"><strong>Identity Platform</strong></h4>
+<p>The identity platform enables organizations to manage access for different entities like <strong>employees and applications, streamlining resource access across cloud and on-premises environments</strong>.</p>
+<p>Entities =&gt;<strong>AuthN</strong> =&gt; Objects =&gt; <strong>AuthZ</strong>=&gt; Resources</p>
+<p><strong>Azure Subscription Relationship</strong></p>
+<p><img alt="Alt Image Text" src="../../images/1az305_1.png" title="Body image" /></p>
+<p><strong>Authentication</strong> and <strong>authorization</strong> are two key concepts in identity management, where users prove their identity and are granted access to resources based on their permissions.</p>
+<h4 id="extended-features-entra-id-overview"><strong>Extended Features Entra ID Overview</strong></h4>
+<p>Once the internal ID tenant is set up, adding identity objects is necessary. This includes registered applications, users, security groups, and devices for comprehensive management.
+To enable resource access, <strong>the Azure subscription must be linked to the internal ID tenant. Proper configuration ensures secure and efficient access to Azure resources</strong>.</p>
+<p><strong>Entra ID</strong></p>
+<ul>
+<li>
+<p>Identity Management</p>
+</li>
+<li>
+<p>Device Management</p>
+</li>
+</ul>
+<p><strong>Conditional Access Policies</strong></p>
+<ul>
+<li>Federation and SSO</li>
+<li>Resource Access</li>
+</ul>
+<p>Having multiple assignments within one identity tenant is a common practice. </p>
+<p>Azure subscriptions must be associated with a tenant. </p>
+<p>Privileged identity management adds extra security and compliance capabilities. </p>
+<p>It allows for better control over identity permissions and access based on specific scenarios.</p>
+<ul>
+<li><strong>Privileged Identity Management</strong><ul>
+<li>Just-in-Time Access</li>
+<li>Access Reviews</li>
+</ul>
+</li>
+<li><strong>Conditional Access</strong><ul>
+<li>Conditional Access Policies</li>
+</ul>
+</li>
+<li><strong>Identity Protection</strong><ul>
+<li>Sign-in Risk</li>
+<li>User Risk</li>
+</ul>
+</li>
+<li>Quality-of-life, self-service, etc. </li>
+</ul>
+<p>Identity protection capabilities allow users to manage their resources easily and reset passwords, enhancing overall security. These features are essential for safeguarding accounts against unauthorized access.</p>
+<h4 id="extended-features">Extended Features</h4>
+<p><strong>Free Included with Azure.</strong></p>
+<ul>
+<li>Cloud/hybrid identity &amp; access management</li>
+<li>Single Sign-On</li>
+<li>Business-to-Business collaboration</li>
+</ul>
+<p><strong>Premium P1 （Extended Features）</strong></p>
+<ul>
+<li>Conditional Access Policies</li>
+<li>Additional support for hybrid IAM</li>
+<li>Additional self-service capabilities</li>
+<li>Dynamic group membership</li>
+</ul>
+<p><strong>Premium P2 （Extended Features）</strong></p>
+<ul>
+<li>Identity Protection (user/sign-in risk)</li>
+<li>Privileged Identity Management</li>
+</ul>
+<p><strong>Various Other （Licensing Options）</strong></p>
+<ul>
+<li>Microsoft Entra ID Governance</li>
+<li>Microsoft 365 E3/E5 Licensing</li>
+<li>Workload Identities Premium</li>
+</ul>
+<h3 id="2-exploring-your-entra-id-tenant">2 Exploring your Entra ID Tenant</h3>
+<p>Learn how to set up your introductory ID tenant using Azure or Microsoft 365 subscriptions. </p>
+<ul>
+<li>
+<p>Different methods to set up an introductory ID tenant include using Azure or Microsoft 365 subscriptions. Each option has unique features and requirements for management.</p>
+</li>
+<li>
+<p>The Microsoft 365 Developer Program provides access to an introductory ID tenant and additional free licenses. It is a valuable resource for gaining practical experience with Microsoft tools.</p>
+</li>
+</ul>
+<p>Setting up and managing a Microsoft 365 Developer Program tenant is essential for effective use of Azure services.        </p>
+<ul>
+<li>
+<p>The Azure portal serves as the primary interface for <strong>managing your introductory ID tenant</strong>, offering various Azure services and user management features for ease of use.</p>
+</li>
+<li>
+<p>The <strong>admin.microsoft.com</strong> portal provides extensive settings for user management and configuration, particularly useful for Microsoft 365 services like SharePoint and Teams.</p>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_2.png" title="Body image" /></p>
+<h3 id="about-the-free-azure-subscription">About the Free Azure Subscription</h3>
+<p>Using a free Azure subscription offers <strong>practical experience and cost savings</strong>, but it comes with significant limitations that users must understand. <strong>Upgrading to a paid subscription may be necessary for full access and functionality</strong>.</p>
+<ul>
+<li>The free Azure subscription provides 30 days of free credits and 12 months of access to additional free services, but some features may be unavailable. Users need to be aware of these limitations.</li>
+<li>If users exhaust their free credits, <strong>they can upgrade their subscription to continue using Azure services without losing their existing account settings</strong>. This ensures a smoother transition.</li>
+<li>Transitioning to on-demand paid subscriptions allows users to utilize resources effectively, but they must remember that costs will incur after free credits are depleted. This is a significant change in budgeting.</li>
+</ul>
+<h3 id="3-create-and-entra-id-tenants">3 Create and Entra ID Tenants</h3>
+<p><strong>How to manage and switch between multiple tenants effectively.</strong></p>
+<ul>
+<li>When setting up your ID tenant, <strong>you can add additional domains but cannot delete the initial one</strong>. This restriction underscores the importance of making the right choice initially.</li>
+<li>Data residency is a significant consideration for organizations like government or healthcare. <strong>Ensuring data is stored in compliant locations, such as Australia, is critical for regulatory adherence.</strong></li>
+</ul>
+<h4 id="switching-between-tenants">Switching between tenants</h4>
+<p>Switching between tenants in Azure or Microsoft 365 does not alter existing relationships or configurations. <strong>You simply log into another tenant you have access to without making changes.</strong></p>
+<ul>
+<li><strong>Understanding that switching directories</strong> allows access to different tenants without affecting the current setup is crucial for management.      </li>
+<li>Creating a new tenant involves adding your identity from previous tenants as a global administrator. <strong>This process ensures you maintain administrative control in the new environment</strong>.</li>
+<li><strong>It's possible to create new user accounts and assign roles within the new tenant</strong>. </li>
+<li><strong>This includes adding yourself to the global administrator role to manage the new setup effectively</strong>.</li>
+</ul>
+<h4 id="switching-directories">Switching directories</h4>
+<ul>
+<li><strong>Switching directories</strong> between tenants is straightforward, enabling quick access to each account. <strong>This feature ensures users can seamlessly navigate between their different setups</strong>.</li>
+<li><strong>It's important to note that one account can access multiple tenants, providing flexibility</strong>. This functionality supports efficient management and reduces the need for multiple logins.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_3.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_4.png" title="Body image" /></p>
+<p>Azure订阅与入口id之间的关系。首先，展示了如何创建和管理Azure订阅，包括创建新的订阅和重命名订阅。</p>
+<p><strong>Azure subscription Billing properties</strong></p>
+<ul>
+<li>Billing account ID</li>
+<li>Billing profile ID</li>
+<li>Invoice section ID</li>
+<li>Cost center</li>
+</ul>
+<p>然后，解释了 Azure订阅和入口ID之间的关系，<strong>指出一个订阅只与多个租户相关联，而一个租户可以与多个订阅相关联</strong>。最
+后，<strong>强调了更改目录的严重性，因为这会打破访问控制，需要谨慎处理</strong></p>
+<p><strong>了解Azure订阅与租户关系，创建订阅，管理多个订阅</strong></p>
+<ul>
+<li>了解不同范围的访问控制，Azure政策的治理设置，无需立即创建订阅</li>
+<li>创建订阅时，默认将当前登录账户设置为订阅所有者，讨论基于访问的控制</li>
+<li>更改订阅与租户的关系需谨慎，使用“更改目录”选项，了解订阅与租户的关系</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_5.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_6.png" title="Body image" /></p>
+<h3 id="configure-domains-for-entra-id">Configure Domains for Entra ID</h3>
+<p>首先，进入Microsoft1D租户，创建一个新用户并选择自定义域名。</p>
+<p>然后，添加自定义域名，<strong>并配置文本记录或MX记录以证明你拥有该域名</strong>。最后，将自定义域名设置为主要记录，完成配置。</p>
+<p>虽然配置自定义域名需要一定的费用和域名，但并非所有操作都需要自定义域名。</p>
+<h3 id="2-entra-id-user-identities"><strong>2 Entra ID User Identities</strong></h3>
+<blockquote>
+<p>Entra ID Tenant</p>
+</blockquote>
+<p><strong>Cloud Identity</strong> / <strong>Synchronized Identity</strong> / <strong>Guest Identity</strong></p>
+<p><strong>Key Features</strong></p>
+<ul>
+<li>Enables people to access enterprise managed resources easily.</li>
+<li>Stores properties like:<ul>
+<li><code>Name = Mike Smith, Office = Seattle</code></li>
+</ul>
+</li>
+<li>Can be created in the cloud with no on-premises infrastructure required.</li>
+<li>Can be <strong>synchronised</strong> from on-premises or <strong>invited</strong> (as a guest) from partner identities.</li>
+<li>Supports username/password and multi-factor authentication.</li>
+</ul>
+<p>Azure AD中配置用户身份的过程，包括创建内部ID租户、添加用户身份、配置用户属性等。</p>
+<p>不同的用户身份类型，如基于云的身份、同步自本地Active Directory的身份以及来自第三方提供商的身份。</p>
+<ul>
+<li>用户身份的类型和厲性，包括用户名、密码、多因素身份验证等，</li>
+<li>用户身份的配置和特性，如名称、办公室、城市、电子邮件地址等</li>
+</ul>
+<p>混合组织或从本地到云迁移的组织，可使用Azure Active Directory管理用户身份，支持同步本地AD身份，第三方身份，实现多因素身份验证</p>
+<ul>
+<li>混合组织或从本地到云迁移的组织，不想从头开始管理所有用户身，可以使用同步或本地Active Directory身份平台</li>
+<li>Azure资源或用户可以使用多种身份类型，包括在entry id中创建云身份，同步本地活动目录身份或第三方提供商身份。</li>
+<li>对于这些身份类型，无论是用户身份还是应用身份，身份验证很重要，取决于具体需求</li>
+</ul>
+<h3 id="create-and-manage-user-identities">Create and Manage User Identities</h3>
+<p>首先，需要设置自己的Azure Active Directory （AAD）租户，然后登录并创建新用户</p>
+<p>如何重置密码，更改用户属性，以及如何在回收站中管理已删除的用户。</p>
+<p>最后，展示了如何管理多种类型的身份，包括云身份和来自外部来源的身份。</p>
+<h3 id="bulk-create-user-identities">Bulk Create User Identities</h3>
+<p>批量操作的功能，包括批量创建、邀请和删除用户。</p>
+<p>详细演示了如何通过CSV模板批量创建用户，包括下载模板、填写信息、上传文件等步骤。</p>
+<p><strong>介绍批量管理工具及其在身份创建中的应用</strong></p>
+<h3 id="authentication-entra-id-application-identities"><strong>Authentication| Entra ID Application Identities</strong></h3>
+<p><strong>On-Prem</strong>  =&gt; App Identity  （App (Client) ID =&gt; Secret + Cert）</p>
+<ul>
+<li>Helps control both access to an app, and the access an app has to other resources.</li>
+<li><strong>The app itself can reside anywhere; inside or outside of Azure.</strong></li>
+<li>Applications must registered within an Entra ID tenant (Application Registration).</li>
+<li><strong>Authentication relies on the use of a client secret or certificate (more secure).</strong></li>
+</ul>
+<p>应用身份的两种验证方式：<strong>秘密和证书，以及如何在Azure中注册应用程序身份</strong></p>
+<p>应用程序身份验证与授权过程</p>
+<ul>
+<li>在Azure中注册应用程序，可以在本地或AWS/GCP中运行，确保企业租户中的应用程序身份安全。</li>
+<li>用户名和密码或多因素身份验证，确保应用程序可以验证并获取权限。</li>
+<li>应用程序身份像标准用户身份，将被赋予对其他资源的权限，确保应用程序需要身份验证。</li>
+</ul>
+<h3 id="entra-id-application-identities">Entra ID Application Identities</h3>
+<p><strong>Entra ID</strong></p>
+<ul>
+<li>App Identity</li>
+<li>Managed Identity</li>
+<li><strong>（Platform Managed）</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_7.png" title="Body image" /></p>
+<p><strong>Key Features</strong></p>
+<ul>
+<li>Provides an identity to a resource that exists within an Azure subscription.</li>
+<li>Authentication is managed by the Azure platform (no credentials need to be stored)</li>
+<li><strong>System-Assigned: </strong>enabled for a single resource for as long as it exists.</li>
+<li>User-Assigned: you may create a managed identity to be used by one or more resources</li>
+</ul>
+<p>身份管理的重要性，特别是在Azure解决方案中。<strong>它区分了内部ID应用程序身份与Azure管理的身份</strong>，井解释了 在Azure中托管的应用程序如何使用应用身份来访问资源。</p>
+<p>两种不同类型的管理身份：<strong>系统分配的管理身份和用户分配的管理身份</strong>。</p>
+<p><strong>系统分配的管理身份严格与单个资源相关联，而用户分配的管理身份则可以共享给多个资源。</strong></p>
+<p>通过这些身份管理，用户无需管理底层凭据，微软将处理这些身份验证</p>
+<p>身份管理：<strong>系统分配与用户分配的区别</strong>。</p>
+<ul>
+<li>单一Azure资源的身份，如虚拟机或web应用程序</li>
+<li>系统分配的管理身份与单一资源相关联，<strong>删除资源后身份消失</strong></li>
+<li>用户分配的管理身份适合多个资源共享，便于管</li>
+</ul>
+<h3 id="entra-id-groups">Entra ID Groups</h3>
+<p><strong>Reduced Administration</strong>: Simplified access to permissions, apps, and licensing.</p>
+<p><strong>Improved Security</strong>: Reduce the incorrect assignment of permissions.</p>
+<p><strong>Automation &amp; Self-Service</strong> Leverage automation and provide users with self-service.</p>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_8.png" title="Body image" /></p>
+<h4 id="entra-id-tenant-user-identities-security-groups">Entra ID Tenant - (<strong>User Identities - Security Groups</strong>）</h4>
+<p>Key Features</p>
+<ul>
+<li>Simplifies assignment of <strong>Entra ID Roles, Azure RBAC Roles, and Entra ID Licensing</strong>.</li>
+<li>Allows an <strong>Owner</strong> to be specified, providing some self-service capabilities.</li>
+<li>Members can be assigned manually (<strong>assigned user group</strong>).</li>
+<li>Members can be managed by the platform (<strong>dynamic user group)</strong>.</li>
+</ul>
+<h4 id="microsoft-365-groups-entra-id-groups">Microsoft 365 Groups Entra ID Groups</h4>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_9.png" title="Body image" />
+`
+<strong>Key Features</strong></p>
+<ul>
+<li>Simplifies administration of collaborative spaces for users/projects/teams</li>
+<li>Allows an <strong>Owner</strong> to be specified, providing some self-service capabilities.</li>
+<li>Provides additional advanced features such as expiry, sensitivity labels, etc.</li>
+<li>Members can be assigned manually (assigned M365 group).</li>
+<li>Members can be managed by the platform (dynamic M365 group).</li>
+</ul>
+<p><strong>安全组简化权限管理，提高安全性</strong>。</p>
+<ul>
+<li>
+<p>使用组可以大大减少T管理负担，提供用户对不同应用的访问权限，
+提高安全性。</p>
+</li>
+<li>
+<p>安全组可以解决決手动分配权限的问题，避免安全问题，简化权限分</p>
+</li>
+<li>
+<p>通过将用户分配到适当的组，可以简化权限管理，提高安全性，便
+千管理闭队，</p>
+</li>
+</ul>
+<p><strong>安全组简化权限管理，提供自服务能力</strong></p>
+<ul>
+<li>通过安全组管理权限，减少错误，提高安全性。</li>
+<li>安全组简化管理，提供自服务能力，适合帮助台团队。</li>
+<li>微软365组与安全组相似，简化资源共享访问权限管理。</li>
+</ul>
+<h3 id="entra-id-dynamic-groups">Entra ID Dynamic Groups</h3>
+<ul>
+<li>Dynamic User Groups</li>
+<li>Dynamic Device Groups</li>
+<li>Dynamic M365 Groups</li>
+</ul>
+<p><strong>Automatically Manage Group Membership</strong></p>
+<blockquote>
+<p>Configure rules to have group membership managed by the platform.</p>
+</blockquote>
+<p><strong>User Properties</strong></p>
+<ul>
+<li>Name: Mike Smith</li>
+<li>City: Seattle</li>
+<li>Department: Marketing</li>
+<li>Role: Creative Director</li>
+</ul>
+<p><strong>Entra ID Dynamic Groups</strong></p>
+<pre><code>(user.department -eq &quot;Medicine&quot;)
+(user.department -eq &quot;Marketing&quot;)
+</code></pre>
+<pre><code>(user.jobTitle -contains &quot;director&quot;)
+</code></pre>
+<pre><code>(device.deviceOSTvoe -eq &quot;ipad&quot;)   -or  (device.deviceOSType  -eq &quot;iphone&quot;)
+</code></pre>
+<ul>
+<li>Dynamic User and M365 Groups require <strong>at least Entra ID Premium P1 licensing.</strong></li>
+<li>You cannot <strong>manually change the membership of dynamic groups.</strong></li>
+<li>Dynamic groups can be for <strong>devices or users (but not both at the same time).</strong></li>
+</ul>
+<p>通过创建不同类型的动态组，<strong>如用户组、设备组和微软365组</strong>，可以配置成员规则，让平台根据预设条件自动管理会员资格。</p>
+<p><strong>动态组自动管理成员资格，基于用户属性配置规则。</strong></p>
+<ul>
+<li>动态用户组的示例：根据身份属性自动分配成员。</li>
+<li>动态组实际应用：根据用户属性自动管理成员资格。</li>
+</ul>
+<p><strong>动杰会员规则控制用户对安全组和微软365组的访问。</strong></p>
+<ul>
+<li>动态会员规则可以控制用户对安全组的会员资格，也能控制对微软365组的访问。</li>
+<li>动态设备组可以自动管理设备，例如，所有iOS设备的安全组。</li>
+<li>配置动态组时，不能手动为这些组分配成员，必须由平台配置</li>
+</ul>
+<h3 id="entra-id-administrative-units">Entra ID Administrative Units</h3>
+<p><strong>Administrative Units</strong></p>
+<p>IT Administrators  （Manage obiects inside of EntraID）</p>
+<ul>
+<li>Groups assigned permissions</li>
+<li>Access resources outside of Entra ID</li>
+</ul>
+<p><strong>Key Features</strong></p>
+<ul>
+<li>Simplifies the assignment of <strong>EntraID permissions</strong> to Entra ID objects.</li>
+<li>Can include a mix of <strong>Entra ID Users. Devices, and Security Groups</strong></li>
+<li>Membership can be <strong>assigned, or dynamic</strong>(controlled using membership rules).</li>
+<li>Allows objects to exist in multiple Administrative Units at the same time.</li>
+</ul>
+<p><strong>Administrative Units require at least Entra ID Premium P1 licensing.</strong></p>
+<p><strong>Permissions do not apply to the members of security groups.</strong></p>
+<p><strong>You cannot nest an Administrative Unit within another Administrative Unit.</strong></p>
+<p>Administrative Units 帮助管理内部D租户的权限，提供更细粒度的访问控制</p>
+<ul>
+<li>管理对不同资源的访问权限。</li>
+<li>详细解释内部ID租户中的管理问题，强调需要更好的权限管理。</li>
+<li>全球管理员角色可能导致权限过度分配，需要更细粒度的权管理</li>
+</ul>
+<p>Administrative Units  提供细粒度权限管理，支持对象多重归属，但不支持层级嵌套。</p>
+<ul>
+<li>地理区域特定行政单位，允许更精细的安全管理</li>
+<li>管理单位可以组合，对象可存在于多个单位中</li>
+<li>受限管理行政单位限制全球管理员权限，保护VIP用户、</li>
+</ul>
+<h3 id="case-studay-design-identity-management">Case Studay - Design Identity Management</h3>
+<h4 id="current-state-identity"><strong>Current State - Identity</strong></h4>
+<ul>
+<li>Active Directory is already synchronized with EntraID</li>
+<li>Identity is managed on-premises with a single Active Directory forest</li>
+<li>All staff attributes have been configured, including department name, phone, title, office, and other details</li>
+<li><strong>All applications use Active Directory identities for authentication</strong></li>
+</ul>
+<h4 id="requirements"><strong>Requirements</strong></h4>
+<p>How would you design the solution to:</p>
+<ul>
+<li>Minimize costs associated with licensing</li>
+<li>Provide secure authentication for the web server to the Azure SQL database</li>
+<li>Minimize the administrative effort required for assigning developers in the  'development' department with permissions to Azure resources</li>
+</ul>
+<h4 id="solution"><strong>SOLUTION</strong></h4>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_10.png" title="Body image" /></p>
+<ul>
+<li>Security group (with dynamic membership)</li>
+<li>Application registration (with certificate for auth.)</li>
+<li>Entra ID P1 licensing</li>
+</ul>
+<h3 id="azure-role-based-access-control-rbac">Azure Role-Based Access Control (RBAC)</h3>
+<p><strong>Implementation</strong></p>
+<p><strong>USAGE OVERVIEW</strong></p>
+<ul>
+<li><strong>Security Principal</strong> Who/what is being assigned access?</li>
+<li><strong>Role Definition</strong>  What are the permissions？</li>
+<li><strong>Scope</strong> Where will the permissions apply?</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_11.png" title="Body image" /></p>
+<p><strong>Security Principal</strong> Supports the following: user, security group, app, managed.</p>
+<p><strong>Role Definition</strong> The permissions being granted, as defined by <strong>built-in</strong> or <strong>custom</strong> roles.</p>
+<ul>
+<li>OWNER</li>
+<li>CONTRIBUTOR</li>
+<li>READER</li>
+<li>DATA</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/1az305_1_12.png" title="Body image" /></p>
+<p><strong>Scope</strong></p>
+<ul>
+<li>Management Group, </li>
+<li>Subscription,</li>
+<li>Resource Group, </li>
+<li>Resource.</li>
+</ul>
+<p>Azure基于角色的访问控制 (Azure RBAC)的概念和实施过程。</p>
+<p>首先，介绍了RBAC的目的，即通过将权限分配给特定角色来管理用户对资源的访问。</p>
+<p>然后，讲解了RBAC的三个关键组件：<strong>身份、资源和角色定义</strong>。</p>
+<p>接着，详细解释了内置角色和自定义角色的区别，强调了在分配权限时应注意权限的范国。最后，通过一个场景展示了如何将所有这些组件结合起来，创建一个完整的RBAC分配。</p>
+<p><strong>Azure基于角色的访问控制，通过角色定义权限，管理用户对资源的访问。</strong></p>
+<ul>
+<li>基于角色的访问控制理念，适用于多个安全产品</li>
+<li><strong>内置角色定义与自定义角色</strong>，避免使用全权访问角</li>
+</ul>
+<p><strong>Azure内置角色与自定义角色，管理权限</strong>。</p>
+<ul>
+<li>所有者、贡献者和读者角色适用于不同的服务，需谨慎使用</li>
+<li>贡献者角色可以管理资源，但无法更改权限或访问数据平面。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

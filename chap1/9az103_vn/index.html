@@ -1,0 +1,5446 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../8az103_Vms/">
+      
+      
+        <link rel="next" href="../10az103_ad/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>L4 Configure and Manage Virtual Networks - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#l4-configure-and-manage-virtual-networks" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              L4 Configure and Manage Virtual Networks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1implement-and-manage-virtual-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、Implement and Manage Virtual Networking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-azure-virtual-network-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Azure Virtual Network overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Azure Virtual Network overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-virtual-network-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Virtual Network Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-virtual-network-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Virtual Network Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-external-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 External Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-filter-and-route-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Filter and Route Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-virutal-network-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Virutal Network Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-virutal-network-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Virutal Network Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-create-a-virtual-network-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Create a virtual network using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-create-a-virtual-network-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Create a virtual network using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-create-a-network-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Create a network interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-azure-ip-addressing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Azure IP addressing overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-10 Azure IP addressing overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-10-1-public-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10-1 Public IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-2-private-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10-2 Private IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-13-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-13 DHCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-14-configure-virtual-machine-ip-addresses-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-14 Configure virtual machine IP addresses using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-15-create-a-private-ip-address-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-15 Create a private IP address using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-16-create-a-public-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-16 Create a public IP address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-17-azure-route-table-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-17 Azure route table overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-create-and-configure-a-network-route-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Create and configure a network route using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-11-create-and-configure-a-network-route-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-11 Create and configure a network route using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-12-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-12 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-create-connectivity-between-virtual-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create Connectivity between Virtual Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Create Connectivity between Virtual Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-azure-virtual-network-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Azure virtual network connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-vnet-peering-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 VNet Peering Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-vnet-to-vnet-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 VNet to VNet Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-create-and-configure-vnet-peering-in-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Create and configure VNet peering in the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-create-and-configure-vnet-peering-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Create and configure VNet peering using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-create-a-vnet-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Create a VNet gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-configure-vnet-to-vnet-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Configure VNet-to-VNet connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-name-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure Name Resolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configure Name Resolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-azure-dns-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Azure DNS overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-create-and-configure-azure-dns-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Create and configure Azure DNS using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-create-and-configure-a-network-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Create and Configure a Network Security Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Create and Configure a Network Security Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-network-security-group-nsg-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Network Security Group (NSG) overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-create-an-nsg-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Create an NSG rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-create-and-associate-an-nsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 Create and associate an NSG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-create-and-configure-an-nsg-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 Create and configure an NSG using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-evaluate-effective-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 Evaluate effective security rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-6 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1implement-and-manage-virtual-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、Implement and Manage Virtual Networking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-azure-virtual-network-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Azure Virtual Network overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Azure Virtual Network overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-virtual-network-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Virtual Network Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-virtual-network-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Virtual Network Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-external-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 External Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-filter-and-route-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Filter and Route Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-virutal-network-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Virutal Network Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-virutal-network-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Virutal Network Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-create-a-virtual-network-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Create a virtual network using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-create-a-virtual-network-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Create a virtual network using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-create-a-network-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Create a network interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-azure-ip-addressing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Azure IP addressing overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-10 Azure IP addressing overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-10-1-public-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10-1 Public IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-2-private-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10-2 Private IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-13-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-13 DHCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-14-configure-virtual-machine-ip-addresses-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-14 Configure virtual machine IP addresses using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-15-create-a-private-ip-address-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-15 Create a private IP address using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-16-create-a-public-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-16 Create a public IP address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-17-azure-route-table-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-17 Azure route table overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-create-and-configure-a-network-route-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Create and configure a network route using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-11-create-and-configure-a-network-route-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-11 Create and configure a network route using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-12-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-12 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-create-connectivity-between-virtual-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create Connectivity between Virtual Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Create Connectivity between Virtual Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-azure-virtual-network-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Azure virtual network connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-vnet-peering-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 VNet Peering Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-vnet-to-vnet-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 VNet to VNet Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-create-and-configure-vnet-peering-in-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Create and configure VNet peering in the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-create-and-configure-vnet-peering-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Create and configure VNet peering using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-create-a-vnet-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Create a VNet gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-configure-vnet-to-vnet-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Configure VNet-to-VNet connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-name-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure Name Resolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configure Name Resolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-azure-dns-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Azure DNS overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-create-and-configure-azure-dns-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Create and configure Azure DNS using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-create-and-configure-a-network-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Create and Configure a Network Security Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Create and Configure a Network Security Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-network-security-group-nsg-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Network Security Group (NSG) overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-create-an-nsg-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Create an NSG rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-create-and-associate-an-nsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 Create and associate an NSG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-create-and-configure-an-nsg-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 Create and configure an NSG using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-evaluate-effective-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 Evaluate effective security rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-6 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="l4-configure-and-manage-virtual-networks"><strong>L4 Configure and Manage Virtual Networks</strong></h1>
+<h2 id="1implement-and-manage-virtual-networking"><strong>1、Implement and Manage Virtual Networking</strong></h2>
+<h2 id="1-azure-virtual-network-overview"><strong>1 Azure Virtual Network overview</strong></h2>
+<p><strong>Typical On-premise</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_1.png" title="Body image" /></p>
+<p><strong>Azure</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_2.png" title="Body image" /></p>
+<h3 id="1-1-virtual-network-overview"><strong>1-1 Virtual Network Overview</strong></h3>
+<ul>
+<li>Isolation and segmentation from other virtual networks </li>
+<li>Communication between the resources in the network </li>
+<li>Allows for external communication </li>
+<li>Filter and Route traffic </li>
+<li>Connect virtual networks </li>
+</ul>
+<p><strong>Isolation &amp; Segmentation</strong> </p>
+<ul>
+<li><strong>Multiple VNets per region and subscription</strong> </li>
+<li>Further isolate or segment using subnets </li>
+<li>By default traffic is routed between all subnets in a <ul>
+<li><strong>VNet Network Security Groups</strong> </li>
+<li><strong>Network Virtual Appliances</strong> </li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-virtual-network-subnet"><strong>1-2 Virtual Network Subnet</strong></h3>
+<ul>
+<li>Subnets must a part of the virtual network address space </li>
+<li><strong>Subnets can not overlap</strong> </li>
+<li>Use a <strong><code>service endpoint</code> to restrict access to a resource, such as Azure storage</strong> </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_3.png" title="Body image" /></p>
+<h3 id="1-3-external-communication"><strong>1-3 External Communication</strong></h3>
+<ul>
+<li>
+<p>Internet </p>
+<ul>
+<li><strong>Outbound access is allowed by default</strong> </li>
+<li><strong>Inbound requires public IP</strong> </li>
+</ul>
+</li>
+<li>
+<p>On-premises </p>
+</li>
+</ul>
+<h3 id="1-4-filter-and-route-traffic"><strong>1-4 Filter and Route Traffic</strong></h3>
+<ul>
+<li>Network Routes </li>
+<li><strong>Network Security Groups</strong> </li>
+<li><strong>Network Virtual Appliances</strong> </li>
+</ul>
+<h3 id="1-5-virutal-network-subnet"><strong>1-5 Virutal Network Subnet</strong></h3>
+<ul>
+<li><strong>Same or different regions</strong> </li>
+<li><strong>Different subscriptions</strong> </li>
+<li><strong>Seamless communications</strong> </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_4.png" title="Body image" /></p>
+<h3 id="1-6-virutal-network-subnet"><strong>1-6 Virutal Network Subnet</strong></h3>
+<ul>
+<li><strong><span style="color:red">Connect VNets in different region and subscriptions</span></strong> </li>
+<li><strong>Requires a VNet Gateway</strong> </li>
+<li>Provides a secure tunnel </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_5.png" title="Body image" /></p>
+<h3 id="1-7-create-a-virtual-network-using-the-portal"><strong>1-7 Create a virtual network using the portal</strong></h3>
+<p>When you <strong>enable an service endpoint</strong>, the service or services to the virtual network, the service or services are secured to the VN</p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_6.png" title="Body image" /></p>
+<p><strong>Add subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_7.png" title="Body image" /></p>
+<h3 id="1-8-create-a-virtual-network-using-powershell"><strong>1-8 Create a virtual network using PowerShell</strong></h3>
+<pre><code>#Create VNet and subnets 
+
+#Parameters 
+$RG = 'PSVTet' 
+$Location = 'Canada Central' 
+
+#Create a Resource Group 
+New-AzResourceGroup -ResourceGroupName $RG -Location $Location 
+
+#Create a Vnet 
+$virtualNetwork New-AzVirtualNetwork` 
+    -ResourceGroupName $RG 
+    -Location $Location 
+    -Name 'VNetPS' 
+    -AddressPrefix 10.0.0.0/16 
+
+#Add a Subnet 
+$subnetconfig Add-AZVirtualNetworkSubnetConfig `
+    -Name FrontEnd `
+    -AddressPrefix 10.0.1.0/24  `
+    -VirtualNetwork $virtualNetwork 
+
+#Assign the subnet to the VNet 
+$virtualNetwork | Set-AzVirtual Network 
+
+#Add another subnet 
+$subnetConfig Add-AzvirtualNetworksubnetconfig ` 
+    -Name BackEnd ` 
+    -AddressPrefix 10.0.2.0/24 `
+    -virtualNetwork $virtualNetwork 
+
+#Assign the subnet to the VNet 
+$virtualNetwork |set-AzvirtualNetwork 
+
+#Review the VNet 
+Get-AZVirtualNetwork -ResourceGroupName $RG -Name 'VNetPS' 
+</code></pre>
+<h3 id="1-9-create-a-network-interface"><strong>1-9 Create a network interface</strong></h3>
+<ul>
+<li>Create Network Interface</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_8.png" title="Body image" /></p>
+<ul>
+<li>Configure IP configuration</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_9.png" title="Body image" /></p>
+<ul>
+<li>Attach Network Interface to VM</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_10.png" title="Body image" /></p>
+<h3 id="1-10-azure-ip-addressing-overview"><strong>1-10 Azure IP addressing overview</strong></h3>
+<h4 id="1-10-1-public-ip"><strong>1-10-1 Public IP</strong></h4>
+<ul>
+<li>Connect to the Internet </li>
+<li>Connect to other Azure public-facing<ul>
+<li>Services SQL Databases </li>
+</ul>
+</li>
+</ul>
+<p><strong>Public IP SKUs</strong></p>
+<ul>
+<li>Basic </li>
+<li><strong>Standard</strong> </li>
+</ul>
+<p><strong>Public IP Basic SKU</strong> </p>
+<ul>
+<li>Static or dynamic allocation </li>
+<li><strong>Open by default</strong> </li>
+<li><span style="color:red">Restrict traffic using NSGs</span></li>
+<li><strong>Do not support Availability Zones</strong> </li>
+</ul>
+<p><strong>Public IP Standard SKU</strong> </p>
+<ul>
+<li>Static allocation </li>
+<li>Closed to inbound traffic </li>
+<li><strong><span style="color:red">Use NSGs to whitelist traffic</span></strong> </li>
+<li><strong>Zone redundant by default</strong> </li>
+</ul>
+<p><strong>Public IP Assignments</strong> </p>
+<ul>
+<li>Virtual machines <ul>
+<li><strong>Assigned to the primary NIC</strong> </li>
+</ul>
+</li>
+<li>VPN Gateways <ul>
+<li>Dynamic IP only </li>
+</ul>
+</li>
+<li>Application Gateways </li>
+<li>Internet-facing load balancers </li>
+</ul>
+<p><strong>Public IP - Dynamic</strong> </p>
+<ul>
+<li>Default </li>
+<li>Not assigned when the virtual machine is created </li>
+<li><strong>Assigned during startup of the virtual machine</strong> </li>
+<li><strong>Released when the virtual machine is restarted, stopped or deallocated</strong> </li>
+</ul>
+<p><strong>Public IP - Static</strong> </p>
+<ul>
+<li>The address is assigned when the virtual machine is provisioned </li>
+<li>Never released <ul>
+<li>Delete the resource </li>
+<li>Change to dynamic </li>
+</ul>
+</li>
+<li>IP is assigned from the Azure resource pool </li>
+</ul>
+<p><strong>Public Static IP Uses</strong> </p>
+<ul>
+<li>IP addresses linked to <strong>SSL certificates</strong> </li>
+<li>Services that require a static IP </li>
+</ul>
+<p><strong>Best Practice</strong></p>
+<ul>
+<li>Microsoft recommends <strong>not</strong> applying the static IP to the OS of the virtual machine </li>
+<li>Exception <ul>
+<li>Assigning multiple IPs to the virtual machine </li>
+<li>Use the same IP address that has been assigned to the network interface </li>
+</ul>
+</li>
+</ul>
+<h4 id="1-10-2-private-ips"><strong>1-10-2 Private IPs</strong></h4>
+<ul>
+<li>Assigned to virtual machines within the VNet </li>
+<li><strong>Connect to an on-premise environment</strong> <ul>
+<li><strong>VPN Gateway</strong> </li>
+<li><strong>ExpressRoute</strong> </li>
+</ul>
+</li>
+<li>Not accessible to the Internet </li>
+</ul>
+<p><strong>Private IP - Dynamic</strong> </p>
+<ul>
+<li>Default </li>
+<li>Not assigned when the virtual machine is created</li>
+<li><strong>Assigned during startup of the virtual machine</strong> </li>
+<li><strong>Released when the virtual machine is stopped</strong> </li>
+<li><strong>May change from reboot to reboot</strong> </li>
+</ul>
+<p><strong>Private IP - Static</strong> </p>
+<ul>
+<li><strong>Assigned when the virtual machine is provisioned</strong> </li>
+<li><strong>Never released</strong> </li>
+<li>Do not configure the private IP within the server </li>
+</ul>
+<blockquote>
+<p>If you do this, this could result in failure and dropped connections</p>
+</blockquote>
+<p><strong>Private Static IP Uses</strong></p>
+<ul>
+<li>Domain controllers </li>
+<li>DNS servers </li>
+<li>Other resources that need require a static IP for connectivity </li>
+</ul>
+<h3 id="1-13-dhcp"><strong>1-13 DHCP</strong></h3>
+<ul>
+<li>Azure controlled </li>
+<li>Leases are for the lifetime of the virtual machine </li>
+</ul>
+<blockquote>
+<p>But keeping in mind that we do no change the private IP address in the operating system </p>
+</blockquote>
+<h3 id="1-14-configure-virtual-machine-ip-addresses-using-the-portal"><strong>1-14 Configure virtual machine IP addresses using the portal</strong></h3>
+<blockquote>
+<p>When you create VM by default, a public, dynamic IP address is assigned automatically</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az103_9_11.png" title="Body image" /></p>
+<p><strong>Configure IP configuration</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_12.png" title="Body image" /></p>
+<h3 id="1-15-create-a-private-ip-address-using-powershell"><strong>1-15 Create a private IP address using PowerShell</strong></h3>
+<pre><code>#Create a Private IP 
+
+#Variables 
+$RG=  &quot;PrivateIP&quot; 
+$Location = &quot;Canada Central&quot; 
+
+New-AzResourceGroup -Name $RG -Location $Location 
+
+# Create a subnet configuration 
+$subnetconfig = New-AzvirtualNetworksubnetconfig 
+    -Name Frontend 
+    -AddressPrefix 10.4.0.0/24 
+
+# Create a virtual network 
+$VNet = New-AzVirtualNetwork `
+    -ResourceGroupName $RG `
+    -Location $Location `
+    -Name VNET ` 
+    -AddressPrefix 10.4.0.0/16 `
+    -subnet $subnetConfig 
+
+# Get the subnet object for use in a later step. 
+$subnet Get-AzvirtualNetworksubnetconfig -Name $SubnetConfig Name -VirtualNetwork $VNet
+
+$ipconfigName1 = &quot;IPConfig1&quot; 
+$ipconfig1 = New-AzNetworkinterfaceipconfig `
+    -Name $IpconfigName1 `
+    -Subnet $subnet  `
+    -PrivatelpAddress 10.4.0.4 `
+    -Primary 
+
+$NIC = New-AzNetworkInterface  `
+        -Name NIC `
+        -ResourceGroupName $RG  `
+        -Location $Location `
+        -Ipconfiguration $Ipconfig1
+
+#view Network Interface 
+Get-AZNetworkinterface -ResourceGroupName $RG 
+
+#You would then assign this NIC to the vm 
+
+</code></pre>
+<h3 id="1-16-create-a-public-ip-address"><strong>1-16 Create a public IP address</strong></h3>
+<p><strong>Standrad Public IP</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_13.png" title="Body image" /></p>
+<p>A standard can only be assoicated with virtual machine or load balancer front end, only IPv4 is available </p>
+<p><strong>Basic SKU Public IP</strong></p>
+<p>At this time, IPv6 can only be associated to internet-facing load balancer, a dynamic address is assigned after the resource has been started.</p>
+<p>A reboot or stopped, but not deallocated, <strong>virtual machine will retain the dynamic IP</strong>, wherear a static IP is assigned when the public IP is created and does not changed. </p>
+<p>A static IP will not be released until the public IP address is deleted </p>
+<p><strong>Associate public IP address to <code>load balancer</code> and <code>Network interface</code></strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_14.png" title="Body image" /></p>
+<h3 id="1-17-azure-route-table-overview"><strong>1-17 Azure route table overview</strong></h3>
+<p><strong>Workflow</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_15.png" title="Body image" /></p>
+<p><strong>Next Hop Options</strong> </p>
+<ul>
+<li>Virtual appliance </li>
+<li>Virtual Network Gateway </li>
+<li>Virtual Network </li>
+<li>Internet </li>
+<li>None (traffic is dropped) </li>
+</ul>
+<p><strong>Network Security Groups &amp; Route Tables</strong> </p>
+<ul>
+<li>Separate entities </li>
+<li>**Both are applied to a Subnet **</li>
+<li><strong>NSG</strong> <ul>
+<li><strong>Security rules to allow or deny traffic</strong> </li>
+</ul>
+</li>
+<li>Route Table <ul>
+<li><strong>Direct traffic</strong> </li>
+</ul>
+</li>
+</ul>
+<p><strong>Considerations</strong></p>
+<ul>
+<li>Routes can be overridden or </li>
+<li>Routes can be combined with the default Azure routes </li>
+<li>Routes with the longest prefix are used first <ul>
+<li><code>10.0.0.0/24</code> will be used over <code>10.0.0.0/16</code> if the next hop address is in n both prefixes </li>
+</ul>
+</li>
+</ul>
+<p><strong>Sequence for Routing</strong> </p>
+<ul>
+<li>User-defined route </li>
+<li>BGP route </li>
+<li>System route </li>
+</ul>
+<h3 id="1-10-create-and-configure-a-network-route-using-the-portal"><strong>1-10 Create and configure a network route using the portal</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_9_16.png" title="Body image" /></p>
+<p><strong>Associate route table to subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_17.png" title="Body image" /></p>
+<p><strong>You can associate route to more than on subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_18.png" title="Body image" /></p>
+<h3 id="1-11-create-and-configure-a-network-route-using-powershell"><strong>1-11 Create and configure a network route using PowerShell</strong></h3>
+<pre><code>#Create a VNet and routes 
+
+# Avariables 
+$RG = &quot;RoutesRG&quot; 
+$Location = &quot;Canada East&quot; 
+
+# Create the Resource Group 
+New-AzResourceGroup -ResourceGroupName $RG -Location 
+
+#Create the Route Table 
+$routeTablePublic = New-AzRouteTable 
+    -Name 'AZRouteTable' `
+    -ResourceGroupName $RG `
+    -location $Location `
+
+# Create the Route 
+Get-AzRouteTable `
+    -ResourceGroupName $RG` 
+    -Name &quot;AZRouteTable&quot; `
+    | Add-AzRouteConfig 
+    -Name &quot;ToPrivateSubnet&quot; ` 
+    -AddressPrefix 10.0.10.0/24 ` 
+    -NextHopType &quot;VirtualAppliance&quot; `
+    -NextHoplpAddress 10.0.20.4 `
+   | Set-AzRouteTable 
+
+# Create the VNet 
+$virtualNetwork = New-AzVirtual Network` 
+    -ResourceGroupName $RG 
+    -Location $Location `
+    -Name AZVirtualNetwork ` 
+    -AddressPrefix 10.0.0.0/16 
+
+# Create subnets 
+$subnetConfigPublic = Add-AzVirtualNetworkSubnetConfig
+ -Name Public `
+ -AddressPrefix 10.0.0.0/24 ` 
+ -Virtua1Network $virtualNetwork `
+
+$subnetConfigPrivate = Add-AzVirtualNetworkSubnetConfig 
+    -Name PrivateSubnet 
+    -AddressPrefix 10.0.10.0/24 ` 
+    -VirtualNetwork $virtualNetwork 
+
+$subnetConfigDmz = Add-AzVirtualNetworkSubnetConfig 
+    -Name DMZSubnet `
+    -AddressPrefix 10.0.20.0/24` 
+    -VirtualNetwork $virtualNetwork 
+
+
+#Sets the subnet 
+$virtualNetwork | Set-AzvirtualNetwork 
+
+# Associates with the subnet 
+Set-AzVirtualNetworkSubnetConfig `
+    -VirtualNetwork $virtualNetwork `
+    -Name 'Public' `
+    -AddressPrefix 10.0.0 0/24 `
+    -RouteTable SrouteTablePublic | `
+Set-AzVirtual Network 
+
+Get-AZRouteTable -ResourceGroupName $RG -Name AZRouteTable
+</code></pre>
+<h3 id="1-12-quiz"><strong>1-12 Quiz</strong></h3>
+<ol>
+<li>By default, where is all traffic within a VNet routed?<ul>
+<li>between all the subnets</li>
+</ul>
+</li>
+<li>What does standard DDoS protection include?<ul>
+<li>adaptive tuning</li>
+<li>telemetry</li>
+<li>notifications</li>
+</ul>
+</li>
+<li>What is the cmdlet to create a subnet?<ul>
+<li><code>Add-AZVirtualnetworkSubnetConfig</code></li>
+</ul>
+</li>
+<li>When must you add public IP addresses to a network interface?<ul>
+<li>after the network interface has been provisioned</li>
+</ul>
+</li>
+<li>A dynamic public IP is assigned at what point during the provisioning of a virtual machine?<ul>
+<li>during the start up of a virtual machine</li>
+</ul>
+</li>
+<li>When creating a new virtual machine, what type is the default sku for a public IP?<ul>
+<li>basic</li>
+</ul>
+</li>
+<li>What is the cmdlet to create a network interface?</li>
+<li><code>New-AZNetworkInterface</code></li>
+<li>You are creating an Azure public IP address that will require an IPv6 address. What sku type must you select?<ul>
+<li>basic</li>
+</ul>
+</li>
+<li>What happens to traffic if the next hop is set to none?<ul>
+<li>All traffic is dropped.</li>
+</ul>
+</li>
+<li>When setting up a route table, what type of virtual resource can the next hop be?<ul>
+<li>Virtual Network</li>
+<li>Virtual Appliance</li>
+<li>Virtual Network Gateway</li>
+</ul>
+</li>
+<li>What cmdlet would you use to create a route?<ul>
+<li><code>Add-AZRouteConfig</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="2-create-connectivity-between-virtual-networks"><strong>2. Create Connectivity between Virtual Networks</strong></h2>
+<h3 id="2-1-azure-virtual-network-connectivity"><strong>2-1 Azure virtual network connectivity</strong></h3>
+<p><strong>Options</strong></p>
+<ul>
+<li>VNet Peering <ul>
+<li>Global VNet Peering spans regions </li>
+</ul>
+</li>
+<li>VNet to VNet </li>
+</ul>
+<p><strong>Vnet peering</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_19.png" title="Body image" /></p>
+<h3 id="2-2-vnet-peering-overview"><strong>2-2 VNet Peering Overview</strong></h3>
+<ul>
+<li><strong>Peered networks appear as one network</strong> </li>
+<li>Resources can communicate between the peered networks </li>
+<li>Traffic between the networks is <strong>private</strong>, never exposed to the Internet </li>
+<li>Provides low-latency and high-bandwidth between all the resources </li>
+</ul>
+<p><strong>VNet Peering Overview</strong> </p>
+<ul>
+<li>Peer across Azure regions or subscriptions as long as the subscriptions are <strong>associated to the same Azure AD tenant</strong> </li>
+<li>Traffic between peered networks is <strong>not encrypted</strong> </li>
+</ul>
+<p><strong>Vnet to vnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_20.png" title="Body image" /></p>
+<h3 id="2-3-vnet-to-vnet-overview"><strong>2-3 VNet to VNet Overview</strong></h3>
+<ul>
+<li>Secured tunnel using <strong>IPsec/IKE</strong> </li>
+<li>Resources can communicate between the networks </li>
+<li><strong>Cross region geo-redundancy and geo-presence</strong> </li>
+<li><strong>Regional multi-tier applications</strong> with isolation or administrative boundaries </li>
+<li>Can be combined with multi-site configurations </li>
+</ul>
+<p><strong>VNet to VNet Overview</strong> </p>
+<ul>
+<li><strong>VPN Gateway is required</strong> </li>
+<li>Traffic between the networks is <strong>private</strong>, never exposed to the Internet </li>
+<li><span style="color:green">VNets in different subscriptions must be configured using PowerShell</span> </li>
+</ul>
+<h3 id="2-3-create-and-configure-vnet-peering-in-the-portal"><strong>2-3 Create and configure VNet peering in the portal</strong></h3>
+<p><strong>Add peering(A-&gt;B)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_21.png" title="Body image" /></p>
+<ul>
+<li>You can across <strong>subscriptions</strong></li>
+<li>You can enable or disable forwarding traffic, if you enable forwarding traffic, traffic has come <strong>through this  virtual network</strong> but not generated here would be forewarded to a peered network </li>
+</ul>
+<p><strong>Add peering(B-&gt;A)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_22.png" title="Body image" /></p>
+<p><strong>Connected peering</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_23.png" title="Body image" /></p>
+<p><strong>Check： Effective routes =&gt; VNetGloablpeering</strong></p>
+<h3 id="2-4-create-and-configure-vnet-peering-using-powershell"><strong>2-4 Create and configure VNet peering using PowerShell</strong></h3>
+<pre><code># variables 
+$RGName = 'PeeringPS' 
+$Location ='CanadaCentrall 
+
+#Create Resource Group 
+New-AzResourceGroup -Name $RGName -Location $Location -Tag @{Peering &quot;Portal&quot;} 
+
+# Create 
+$vnet1 = New-AZVirtualNetwork -ResourceGroupName $rgName -Name 'VNet1' -AddressPrefix '10.7.0.0/16' -Location $location
+$vnet2 = New-AZVirtualNetwork -ResourceGroupName $rgName -Name 'VNet2' -AddressPrefix '10.5.0.0/16' -Location location
+
+# Peer VNet1 to VNet2 
+Add-AZVirtualNetworkPeering -Name 'VNet1ToVNet2' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet2.Id 
+
+# Peer VNet2 to VNet1 
+Add-AZVirtualNetworkPeering -Name 'VNet2ToVNet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id 
+
+#Verify 
+Get-AZVirtualNetworkPeering -Name 'VNet1ToVNet2' -VirtualNetwork 'Vnetl' -ResourceGroupName $rgName | Select PeeringState
+</code></pre>
+<h3 id="2-5-create-a-vnet-gateway"><strong>2-5 Create a VNet gateway</strong></h3>
+<p><strong>1. Add gateway subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_24.png" title="Body image" /></p>
+<p><strong>2. Create virtual network gateway</strong></p>
+<ul>
+<li>A good rule, for the most part, is choosing a <strong>route based VPN</strong>.  </li>
+<li><span style="color:red">Note: A <strong>policy based VPN</strong> will only allow for one to site connection</span> The difference in the <strong>SKUs is the throughput</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_25.png" title="Body image" /></p>
+<h3 id="2-5-configure-vnet-to-vnet-connection"><strong>2-5 Configure VNet-to-VNet connection</strong></h3>
+<p><strong>1. Add connection(VNet to VNet A-&gt;B)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_26.png" title="Body image" /></p>
+<p><strong>2. Add connection(VNet to VNet B-&gt;A)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_27.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_28.png" title="Body image" /></p>
+<blockquote>
+<p>In order to use the portal, the network must be in the <strong>same subscriptions</strong>, If the networks are in different subscriptions, you will using Powershell</p>
+</blockquote>
+<h3 id="2-6-quiz"><strong>2-6 Quiz</strong></h3>
+<ol>
+<li>
+<p>You are connecting two virtual networks in Azure. The traffic must be encrypted during transit. What type of connection should you use?</p>
+<ul>
+<li><strong>VNet to VNet</strong></li>
+</ul>
+</li>
+<li>
+<p>To verify two networks have been peered in effective routes, what is the next hop type?</p>
+<ul>
+<li>peered</li>
+</ul>
+</li>
+<li>
+<p>What cmdlet would you use to peer to another network?</p>
+<ul>
+<li><code>Add-AZVirtualNetworkPeering</code></li>
+</ul>
+</li>
+<li>
+<p>You are setting up a VNet connection and require multiple vnet gateways from a single on-premises connection. What do you need to enable for this functionality?</p>
+<ul>
+<li><code>Active-active mode</code></li>
+</ul>
+</li>
+<li>
+<p>You need to connect two networks in different subscriptions using a VNet to VNet connection. How would you accomplish this?</p>
+<ul>
+<li>Create a VNet to VNet connection using PowerShell.</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-configure-name-resolution"><strong>3. Configure Name Resolution</strong></h2>
+<h3 id="3-1-azure-dns-overview"><strong>3-1 Azure DNS overview</strong></h3>
+<p><strong>Options</strong></p>
+<ul>
+<li>Azure provided name resolution </li>
+<li>Bring your own DNS </li>
+<li>Azure DNS Azure DNS Private Zones (Preview) </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_29.png" title="Body image" /></p>
+<p><strong>Azure Provided DNS Pros</strong> </p>
+<ul>
+<li>No configuration required </li>
+<li><strong>FQDN is not needed</strong><ul>
+<li>Unless connecting to networks in the Classic model </li>
+</ul>
+</li>
+<li>Highly available </li>
+</ul>
+<p><strong>Azure Provided DNS Cons</strong> </p>
+<ul>
+<li>DNS suffix can not be modified </li>
+<li>WINS and NetBIOS are not supported </li>
+<li>Cannot manually register records </li>
+</ul>
+<p><strong>Bring Your Own DNS</strong> </p>
+<ul>
+<li><strong>Hybrid connectivity</strong> <ul>
+<li>Azure virtual machines and on-premises </li>
+<li>Azure virtual machines in different networks </li>
+</ul>
+</li>
+<li>Reverse lookup of Internal IPs </li>
+<li>Authenticate to a DC </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_30.png" title="Body image" /></p>
+<p><strong>Bring Your Own DNS Considerations</strong> </p>
+<ul>
+<li>Turn off scavenging <ul>
+<li>To avoid accidental removal of a DNS record </li>
+</ul>
+</li>
+<li>Enable DNS recursion </li>
+<li><strong>Accessible on TCP/UDP port 53 from clients</strong> </li>
+<li>Provide hostname resolution </li>
+<li>Secure it </li>
+</ul>
+<h3 id="3-3-azure-dns"><strong>3-3 Azure DNS</strong></h3>
+<ul>
+<li>Hosts DNS domains </li>
+<li>Provides name resolution using the Microsoft global servers </li>
+<li>Highly available </li>
+<li>Can be secured using RBAC and Resource Locking </li>
+<li>You must already own the domain</li>
+<li>Does not support DNSSEC </li>
+<li>Supports private DNS domains (preview)  </li>
+</ul>
+<p><strong>Azure DNS Private Domains (preview)</strong> </p>
+<ul>
+<li>Provides name resolution within a Azure network </li>
+<li>Replaces managing a DNS server </li>
+<li>Span virtual networks, regions and subscriptions </li>
+<li>Support split-horizon <ul>
+<li>Private and public DNS zone to share a name </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Keep in mind you can't purchase domain name through Azure, you still have to do via your favorite register</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az103_9_31.png" title="Body image" /></p>
+<p><strong>Add A record set</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_32.png" title="Body image" /></p>
+<h3 id="3-3-create-and-configure-azure-dns-using-powershell"><strong>3-3 Create and configure Azure DNS using PowerShell</strong></h3>
+<pre><code># variables 
+$RG = 'PSDNS' 
+$Location = 'Canada Central' 
+
+# Create DNS Zone 
+New-AZDnsZone -Name &quot;bennettbiz.ca&quot; -ResourceGroupName $RG 
+
+# Create an A Record 
+New-AZDNSRecordSet -Name www `
+    -RecordType A 
+    -ZoneName &quot;bennettbiz.ca&quot; ` 
+    -ResourceGroupName $RG  `
+    -Ttl 3600 -DnsRecords (New-AZDnsRecordconfig -IPv4Adress &quot;10.10.10.12&quot;) 
+
+# View Record 
+Get-AZDnsRecordSet -ZoneName &quot;bennettbiz.ca&quot; `
+ -ResourceGroupName $RG 
+
+# Create a Private DNS Zone 
+New-AzDnsZone -Name private.bennettbiz.ca `
+    -ResourceGroupName $RG  `
+    -ZoneType Private ` 
+
+#To specify the network that the DNS will manage the hostname records
+-RegistrationvirtualNetworkId @($vnet.Id) 
+
+# View Private DNS Record 
+Get-AZDnsRecordSet -ZoneName &quot;private.bennettbiz.ca&quot; 
+-ResourceGroupName $RG
+</code></pre>
+<h3 id="3-4-quiz"><strong>3-4 Quiz</strong></h3>
+<ol>
+<li>
+<p>To avoid accidental removal of DNS records, what must you do if you "bring your own DNS" to Azure?</p>
+<ul>
+<li>Turn off scavenging.</li>
+</ul>
+</li>
+<li>
+<p>Microsoft provides domain names for Azure DNS.</p>
+<ul>
+<li>FALSE</li>
+</ul>
+</li>
+<li>
+<p>To create a Private DNS, what cmdlet do you need to include when creating a zone using PowerShell?</p>
+<ul>
+<li><code>-ZoneType Private</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="4-create-and-configure-a-network-security-group"><strong>4. Create and Configure a Network Security Group</strong></h2>
+<h3 id="4-1-network-security-group-nsg-overview"><strong>4-1 Network Security Group (NSG) overview</strong></h3>
+<p><strong>What is a Network Security Group</strong> </p>
+<ul>
+<li>List of Rules </li>
+<li><strong><span style="color:green">Allow or Deny Traffic</span></strong> </li>
+<li>Applied to <ul>
+<li><strong>Subnet</strong> — affects all the virtual machines in the subnet </li>
+<li><strong>Network Interface</strong> — affects the virtual machine </li>
+</ul>
+</li>
+<li><strong>Inbound or Outbound</strong> </li>
+</ul>
+<p><strong>Nsg Workflow</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_33.png" title="Body image" /></p>
+<p><strong>Default Inbound Security Rules</strong> </p>
+<ul>
+<li>AllowVNetInBound </li>
+<li><strong>AllowAzureLoadBalancerInBound</strong></li>
+<li>DenyAllInBound </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_34.png" title="Body image" /></p>
+<blockquote>
+<p>The last rule in the <strong>inbound security rules</strong> is <strong>DenyAllInBound</strong></p>
+</blockquote>
+<p><strong>Default Outbound Security Rules</strong> </p>
+<ul>
+<li>AllowVnetOutbound </li>
+<li>AllowInternetOutBound </li>
+<li>DenyAllOutBound </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_35.png" title="Body image" /></p>
+<p><strong>Rules</strong></p>
+<ul>
+<li>Source, Source Port Range </li>
+<li>Destination, Destination Port Range </li>
+<li>Protocol <ul>
+<li>Any, tcp, udp</li>
+</ul>
+</li>
+<li>Action <ul>
+<li>Allow, Deny</li>
+</ul>
+</li>
+<li>Priority - Microsoft recommends increments of a 100 </li>
+<li>Name </li>
+</ul>
+<blockquote>
+<p>And Microsoft does recommend that your port range here be any or an asterisk</p>
+</blockquote>
+<h3 id="4-2-create-an-nsg-rule"><strong>4-2 Create an NSG rule</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_9_36.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_37.png" title="Body image" /></p>
+<h3 id="4-3-create-and-associate-an-nsg"><strong>4-3 Create and associate an NSG</strong></h3>
+<p><strong>Associcate NSG to subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_38.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az103_9_39.png" title="Body image" /></p>
+<blockquote>
+<p>This means that any traffic coming into that subnet is subject to the rules in that network security group</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az103_9_40.png" title="Body image" /></p>
+<h3 id="4-4-create-and-configure-an-nsg-using-powershell"><strong>4-4 Create and configure an NSG using PowerShell</strong></h3>
+<pre><code>#create NSG 
+
+#Variables 
+$RG = 'NSGRG' 
+$Location = 'Canada central' 
+$vnet = 'NSGVNET' 
+$Mgmtsubnet = 'Management' 
+$Protectedsubnet = 'ProtectedvMs' 
+
+#create the Rule 
+$httprule New-AzNetworksecurityRuleconfig `
+    -Name &quot;Allowinternet&quot;  `
+    -Description &quot;Allow HTTP&quot; `
+    -Access &quot;Allow&quot;  `
+    -Protocol &quot;Tcp&quot; `
+    -Direction &quot;Inbound&quot; `
+    -Priority &quot;200&quot; ` 
+    -sourceAddressPrefix &quot;Internet&quot; `
+    -SourcePortRange * `
+    -DestinationAddressPrefix * `
+    -DestinationPortRange 8O 
+
+#Create the NSG 
+$nsg New-AzNetworkSecurityGroup  `
+    -ResourceGroupName $RG  `
+    -Location $Location `
+    -Name 'InternetNSGI' `
+    -SecurityRules $httprule `
+
+#Assign to a subnet 
+$vnet = Get-AzvirtualNetwork ` 
+    -ResourceGroupName $RG ` 
+    -Name $vnet 
+
+
+#Assocaite with the subnet 
+$subnetPrefix = $vnet.Subnets | ?{$_.Name -eq 'ProtectedVMs'}
+
+#set the subnet and NSG 
+set-AzvirtualNetworksubnetconfig `
+    -virtualNetwork $vnet `
+    -Name $Protectedsubnet ` 
+    -AddressPrefix $subnetPrefix.AddressPrefix ` 
+    -NetworkSecurityGroup $nsg 
+
+#update the VNet 
+set-Azvirtual Network -virtualNetwork 
+
+#View NSG 
+Get-AzNetworkSecurityGroup -ResourceGroupName $RG -Name InternetNSG 
+</code></pre>
+<blockquote>
+<p>In oder to delete this network secruity group, you first disassociate it with the subnet, then go ahead to delete the network secruity group, </p>
+</blockquote>
+<h3 id="4-5-evaluate-effective-security-rules"><strong>4-5 Evaluate effective security rules</strong></h3>
+<ul>
+<li>First section: <strong>attach to subnet</strong></li>
+<li>Second Section: <strong>attach to network interface</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_9_41.png" title="Body image" /></p>
+<h3 id="4-6-quiz"><strong>4-6 Quiz</strong></h3>
+<ol>
+<li>
+<p>What are the default NSG rule(s)?</p>
+<ul>
+<li>DenyAllInBound</li>
+<li>AllowAzureLoadBalancerInBound</li>
+<li>AllowVNetInBound</li>
+</ul>
+</li>
+<li>
+<p>Security rules are processed in which order?</p>
+<ul>
+<li>lowest to highest</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5526 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../3ai102-sdk/">
+      
+      
+        <link rel="next" href="../../az305/1az305/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Azure AI-102 Exam Preparation: Technical Overview - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-ai-102-exam-preparation-technical-overview" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure AI-102 Exam Preparation: Technical Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-azure-al-engineer-associate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Azure Al Engineer Associate?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-is-this-certification-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who is this Certification for?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exam-guide-content-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Guide - Content Outline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exam-guide-response-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Guide - Response Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-3-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction (3 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-ai-services-overview-12-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Core AI Services Overview (12 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core AI Services Overview (12 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-language-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Language &amp; Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Speech
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-decision-document-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Decision &amp; Document AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-building-conversation-ai-8-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Building Conversation AI (8 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Building Conversation AI (8 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-qna-maker-custom-question-answering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. QnA Maker &amp; Custom Question Answering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-bot-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Bot Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-advanced-topics-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Advanced Topics (10 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Advanced Topics (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-containers-for-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Containers for AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-responsible-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Responsible AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Azure AI Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-deployment-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Deployment &amp; Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exam-tips-common-scenarios-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Exam Tips &amp; Common Scenarios (5 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hands-on-recommendations-2-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hands-On Recommendations (2 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-qa-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Q&amp;A (5 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-session-overview-exam-focused-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Session Overview (Exam-Focused Workshop)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-time-boxed-agenda-3045-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Time-Boxed Agenda (30–45 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ Time-Boxed Agenda (30–45 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-minute-version-fast-sharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱ 30-Minute Version (fast &amp; sharp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-minute-version-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱ 45-Minute Version (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-slide-by-slide-workshop-outline-exam-focused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Slide-by-Slide Workshop Outline (Exam-Focused)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ Slide-by-Slide Workshop Outline (Exam-Focused)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slide-1-exam-mindset-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 1 — Exam Mindset (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-2-azure-ai-service-decision-map-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 2 — Azure AI Service Decision Map (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-3-language-bot-scenarios-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 3 — Language + Bot Scenarios (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-4-speech-streaming-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 4 — Speech &amp; Streaming (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-5-vision-vs-form-recognizer-8-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 5 — Vision vs Form Recognizer (8 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-6-containers-security-8-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 6 — Containers &amp; Security (8 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-7-cognitive-search-7-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 7 — Cognitive Search (7 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🟦 Slide 7 — Cognitive Search (7 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Private Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmk-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 CMK Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Throttling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-8-responsible-ai-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 8 — Responsible AI (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-final-exam-drill-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ Final Exam Drill (5 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4️⃣ Final Exam Drill (5 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rapid-fire-ask-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Rapid Fire (Ask audience)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-facilitator-tips-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ Facilitator Tips (Very Important)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-want-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6️⃣ Want Next?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-azure-al-engineer-associate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Azure Al Engineer Associate?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-is-this-certification-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who is this Certification for?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exam-guide-content-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Guide - Content Outline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exam-guide-response-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Guide - Response Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-3-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction (3 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-ai-services-overview-12-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Core AI Services Overview (12 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core AI Services Overview (12 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-language-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Language &amp; Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Speech
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-decision-document-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Decision &amp; Document AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-building-conversation-ai-8-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Building Conversation AI (8 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Building Conversation AI (8 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-qna-maker-custom-question-answering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. QnA Maker &amp; Custom Question Answering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-bot-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Bot Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-advanced-topics-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Advanced Topics (10 minutes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Advanced Topics (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-containers-for-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Containers for AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-responsible-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Responsible AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. Azure AI Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-deployment-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Deployment &amp; Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exam-tips-common-scenarios-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Exam Tips &amp; Common Scenarios (5 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hands-on-recommendations-2-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hands-On Recommendations (2 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-qa-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Q&amp;A (5 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-session-overview-exam-focused-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Session Overview (Exam-Focused Workshop)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-time-boxed-agenda-3045-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Time-Boxed Agenda (30–45 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ Time-Boxed Agenda (30–45 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-minute-version-fast-sharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱ 30-Minute Version (fast &amp; sharp)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-minute-version-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱ 45-Minute Version (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-slide-by-slide-workshop-outline-exam-focused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Slide-by-Slide Workshop Outline (Exam-Focused)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ Slide-by-Slide Workshop Outline (Exam-Focused)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slide-1-exam-mindset-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 1 — Exam Mindset (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-2-azure-ai-service-decision-map-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 2 — Azure AI Service Decision Map (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-3-language-bot-scenarios-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 3 — Language + Bot Scenarios (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-4-speech-streaming-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 4 — Speech &amp; Streaming (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-5-vision-vs-form-recognizer-8-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 5 — Vision vs Form Recognizer (8 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-6-containers-security-8-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 6 — Containers &amp; Security (8 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-7-cognitive-search-7-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 7 — Cognitive Search (7 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🟦 Slide 7 — Cognitive Search (7 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Private Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmk-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 CMK Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Throttling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slide-8-responsible-ai-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Slide 8 — Responsible AI (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-final-exam-drill-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ Final Exam Drill (5 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4️⃣ Final Exam Drill (5 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rapid-fire-ask-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Rapid Fire (Ask audience)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-facilitator-tips-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5️⃣ Facilitator Tips (Very Important)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-want-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6️⃣ Want Next?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="azure-ai-102-exam-preparation-technical-overview"><strong>Azure AI-102 Exam Preparation: Technical Overview</strong></h1>
+<p><em>Sharing Session for Technical Team, 30–45 minutes</em></p>
+<h2 id="what-is-the-azure-al-engineer-associate">What is the Azure Al Engineer Associate?</h2>
+<p>The Microsoft Azure Al Engineer Associate (Al-102) is an Al
+certification focused on:</p>
+<ul>
+<li>Using Azure's managed Al services</li>
+<li>Working with Large Language Models (LLMs)</li>
+</ul>
+<h2 id="who-is-this-certification-for">Who is this Certification for?</h2>
+<p>Consider the Al-102 certification if</p>
+<p>You want to directly learn how to work with OpenAl's LLMs pragmatically.</p>
+<p>You want to have deep knowledge on implementing Azure's Managed AI Offering</p>
+<p>You want to have deep knowledge on implementing Azure's Managed AI  Offering</p>
+<p>You are a Cloud Engineer upskilling to take on AI Engineer responsbilities.</p>
+<p><img alt="Alt Image Text" src="../../images/az102_4_1.png" title="Body image" /></p>
+<h2 id="exam-guide-content-outline">Exam Guide - Content Outline</h2>
+<p>Exam Guide - Content Outline</p>
+<ul>
+<li>15-20% Domain 1: Plan and manage an Azure Al solution</li>
+<li>10-15% Domain 2: Implement content moderation solutions</li>
+<li>15-20% Domain 3: Implement computer vision solutions</li>
+<li>30-35% Domain 4: Implement natural language processing solutions</li>
+<li>10-15% Domain 5: Implement knowledge mining and document intelligence solutions</li>
+<li>10-15 % Domain 6: Implement generative AI solutions</li>
+</ul>
+<h2 id="exam-guide-response-types">Exam Guide - Response Types</h2>
+<p>There are ~40-60 Questions</p>
+<p>You can afford to get roughly 12-18 questions wrong</p>
+<p><strong>Format of Questions</strong></p>
+<ul>
+<li>Multiple Choice</li>
+<li>Multiple Answer</li>
+<li>Drag and Drop</li>
+<li>Yes and No</li>
+<li>And more...</li>
+</ul>
+<hr />
+<h2 id="1-introduction-3-minutes"><strong>1. Introduction (3 minutes)</strong></h2>
+<ul>
+<li>
+<p><strong>What is AI-102?</strong><br />
+  Exam: <em>Designing and Implementing a Microsoft Azure AI Solution</em><br />
+  Focus: Building AI solutions using Azure Cognitive Services, Azure Applied AI Services, and Azure AI infrastructure.</p>
+</li>
+<li>
+<p><strong>Why it matters for our team?</strong>  </p>
+</li>
+<li>Learn to integrate AI capabilities into existing apps  </li>
+<li>Understand best practices for scalable, secure, and responsible AI  </li>
+<li>Prepare for real-world projects using Azure AI</li>
+</ul>
+<hr />
+<h2 id="2-core-ai-services-overview-12-minutes"><strong>2. Core AI Services Overview (12 minutes)</strong></h2>
+<h3 id="a-language-text"><strong>a. Language &amp; Text</strong></h3>
+<ul>
+<li><strong>Language Understanding (LUIS / CLU)</strong>  </li>
+<li>Intents, entities, utterances  </li>
+<li>Example: chatbot intent recognition  </li>
+<li><strong>Text Analytics (Sentiment, NER, PII, Key Phrases)</strong>  </li>
+<li>Use case: customer feedback analysis  </li>
+<li><strong>Translator</strong>  </li>
+<li>Text and document translation with data residency control</li>
+</ul>
+<h3 id="b-vision"><strong>b. Vision</strong></h3>
+<ul>
+<li><strong>Computer Vision</strong>  </li>
+<li>OCR, image analysis, tagging, description generation  </li>
+<li><strong>Custom Vision</strong>  </li>
+<li>Train custom image classifiers or object detectors  </li>
+<li><strong>Face API</strong>  </li>
+<li>Face detection, recognition, liveness verification</li>
+</ul>
+<h3 id="c-speech"><strong>c. Speech</strong></h3>
+<ul>
+<li><strong>Speech-to-Text, Text-to-Speech</strong>  </li>
+<li>Real-time transcription, custom neural voices  </li>
+<li><strong>Speech Translation</strong>  </li>
+<li>Real-time multilingual speech translation</li>
+</ul>
+<h3 id="d-decision-document-ai"><strong>d. Decision &amp; Document AI</strong></h3>
+<ul>
+<li><strong>Anomaly Detector</strong>  </li>
+<li>Time-series anomaly detection  </li>
+<li><strong>Form Recognizer / Document Intelligence</strong>  </li>
+<li>Extract structured data from forms, invoices, receipts</li>
+</ul>
+<hr />
+<h2 id="3-building-conversation-ai-8-minutes"><strong>3. Building Conversation AI (8 minutes)</strong></h2>
+<h3 id="a-qna-maker-custom-question-answering"><strong>a. QnA Maker &amp; Custom Question Answering</strong></h3>
+<ul>
+<li>Create knowledge bases from URLs, files, or manual QnA pairs  </li>
+<li>Integrate with bots for FAQ handling</li>
+</ul>
+<h3 id="b-bot-framework"><strong>b. Bot Framework</strong></h3>
+<ul>
+<li>Bot Framework SDK, Composer, Emulator  </li>
+<li>Channels: Teams, Web Chat, Direct Line  </li>
+<li>Use LUIS + QnA Maker + Dispatch for multi-turn conversations</li>
+</ul>
+<hr />
+<h2 id="4-advanced-topics-10-minutes"><strong>4. Advanced Topics (10 minutes)</strong></h2>
+<h3 id="a-containers-for-ai"><strong>a. Containers for AI</strong></h3>
+<ul>
+<li>Run Cognitive Services on-premises or in private networks  </li>
+<li>Use Docker containers for Speech, Language, Vision, etc.  </li>
+<li>Benefits: data sovereignty, low latency, air-gapped environments</li>
+</ul>
+<h3 id="b-responsible-ai"><strong>b. Responsible AI</strong></h3>
+<ul>
+<li>Principles: Fairness, Inclusiveness, Transparency, Privacy  </li>
+<li>Tools: Content Moderator, PII detection, logging control</li>
+</ul>
+<h3 id="c-azure-ai-search"><strong>c. Azure AI Search</strong></h3>
+<ul>
+<li>Index structured and unstructured data  </li>
+<li>Enrich with AI skills (OCR, entity extraction, key phrases)  </li>
+<li>Secure with private endpoints, RBAC, IP filtering</li>
+</ul>
+<h3 id="d-deployment-monitoring"><strong>d. Deployment &amp; Monitoring</strong></h3>
+<ul>
+<li>ARM templates, Azure CLI, SDKs (C#, Python)  </li>
+<li>Logging, diagnostics, Azure Monitor  </li>
+<li>Manage keys, endpoints, and network security</li>
+</ul>
+<hr />
+<h2 id="5-exam-tips-common-scenarios-5-minutes"><strong>5. Exam Tips &amp; Common Scenarios (5 minutes)</strong></h2>
+<ul>
+<li><strong>Scenario-based questions</strong>: How would you design…?  </li>
+<li><strong>Code completion</strong>: Know SDK methods (e.g., <code>AddFaceFromStreamAsync</code>, <code>StartRecognizeReceiptsFromUrl</code>)  </li>
+<li><strong>Security &amp; compliance</strong>: Private endpoints, VNet integration, data residency  </li>
+<li><strong>Cost optimization</strong>: Choose between F0 (free) and S0/S1 tiers based on scale</li>
+</ul>
+<hr />
+<h2 id="6-hands-on-recommendations-2-minutes"><strong>6. Hands-On Recommendations (2 minutes)</strong></h2>
+<ul>
+<li><strong>Microsoft Learn Path</strong>: <em>AI-102 Learning Path</em>  </li>
+<li><strong>Labs</strong>: Use Azure Sandbox for hands-on practice  </li>
+<li><strong>Quickstarts</strong>: Deploy a bot, analyze an image, translate text  </li>
+<li><strong>Sample Code</strong>: GitHub Azure-Samples/Cognitive-Services</li>
+</ul>
+<hr />
+<h2 id="7-qa-5-minutes"><strong>7. Q&amp;A (5 minutes)</strong></h2>
+<ul>
+<li>Open floor for team questions  </li>
+<li>Discuss real use cases from current projects</li>
+</ul>
+<hr />
+<hr />
+<p>Perfect 👍
+Based on your <strong>AI-102 material + engineer audience + exam-focused workshop</strong>, here’s a <strong>30–45 min structured tech sharing session</strong> that works well in real teams and maps <em>directly</em> to exam scoring patterns.</p>
+<p>I’ll give you:</p>
+<ol>
+<li>⏱ <strong>Time-boxed agenda (30–45 min)</strong></li>
+<li>🧠 <strong>High-frequency exam themes (what MS loves to test)</strong></li>
+<li>📊 <strong>Slide-by-slide outline with talking points</strong></li>
+<li>❓ <strong>Interactive exam drills (hands-on thinking, no labs needed)</strong></li>
+<li>📝 <strong>Facilitator tips (how to run it smoothly)</strong></li>
+</ol>
+<h2 id="1-session-overview-exam-focused-workshop">1️⃣ Session Overview (Exam-Focused Workshop)</h2>
+<p><strong>Title</strong></p>
+<blockquote>
+<p><em>AI-102 for Engineers: How to Think Like the Exam</em></p>
+</blockquote>
+<p><strong>Audience</strong>
+Backend / Cloud / Platform engineers
+(assumes Azure basics, not AI experts)</p>
+<p><strong>Goal</strong>
+By the end, engineers should be able to:</p>
+<ul>
+<li>Instantly pick the <strong>correct Azure AI service</strong></li>
+<li>Recognize <strong>trick options</strong></li>
+<li>Answer <strong>scenario-based questions under time pressure</strong></li>
+</ul>
+<hr />
+<h2 id="2-time-boxed-agenda-3045-min">2️⃣ Time-Boxed Agenda (30–45 min)</h2>
+<h3 id="30-minute-version-fast-sharp">⏱ 30-Minute Version (fast &amp; sharp)</h3>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–5 min</td>
+<td>Exam mindset &amp; service map</td>
+</tr>
+<tr>
+<td>5–12 min</td>
+<td>Language &amp; Bots (LUIS, QnA, Text Analytics)</td>
+</tr>
+<tr>
+<td>12–18 min</td>
+<td>Vision &amp; Documents</td>
+</tr>
+<tr>
+<td>18–24 min</td>
+<td>Containers, Security, Networking</td>
+</tr>
+<tr>
+<td>24–28 min</td>
+<td>Cognitive Search &amp; Encryption</td>
+</tr>
+<tr>
+<td>28–30 min</td>
+<td>Lightning exam drill</td>
+</tr>
+</tbody>
+</table>
+<h3 id="45-minute-version-recommended">⏱ 45-Minute Version (recommended)</h3>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–5 min</td>
+<td>Exam strategy</td>
+</tr>
+<tr>
+<td>5–15 min</td>
+<td>Language, Bots &amp; Speech</td>
+</tr>
+<tr>
+<td>15–25 min</td>
+<td>Vision &amp; Form Recognizer</td>
+</tr>
+<tr>
+<td>25–33 min</td>
+<td>Containers, Keys, RBAC</td>
+</tr>
+<tr>
+<td>33–40 min</td>
+<td>Cognitive Search (Private Link, CMK, throttling)</td>
+</tr>
+<tr>
+<td>40–45 min</td>
+<td>Exam drills + Q&amp;A</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-slide-by-slide-workshop-outline-exam-focused">3️⃣ Slide-by-Slide Workshop Outline (Exam-Focused)</h2>
+<hr />
+<h3 id="slide-1-exam-mindset-5-min">🟦 Slide 1 — Exam Mindset (5 min)</h3>
+<p><strong>Key Message</strong></p>
+<blockquote>
+<p>AI-102 is <strong>NOT</strong> ML theory
+It’s <strong>service selection + deployment decisions</strong></p>
+</blockquote>
+<p><strong>Say this explicitly</strong></p>
+<ul>
+<li>80% scenario-based</li>
+<li>Wrong answers are <em>technically valid but wrong context</em></li>
+<li>Keywords matter more than code</li>
+</ul>
+<p>📌 <strong>Exam Trigger Words</strong></p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Minimize dev effort</em></td>
+<td>Prebuilt service</td>
+</tr>
+<tr>
+<td><em>Offline / on-prem</em></td>
+<td>Container</td>
+</tr>
+<tr>
+<td><em>Single key</em></td>
+<td>CognitiveServices (multi-service)</td>
+</tr>
+<tr>
+<td><em>Private traffic</em></td>
+<td>Private Endpoint</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="slide-2-azure-ai-service-decision-map-5-min">🟦 Slide 2 — Azure AI Service Decision Map (5 min)</h3>
+<p><strong>Golden Rule</strong></p>
+<blockquote>
+<p>If Microsoft already solved it → <strong>don’t train</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Correct Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chit-chat intent</td>
+<td>LUIS</td>
+</tr>
+<tr>
+<td>Knowledge base</td>
+<td>QnA Maker</td>
+</tr>
+<tr>
+<td>Sentiment</td>
+<td>Text Analytics</td>
+</tr>
+<tr>
+<td>Language detection</td>
+<td>Text Analytics</td>
+</tr>
+<tr>
+<td>Receipt extraction</td>
+<td>Form Recognizer</td>
+</tr>
+<tr>
+<td>OCR only</td>
+<td>Computer Vision</td>
+</tr>
+<tr>
+<td>Predictive maintenance</td>
+<td>Anomaly Detector</td>
+</tr>
+<tr>
+<td>Correlated sensors</td>
+<td>Metrics Advisor</td>
+</tr>
+</tbody>
+</table>
+<p>🚫 <strong>Trap</strong>
+Custom Vision / Azure ML when “minimize effort” is stated.</p>
+<hr />
+<h3 id="slide-3-language-bot-scenarios-10-min">🟦 Slide 3 — Language + Bot Scenarios (10 min)</h3>
+<p><strong>High-Frequency Exam Combo</strong></p>
+<blockquote>
+<p>“Chit-chat + KB + sentiment + multilingual”</p>
+</blockquote>
+<p>✅ <strong>Correct Answer Pattern</strong></p>
+<pre><code>LUIS + QnA Maker + Text Analytics
+</code></pre>
+<p>❌ <strong>Why Dispatch is often wrong</strong></p>
+<ul>
+<li>Dispatch is for routing <em>between bots</em></li>
+<li>Exam often <em>does not require routing</em></li>
+</ul>
+<p>💡 <strong>Exam Drill</strong></p>
+<blockquote>
+<p>“Which service automatically detects language?”
+➡️ <strong>Text Analytics</strong>, not Translator</p>
+</blockquote>
+<hr />
+<h3 id="slide-4-speech-streaming-5-min">🟦 Slide 4 — Speech &amp; Streaming (5 min)</h3>
+<p><strong>Exam Pattern</strong></p>
+<blockquote>
+<p>“Streaming MP3 speech to text”</p>
+</blockquote>
+<p>✅ Required:</p>
+<ul>
+<li><code>AudioStreamFormat.GetCompressedFormat(MP3)</code></li>
+<li><code>SpeechRecognizer</code></li>
+</ul>
+<p>🚫 Wrong:</p>
+<ul>
+<li><code>SpeechSynthesizer</code> (TTS)</li>
+<li><code>KeywordRecognizer</code></li>
+</ul>
+<p>📌 Keyword: <em>streaming</em>, <em>MP3</em> → <strong>CompressedFormat</strong></p>
+<hr />
+<h3 id="slide-5-vision-vs-form-recognizer-8-min">🟦 Slide 5 — Vision vs Form Recognizer (8 min)</h3>
+<p><strong>Decision Table (very exam-heavy)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Receipts, invoices</td>
+<td>Form Recognizer</td>
+</tr>
+<tr>
+<td>Structured fields</td>
+<td>Form Recognizer</td>
+</tr>
+<tr>
+<td>OCR only</td>
+<td>Computer Vision</td>
+</tr>
+<tr>
+<td>PPE detection</td>
+<td>Face API</td>
+</tr>
+<tr>
+<td>Captions for blind users</td>
+<td><code>describeImage</code></td>
+</tr>
+</tbody>
+</table>
+<p>🚫 <strong>Trap</strong></p>
+<blockquote>
+<p>“Receipts” ≠ OCR
+Receipts = <strong>prebuilt Form Recognizer</strong></p>
+</blockquote>
+<hr />
+<h3 id="slide-6-containers-security-8-min">🟦 Slide 6 — Containers &amp; Security (8 min)</h3>
+<p><strong>Exam Keywords</strong></p>
+<ul>
+<li>On-prem</li>
+<li>Limited connectivity</li>
+<li>No internet</li>
+<li>Secure keys</li>
+</ul>
+<p>✅ <strong>Correct Order Pattern</strong></p>
+<ol>
+<li>Pull image from MCR</li>
+<li>Push to ACR (RBAC)</li>
+<li>Distribute <code>docker run</code> script</li>
+<li>Run container</li>
+</ol>
+<p>📌 <strong>Mandatory container flags</strong></p>
+<pre><code>Eula=accept
+Billing={ENDPOINT}
+ApiKey={KEY}
+</code></pre>
+<p>🚫 Don’t put keys directly in CLI history.</p>
+<hr />
+<h3 id="slide-7-cognitive-search-7-min">🟦 Slide 7 — Cognitive Search (7 min)</h3>
+<p><strong>Top 3 Exam Themes</strong></p>
+<h4 id="private-access">🔐 Private Access</h4>
+<table>
+<thead>
+<tr>
+<th>Solution</th>
+<th>Correct?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NSG</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Firewall</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Public endpoint + IP rule</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Private Endpoint</strong></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h4 id="cmk-encryption">🔐 CMK Encryption</h4>
+<p><strong>Implications</strong></p>
+<ul>
+<li>Index size ↑</li>
+<li>Query time ↑</li>
+<li>Requires Key Vault</li>
+</ul>
+<h4 id="throttling">⚡ Throttling</h4>
+<table>
+<thead>
+<tr>
+<th>Fix</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add replicas</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Higher tier</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Add indexes</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="slide-8-responsible-ai-5-min">🟦 Slide 8 — Responsible AI (5 min)</h3>
+<p><strong>Microsoft LOVES this</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Notify users</td>
+<td>Transparency</td>
+</tr>
+<tr>
+<td>Avoid bias</td>
+<td>Fairness</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Inclusiveness</td>
+</tr>
+<tr>
+<td>Money decisions</td>
+<td>Human-in-loop</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>Exam Tip</strong>
+If AI affects <strong>salary / hiring / punishment</strong>
+➡️ Always add <strong>human review</strong></p>
+<hr />
+<h2 id="4-final-exam-drill-5-min">4️⃣ Final Exam Drill (5 min)</h2>
+<h3 id="rapid-fire-ask-audience">🔥 Rapid Fire (Ask audience)</h3>
+<p>1️⃣ <em>“Receipts, minimize effort”</em>
+➡️ <strong>Form Recognizer</strong></p>
+<p>2️⃣ <em>“Private traffic, no internet”</em>
+➡️ <strong>Private Endpoint</strong></p>
+<p>3️⃣ <em>“Multiple correlated sensors”</em>
+➡️ <strong>Metrics Advisor</strong></p>
+<p>4️⃣ <em>“Blind users, image output”</em>
+➡️ <strong>describeImage</strong></p>
+<hr />
+<h2 id="5-facilitator-tips-very-important">5️⃣ Facilitator Tips (Very Important)</h2>
+<ul>
+<li>Don’t read slides → <strong>ask “why not the others?”</strong></li>
+<li>Always highlight <strong>why wrong answers are tempting</strong></li>
+<li>Use <strong>Microsoft wording</strong> (“minimize effort”, “secure”, “single key”)</li>
+</ul>
+<hr />
+<h2 id="6-want-next">6️⃣ Want Next?</h2>
+<p>I can:</p>
+<ul>
+<li>📝 Add <strong>speaker notes</strong> to your PPT</li>
+<li>❓ Create <strong>20 exam-style MCQs</strong> for live polling</li>
+<li>🧩 Convert this into a <strong>90-min deep-dive workshop</strong></li>
+<li>📄 Produce a <strong>1-page AI-102 cheat sheet</strong></li>
+</ul>
+<h2 id="-">---</h2>
+<hr />
+<p>Love it—this topic is <em>perfect</em> for a 90-minute deep dive.
+Below is a <strong>battle-tested, engineer-friendly, exam-optimized 90-minute workshop</strong> that you can run straight from your existing deck + a few added slides.</p>
+<p>I’ll structure this like a <strong>trainer’s runbook</strong> so you can <em>facilitate</em>, not just present.</p>
+<hr />
+<h1 id="ai-102-90-minute-deep-dive-exam-workshop-engineer-edition">🧠 AI-102 — 90-Minute Deep-Dive Exam Workshop (Engineer Edition)</h1>
+<p><strong>Audience</strong>: Engineers / architects
+<strong>Style</strong>: Scenario-driven, exam-pattern focused
+<strong>Outcome</strong>: Engineers answer AI-102 questions by <em>elimination logic</em>, not memorization</p>
+<hr />
+<h2 id="full-90-minute-agenda">⏱️ Full 90-Minute Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Module</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–10</td>
+<td>Exam mindset &amp; service map</td>
+<td>Instructor</td>
+</tr>
+<tr>
+<td>10–25</td>
+<td>Language, Bots &amp; Speech</td>
+<td>Guided analysis</td>
+</tr>
+<tr>
+<td>25–40</td>
+<td>Vision &amp; Document Intelligence</td>
+<td>Scenario breakdown</td>
+</tr>
+<tr>
+<td>40–55</td>
+<td>Containers, Security &amp; RBAC</td>
+<td>Architecture thinking</td>
+</tr>
+<tr>
+<td>55–70</td>
+<td>Cognitive Search deep dive</td>
+<td>Whiteboard logic</td>
+</tr>
+<tr>
+<td>70–80</td>
+<td>Responsible AI (scoring booster)</td>
+<td>Fast drills</td>
+</tr>
+<tr>
+<td>80–90</td>
+<td>Full exam simulation</td>
+<td>Group challenge</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="010-min-exam-mindset-set-the-rules">0–10 min — Exam Mindset (Set the Rules)</h2>
+<h3 id="goal">🎯 Goal</h3>
+<p>Get engineers to <strong>stop over-engineering</strong>.</p>
+<h3 id="key-talking-points">Key Talking Points</h3>
+<blockquote>
+<p>“AI-102 does NOT reward clever solutions.
+It rewards <strong>Microsoft’s intended solution</strong>.”</p>
+</blockquote>
+<h4 id="the-5-exam-laws">The 5 Exam Laws</h4>
+<ol>
+<li><em>Minimize development effort</em> → <strong>Prebuilt</strong></li>
+<li><em>On-prem / no internet</em> → <strong>Container</strong></li>
+<li><em>Single key / billing</em> → <strong>CognitiveServices</strong></li>
+<li><em>Private traffic</em> → <strong>Private Endpoint</strong></li>
+<li><em>Human impact</em> → <strong>Responsible AI</strong></li>
+</ol>
+<h3 id="interactive-2-min">Interactive (2 min)</h3>
+<p>Ask:</p>
+<blockquote>
+<p>“Who here would pick Azure ML for receipts?”</p>
+</blockquote>
+<p>Then explain why that <strong>loses points</strong>.</p>
+<hr />
+<h2 id="1025-min-language-bots-speech-high-roi-section">10–25 min — Language, Bots &amp; Speech (High ROI Section)</h2>
+<h3 id="why-this-matters">🔍 Why This Matters</h3>
+<p>This section appears <strong>constantly</strong> and has many trap answers.</p>
+<hr />
+<h3 id="part-a-language-stack-decision-tree-10-min">Part A — Language Stack Decision Tree (10 min)</h3>
+<p>Draw this live:</p>
+<pre><code>User text
+ ├─ Intent? → LUIS
+ ├─ Knowledge base? → QnA Maker
+ ├─ Sentiment / language? → Text Analytics
+</code></pre>
+<p>❌ Translator ≠ language detection
+❌ Dispatch ≠ required unless routing bots</p>
+<hr />
+<h3 id="exam-scenario-drill-5-min">Exam Scenario Drill (5 min)</h3>
+<blockquote>
+<p>“Build a chatbot that:</p>
+<ul>
+<li>Supports chit-chat</li>
+<li>Uses a KB</li>
+<li>Performs sentiment analysis</li>
+<li>Selects best language automatically”</li>
+</ul>
+</blockquote>
+<p>Ask teams to vote.</p>
+<p>✅ <strong>Correct</strong>
+<code>LUIS + QnA Maker + Text Analytics</code></p>
+<p>🚫 Explain why Dispatch is <em>tempting but wrong</em>.</p>
+<hr />
+<h3 id="part-b-speech-streaming-5-min">Part B — Speech Streaming (5 min)</h3>
+<p><strong>Exam keyword</strong>: <em>streaming MP3</em></p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MP3</td>
+<td><code>GetCompressedFormat(MP3)</code></td>
+</tr>
+<tr>
+<td>STT</td>
+<td><code>SpeechRecognizer</code></td>
+</tr>
+</tbody>
+</table>
+<p>🚫 KeywordRecognizer
+🚫 SpeechSynthesizer</p>
+<hr />
+<h2 id="2540-min-vision-document-intelligence">25–40 min — Vision &amp; Document Intelligence</h2>
+<h3 id="one-rule-to-drill-in">🔥 One Rule to Drill In</h3>
+<blockquote>
+<p>“If it’s a form → Form Recognizer.
+If it’s pixels → Computer Vision.”</p>
+</blockquote>
+<hr />
+<h3 id="high-frequency-matrix-show-explain">High-Frequency Matrix (Show + Explain)</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Receipts</td>
+<td>Form Recognizer</td>
+</tr>
+<tr>
+<td>Invoices</td>
+<td>Form Recognizer</td>
+</tr>
+<tr>
+<td>PPE / mask</td>
+<td>Face</td>
+</tr>
+<tr>
+<td>OCR only</td>
+<td>Computer Vision</td>
+</tr>
+<tr>
+<td>Captions for blind</td>
+<td><code>describeImage</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="exam-trap-breakdown-10-min">Exam Trap Breakdown (10 min)</h3>
+<p><strong>Question</strong></p>
+<blockquote>
+<p>“Extract vendor and total from receipts. Minimize effort.”</p>
+</blockquote>
+<p>Walk through wrong answers:</p>
+<ul>
+<li>❌ Custom Vision → training</li>
+<li>❌ OCR → unstructured</li>
+<li>❌ Personalizer → irrelevant</li>
+</ul>
+<p>✅ <strong>Form Recognizer (prebuilt receipts)</strong></p>
+<hr />
+<h2 id="4055-min-containers-security-rbac">40–55 min — Containers, Security &amp; RBAC</h2>
+<h3 id="exam-keywords">🔐 Exam Keywords</h3>
+<ul>
+<li>Limited connectivity</li>
+<li>On-prem</li>
+<li>Secure keys</li>
+<li>RBAC</li>
+</ul>
+<hr />
+<h3 id="container-deployment-pattern-must-memorize">Container Deployment Pattern (Must Memorize)</h3>
+<p><strong>Correct Order</strong></p>
+<ol>
+<li>Pull from MCR</li>
+<li>Push to ACR</li>
+<li>Use RBAC</li>
+<li>Distribute docker script</li>
+<li>Run container</li>
+</ol>
+<hr />
+<h3 id="mandatory-container-flags-exam-loves-this">Mandatory Container Flags (Exam loves this)</h3>
+<pre><code>Eula=accept
+Billing={ENDPOINT}
+ApiKey={KEY}
+</code></pre>
+<p>🚫 Missing Billing = container won’t start</p>
+<hr />
+<h3 id="group-exercise-5-min">Group Exercise (5 min)</h3>
+<blockquote>
+<p>“Why is Docker Hub wrong here?”</p>
+</blockquote>
+<p>Expected answer:</p>
+<ul>
+<li>No RBAC</li>
+<li>Public access</li>
+<li>Violates least privilege</li>
+</ul>
+<hr />
+<h2 id="5570-min-cognitive-search-hard-but-scoring">55–70 min — Cognitive Search (Hard but Scoring)</h2>
+<h3 id="part-a-private-access-7-min">Part A — Private Access (7 min)</h3>
+<p><strong>Goal</strong>: No public internet</p>
+<table>
+<thead>
+<tr>
+<th>Solution</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NSG</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Firewall</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>IP rule</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Private Endpoint</strong></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>Explain <strong>why NSG doesn’t apply to PaaS</strong>.</p>
+<hr />
+<h3 id="part-b-cmk-encryption-5-min">Part B — CMK Encryption (5 min)</h3>
+<p><strong>Impacts (Exam expects all 3)</strong>:</p>
+<ul>
+<li>Index size ↑</li>
+<li>Query time ↑</li>
+<li>Requires Key Vault</li>
+</ul>
+<p>🚫 No performance improvement</p>
+<hr />
+<h3 id="part-c-throttling-logic-3-min">Part C — Throttling Logic (3 min)</h3>
+<table>
+<thead>
+<tr>
+<th>Fix</th>
+<th>Works?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add replicas</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Higher tier</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Add indexes</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>CMK</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7080-min-responsible-ai-free-points">70–80 min — Responsible AI (Free Points)</h2>
+<h3 id="rule-of-thumb">Rule of Thumb</h3>
+<blockquote>
+<p>“If AI affects people → add a human.”</p>
+</blockquote>
+<hr />
+<h3 id="exam-mapping">Exam Mapping</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Notify users</td>
+<td>Transparency</td>
+</tr>
+<tr>
+<td>Bias monitoring</td>
+<td>Fairness</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Inclusiveness</td>
+</tr>
+<tr>
+<td>Salary decisions</td>
+<td>Human-in-loop</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="fast-drill-5-min">Fast Drill (5 min)</h3>
+<p>Ask:</p>
+<blockquote>
+<p>“Which principle is violated if users don’t know data is processed?”</p>
+</blockquote>
+<p>Answer: <strong>Transparency</strong></p>
+<hr />
+<h2 id="8090-min-full-exam-simulation">80–90 min — Full Exam Simulation</h2>
+<h3 id="group-challenge-10-min">Group Challenge (10 min)</h3>
+<p>Split into 3–4 groups.
+Each group gets <strong>one full AI-102 style scenario</strong>.</p>
+<p>They must:</p>
+<ol>
+<li>Pick service</li>
+<li>Eliminate wrong answers</li>
+<li>Justify using keywords</li>
+</ol>
+<h3 id="sample-prompt">Sample Prompt</h3>
+<blockquote>
+<p>“IoT sensors, correlated signals, RCA, alerts, minimal dev”</p>
+</blockquote>
+<p>Correct:
+✅ <strong>Azure Metrics Advisor</strong></p>
+<hr />
+<h2 id="what-you-should-send-after-the-workshop">🧾 What You Should Send After the Workshop</h2>
+<p>I recommend providing:</p>
+<ul>
+<li>✅ <strong>1-page service decision cheat sheet</strong></li>
+<li>✅ <strong>Top 30 exam keywords</strong></li>
+<li>✅ <strong>Practice MCQs with explanations</strong></li>
+</ul>
+<hr />
+<h2 id="want-me-to-deliver-the-next-artifacts">Want Me to Deliver the Next Artifacts?</h2>
+<p>I can:</p>
+<ul>
+<li>🧠 Add <strong>speaker notes per slide</strong></li>
+<li>❓ Create <strong>live Kahoot / Slido questions</strong></li>
+<li>📄 Generate a <strong>printable AI-102 exam cheat sheet</strong></li>
+<li>🎯 Build a <strong>mock exam (40 questions)</strong></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

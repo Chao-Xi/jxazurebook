@@ -1,0 +1,5654 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../dp5/">
+      
+      
+        <link rel="next" href="../dp900_learn/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>DP900 Real Exam - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dp900-real-exam" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DP900 Real Exam
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-database-by-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph database by example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-graph-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Property graph objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-of-azure-cosmos-dbs-gremlin-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features of Azure Cosmos DB's Gremlin API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stream Processing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#various-tools-in-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Various Tools in Azure:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Factory:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Factory components:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-store-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Store Models:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Analytics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-synapse-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Synapse Analytics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-commands-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Commands Categories:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power BI Service:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bi-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power BI Dashboard:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bi-dashboards-versus-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power BI Dashboards versus Reports:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-database-by-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph database by example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-graph-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Property graph objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-of-azure-cosmos-dbs-gremlin-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features of Azure Cosmos DB's Gremlin API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stream Processing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#various-tools-in-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Various Tools in Azure:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Factory:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-factory-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Factory components:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-store-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Store Models:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Analytics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-synapse-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Synapse Analytics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-commands-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Commands Categories:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power BI Service:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bi-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power BI Dashboard:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bi-dashboards-versus-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power BI Dashboards versus Reports:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dp900-real-exam"><strong>DP900 Real Exam</strong></h1>
+<p>1.<strong>Descriptive</strong> analytics tells you</p>
+<ul>
+<li>what is most likely to occur in the future</li>
+<li><strong>what occurred in the past</strong>.  （V)</li>
+<li>which actions you can perform to affect outcomes.</li>
+<li>why something occurred in the past.</li>
+</ul>
+<blockquote>
+<p>The descriptive analytics tells you about what has <strong>happened in the past</strong></p>
+<p><strong>Diagnostic analytics tells you why something is happening</strong></p>
+<p><strong>Predictive analytics tells what will happen in the
+future</strong>,predictive is more related to examining the future, about what will be the outcomes in the future</p>
+<p><strong>prescriptive tells you what action should we take</strong></p>
+<p><strong>The descriptive analytics tells you more about what is happening or what occurred in the past</strong></p>
+</blockquote>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>Descriptive Analytics tells you what happened in the past</strong>. </li>
+<li>Diagnostic Analytics helps you understand <strong>why something happened in the past.</strong> Diagnostic analytics ask about the present. They drill down into why
+something has happened and helps users diagnose issues.</li>
+<li>Descriptive analytics ask about the past. They want to know what has been happening to the business and how this is likely to affect future sales.</li>
+</ul>
+<p>2.In batch processing,</p>
+<ul>
+<li>data is always inserted one row at a time.</li>
+<li>data is processed in real-time.</li>
+<li><strong>latency is expected</strong>.  （V)</li>
+<li>processing can only execute serially.</li>
+</ul>
+<blockquote>
+<p>Batch processing and real time processing</p>
+<p><strong>Batch processing</strong> when you process
+the data in chunks or in batches</p>
+<p><strong>real-time processing you process</strong>. you're processing them as in when they are coming</p>
+</blockquote>
+<p>3.An extract, transform and load (ETL) process
+requires</p>
+<ul>
+<li>a matching schema in the data source and the data target</li>
+<li>a target data store powerful enough to transform data.</li>
+<li><strong>data that is fully processed before being loaded to the target data store</strong>.</li>
+<li>That the data target be a relational database</li>
+</ul>
+<blockquote>
+<p>in the ETL process what more important is transforming the data before it's getting before it's getting loaded into a data store</p>
+<p>Transforming the data which means what you are already processing the data， you're filtering the data  and cleansing the data before before it's actuallv loaded into the the data store</p>
+</blockquote>
+<p>4.An extract, (load, and transform (ELT) process requires</p>
+<ul>
+<li>a separate transformation engine.</li>
+<li><strong>a target data store powerful enough to transform data</strong>. （V)</li>
+<li>data that is fully processed before being loaded to the target data store</li>
+<li>a data pipeline that includes a transformation engine.</li>
+</ul>
+<blockquote>
+<p>loading a big chunk of data need something <strong>powerful process the data</strong></p>
+</blockquote>
+<p>5.A relational database is appropriate for scenarios that involve a high volume of</p>
+<ul>
+<li>changes to relationships between entities</li>
+<li>geographically distributed writes</li>
+<li><strong>Transactional writes</strong> （V)  （OLTP)</li>
+<li>writes that have varying data structures</li>
+</ul>
+<blockquote>
+<p>Explanation</p>
+<p><strong>Relational databases are optimized for writes. They are optimized for consistency and availability</strong>. Advantages of relational databases include simplicity, ease of data retrieval, data integrity, and flexibility.</p>
+</blockquote>
+<p>6.Transcribing audio files is an example of ( ) analytics.</p>
+<ul>
+<li><strong>cognitive   （V)</strong></li>
+<li>descriptive</li>
+<li>predictive</li>
+<li>prescriptive</li>
+</ul>
+<blockquote>
+<p>Transcribe means converting from Audio to Text.
+This is similar to Alexa, Alexa is a Cognitive
+device. Cognitive is the correct answer.</p>
+</blockquote>
+<p>7.A visualization that shows a university's current student enrollment
+versus the maximum capacity is an example of  () analytics.</p>
+<ul>
+<li>cognitive</li>
+<li><strong>descriptive （V)</strong></li>
+<li>predictive</li>
+<li>prescriptive</li>
+</ul>
+<p>8.A relational database must be used when</p>
+<ul>
+<li>a dynamic schema is required.</li>
+<li>data will be stored as key/value pairs.</li>
+<li>storing large images and videos.</li>
+<li><strong>Strong consistency guarantees are required （V)</strong></li>
+</ul>
+<p>9.( ) natively support the analysis of relationships between entities</p>
+<ul>
+<li>Column family databases</li>
+<li>Document databases</li>
+<li><strong>Graph databases  （V)</strong></li>
+<li>Key-value stores</li>
+</ul>
+<blockquote>
+<p>document database no they are more suited to store the documents like json documents</p>
+<p>graph database are good for <strong>storing relationship</strong> or showing
+the hierarchy between the entities</p>
+</blockquote>
+<p>10.Relational data uses ( )  to enforce relationships between different tables.</p>
+<ul>
+<li>collections</li>
+<li>columns</li>
+<li><strong>Keys （V)</strong></li>
+<li>partitions</li>
+</ul>
+<p>11.Creating closed caption text for audio files  ( ) analytics  is an example of</p>
+<ul>
+<li><strong>cognitive （V)</strong></li>
+<li>descriptive</li>
+<li>predictive</li>
+<li>prescriptive</li>
+</ul>
+<p>12</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_1.png" title="Body image" /></p>
+<p>Customer is ( )</p>
+<ul>
+<li>a nested array</li>
+<li>a nested object</li>
+<li><strong>a root object</strong>. (v)</li>
+</ul>
+<p><strong>Address</strong> is [answer]</p>
+<ul>
+<li>a nested array</li>
+<li><strong>a nested object(v)</strong></li>
+<li>a root object. </li>
+</ul>
+<p>Social media is [answer choice]</p>
+<ul>
+<li><strong>a nested array</strong>.  (v)</li>
+<li>a nested object</li>
+<li>a root object</li>
+</ul>
+<p>13</p>
+<ul>
+<li>Normalization involves eliminating relationships between database tables.     <strong>(NO)</strong></li>
+<li>Normalizing a database reduces data redundancy.   <strong>(YES)</strong></li>
+<li>Normalization improves data integrity.   <strong>(YES)</strong></li>
+</ul>
+<blockquote>
+<p>normalization is lot of tables in a relational database and amongst those tables <strong>we set relationship so that we are able to secure or select the data from different tables</strong></p>
+<p>normalization is essentially bullding the relationship between database
+tables</p>
+</blockquote>
+<p><strong>Explanation</strong></p>
+<p>Normalization is the process of organizing data in a database. </p>
+<p><strong>This includes creating tables and establishing relationships between those tables according to rules designed both to protect the data</strong> and to <strong>make the database more flexible by eliminating redundancy and inconsistent dependency</strong>.</p>
+<p>14</p>
+<ul>
+<li><strong>Batch processing can output data to a file store.   (V)</strong></li>
+<li><strong>Batch processing can output data to a relational database. (V)</strong></li>
+<li><strong>Batch processing can output data to a NoSQL database.  (V)</strong></li>
+</ul>
+<blockquote>
+<p>Box 1: Yes - Big data solutions often use long-running batch jobs, these jobs involve reading source files from
+scalable storage (like HDFS, Azure Data Lake Store, and Azure Storage), processing them, and writing the output to new files</p>
+<p>batch processing can definitely output the data to <strong>a file store relational database, no sq| and to multiple data stores or data data types</strong></p>
+</blockquote>
+<p>15</p>
+<ul>
+<li>Platform as a service (PaS) database offerings in Azure require less setup and configuration effort than infrastructure as a service (laS) database offerings.  <strong>(YES)</strong></li>
+<li>Platform as a service (PaS) database offerings in Azure provide administrators with the ability to control and update the operating system version.    <strong>(NO)</strong></li>
+<li>All relation and non-relational platform as a service (Paas) database offerings in Azure can be paused to reduce costs.    <strong>(NO)</strong></li>
+</ul>
+<blockquote>
+<p>You just cannot you cannot pause all the services to reduce cost right the important thing is that</p>
+</blockquote>
+<p>16</p>
+<ul>
+<li>Platform as a service (PaaS) database offerings in Azure
+  provide built-in high availability.    <strong>(YES)</strong></li>
+<li>Platform as a service (PaaS) database offerings in Azure
+  provide configurable scaling options.       <strong>(YES)</strong></li>
+<li>Platform as a service (PaS) database offerings in Azure
+  reduce the administrative overhead for managing hardware.   <strong>(YES)</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_2.png" title="Body image" /></p>
+<p>The data model is a [answer choice].</p>
+<ul>
+<li>transactional model</li>
+<li><strong>star schema  (V)</strong></li>
+<li>snowflake schema</li>
+</ul>
+<p>Customer is a [answer choice] table.</p>
+<ul>
+<li>fact</li>
+<li><strong>dimension (V)</strong></li>
+<li>bridge</li>
+</ul>
+<blockquote>
+<p>The Star schema， center of the schema and every other
+dimension is related to <strong>it bodies or the related parties which are
+also known as dimensions</strong></p>
+<p><strong>FACT -&gt; dimensions</strong></p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_3.png" title="Body image" /></p>
+<blockquote>
+<p>The snowflake schema is a variation of the star schema, featuring normalization of dimension tables.</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_4.png" title="Body image" /></p>
+<blockquote>
+<p>the difference between star and snowflake is that in case snowflake have <strong>main dimension which attahced to the fact</strong> and also <strong>have sub-dimensions attched main dimension</strong></p>
+</blockquote>
+<p>A key/value data store is optimized for</p>
+<ul>
+<li>enforcing constraints</li>
+<li><strong>simple lookups</strong></li>
+<li>table Joins</li>
+<li>transactions</li>
+</ul>
+<blockquote>
+<p>Key/value stores are highly optimized for applications performing <strong>simple lookups</strong>, but are <strong>less suitable if you need to query data across different key/value stores</strong>. Key/value stores are also not optimized for querying by value.</p>
+<p>A single key/value store can be extremely scalable, as the data store can easily distribute data across multiple nodes on separate machines.</p>
+</blockquote>
+<p>Relational data uses  ( )  to enforce <strong>relationships between different tables</strong>.</p>
+<ul>
+<li>collections</li>
+<li>columns</li>
+<li><strong>keys  (V)</strong></li>
+<li>partitions</li>
+</ul>
+<p>20</p>
+<ul>
+<li>( <strong>Table</strong> ) A database object that holds data</li>
+<li>( <strong>View</strong> ) A database object whose content is defined by a query</li>
+<li>( <strong>Index</strong> ) A database object that helps improve the speed of data retrieval</li>
+</ul>
+<p>21</p>
+<ul>
+<li>( <strong>Image files</strong> ) Azure Blob storage</li>
+<li>( <strong>Relationships between employees</strong> ) Azure Cosmos DB Gremlin API</li>
+<li>( <strong>Key/value pairs</strong> ) Azure Table storage</li>
+</ul>
+<blockquote>
+<p>Graph databases</p>
+<p><strong>A graph database stores two types of information, nodes and edges</strong>. Edges specify relationships between nodes.</p>
+<p><strong>Nodes and edges can have properties that provide information about that node or edge, similar to columns in a table</strong>.</p>
+<p><strong>Edges can also have a direction indicating the nature of the relationship.</strong></p>
+<p>Graph databases can efficiently perform queries <strong>across the network of nodes and edges</strong> and analyze the relationships between entities.</p>
+</blockquote>
+<p>22 By default, each Azure SQL database is protected by   ( )</p>
+<ul>
+<li>a network security group (NSG).</li>
+<li>a server-level firewall.</li>
+<li><strong>Azure Firewall  (V)</strong></li>
+<li>Azure Front Door.</li>
+</ul>
+<p>23 The massively parallel processing (MPP) engine of Azure Synapse Analytics</p>
+<ul>
+<li><strong>distributes processing across compute nodes  （V）</strong></li>
+<li>distributes processing across control nodes.</li>
+<li>redirects client connections across compute nodes.</li>
+<li>redirects client connections across control nodes</li>
+</ul>
+<blockquote>
+<p>control nodes are the nodes which deciding which compute nodes will actually process</p>
+</blockquote>
+<p>24 ( ) is an object associated with a table that sorts and stores the data rows in the table based on their key values.</p>
+<ul>
+<li><strong>A clustered index  （V）</strong></li>
+<li>A FileTable</li>
+<li>A foreign key</li>
+<li>A stored procedure</li>
+</ul>
+<p>25 Transparent Data Encryption (TDE) encrypts</p>
+<ul>
+<li>a colutin to protect data at rest and in transit.</li>
+<li>queries and their results in order to protect data in transit.</li>
+<li><strong>the database to protect data at rest.（V）</strong></li>
+<li>the server to protect data at rest.</li>
+</ul>
+<blockquote>
+<p>it doesn't protect the data and doesn't encrypt a column to protect
+the data at rest</p>
+</blockquote>
+<p>26</p>
+<ul>
+<li>( <strong>Firewall</strong> ) Prevent access to an Azure SQL database from another network.</li>
+<li>( <strong>Authentication</strong> ) Support Azure Active Directory (Azure AD) sign-ins to an Azure SQL database.</li>
+<li>( <strong>Encryption</strong> ) Ensure that sensitive data never appears as plain text in an Azure SQL database.</li>
+</ul>
+<p>27</p>
+<ul>
+<li><strong>(Batch)</strong> Data for a product catalog will be loaded every 12 hours to a data warehouse</li>
+<li><strong>(Streaming)</strong> Thousands of data sets per second for online purchases will be loaded into a data warehouse real time</li>
+<li><strong>(Batch)</strong> Updates to inventory data be loaded to a data warehouse every 1 million transactions.</li>
+</ul>
+<p>28</p>
+<ul>
+<li>( <strong>Treemap</strong> ) A chart of colored, nested rectangles that displays individual data points represents by the size and color of relative rectangles</li>
+<li>( <strong>Key influencer</strong> ) A Chart that displays the <strong>major contributions of a selected results or value</strong></li>
+<li>( <strong>Scatter</strong>  ) A Chart that shows the relationship between two numericl values**</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_5.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_6.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_7.png" title="Body image" /></p>
+<p>29</p>
+<ul>
+<li>( <strong>Diagnostic</strong> ) Why did sales increase last month?</li>
+<li>（ <strong>Prescriptive</strong> ）How do I allocate my budget to buy different inventory items?</li>
+<li>（ <strong>Descriptive</strong>） Which people are mentioned in a company's business documents?</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_8.png" title="Body image" /></p>
+<p><strong>Explanation</strong></p>
+<ul>
+<li><strong>Descriptive</strong>, to answer the question: What's happening?</li>
+<li><strong>Diagnostic</strong>, to answer the question: Why's happening?</li>
+<li><strong>Predictive</strong>, to answer the question: What will happen?</li>
+<li><strong>Prescriptive</strong>, to answer the question: What actions should we take?</li>
+</ul>
+<p>30   <strong>Data Factory</strong></p>
+<ul>
+<li>（ <strong>Dataset</strong> ）  A representation of data structures within data stores</li>
+<li>（ <strong>Linked service</strong> ）<strong>The information used to connect to external resources</strong></li>
+<li>（ <strong>Pipeline</strong> ） A logical grouping of activities that performs a unit of work and can be scheduled</li>
+</ul>
+<p>31</p>
+<ul>
+<li>( <strong>Germlin API</strong> )  Graph data</li>
+<li>( <strong>MongoDB API</strong> ) JSON documents</li>
+<li>( <strong>Table API</strong> ) Key/value data</li>
+</ul>
+<p>32 Match the Azure Data Lake Storage Gen2 terms to the appropriate levels in the hierarchy.</p>
+<pre><code>Azure Resource Group
+|
+|
+---- (**Azure storage account**)
+            |
+            |
+            ----  (**Container**)
+                        |
+                        |
+                        ---- Folders
+                                |
+                                ----  FILES
+</code></pre>
+<blockquote>
+<p><strong>Explanation</strong></p>
+<p><strong>Box 1</strong>: Azure Storage account - <strong>Azure file shares are deployed into storage accounts, which are top-level objects that represent a shared pool of storage</strong>.</p>
+<p><strong>Box 2: Container</strong></p>
+</blockquote>
+<p>33 PostgreSQL on Azure VMs:</p>
+<ul>
+<li><strong>Infrastructure as a service (IaaS)  (V)</strong></li>
+<li>Platform as a service (PaaS)</li>
+<li>Software as a service (SaaS)</li>
+</ul>
+<p>Azure Database for PostgreSQL:</p>
+<ul>
+<li>Infrastructure as a service (IaaS)</li>
+<li><strong>Platform as a service (Paas) (V)</strong></li>
+<li>Software as a service (SaaS)</li>
+</ul>
+<p>34  You need to create an Azure Storage account.
+Data in the account must replicate <strong>outside the Azure region</strong> automatically. Which two types of replication can you use for the storage account? Each correct answer presents a complete Solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>A. zone-redundant storage (ZRS)</li>
+<li><strong>B. read-access geo-redundant storage (RA-GRS)</strong></li>
+<li>C. locally-redundant storage (LRS).</li>
+<li><strong>D. geo-redundant storage (GRS)</strong></li>
+</ul>
+<blockquote>
+<p>With GRS or GZRS, the data in the secondary region
+isn't available for read or write access unless there is a failover to the secondary region. For read access to the secondary region, configure your storage account to
+use read-access geo-redundant storage (RA-GRS) or
+read-access geo-zone-redundant storage (RA-GZRS).</p>
+</blockquote>
+<p>35 You have a SQL query that combines customer data and order data. The query includes calculated columns.</p>
+<p>You need to create a database object that would allow other users to rerun the same SQL query. What should you create?</p>
+<ul>
+<li>A. an index</li>
+<li><strong>B. a view</strong></li>
+<li>C. a scalar function</li>
+<li>D. a table</li>
+</ul>
+<p>36 What are two characteristics of real-time data processing? Each correct answer presents a complete SQLution.</p>
+<ul>
+<li>A. Data is processed periodically</li>
+<li><strong>B. Low latency is expected  （V)</strong></li>
+<li>C. High latency is acceptable</li>
+<li><strong>D. Data is processed as it is created （V)</strong></li>
+</ul>
+<p>37 Which statement is an example of Data Manipulation Language (DML)?</p>
+<ul>
+<li>A. REVOKE</li>
+<li>B. DISABLE</li>
+<li><strong>D. INSERT （V)</strong></li>
+<li>D. GRANT</li>
+</ul>
+<blockquote>
+<p>Explanation</p>
+<p>There's 3 type of Relational data SQL:</p>
+<p>DDL (Data Definition Language) CREATE, DROP, ALTER, RENAME, COMMENT AND TRUNCATE.</p>
+<p>DML (Data Manipulation Language) SELECT, INSERT INTO, DELETE, UPDATE.</p>
+<p>DCL (Data Control Language) REVOKE &amp; GRANT.</p>
+<p>TCL (Transactional Control Language) COMMIT &amp; ROLLBACK</p>
+</blockquote>
+<p>38 You need to ensure that users use multi-factor authentication (MFA) when connecting to an Azure SQL database. Which type of authentication should you use?</p>
+<ul>
+<li>A. service principal authentication</li>
+<li><strong>B. Azure Active Directory Azure AD authentication （V)</strong></li>
+<li>C. SQL authentication</li>
+<li>D. certificate authentication</li>
+</ul>
+<p>39 You need to design and model a database by using a
+graphical tool that supports project-oriented offline database development. What should you use?</p>
+<ul>
+<li><strong>A. Microsoft SQL Server Data Tools (SSDT)  (V)</strong></li>
+<li>B. Microsoft SQL Server Management Studio (SSMS)</li>
+<li>C. Azure Databricks</li>
+<li>D. Azure Data Studio</li>
+</ul>
+<blockquote>
+<p>b, c, d are online</p>
+</blockquote>
+<p>40 You have a transactional application that stores data in an Azure SQL managed instance.</p>
+<p>When <strong>should you implement a read-only database replica</strong>?</p>
+<ul>
+<li><strong>A You need to generate reports without affecting the
+  transactional workload (V)</strong>.</li>
+<li>B You need to audit the transactional application.</li>
+<li>C You need to implement high availability in the event of a regional outage.</li>
+<li>D. You need to improve the recovery point objective (RPO).</li>
+</ul>
+<p>41 You need to create an Azure resource to store data in Azure Table storage.</p>
+<p>Which command should you run?</p>
+<ul>
+<li>A. az storage share create</li>
+<li><strong>B. az storage account create(V)</strong></li>
+<li>C. az cosmosdb create</li>
+<li>D. az storage container create </li>
+</ul>
+<blockquote>
+<p>Explanation</p>
+<p>Table is created under storage account. also URL format for Azure Table Storage is</p>
+<p><code>http://&lt;storage account&gt;.table.core.windows.net/&lt;table&gt;</code></p>
+</blockquote>
+<p>42 Which type of analysis is shown in the fourth quarter?</p>
+<p>Your company recently reported sales from the third quarter. You have the chart below</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_9.png" title="Body image" /></p>
+<p>Which type of analysis is shown in the fourth quarter?</p>
+<ul>
+<li><strong>A. predictive</strong></li>
+<li>B. prescriptive</li>
+<li>C. descriptive</li>
+<li>D. diagnostic</li>
+</ul>
+<p>43 Relational data is stored in</p>
+<ul>
+<li>a file system as unstructured data</li>
+<li>a hierarchal folder structure.</li>
+<li><strong>a tabular form of rows and columns. (V)</strong></li>
+<li>comma-separated value (CSV) files.</li>
+</ul>
+<p>44 Your company needs to impiement a rerational database in Azure. The solution must minimize ongoing
+maintenance.</p>
+<p>Which Azure service should you use?</p>
+<ul>
+<li>A Azure HDInsight</li>
+<li><strong>B Azure SQL Database (V)</strong></li>
+<li>C. Azure CosmosDB</li>
+<li>D. SQL Server on Azure virtual machines</li>
+</ul>
+<p>45 What is a benefit of hosting a database on Azure SQL managed instance as compared to an Azure SQL database?</p>
+<ul>
+<li>A. built-in high availability</li>
+<li><strong>B. native support for cross-database queries and transactions （V)</strong></li>
+<li>C. system-initiated automatic backups</li>
+<li>D. support for encryption at rest</li>
+</ul>
+<p>46 You have an e-commerce application that reads and writes data to an Azure SQL database.</p>
+<p>Which type of processing does the application use?</p>
+<ul>
+<li>A. stream processing</li>
+<li>B. batch processing</li>
+<li>C. Online Analytical Processing (OLAP)</li>
+<li><strong>D. Online Transaction Processing (OLTP) （v)</strong></li>
+</ul>
+<p>47 You need to store data in Azure Blob Storage for ten years as per your company needs. The data is rarely accessed.</p>
+<p>Choose the storage tier best suited for this?</p>
+<ul>
+<li>Hot</li>
+<li>Cool</li>
+<li><strong>Archive (V)</strong></li>
+</ul>
+<blockquote>
+<p>Hot tier - An online tier optimized for storing data that is accessed or modified frequently. The Hot tier has the highest storage costs, but the lowest access costs.</p>
+<p>Cool tier - An online tier optimized for storing data that is infrequently accessed or modified. Data in the Cool tier should be stored for a <strong>minimum of 30 days</strong>. The Cool tier has lower storage costs and higher access costs compared to the Hot tier.</p>
+<p>Archive tier - An offline tier optimized for storing data that is rarely accessed, and that has flexible latency requirements, on the order of hours. Data in the Archive tier should be stored for a <strong>minimum of 180 days</strong>.</p>
+</blockquote>
+<p>48  You need to query a table named Products in an Azure SQL database.</p>
+<p>Which three requirements must be met to query the table from the internet? Each correct answer presents part of the SQLution. (Choose three.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>You must be assigned the Reader role for the resource group that contains the database.</li>
+<li><strong>You must have SELECT access to the Products table (V)</strong></li>
+<li><strong>You must have a user in the database (v)</strong></li>
+<li>You must be assigned the Contributor role for the resource group that contains the database.</li>
+<li><strong>Your IP address must be allowed to connect to the database (v)</strong></li>
+</ul>
+<p>49 When can you use an Azure Resource Manager template?</p>
+<ul>
+<li><strong>A. to automate the creation of an inferdependent group of Azure
+  resources in a repeatable way  (V)</strong></li>
+<li>B. to apply Azure policies for multi-tenant deployments</li>
+<li>C. to provision Azure subscriptions</li>
+<li>D. to control which services and feature administrators and developers can deploy from the Azure portal</li>
+</ul>
+<blockquote>
+<p>Why choose ARM templates?</p>
+<p>Declarative syntax: ARM templates allow you to create and deploy an entire Azure infrastructure declaratively.</p>
+<p><strong>Repeatable results</strong>: Repeatedly deploy your infrastructure throughout the development lifecycle and have confidence your resources are deployed in a consistent manner.</p>
+<p>Orchestration: You don't have to worry about the complexities of ordering operations.</p>
+</blockquote>
+<p>50 You are deploying a software as a service (SaaS) application that
+requires a relational database for Online Transaction Processing
+(OLTP).</p>
+<p>Which Azure service should you use to support the application?</p>
+<ul>
+<li>A. Azure Cosmos DB</li>
+<li>B. Azure HDInsight</li>
+<li><strong>C. Azure SQL Database (V)</strong></li>
+<li>D. Azure Synapse Analytics</li>
+</ul>
+<blockquote>
+<p>azure cosmos db is NOT an OLTP</p>
+<p>hd insight is more analvtics and and analysis so this is also not oltp</p>
+<p>Azure synapse is more like a datawarehouse, synapse analytics was also known as azure was also known as azure sql data warehouse</p>
+</blockquote>
+<p>51 You are deploying a software as a service (SaaS) application that
+requires a relational database for Online Transaction Processing
+(OLTP).</p>
+<p>Which Azure service should you use to support the application?</p>
+<ul>
+<li>A. Azure Cosmos DB</li>
+<li>B. Azure HDInsight</li>
+<li><strong>C. Azure SQL Database (v)</strong></li>
+<li>D. Azure Synapse Analytics ;</li>
+</ul>
+<p>52 You have an e-commerce application that reads and writes data to an Azure SQL database.</p>
+<p>Which type of processing does the application use?</p>
+<ul>
+<li>A. stream processing</li>
+<li>B. batch processing</li>
+<li>C. Online Analytical Processing (OLAP)</li>
+<li><strong>D. Online Transaction Processina (OLTP)</strong></li>
+</ul>
+<p>53 What are two benefits of platform as a service (PaaS) relational database offerings in Azure, such as Azure SQL Database? Each correct answer presents a complete solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. access to the latest features</strong></li>
+<li>B. complete control over backup and restore processes</li>
+<li>C. in-database machine learning services</li>
+<li><strong>D. reduced administrative effort for managing the server infrastructure</strong></li>
+</ul>
+<p>54 Which Azure Data Factory component initiates the execution of a pipeline?</p>
+<ul>
+<li>A. a control flow</li>
+<li><strong>B. a trigger （V)</strong></li>
+<li>C. a parameter</li>
+<li>D. an activity</li>
+</ul>
+<blockquote>
+<p>data factory in azure is a serverless integration service integration service it's fully managed and you can use it to build elt or etl</p>
+<p>Integrate all your data with Azure Data Factory - a fully managed and serverless data integration service. Visually integrate data sources with more than 90 built-in and maintenance-free connectivity apps that you can use at no extra cost.</p>
+<p>You can easily create EL and ELT processes without code in an intuitive environment, or write your own code. Then you deliver integrated data to Azure Synapse Analytics to unlock business insights.</p>
+<p>Trigger execution</p>
+<p>Triggers are another way that you can execute a pipeline run. Triggers represent a unit of processing that determines when a pipeline execution needs to be kicked off. Currently, the service supports three types of triggers:</p>
+<p><strong>Schedule trigger:</strong> A trigger that invokes a pipeline on a wall-clock schedule.</p>
+<p>Tumbling window trigger: A trigger that operates on a periodic interval, while also retaining state.</p>
+<p>Event-based trigger: A trigger that responds to an event.</p>
+</blockquote>
+<p>55 Select Yes if statement is true otherwise, select No.</p>
+<ul>
+<li><strong>Azure SQL Database includes a fully managed backup service  (YES)</strong></li>
+<li><strong>Azure SQL Database has built-in high availability  (YES)</strong></li>
+<li><strong>Azure SQL Database can use Azure Advanced Threat Protection (ATP) (YES)</strong></li>
+</ul>
+<blockquote>
+<p><strong>Fully managed SQL</strong> database automates updates, establishment and backup so you can focus on software development</p>
+<p>Flexible and dynamic serverless computing and large-scale storage are quickly adapted to your changing requirements</p>
+<p><strong>Layers of protection</strong>, built-in controls and intelligent threat identification protect your data</p>
+<p>Build-in AI and build-in high availability maintain the highest performance and durability with service aggrement of up-to 99.995 percent</p>
+</blockquote>
+<p>56 When provisioning an Azure Cosmos DB account, which feature provides redundancy within an Azure region?</p>
+<ul>
+<li>A. multi-master replication</li>
+<li><strong>B. Availability Zones (V)</strong></li>
+<li>C. the strong consistency level</li>
+<li>D. automatic failover</li>
+</ul>
+<p>57 You need to gather real-time telemetry data from a mobile application.</p>
+<p>Which type of workload describes this scenario?</p>
+<ul>
+<li>A. Online Transaction Processing (OLTP)</li>
+<li>B. batch</li>
+<li>C. massively parallel processing (MPP)</li>
+<li><strong>D. streaming (V)</strong></li>
+</ul>
+<p>58 What is a benefit of the Azure Cosmos DB Table API as compared to Azure Table storage?</p>
+<ul>
+<li>A. provides resiliency if an Azure region fails</li>
+<li>B. supports partitioning</li>
+<li>C. provides a higher storage capacity</li>
+<li><strong>D. supports a multi-master model (V)</strong></li>
+</ul>
+<p>59 You need to store data by using Azure Table storage.
+What should you create first?</p>
+<ul>
+<li>A. an Azure Cosmos DB instance</li>
+<li><strong>B. a storage account (V)</strong></li>
+<li>C. a blob container</li>
+<li>D. a table</li>
+</ul>
+<p>60 What is the primary purpose of a data warehouse?</p>
+<ul>
+<li><strong>A. to provide answers to complex queries that rely on data from multiple sources (V)</strong></li>
+<li>B. to provide transformation services between source and target data stores</li>
+<li>C. to provide read-only storage of relational and non-relational historical data</li>
+<li>D. to provide storage for transactional line-of-business (LOB) applications</li>
+</ul>
+<p>61 What is the primary purpose of a data warehouse?</p>
+<ul>
+<li><strong>A. to provide answers to complex queries that rely on data from multiple sources (V)</strong></li>
+<li>B. to provide transformation services between source and target data stores</li>
+<li>C. to provide read-only storage of relational and non-relational historical data</li>
+<li>D. to provide storage for transactional line-of-business (LOB) applications</li>
+</ul>
+<p>62 You manage an application that stores data in a shared folder on a Windows server. You need to move the shared folder to Azure Storage.</p>
+<p>Which type of Azure Storage should you use?</p>
+<ul>
+<li>A. queue</li>
+<li>B. blob</li>
+<li><strong>C. file (V)</strong></li>
+<li>D. table</li>
+</ul>
+<p>63 You need to recommend a data store service that meets the following requirements</p>
+<ul>
+<li>Native SQL API access</li>
+<li>Configurable indexes</li>
+</ul>
+<p>What should you recommend?</p>
+<ul>
+<li>A. Azure Files</li>
+<li>B. Azure Blob storage</li>
+<li>C. Azure Table storage</li>
+<li><strong>D. Azure Cosmos DB (V)</strong></li>
+</ul>
+<p>64 You have an application that runs on Windows and requires access to a mapped drive.</p>
+<p>Which Azure service should you use?</p>
+<ul>
+<li><strong>A. Azure Files (V)</strong></li>
+<li>B. Azure Blob storage</li>
+<li>C. Azure Cosmos DB</li>
+<li>D. Azure Table storage</li>
+</ul>
+<p>65 Your company needs to design a database that show how changes in network traffic in one area of a network affect network traffic in other areas of the network.</p>
+<p>Which type of data store should you use?</p>
+<ul>
+<li><strong>a) Graph （V)</strong></li>
+<li>b) Key/value</li>
+<li>C) Document</li>
+<li>D) columnar</li>
+</ul>
+<p>66 Your company is designing a database that will contain session data for a website. The data will include notifications, personalization attributes, and
+products that are added to a shopping cart.</p>
+<p>Which type of data store will provide the lowest latency to retrieve the data?</p>
+<ul>
+<li>a) Graph</li>
+<li>b) Key/value</li>
+<li>C) Document</li>
+<li><strong>D) Columnar (V)</strong></li>
+</ul>
+<blockquote>
+<p>Column-family database is the low latency store type.</p>
+<p>Examples
+Recommendations
+Personalization
+Sensor data
+Telemetry
+Messaging
+Social media analytics
+Web analytics
+Activity monitoring
+Weather and other time-series data</p>
+</blockquote>
+<p>67 What are three characteristics of an Online Transaction
+Processing (OLTP) workload? Choose three!</p>
+<ul>
+<li>a) Denormalized data</li>
+<li><strong>b) Heavy writes and moderate reads (V)</strong></li>
+<li>c) Light writes and heavy reads</li>
+<li><strong>d) Schema on write (V)</strong></li>
+<li>e) Schema on read</li>
+<li><strong>f) Normalized data (V)</strong></li>
+</ul>
+<p>68 Which two activities can be performed entirely by using the Microsoft Power Bl service <strong>without relaying on Power BI desktop</strong>?</p>
+<ul>
+<li><strong>a） A report and dashboard creation （v)</strong></li>
+<li>b) Report sharing and distribution</li>
+<li>c) Data modeling</li>
+<li><strong>d） Data acquisition and preparation (V)</strong></li>
+</ul>
+<p>69 Select Yes if statement is true otherwise, select No.</p>
+<ul>
+<li>Processing salary payments once a month is an example of a batch workload   <strong>(YES)</strong></li>
+<li>A wind turbine sends 50 sensor reading per second is streaming workload.       <strong>(YES)</strong></li>
+<li>A home electricity meter that sends readings once a day to an energy provider is an example of streaming workload.   <strong>(No)</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_10.png" title="Body image" /></p>
+<ul>
+<li>Ingest   <strong>Azure Data Factory</strong></li>
+<li>Store   <strong>Azure Data Lake Storage</strong></li>
+<li>Preprocess &amp; model   <strong>Azure Synapse Analytics</strong></li>
+<li>OLAP   <strong>Azure Analysis Services</strong></li>
+<li>Reporting  <strong>Microsoft Power BI</strong></li>
+</ul>
+<blockquote>
+<p>factory azure data factory helps you do either etl or elt thus something that relates to data warehouse should come</p>
+</blockquote>
+<p>71</p>
+<ul>
+<li>( <strong>Microsoft SQL Server Management Studio (SSMS)</strong> )  A <strong>graphical tool for managing SQL Server</strong> or Azure SQL databases that supports access, configuration, management, and administration tasks.</li>
+<li>( <strong>Microsoft Visual Studio Code</strong> )  <strong>A lightweight source code editor</strong> with an mssql extension that supports connections to SQL Server and a rich editing experience for T-SQL.</li>
+<li>( <strong>Azure Data Studio</strong> ) A <strong>lightweight editor that can run on-demand SQL queries</strong> and view and save results as text, JSON, or Microsoft Excel files.</li>
+<li>(<strong>Microsoft SQL Server Data Tools(SSDT)</strong> )  A development tool for building Azure SQL databases, Microsoft SQL Server relational databases, SQL Server Analysis Services (SSAS) data models, SQL Server Integration Services(SISS), and SQL Server Reporting Service (SSRS) reports</li>
+</ul>
+<p>72 Which scenario is an example of a streaming workload?</p>
+<ul>
+<li>A. sending transactions that are older than a month to an archive</li>
+<li>B. sending transactions daily from point of sale (POS) devices</li>
+<li><strong>C sending telemetry data from edge devices (V)</strong></li>
+<li>D. sending cloud infrastructure metadata every 30 minutes</li>
+</ul>
+<p>73 You can query a graph database in Azure COSMOS DB</p>
+<ul>
+<li>as a JSON document by using a SQL-like language</li>
+<li>as a partitioned row store by using Cassandra Query Language (CQL)</li>
+<li>as a partitioned row store by using Language-Integrated Query (LINQ)</li>
+<li><strong>as nodes and edges by using the Gremlin Language (V)</strong></li>
+</ul>
+<p>74</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_11.png" title="Body image" /></p>
+<ul>
+<li>Extract Transform Load (ETL)   Azure Data Factory</li>
+<li>Data warehouse  Azure Synapse Analytics</li>
+</ul>
+<blockquote>
+<p>Select &amp; Group By clause of SQL Query</p>
+<p>Azure Regions &amp; Azure Availability Zones</p>
+<p>Batch VS Streaming</p>
+<p>Azure Files</p>
+<p>Azure Graph</p>
+</blockquote>
+<h2 id="section-2"><strong>Section 2</strong></h2>
+<h3 id="graph-database-by-example"><strong>Graph database by example</strong></h3>
+<p>Let's use a sample graph to understand how <strong>queries can be expressed in Gremlin</strong>.</p>
+<p>The following figure shows a business application that manages data about users, interests, and devices in the form of a graph.</p>
+<h3 id="property-graph-objects"><strong>Property graph objects</strong></h3>
+<ul>
+<li><strong>Vertices/nodes</strong> - Vertices denote discrete entities, such as a person, a place, or an event.</li>
+<li><strong>Edges/relationships</strong> - Edges denote relationships between vertices. For example, a person might know another person, be involved in an event, and recently been at a location.</li>
+<li><strong>Properties</strong> - Properties express information about the vertices and edges. There can be any number of properties in either vertices or edges, and they can be used to describe and filter the objects in a query. Example properties include a vertex that has name and age, or an edge, which can have a time stamp and/or a weight.</li>
+<li><strong>Label</strong> - A label is a name or the identifier of a vertex or an edge. Labels can group multiple vertices or edges such that all the vertices/edges in a group</li>
+</ul>
+<h3 id="features-of-azure-cosmos-dbs-gremlin-api"><strong>Features of Azure Cosmos DB's Gremlin API</strong></h3>
+<p><strong>Azure CosmosB is a fully managed graph database</strong> that offers global distribution, elastic scaling of storage and throughput, automatic indexing and query, tunable consistency levels, and support for the TinkerPop standard.</p>
+<ul>
+<li>Columnar Data Store</li>
+<li>Batch Workloads and Streaming workloads</li>
+<li>OLTP and OLAP</li>
+<li>Azure Data Factory and Azure Synapse</li>
+<li>Azure COSMOS DB/Graph Database</li>
+</ul>
+<p>1.Your company needs to implement a relational database in Azure. The soution must minimize ongoing maintenance. Which Azure service should you use?</p>
+<ul>
+<li>A. Azure HDlnsight</li>
+<li><strong>B. Azure SQL Database （V)</strong></li>
+<li>C. Azure Cosmos DB</li>
+<li>D. SQL Server on Azure virtual machines</li>
+</ul>
+<p>2 Which command-line tool can you use to query Azure SQL databases?</p>
+<ul>
+<li><strong>A. sqlcmd (V)</strong></li>
+<li>B. bcp</li>
+<li>C. azdata</li>
+<li>D. Azure CLI</li>
+</ul>
+<p>3 You have a transactional application that stores data in an Azure SQL managed instance. In which of the following circumstances would you need to implement a read-only database replica?</p>
+<ul>
+<li><strong>A. You need to generate reports without affecting the transactional workload (V)</strong></li>
+<li>B. You need to audit the transactional application.</li>
+<li>C. You need to implement high availability in the event of a regional outage.</li>
+<li>D You need to improve the recover point obiective (RPO)</li>
+</ul>
+<p>4 What is a benefit of hosting a database on <strong>Azure SQL managed instance as compared to an Azure SQL database</strong>?</p>
+<ul>
+<li>A. built-in high availability</li>
+<li><strong>B. native support for cross-database queries and transactions (V)</strong></li>
+<li>C. system-initiated automatic backups</li>
+<li>D. support for encryption at rest</li>
+</ul>
+<p>5 When you create an Azure SQL database, which account can always connect to the database?</p>
+<ul>
+<li>A. the Azure Active Directory (Azure AD) account that created the database</li>
+<li>B. the sa account</li>
+<li><strong>C. the server admin login account of the logical server (V)</strong></li>
+<li>D. the Azure Active Directory (Azure AD) administrator account</li>
+</ul>
+<p>6 You have an Azure SQL database that you access directly
+from the Internet. You recently changed your external IP address. After
+changing the IP address, you can no longer access the database. You can connect to other resources in Azure.</p>
+<p>What is a possible cause of the issue?</p>
+<ul>
+<li>A. role-based access control (RBAC)</li>
+<li>B. Dynamic Host Configuration Protocol (DHCP)</li>
+<li>C. Domain Name Service (DNS)</li>
+<li><strong>D. a database-level firewall (v)</strong></li>
+</ul>
+<p>7 Which Azure SQL offering supports automatic database scaling and automatic pausing of the database during inactive periods?</p>
+<ul>
+<li>A. Azure SQL Database Hyperscale</li>
+<li>B. Azure SQL managed instance</li>
+<li><strong>C. Azure SQL Database serverless (v)</strong></li>
+<li>D. Azure SQL Database elastic pod</li>
+</ul>
+<p>8 By default, each Azure SQL database is protected by</p>
+<ul>
+<li>a network security group (NSG)</li>
+<li><strong>a server-level firewall. (V)</strong></li>
+<li>Azure Firewall.</li>
+<li>Azure Front Door.</li>
+</ul>
+<p>9 A relational database must be used when</p>
+<ul>
+<li>changes to relationships between entities</li>
+<li>geographically distributed writes</li>
+<li><strong>transactional writes (v)</strong></li>
+<li>writes that have varying data structures</li>
+</ul>
+<p>10</p>
+<ul>
+<li>You must apply patches to Azure SQL databases regularly.   <strong>(No)</strong></li>
+<li>You need a Microsoft 365 subscription to create an Azure
+  SQL database.   <strong>(YES)</strong></li>
+<li>You can use existing Microsoft SQL Server licenses to reduce the cost of Azure SQL databases.   <strong>(YES)</strong></li>
+</ul>
+<p>11 Match the security components to the appropriate scenarios.</p>
+<ul>
+<li>( <strong>Firewall</strong> ) Prevent access to an Azure SQL database from another network.</li>
+<li>(<strong>Authentication</strong>)    Support Azure Active Directory (Azure AD) sign-ins to an Azure SQL database.</li>
+<li>(<strong>Encryption</strong>)   Ensure that sensitive data never appears as plain text in an Azure SQL database.</li>
+</ul>
+<p>12 Your company has a reporting solution that haspaginated reports. The reports query a dimensional model in a data warehouse. Which type of processing does the reporting SQLution use?</p>
+<ul>
+<li>A. stream processing</li>
+<li>B. batch processing</li>
+<li><strong>C. Online Analytical Processing (OLAP) (V)</strong></li>
+<li>D. Online Transaction Processing (OLTP)</li>
+</ul>
+<p>13 You have a quality assurance application that reads data from a data warehouse. Which type of processing does the application use?</p>
+<ul>
+<li>A. Online Transaction Processing (OLTP)</li>
+<li>B. batch processing</li>
+<li>C. stream processing</li>
+<li><strong>D. Online Analytical Processing (OLAP) (v)</strong></li>
+</ul>
+<p>14 You have an e-commerce application that reads and writes data to an Azure SQL database. Which type of processing does the application use?</p>
+<p><strong>D. Online Transaction Processing (OLTP) (V)</strong></p>
+<p>15 What are three characteristics of an Online Transaction Processing (OLTP) workload? Each correct answer presents a complete SQLution. (Choose three.)</p>
+<p>NOTE: Each correct selection is worth one point</p>
+<ul>
+<li>A. denormalized data</li>
+<li><strong>B. heavy writes and moderate reads (v)</strong></li>
+<li>C. light writes and heavy reads</li>
+<li><strong>D. schema on write  (V)</strong></li>
+<li>E. schema on read</li>
+<li><strong>F. normalized data  (v)</strong></li>
+</ul>
+<p>16 In a data warehousing workload, data</p>
+<ul>
+<li>from a single source is distributed to multiple locations</li>
+<li><strong>from multiple sources is combined in a single location （V)</strong></li>
+<li>is added to a queue for multiple systems to process</li>
+<li>is used to train machine learning models</li>
+</ul>
+<p>17 Which of the following is required for an extract, load and transform (ELT) process?</p>
+<ul>
+<li>A. a data pipeline that includes a transformation engine</li>
+<li>B. a separate a transformation engine</li>
+<li><strong>C. A target data store powerful enough to transform the data (v)</strong></li>
+<li>D. Data that is fully processed before being loaded to the target data store</li>
+</ul>
+<blockquote>
+<p>Explanation</p>
+<p>Extract, transform, and load (ETL) is a data pipeline used to <strong>collect data from various sources, transform the data according to business rules</strong>, and <strong>load it into a destination data store</strong>.</p>
+</blockquote>
+<p>18 An extract, transform, and load (ETL) process requires</p>
+<ul>
+<li>a matching schema in the data source and the data target.</li>
+<li>a target data store powerful enough to transform data.</li>
+<li><strong>data that is fully processed before being loaded to the target data store (V)</strong>.</li>
+<li>that the data target be a relational database.</li>
+</ul>
+<p>19 Your company plans to load data from a customer relationship
+management (CM) system to a data warehouse by using an extract, load, and transform (ELT) process. Where does data processing occur for each stage of the ELT process? To answer, drag the appropriate locations to the correct stages. Each location may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view
+content.</p>
+<p>NOTE: Each correct match is worth one point.</p>
+<ul>
+<li>The data warehouse:  <strong>(Transform)</strong></li>
+<li>The CRM system     <strong>Extract:</strong></li>
+<li>The data warehouse   <strong>Load</strong></li>
+</ul>
+<blockquote>
+<p>Box 1: Data is extracted from the CRM system.</p>
+<p>Box 2: <strong>Data is loaded to the data warehouse</strong>.</p>
+<p>Box 3: <strong>In the ELT pipeline, the transformation occurs in the target data warehouse</strong>.</p>
+</blockquote>
+<p>20 What are two benefits of platform as a service (PaaS) relational database offerings in Azure, such as Azure SQL Database? Each correct answer presents a complete SQLution. NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. access to the latest features （v)</strong></li>
+<li>B. complete control over backup and restore processes</li>
+<li>C. in-database machine learning services</li>
+<li><strong>D. reduced administrative effort for managing the server infrastructure  （V)</strong></li>
+</ul>
+<p>21 For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>Platform as a service (PaaS) database offerings in Azure provide built-in high availability.       (v)</strong></li>
+<li><strong>Platform as a service (PaaS) database offerings in Azure provide configurable scaling options.   (V)</strong></li>
+<li><strong>Platform as a service (PaaS) database offerings in Azure reduce the administrative overhead for managing hardware.   (v）</strong></li>
+</ul>
+<p>22</p>
+<ul>
+<li>If you have a platform as a service (PaaS) database in Azure, you are responsible for applying operating system updates.  <strong>（No)</strong></li>
+<li>If you have a platform as a service (PaaS) database in Azure,
+  backups are performed automatically.   <strong>(YES)</strong></li>
+<li>If you have a platform as a service (PaaS) database in Azure,
+  you are responsible for upgrading the database engine.  <strong>(NO)</strong></li>
+</ul>
+<p>23</p>
+<ul>
+<li>Platform as a service (PaaS) database offerings in Azure require less setup and configuration effort than infrastructure as a service (laaS) database offerings.  <strong>(Yes)</strong></li>
+<li>Platform as a service (PaS) database offerings in Azure provide administrators with the ability to control and update the operating system version.      <strong>(No)</strong></li>
+<li>All platform as a service (PaaS) database offerings in Azure can be paused to reduce costs.    <strong>(No)</strong></li>
+</ul>
+<p>24 What are two uses of data visualization? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. Represent trends and patterns over time (V)</strong></li>
+<li>B. Implement machine learning to predict future values</li>
+<li><strong>C. Communicate the significance of data  (v)</strong></li>
+<li>D. Consistently implement business logic across reports</li>
+</ul>
+<p>25 Match the types of visualizations to the appropriatedescriptions. To answer, drag the appropriate visualization type from the column on the left to its description on the right.</p>
+<p>Each visualization type may be used once, more than once, or not at all. NOTE: Each correct match is worth one point.</p>
+<ul>
+<li>(<strong>Key influencer</strong>)   A chart that displays the major contributors of a selected result or value.</li>
+<li>(<strong>Scatter</strong>) A chart that shows the relationship between two numerical values,</li>
+<li>(<strong>Treemap</strong>)  A chart of colored, nested rectangles that displays individual data points represented by the size and color of a relative rectangle.</li>
+</ul>
+<p>26 For each of the following statements, select Yes if
+the statement is true.</p>
+<p>Otherwise, select No.
+NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>Azure Databricks can consume data from Azure SQL Database  <strong>（Yes)</strong></li>
+<li>Azure Databricks can consume data from Azure Event Hubs   <strong>(Yes)</strong></li>
+<li>Azure Databricks can consume data from Azure Cosmos DB  <strong>(Yes)</strong></li>
+</ul>
+<p>27 At which two levels can you set the throughput for
+an Azure Cosmos DB account? Each correct answer
+presents a complete solution. (Choose two.)
+NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. database  （V)</strong></li>
+<li>B. Item</li>
+<li><strong>C. Container  (V)</strong></li>
+<li>D. SQL partition</li>
+</ul>
+<p>28 What is a benefit of the Azure Cosmos DB Table API
+as compared to Azure Table storage?</p>
+<ul>
+<li>A. provides resiliency if an Azure region fails</li>
+<li>B. supports partitioning</li>
+<li>C. provides a higher storage capacity</li>
+<li><strong>D. supports a multi-master model  (v)</strong></li>
+</ul>
+<p>29 You have an Azure Cosmos DB account that uses the Core (SQL) API. Which two settings can you configure at the container level? Each correct answer presents a complete SQLution. (Choose two.)</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. the throughput  (V)</strong></li>
+<li>B. the read region</li>
+<li><strong>C. the partition key (V)</strong></li>
+<li>D. the API</li>
+</ul>
+<p>30 When provisioning an Azure Cosmos DB account,
+which feature provides redundancy within an Azure
+region?</p>
+<ul>
+<li>A. multi-master replication</li>
+<li><strong>B. Availability Zones (v)</strong></li>
+<li>C. the strong consistency level</li>
+<li>D. automatic failover</li>
+</ul>
+<p>31 At which level in Azure Cosmos DB can you
+configure multiple write regions and read regions?</p>
+<ul>
+<li>A. database</li>
+<li>B. partition</li>
+<li>C. collection</li>
+<li><strong>D. account (V)</strong></li>
+</ul>
+<p>32 You can query a graph database in Azure Cosmos DB</p>
+<ul>
+<li><strong>as a JSON document by using a SQL-like language(v)</strong></li>
+<li>as a partitioned row store by using Cassandra Query Language (CQL).</li>
+<li>as a partitioned row store by using Language-Integrated Query (LINQ).</li>
+<li>as nodes and edges by using the Gremlin language.</li>
+</ul>
+<p>33</p>
+<ul>
+<li>The Azure Cosmos DB API is configured separately for each database in an Azure CosmosDB account.   <strong>(No)</strong></li>
+<li>Partition keys are used in Azure Cosmos DB to optimize queries    <strong>(YES)</strong></li>
+<li>Items contained in the same Azure CosmosDB logical partition can have different partition keys.   (<strong>NO</strong>)</li>
+</ul>
+<p>34</p>
+<ul>
+<li>Azure Table storage supports multiple read replicas.  (<strong>YES</strong>)</li>
+<li>Azure Table storage supports multiple write regions. (<strong>NO</strong>)</li>
+<li>The Azure Cosmos DB Table API supports multiple read replicas.   (<strong>YES</strong>)</li>
+<li>The Azure Cosmos DB Table API supports multiple write regions.   (<strong>YES</strong>)</li>
+</ul>
+<p>35 Match the datastore services to the appropriate
+descriptions.</p>
+<ul>
+<li>(<strong>Azure Cosmos DB</strong>)  Enables the use of SQL queries against data stored in JSON documents</li>
+<li>(<strong>Azure Files</strong>) Enables users to access data by using the Server Message Block (SMB) version 3 protocol</li>
+</ul>
+<p>36 Which two Azure services can be used to provision
+Apache Spark clusters? Each correct answer presents a complete SQLution. (Choose two.)</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>A. Azure Time Series Insights</li>
+<li><strong>B. Azure HDInsight （V)</strong></li>
+<li><strong>C. Azure Databricks (v)</strong></li>
+<li>D. Azure Log Analytics</li>
+</ul>
+<h3 id="batch-processing"><strong>Batch Processing:</strong></h3>
+<ul>
+<li>long-running batch jobs to filter, aggregate and prepare the data for analysis.</li>
+<li>Some (high) latency is expected that measure in minutes to hours.</li>
+<li>Data is processed periodically.</li>
+</ul>
+<h3 id="stream-processing"><strong>Stream Processing:</strong></h3>
+<ul>
+<li>Real time processing deals with streams of data that are captured in real-time and processed with minimal latency.</li>
+<li>Low latency is expected</li>
+<li>Data is processed as it is created (Data is processed in real time.)</li>
+</ul>
+<p>37 Which scenario is an example of a streaming workload?</p>
+<ul>
+<li>A. sending transactions that are older than a month to an archive</li>
+<li>B. sending transactions daily from point of sale (POS) devices</li>
+<li><strong>C. sending telemetry data from edge devices （V）</strong></li>
+<li>D. sending cloud infrastructure metadata every 30 minutes</li>
+</ul>
+<p>38 You need to gather real-time telemetry data from a
+mobile application. Which type of workload describes this scenario?</p>
+<ul>
+<li>A. Online Transaction Processing (OLTP)</li>
+<li>B. batch</li>
+<li>C. massively parallel processing (MPP)</li>
+<li><strong>D. streaming (V)</strong></li>
+</ul>
+<p>39</p>
+<ul>
+<li>(<strong>Batch</strong>) Analyzing web traffic from the past year</li>
+<li>(<strong>Batch</strong>)  Classifying images that were uploaded last month</li>
+<li>(<strong>Streaming</strong>) Tracking how many people are currently using a website</li>
+</ul>
+<p>40</p>
+<ul>
+<li>(<strong>Batch</strong>) Data for a product catalog will be loaded every 12 hours to a data warehouse.</li>
+<li>(<strong>Streaming</strong>) Data for online purchases will be loaded to a data warehouse as the purchases occur.</li>
+<li>(<strong>Batch</strong>) Updates to inventory data will be loaded to a data warehouse every 1.000 transactions.</li>
+</ul>
+<p>41</p>
+<ul>
+<li>Processing salary payments once a month is an example of a batch workload.      (<strong>Yes</strong>)</li>
+<li>A wind turbine that sends 50 sensor readings per second is an example of a streaming workload.   (<strong>Yes</strong>)</li>
+<li>A home electricity meter that sends readings once a day to an energy provider is an example of a streaming workload.    (<strong>No</strong>)</li>
+</ul>
+<p>42 In batch processing,  <strong>latency is expected.</strong></p>
+<blockquote>
+<p>Explanation</p>
+<p><strong>Azure Batch is especially well-suited to running large-scale parallel and high-performance computing (HPC) batch jobs</strong>. The service handles everything for you - managing and scheduling all the nodes and applications required to run your scenarios. </p>
+<p>And it's a free service, so you only pay for the underlying compute, storage, and networking resources that you use</p>
+</blockquote>
+<p>43</p>
+<ul>
+<li>Batch processing can output data to a file store <strong>(Yes)</strong></li>
+<li>Batch processing can output data to a relational database   <strong>(Yes)</strong></li>
+<li>Batch processing can output data to a NoSQL database   <strong>(Yes)</strong></li>
+</ul>
+<p>44 You manage an application that stores data in a shared folder on a Windows server. You need to move the
+shared folder to Azure Storage. Which of the following
+service within an Azure storage account could you use
+for this purpose?</p>
+<ul>
+<li>A. queue</li>
+<li>B. blob</li>
+<li><strong>C. file  (V)</strong></li>
+<li>D. table</li>
+</ul>
+<p>45 You have an application that runs on Windows and
+requires access to a mapped drive.</p>
+<p>Which Azure service should you use?</p>
+<ul>
+<li><strong>A. Azure Files  (V)</strong></li>
+<li>B. Azure Blob storage</li>
+<li>C. Azure Cosmos DB</li>
+<li>D. Azure Table storage</li>
+</ul>
+<p>46 Which storage SQLution supports role-based access control (RBAC) at the file and folder level?</p>
+<ul>
+<li>A. Azure Disk Storage</li>
+<li><strong>B. Azure Data Lake Storage (V)</strong></li>
+<li>C. Azure Blob storage</li>
+<li>D. Azure Queue storage</li>
+</ul>
+<p>47 You need to store data in Azure Blob storage for sever years to meet your company's compliance
+requirements. The retrieval time of the data is
+unimportant. The SQLution must minimize storage
+costs. Which storage tier should you use?</p>
+<ul>
+<li><strong>A. Archive  (V)</strong></li>
+<li>B. Hot</li>
+<li>C. Cool</li>
+</ul>
+<p>48 To configure an Azure Storage account to support both security <strong>at the folder level and atomic directory manipulation</strong>,</p>
+<ul>
+<li><strong>enable the hierarchical namespace (V)</strong>.</li>
+<li>set Account kind to BlobStorage.</li>
+<li>set Performance to Premium.</li>
+<li>set Replication to Read-access geo-redundant storage (RA-GRS).</li>
+</ul>
+<p>49 When using the Azure Cosmos DB Gremlin API, the container resource type is projected as a</p>
+<ul>
+<li><strong>graph  (v)</strong>.</li>
+<li>table.</li>
+<li>partition key.</li>
+<li>document.</li>
+</ul>
+<p>50</p>
+<ul>
+<li>(<strong>Gremlin API</strong>) Graph data</li>
+<li>(<strong>MongoDB API</strong>) JSON documents</li>
+<li>(<strong>Table API</strong>) Key/value data</li>
+</ul>
+<blockquote>
+<p><strong>ETL (Extract, Transform, and Load)</strong></p>
+<p><strong>ELT (Extract, Load, and Transform)</strong></p>
+</blockquote>
+<h3 id="various-tools-in-azure"><strong>Various Tools in Azure:</strong></h3>
+<ul>
+<li>SMS (SQL Server Management Studio)</li>
+<li>SSDT (SQL Server Data Tools)</li>
+<li>Azure Data Studio</li>
+<li>Visual Studio code</li>
+<li>MySQL Workbench</li>
+</ul>
+<p>51 You need to design and model a database by using a
+graphical tool that supports project-oriented offline
+database development.</p>
+<p>What should you use?</p>
+<ul>
+<li><strong>A. Microsoft SQL Server Data Tools (SSDT) (V)</strong></li>
+<li>B. Microsoft SQL Server Management Studio (SSMS)</li>
+<li>C. Azure Databricks</li>
+<li>D. Azure Data Studio</li>
+</ul>
+<p>52 You are writing a set of SQL queries that administrators will use to troubleshoot an Azure SQL database. You need to embed documents and query results into a SQL notebook.</p>
+<p>What should you use?</p>
+<ul>
+<li>A. Microsoft SQL Server Management Studio (SSMS)</li>
+<li><strong>B. Azure Data Studio  (V)</strong></li>
+<li>C. Azure CLI</li>
+<li>D. Azure PowerShell</li>
+</ul>
+<p>53 A set of developers have computers that run Windows
+10 and Ubuntu Desktop. They need to connect and
+query an Azure SQL database from their computer. The
+developers require code assistance features such as
+IntelliSense. Which of the following can be used for
+this requirement?</p>
+<ul>
+<li><strong>A. Azure Data Studio (v)</strong></li>
+<li>B. SSMS</li>
+<li>C. Azure Data Explorer</li>
+</ul>
+<p>54 Which is not a tool to access DB?</p>
+<ul>
+<li>A. Query Editor</li>
+<li>B. Data Studio</li>
+<li><strong>C. Storage Explorer (v)</strong></li>
+<li>D. VS Code</li>
+</ul>
+<p>55 For each of the following statements, select Yes if
+the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.</p>
+<p>Answer Area:</p>
+<ul>
+<li>Azure Data Studio can be used to query an Azure SQL
+  database from a device that runs macOS.  <strong>(YES)</strong></li>
+<li>Microsoft SQL Server Management Studio (SMS) enables
+  users to create and use SQL notebooks.    <strong>(NO)</strong></li>
+<li>Azure Data Studio can be used to restore a database. <strong>(YES)</strong></li>
+</ul>
+<p>56</p>
+<ul>
+<li>You can use Azure Data Studio to query a Microsoft SQL
+  Server big data cluster.  <strong>(YES)</strong></li>
+<li>You can use Microsoft SQL Server Management Studio
+  (SSMS) to query an Azure Synapse Analytics data warehouse.   <strong>(YES)</strong></li>
+<li>You can use MySQL Workbench to query Azure Database
+  for MariaDB databases.   <strong>(YES)</strong></li>
+</ul>
+<h3 id="azure-data-factory"><strong>Azure Data Factory:</strong></h3>
+<ul>
+<li><strong>the cloud-based ET and data integration service that allows you to create data-driven workflows</strong> for orchestrating data movement and transforming data at scale.</li>
+<li><strong>Can create and schedule data-driven workflows (called pipelines) that can ingest data from disparate data stores.</strong></li>
+</ul>
+<h3 id="azure-data-factory-components"><strong>Azure Data Factory components:</strong></h3>
+<ul>
+<li><strong>Pipelines</strong>: a logical grouping of activites that perform a unit of work and can be scheduled</li>
+<li><strong>Activities</strong>: Processing step</li>
+<li><strong>Datasets</strong>: A representation of data structure whith data stores</li>
+<li><strong>Linked services</strong>: The information used to connect to external service</li>
+<li><strong>Data Flows</strong></li>
+<li><strong>Integration Runtimes</strong> Computer Environment</li>
+<li><strong>Triggers</strong>: Initiates the executions of a pipeline</li>
+<li><strong>Control flow</strong> Orchestrate pipeline activites</li>
+</ul>
+<p>57 Which Azure Data Factory component provides the compute environment for activities?</p>
+<ul>
+<li>A. a linked service</li>
+<li><strong>B. an integration runtime (v)</strong></li>
+<li>C. a control flow</li>
+<li>D. a pipeline</li>
+</ul>
+<p>58 Which Azure Data Factory component initiates the
+execution of a pipeline?</p>
+<ul>
+<li>A. a control flow</li>
+<li><strong>B. a trigger (V)</strong></li>
+<li>C. a parameter</li>
+<li>D. an activity</li>
+</ul>
+<p>59 In Azure Data Factory, you can use  ()  to orchestrate pipeline activities that depend on the output of other pipeline activities.</p>
+<ul>
+<li><strong>a control flow (v)</strong></li>
+<li>a dataset</li>
+<li>a linked service</li>
+<li>an integration runtime</li>
+</ul>
+<p>60</p>
+<ul>
+<li>Azure Databricks is an Apache Spark-based collaborative analytics platform.  <strong>(YES)</strong></li>
+<li>Azure Analysis Services is used for transactional workloads.  <strong>(NO)</strong></li>
+<li>Azure Data Factory orchestrates data integration workflows.   <strong>(YES)</strong></li>
+</ul>
+<blockquote>
+<p><strong>Explanation</strong></p>
+<p>Azure Databricks is an analytics platform based on Apache Spark.</p>
+<p>Azure Databricks <strong>can handle batch and stream processing</strong>.</p>
+<p><strong>Azure Databricks provides an interactive workspace for
+exploration and data visualization</strong>. You can run notebooks in R, Python, Scala, or SQL. and interact with the data very quickly.</p>
+</blockquote>
+<p>61</p>
+<ul>
+<li>A pipeline is a representation of a data structure within Azure Data Factory  <strong>(NO)</strong></li>
+<li>Azure Data Factory pipelines can execute other pipelines <strong>(YES)</strong></li>
+<li>A processing step within an Azure Data Factory pipeline is an   activity   <strong>(YES)</strong></li>
+</ul>
+<p>62 Match the Azure services to the appropriate
+locations in the architecture.</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_12.png" title="Body image" /></p>
+<ul>
+<li><strong>Azure Data Factory</strong></li>
+<li><strong>Azure Synapse Analvtics</strong></li>
+</ul>
+<p>63</p>
+<ul>
+<li>（<strong>Azure Data Factory</strong>） Output data to Parquet format</li>
+<li>（<strong>Azure Data Lake Storage</strong>） Store data that is in Parquet format</li>
+<li>（<strong>Azure Synapse Analytics</strong>） Persist a tabular representation of data that is stored in Parquet format</li>
+</ul>
+<p>64</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_13.png" title="Body image" /></p>
+<ul>
+<li>Azure Data Factory</li>
+<li>Azure Synapse Anayics</li>
+</ul>
+<p>65</p>
+<ul>
+<li>（<strong>Control</strong>） Until</li>
+<li>（<strong>Data movement</strong>） Copy</li>
+<li>（<strong>Data transformation</strong>） Mapping data flow</li>
+</ul>
+<p>66</p>
+<ul>
+<li>（<strong>Dataset</strong>） A representation of data structures within data stores</li>
+<li>（<strong>Linked service</strong>） The information used to connect to external resources</li>
+<li>（<strong>Pipeline</strong>） A logical grouping of activities that performs a unit of work and can be scheduled</li>
+</ul>
+<h3 id="data-store-models"><strong>Data Store Models:</strong></h3>
+<ul>
+<li>Key/value stores</li>
+<li>Document databases</li>
+<li>Object storage</li>
+<li>Graph databases</li>
+<li>Column-family databases</li>
+<li>Time series databases</li>
+</ul>
+<p>67</p>
+<p>You need to recommend a non-relational data store that is optimized for storing and retrieving text files, videos, audio streams, and virtual disk images. The data store must store data, some metadata, and a unique ID for each file.</p>
+<p>Which type of data store should you recommend?</p>
+<ul>
+<li>A. key/value</li>
+<li>B. columnar</li>
+<li><strong>C. object  (V)</strong></li>
+<li>D. document</li>
+</ul>
+<p>68</p>
+<p>Your company is designing an application that will
+write a high volume of JSON data and will have an
+application-defined schema.</p>
+<p>Which type of data store should you use?</p>
+<ul>
+<li>A. columnar</li>
+<li><strong>B. key/value (V)</strong></li>
+<li>C. document</li>
+<li>D. graph</li>
+</ul>
+<p>69</p>
+<p>Which type of non-relational data store supports a
+flexible schema, <strong>stores data as JSON files, and stores
+the all the data</strong> for an entity in the same document?</p>
+<ul>
+<li><strong>A. document  (V)</strong></li>
+<li>B. columnar</li>
+<li>C. graph</li>
+<li>D. time series</li>
+</ul>
+<p>70</p>
+<p>Your company is designing a database that will contain session data for a website. The data will include notifications, personalization attributes, and products that are added to a shopping cart. Which type of data store will provide the lowest latency to retrieve the data?</p>
+<ul>
+<li>A. key/value</li>
+<li>B. graph</li>
+<li><strong>C. columnar (V)</strong></li>
+<li>D. document</li>
+</ul>
+<p>71</p>
+<p>Your company is designing a data store that will contain studen data. The data has the following format.</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_5_14.png" title="Body image" /></p>
+<p>Which type of data store should you use?</p>
+<ul>
+<li>A. graph</li>
+<li>B. key/value</li>
+<li>C. object</li>
+<li><strong>D. columnar (V)</strong></li>
+</ul>
+<p>72</p>
+<p>Your company is designing a data store for internet-
+connected temperature sensors. The collected data will
+be used to analyze temperature trends.</p>
+<p>Which type of data store should you use?</p>
+<ul>
+<li>A. relational</li>
+<li><strong>B. time series （V)</strong></li>
+<li>C. graph</li>
+<li>D. columnar</li>
+</ul>
+<p>73 Your company needs to design a database that shows how changes in network traffic in one area of a network affect network traffic in other areas of the network.</p>
+<p>Which type of data store should you use?</p>
+<ul>
+<li><strong>A. Graph （V)</strong></li>
+<li>B. Key/value</li>
+<li>C. document</li>
+<li>D. columnar</li>
+</ul>
+<p>74 A key/value data store is optimized for</p>
+<ul>
+<li>enforcing constraints</li>
+<li><strong>simple lookups （V)</strong></li>
+<li>table joins</li>
+<li>transactions</li>
+</ul>
+<p>75</p>
+<ul>
+<li>When ingesting data from Azure Data Lake Storage across Azure regions, you will incur costs for bandwidth.   <strong>(YES)</strong></li>
+<li>You can use blob, table, and file storage in the same Azure Storage account.      <strong>(YES)</strong></li>
+<li>You implement Azure Data Lake Storage by creating an
+  Azure Storage account.      <strong>(YES)</strong></li>
+</ul>
+<h3 id="azure-data-analytics">Azure Data Analytics:</h3>
+<ul>
+<li>Descriptive analytics</li>
+<li>Diagnostics Analytics</li>
+<li>Predictive Analytics</li>
+<li>Prescriptive Analytics</li>
+<li>Cognitive Analytics</li>
+</ul>
+<h3 id="azure-synapse-analytics">Azure Synapse Analytics:</h3>
+<ul>
+<li>An analytics service that brings together enterprise data warehousing and Big Data analytics</li>
+<li><strong>used Massively Parallel Processing (MPP) Engine has unlimited storage capacity</strong></li>
+<li>provide the ability to <strong>pause and resume the Synapse pool</strong></li>
+<li>Compute is separate from storage, which enables you to scale compute independently</li>
+</ul>
+<p>76 A bar chart showing year-to date sales by region is an example of which type of analytics?</p>
+<ul>
+<li>A. descriptive</li>
+<li><strong>B. diagnostic (V)</strong></li>
+<li>C. predictive</li>
+<li>D. prescriptive</li>
+</ul>
+<p>77 I have a Car showroom and I am thinking to open a new
+branch of my showroom. I want to find out where I
+should open by new showroom based on sales data.
+Which analytics will tell me that?</p>
+<ul>
+<li><strong>A. descriptive  （V)</strong></li>
+<li>B. diagnostic</li>
+<li>C. predictive</li>
+<li>D. prescriptive</li>
+</ul>
+<p>78 A visualization that shows a university's current student enrollment versus the maximum capacity is an example of</p>
+<ul>
+<li>cognitive</li>
+<li><strong>descriptive</strong></li>
+<li>predictive</li>
+<li>prescriptive</li>
+</ul>
+<p>78 You have a SQL pool in Azure Synapse Analytics that is only used actively every night for eight hours.
+You need to minimize the cost of the SQL pool during
+idle times. The SQLution must ensure that the data
+remains intact. What should you do on the SQL pool?</p>
+<ul>
+<li>A. Scale down the data warehouse units (DWUs).</li>
+<li><strong>B. Pause the pool (V)</strong></li>
+<li>C. Create a user-defined restore point.</li>
+<li>D. Delete the pool</li>
+</ul>
+<p>79</p>
+<ul>
+<li>Azure Synapse Analytics scales storage and compute independently <strong>(yes)</strong></li>
+<li>Azure Synapse Analytics can be paused to reduce compute costs   <strong>(yes)</strong></li>
+<li>An Azure Synapse Analytics data warehouse has a fixed storage capacity  <strong>(no)</strong></li>
+</ul>
+<p>79 </p>
+<ul>
+<li>(<strong>Diagnostic</strong>) Why did sales increase last month?</li>
+<li>(<strong>Prescriptive</strong>) How do I allocate my budget to buy different inventory items?</li>
+<li>(<strong>Descriptive</strong>) Which people are mentioned in a company's business documents?</li>
+</ul>
+<h3 id="sql-commands-categories">SQL Commands Categories:</h3>
+<ul>
+<li>DDL - Data Definition Language</li>
+<li>DML - Data Manipulation Language</li>
+<li>DQL - Data Query Language  (SELECT</li>
+<li>DCL - Data Control Language  (GRANT, REVOKE)</li>
+<li>TCL - Transaction Control Language （COMMIT， ROLLBACK， SAVEPOINT， SET TRANSACTION）</li>
+</ul>
+<p>80 Which statement is an example of Data Definition Language (DDL)?</p>
+<ul>
+<li>A. SELECT</li>
+<li>B. JOIN</li>
+<li>C. MERGE</li>
+<li><strong>D. CREATE （V)</strong></li>
+</ul>
+<p>81 Which of the following is an example of Data Manipulation Language (DML)?   <strong>C. INSERT</strong></p>
+<p>82 You have designed a SQL query that combines customer data and order data. The query includes calculated columns. You need to persist the SQL query so that other users can use the query.</p>
+<p>What should you create?</p>
+<ul>
+<li>A. an index</li>
+<li><strong>B. a view （V)</strong></li>
+<li>C. a scalar function</li>
+<li>D. a table</li>
+</ul>
+<p>83  （ ）is a virtual table that contains content defined by a query.</p>
+<ul>
+<li>A heap</li>
+<li>A stored procedure</li>
+<li><strong>A view （V)</strong></li>
+<li>An index</li>
+</ul>
+<p>84 is an object associated with a table that sorts and stores the data rows in the table based on their key values.</p>
+<ul>
+<li><strong>A clustered index （V)</strong></li>
+<li>A FileTable</li>
+<li>A foreign key</li>
+<li>A stored procedure</li>
+</ul>
+<blockquote>
+<p>Explanation</p>
+<p><strong>Clustered indexes sort and store the data rows in the table or view based on their key values</strong>. These are the columns included in the index definition. There can be only one clustered index per table, because the data rows themselves can be stored in only one order.</p>
+</blockquote>
+<p>85 (<strong>A view</strong>)  is a virtual table that contains content defined by a query.</p>
+<p>86 You have the following SQL query</p>
+<pre><code>INSERT INTO dbo.Products (ProductID, ProductName, Price, ProductDescription) VALUES (1, 'Clamp', 12.48, &quot;Workbench clamp')
+</code></pre>
+<p>What are dbo.Products and ProductName? To answer, select the
+appropriate options in the answer area.</p>
+<ul>
+<li>Dbo. Products:    <strong>A table</strong></li>
+<li>ProductName:  <strong>A column</strong></li>
+</ul>
+<h3 id="power-bi-service">Power BI Service:</h3>
+<ul>
+<li>an online SaaS (Software as a Service) service</li>
+<li>Dashboards display tiles, which you can select to open reports for exploring further</li>
+<li>Power BI workflow are:</li>
+<li>Creating reports and dashboards</li>
+<li>Sharing reports and dashboards</li>
+</ul>
+<h3 id="power-bi-dashboard">Power BI Dashboard:</h3>
+<ul>
+<li>It is a single page, often called a canvas, that tells a story through visualizations.</li>
+<li>We can add many objects</li>
+<li>a new tile by pinning a report page.</li>
+<li>a visualization from a report</li>
+<li>An image,</li>
+<li>a text box,</li>
+<li>a video,</li>
+<li>Streaming Data,</li>
+<li>Web content</li>
+</ul>
+<h3 id="power-bi-dashboards-versus-reports">Power BI Dashboards versus Reports:</h3>
+<ul>
+<li>Pages</li>
+<li>Data sources</li>
+<li>Drilling down in visuals</li>
+<li>Filtering</li>
+</ul>
+<p><strong>Paginated reports in Power BI:</strong></p>
+<ul>
+<li>designed to be printed or shared.</li>
+<li>called paginated because they're formatted to fit well on a page</li>
+<li>called pixel perfect because you can control their report page layout exactly.</li>
+<li>advantage of paginated reports is their ability to</li>
+<li>print or display all the data in a table</li>
+<li>have their own design tool i.e., called Power BI Report Builder.</li>
+</ul>
+<p>87 What should you use to build a Microsoft Power Bl paginated report?</p>
+<ul>
+<li>A. Charticulator</li>
+<li>B. Power BI Desktop</li>
+<li>C. the Power Bl service</li>
+<li><strong>D. Power BI Report Builder (V)</strong></li>
+</ul>
+<p>88 Which two activities can be performed entirely by using the
+Microsoft Power BI service? Each correct answer presents a complete SQLution. (Choose two.)</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. report and dashboard creation (v)</strong></li>
+<li>B. data modeling</li>
+<li><strong>C. report sharing and distribution (v)</strong></li>
+<li>D. data acquisition and preparation</li>
+</ul>
+<p>89 You need to develop a SQLution to provide data to executives.
+The SQLution must provide an interactive graphical interface,
+depict various key performance indicators, and support data
+exploration by using drill down.</p>
+<p>What should you use in Microsoft Power Bl?</p>
+<ul>
+<li>A. a dashboard</li>
+<li><strong>B. a report （V)</strong></li>
+<li>C. a dataflow</li>
+<li>D. Microsoft Power Apps</li>
+</ul>
+<p>90 Which three objects can be added to a Microsoft Power BI
+dashboard? Each correct answer presents a complete SQLution.
+(Choose three.)</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li><strong>A. a report page</strong></li>
+<li><strong>C. a visualization from a report</strong></li>
+<li><strong>E. a text box</strong></li>
+</ul>
+<p>91 A Microsoft Power BI  (<strong>paginated report</strong>) enables users to create highly formatted, fixed-layout documents optimized for printing and archiving.</p>
+<p>92</p>
+<ul>
+<li>A Microsoft Power BI dashboard is associated with a single workspace.   <strong>（yes）</strong></li>
+<li>A Microsoft Power BI dashboard can only display visualizations from a single dataset.   <strong>（NO）</strong></li>
+<li>A Microsoft Power BI dashboard can display visualizations from a Microsoft Excel workbook.  <strong>（yes）</strong></li>
+</ul>
+<p>93 You need to use Transact-SQL to query files in Azure Data Lake Storage from an Azure Synapse Analytics data warehouse.</p>
+<p>What should you use to query the files?</p>
+<ul>
+<li>A. Azure Functions</li>
+<li>B. Microsoft SQL Server Integration Services (SSIS)</li>
+<li><strong>C. PolyBase (YES)</strong></li>
+<li>D. Azure Data Factory</li>
+</ul>
+<p>94 Which of the following is an Azure storage SQLution that provides native support for POSIX-compliant access control lists?</p>
+<ul>
+<li>A. Azure Queue storage</li>
+<li><strong>B. Azure Data Lake Storage (v)</strong></li>
+<li>C. Azure table storage</li>
+<li>D. Azure Files</li>
+</ul>
+<p>95</p>
+<ul>
+<li>Relational database tables contain columns and rows  <strong>(YES)</strong></li>
+<li>Indexes in a relational database describe the data types in a table  <strong>(no)</strong></li>
+<li>A database view is a virtual table whose content is defined by a query  <strong>(YES)</strong></li>
+</ul>
+<p>96 <strong>Batch workloads</strong></p>
+<ul>
+<li>process data in memory, row-by-row.</li>
+<li>collect and process data at most once a day.</li>
+<li>process data as new data is received in near real-time</li>
+<li><strong>collect data and then process the data when a condition is met</strong></li>
+</ul>
+<p>97 Your company uses both relational and non-relational data.</p>
+<p>You need to determine which tools are suitable for each of the following tasks.</p>
+<p>What tools should you use?</p>
+<ul>
+<li>Extract data from external sources.  (<strong>Azure Data Factory</strong>)</li>
+<li><strong>Maintain relational and NoSOL data in a data store</strong>.  (<strong>Azure Data Lake Storage</strong>)</li>
+<li>Analyze relational and NoSOL data. (<strong>Azure Synapse Analytics</strong>)</li>
+</ul>
+<p>Explanation</p>
+<ul>
+<li>You should use <strong>Azure Data Factory to extract data from external sources</strong>. <strong>Azure Data Factory allows you to extract data from both relational and non-relational data stores</strong>.</li>
+<li>You should <strong>use Azure Data Lake Storage to maintain relational and NoSQL data in a data store</strong>. You can load raw data into Azure Data Lake storage.</li>
+<li><strong>You should use Azure Synapse Analytics to analyze relational and NoSQL data</strong>. You can analyze a high volume of structured and unstructured data with Azure Synapse Analytics.</li>
+</ul>
+<p>98 Which statement is an example of Data Manipulation Language (DML)?</p>
+<ul>
+<li>A. REVOKE</li>
+<li>B. DISABLE</li>
+<li>C. CREATE</li>
+<li><strong>D. UPDATE</strong></li>
+</ul>
+<blockquote>
+<p>Explanation</p>
+<p>Data Manipulation Language (DML) affect the information stored in the database. Use these statements to insert, update, and change the rows in the database.</p>
+<p>BULK INSERT / DELETE / INSERT / SELECT / UPDATE /MERGE</p>
+</blockquote>
+<p>99 The Azure Cosmos DB (<strong>Core (SQL)</strong>)  API enables the use of SELECT statements to retrieve documents from Azure Cosmos DB.</p>
+<blockquote>
+<p><strong>Explanation</strong></p>
+<p>Azure Cosmos DB Core (SQL) API accounts provide support for querying items using the Structured Query Language (SQL) syntax.</p>
+</blockquote>
+<p>100 You need to modify a view in a relational database by adding a new column. Which statement should you use?</p>
+<ul>
+<li>A. MERGE</li>
+<li><strong>B. ALTER</strong></li>
+<li>C. INSERT</li>
+<li>D. UPDATE</li>
+</ul>
+<blockquote>
+<p><strong>Explanation</strong></p>
+<p><strong>ALTER - add/delete/modify column</strong></p>
+<p>UPDATE - edit existing row</p>
+<p>INSERT - Insert new row</p>
+</blockquote>
+<p>101 </p>
+<ul>
+<li>Extract, transform, and load (ETL) <strong>can reduce the transfer of sensitive data to destination systems</strong>.  （<strong>YES</strong>)</li>
+<li>Extract, load, and transform <strong>(ELT) transforms data</strong> by using a compute resource <em>independent</em> of the source system and destination system.   （<strong>NO</strong>)</li>
+<li>Extract, load, and transform (ELT) minimizes the time it takes to copy large volumes of data to destination systems.   （<strong>YES</strong>)</li>
+</ul>
+<blockquote>
+<p>Box one is yes - You can reduce transfer sensitive data <strong>with transformations on data source</strong>.</p>
+<p>Box two is No - <strong>ELT use the compute resource from destination system. So not independent</strong></p>
+<p>Box three is Yes. ELT minimizes time with transformations are going to be processed on target data destination systems.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

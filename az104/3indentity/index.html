@@ -1,0 +1,5441 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../2az_gc/">
+      
+      
+        <link rel="next" href="../4rbac/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>3 AZ Identity - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-az-identity" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 AZ Identity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conceptualizing-azure-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Conceptualizing Azure Active Directory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Conceptualizing Azure Active Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-iam-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 IAM Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-what-is-azure-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 What is Azure AD?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-azure-ad-tenant-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Azure AD Tenant Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-azure-active-directory-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Azure Active Directory tenant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-azure-ad-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Azure AD Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-azure-ad-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Azure AD Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-azure-ad-vs-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Azure AD vs. Active Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-8 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-managing-tenants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Managing Tenants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Managing Tenants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-planning-our-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Planning Our Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-and-managing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Creating and Managing Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Creating and Managing Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-describing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Describing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types Of Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods-of-creating-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods of Creating Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt comment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creating-and-managing-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Creating and Managing Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Creating and Managing Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chatgpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creating-administrative-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Creating Administrative Units
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Creating Administrative Units">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-administrative-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Administrative Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configuring-sspr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Configuring SSPR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Configuring SSPR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-and-manage-sspr-via-azure-ad-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable and manage SSPR via Azure AD groups.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-service-password-reset-sspr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Service Password Reset (SSPR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-azure-ad-device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Azure AD Device Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Azure AD Device Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics-of-device-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basics of Device Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basics-of-device-identity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basics of Device Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-access-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional Access Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-signal-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Signal Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configuring-azure-ad-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Configuring Azure AD Join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 Configuring Azure AD Join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provisioning-azure-ad-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisioning Azure AD Join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enterprise-state-roaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enterprise State Roaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-active-directory-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Active Directory Conclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Active Directory Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conceptualizing-azure-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Conceptualizing Azure Active Directory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Conceptualizing Azure Active Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-iam-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 IAM Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-what-is-azure-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 What is Azure AD?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-azure-ad-tenant-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Azure AD Tenant Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-azure-active-directory-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Azure Active Directory tenant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-azure-ad-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Azure AD Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-azure-ad-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Azure AD Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-azure-ad-vs-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Azure AD vs. Active Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-8 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-managing-tenants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Managing Tenants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Managing Tenants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-planning-our-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Planning Our Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-and-managing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Creating and Managing Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Creating and Managing Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-describing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Describing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types Of Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods-of-creating-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods of Creating Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt comment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creating-and-managing-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Creating and Managing Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Creating and Managing Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chatgpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creating-administrative-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Creating Administrative Units
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Creating Administrative Units">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-administrative-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Administrative Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configuring-sspr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Configuring SSPR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Configuring SSPR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-and-manage-sspr-via-azure-ad-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable and manage SSPR via Azure AD groups.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-service-password-reset-sspr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Service Password Reset (SSPR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-azure-ad-device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Azure AD Device Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Azure AD Device Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics-of-device-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basics of Device Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basics-of-device-identity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basics of Device Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-access-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional Access Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-signal-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Signal Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configuring-azure-ad-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Configuring Azure AD Join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 Configuring Azure AD Join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provisioning-azure-ad-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisioning Azure AD Join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enterprise-state-roaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enterprise State Roaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-active-directory-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Active Directory Conclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Active Directory Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3-az-identity">3 AZ Identity</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>Azure AD</strong></p>
+<ul>
+<li>Identity and Access Management (IAM) basics; </li>
+<li>define Azure AD, Azure AD tenants, and Azure AD architecture; </li>
+<li>compare Azure AD and Active Directory; </li>
+<li>Create and switch between tenants.</li>
+</ul>
+<p><strong>Azure AD Users</strong></p>
+<ul>
+<li><strong>Define users, types of users, methods of creating users, and architecture;</strong> </li>
+<li>Create and delete users; </li>
+<li><strong>perform bulk user updates;</strong> </li>
+<li>invite guest accounts.</li>
+</ul>
+<p><strong>Azure AD Groups</strong></p>
+<ul>
+<li><strong>Define groups, group and membership types, and role-based access control (RBAC);</strong> </li>
+<li>Create dynamic groups; </li>
+<li>and assign access to resources.</li>
+</ul>
+<p><strong>Administrative Units</strong></p>
+<ul>
+<li><strong>Define Multi-Factor Authentication (MFA) and self-service password reset (SSPR);</strong> </li>
+<li>enable MFA; </li>
+<li>and enable SSPR. </li>
+</ul>
+<p><strong>Azure AD Join</strong></p>
+<ul>
+<li>Define Azure AD Join, device settings, and conditional access; </li>
+<li>join Windows 10 to Azure AD.</li>
+</ul>
+<h2 id="2-conceptualizing-azure-active-directory">2 Conceptualizing Azure Active Directory</h2>
+<h3 id="2-1-iam-basics">2-1 IAM Basics</h3>
+<p><strong>1 Principal</strong></p>
+<p>An <strong>unauthenticated entity that will seek to authenticate as an identity</strong></p>
+<p><strong>2 Identity</strong></p>
+<p>A identity profile that is authenticated <strong>against using credentials.</strong></p>
+<p><strong>3 Authorizations</strong></p>
+<p>Actions that are permitted/prohibited for an identity to perform.</p>
+<h3 id="2-2-what-is-azure-ad">2-2 What is Azure AD?</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_1.png" title="Body image" /></p>
+<p><strong>Identity and Access Management (IAM)</strong></p>
+<p>Global cloud-based identity service for Azure that provides an <strong>identity repository</strong>.</p>
+<p><strong>Create Identity Resources</strong></p>
+<p>Create users and groups.</p>
+<p><strong>Manage Identity Security</strong></p>
+<p><strong>Enable MFA, control resource access, and provide policy-based controls</strong>.</p>
+<h3 id="2-3-azure-ad-tenant-architecture">2-3 Azure AD Tenant Architecture</h3>
+<p>Azure AD is <strong>identity and access management solution for the cloud.</strong> It provides our cloud-based identities that it contains, and it allows them to access resources.</p>
+<p>And while it is a global service that spans the Azure cloud, our specific instance of this service that we get to use is going to be scoped to geography. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_2.png" title="Body image" /></p>
+<p><strong>Organization = Tenant = Directory</strong></p>
+<p>If we create our tenant in the United States, it's because we were in the United States when we created it at that time. And it could be the same for Europe; <strong>if you're creating an account from Europe, you're going to end up with an instance inside of the Europe geography of the Azure cloud</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_3.png" title="Body image" /></p>
+<h3 id="2-4-azure-active-directory-tenant">2-4 Azure Active Directory tenant</h3>
+<p>Default domain name for tenant. typically follows a form of, for example, <strong>atld.onmicrosoft.com</strong>. and it's always going to follow this format of our <strong>prefix.onmicrosoft.com</strong></p>
+<p>Those identity resources have role assignments to perform actions on subscriptions that our Azure Active Directory is associated with, and this <strong>can happen for multiple subscriptions.</strong> </p>
+<p><mark>Trust relationship that we establish <strong>between our tenant and our Azure subscriptions is a one-to-many relationship</strong></mark></p>
+<p><strong><mark>One tenant can be associated with multiple subscriptions at a time</strong>, providing those identities that exist within it, access to Azure resources in those subscriptions, <strong>but a subscription can only be associated with a single Azure Active Directory tenant at a time.</mark></strong></p>
+<h3 id="2-5-azure-ad-features">2-5 Azure AD Features</h3>
+<ul>
+<li><strong>IAM Platform</strong>： Identity and Access Management (IAM) for Azure cloud-based resources.</li>
+<li><strong>Enterprise Access</strong>： Additional security for applications and devices both on-premises and in the cloud</li>
+<li><strong>Identity Integration</strong>： <strong>Hybrid identity and single sign-on (SSO) using Azure AD Connect and Azure AD Domain Services</strong>.</li>
+<li><strong>Identity Security</strong>： Additional security with <mark>Multi-Factor Authentication (MFA) and  Privileged Identity Management (PIM）</mark></li>
+<li><strong>Collaboration and Development</strong>  Azure AD B2B for collaboration  and Azure AD B2C to support development.</li>
+<li><strong>Monitoring</strong>： <strong>Audit logs, security monitoring, identity protection, and risk management</strong>.<ul>
+<li>Audit logging where can <strong>perform audit logs of sign-ins or security events based on identities</strong>. </li>
+<li>We also have some identity protection and risk management functionalities, such as user sign-in risks, and can determine things like risky behaviors of users that are signing in, for example, <strong>from untrusted IPs or for example, things even like impossible travel</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>We can integrate these services using something known as <strong><mark>Azure AD Connect</mark>,</strong> and we can also provide those users that are being <strong>synced from our on-premises environments into the cloud with the ability to use single sign-on</strong> so that we don't have to sign in to various things multiple times, <strong>we can just sign in once and access all of our resources.</strong> </p>
+<h3 id="2-6-azure-ad-features">2-6 Azure AD Features</h3>
+<p><strong>Azure Licensing Features</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_4.png" title="Body image" /></p>
+<h3 id="2-7-azure-ad-vs-active-directory">2-7 Azure AD vs. Active Directory</h3>
+<p><strong>Active Directory</strong></p>
+<ul>
+<li>Organizational units (OUs)</li>
+<li>Group Policy Objects (GPOs)</li>
+<li>Kerberos, LDAP, NTLM</li>
+<li>Hierarchical<ul>
+<li><strong>Active Directory is traditionally a hierarchical structure in terms of providing identity and access management, on-premises, locally.</strong></li>
+</ul>
+</li>
+<li>On-Premise</li>
+</ul>
+<p><strong>Azure AD</strong></p>
+<ul>
+<li>Administrative units:  <strong>logical grouping for users inside of our organizations</strong>. </li>
+<li>SAML, WS-Federation, OAuth</li>
+<li>Flat directory structure: <strong>There is no hierarchy here</strong>. </li>
+<li>Cloud-based solution</li>
+<li>Global</li>
+</ul>
+<blockquote>
+<p>Note: Microsoft cloud-based offerings that use Azure AD for IAM include Azure, Microsoft 365, Microsoft Intune, and Microsoft Dynamics 365</p>
+</blockquote>
+<p><strong>we can extend the functionality between Azure Active Directory and Active Directory on-prem using Azure AD Connect</strong></p>
+<h3 id="2-8-key-takeaways">2-8 Key Takeaways</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_5.png" title="Body image" /></p>
+<p><strong>Identity and Access Management (IAM)</strong></p>
+<p>Global cloud-based identity service for Azure that provides an identity repository.</p>
+<p><strong>Create Identity Resources</strong></p>
+<p>Create users and groups.</p>
+<p><strong>Manage Identity Security</strong></p>
+<p>Enable MFA, control resource access, and provide policy-based controls</p>
+<h3 id="gpt-summary">GPT summary</h3>
+<ol>
+<li><strong>Identity and Access Management Basics</strong>:</li>
+<li>Understanding the shift towards identity-centric security in cloud environments.</li>
+<li>
+<p>Importance of authentication for accessing resources.</p>
+</li>
+<li>
+<p><strong>Azure Active Directory (AD)</strong>:</p>
+</li>
+<li>Azure AD is the identity and access management solution for the cloud.</li>
+<li>Provides cloud-based identities for accessing resources.</li>
+<li>
+<p>Users authenticate against identities to perform specific actions.</p>
+</li>
+<li>
+<p><strong>Azure AD Tenant Architecture</strong>:</p>
+</li>
+<li>Azure AD is a global service with instances scoped to specific geographies.</li>
+<li>Tenants exist for different organizations alongside each other.</li>
+<li>
+<p>Default domain naming convention and custom domain registration.</p>
+</li>
+<li>
+<p><strong>Azure AD Features</strong>:</p>
+</li>
+<li>Security functionalities like multi-factor authentication, Conditional Access policies, and privileged identity management.</li>
+<li>Collaborative features such as B2B collaboration and Azure AD B2C.</li>
+<li>
+<p>Monitoring features including audit logging and identity protection.</p>
+</li>
+<li>
+<p><strong>Identity Integration</strong>:</p>
+</li>
+<li>Integration of Azure AD with on-premises solutions like Active Directory Domain Services using Azure AD Connect.</li>
+<li>
+<p>Single sign-on capability for synced users from on-premises environments.</p>
+</li>
+<li>
+<p><strong>Comparing Active Directory with Azure AD</strong>:</p>
+</li>
+<li>Active Directory features organizational units, group policy objects, Kerberos, LDAP, and NTLM for authentication.</li>
+<li>
+<p>Azure AD features administrative units, SAML, WS-Federation, OAuth for authentication, and is a flat directory structure.</p>
+</li>
+<li>
+<p><strong>Key Takeaways</strong>:</p>
+</li>
+<li>Azure AD is the global identity and access management solution for managing cloud-based identities.</li>
+<li>Trust relationships with subscriptions provide identities access to resources.</li>
+<li>Azure AD offers security functionalities like multi-factor authentication, role assignments, and Conditional Access policies.</li>
+</ol>
+<h2 id="3-managing-tenants">3 Managing Tenants</h2>
+<p>Hybrid identity where we're connecting our Azure AD tenant to our <strong>on-premises domain solutions, like Active Directory Domain Services so that we can sync those identities up into our Azure cloud environments using Azure AD Connect.</strong></p>
+<h3 id="3-1-planning-our-organization">3-1 Planning Our Organization</h3>
+<p><strong>Designing Tenants</strong>： Planning out the design of our tenant </p>
+<ul>
+<li><strong>Monitor and Automate</strong>： <ul>
+<li><strong>Monitor administrators</strong></li>
+<li><strong>Perform access reviews</strong></li>
+<li><strong>Automate user lifecycles</strong>.</li>
+<li>Resetting the password after a period of time automatically so that <strong>users are always prompted to create a new password</strong></li>
+</ul>
+</li>
+<li><strong>Manage Apps</strong>： Identify apps to be used from App Gallery and register apps from on-prem.</li>
+<li><strong>Populate Identity Resources</strong>： Add users, create groups, add devices, and set up hybrid identity.</li>
+<li><strong>Build Secure Foundations</strong>： Set up best practices <strong>like SSPR, MFA, backup global admin, and privileged users for specific tasks</strong>.</li>
+</ul>
+<h3 id="key-takeaways">Key Takeaways</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_5.png" title="Body image" /></p>
+<ul>
+<li>Azure Active Directory is a global service that spans the Azure cloud.</li>
+<li>Create instance of that service known as a tenant inside of geographical regions like the United States.</li>
+<li>Tenant of Azure Active Directory will be running on servers allocated for Azure Active Directory global service inside of that geographical region.</li>
+<li><strong>Identity objects, like users and groups, devices, and applications are all going to exist</strong>.</li>
+</ul>
+<h3 id="gpt-summary_1">Gpt summary</h3>
+<ol>
+<li>
+<p><strong>Planning for Azure Organization:</strong></p>
+<ul>
+<li>Importance of planning the organization structure for Azure adoption.</li>
+<li>Understanding the setup of the first Azure Active Directory (AD) tenant.</li>
+<li>Security considerations when setting up the tenant, including best practices like self-service password reset and multi-factor authentication.</li>
+</ul>
+</li>
+<li>
+<p><strong>Creating and Managing Azure AD Tenant:</strong></p>
+<ul>
+<li>Process of creating an Azure AD tenant, including selecting the tenant type, configuring settings, and region selection.</li>
+<li>Populating the tenant with identity resources like users, groups, and devices.</li>
+<li>Managing applications, including using existing app gallery apps and registering custom applications.</li>
+<li>Implementing hybrid identity solutions to sync on-premises identities with Azure AD.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tenant Management and Monitoring:</strong></p>
+<ul>
+<li>Managing tenant security settings such as multi-factor authentication and conditional access policies.</li>
+<li>Configuring password reset options and mobile device management (MDM).</li>
+<li>Customizing domain names and using Azure AD Connect for identity synchronization.</li>
+<li>Licensing management, application registration, device management, user and group creation, and external collaboration.</li>
+<li>Assigning roles to users for specific administrative tasks, such as billing administrator roles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Key Takeaways:</strong></p>
+<ul>
+<li>Understanding Azure Active Directory as a global service within Azure cloud.</li>
+<li>Creation of an Azure AD tenant within specific geographical regions.</li>
+<li>Tenant hosting on Azure AD global service servers in the chosen region.</li>
+<li>Identity resources (users, groups, devices, applications) reside within the tenant for access to Azure resources.</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-creating-and-managing-users">3 Creating and Managing Users</h2>
+<h3 id="3-1-describing-users">3-1 Describing Users</h3>
+<p>Azure AD tenant,  <strong>like users, and these users are just identity objects with a set of permissions</strong>, and that's what defines the type of user it is, and also where the user originates from whether it originated inside of our Azure AD tenant, or it originated from someone outside of our Azure AD tenant.</p>
+<p><strong>Azure AD</strong></p>
+<ul>
+<li><strong>1 Administrators</strong>:  <ul>
+<li>Global admins </li>
+<li>billing administrators </li>
+<li>User administrators</li>
+</ul>
+</li>
+<li><strong>2 Members</strong><ul>
+<li>Members of our tenant can be <strong>support engineer</strong> that needs to manage virtual machine workloads</li>
+<li>Could be our organization's <strong>data engineering team</strong>, and they may have access to a specific set of services inside of Azure, at various scopes. </li>
+</ul>
+</li>
+<li><strong>3 Guests</strong></li>
+</ul>
+<h3 id="describing-users">Describing Users</h3>
+<ul>
+<li><strong>Members have default permissions</strong></li>
+<li>These identities are JSON objects</li>
+<li><strong>Each user can have role assignments</strong><ul>
+<li>which is the thing that provides them the access to perform specific operations at various scopes inside of our Azure environments.</li>
+</ul>
+</li>
+<li><strong>Each user can have object ownership</strong><ul>
+<li>A user could be the owner of a group object that is used to manage other users</li>
+<li>Manager will have their identity object, and then they're an owner of a group object, which is their team members, and they will manage their access</li>
+</ul>
+</li>
+</ul>
+<pre><code>{
+ &quot;accountEnabled&quot;: true,
+ &quot;department&quot;: &quot;Student&quot;,
+ &quot;displayName&quot;: &quot;Eruza Duolc”,
+ &quot;studentId&quot;: 0123456,
+ &quot;givenName&quot;: &quot;Eruza&quot;,
+ &quot;jobTitle&quot;: &quot;Student&quot;,
+ &quot;objectType&quot;: &quot;User&quot;,
+ &quot;surname&quot;: &quot;Duolc&quot;,
+ &quot;usageLocation&quot;: &quot;US&quot;,
+ &quot;userPrincipalName&quot;: 
+ &quot;eruza@example.onmicrosoft.com&quot;,
+ &quot;userType&quot;: &quot;Member&quot;
+}
+</code></pre>
+<h3 id="types-of-users"><strong>Types Of Users</strong></h3>
+<ul>
+<li><strong>Administrators</strong>: Users with an administrator role assigned.</li>
+<li><strong>Members</strong>: Regular users that are native to Azure AD.</li>
+<li><strong>Guests</strong> External users that are invited to the Azure AD Tenant.</li>
+</ul>
+<h3 id="methods-of-creating-users"><strong>Methods of Creating Users</strong></h3>
+<ul>
+<li><strong>Azure Portal</strong></li>
+</ul>
+<p>Navigate to Azure AD service &gt; Select Users  &gt; New User</p>
+<ul>
+<li><strong>Azure CLI</strong></li>
+</ul>
+<pre><code>#create user
+az ad user create
+</code></pre>
+<ul>
+<li><strong>PowerShell</strong></li>
+</ul>
+<pre><code>#create user
+New-AzureADUser
+</code></pre>
+<h3 id="demonstration">Demonstration</h3>
+<ul>
+<li><strong>Create/Add A User</strong>： Create a member account inside of Azure AD</li>
+<li><strong>Bulk Add Users</strong>： Using a CSV file, bulk add users to Azure AD.</li>
+<li><strong>Update User Properties</strong>： Update the properties to show this user is part of the HR department.</li>
+<li><strong>Invite a Guest Account</strong> Invite an external guest into Azure AD.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_6.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_7.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_8.png" title="Body image" /></p>
+<h3 id="key-takeaways_1">Key Takeaways</h3>
+<p><strong>Type Of User</strong></p>
+<p>Administrator, member, and guest accounts</p>
+<p><strong>Role Assignment</strong></p>
+<p>Determines permissions and access</p>
+<p><strong>Obiect Ownership</strong></p>
+<p>Apps, devices, groups, and resources that are owned</p>
+<h3 id="gpt-comment">Gpt comment</h3>
+<p>The key takeaways from this article are:</p>
+<ul>
+<li>Users in Azure AD are identity objects with a set of permissions, and they can originate from within or outside the Azure AD tenant.</li>
+<li><strong>Administrative users have specific roles assigned to them, while tenant members can be employees or specific teams with access to Azure services</strong>.</li>
+<li>Guest users are external users invited to collaborate within the Azure AD tenant.</li>
+<li><strong>Users have default permissions and properties that can be modified, such as job title, display name, and usage location</strong>.</li>
+<li>Role assignments provide users with access to perform specific operations within Azure environments.</li>
+<li>Users can have <strong>object ownership, allowing them to manage apps, devices, groups, and resources they own within Azure</strong>.</li>
+</ul>
+<h2 id="4-creating-and-managing-groups">4 Creating and Managing Groups</h2>
+<p><img alt="Alt Image Text" src="../../images/az104_3_9.png" title="Body image" /></p>
+<h3 id="describing-groups">Describing Groups</h3>
+<ul>
+<li><strong>Owner and Members</strong>: An owner of the group or a member of the group</li>
+<li><strong>Type of Group</strong> A <strong>security group</strong> or a <strong>Microsoft 365 group</strong></li>
+<li><strong>Membership Type</strong> Assigned, dynamic user, or dynamic device</li>
+</ul>
+<h3 id="demonstration_1"><strong>Demonstration</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_10.png" title="Body image" /></p>
+<p><strong>Create/Add a Group</strong></p>
+<p>Create a dynamic security group for guests accounts.</p>
+<p><strong>Add a Dynamic Query</strong></p>
+<p>Add a query that will dynamically manage group membership by adding guest accounts.</p>
+<h3 id="group-types">Group Types</h3>
+<ul>
+<li><strong>Security</strong> <strong>Security groups are used to manage access to shared resources for a group of users</strong></li>
+<li><strong>Microsoft 365</strong>  Microsoft 365 groups are used to give members access to a shared mailbox, calendar, files, etc.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_11.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_12.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_13.png" title="Body image" /></p>
+<h3 id="membership-types"><strong>Membership Types</strong></h3>
+<ul>
+<li><strong>Assigned Users</strong> are specifically selected to be members of a group.</li>
+<li><strong>Dynamic User</strong> <em>Membership rules</em> are created that automate group membership via <strong>user attributes.</strong></li>
+<li><strong>Dynamic Device</strong>  <em>Membership rules</em> are created that automate group membership via <strong>device attributes</strong>.</li>
+</ul>
+<p>First and foremost, we can directly assign members to a group, so add those users or devices directly to the groups by manually assigning it. </p>
+<p>Then we also have that dynamic user type where we can create those types of queries to manage membership for those groups using a property of, for example, our users, such as the department, or the user type as we saw in our demonstration. <strong>So we're using these identity object attributes to manage the membership for groups without having to manage things manually.</strong> </p>
+<p>It's going to use those device attributes for devices that we're managing through our Azure AD tenant. </p>
+<h3 id="chatgpt-summary">Chatgpt summary</h3>
+<ol>
+<li><strong>Users in Azure Active Directory (AD)</strong>:</li>
+<li>Users are identity objects in Azure AD with a set of permissions.</li>
+<li>Users can originate from within the Azure AD tenant or externally.</li>
+<li>
+<p>Types of users include administrators (global admins, billing admins, user admins), regular members (native to the organization), and guest members (external users invited for collaboration).</p>
+</li>
+<li>
+<p><strong>Managing Users</strong>:</p>
+</li>
+<li>Properties of users can be modified, such as job title, display name, and usage location.</li>
+<li>Users can be assigned role assignments for specific operations in Azure environments.</li>
+<li>
+<p>Users can have object ownership, for example, managing permissions of a group of users.</p>
+</li>
+<li>
+<p><strong>Creating Users</strong>:</p>
+</li>
+<li>Users can be created using various methods like Azure portal, Azure CLI, and Azure PowerShell.</li>
+<li>When creating a user, properties like username, domain, password, and other details are set.</li>
+<li>
+<p>User properties can be updated post-creation, such as assigning them to a specific department.</p>
+</li>
+<li>
+<p><strong>Bulk Operations</strong>:</p>
+</li>
+<li>Bulk operations like Bulk Create, Invite, and Bulk Delete can be performed using CSV files.</li>
+<li>CSV files must contain required components like username, password, and other necessary details.</li>
+<li>
+<p>Bulk operations can help efficiently manage multiple users at once.</p>
+</li>
+<li>
+<p><strong>Inviting Guest Accounts</strong>:</p>
+</li>
+<li>Guest accounts are external users invited for collaboration.</li>
+<li>Inviting a guest account is similar to creating a user, requiring only an email address.</li>
+<li>
+<p>Guest users have limited permissions within the Azure environment.</p>
+</li>
+<li>
+<p><strong>Role Assignments</strong>:</p>
+</li>
+<li>Role assignments provide users with authorizations to perform specific actions in Azure environments.</li>
+<li>Understanding role assignments is essential for managing user access and permissions effectively.</li>
+</ol>
+<h2 id="5-creating-administrative-units">5 Creating Administrative Units</h2>
+<h3 id="describing-administrative-units">Describing Administrative Units</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_14.png" title="Body image" /></p>
+<h3 id="demonstration_2">Demonstration</h3>
+<p><strong>Plan the Organization</strong></p>
+<p>Plan the organization and evaluate its needs to determine the value that administrative units can provide for managing identities like groups and users.</p>
+<p><strong>Create an Administrative Unit</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_15.png" title="Body image" /></p>
+<ul>
+<li><strong>Create an administrative unit to logically</strong></li>
+<li><strong>Divide the organization and allow for scoping.</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_16.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_17.png" title="Body image" /></p>
+<p><strong>Summary from ChatGPT</strong></p>
+<ul>
+<li><strong>Administrative units</strong> act as a logical container within a flat data structure of <strong>Azure Active Directory, allowing for organization and scoping of Azure AD identity objects</strong>.</li>
+<li><mark>They enable control of the scope of administrative users</mark>, <strong>preventing them from having default tenant-level access and allowing for specific scoping to manage specific identity objects</strong>.</li>
+<li>Common use-case examples include <strong>geographical locations, business departments, and subsidiary organizations</strong> of a parent organization using the <strong>same Azure Active Directory to manage all entities.</strong></li>
+<li><strong>Administrative units</strong> can be used to <strong>manage users, groups, and devices</strong>, and <strong>can be assigned specific administrative roles tailored to the needs of the organization</strong>.</li>
+<li>Azure AD P1 and P2 licensing allows for the management of membership types to administrative units, <strong>including Assigned, Dynamic User, and Dynamic Device, which can be used to manage identity objects within the administrative units</strong>.</li>
+</ul>
+<h2 id="6-configuring-sspr">6 Configuring SSPR</h2>
+<p>Self-Service Password Reset (SSPR)</p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_18.png" title="Body image" /></p>
+<ul>
+<li>Enable users to change or reset</li>
+<li>Increased productivity</li>
+<li>Decreased admin overhead</li>
+</ul>
+<p><strong>SSPR Process</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_19.png" title="Body image" /></p>
+<h3 id="authentication-methods">Authentication Methods</h3>
+<ul>
+<li><strong>Mobile App</strong>: Authentication via app notification. An example is the Microsoft Authenticator application.</li>
+<li><strong>Mobile Phone</strong>: Authentication via a mobile number using a phone call or SMS that provides a code. (Less recommended method.)</li>
+<li><strong>Mobile App Code</strong>： Authentication via time-based codes. An example is the Microsoft Authenticator application.</li>
+<li><strong>Office Phone</strong>： Authentication via a non-mobile phone using a phone call that prompts the user to press #.</li>
+<li><strong>Email</strong>： Authentication via an email external to Microsoft using codes sent to that email address.</li>
+<li><strong>Security Questions</strong>： Authentication via answering a set of security questions. (Least recommended method.）</li>
+</ul>
+<h3 id="enable-and-manage-sspr-via-azure-ad-groups"><strong>Enable and manage SSPR via Azure AD groups.</strong></h3>
+<p><strong>Required Methods</strong></p>
+<p>One or more of the available authentication methods is required for SSPR.</p>
+<p><strong>SSPR for Admins</strong></p>
+<p><mark>Security questions not available for admins. By default, admins must register for MFA methods.</mark></p>
+<p><strong>Required Licenses</strong></p>
+<p>Azure AD P1 or P2, Microsoft Apps for Business, or Microsoft 365 licensing is required for SSPR.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_20.png" title="Body image" /></p>
+<ul>
+<li>Create a SSPR group</li>
+<li>Add user to group</li>
+<li>Enable SSPR</li>
+<li>Test SSPR</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_22.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_23.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_24.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_25.png" title="Body image" /></p>
+<h3 id="self-service-password-reset-sspr">Self-Service Password Reset (SSPR)</h3>
+<p><strong>Unauthenticated users use SSPR</strong></p>
+<ul>
+<li>Decreased administration overhead</li>
+<li>Secure password reset for users and admins</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_21.png" title="Body image" /></p>
+<h3 id="summary-from-chatgpt"><strong>Summary from ChatGPT</strong></h3>
+<ul>
+<li>Traditional password reset method required users to request help desk admin to reset their passwords, <strong>leading to decrease in productivity</strong>.</li>
+<li>Self-service password reset(SSPR) enables users to reset their passwords <strong>without help desk admin, increasing productivity and decreasing admin overhead.</strong></li>
+<li>SSPR process involves localization, verification, authentication, and setting options for notifications.</li>
+<li>Authentication methods include mobile app, mobile app code, email, mobile phone, office phone, and security questions.</li>
+<li>SSPR considerations include enabling and managing via Azure AD Group, <strong>different authentication methods for regular users and administrators, and required licensing for SSPR.</strong></li>
+<li>The key takeaway is that SSPR provides a secure and productive way of resetting passwords for users and administrators.</li>
+</ul>
+<h2 id="7-azure-ad-device-management">7 Azure AD Device Management</h2>
+<h3 id="basics-of-device-identity">Basics of Device Identity</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_26.png" title="Body image" /></p>
+<h3 id="basics-of-device-identity_1">Basics of Device Identity</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_27.png" title="Body image" /></p>
+<h3 id="registration-options"><strong>Registration Options</strong></h3>
+<p><strong>How to Register Devices</strong></p>
+<ul>
+<li><strong>Azure AD  Registered</strong></li>
+</ul>
+<p>Least restrictive option, allowing for Bring Your Own Device (BYOD) with a personal Microsoft or local account. Supports Windows 10, iOS, iPadOS, Android, and macOS</p>
+<ul>
+<li><strong>Azure AD Joined</strong></li>
+</ul>
+<p>Device is owned by the organization and accesses AAD through a work account. These identities only exist in the cloud. Supports Windows 10 and Server 2019.</p>
+<ul>
+<li><strong>Hybrid Azure AD Joined</strong></li>
+</ul>
+<p>Similar to AAD joined, however these device identities exist both on premises and in the cloud.  Supports Windows 7, 8.1, 10, and Server 2008 or late</p>
+<h3 id="conditional-access-policies">Conditional Access Policies</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_28.png" title="Body image" /></p>
+<blockquote>
+<p><strong>NOTE: Requires Azure AD P1 license or Microsoft 365 Business license</strong></p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az104_3_31.png" title="Body image" /></p>
+<p><strong>Join Device to AD</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_32.png" title="Body image" /></p>
+<p><strong>On window server</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_33.png" title="Body image" /></p>
+<ul>
+<li><strong>VM1 Azure AD registered</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_34.png" title="Body image" /></p>
+<ul>
+<li><strong>Azure AD joined</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_3_35.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_36.png" title="Body image" /></p>
+<h3 id="common-signal-types"><strong>Common Signal Types</strong></h3>
+<ol>
+<li><strong>User or Group</strong>: Provides fine-grained access to resources based on user identity or group membership.</li>
+<li><strong>IP Location</strong> Uses an allow list of trusted IP addresses and a deny list of blocked IP addresses to control access to resources.</li>
+<li><strong>Device</strong>: Allows for device type and device state to be evaluated in conditional access policy</li>
+<li><strong>Application</strong>: Allows control of access to an application on a specific device. Microsoft Cloud App Security can be used to control access to cloud.</li>
+<li><strong>Real-Time Risk</strong>: Uses Identity Protection to detect risk at sign-in and during a user’s session to calculate overall real-time risk.</li>
+</ol>
+<h3 id="common-decisions">Common Decisions</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_3_29.png" title="Body image" /></p>
+<h3 id="key-takeaways_2">Key Takeaways</h3>
+<p><strong>Device Identity + Conditional Access</strong></p>
+<ul>
+<li>Simplified procedure for adding and managing devices</li>
+<li>Improved user experience on devices</li>
+<li>Support for Microsoft Intune</li>
+<li>Single Sign-On (SSO) for any registered or joined devices</li>
+</ul>
+<h3 id="summary-from-chatgpt_1"><strong>Summary from ChatGPT</strong></h3>
+<ul>
+<li>Azure Active Directory is the <strong>identity solution</strong> inside of the Azure Cloud.</li>
+<li>Identity objects are used to authenticate into Azure environments.</li>
+<li><strong>Devices need to be managed and registered in Azure Active Directory to control access to resources, assets, and data.</strong></li>
+<li>Three registration options for devices in Azure Active Directory: <strong>Azure AD Registered, Azure AD Joined, and Hybrid Azure AD Joined</strong>.</li>
+<li><strong><mark>Azure AD Registered is for devices owned by employees, while Azure AD Joined is for organization-owned devices.</mark></strong></li>
+<li><strong>Device settings</strong> in Azure AD can be managed at the tenant level to control device join and registration.</li>
+<li><strong>Hybrid Azure AD Joined is a device that exists both on-premises and in the cloud</strong>.</li>
+<li>Registering and joining devices in Azure Active Directory provides improved user experience with features like single sign-on.</li>
+</ul>
+<h2 id="8-configuring-azure-ad-join">8 Configuring Azure AD Join</h2>
+<p><strong><em>What Is Azure AD Join?</em></strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_3_30.png" title="Body image" /></p>
+<h3 id="device-management"><strong>Device Management</strong></h3>
+<p><strong>Management Options</strong></p>
+<p>Choosing between Mobile Device Management (MDM)-only or co-management options for device management</p>
+<p><strong>MDM-Only</strong></p>
+<p>MDM system support using Microsoft Intune</p>
+<p><strong>Co-Management</strong></p>
+<p>Locally installed Configuration Manager and MDM provide</p>
+<h3 id="provisioning-azure-ad-join">Provisioning Azure AD Join</h3>
+<blockquote>
+<p>Manage via Device Settings</p>
+</blockquote>
+<p><strong>Self-Service</strong></p>
+<p>Manually configure via Out of Box Experience (OOBE)or from Windows Settings. Technical 
+users only</p>
+<p><strong>Windows Autopilot</strong></p>
+<p>Pre-configure OOBE to provide automated device joining and automated MDM enrollment.</p>
+<p><strong>Bulk Enrollment</strong></p>
+<p>Use a bulk provisioning tool or package to join a large number of devices.</p>
+<h3 id="enterprise-state-roaming">Enterprise State Roaming</h3>
+<ul>
+<li>Provides user settings and app data across devices</li>
+<li>Separates corporate data and user data</li>
+<li>Syncs with Azure Cloud</li>
+</ul>
+<h2 id="azure-active-directory-conclusion">Azure Active Directory Conclusion</h2>
+<p><strong>Azure AD</strong></p>
+<p><strong>Azure AD as the identity and access management service for the Azure cloud</strong>. </p>
+<p>IAM basics; define Azure AD, Azure AD tenants, and Azure AD architecture; compare Azure AD and Active Directory;  and create and switch between tenants.</p>
+<p><strong>Azure AD Users</strong></p>
+<p>Define users, types of users, methods of creating users, and architecture; create and delete users; perform bulk user updates; and invite guest accounts.</p>
+<p><strong>Azure AD Groups</strong></p>
+<p>Define groups, group and membership types, and RBAC; create dynamic groups; and assign access to resources</p>
+<p><strong>Azure AD Join</strong></p>
+<p>Define Azure AD Join, device settings, and conditional access; join Windows 10 to Azure AD.</p>
+<h3 id="summary-from-chatgpt_2"><strong>Summary from ChatGPT</strong></h3>
+<ol>
+<li><strong>Azure AD tenants are the instance of the Azure AD service</strong>.</li>
+<li>Azure AD architecture was discussed to understand its structure.</li>
+<li>Comparison between Azure Active Directory and Active Directory was made to highlight the differences.</li>
+<li>The creation and management of user accounts were demonstrated, including member, administrative, and guest users.</li>
+<li><strong>Use of groups to manage users and administrative units to limit administrative control was discussed</strong>.</li>
+<li>Self-service password reset (SSPR) was highlighted as a feature to reduce password reset workload for administrators.</li>
+<li><strong>Device settings and management in Azure AD, including joining devices to the network using Azure AD join, were covered</strong>.</li>
+<li>The importance of Azure AD in identity and <strong>access management, including user roles, permissions, groups, and device identities, in the Azure cloud.</strong></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

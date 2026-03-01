@@ -1,0 +1,5481 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../6az103_ad_sub_resource/">
+      
+      
+        <link rel="next" href="../8az103_Vms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>L2 Azure Administration: Implement and Manage Storage - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#l2-azure-administration-implement-and-manage-storage" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              L2 Azure Administration: Implement and Manage Storage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-and-configure-storage-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create and Configure Storage Accounts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Create and Configure Storage Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-azure-storage-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Azure Storage overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-azure-blob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Azure Blob
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-azure-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Azure Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-azure-queue-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Azure Queue Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-azure-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Azure Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-azure-data-lake-storage-gent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Azure Data Lake Storage Gent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-create-and-configure-a-storage-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Create and configure a storage account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-create-and-configure-a-storage-account-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Create and configure a storage account using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-manage-storage-access-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Manage storage access keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-manage-shared-access-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Manage shared access signature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-11-monitor-activity-logs-using-log-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-11 Monitor activity logs using Log Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-12-implement-azure-storage-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-12 Implement Azure Storage replication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-12 Implement Azure Storage replication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locally-redundant-storage-lrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Locally Redundant Storage (LRS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-13-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-13 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-import-and-export-data-to-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Import and Export Data to Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Import and Export Data to Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-import-and-export-data-to-and-from-azure-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Import and export data to and from Azure Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-create-an-import-job-from-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Create an import job from Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-create-an-export-job-into-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Create an export job into Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-azure-blob-storage-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Azure Blob Storage overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-configure-and-use-azure-blob-storage-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Configure and use Azure Blob Storage using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-configure-and-use-azure-blob-storage-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Configure and use Azure Blob Storage using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-azure-content-delivery-network-cdn-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Azure Content Delivery Network (CDN) overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-azure-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure Azure Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configure Azure Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-create-an-azure-file-share-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Create an Azure file share using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-create-an-azure-file-share-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Create an Azure file share using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-file-sync-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure File Sync overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-create-an-azure-file-sync-service-and-sync-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Create an Azure File Sync service and sync group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-troubleshoot-azure-file-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Troubleshoot Azure File Sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implement-azure-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Implement Azure Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Implement Azure Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-azure-virtual-machine-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Azure virtual machine backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-create-and-configure-a-recovery-services-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Create and configure a Recovery Services Vault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-create-and-configure-a-recovery-services-vault-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 Create and configure a Recovery Services Vault using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-create-an-azure-virtual-machine-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 Create an Azure virtual machine backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-create-an-azure-virtual-machine-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 Create an Azure virtual machine backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6-restore-an-azure-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-6 Restore an Azure virtual machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-7-perform-a-restore-operation-files-and-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-7 Perform a restore operation files and folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-8-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-8 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-and-configure-storage-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create and Configure Storage Accounts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Create and Configure Storage Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-azure-storage-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Azure Storage overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-azure-blob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Azure Blob
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-azure-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Azure Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-azure-queue-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Azure Queue Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-azure-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Azure Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-azure-data-lake-storage-gent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Azure Data Lake Storage Gent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-create-and-configure-a-storage-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Create and configure a storage account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-create-and-configure-a-storage-account-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Create and configure a storage account using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-manage-storage-access-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Manage storage access keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-10-manage-shared-access-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-10 Manage shared access signature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-11-monitor-activity-logs-using-log-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-11 Monitor activity logs using Log Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-12-implement-azure-storage-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-12 Implement Azure Storage replication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-12 Implement Azure Storage replication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locally-redundant-storage-lrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Locally Redundant Storage (LRS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-13-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-13 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-import-and-export-data-to-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Import and Export Data to Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Import and Export Data to Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-import-and-export-data-to-and-from-azure-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Import and export data to and from Azure Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-create-an-import-job-from-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Create an import job from Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-create-an-export-job-into-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Create an export job into Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-azure-blob-storage-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Azure Blob Storage overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-configure-and-use-azure-blob-storage-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Configure and use Azure Blob Storage using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-configure-and-use-azure-blob-storage-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Configure and use Azure Blob Storage using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-azure-content-delivery-network-cdn-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Azure Content Delivery Network (CDN) overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-azure-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure Azure Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configure Azure Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-create-an-azure-file-share-using-the-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Create an Azure file share using the portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-create-an-azure-file-share-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Create an Azure file share using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-file-sync-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure File Sync overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-create-an-azure-file-sync-service-and-sync-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Create an Azure File Sync service and sync group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-troubleshoot-azure-file-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Troubleshoot Azure File Sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implement-azure-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Implement Azure Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Implement Azure Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-azure-virtual-machine-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Azure virtual machine backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-create-and-configure-a-recovery-services-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Create and configure a Recovery Services Vault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-create-and-configure-a-recovery-services-vault-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 Create and configure a Recovery Services Vault using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-create-an-azure-virtual-machine-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 Create an Azure virtual machine backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-create-an-azure-virtual-machine-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 Create an Azure virtual machine backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6-restore-an-azure-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-6 Restore an Azure virtual machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-7-perform-a-restore-operation-files-and-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-7 Perform a restore operation files and folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-8-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-8 Quiz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="l2-azure-administration-implement-and-manage-storage"><strong>L2 Azure Administration: Implement and Manage Storage</strong></h1>
+<h2 id="1-create-and-configure-storage-accounts"><strong>1. Create and Configure Storage Accounts</strong></h2>
+<h3 id="1-1-azure-storage-overview"><strong>1-1 Azure Storage overview</strong></h3>
+<p>Storage Types：</p>
+<ul>
+<li><strong>Azure Files</strong></li>
+<li><strong>Azure Blob</strong> </li>
+<li><strong>Azure Queue</strong></li>
+<li><strong>Azure Table</strong> </li>
+<li><strong>Azure Data Lake Storage Gen2</strong></li>
+</ul>
+<h3 id="1-2-azure-blob"><strong>1-2 Azure Blob</strong></h3>
+<ul>
+<li>Unstructured data </li>
+<li>Support streaming scenarios </li>
+<li>Access from anywhere </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_1.png" title="Body image" /></p>
+<p><strong>Azure Blob for VHDs</strong></p>
+<ul>
+<li>Used for virtual machine disks </li>
+<li>Persistent storage </li>
+<li>4 TB </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_2.png" title="Body image" /></p>
+<h3 id="1-3-azure-files"><strong>1-3 Azure Files</strong></h3>
+<ul>
+<li>Shared folder</li>
+<li>Net use </li>
+<li>Access files via SMB </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_3.png" title="Body image" /></p>
+<h3 id="1-4-azure-queue-storage"><strong>1-4 Azure Queue Storage</strong></h3>
+<ul>
+<li>Stores messages </li>
+<li>Can be accessed via HTTP or HTTPS </li>
+<li>Up to a million messages </li>
+<li>Processing work asynchronously, such as ../images to resize </li>
+<li><strong>Passing messages from a web role to a worker role</strong> </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_4.png" title="Body image" /></p>
+<h3 id="1-5-azure-tables"><strong>1-5 Azure Tables</strong></h3>
+<ul>
+<li>Structured NoSQL </li>
+<li>Key attribute store </li>
+<li>Schemaless </li>
+<li>Premium offering for table storage is Azure Cosmos DB </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_5.png" title="Body image" /></p>
+<h3 id="1-6-azure-data-lake-storage-gent"><strong>1-6 Azure Data Lake Storage Gent</strong></h3>
+<ul>
+<li>Stores and accesses both objects and file system data at the same time</li>
+<li>Analytic workloads </li>
+</ul>
+<h3 id="1-7-create-and-configure-a-storage-account"><strong>1-7 Create and configure a storage account</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_7_6.png" title="Body image" /></p>
+<h3 id="1-8-create-and-configure-a-storage-account-using-powershell"><strong>1-8 Create and configure a storage account using PowerShell</strong></h3>
+<pre><code>#Create a Resource Group and Storage Account 
+
+#Variables 
+$location = &quot;canadacentral&quot; 
+$resourceGroup = &quot;AZ100_SA_PS&quot; 
+$storageAccountName &quot;sbaz100sa&quot; 
+$skuName = &quot;Standard_LRS&quot; 
+
+
+#Create the Resource Group 
+New-AzureRmResourceGroup -Name $resourceGroup -Location $location 
+
+# Create the storage account. 
+$storageAccount New-AzureRmStorageAccount -ResourceGroupName $resourceGroup -Name $storageAccountName -Location -SkuName $skuname
+
+#View Storage Account 
+Get-AzureRmStorageAccount -ResourceGroupName $resourceGroup 
+</code></pre>
+<h3 id="1-9-manage-storage-access-keys"><strong>1-9 Manage storage access keys</strong></h3>
+<p><strong>Best Practices</strong></p>
+<ul>
+<li>Store the access keys in a secure location <strong>Azure Key Vault</strong>  </li>
+<li>Do not share the keys </li>
+<li><strong>Use a shared access signature</strong> </li>
+<li>Regenerate the access keys if the account has been compromised </li>
+</ul>
+<p><strong>Microsoft Steps for Key Regeneration</strong></p>
+<ol>
+<li>Update apps to use the second key. </li>
+<li>Regenerate the first key. </li>
+<li>Update apps to use the first key. </li>
+<li>Regenerate the second key. </li>
+</ol>
+<h3 id="1-10-manage-shared-access-signature"><strong>1-10 Manage shared access signature</strong></h3>
+<p><strong>Overview</strong></p>
+<ul>
+<li>You do not have to share the account keys </li>
+<li>Set time limits </li>
+<li>Specify allowed permissions </li>
+<li>Restrict the protocol </li>
+<li>Restrict the IP address range </li>
+</ul>
+<p><strong>Types of Shared Access Signatures</strong> </p>
+<ul>
+<li><strong>Service SAS</strong> <ul>
+<li>Allows access to only one storage service </li>
+<li>Only Files, Blob, Queue, or Table </li>
+</ul>
+</li>
+<li><strong>Account SAS</strong> <ul>
+<li>Allows access to any of the storage services </li>
+<li>Files, Blob, Queue, and Table </li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_7.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_8.png" title="Body image" /></p>
+<h3 id="1-11-monitor-activity-logs-using-log-analytics"><strong>1-11 Monitor activity logs using Log Analytics</strong></h3>
+<p><strong>Overview</strong> </p>
+<ul>
+<li>Activities or operations that have occurred on resources in the subscription (agentless) </li>
+<li>Who did what when</li>
+<li>Also known as <strong>audit logs or operational logs</strong> </li>
+<li>Logs are kept for 90 days</li>
+<li>Logs kept for more than 90 days will be charged </li>
+</ul>
+<p><strong>Data Sources</strong> </p>
+<ul>
+<li>Virtual machines </li>
+<li>Storage account </li>
+<li>Azure Activity Logs </li>
+<li>Scope Configurations (preview) </li>
+<li>Azure resources </li>
+<li>System Center Operations Manager </li>
+</ul>
+<p><strong>Create Log analytics</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_9.png" title="Body image" /></p>
+<p><strong>Add storage account log</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_10.png" title="Body image" /></p>
+<blockquote>
+<p>ETW Log: Event Tracing Logs</p>
+</blockquote>
+<p><strong>Add resource log</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_11.png" title="Body image" /></p>
+<h3 id="1-12-implement-azure-storage-replication"><strong>1-12 Implement Azure Storage replication</strong></h3>
+<p><strong>Types of Replication</strong> </p>
+<ul>
+<li><strong>Locally redundant storage (LRS)</strong></li>
+<li><strong>Zone-redundant storage (ZRS)</strong> </li>
+<li>**Geo-redundant storage (GRS) **</li>
+<li><strong>Read-access geo-redundant storage (RA-GRS)</strong> </li>
+</ul>
+<h4 id="locally-redundant-storage-lrs"><strong>Locally Redundant Storage (LRS)</strong></h4>
+<ul>
+<li><span style="color:red">Copy of the data in the same data center</span></li>
+<li><span style="color:red">Three copies</span> </li>
+<li>Supported on GPv1 , GPv2, and Blob storage accounts </li>
+<li>Protects against<ul>
+<li>Node failure </li>
+</ul>
+</li>
+</ul>
+<p><strong>Geo-Redundant Storage (GRS)</strong> </p>
+<ul>
+<li><span style="color:red">Data is replicated to a data center in a secondary region</span> </li>
+<li><span style="color:red">Six copies of the data</span>  </li>
+<li>Supported on GPv1 , GPv2, and Blob storage accounts </li>
+<li>Protects against <ul>
+<li><strong>Node failure</strong> </li>
+<li>Data center failure </li>
+<li>Region-wide outage </li>
+</ul>
+</li>
+</ul>
+<p><strong>Read-Access Geo-Redundant Storage (RA-GRS)</strong> </p>
+<ul>
+<li><strong>Data is replicated to a data center in a secondary region</strong> </li>
+<li>Supported on GPv1 , GPv2, and Blob storage accounts </li>
+<li>Protects against <ul>
+<li>Node failure </li>
+<li>Data center failure </li>
+<li>Region-wide outage </li>
+</ul>
+</li>
+<li><strong>Data can be read from the replica without Microsoft initiating a failover</strong> </li>
+<li>Secondary endpoint <ul>
+<li><code>youraccount-secondary.blob.core.windows.net</code> </li>
+</ul>
+</li>
+<li>Access keys are the same for both endpoints </li>
+</ul>
+<p><strong>Zone-Redundant Storage (ZRS)</strong> </p>
+<ul>
+<li><span style="color:red">Data is replicated synchronously across three storage clusters in the same region</span> </li>
+<li><strong>Each cluster is isolated in an availability zone</strong></li>
+<li><strong>Only support on standard and GPv2 storage accounts</strong> </li>
+<li>Default replication when creating availability sets </li>
+<li>Protects against <ul>
+<li>Node unavailability </li>
+<li>Data center failure </li>
+</ul>
+</li>
+</ul>
+<h3 id="1-13-quiz"><strong>1-13 Quiz</strong></h3>
+<p>1.Which replication strategy protects against node unavailability and datacenter failure?</p>
+<p><strong>Zone-redundant Storage (ZRS)</strong></p>
+<p>2.Alberto is attempting to connect a virtual machine to a workspace to analyze logs, but he is unable to connect it. Why is this happening?</p>
+<p><strong>The virtual machine is shutdown.</strong></p>
+<p>3.What are some of the benefits of using a Shared Access Signature instead of a Storage Account Key?</p>
+<ul>
+<li>set time limits for access</li>
+<li>specify HTTP or HTTPs</li>
+<li>specify allowed permissions</li>
+</ul>
+<p>4.What is the correct order to regenerate storage account keys?</p>
+<p><strong>1. Update apps to use the 2nd key 2. Regenerate first key 3. Update apps to use the first key 4. Regenerate 2nd key</strong></p>
+<p>5.What is the correct cmdlet to create a new storage account?</p>
+<pre><code>New-AzureRmStorageAccount -ResourceGroupName $resourceGroup -Name $storageAccountName -Location $location -SkuName $skuName
+</code></pre>
+<p>6.Premium storage performance disks are only supported in which storage type?</p>
+<p><strong>Azure virtual machines</strong></p>
+<p>7.What type of Azure Storage is used for unstructured data, such as streaming data?</p>
+<p><strong>Azure Blobs</strong></p>
+<h2 id="2-import-and-export-data-to-azure"><strong>2. Import and Export Data to Azure</strong></h2>
+<h3 id="2-1-import-and-export-data-to-and-from-azure-storage"><strong>2-1 Import and export data to and from Azure Storage</strong></h3>
+<p><strong>Azure Data Box</strong></p>
+<ul>
+<li>Physical storage device </li>
+<li>Offline data transfer <ul>
+<li>Data Box Disk — up to 40 TB </li>
+<li>Data Box — 40-500 TB </li>
+<li>Data Box Heavy — larger than 500 TB </li>
+</ul>
+</li>
+<li>Online data transfer <ul>
+<li>Data Box Gateway, Data Box Edge </li>
+</ul>
+</li>
+</ul>
+<p><strong>Azure Import</strong>: Prepare the Disks </p>
+<ul>
+<li>Must enable <strong>BitLocker</strong> </li>
+<li>Prepare disk using <strong><code>WAlmportExport.exe</code></strong> </li>
+<li>Must create a journal file that contains <ul>
+<li>Drive serial number, encryption key, and storage account information </li>
+</ul>
+</li>
+<li>Microsoft recommends using the drive SN as the journal name </li>
+</ul>
+<p><strong>WAImporatExport Tool</strong></p>
+<ul>
+<li>
+<p>Import data to blobs use</p>
+<ul>
+<li>WAImportExport Version 1 </li>
+</ul>
+</li>
+<li>
+<p>Import data to files </p>
+<ul>
+<li>use WAImportExport Version 2 </li>
+</ul>
+</li>
+<li>
+<p>Same general steps but the tool options and configuration are slightly different </p>
+</li>
+</ul>
+<p><strong>Azure Export Overview</strong></p>
+<ul>
+<li>Ship empty drives, configure blobs to export, and ship drives back </li>
+<li>Retrieve the <strong>BitLocker keys</strong> </li>
+<li>Transfer the data from the disks </li>
+<li><strong>Export data from blobs only</strong> </li>
+</ul>
+<h3 id="2-2-create-an-import-job-from-azure"><strong>2-2 Create an import job from Azure</strong></h3>
+<ul>
+<li>Step 1 on Terminal: <strong>Generate journal file</strong></li>
+</ul>
+<pre><code>C:\Users\sharon\Desktop\WAImportExportvl&gt; manage-bde -protectors -get e: 
+BitLocker Drive Encryption: Configuration Tool version 10.0.14393 
+Copyright (C) 2013 Microsoft Corporation. All rights reserved. 
+
+Volume E: [data] 
+All Key Protectors 
+
+    Password: 
+        ID: {7882094D-7FEA-430C-93B3-1F9ADB8ADA17} 
+
+    Numerical Password: 
+        ID: {45DA525A-382C-457C-9Al2-CBF2042EC7C7} 
+        Password: 
+            068138-084161-634887-146102-542399-718641-278212-157179 
+
+WAImportExporExport.exe PreImport ...   
+</code></pre>
+<ul>
+<li>Step 2: Create import <strong>job on portal</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_12.png" title="Body image" /></p>
+<ul>
+<li>
+<p>Step 3: Configure data and destination </p>
+<ul>
+<li>Data Resource: <strong>(upload journal file)</strong></li>
+<li>Import Destination: Storage account</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_13.png" title="Body image" /></p>
+<h3 id="2-3-create-an-export-job-into-azure"><strong>2-3 Create an export job into Azure</strong></h3>
+<ul>
+<li>Blobs to export<ul>
+<li>Export all</li>
+<li>Selected containers and blobs</li>
+<li>Export from <strong>blob list file</strong>(XML format)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_14.png" title="Body image" /></p>
+<h3 id="2-4-azure-blob-storage-overview"><strong>2-4 Azure Blob Storage overview</strong></h3>
+<p><strong>Blobs</strong></p>
+<ul>
+<li>Unstructured data <ul>
+<li>Files for distributed access </li>
+<li>Log files </li>
+<li>Backups </li>
+<li>Archives </li>
+<li>Data for analysis </li>
+</ul>
+</li>
+<li>Access objects via <strong>HTTP or HTTPS</strong> </li>
+</ul>
+<p><strong>Blob Storage</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_15.png" title="Body image" /></p>
+<blockquote>
+<p>Think containers like folders </p>
+</blockquote>
+<pre><code>https://youraccount.blob.core.windows.net/movies1/movie1.avi
+</code></pre>
+<p><strong>Container Access</strong></p>
+<ul>
+<li><strong>Allow access without sharing access keys or shared access signature</strong> </li>
+<li><strong>Stored access policy for fine-grained access</strong> </li>
+<li>Public access level <ul>
+<li>Private </li>
+<li>Blob </li>
+<li>Container </li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_16.png" title="Body image" /></p>
+<p><strong>Private： No Anonymous Access</strong></p>
+<ul>
+<li>Only the account owner can see the data </li>
+<li>Default setting </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_17.png" title="Body image" /></p>
+<p><strong>Blob： Anonymous Read Access for Blobs Only</strong></p>
+<ul>
+<li>Does not have access to the container </li>
+<li><strong>Allows public read access for the blobs only</strong> </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_18.png" title="Body image" /></p>
+<p><strong>Container: Anonymous Read Access for Containers and Blobs</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_19.png" title="Body image" /></p>
+<ul>
+<li>Access to read and list access to the container </li>
+</ul>
+<p><strong>Stored Access Policy</strong></p>
+<ul>
+<li>Fine-grained access control at the container and blob level </li>
+<li>Change start and expiry for access </li>
+<li>Modify the permissions for access </li>
+<li>Easier to revoke access to the object </li>
+</ul>
+<p><strong>Immutable Blob Storage</strong></p>
+<ul>
+<li>Write once, read many (WORM) </li>
+<li>Data cannot be deleted or modified</li>
+<li>New containers and data can still be added </li>
+<li>
+<p>Scenario </p>
+<ul>
+<li>Legal hold </li>
+<li>Secure document retention </li>
+<li>Compliance </li>
+</ul>
+</li>
+<li>
+<p>Time-based retention </p>
+<ul>
+<li>Active from when the container was created </li>
+<li>For example, a three-year retention is applied; containers created a year ago would have an effective retention of two years from now </li>
+</ul>
+</li>
+<li>Legal hold <ul>
+<li>Data is protected until the hold is cleared </li>
+</ul>
+</li>
+</ul>
+<h3 id="2-5-configure-and-use-azure-blob-storage-using-the-portal"><strong>2-5 Configure and use Azure Blob Storage using the portal</strong></h3>
+<ul>
+<li>Create container</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_20.png" title="Body image" /></p>
+<ul>
+<li>Add Stored Access Policy</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_21.png" title="Body image" /></p>
+<ul>
+<li>Add Immutable Blob Storage</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_22.png" title="Body image" /></p>
+<h3 id="2-6-configure-and-use-azure-blob-storage-using-powershell"><strong>2-6 Configure and use Azure Blob Storage using PowerShell</strong></h3>
+<pre><code>#variables 
+$location = &quot;canadacentral&quot; 
+$resourceGroup = &quot;AZ100_SA_PS&quot; 
+$storageAccountName = &quot;sbaz100sa&quot; 
+$containerName = &quot;az100&quot; 
+
+# Retrieve the context. 
+$Key = (Get-AzureRmstorageAccountKey -ResourceGroupName $resourcegroup -StorageAccountName SstorageAccountName) Value 0
+$ctx = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $Key 
+
+#Create a container 
+New-AzureStorageContainer -Name $containerName -Context $ctx -Permission blob 
+
+
+#Upload a file 
+Set-AzureStorageBlobContent -File &quot;D:\02\Image001.bmp&quot; -Contlainer ScodtainerName -Blob &quot;Image001.bmp&quot; -Context $ctx
+
+
+#Download a file 
+Get-AzureStorageBlobContent -Blob &quot;Image001.bmp&quot; -Container ScontainerName -Destination &quot;D:\02\Downloads\&quot;  -Context $ctx
+
+#List the files in a container 
+Get-AzureStoraqeBlob -Container $ContainerName -Context $ctx | select Name 
+
+#Delete Container 
+Remove-AzureStorageContainer -Name ScontainerName -context $ctx 
+</code></pre>
+<h3 id="2-7-azure-content-delivery-network-cdn-overview"><strong>2-7 Azure Content Delivery Network (CDN) overview</strong></h3>
+<p><strong>Overview</strong>
+<img alt="Alt Image Text" src="../../images/az103_7_23.png" title="Body image" /></p>
+<p><strong>Scenarios</strong> </p>
+<ul>
+<li>Static content <ul>
+<li>Websites </li>
+<li>Resources </li>
+</ul>
+</li>
+<li>Streaming video </li>
+</ul>
+<p><strong>Time to Live (TTL)</strong></p>
+<ul>
+<li>The cached file lives on the server until the TTL expires </li>
+<li>The TTL is in the 1-1TTP header </li>
+<li>If a TTL has not been specified, <strong>the default TTL is seven days</strong> </li>
+</ul>
+<p><strong>CDN Products</strong></p>
+<ul>
+<li>Premium Verizon </li>
+<li>Standard Verizon </li>
+<li>Standard Akamal </li>
+<li>Standard Microsoft </li>
+<li><strong>Delivery of large files and media via general web delivery is supported on Microsoft and Verizon only</strong> </li>
+</ul>
+<p><strong>Registration Propagation Times</strong></p>
+<ul>
+<li>Microsoft 10 minutes </li>
+<li>Standard from Akamai 1 minute </li>
+<li>Standard and Premium from Verizon 90 minutes </li>
+</ul>
+<p><strong>CDN POP Configuration</strong></p>
+<ul>
+<li>Microsoft recommends <strong>creating POP locations based on features, not location</strong> </li>
+<li>Not all regions support all CDN products </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_24.png" title="Body image" /></p>
+<p><strong>Configure an Azure CDN</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_25.png" title="Body image" /></p>
+<h3 id="2-7-quiz"><strong>2-7 Quiz</strong></h3>
+<p>1.Microsoft recommends choosing the CDN product based on what?</p>
+<p>features</p>
+<p>2.What is the default length a file will stay on the edge server if the TTL is not specified in the HTTP header?</p>
+<p>7 day</p>
+<p>3.What is the cmdlet to upload a file to Azure Storage?</p>
+<pre><code>Set-AzureStorageBlobContent -File &quot;D:\02\Image001.bmp&quot; -Container $containerName -Blob &quot;Image001.bmp&quot; -Context $ctx
+</code></pre>
+<p>4.Adelita is unable to delete a blob container. Why is this?</p>
+<p><strong>Adelita has locked a time-based retention policy to the container.</strong></p>
+<p>5.John wants to allow access to the blobs in a container but not the container. Which type of Public access level should John select?</p>
+<p><strong>Blob</strong></p>
+<p>6.To determine how many drives are required for an export, which option must be selected?</p>
+<p><strong>Export from blob list file</strong></p>
+<p>7.What drive data type is required to execute WAImport.exe?</p>
+<p><strong>Numerical BitLocker Password</strong></p>
+<p>8.Ankur has 250 TB of data that they wants to ship to Azure using the new Azure Data Box service. Which Azure Data Box product will be required?</p>
+<p>Data Box</p>
+<h2 id="3-configure-azure-files"><strong>3. Configure Azure Files</strong></h2>
+<h3 id="3-1-create-an-azure-file-share-using-the-portal"><strong>3-1 Create an Azure file share using the portal</strong></h3>
+<p><strong>Overview</strong> </p>
+<ul>
+<li>Company share hosted in the cloud </li>
+<li>File share via SMB 3.0 </li>
+<li>Mount on local systems </li>
+</ul>
+<blockquote>
+<p>Mount the file share to our systems that are actually on premises or our virtual machines that are in Azure </p>
+</blockquote>
+<p><strong>File Storage</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_26.png" title="Body image" /></p>
+<p><code>https://yourstorageaccount.file.core.windows.net/Files</code></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_27.png" title="Body image" /></p>
+<p>Example: Net use</p>
+<pre><code>C:\Users\sharon&gt;net use Z: \\az100fs.file.core.windows.net\companyfiles /u:AZURE\az100fs TUWakeTruuUnjv+Stw0QcBiYojwd3aMSNXM6vFLOapQtbps4bfHFRIF7i3UfvQjEGIY1pM8q152XSCkjsBMgQ== 
+
+The command completed successfully. 
+</code></pre>
+<h3 id="3-2-create-an-azure-file-share-using-powershell"><strong>3-2 Create an Azure file share using PowerShell</strong></h3>
+<pre><code>#Variables 
+$location &quot;canadacentral&quot; 
+$resourceGroup = &quot;Az100_Fst&quot; 
+$storageAccountName = &quot;az100fs&quot; 
+$FileSharename = &quot;hrfiles&quot; 
+$Path = &quot;recruitment&quot; 
+$Sharename = &quot;hrfiles&quot; 
+
+#Retrieve the context 
+$Key = (Get-AzureRMStorageAccountKey -ResourceGroupName $resourcegroup -StorageAccountName $storageAccountName) 
+$ctx = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $Key
+
+#Create a file share 
+New-AzureStorageShare -Name SFileSharename -Context $ctx
+
+#View file shares 
+Get-AzureStorageShare -Context $ctx
+
+#Create a new directory 
+New-AzureStorageDirectory -ShareName $Filesharename -Path -Context $ctx
+
+#Upload a file to the Azure file Share 
+Set-AzureStorageFileContent -ShareName $ShareName -Source &quot;C:\users\sharon Bennett\Desktop\01 Implement Azure Storage\03\doc 3.docx&quot; -Path $path -Context $ctx
+
+# View files
+New-AzureStorageDirectory -ShareName $sharename -path -Context $ctx | Get-AzureStorageFile
+
+# Download a file to the local system 
+Get-AzureStorageFileContent -ShareName $sharename -Path &quot;recruitment\doc 3.docx&quot; -Destination &quot;D:\03\doc3.docx&quot; -Context $ctx
+
+#Delete the file share 
+Remove-AzureStorageShare -Name $Filesharename -Context $ctx 
+
+#View file shares 
+Get-AzureStorageShare -Context $ctx 
+</code></pre>
+<h3 id="3-3-azure-file-sync-overview"><strong>3-3 Azure File Sync overview</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az103_7_28.png" title="Body image" /></p>
+<p><strong>Components</strong></p>
+<ul>
+<li>Storage Sync Service </li>
+<li>Sync group </li>
+<li>Registered server </li>
+<li>Azure File Sync agent </li>
+</ul>
+<p><strong>Sync Group</strong> </p>
+<ul>
+<li>Cloud endpoint: <ul>
+<li>Points to the storage account and file share Detection job is initiated every 24 hours </li>
+</ul>
+</li>
+<li>Server endpoint <ul>
+<li>Points to the registered server and path </li>
+<li>Configure cloud tiering </li>
+<li>NAS storage is not supported </li>
+</ul>
+</li>
+</ul>
+<p><strong>Registered Server</strong> </p>
+<ul>
+<li>The server that contains the share to be synced</li>
+<li>Must have the agent installed </li>
+<li>Each server can only be registered to one Storage Sync Service </li>
+<li>Windows Server 2012 R2 and later </li>
+</ul>
+<p><strong>Cloud Tiering</strong> </p>
+<ul>
+<li>Frequently accessed (hot) files are cached locally </li>
+<li><strong>Free space is the amount of space reserved on the local system for cached files</strong> </li>
+<li>Does not support volumes with data deduplication </li>
+</ul>
+<p><strong>Backup</strong></p>
+<ul>
+<li>Microsoft recommends backing up the cloud share, instead of the <code>on-premises</code> share </li>
+<li><strong><span style="color:red">If backing up the on-premises server, cloud tiering should be disabled</span></strong></li>
+<li>Bare metal backups are not supported </li>
+</ul>
+<p><strong>Encryption</strong> </p>
+<ul>
+<li>Azure File Sync supports <ul>
+<li>BitLocker encryption </li>
+<li>Azure Information Protection (AIP) </li>
+<li>Azure Rights Management (RMS) services </li>
+<li>Active Directory RMS </li>
+</ul>
+</li>
+<li>Azure File Sync does not support <ul>
+<li>NITS Encrypted File System </li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-create-an-azure-file-sync-service-and-sync-group"><strong>3-4 Create an Azure File Sync service and sync group</strong></h3>
+<ul>
+<li>Create sync group</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_29.png" title="Body image" /></p>
+<ul>
+<li>Add server endpoint</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_30.png" title="Body image" /></p>
+<blockquote>
+<p>Basically what Cloud Tiring allows us to do is to cache files on local server reducing the latency for our users</p>
+</blockquote>
+<ul>
+<li>Check registered Sync Server</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_31.png" title="Body image" /></p>
+<h3 id="3-5-troubleshoot-azure-file-sync"><strong>3-5 Troubleshoot Azure File Sync</strong></h3>
+<p><strong>What Not to Do</strong></p>
+<ul>
+<li>Do not remove server endpoint </li>
+<li>Could result in the loss of data </li>
+</ul>
+<p><strong>General Troubleshooting</strong></p>
+<ul>
+<li>Review operational and diagnostic logs </li>
+<li>Verify the Azure File Sync service is running on the server </li>
+<li>Verify the Azure File Sync filter drivers are running <ul>
+<li><code>StorageSync.sys</code>, <code>StorageSyncGuard.sys</code></li>
+</ul>
+</li>
+<li>Run <strong>AFSDiag tool and review the output</strong> </li>
+</ul>
+<p><strong>Registration Error</strong></p>
+<ul>
+<li>Error <code>'The term find-AzureRMResource'</code> is not recognized as the name during registration <ul>
+<li><code>Cmdlet</code> was changed in <code>AzureRM version 6</code> </li>
+<li>Install module <code>AzureRM 5.7.0</code> </li>
+</ul>
+</li>
+</ul>
+<p><strong>Agent Installation Failures</strong></p>
+<ul>
+<li>Review the <code>installer.log</code> by running <code>StorageSyncAgent.msi /l*v Installer.log</code> </li>
+<li>Microsoft Update is enabled and the Windows Update service is not running the agent will fail during installation </li>
+</ul>
+<p><strong>Agent Installation Failures</strong> </p>
+<ul>
+<li>
+<p>Agent installation fails on AD DC </p>
+<ul>
+<li>Move PDC role to a domain controller running </li>
+<li>Server 2012 R2, if the failure occurs on Server 2008 R2 or below</li>
+</ul>
+</li>
+<li>
+<p>"Storage Sync Agent Wizard" error when installing the agent </p>
+<ul>
+<li>Use <strong><code>version 2.0.11+</code></strong> of the agent, instead of version 1.x </li>
+</ul>
+</li>
+</ul>
+<p><strong>Agent Installation Failures</strong> </p>
+<ul>
+<li>Server is not listed under registered servers <ul>
+<li>Reset the Storage Sync Server </li>
+</ul>
+</li>
+</ul>
+<p><strong>Sync Group Issues</strong></p>
+<ul>
+<li>
+<p>"The soecified Azure FileShare is already in use by a different CloudEndpoint" </p>
+<ul>
+<li>Azure file share is already in use </li>
+</ul>
+</li>
+<li>
+<p>Cloud endpoint creation fails with "Authorization Failed"</p>
+<ul>
+<li>User account does not have the correct permissions </li>
+</ul>
+</li>
+</ul>
+<pre><code>* Read: Get role definition 
+* Write: Create or update custom role definition 
+
+* Read: Get role assignment 
+* Write: Create role assignment 
+</code></pre>
+<p><strong>Server Issues</strong></p>
+<ul>
+<li>
+<p><code>"MgmtServerJobFailed" (Error code: -2134375898)</code></p>
+<ul>
+<li>Cloud tiering is enabled on a server endpoint path on the system volume - not supported on the system volume </li>
+<li>Disable the cloud tiering </li>
+</ul>
+</li>
+<li>
+<p><code>"MgmtServerJobExpired"</code> </p>
+<ul>
+<li>Server is offline or unable to connect to it </li>
+</ul>
+</li>
+</ul>
+<p><strong>Sync Issues</strong> </p>
+<ul>
+<li>
+<p>Sync fails on the server </p>
+<ul>
+<li>Verify the endpoints exist in Azure </li>
+<li>Review operational and diagnostic event logs</li>
+</ul>
+</li>
+<li>
+<p><code>"Ox80c8300f</code> - the replica is not ready to perform the required operation" </p>
+<ul>
+<li>May see this error while the data is initially syncing </li>
+<li>Azure file share will sync every 24 hours </li>
+</ul>
+</li>
+<li>
+<p><code>": Ox80083060 - error -2134364064</code> The storage account name used could not be resolved" </p>
+<ul>
+<li>Verify you can resolve the storage DNS name </li>
+<li>Verify Hybrid File Sync Service has been assigned to the Reader and Data Access role </li>
+</ul>
+</li>
+<li>"This PC doesn't have enough free space" <ul>
+<li>Less than 1 GB free on the volume</li>
+<li>Increase the size of the volume </li>
+</ul>
+</li>
+</ul>
+<p><strong>Cloud Storage Failures</strong></p>
+<ul>
+<li>Inaccessible Azure file share <ul>
+<li>Deleted the Azure file share that is still associated with the cloud endpoint </li>
+</ul>
+</li>
+<li>Inaccessible storage account <ul>
+<li>Deleted the storage account that is still associated with an Azure file share </li>
+</ul>
+</li>
+</ul>
+<p><strong>Cloud Tiering Server Failures</strong> </p>
+<ul>
+<li>Azure File Sync file system filter (<code>StorageSync.sys</code>) is not loaded <ul>
+<li>Reload the filter </li>
+</ul>
+</li>
+<li>Missing, corrupt, or broken reparse point <ul>
+<li>Caused by modifying the tag or data </li>
+</ul>
+</li>
+<li>Network connectivity issues <ul>
+<li>Verify the server has Internet connectivity </li>
+</ul>
+</li>
+</ul>
+<h3 id="3-6-quiz"><strong>3-6 Quiz</strong></h3>
+<p>1.What are the two Azure File Sync filter drivers that need to be installed on the sync server?</p>
+<p><code>StorageSync.sys</code> and <code>StorageSyncGuard.sys</code></p>
+<p>2.What would need to be enabled to cache files on the Sync Server?</p>
+<p>Cloud Tiering</p>
+<p>3.Santiago had created a Storage Sync service and is attempting to add an Azure file share to service but the share is not in the list of available file shares. Why is the file share missing?</p>
+<p><strong>The file share and Storage Sync service are in different regions.</strong></p>
+<p>4.What is the cmdlet to create a File share?</p>
+<p><strong><code>New-AzureStorageShare -Name $FileshareName -Context $ctx</code></strong></p>
+<p>5.Natalia is attempting to connect to a file share in Azure from the local on-premises system but is unable to successfully connect. What could be the issue?</p>
+<p><strong>Outbound TCP port 445 is not open.</strong></p>
+<h2 id="4-implement-azure-backup"><strong>4 Implement Azure Backup</strong></h2>
+<h3 id="4-1-azure-virtual-machine-backup"><strong>4-1 Azure virtual machine backup</strong></h3>
+<p><strong>Overview</strong></p>
+<ul>
+<li>Back up once per day </li>
+<li>9999 recovery points </li>
+<li>Agent is not required (virtual machine extension) </li>
+<li>Application-aware snapshots (VSS) </li>
+<li>Windows and Linux virtual machines </li>
+<li>Incremental backups </li>
+</ul>
+<p><strong>Components</strong></p>
+<ul>
+<li>Recovery Services vault <ul>
+<li>Geo-replication by default </li>
+<li>Backup of multiple virtual machines at once </li>
+<li>Must be in the same location as the virtual machines </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Otherwise you can back up a virtual machine when you provision it or after its been provisioned </p>
+</blockquote>
+<ul>
+<li>Backup policy <ul>
+<li>Daily or weekly frequency </li>
+<li>Retention points </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Those been weekly, monthly and yearly</p>
+</blockquote>
+<p><strong>Premium Storage and VM Backups</strong> </p>
+<ul>
+<li>
+<p>Temporary staging location is created called <code>"AzureBackup-"</code> in the <code>Premium Storage account</code> </p>
+</li>
+<li>
+<p>Staging location is the same size as the snapshot </p>
+<ul>
+<li>Be sure there is enough room in the Premium Storage account for the temporary location </li>
+<li>Staging location is deleted after the backup has completed </li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-create-and-configure-a-recovery-services-vault"><strong>4-2 Create and configure a Recovery Services Vault</strong></h3>
+<p><strong>Backup configuration</strong></p>
+<p><code>Recovery Services Vault =&gt; Backup Infrastructure(Manage) =&gt; Backup Configuration(General) =&gt; Locally-redundant(Backup configuration)</code></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_32.png" title="Body image" /></p>
+<p><strong>Backup Policy</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_33.png" title="Body image" /></p>
+<p><strong>Add Custom Policy: Type</strong></p>
+<ul>
+<li>AZ VM</li>
+<li>Azure File Share</li>
+<li>SQL Server in Azure VM</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_34.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_35.png" title="Body image" /></p>
+<h3 id="4-3-create-and-configure-a-recovery-services-vault-using-powershell"><strong>4-3 Create and configure a Recovery Services Vault using PowerShell</strong></h3>
+<pre><code>#variables
+$RGName = &quot;Az100_Bu_PS&quot;
+$RSVNaMe = &quot;Azl00Rsv&quot; 
+$Location = &quot;canadacentral&quot; 
+
+# Create a Recovery Services vault 
+New-AzureRmRecoveryServicesVault -Name $RSVName -ResourceGroupName $RGName -Location $Location 
+
+#Set replication type 
+$vault = Get-AzureRmRecoveryServicesVault -Name $RSVName 
+Set-AzureRmRecoveryServicesBackupProperties -Vault $vault -BackupStorageRedundancy LocallyRedundant 
+
+#view 
+Get-AzureRmRecoveryServicesVault 
+
+#Create a New Policy 
+$schPolicy Get-AzureRmRecoveryservicesBackupschedulePolicyobject -workloadType &quot;AzureVM&quot; 
+$retPolicy Get-AzureRmRecoveryservicesBackupRetentionPolicyobject -workloadType &quot;AzureVM&quot; 
+New-AzureRmRecoveryservicesBackupProtectionPolicy -Name &quot;Daily&quot; -workloadType &quot;AzureVM&quot; -RetentionPolicy -SchedulePolicy $schpolicy
+
+#Delete the Recovery Services vault 
+Remove-AzureRmRecoveryServicesVault -Vault $vault
+</code></pre>
+<h3 id="4-4-create-an-azure-virtual-machine-backup"><strong>4-4 Create an Azure virtual machine backup</strong></h3>
+<p><code>Home =&gt; VM =&gt; OnPremServer =&gt; Enable backup</code></p>
+<ul>
+<li>Backup frequency</li>
+<li>Retention Range</li>
+<li>Retention of daily backup point</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_36.png" title="Body image" /></p>
+<pre><code>Recovery Services Vault =&gt; Backup Goal(what do you want to backup?) 
+=&gt; Backup policy =&gt; Items to backup =&gt; 
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az103_7_37.png" title="Body image" /></p>
+<h3 id="4-5-create-an-azure-virtual-machine-backup"><strong>4-5 Create an Azure virtual machine backup</strong></h3>
+<p><strong>Backup reports</strong></p>
+<ul>
+<li>Add Diagnostics Settings</li>
+<li>Power BI connect to Azure Backup Content</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_38.png" title="Body image" /></p>
+<h3 id="4-6-restore-an-azure-virtual-machine"><strong>4-6 Restore an Azure virtual machine</strong></h3>
+<p><strong>Restore Azure Virtual Machine Options</strong> </p>
+<ul>
+<li>Create a new virtual machine </li>
+<li>Restore disks only </li>
+<li>Replace disks </li>
+</ul>
+<p><strong>Restore to a New Virtual Machine</strong></p>
+<ul>
+<li>Restored virtual machine will not overwrite the existing virtual machine </li>
+<li>Additional customizations will require PowerShell </li>
+</ul>
+<p><strong>Restore Disks</strong></p>
+<ul>
+<li>Use when special network customizations are required </li>
+<li>New disks will be created in the selected storage account </li>
+<li>Additional customizations will require PowerShell </li>
+</ul>
+<p><strong>Replace Virtual Machine Disks</strong> </p>
+<ul>
+<li>Replaces the disks in the existing virtual machine </li>
+<li>The virtual machine must still exist </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az103_7_39.png" title="Body image" /></p>
+<ul>
+<li>Restore VM</li>
+<li>File restore</li>
+</ul>
+<p><code>restore configuration</code></p>
+<p><img alt="Alt Image Text" src="../../images/az103_7_40.png" title="Body image" /></p>
+<h3 id="4-7-perform-a-restore-operation-files-and-folders"><strong>4-7 Perform a restore operation files and folders</strong></h3>
+<blockquote>
+<p>Perform a restore operations files and folders</p>
+</blockquote>
+<ol>
+<li>Select recovery point</li>
+<li>download script to browse and recove files</li>
+<li>Unmount the disk after recovery</li>
+</ol>
+<p><img alt="Alt Image Text" src="../../images/az103_7_41.png" title="Body image" /></p>
+<h3 id="4-8-quiz"><strong>4-8 Quiz</strong></h3>
+<p>1.Can a mounted disk that has been protected with BitLocker can still have be accessed to recover files from?</p>
+<p><strong>Yes, but only if the BitLocker key is provided.</strong></p>
+<p>2.Nisha is attempting to replace virtual machine disks but is unable to do so. Why can Nisha not restore the disks?</p>
+<p>The virtual machine that the disks were backed up from has been deleted.</p>
+<p>3.Diya want to retain the AzureBackupReport logs forever. How does Diya configure this option?</p>
+<p>Set the retention time to 0.</p>
+<p>4.An Azure virtual machine backup can be enabled from where in the portal?</p>
+<ul>
+<li>from the virtual machine blade</li>
+<li>when provisioning/creating the virtual machine</li>
+<li>from the recovery services vault</li>
+</ul>
+<p>5.Tomas is creating a Recovery Services Vault using PowerShell. What command should they use to create the vault?</p>
+<p><code>New-AzureRMRecoveryServicesVault -Name $RSName -ResourceGroupName -$RGName -Location $Location</code></p>
+<p>6.What is the default storage replication type for a Azure Recovery Vault?</p>
+<p><code>Geo-redundant (GRS)</code></p>
+<p>7.Gislaine is attempting to configure a virtual machine backup, but virtual machine is not listed in the Recovery Services Vault as option. What does Gislaine need to do to backup the Azure virtual machine?</p>
+<p>Backup the virtual machine to a Recovery Services Vault in the same location as the virtual machine.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4434 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../../ubsaz/2Migration/">
+      
+      
+        <link rel="next" href="../2iac/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>1 Introduction to Release Management - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction-to-release-management" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 Introduction to Release Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Outline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Outline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-management-in-the-context-of-continuous-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Management in the Context of Continuous Delivery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-continuous-delivery-we-strive-to-separate-a-deployment-from-a-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In continuous delivery we strive to separate a deployment from a release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-steps-of-a-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Steps of a Release
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-azure-devops-release-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Azure DevOps Release Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-release-management-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Release Management Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-artifacts-stages-and-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Artifacts, Stages, and Gates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-agent-jobs-and-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Agent Jobs and Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-release-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Release Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-continuous-deployment-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 Continuous Deployment Trigger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-create-a-release-for-an-aspnet-web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Create a release for an ASP.NET web application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-release-management-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 Release Management Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-hybrid-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 Hybrid Release Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-set-up-a-custom-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 Set up a Custom Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-deploying-to-on-premise-or-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 Deploying to On-premise or Cloud
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-deploy-to-a-deployment-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15 Deploy to a deployment group
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Outline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Outline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-management-in-the-context-of-continuous-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Management in the Context of Continuous Delivery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-continuous-delivery-we-strive-to-separate-a-deployment-from-a-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In continuous delivery we strive to separate a deployment from a release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-steps-of-a-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Steps of a Release
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-azure-devops-release-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Azure DevOps Release Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-release-management-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Release Management Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-artifacts-stages-and-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Artifacts, Stages, and Gates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-agent-jobs-and-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Agent Jobs and Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-release-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Release Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-continuous-deployment-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 Continuous Deployment Trigger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-create-a-release-for-an-aspnet-web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Create a release for an ASP.NET web application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-release-management-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 Release Management Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-hybrid-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 Hybrid Release Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-set-up-a-custom-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 Set up a Custom Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-deploying-to-on-premise-or-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 Deploying to On-premise or Cloud
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-deploy-to-a-deployment-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15 Deploy to a deployment group
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-introduction-to-release-management"><strong>1 Introduction to Release Management</strong></h1>
+<h2 id="1-outline">1 Outline</h2>
+<ul>
+<li>Release management in the context of continuous delivery</li>
+<li>Steps of a release</li>
+<li>Release management concepts</li>
+<li>Release management infrastructure</li>
+</ul>
+<h3 id="release-management-in-the-context-of-continuous-delivery">Release Management in the Context of Continuous Delivery</h3>
+<ul>
+<li>
+<p>This provides better stability to the deployment, better validation of the deployment and makes releasing a feature a functional operation, preferably done by the 
+“business” at the moment they prefer</p>
+</li>
+<li>
+<p><strong>Importance of Separating Build and Release Processes</strong>:</p>
+</li>
+<li>
+<p>Need to separate build and release processes, suggesting that it is better <strong>to have distinct phases for build and release management.</strong></p>
+</li>
+<li>
+<p><strong>Adoption of Automated Build Pipeline and Release Management Pipelines:</strong></p>
+</li>
+<li>
+<p>It advocates using automated build pipelines for the <strong><mark>build phase and release management pipelines</mark></strong> for the release phase to effectively separate these processes.</p>
+</li>
+<li>
+<p>Separation of Deployment and Release:</p>
+</li>
+<li>
+<p>The separation of <strong>deployment (the process of getting artifacts on production servers) and release (delivering new features to end users</strong>)</p>
+</li>
+<li>
+<p><strong>Goals of the Separation:</strong></p>
+</li>
+<li>Specifies the objectives of achieving <strong><mark>smoother deployment processes without disrupting services</mark></strong>, </li>
+<li><strong>performing easy validation of deployment outcomes</strong>, </li>
+<li>
+<p><strong>gradually releasing new features to end users</strong>.</p>
+</li>
+<li>
+<p>Benefits of the New Approach:</p>
+</li>
+<li>The article outlines the benefits of separating build and release processes, </li>
+<li><strong><mark>Including enhanced deployment stability, improved validation of deployment quality</mark></strong>,</li>
+<li><strong><mark>Itransforming feature release into a business-focused practicey</mark></strong>.</li>
+</ul>
+<h3 id="in-continuous-delivery-we-strive-to-separate-a-deployment-from-a-release">In continuous delivery we strive to separate a deployment from a release</h3>
+<p>This provides better stability to the deployment, better 
+validation of the deployment and makes releasing a 
+feature a functional operation, preferably done by the 
+“business” at the moment they prefer</p>
+<ul>
+<li>Deploy your product</li>
+<li>See if it operates in a stable fashion</li>
+<li>
+<p>Enable your feature for</p>
+<ul>
+<li>Segment of users</li>
+<li>Random selected percentage</li>
+<li>All in one</li>
+</ul>
+</li>
+<li>
+<p>Watch how the system behaves</p>
+</li>
+<li>
+<p><strong>Separation of Release and Deployment</strong>:</p>
+</li>
+<li>
+<p>Emphasizes the need to separate deployment and release of software to <strong><mark>facilitate rapid and stable movement of software into production environments</mark></strong>.</p>
+</li>
+<li>
+<p>Importance of Separation:</p>
+</li>
+<li>
+<p>Points out that the common industry practice of teams needing overtime to install and release software is due to the coupling of deployment and release processes, advocating for the separation of these concerns.</p>
+</li>
+<li>
+<p>New Deployment Sequence:</p>
+</li>
+<li>
+<p>Explains the <strong>sequence of deployment</strong>, where software is installed without exposing new or changed functionality to end users, allowing for observation of system behavior to ensure stability.</p>
+</li>
+<li>
+<p>Feature Toggles:</p>
+</li>
+<li>
+<p>Discusses the use of feature toggles to <strong>reveal new features or change routines within the system, offering flexibility in choosing the strategy for releasing features to end users.</strong></p>
+</li>
+<li>
+<p>Collaboration with Business Owners:</p>
+</li>
+<li>
+<p>Highlights the importance of deciding on feature release strategies in collaboration with the business owner of the system, as there are many options for revealing features to end users.</p>
+</li>
+<li>
+<p>Benefits of Separation:</p>
+</li>
+<li>Outlines the benefits of separating feature deployment from feature unveiling, </li>
+<li><strong>including more stable releases,</strong> </li>
+<li><strong>improved rollback capabilities</strong>, </li>
+<li><strong>the ability to release software at any time without affecting the system</strong>.</li>
+</ul>
+<h2 id="3-steps-of-a-release">3 Steps of a Release</h2>
+<ul>
+<li><strong>First you build the software</strong>  * And validate product quality</li>
+<li><strong>Then you deploy the software</strong><ul>
+<li>And validate runtime stability</li>
+</ul>
+</li>
+<li><strong>Then you release the feature</strong><ul>
+<li>And validate feature usage</li>
+</ul>
+</li>
+</ul>
+<p>Clean separation in the different stages of delivery    </p>
+<ol>
+<li><strong>Build Process</strong>:</li>
+<li>Emphasizes the importance of utilizing a build pipeline, <strong>which can be implemented using various build engines such as Jenkins, TeamCity, Bamboo, or Azure DevOps build pipelines</strong>. </li>
+<li>
+<p>The build process provides artifacts required for software deployment, including provisioning scripts and information about product quality from a static perspective.</p>
+</li>
+<li>
+<p><strong>Deployment and Validation:</strong></p>
+</li>
+<li>After building the software, the next step involves deploying the new software to a freshly provisioned environment and validating its stability. </li>
+<li>
+<p>This phase offers <strong>insights into the runtime stability of the software and determines whether it is ready for the final phase of releasing the feature</strong>.</p>
+</li>
+<li>
+<p>Feature Release:</p>
+</li>
+<li>
+<p>The feature release is performed using a suitable feature toggling mechanism, and usage of the new feature is validated.</p>
+</li>
+<li>
+<p>Separation of Concerns:</p>
+</li>
+<li><strong>Focusing on product quality</strong></li>
+<li><strong>Product stability</strong></li>
+<li><strong>Feature usage</strong>, </li>
+<li><strong>Combined with technical characteristics such as performance</strong>.</li>
+</ol>
+<h2 id="4-azure-devops-release-pipelines">4 Azure DevOps Release Pipelines</h2>
+<ul>
+<li><strong>Distinction between build and release</strong></li>
+<li><strong>Build produces artifacts</strong><ul>
+<li>Mix and match with other build software</li>
+</ul>
+</li>
+<li><strong>A release pipeline picks these up and deploys them in an environment</strong></li>
+<li>
+<p><strong>End-to-end traceable process</strong></p>
+</li>
+<li>
+<p><strong>Azure DevOps Pipelines:</strong></p>
+</li>
+<li>
+<p>Azure DevOps Pipelines enables the separation of <strong><mark>building and releasing products by providing distinct features for building (Azure DevOps build pipelines) and releasing (Azure DevOps release pipelines)</mark></strong>.</p>
+</li>
+<li>
+<p><strong>Utilizing Release Pipelines</strong>:</p>
+</li>
+<li>
+<p>Azure DevOps release pipelines facilitate the provisioning of environments for deploying software by picking up artifacts from the <strong>build pipeline, enabling the release of features, and monitoring system behavior post-release</strong>.</p>
+</li>
+<li>
+<p>Flexibility in Tools:</p>
+</li>
+<li>
+<p>The flexibility of Azure DevOps release pipelines allows for <strong>integration with other open-source tools such as Jenkins, Bamboo, or TeamCity builds, providing the freedom to mix and match according to preferences</strong>.</p>
+</li>
+<li>
+<p><strong>Capabilities of Release Pipelines:</strong></p>
+</li>
+<li>
+<p>Azure DevOps release pipelines offer capabilities for defining stages for deploying, validating software, defining deployment steps, associating deployment agents, and specifying approvals to move to the next stage.</p>
+</li>
+<li>
+<p>Integration and Traceability:</p>
+</li>
+<li>The benefit of using Azure build pipelines together with Azure release pipelines is the <strong>automatic flow of information from the build to the release, providing traceability of changes in Azure DevOps agile boards without additional effort</strong>.</li>
+</ul>
+<h2 id="5-release-management-concepts">5 Release Management Concepts</h2>
+<p><strong>How a Release Is Set Up</strong></p>
+<ul>
+<li>Release Pipeline Definition</li>
+<li>
+<p>Release Agent</p>
+</li>
+<li>
+<p><strong>Terms Used in Azure DevOps Release Pipelines</strong>:</p>
+</li>
+<li>
+<p>Azure DevOps release pipelines to facilitate understanding and enable the building of customized releases.</p>
+</li>
+<li>
+<p>Release Pipeline Definition:</p>
+</li>
+<li>
+<p>The concept of a release pipeline definition refers to the <strong>set of steps and actions required to obtain artifacts, install and validate software, and move it between different stages. This serves as a repeatable template for running releases</strong>.</p>
+</li>
+<li>
+<p>Release Agent:</p>
+</li>
+<li>
+<p><strong>The release agent, identical to the one used for builds, is responsible for executing tasks defined in the release definition, carrying out the actual work, and producing the end results</strong>.</p>
+</li>
+<li>
+<p>Implementation of a Release Pipeline:</p>
+</li>
+</ul>
+<h2 id="6-artifacts-stages-and-gates">6 Artifacts, Stages, and Gates</h2>
+<p><img alt="Alt Image Text" src="../../images/az_devops1_1.png" title="Body image" /></p>
+<p>Key points and knowledge from the article:</p>
+<ol>
+<li>Artifacts in Release Pipeline:</li>
+<li>
+<p>Artifacts used in a release can originate from various sources, such as Git repositories (including Azure DevOps Git Repository and GitHub), Jenkins, Azure Container Registry, Docker Hub, or the Azure DevOps build pipeline associated with the project. Artifacts are utilized to pull results from a known location, serving as triggers for the release upon changes in the artifacts.</p>
+</li>
+<li>
+<p>Understanding Stages:</p>
+</li>
+<li><strong>Stages are depicted as logical steps for deploying and validating software within the release pipeline.</strong> </li>
+<li>They can represent traditional environments like desk, test, acceptance, or production,</li>
+<li>Set of steps to provision required resources using a cloud provider, followed by software deployment and validation of expected functionality through integration tests and performance tests. </li>
+<li>
+<p><strong>Each stage acts as a quality gate before moving towards a production status.</strong></p>
+</li>
+<li>
+<p>Parallel Executing Stages:</p>
+</li>
+<li><strong>Release pipeline definitions can include multiple stages that execute in parallel, enabling faster validation of the software before transitioning to production status.</strong></li>
+</ol>
+<h2 id="7-agent-jobs-and-tasks">7 Agent Jobs and Tasks</h2>
+<p><img alt="Alt Image Text" src="../../images/az_devops1_2.png" title="Body image" /></p>
+<ol>
+<li>Tasks and Jobs in a Stage:</li>
+<li><strong>Within a stage, tasks are defined to be executed, which are organized into one or more jobs</strong>. </li>
+<li>
+<p><mark>Each job can execute a set of tasks and runs on a designated agent selected from agent pools, <strong>including Microsoft-managed hosted pools or custom-defined pools running on-premises or in a cloud subscription</strong>.</p>
+</li>
+<li>
+<p>Deployment Job Group:</p>
+</li>
+<li>
+<p>Deployment job group enables running a task on a <strong>preselected deployment group</strong>, which consists of predefined machines within a network segment, <strong>typically on-premises or in a chosen cloud subscription</strong>.</p>
+</li>
+<li>
+<p>Agentless Job:</p>
+</li>
+<li>
+<p>An agentless job contains tasks that do not require a running agent and can be handled by the Azure DevOps service itself, such as manual intervention tasks that require human approval.</p>
+</li>
+<li>
+<p>Selection of Tasks:</p>
+</li>
+<li>Upon selecting a job, users can choose from a list of tasks to execute. </li>
+<li>
+<p>These tasks cover a range of actions including creating required machines or cloud resources, configuring infrastructure or software, and testing parts of the deployment process.</p>
+</li>
+<li>
+<p><strong>Extending Functionality with Marketplace Tasks</strong>:</p>
+</li>
+<li>If a required task is not available, <strong>users can explore the marketplace to obtain additional tasks built by the community. Alternatively, users can create their own tasks using the downloadable SDK</strong>.</li>
+</ol>
+<h2 id="8-release-variables">8 Release Variables</h2>
+<ul>
+<li>Custom Variables</li>
+<li>$(variablename)</li>
+<li>Build In Variables</li>
+<li>Secrets</li>
+<li>
+<p>Environment Variable</p>
+</li>
+<li>
+<p>Configuration and Task Execution:</p>
+</li>
+<li>
+<p>When defining a release, a set of tasks is executed within a stage through an agent job. <strong>Each task needs to be configured, involving the provision of specific data for different settings</strong>.</p>
+</li>
+<li>
+<p>Use of Variables:</p>
+</li>
+<li>
+<p>Variables can be defined to avoid repeating configurations, with values assigned to the variables and then referenced within the tasks using a specific syntax ($[variableName]). </p>
+</li>
+<li>
+<p>Predefined Variables:</p>
+</li>
+<li>
+<p>Predefined variables, <strong>such as information on the current agent and artifacts used during the release, are available for use</strong>. These variables are well-documented within the product, offering flexibility and efficiency in release configuration.</p>
+</li>
+<li>
+<p>Secret Variables:</p>
+</li>
+<li>It is possible to mark variables as secrets, <strong>ensuring that their actual values are not displayed in the web UI or logs</strong>. T</li>
+<li>
+<p>his feature enhances the security of sensitive information within the release environment.</p>
+</li>
+<li>
+<p>Environment Variables:</p>
+</li>
+<li>Variables defined and used within the release become available as environment variables during the release, which can be crucial for ensuring the proper operation of software that requires specific environment variables.</li>
+</ul>
+<h2 id="9-continuous-deployment-trigger">9 Continuous Deployment Trigger</h2>
+<ul>
+<li>Build, (Azure DevOps) Git,</li>
+<li>Team Foundation Version Control</li>
+<li>GitHub </li>
+<li>Jenkins</li>
+<li>Azure DevOps Artifact Management</li>
+<li>Container Registry</li>
+<li>
+<p>Docker Hub</p>
+</li>
+<li>
+<p>Artifact Sources and Continuous Deployment Triggers:</p>
+</li>
+<li>
+<p><strong>Various artifact sources, including Build, Git, Team Foundation Server Version Control, GitHub, Jenkins, package management systems (such as NuGet and Node package), and container registries (e.g., Azure Container Registry, Amazon container registry, Docker Hub) are supported as triggers for a new release</strong>. When changes occur in any of these artifact sources, a new release can be automatically triggered.</p>
+</li>
+<li>
+<p>Supported Artifact Sources:</p>
+</li>
+<li>
+<p>The built-in artifact sources provided by Azure DevOps, such as Build, Git, and Team Foundation Server Version Control, are supported for triggering new releases. Additionally, external sources like Git repositories, GitHub, Jenkins, package management systems, and container repositories can also serve as triggers for new releases.</p>
+</li>
+<li>
+<p>Flexibility in Release Triggers:</p>
+</li>
+<li>By supporting a wide variety of artifact sources, Azure DevOps offers flexibility in triggering new releases based on any changes that are essential for an application to generate a fresh release automatically.</li>
+</ul>
+<h2 id="10-create-a-release-for-an-aspnet-web-application">10 Create a release for an ASP.NET web application</h2>
+<ol>
+<li>Show the Azure DevOps project and the MvcMusicStore repository in the repos section.
+    <img alt="Alt Image Text" src="../../images/az_devops1_3.png" title="Body image" /></li>
+<li>Display the existing ASP.NET -CI build pipeline and its successful build details, <strong>including the associated changes and published artifacts in the drop folder</strong>.
+    <img alt="Alt Image Text" src="../../images/az_devops1_4.png" title="Body image" />
+    <img alt="Alt Image Text" src="../../images/az_devops1_5.png" title="Body image" /></li>
+<li>Create a new release pipeline and select the "Azure App Service deployment" template.
+        <img alt="Alt Image Text" src="../../images/az_devops1_6.png" title="Body image" /> </li>
+<li>Name the stage "DeploytoAzure" and add the ASP.NET -CI build as the artifact source, specifying it as the drop alias to use.
+    <img alt="Alt Image Text" src="../../images/az_devops1_8.png" title="Body image" /> </li>
+<li><strong>Set the trigger for continuous deployment to automatically start deployment</strong> to the Azure web application after a successful build. 
+     <img alt="Alt Image Text" src="../../images/az_devops1_9.png" title="Body image" /> </li>
+<li>Configure the tasks for the agents, including managing the Azure subscription and selecting the web application and Azure subscription for deployment.</li>
+<li>Select the type of application service (e.g., web application on Windows), specify the application service name "musicstore-ps," and authenticate with the Azure account.
+    <img alt="Alt Image Text" src="../../images/az_devops1_10.png" title="Body image" /> </li>
+<li>Save the release pipeline and create a release, associating it with the build and specifying any additional release description if necessary.
+    <img alt="Alt Image Text" src="../../images/az_devops1_11.png" title="Body image" /> </li>
+<li>Monitor the deployment progress, validating the successful deployment of the web application to the Azure web app.
+     <img alt="Alt Image Text" src="../../images/az_devops1_12.png" title="Body image" /> </li>
+<li>Access the deployed Azure web app to ensure the successful deployment of the MvcMusicStore web application.</li>
+</ol>
+<h2 id="11-release-management-infrastructure">11 Release Management Infrastructure</h2>
+<p><strong>Agents and Pipelines</strong></p>
+<ul>
+<li>Hosted Agent</li>
+<li>Pipelines</li>
+<li>
+<p>Custom Agent</p>
+</li>
+<li>
+<p><strong>Hosted Agents in Azure DevOps</strong>:</p>
+</li>
+<li>Microsoft provides hosted agents for which users pay based on usage minutes. <strong>Each Azure DevOps account receives a set of free minutes, and additional minutes can be purchased through the Azure portal</strong>.</li>
+<li>There are two options for purchasing additional capacity: <strong>buying additional build or release minutes, or investing in hosted pipelines to gain unlimited build or release minutes for one concurrent build or release</strong>.</li>
+<li>
+<p>Hosted pipelines offer unlimited minutes and are used for build and release pipelines, collectively forming a container's delivery pipeline.</p>
+</li>
+<li>
+<p>Custom Build Agents:</p>
+</li>
+<li>Users can choose to host the build and release agent on their own infrastructure, referred to as a custom build agent. </li>
+<li>Each custom build agent registered with Azure DevOps counts as a custom pipeline, with one free custom pipeline by default. </li>
+<li>
+<p><strong>Additional custom pipelines need to be purchased for hosting multiple custom build agents</strong>.</p>
+</li>
+<li>
+<p><strong>Interactive Custom Build Agent and Release Agent:</strong></p>
+</li>
+<li>Interactive custom agents are configured to run interactively and are necessary for executing automated UI tests as a part of build or release processes. </li>
+<li>They are essential for starting a browser and interacting with the website, especially when running UI tests for UWP or other client applications like Windows Forms.</li>
+<li><strong>Interactive agents are always custom agents and cannot be purchased as a hosted option.</strong></li>
+</ul>
+<h2 id="12-hybrid-release-management">12 Hybrid Release Management</h2>
+<p><img alt="Alt Image Text" src="../../images/az_devops1_13.png" title="Body image" /> </p>
+<h2 id="13-set-up-a-custom-agent">13 Set up a Custom Agent</h2>
+<ol>
+<li>Open Azure DevOps and navigate to Project settings.</li>
+<li>Select Agent pools and choose the default pool for installing a new agent.</li>
+<li>
+<p><strong>Download the agent installer and save it to a local drive, then extract the contents of the ZIP file</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops1_14.png" title="Body image" /> </p>
+</li>
+<li>
+<p>Open a console window and configure the agent by running the config command, <strong>specifying the server URL and creating a personal access token</strong>.
+    <img alt="Alt Image Text" src="../../images/az_devops1_15.png" title="Body image" /> </p>
+</li>
+<li>Register the custom agent with Azure DevOps, specifying the agent name and working folder location.
+    <img alt="Alt Image Text" src="../../images/az_devops1_16.png" title="Body image" /> </li>
+<li>Run the agent as an interactive process and wait for the agent to become available in the pool.</li>
+<li>Modify a source code file in the Views section and commit the changes to the Azure DevOps repo, triggering a build and subsequent release.
+    <img alt="Alt Image Text" src="../../images/az_devops1_17.png" title="Body image" /> </li>
+<li>Verify the triggered build and monitor the progress of the release, ensuring the completion of the deployment.</li>
+<li>Access the web application to confirm the deployment of the changes made in the source code.</li>
+</ol>
+<h2 id="14-deploying-to-on-premise-or-cloud">14 Deploying to On-premise or Cloud</h2>
+<p><strong>Deployment Groups</strong></p>
+<ul>
+<li>
+<p>Provisioned per project or for multiple teams</p>
+<ul>
+<li>Deployment Pool</li>
+<li>Deployment Group</li>
+</ul>
+</li>
+</ul>
+<p>Requires Agent install per machine that is part of the pool/group</p>
+<p><strong>Agent runs as system service</strong></p>
+<p><strong>Primarily used for on-premises hosting</strong></p>
+<ol>
+<li><strong>Hybrid Solutions:</strong></li>
+<li>Many organizations adopt hybrid solutions that combine <strong>on-premises and cloud-based resources for software deployment.</strong></li>
+<li>
+<p>Deployment of software may involve running applications in specific test environments, often targeting virtual machines and utilizing cloud-based resources.</p>
+</li>
+<li>
+<p><strong>Deployment Groups:</strong></p>
+</li>
+<li>Microsoft's introduction of the deployment group concept addresses the need for efficient and consistent deployment across multiple environments.</li>
+<li>
+<p>A deployment group comprises pre-provisioned machines on which the deployment group agent is installed, tailored for use by one or multiple teams. These machines are added to the deployment pool.</p>
+</li>
+<li>
+<p><strong>Pre-Provisioning and Defined Deployment Group</strong>:</p>
+</li>
+<li>The pre-provisioned machines are designated for specific teams and are added to the deployment pool.</li>
+<li>
+<p>On each machine, the deployment group agent is installed and configured to belong to a specific deployment group.</p>
+</li>
+<li>
+<p>Agent Configuration and Service Usage:</p>
+</li>
+<li>
+<p><strong>The deployment group agent is configured to run as a system service, enabling it to perform tasks on the machines within the deployment group while restricting operations on the network.</strong></p>
+</li>
+<li>
+<p>Purpose of Deployment Group:</p>
+</li>
+<li>Deployment groups are primarily utilized for the installation of software or applications on a defined set of pre-provisioned machines, typically available within the organization's network or a cloud subscription.</li>
+</ol>
+<h2 id="15-deploy-to-a-deployment-group">15 Deploy to a deployment group</h2>
+<ol>
+<li>
+<p>In Azure DevOps, navigate to the Deployment groups tab and initiate the creation of a deployment group named "MusicstoreOnPrem."</p>
+<p><img alt="Alt Image Text" src="../../images/az_devops1_18.png" title="Body image" /> </p>
+</li>
+<li>
+<p>Copy the script for installing a custom agent provided on the right-hand side of the creation page and paste it into a text file for use in setting up the custom agent on a virtual machine.</p>
+</li>
+<li>On the virtual machine, with IIS running, open a command prompt and execute the PowerShell script obtained from Azure DevOps to download, install, and configure the Azure Pipelines Agent for the deployment group automatically.</li>
+<li>Confirm the installation and configuration of the agent by checking the Services Manager to ensure that the Azure Pipelines Agent is running as a service in the background.</li>
+<li>Return to Azure DevOps and modify the release pipeline to add a new stage for deploying to the on-premises environment within the newly created deployment group.</li>
+<li>Configure the release pipeline for the on-premises deployment stage, specifying details such as the website, port, application pool, and the associated deployment group "MusicstoreOnPrem."</li>
+<li>Save the configuration changes, create a new release, and select the latest build to trigger the deployment to both Azure and on-premises environments.</li>
+<li>Monitor the progress of the release, verify the successful deployment to the on-premises virtual machine, and confirm the availability of the application on the virtual machine's localhost.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

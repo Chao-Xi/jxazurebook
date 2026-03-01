@@ -1,0 +1,4921 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../2az305/">
+      
+      
+        <link rel="next" href="../5az305_summary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>3 Networking Strateg / Connectivity & Security - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-networking-strateg-connectivity-security" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 Networking Strateg / Connectivity & Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-design-a-networking-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Design a Networking Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Design a Networking Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hub-and-spoke-network-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hub-and-Spoke Network Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-accessibility-for-azure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Accessibility for Azure Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-recapping-virtual-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Recapping Virtual Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-2 Recapping Virtual Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routing-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security-groups-nsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security Groups (NSGs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-recapping-integrated-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Recapping Integrated Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 Recapping Integrated Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-recapping-hybrid-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Recapping Hybrid Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-4 Recapping Hybrid Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Private Networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-networking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Private Networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExpressRoute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual WAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-designing-networks-for-azure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Designing Networks for Azure Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-5 Designing Networks for Azure Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vnet-native-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VNet-Native Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Net Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Firewalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-a-networking-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design a Networking Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-design-connectivity-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Design Connectivity and Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Design Connectivity and Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modern-scaling-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modern scaling Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-recapping-azure-global-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Recapping Azure Global Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1 Recapping Azure Global Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability Zones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designing-highly-available-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Designing Highly Available Connectivity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Designing Highly Available Connectivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traffic-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features and Configuration:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-front-door-vs-azure-traffic-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Front Door vs. Azure Traffic Manager:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-manager-vs-front-door" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic Manager vs. Front Door
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-design-a-networking-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Design a Networking Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Design a Networking Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hub-and-spoke-network-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hub-and-Spoke Network Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-accessibility-for-azure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Accessibility for Azure Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-recapping-virtual-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Recapping Virtual Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-2 Recapping Virtual Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routing-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security-groups-nsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security Groups (NSGs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-recapping-integrated-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Recapping Integrated Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 Recapping Integrated Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-recapping-hybrid-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Recapping Hybrid Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-4 Recapping Hybrid Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Private Networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-networking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Private Networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExpressRoute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual WAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-designing-networks-for-azure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Designing Networks for Azure Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-5 Designing Networks for Azure Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vnet-native-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VNet-Native Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Net Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Firewalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-a-networking-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design a Networking Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-design-connectivity-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Design Connectivity and Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Design Connectivity and Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modern-scaling-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modern scaling Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-recapping-azure-global-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Recapping Azure Global Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1 Recapping Azure Global Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability Zones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designing-highly-available-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Designing Highly Available Connectivity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Designing Highly Available Connectivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traffic-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features and Configuration:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-front-door-vs-azure-traffic-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Front Door vs. Azure Traffic Manager:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-manager-vs-front-door" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic Manager vs. Front Door
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3-networking-strateg-connectivity-security">3 Networking Strateg / Connectivity &amp; Security</h1>
+<h2 id="1-design-a-networking-strategy">1 Design a Networking Strategy</h2>
+<p><strong>Isolated Networks</strong></p>
+<p>Secure, private, and isolated from other virtual networks.</p>
+<p><strong>Default Routing</strong></p>
+<p>Intra-VNet traffic, and outbound Internet is routed.</p>
+<p><strong>Multi-Zone Deployments</strong></p>
+<p>Supports zone-based resources within a region.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_1.png" title="Body image" /></p>
+<h4 id="hub-and-spoke-network-architecture">Hub-and-Spoke Network Architecture</h4>
+<blockquote>
+<p>Common network design for sharing centralized network resources and access.</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az305_3_2.png" title="Body image" /></p>
+<h4 id="public-accessibility-for-azure-services">Public Accessibility for Azure Services</h4>
+<p>Many Azure services are built for public accessibility.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_3.png" title="Body image" /></p>
+<ol>
+<li>
+<p><strong>Virtual Networking</strong>: </p>
+</li>
+<li>
+<p>Virtual networks in Azure are fully isolated and secure by default.</p>
+</li>
+<li><strong>Default routing is configured when creating a virtual network, providing connectivity to the public internet and between subnets within the virtual network</strong>.</li>
+<li>
+<p><strong>Virtual networks deployed in a multi-zone deployment can be accessed by resources pinned to availability zones within the same region</strong>.</p>
+</li>
+<li>
+<p><strong>Hub-and-Spoke Network Architecture</strong>:</p>
+</li>
+<li>
+<p>Common network architecture for connecting and sharing centralized resources within a virtual network.</p>
+</li>
+<li><strong>Hub VNet contains shared resources like firewalls, ExpressRoute connectivity, VPN connections, etc</strong>.</li>
+<li>
+<p><strong>Spoke VNets can connect to the hub VNet to access shared resources without the need to configure connectivity individually for each VNet</strong>.</p>
+</li>
+<li>
+<p><strong>Azure Services Accessibility</strong>:</p>
+</li>
+<li>
+<p>Many Azure services are built for public accessibility by default, with public endpoints.</p>
+</li>
+<li>Technologies exist to restrict and control access to public endpoints and provide more private connectivity for Azure services.</li>
+</ol>
+<p>Additional Exam Key Points:</p>
+<ul>
+<li>Integrated networking services like service endpoints and private link.</li>
+<li><strong>Hybrid networks including Azure Virtual WAN and ExpressRoute.</strong></li>
+<li>Service networking considerations for deploying different services and providing them with connectivity to virtual networks.</li>
+<li><strong>Securing services with resource firewalls</strong>.</li>
+<li>Various technologies for securely connecting to, integrating, <strong>and establishing hybrid connectivity for different types of services and networks</strong>.</li>
+</ul>
+<h3 id="1-2-recapping-virtual-networks">1-2 Recapping Virtual Networks</h3>
+<p>Custom Routes</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_4.png" title="Body image" /></p>
+<p>Examples of Custom Routes:</p>
+<p><strong>Blocking Internet Access</strong></p>
+<p>Using the <strong>None next hop type</strong>, we can block internet access.</p>
+<p><strong>Forcing Traffic via Another Address</strong></p>
+<p>Using various next hop types, we can force traffic elsewhere.</p>
+<p><strong>Configuration</strong></p>
+<p>Routes within a route table apply to associated subnets.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_5.png" title="Body image" /></p>
+<h4 id="routing-considerations">Routing Considerations</h4>
+<p>Special Scenarios and Configuration:</p>
+<p><strong>Automatic System Routes</strong></p>
+<p>System routes can be automatically generated (e.g., VNet peering).</p>
+<p><strong>Border Gateway Protocol (BGP)</strong></p>
+<p>BGP can help manage dynamic routing (e.g., ExpressRoute or VPN).</p>
+<p><strong>Matching Address Prefix Routes</strong></p>
+<p>The below precedence is used:</p>
+<p><strong>Custom &gt; BGP &gt; System</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_6.png" title="Body image" /></p>
+<h4 id="network-security-groups-nsgs">Network Security Groups (NSGs)</h4>
+<p><strong>Traffic Filtering</strong></p>
+<p><strong>Priority-based allow or deny rules</strong> are processed only until a single match is found.</p>
+<p><strong>Default Rules</strong></p>
+<p><strong>All NSGs include a default DENY rule</strong>. There is one rule each for <strong>inbound and outbound traffic.</strong></p>
+<p><strong>Assignment</strong></p>
+<p>Assigned to a subnet or NIC. Subnet assignments are similar to all NICs.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_7.png" title="Body image" /></p>
+<p><strong>Shared Outbound Internet</strong></p>
+<p>Replaces the need for individual public IP addressing for outbound connectivity.</p>
+<p><strong>Public IP Addressing</strong></p>
+<p>Can address like a standard public IP. Also supports public IP prefixes.</p>
+<p><strong>Configuration</strong></p>
+<p>One NAT can be associated with one or more subnets within a VNet.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_8.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_9.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_10.png" title="Body image" /></p>
+<ol>
+<li>
+<p><strong>Routing</strong>:</p>
+</li>
+<li>
+<p><strong>Virtual networks have built-in connectivity between subnets and the internet, but custom routing can be used to change these pathways</strong>.</p>
+</li>
+<li><strong>Route tables can be created to alter pathways</strong>, such as blocking access to the internet or forcing traffic through a specific IP address.</li>
+<li>Network security groups and routing serve different purposes: <strong>routing controls pathways while network security groups filter traffic</strong>.</li>
+<li>Routes can be configured for various purposes like <strong>sending traffic via a virtual appliance, the internet, virtual network, or virtual network gateway.</strong></li>
+<li>
+<p><strong>Custom routes take precedence over BGP routes</strong>, which take precedence over system routes when conflicts arise.</p>
+</li>
+<li>
+<p><strong>Network Security Groups</strong>:</p>
+</li>
+<li>
+<p>Network security groups <strong>filter traffic with priority-based rules, where lower number rules are processed first</strong>.</p>
+</li>
+<li><strong>Default deny rules exist</strong> on both inbound and outbound sides of network security groups.</li>
+<li><strong>Rules need to be assigned to network security groups to take effect</strong>.</li>
+<li>
+<p><strong>Network security groups</strong> at the <strong>subnet level</strong> apply to all network devices within that subnet.</p>
+</li>
+<li>
+<p><strong>Public IP Addresses and Network Security</strong>:</p>
+</li>
+<li>
+<p>With standard public IP addresses, all traffic is blocked by default <strong>unless allowed through network security groups</strong>.</p>
+</li>
+<li>Network security group rules are stateful, allowing outbound traffic and its corresponding inbound replies.</li>
+<li>
+<p>Even without a public IP address assigned, <strong>a virtual machine can still have internet access through other means like VPN or ExpressRoute.</strong></p>
+</li>
+<li>
+<p><strong>Virtual Network NAT</strong>:</p>
+</li>
+<li><strong>Virtual Network NAT controls outbound connectivity for multiple devices within a subnet</strong>.</li>
+<li><strong>It eliminates the need to configure outbound connectivity on a per-VM basis.</strong></li>
+<li>Public IP addressing for outbound connectivity can be controlled <strong>using virtual network NAT, providing shared outbound internet control</strong>.</li>
+<li><strong>Virtual network NAT can use single IP addresses or public IP prefixes to manage outbound IP addressing for resources.</strong></li>
+</ol>
+<h3 id="1-3-recapping-integrated-networks">1-3     Recapping Integrated Networks</h3>
+<ol>
+<li>
+<p><strong>VNet Peering:</strong></p>
+</li>
+<li>
+<p>Allows connecting multiple VNets securely.</p>
+</li>
+<li>Provides low-latency, private IP address connectivity between <strong>virtual machines in different VNets</strong>.</li>
+<li><strong>Supports peering across different subscriptions and regions</strong>.</li>
+<li><strong>Limitations include non-overlapping address spaces and lack of transitive routing by default.</strong></li>
+</ol>
+<p><strong>VNet Peering</strong></p>
+<p>Virtual networks have default connectivity, but are otherwise totally isolated.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_47.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_48.png" title="Body image" /></p>
+<ul>
+<li>[V] Fast, low-latency private IP connectivity.</li>
+<li>[V] Supports cross-subscription connectivity.</li>
+<li>
+<p>[V] Supports cross-region connectivity.</p>
+</li>
+<li>
+<p>[X] Address spaces cannot overlap.</p>
+</li>
+<li>[X] Does not support transitive routing.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_3_49.png" title="Body image" /></p>
+<h4 id="service-endpoints">Service Endpoints</h4>
+<p><strong>Service Endpoints:</strong></p>
+<ul>
+<li>Provides secure connectivity to Azure resources.</li>
+<li><strong>Configured at the subnet level for specific resource providers</strong>.</li>
+<li>Utilizes the <strong>Microsoft backbone for private connectivity</strong>.</li>
+<li><strong>Does not offer private IP addressing but ensures secure pathway</strong>.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_3_50.png" title="Body image" /></p>
+<p><strong>Configuring Service Endpoints</strong></p>
+<p>Configured per resource provider, per subnet, to provide secure connectivity,</p>
+<p><strong>System Routes</strong></p>
+<p>Optimal routes are added so that <strong>all resources within a subnet use the backbone</strong>.</p>
+<p><strong>Network Security</strong></p>
+<p>Resource firewall rules can be <strong>configured to allow/deny traffic</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_51.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_52.png" title="Body image" /></p>
+<h4 id="private-link">Private Link</h4>
+<p><strong>Private Link:</strong></p>
+<ul>
+<li><strong>Offers secure connectivity to supported Azure services</strong>.</li>
+<li><strong>Enables creation of private endpoints with private IP addresses within a subnet.</strong></li>
+<li>Allows for granular security by providing connectivity to specific resources.</li>
+<li><strong>Supports connectivity to Azure services and custom solutions in different subscriptions.</strong></li>
+<li>Provides enhanced security features compared to service endpoints, including DNS integration and private IP addressing.</li>
+</ul>
+<p><strong>Secure Network Connectivity:</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_53.png" title="Body image" /></p>
+<p><strong>Private Link Support</strong></p>
+<ul>
+<li>Supported Azure services</li>
+<li>Customer/partner-managed services</li>
+</ul>
+<p><strong>Granular Security</strong></p>
+<p>Configure connectivity to specific resources (not a whole resource type)</p>
+<p><strong>Broad Accessibility</strong></p>
+<ul>
+<li>Accessibility from on premises</li>
+<li>Access from peered virtual networks</li>
+<li>Accessing services in other region</li>
+</ul>
+<p><strong>Implementation in Azure Portal:</strong></p>
+<ul>
+<li>Demonstrated VNet peering, service endpoints, and Private Link configurations in the Azure portal.</li>
+<li>Showed how to set up VNet peering for secure connectivity between virtual machines in different VNets.</li>
+<li>Illustrated the configuration of service endpoints to establish private backbone connectivity.</li>
+<li>Walked through the process of creating private endpoints using Private Link for secure connectivity to Azure services like storage accounts.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_3_54.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_55.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_56.png" title="Body image" /></p>
+<h3 id="1-4-recapping-hybrid-networks">1-4 Recapping Hybrid Networks</h3>
+<h4 id="virtual-private-networking">Virtual Private Networking</h4>
+<p>Providing private, encrypted connectivity to Azure virtual networks.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_57.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_58.png" title="Body image" /></p>
+<ol>
+<li>
+<p><strong>Virtual Private Networking (VPN)</strong>:</p>
+</li>
+<li>
+<p><strong>VPNs provide private connectivity across the internet to resources in a virtual network</strong>.</p>
+</li>
+<li><strong>Site-to-site VPN connects entire networks to an Azure Virtual Network, while point-to-site VPN allows users to connect to an Azure Virtual Network</strong>.</li>
+<li>VPN encryption ensures secure and isolated connections over the public internet.</li>
+<li><strong>VPNs support hybrid connectivity, site-to-site, point-to-site, and VNet-to-VNet connections</strong>.</li>
+</ol>
+<h4 id="virtual-private-networking_1">Virtual Private Networking</h4>
+<p><strong>VNet Peering</strong></p>
+<ul>
+<li>Designed for VNet-to-VNet connectivity.</li>
+<li><strong>Supports cross-subscription, cross-region, cross-Azure AD tenant.</strong></li>
+<li>Leverages Microsoft backbone for private IP address connectivity.</li>
+<li>Used for private, low-latency, limitless bandwidth connectivity.</li>
+</ul>
+<p><strong>VPN</strong></p>
+<ul>
+<li>Designed for hybrid connectivity (site-to-site, point-to-site).</li>
+<li><strong>Supports similar Vet connectivity (cross-subscription, cross-region)</strong></li>
+<li><strong>Requires a public IP address for the VPN termination point</strong>.</li>
+<li><strong>Used where encryption and/or transitive routing is needed.</strong></li>
+</ul>
+<p><strong>VNet Peering vs. VPN</strong>:</p>
+<ul>
+<li>VNet peering is designed for <strong>VNet-to-VNet interconnectivity</strong>, <strong>leveraging the Microsoft backbone for private IP address connectivity</strong>.</li>
+<li>VPN connections go over the public internet, <strong>requiring public IP addresses for termination points.</strong></li>
+<li>VNet peering offers low latency and limitless bandwidth, while VPNs provide encryption and support transitive routing.</li>
+</ul>
+<h4 id="expressroute">ExpressRoute</h4>
+<p>ExpressRoute can provide a more direct and secure connection to Microsoft cloud services.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_59.png" title="Body image" /></p>
+<p><strong>ExpressRoute</strong></p>
+<ul>
+<li><strong>Provides secure connectivity to virtual networks and Microsoft 365</strong>.</li>
+<li>Does not traverse the public internet.</li>
+<li><strong>Does not leverage encryption by default (IPsec and MACsec)</strong>.</li>
+<li>Supports up to 10 Gbps (100Gbps with ExpressRoute Direct).</li>
+</ul>
+<p><strong>VPN</strong></p>
+<ul>
+<li><strong>Provides secure connectivity to virtual networks only</strong>.</li>
+<li>Traverses the public internet (between the point/site and Azure).</li>
+<li><strong>Traffic is encrypted by default as part of an end-to-end tunnel (IPsec)</strong>.</li>
+<li>Supports up to 10 Gbps.</li>
+</ul>
+<p><strong>ExpressRoute</strong>:</p>
+<ul>
+<li>ExpressRoute provides secure connectivity <strong>between on-premises networks and Azure Virtual Networks without using the public internet</strong>.</li>
+<li>It can also be used to connect to Microsoft 365 services securely.</li>
+<li>ExpressRoute does not require encryption by default, <strong>supports up to 100 gigabits per second connectivity, and offers direct network connections with ExpressRoute Direct</strong>.</li>
+</ul>
+<h4 id="virtual-wan">Virtual WAN</h4>
+<p><img alt="Alt Image Text" src="../../images/az305_3_60.png" title="Body image" /></p>
+<p>Azure Virtual WAN helps to automate and optimize connectivity using the hub-and-spoke network architecture.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_61.png" title="Body image" /></p>
+<p><strong>Azure Virtual WAN</strong>:</p>
+<ul>
+<li><strong>Azure Virtual WAN automates and optimizes hub-and-spoke network topology, simplifying network management through software-defined networking</strong>.</li>
+<li>It streamlines connectivity between spoke virtual networks, remote users, branch offices, and head offices.</li>
+<li>Microsoft manages the Hub virtual network in Azure Virtual WAN on a per-region basis, simplifying global interconnectivity.</li>
+<li>Azure Virtual WAN allows for a simplified deployment and management experience for various types of connectivity scenarios, including branch-to-branch, branch-to-Azure, and VNet-to-VNet connections.</li>
+</ul>
+<h3 id="1-5-designing-networks-for-azure-services">1-5 Designing Networks for Azure Services</h3>
+<h4 id="vnet-native-services">VNet-Native Services</h4>
+<p><img alt="Alt Image Text" src="../../images/az305_3_62.png" title="Body image" /></p>
+<p><strong>VNet-Native Services:</strong></p>
+<ul>
+<li>Some services are ready to go and work with virtual networks by default.</li>
+<li>Examples include virtual machines, Azure Kubernetes service, and Azure App Service environments.</li>
+<li>Services like container instances can be deployed to a virtual network for private connectivity.</li>
+<li>VNet Peering can be used for access across virtual networks.</li>
+</ul>
+<h4 id="net-integration">Net Integration</h4>
+<p><img alt="Alt Image Text" src="../../images/az305_3_63.png" title="Body image" /></p>
+<p><strong>VNet Integration for Outbound Access:</strong></p>
+<ul>
+<li><strong>For services like Azure App Service that require outbound access to a virtual network, VNet integration is needed.</strong></li>
+<li>VNet integration provides access from the app to the virtual network.</li>
+<li><strong>Supported by standard and premium tiers, not free or basic tiers</strong>.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_3_64.png" title="Body image" /></p>
+<ul>
+<li>Provides outbound access to a VNet.</li>
+<li>Supported by Standard or Premium tiers.</li>
+<li>
+<p>Supports function apps.</p>
+</li>
+<li>
+<p><strong>Doesn't support NetBIOS or SMB.</strong></p>
+</li>
+<li><strong>Does not provide inbound app access.</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_3_65.png" title="Body image" /></p>
+<p><strong>Hybrid Connections for On-Premises Connectivity:</strong></p>
+<ul>
+<li>For connectivity to on-premises resources, hybrid connections using Azure Relay service are utilized.</li>
+</ul>
+<h4 id="resource-firewalls">Resource Firewalls</h4>
+<p>Many networked Azure services provide access control through a resource firewall.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_66.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_67.png" title="Body image" /></p>
+<p><strong>Resource Firewalls:</strong></p>
+<ul>
+<li><strong>Services like Azure SQL, storage accounts, Azure App Service, and key vaults have resource firewalls to control inbound access.</strong></li>
+<li><strong>Enabling a resource firewall creates a default deny rule, allowing only specified access</strong>.</li>
+<li>Options include allowing access from public IP addresses and setting up virtual network rules.</li>
+<li><strong>Resource firewalls can be configured in the Azure portal for services like Azure App Service and storage accounts</strong>.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_3_68.png" title="Body image" /></p>
+<h3 id="design-a-networking-strategy">Design a Networking Strategy</h3>
+<p><strong>Client Requirements</strong>:</p>
+<ul>
+<li>GOVGoods wants the solution migrated to a cloud-based scalable service, preferably platform as a service.</li>
+<li>They require staging functionality to test updates before production deployment.</li>
+<li>Connectivity must be maintained for on-premises manufacturing hardware without using the public internet.</li>
+</ul>
+<p><strong>Proposed Solution</strong>:</p>
+<ul>
+<li>Host the application on Azure App Service to minimize administrative overhead and utilize deployment slots for staging.</li>
+<li>Use ExpressRoute with private peering to connect on-premises environment to Azure.</li>
+<li>Implement PrivateLink to provide secure connectivity for on-premises manufacturing devices to the Azure App Service.</li>
+</ul>
+<p><strong>Azure App Service for Hosting</strong></p>
+<p>Leverage staging slots for C/CD requirements.</p>
+<p><strong>ExpressRoute for Private Connectivity</strong></p>
+<p>Leverage private peering to a Vet within the GOVGoods subscription.</p>
+<p><strong>Azure Private Link for Inbound Access to the App</strong></p>
+<p>Associate the private endpoint with the GOVGoods VNet.</p>
+<p><strong>Technologies Used</strong>:</p>
+<ul>
+<li>Azure App Service for hosting the application.</li>
+<li>ExpressRoute with private peering for secure connectivity.</li>
+<li>PrivateLink for connecting on-premises manufacturing hardware to the Azure App Service.</li>
+</ul>
+<h2 id="2-design-connectivity-and-security">2 Design Connectivity and Security</h2>
+<h4 id="modern-scaling-solutions">Modern scaling Solutions</h4>
+<p>A more modern approach is to scale in and out based on demand.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_69.png" title="Body image" /></p>
+<ol>
+<li>
+<p><strong>Traditional vs. Cloud Model</strong>:</p>
+</li>
+<li>
+<p>Traditional solutions involved hosting everything on a single server, with the risk of the entire solution going offline if the server fails.</p>
+</li>
+<li>
+<p>Cloud solutions involve scaling out by adding duplicate copies of servers or services for high availability.</p>
+</li>
+<li>
+<p><strong>Scaling In and Scaling Out</strong>:</p>
+</li>
+<li>
+<p>Scaling in involves adding more resources to a single server.</p>
+</li>
+<li>
+<p>Scaling out involves adding duplicate copies of servers or services to distribute traffic and ensure high availability.</p>
+</li>
+<li>
+<p><strong>Load Balancers</strong>:</p>
+</li>
+<li>
+<p><strong>Load balancers provide a single entry point for applications and distribute traffic among healthy instances of servers</strong>.</p>
+</li>
+<li>
+<p>They help in maintaining high availability and managing connectivity to multiple server instances.</p>
+</li>
+<li>
+<p><strong>Splitting Solutions into Tiers</strong>:</p>
+</li>
+<li>
+<p>Cloud solutions allow splitting the solution into different tiers, such as web frontend and data backend, and scaling them independently based on demand.</p>
+</li>
+<li>
+<p><strong>Global Scalability</strong>:</p>
+</li>
+<li>
+<p>To achieve global scalability, multiple copies of the solution are deployed across different regions.</p>
+</li>
+<li>
+<p><strong>Global traffic routing and load balancing are essential to manage connectivity and distribute traffic effectively</strong>.</p>
+</li>
+<li>
+<p><strong>Microsoft Products for Connectivity and Security</strong>:</p>
+</li>
+<li>
+<p>Microsoft offers products to help with load balancing, controlling connectivity to regional and global services, and enhancing security for cloud solutions.</p>
+</li>
+</ol>
+<h3 id="2-1-recapping-azure-global-infrastructure">2-1 Recapping Azure Global Infrastructure</h3>
+<h4 id="azure-regions">Azure regions</h4>
+<p><img alt="Alt Image Text" src="../../images/az305_3_70.png" title="Body image" /></p>
+<p><strong>Region</strong></p>
+<ul>
+<li>Low-latency connected data</li>
+<li>centers hosting services</li>
+</ul>
+<p><strong>Cross-Region Replication</strong></p>
+<p>Region pairs with replication</p>
+<p><strong>Geography</strong></p>
+<p>Geographic, data, and compliance boundary</p>
+<h4 id="availability-zones">Availability Zones</h4>
+<p><strong>Availability Zone</strong></p>
+<p>Physically separate location within a region.</p>
+<p><strong>Zonal Services</strong></p>
+<p>Some services can be pinned to a specific availability zone.</p>
+<p><strong>Zone-Redundant Services</strong></p>
+<p>Some services are replicated across availability zones.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_71.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_72.png" title="Body image" /></p>
+<h3 id="availability-sets">Availability Sets</h3>
+<p><strong>Availability Set</strong></p>
+<p>Group duplicate VMs together to avoid common outages.</p>
+<p><strong>Fault Domain</strong>
+Hardware that shares common sources of failure.</p>
+<p><strong>Update Domain</strong></p>
+<p>Platform services updated/restarted by Microsoft.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_73.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_74.png" title="Body image" /></p>
+<p>Here is a summary of the key points for the AZ-305 exam based on the provided article:</p>
+<ol>
+<li>
+<p><strong>Azure Load Balancer:</strong></p>
+<ul>
+<li>Used for providing public connectivity to web applications deployed to backend resources.</li>
+<li>Distributes traffic to healthy backend resources based on configured health probes.</li>
+<li>Enables outbound public internet connectivity using public IP or IP prefix.</li>
+</ul>
+</li>
+<li>
+<p><strong>Azure Application Gateway:</strong></p>
+<ul>
+<li>Similar to Azure Load Balancer but specifically designed for web application solutions.</li>
+<li>Layer 7 aware, can route based on host name and path-based routing.</li>
+<li>Can load balance across multiple components in different backend pools.</li>
+</ul>
+</li>
+<li>
+<p><strong>Traffic Manager:</strong></p>
+<ul>
+<li>Designed for globally distributed solutions.</li>
+<li>Ensures users are routed to the closest backend resources based on routing methods.</li>
+<li>Uses DNS for routing, confirms resource health, and responds with a DNS response to guide users directly to backend resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>General Load Balancing Concepts:</strong></p>
+<ul>
+<li>Load balancers like Azure Load Balancer and Application Gateway are region-specific.</li>
+<li>Load balancers distribute traffic to backend resources based on health and routing rules.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exam Topics:</strong></p>
+<ul>
+<li>Understand the differences between Azure Load Balancer, Application Gateway, and Traffic Manager.</li>
+<li>Know how each service functions and their use cases in load balancing applications.</li>
+<li>Be familiar with configuring and managing these load balancing services in Azure Portal.</li>
+</ul>
+</li>
+</ol>
+<p>These key points should help you prepare for the AZ-305 exam focusing on load balancing technologies in Azure.</p>
+<h3 id="designing-highly-available-connectivity">Designing Highly Available Connectivity</h3>
+<blockquote>
+<p>Azure Load Balancer</p>
+</blockquote>
+<p>Distributing Layer 4 connectivity to resources within a region.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_75.png" title="Body image" /></p>
+<blockquote>
+<p>Layer 7 application-aware load balancing</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az305_3_76.png" title="Body image" /></p>
+<p>1.<strong>Azure Load Balancer:</strong></p>
+<ul>
+<li>Distributes Layer 4 connectivity to resources within a single region.</li>
+<li>Uses TCP and UDP protocols.</li>
+<li>Can be internal (private within a virtual network) or public for outbound internet connectivity.</li>
+<li>Balances connectivity across redundant backend resources within a region.</li>
+</ul>
+<p>2.<strong>Azure Application Gateway (App Gateway):</strong></p>
+<ul>
+<li>Layer 7 aware load balancer for web application solutions.</li>
+<li>Capable of routing based on hostnames and paths.</li>
+<li>Can load balance across multiple backend pools for different components of a solution.</li>
+<li>Used for distributing load across web applications hosted in different regions.</li>
+</ul>
+<p>3.<strong>Traffic Manager:</strong></p>
+<ul>
+<li>For globally distributed solutions, unlike region-specific load balancing.</li>
+<li>Requires backend resources to be publicly accessible.</li>
+<li>Routes users based on routing methods such as proximity, priority, or network location.</li>
+<li>Uses DNS for routing and responds with a DNS response to guide users to backend resources directly.</li>
+</ul>
+<h4 id="traffic-manager"><strong>Traffic Manager</strong></h4>
+<p><strong>Azure Front Door Service Overview:</strong></p>
+<ul>
+<li><strong>Azure Front Door is a global load balancer designed specifically for web applications</strong>, </li>
+<li>offering web functionality, caching, and acceleration capabilities.</li>
+<li>It leverages Microsoft's global network to provide faster access to web applications across the globe.</li>
+<li>Functions as a <strong>global application gateway, enabling web application acceleration and delivery worldwide</strong>.</li>
+</ul>
+<h4 id="key-features-and-configuration">Key Features and Configuration:</h4>
+<ul>
+<li><strong>Uses origin groups similar to backend pools in Application Gateway for defining backend endpoints.</strong></li>
+<li>Supports various backend endpoints, built-in health probes, and load balancing.</li>
+<li><strong>Allows path-based routing for directing traffic to specific backend endpoints based on URL paths</strong>.</li>
+<li><strong>Offers Layer 7 functionality for advanced routing capabilities</strong>.</li>
+<li>Provides options for configuring caching, security features like web application firewall, and custom routing rules.</li>
+<li><strong>Supports load balancing and Layer 7 capabilities for routing traffic efficiently.</strong></li>
+</ul>
+<h4 id="azure-front-door-vs-azure-traffic-manager">Azure Front Door vs. Azure Traffic Manager:</h4>
+<ul>
+<li>Azure Traffic Manager is more similar to a global load balancer supporting various protocols, <strong>while Azure Front Door is tailored for web applications, HTTP, and HTTPS</strong>.</li>
+<li>Traffic Manager uses DNS for routing user requests directly to endpoints, <strong>while Front Door accelerates web traffic through Microsoft's endpoint network</strong>.</li>
+<li>Traffic Manager routes traffic directly to endpoints, whereas Front Door proxies traffic at the Microsoft edge, enhancing performance and load balancing.</li>
+<li>Both services offer routing methodologies based on proximity, priority, or weighted lists, but Front Door additionally supports session affinity routing.</li>
+<li><strong>Front Door provides advanced Layer 7 features like rate-limiting, IP-based ACLs, and integration with web application firewall for enhanced security and performance</strong>.</li>
+<li>Front Door can be more expensive due to its additional Layer 7 capabilities compared to Traffic Manager.</li>
+</ul>
+<blockquote>
+<p>Distributing traffic to resources across Azure regions using DNS.</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az305_3_77.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_78.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_79.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_80.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_3_81.png" title="Body image" /></p>
+<h3 id="traffic-manager-vs-front-door">Traffic Manager vs. Front Door</h3>
+<p><strong>Traffic Manager</strong></p>
+<ul>
+<li><strong>Supports several protocols.</strong></li>
+<li>Routes traffic by responding to DNS queries based on routing method.</li>
+<li><strong>Traffic is routed directly</strong>.</li>
+<li>Routing: <strong>performance, priority, weighted, geo, and multi-value</strong></li>
+<li>Simply routes to healthy endpoints (pricing is accordingly simple).</li>
+</ul>
+<p><strong>Front Door</strong></p>
+<ul>
+<li><strong>Supports HTTP/S.</strong></li>
+<li>Accelerates web traffic through Microsoft's edge network.</li>
+<li><strong>Traffic is proxied at the edge.</strong></li>
+<li>Routing: <strong>latency, priority, weighted, and session affinity</strong></li>
+<li>Adds Layer 7 features, rate-limiting, and IP-based ACLs.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

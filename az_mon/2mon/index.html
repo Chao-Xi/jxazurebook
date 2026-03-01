@@ -1,0 +1,8403 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../1log_ana/">
+      
+      
+        <link rel="next" href="../3mon_test/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>2 Azure Monitoring Fundamentals - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-monitoring-microsoft-azure-resources-and-workloads" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Azure Monitoring Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-azure-monitoring-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Azure Monitoring Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Azure Monitoring Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-collecting-data-with-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Collecting Data with Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-taking-action-on-azure-monitor-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Taking Action on Azure Monitor Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-2 Taking Action on Azure Monitor Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-analysis-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Data Analysis Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-visualization-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Visualization Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automated-actions-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automated Actions &amp; Alerts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-demo-configuring-alerts-and-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Demo: Configuring Alerts and Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-4 Demo: Configuring Alerts and Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-creation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔔 Alert Creation Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Alert Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-analyzing-with-azure-monitor-logs-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo: Analyzing with Azure Monitor Logs 💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-demo-analyzing-with-azure-monitor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Demo: Analyzing with Azure Monitor Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-approaches-to-log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Three Approaches to Log Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-workflow-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Workflow Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Getting Started Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-monitoring-microsoft-azure-resources-and-workloads_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Monitoring Microsoft Azure Resources and Workloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Monitoring Microsoft Azure Resources and Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-introducing-azure-diagnostics-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Introducing Azure Diagnostics Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1 Introducing Azure Diagnostics Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-health-resource-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚕️ Service Health &amp; Resource Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-core-monitoring-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Two Core Monitoring Streams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Enabling Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Monitoring Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-enabling-azure-diagnostics-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Enabling Azure Diagnostics Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2 Enabling Azure Diagnostics Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-configuration-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Key Configuration Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-output-destinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📤 Three Output Destinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Data Collection Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaway
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-azure-monitor-data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Azure Monitor Data Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-layers-of-metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Three Layers of Metrics Collection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Three Layers of Metrics Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitor-log-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Log Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baselining-proactive-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Baselining &amp; Proactive Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-distinctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Key Distinctions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-demo-configure-diagnostics-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Demo: Configure Diagnostics Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-6 Demo: Configure Diagnostics Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-diagnostics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Enabling Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-explorer-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Metrics Explorer Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-azure-monitor-log-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Azure Monitor Log Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-7 Azure Monitor Log Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-rule-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Alert Rule Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Action Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-auditing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Monitoring &amp; Auditing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-azure-monitor-log-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-8 Azure Monitor Log Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-8 Azure Monitor Log Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Core Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-log-analytics-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Activity Log Analytics Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-value-propositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Critical Value Propositions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-9-demo-perform-log-searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-9 Demo: Perform Log Searches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-9 Demo: Perform Log Searches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workspace-setup-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Workspace Setup &amp; Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending-capabilities-with-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 Extending Capabilities with Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querying-with-kql-kusto-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Querying with KQL (Kusto Query Language)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Visualization &amp; Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pro-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Pro Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-monitoring-your-spend-in-microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Monitoring Your Spend in Microsoft Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Monitoring Your Spend in Microsoft Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-get-estimated-azure-costs-pre-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Get Estimated Azure Costs Pre-deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-1 Get Estimated Azure Costs Pre-deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-estimation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 Cost Estimation Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-regional-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌍 Critical Regional Factors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-get-estimated-azure-costs-pre-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Get Estimated Azure Costs Pre-deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-2 Get Estimated Azure Costs Pre-deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-cost-tracking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💳 Core Cost Tracking Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-cost-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Deep Cost Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudyn-vs-azure-advisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Cloudyn vs. Azure Advisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-demo-view-subscription-and-cost-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Demo: View Subscription and Cost Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-3 Demo: View Subscription and Cost Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control-iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Access Control (IAM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-management-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 Cost Management Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscription-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Subscription Administration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-external-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤝 Partner &amp; External Integrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-workflow-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Key Workflow Highlights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Key Workflow Highlights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Critical Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-forecast-and-optimize-your-azure-spend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Forecast and Optimize Your Azure Spend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-4 Forecast and Optimize Your Azure Spend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-optimization-via-azure-advisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Cost Optimization via Azure Advisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forecasting-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Forecasting Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Forecasting Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategic-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Strategic Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔮 Future Outlook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-management-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Cost Management Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-tools-in-cost-management-billing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Core Tools in Cost Management &amp; Billing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-importance-of-tagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Strategic Importance of Tagging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Workflow Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-demo-work-with-azure-cost-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Demo: Work with Azure Cost Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-5 Demo: Work with Azure Cost Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-management-hierarchy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Cost Management Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-tools-in-cost-management-billing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Core Tools in Cost Management &amp; Billing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-importance-of-tagging_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Strategic Importance of Tagging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-highlights_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Workflow Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-microsoft-monitoring-azure-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Microsoft Monitoring Azure Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Microsoft Monitoring Azure Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-azure-cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Azure Cost Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-1 Azure Cost Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-reporting-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Core Reporting Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Critical Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudyn-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Cloudyn Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Workflow Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-azure-monitor-workbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-2 Azure Monitor Workbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-workbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workbooks-vs-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Workbooks vs. Notebooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-azure-monitor-workbooks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-2 Azure Monitor Workbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Core Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Strategic Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Migration Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-azure-monitor-for-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 Azure Monitor for VMs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-3 Azure Monitor for VMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolution-from-legacy-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Evolution from Legacy Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ Core Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Key Advantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Deployment Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-adopt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Why Adopt?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-demo-enable-azure-monitor-for-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 Demo: Enable Azure Monitor for VM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-4 Demo: Enable Azure Monitor for VM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Onboarding Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Key Features Enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Critical Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Workflow Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-demo-integrate-azure-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 Demo: Integrate Azure Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-5 Demo: Integrate Azure Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-policy-for-monitoring-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Azure Policy for Monitoring Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Implementation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initiative-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Initiative Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6-demo-view-azure-monitor-vm-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-6 Demo: View Azure Monitor VM Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-6 Demo: View Azure Monitor VM Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Onboarding Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Performance Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-map-dependency-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Service Map (Dependency Visualization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-8-where-you-see-kql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-8 Where You See KQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-8 Where You See KQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kql-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 KQL Essentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-azure-services-using-kql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Key Azure Services Using KQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-value_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Strategic Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-explorer-adx-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Azure Data Explorer (ADX) Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-azure-monitoring-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Azure Monitoring Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Azure Monitoring Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-collecting-data-with-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Collecting Data with Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-taking-action-on-azure-monitor-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 Taking Action on Azure Monitor Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-2 Taking Action on Azure Monitor Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-analysis-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Data Analysis Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-visualization-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Visualization Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automated-actions-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automated Actions &amp; Alerts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-demo-configuring-alerts-and-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Demo: Configuring Alerts and Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-4 Demo: Configuring Alerts and Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-creation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔔 Alert Creation Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Alert Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-analyzing-with-azure-monitor-logs-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo: Analyzing with Azure Monitor Logs 💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-demo-analyzing-with-azure-monitor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Demo: Analyzing with Azure Monitor Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-approaches-to-log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Three Approaches to Log Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-workflow-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Workflow Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Getting Started Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-monitoring-microsoft-azure-resources-and-workloads_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Monitoring Microsoft Azure Resources and Workloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Monitoring Microsoft Azure Resources and Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-introducing-azure-diagnostics-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Introducing Azure Diagnostics Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1 Introducing Azure Diagnostics Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-health-resource-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚕️ Service Health &amp; Resource Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-core-monitoring-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Two Core Monitoring Streams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Enabling Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Monitoring Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-enabling-azure-diagnostics-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Enabling Azure Diagnostics Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2 Enabling Azure Diagnostics Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-configuration-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Key Configuration Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-output-destinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📤 Three Output Destinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Data Collection Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaway
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-azure-monitor-data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Azure Monitor Data Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-layers-of-metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Three Layers of Metrics Collection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Three Layers of Metrics Collection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitor-log-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Log Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baselining-proactive-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Baselining &amp; Proactive Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-distinctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Key Distinctions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-demo-configure-diagnostics-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Demo: Configure Diagnostics Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-6 Demo: Configure Diagnostics Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-diagnostics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Enabling Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-explorer-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Metrics Explorer Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-azure-monitor-log-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Azure Monitor Log Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-7 Azure Monitor Log Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-rule-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Alert Rule Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Action Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-auditing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Monitoring &amp; Auditing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-azure-monitor-log-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-8 Azure Monitor Log Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-8 Azure Monitor Log Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Core Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-log-analytics-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Activity Log Analytics Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-value-propositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Critical Value Propositions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-9-demo-perform-log-searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-9 Demo: Perform Log Searches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-9 Demo: Perform Log Searches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workspace-setup-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Workspace Setup &amp; Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending-capabilities-with-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 Extending Capabilities with Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querying-with-kql-kusto-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Querying with KQL (Kusto Query Language)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Visualization &amp; Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pro-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Pro Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-monitoring-your-spend-in-microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Monitoring Your Spend in Microsoft Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Monitoring Your Spend in Microsoft Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-get-estimated-azure-costs-pre-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Get Estimated Azure Costs Pre-deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-1 Get Estimated Azure Costs Pre-deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-estimation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 Cost Estimation Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-regional-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌍 Critical Regional Factors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-get-estimated-azure-costs-pre-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Get Estimated Azure Costs Pre-deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-2 Get Estimated Azure Costs Pre-deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-cost-tracking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💳 Core Cost Tracking Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-cost-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Deep Cost Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudyn-vs-azure-advisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Cloudyn vs. Azure Advisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-demo-view-subscription-and-cost-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Demo: View Subscription and Cost Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-3 Demo: View Subscription and Cost Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control-iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Access Control (IAM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-management-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 Cost Management Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscription-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Subscription Administration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-external-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤝 Partner &amp; External Integrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-workflow-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Key Workflow Highlights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Key Workflow Highlights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Critical Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-forecast-and-optimize-your-azure-spend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Forecast and Optimize Your Azure Spend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-4 Forecast and Optimize Your Azure Spend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-optimization-via-azure-advisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Cost Optimization via Azure Advisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forecasting-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Forecasting Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Forecasting Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategic-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Strategic Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔮 Future Outlook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-management-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Cost Management Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-tools-in-cost-management-billing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Core Tools in Cost Management &amp; Billing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-importance-of-tagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Strategic Importance of Tagging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Workflow Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-demo-work-with-azure-cost-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Demo: Work with Azure Cost Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-5 Demo: Work with Azure Cost Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-management-hierarchy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Cost Management Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-tools-in-cost-management-billing_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Core Tools in Cost Management &amp; Billing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-importance-of-tagging_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Strategic Importance of Tagging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-highlights_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Workflow Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-microsoft-monitoring-azure-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Microsoft Monitoring Azure Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Microsoft Monitoring Azure Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-azure-cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 Azure Cost Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-1 Azure Cost Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-reporting-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Core Reporting Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Critical Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudyn-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Cloudyn Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Workflow Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-azure-monitor-workbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-2 Azure Monitor Workbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-workbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workbooks-vs-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Workbooks vs. Notebooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-azure-monitor-workbooks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-2 Azure Monitor Workbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Core Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Strategic Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Migration Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-azure-monitor-for-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 Azure Monitor for VMs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-3 Azure Monitor for VMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolution-from-legacy-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Evolution from Legacy Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ Core Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Key Advantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Deployment Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-adopt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Why Adopt?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-demo-enable-azure-monitor-for-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 Demo: Enable Azure Monitor for VM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-4 Demo: Enable Azure Monitor for VM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Onboarding Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Key Features Enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Critical Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Workflow Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-demo-integrate-azure-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 Demo: Integrate Azure Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-5 Demo: Integrate Azure Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-policy-for-monitoring-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Azure Policy for Monitoring Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Implementation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initiative-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Initiative Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6-demo-view-azure-monitor-vm-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-6 Demo: View Azure Monitor VM Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-6 Demo: View Azure Monitor VM Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Onboarding Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Performance Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-map-dependency-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Service Map (Dependency Visualization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-8-where-you-see-kql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-8 Where You See KQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-8 Where You See KQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kql-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 KQL Essentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-azure-services-using-kql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Key Azure Services Using KQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-value_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Strategic Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-explorer-adx-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Azure Data Explorer (ADX) Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2-monitoring-microsoft-azure-resources-and-workloads">2 Monitoring Microsoft Azure Resources and Workloads</h1>
+<h2 id="2-azure-monitoring-fundamentals">2 Azure Monitoring Fundamentals</h2>
+<h3 id="1-1-collecting-data-with-azure-monitor">1-1 Collecting Data with Azure Monitor</h3>
+<p>Here's a concise summary of the Azure Monitor data collection article:</p>
+<ol>
+<li><strong>Diverse Data Sources:</strong> Azure Monitor collects data from numerous sources including:<ul>
+<li>Azure resources (VMs, SQL DB, networks, etc.)</li>
+<li>Applications (custom apps, OS info from VMs)</li>
+<li>Azure Subscription (health/availability)</li>
+<li>Azure Tenant (e.g., Microsoft Entra ID)</li>
+<li>Hybrid environments (e.g., on-prem SQL with Azure agents)</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Alt Image Text" src="../../images/am1_2_1.png" title="Body image" /></p>
+<ol>
+<li><strong>Primary Data Types:</strong><ul>
+<li><strong>Metrics:</strong> Numerical time-series data for real-time/short-term performance monitoring (e.g., CPU%, disk I/O, memory pressure).</li>
+<li><strong>Logs:</strong> Detailed event/activity records (e.g., security logs, application logs, Windows/Linux system logs, resource state changes).</li>
+<li><strong>Traces:</strong> Data for tracking request flows in distributed applications (e.g., via Application Insights).</li>
+<li><strong>Changes:</strong> Tracks modifications to Azure resources over time.</li>
+</ul>
+</li>
+</ol>
+<p><em>Focus:</em> The article (and course) emphasizes <strong>Metrics</strong> (real-time performance) and <strong>Logs</strong> (detailed troubleshooting) as the most common and impactful data types.</p>
+<ol>
+<li><strong>Enabling Collection:</strong><ul>
+<li><strong>Automatic:</strong> Basic data collection starts immediately when an Azure resource is created.</li>
+<li><strong>Enhanced Setup:</strong> Requires configuration for deeper insights:<ul>
+<li>Enable diagnostic logging on resources (e.g., Azure SQL DB).</li>
+<li>Install Azure Monitor agents on VMs.</li>
+<li>Use the <strong>Data Collector API</strong> to send data from custom applications (web apps, functions, mobile apps).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-2-taking-action-on-azure-monitor-data">1-2 Taking Action on Azure Monitor Data</h3>
+<h4 id="1-data-analysis-tools">1. <strong>Data Analysis Tools</strong></h4>
+<ul>
+<li><strong>Metrics Explorer</strong>: Visualizes real-time numerical data (CPU%, memory, disk I/O) via charts to track performance trends and set threshold-based alerts.</li>
+<li><strong>Log Analytics</strong>: Performs deep investigation using <strong>Kusto Query Language (KQL)</strong> or a point-and-click interface. Combines logs (Windows events, Linux syslogs, errors) for troubleshooting complex issues.</li>
+<li><strong>Key Difference</strong>:  </li>
+<li><em>Metrics</em>: Real-time resource health (automatic collection).  </li>
+<li><em>Logs</em>: Detailed event analysis (may require setup like Log Analytics workspace).</li>
+</ul>
+<p><strong>Analytics</strong></p>
+<p><strong>Metrics Explorer</strong>：  Create charts, analyze trends, and identify fluctuations in metric values</p>
+<p><strong>Log Analytics</strong>： Detailed log investigation and custom queries for in-depth troubleshooting</p>
+<h4 id="analytics-use-cases"><strong>Analytics Use Cases</strong></h4>
+<p><strong>Metrics Explorer</strong></p>
+<ul>
+<li>Real-time performance monitoring</li>
+<li>Metrics like CPU, memory, disk</li>
+<li>Threshold-based alerts</li>
+<li>Quick visual overview</li>
+<li>Immediately collected</li>
+</ul>
+<p><strong>Log Analytics</strong></p>
+<ul>
+<li>Deep analysis</li>
+<li>Multiple log types and sources</li>
+<li>Tracking event or error patterns</li>
+<li>Powerful KQL queries</li>
+<li>Requires steps to enable</li>
+</ul>
+<hr />
+<h4 id="2-visualization-options">2. <strong>Visualization Options</strong></h4>
+<ul>
+<li>
+<p><strong>Dashboards</strong>: Static, high-level view of multiple resources in one place</p>
+<ul>
+<li>Static views in Azure portal showing metrics, logs, or insights. Ideal for quick team sharing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Workbooks</strong>: A flexible tool for dynamically interacting with data</p>
+<ul>
+<li>Interactive reports combining multiple datasets for real-time analysis and deep troubleshooting.</li>
+</ul>
+</li>
+<li>
+<p><strong>Power BI</strong>: <strong>Business analytics service for advanced reporting</strong></p>
+<ul>
+<li>Advanced business reporting (e.g., executive dashboards), integrates external data, and automates updates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Grafana</strong>: <strong>Open-source dashboard platform</strong></p>
+<ul>
+<li>Open-source dashboards for multi-cloud monitoring (AWS/GCP) and third-party tools (Dynatrace, New Relic).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Analytics Use Cases</strong></p>
+<ul>
+<li><strong>Dashboards</strong>: View real-time resource health in the Azure portal</li>
+<li><strong>Workbooks</strong>： Investigate performance trends and troubleshoot issues</li>
+<li><strong>Power BI</strong>： Executive reports or sharing business insights outside Azure</li>
+<li><strong>Grafana</strong>  Unified monitoring across cloud platforms and external tool</li>
+</ul>
+<hr />
+<h4 id="3-automated-actions-alerts">3. <strong>Automated Actions &amp; Alerts</strong></h4>
+<ul>
+<li><strong>Alerts</strong>: Trigger notifications (email/SMS/webhooks) based on metric thresholds or log patterns.</li>
+<li><strong>Autoscaling</strong>: Dynamically adjusts resources (e.g., VMs) to optimize performance/cost.</li>
+<li><strong>AIOps</strong>: Automates anomaly detection and issue resolution.</li>
+<li><strong>Insights</strong>: Microsoft’s pre-built monitoring experiences for key services (e.g., VMs, containers, networks).</li>
+</ul>
+<hr />
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>Act on Data</strong>: Tools transform raw data into actionable insights (e.g., autoscaling from CPU metrics).</li>
+<li><strong>Visualization Fit</strong>:  </li>
+<li>Dashboards → Quick health checks  </li>
+<li>Workbooks → Interactive analysis  </li>
+<li>Power BI/Grafana → Cross-platform or executive reporting  </li>
+<li><strong>Automation</strong>: Alerts and AIOps enable proactive responses to issues.  </li>
+<li><strong>Start with Insights</strong>: Microsoft-curated templates accelerate monitoring setup.  </li>
+</ul>
+<blockquote>
+<p>💡 <strong>Core Value</strong>: Azure Monitor closes the loop from data collection → analysis → visualization → automated action.</p>
+</blockquote>
+<h3 id="1-4-demo-configuring-alerts-and-notifications">1-4 Demo: Configuring Alerts and Notifications</h3>
+<h4 id="alert-creation-methods">🔔 <strong>Alert Creation Methods</strong></h4>
+<ol>
+<li><strong>Portal Setup (GUI):</strong></li>
+<li>Created <strong>Action Group</strong> (<code>pstestgroup</code>) with email notifications.</li>
+<li>Defined an alert rule (<code>Cpu80Percent</code>) for a VM (<code>pstest1</code>):<ul>
+<li><strong>Condition:</strong> <code>Max CPU &gt; 80%</code> over 1 minute.</li>
+<li><strong>Severity:</strong> Warning.</li>
+</ul>
+</li>
+<li>
+<p>Enabled email notifications via the action group.</p>
+</li>
+<li>
+<p><strong>CLI Method (Azure Cloud Shell):</strong></p>
+</li>
+<li>Used <code>az monitor metrics alert create</code> to create an alert for another VM (<code>pstest2</code>):<ul>
+<li><strong>Condition:</strong> <code>CPU &gt; 40%</code>.</li>
+<li><strong>Severity:</strong> Informational (level 3).</li>
+</ul>
+</li>
+</ol>
+<pre><code>az monitor metrics alert create -n &quot;Cpu40Percent&quot; --resource-group &quot;1-b4e6871e-playground-sandbox&quot; --scopes $VMID --condition
+&quot;max percentage CPU &gt; 40&quot; --description &quot;Virtual machine is running at or greater than 40% CPU utilization&quot; --evaluation-frequency 1m —-window-size 1m -- severity 3
+</code></pre>
+<hr />
+<h4 id="alert-verification">⚡ <strong>Alert Verification</strong></h4>
+<ul>
+<li>Ran a load-generation script to trigger alerts.</li>
+<li><strong>Results:</strong></li>
+<li>Both alerts fired: <code>CPU &gt; 40%</code> (pstest2) and <code>CPU &gt; 80%</code> (pstest1).</li>
+<li>Email received for the 80% alert (configured via action group).</li>
+<li>Incident details showed:</li>
+<li>CPU progression graphs.</li>
+<li>Options to update incident status (New/Acknowledged/Closed).</li>
+</ul>
+<hr />
+<h4 id="demo-analyzing-with-azure-monitor-logs-key-takeaways">Demo: Analyzing with Azure Monitor Logs 💡 <strong>Key Takeaways</strong></h4>
+<ul>
+<li><strong>Action Groups:</strong> Centralize notifications (email/SMS) for reuse across alerts.</li>
+<li><strong>Flexible Configuration:</strong> Use GUI (portal) for one-off setups or CLI (<code>az</code>) for automation/scaling.</li>
+<li><strong>Real-Time Response:</strong> Alerts provide:</li>
+<li>Immediate visibility into thresholds (e.g., CPU spikes).</li>
+<li>Contextual data for troubleshooting.</li>
+<li>Notifications to streamline team response.</li>
+</ul>
+<h3 id="1-5-demo-analyzing-with-azure-monitor-logs">1-5 Demo: Analyzing with Azure Monitor Logs</h3>
+<p>Here's a concise summary of the Azure Monitor Logs analysis demo:</p>
+<h3 id="three-approaches-to-log-analysis">🔍 <strong>Three Approaches to Log Analysis</strong></h3>
+<ol>
+<li>
+<p><strong>Pre-Built Queries (Zero-Code):</strong></p>
+</li>
+<li>
+<p>Accessed via <strong>Queries Hub</strong> (scoped to resources like VMs).</p>
+</li>
+<li>Example: "Heartbeat" query to verify VM connectivity (<code>pstest1</code>, <code>pstest2</code>).</li>
+<li>
+<p>Instantly shows key details: computer name, IP, last check-in time.</p>
+</li>
+<li>
+<p><strong>Simple Mode (Point-and-Click GUI):</strong></p>
+</li>
+<li>Visually build queries using filters:<ul>
+<li>Start with table (e.g., <code>Event</code> for Windows logs).</li>
+<li>Add filters: <code>Source → EventLog</code> → Specific computer (e.g., <code>pstest1</code>).</li>
+</ul>
+</li>
+<li>
+<p>No KQL knowledge needed – ideal for quick ad-hoc analysis.</p>
+</li>
+<li>
+<p><strong>KQL Mode (Advanced Custom Queries):</strong></p>
+</li>
+<li>
+<p>Write Kusto Query Language scripts for deep investigation.</p>
+</li>
+<li>Example query:<br />
+<code>kql
+     Event | where EventLog == "Security" | where EventID == 4625</code></li>
+<li><strong>Use Case</strong>: Track failed logins (<code>EventID 4625</code>) across all VMs, revealing details like attacker account names (e.g., <code>fakeuser2</code>).</li>
+</ol>
+<hr />
+<h3 id="key-workflow-insights">💡 <strong>Key Workflow Insights</strong></h3>
+<ul>
+<li><strong>Scope First</strong>: Start by selecting a resource group/VM to target analysis.</li>
+<li><strong>Progress from Simple → Advanced</strong>:  </li>
+<li>Pre-built queries → GUI filtering → Custom KQL.</li>
+<li><strong>KQL Advantages</strong>:  </li>
+<li>SQL-like syntax (familiar for many users).  </li>
+<li>Enables complex cross-VM correlation (e.g., security threat hunting).  </li>
+<li><strong>Unified Interface</strong>: All approaches accessible in the same <strong>Log Analytics</strong> workspace.</li>
+</ul>
+<hr />
+<h3 id="getting-started-tips">🚀 <strong>Getting Started Tips</strong></h3>
+<ul>
+<li><strong>New Users</strong>: Leverage pre-built queries + Simple mode to avoid syntax barriers.  </li>
+<li><strong>Security/Admin Teams</strong>: Use KQL to audit events (e.g., failed logins, resource access).  </li>
+<li><strong>Troubleshooting</strong>: Combine log types (application/security/system) for root-cause analysis.  </li>
+</ul>
+<blockquote>
+<p><strong>Demo Outcome</strong>: From verifying VM health to investigating security events, Azure Monitor Logs adapts to user expertise—delivering value immediately. 🕵️♂️</p>
+</blockquote>
+<h2 id="2-monitoring-microsoft-azure-resources-and-workloads_1">2 Monitoring Microsoft Azure Resources and Workloads</h2>
+<h3 id="2-1-introducing-azure-diagnostics-monitoring">2-1 Introducing Azure Diagnostics Monitoring</h3>
+<p>Here's a concise summary of the Azure diagnostics monitoring concepts:</p>
+<p><img alt="Alt Image Text" src="../../images/am1_2_2.png" title="Body image" /></p>
+<h4 id="service-health-resource-health">⚕️ <strong>Service Health &amp; Resource Health</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Personalized view of Azure platform issues affecting <em>your</em> resources (e.g., Microsoft-side outages).</li>
+<li><strong>Key Features</strong>:</li>
+<li>World map showing regional service status.</li>
+<li>Historical issue tracking (resolved incidents).</li>
+<li>Determines if problems are Azure-related (vs. your configuration).</li>
+<li><strong>Use Case</strong>: "Sanity check" before troubleshooting internal issues.</li>
+</ul>
+<hr />
+<h4 id="two-core-monitoring-streams">📊 <strong>Two Core Monitoring Streams</strong></h4>
+<ol>
+<li>
+<p><strong>Metrics</strong></p>
+</li>
+<li>
+<p><strong>What</strong>: Numerical time-series data (sampled periodically).  </p>
+</li>
+<li><strong>Examples</strong>: <ul>
+<li><em>Infrastructure</em>: VM CPU%, disk space, network I/O.  </li>
+<li><em>Apps</em>: HTTP errors, request rates.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis Tools</strong>: Metrics Explorer, dashboards, alerts.  </p>
+</li>
+<li>
+<p><strong>Logs</strong></p>
+</li>
+<li>
+<p><strong>What</strong>: Event-based records (discrete occurrences).  </p>
+</li>
+<li><strong>Types</strong>:  <ul>
+<li><strong>Activity Log</strong>: Subscription-level <em>control-plane</em> audits (e.g., "VM deleted").  </li>
+<li><strong>Diagnostic Logs</strong>: Resource-level <em>data-plane</em> events (e.g., VM guest OS logs).  </li>
+</ul>
+</li>
+<li><strong>Storage</strong>:  <ul>
+<li>Metrics → Tables  </li>
+<li>Logs → Blobs (e.g., IIS logs) or Log Analytics.  </li>
+</ul>
+</li>
+<li><strong>Analysis Tools</strong>: Log Analytics, KQL queries.  </li>
+</ol>
+<hr />
+<h4 id="enabling-diagnostics">⚙️ <strong>Enabling Diagnostics</strong></h4>
+<ul>
+<li><strong>Data Capture</strong>: Send both metrics and logs to:</li>
+<li>Azure Storage (tables/blobs).</li>
+<li>Log Analytics workspace.</li>
+<li>Event Hubs (streaming).</li>
+<li><strong>Guest OS Monitoring</strong>: Enable for VMs to collect:</li>
+<li>Performance counters (CPU/memory).</li>
+<li>IIS/application logs.</li>
+<li>System event logs.</li>
+</ul>
+<hr />
+<h4 id="monitoring-goals">🎯 <strong>Monitoring Goals</strong></h4>
+<ol>
+<li><strong>Break/Fix</strong>: Rapid incident response.</li>
+<li><strong>Optimization</strong>: Performance tuning (e.g., scaling based on trends).</li>
+<li><strong>Security</strong>: Detect anomalies/breaches.</li>
+<li><strong>Proactive Management</strong>: Address issues before they impact users.</li>
+</ol>
+<blockquote>
+<p><strong>Key Insight</strong>: Azure diagnostics provide critical visibility despite no physical access to datacenters. Start by defining <em>why</em> you need monitoring (e.g., SLA compliance, cost control).</p>
+</blockquote>
+<h3 id="2-2-enabling-azure-diagnostics-monitoring">2-2 Enabling Azure Diagnostics Monitoring</h3>
+<p><img alt="Alt Image Text" src="../../images/am1_2_3.png" title="Body image" /></p>
+<p>Here's a concise summary of the Azure diagnostic settings configuration:</p>
+<h4 id="key-configuration-features">⚙️ <strong>Key Configuration Features</strong></h4>
+<ol>
+<li>
+<p><strong>Flexible Setup</strong></p>
+</li>
+<li>
+<p>Create <strong>multiple diagnostic settings</strong> per resource.  </p>
+</li>
+<li>Configure <em>most resources</em> directly in <strong>Azure Monitor</strong> (except VM guest OS diagnostics, set at VM scope).  </li>
+</ol>
+<hr />
+<h4 id="three-output-destinations">📤 <strong>Three Output Destinations</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Destination</strong></th>
+<th><strong>Use Case</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Storage Account</strong></td>
+<td>Long-term archival of raw logs/metrics (blobs/tables).</td>
+</tr>
+<tr>
+<td><strong>Event Hub</strong></td>
+<td>Real-time event streaming (handles millions of events); enables downstream processing (e.g., alerts, custom analytics).</td>
+</tr>
+<tr>
+<td><strong>Log Analytics</strong></td>
+<td>Advanced querying/analysis with KQL (Microsoft's recommended standard).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Critical Note</strong>: Outputs are <strong>not mutually exclusive</strong> – send data to <em>multiple destinations simultaneously</em>.</p>
+</blockquote>
+<hr />
+<h4 id="data-collection-options">📊 <strong>Data Collection Options</strong></h4>
+<ul>
+<li>
+<p><strong>Varies by Resource Type</strong>:</p>
+</li>
+<li>
+<p>Some resources offer <strong>both logs + metrics</strong> (e.g., Azure SQL DB).  </p>
+</li>
+<li>
+<p>Others provide <strong>only metrics</strong> (e.g., Azure Load Balancer) or <strong>only logs</strong> (e.g., Azure Policy).</p>
+</li>
+<li>
+<p><strong>Selectable Categories</strong>: Choose specific log types/metrics to collect (e.g., audit logs, performance counters).</p>
+</li>
+</ul>
+<hr />
+<h4 id="key-takeaway">💡 <strong>Key Takeaway</strong></h4>
+<p>Azure diagnostic settings offer <strong>centralized, customizable pipelines</strong> to route monitoring data where it’s needed – whether for compliance (storage), real-time ops (Event Hubs), or deep analysis (Log Analytics). Always verify supported data types per resource.</p>
+<h3 id="2-3-azure-monitor-data-sources">2-3 Azure Monitor Data Sources</h3>
+<p>Here's a concise summary of Azure Monitor's data layers and capabilities:</p>
+<h3 id="three-layers-of-metrics-collection">⚙️ <strong>Three Layers of Metrics Collection</strong></h3>
+<p>Azure Monitor Metrics Data Sources</p>
+<p><strong>Platform metrics / Guest OS metrics / Application metrics / Custom metrics</strong></p>
+<ol>
+<li>
+<p><strong>Platform Metrics</strong></p>
+</li>
+<li>
+<p>Automatically collected baseline metrics (e.g., VM CPU%, network I/O).  </p>
+</li>
+<li>
+<p>Requires <strong>no configuration</strong> – available out-of-the-box.  </p>
+</li>
+<li>
+<p><strong>Guest OS Metrics</strong></p>
+</li>
+<li>
+<p>Enriched via <strong>agents</strong> (Windows/Linux VMs):  </p>
+<ul>
+<li>Performance counters (Windows)  </li>
+<li>Syslogs (Linux)  </li>
+<li>Windows Event Logs  </li>
+</ul>
+</li>
+<li>
+<p><strong>Application Metrics</strong></p>
+</li>
+<li>
+<p>Via <strong>Application Insights</strong> (APM):  </p>
+<ul>
+<li>HTTP requests, dependencies, performance issues  </li>
+</ul>
+</li>
+<li>
+<p>Custom metrics from application code</p>
+</li>
+<li>
+<p><strong>Custom metrics</strong></p>
+</li>
+</ol>
+<hr />
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Features</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Metrics Explorer</strong></td>
+<td>Visualize platform/guest metrics</td>
+<td>Multi-resource charts, baselining, alert creation</td>
+</tr>
+<tr>
+<td><strong>Log Analytics</strong></td>
+<td>Unify &amp; analyze logs across resources</td>
+<td>Kusto Query Language (KQL), normalized data tables</td>
+</tr>
+<tr>
+<td><strong>Application Insights</strong></td>
+<td>Monitor app performance (PaaS/IaaS)</td>
+<td>End-to-end transaction tracing, instrumentation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔍 <strong>Log Analytics Backend</strong>: Built on <strong>Azure Data Explorer (ADE)</strong> – a scalable engine for log normalization/querying.</p>
+</blockquote>
+<h4 id="monitor-log-data">Monitor Log Data</h4>
+<p><strong>Disparate data sources</strong>  Log formats / VMs / Storage accounts</p>
+<p><strong>Azure Data Explorer</strong></p>
+<ul>
+<li>Fast, highly scalable data exploration service</li>
+<li>Normalized data warehouse</li>
+<li>Kusto Query Language (KQL)</li>
+</ul>
+<p><strong>Log Analytics</strong></p>
+<ul>
+<li>Based on ADE</li>
+<li>On-board VMs, storage accounts, diagnostic settings</li>
+</ul>
+<h4 id="app-insights">App Insights</h4>
+<p><img alt="Alt Image Text" src="../../images/am1_2_4.png" title="Body image" /></p>
+<h4 id="baselining-proactive-monitoring">📈 <strong>Baselining &amp; Proactive Monitoring</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Establish performance norms to detect anomalies.  </li>
+<li>
+<p><strong>Workflow</strong>:</p>
+</li>
+<li>
+<p><strong>Collect continuous metrics/logs</strong> </p>
+</li>
+<li><strong>Define "normal" operational parameters (e.g., peak/valley trends)</strong> </li>
+<li>**Alert on deviations ** </li>
+<li>
+<p><strong>Trigger automated actions (e.g., scaling, notifications)</strong></p>
+</li>
+<li>
+<p><strong>Critical Tip</strong>: Avoid over-instrumentation – start with critical baselines.</p>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/am1_2_5.png" title="Body image" /></p>
+<hr />
+<h4 id="key-distinctions">🔑 <strong>Key Distinctions</strong></h4>
+<ul>
+<li>
+<p><strong>Log Analytics vs. Application Insights</strong>: </p>
+</li>
+<li>
+<p><em>Log Analytics</em>: Aggregates <strong>infrastructure/OS logs</strong>.  </p>
+</li>
+<li>
+<p><em>App Insights</em>: Tracks <strong>application-layer performance</strong> (code-level).</p>
+</li>
+<li>
+<p><strong>KQL (Kusto Query Language)</strong>: SQL-like syntax for cross-resource log queries.  </p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Pro Tip</strong>: Use Metrics Explorer for real-time resource health dashboards and Log Analytics/KQL for deep forensic analysis.</p>
+</blockquote>
+<h3 id="2-6-demo-configure-diagnostics-settings">2-6 Demo: Configure Diagnostics Settings</h3>
+<h4 id="enabling-diagnostics_1">⚙️ <strong>Enabling Diagnostics</strong></h4>
+<ol>
+<li>
+<p><strong>Resource-Level Setup</strong></p>
+</li>
+<li>
+<p><strong>Most Resources</strong>: Configure via <strong>Azure Monitor → Diagnostics settings</strong></p>
+<ul>
+<li><em>Example</em>: Network interface (<code>vm2-nic</code>) enabled with:  </li>
+<li>Archival to storage account (<code>Contosodiag1</code>)  </li>
+<li>Streaming to Event Hub (<code>pshub704/diagnostics</code>)  </li>
+<li>Optional Log Analytics integration  </li>
+<li><em>Resource Variations</em>:  </li>
+<li>Network interfaces → <strong>Metrics only</strong>  </li>
+<li>NSGs → <strong>Logs only</strong> (network events/rule counters)  </li>
+</ul>
+</li>
+</ol>
+<p><img alt="Alt Image Text" src="../../images/am1_2_6.png" title="Body image" /></p>
+<ol>
+<li>
+<p><strong>Virtual Machines (Special Case)</strong></p>
+</li>
+<li>
+<p>Enabled via <strong>VM blade → Diagnostics settings</strong>  </p>
+</li>
+<li>Installs <strong>Azure Diagnostics Extension</strong> (Windows/Linux):  <ul>
+<li><strong>Windows</strong>: Performance counters, Event Logs, IIS logs  </li>
+<li><strong>Linux</strong>: Syslog, disk/CPU/memory metrics  </li>
+</ul>
+</li>
+<li>Requires <strong>running VM state</strong> for configuration  </li>
+<li>Storage account mandatory for data retention  </li>
+</ol>
+<hr />
+<h4 id="metrics-explorer-demo">📊 <strong>Metrics Explorer Demo</strong></h4>
+<ol>
+<li><strong>Plotting Metrics</strong>  </li>
+<li>Scope: Select VM resource (<code>vm1</code>)  </li>
+<li>Metric: <code>Percentage CPU</code> (host-level)  </li>
+<li>
+<p>Customization:  </p>
+<ul>
+<li>Aggregation (Avg/Min/Max)  </li>
+<li>Time range (default 24h → adjustable)  </li>
+<li>Chart types (line/bar/area)  </li>
+</ul>
+</li>
+<li>
+<p><strong>Persistence Options</strong>  </p>
+</li>
+<li><strong>Pin to dashboard</strong>: Real-time monitoring  </li>
+<li><strong>Copy link</strong>: Save chart configuration (avoids recreation)  </li>
+</ol>
+<hr />
+<h4 id="key-insights">💡 <strong>Key Insights</strong></h4>
+<ul>
+<li><strong>Automatic Baseline Metrics</strong>: Collected for <em>all</em> resources (even without diagnostics)  </li>
+<li><strong>Agent-Dependent Data</strong>: Richer metrics (e.g., guest OS) require extension installation  </li>
+<li><strong>Resource Differences</strong>:  </li>
+<li>VMs need per-instance configuration  </li>
+<li>Non-VM resources use centralized Monitor settings  </li>
+<li><strong>Pro Tip</strong>: Use <strong>Chart Link Sharing</strong> to preserve complex metric views  </li>
+</ul>
+<blockquote>
+<p><strong>Demo Workflow</strong>: Enabled diagnostics → Customized VM metrics → Visualized CPU usage → Saved chart for reuse.</p>
+</blockquote>
+<h3 id="2-7-azure-monitor-log-search">2-7 Azure Monitor Log Search</h3>
+<p><img alt="Alt Image Text" src="../../images/am1_2_7.png" title="Body image" /></p>
+<h4 id="alert-rule-components">⚡ <strong>Alert Rule Components</strong></h4>
+<ol>
+<li><strong>Target Resources</strong>  </li>
+<li>Monitored Azure resources (e.g., VMs, databases)</li>
+<li><strong>Signals</strong>  </li>
+<li>Trigger events (e.g., VM restart, CPU threshold breach)</li>
+<li><strong>Logic/Condition</strong>  </li>
+<li>Boolean criteria defining when to fire (e.g., <em>"CPU &gt; 80% for 5 minutes"</em>)</li>
+</ol>
+<h4 id="action-groups">🛠️ <strong>Action Groups</strong></h4>
+<ul>
+<li><strong>Reusable workflows</strong> triggered by alerts</li>
+<li><strong>Actions beyond notifications</strong>:</li>
+<li>Run scripts (PowerShell/Python/C#) for auto-remediation (e.g., restart VM)</li>
+<li>Integrate with ITSM tools (ServiceNow, Jira)</li>
+<li>Notify via email/SMS/push/voice</li>
+<li>Trigger Azure Functions or Logic Apps</li>
+</ul>
+<h4 id="monitoring-auditing">📊 <strong>Monitoring &amp; Auditing</strong></h4>
+<ul>
+<li>Track alert states (fired/resolved)</li>
+<li>Audit trails for all actions</li>
+<li>Historical incident analysis</li>
+</ul>
+<h4 id="pricing">💰 <strong>Pricing</strong></h4>
+<ul>
+<li><strong>Free tier</strong>:  </li>
+<li>1,000 email/push notifications monthly  </li>
+<li><strong>Beyond free tier</strong>:  </li>
+<li>Low-cost per notification (check <a href="https://azure.microsoft.com/pricing/details/monitor/">Azure Alerts Pricing</a>)</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/am1_2_8.png" title="Body image" /></p>
+<h4 id="key-value">💡 <strong>Key Value</strong></h4>
+<ul>
+<li><strong>Proactive ops</strong>: Transform monitoring → automated response  </li>
+<li><strong>Unified platform</strong>: No need for custom notification systems  </li>
+<li><strong>Scalable</strong>: Handles enterprise workloads with pay-as-you-go model  </li>
+</ul>
+<blockquote>
+<p>Example: Auto-restart VMs when shutdowns occur, with audit logs and SMS alerts.</p>
+</blockquote>
+<h3 id="2-8-azure-monitor-log-search">2-8 Azure Monitor Log Search</h3>
+<p>Here's a concise summary of Azure Monitor Log Analytics capabilities:</p>
+<h4 id="core-functionality">📊 <strong>Core Functionality</strong></h4>
+<ol>
+<li><strong>Workspace Architecture</strong>  </li>
+<li>Central <strong>Log Analytics workspace</strong> aggregates logs from all onboarded resources  </li>
+<li>
+<p>Data automatically <strong>normalized/indexed</strong> into virtual tables with unified schema  </p>
+</li>
+<li>
+<p><strong>Kusto Query Language (KQL)</strong>  </p>
+</li>
+<li>SQL-like syntax with Splunk/PowerShell similarities  </li>
+<li>Dynamic query editor in Azure portal with live visualization toggle (tables ↔ charts)  </li>
+</ol>
+<hr />
+<h4 id="key-features">🚀 <strong>Key Features</strong></h4>
+<ul>
+<li><strong>Export &amp; Integration</strong>  </li>
+<li>Save/share queries across teams  </li>
+<li>Export to CSV/Power BI for dashboards  </li>
+<li>Trigger alerts from query results  </li>
+<li><strong>Pre-Built Solutions</strong>  </li>
+<li><strong>Azure Marketplace solutions</strong> (e.g., <em>Activity Log Analytics</em>)  </li>
+<li>Centralized views across subscriptions  </li>
+<li>Ready-made dashboards/visualizations  </li>
+</ul>
+<hr />
+<h4 id="activity-log-analytics-example">🔍 <strong>Activity Log Analytics Example</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Unified <em>control-plane</em> auditing ("who did what when")  </li>
+<li><strong>Capabilities</strong>:  </li>
+<li>Aggregate admin logs across <strong>multiple subscriptions</strong>  </li>
+<li>Run cross-subscription KQL queries  </li>
+<li>Pre-configured dashboards for access/change analysis  </li>
+</ul>
+<hr />
+<h4 id="critical-value-propositions">💡 <strong>Critical Value Propositions</strong></h4>
+<ol>
+<li><strong>Schema Normalization</strong>  </li>
+<li>Transforms disparate log formats into query-friendly tables  </li>
+<li><strong>Unified Operations</strong>  </li>
+<li>Single pane for infrastructure/app/audit logs  </li>
+<li><strong>Extensible Ecosystem</strong>  </li>
+<li>Marketplace solutions accelerate monitoring setup  </li>
+<li><strong>Proactive Alerting</strong>  </li>
+<li>Convert log patterns into actionable triggers  </li>
+</ol>
+<p><img alt="Alt Image Text" src="../../images/am1_2_9.png" title="Body image" /></p>
+<blockquote>
+<p><strong>Example Workflow</strong>: Onboard VMs → Query failed logins (KQL) → Visualize attack patterns → Automate security alerts.</p>
+</blockquote>
+<h3 id="2-9-demo-perform-log-searches">2-9 Demo: Perform Log Searches</h3>
+<h4 id="workspace-setup-configuration">🛠️ <strong>Workspace Setup &amp; Configuration</strong></h4>
+<ol>
+<li><strong>Create Workspace</strong>:  </li>
+<li>Foundation for log aggregation (e.g., <code>ps-workspace</code>).  </li>
+<li><strong>Onboard Data Sources</strong>:  </li>
+<li>Connect VMs, storage accounts, activity logs via <strong>Diagnostic Settings</strong>.  </li>
+<li><strong>Key constraint</strong>: A VM can link to <em>only one</em> workspace at a time.  </li>
+<li><strong>Install Log Analytics Agent</strong>:  </li>
+<li>Automatically deployed when connecting VMs → streams OS/resource data to workspace.  </li>
+</ol>
+<hr />
+<h4 id="extending-capabilities-with-solutions">🔌 <strong>Extending Capabilities with Solutions</strong></h4>
+<ul>
+<li><strong>Azure Marketplace Solutions</strong>:  </li>
+<li>Pre-built tools (e.g., <code>AzureBackup</code>, <code>NetworkMonitoring</code>) add specialized dashboards/queries.  </li>
+<li>Install via <strong>Solutions</strong> blade → enhances workspace functionality.  </li>
+<li><em>Note</em>: Each solution has its own pricing (check exercise files).  </li>
+</ul>
+<hr />
+<h4 id="querying-with-kql-kusto-query-language">🔍 <strong>Querying with KQL (Kusto Query Language)</strong></h4>
+<ol>
+<li><strong>Access Interfaces</strong>:  </li>
+<li><strong>Azure Portal</strong>: Built-in Logs interface.  </li>
+<li><strong>Query Playground</strong>: Microsoft-hosted sandbox (authenticate via Azure AD).  </li>
+<li><strong>Key Features</strong>:  </li>
+<li><strong>IntelliSense</strong>: Auto-complete for tables/commands (e.g., <code>Perf</code>, <code>SecurityEvent</code>).  </li>
+<li><strong>Cross-Table Queries</strong>: Join data from multiple sources (e.g., <code>search SecurityEvent | where ...</code>).  </li>
+<li><strong>Time Filters</strong>: Use <code>ago()</code> for dynamic time ranges (e.g., <code>where TimeGenerated &gt; ago(1h)</code>).  </li>
+<li><strong>Query Examples</strong>:<br />
+<code>kql
+   Perf | where TimeGenerated &gt; ago(24h) | summarize count() by ObjectName, CounterName</code>
+   <code>kql
+   SecurityEvent | where EventID == 4625 // Failed logins</code></li>
+</ol>
+<pre><code>search in (SecurityEvent) &quot;Cryptographic&quot;
+take 10
+
+Perf | 
+where TimeGenerated &gt; ago (1h)
+summarize count() by ObjectName, CounterName
+
+// comments
+
+SecurityEvent
+| where Level == 8
+| where EventID == 4672
+Event
+| where EventLog == &quot;Application&quot;
+| where TimeGenerated &gt; ago (24h)
+| where RenderedDescription contains &quot;cryptographic&quot;
+</code></pre>
+<hr />
+<h4 id="visualization-export">📊 <strong>Visualization &amp; Export</strong></h4>
+<ul>
+<li><strong>Dynamic Toggling</strong>: Switch between table/chart views based on query results.  </li>
+<li><strong>Export Options</strong>:  </li>
+<li><strong>CSV</strong>: For offline analysis.  </li>
+<li><strong>Power BI</strong>: Build live dashboards.  </li>
+<li><strong>Alerts</strong>: Trigger rules from query results.  </li>
+<li><strong>Saving/Sharing</strong>: Reuse queries across teams.  </li>
+</ul>
+<hr />
+<h4 id="pro-tips">💡 <strong>Pro Tips</strong></h4>
+<ol>
+<li><strong>Use Sample Queries</strong>: Built-in templates (e.g., "Computer performance") jumpstart analysis.  </li>
+<li><strong>Leverage Schema Pane</strong>: Explore tables/columns under <strong>LogManagement</strong>.  </li>
+<li><strong>Playground Advantage</strong>: Practice KQL safely using Microsoft’s demo data.  </li>
+</ol>
+<blockquote>
+<p><strong>Demo Workflow</strong>: Created workspace → Onboarded VMs → Installed solutions → Ran KQL queries → Exported to CSV/Power BI.  </p>
+</blockquote>
+<p><strong>Next Steps</strong>: Deepen KQL skills using exercise files/Pluralsight courses.</p>
+<h2 id="3-monitoring-your-spend-in-microsoft-azure">3 Monitoring Your Spend in Microsoft Azure</h2>
+<h3 id="3-1-get-estimated-azure-costs-pre-deployment">3-1 Get Estimated Azure Costs Pre-deployment</h3>
+<h4 id="cost-estimation-tools">💰 <strong>Cost Estimation Tools</strong></h4>
+<ol>
+<li><strong>Azure Pricing Calculator</strong>  </li>
+<li>Web-based tool on azure.com for pre-deployment cost modeling  </li>
+<li>
+<p>Supports most Azure services (VMs, databases, storage, etc.)</p>
+</li>
+<li>
+<p><strong>In-Portal Estimates</strong>  </p>
+</li>
+<li>
+<p>Real-time cost displays when configuring resources:  </p>
+<ul>
+<li>VM size selection shows <strong>monthly estimates</strong>  </li>
+<li>Azure SQL DB tiers show pricing during setup  </li>
+</ul>
+</li>
+<li>
+<p><strong>Programmatic Access</strong>  </p>
+</li>
+<li><strong>Consumption API</strong>: Track usage expenditures  </li>
+<li><strong>Rate Card API</strong>: Look up real-time pricing per service/region  </li>
+</ol>
+<hr />
+<h4 id="critical-regional-factors">🌍 <strong>Critical Regional Factors</strong></h4>
+<ul>
+<li><strong>Price Variability</strong>: Costs differ by region due to:  </li>
+<li>Local energy/operational expenses  </li>
+<li>Infrastructure availability  </li>
+<li><strong>Service Limitations</strong>: Not all services available in every region  </li>
+<li><strong>Strategic Impact</strong>: Region choice directly affects:  </li>
+<li>Deployment costs (e.g., US West vs. Southeast Asia)  </li>
+<li>Architecture decisions (e.g., geo-redundancy tradeoffs)  </li>
+</ul>
+<hr />
+<h4 id="key-recommendations">💡 <strong>Key Recommendations</strong></h4>
+<ul>
+<li><strong>Always Specify Region</strong>: Use region filters in pricing tools for accuracy  </li>
+<li><strong>Combine Tools</strong>: Use calculator for planning + portal for real-time validation  </li>
+<li><strong>Monitor Post-Deployment</strong>: Pair estimates with <strong>Cost Management</strong> for ongoing optimization  </li>
+</ul>
+<blockquote>
+<p><strong>Example</strong>: A <em>D4s v3 VM</em> in <strong>East US</strong> = ~$299/month vs. <strong>West Europe</strong> = ~$327/month (illustrates regional variance).</p>
+</blockquote>
+<h3 id="3-2-get-estimated-azure-costs-pre-deployment">3-2 Get Estimated Azure Costs Pre-deployment</h3>
+<h4 id="core-cost-tracking-tools">💳 <strong>Core Cost Tracking Tools</strong></h4>
+<ol>
+<li><strong>Invoices</strong>  </li>
+<li>Detailed monthly expenditure breakdowns (for PAYG subscriptions).  </li>
+<li><strong>Budgets &amp; Alerts</strong>  </li>
+<li>Set spending limits (critical for <strong>Enterprise Agreements</strong>).  </li>
+<li>Receive notifications at custom thresholds (e.g., 80% of budget consumed).  </li>
+</ol>
+<hr />
+<h4 id="deep-cost-analysis">📊 <strong>Deep Cost Analysis</strong></h4>
+<ul>
+<li><strong>Azure Cost Analysis Tool</strong>:  </li>
+<li>Native portal interface for spend exploration.  </li>
+<li>Tracks costs by service/resource group/tags.  </li>
+<li><strong>Cloudyn Integration</strong>:  </li>
+<li>Advanced visual dashboards (easier than spreadsheets).  </li>
+<li><strong>Optimization Engine</strong>:  <ul>
+<li>Identifies underutilized resources (e.g., "Downsize VM X to save $Y/year").  </li>
+<li>Recommends reservations or rightsizing.  </li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="cloudyn-vs-azure-advisor">⚖️ <strong>Cloudyn vs. Azure Advisor</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Azure Advisor</strong></th>
+<th><strong>Cloudyn</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cost Analysis Depth</strong></td>
+<td>Baseline recommendations</td>
+<td>Advanced optimization</td>
+</tr>
+<tr>
+<td><strong>Visualization</strong></td>
+<td>Limited</td>
+<td>Rich dashboards</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Quick checks</td>
+<td>Enterprise cost governance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="key-takeaways_1">💡 <strong>Key Takeaways</strong></h4>
+<ul>
+<li><strong>Proactive Controls</strong>: Budgets/alerts prevent cost overruns.  </li>
+<li><strong>Visual Insights</strong>: Cloudyn transforms raw data into actionable reports.  </li>
+<li><strong>Optimization</strong>: Combine Advisor (quick wins) + Cloudyn (deep dives) for maximum savings.  </li>
+<li><strong>EA Focus</strong>: Budget tracking is essential for credit-based subscriptions.  </li>
+</ul>
+<blockquote>
+<p><strong>Example</strong>: Cloudyn might flag an underused $500/month VM that could be replaced with a $200/month instance → <strong>$3,600/year saved</strong>.</p>
+</blockquote>
+<h3 id="3-3-demo-view-subscription-and-cost-data">3-3 Demo: View Subscription and Cost Data</h3>
+<h4 id="access-control-iam">🔐 <strong>Access Control (IAM)</strong></h4>
+<ul>
+<li><strong>Billing Permissions</strong>:  </li>
+<li>Assign <code>Billing Reader</code> role for read-only billing access  </li>
+<li>Initial subscription creator = default billing admin (transferable)  </li>
+<li><strong>RBAC Principle</strong>: Apply least privilege for cost visibility  </li>
+</ul>
+<h4 id="cost-management-tools">💰 <strong>Cost Management Tools</strong></h4>
+<ol>
+<li><strong>Budgets</strong>  </li>
+<li>Set spend thresholds (subscription/resource group level)  </li>
+<li>Alert triggers via <strong>Action Groups</strong> (email/SMS)  </li>
+<li>Reset periods: Monthly/Quarterly/Yearly  </li>
+<li><strong>Invoices</strong>  </li>
+<li>Download/view PAYG invoices  </li>
+<li>Email invoices directly from portal  </li>
+</ol>
+<h3 id="subscription-administration">⚙️ <strong>Subscription Administration</strong></h3>
+<ul>
+<li><strong>Renaming/Organization</strong>: Label subscriptions clearly  </li>
+<li><strong>Directory Transfer</strong>:  </li>
+<li>Move subscription between Azure AD tenants  </li>
+<li><em>Critical note</em>: <strong>Doesn’t transfer billing ownership</strong>  </li>
+<li><strong>Cancellation</strong>: Directly from Overview blade  </li>
+<li><strong>Resource Providers</strong>:  </li>
+<li>Register/unregister services (troubleshooting API issues)  </li>
+</ul>
+<h3 id="partner-external-integrations">🤝 <strong>Partner &amp; External Integrations</strong></h3>
+<ul>
+<li><strong>Cloud Service Providers</strong>: Link partner IDs for usage sharing  </li>
+<li><strong>Network Virtual Appliances</strong>: View external billing linkages  </li>
+</ul>
+<h3 id="key-workflow-highlights">📊 <strong>Key Workflow Highlights</strong></h3>
+<ol>
+<li><strong>Budget Creation</strong>:<br />
+   Scope → Amount → Alert conditions → Action group  </li>
+<li><strong>Invoice Delegation</strong>: Use "Access Invoice" to grant billing access  </li>
+<li><strong>Directory Change Caveats</strong>:  </li>
+<li>Original directory can’t be deleted until billing ownership is transferred  </li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/change-directory">Microsoft Docs</a> for detailed process  </li>
+</ol>
+<blockquote>
+<p><strong>Pro Tip</strong>: Combine budgets with Azure Monitor alerts for automated cost governance (e.g., auto-shutdown VMs at 90% budget utilization).</p>
+</blockquote>
+<hr />
+<h4 id="critical-takeaways">💡 <strong>Critical Takeaways</strong></h4>
+<ul>
+<li><strong>Filter subscriptions</strong> to reduce portal clutter  </li>
+<li><strong>Budgets = specialized cost alerts</strong> (leverages Action Groups)  </li>
+<li><strong>Billing access ≠ subscription access</strong> (manage via IAM)  </li>
+<li>Always verify <strong>resource provider registration</strong> for new services  </li>
+<li>Directory changes require <strong>explicit billing ownership transfer</strong>  </li>
+</ul>
+<p>This setup enables granular cost control while maintaining security and operational flexibility.</p>
+<h3 id="3-4-forecast-and-optimize-your-azure-spend">3-4 Forecast and Optimize Your Azure Spend</h3>
+<h4 id="cost-optimization-via-azure-advisor">⚙️ <strong>Cost Optimization via Azure Advisor</strong></h4>
+<ul>
+<li><strong>Key Recommendations</strong>:  </li>
+<li><strong>Resize/Shut Down</strong> underutilized VMs  </li>
+<li><strong>Delete idle VPN Gateways</strong> (high-cost if unused)  </li>
+<li><strong>Purchase Reserved VM Instances</strong> (save 40-70% vs. pay-as-you-go)  </li>
+<li><strong>Clean up orphaned resources</strong>: Unattached public IPs, unused disks  </li>
+<li><strong>Use Standard-tier snapshots</strong> for managed disks (no premium needed for backups)  </li>
+</ul>
+<hr />
+<h3 id="forecasting-tools">📈 <strong>Forecasting Tools</strong></h3>
+<ol>
+<li><strong>Azure Cost Management</strong>:  </li>
+<li>Built-in portal tool for spend visualization  </li>
+<li>Projects future costs based on current usage patterns  </li>
+<li>
+<p>Breaks down costs by service/resource/region  </p>
+</li>
+<li>
+<p><strong>Cloudyn Integration</strong>:</p>
+</li>
+<li>
+<p>Advanced forecasting gradually merging into Azure Cost Management  </p>
+</li>
+<li>Provides richer dashboards and long-term trend analysis  </li>
+</ol>
+<hr />
+<h4 id="strategic-insights">💡 <strong>Strategic Insights</strong></h4>
+<ul>
+<li><strong>Proactive Savings</strong>:  </li>
+<li>Reservations → Significant long-term discounts  </li>
+<li>Resource hygiene → Eliminates "orphaned resource tax"  </li>
+<li><strong>Tier Optimization</strong>:  </li>
+<li>Match storage performance to actual needs (e.g., standard snapshots)  </li>
+<li><strong>Continuous Monitoring</strong>:  </li>
+<li>Combine Advisor recommendations with Cost Management trends  </li>
+</ul>
+<blockquote>
+<p><strong>Example Impact</strong>:<br />
+- Resizing 5 underused VMs: <strong>~$15k/year saved</strong><br />
+- Switching to reserved instances: <strong>~60% cost reduction</strong>  </p>
+</blockquote>
+<h4 id="future-outlook">🔮 <strong>Future Outlook</strong></h4>
+<p>Microsoft is unifying Cloudyn’s depth with native Azure tools – expect:  </p>
+<ul>
+<li>Enhanced forecasting algorithms  </li>
+<li>Deeper cross-subscription insights  </li>
+<li>Automated optimization workflows  </li>
+</ul>
+<p><strong>Next Step</strong>: Implement Advisor recommendations + set budget alerts to lock in savings.</p>
+<p>Here's a concise summary of Azure cost management layers and tools:</p>
+<h4 id="cost-management-hierarchy">🔍 <strong>Cost Management Hierarchy</strong></h4>
+<ol>
+<li><strong>Management Groups</strong>  </li>
+<li>Organize subscriptions hierarchically (above subscriptions, below Azure AD tenant)  </li>
+<li>Enable cross-subscription cost analysis  </li>
+<li>
+<p><em>Best Practice</em>: Use even with single subscriptions for future scalability  </p>
+</li>
+<li>
+<p><strong>Scope Control</strong>  </p>
+</li>
+<li>Toggle between tenant/management group/subscription/resource views  </li>
+</ol>
+<hr />
+<h4 id="core-tools-in-cost-management-billing">⚙️ <strong>Core Tools in Cost Management &amp; Billing</strong></h4>
+<ol>
+<li><strong>Azure Advisor (Cost Tab)</strong>  </li>
+<li>
+<p><strong>Free ML-powered optimization</strong>:  </p>
+<ul>
+<li>Reserved instance recommendations  </li>
+<li>Underutilized resource identification  </li>
+<li>Orphaned resource cleanup (e.g., unattached IPs)  </li>
+</ul>
+</li>
+<li>
+<p><strong>Cost Analysis</strong>  </p>
+</li>
+<li><strong>Key Features</strong>:  <ul>
+<li>Views: Accumulated/Daily/Service/Resource costs  </li>
+<li><strong>Tag-based grouping</strong>: Critical for cross-resource-group tracking  </li>
+<li>Export options: PNG/PDF/CSV  </li>
+</ul>
+</li>
+<li>
+<p><strong>Time Frames</strong>: Customizable (last 7 days, calendar months, etc.)  </p>
+</li>
+<li>
+<p><strong>Cloudyn Transition</strong>  </p>
+</li>
+<li>Native Azure tools now replace Cloudyn  </li>
+<li>New Cloudyn registrations restricted to CSP partners  </li>
+</ol>
+<hr />
+<h4 id="strategic-importance-of-tagging">🏷️ <strong>Strategic Importance of Tagging</strong></h4>
+<ul>
+<li><strong>Cost Allocation</strong>: Track expenses across projects/departments  </li>
+<li><strong>Analysis Use Case</strong>:<br />
+<code>markdown
+  Cost Analysis → Group By → "Tag:ProjectX"</code></li>
+<li>Solves limitation of resource-group-only tracking  </li>
+</ul>
+<hr />
+<h4 id="workflow-highlights">📊 <strong>Workflow Highlights</strong></h4>
+<ol>
+<li><strong>Navigate to</strong>:<br />
+<code>Cost Management + Billing → Cost Management</code>  </li>
+<li><strong>Set Scope</strong>: Management group / Subscription  </li>
+<li><strong>Analyze</strong>: Use built-in views or custom tags  </li>
+<li><strong>Optimize</strong>: Implement Advisor recommendations  </li>
+<li><strong>Export</strong>: Share reports via PDF/CSV  </li>
+</ol>
+<blockquote>
+<p><strong>Pro Tip</strong>: Combine daily cost alerts with tag-based dashboards for real-time budget control.</p>
+</blockquote>
+<hr />
+<h4 id="key-takeaways_2">💡 <strong>Key Takeaways</strong></h4>
+<ul>
+<li><strong>Management Groups &gt; Subscriptions</strong>: Foundation for enterprise cost governance  </li>
+<li><strong>Tags Are Non-Negotiable</strong>: Essential for accurate cost attribution  </li>
+<li><strong>Advisor = Free Savings</strong>: Automatically identifies waste  </li>
+<li><strong>Cloudyn Phase-Out</strong>: Prioritize native Azure Cost Management tools  </li>
+</ul>
+<p>This layered approach enables granular cost tracking from tenant-level down to individual resources.</p>
+<h3 id="3-5-demo-work-with-azure-cost-analysis">3-5 Demo: Work with Azure Cost Analysis</h3>
+<h4 id="cost-management-hierarchy_1">🔍 <strong>Cost Management Hierarchy</strong></h4>
+<ol>
+<li><strong>Management Groups</strong>  </li>
+<li>Organize subscriptions hierarchically (above subscriptions, below Azure AD tenant)  </li>
+<li>Enable cross-subscription cost analysis  </li>
+<li>
+<p><em>Best Practice</em>: Use even with single subscriptions for future scalability  </p>
+</li>
+<li>
+<p><strong>Scope Control</strong>  </p>
+</li>
+<li>Toggle between tenant/management group/subscription/resource views  </li>
+</ol>
+<hr />
+<h4 id="core-tools-in-cost-management-billing_1">⚙️ <strong>Core Tools in Cost Management &amp; Billing</strong></h4>
+<ol>
+<li><strong>Azure Advisor (Cost Tab)</strong>  </li>
+<li>
+<p><strong>Free ML-powered optimization</strong>:  </p>
+<ul>
+<li>Reserved instance recommendations  </li>
+<li>Underutilized resource identification  </li>
+<li>Orphaned resource cleanup (e.g., unattached IPs)  </li>
+</ul>
+</li>
+<li>
+<p><strong>Cost Analysis</strong>  </p>
+</li>
+<li><strong>Key Features</strong>:  <ul>
+<li>Views: Accumulated/Daily/Service/Resource costs  </li>
+<li><strong>Tag-based grouping</strong>: Critical for cross-resource-group tracking  </li>
+<li>Export options: PNG/PDF/CSV  </li>
+</ul>
+</li>
+<li>
+<p><strong>Time Frames</strong>: Customizable (last 7 days, calendar months, etc.)  </p>
+</li>
+<li>
+<p><strong>Cloudyn Transition</strong>  </p>
+</li>
+<li>Native Azure tools now replace Cloudyn  </li>
+<li>New Cloudyn registrations restricted to CSP partners  </li>
+</ol>
+<hr />
+<h4 id="strategic-importance-of-tagging_1">🏷️ <strong>Strategic Importance of Tagging</strong></h4>
+<ul>
+<li><strong>Cost Allocation</strong>: Track expenses across projects/departments  </li>
+<li><strong>Analysis Use Case</strong>:<br />
+<code>markdown
+  Cost Analysis → Group By → "Tag:ProjectX"</code></li>
+<li>Solves limitation of resource-group-only tracking  </li>
+</ul>
+<hr />
+<h4 id="workflow-highlights_1">📊 <strong>Workflow Highlights</strong></h4>
+<ol>
+<li><strong>Navigate to</strong>:<br />
+<code>Cost Management + Billing → Cost Management</code>  </li>
+<li><strong>Set Scope</strong>: Management group / Subscription  </li>
+<li><strong>Analyze</strong>: Use built-in views or custom tags  </li>
+<li><strong>Optimize</strong>: Implement Advisor recommendations  </li>
+<li><strong>Export</strong>: Share reports via PDF/CSV  </li>
+</ol>
+<blockquote>
+<p><strong>Pro Tip</strong>: Combine daily cost alerts with tag-based dashboards for real-time budget control.</p>
+</blockquote>
+<hr />
+<h4 id="key-takeaways_3">💡 <strong>Key Takeaways</strong></h4>
+<ul>
+<li><strong>Management Groups &gt; Subscriptions</strong>: Foundation for enterprise cost governance  </li>
+<li><strong>Tags Are Non-Negotiable</strong>: Essential for accurate cost attribution  </li>
+<li><strong>Advisor = Free Savings</strong>: Automatically identifies waste  </li>
+<li><strong>Cloudyn Phase-Out</strong>: Prioritize native Azure Cost Management tools  </li>
+</ul>
+<p>This layered approach enables granular cost tracking from tenant-level down to individual resources.</p>
+<h2 id="4-microsoft-monitoring-azure-updates">4 Microsoft Monitoring Azure Updates</h2>
+<h3 id="4-1-azure-cost-management">4-1 Azure Cost Management</h3>
+<p>Here's a concise summary of Azure spend reporting in Cost Management:</p>
+<h4 id="core-reporting-tools">📊 <strong>Core Reporting Tools</strong></h4>
+<ol>
+<li><strong>Cost Analysis Hub</strong>  </li>
+<li><strong>Views</strong>:  <ul>
+<li>Accumulated spend  </li>
+<li>Forecasted future costs  </li>
+<li>Breakdowns by service/location/resource  </li>
+</ul>
+</li>
+<li><strong>Forecasting</strong>: Predicts month-end spend based on current trends  </li>
+</ol>
+<hr />
+<h4 id="critical-features">🏷️ <strong>Critical Features</strong></h4>
+<ul>
+<li><strong>Tag Filtering</strong>:  </li>
+<li>Track costs across resource groups/subscriptions  </li>
+<li>Essential for multi-department/project cost allocation  </li>
+<li><strong>Export &amp; Sharing</strong>:  </li>
+<li>Generate CSV reports  </li>
+<li>Share custom views with stakeholders  </li>
+<li><strong>Alerts Integration</strong>:  </li>
+<li>Trigger notifications at spending thresholds  </li>
+</ul>
+<hr />
+<h4 id="cloudyn-transition">⚠️ <strong>Cloudyn Transition</strong></h4>
+<ul>
+<li><strong>Deprecation Status</strong>:  </li>
+<li>Cloudyn (acquired by Microsoft) is being phased out  </li>
+<li>Functionality now <strong>natively integrated</strong> into Azure Cost Management  </li>
+<li><strong>Action</strong>: Use built-in tools instead of standalone Cloudyn  </li>
+</ul>
+<hr />
+<h4 id="workflow-summary">⚙️ <strong>Workflow Summary</strong></h4>
+<pre><code class="language-mermaid">graph TD
+A[Access Cost Analysis] --&gt; B{Configure View}
+B --&gt; C[Scope: Subscription/Resource Group]
+B --&gt; D[Filter: Tags/Service/Location]
+B --&gt; E[Select: Forecast/Accumulated View]
+C --&gt; F[Export CSV/Share Dashboard]
+D --&gt; G[Identify Cost Centers]
+E --&gt; H[Track Against Budgets]
+</code></pre>
+<h4 id="key-takeaways_4">💡 <strong>Key Takeaways</strong></h4>
+<ol>
+<li><strong>Forecasting &gt; Retrospection</strong>: Proactively manage budgets using prediction tools  </li>
+<li><strong>Tag Discipline</strong>: Implement consistent tagging for accurate cost attribution  </li>
+<li><strong>Native Over Third-Party</strong>: Rely on Azure's built-in cost tools (Cloudyn replacement)  </li>
+<li><strong>Actionable Outputs</strong>: Export data for finance teams/audits  </li>
+</ol>
+<blockquote>
+<p><strong>Pro Tip</strong>: Combine daily cost alerts with tag-based dashboards for real-time budget control across projects.  </p>
+</blockquote>
+<p><strong>Next Step</strong>: Set up monthly forecast vs. actual reports using exported CSV data.</p>
+<h3 id="4-2-azure-monitor-workbooks">4-2 Azure Monitor Workbooks</h3>
+<h4 id="azure-monitor-workbooks">📘 <strong>Azure Monitor Workbooks</strong></h4>
+<ol>
+<li><strong>Purpose</strong>:  </li>
+<li>Solves "metric overload" by providing curated monitoring views  </li>
+<li>Combines <strong>metrics</strong>, <strong>KQL queries</strong>, and <strong>markdown</strong> in interactive reports  </li>
+<li><strong>Key Features</strong>:  </li>
+<li>Predefined templates for common scenarios (e.g., VM performance, app health)  </li>
+<li>Custom report creation with drag-and-drop components  </li>
+<li>Real-time collaboration for teams  </li>
+<li><strong>Value</strong>:  </li>
+<li>Replaces manual Metric Explorer configuration  </li>
+<li>Contextualizes data (e.g., explanations + visuals + live queries)  </li>
+</ol>
+<hr />
+<h4 id="workbooks-vs-notebooks">⚖️ <strong>Workbooks vs. Notebooks</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Azure Monitor Workbooks</strong></th>
+<th><strong>Azure Notebooks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core Function</strong></td>
+<td>Monitoring dashboards</td>
+<td>Code execution + data science</td>
+</tr>
+<tr>
+<td><strong>Technology</strong></td>
+<td>Native Azure tool</td>
+<td>Hosted Jupyter Notebooks</td>
+</tr>
+<tr>
+<td><strong>Components</strong></td>
+<td>Metrics + KQL + markdown</td>
+<td>Markdown + executable code (Python/R)</td>
+</tr>
+<tr>
+<td><strong>Primary Users</strong></td>
+<td>DevOps/IT Ops</td>
+<td>Data scientists/ML engineers</td>
+</tr>
+<tr>
+<td><strong>Hosting</strong></td>
+<td>Integrated in Azure Monitor</td>
+<td><code>notebooks.azure.com</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="key-takeaways_5">💡 <strong>Key Takeaways</strong></h4>
+<ol>
+<li><strong>Use Workbooks for</strong>:  </li>
+<li>Unified performance/health dashboards  </li>
+<li>Combining live metrics with diagnostic logs  </li>
+<li>Team-sharable operational reports  </li>
+<li><strong>Use Notebooks for</strong>:  </li>
+<li>Exploratory data analysis  </li>
+<li>Machine learning prototyping  </li>
+<li>Code-heavy collaborations (e.g., Python/R scripts)  </li>
+<li><strong>Innovation</strong>: Workbooks simplify monitoring by pre-packaging critical insights (no manual metric hunting).  </li>
+</ol>
+<blockquote>
+<p><strong>Pro Tip</strong>: Start with predefined Workbooks templates, then customize with organization-specific KQL queries.</p>
+</blockquote>
+<h3 id="4-2-azure-monitor-workbooks_1">4-2 Azure Monitor Workbooks</h3>
+<h4 id="core-evolution">🔍 <strong>Core Evolution</strong></h4>
+<ul>
+<li><strong>Successor to "v1" VM Monitoring</strong>: Replaces manual guest OS diagnostics + Metrics Explorer  </li>
+<li><strong>Unified Solution</strong>: Integrates legacy Operations Management Suite (OMS) capabilities into Azure Monitor  </li>
+</ul>
+<hr />
+<h4 id="key-features_1">🚀 <strong>Key Features</strong></h4>
+<ol>
+<li><strong>Performance Dashboard</strong>  </li>
+<li>Predefined views for critical metrics (CPU/memory/disk/network)  </li>
+<li>Eliminates manual chart configuration in Metrics Explorer  </li>
+<li><strong>Map (Service Map)</strong>  </li>
+<li>Visualizes dependencies between VMs/services  </li>
+<li>Reveals:  <ul>
+<li>Active network connections (IPs/ports/protocols)  </li>
+<li>Running processes and linked dependencies  </li>
+</ul>
+</li>
+<li><strong>Bulk Configuration</strong>  </li>
+<li>Auto-enable diagnostics across VMs via <strong>Azure Policy</strong>  </li>
+<li>Centralized onboarding via Log Analytics workspace  </li>
+</ol>
+<hr />
+<h4 id="requirements">⚙️ <strong>Requirements</strong></h4>
+<ul>
+<li><strong>Log Analytics Workspace</strong>: Mandatory foundation (future-proofs monitoring)  </li>
+<li><strong>Agents</strong>: Automatic deployment during onboarding  </li>
+<li><em>Log Analytics agent</em> (data collection)  </li>
+<li><em>Dependency agent</em> (dependency mapping)  </li>
+</ul>
+<hr />
+<h4 id="strategic-value">💡 <strong>Strategic Value</strong></h4>
+<ul>
+<li><strong>Proactive Insights</strong>: Detect bottlenecks/dependencies before outages  </li>
+<li><strong>Operational Efficiency</strong>:  </li>
+<li>Replace custom dashboards with out-of-box views  </li>
+<li>Automate monitoring at scale (via policies)  </li>
+<li><strong>Unified Experience</strong>: Accessible from:  </li>
+<li>Individual VM blades  </li>
+<li>Azure Monitor hub  </li>
+</ul>
+<blockquote>
+<p><strong>Demo Highlight</strong>: Showcases how to replace fragmented monitoring with a single-pane solution.  </p>
+</blockquote>
+<hr />
+<h4 id="migration-note">🔄 <strong>Migration Note</strong></h4>
+<ul>
+<li><strong>OMS Transition</strong>: Original "Service Map" now fully integrated as the "Map" feature  </li>
+<li><strong>Adoption Incentive</strong>: Microsoft’s recommended path for VM monitoring</li>
+</ul>
+<h3 id="4-3-azure-monitor-for-vms">4-3 Azure Monitor for VMs</h3>
+<p>Here's a concise summary of <strong>Azure Monitor for VMs (Virtual Machine Insights)</strong>:</p>
+<h4 id="evolution-from-legacy-monitoring">🔄 <strong>Evolution from Legacy Monitoring</strong></h4>
+<ul>
+<li>Replaces "v1" VM monitoring (manual guest OS diagnostics + Metrics Explorer)</li>
+<li>Integrates former <strong>Operations Management Suite (OMS)</strong> capabilities</li>
+<li>Requires a <strong>Log Analytics workspace</strong> (foundation for modern monitoring)</li>
+</ul>
+<hr />
+<h4 id="core-features">🖥️ <strong>Core Features</strong></h4>
+<ol>
+<li><strong>Performance Dashboard</strong>  </li>
+<li>Predefined views for critical metrics (CPU/memory/disk/network)  </li>
+<li>Eliminates manual chart configuration  </li>
+<li><strong>Map (Service Map)</strong>  </li>
+<li>Visualizes dependencies between VMs/services  </li>
+<li>Reveals:  <ul>
+<li>Live network connections (IPs/ports/protocols)  </li>
+<li>Running processes and dependencies  </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h4 id="key-advantages">⚡ <strong>Key Advantages</strong></h4>
+<ul>
+<li><strong>Bulk Configuration</strong>:  </li>
+<li>Auto-enable monitoring across VMs via <strong>Azure Policy</strong>  </li>
+<li>Centralized onboarding (portal/API/templates)  </li>
+<li><strong>Unified Access</strong>:  </li>
+<li>Available from individual VM blades <em>and</em> Azure Monitor hub  </li>
+<li><strong>Future-Proof</strong>:  </li>
+<li>Microsoft's strategic direction for VM monitoring  </li>
+</ul>
+<hr />
+<h4 id="deployment-workflow">⚙️ <strong>Deployment Workflow</strong></h4>
+<pre><code class="language-mermaid">graph LR
+A[Log Analytics Workspace] --&gt; B[Enable Insights]
+B --&gt; C[Performance Dashboard]
+B --&gt; D[Service Map]
+B --&gt; E[Azure Policy Integration]
+</code></pre>
+<blockquote>
+<p><strong>Demo Highlight</strong>: Showcases seamless transition from legacy diagnostics to automated insights with dependency mapping.</p>
+</blockquote>
+<hr />
+<h4 id="why-adopt">💡 <strong>Why Adopt?</strong></h4>
+<ul>
+<li><strong>Proactive Optimization</strong>: Identify bottlenecks before outages  </li>
+<li><strong>Operational Efficiency</strong>: Replace fragmented tools with a single pane  </li>
+<li><strong>Enterprise Scale</strong>: Manage 1000s of VMs via policy-driven enforcement  </li>
+</ul>
+<h3 id="4-4-demo-enable-azure-monitor-for-vm">4-4 Demo: Enable Azure Monitor for VM</h3>
+<h4 id="onboarding-methods">⚙️ <strong>Onboarding Methods</strong></h4>
+<ol>
+<li><strong>Per-VM Enablement</strong>:  </li>
+<li>Navigate to VM → <strong>Monitoring</strong> → <strong>Insights</strong> → Enable  </li>
+<li>Select <strong>Log Analytics workspace</strong>  </li>
+<li>
+<p>Automatically deploys:  </p>
+<ul>
+<li><em>Log Analytics agent</em> (metrics/logs)  </li>
+<li><em>Dependency agent</em> (Service Map)  </li>
+</ul>
+</li>
+<li>
+<p><strong>Bulk Enablement</strong>:  </p>
+</li>
+<li>Use <strong>Azure Monitor hub</strong> → <strong>Virtual Machines</strong>  </li>
+<li>View <strong>monitored/unmonitored VMs</strong>  </li>
+<li>Configure <strong>workspace assignment</strong>  </li>
+<li>Leverage <strong>Azure Policy/REST API/ARM templates</strong> for automation  </li>
+</ol>
+<hr />
+<h4 id="key-features-enabled">🔍 <strong>Key Features Enabled</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Prebuilt dashboards for CPU/memory/disk/network</td>
+</tr>
+<tr>
+<td><strong>Map (Service Map)</strong></td>
+<td>Visualize dependencies between VMs/services (ports/protocols/connections)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="critical-notes">⚠️ <strong>Critical Notes</strong></h4>
+<ul>
+<li><strong>Multi-Homing Support</strong>: VMs <em>can</em> report to <strong>multiple workspaces</strong> (advanced scenario)  </li>
+<li><strong>Agent Requirements</strong>:  </li>
+<li>Windows: Event logs, IIS, crash dumps  </li>
+<li>Linux: Syslog data  </li>
+<li><strong>Legacy vs. Modern</strong>:  </li>
+<li><em>Old method</em>: "Guest OS diagnostics" (storage account-based)  </li>
+<li><em>New standard</em>: <strong>Insights</strong> (Log Analytics-centric)  </li>
+</ul>
+<hr />
+<h4 id="workflow-comparison">🚀 <strong>Workflow Comparison</strong></h4>
+<pre><code class="language-mermaid">graph LR
+A[VM Monitoring] --&gt; B[Traditional Method]
+A --&gt; C[Modern Method]
+B --&gt; D[Enable Guest OS diagnostics&lt;br&gt;per VM]
+C --&gt; E[Enable Insights&lt;br&gt;per VM or at scale]
+E --&gt; F[Azure Monitor hub]
+E --&gt; G[Azure Policy]
+</code></pre>
+<h4 id="key-takeaways_6">💡 <strong>Key Takeaways</strong></h4>
+<ol>
+<li><strong>Centralization</strong>: Log Analytics workspace is now the monitoring backbone  </li>
+<li><strong>Scale Matters</strong>: Use Azure Monitor hub for enterprise deployments (100s of VMs)  </li>
+<li><strong>Dependency Mapping</strong>: Service Map reveals hidden infrastructure relationships  </li>
+<li><strong>Future-Proof</strong>: Insights replaces legacy diagnostics (Microsoft's strategic path)  </li>
+</ol>
+<p><strong>Pro Tip</strong>: Start with Insights onboarding via Azure Policy to enforce monitoring standards across all VMs.</p>
+<h3 id="4-5-demo-integrate-azure-policy">4-5 Demo: Integrate Azure Policy</h3>
+<h4 id="azure-policy-for-monitoring-automation">⚙️ <strong>Azure Policy for Monitoring Automation</strong></h4>
+<ol>
+<li><strong>Purpose</strong>:  </li>
+<li>Enforce monitoring compliance at scale  </li>
+<li><strong>Automate deployment of monitoring agents</strong>  </li>
+<li>
+<p><strong>Enable </strong>Azure Monitor for VMs<strong> across environments</strong>  </p>
+</li>
+<li>
+<p><strong>Key Built-in Initiatives</strong>:  </p>
+</li>
+<li><strong>Enable Azure Monitor for VMs</strong>:  <ul>
+<li>Auto-deploys Log Analytics agent to <strong>Windows/Linux VMs</strong>  </li>
+</ul>
+</li>
+<li><strong>Enable Azure Monitor for Scale Sets</strong>:  <ul>
+<li>Applies same monitoring to VM scale sets  </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h4 id="implementation-workflow">🔧 <strong>Implementation Workflow</strong></h4>
+<pre><code class="language-mermaid">graph TD
+A[Azure Policy → Definitions] --&gt; B{Filter:}
+B --&gt; C[Category: Monitoring]
+B --&gt; D[Type: Built-in]
+C --&gt; E[Select Initiative]
+E --&gt; F[Assign to Scope]
+</code></pre>
+<ol>
+<li>Navigate: <code>Policy &gt; Authoring &gt; Definitions</code>  </li>
+<li>Filter:  </li>
+<li><em>Category</em>: <code>Monitoring</code>  </li>
+<li><em>Type</em>: <code>Built-in</code>  </li>
+<li>Assign initiatives to:  </li>
+<li>Management groups  </li>
+<li>Subscriptions  </li>
+<li>Resource groups  </li>
+</ol>
+<hr />
+<h4 id="initiative-components">📦 <strong>Initiative Components</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Initiative</strong></th>
+<th><strong>Policies Included</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enable Azure Monitor for VMs</strong></td>
+<td>- Deploy Log Analytics agent (Windows)</td>
+</tr>
+<tr>
+<td></td>
+<td>- Deploy Log Analytics agent (Linux)</td>
+</tr>
+<tr>
+<td><strong>Enable for Scale Sets</strong></td>
+<td>- Equivalent policies for VM scale sets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="key-benefits">💡 <strong>Key Benefits</strong></h4>
+<ul>
+<li><strong>Zero-Touch Onboarding</strong>: Automates agent deployment  </li>
+<li><strong>Consistency</strong>: Ensures 100% VM monitoring coverage  </li>
+<li><strong>Remediation</strong>: Auto-fixes non-compliant resources  </li>
+<li><strong>Governance Integration</strong>: Part of broader Azure governance framework  </li>
+</ul>
+<blockquote>
+<p><strong>Pro Tip</strong>: Combine with Azure Monitor's "Insights" onboarding for end-to-end monitoring enforcement. Assign initiatives at <strong>management group level</strong> for enterprise-wide coverage.</p>
+</blockquote>
+<h3 id="4-6-demo-view-azure-monitor-vm-data">4-6 Demo: View Azure Monitor VM Data</h3>
+<h4 id="onboarding-workflow">⚙️ <strong>Onboarding Workflow</strong></h4>
+<ol>
+<li><strong>Bulk Enablement</strong>:  </li>
+<li>From <strong>Azure Monitor → Virtual Machines</strong> view  </li>
+<li>Identify non-monitored VMs across subscriptions/resource groups  </li>
+<li>Select VMs → "Enable" → Choose existing Log Analytics workspace  </li>
+<li>
+<p><em>Critical Note</em>: Avoid accidentally creating new workspaces (demo mishap)  </p>
+</li>
+<li>
+<p><strong>Per-VM Method</strong>:  </p>
+</li>
+<li>VM blade → <strong>Insights</strong> → Select workspace → Enable  </li>
+<li>Auto-deploys agents (Log Analytics + Dependency agents)  </li>
+</ol>
+<hr />
+<h4 id="performance-dashboard">📊 <strong>Performance Dashboard</strong></h4>
+<ul>
+<li><strong>Prebuilt Metrics Visualization</strong>:  </li>
+<li>CPU/Memory/Disk/Network charts across multiple VMs  </li>
+<li>Interactive tooltips show per-VM values  </li>
+<li>Aggregation options: Min/Max/Avg/Percentiles  </li>
+<li><strong>Advantage vs. Metrics Explorer</strong>:  </li>
+<li>No manual configuration required  </li>
+<li>Unified view of critical metrics  </li>
+</ul>
+<hr />
+<h4 id="service-map-dependency-visualization">🌐 <strong>Service Map (Dependency Visualization)</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Connections</strong></td>
+<td>Live inbound/outbound links (IPs/ports/protocols)</td>
+</tr>
+<tr>
+<td><strong>Processes</strong></td>
+<td>Running services (e.g., 22 processes on <code>spot1</code> in demo)</td>
+</tr>
+<tr>
+<td><strong>Dependency Mapping</strong></td>
+<td>Critical for migrations (identify all dependencies pre-move)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Example</em>:<br />
+- <code>spot1</code> showed 11 external connections on port 443<br />
+- Azure DNS names revealed cloud dependencies  </p>
+<hr />
+<h4 id="key-insights_1">🔑 <strong>Key Insights</strong></h4>
+<ol>
+<li><strong>Scalability</strong>:  </li>
+<li>Onboard 100s of VMs via Azure Monitor hub (not just per-VM)  </li>
+<li><strong>Migration Safety</strong>:  </li>
+<li>Service Map prevents post-move outages by exposing hidden dependencies  </li>
+<li><strong>Hybrid Support</strong>:  </li>
+<li>Works with Azure Arc-enabled on-premises servers  </li>
+<li>Includes VM scale sets  </li>
+<li><strong>Workbook Integration</strong>:  </li>
+<li>All views are prebuilt Azure Workbooks (customizable)  </li>
+</ol>
+<blockquote>
+<p><strong>Pro Tip</strong>: Use Service Map before ANY VM migration/change to audit connections. Combine with Azure Policy for auto-remediation of unmonitored resources.</p>
+</blockquote>
+<h3 id="4-8-where-you-see-kql">4-8 Where You See KQL</h3>
+<h4 id="kql-essentials">🔍 <strong>KQL Essentials</strong></h4>
+<ol>
+<li><strong>Origin &amp; Purpose</strong>:  </li>
+<li>Named after explorer <em>Jacques Cousteau</em> (homophone "Kusto")  </li>
+<li>Designed as a <strong>data exploration language</strong> for large-scale analytics  </li>
+<li>Internally used by Microsoft for years before public release  </li>
+</ol>
+<hr />
+<h4 id="key-azure-services-using-kql">⚙️ <strong>Key Azure Services Using KQL</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Service</strong></th>
+<th><strong>Use Case</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure Log Analytics</strong></td>
+<td>Query logs across Azure/hybrid resources (primary interface)</td>
+</tr>
+<tr>
+<td><strong>Application Insights</strong></td>
+<td>Analyze application performance/traces</td>
+</tr>
+<tr>
+<td><strong>Azure Sentinel (SIEM)</strong></td>
+<td>Investigate security threats/incidents</td>
+</tr>
+<tr>
+<td><strong>Azure Data Explorer (ADX)</strong></td>
+<td>High-speed data exploration on petabyte-scale datasets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="strategic-value_1">💡 <strong>Strategic Value</strong></h4>
+<ol>
+<li><strong>Certification &amp; Career</strong>:  </li>
+<li>Critical for Azure certification exams  </li>
+<li>High-value industry skill for cloud monitoring/security roles  </li>
+<li><strong>Unified Language</strong>:  </li>
+<li>Single syntax across monitoring/security/data services  </li>
+<li><strong>Performance</strong>:  </li>
+<li>Optimized for fast queries on massive datasets (billions of records)  </li>
+</ol>
+<hr />
+<h4 id="azure-data-explorer-adx-notes">🌐 <strong>Azure Data Explorer (ADX) Notes</strong></h4>
+<ul>
+<li><strong>Web-based service</strong> (not desktop app)  </li>
+<li>Uses <strong>compute clusters</strong> for parallel query processing  </li>
+<li>Supports both <strong>SQL</strong> and <strong>KQL</strong> interfaces  </li>
+<li>Handles petabyte-scale data exploration  </li>
+</ul>
+<blockquote>
+<p>💡 <strong>Pro Tip</strong>: Mastering KQL unlocks deep insights across Azure's monitoring ecosystem – prioritize learning its core operators (<code>where</code>, <code>summarize</code>, <code>join</code>, <code>render</code>).  </p>
+</blockquote>
+<pre><code>StormEvents
+| limit 100
+</code></pre>
+<p><strong>Azure Data Explorer (ADX)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/am1_2_10.png" title="Body image" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5129 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Topic 1 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#topic-5-question-set-5" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Topic 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topic-5-question-set-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 5 - Question Set 5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 5 - Question Set 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #9
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #10
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #11
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #12
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #13
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #16
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #17
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #18
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-19-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #19 SIMULATION
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #22
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #23
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #24
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #25
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #26
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-b-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - B. No
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="- B. No">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #27
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #28
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #29
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #30
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #31
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #33
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #34
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #35
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #36
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #37
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #38
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #39
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #40
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #41
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #42
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #43
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #44
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #45
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #46
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #47
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-48" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #48
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #49
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #50
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #51
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #52
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 6
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Topic 1</h1>
+
+<h2 id="topic-5-question-set-5">Topic 5 - Question Set 5</h2>
+<h3 id="question-1">Question #1</h3>
+<p>You build a bot by using the Microsoft Bot Framework SDK and the Azure Bot Service.</p>
+<p>You plan to deploy the bot to Azure.</p>
+<p>You register the bot by using the Bot Channels Registration service.</p>
+<p>Which two values are required to complete the deployment? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p>A. botId</p>
+</li>
+<li>
+<p>B. tenantId</p>
+</li>
+<li>
+<p><strong>C. appId</strong></p>
+</li>
+<li>
+<p>D. objectId</p>
+</li>
+<li>
+<p><strong>E. appSecret</strong></p>
+</li>
+</ul>
+<p><strong>Correct Answer: CE</strong></p>
+<p>The identity information you need to add depends on the bot's application type. Provide the following values in your configuration file.</p>
+<ul>
+<li>
+<p><strong>MicrosoftAppId The bot's app ID.</strong></p>
+</li>
+<li>
+<p><strong>MicrosoftAppPassword The bot's app password.</strong></p>
+</li>
+</ul>
+<p><strong>appId appSecret</strong></p>
+<h3 id="question-2">Question #2</h3>
+<p>You are building a chatbot by using the Microsoft Bot Framework Composer. </p>
+<p>You have the dialog design shown in the following exhibit.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_153.png" title="Body image" /></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_154.png" title="Body image" /></p>
+<p><strong>Box 1: No -  User.name is a property.</strong></p>
+<p><strong>Box 2: Yes -</strong></p>
+<p><strong>Box 3: Yes The coalesce() function evaluates a list of expressions and returns the first non-null (or non-empty for string) expression.</strong></p>
+<p>I am not sure if the correct answer for third is yes - the fields are showing examples, not the actual values typed in the boxes.</p>
+<h3 id="question-3">Question #3</h3>
+<p>You are building a multilingual chatbot.</p>
+<p>You need to send a different answer for positive and negative messages.</p>
+<p>Which two Language service APIs should you use? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p>A. Linked entities from a well-known knowledge base</p>
+</li>
+<li>
+<p><strong>B. Sentiment Analysis</strong></p>
+</li>
+<li>
+<p>C. Key Phrases</p>
+</li>
+<li>
+<p><strong>D. Detect Language</strong></p>
+</li>
+<li>
+<p>E. Named Entity Recognition</p>
+</li>
+</ul>
+<p><strong>Correct Answer: BD</strong></p>
+<p><strong>B: The Text Analytics API's Sentiment Analysis feature provides two ways for detecting positive and negative sentiment</strong>. </p>
+<p>If you send a Sentiment Analysis request, the API will return sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level</p>
+<p><strong>D: The Language Detection feature of the Azure Text Analytics REST API evaluates text input for each document and returns language identifiers with a score that indicates the strength of the analysis.</strong></p>
+<p>This capability is useful for content stores that collect arbitrary text, where language is unknown.</p>
+<p><strong>Selected Answer: BD</strong></p>
+<ul>
+<li>
+<p><strong>B. Sentiment Analysis &lt;-- different answer for positive and negative messages</strong></p>
+</li>
+<li>
+<p><strong>D. Detect Language &lt;-- multilingual chatbot</strong></p>
+</li>
+</ul>
+<h3 id="question-4">Question #4</h3>
+<p>You plan to build a chatbot to support task tracking.</p>
+<p>You create a Language Understanding service named lu1.</p>
+<p>You need to build a Language Understanding model to integrate into the chatbot. The solution must minimize development time to build the model.</p>
+<p>Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p><strong>Actions</strong></p>
+<ul>
+<li>Train the application.</li>
+<li>Publish the application.</li>
+<li>Add a new application.</li>
+<li>Add example utterances.</li>
+<li>Add the prebuilt domain ToDo.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_1541.png" title="Body image" /></p>
+<hr />
+<ul>
+<li>
+<p><strong>Add a new application.</strong></p>
+</li>
+<li>
+<p><strong>Add the prebuilt domain ToDo.</strong></p>
+</li>
+<li>
+<p><strong>Train the application.</strong></p>
+</li>
+<li>
+<p><strong>Publish the application</strong></p>
+</li>
+</ul>
+<h3 id="question-5">Question #5</h3>
+<p>You are building a bot on a local computer by using the Microsoft Bot Framework. The bot will use an existing Language Understanding model.</p>
+<p>You need to translate the Language Understanding model locally by using the Bot Framework CLI.</p>
+<p>What should you do first?</p>
+<ul>
+<li>
+<p>A. From the Language Understanding portal, clone the model.</p>
+</li>
+<li>
+<p><strong>B. Export the model as an .lu file.</strong></p>
+</li>
+<li>
+<p>C. Create a new Speech service.</p>
+</li>
+<li>
+<p>D. Create a new Language Understanding service.</p>
+</li>
+</ul>
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>B. Export the model as an .lu file.</strong></p>
+<p><strong>When you need to translate a Language Understanding (LUIS) model using the Microsoft Bot Framework CLI locally, the first step is to export the existing LUIS model as a .lu file. The .lu file format (Language Understanding file format) allows you to represent intents, entities, and other mode components in a text-based form</strong>, enabling you to process, modify, or translate them using the Bot Framework CLI. This is a crucial step for working with and integrating LUIS models in a local environment."</p>
+<h3 id="question-6">Question #6</h3>
+<p>You are using a Language Understanding service to handle natural language input from the users of a web-based customer agent.</p>
+<p>The users report that the agent frequently responds with the following generic response: "Sorry, I don't understand that."</p>
+<p><strong>You need to improve the ability of the agent to respond to requests.</strong></p>
+<p>Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p><strong>Actions</strong></p>
+<ul>
+<li>Add prebuilt domain models as required.</li>
+<li>Validate the utterances logged for review and modify the model.</li>
+<li>Migrate authoring to an Azure resource authoring key.</li>
+<li>Enable active learning.</li>
+<li>Enable log collection by using Log Analytics.</li>
+<li>Train and republish the Language Understanding model.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_1542.png" title="Body image" /></p>
+<p><strong>1. Enable active learning</strong></p>
+<p><strong>2. Validate the utterances logged for review and modify the model</strong></p>
+<p><strong>3. Train and republish the language understanding model Understanding model</strong></p>
+<h3 id="question-7">Question #7</h3>
+<p>You build a conversational bot named bot1.</p>
+<p>You need to configure the bot to use a QnA Maker application.</p>
+<p>From the Azure Portal, where can you find the information required by bot1 to connect to the QnA Maker application?</p>
+<ul>
+<li>
+<p>A. Access control (IAM)</p>
+</li>
+<li>
+<p>B. Properties</p>
+</li>
+<li>
+<p><strong>C.Keys and Endpoint</strong></p>
+</li>
+<li>
+<p>D. Identity</p>
+</li>
+</ul>
+<hr />
+<ol>
+<li>
+<p>In the QnA Maker site, select your knowledge base.</p>
+</li>
+<li>
+<p>With your knowledge base open, select the SETTINGS tab. Record the value shown for service name. This value is useful for finding your knowledge base of interest when using the QnA Maker portal interface. It's not used to connect your bot app to this knowledge base.</p>
+</li>
+<li>
+<p>Scroll down to find Deployment details and record the following values from the Postman sample HTTP request:</p>
+</li>
+<li>
+<p><code>POST /knowledgebases/&lt;knowledge-base-id&gt;/generateAnswer</code></p>
+</li>
+<li>
+<p>Host: <your-host-url></p>
+</li>
+<li>
+<p>Authorization: EndpointKey <your-endpoint-key></p>
+</li>
+</ol>
+<h3 id="question-8">Question #8</h3>
+<p>You are building a chatbot for a Microsoft Teams channel by using the Microsoft Bot Framework SDK. The chatbot will use the following code.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_155.png" title="Body image" /></p>
+<p>For each of the following statements, select Yes if the statement is true. </p>
+<p>Otherwise, select No. NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_156.png" title="Body image" /></p>
+<p><strong>A1. Yes</strong></p>
+<p><code>ActivityHandler.OnMembersAddedAsync(IList&lt;ChannelAccount&gt;, ITurnContext&lt;IConversationUpdateActivity&gt;, CancellationToken)</code> Method invoked when members other than the bot join the conversation</p>
+<p><strong>A2. No</strong></p>
+<p>Sends a message activity to the sender of the incoming activity in turncontext</p>
+<p><strong>A3: No</strong></p>
+<p><strong><code>ActivityHandler.OnConversationUpdateActivityAsync(ITurnContext&lt;IConversationUpdateActivity&gt;, CancellationToken)</code></strong></p>
+<p>Method invoked when a conversation update activity that indicates one or more users other than the bot are joining the conversation</p>
+<h3 id="question-9">Question #9</h3>
+<p>You are reviewing the design of a chatbot. The chatbot includes a language generation file that contains the following fragment.</p>
+<pre><code># Greet(user) 
+
+- ${Greeting()}, ${user.name}
+</code></pre>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_157.png" title="Body image" /></p>
+<p><strong>COrrect answer is : N Y Y</strong></p>
+<p><strong><code>${user.name}</code> retrieves the user's name using a prompt.--&gt;No.</strong></p>
+<p><strong>In this context, ${user.name} directly retrieves the user's name from the incoming user object. It doesn't obtain the user's name through a prompt but assumes that the user object already contains the name property.</strong></p>
+<p><strong><code>Greet()</code> is the name of the language generation template.--&gt;Yes.</strong></p>
+<p>Greet(user) defines a language generation template named Greet. This template takes a user parameter, indicating that Greet is the template name used to generate personalized greeting messages.</p>
+<p><strong><code>${Greeting()}</code> is a reference to a template in the language generation file.--&gt;Yes.</strong></p>
+<p><strong><code>${Greeting()}</code> is a reference to another template in the language generation file. This syntax indicates that Greeting is a template that will be invoked to generate all or part of a greeting when messages are generated.</strong> This allows developers to reuse and combine templates in the language generation file to create more complex messages.</p>
+<h3 id="question-10">Question #10</h3>
+<p>You are building a chatbot by using the Microsoft Bot Framework SDK.</p>
+<p>You use an object named UserProfile to store user profile information and an object named ConversationData to store information related to a conversation.</p>
+<p>You create the following state accessors to store both objects in state. </p>
+<pre><code>var userStateAccessors = _userState.CreateProperty&lt;UserProfile&gt; (nameof(UserProfile)); var conversationStateAccessors = _conversationState.CreateProperty&lt;ConversationData&gt;(nameof(ConversationData)); 
+</code></pre>
+<p>The state storage mechanism is set to Memory Storage.</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_158.png" title="Body image" /></p>
+<p><strong>YYN is the answer.</strong></p>
+<p><strong>Box 1: Yes</strong></p>
+<p>You create property accessors using the CreateProperty method that provides a handle to the BotState object. Each state property accessor allows you to get or set the value of the associated state property.</p>
+<p><strong>Box 2: Yes -</strong></p>
+<p><strong>Box 3: No</strong></p>
+<p>Before you exit the turn handler, you use the state management objects' SaveChangesAsync() method to write all state changes back to storage.</p>
+<p>State property accessors are used to actually read or write one of your state properties, and provide get, set, and delete methods for accessing your state properties from within a turn. To create an accessor, you must provide the property name, which usually takes place when you're initializing your bot. Then, you can use that accessor to get and manipulate that property of your bot's state.</p>
+<p>The accessors allow the SDK to get state from the underlying storage, and update the bot's state cache for you. The state cache is a local cache maintained by your bot that stores the state object for you, allowing read and write operations without accessing the underlying storage. If it isn't already in the cache, calling the accessor's get method retrieves state and also places it in the cache. Once retrieved, the state property can be manipulated just like a local variable.</p>
+<h3 id="question-11">Question #11</h3>
+<p>You are building a chatbot that will provide information to users as shown in the following exhibit.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_159.png" title="Body image" /></p>
+<p>Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic. </p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_160.png" title="Body image" /></p>
+<p><strong>1. Adaptive Card</strong></p>
+<p>an Adaptive Card that is a JSON-serialized card object model rendered into a PNG image</p>
+<p><strong>2. image</strong></p>
+<h3 id="question-12">Question #12</h3>
+<p>You are building a bot and that will use Language Understanding. You have a LUDown file that contains the following content.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_161.png" title="Body image" /></p>
+<p>Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_162.png" title="Body image" /></p>
+<p><strong>SelectItem</strong> is the <strong>intent</strong>, and each item below it are example utterances that capture ways users can express this intent. </p>
+<p>Entities in .lu files are denoted using {<entityName>=<labeled value>} notation. Taking from our sample code once again, you can find the bottom left entity within the following utterance: choose the {DirectionalReference=bottom left}.</p>
+<ol>
+<li>
+<p>intent</p>
+</li>
+<li>
+<p>utterance</p>
+</li>
+</ol>
+<p><strong>sample-utterances</strong></p>
+<p>Intents with their sample utterances are declared in the following way:</p>
+<pre><code># &lt;intent-name&gt;
+
+- &lt;utterance1&gt;
+
+- &lt;utterance2&gt;
+
+# &lt;intent-name&gt; describes a new intent definition section. Each line after the intent definition are example utterances that describe that intent using the - &lt;utterance&gt; format.
+</code></pre>
+<h3 id="question-13">Question #13</h3>
+<p>You are designing a conversation flow to be used in a chatbot.</p>
+<p>You need to test the conversation flow by using the Microsoft Bot Framework Emulator.</p>
+<p>How should you complete the .chat file? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_163.png" title="Body image" /></p>
+<p><strong>1. Typing</strong></p>
+<p><strong>2. carousel</strong></p>
+<p><strong>3. adaptivecard</strong></p>
+<p><strong>CardCarousel</strong></p>
+<p>A horizontally scrollable collection of cards that allows your user to easily view a series of possible user choices.</p>
+<p><strong>AdaptiveCard</strong></p>
+<p>An open card exchange format rendered as a JSON object. Typically used for cross-channel deployment of cards. Cards adapt to the look and fee of each host channel.</p>
+<h3 id="question-14">Question #14</h3>
+<p>You are building a chatbot by using the Microsoft Bot Framework Composer as shown in the exhibit. (Click the Exhibit tab.)</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_164.png" title="Body image" /></p>
+<p><strong>The chatbot contains a dialog named GetUserDetails. GetUserDetails contains a TextInput control that prompts users for their name. The user input will be stored in a property named name.</strong></p>
+<p>You need to ensure that you can dispose of the property when the last active dialog ends.</p>
+<p>Which scope should you assign to name?</p>
+<ul>
+<li>
+<p><strong>A. dialog</strong></p>
+</li>
+<li>
+<p>B. user</p>
+</li>
+<li>
+<p>C. turn</p>
+</li>
+<li>
+<p>D. conversation</p>
+</li>
+</ul>
+<p><strong>Correct Answer: A</strong></p>
+<p><strong>Dialog:  Properties associated with the active dialog. Properties in the dialog scope are kept until the dialog ends.</strong></p>
+<h3 id="question-15">Question #15</h3>
+<p>You have a chatbot that uses a QnA Maker application.</p>
+<p>You enable active learning for the knowledge base used by the QnA Maker application.</p>
+<p>You need to integrate user input into the model.</p>
+<p>Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_165.png" title="Body image" /></p>
+<p><strong>Step 1: For the knowledge base, select Show active learning suggestions.</strong></p>
+<p>In order to see the suggested questions, on the Edit knowledge base page, select View Options, then select Show active learning suggestions.</p>
+<p><strong>Step 2: Approve and reject suggestions.</strong></p>
+<p>Each QnA pair suggests the new question alternatives with a check mark, , to accept the question or an x to reject the suggestions. Select the check mark to add the question.</p>
+<p><strong>Step 3: Save and train the knowledge base.</strong></p>
+<p>Select Save and Train to save the changes to the knowledge base.</p>
+<p><strong>Step 4: Publish the knowledge base.</strong></p>
+<p>Select Publish to allow the changes to be available from the GenerateAnswer API.</p>
+<ol>
+<li>
+<p>From knowledge base, select show active learning suggestions.</p>
+</li>
+<li>
+<p>Approve and reject the suggestions.</p>
+</li>
+<li>
+<p>Save and train knowledge base.</p>
+</li>
+<li>
+<p>Publish knowledge base.</p>
+</li>
+</ol>
+<h3 id="question-16">Question #16</h3>
+<p>You need to enable speech capabilities for a chatbot.</p>
+<p>Which three actions should you perform? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p>A. Enable WebSockets for the chatbot app.</p>
+</li>
+<li>
+<p>B. Create a Speech service.</p>
+</li>
+<li>
+<p>C. Register a Direct Line Speech channel.</p>
+</li>
+<li>
+<p>D. Register a Cortana channel.</p>
+</li>
+<li>
+<p>E. Enable CORS for the chatbot app.</p>
+</li>
+<li>
+<p>F. Create a Language Understanding service.</p>
+</li>
+</ul>
+<p><strong>Correct Answer: ABC</strong></p>
+<p>You can use the Speech service to voice-enable a chat bot.</p>
+<p>The Direct Line Speech channel uses the text-to-speech service, which has neural and standard voices.</p>
+<p>You'll need to make a small configuration change so that your bot can communicate with the Direct Line Speech channel using web sockets.</p>
+<p><strong>A, B and C are correct answers in order shown below.</strong></p>
+<p>B. Create a Speech service</p>
+<p>A. Enable WebSockets for the chatbot app</p>
+<h3 id="question-17">Question #17</h3>
+<p>You use the Microsoft Bot Framework Composer to build a chatbot that enables users to purchase items.</p>
+<p>You need to ensure that the users can cancel in-progress transactions. </p>
+<p>The solution must minimize development effort. What should you add to the bot?</p>
+<ul>
+<li>
+<p>A. a language generator</p>
+</li>
+<li>
+<p>B. a custom event</p>
+</li>
+<li>
+<p><strong>C. a dialog trigger</strong></p>
+</li>
+<li>
+<p>D. a conversation activity</p>
+</li>
+</ul>
+<p>C. a dialog trigger Dialog triggers manage conversation flow and handle user inputs, allowing users to cancel in-progress transactions efficiently.</p>
+<p>To ensure that users can cancel in-progress transactions with minimal development effort, you should add C. a dialog trigger to the bot. A dialog trigger allows the bot to respond to specific conditions or intents, such as a user's request to cancel a transaction, by invoking predefined dialogs that handle these scenarios efficiently.</p>
+<h3 id="question-18">Question #18</h3>
+<p>You need to create and publish a bot that will use Language Understanding and QnA Maker. The bot must be named bot12345678. You must publish the bot by using the User1-12345678@abc.com account.</p>
+<p>NOTE: Complete this task first. It may take several minutes to complete the required deployment steps. While this is taking place, you can complete tasks 2-6 in this lab during the deployment.</p>
+<p>To complete this task, use the Microsoft Bot Framework Composer.</p>
+<p>Step 1: Sign in to the QnAMaker.ai portal with your Azure credentials. Use the User1-12345678@abc.com account </p>
+<p>Step 2: Publish the knowledge base. In the QnA Maker portal, select Publish. Then to confirm, select Publish on the page. The QnA Maker service is now successfully published. You can use the endpoint in your application or bot code.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_167.png" title="Body image" /></p>
+<p>Step 3: In the QnA Maker portal, on the Publish page, select Create bot.</p>
+<p>This button appears only after you've published the knowledge base.</p>
+<p>After publishing the knowledge base, you can create a bot from the Publish page.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_166.png" title="Body image" /></p>
+<p>Step 4: A new browser tab opens for the Azure portal, with the Azure Bot Service's creation page. </p>
+<p>Configure the Azure bot service. Bot name: bot12345678 The bot will be created.</p>
+<h3 id="question-19-simulation">Question #19 <strong>SIMULATION</strong></h3>
+<p>You need to create a QnA Maker service named QNA12345678 in the East US Azure region. QNA12345678 must contain a knowledge base that uses the questions and answers available at https://support.microsoft.com/en-us/help/12435/windows-10-upgrade-faq.</p>
+<p>To complete this task, sign in to the Azure portal and the QnA Maker portal.</p>
+<p><strong>Correct Answer: See explanation below.</strong></p>
+<p>Step 1: Sign in to the Azure portal create and a QnA Maker resource.</p>
+<p>Step 2: Select Create after you read the terms and conditions:</p>
+<p>Step 3: In QnA Maker, select the appropriate tiers and regions.</p>
+<p>Name: QNA12345678 In the Name field, enter a unique name to identify this QnA Maker service. This name also identifies the QnA Maker endpoint that your knowledge bases will be associated with.</p>
+<p>Resource Group Location: East US Azure</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_168.png" title="Body image" /></p>
+<p>Step 4: After all the fields are validated, select Create. The process can take a few minutes to complete. </p>
+<p>After deployment is completed, you'll see the following resources created in your subscription:</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_169.png" title="Body image" /></p>
+<p>Remember your Azure Active Directory ID, Subscription, QnA resource name you selected when you created the resource.</p>
+<p>Step 5: When you are done creating the resource in the Azure portal, return to the QnA Maker portal, refresh the browser page.</p>
+<p>Step 6: In the QnA Maker portal, select Create a knowledge base.</p>
+<p>Step 7: Skip Step 1 as you already have your QnA Maker resource.</p>
+<p>Step 8: In Step 2, select your Active directory, subscription, service (resource), and the language for all knowledge bases created in the service.</p>
+<p>Azure QnA service: QNA12345678 -</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_170.png" title="Body image" /></p>
+<h3 id="question-22">Question #22</h3>
+<p>You are designing a conversational interface for an app that will be used to make vacation requests. The interface must gather the following data:</p>
+<ul>
+<li>
+<p>The start date of a vacation</p>
+</li>
+<li>
+<p>The end date of a vacation</p>
+</li>
+<li>
+<p>The amount of required paid time off</p>
+</li>
+</ul>
+<p><strong>The solution must minimize dialog complexity.</strong></p>
+<p>Which type of dialog should you use?</p>
+<p>A. adaptive</p>
+<p>B. skill</p>
+<p><strong>C. waterfall</strong></p>
+<p>D. component</p>
+<p><strong>For designing a conversational interface that gathers data in a structured manner with minimal dialog complexity,</strong> you should use C. waterfall dialog. </p>
+<p>Waterfall dialogs are designed to guide the user through a series of steps or questions, one after another, which is ideal for collecting specific pieces of information sequentially, like vacation start and end dates, and the amount of required paid time off.</p>
+<h3 id="question-23">Question #23</h3>
+<p>You build a bot by using the Microsoft Bot Framework SDK.</p>
+<p>You need to test the bot interactively on a local machine.</p>
+<p>Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p>NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_171.png" title="Body image" /></p>
+<ol>
+<li>
+<p>Build and run the bot</p>
+</li>
+<li>
+<p>Open Bot Framework Emulator</p>
+</li>
+<li>
+<p>Connect to bot endpoint</p>
+</li>
+</ol>
+<h3 id="question-24">Question #24</h3>
+<p>You create a bot by using the Microsoft Bot Framework SDK.</p>
+<p>You need to configure the bot to respond to events by using custom text responses.</p>
+<p>What should you use?</p>
+<p>A. a dialog</p>
+<p><strong>B. an activity handler</strong></p>
+<p>C. an adaptive card</p>
+<p>D. a skill</p>
+<p>B. An activity handler is the correct choice for configuring the bot to respond to events by using custom text responses.</p>
+<p>An activity handler is a class in the Bot Framework SDK that processes incoming activities (e.g., messages, events, etc.) from the user and generates outgoing activities (e.g., replies). By overriding the OnMessageActivityAsync method of the activity handler, you can provide custom logic for responding to user messages.</p>
+<h3 id="question-25">Question #25</h3>
+<p>You build a bot named app1 by using the Microsoft Bot Framework.</p>
+<p><strong>You prepare app1 for deployment.</strong></p>
+<p><strong>You need to deploy app1 to Azure.</strong></p>
+<p>How should you complete the command? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_172.png" title="Body image" /></p>
+<ul>
+<li>
+<p><strong>webapp</strong></p>
+</li>
+<li>
+<p><strong>config-zip</strong></p>
+</li>
+</ul>
+<pre><code>az webapp deployment source config-zip --resource-group &quot;&lt;resource-group-name&gt;&quot; --name &quot;&lt;name-of-app-service&gt;&quot; --src &quot;&lt;project-zippath&gt;&quot;
+</code></pre>
+<h3 id="question-26">Question #26</h3>
+<p>You have a chatbot that uses question answering in Azure Cognitive Service for Language.</p>
+<p>Users report that the responses of the chatbot lack formality when answering spurious questions.</p>
+<p>You need to ensure that the chatbot provides formal responses to spurious questions.</p>
+<p><strong>Solution: From Language Studio, you change the chitchat source to <code>qna_chitchat_friendly.tsv</code>, and then retrain and republish the model</strong>.</p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>A. Yes</li>
+</ul>
+<h2 id="-b-no">- <strong>B. No</strong></h2>
+<p>This file is used to provide responses suitable for a friendly or casual tone. <strong>You need to use <code>qna_chitchat_professional.tsv</code></strong>.</p>
+<h3 id="question-27">Question #27</h3>
+<p>After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.</p>
+<p>You have a chatbot that uses question answering in Azure Cognitive Service for Language.</p>
+<p>Users report that the responses of the chatbot lack formality when answering spurious questions.</p>
+<p>You need to ensure that the chatbot provides formal responses to spurious questions.</p>
+<p><strong>Solution: From Language Studio, you modify the question and answer pairs for the custom intents, and then retrain and republish the model.</strong></p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>
+<p>A. Yes</p>
+</li>
+<li>
+<p><strong>B. No</strong></p>
+</li>
+</ul>
+<p><strong>The formality of responses to spurious questions is not controlled by modifying the question and answer pairs for the custom intents in Language Studio. These pairs are used to train the model to understand and respond to specific intents, not to control the tone or formality of the responses</strong>.</p>
+<p>To ensure that the chatbot provides formal responses to spurious questions, you would need to adjust the chatbot's response templates or script not the question and answer pairs for the custom intents. This might involve programming the chatbot to use more formal language in its responses, or to respond to unrecognized or spurious inputs with a standard, formal message</p>
+<h3 id="question-28">Question #28</h3>
+<p>After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.</p>
+<p>You have a chatbot that uses question answering in Azure Cognitive Service for Language.</p>
+<p>Users report that the responses of the chatbot lack formality when answering spurious questions.</p>
+<p>You need to ensure that the chatbot provides formal responses to spurious questions.</p>
+<p><strong>Solution: From Language Studio, you change the chitchat source to <code>qna_chitchat_professional.tsv</code>, and then retrain and republish the model.</strong></p>
+<p>Does this meet the goal?</p>
+<p><strong>A. Yes</strong></p>
+<p>B. No</p>
+<p>**Focus on "qna_chitchat_professional.tsv". **</p>
+<p><strong>The <code>qna_chitchat_professional.tsv</code> is specifically designed to provide responses with a formal tone compared to other chitchat sources. It contains a curated set of question-and-answer pairs that are structured to reflect a professional and formal manner of communication.</strong></p>
+<p>This makes it more suitable for environments or user interactions where formal responses are preferred, ensuring that the chatbot's replies to spurious or off-topic questions maintain the desired level of professionalism.</p>
+<h3 id="question-29">Question #29</h3>
+<p>You create five bots by using Microsoft Bot Framework Composer.</p>
+<p><strong>You need to make a single bot available to users that combines the bots. The solution must support dynamic routing to the bots based on user input.</strong></p>
+<p>Which three actions should you perform? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p>A. Create a composer extension.</p>
+</li>
+<li>
+<p><strong>B. Change the Recognizer/Dispatch type</strong>.</p>
+</li>
+<li>
+<p><strong>C. Create an Orchestrator model</strong>.</p>
+</li>
+<li>
+<p>D. Enable WebSockets.</p>
+</li>
+<li>
+<p>E. Create a custom recognizer JSON file.</p>
+</li>
+<li>
+<p><strong>F. Install the Orchestrator package.</strong></p>
+</li>
+<li>
+<p>Recognizer/Dispatch type </p>
+</li>
+<li>double Orchestrator</li>
+</ul>
+<p><strong>B. Change the Recognizer/Dispatch type: Adjusting the recognizer type to one that supports dispatching allows the bot to understand and route user input to the appropriate sub-bot</strong>.</p>
+<p>================================================</p>
+<p><strong>C. Create an Orchestrator model: The Orchestrator is an AI-based component that helps in making decisions on routing the conversation to the most appropriate bot based on the user's intent.</strong></p>
+<p>================================================</p>
+<p><strong>F. Install the Orchestrator package: This is necessary to use the Orchestrator model within your bot, enabling it to dynamically route conversations to the correct bot based on the context and content of the user input.</strong></p>
+<h3 id="question-30">Question #30</h3>
+<p>After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.</p>
+<p>You are building a chatbot that will use question answering in Azure Cognitive Service for Language.</p>
+<p>You have a PDF named Doc1.pdf that contains a product catalogue and a price list.</p>
+<p>You upload Doc1.pdf and train the model.</p>
+<p>During testing, users report that the chatbot responds correctly to the following question: What is the price of ?</p>
+<p>The chatbot fails to respond to the following question: How much does cost?</p>
+<p>You need to ensure that the chatbot responds correctly to both questions.</p>
+<p><strong>Solution: From Language Studio, you add alternative phrasing to the question and answer pair, and then retrain and republish the model.</strong></p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>
+<p><strong>A. Yes</strong></p>
+</li>
+<li>
+<p>B. No</p>
+</li>
+</ul>
+<p>"From Language Studio, you add alternative phrasing to the question and answer pair, and then retrain and republish the model." is correct solution</p>
+<h3 id="question-31">Question #31</h3>
+<p>You are building a chatbot that will use question answering in Azure Cognitive Service for Language.</p>
+<p>You have a PDF named Doc1.pdf that contains a product catalogue and a price list.</p>
+<p>You upload Doc1.pdf and train the model.</p>
+<p>During testing, users report that the chatbot responds correctly to the following question: What is the price of ?</p>
+<p>The chatbot fails to respond to the following question: How much does cost?</p>
+<p>You need to ensure that the chatbot responds correctly to both questions.</p>
+<p><strong>Solution: From Language Studio, you enable chit-chat, and then retrain and republish the model.</strong></p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>
+<p>A. Yes</p>
+</li>
+<li>
+<p><strong>B. No</strong></p>
+</li>
+</ul>
+<p><strong>PDF file use for training, it is not rationale.</strong></p>
+<p><strong>Solution: From Language Studio, you create an entity for price, and then retrain and republish the model.</strong></p>
+<p>Does this meet the goal?</p>
+<p>A. Yes</p>
+<p><strong>B. No</strong></p>
+<p>here the issue is not the price that could be an entity, but very different utterances that need to be considered</p>
+<h3 id="question-33">Question #33</h3>
+<p>You have a Conversational Language Understanding model.</p>
+<p>You export the model as a JSON file. The following is a sample of the file.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_173.png" title="Body image" /></p>
+<p>What represents the Weather.Historic entity in the sample utterance?</p>
+<ul>
+<li>
+<p>A. last year</p>
+</li>
+<li>
+<p><strong>B. by month</strong></p>
+</li>
+<li>
+<p>C. amount of</p>
+</li>
+<li>
+<p>D. average</p>
+</li>
+</ul>
+<p><strong>Selected Answer: B</strong></p>
+<h3 id="question-34">Question #34</h3>
+<p>You are building a chatbot by using Microsoft Bot Framework Composer.</p>
+<p>You need to configure the chatbot to present a list of available options. The solution must ensure that an image is provided for each option.</p>
+<p>Which two features should you use? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p>A. an entity</p>
+</li>
+<li>
+<p>B. an Azure function</p>
+</li>
+<li>
+<p>C. an utterance</p>
+</li>
+<li>
+<p><strong>D. an adaptive card</strong></p>
+</li>
+<li>
+<p><strong>E. a dialog</strong></p>
+</li>
+</ul>
+<p>To configure the chatbot to present a list of available options with images, you should use the following features:</p>
+<p>D. An adaptive card: Adaptive cards are a flexible, customizable way to present rich, interactive content within a chatbot conversation. You can use adaptive cards to display a list of available options, along with images and other interactive elements, such as buttons or inputs.</p>
+<p>E. A dialog: Dialogs are used to manage and organize the conversation flow in your chatbot. You can create a dialog that is responsible for presenting the list of available options using an adaptive card. The dialog can be triggered when needed, and it can handle the user's selection of an option.</p>
+<p><strong>DE is the answer.</strong></p>
+<p>Modern conversational software has many different components. Bot Framework Composer integrates these pieces into dialogs, a single interface for constructing the building blocks of bot functionality.</p>
+<p>**Each dialog represents a portion of the bot's functionality and contains instructions for how the bot will react to the input. Dialogs can include custom business logic, calls to cloud APIs, training data for language processing systems, and importantly, the actual content used in conversation with the bot's end users. **</p>
+<p>Simple bots will have just a few dialogs. Sophisticated bots might have dozens or hundreds of individual dialogs.</p>
+<h3 id="question-35">Question #35</h3>
+<p>You are building a chatbot.</p>
+<p>You need to configure the bot to guide users through a product setup process.</p>
+<p>Which type of dialog should you use?</p>
+<p>A. component</p>
+<p>B. action</p>
+<p><strong>C. waterfall</strong></p>
+<p>D. adaptive</p>
+<h3 id="question-36">Question #36</h3>
+<p>You have a chatbot that was built by using Microsoft Bot Framework and deployed to Azure.</p>
+<p>You need to configure the bot to support voice interactions. The solution must support multiple client apps.</p>
+<p>Which type of channel should you use?</p>
+<p>A. Cortana</p>
+<p>B. Microsoft Teams</p>
+<p><strong>C. Direct Line Speech</strong></p>
+<p><strong>C is the answer.</strong></p>
+<p><strong>The Bot Framework offers multiple channels with the Direct Line branding. It's important that you select the version that best fits the conversational AI experience you're designing.</strong></p>
+<p><strong>Direct Line Speech. It provides text-to-speech and speech-to-text services within the channel. It allows a client to stream audio directly to the channel which will then be converted to text and sent to the bot.</strong></p>
+<p><strong>Direct Line Speech can also convert text messages from the bot into audio messages spoken by an AI-powered voice</strong>. Combined, this makes Direct Line Speech capable of having audio only conversations with clients.</p>
+<h3 id="question-37">Question #37</h3>
+<p>You are building a bot by using Microsoft Bot Framework.</p>
+<p>You need to configure the bot to respond to spoken requests. The solution must minimize development effort.</p>
+<p>What should you do?</p>
+<ul>
+<li>
+<p><strong>A. Deploy the bot to Azure and register the bot with a Direct Line Speech channel</strong>.</p>
+</li>
+<li>
+<p>B. Integrate the bot with Cortana by using the Bot Framework SDK.</p>
+</li>
+<li>
+<p>C. Create an Azure function that will call the Speech service and connect the bot to the function.</p>
+</li>
+<li>
+<p>D. Deploy the bot to Azure and register the bot with a Microsoft Teams channel.</p>
+</li>
+</ul>
+<p>A. Deploy the bot to Azure and register the bot with a Direct Line Speech channel.</p>
+<p>To enable the bot to respond to spoken requests with minimal development effort, you should deploy the bot to Azure and register the bot with a Direct Line Speech channel. Direct Line Speech provides an integrated speech and bot experience without requiring additional development. It combines both the speech-to-text and text-to-speech capabilities with the bot's logic to handle spoken requests and generate spoken responsese</p>
+<h3 id="question-38">Question #38</h3>
+<p>After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.</p>
+<p>You have a chatbot that uses question answering in Azure Cognitive Service for Language.</p>
+<p>Users report that the responses of the chatbot lack formality when answering spurious questions.</p>
+<p>You need to ensure that the chatbot provides formal responses to spurious questions.</p>
+<p>Solution: From Language Studio, you remove all the chit-chat question and answer pairs, and then retrain and republish the model.</p>
+<p>Does this meet the goal?</p>
+<ul>
+<li>
+<p>A. Yes</p>
+</li>
+<li>
+<p><strong>B. No</strong></p>
+</li>
+</ul>
+<p><strong>Selected Answer: B</strong>  B. You need chitchat with professional personality</p>
+<p>Removing all chitchat QA pairs will not solve the problem of lack of formality.</p>
+<p><strong>To solve the issue, change the chitchat source to <code>qna_chitchat_professional.tsv</code></strong></p>
+<h3 id="question-39">Question #39</h3>
+<p>You are building a chatbot.</p>
+<p>You need to use the Content Moderator service to identify messages that contain sexually explicit language.</p>
+<p>Which section in the response from the service will contain the category score, and which category will be assigned to the message? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_174.png" title="Body image" /></p>
+<p><strong>1. Classification</strong></p>
+<ol>
+<li>1</li>
+</ol>
+<p>Content Moderator's machine-assisted text classification feature supports English only, and helps detect potentially undesired content. The flagged content may be assessed as inappropriate depending on context. It conveys the likelihood of each category. The feature uses a trained model to identify possible abusive, derogatory or discriminatory language. This includes slang, abbreviated words, offensive, and intentionally misspelled words.</p>
+<ul>
+<li>
+<p><strong>Category1 refers to potential presence of language that may be considered sexually explicit or adult in certain situations</strong>. </p>
+</li>
+<li>
+<p>Category2 refers to potential presence of language that may be considered sexually suggestive or mature in certain situations. </p>
+</li>
+<li>
+<p>Category3 refers to potential presence of language that may be considered offensive in certain situations.</p>
+</li>
+</ul>
+<h3 id="question-40">Question #40</h3>
+<p>You are building a chatbot for a travel agent. The bot will ask users for a destination and must repeat the question until a valid input is received, or the user closes the conversation.</p>
+<p>Which type of dialog should you use?</p>
+<p><strong>A. prompt</strong></p>
+<p>B. input</p>
+<p>C. adaptive</p>
+<p>D. QnA Maker</p>
+<p><strong>Selected Answer: A</strong></p>
+<ul>
+<li>prompt dialogs Ask the user for input and return the result. A prompt will repeat until it gets valid input or it's canceled. They're designed to work with waterfall dialogs.</li>
+</ul>
+<h3 id="question-41">Question #41</h3>
+<p>You are building a chatbot.</p>
+<p>You need to configure the chatbot to query a knowledge base.</p>
+<p>Which dialog class should you use?</p>
+<p><strong>A. QnAMakerDialog</strong></p>
+<p>B. AdaptiveDialog</p>
+<p>C. SkillDialog</p>
+<p>D. ComponentDialog</p>
+<p><strong>QnA Maker dialog  Automates access to a QnA Maker knowledge base. This dialog is designed to also work as an action within Composer.</strong></p>
+<h3 id="question-42">Question #42</h3>
+<p>You have a chatbot.</p>
+<p>You need to ensure that the bot conversation resets if a user fails to respond for 10 minutes.</p>
+<p>How should you complete the code? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_175.png" title="Body image" /></p>
+<ol>
+<li>
+<p><code>send_activity</code></p>
+</li>
+<li>
+<p><code>clear_state</code></p>
+</li>
+</ol>
+<pre><code># Notify the user that the conversation is being restarted.
+
+- await turn_context.send_activity( # Clear state.
+
+- await self.conversation_state.clear_state(turn_context)
+</code></pre>
+<h3 id="question-43">Question #43</h3>
+<p>You develop a Conversational Language Understanding model by using Language Studio.</p>
+<p>During testing, users receive incorrect responses to requests that do NOT relate to the capabilities of the model.</p>
+<p>You need to ensure that the model identifies spurious requests.</p>
+<p>What should you do?</p>
+<ul>
+<li>
+<p>A. Enable active learning.</p>
+</li>
+<li>
+<p>B. Add entities.</p>
+</li>
+<li>
+<p><strong>C. Add examples to the None intent.</strong></p>
+</li>
+<li>
+<p>D. Add examples to the custom intents.</p>
+</li>
+</ul>
+<p><strong>Selected Answer: C</strong></p>
+<p><strong>The None intent is also treated like any other intent in your project. If there are utterances that you want predicted as None, consider adding similar examples to them in your training data.</strong> </p>
+<p><strong>For example, if you would like to categorize utterances that are not important to your project as None, such as greetings, yes and no answers, responses to questions such as providing a number, then add those utterances to your intent.</strong></p>
+<p><strong>You should also consider adding false positive examples to the None inten</strong>t. For example, in a flight booking project it is likely that the utterance "I want to buy a book" could be confused with a Book Flight intent. Adding "I want to buy a book" or "I love reading books" as None training utterances helps alter the predictions of those types of utterances towards the None intent instead of Book Flight.</p>
+<h3 id="question-44">Question #44</h3>
+<p>You have a Speech resource and a bot that was built by using the Microsoft Bot Framework Composer.</p>
+<p>You need to add support for speech-based channels to the bot.</p>
+<p>Which three actions should you perform? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p><strong>A. Configure the language and voice settings for the Speech resource</strong>.</p>
+</li>
+<li>
+<p><strong>B. Add the endpoint and key of the Speech resource to the bot</strong>.</p>
+</li>
+<li>
+<p>C. Add language understanding to dialogs.</p>
+</li>
+<li>
+<p>D. Add Orchestrator to the bot.</p>
+</li>
+<li>
+<p><strong>E. Add Speech to the bot responses</strong>.</p>
+</li>
+<li>
+<p>F. Remove the setSpeak configuration.</p>
+</li>
+</ul>
+<p><strong>To add support for speech-based channels to a bot built with the Microsoft Bot Framework Composer, you should perform the following actions</strong></p>
+<p>Add the endpoint and key of the Speech resource to the bot (B): You need to configure the bot to connect to the Speech resource, which will enable the bot to convert text into speech and vice versa.</p>
+<p>Add Speech to the bot responses (E): You should update your bot's responses to include speech output. This is important for speech-based channels, as the bot will need to generate spoken responses for users.</p>
+<p>Configure the language and voice settings for the Speech resource (A): Configuring the language and voice settings in your Speech resource important to ensure that the speech output is generated in the desired language and with the appropriate voice.</p>
+<p>The other options (C, D, and F) are not directly related to adding support for speech-based channels and can be considered unrelated to this specific task. </p>
+<p><strong>A. Configure the language and voice settings for the Speech resource.</strong></p>
+<p>This step is crucial for ensuring that the Speech service can accurately recognize and synthesize speech in the desired language and voice.</p>
+<p><strong>B. Add the endpoint and key of the Speech resource to the bot.</strong></p>
+<p>To use the Azure Speech service with your bot, you need to authenticate your requests.</p>
+<p><strong>E. Add Speech to the bot responses.</strong></p>
+<p>To enhance the bot’s interactions over speech-based channels, you should include speech-specific responses.</p>
+<h3 id="question-45">Question #45</h3>
+<p>You are building a bot.</p>
+<p>You need to test the bot in the Bot Framework Emulator. The solution must ensure that you can debug the bot interactively.</p>
+<p>Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_176.png" title="Body image" /></p>
+<ol>
+<li>
+<p>In code, create new trace activity</p>
+</li>
+<li>
+<p>In code, send a trace activity</p>
+</li>
+<li>
+<p>Run bot app on local host</p>
+</li>
+</ol>
+<p>A trace activity is an activity that your bot can send to the Bot Framework Emulator. You can use trace activities to interactively debug a bot, as the allow you to view information about your bot while it runs locally.</p>
+<p>Trace activities are sent only to the Emulator and not to any other client or channel. The Emulator displays them in the log but not the main chat panel.</p>
+<p>In order to see a trace activity in the Emulator, you need a scenario in which your bot will send a trace activity, such as throwing an exception and sending a trace activity from the adapter's on turn error handler.</p>
+<p><strong>To send a trace activity from your bot</strong></p>
+<ul>
+<li>Create a new activity.</li>
+</ul>
+<p><strong>To view a trace activity in the Emulator:</strong></p>
+<ul>
+<li>
+<p>Run the bot locally on your machine.</p>
+</li>
+<li>
+<p>Test it using the Emulator.</p>
+</li>
+</ul>
+<h3 id="question-46">Question #46</h3>
+<p>You have a bot that was built by using the Microsoft Bot Framework composer as shown in the following exhibit.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_177.png" title="Body image" /></p>
+<p>Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_178.png" title="Body image" /></p>
+<p><strong>1. identity New York as city entity</strong></p>
+<p><strong>2. Language Understanding intent recognised</strong></p>
+<p>Entities are a collection of objects, each consisting of data extracted from an utterance such as places, times, and people. Entities and intents are both important data extracted from utterances. </p>
+<p>An utterance may include zero or more entities, while an utterance usually represents one intent. I Composer, all entities are defined and managed inline. Entities in the .lu file format are denoted using {\&lt;entityName&gt;=\&lt;labelled value&gt;} notation.</p>
+<h3 id="question-47">Question #47</h3>
+<p>You are building a fiight booking bot by using the Microsoft Bot Framework SDK.</p>
+<p>The bot will ask users for the departure date. The bot must repeat the question until a valid date is given, or the users cancel the transaction.</p>
+<p>Which type of dialog should you use?</p>
+<ul>
+<li>
+<p><strong>A. prompt</strong></p>
+</li>
+<li>
+<p>B. adaptive</p>
+</li>
+<li>
+<p>C. waterfall</p>
+</li>
+<li>
+<p>D. action</p>
+</li>
+</ul>
+<p><strong>Selected Answer: A</strong></p>
+<ul>
+<li><strong>prompt dialogs Ask the user for input and return the result. A prompt will repeat until it gets valid input or it's canceled. They're designed to work with waterfall dialogs</strong></li>
+</ul>
+<h3 id="question-48">Question #48</h3>
+<p>You have a chatbot.</p>
+<p>You need to test the bot by using the Bot Framework Emulator. The solution must ensure that you are prompted for credentials when you sign in to the bot.</p>
+<p>Which three settings should you configure? To answer, select the appropriate settings in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_179.png" title="Body image" /></p>
+<p><strong>1. Enter the local path to ngrok.</strong></p>
+<p><strong>2. Enable Run ngrok when the Emulator starts up</strong>.</p>
+<p><strong>3. Enable Use version 1.0 authentication tokens</strong>.</p>
+<h3 id="question-49">Question #49</h3>
+<p>You are building a chatbot by using the Microsoft Bot Framework SDK.</p>
+<p>You use an object named UserProfile to store user profile information and an object named ConversationData to store information related to a conversation.</p>
+<p>You create the following state accessors to store both objects in state.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_180.png" title="Body image" /></p>
+<p>The state storage mechanism is set to Memory Storage.</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_181.png" title="Body image" /></p>
+<p><strong>Yes Yes No</strong></p>
+<h3 id="question-50">Question #50</h3>
+<p>You build a bot.</p>
+<p>You create an Azure Bot resource.</p>
+<p>You need to deploy the bot to Azure.</p>
+<p>What else should you create?</p>
+<ul>
+<li>
+<p><strong>A. only an app registration in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra, an Azure App Service instance, and an App Service plan</strong></p>
+</li>
+<li>
+<p>B. only an app registration in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra, an Azure Kubernetes Service (AKS) instance, and a container image</p>
+</li>
+<li>
+<p>C. only an Azure App Service instance, and an App Service plan</p>
+</li>
+<li>
+<p>D. only an Azure Machine Learning workspace and an app registration in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra</p>
+</li>
+</ul>
+<p><strong>Selected Answer: A</strong></p>
+<p>To deploy a bot to Azure, at a minimum you need:</p>
+<ul>
+<li><strong>An app registration in Azure AD to represent the bot identity</strong> </li>
+<li><strong>An App Service instance to host the bot web service</strong> </li>
+<li><strong>An App Service plan which defines the pricing tier and scale for the App Service</strong></li>
+</ul>
+<h3 id="question-51">Question #51</h3>
+<p>You are building a chatbot by using the Microsoft Bot Framework SDK. The bot will be used to accept food orders from customers and allow the customers to customize each food item.</p>
+<p>You need to configure the bot to ask the user for additional input based on the type of item ordered. The solution must minimize development effort.</p>
+<p>Which two types of dialogs should you use? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. adaptive</p>
+<p>B. action</p>
+<p><strong>C. waterfall</strong></p>
+<p><strong>D. prompt</strong></p>
+<p>E. input</p>
+<p><strong>Selected Answer: CD</strong></p>
+<p><strong>=======Waterfall Dialogs===========:</strong></p>
+<p><strong>Guide users through a predefined, linear sequence of steps.</strong></p>
+<p><strong>Each step prompts the user for specific input, and the bot moves to the next step based on the user's response. Useful for structured conversation where the bot needs to collect information in a specific order.</strong></p>
+<p>Ideal for gathering customization options for food items in a structured way.</p>
+<p><strong>========Prompt Dialogs===========:</strong></p>
+<p>Simple dialogs that present a prompt to the user and wait for their response.</p>
+<p>Can be used within waterfall dialogs or as standalone prompts.</p>
+<p>Offer flexibility in how you ask questions and collect user input.</p>
+<h3 id="question-52">Question #52</h3>
+<p>After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.</p>
+<p>You are building a chatbot that will use question answering in Azure Cognitive Service for Language.</p>
+<p>You have a PDF named Doc1.pdf that contains a product catalogue and a price list.</p>
+<p>You upload Doc1.pdf and train the model.</p>
+<p>During testing, users report that the chatbot responds correctly to the following question: What is the price of ?</p>
+<p>The chatbot fails to respond to the following question: How much does cost?</p>
+<p>You need to ensure that the chatbot responds correctly to both questions.</p>
+<p><strong>Solution: From Language Studio, you create an entity for cost, and then retrain and republish the model.</strong></p>
+<p>Does this meet the goal?</p>
+<p>A. Yes</p>
+<p><strong>B. No</strong></p>
+<p>Solution: From Language Studio, you add alternative phrasing to the question and answer pair, and then retrain and republish the model. Choice is B</p>
+<h2 id="topic-6">Topic 6</h2>
+<h3 id="question-1_1">Question #1</h3>
+<p>You have a monitoring solution that uses the Azure AI Anomaly Detector service.</p>
+<p>You provision a server named Server1 that has intermittent internet access.</p>
+<p>You need to deploy the Azure AI Anomaly Detector to Server1.</p>
+<p>Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_182.png" title="Body image" /></p>
+<ol>
+<li>
+<p>Install</p>
+</li>
+<li>
+<p>From pull</p>
+</li>
+<li>
+<p>From run</p>
+</li>
+<li>
+<p>Query</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

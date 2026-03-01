@@ -1,0 +1,6329 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../7IntersiteConnectivity/">
+      
+      
+        <link rel="next" href="../9LB/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>8 Azure Virtual Machines - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8-azure-virtual-machines" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8 Azure Virtual Machines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-creating-and-managing-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Creating and Managing Virtual Machines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Creating and Managing Virtual Machines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-azure-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Azure Virtual Machine?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Parts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Parts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-and-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU and Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keeping-vm-workloads-in-the-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping VM Workloads in the Family
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Machine Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from Chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-managing-virtualmachine-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Managing VirtualMachine Disks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Managing VirtualMachine Disks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-virtual-hard-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Virtual Hard Disks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purposes-of-vhds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purposes of VHDs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Purposes of VHDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-disk-stores-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS Disk （Stores the operating system）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporary-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary Disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmanaged-s-managed-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmanaged s. Managed Disks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unmanaged s. Managed Disks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unmanaged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmanaged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-disk-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Disk Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-encryption-at-rest-for-defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk Encryption at Rest for Defense in Depth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk Encryption at Rest for Defense in Depth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-service-encryption-sse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Service Encryption (SSE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-disk-encryption-ade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Disk Encryption (ADE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configuring-virtual-machine-availability-and-scale-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Configuring Virtual Machine Availability and Scale Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Configuring Virtual Machine Availability and Scale Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-infrastructure-and-high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Infrastructure and High Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Machine Availability Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-availability-sets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Machine Availability Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Machine Availability Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fault-domain-fd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fault Domain (FD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-domain-ud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Domain (UD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fault-domain-host-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fault domain host failure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-for-availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo for availability sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoscaling-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autoscaling Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autoscaling Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual machine definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-in-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale-in policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-sets-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling Sets Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from Chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automating-virtual-machine-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Automating Virtual Machine Deployments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Automating Virtual Machine Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-automate-vm-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Automate VM Deployments?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-resource-manager-arm-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resource Manager (ARM) Templates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Resource Manager (ARM) Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Consistency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-resource-manager-arm-templates_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resource Manager (ARM) Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-hard-disk-vhd-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Hard Disk (VHD) Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-managing-virtual-machine-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Managing Virtual Machine Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Managing Virtual Machine Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Update Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing Update Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-automating-virtual-machine-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Automating Virtual Machine Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Automating Virtual Machine Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-configuration-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Configuration Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-configuration-automation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Configuration Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-powershell-dsc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing PowerShell DSC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from Chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-using-azure-bastion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Using Azure Bastion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Using Azure Bastion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-azure-bastion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is Azure Bastion?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Facts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-bastion-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Bastion Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-creating-and-managing-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Creating and Managing Virtual Machines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Creating and Managing Virtual Machines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-azure-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Azure Virtual Machine?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Parts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Parts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-and-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU and Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keeping-vm-workloads-in-the-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping VM Workloads in the Family
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Machine Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from Chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-managing-virtualmachine-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Managing VirtualMachine Disks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Managing VirtualMachine Disks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-virtual-hard-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Virtual Hard Disks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purposes-of-vhds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purposes of VHDs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Purposes of VHDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-disk-stores-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS Disk （Stores the operating system）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporary-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary Disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmanaged-s-managed-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmanaged s. Managed Disks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unmanaged s. Managed Disks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unmanaged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmanaged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-disk-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Disk Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-encryption-at-rest-for-defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk Encryption at Rest for Defense in Depth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk Encryption at Rest for Defense in Depth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-service-encryption-sse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Service Encryption (SSE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-disk-encryption-ade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Disk Encryption (ADE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configuring-virtual-machine-availability-and-scale-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Configuring Virtual Machine Availability and Scale Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Configuring Virtual Machine Availability and Scale Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-infrastructure-and-high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Infrastructure and High Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Machine Availability Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-availability-sets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Machine Availability Sets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Machine Availability Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fault-domain-fd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fault Domain (FD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-domain-ud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Domain (UD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fault-domain-host-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fault domain host failure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-for-availability-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo for availability sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoscaling-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autoscaling Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autoscaling Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machine-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual machine definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-in-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale-in policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-sets-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling Sets Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from Chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automating-virtual-machine-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Automating Virtual Machine Deployments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Automating Virtual Machine Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-automate-vm-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Automate VM Deployments?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-resource-manager-arm-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resource Manager (ARM) Templates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Resource Manager (ARM) Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Consistency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-resource-manager-arm-templates_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resource Manager (ARM) Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-hard-disk-vhd-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Hard Disk (VHD) Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstration_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-managing-virtual-machine-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Managing Virtual Machine Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Managing Virtual Machine Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Update Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing Update Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-automating-virtual-machine-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Automating Virtual Machine Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Automating Virtual Machine Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-configuration-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Configuration Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-configuration-automation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Configuration Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-powershell-dsc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing PowerShell DSC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from Chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-using-azure-bastion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Using Azure Bastion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Using Azure Bastion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-azure-bastion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is Azure Bastion?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Facts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-bastion-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Bastion Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-chatgpt_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from chatgpt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="8-azure-virtual-machines">8 Azure Virtual Machines</h1>
+<h2 id="1-creating-and-managing-virtual-machines">1 Creating and Managing Virtual Machines</h2>
+<h3 id="what-is-an-azure-virtual-machine">What is an Azure Virtual Machine?</h3>
+<ul>
+<li>Scalable cloud computing resource offered as Infrastructure as a Service (IaaS).</li>
+<li><strong>Includes CPU, memory, storage, and networking resources</strong>.</li>
+<li>Can be created from the Azure Portal, Azure CLI, or PowerShell</li>
+</ul>
+<h3 id="core-parts">Core Parts</h3>
+<h4 id="cpu-and-memory"><strong>CPU and Memory</strong></h4>
+<p>Determined by <strong>virtual machine (VM) sizing. Selected based on VM use case</strong>.</p>
+<h4 id="networking"><strong>Networking</strong></h4>
+<p>Virtual Networks (VNets), Subnets, <strong>Network Interface Card (NIC), Public IP (PIP), and Network Security Group (NSG)</strong>.</p>
+<h4 id="storage"><strong>Storage</strong></h4>
+<p>Azure Disks, consisting of <strong>OS disk, temporary 
+disk, and data disk</strong>.</p>
+<h3 id="keeping-vm-workloads-in-the-family">Keeping VM Workloads in the Family</h3>
+<table>
+<thead>
+<tr>
+<th><strong>VM Family Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>General Purpose</strong></td>
+<td>Balanced CPU-to-memory. Best for testing, development, or for small to medium workloads.</td>
+</tr>
+<tr>
+<td><strong>Compute Optimized</strong></td>
+<td>High CPU-to-memory. Good for medium traffic web servers, network appliances, batch processing, and app servers.</td>
+</tr>
+<tr>
+<td><strong>Memory Optimized</strong></td>
+<td>High memory-to-CPU. Works well for relational databases, caching, and inmemory analytics.</td>
+</tr>
+<tr>
+<td><strong>Storage Optimized</strong></td>
+<td>High disk throughput and I/O. Good for Big Data, SQL, NoSQL, and data warehousing. Works well for Online Transactional Processing (OLTP) databases</td>
+</tr>
+<tr>
+<td><strong>GPU</strong></td>
+<td>Specialized for heavy graphic rendering and video editing. Works well for artificial intelligence (AI) training and deep learning</td>
+</tr>
+<tr>
+<td><strong>HPC</strong></td>
+<td>Fastest and most powerful. Great for intensive workloads like large scale geophysics and advanced mathematics/sciences</td>
+</tr>
+</tbody>
+</table>
+<h3 id="virtual-machine-properties">Virtual Machine Properties</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_1.png" title="Body image" /></p>
+<ul>
+<li>Name: CloudChaseVM</li>
+<li>Region: East US 2</li>
+<li>Size: Standard_B1s</li>
+<li>Image: Linux/Windows</li>
+</ul>
+<h3 id="summary-from-chatgpt">Summary from chatgpt</h3>
+<p>Exam Points and Knowledge for Azure AZ-104 from the Article:</p>
+<ol>
+<li>Azure Virtual Machine is an Infrastructure as a Service (IaaS) solution provided by Microsoft Azure for deploying virtual machine instances in the Azure Cloud.</li>
+<li>Virtual Machine instances can be managed and deployed using the Azure Portal, Azure CLI, PowerShell, client SDKs, and API.</li>
+<li><strong>Components of Virtual Machines include CPU, memory, storage, and networking resources, which can be provisioned based on the use case and requirements</strong>.</li>
+<li>Virtual Networks, subnets, private IP addresses, and public IP addresses are used to deploy virtual machine resources and manage network connectivity.</li>
+<li><strong>Azure disks provide OS disk and temporary disk for non-persistent data storage by default, and can have additional data disks for persistent storage</strong>.</li>
+<li>Different family types of Virtual Machines cater to specific use cases, <strong>such as general purpose, compute optimized, memory optimized, storage optimized, GPU, and high-performance compute</strong>.</li>
+<li>Virtual Machines properties include name, region of deployment, sizing SKU for compute, memory, and storage performance, and choice of Linux or Windows image.</li>
+<li>Virtual Machine instances <strong>consist of Azure disks and network interfaces, with IP configurations for private and public IP addresses</strong>.</li>
+<li>Resources associated with Virtual Machines are deployed into a common resource group to <strong>share a common lifecycle.</strong></li>
+</ol>
+<p><strong>Virtual Machine Architecture</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_2.png" title="Body image" /></p>
+<h3 id="demonstration">Demonstration</h3>
+<ul>
+<li><strong>Create a Linux VM</strong></li>
+</ul>
+<p>Use Azure Portal, Azure CLI, and PowerShell via the Cloud Shell in the Cloud Playground.</p>
+<ul>
+<li><strong>Configure Disks</strong></li>
+</ul>
+<p>Add a data disk to the VM.</p>
+<ul>
+<li><strong>Configure Networking</strong></li>
+</ul>
+<p>Select/Create a VNet, subnet, NIC, PIP, and NSG.</p>
+<ul>
+<li><strong>Install a Webserver</strong></li>
+</ul>
+<p>Install Nginx using custom Configure Disks data.</p>
+<ul>
+<li><strong>Open NSG for HTTP</strong></li>
+</ul>
+<p>Manage security rules for the VM.</p>
+<h3 id="intended-purposes">Intended Purposes</h3>
+<p><strong>Linux/Windows Compute</strong></p>
+<p>Deploy Linux/Windows virtual machines using Azure VM’s IaaS model.</p>
+<p><strong>Migrate Workloads</strong></p>
+<p>Migrate compute workloads to Azure. For example, move web servers to Azure VMs</p>
+<p><strong>Cloud Computing Solutions</strong></p>
+<p>Azure VM workloads with specific configurations and additional resources can provide solutions with <strong>high availability, fault tolerance, scalability, and elasticity</strong>.</p>
+<p><strong>Inbound port rules</strong></p>
+<p>This will allow all IP addresses to access your virtual machine.</p>
+<h3 id="exam-tips">Exam Tips</h3>
+<p><strong>Key Components</strong></p>
+<ul>
+<li><strong>CPU/Memory</strong>: Sizing determines CPU and memory</li>
+<li><strong>Networking</strong>: VMs use VNets, NICs, and NSGs to determine connectivity</li>
+<li><strong>Storage</strong>: VMs use Azure Disks to store OS, non-persistent, and persistent data</li>
+</ul>
+<p><strong>BONUS TIP</strong></p>
+<p>Security for VMs can be managed by opening ports on a NSG (Network Security Group).</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_3.png" title="Body image" /></p>
+<p><strong>new disk（Source type）</strong>: Snapshot / Storage blob / empty</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_4.png" title="Body image" /></p>
+<ul>
+<li>Subnet </li>
+<li>NIC network security group</li>
+<li>Public IP</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_8_5.png" title="Body image" /></p>
+<p><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-automate-vm-deployment">https://learn.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-automate-vm-deployment</a></p>
+<pre><code>#cloud-config
+package_upgrade: true
+packages:
+  - nginx
+  - nodejs
+  - npm
+write_files:
+  - owner: www-data:www-data
+    path: /etc/nginx/sites-available/default
+    content: |
+ ...
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az104_8_6.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_7.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_8.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_9.png" title="Body image" /></p>
+<h3 id="summary-from-chatgpt_1">Summary from Chatgpt</h3>
+<p>Exam Points and Knowledge for Azure AZ-104 from the Article:</p>
+<ol>
+<li>Virtual Machine architecture includes a <strong>resource group, virtual network, subnet, network interface card, Azure disks, and security rules using Network Security Groups</strong>.</li>
+<li>The process of creating a Linux virtual machine involves <strong>configuring networking, creating a virtual network, subnet, NIC, public IP address, and a network security group, and adding network security group rules</strong>.</li>
+<li>Aspects of virtual machine deployment such as selecting regions, sizing, images (Windows or Linux), and authentication methods using SSH public key or password are essential knowledge areas.</li>
+<li>Disk options, including <strong>Premium SSD, Standard SSD, and Standard HDD</strong>, and the ability to <strong>create additional data disks for persistent storage, are components of virtual machine deployment</strong>.</li>
+<li>Networking configuration for virtual machines involves creating virtual networks, subnets, public IP addresses, and associating a NIC with a network security group for securing public connectivity.</li>
+<li>Advanced features for virtual machines <strong>include boot diagnostics, OS guest diagnostics</strong>, and using extensions for post-deployment configuration and automation through scripts or custom data.</li>
+<li>The ability to secure VMs by managing security through <strong>opening ports on a network security group for public connectivity is important knowledge for virtual machine deployment and management</strong>.</li>
+</ol>
+<h2 id="2-managing-virtualmachine-disks">2 Managing VirtualMachine Disks</h2>
+<h3 id="what-are-virtual-hard-disks">What Are Virtual Hard Disks?</h3>
+<p><strong>Virtual Hard Disks (VHDs)</strong></p>
+<p><mark>A file representation of what is found on a hard disk</mark></p>
+<p>Virtual machines (VMs) use <strong>VHDs to store OS, apps, and data</strong>. </p>
+<p>VHDs utilize the underlying Microsoft storage infrastructure. <strong>They are stored as page blobs in the blob service</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_10.png" title="Body image" /></p>
+<blockquote>
+<p><strong>Virtual hard disks</strong> that virtualize that hardware component. </p>
+<p><strong>Virtual machines</strong> use these virtual hard disks to store data, and our virtual hard disks ( i.e. Azure disks) use <strong>the underlying Microsoft storage infrastructure and store these disks as page blobs inside of the Blob service</strong>. </p>
+</blockquote>
+<h3 id="purposes-of-vhds">Purposes of VHDs</h3>
+<h4 id="os-disk-stores-the-operating-system"><strong>OS Disk</strong> （Stores the operating system）</h4>
+<ul>
+<li>Default with virtual machines</li>
+<li><strong>Stores the operating system</strong></li>
+<li>Registered as a SATA drive</li>
+<li><strong>Labeled as the C: drive for Windows and mounted at <code>“/“</code> for Unix-like systems</strong></li>
+<li>Max capacity of 4,095 GiB</li>
+</ul>
+<h4 id="temporary-disk"><strong>Temporary Disk</strong></h4>
+<ul>
+<li>Default with virtual machines </li>
+<li><strong>Stores non-persistent data like page and swap files</strong></li>
+<li>Local disk for the underlying Microsoft infrastructure</li>
+</ul>
+<h4 id="data-disk"><strong>Data Disk</strong></h4>
+<ul>
+<li>Additional disks attached to a VM （they don't come by default）</li>
+<li><strong><mark>Used for storing persistent data like files or databases</mark></strong></li>
+<li><strong>Registered as a SCSI drive</strong></li>
+<li>Max capacity of 32,767 GiB</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_8_11.png" title="Body image" /></p>
+<blockquote>
+<p>OS disk, our temporary disk, and our data disks. </p>
+</blockquote>
+<h3 id="unmanaged-s-managed-disks">Unmanaged s. Managed Disks</h3>
+<h4 id="unmanaged"><strong>Unmanaged</strong></h4>
+<ul>
+<li>Not an Azure Resource Manager (ARM)-managed resource</li>
+<li>Manually managed storage accounts</li>
+<li>Availability not guaranteed</li>
+</ul>
+<h4 id="managed"><strong>Managed</strong></h4>
+<ul>
+<li>An Azure Resource Manager (ARM)-managed resource</li>
+<li>Azure-managed storage accounts</li>
+<li>Availability supported</li>
+<li><strong>Role-Based Access Control (RBAC)</strong></li>
+<li><strong>Snapshot support</strong></li>
+<li>Backup Support</li>
+</ul>
+<h3 id="major-disk-types">Major Disk Types</h3>
+<p><strong>Disk Type</strong></p>
+<ul>
+<li><strong>Ultra Disk (SSD)</strong>： I/O-intensive workloads like top tier Online Transactional Processing (OLTP), any transaction-heavy workloads. (Only used as a data disk.)</li>
+<li><strong>Premium (SSD)</strong>： <strong>Production and performance workloads.</strong></li>
+<li><strong>Standard (SSD)</strong>： Web servers, light enterprise applications, and dev/test workloads.</li>
+<li><strong>Standard (HDD)</strong>： Backup, non-critical workloads.</li>
+</ul>
+<h3 id="disk-encryption-at-rest-for-defense-in-depth">Disk Encryption at Rest for Defense in Depth</h3>
+<p>The disk encryption can happen at rest and also it can happen on the virtual machine</p>
+<h4 id="storage-service-encryption-sse"><strong>Storage Service Encryption (SSE)</strong></h4>
+<ul>
+<li>Encryption of physical disks in the data center<ul>
+<li>Encrypting the disks of the underlying hardware. </li>
+</ul>
+</li>
+<li>Built into Azure platform</li>
+</ul>
+<h4 id="azure-disk-encryption-ade"><strong>Azure Disk Encryption (ADE)</strong></h4>
+<ul>
+<li>Optional encryption of the VHDs</li>
+<li>Ensures a disk is only accessible by the VM that owns the disk</li>
+<li><strong>OS tools like BitLocker and DM-Crypt</strong></li>
+</ul>
+<h3 id="demonstration_1">Demonstration</h3>
+<p><strong>Add a Data Disk to a VM</strong></p>
+<p>Use Azure Portal in Cloud Playground to add a data disk</p>
+<p><strong>Enable Azure Disk Encryption</strong></p>
+<p>Create a key vault, create a key, and select encryption settings.</p>
+<p><strong>Validate Encryption</strong></p>
+<p>Use PowerShell to validate encryption.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_13.png" title="Body image" /></p>
+<p>Azure Disk Encryption (ADE) provides volume encryption for the OS and data disks. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_14.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_15.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_16.png" title="Body image" /></p>
+<pre><code>Get-AzVMDiskEncryptionStatus -ResourceGroupName -sandbox -VMName vmdemo01
+
+OsVolumeEncrypted         NotEncrypted
+DataVolumesEncrypted     NotMounted
+OsVolumeEncryptionSettings
+ProgressMessage          Encryption succeeded for data volumes
+</code></pre>
+<h3 id="exam-tips_1">Exam Tips</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_12.png" title="Body image" /></p>
+<ul>
+<li>Azure Disks are really just virtual hard disks: <strong>a virtualized hard disk, much like a physical hard disk on a physical machine</strong>. </li>
+<li>Azure Disks to provide the <strong>OS disk</strong> and <strong>the temporary disk by default</strong> to our virtual machines, <strong>to provide the operating system, which is our root disk</strong>; </li>
+<li><strong>Temporary disk that is localized to the underlying hardware, and this is great for non-persistent storage like swap files</strong>. </li>
+<li>Data disks that we can create and attach to these virtual machines. And these are managed as a separate resource and these provide <strong>persistent data storage for virtual machines</strong>. </li>
+<li>Azure Disks are utilizing the <strong>underlying Microsoft storage infrastructure and storing our disks as page blobs.</strong> And we don't have to necessarily keep track of all of this if we're using managed disks, because Microsoft is going to do it for us. </li>
+<li>encryption on our <strong>physical hardware on the physical disks inside of the data center</strong>. </li>
+</ul>
+<h3 id="summary-from-chatgpt_2">Summary from chatgpt</h3>
+<h3 id="exam-tips_2">Exam Tips</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_12.png" title="Body image" /></p>
+<ul>
+<li>Azure Disks are really just virtual hard disks: <strong>a virtualized hard disk, much like a physical hard disk on a physical machine</strong>. </li>
+<li>Azure Disks to provide the <strong>OS disk</strong> and <strong>the temporary disk by default</strong> to our virtual machines, <strong>to provide the operating system, which is our root disk</strong>; </li>
+<li><strong>Temporary disk that is localized to the underlying hardware, and this is great for non-persistent storage like swap files</strong>. </li>
+<li>Data disks that we can create and attach to these virtual machines. And these are managed as a separate resource and these provide <strong>persistent data storage for virtual machines</strong>. </li>
+<li>Azure Disks are utilizing the <strong>underlying Microsoft storage infrastructure and storing our disks as page blobs.</strong> And we don't have to necessarily keep track of all of this if we're using managed disks, because Microsoft is going to do it for us. </li>
+<li>encryption on our <strong>physical hardware on the physical disks inside of the data center</strong>.</li>
+</ul>
+<h2 id="3-configuring-virtual-machine-availability-and-scale-sets">3 Configuring Virtual Machine Availability and Scale Sets</h2>
+<h3 id="global-infrastructure-and-high-availability">Global Infrastructure and High Availability</h3>
+<p>For example, inside of the Azure cloud, we have regions across the globe where we deploy our virtual machines. </p>
+<p>Within these regions(Exp East US), we have a cluster of <strong>Availability Zones</strong>, and these Availability Zones are isolated from one another. </p>
+<p>If one of these Availability Zones experiences any sort of outage for whatever reason - like a natural disaster or some sort of apocalypse, we are good to go, because the other Availability Zones are still available. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_18.png" title="Body image" /></p>
+<p><strong>Global Infrastructure and High Availability</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_19.png" title="Body image" /></p>
+<p>Even with Availability Zones, if we distribute our solutions improperly, such as putting our database tier in one Availability Zone and our web tier in another Availability Zone, if Availability Zone 2 experiences an outage, our solution is ultimately still down and not highly available, because it is not redundant. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_20.png" title="Body image" /></p>
+<p>What we could do to fix this and make it highly available is to spread our web tier across Availability Zone 1 and 2, and do the same with our database tier. And that way, if we experience that outage in Availability Zone 2, the good thing is, Availability Zone 1 is still up and running, and our solution is still available.</p>
+<h3 id="virtual-machine-availability-sets">Virtual Machine Availability Sets</h3>
+<p><strong>What about protecting ourselves on the underlying hardware inside of these Availability Zones?</strong></p>
+<p><strong>Purpose of Availability Sets</strong></p>
+<ul>
+<li>Protect redundant VMs</li>
+<li><strong>Protect against underlying host failures,such as a server rack going down</strong>. </li>
+<li><strong>Prevent outages due to maintenance</strong></li>
+</ul>
+<h3 id="virtual-machine-availability-sets_1">Virtual Machine Availability Sets</h3>
+<h4 id="fault-domain-fd"><strong>Fault Domain (FD)</strong></h4>
+<p><strong>Underlying host failure, such as power or network outages</strong>. (Max FD: 3)</p>
+<p>The fault domain is going to protect is from underlying host failures, <strong>because these 2 server racks don't share the same underlying resources, like power and network</strong>.</p>
+<p>And availability sets automatically takes care of spreading out our virtual machines inside of the availability set across the fault domains, and we can spread them across a max of 3 fault domains. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_21.png" title="Body image" /></p>
+<h4 id="update-domain-ud"><strong>Update Domain (UD)</strong></h4>
+<blockquote>
+<p>About the maintenance activities?</p>
+</blockquote>
+<p><strong>Logical grouping of infrastructure for maintenance/updates.  (Max UD: 20)</strong></p>
+<p>What update domains are logical groupings of the underlying infrastructure to protect us from any sort of maintenance activity or any updates occurring on the underlying hardware. </p>
+<p>For example, if there is an update taking place on anything in update domain 2, everything inside of update domain 1 is good, and we don't have to worry about any outage related to this maintenance activity. </p>
+<h4 id="availability-sets"><strong>Availability Sets</strong></h4>
+<p>Availability sets are <strong>automatically going to distribute our virtual machines in the availability set</strong> across the update domains, and <strong>we can distribute across a max of 20 update domains</strong>.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_22.png" title="Body image" /></p>
+<h4 id="fault-domain-host-failure">Fault domain host failure.</h4>
+<p>Inside of our Availability Zone, we have 2 server racks, and we have our app running in both as part of an availability set. </p>
+<p>If server rack 1 goes down, we are still good to go, and we still have a highly available solution, because we have our app running in another instance on the underlying server rack in fault domain 2 that is still good to go. </p>
+<p><strong>This protects us using availability sets and makes our multi-AZ deployment also highly available within that Availability Zone itself by using availability sets.</strong> </p>
+<h3 id="demo-for-availability-sets">Demo for availability sets</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_24.png" title="Body image" /></p>
+<p><strong>Availability sets</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_25.png" title="Body image" /></p>
+<p>Machine scale set</p>
+<ul>
+<li>Network interface</li>
+<li>Load balancing</li>
+</ul>
+<h3 id="autoscaling-operations">Autoscaling Operations</h3>
+<ul>
+<li>If traffic demands go up to our virtual machines, we'll scale up</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_8_23.png" title="Body image" /></p>
+<p>Scale set is providing the compute solution that meets our traffic demand, and <strong>this is achieved through horizontal scaling, or scaling out, of our virtual machines</strong>. </p>
+<p><strong>Why Use Scale Sets?</strong></p>
+<p>Purpose of Virtual Machine Scale Sets</p>
+<ul>
+<li>Simplify scaling configurations</li>
+<li>Save costs by aligning usage with demand</li>
+<li><strong>Scale to meet demand of traffic</strong></li>
+</ul>
+<p>For example, the virtual <strong>machine's size, the image we want to use, the network interface card, the storage, and all of the underlying resources that you would typically get with a virtual machine</strong>. </p>
+<h4 id="virtual-machine-definition"><strong>Virtual machine definition</strong></h4>
+<p>Scaling definition is going to define the scaling actions, i.e. scaling in or out, <strong>based on whatever conditions are met</strong>. </p>
+<p><mark>An example here is our <strong>scaling definition can be that, if we have CPU utilization that is greater than 80%, well then, add one VM</strong>. </mark></p>
+<h4 id="scale-in-policy"><strong>Scale-in policy</strong></h4>
+<p>Scale-in policy allows us to scale back in and delete VMs by priority as scaling operations occur.</p>
+<p>Provide a scalable and elastic solution using these virtual machine scale sets. </p>
+<h3 id="exam-tips_3">Exam Tips</h3>
+<p><strong>Scale Sets</strong></p>
+<p>Autoscale solutions to meet demands of traffic and scale in to decrease costs when demand goes down.</p>
+<p><strong>High Availability</strong></p>
+<p>Design highly available solutions using zonal redundant deployments.</p>
+<p><strong>Availability Sets</strong></p>
+<p>Provide protection for redundant VMs by preventing outages related to faults and updates by logically grouping them into domains</p>
+<h3 id="scaling-sets-demo">Scaling Sets Demo</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_26.png" title="Body image" /></p>
+<p><strong>Scaling out policy</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_27.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_28.png" title="Body image" /></p>
+<p><strong>Scaling in policy</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_29.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_30.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_31.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_39.png" title="Body image" /></p>
+<h3 id="summary-from-chatgpt_3">Summary from Chatgpt</h3>
+<ol>
+<li>Scale sets for scalability:</li>
+<li>Understanding the purpose of virtual machine scale sets in providing scalability for virtual machine deployments in response to fluctuating traffic demands.</li>
+<li>Exploring the concept of horizontal scaling or scaling out within virtual machine scale sets to add or remove instances based on traffic requirements.</li>
+<li>
+<p><strong>Leveraging virtual machine scale sets to align the usage of virtual machines with traffic demands and optimize costs</strong>.</p>
+</li>
+<li>
+<p>Components of virtual machine scale sets:</p>
+</li>
+<li>Understanding the components of virtual machine scale sets, such as VM definitions, scaling definitions, and scaling policies.</li>
+<li>
+<p>Exploring the use of scaling policies to define actions based on conditions like CPU utilization thresholds to automatically adjust the number of instances in the scale set.</p>
+</li>
+<li>
+<p>Practical demonstration:</p>
+</li>
+<li>Creating a virtual machine scale set using the Azure portal and configuring various settings including region, availability zones, virtual machine image, authentication type, disks, networking, scaling policies, and upgrade policies.</li>
+<li>
+<p>Reviewing the created virtual machine scale set and its instances, as well as custom autoscaling configurations.</p>
+</li>
+<li>
+<p>Exam tips:</p>
+</li>
+<li>Emphasizing the creation of highly available and scalable virtual machine solutions using multi-AZ deployments, availability sets, and scale sets.</li>
+<li>Recognizing the role of availability sets in protecting redundant virtual machines within an Availability Zone to prevent outages related to faults and updates.</li>
+<li>Understanding the use of virtual machine scale sets to provide scalable and elastic virtual machine solutions and align the virtual machine deployment with traffic demands.</li>
+</ol>
+<h2 id="4-automating-virtual-machine-deployments">4 Automating Virtual Machine Deployments</h2>
+<h3 id="why-automate-vm-deployments">Why Automate VM Deployments?</h3>
+<ul>
+<li>Patch/update Operating System (OS) <strong>using extensions and scripts</strong> </li>
+<li>Pre-install software (e.g. Apache2 web server)</li>
+<li>Preconfigure settings<ul>
+<li>For our virtual machines when we deploy them. </li>
+</ul>
+</li>
+</ul>
+<h3 id="azure-resource-manager-arm-templates">Azure Resource Manager (ARM) Templates</h3>
+<h4 id="infrastructure-as-code-iac"><strong>Infrastructure as Code (IaC)</strong></h4>
+<p>Text-based (declarative JSON) definition of Azure resources and resource configurations.</p>
+<h4 id="deployment-consistency"><strong>Deployment Consistency</strong></h4>
+<p>Manage resource deployments using software deployment methodologies</p>
+<h4 id="automation"><strong>Automation</strong></h4>
+<p>Automate resource deployments and provide modular approach to resource deployments</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_32.png" title="Body image" /></p>
+<h3 id="azure-resource-manager-arm-templates_1">Azure Resource Manager (ARM) Templates</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_33.png" title="Body image" />  <img alt="Alt Image Text" src="../../images/az104_8_34.png" title="Body image" /></p>
+<p>For example, inside of Azure, we have a resource group that we can deploy our resources to using a ARM template or Azure Resource Manager template. We'll <strong><mark>define the resources such as our virtual network, the virtual network's configurations, a subnet, a virtual machine, the disk associated with that virtual machine, the network interface associated with that virtual machine, a public IP address for our virtual machine, and even the network security group, and the rules that are part of this deployment</mark></strong>. This can all be in one ARM template where we define all of this Infrastructure as Code. </p>
+<h3 id="virtual-hard-disk-vhd-templates">Virtual Hard Disk (VHD) Templates</h3>
+<p>Automate the deployment of our virtual machines is we could use a source virtual machine to create what is known as a <strong>golden image</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_35.png" title="Body image" /></p>
+<p><strong>Prep Virtual Machine</strong></p>
+<p>Configure VM with required software, updates, and configurations</p>
+<p><strong>Generalize Virtual Machine</strong></p>
+<p>Prepare VM for imaging using sysprep (Windows) or VM Agent deprovision (Linux)</p>
+<h3 id="demonstration_2">Demonstration</h3>
+<p><strong>Deploy VM Using ARM Template</strong></p>
+<p>Using an ARM template, deploy a Linux VM and modify the NSG rule properties.</p>
+<p>Add ARM template</p>
+<p><a href="https://acloudguru-content-attachment-production.s3-accelerate.amazonaws.com/1619127192805-vm_arm_template.json">https://acloudguru-content-attachment-production.s3-accelerate.amazonaws.com/1619127192805-vm_arm_template.json</a></p>
+<pre><code>...
+&quot;properties&quot;: {
+        &quot;securityRules&quot;: [
+          {
+            &quot;name&quot;: &quot;http&quot;,
+            &quot;properties&quot;: {
+              &quot;priority&quot;: 1010,
+              &quot;protocol&quot;: &quot;TCP&quot;,
+              &quot;access&quot;: &quot;Allow&quot;,
+              &quot;direction&quot;: &quot;Inbound&quot;,
+              &quot;sourceAddressPrefix&quot;: &quot;*&quot;,
+              &quot;sourcePortRange&quot;: &quot;*&quot;,
+              &quot;destinationAddressPrefix&quot;: &quot;*&quot;,
+              &quot;destinationPortRange&quot;: &quot;80&quot;
+            }
+          }
+        ]
+      }
+...
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az104_8_36.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_37.png" title="Body image" /></p>
+<p><strong>Custom deployment</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_38.png" title="Body image" /></p>
+<p>Using the generalized image, deploy a Linux VM.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_40.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_41.png" title="Body image" /></p>
+<p><strong>Generalize VM</strong></p>
+<p>Generalize the Linux VM to prep for imaging as a VHD template</p>
+<pre><code>sudo waagent -deprovisiontuser
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az104_8_42.png" title="Body image" /></p>
+<p>Let it deprovision our virtual machine.</p>
+<pre><code>$rg = (Get-AzResourceGroup).ResourceGroupName
+$myvm = az vm list --query [].name -s tsv
+  --resouce-group $rg `
+  --name $myvm
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az104_8_43.png" title="Body image" /></p>
+<pre><code>az vm generalize `
+    --resouce-group $rg `
+    --name $myvm
+
+az vm create `
+    --resouce-group $rg `
+    --name myImage --source $myvm
+</code></pre>
+<p><strong>Deploy VM from Custom Image</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_44.png" title="Body image" /></p>
+<h3 id="demonstration_3">Demonstration</h3>
+<p><strong>Deploy Linux Web Server</strong>: Using cloud-init, deploy a Linux web server running Apache2.</p>
+<p><strong>Generalize VM</strong>: Generalize the Linux VM to prep for imaging as a VHD template</p>
+<p><strong>Deploy VM Using ARM Template</strong>: Using an ARM template, deploy a Linux VM and modify the NSG rule properties.</p>
+<p><strong>Deploy VM from Custom Image</strong>: Using the generalized image, deploy a Linux VM</p>
+<h3 id="exam-tips_4">Exam Tips</h3>
+<p><strong>ARM Templates</strong></p>
+<p>Deploy VMs quickly and manage infrastructure using change control using Infrastructure as Code (IaC).</p>
+<p><strong>VHD Template</strong></p>
+<p>Create a golden image of VMs to easily deploy VMs with consistent software and configurations</p>
+<p><strong>Automate Management</strong></p>
+<p>Manage VM deployments using custom data and manage VMs using extension scripts</p>
+<h3 id="summary-from-chatgpt_4">Summary from chatgpt</h3>
+<ol>
+<li>Importance of automating VM deployments:</li>
+<li>Understanding the benefits of automating VM deployments, such as automating patching and updating processes, pre-installing software on virtual machines, and preconfiguring virtual machine settings.</li>
+<li>
+<p>Exploring the role of automation in ensuring consistent and repeatable deployments and managing infrastructure as code.</p>
+</li>
+<li>
+<p>Azure Resource Manager (ARM) templates for automation:</p>
+</li>
+<li>Understanding ARM templates as JSON documents that define Azure resources and configurations, and the use of Infrastructure as Code to ensure consistent deployments.</li>
+<li>
+<p>Modifying ARM templates to customize deployment configurations, such as adding security rules to network security groups.</p>
+</li>
+<li>
+<p>Creating a golden image for VM deployment:</p>
+</li>
+<li>
+<p><strong>Exploring the concept of creating a golden image from a source virtual machine by preparing it with required software updates and configurations, and generalizing the virtual machine to create a custom image for deployment</strong>.</p>
+</li>
+<li>
+<p>Deployment automation and custom scripting:</p>
+</li>
+<li>
+<p>Demonstrating the use of custom data and extension scripts for post-deployment configurations and automation of tasks on virtual machines.</p>
+</li>
+<li>
+<p>Practical demonstration:</p>
+</li>
+<li>
+<p>Step-by-step demonstration of deploying a virtual machine using an ARM template, m<strong>odifying the template to add security rules, generalizing the virtual machine to create a custom image, and deploying a new virtual machine from the custom image</strong>.</p>
+</li>
+<li>
+<p>Exam tips:</p>
+</li>
+<li>Emphasizing the use of ARM templates and Infrastructure as Code to automate and manage virtual machine deployments.</li>
+<li>Recognizing the importance of creating custom images and automating post-deployment configurations using custom data and extension scripts.</li>
+<li>Understanding the benefits of automation in ensuring consistent and repeatable deployment processes for virtual machines.</li>
+</ol>
+<h2 id="5-managing-virtual-machine-updates">5 Managing Virtual Machine Updates</h2>
+<h3 id="describing-update-management">Describing Update Management</h3>
+<p>Update Management is our solution for managing guest operating system. </p>
+<h4 id="update-management"><strong>Update Management</strong></h4>
+<p><strong>Manages system updates and patches for workloads both in the Azure cloud and on-premises</strong></p>
+<ul>
+<li>Supports Linux and Windows VMs<ul>
+<li><strong>Running in Azure and running as non-Azure compute(on-prem</strong>). </li>
+</ul>
+</li>
+<li>Provides capabilities for:<ul>
+<li><strong>Scheduling for update</strong></li>
+<li>Compliance scanning</li>
+<li>Reporting</li>
+</ul>
+</li>
+</ul>
+<h3 id="components-of-update-management"><strong>Components of Update Management</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_45.png" title="Body image" /></p>
+<ol>
+<li><strong>Automation account</strong>, a service inside of Azure that carries out the <strong>automation of running our Update Management Solution</strong>. </li>
+<li><strong>Log Analytics agent</strong>, as an agent on our operating system to tell us what is going on on the operating system and whether or not our machines are up to date, and the post status of update jobs. </li>
+<li><strong>update jobs</strong> are going to be configured by us as users and run by the Hybrid Runbook Worker, which is part of our automation account.</li>
+<li><strong>Log Analytics agent</strong> is going to perform a pre-update report. </li>
+<li>To see what pre-updates we need by seeing things such as the compliance scanning, and the reports on what updates are available. </li>
+<li>check maintenance windows with our Hybrid Runbook Worker.</li>
+<li>Perform the updates and start them on our operating system inside of these maintenance windows. And then after the updates are done, we're going to have update report to tell us how the update went.</li>
+</ol>
+<h3 id="demo">Demo</h3>
+<p>Allow HTTP and HTTPS so that we can allow Update Management to communicate with this virtual machine, so that we can determine what updates are necessary for the virtual machine. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_47.png" title="Body image" /></p>
+<p><strong>Update Management</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_48.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_49.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_50.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_51.png" title="Body image" /></p>
+<h3 id="key-takeaways"><strong>Key Takeaways</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_46.png" title="Body image" /></p>
+<p><strong>Automation Account</strong>： Service for managing update configurations for VMs</p>
+<p><strong>Hybrid Runbook Worker</strong>： Runbook for updates and configurations that will be run</p>
+<p><strong>Log Analytics Workspace</strong>： Storage for logging details about update management processes</p>
+<p><strong>Log Analytics Agent</strong>： Agent installed on OS for sending back data to workspace log</p>
+<p>Managing Virtual Machine Updates, both in the cloud and on-prem to manage things like <em>guest OS updates, such as our system updates,</em> so that we can make sure that our systems are always up to date with the most up-to-date security updates that are rolling in. </p>
+<h3 id="summary-from-chatgpt_5">Summary from chatgpt</h3>
+<ol>
+<li>Purpose of Update Management Solution:</li>
+<li>Update Management <strong>is a solution for managing guest operating system updates and patches for virtual machines, both inside Azure and on-premise</strong>.</li>
+<li>
+<p>It provides support for Linux and Windows VMs in Azure and non-Azure compute resources running on-premises.</p>
+</li>
+<li>
+<p>Functionality of Update Management:</p>
+</li>
+<li>Capabilities include scheduling updates, compliance scanning for correct updates, reporting on update jobs, and failure analysis for update issues.</li>
+<li>
+<p><strong>The solution also enables pre-update reporting, update configuration, maintenance window checking, update execution, and post-update reports.</strong></p>
+</li>
+<li>
+<p>Components of Update Management Solution:</p>
+</li>
+<li>Operating System: The OS running on virtual machine workloads, whether inside Azure or on-premises.</li>
+<li>Automation Account: A service in Azure for automating the execution of the Update Management Solution.</li>
+<li>Log Analytics Agent: T<strong>his agent functions on the OS to monitor the update status, update jobs, and report to the Log Analytics workspace</strong>.</li>
+<li>
+<p>Hybrid Runbook Worker: <strong>Part of the automation account that runs the configured update jobs against the virtual machines</strong>.</p>
+</li>
+<li>
+<p>Demonstration in the Azure Portal:</p>
+</li>
+<li>The process of enabling Update Management on a virtual machine was demonstrated in the Azure portal, which involved creating a virtual machine and enabling Update Management for it.</li>
+<li>
+<p>The creation of a Log Analytics workspace and an automation account was part of the enablement process.</p>
+</li>
+<li>
+<p>Key takeaways from the lesson:</p>
+</li>
+<li>Update Management Solution is used for automating and managing guest OS updates for virtual machines, ensuring they are up to date with security updates.</li>
+<li>The use of the automation account, Hybrid Runbook Worker, Log Analytics workspace, and Log Analytics agent was emphasized in the management of update configurations and logging update details.</li>
+</ol>
+<h2 id="6-automating-virtual-machine-configuration">6 Automating Virtual Machine Configuration</h2>
+<p>Automation Account in PowerShell Desired State Configuration for Linux and Windows virtual machines. </p>
+<h3 id="describing-configuration-automation">Describing Configuration Automation</h3>
+<p><strong>Config Automation</strong></p>
+<p>Automates configuration management of virtual machines using an <strong>Automation account</strong> and <strong>PowerShell Desired State Configuration (DSC)</strong></p>
+<ul>
+<li>Supports Linux and Windows VMs</li>
+<li>Built-in pull server</li>
+<li>
+<p>PowerShell DSC uses declarative syntax</p>
+</li>
+<li>
+<p>Using <strong>PowerShell Desired State Configuration</strong>, what we have is a <strong>built-in pull server</strong>, and this is going to allow us to be able to keep our environments configured in the same fashion across all of our virtual machines using the PowerShell Desired State Configuration.</p>
+</li>
+<li>PowerShell Desired State Configuration uses a <strong>declarative syntax,</strong> allowing us to <strong>have our configuration of our environments be item potent so that it is the same across all virtual machines</strong> </li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_8_52.png" title="Body image" /></p>
+<ol>
+<li>Automation Account that we create that allows us to use <strong>PowerShell Desired State Configuration</strong> and then we have <strong>our virtual machine and our virtual machine has a local configuration manager</strong> on it that's going to be able to reach out to the Automation Account and then when it reaches out to the Automation Account</li>
+<li><strong>The Automation Account, as the pull server</strong>, is going to send back the PowerShell Desired State Configuration that is necessary so that we can make sure that if this virtual machine has drifted, that we pull it back into line. </li>
+<li>Use the PowerShell Desired State Configuration to be able to determine what our alignment across the environment is going to look like</li>
+<li>Declarative PowerShell syntax where we can do things such as ensure that there's always going to be a web server feature present on our virtual machines</li>
+</ol>
+<h3 id="describing-configuration-automation_1"><strong>Describing Configuration Automation</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_8_53.png" title="Body image" /></p>
+<ol>
+<li>
+<p>These machines with their <strong>local configuration managers（LCM) are going to reach out to our Automation Account pull server to see what the PowerShell Desired State Configuration</strong> </p>
+</li>
+<li>
+<p>Pull server is going to send it back and make sure that these web servers are in line with the PowerShell Desired State Configuration all across our entire environment, ensuring that we are automating the configuration of the virtual machines to stay in alignment with what we've determined in that PowerShell Desired State Configuration. </p>
+</li>
+</ol>
+<h3 id="describing-powershell-dsc">Describing PowerShell DSC</h3>
+<pre><code>Configuration MyDscConfiguration {
+    Node &quot;localhost&quot; {
+        WindowsFeature MyFeatureInstance {
+            Ensure = 'Present'
+            Name = 'Web-Server'
+    }
+ } 
+}
+</code></pre>
+<h3 id="demo_1">Demo</h3>
+<ul>
+<li>Creation of a virtual machine in Azure Cloud Sandbox.</li>
+<li>Setting up an Automation Account for configuration automation.</li>
+<li>Importing and compiling a PowerShell Desired State Configuration file into the Automation Account.</li>
+<li>Connecting the virtual machine to the Automation Account and applying the configuration to set up a web server.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_8_54.png" title="Body image" /></p>
+<p><strong>Create Automation Accounts</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_55.png" title="Body image" /></p>
+<p><strong>config-demo-auto | State configuration (DSC)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_56.png" title="Body image" /></p>
+<p><code>$HOME/mydscconfig.ps1</code></p>
+<pre><code>Configuration MyDscConfiguration {
+    Node &quot;localhost&quot; {
+        WindowsFeature MyFeatureInstance {
+            Ensure = 'Present'
+            Name = 'Web-Server'
+    }
+ } 
+}
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az104_8_57.png" title="Body image" /></p>
+<pre><code>Import-AzAutomationDscConfiguration `
+    -AutomationAccountName config-demo-auto `
+    -ResourceGroupName 1-57dala2d-playground-sandbox `
+    -SourcePath /home/cloud/mydscconfig.ps1  `
+    -Force  `
+    -Published
+</code></pre>
+<p><img alt="Alt Image Text" src="../../images/az104_8_58.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_59.png" title="Body image" /></p>
+<p><strong>Registration to Automation Account</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_60.png" title="Body image" /></p>
+<h3 id="key-takeaways_1">Key Takeaways</h3>
+<p><strong>Automation Account</strong></p>
+<p>Service for managing update configurations for VMs</p>
+<p><strong>PowerShell DSC</strong></p>
+<p>PowerShell scripts that declare desired state of VMs</p>
+<p><strong>Local Configuration Manager</strong></p>
+<p>Sends current config state to pull server for evaluation</p>
+<h3 id="summary-from-chatgpt_6">Summary from Chatgpt</h3>
+<ol>
+<li><strong>Automation Account and PowerShell Desired State Configuration (DSC)</strong>:</li>
+<li>Azure Automation Account enables automation of configuration for virtual machines using PowerShell Desired State Configuration for Linux and Windows VMs.</li>
+<li>DSC uses a declarative syntax to ensure consistent configuration across VMs and prevent configuration drift.</li>
+<li>
+<p><strong>Local Configuration Manager on VMs communicates with the Automation Account's pull server to maintain alignment with the DSC.</strong></p>
+</li>
+<li>
+<p>Demonstration in Azure Cloud Sandbox:</p>
+</li>
+<li>Creation of a virtual machine in Azure Cloud Sandbox.</li>
+<li>Setting up an Automation Account for configuration automation.</li>
+<li>Importing and compiling a PowerShell Desired State Configuration file into the Automation Account.</li>
+<li>
+<p><strong>Connecting the virtual machine to the Automation Account and applying the configuration to set up a web server</strong>.</p>
+</li>
+<li>
+<p>Use Cases and Benefits:</p>
+</li>
+<li>Automation of configuration management for multiple virtual machines to maintain consistency across the environment.</li>
+<li>
+<p>Detection and correction of configuration drift using PowerShell Desired State Configuration.</p>
+</li>
+<li>
+<p>Key Takeaways for AZ-104 Exam:</p>
+</li>
+<li>Understanding the automation capabilities provided by Azure Automation Account and PowerShell Desired State Configuration.</li>
+<li>Knowledge of how DSC ensures consistent configuration and prevents configuration drift.</li>
+<li>Familiarity with the process of importing, compiling, and applying DSC configurations to virtual machines in Azure.</li>
+</ol>
+<h2 id="7-using-azure-bastion">7 Using Azure Bastion</h2>
+<p>Azure Bastion is a Platform as a Service inside of the Azure Cloud.</p>
+<h3 id="what-is-azure-bastion">What Is Azure Bastion?</h3>
+<p><strong>What is Azure Bastion?</strong></p>
+<ul>
+<li><strong>Fully-managed PaaS</strong></li>
+<li>RDP/SSH connectivity<ul>
+<li>Not having to actually manage the underlying infrastructure that Azure Bastion is using. </li>
+</ul>
+</li>
+<li><strong>No public IPs exposed</strong></li>
+</ul>
+<h3 id="facts"><strong>Facts</strong></h3>
+<p>Azure Bastion</p>
+<ul>
+<li><strong>RDP/SSH connectivity over SSL/TLS</strong></li>
+<li>Deployed per virtual network</li>
+<li>Connectivity to all VMs in VNet</li>
+<li><strong><mark>HTML5 browser supported</mark></strong></li>
+<li><strong>No public IPs</strong></li>
+<li><strong>Only supports IPv4</strong></li>
+<li>Security is managed</li>
+</ul>
+<p>The Azure Bastion will have a public IP address that we'll use to connect to the Azure Bastion, but the <strong>actual virtual machines we're connecting to do not need to have public IPs at all</strong>.</p>
+<p>Only have support for IPv4 public IP addresses for our Azure Bastion, and the security of our Azure Bastion is going to be managed for us because it is a platform as a service,</p>
+<h3 id="azure-bastion-architecture">Azure Bastion Architecture</h3>
+<p>Typically, what we would do is to connect to our virtual machines inside of our virtual network We'd have to connect to them over the <strong>public internet using a public IP address</strong>, and we'd have to have their correct network security group rules and the firewall rules on any firewalls that we have to secure this network and its traffic.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_61.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_62.png" title="Body image" /></p>
+<p>Azure Bastion, what we can do is create an <strong>Azure Bastion subnet for our bastion resource</strong>, and then we can connect to our Azure Bastion, and by connecting to our Azure Bastion, <strong>it acts as a jump box</strong>. It allows us to be able to connect to all of the virtual machines that we have inside of this virtual network over RDP and SSH connections, so that we can manage these. </p>
+<p><strong>It's going to send the return traffic through the Azure Bastion itself and back over the internet to us so that we can access it inside of the browser</strong>, and <strong>manage these virtual machines without having to expose them with public IP addresses</strong>.</p>
+<h3 id="demo_2">Demo</h3>
+<p><strong>Public IP： None</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_63.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_64.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_65.png" title="Body image" /></p>
+<p>not allowing any inbound traffic here.</p>
+<p><strong>VM Subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_66.png" title="Body image" /></p>
+<p><strong>Create a Bastion within subnet</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_67.png" title="Body image" /></p>
+<p>Connect vm with bastion</p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_68.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_8_69.png" title="Body image" /></p>
+<h3 id="key-takeaways_2">Key Takeaways</h3>
+<ul>
+<li><strong>Private Traffic</strong></li>
+</ul>
+<p>Traffic from Bastion to target VM stays within VNets. (Peered VNets included.)</p>
+<ul>
+<li><strong>Hardened Bastion</strong></li>
+</ul>
+<p>NSGs are not needed because Bastion is hardened internally.</p>
+<ul>
+<li><strong>Audit Logs</strong></li>
+</ul>
+<p>Enable diagnostics for auditing Bastion connections.</p>
+<ul>
+<li><strong>Service Integration</strong></li>
+</ul>
+<p>Bastion natively integrates with Azure Firewall.</p>
+<p><strong>Concurrent Connections</strong></p>
+<p>Total maximum connections is 25 with RDP and 50 with SSH traffic.</p>
+<p><strong>Required Role</strong></p>
+<p>Reader role permissions are required on the Bastion, VM, and NIC in order to use Bastion]</p>
+<h3 id="summary-from-chatgpt_7">Summary from chatgpt</h3>
+<p>Key Points for Azure AZ-104 Exam from the Article:</p>
+<ol>
+<li>Azure Bastion Overview:</li>
+<li>Azure Bastion is a fully managed Platform as a Service in Azure Cloud, acting as a <strong>jump box to enable secure RDP and SSH connections to virtual machines without managing underlying infrastructure</strong>.</li>
+<li>
+<p><strong>It eliminates the need to expose public IPs for virtual machines and provides secure connectivity within the virtual networks</strong>.</p>
+</li>
+<li>
+<p>Secure Connectivity with Azure Bastion:</p>
+</li>
+<li><strong>RDP and SSH connections over SSL/TLS are supported by Azure Bastion, ensuring secure communication by defaul</strong>t.</li>
+<li>
+<p><strong>Azure Bastion is deployed on a per-virtual network basis, with a dedicated Azure Bastion subnet within the virtual network</strong>.</p>
+</li>
+<li>
+<p>Bastion Deployment and Use:</p>
+</li>
+<li>Creation of a virtual machine and deployment of Azure Bastion in the Azure Cloud Sandbox to enable connection to the virtual machine without public IP exposure.</li>
+<li>
+<p>Configuration of the Azure Bastion subnet within the virtual network and provisioning of Azure Bastion.</p>
+</li>
+<li>
+<p>Key Takeaways for AZ-104 Exam:</p>
+</li>
+<li>Understanding the role of Azure Bastion as a secure connectivity solution for virtual machines within virtual networks.</li>
+<li>Knowledge of the deployment process for Azure Bastion, including the creation of the Azure Bastion subnet and required configurations.</li>
+<li>
+<p>Awareness of the security features, maximum concurrent connections, auditing, permission requirements, and native integration with Azure firewall for Azure Bastion.</p>
+</li>
+<li>
+<p>Azure Bastion Security Features:</p>
+</li>
+<li>Azure Bastion employs an encrypted SSL/TLS tunnel for RDP and SSH connections, ensuring secure communication between the client and the virtual machine.</li>
+<li>
+<p><strong>It eliminates the need to manage public IPs, decreasing the surface area for potential attacks</strong>.</p>
+</li>
+<li>
+<p>Maximum Concurrent Connections:</p>
+</li>
+<li>
+<p>Azure Bastion is designed to handle multiple concurrent RDP and SSH sessions, <strong>with a maximum of 10 concurrent connections per Azure Bastion instance.</strong></p>
+</li>
+<li>
+<p>Auditing and Logging:</p>
+</li>
+<li>
+<p>Azure Bastion provides detailed session logs and auditing capabilities, allowing administrators to monitor and track RDP and SSH connections for security and compliance purposes.</p>
+</li>
+<li>
+<p>Permission Requirements:</p>
+</li>
+<li>
+<p>To access a virtual machine through Azure Bastion, users need the necessary permissions, <strong>such as "Virtual Machine Contributor" or "Virtual Machine Operator" role assignments</strong>.</p>
+</li>
+<li>
+<p>Integration with Azure Firewall:</p>
+</li>
+<li><strong>Azure Bastion seamlessly integrates with Azure Firewall to leverage network security groups and control traffic flows for an added layer of security within the virtual network</strong>.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

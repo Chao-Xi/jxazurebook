@@ -1,0 +1,5025 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../2ai102/">
+      
+      
+        <link rel="next" href="../3ai102-sdk/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>AI-102 - 2 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai102-1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI-102 - 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #15
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 17
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 18
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 19
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 21
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 23
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 24
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 25
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 26
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 27
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 28
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 29
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 30
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 31
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 33
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 34
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 35
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 36
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 37
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question #15
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 17
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 18
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 19
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 21
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 23
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 24
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 25
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 26
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 27
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 28
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 29
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 30
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 31
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 33
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 34
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 35
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 36
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 37
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ai102-1">AI102 -1</h1>
+<h3 id="question-1">Question 1</h3>
+<p>You have a chatbot that uses a QnA Maker application. You enable active learning for the knowledge base used by the QnA Maker application.
+You need to integrate user input into the model. Which four actions should you perform in sequence?</p>
+<ol>
+<li>Add a task to the Azure resource.</li>
+<li>Approve and reject suggestions.</li>
+<li>Publish the knowledge base.</li>
+<li>Modify the automation task logic app to run an Azure Resource Manager template that creates the Azure Cognitive Services resource.</li>
+<li>For the knowledge base, select Show active learning suggestions.</li>
+<li>Save and train the knowledge base.</li>
+<li>
+<p>Select the properties of the Azure Cognitive Services resource.</p>
+</li>
+<li>
+<p>A. 5-6-2-3</p>
+</li>
+<li>B. 5-4-6-3</li>
+<li>C. 5-2-6-3</li>
+<li>D. 5-6-4-3</li>
+</ol>
+<hr />
+<p><strong>A. 5-6-2-3</strong> ✅</p>
+<p>Explanation: To integrate user input using active learning, you first view the suggestions by selecting "Show active learning suggestions," then save and train the knowledge base to incorporate any edits. Next, you approve or reject suggestions based on their relevance, and finally publish the knowledge base to apply the changes and update the live chatbot experience.</p>
+<h3 id="question-2">Question 2</h3>
+<p>You are building an app that will use Azure Al to monitor workspaces for safety regulation compliance. You need to recommend a service that meets the following requirements:</p>
+<ul>
+<li>Generates alerts when employees enter high-risk areas</li>
+<li>Monitors video feeds in real time</li>
+<li>Minimizes development effort</li>
+</ul>
+<p>What should you recommend?</p>
+<ul>
+<li>A. object detection in Azure Al Custom Vision</li>
+<li>B. Azure Al Vision Spatial Analysis</li>
+<li>C. Azure Al Vision Image Analysis</li>
+<li>D. Azure Al Video</li>
+</ul>
+<hr />
+<p>B. Azure Al Vision Spatial Analysis  ✅</p>
+<p>Explanation: Azure Al Vision Spatial Analysis is designed for real-time video monitoring and can be used to track and analyze movement in workspaces, such as detecting when employees enter high-risk areas. It minimizes development effort by providing built-in capabilities for spatial understanding, such as people tracking, crowd density, and zone-based monitoring, making it ideal for this use</p>
+<h3 id="question-3">Question 3</h3>
+<p>You are building a chatbot. You need to ensure that the chatbot can classify user input <strong>into separate categories</strong>. The categories must be dynamic and defined at the time of inference.</p>
+<p>Which service should you use to classify the input?</p>
+<ul>
+<li>A. Azure OpenAl text summarization</li>
+<li>B. Azure Al Language custom text classification</li>
+<li>C. Azure Al Language custom named entity recognition (NER)</li>
+<li>D. Azure OpenAl text classification</li>
+</ul>
+<hr />
+<p>D. Azure OpenAl text classification  ✅</p>
+<p>Explanation: Azure OpenAl's text classification enables dynamic categorization by allowing categories to be defined at inference time, using prompts.</p>
+<p>This flexibility makes it suitable for situations where categories aren't fixed in advance, unlike traditional custom classification models that require predefined labels and training.</p>
+<h3 id="question-4">Question 4</h3>
+<p>You have a factory that produces food products. You need to build a monitoring solution for staff compliance with personal protective equipment (PPE) requirements. The solution must meet the following requirements:</p>
+<ul>
+<li>Identify staff who have removed masks or safety glasses.</li>
+<li>Perform a compliance check every 15 minutes.</li>
+<li>Minimize development effort.</li>
+<li>Minimize costs.</li>
+</ul>
+<p>Which service should you use?</p>
+<ul>
+<li>A. Face</li>
+<li>B. Azure Al Vision</li>
+<li>C. Azure Video Analyzer for Media (formerly Video Indexer)</li>
+</ul>
+<hr />
+<p>B. Azure Al Vision  ✅</p>
+<p>Explanation: </p>
+<p>Azure Al Vision with Spatial Analysis enables real-time video feed analysis to detect objects such as masks or safety glasses. It is specifically designed for scenarios like PPE compliance monitoring, supports regular interval checks, minimizes development effort through prebuilt models, and is more cost-effective compared to more comprehensive but heavier services like Azure Video Analyzer. Face API, while capable of detecting facial features, does not provide object-level PPE detection.</p>
+<h3 id="question-5">Question 5</h3>
+<p>You have a local folder that contains the files shown in the following table.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_82.png" title="Body image" /></p>
+<p>You need to analyze the files by using Azure AI Video Indexer.</p>
+<p><strong>Which files can you upload to the Video Indexer website</strong>?</p>
+<ul>
+<li>
+<p>A. File1 and File3 only</p>
+</li>
+<li>
+<p>B. File1, File2, File3 and File4</p>
+</li>
+<li>
+<p>C. File1, File2, and File3 only</p>
+</li>
+<li>
+<p>D. File1 and File2 only</p>
+</li>
+<li>
+<p>E. File1, File2, and File4 only</p>
+</li>
+</ul>
+<hr />
+<p>B. File1, File2, File3 and File4  ✅</p>
+<p>Explanation:</p>
+<ul>
+<li>File1: Supported because it uses a supported format (WMV), is under the 2 GB size limit, and has a duration of less than 6 hours.</li>
+<li>File2: Supported because it uses a supported format (AVI), is under the 2 GB size limit, and has a duration of less than 6 hours.</li>
+<li>File3: Supported because it uses a supported format (MOV), is under the 2 GB size limit, and has a duration of 5 hours (less than the 6-hour limit).</li>
+<li>File4: Supported because it uses a supported format (MP4), is under the 2 GB size limit, and has a duration of less than 6</li>
+</ul>
+<h3 id="question-6">Question 6</h3>
+<p>You have an Azure subscription that contains an Azure Al Language custom question answering project named QA1. You need to import question and answer pairs to QA1. Which two file formats can you use?</p>
+<ul>
+<li>A. JSON</li>
+<li>B. TSV</li>
+<li>C. Excel</li>
+<li>D. LU</li>
+<li>E. CSV</li>
+</ul>
+<hr />
+<p>A. JSON  /  D. LU   ✅</p>
+<p>Explanation: You can import question and answer pairs into an Azure Al Language custom question answering project using the JSON format, which is commonly used for structured data. The LU (Language Understanding) format is also supported for importing data in a more conversational</p>
+<h3 id="question-7">Question 7</h3>
+<p>You have a Microsoft OneDrive folder that contains a 20-GB video file named File1.avi. You need to index File1.avi by using the Azure Video Indexer website
+What should you do?</p>
+<ul>
+<li>A. Upload File1.avi to the www.youtube.com webpage, and then copy the URL of the video to the Azure Al Video Indexer website.</li>
+<li>B. Download File1.avi to a local computer, and then upload the file to the Azure Al Video Indexer website.</li>
+<li>C. From OneDrive, create a download link, and then copy the link to the Azure Al Video Indexer website.</li>
+<li>D. From OneDrive, create a sharing link for File1.avi, and then copy the link to the Azure Al Video Indexer website.</li>
+</ul>
+<hr />
+<p>C. From OneDrive, create a download link, and then copy the link to the Azure Al Video Indexer website.   ✅</p>
+<p>Explanation: To index a video file from OneDrive using the Azure Video Indexer, the video must be accessible via a direct download link that allows Video Indexer to fetch the file. Creating a download link (not just a sharing link) ensures the file can be streamed or downloaded directly by the service. A standard sharing link often leads to a webpage rather than the video file itself, which Video Indexer cannot process.</p>
+<h3 id="question-8">Question 8</h3>
+<p>You have a web app that uses Azure Al Search. When reviewing activity, you see greater than expected search query volumes. You suspect that the query key is compromised. You need to prevent unauthorized access to the search endpoint and ensure that users only have read-only access to the documents collection. The solution must minimize app downtime.</p>
+<p>Which three actions should you perform in sequence?</p>
+<ol>
+<li>Delete the compromised key</li>
+<li>Change the app to use the secondary admin key</li>
+<li>Add a new query key</li>
+<li>Regenerate the secondary admin key</li>
+<li>Change the app to use the new key</li>
+<li>
+<p>Regenerate the primary admin key</p>
+</li>
+<li>
+<p>A. 3-4-2</p>
+</li>
+<li>B. 2-5-1</li>
+<li>C. 3-5-1</li>
+<li>D. 5-1-3</li>
+</ol>
+<hr />
+<p>C. 3-5-1    ✅</p>
+<h3 id="question-9">Question 9</h3>
+<p>You have an Azure subscription that contains an Azure OpenAl resource. You deploy the GPT-4 model to the resource.</p>
+<p>You need to ensure that you can upload files that will be used as grounding data for the model. Which two types of resources should you create?</p>
+<ul>
+<li>A. Azure Al Document Intelligence</li>
+<li>B. Azure Blob Storage</li>
+<li>C. Azure Al Bot Service</li>
+<li>D. Azure Al Search</li>
+<li>E. Azure SQL</li>
+</ul>
+<hr />
+<p>B. Azure Blob Storage  ✅</p>
+<p>D. Azure Al Search  ✅</p>
+<p>Explanation: To use grounding data (also known as retrieval-augmented generation or RAG) with GPT-4 in Azure OpenAl, you need to upload files to Azure Blob Storage, which serves as the data source. Then, Azure Al Search indexes and makes this content searchable. GPT-4 can use this indexed data to provide grounded, contextually relevant responses. This setup enables effective grounding without needing custom training. Azure Al Document
+Intelligence, Bot Service, and SQL are not required for grounding via file uploads.</p>
+<h3 id="question-10">Question 10</h3>
+<p>You are building an app that will analyze text by using the Azure Al Language service. You need to configure the app to mask the telephone number and email details in a given document.</p>
+<p>You need to complete the following code.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_1.png" title="Body image" /></p>
+<p>What should you choose for Dropdown 1?</p>
+<ul>
+<li>A. RecognizeLinkedEntities</li>
+<li>B. RecognizePiiEntities</li>
+<li>C. SingleLabe|Classify</li>
+</ul>
+<hr />
+<p>** B. RecognizePiiEntities**   ✅</p>
+<p>Explanation: This method detects Personally Identifiable Information (PIl) such as phone numbers, email addresses, and other sensitive data in text.
+Since the goal is to mask telephone numbers and email details, using RecognizePiiEntities ensures that these elements are identified and can be redacted or replaced in the output</p>
+<p>What should you choose for Dropdown 2?</p>
+<ul>
+<li>A. RedactedText</li>
+<li>B. Statistics</li>
+<li>C. Warnings</li>
+</ul>
+<hr />
+<p><strong>A. RedactedText</strong>    ✅</p>
+<h3 id="question-11">Question  11</h3>
+<p>You are building a social media messaging app. You need to identify in real time the language used in messages. Which SDK package should you install?</p>
+<ul>
+<li>A. Azure.Al. Translation. Text</li>
+<li>B. Microsoft.CognitiveServices.Speech</li>
+<li>C. Azure.Al. Translation.Speech</li>
+<li>D. Azure.Al. Translation.Document</li>
+</ul>
+<hr />
+<p><strong>A. Azure.Al. Translation. Text</strong>  ✅</p>
+<p><strong>Explanation</strong>: The Azure.Al. Translation. Text SDK is designed for real-time text translation and language detection, making it ideal for identifying the language of social media messages as they are sent. It supports fast, cloud-based detection and translation for a wide range of languages. The other options are focused on speech translation or document translation, which are not suitable for short, text-based messages in real-time scenarios.</p>
+<h3 id="question-12">Question 12</h3>
+<p>You need to measure the <strong>public perception</strong> of your brand on social media by using natural language processing. Which Azure service should you use?</p>
+<ul>
+<li>A. Azure Al Vision</li>
+<li>B. Azure Al Content Safety</li>
+<li>C. Azure Al Document Intelligence</li>
+<li>D. Azure Al Language service</li>
+</ul>
+<hr />
+<p><strong>D. Azure Al Language service</strong>  ✅</p>
+<h3 id="question-13">Question 13</h3>
+<p>"The code will work for up to 10,000 people."</p>
+<ul>
+<li>A. Yes</li>
+<li>B. No</li>
+</ul>
+<h3 id="question-14">Question 14</h3>
+<p>You are building a Conversational Language Understanding model for an e-commerce chatbot. Users can speak or type their billing address when promptec by the chatbot.</p>
+<p>You need to construct an entity to capture billing addresses. Which entity type should you use?</p>
+<ul>
+<li>A. machine learned</li>
+<li>B. Regex</li>
+<li>C. list</li>
+<li>D. Pattern.any</li>
+</ul>
+<hr />
+<p><strong>A. machine learned</strong>  ✅</p>
+<p>Explanation: A machine learned entity is best suited for capturing complex, variable data like billing addresses, which can differ in format, length, and structure. Unlike list or regex entities, machine learned entities can generalize from training examples and adapt to different ways users might express an address, whether spoken or typed.</p>
+<h3 id="question-15">Question #15</h3>
+<p>You have an Azure Cognitive Search solution and an <strong>enrichment pipeline that performs Sentiment Analysis on social media posts</strong>. </p>
+<p><strong>You need to define a knowledge store that will include the social media posts and the Sentiment Analysis results</strong>.</p>
+<p><strong>Which two fields should you include in the definition?</strong> Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<ul>
+<li>
+<p>A. storageContainer</p>
+</li>
+<li>
+<p>B. storageConnectionString </p>
+</li>
+<li>
+<p>C. files</p>
+</li>
+<li>
+<p>D. tables </p>
+</li>
+<li>
+<p>E. objects</p>
+</li>
+</ul>
+<hr />
+<p>B. storageConnectionString   ✅</p>
+<p>D. tables  ✅</p>
+<h3 id="question-16">Question 16</h3>
+<p>You have an Azure subscription that contains an Azure Al Document Intelligence resource named DI1.</p>
+<p><strong>You create a PDF document named Test.pdf that contains tabular data</strong>.</p>
+<p>You need to analyze Test.pdf by using DI1.</p>
+<p>You need to complete the following command.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_2.png" title="Body image" /></p>
+<p>What should you choose for Placeholder 1?</p>
+<ul>
+<li>A. prebuilt-contract</li>
+<li>B. prebuilt-document</li>
+<li>C. prebuilt-layout</li>
+<li>D. prebuilt-read</li>
+</ul>
+<hr />
+<p><strong>C. prebuilt-layout</strong>  ✅</p>
+<p>What should you choose for Placeholder 2?</p>
+<ul>
+<li>A. Key1</li>
+<li>B. Ocp-Apim-Subscription-Key</li>
+<li>C. Secret</li>
+<li>D. Subscription-Key</li>
+</ul>
+<p><strong>B. Ocp-Apim-Subscription-Key</strong>  ✅</p>
+<h3 id="question-17">Question 17</h3>
+<p>In Azure Al Studio, you use Completions playground with the GPT-35 Turbo model. You have a prompt that contains the following code.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_3.png" title="Body image" /></p>
+<p>You need the model to create an explanation of the code. The solution must minimize costs. What should you do?</p>
+<ul>
+<li><strong>A. Add // what does function F do? to the prompt.</strong></li>
+<li>B. Add function F(explanation) to the prompt.</li>
+<li>C. Change the model to GPT-4-32k.</li>
+<li>D. Set the temperature parameter to 1.</li>
+</ul>
+<hr />
+<p><strong>A. Add // what does function F do? to the prompt.</strong>  ✅</p>
+<p>Explanation: Adding a simple comment like // what does function F do? </p>
+<p>helps guide the GPT-35 Turbo model to generate an explanation of the code while keeping the prompt size minimal. This approach ensures that the model understands the intent without increasing token usage significantly, thereby minimizing costs. The GPT-35 Turbo model is optimized for cost efficiency compared to GPT-4 models, making this an effective choice.</p>
+<h3 id="question-18">Question 18</h3>
+<p>You have a product knowledgebase that contains multiple PDF documents. You need to build a chatbot that will provide responses based on data in the knowledgebase. The solution must minimize development effort and costs.</p>
+<p>What should you include in the solution?</p>
+<ul>
+<li>A. Azure Al language detection</li>
+<li>B. Azure Al Language custom question answering</li>
+<li>C. Azure OpenAl</li>
+<li>D. Azure Al Language conversational language understanding (CLU)</li>
+</ul>
+<hr />
+<p><strong>B. Azure Al Language custom question answering</strong>  ✅</p>
+<blockquote>
+<p>Explanation: Azure Al Language custom question answering is designed specifically to build chatbots that respond based on data from documents like PDFs, websites, or knowledge bases. It allows you to upload content, configure it with minimal effort, and quickly enable question-answering over that data. This approach reduces both development time and cost compared to building solutions from scratch or using generalized models like Azure</p>
+</blockquote>
+<h3 id="question-19">Question 19</h3>
+<p>You train a Conversational Language Understanding model to understand the natural language input of users. You need to evaluate the accuracy of the model 
+before deploying it.</p>
+<p>What are two methods you can use?</p>
+<ul>
+<li>A. From the Azure Al language authoring REST endpoint, retrieve the model evaluation summary.</li>
+<li>B. From Language Studio, enable Active Learning, and then validate the utterances logged for review.</li>
+<li>C. From Language Studio, select Model performance.</li>
+<li>D. From the Azure portal, enable log collection in Log Analytics, and then analyze the logs.</li>
+</ul>
+<hr />
+<ul>
+<li>B. From Language Studio, enable Active Learning, and then validate the utterances logged for review. ✅</li>
+<li>C. From Language Studio, select Model performance.  ✅</li>
+</ul>
+<blockquote>
+<p>Explanation: To evaluate the accuracy of your Conversational Language Understanding model, you can use Active Learning in Language Studio to review and validate user utterances, improving the model over time. Additionally, selecting "Model performance" in Language Studio will provide insights into how well the model performs based on the data it has been trained with, helping you assess its effectiveness before deployment.</p>
+</blockquote>
+<h3 id="question-20">QUESTION 20</h3>
+<p>You are creating an enrichment pipeline that will use Azure Cognitive Search. The knowledge store contains unstructured JSON data and scanned PDF documents that contain text.</p>
+<p>Which projection type should you use for each data type? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_2_132.png" title="Body image" /></p>
+<hr />
+<p>✅ <strong>Answer:</strong></p>
+<ul>
+<li>JSON data → <strong>Object projection</strong></li>
+<li>Scanned data → <strong>File projection</strong></li>
+</ul>
+<h3 id="question-21">Question 21</h3>
+<p>You are building an app that will perform translations by using the Azure Al Translator service. You need to ensure that the app will translate user-inputted text. You need to complete the following code.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_4.png" title="Body image" /></p>
+<p>Which value should you choose for Placeholder 1?</p>
+<ul>
+<li>A. Translate(targetLanguage, input)</li>
+<li>B. TranslateAsync(targetLanguage, input)</li>
+<li>C. TranslationRecognizer)</li>
+</ul>
+<hr />
+<p><strong>B. TranslateAsync(targetLanguage, input)</strong>   ✅</p>
+<p>Which value should you choose for Placeholder 2?</p>
+<ul>
+<li>A. translations. Value'.");</li>
+<li>B. translations[O].text'.");</li>
+<li>C. (Translations. Text).);</li>
+<li>D. (translation?. Translations?[0]?.Text).");</li>
+</ul>
+<hr />
+<p><strong>D. (translation?. Translations?[0]?.Text).");</strong> ✅</p>
+<blockquote>
+<p>Explanation: This expression safely accesses the translation result's text property, ensuring that it handles potential null values. It retrieves the translated text from the first item in the Translations list, which is needed to display the translation in the</p>
+</blockquote>
+<h3 id="question-22">Question 22</h3>
+<p>You build a chatbot that uses an Azure OpenAl GPT-4 model augmented by Azure Al Search to provide generative answers to questions. You need to ensure that responses are based on contextual data.</p>
+<p>Which Azure Al Content Safety API should you use?</p>
+<ul>
+<li>A. Analyze Text</li>
+<li>B. Protected material text detection</li>
+<li>C. Prompt Shields</li>
+<li><strong>D. Groundedness detection</strong></li>
+</ul>
+<hr />
+<p><strong>D. Groundedness detection</strong> ✅</p>
+<p>Explanation: Groundedness detection is used to ensure that responses from a generative Al model are based on the provided contextual data rather than hallucinated content. This is essential in scenarios where GPT-4 is augmented with Azure Al Search to validate that responses stay aligned with the search results.</p>
+<h3 id="question-22_1">Question 22</h3>
+<p>A. "enabled":     ✅</p>
+<p>C. false ✅</p>
+<h3 id="question-23">Question 23</h3>
+<p>You are building an app by using the Semantic Kernel. You need to include complex objects in the prompt templates of the app. The solution must support objects that contain sub-properties.
+Which two prompt templates can you use?</p>
+<ul>
+<li>A. Liquid</li>
+<li>B. Handlebars</li>
+<li>C. YAML</li>
+<li>D. Semantic Kernel</li>
+<li>E. JSONL</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p><strong>A. Liquid</strong>   ✅</p>
+</li>
+<li>
+<p><strong>B. Handlebars</strong>   ✅</p>
+</li>
+</ul>
+<p>Explanation: Liquid and Handlebars are templating languages supported by Semantic Kernel that allow complex object handling, including nested properties (sub-properties). These templates enable dynamic prompt generation with structured data, making them suitable for advanced prompt customization.</p>
+<h3 id="question-24">Question 24</h3>
+<p>You are building an agent that will retrieve the current time at a given location by using a custom API. You need to test the functionality of the custom API.</p>
+<p>You need to complete the following command.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_5.png" title="Body image" /></p>
+<p>What should you choose for Dropdown 1?</p>
+<ul>
+<li>A. assistants</li>
+<li>B. completions</li>
+<li>C. embeddings</li>
+<li>D. threads</li>
+</ul>
+<hr />
+<p><strong>A. assistants ✅</strong></p>
+<p>What should you choose for Dropdown 2?</p>
+<ul>
+<li>A. content=[</li>
+<li>B. functions=[</li>
+<li>C. tool_resources=K</li>
+<li>D. tools=K</li>
+</ul>
+<hr />
+<p><strong>D. tools=[{</strong> ✅</p>
+<h3 id="question-25">Question 25</h3>
+<p>You are building an agent by using the Azure Al Agent Service. You need to ensure that the agent can access publicly accessible data that was released during the past 90 days. You need to complete the following</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_6.png" title="Body image" /></p>
+<p>What should you choose for Dropdown 1?</p>
+<ul>
+<li>A. AzureAlSearchResource</li>
+<li>B. BingGrounding ToolDefinition</li>
+<li>C. ToolResources</li>
+</ul>
+<hr />
+<ul>
+<li><strong>B. BingGrounding ToolDefinition</strong> ✅</li>
+</ul>
+<p>What should you choose for Dropdown 2?</p>
+<ul>
+<li>A. metadata;</li>
+<li>B. ToolResources:</li>
+<li>C. tools:</li>
+</ul>
+<hr />
+<p><strong>C. tools:  ✅</strong></p>
+<h3 id="question-26">Question 26</h3>
+<p>You are developing an app that will use the Speech and Language APls. You need to provision resources for the app. The solution must ensure that each service is accessed by using a single endpoint and credential.</p>
+<p>Which type of resource should you create?</p>
+<ul>
+<li>A. Azure Al Language</li>
+<li>B. Azure Al Speech</li>
+<li><strong>C. Azure Al Service</strong></li>
+<li>D. Azure Al Content Safety</li>
+</ul>
+<p><strong>C. Azure Al Service ✅</strong></p>
+<p>Explanation: The Azure Al Service (f<strong>ormerly known as Cognitive Services</strong> multi-service account) allows you to access multiple Al capabilities-such as Speech and Language APis-using a single endpoint and a single set of credentials. This simplifies authentication and integration when your app uses multiple Al services.</p>
+<h3 id="question-27">Question 27</h3>
+<p>"Changing "You are a helpful assistant." to "You must answer only within the context of Al language models." will produce the intended response."</p>
+<ul>
+<li><strong>A. Yes</strong> ✅</li>
+<li>B. No</li>
+</ul>
+<h3 id="question-28">Question 28</h3>
+<p>You have an Azure subscription that contains an Azure Al Search resource named AS1. You implement a custom skill in AS1 that performs language and sentiment analysis of documents. You are evaluating the use of AS1 as part of an enrichment pipeline. In which order will AS1 index the documents?</p>
+<p>STAGES</p>
+<ol>
+<li>output field mappings</li>
+<li>skillset execution</li>
+<li>document cracking</li>
+<li>field mappings</li>
+<li>
+<p>push to index</p>
+</li>
+<li>
+<p>A. 2-3-1-4-5</p>
+</li>
+<li>B. 5-3-2-4-1</li>
+<li>C. 3-4-2-1-5</li>
+<li>D. 1-4-2-5-3</li>
+</ol>
+<hr />
+<p><strong>C. 3-4-2-1-5 ✅</strong></p>
+<h3 id="question-29">Question 29</h3>
+<p>You have an Azure subscription. You are building a chatbot that will use an Azure OpenAl model. You need to deploy the model. Which three actions should you perform in sequence?</p>
+<p>ACTIONS</p>
+<ol>
+<li>Deploy the DALL-E model.</li>
+<li>Deploy the embeddings model.</li>
+<li>Provision an Azure OpenAl resource.</li>
+<li>Provision Azure API Management.</li>
+<li>Deploy the GPT model.</li>
+<li>
+<p>Apply for access to Azure OpenAl.</p>
+</li>
+<li>
+<p>A. 3-5-6</p>
+</li>
+<li>B. 6-3-2</li>
+<li>C. 3-1-4</li>
+<li>D. 6-3-5</li>
+</ol>
+<hr />
+<p><strong>D. 6-3-5</strong>   ✅</p>
+<h3 id="question-30">Question 30</h3>
+<p>You have an Azure subscription. You plan to build an app that will use the Azure OpenAl DALL-E model. You need to deploy the model. What should you use?</p>
+<ul>
+<li>A. the Azure SDK for JavaScript and Azure Machine Learning Studio</li>
+<li>B. the Azure portal and Microsoft Graph API</li>
+<li>C. the Azure SDK for Python and PowerShell cmdlets</li>
+<li>D. Azure Al Studio and Azure Command-Line Interface (CLI)</li>
+</ul>
+<hr />
+<p><strong>D. Azure Al Studio and Azure Command-Line Interface (CLI)  ✅</strong></p>
+<blockquote>
+<p>Explanation: To deploy and interact with the DALL•E model in Azure OpenAl, you typically use Azure Al Studio for configuring and managing the model and Azure CLI for deployment and resource setup. This combination supports a streamlined, low-effort way to manage Azure OpenAl services including DALL•E.</p>
+</blockquote>
+<h3 id="question-31">Question 31</h3>
+<p>You have an Azure subscription that contains an Azure Al Content Safety resource named resource1. You are building an app that will analyze text by using resourcel.</p>
+<p>You need to identify text that contains hateful content. You need to complete the following code.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_7.png" title="Body image" /></p>
+<p>What should you choose for Dropdown 1?</p>
+<ul>
+<li>A. BlocklistMatch</li>
+<li>B. CategoriesAnalysis</li>
+<li>C. Equals</li>
+</ul>
+<p><strong>B. CategoriesAnalysis ✅</strong></p>
+<p>What should you choose for Dropdown 2?</p>
+<ul>
+<li>A. Blocklist|temld ?? 0);</li>
+<li>B. BlocklistltemText ?? 0);</li>
+<li>C. Category ?? 0);</li>
+<li>D. Severity ?? 0);</li>
+</ul>
+<p><strong>D. Severity ?? 0); ✅</strong></p>
+<h3 id="question-33">Question 33</h3>
+<p>You have the following files:</p>
+<ul>
+<li>File1.pdf</li>
+<li>File2.jpg</li>
+<li>File3.docx</li>
+<li>File4.webp</li>
+<li>File5.png</li>
+</ul>
+<p>Which files can you analyze by using Azure Al Content Understanding?</p>
+<ul>
+<li>A. File1.pdf and File3.docx only</li>
+<li>B. File1.pdf, File2.jpg, and File5.png only</li>
+<li>C. File1.pdf, File2.jpg, and File3.docx only</li>
+<li>D. File1.pdf, File2.jpg, File3.docx, and File5.png only</li>
+<li>E. File1.pdf, File2.jpg, File3.docx, File4.webp, and File5.png</li>
+</ul>
+<p><strong>B. File1.pdf, File2.jpg, and File5.png only</strong>  ✅</p>
+<p>Explanation: Azure Al Content Understanding supports analyzing a limited set of file types, specifically PDF documents and common image formats like JPEG (jpg) and PNG (.png). These formats are supported for tasks such as text extraction, key-value pair extraction, and image-based analysis using
+OCR and layout recognition.</p>
+<h3 id="question-34">Question 34</h3>
+<p>You have a blog that allows users to append feedback comments. Some of the feedback comments contain harmful content that includes discriminatory language. You need to create a prototype of a solution that will detect the harmful content. The solution must minimize development effort.</p>
+<p>Which two actions should you perform?</p>
+<ul>
+<li>A. From the Azure portal, create an Azure Al Content Safety resource.</li>
+<li>B. Sign in to Azure Al Foundry and select Safety + security.</li>
+<li>C. Sign in to Content Safety Studio and select Protected material detection for text.</li>
+<li>D. From the Azure portal, create an Azure OpenAl resource.</li>
+<li>E. Sign in to Content Safety Studio and select Moderate text content.</li>
+</ul>
+<hr />
+<p><strong>A. From the Azure portal, create an Azure Al Content Safety resource.  ✅</strong></p>
+<p><strong>E. Sign in to Content Safety Studio and select Moderate text content.  ✅</strong></p>
+<blockquote>
+<p>Explanation: To detect harmful content with minimal effort, create an Azure Al Content Safety resource from the Azure portal. Then, sign in to Content Safety Studio and choose the option to moderate text content. This allows you to quickly prototype a solution by analyzing user feedback for discriminatory language using prebuilt models, without writing code or building a custom Al solution.</p>
+</blockquote>
+<h3 id="question-35">Question 35</h3>
+<p>You have an app that uses an Azure Al Content Safety blocklist. You need to remove an entry from the blocklist. The solution must minimize the impact on existing entries on the list.</p>
+<p>You need to complete the following code.</p>
+<p>What should you choose for Dropdown 1?</p>
+<ul>
+<li>A. AddOrUpdateBlocklistltems</li>
+<li>B. CreateOrUpdate TextBlocklist</li>
+<li>C. Delete TextBlocklist</li>
+<li>D. RemoveBlocklistltems</li>
+</ul>
+<p><strong>D. RemoveBlocklistltems</strong> ✅</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_3_8.png" title="Body image" /></p>
+<p>What should you choose for Dropdown 2?</p>
+<ul>
+<li>A. AddOrUpdateTextBlocklistltemsOptions</li>
+<li>B. BlocklistClient</li>
+<li>C. ContentSafetyClient</li>
+<li>D. RemoveTextBlocklistItemsOptions</li>
+</ul>
+<p><strong>D. RemoveTextBlocklistItemsOptions</strong>  ✅</p>
+<p>Explanation: This class is used to specify the options for the RemoveBlocklistltems method. Specifically, it takes the list of blocklist item IDs that you want to remove.</p>
+<h3 id="question-36">Question 36</h3>
+<p>You are building a call handling system that will perform the following action:</p>
+<ul>
+<li>Accept incoming voicemails in French.</li>
+</ul>
+<p>Which Azure Al Speech SDK class should you use for the above action?</p>
+<ul>
+<li>A. AudioConfig</li>
+<li>B. SpeechConfig</li>
+<li>C. Speech TranslationConfig</li>
+<li>D. TextTranslationClient</li>
+</ul>
+<hr />
+<p><strong>A. AudioConfig</strong>  ✅</p>
+<blockquote>
+<p>Explanation: This class specifies the audio input source, enabling the system to capture incoming French voicemails for processing. SpeechConfig configures speech service settings but doesn't handle audio input directly. SpeechTranslationConfig and TextTranslationClient focus on translation tasks, not just receiving audio.</p>
+</blockquote>
+<h3 id="question-37">Question 37</h3>
+<p>You are building a call handling system that will perform the following action:</p>
+<ul>
+<li>Convert voicemails from French to English.</li>
+</ul>
+<p>Which Azure Al Speech SDK class should you use for the above action?</p>
+<ul>
+<li>A. SpeechSynthesizer</li>
+<li>B. TextTranslationClient</li>
+<li>C. TranslationRecognitionResult</li>
+<li>D. TranslationRecognizer</li>
+</ul>
+<p><strong>D. TranslationRecognizer   ✅</strong></p>
+<blockquote>
+<p>Explanation: This class handles speech-to-speech or speech-to-text translation, allowing the system to convert French voicemails into English.</p>
+<p>SpeechSynthesizer generates speech from text, Text TranslationClient is for text-to-text translation, and TranslationRecognitionResult represents the result, not the processing class</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

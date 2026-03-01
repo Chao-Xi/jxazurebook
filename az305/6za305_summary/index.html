@@ -1,0 +1,5458 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../5az305_summary/">
+      
+      
+        <link rel="next" href="../7az305_summary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>6 AZ305 Summary - 2 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#az305-summary-2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6 AZ305 Summary - 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Azure Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Azure Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-introduction-to-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Introduction to Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-the-pillars-of-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 The Pillars of Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-anatomy-of-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Anatomy of Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-azure-monitor-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Azure Monitor - Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-azure-monitor-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Azure Monitor - Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor - Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor - Data Stores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Monitor - Data Stores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-azure-monitor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Azure Monitor Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-6 Azure Monitor Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-log-analytics-workspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Log Analytics Workspaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-log-analytics-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Log Analytics agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-log-analytics-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Log Analytics agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-application-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Application Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Application Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-what-is-an-apm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 What is an APM?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-application-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Application Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2 Application Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-application-insights-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does Application Insights Monitor?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-do-i-see-my-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where do I see my telemetry?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-application-insights-instrumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Application Insights - Instrumentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-3 Application Insights - Instrumentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-insights-auto-instrumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Insights - Auto Instrumentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-microsoft-sentinel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Microsoft Sentinel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-microsoft-sentinel-data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Microsoft Sentinel - Data Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-microsoft-sentinel-azure-monitor-workbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Microsoft Sentinel - Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-microsoft-sentinel-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Microsoft Sentinel - Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-microsoft-sentinel-automation-and-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-8 Microsoft Sentinel - Automation and Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-9-microsoft-sentinel-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-9 Microsoft Sentinel - Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10-microsoft-sentinel-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-10 Microsoft Sentinel - Hunting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-11-microsoft-sentinel-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-11 Microsoft Sentinel - Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 The principle of least privilege
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 The principle of least privilege">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 The principle of least privilege
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-azure-ad-identity-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Azure AD Identity Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-identity-protection-detection-and-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Identity Protection - Detection and Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-identity-protection-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Identity Protection - Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-introduction-to-azure-key-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Introduction to Azure Key Vault
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Introduction to Azure Key Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-hsm-and-fips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 HSM and FIPS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-1 HSM and FIPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#federal-information-processing-standard-fips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Federal Information Processing Standard (FIPS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-azure-key-vault-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Azure Key Vault - Vault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-key-vault-recovery-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure Key Vault - Recovery Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-azure-key-vault-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Azure Key Vault - Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-azure-key-vault-double-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Azure Key Vault - Double Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-azure-key-vault-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 Azure Key Vault - Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-7-azure-key-vault-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-7 Azure Key Vault - Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-key-vault-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Key Vault - Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-8-azure-key-vault-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-8 Azure Key Vault - Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-9-azure-key-vault-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-9 Azure Key Vault - Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-10-x509-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-10 X.509 Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-11-x509-certificates-certificate-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-11 X.509 Certificates - Certificate Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Azure Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Azure Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-introduction-to-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 Introduction to Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-the-pillars-of-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 The Pillars of Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-anatomy-of-azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Anatomy of Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-azure-monitor-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Azure Monitor - Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-azure-monitor-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 Azure Monitor - Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor - Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor - Data Stores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Monitor - Data Stores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-6-azure-monitor-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-6 Azure Monitor Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-6 Azure Monitor Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-7-log-analytics-workspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-7 Log Analytics Workspaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-8-log-analytics-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-8 Log Analytics agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-9-log-analytics-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-9 Log Analytics agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-application-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Application Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Application Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-what-is-an-apm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 What is an APM?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-application-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Application Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2 Application Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-application-insights-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does Application Insights Monitor?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-do-i-see-my-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where do I see my telemetry?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-application-insights-instrumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 Application Insights - Instrumentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-3 Application Insights - Instrumentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-insights-auto-instrumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Insights - Auto Instrumentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-microsoft-sentinel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Microsoft Sentinel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-microsoft-sentinel-data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Microsoft Sentinel - Data Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-6-microsoft-sentinel-azure-monitor-workbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-6 Microsoft Sentinel - Azure Monitor Workbooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-7-microsoft-sentinel-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-7 Microsoft Sentinel - Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8-microsoft-sentinel-automation-and-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-8 Microsoft Sentinel - Automation and Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-9-microsoft-sentinel-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-9 Microsoft Sentinel - Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-10-microsoft-sentinel-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-10 Microsoft Sentinel - Hunting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-11-microsoft-sentinel-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-11 Microsoft Sentinel - Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 The principle of least privilege
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 The principle of least privilege">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 The principle of least privilege
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-azure-ad-identity-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Azure AD Identity Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-identity-protection-detection-and-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Identity Protection - Detection and Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-identity-protection-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Identity Protection - Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-introduction-to-azure-key-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Introduction to Azure Key Vault
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Introduction to Azure Key Vault">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-hsm-and-fips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 HSM and FIPS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-1 HSM and FIPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#federal-information-processing-standard-fips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Federal Information Processing Standard (FIPS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-azure-key-vault-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Azure Key Vault - Vault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-azure-key-vault-recovery-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Azure Key Vault - Recovery Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-azure-key-vault-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Azure Key Vault - Pricing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-azure-key-vault-double-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 Azure Key Vault - Double Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-azure-key-vault-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 Azure Key Vault - Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-7-azure-key-vault-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-7 Azure Key Vault - Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-key-vault-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Key Vault - Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-8-azure-key-vault-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-8 Azure Key Vault - Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-9-azure-key-vault-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-9 Azure Key Vault - Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-10-x509-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-10 X.509 Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-11-x509-certificates-certificate-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-11 X.509 Certificates - Certificate Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="az305-summary-2">Az305 - Summary 2</h1>
+<h2 id="1-azure-monitor">1 Azure Monitor</h2>
+<h3 id="1-1-introduction-to-azure-monitor">1-1 Introduction to Azure Monitor</h3>
+<p>Azure Monitor comprehensive solution <strong>for collecting, analyzing, and acting on telemetry</strong> from your cloud and on-premises environments</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Visual Dashboards</strong>: A visual representation of your data.</li>
+<li><strong>Smart Alerts</strong>: Intelligent notifications based on specific conditions.</li>
+<li><strong>Automated Actions</strong>: Set automation based on certain triggers.</li>
+<li><strong>Log Monitoring</strong>: Track and analyze event logs.</li>
+</ul>
+<p><mark>Many Azure services by default are already sending telemetry data to Azure Monitor</mark></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_1.png" title="Body image" /></p>
+<h3 id="1-2-the-pillars-of-observability">1-2 The Pillars of Observability</h3>
+<p><strong>What is Observability?</strong></p>
+<p>The ability to measure and understand how internal systems work in order to answer questions regarding performance, tolerance, security and faults with a system / application.</p>
+<p>To obtain observability you need to use <strong>Metrics, Logs and Traces.</strong></p>
+<p>You have to use them together, using them in isolate does not gain you observability</p>
+<p><strong>Metrics</strong></p>
+<p>A number that is measured over period of time e.g., If we measured the CPU usage and aggerated it over a period of time we could have an <strong>Average CPU metric</strong></p>
+<p><strong>Logs</strong></p>
+<p>A text file where each line contains event data about what happened at a certain time</p>
+<p><strong>Traces</strong></p>
+<p><strong>A history of request that is travels through multiple Apps/services</strong> so we can pinpoint performance or failure.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_2.png" title="Body image" /></p>
+<h3 id="1-3-anatomy-of-azure-monitor">1-3 Anatomy of Azure Monitor</h3>
+<p>The <strong>sources of common monitoring data</strong> to populate datastores Order by (<strong>Highest to Lowest</strong>)</p>
+<p><strong>Application -&gt; Operating system -&gt; Azure Resouce -&gt; Azure Subscription -&gt; Azure Tenant -&gt; Custom resources</strong></p>
+<blockquote>
+<p>The functions that Azure monitor can performed</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az305_6_3.png" title="Body image" /></p>
+<p>The two fundamental data stores are <strong>Metrics</strong> and <strong>Logs</strong></p>
+<h3 id="1-4-azure-monitor-sources">1-4 Azure Monitor - Sources</h3>
+<p><strong>Application Code</strong>: Performance and functionality of application and code.
+Performance traces, application logs, and user telemetry.</p>
+<p>You need to install <strong>Instrumentation Package</strong> to collect data for Application Insights</p>
+<ul>
+<li>
+<p><strong>Metrics</strong> <strong>Descriptive data regarding your application's performance, operation, and custom metrics</strong>.</p>
+</li>
+<li>
+<p><strong>Availability Tests</strong> responsiveness of your application from different locations on the public Internet</p>
+</li>
+<li>
+<p><strong>Logs</strong> store operational data about our application, including page views, application requests, exceptions, and traces.</p>
+<ul>
+<li>Send application data to <strong>Azure Storage</strong> for archiving.</li>
+<li>Details of <strong>availability test</strong> stored</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_4.png" title="Body image" /></p>
+<h3 id="1-5-azure-monitor-sources">1-5 Azure Monitor - Sources</h3>
+<ul>
+<li><strong>Log Analytics</strong> Agent is installed for comprehensive monitoring.</li>
+<li><strong>Dependency Agent</strong> collects discovered data about processes running on the virtual machine and external process dependencies.<ul>
+<li>Agents can be installed on the OS for VMs running in Azure, On-premises or other cloud providers.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Diagnostics Extension</strong> collect performance counters and store them in <strong>Metrics</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_5.png" title="Body image" /></p>
+<p><strong>Application Insights Logs</strong></p>
+<p>collect logs and performance counters from the compute resource supporting your application to be analyzed with other application data</p>
+<ul>
+<li><strong>Azure diagnostics extension</strong> always writes to an <strong>Azure Storage</strong> account.</li>
+<li>Azure Monitor for VMs uses the Log Analytics agent to store heath state information in a custom location.</li>
+</ul>
+<p><strong>Diagnostics Extension</strong> can also stream data to other locations using <strong>Event Hubs</strong></p>
+<ul>
+<li><strong>Resource Logs</strong></li>
+</ul>
+<p><strong>Resource Logs</strong> provide insights into the internal operation of an Azure resource and are automatically created. However, you must create a <strong>diagnostic setting</strong> to specify a destination for each resource</p>
+<ul>
+<li>
+<p><strong>Metrics</strong> : <strong>Platform metrics</strong> will write to the <strong>Azure Monitor metrics database</strong> with no configuration.</p>
+<ul>
+<li><strong>Metrics Explorer</strong>: Access platform metrics from <strong>Metrics Explorer</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Logs</strong>: Copy platform metrics to <strong>Logs</strong></p>
+<ul>
+<li><strong>Log Analytics</strong>: Trending and other analysis
+using Log Analytics</li>
+</ul>
+</li>
+<li>
+<p><strong>Azure Storage</strong>： Send resource logs to <strong>Azure Storage</strong> for archiving.</p>
+</li>
+<li>
+<p><strong>Azure Event Hub</strong>： Stream metrics to other locations using <strong>Event Hubs</strong></p>
+</li>
+</ul>
+<p><strong>Resource Logs</strong> provide insights into the internal operation of an Azure resource and are automatically created. However, you must create a <strong>diagnostic setting</strong> to specify a destination for each resource.</p>
+<h3 id="azure-monitor-sources">Azure Monitor - Sources</h3>
+<p>For resources that cannot be monitored using the other data sources, write this data to either
+Metrics or Logs using an <strong>Azure Monitor API</strong></p>
+<p>This will allow you to collect log data from any <strong>REST</strong> client and store it in Log </p>
+<p>Analytics and the Azure Monitor metrics database.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_6.png" title="Body image" /></p>
+<h3 id="azure-monitor-data-stores">Azure Monitor - Data Stores</h3>
+<p>Azure Monitor collects <strong>two fundamental types</strong> of data from sources : <strong>Logs and Metrics</strong></p>
+<h4 id="azure-monitor-logs"><strong>Azure Monitor Logs</strong></h4>
+<ul>
+<li>collects and organizes log and performance data from monitored resources</li>
+<li><strong>Data Consolidation:</strong> Logs can be pulled from diverse sources such as platform logs from Azure services, log and performance，data from agents on virtual machines, and usage and performance data from applications.</li>
+<li><strong>Workspaces:</strong> All these logs are organized into workspaces, providing a centralized repository for in-depth analysis.</li>
+<li><strong>Query Language</strong>: Azure Monitor Logs offers a sophisticated query language, which can quickly analyze millions of records.</li>
+<li><strong>Log Analytics</strong>: You can interactively work with log queries and their results using <strong>Log Analytics</strong></li>
+</ul>
+<h4 id="azure-monitor-metrics"><strong>Azure Monitor Metrics</strong></h4>
+<ul>
+<li>collects numeric data from monitored resources <strong>into a time series database</strong>.</li>
+<li><strong>Numeric Data:</strong> Metrics are numerical values captured at regular intervals. They are a snapshot that describes a particular aspect of a system at a specific moment in time.</li>
+<li><strong>Lightweight</strong>: Metrics are designed to be lightweight, allowing for near real-time data analysis. This makes them particularly useful for alerting and the rapid detection of issues.</li>
+<li><strong>Metrics Explorer:</strong> The <strong>Metrics Explorer</strong> tool allows for interactive analysis of metric data.</li>
+</ul>
+<h3 id="1-6-azure-monitor-logs">1-6 Azure Monitor Logs</h3>
+<p><strong>Data retention and archive policies</strong></p>
+<p>In Azure Monitor Logs, you can control how long your log data stays stored.</p>
+<p>By default, in the Azure portal, you can set this retention time anywhere from <strong>30 to 730 days</strong> for the whole workspace.</p>
+<p>You can also specify different storage durations for certain <strong>tables</strong> within your workspace,
+letting you manage different types of data as needed.</p>
+<p>This gives you the flexibility to meet <strong>an business or regulatory rules</strong> about data storage.</p>
+<p>To tweak these retention settings, you have to be on the <strong>paid tier</strong> of Azure Monitor Logs.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_7.png" title="Body image" /></p>
+<p><strong>To set retention and archive policy by table:</strong></p>
+<ol>
+<li>Navigate to the Azure portal and go to the Log Analytics workspace where the data is stored</li>
+<li>Under the "Settings" section, select "Usage and estimated costs"</li>
+<li>Then, select <strong>"Data Retention"</strong></li>
+</ol>
+<p><img alt="Alt Image Text" src="../../images/az305_6_8.png" title="Body image" /></p>
+<p>4.In the data retention blade, you can modify the retention period for each for the list of table. By default, it is set to <strong>31 days, but you can extend it up to 730 days.</strong></p>
+<p>5.For archiving data, you can use <strong>Azure Data Explorer</strong>, which lets you retain data beyond the 2-year limit, and gives you a highly-scalable analytics service.</p>
+<h4 id="log-analytics"><strong>Log Analytics</strong></h4>
+<p><strong>Log Analytics</strong> is a tool in the Azure portal used <strong>to edit and run log queries</strong> with data in <strong>Azure Monitor Logs.</strong></p>
+<ul>
+<li>Log Analytics processes data from various sources and transforms it into actionable insights.</li>
+<li>It ingests data from <strong>Azure Monitor, Windows, and Linux agents, Azure services, and other sources.</strong></li>
+<li>Once the data is collected, you can use Log Analytics query language to retrieve, consolidate, and analyze the data.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_9.png" title="Body image" /></p>
+<p><strong>Log Analytics</strong> uses a query language called <strong>KQL</strong></p>
+<h4 id="benefits"><strong>Benefits</strong></h4>
+<ol>
+<li><strong>Centralized Log Management</strong>: Collect and analyze data from multiple sources, both on-premises and in the cloud, in a centralized location.</li>
+<li><strong>Powerful Analytics:</strong> Utilize the <strong>Kusto Query Language (KQL)</strong> to run advanced analytics on large amounts of fast-streaming data in real time.</li>
+<li><strong>Custom Dashboards</strong>: Create custom dashboards and visualizations to display real-time data and trends.</li>
+<li><strong>Integration</strong>: Seamless integration with other Azure services and Microsoft solutions, such as Power BI and Azure Automation.</li>
+<li><strong>Alerting</strong>: Set up alerts based on specific criteria to proactively identify and respond to potential issues before they affect your users.</li>
+</ol>
+<h3 id="1-7-log-analytics-workspaces">1-7 Log Analytics Workspaces</h3>
+<p><strong>Log Analytics workspace</strong> is a unique environment for Azure Monitor log data</p>
+<p>Each <strong>workspace</strong> has its own data repository and configuration, and data sources and solutions are configured to store their data in a particular <strong>workspace</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_10.png" title="Body image" /></p>
+<h3 id="1-8-log-analytics-agent">1-8 Log Analytics agent</h3>
+<p>The Log Analytics agent is a lightweight agent that can be installed on <strong>Windows</strong> and <strong>Linux</strong>
+machines to collect and send log data to <strong>Azure Monitor.</strong></p>
+<p>The Log Analytics agent is a lightweight agent that can be installed on <strong>Windows and Linux
+machines to collect and send log data to Azure Monitor</strong>.</p>
+<p>The agent can collect logs from various sources, including <strong>Windows event logs, custom logs, performance counters, and Syslog.</strong></p>
+<p>It supports both agent-based and agentless data collection and can be configured to collect data from on-premises and cloud-based environments.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_11.png" title="Body image" /></p>
+<h3 id="1-9-log-analytics-agent">1-9 Log Analytics agent</h3>
+<p>The Log Analytics agent is set up to monitor certain <strong>Windows event logs</strong> like Security, System, or Application logs</p>
+<p>The data from these logs is then gathered and sent to <strong>Log Analytics</strong> for analysis using queries and visualizations.</p>
+<p>The Log Analytics agent is set up to monitor <strong>Syslog</strong> servers or network devices.</p>
+<p>It collects data from these sources and sends it to Log Analytics, allowing for detailed analysis and troubleshooting.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_12.png" title="Body image" /></p>
+<p>Both methods for collecting log data allow for centralized management and analysis of log data from multiple sources, <strong>which can help to improve visibility and streamline troubleshooting and issue resolution.</strong></p>
+<h2 id="2-application-insights">2 Application Insights</h2>
+<p><strong>Application Insights is an Application Performance Management (APM)</strong> service </p>
+<p>It is a sub-service of Azure Monitor.</p>
+<h3 id="2-1-what-is-an-apm">2-1 What is an APM?</h3>
+<p>Monitoring and management of <strong>performance and availability of software apps</strong>. APM strives to detect and diagnose complex application performance problems to maintain an expected level of service.</p>
+<ul>
+<li><strong>Automatic Detection of Performance Anomalies:</strong> Application Insights automatically identifies performance anomalies in your system.</li>
+<li><strong>Powerful Analytics Tools</strong>: It comes with robust analytics tools to help you diagnose issues and understand what users do with your app.</li>
+<li><strong>Continuous Improvement</strong>: It is designed to help you continuously improve performance and usability of your applications.</li>
+<li><strong>Platform Agnostic</strong>: It works for apps on .NET, Node.js, Java, and Python, hosted on-premises, hybrid, or any public cloud.</li>
+<li><strong>DevOps Integration</strong>: It can be integrated into your DevOps process.</li>
+<li><strong>Mobile App Monitoring:</strong> It can monitor and analyze telemetry from mobile apps by integrating with Visual Studio App Center.</li>
+</ul>
+<h3 id="2-2-application-insights">2-2 Application Insights</h3>
+<p>To use Application Insights, <strong>you need to instrument your application.</strong></p>
+<p>This involves installing the <strong>instrument package (SDK),</strong> or enabling Application Insights using the <strong>Application Insights Agents</strong>, where supported.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_13.png" title="Body image" /></p>
+<p><strong>Apps can be instrumented from anywhere</strong></p>
+<p>When you set up Application Insights monitoring for your web app, you create an Application Insights resource in Microsoft Azure </p>
+<p>You open this resource in the Azure portal to see and analyze the telemetry collected from your app. </p>
+<p>The resource is identified by an instrumentation key (ikey)</p>
+<h4 id="what-does-application-insights-monitor"><strong>What does Application Insights Monitor?</strong></h4>
+<ul>
+<li>Request rates, response times, and failure rates</li>
+<li>Dependency rates, response times, and failure rates</li>
+<li>Exceptions</li>
+<li>Page views and load performance</li>
+<li>AJAX calls</li>
+<li>User and session counts</li>
+<li>Performance counters</li>
+<li>Host diagnostics</li>
+<li>Diagnostic trace logs</li>
+<li>Custom events and metrics</li>
+</ul>
+<h4 id="where-do-i-see-my-telemetry"><strong>Where do I see my telemetry?</strong></h4>
+<ul>
+<li>Smart detection and manual alerts</li>
+<li>Application map</li>
+<li>Profiler</li>
+<li>Usage Analysis</li>
+<li>Diagnostic search for instance data</li>
+<li>Metrics Explorer for aggerated data</li>
+<li>Dashboards</li>
+<li>Live Metrics Stream</li>
+<li>Analytics</li>
+<li>Visual Studio</li>
+<li>Snapshot debugger</li>
+<li>Power BI</li>
+<li>REST API</li>
+<li>Continuous Export</li>
+</ul>
+<h3 id="2-3-application-insights-instrumentation">2-3 Application Insights - Instrumentation</h3>
+<p>You Instrument your application by adding the Azure Application Insights SDK and implementing traces.</p>
+<p>In the case of a <strong>Node.js</strong> application, you can install the Azure Application Insights SDK using <strong>npm (Node Package Manager) with the following command:</strong></p>
+<pre><code>npm install applicationinsights --save
+</code></pre>
+<pre><code>let appInsights = require(&quot;applicationinsights&quot;);
+
+// configure what you watn to collect
+appInsights.setup(&quot;&lt;instrumentation_key&gt;&quot;)
+    .setAutoDependencyCorrelation(true)
+    .setAutoCollectRequests(true)
+    .setAutoCollectPerformance(true, true)
+    .setAutoCollectExceptions(true)
+    .setAutoCollectDependencies(true)
+    .setAutoCollectConsole(true)
+    .setUseDiskRetryCaching(true)
+    .setSendLiveMetrics(false)
+    .setDistributedTracingMode(
+    appInsights.DistributedTracingModes.AI
+).start();
+</code></pre>
+<p><strong>Azure supports the following languages:</strong></p>
+<p>.NET, Java, Python, Node.js, JavaScript</p>
+<pre><code>client.trackEvent({
+    name: &quot;my custom event&quot;,
+    properties: {customProperty: &quot;custom property value&quot;}
+});
+client.trackException({
+    exception: new Error(
+    &quot;handled exceptions can be logged with this method&quot;)
+});
+client.trackMetric({name: &quot;custom metric&quot;, value: 3});
+client.trackTrace({message: &quot;trace message&quot;});
+client.trackDependency({
+    target:&quot;http://dbname&quot;,
+    name: &quot;select customers proc&quot;,
+    data: &quot;SELECT * FROM Customers&quot;,
+    duration:231,
+    resultCode:0,
+    success: true,
+    dependencyTypeName: &quot;ZSQL&quot;
+});
+client.trackRequest({
+    name: &quot;GET /customers&quot;,
+    url:&quot;http://myserver/customers&quot;,
+    duration:309,
+    resultCode:200,
+    success:true
+});
+</code></pre>
+<h4 id="application-insights-auto-instrumentation">Application Insights - Auto Instrumentation</h4>
+<p><strong>Auto-instrumentation</strong> allows you to enable application monitoring with </p>
+<p>Application Insights without changing your code.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_14.png" title="Body image" /></p>
+<h3 id="2-4-microsoft-sentinel">2-4 Microsoft Sentinel</h3>
+<p>Microsoft Sentinel is a scalable, cloud-native:</p>
+<ul>
+<li><strong>Security information event management (SIEM)</strong></li>
+</ul>
+<p>collecting and analyzing security-related data</p>
+<ul>
+<li><strong>Security orchestration automated response (SOAR)</strong></li>
+</ul>
+<p>collection of tools that enable an organization to define, standardize, measure, and automate to define, standardize, measure, and automate</p>
+<p><strong><mark>Microsoft Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for:</mark></strong></p>
+<ul>
+<li>Alert Detection</li>
+<li>Threat visibility</li>
+<li>Proactive hunting</li>
+<li>Threat response</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_15.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_16.png" title="Body image" /></p>
+<h3 id="2-5-microsoft-sentinel-data-sources">2-5 Microsoft Sentinel - Data Sources</h3>
+<p>Microsoft Sentinel comes with several connectors for Microsoft solutions:</p>
+<ul>
+<li>Microsoft 365 Defender</li>
+<li>Office 365</li>
+<li><strong>Azure AD (Microsoft Entra ID)</strong></li>
+<li>Microsoft Defender for Identity</li>
+<li>Microsoft Defender for Cloud Apps</li>
+</ul>
+<p><strong>Use common event formats:</strong></p>
+<ul>
+<li>Syslog</li>
+<li>REST-API</li>
+<li>Windows Event Logs</li>
+<li>Common Event Format (CEF)</li>
+<li>Trusted Automated eXchange of Indicator Information (TAXII)</li>
+</ul>
+<h3 id="2-6-microsoft-sentinel-azure-monitor-workbooks">2-6 Microsoft Sentinel - Azure Monitor Workbooks</h3>
+<p>From Microsoft Sentinel you can create <strong>Azure Monitor Workbooks</strong></p>
+<p><strong>Workbooks provide a flexible canvas for data analysis</strong> and the creation of rich visual reports within the Azure portal.</p>
+<p>They allow you to tap into multiple data sources from across Azure and combine them into unified interactive experiences.</p>
+<p>It tells a story about the performance and availability about your applications and services</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_17.png" title="Body image" /></p>
+<p>Workbooks are temporary workspaces to define a document-like format with visualization intertwined
+to help investigate and discuss performance.</p>
+<h3 id="2-7-microsoft-sentinel-analytics">2-7 Microsoft Sentinel - Analytics</h3>
+<p>Microsoft Sentinel uses analytics to correlate alerts into <strong>incidents</strong></p>
+<p><strong>Incidents</strong> are groups of related alerts that together create an actionable possible-threat that you can investigate and resolve</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_18.png" title="Body image" /></p>
+<h3 id="2-8-microsoft-sentinel-automation-and-orchestration">2-8 Microsoft Sentinel - Automation and Orchestration</h3>
+<p>Microsoft Sentinel's automation and orchestration solution provides a <strong>highly-extensible architecture that enables scalable automation as new technologies and threats emerge</strong></p>
+<p>Built on the foundation of <strong>Azure Logic Apps</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_19.png" title="Body image" /></p>
+<h3 id="2-9-microsoft-sentinel-investigation">2-9 Microsoft Sentinel - Investigation</h3>
+<p>Microsoft Sentinel has deep investigation tools that help you to understand the scope and find the root cause of a potential security threat.</p>
+<p>You can choose an entity on the interactive graph to ask interesting questions for a specific entity,
+and drill down into that entity and its connections to get to the root cause of the threat.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_20.png" title="Body image" /></p>
+<h3 id="2-10-microsoft-sentinel-hunting">2-10 Microsoft Sentinel - Hunting</h3>
+<p>Microsoft Sentinel's powerful hunting <strong>search-and-query tools, based on the MITRE framework</strong>, enable you to proactively hunt for security threats across your organization's  data sources, before an alert is triggered</p>
+<p>After you discover which hunting query provides high-value insights into possible attacks, you can also create <strong>custom detection rules</strong> based on your query, and surface those insights as alerts to your security incident responders.</p>
+<p>While hunting, you can create bookmarks for interesting events, enabling you to return to them later, share them with others, and group them with other correlating events to create a compelling incident for investigation.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_21.png" title="Body image" /></p>
+<h3 id="2-11-microsoft-sentinel-pricing">2-11 Microsoft Sentinel - Pricing</h3>
+<p>Microsoft Sentinel has two different pricing models</p>
+<p><strong>Capacity Reservations:</strong></p>
+<p>Billed a fixed fee based on the selected tier, enabling a predictable total cost for Microsoft Sentinel.</p>
+<p><strong>Pay-As-You-Go:</strong></p>
+<p>Billed per gigabyte (GB) for the volume of data ingested for analysis in Microsoft Sentinel and stored in the Azure Monitor Log Analytics workspace.</p>
+<h2 id="3-the-principle-of-least-privilege">3 The principle of least privilege</h2>
+<p>The principle of least privilege is a security principle that states that <strong>users, applications, and services</strong> should be granted only the <strong><mark>minimum access necessary</mark></strong> to perform their assigned tasks, and no more. </p>
+<p>In Microsoft Azure, the principle of least privilege is a critical aspect of security that helps <strong>prevent unauthorized access, data breaches, and other security incidents.</strong></p>
+<p>The principle of least privilege in Azure involves limiting access to Azure resources such as <strong>virtual machines, storage accounts, and databases, as well as Azure services such as Azure Active Directory and Azure Key Vault</strong>.</p>
+<p>Azure role-based access control (RBAC) permits administrators to grant roles to users, groups, and apps based on their access levels.</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_22.png" title="Body image" /></p>
+<p>Following the principle of least privilege helps minimize unauthorized access risks and potential harm from compromised credentials, thus reducing the Azure environment's attack surface.</p>
+<h3 id="3-1-the-principle-of-least-privilege">3-1 The principle of least privilege</h3>
+<p>Following the principle of least privilege can help organizations comply with regulatory requirements and best practices for security.</p>
+<p>To implement the principle of least privilege in Azure, administrators should follow these best practices:</p>
+<ol>
+<li>Assign roles based on the least amount of privilege needed to perform the task.</li>
+<li>Monitor role assignments and permissions regularly to ensure they align with business requirements.</li>
+<li>Limit the use of shared accounts and use individual user accounts where possible.</li>
+<li>Implement <strong>multi-factor authentication (MFA)</strong> to prevent unauthorized access to user accounts.</li>
+<li><mark>Use <strong>Azure Policy</strong> to enforce compliance with organizational policies and industry regulations.</mark></li>
+<li>Implement <strong>network security groups (NSGs) and firewalls</strong> to control traffic to and from Azure
+resources.</li>
+<li>Regularly <strong>review access control policies</strong> and adjust as necessary to ensure that they remain effective.</li>
+</ol>
+<h3 id="3-2-azure-ad-identity-protection">3-2 Azure AD Identity Protection</h3>
+<p><strong>Identity Protection</strong> is a feature of Azure AD that let's you to <strong>detect, investigate, remediate</strong>, and <strong>export identity-based risks</strong> for future analysis.</p>
+<p>Microsoft analyses 6.5 trillion signals per day to identify and protect customers from threats.</p>
+<p>Identity Protection notices:</p>
+<ul>
+<li>Risky Users</li>
+<li>Risky Sign-ins</li>
+<li>Risk Detections</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_23.png" title="Body image" /></p>
+<h3 id="3-3-identity-protection-detection-and-remediation">3-3 Identity Protection - Detection and Remediation</h3>
+<p>Identity Protection identifies for the following risks:</p>
+<ul>
+<li><strong>Anonymous IP address</strong> - Sign in from an anonymous IP address (e.g., Tor browser, anonymizer VPNs)</li>
+<li><strong>Atypical travel</strong> - Sign in from an atypical location based on the user's recent sign-ins</li>
+<li><strong>Malware linked IP address</strong> - Sign in from a malware linked IP address</li>
+<li><strong>Unfamiliar sign-in properties</strong> - Sign in with properties that haven't been seen recently for the given user</li>
+<li><strong>Leaked Credentials</strong> - Indicates that the user's valid credentials have been leaked</li>
+<li><strong>Password spray</strong> - Multiple usernames being attacked using common passwords in a unified, brute-force manner</li>
+<li><strong>Azure AD threat intelligence</strong> - Microsoft's internal and external threat intelligence sources have identified a known attack pattern</li>
+<li><strong>New country</strong> - This detection is discovered by Microsoft Defender for Cloud Apps</li>
+<li><strong>Activity from anonymous IP address</strong> - This detection is discovered by Microsoft Defender for Cloud Apps</li>
+<li><strong>Suspicious inbox forwarding</strong> - This detection is discovered by Microsoft Defender for Cloud Apps</li>
+</ul>
+<p>The <strong>risk signals can trigger remediation efforts</strong> such as requiring users:</p>
+<p>Azure AD Multi-Factor Authentication, reset their password using self-service password reset, or blocking until an administrator takes action</p>
+<h3 id="3-4-identity-protection-investigation">3-4 Identity Protection - Investigation</h3>
+<p>Identity Protection categorizes risk into three tiers: <strong>low, medium, and high.</strong></p>
+<p>Admins can use key reports for investigations in Identity Protection, <strong>Risky users, Risky sign-ins, Risk detections</strong></p>
+<p><strong>Risky users</strong></p>
+<ul>
+<li>Details about detections</li>
+<li>History of all risky sign-ins</li>
+<li>Risk history</li>
+</ul>
+<p><strong>Risky sign-ins</strong></p>
+<ul>
+<li>Which sign-ins are classified as at risk, confirmed compromised,</li>
+<li>confirmed safe, dismissed, or remediated.</li>
+<li>Real-time and aggregate risk levels with sign-in attempts.</li>
+<li>Detection types triggered</li>
+<li>Conditional Access policies applied</li>
+<li>MFA details</li>
+<li>Device, Application, Location information</li>
+</ul>
+<p><strong>Risk detections</strong></p>
+<ul>
+<li>Contains filterable data for up to the past 90 days</li>
+<li>Information about each risk detection including type.</li>
+<li>Other risks triggered at the same time</li>
+<li>Sign-in attempt location</li>
+</ul>
+<p><strong>Admin follow up actions:</strong></p>
+<ul>
+<li>Reset the user password</li>
+<li>Confirm user compromise</li>
+<li>Dismiss user risk</li>
+<li>Block user from signing in</li>
+<li>Investigate further using Azure ATP</li>
+</ul>
+<h2 id="3-introduction-to-azure-key-vault">3 Introduction to Azure Key Vault</h2>
+<p><strong>Azure Key Vault</strong> helps you <strong>safeguard cryptographic keys</strong> and <strong>other secrets</strong> used by cloud apps and services.</p>
+<p>Azure Key Vault focuses on three things:</p>
+<p><strong>Certificate Management</strong></p>
+<p>Easily provision, manage, and deploy public and private <strong>SSL certificates</strong> for use with Azure and internal connected resources</p>
+<p><strong>Key Management</strong></p>
+<p>Create and control the encryption keys used to encrypt your data</p>
+<p><strong>Secrets Management</strong></p>
+<p>Store and tightly control access to <strong>tokens, passwords, certificates, API keys, and other secrets</strong></p>
+<blockquote>
+<p>Certificates contain key pair (key and secret). This is not to be
+confused with Key Management and Secrets Management</p>
+</blockquote>
+<h3 id="3-1-hsm-and-fips">3-1 HSM and FIPS</h3>
+<p><strong>An HSM is a Hardware Security Module.</strong></p>
+<p>Its a piece of hardware designed to store encryption keys.</p>
+<h4 id="federal-information-processing-standard-fips">Federal Information Processing Standard (FIPS)</h4>
+<p><strong>US and Canadian government standard that specifies the security requirements for cryptographic modules that protect sensitive information.</strong></p>
+<p>HSM's that are <strong>multi-tenant are FIPS 140-2 Level 2 Compliant</strong>(multiple customers virtually isolated on an HSM)</p>
+<p>HSM's that are <strong>single-tenant are FIPS 140-2 Level 3 Compliant</strong> (single customer on a dedicated HSM)</p>
+<h3 id="3-2-azure-key-vault-vault">3-2 Azure Key Vault - Vault</h3>
+<p><strong>A Vault</strong> stores secrets and keys, that can be safeguarded by software or <strong>FIPS 140-2 Level 2 validated HSMs</strong></p>
+<p>Azure Key Vaults provides two types of containers:</p>
+<ul>
+<li><strong>Vaults</strong> - supports, software and HSM backed keys</li>
+<li><strong>HSM pools</strong> - only supports HM backed keys</li>
+</ul>
+<p>To activate your HSM, you will need to:</p>
+<ul>
+<li>provide a minimum of three RSA key-pairs (up to a maximum of 10)</li>
+<li>specify the minimum number of keys required to decrypt the security domain (called a quorum)</li>
+</ul>
+<blockquote>
+<p>You do not choose the container on creation; you just choose between <strong>Standard and Premium.</strong></p>
+<p>When you choose Premium and create enough RSA key pairs you will begin to use HSM pools.</p>
+</blockquote>
+<h3 id="3-3-azure-key-vault-recovery-options">3-3 Azure Key Vault - Recovery Options</h3>
+<ul>
+<li><strong>Soft Delete</strong> allows you to recover or permanently delete a key vault and secrets for the duration of the retention period. (It's enabled by default on creation)</li>
+<li><strong>Mandatory retention period</strong> and prevents the permanent deletion of key vaults or secrets prior to the retention period elapsing</li>
+<li><strong>Purge protection</strong> when enabled, prevents secrets to be purged by users or by Microsoft.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_24.png" title="Body image" /></p>
+<h3 id="3-4-azure-key-vault-pricing">3-4 Azure Key Vault - Pricing</h3>
+<p><strong>Azure has two pricing tiers:</strong></p>
+<ul>
+<li><strong>Standard</strong></li>
+<li><strong>Premium</strong> (Allows for both software and HSM-protected keys)</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_25.png" title="Body image" /></p>
+<h3 id="3-5-azure-key-vault-double-encryption">3-5 Azure Key Vault - Double Encryption</h3>
+<p>Microsoft has a two layered approach each for <strong>Data At-Rest and Data In-Transit</strong></p>
+<p><strong>Data-at-Rest</strong></p>
+<ol>
+<li><strong>Disk encryption using customer-managed keys</strong></li>
+<li>Infrastructure encryption using platform-managed keys</li>
+</ol>
+<p><strong>Data-in-Transit</strong></p>
+<ol>
+<li>Transit encryption <strong>using Transport Layer Security (TLS) 1.2</strong></li>
+<li>Additional layer of encryption provided at the infrastructure layer</li>
+</ol>
+<h3 id="3-6-azure-key-vault-keys">3-6 Azure Key Vault - Keys</h3>
+<p>When creating a key, there are three options:</p>
+<ul>
+<li><strong>Generate</strong> - Azure will generate the key</li>
+<li><strong>Import</strong> - Import an existing RSA key</li>
+<li><strong>Restore Backup</strong> - Restore a key from </li>
+</ul>
+<p>For keys generated by Azure, you can use either RSA or EC.</p>
+<p><strong>RSA (Rivest-Shamir-Adleman): 2048,3072,4096</strong></p>
+<p><strong>EC (Elliptic-curve cryptography): P-256. P-384.P-521.p-256K</strong></p>
+<p>For keys generated by Azure, you can set an <strong>Activation and Expiration date</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_26.png" title="Body image" /></p>
+<ul>
+<li>You can create <strong>new versions</strong> of keys</li>
+<li>You can download backups of keys. Backups can onlv be restored within the same Azure subscription and within Azure Kev Vault</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_27.png" title="Body image" /></p>
+<h3 id="3-7-azure-key-vault-keys">3-7 Azure Key Vault - Keys</h3>
+<p>When you have a <strong>Premium Vault</strong>, you'll key options for HSM:</p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_28.png" title="Body image" /></p>
+<ul>
+<li><strong>Generate</strong> an RSA or EC for HSM</li>
+<li><strong>Import</strong> an RSA key for HSM</li>
+</ul>
+<h3 id="azure-key-vault-keys">Azure Key Vault - Keys</h3>
+<p><strong>Microsoft Managed Key (MMK)</strong> are keys managed by Microsoft. They do not appear in your vault and in most cases are used by default for many azure services.</p>
+<p><strong>Customer Managed Key (CMK)</strong> are keys you create in Azure Key Vault.
+You need to <strong>select a key from a vault</strong> for various services.</p>
+<p>Sometimes "customer managed" means that the customer has imported cryptographic material.</p>
+<p>Generated or imported keys are considered CMK in Azure.</p>
+<p>In order to use a key, an Azure service needs an identity (within Azure AD) <strong>for permission to access the key from the vault</strong></p>
+<p><strong>Infrastructure encryption</strong> is sometimes an option.</p>
+<ul>
+<li>By default, Azure encrypts storage account data at rest.</li>
+<li>Infrastructure encryption adds a second layer of encryption to your storage account's data.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_29.png" title="Body image" /></p>
+<h3 id="3-8-azure-key-vault-secrets">3-8 Azure Key Vault - Secrets</h3>
+<p><strong>Azure Key Vault Secrets</strong> provides <strong>secure storage of generic secrets</strong>,</p>
+<p>such as <strong>passwords and database connection strings</strong>.</p>
+<ul>
+<li>Key Vault APIs accept and return secret values as strings</li>
+<li>
+<p>Internally, Key Vault stores and manages secrets:</p>
+<ul>
+<li>As sequences of octets (8-bit bytes),</li>
+<li>Each secret with a maximum size of 25k bytes</li>
+</ul>
+</li>
+<li>
+<p>Key Vault service doesn't provide semantics for secrets</p>
+<ul>
+<li><strong>accepts the data, encrypts it, stores it, and returns a secret identifier ("id").</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>For highly sensitive data, <strong>clients should consider additional layers of protection for data</strong>. For example, encrypting your data using a separate protection key before storing it in the Key Vault.</p>
+</blockquote>
+<p>Key Vault also supports a <strong>contentType</strong> field for secrets</p>
+<ul>
+<li>Clients may specify the content type of a secret to assist in interpreting the secret data when it's retrieved</li>
+<li>maximum length of this field is 255 characters</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az305_6_30.png" title="Body image" /></p>
+<h3 id="3-9-azure-key-vault-secrets">3-9 Azure Key Vault - Secrets</h3>
+<p>Every secret stored in your Key Vault is encrypted.</p>
+<p>Key Vault encrypts secrets at rest with a hierarchy of encryption keys</p>
+<ul>
+<li>All keys in that hierarchy are protected by modules that are FIPS 140-2 compliant</li>
+<li>The encryption leaf key is unique to each Key Vault, while the root key is unique to the entire security world.</li>
+<li>Protection level may vary between regions<ul>
+<li>E.g., <strong>China uses FIPS 140-2 Level 1, and all other regions use Level 2 or higher</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Secret Attributes</strong></p>
+<ul>
+<li><strong>exp</strong> - expiration time, after which the secret data should not be retrieved</li>
+<li><strong>Nbf</strong> - not before (default value is <strong>now</strong>） the time before which the secret data should not be retrieved</li>
+<li><strong>enabled</strong> - whether the secret data can be retrieved, (default true)</li>
+</ul>
+<p>There are also read-only attributes for <strong>created and update</strong></p>
+<p>In order to access secrets within your application code, you can would use the Azure SDK e.g., .NET example</p>
+<pre><code>using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Core;
+
+SecretClientOptions options = new SecretClientOptions(){
+    Retry = {
+    Delay= TimeSpan.FromSeconds(2),
+    MaxDelay = TimeSpan.FromSeconds(16),
+    MaxRetries = 5,
+    Mode = RetryMode.Exponential
+    },
+};
+
+var uri = new Uri(&quot;https://&lt;your-unique-key-vault-name&gt;.vault.azure.net/&quot;);
+var creds = new DefaultAzureCredential();
+var client = new SecretClient(uri, options);
+
+KeyVaultSecret secret = client.GetSecret(&quot;&lt;mySecret&gt;&quot;);
+
+string secretValue = secret.Value;
+</code></pre>
+<p>Or you can use the Azure CLI</p>
+<pre><code>az keyvault secret show [--id]
+                            [--name]
+                            [--subscription]
+                            [--vault-name]
+                            [--version]
+</code></pre>
+<h3 id="3-10-x509-certificates">3-10 X.509 Certificates</h3>
+<p><strong>What is Public key infrastructure (PKI)?</strong></p>
+<p><mark>PKI is a set of roles, policies, hardware, software and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption.</mark></p>
+<p><strong>What is an X.509 certificate?</strong></p>
+<p>A standard defined by the <strong>International Telecommunication Union (ITU)</strong> for <strong>public key certifications</strong>.</p>
+<p>X.509 certificates are used in many Internet protocols including:</p>
+<ul>
+<li><strong>SSL/TLS and HTTPS</strong></li>
+<li><strong>Signed and encrypted email</strong></li>
+<li>Code Signing and Document Signing</li>
+</ul>
+<p><strong>A certificate contains</strong></p>
+<ul>
+<li>An identity - hostname, organization or individual</li>
+<li>A public key - RSA, DSA, ECDA, etc.</li>
+</ul>
+<p><strong>What is a Certificate Authority (CA)?</strong></p>
+<p><strong>An entity that issues digital certificates</strong></p>
+<p>A CA acts as a trusted third party-trusted both by the subject (owner) of the certificate and by the party relying upon the certificate</p>
+<p><strong>Intermediate Certificate Authority (ICA)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az305_6_31.png" title="Body image" /></p>
+<ul>
+<li>Intermediate Certificates are signed by the root private key and act as entities that can issue certificates</li>
+<li>They protect the root certificate because the root certificate does not have to sign every issued certificate</li>
+</ul>
+<p><strong>End Entity Certificate</strong></p>
+<ul>
+<li>A certificate issued by the ICA used by the end entity</li>
+<li>The entity in the case is an SSL certificate for a website</li>
+</ul>
+<h3 id="3-11-x509-certificates-certificate-format">3-11 X.509 Certificates - Certificate Format</h3>
+<p>A certificate contains a metadata about:</p>
+<ul>
+<li><strong>Version Number</strong>: The version of the X.509 standard.</li>
+<li><strong>Serial Number</strong>: A unique serial number assigned to the certificate by the Certificate Authority (CA).</li>
+<li><strong>Signature Algorithm ID</strong>: The algorithm used to sign the certificate, e.g., RSA or DSA.</li>
+<li><strong>Issuer</strong>: The name of the Certificate Authority that issued this certificate.</li>
+<li><strong>Validity Period</strong>: The start and end dates during which the certificate is valid.</li>
+<li><strong>Subject</strong>: The identifier for the individual or organization to whom the certificate was</li>
+<li>issued.</li>
+<li><strong>Subject Public Key</strong>: The public key that is authenticated by this certificate. </li>
+<li>sThis field also names the algorithm used for public-key generation.</li>
+<li><strong>Issuer Unique Identifier</strong>: Allows multiple CAs to operate as a single logical CA.</li>
+<li><strong>Subject Unique Identifier</strong>: Allows multiple certificate holders to act as a single logical entity.</li>
+<li><strong>Extensions</strong>: Allows a CA to associate additional private information with a certificate.</li>
+</ul>
+<blockquote>
+<p>All the metadata publicly readable (anyone can view it)</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az305_6_32.png" title="Body image" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

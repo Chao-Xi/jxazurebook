@@ -1,0 +1,6577 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../../chap5/dp900_sum/">
+      
+      
+        <link rel="next" href="../2azure_sla/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>1 Implementing Hybrid Infrastructure - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-microsoft-azure-virtual-implementing-hybrid-infrastructure" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 Implementing Hybrid Infrastructure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-of-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Overview of Hybrid Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Overview of Hybrid Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-hybrid-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Hybrid Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Hybrid Cloud?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-hybrid-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Hybrid Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Architectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements-of-hybrid-cloud-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elements of Hybrid Cloud Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-elements-of-a-hybrid-cloud-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Elements of a Hybrid Cloud Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolving-to-a-hybrid-posture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolving to a Hybrid Posture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution-azure-automation-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution: Azure Automation Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-management-and-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Management and Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-hybrid-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Hybrid Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-in-the-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data in the Hybrid Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-with-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenges with Hybrid Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hybrid-cloud-identity-and-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Hybrid Cloud Identity and Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Hybrid Cloud Identity and Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn-gateways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN Gateways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn-gateway-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN Gateway Subnets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-the-connection-traverse-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can the connection traverse the internet?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-expressroute-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ExpressRoute (Benefits)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-expressroute-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ExpressRoute (Challenges)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-expressroute-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ExpressRoute Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-azure-virtual-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Azure Virtual WAN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Azure Virtual WAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-virtual-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Virtual WAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-virtual-wan-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Virtual WAN architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-hybrid-identity-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Hybrid Identity Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Hybrid Identity Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ad-ds-in-azure-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD DS in Azure Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad-ds-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AD DS Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hybrid-cloud-compute-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Hybrid Cloud Compute Workloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Hybrid Cloud Compute Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hybrid-cloud-admin-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Hybrid Cloud Admin Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Hybrid Cloud Admin Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-admin-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Admin Center
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-admin-center-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Admin Center Architectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-hybrid-environment-is-increasingly-complex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders hybrid environment is increasingly complex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-enabled-servers-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc Enabled Servers Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways-for-azure-arc-enabled-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways for Azure Arc enabled Servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expanding-the-azure-stack-portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanding the Azure Stack portfolio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-new-for-azure-stack-hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's new for Azure Stack HCI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailwind-traders-using-hybrid-file-shares-via-azure-file-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders using Hybrid file shares via Azure File Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailwind Traders using Hybrid file shares via Azure File Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-file-sync-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure File Sync Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-azure-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Azure Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Azure Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-backup-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Backup Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-backup-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Backup Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-backup-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Backup Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-on-premises-to-microsoft-azure-protection-with-azure-site-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 On-premises to Microsoft Azure protection with Azure Site Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 On-premises to Microsoft Azure protection with Azure Site Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-site-recovery-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Site Recovery Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-hybrid-cloud-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 Hybrid Cloud Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 Hybrid Cloud Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-azure-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Azure Relay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 Azure Relay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wcf-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WCF Relays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-azure-app-service-hybrid-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Azure App Service Hybrid Connection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 Azure App Service Hybrid Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-app-service-hybrid-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure App Service Hybrid Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-app-service-hybrid-connection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure App Service Hybrid Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-azure-ad-application-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 Azure AD Application Proxy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11 Azure AD Application Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad-application-proxy-functions-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AD Application Proxy functions with:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad-application-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AD Application Proxy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-azure-arc-enabled-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 Azure Arc Enabled Kubernetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12 Azure Arc Enabled Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-enabled-kubernetes-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc Enabled Kubernetes Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-azure-arc-enabled-data-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 Azure Arc Enabled Data Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13 Azure Arc Enabled Data Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-hybrid-cloud-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 Hybrid Cloud Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12 Hybrid Cloud Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-security-is-a-shared-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud security is a shared responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-management-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Management Challenges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-management-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Management Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-update-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-enabled-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc enabled Servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-what-azure-security-center-report-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 What Azure Security Center Report On?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14 What Azure Security Center Report On?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-hybrid-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Hybrid Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-hybrid-security_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Hybrid Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-of-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Overview of Hybrid Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Overview of Hybrid Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-hybrid-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Hybrid Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Hybrid Cloud?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-hybrid-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Hybrid Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Architectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements-of-hybrid-cloud-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elements of Hybrid Cloud Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-elements-of-a-hybrid-cloud-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Elements of a Hybrid Cloud Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolving-to-a-hybrid-posture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolving to a Hybrid Posture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution-azure-automation-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution: Azure Automation Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-solution_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-management-and-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Management and Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-hybrid-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Hybrid Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-in-the-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data in the Hybrid Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-with-hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenges with Hybrid Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hybrid-cloud-identity-and-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Hybrid Cloud Identity and Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Hybrid Cloud Identity and Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn-gateways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN Gateways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-vpn-gateway-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure VPN Gateway Subnets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-the-connection-traverse-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can the connection traverse the internet?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-expressroute-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ExpressRoute (Benefits)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-expressroute-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ExpressRoute (Challenges)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-expressroute-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure ExpressRoute Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-azure-virtual-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Azure Virtual WAN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Azure Virtual WAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-virtual-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Virtual WAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-virtual-wan-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Virtual WAN architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-hybrid-identity-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Hybrid Identity Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Hybrid Identity Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ad-ds-in-azure-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD DS in Azure Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad-ds-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AD DS Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hybrid-cloud-compute-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Hybrid Cloud Compute Workloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Hybrid Cloud Compute Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hybrid-cloud-admin-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Hybrid Cloud Admin Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Hybrid Cloud Admin Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-admin-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Admin Center
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-admin-center-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Admin Center Architectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-hybrid-environment-is-increasingly-complex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders hybrid environment is increasingly complex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-enabled-servers-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc Enabled Servers Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways-for-azure-arc-enabled-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways for Azure Arc enabled Servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expanding-the-azure-stack-portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanding the Azure Stack portfolio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-new-for-azure-stack-hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's new for Azure Stack HCI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailwind-traders-using-hybrid-file-shares-via-azure-file-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders using Hybrid file shares via Azure File Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailwind Traders using Hybrid file shares via Azure File Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-file-sync-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure File Sync Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-azure-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Azure Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Azure Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-backup-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Backup Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-backup-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Backup Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-backup-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Backup Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-on-premises-to-microsoft-azure-protection-with-azure-site-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 On-premises to Microsoft Azure protection with Azure Site Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 On-premises to Microsoft Azure protection with Azure Site Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-site-recovery-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Site Recovery Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-hybrid-cloud-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 Hybrid Cloud Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 Hybrid Cloud Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-azure-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Azure Relay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 Azure Relay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wcf-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WCF Relays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-azure-app-service-hybrid-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Azure App Service Hybrid Connection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 Azure App Service Hybrid Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-app-service-hybrid-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure App Service Hybrid Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-app-service-hybrid-connection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure App Service Hybrid Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-azure-ad-application-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 Azure AD Application Proxy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11 Azure AD Application Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad-application-proxy-functions-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AD Application Proxy functions with:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad-application-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AD Application Proxy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-azure-arc-enabled-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 Azure Arc Enabled Kubernetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12 Azure Arc Enabled Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-enabled-kubernetes-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc Enabled Kubernetes Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-azure-arc-enabled-data-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 Azure Arc Enabled Data Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13 Azure Arc Enabled Data Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-hybrid-cloud-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 Hybrid Cloud Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12 Hybrid Cloud Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-traders-requirements_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind Traders Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-security-is-a-shared-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud security is a shared responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-management-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Management Challenges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-update-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-management-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Management Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-update-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Update Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-enabled-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc enabled Servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-arc-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Arc Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-what-azure-security-center-report-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 What Azure Security Center Report On?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14 What Azure Security Center Report On?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-hybrid-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Hybrid Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-hybrid-security_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Hybrid Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-microsoft-azure-virtual-implementing-hybrid-infrastructure"><strong>1 Microsoft Azure Virtual: Implementing Hybrid Infrastructure</strong></h1>
+<h2 id="1-overview-of-hybrid-cloud"><strong>1 Overview of Hybrid Cloud</strong></h2>
+<h3 id="tailwind-traders-hybrid-strategy">Tailwind Traders Hybrid Strategy</h3>
+<p>Tailwind Traders currently has a multi-national on-premises deployment with aging infrastructure that is running close to capacity.</p>
+<p>Tailwind Traders is slowly and steadily growing. Rather than expand on-premises capacity, they wish to extend their infrastructure into 
+Azure</p>
+<p>Tailwind Traders wants to enhance their on-premises deployment with  appropriate cloud technologies</p>
+<p>Tailwind Traders is looking to achieve optimal balance between workloads hosted on-premises and cloud</p>
+<h3 id="what-is-hybrid-cloud">What is Hybrid Cloud?</h3>
+<p>Hybrid cloud is a stable state <strong>where some workloads are hosted on-premises and other workloads are hosted in the Azure cloud</strong></p>
+<p><strong>Resources on-premises communicate securely and seamlessly with resources in the Azure cloud</strong></p>
+<p>A consistent identity infrastructure is used for authentication and authorization for on-premises and cloud workloads and infrastructure</p>
+<p>A consistent set of tools is used to manage on-premises and cloud workloads and infrastructures</p>
+<p><strong>A consistent set of technologies is used to secure on-premises and cloud resources</strong></p>
+<h3 id="challenge">Challenge:</h3>
+<p>Tailwind Traders currently has Windows Server VM workloads that are dependent on Active Directory Domain Services and custom schema extensions at a number of branch offices</p>
+<p>These workloads are running alongside virtualized AD DS domain controllers 
+on aging virtualization host hardware that is getting close to end of life</p>
+<h3 id="hybrid-solution">Hybrid Solution:</h3>
+<p>Connect TWT branch offices to Azure using <strong>VPN or ExpressRoute</strong></p>
+<p>Deploy Windows Server laS VMs as domain controllers and configure as a new AD DS site in the existing domain</p>
+<p>Migrate the Windows Server VM workloads from the aging virtualization hardware to the Azure subnets with Windows Server laaS domain controllers.</p>
+<p>Workers in these branch offices in multiple countries still require secure access to these workloads</p>
+<p>Migrating the workloads to the head office datacenters doesn’t make sense when the branch offices are half a world away</p>
+<h3 id="hybrid-solution_1">Hybrid Solution:</h3>
+<ul>
+<li>Connect TWT branch offices to Azure using VPN or ExpressRoute</li>
+<li>Deploy Windows Server IaaS VMs as domain controllers and configure as a new AD DS site in the existing domain</li>
+<li>Migrate the Windows Server VM workloads from the aging virtualization hardware to the Azure subnets with Windows Server IaaS domain controllers</li>
+</ul>
+<h3 id="example-hybrid-deployment">Example Hybrid Deployment</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_1.png" title="Body image" /></p>
+<h3 id="hybrid-cloud-architectures">Hybrid Cloud Architectures</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_6.png" title="Body image" /></p>
+<p>Shows how to implement a variety of hybrid solution including:</p>
+<ul>
+<li>Managing configurations for Azure Arc enabled servers</li>
+<li>Azure Automation in a hybrid environment</li>
+<li>Using Azure file shares in a hybrid environment</li>
+<li>Azure Automation Update Management</li>
+<li>Hvbrid file services</li>
+<li><strong>Hybrid Security Monitoring using Azure Security Center and Azure Sentinel</strong></li>
+<li>Run containers in a hybrid environment</li>
+<li>Extend on-premises AD FS to Azure</li>
+<li>Manage hybrid Azure workloads using Windows Admin Center</li>
+<li>Implement a hub-spoke network topology</li>
+<li>Azure Arc hybrid management and deployment for Kubernetes clusters</li>
+<li>Connect an on-premises network to Azure</li>
+<li>Cross cloud scaling</li>
+<li>Integrate on-premises AD domains with Azure AD</li>
+<li>AD DS resource forests in Azure</li>
+</ul>
+<h3 id="challenge_1">Challenge:</h3>
+<p>Tailwind Traders has branch office perimeter networks that host web applications in multiple countries that they wish to decommission</p>
+<p>Several weeks a year during online retail campaigns, the applications are overwhelmed with traffic and fail. Tailwind Traders wants to ensure that in future this demand can be 
+met</p>
+<p>TWT want to implement OSASP filtering and DDOS protection on their web apps without having to manage complex perimeter network firewall configuration</p>
+<h3 id="hybrid-solution_2"><strong>Hybrid Solution:</strong></h3>
+<p>Tailwind Traders can decommission their branch office perimeter networks after moving all externally facing web applications hosted on these networks to Azure</p>
+<p>Protecting web applications from attacks on the OWASP top 10 list as well as implementing DDoS protection is straightforward.</p>
+<p>The web applications can also scale up and down as required as traffic fluctuates</p>
+<h3 id="elements-of-hybrid-cloud-solution">Elements of Hybrid Cloud Solution</h3>
+<p><strong>Management</strong></p>
+<p>Use a consistent set of management tools to manage on-premises and cloud workloads</p>
+<p><strong>Identity</strong></p>
+<p>Use a single identity provider for authorization and authentication</p>
+<p><strong>Networking</strong></p>
+<p>Ensure secure and reliable communication between on-premises and cloud resources</p>
+<p><strong>Security</strong></p>
+<p>Ensure that a single set of tools can be used to monitor and respond to suspicious activity in on-premises and cloud assets</p>
+<p><strong>Fabric</strong></p>
+<p>Ensure that on-premises fabric is managed and maintained as consistently as cloud fabric</p>
+<h3 id="azure-elements-of-a-hybrid-cloud-solution">Azure Elements of a Hybrid Cloud Solution</h3>
+<ul>
+<li><strong>Management</strong></li>
+</ul>
+<p>Azure Portal, Azure Arc, Azure CLI, Windows Admin Center</p>
+<ul>
+<li><strong>Identity</strong></li>
+</ul>
+<p>Azure AD, Azure AD DS, Azure AD Connect</p>
+<ul>
+<li><strong>Security</strong></li>
+</ul>
+<p>Azure Sentinel, Azure Security Center</p>
+<ul>
+<li><strong>Fabric</strong></li>
+</ul>
+<p>Azure Stack HCI, Azure Stack Edge</p>
+<h3 id="challenge_2">Challenge</h3>
+<p>Tailwind Traders needs to keep a large number of VMs on-premises, but has noted that maintaining the virtualization fabric that hosts those virtual machines is increasingly challenging.</p>
+<p>Downtime occasionally occurs because the process of applying operating system updates, device driver updates, and firmware updates is a complicated task for a hyperconverged virtualization infrastructure.</p>
+<h3 id="hybrid-example">Hybrid Example:</h3>
+<p>Tailwind Traders needs to keep a large number of VMs on-premises, but has noted that maintaining the virtualization fabric that hosts those virtual machines is increasingly 
+challenging</p>
+<p>Azure Stack HCI provides TWT with an option of a fully managed virtualization infrastructure where TWT IT operations only has to worry about the virtual machine workloads and doesn’t have to worry about managing and maintaining the 
+infrastructure that supports those workloads</p>
+<h3 id="evolving-to-a-hybrid-posture">Evolving to a Hybrid Posture</h3>
+<ul>
+<li>Hybrid cloud technologies <strong>enhance on-premises deployments</strong></li>
+<li>Many organizations already have hybrid cloud. <strong>They run on-premises workloads while using M365 technologies such as Exchange Online, Teams and Azure web applications</strong></li>
+<li><strong>Choose cloud technologies that make your organization successful whilst keeping the parts of on-premises that still do what you need</strong></li>
+</ul>
+<h3 id="hybrid-solution-azure-automation-update-management">Hybrid Solution: Azure Automation Update Management</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_2.png" title="Body image" /></p>
+<h3 id="challenge_3"><strong>Challenge:</strong></h3>
+<p>In the past, Tailwind Traders spent a substantive amount of time auditing the configuration of their Windows Server and Linux workloads to determine if they had drifted from a baseline that ensured compliance with various standards such as ISO 
+27001 and PCI DSS 3.2.1</p>
+<h3 id="hybrid-solution_3"><strong>Hybrid Solution</strong></h3>
+<p><strong>By using Azure Arc, Azure Policy, and Azure Security Center,</strong> Tailwind Traders will be able to identify non-compliant workloads, remediate those workloads, and then verify that those workloads are now compliant with third party standards.</p>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_17.png" title="Body image" /></p>
+<h3 id="hybrid-cloud-management-and-governance">Hybrid Cloud Management and Governance</h3>
+<p><strong>Azure Arc and Azure Policy</strong> can be <strong>used to ensure that hybrid workloads are configured in a specific manner</strong></p>
+<p><strong>Role Based Access Control</strong> can be <strong>implemented in hybrid environments to ensure that only authorized users can perform specific administrative actions</strong></p>
+<p>Tagging can be implemented so that workloads related to specific projects can be identified whether they reside on-premises or in Azure</p>
+<h3 id="tailwind-challenge"><strong>Tailwind Challenge</strong></h3>
+<p>An ongoing challenge for Tailwind Traders is that they were constantly running out of disk space on their file servers.</p>
+<p>This meant that every few months, an administrator would need to make an assessment of which files could be safely removed and transferred to long term storage on tape</p>
+<p>Occasionally it also meant that administrators might have to retrieve a file from long term tape storage when it was required</p>
+<p><strong>File share replication using DFS worked most of the time, but not all of the time</strong></p>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_3.png" title="Body image" /></p>
+<h3 id="tailwind-hybrid-solution"><strong>Tailwind Hybrid Solution</strong></h3>
+<ul>
+<li>Tailwind Traders <strong>implemented Azure File Sync on each file server and turned on cloud tiering</strong>.</li>
+<li>They configured Azure File Sync to automatically tier all files that haven't been accessed in 30 days up to an Azure File Share.</li>
+<li><strong>Tiered files appear to the user to be still present on the file share</strong>. If a user accesses a tiered file, it is automatically replicated down to the file share and opens normally for the user</li>
+<li><strong>Additional file servers can be added to the sync group. These additional servers can host replicas of the Azure File Share</strong></li>
+<li><strong>This file share can automatically be backed each day</strong></li>
+</ul>
+<h3 id="data-in-the-hybrid-cloud"><strong>Data in the Hybrid Cloud</strong></h3>
+<p>Hybrid cloud allows the cheap and functionally limitless storage
+capacity of the cloud to act as storage for cold data</p>
+<p>Cold data can be placed on less performant, but much cheaper,
+storage tiers</p>
+<p><strong>Azure File Sync can be configured to automatically tier cold data to an Azure File Share</strong></p>
+<h3 id="hybrid-cloud-best-practices"><strong>Hybrid Cloud Best Practices</strong></h3>
+<ul>
+<li><strong>Use a consistent set of management tools for on-premises and cloud workloads</strong></li>
+<li><strong>Ensure that consistent security policies are applied to hybrid workloads</strong></li>
+<li>Backup and Disaster Recovery is critical for on-premises and cloud
+workloads</li>
+<li>Track workload costs on-premises and in cloud</li>
+<li><strong>Understand a workload's lifecycle</strong></li>
+</ul>
+<h3 id="challenges-with-hybrid-cloud"><strong>Challenges with Hybrid Cloud</strong></h3>
+<ul>
+<li>When adopting hybrid cloud, ensure that the environment doesn't become so complicated that it becomes unmanageable</li>
+<li>Ensure that workloads are hosted in the appropriate location from the
+perspective of cost, governance and compliance</li>
+<li><strong>Migrating a VM is only the first step in migrating that workload to the cloud.</strong> It is eventually necessary to migrate the application to a Paas service to take full advantage of what the cloud offers</li>
+</ul>
+<h2 id="2-hybrid-cloud-identity-and-networking"><strong>2 Hybrid Cloud Identity and Networking</strong></h2>
+<p><strong>Hybrid</strong></p>
+<ul>
+<li>Keep some workloads on-premises</li>
+<li>Move some workloads to Azure</li>
+</ul>
+<p><strong>Communication</strong></p>
+<ul>
+<li>Between on-prem &amp; Azure</li>
+<li>Secure &amp; reliable</li>
+</ul>
+<h3 id="tailwind-traders-requirements">Tailwind Traders Requirements</h3>
+<p>How does TWT connect branch offices to resources and workloads in Azure datacenters without making those resources available to the public internet?</p>
+<p>How does TWT ensure that network traffic from specific offices to specific workloads and resources in Azure doesn't cross the public internet?</p>
+<p>How can TWT simplify its network topology when routing traffic between branch offices?</p>
+<p>How can TWT restrict access to resources and workloads in Azure datacenters 
+using on-premises identity?</p>
+<h3 id="azure-vpn">Azure VPN</h3>
+<ul>
+<li><strong>On-premises gateway device required</strong></li>
+<li>MSFT guarantees 99.9% availability for only the VPN gateway</li>
+<li><strong>No guarantee on reliability of the connection to the gateway across the internet</strong></li>
+<li>Maximum bandwidth per VPN connection is up to 1 Gbps</li>
+<li>May be necessary to have multiple connections</li>
+<li>Encrypted traffic passes across public internet</li>
+</ul>
+<h3 id="azure-vpn-architecture">Azure VPN Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_4.png" title="Body image" /></p>
+<h3 id="azure-vpn-gateways">Azure VPN Gateways</h3>
+<p>Includes the following elements:</p>
+<ul>
+<li><strong>Virtual network gateway.</strong> A virtual VPN appliance for the Vet. Routes encrypted traffic from the on-premises network to the VNet.</li>
+<li><strong>Local network gateway.</strong> Represents the on-premises VPN appliance. Routes traffic from the on-premises network to Azure.</li>
+<li><strong>Connection</strong>. The properties that determine the connection type (IPsec) and the key shared with on-premises VPN appliance to encrypt traffic</li>
+<li><strong>Gateway subnet.</strong> A special subnet that hosts the virtual network gateway</li>
+</ul>
+<h3 id="azure-vpn-gateway-subnets">Azure VPN Gateway Subnets</h3>
+<p>Hosts the IP addresses that the virtual network gateway VMs and services use</p>
+<p>Hints:</p>
+<ul>
+<li>Do not deploy workloads to the gateway subnet</li>
+<li>Must be named GatewaySubnet to function</li>
+<li>Recommended that it be created as a <code>/26</code>, <code>/27</code> or <code>/28</code></li>
+<li>Don't apply an NSG to the gateway subnet</li>
+</ul>
+<pre><code>Add-AzVirtualNetworkSubnetConfig-Name
+'GatewaySubnet'
+-AddressPrefix172.16.3.0/27
+</code></pre>
+<h3 id="can-the-connection-traverse-the-internet">Can the connection traverse the internet?</h3>
+<ul>
+<li>Compliance</li>
+<li>Requlation</li>
+</ul>
+<h3 id="azure-expressroute-benefits">Azure ExpressRoute (Benefits)</h3>
+<ul>
+<li>Up to 10 Gbps*</li>
+<li><strong>Supports dynamic scaling of bandwidth to reduce costs</strong>*</li>
+<li>Allows direct access to national cloud*</li>
+<li>Traffic does not pass across public internet</li>
+<li>99.9% availability SLA of entire connection</li>
+</ul>
+<h3 id="azure-expressroute-challenges">Azure ExpressRoute (Challenges)</h3>
+<ul>
+<li>Not available all locations</li>
+<li>Can be complex to configure</li>
+<li>Third party connectivity provider is responsible for provisioning network</li>
+<li>Requires high bandwidth network equipment on-premises</li>
+</ul>
+<h3 id="azure-expressroute-architecture">Azure ExpressRoute Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_5.png" title="Body image" /></p>
+<h2 id="3-azure-virtual-wan"><strong>3 Azure Virtual WAN</strong></h2>
+<ul>
+<li><strong>Provides</strong> branch to branch connectivity <strong>through Azure</strong></li>
+<li><strong>Automatic Site-to-Site configuration and connectivity between on-premises sites and an Azure Hub</strong></li>
+<li>Automated <strong>spoke setup and configuration</strong></li>
+<li><strong>Built in Azure dashboard to provide troubleshooting insights and view large scale connectivity</strong></li>
+</ul>
+<h3 id="azure-virtual-wan"><strong>Azure Virtual WAN</strong></h3>
+<ul>
+<li><strong>Up to 1000 connections are supported per virtual hub</strong></li>
+<li><strong>Each connection has two tunnels</strong> in an <strong>active-active configuration</strong></li>
+<li><strong>On premises VPN devices can connect to multiple Azure Virtual WAN hubs</strong></li>
+</ul>
+<h3 id="azure-virtual-wan-architecture">Azure Virtual WAN architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_6.png" title="Body image" /></p>
+<h2 id="4-hybrid-identity-options"><strong>4 Hybrid Identity Options</strong></h2>
+<p><strong>AD DS in Azure</strong></p>
+<ul>
+<li>Deploy AD DS domain controllers in Azure as separate site, forest or domain</li>
+<li>Connect to on-premises environment using a VPN</li>
+</ul>
+<p><strong>Azure AD Connect</strong></p>
+<ul>
+<li>Synchronize on-premises identities to Azure AD</li>
+<li>Azure resources use Azure AD for authentication and authorization</li>
+</ul>
+<p><strong>Azure AD DS</strong></p>
+<ul>
+<li>AD DS domain controllers "as a service"</li>
+<li>Provides domain join and login with Azure AD accounts without requiring AD DS DC VMs</li>
+</ul>
+<h3 id="ad-ds-in-azure-architecture">AD DS in Azure Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_7.png" title="Body image" /></p>
+<h3 id="azure-ad-ds-architecture">Azure AD DS Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_8.png" title="Body image" /></p>
+<h3 id="demo">Demo</h3>
+<p>Sign on to Azure VM with On-Premises Credentials</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>TWT can use Azure VPN and ExpressRoute to connect branch offices</strong> to resources and workloads in Azure datacenters without making those resources available to the public internet</li>
+<li>TWT can use Azure ExpressRoute to ensure that network traffic from specific offices to specific workloads and resources in Azure doesn't cross the public internet</li>
+<li>TWT can use Azure Virtual WAN to simplify its network topology when routing traffic between branch offices</li>
+</ul>
+<h2 id="5-hybrid-cloud-compute-workloads"><strong>5 Hybrid Cloud Compute Workloads</strong></h2>
+<h3 id="tailwind-traders-requirements_1"><strong>Tailwind Traders Requirements</strong></h3>
+<p>What tools can TWT use to consistently manage Windows Server workloads in a hybrid cloud environment?</p>
+<p>How does TWT apply policy to compute workloads in a hybrid cloud environment?</p>
+<p>How can TWT simplify the management and maintenance of its on-premises virtualization fabric?</p>
+<p>How can TWT make file servers more efficient in a hybrid cloud environment?</p>
+<p>How can TWT simplify its disaster recovery strategy for Windows Server workloads in hybrid environments?</p>
+<h2 id="6-hybrid-cloud-admin-management"><strong>6 Hybrid Cloud Admin Management</strong></h2>
+<h3 id="windows-admin-center">Windows Admin Center</h3>
+<ul>
+<li>Web based console</li>
+<li>Gateway server on-premises and in cloud</li>
+<li>Remote Desktop and PowerShell sessions to managed computers</li>
+<li>Available in Azure Portal (Preview)</li>
+</ul>
+<h3 id="windows-admin-center-architectures">Windows Admin Center Architectures</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_9.png" title="Body image" /></p>
+<h3 id="tailwind-traders-hybrid-environment-is-increasingly-complex">Tailwind Traders hybrid environment is increasingly complex</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_10.png" title="Body image" /></p>
+<h3 id="azure-management">Azure Management</h3>
+<blockquote>
+<p>Single Control Plane for Azure resources</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_11.png" title="Body image" /></p>
+<blockquote>
+<p>Single Control Plane for resources everywhere</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_111.png" title="Body image" /></p>
+<h3 id="azure-arc-enabled-servers-architecture">Azure Arc Enabled Servers Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_12.png" title="Body image" /></p>
+<h3 id="key-takeaways-for-azure-arc-enabled-servers">Key takeaways for Azure Arc enabled Servers</h3>
+<p><strong>Inventory</strong></p>
+<ul>
+<li>Windows and Linux servers</li>
+<li>Physical and virtual machines</li>
+<li>Private datacenter and other hosted cloud</li>
+<li>Domain agnostic</li>
+</ul>
+<p><strong>Governance and security</strong></p>
+<ul>
+<li>Available built-in policies</li>
+<li>manage Azure and Azure Arc servers</li>
+<li>Security baseline policy</li>
+<li>One place to view compliance</li>
+</ul>
+<p><strong>Role based access</strong></p>
+<ul>
+<li>Central IT at scale operations</li>
+<li>Workload owners manage based on their access</li>
+<li>Lighthouse for MSPs</li>
+<li>Resource centric log access</li>
+</ul>
+<p><strong>One central place to manage at-scale</strong></p>
+<ul>
+<li>Searchable inventory</li>
+<li>Consistent experience through the Portal</li>
+<li>Organize resources using Tag</li>
+</ul>
+<h2 id="azure-stack">Azure Stack</h2>
+<h3 id="expanding-the-azure-stack-portfolio">Expanding the Azure Stack portfolio</h3>
+<ul>
+<li><strong>Azure Stack Edge</strong>  Cloud-managed appliance</li>
+<li><strong>Azure Stack HCI</strong>  Hyperconverged infrastructure</li>
+<li><strong>Azure Stack Hub</strong>  Cloud-native integrated system</li>
+</ul>
+<h3 id="whats-new-for-azure-stack-hci">What's new for Azure Stack HCI</h3>
+<p><strong>Hyperconverged infrastructure stack</strong></p>
+<ul>
+<li>Specialized host operating system</li>
+<li>Native disaster recovery</li>
+<li>Faster Storage Spaces resync</li>
+<li>Full-stack updates</li>
+</ul>
+<p><strong>Delivered as an Azure hybrid service</strong></p>
+<ul>
+<li>Native integration, no agent</li>
+<li>Manage in Azure Portal</li>
+<li>Dedicated team in Azure Support</li>
+<li>Modern subscription billing</li>
+</ul>
+<p><strong>Familiar for IT to manage and operate</strong></p>
+<ul>
+<li>Choose and customize hardware</li>
+<li>Familiar edge-local tools</li>
+<li>PowerShell, SC VMM, Altaro Backup</li>
+<li>Full administrator control</li>
+</ul>
+<h2 id="tailwind-traders-using-hybrid-file-shares-via-azure-file-sync"><strong>Tailwind Traders using Hybrid file shares via Azure File Sync</strong></h2>
+<ul>
+<li>Cloud Tiering</li>
+<li>Cloud Access</li>
+<li>Multi-site Sync</li>
+<li>Cloud Backup</li>
+<li>Rapid File Server DR</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_13.png" title="Body image" /></p>
+<h3 id="azure-file-sync-architecture">Azure File Sync Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_14.png" title="Body image" /></p>
+<h2 id="7-azure-backup"><strong>7 Azure Backup</strong></h2>
+<ul>
+<li>Backup and restore data in hybrid environments to Azure</li>
+<li><strong>Azure Backup automatically allocates and manages backup storage</strong></li>
+<li>Unlimited scale and highly available (LRS or GRS)</li>
+<li>No charge (by backup) for regular backup data transfer</li>
+<li>Pay-as-you-use model</li>
+</ul>
+<h3 id="azure-backup-encryption">Azure Backup Encryption</h3>
+<ul>
+<li>
+<p>On-premises, data in transit is encrypted on the on-premises machine using AES256</p>
+</li>
+<li>
+<p>For on-premises to Azure backup, data in Azure is encrypted at-rest using the passphrase you provide when you set up backup</p>
+</li>
+<li>
+<p>For Azure VMs, data is encrypted at-reset using Storage Service Encryption</p>
+</li>
+</ul>
+<h3 id="backup-properties">Backup Properties</h3>
+<ul>
+<li>Application consistent backup</li>
+<li>No limit on amount of time data is stored in a recovery vault</li>
+<li>A limit of 9999 recovery points per protected instance</li>
+<li>Azure Backup Options<ul>
+<li>Azure Backup Agent</li>
+<li>Azure Backup Server</li>
+<li>Azure laaS VM Backup (including SQL on Windows laS VM)</li>
+<li>Azure File Share Backup </li>
+</ul>
+</li>
+</ul>
+<h3 id="azure-backup-server">Azure Backup Server</h3>
+<ul>
+<li><strong>Back up and restore VMware VMs</strong></li>
+</ul>
+<p>Windows &amp; Linux</p>
+<ul>
+<li><strong>Backs Up</strong></li>
+</ul>
+<p>Files, Folders, volumes, VMs, Applications, System State</p>
+<ul>
+<li>
+<p><strong>Backs up to</strong></p>
+</li>
+<li>
+<p>Recovery Services vault,</p>
+</li>
+<li>
+<p>Locally attached disk</p>
+</li>
+<li>
+<p><strong>Application-aware snapshots (VSS)</strong></p>
+</li>
+<li><strong>Full flexibility for when to take backups</strong></li>
+<li><strong>Recovery granularity (all)</strong></li>
+</ul>
+<h3 id="azure-backup-architecture">Azure Backup Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_112.png" title="Body image" /></p>
+<h2 id="8-on-premises-to-microsoft-azure-protection-with-azure-site-recovery"><strong>8 On-premises to Microsoft Azure protection with Azure Site Recovery</strong></h2>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_18.png" title="Body image" /></p>
+<h3 id="azure-site-recovery-architecture">Azure Site Recovery Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_19.png" title="Body image" /></p>
+<h3 id="summary_1">Summary</h3>
+<p>TWT can use <strong>Windows Admin Center</strong> to consistently <strong>manage Windows Server</strong> workloads in a hybrid cloud environment</p>
+<p>TWT can use <strong>Azure Arc</strong> to provide a <strong>single control plane</strong> to compute workloads in a hybrid cloud environment?</p>
+<p>TWT can deploy <strong>Azure Stack HCI</strong> to simplify the management and maintenance of its on-premises <strong>virtualization fabric</strong></p>
+<p>TWT can use <strong>Azure File Sync</strong> to make file servers more efficient in a hybrid cloud environment</p>
+<p>TWT can simplify its disaster recovery strategy for Windows Server workloads in hybrid environments using <strong>Azure Backup and Azure Site Recovery</strong></p>
+<h3 id="additional-resources">Additional resources</h3>
+<ul>
+<li><strong>Windows Admin Center</strong>： <a href="https://www.aka.ms/OPS-WAC">https://www.aka.ms/OPS-WAC</a></li>
+<li><strong>Azure Arc</strong>： <a href="https://www.aka.ms/OPS-ARC">https://www.aka.ms/OPS-ARC</a></li>
+<li><strong>Azure Stack HCI</strong> <a href="https://www.aka.ms/OPS-HCI">https://www.aka.ms/OPS-HCI</a> </li>
+<li><strong>Azure File Sync</strong> <a href="https://www.aka.ms/OPS-FILESYNC">https://www.aka.ms/OPS-FILESYNC</a></li>
+<li><strong>Azure Backup</strong> <a href="https://www.aka.ms/OPS-BACKUP">https://www.aka.ms/OPS-BACKUP</a></li>
+<li><strong>Azure Site Recovery</strong> <a href="https://www.aka.ms/OPS-ASR">https://www.aka.ms/OPS-ASR</a></li>
+</ul>
+<h2 id="9-hybrid-cloud-applications"><strong>9 Hybrid Cloud Applications</strong></h2>
+<h3 id="tailwind-traders-requirements_2"><strong>Tailwind Traders Requirements</strong></h3>
+<p>How can TWT make internal applications available to internet 
+without opening inbound port on perimeter firewall</p>
+<p>How can TWT retire current perimeter network and reverse proxy</p>
+<p>How does TWT allow Azure Web App to use on-premises data 
+source</p>
+<p>How can TWT simplify management of on-premises Kubernetes 
+clusters</p>
+<p>How can TWT simplify management of on-premises SQL and 
+PostgreSQL instances</p>
+<h3 id="hybrid-cloud-applications">Hybrid Cloud Applications</h3>
+<p>Applications that have one tier in the cloud and another on-premises</p>
+<p>Allows organizations to retire perimeter network whilst keeping 
+some applications in on-premises datacenters</p>
+<p><strong>Allow application access to application hosted on on-premises  internal network without requiring a VPN</strong></p>
+<h2 id="10-azure-relay"><strong>10 Azure Relay</strong></h2>
+<ul>
+<li><strong>Allows you to securely expose workloads running on internal  network to public cloud</strong></li>
+<li><strong>Does not require opening inbound port on perimeter network  firewall</strong></li>
+<li><strong>Allows applications to be published to internet clients without configuring VPN connection</strong></li>
+<li>Use instead of Azure AD Application Proxy when application doesn’t require Azure AD authentication</li>
+</ul>
+<p>Supports the following scenarios between on-premises services and  applications running in Azure:</p>
+<ul>
+<li>Traditional one-way, request/response, and peer-to-peer communication.</li>
+<li>Event distribution to enable publish/subscribe scenarios.</li>
+<li>Bidirectional and unbuffered socket communication across network boundaries.</li>
+</ul>
+<h3 id="hybrid-connections"><strong>Hybrid Connections</strong></h3>
+<p>Hybrid Connections uses the open-standard web sockets and can be used in multiplatform architectures</p>
+<p>Supports <code>.NET</code> Core, <code>.NET</code> Framework, Java script/Node.JS, standards-based open protocols, and  remote procedure call (RPC) programming models.</p>
+<h3 id="wcf-relays"><strong>WCF Relays</strong></h3>
+<p>WCF Relays uses Windows Communication Foundation (WCF) to enable remote procedure calls. </p>
+<p>This is an existing option that many customers use with their WCF programs. It also supports WCF Relay and <code>.NET</code> Framework.</p>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_20.png" title="Body image" /></p>
+<h2 id="10-azure-app-service-hybrid-connection"><strong>10 Azure App Service Hybrid Connection</strong></h2>
+<h3 id="azure-app-service-hybrid-connection">Azure App Service Hybrid Connection</h3>
+<p>Allows you to connect an Azure Web App to an application resource on any network that is able to send outbound requests to Azure on  port 443</p>
+<p>Can communicate with any resource provided it can function as a  TCP endpoint</p>
+<p>Use a relay agent that is able to connect to internal network as well as establish connection to Azure</p>
+<p>Not necessary to open inbound port on perimeter network firewall</p>
+<p>Doesn’t require VPN or ExpressRoute connection</p>
+<h3 id="azure-app-service-hybrid-connection_1">Azure App Service Hybrid Connection</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_21.png" title="Body image" /></p>
+<h2 id="11-azure-ad-application-proxy"><strong>11 Azure AD Application Proxy</strong></h2>
+<ul>
+<li>Provide secure remote access to web application running on onpremises network through an external URL</li>
+<li>Can be used as a replacement for reverse proxies or VPNs</li>
+<li>Can be configured to allow remote access and single sign-on to:</li>
+</ul>
+<h3 id="azure-ad-application-proxy-functions-with">Azure AD Application Proxy functions with:</h3>
+<p>Web applications that use Integrated Windows Authentication</p>
+<p>Web applications that use header-based or form-based 
+authentication</p>
+<p>Applications hosted through Remote Desktop Gateway</p>
+<p>On premises SharePoint</p>
+<h3 id="azure-ad-application-proxy"><strong>Azure AD Application Proxy</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_22.png" title="Body image" /></p>
+<h2 id="12-azure-arc-enabled-kubernetes">12 Azure Arc Enabled Kubernetes</h2>
+<p>Allows management of Kubernetes clusters through Azure Portal</p>
+<p>Connect Kubernetes clusters outside of Azure for inventory, grouping, and tagging tasks</p>
+<p>Deploy applications and apply configurations to Kubernetes clusters using GitOps-based configuration management</p>
+<p>Use Azure Monitor for Containers to review and monitor hybrid Kubernetes clusters</p>
+<p>Apply Azure Policy for Kubernetes Policies to hybrid Kubernetes clusters</p>
+<h3 id="azure-arc-enabled-kubernetes-architecture"><strong>Azure Arc Enabled Kubernetes Architecture</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_23.png" title="Body image" /></p>
+<h2 id="13-azure-arc-enabled-data-services"><strong>13 Azure Arc Enabled Data Services</strong></h2>
+<ul>
+<li>
+<p>Allows organizations to run Azure Database for PostgreSQL Servers 
+and SQL Managed Instances on premises</p>
+</li>
+<li>
+<p>Managed through Azure Data Studio, Azure Portal, or Azure CLI</p>
+</li>
+<li>
+<p>Automates the patching and update processes for these onpremises database instances</p>
+</li>
+<li>
+<p>Applies database advanced threat protection functionality in Azure 
+Security Center for managed SQL instances on-premises</p>
+</li>
+<li>
+<p>Uses container and Kubernetes services to host managed database 
+instances</p>
+</li>
+</ul>
+<h3 id="summary_2">Summary</h3>
+<ul>
+<li>
+<p>Azure Relay makes internal applications available to internet without 
+opening inbound port on perimeter firewall</p>
+</li>
+<li>
+<p>Azure AD Application proxy allows TWT to retire reverse proxy</p>
+</li>
+<li>
+<p>Azure App Service Hybrid Connection allows Azure Web App to use 
+on-premises data source</p>
+</li>
+<li>
+<p>Azure Arc enabled Kubernetes simplifies management of onpremises Kubernetes clusters</p>
+</li>
+<li>
+<p>Azure Arc enabled data services simplify management of onpremises SQL and PostgreSQL instances</p>
+</li>
+</ul>
+<h3 id="additional-resources_1"><strong>Additional resources</strong></h3>
+<ul>
+<li><strong>Azure Relay</strong> <a href="https://learn.microsoft.com/en-us/azure/azure-relay/relay-what-is-it">https://learn.microsoft.com/en-us/azure/azure-relay/relay-what-is-it</a></li>
+<li><strong>Azure App Service Hybrid Connections</strong>  <a href="https://learn.microsoft.com/en-us/azure/app-service/app-service-hybrid-connections">https://learn.microsoft.com/en-us/azure/app-service/app-service-hybrid-connections</a></li>
+<li><strong>Azure AD Application Proxy</strong>  <a href="https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/application-proxy">https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/application-proxy</a></li>
+<li><strong>Azure ARC enabled Kubernetes</strong> <a href="https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/overview">https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/overview</a></li>
+<li><strong>Azure ARC enabled data services</strong> <a href="https://learn.microsoft.com/en-us/azure/azure-arc/data/overview">https://learn.microsoft.com/en-us/azure/azure-arc/data/overview</a></li>
+</ul>
+<h2 id="12-hybrid-cloud-security"><strong>12 Hybrid Cloud Security</strong></h2>
+<h3 id="tailwind-traders-requirements_3">Tailwind Traders Requirements</h3>
+<ul>
+<li>How can TWT ensure that all hybrid cloud compute workloads have the <strong>most recent software updates</strong> installed?</li>
+<li>How can TWT be alerted if hybrid cloud compute workloads have <strong>non-compliant configurations</strong>?</li>
+<li>How can TWT know if important files on hybrid cloud compute workloads <strong>have been altered</strong>?</li>
+<li>How can TWT <strong>be alerted if suspicious security events</strong> are written to event logs on hybrid cloud operating system workloads?</li>
+</ul>
+<h3 id="cloud-security-is-a-shared-responsibility">Cloud security is a shared responsibility</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_24.png" title="Body image" /></p>
+<h3 id="update-management-challenges">Update Management Challenges</h3>
+<p>Both <strong>physical and virtual machines</strong>, both <strong>on-prem and Cloud</strong>, running Windows or Linux remain current with software updates</p>
+<p>Ability to <strong>determine update compliancy</strong></p>
+<p>Centralize deployment of software updates</p>
+<h3 id="azure-update-management">Azure Update Management</h3>
+<p>Checks update compliance of their Windows and Linux computers, both on-prem and in Azure IaaS</p>
+<p>Can deploy and install software updates to Windows and Linux computers, both on-prem and in Azure IaaS</p>
+<p>Avoids having to use different products depending on operating system or location</p>
+<h3 id="update-management-architecture">Update Management Architecture</h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_25.png" title="Body image" /></p>
+<h3 id="azure-update-management_1">Azure Update Management</h3>
+<p><strong>Assess update status of servers across your environment</strong></p>
+<ul>
+<li>Windows, Linux</li>
+<li>Azure, other cloud, on-prem Deploy updates</li>
+<li>Custom approval criteria</li>
+<li>Single pane of glass</li>
+<li>Automated periodic deployment</li>
+</ul>
+<h3 id="azure-arc-enabled-servers">Azure Arc enabled Servers</h3>
+<ul>
+<li>
+<p><strong>Inventory</strong></p>
+<ul>
+<li>Windows and Linux servers</li>
+<li>Physical and virtual  machines</li>
+<li>Private datacenter and other hosted cloud</li>
+<li>Domain agnostic</li>
+</ul>
+</li>
+<li>
+<p><strong>Governance and security</strong></p>
+<ul>
+<li>Available built-in policies manage Azure and Azure Arc servers</li>
+<li>Security baseline policy One place to view compliance</li>
+</ul>
+</li>
+<li>
+<p>Role based access</p>
+<ul>
+<li>Central IT at scale operations    </li>
+<li>Workload owners manage based on their access Lighthouse for MSPs</li>
+<li>Resource centric log access</li>
+</ul>
+</li>
+<li>
+<p><strong>One central place to manage at-scale</strong></p>
+<ul>
+<li>Searchable inventory</li>
+<li>Consistent experience through the Portal</li>
+<li>Organize resources using Tag</li>
+</ul>
+</li>
+</ul>
+<h3 id="azure-arc-configuration"><strong>Azure Arc Configuration</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_26.png" title="Body image" /></p>
+<h2 id="14-what-azure-security-center-report-on"><strong>14 What Azure Security Center Report On?</strong></h2>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_27.png" title="Body image" /></p>
+<h3 id="monitoring-hybrid-security"><strong>Monitoring Hybrid Security</strong></h3>
+<p><strong>Agents are deployed on hybrid operating system workloads</strong></p>
+<p>Windows Security Events Connector stream Windows security events to Azure Sentinel</p>
+<p>Connector for Microsoft Defender for Identity can stream on premises AD DS telemetry to Azure 
+Sentinel</p>
+<p>Connector for Microsoft Defender for Endpoint can stream alerts for Microsoft Defender for 
+Endpoint into Azure Sentinel</p>
+<p>Connectors for Linux operating systems can forward Syslog and CEF data to Azure Sentinel</p>
+<p><strong>Azure Sentinel analyzes telemetry to detect, hunt, prevent, and respond to threats against hybrid operating system workloads</strong></p>
+<h3 id="monitoring-hybrid-security_1"><strong>Monitoring Hybrid Security</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/chap6_1_28.png" title="Body image" /></p>
+<h3 id="summary_3">Summary</h3>
+<p>TWT can use <strong>Azure Update Management</strong> to ensure that all hybrid cloud compute workloads have the most recent software updates installed</p>
+<p>TWT can use <strong>Azure Arc enabled Servers</strong> to be alerted if hybrid cloud compute workloads have non-compliant configurations?</p>
+<p>TWT can use <strong>Azure Security Center</strong> to be notified if modifications are made to important files on hybrid cloud operating system workloads</p>
+<p>TWT can use <strong>Azure Sentinel</strong> to be alerted if suspicious security events are written to event logs on hybrid cloud operating system workloads</p>
+<h3 id="additional-resources_2">Additional resources</h3>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-update-mgmt?WT.mc_id=modinfra-11034-thmaure"><strong>Azure Automation Update Management</strong></a> </li>
+<li><a href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/supported-machines-endpoint-solutions-clouds-containers?WT.mc_id=modinfra-11034-thmaure&amp;tabs=azure-aks"><strong>Azure Security Center</strong></a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/architecture/hybrid/hybrid-security-monitoring?WT.mc_id=modinfra-11034-thmaure"><strong>Monitoring Hybrid Security</strong></a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-hybrid-config"><strong>Azure Arc Configuration Management</strong></a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

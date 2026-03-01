@@ -1,0 +1,6294 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../3ai102/">
+      
+      
+        <link rel="next" href="../4ai102/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>AI-102 Complete SDK Summary - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-102-complete-sdk-summary" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI-102 Complete SDK Summary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision-speech-language-conversational-ai-form-recognizer-cognitive-search-bot-framework-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Computer Vision, Speech, Language, Conversational AI, Form Recognizer, Cognitive Search, Bot Framework SDK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-computer-vision-sdk-azureaivision-azurecognitiveservicesvision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 1. Computer Vision SDK (Azure.AI.Vision / Azure.CognitiveServices.Vision)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 1. Computer Vision SDK (Azure.AI.Vision / Azure.CognitiveServices.Vision)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-image-tagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Image Tagging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Image Tagging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-smart-cropping-thumbnail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Smart Cropping / Thumbnail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-ocr-read-api-async-loop-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 OCR &amp; Read API (ASYNC LOOP PATTERN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-speech-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 2. Speech SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 2. Speech SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-speech-to-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Speech-to-Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-text-to-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Text-to-Speech
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-speech-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Speech Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-streaming-mp3-speech-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Streaming MP3 Speech Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-custom-neural-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Custom Neural Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-form-recognizer-document-intelligence-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 3. Form Recognizer / Document Intelligence SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 3. Form Recognizer / Document Intelligence SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyze-pdfs-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyze PDFs, images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-azure-ai-language-service-sdks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 4. Azure AI Language Service SDKs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 4. Azure AI Language Service SDKs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-text-analytics-sentiment-ner-pii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Text Analytics (Sentiment, NER, PII)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-conversational-language-understanding-clu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Conversational Language Understanding (CLU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDK packages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-language-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Language Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-active-learning-luis-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Active Learning (LUIS Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-phrase-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Phrase Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-handle-none-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Handle "None" Intent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-azure-cognitive-search-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 5. Azure Cognitive Search SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 5. Azure Cognitive Search SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-field-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Field attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-use-in-indexers-with-form-recognizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Use in indexers with Form Recognizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Throttling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bot-framework-sdk-c-or-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 6. Bot Framework SDK (C# or Python)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 6. Bot Framework SDK (C# or Python)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61-qna-maker-question-answering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 QnA Maker / Question Answering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-reset-conversation-after-inactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Reset conversation after inactivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-bot-with-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Bot with Speech
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-containers-luis-cognitive-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 7. Containers (LUIS / Cognitive Services)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 7. Containers (LUIS / Cognitive Services)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-run-a-luis-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps to run a LUIS container:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-what-to-memorize-for-the-exam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Final: What to Memorize for the Exam
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-102-sdk-flashcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎴 AI-102 SDK Flashcards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎴 AI-102 SDK Flashcards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟥 Computer Vision SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-1-create-vision-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-1 — Create Vision Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-2-generate-image-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-2 — Generate Image Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-3-tag-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-3 — Tag Image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-4-read-ocr-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-4 — Read OCR Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-5-read-operation-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-5 — Read Operation IDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-6-ocr-result-status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-6 — OCR Result Status Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-7-smart-thumbnail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-7 — Smart Thumbnail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-8-model-domain-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-8 — Model Domain Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speech-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Speech SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🟦 Speech SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sp-1-initialize-speech-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-1 — Initialize Speech Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-2-stt-speech-to-text-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-2 — STT (Speech-to-Text) Basic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-3-recognize-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-3 — Recognize Once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-4-tts-text-to-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-4 — TTS (Text-to-speech)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-5-streaming-audio-mp3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-5 — Streaming Audio (MP3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-6-speech-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-6 — Speech Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-7-custom-neural-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-7 — Custom Neural Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision-speech-language-conversational-ai-form-recognizer-cognitive-search-bot-framework-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Computer Vision, Speech, Language, Conversational AI, Form Recognizer, Cognitive Search, Bot Framework SDK)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-computer-vision-sdk-azureaivision-azurecognitiveservicesvision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 1. Computer Vision SDK (Azure.AI.Vision / Azure.CognitiveServices.Vision)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 1. Computer Vision SDK (Azure.AI.Vision / Azure.CognitiveServices.Vision)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-image-tagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Image Tagging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Image Tagging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-smart-cropping-thumbnail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Smart Cropping / Thumbnail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-ocr-read-api-async-loop-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 OCR &amp; Read API (ASYNC LOOP PATTERN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-speech-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 2. Speech SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 2. Speech SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-speech-to-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Speech-to-Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-text-to-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Text-to-Speech
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-speech-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Speech Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-streaming-mp3-speech-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Streaming MP3 Speech Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-custom-neural-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Custom Neural Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-form-recognizer-document-intelligence-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 3. Form Recognizer / Document Intelligence SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 3. Form Recognizer / Document Intelligence SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyze-pdfs-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyze PDFs, images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-azure-ai-language-service-sdks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 4. Azure AI Language Service SDKs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 4. Azure AI Language Service SDKs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-text-analytics-sentiment-ner-pii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Text Analytics (Sentiment, NER, PII)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-conversational-language-understanding-clu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Conversational Language Understanding (CLU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDK packages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-language-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Language Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-active-learning-luis-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Active Learning (LUIS Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-phrase-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Phrase Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-handle-none-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Handle "None" Intent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-azure-cognitive-search-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 5. Azure Cognitive Search SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 5. Azure Cognitive Search SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-field-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Field attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-use-in-indexers-with-form-recognizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Use in indexers with Form Recognizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Throttling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bot-framework-sdk-c-or-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 6. Bot Framework SDK (C# or Python)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 6. Bot Framework SDK (C# or Python)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#61-qna-maker-question-answering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 QnA Maker / Question Answering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-reset-conversation-after-inactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Reset conversation after inactivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-bot-with-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Bot with Speech
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-containers-luis-cognitive-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 7. Containers (LUIS / Cognitive Services)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 7. Containers (LUIS / Cognitive Services)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-run-a-luis-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps to run a LUIS container:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-what-to-memorize-for-the-exam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Final: What to Memorize for the Exam
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-102-sdk-flashcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎴 AI-102 SDK Flashcards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎴 AI-102 SDK Flashcards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟥 Computer Vision SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-1-create-vision-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-1 — Create Vision Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-2-generate-image-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-2 — Generate Image Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-3-tag-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-3 — Tag Image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-4-read-ocr-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-4 — Read OCR Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-5-read-operation-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-5 — Read Operation IDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-6-ocr-result-status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-6 — OCR Result Status Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-7-smart-thumbnail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-7 — Smart Thumbnail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cv-8-model-domain-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CV-8 — Model Domain Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speech-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟦 Speech SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🟦 Speech SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sp-1-initialize-speech-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-1 — Initialize Speech Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-2-stt-speech-to-text-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-2 — STT (Speech-to-Text) Basic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-3-recognize-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-3 — Recognize Once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-4-tts-text-to-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-4 — TTS (Text-to-speech)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-5-streaming-audio-mp3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-5 — Streaming Audio (MP3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-6-speech-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-6 — Speech Translation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sp-7-custom-neural-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SP-7 — Custom Neural Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ai-102-complete-sdk-summary">✅ <strong>AI-102 Complete SDK Summary</strong></h1>
+<h3 id="computer-vision-speech-language-conversational-ai-form-recognizer-cognitive-search-bot-framework-sdk"><strong>(Computer Vision, Speech, Language, Conversational AI, Form Recognizer, Cognitive Search, Bot Framework SDK)</strong></h3>
+<hr />
+<h2 id="1-computer-vision-sdk-azureaivision-azurecognitiveservicesvision">🚀 <strong>1. Computer Vision SDK (Azure.AI.Vision / Azure.CognitiveServices.Vision)</strong></h2>
+<h3 id="core-client"><strong>Core client</strong></h3>
+<pre><code class="language-csharp">var client = new ComputerVisionClient(
+    new ApiKeyServiceClientCredentials(key))
+{
+    Endpoint = endpoint
+};
+</code></pre>
+<hr />
+<h2 id="11-image-tagging"><strong>1.1 Image Tagging</strong></h2>
+<p>Exam pattern: <em>TagImageAsync / TagImageInStreamAsync</em></p>
+<pre><code class="language-csharp">using (var stream = File.OpenRead(path))
+{
+    var result = await client.TagImageInStreamAsync(stream);
+    foreach (var tag in result.Tags)
+        Console.WriteLine($&quot;{tag.Name} {tag.Confidence}&quot;);
+}
+</code></pre>
+<p>✔ Frequently asked:</p>
+<ul>
+<li>Tags = simple labels</li>
+<li><strong>Not</strong> for face recognition</li>
+<li>Works with file streams</li>
+</ul>
+<hr />
+<h3 id="12-smart-cropping-thumbnail"><strong>1.2 Smart Cropping / Thumbnail</strong></h3>
+<p>API call:</p>
+<pre><code>POST https://{resource}.cognitiveservices.azure.com/vision/v3.1/generateThumbnail
+</code></pre>
+<hr />
+<h3 id="13-ocr-read-api-async-loop-pattern"><strong>1.3 OCR &amp; Read API (ASYNC LOOP PATTERN)</strong></h3>
+<p>This appears <em>many times</em> on exam questions.</p>
+<pre><code class="language-csharp">var headers = await client.ReadAsync(stream);
+string id = headers.OperationLocation.Split('/').Last();
+
+ReadOperationResult result;
+do
+{
+    result = await client.GetReadResultAsync(Guid.Parse(id));
+    await Task.Delay(1000);
+}
+while (result.Status == OperationStatusCodes.Running
+    || result.Status == OperationStatusCodes.NotStarted);
+</code></pre>
+<p>✔ Must: loop + delay
+✔ Must: check <code>result.Status</code></p>
+<hr />
+<h2 id="2-speech-sdk">🚀 <strong>2. Speech SDK</strong></h2>
+<h3 id="core-setup"><strong>Core setup</strong></h3>
+<pre><code class="language-csharp">var speechConfig = SpeechConfig.FromSubscription(key, region);
+</code></pre>
+<hr />
+<h3 id="21-speech-to-text"><strong>2.1 Speech-to-Text</strong></h3>
+<pre><code class="language-csharp">var recognizer = new SpeechRecognizer(speechConfig);
+var result = await recognizer.RecognizeOnceAsync();
+Console.WriteLine(result.Text);
+</code></pre>
+<p>Exam patterns:</p>
+<ul>
+<li>Use <code>SpeechRecognizer</code> for STT</li>
+<li>Not <code>KeywordRecognizer</code>, <code>SpeakerRecognizer</code>, or <code>SpeechSynthesizer</code></li>
+</ul>
+<hr />
+<h3 id="22-text-to-speech"><strong>2.2 Text-to-Speech</strong></h3>
+<pre><code class="language-csharp">var synthesizer = new SpeechSynthesizer(speechConfig);
+await synthesizer.SpeakTextAsync(&quot;Hello world&quot;);
+</code></pre>
+<hr />
+<h3 id="23-speech-translation"><strong>2.3 Speech Translation</strong></h3>
+<pre><code class="language-csharp">speechConfig.SpeechRecognitionLanguage = &quot;fr&quot;;
+
+var translator = new TranslationRecognizer(speechConfig);
+translator.AddTargetLanguage(&quot;de&quot;);
+</code></pre>
+<hr />
+<h3 id="24-streaming-mp3-speech-input"><strong>2.4 Streaming MP3 Speech Input</strong></h3>
+<pre><code class="language-csharp">var audioFormat = AudioStreamFormat.GetCompressedFormat(AudioStreamContainerFormat.MP3);
+var audioConfig = AudioConfig.FromStreamInput(pushStream, audioFormat);
+
+var recognizer = new SpeechRecognizer(speechConfig, audioConfig);
+</code></pre>
+<p>✔ MP3 requires <strong>GetCompressedFormat</strong>
+✔ Streaming uses <strong>push stream</strong></p>
+<hr />
+<h3 id="25-custom-neural-voice"><strong>2.5 Custom Neural Voice</strong></h3>
+<p>Exam pattern:</p>
+<ul>
+<li>Create voice in <strong>Speech Studio portal</strong></li>
+<li>Generate narration with <strong>Text-to-Speech service</strong></li>
+</ul>
+<hr />
+<h2 id="3-form-recognizer-document-intelligence-sdk">🚀 <strong>3. Form Recognizer / Document Intelligence SDK</strong></h2>
+<h3 id="analyze-pdfs-images"><strong>Analyze PDFs, images</strong></h3>
+<p>You use <strong>DocumentAnalysisClient</strong></p>
+<pre><code class="language-csharp">var client = new DocumentAnalysisClient(new Uri(endpoint), new AzureKeyCredential(key));
+var result = await client.AnalyzeDocumentAsync(&quot;prebuilt-invoice&quot;, stream);
+</code></pre>
+<p>Exam facts:</p>
+<ul>
+<li>Use <strong>Custom Neural model</strong> for handwritten/custom forms</li>
+<li>Use <strong>prebuilt models</strong> (invoice, receipt, ID) for minimal development</li>
+<li>
+<p>Labeling tool:</p>
+</li>
+<li>
+<p>create project</p>
+</li>
+<li>upload samples</li>
+<li>label documents</li>
+<li>train model</li>
+</ul>
+<hr />
+<h2 id="4-azure-ai-language-service-sdks">🚀 <strong>4. Azure AI Language Service SDKs</strong></h2>
+<h3 id="41-text-analytics-sentiment-ner-pii"><strong>4.1 Text Analytics (Sentiment, NER, PII)</strong></h3>
+<p>Package:</p>
+<ul>
+<li>Python → <code>azure-ai-textanalytics</code></li>
+<li>C# → <code>Azure.AI.TextAnalytics</code></li>
+</ul>
+<p>Disable logging (VERY common exam question):</p>
+<pre><code>?loggingOptOut=true
+</code></pre>
+<hr />
+<h3 id="42-conversational-language-understanding-clu"><strong>4.2 Conversational Language Understanding (CLU)</strong></h3>
+<p>For intent recognition:</p>
+<h3 id="sdk-packages">SDK packages:</h3>
+<ul>
+<li>C#: <code>Azure.AI.Language.Conversations</code></li>
+<li>Python: <code>azure-ai-language-conversations</code></li>
+</ul>
+<hr />
+<h3 id="43-language-detection"><strong>4.3 Language Detection</strong></h3>
+<p>Endpoint:</p>
+<pre><code>https://&lt;region&gt;.api.cognitive.microsoft.com/text/analytics/v3.1/languages
+</code></pre>
+<hr />
+<h3 id="44-active-learning-luis-legacy"><strong>4.4 Active Learning (LUIS Legacy)</strong></h3>
+<p>Enable logging:</p>
+<pre><code>log=true
+</code></pre>
+<p>✔ Required for review endpoint utterances
+✔ Not related to show-all-intents or sentiment</p>
+<hr />
+<h3 id="45-phrase-lists"><strong>4.5 Phrase Lists</strong></h3>
+<pre><code class="language-csharp">await client.Features.AddPhraseListAsync(appId, versionId,
+    new PhraselistCreateObject {
+        Name=&quot;PL1&quot;, Phrases=&quot;item1,item2&quot;
+    });
+</code></pre>
+<hr />
+<h3 id="46-handle-none-intent"><strong>4.6 Handle "None" Intent</strong></h3>
+<p>To reduce misclassification:</p>
+<ul>
+<li>Add examples to <strong>None</strong> intent</li>
+</ul>
+<hr />
+<h2 id="5-azure-cognitive-search-sdk">🚀 <strong>5. Azure Cognitive Search SDK</strong></h2>
+<h3 id="51-field-attributes"><strong>5.1 Field attributes</strong></h3>
+<p>Common exam case:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Attribute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search text</td>
+<td><code>searchable</code></td>
+</tr>
+<tr>
+<td>Return field</td>
+<td><code>retrievable</code></td>
+</tr>
+<tr>
+<td>Filter/drill-down</td>
+<td><code>facetable</code></td>
+</tr>
+<tr>
+<td>Filter-only</td>
+<td><code>filterable</code></td>
+</tr>
+<tr>
+<td>Sort</td>
+<td><code>sortable</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="52-use-in-indexers-with-form-recognizer"><strong>5.2 Use in indexers with Form Recognizer</strong></h3>
+<p>To export to Power BI:
+✔ Use <strong>table projection</strong></p>
+<hr />
+<h3 id="53-throttling"><strong>5.3 Throttling</strong></h3>
+<p>✔ Add <strong>replicas</strong> to handle queries
+✔ Add <strong>partitions</strong> to handle ingestion</p>
+<hr />
+<h2 id="6-bot-framework-sdk-c-or-python">🚀 <strong>6. Bot Framework SDK (C# or Python)</strong></h2>
+<h4 id="state-access"><strong>State Access</strong></h4>
+<pre><code class="language-csharp">_userState.CreateProperty&lt;UserProfile&gt;(&quot;UserProfile&quot;);
+_conversationState.CreateProperty&lt;ConversationData&gt;(&quot;ConversationData&quot;);
+</code></pre>
+<p>Memory storage:</p>
+<ul>
+<li>Yes stores state</li>
+<li>No persistence after restart</li>
+</ul>
+<hr />
+<h3 id="61-qna-maker-question-answering"><strong>6.1 QnA Maker / Question Answering</strong></h3>
+<p>To query a KB:
+✔ Use <strong>QnAMakerDialog</strong></p>
+<hr />
+<h3 id="62-reset-conversation-after-inactivity"><strong>6.2 Reset conversation after inactivity</strong></h3>
+<p>Python exam snippet:</p>
+<pre><code class="language-python">await turn_context.send_activity(&quot;Welcome back! Let's start over...&quot;)
+await self.conversation_state.clear_state(turn_context)
+</code></pre>
+<hr />
+<h3 id="63-bot-with-speech"><strong>6.3 Bot with Speech</strong></h3>
+<p>To enable voice in Composer:</p>
+<p>✔ Configure Speech language/voice
+✔ Add Speech resource key/endpoint
+✔ Add Speech to responses</p>
+<p>Correct answers: <strong>A, B, E</strong></p>
+<hr />
+<h2 id="7-containers-luis-cognitive-services">🚀 <strong>7. Containers (LUIS / Cognitive Services)</strong></h2>
+<h3 id="steps-to-run-a-luis-container">Steps to run a LUIS container:</h3>
+<ol>
+<li>Select latest deployable version</li>
+<li>Export for container (GZIP)</li>
+<li>Run Docker container and mount model folder</li>
+</ol>
+<p>Container basics:</p>
+<ul>
+<li><code>/status</code> → API key validity</li>
+<li><code>/swagger</code> → API docs</li>
+</ul>
+<hr />
+<h3 id="final-what-to-memorize-for-the-exam">🎯 <strong>Final: What to Memorize for the Exam</strong></h3>
+<ul>
+<li>Read API requires <strong>polling loop</strong></li>
+<li>Speech translation: <code>SpeechRecognitionLanguage</code> + <code>AddTargetLanguage()</code></li>
+<li>Logging for active learning: <code>log=true</code></li>
+<li>Disable storage: <code>loggingOptOut=true</code></li>
+<li>Cognitive Search field mapping</li>
+<li>CLU models → Conversations SDK package</li>
+<li>Form Recognizer → Custom Neural for handwriting</li>
+<li>QnA Maker queries use <strong>QnAMakerDialog</strong></li>
+</ul>
+<p>Here are your <strong>AI-102 SDK Flashcards</strong> — short, exam-focused, and perfect for fast memorization.
+If you want, I can turn these into <strong>Anki deck</strong>, <strong>PDF</strong>, or <strong>printable cards</strong>.</p>
+<hr />
+<h2 id="ai-102-sdk-flashcards">🎴 <strong>AI-102 SDK Flashcards</strong></h2>
+<p>(Organized by service; each section ~10–15 cards)</p>
+<hr />
+<h3 id="computer-vision-sdk">🟥 <strong>Computer Vision SDK</strong></h3>
+<h3 id="cv-1-create-vision-client"><strong>CV-1 — Create Vision Client</strong></h3>
+<p><strong>Q:</strong> How do you create a ComputerVisionClient in C#?
+<strong>A:</strong></p>
+<pre><code class="language-csharp">var client = new ComputerVisionClient(
+    new ApiKeyServiceClientCredentials(key))
+{
+    Endpoint = endpoint
+};
+</code></pre>
+<hr />
+<h3 id="cv-2-generate-image-description"><strong>CV-2 — Generate Image Description</strong></h3>
+<p><strong>Q:</strong> Which method returns full-sentence descriptions?
+<strong>A:</strong> <code>DescribeImageInStreamAsync()</code></p>
+<hr />
+<h3 id="cv-3-tag-image"><strong>CV-3 — Tag Image</strong></h3>
+<p><strong>Q:</strong> Which method returns only tags?
+<strong>A:</strong> <code>TagImageInStreamAsync()</code></p>
+<hr />
+<h3 id="cv-4-read-ocr-pattern"><strong>CV-4 — Read OCR Pattern</strong></h3>
+<p><strong>Q:</strong> What pattern is required to use Read API?
+<strong>A:</strong></p>
+<ol>
+<li>Call <code>ReadAsync()</code></li>
+<li>Extract Operation ID</li>
+<li>Poll with <code>GetReadResultAsync()</code> until <code>Succeeded</code></li>
+</ol>
+<hr />
+<h3 id="cv-5-read-operation-ids"><strong>CV-5 — Read Operation IDs</strong></h3>
+<p><strong>Q:</strong> Where is the Read API operation ID found?
+<strong>A:</strong> In the <code>OperationLocation</code> response header.</p>
+<hr />
+<h3 id="cv-6-ocr-result-status-values"><strong>CV-6 — OCR Result Status Values</strong></h3>
+<p><strong>Q:</strong> Which statuses require polling?
+<strong>A:</strong> <code>Running</code> and <code>NotStarted</code></p>
+<hr />
+<h3 id="cv-7-smart-thumbnail"><strong>CV-7 — Smart Thumbnail</strong></h3>
+<p><strong>Q:</strong> Which API generates smart crops?
+<strong>A:</strong> <code>/generateThumbnail</code></p>
+<hr />
+<h3 id="cv-8-model-domain-analysis"><strong>CV-8 — Model Domain Analysis</strong></h3>
+<p><strong>Q:</strong> Which method uses domain-specific models (e.g., celebrities)?
+<strong>A:</strong> <code>AnalyzeImageByDomainInStreamAsync()</code></p>
+<hr />
+<hr />
+<h2 id="speech-sdk">🟦 <strong>Speech SDK</strong></h2>
+<h3 id="sp-1-initialize-speech-config"><strong>SP-1 — Initialize Speech Config</strong></h3>
+<p><strong>Q:</strong> How to initialize SpeechConfig?
+<strong>A:</strong></p>
+<pre><code class="language-csharp">var config = SpeechConfig.FromSubscription(key, region);
+</code></pre>
+<hr />
+<h3 id="sp-2-stt-speech-to-text-basic"><strong>SP-2 — STT (Speech-to-Text) Basic</strong></h3>
+<p><strong>Q:</strong> Which class is used for speech recognition?
+<strong>A:</strong> <code>SpeechRecognizer</code></p>
+<hr />
+<h3 id="sp-3-recognize-once"><strong>SP-3 — Recognize Once</strong></h3>
+<p><strong>Q:</strong> Which method returns a single utterance?
+<strong>A:</strong> <code>RecognizeOnceAsync()</code></p>
+<hr />
+<h3 id="sp-4-tts-text-to-speech"><strong>SP-4 — TTS (Text-to-speech)</strong></h3>
+<p><strong>Q:</strong> Which class performs TTS?
+<strong>A:</strong> <code>SpeechSynthesizer</code></p>
+<hr />
+<h3 id="sp-5-streaming-audio-mp3"><strong>SP-5 — Streaming Audio (MP3)</strong></h3>
+<p><strong>Q:</strong> How to stream MP3 audio into Speech SDK?
+<strong>A:</strong> Use <code>AudioConfig.FromStreamInput()</code> with
+<code>AudioStreamFormat.GetCompressedFormat(AudioStreamContainerFormat.MP3)</code></p>
+<hr />
+<h3 id="sp-6-speech-translation"><strong>SP-6 — Speech Translation</strong></h3>
+<p><strong>Q:</strong> How to add target translation languages?
+<strong>A:</strong> <code>translator.AddTargetLanguage("de")</code></p>
+<hr />
+<h3 id="sp-7-custom-neural-voice"><strong>SP-7 — Custom Neural Voice</strong></h3>
+<p><strong>Q:</strong> Where is custom voice model created?
+<strong>A:</strong> Speech Studio → Custom Neural Voice</p>
+<hr />
+<hr />
+<h1 id="form-recognizer-document-intelligence">🟩 <strong>Form Recognizer (Document Intelligence)</strong></h1>
+<h3 id="fr-1-create-client"><strong>FR-1 — Create Client</strong></h3>
+<p><strong>Q:</strong> What is the main client class?
+<strong>A:</strong> <code>DocumentAnalysisClient</code></p>
+<hr />
+<h3 id="fr-2-prebuilt-model-example"><strong>FR-2 — Prebuilt Model Example</strong></h3>
+<p><strong>Q:</strong> How to analyze an invoice?
+<strong>A:</strong></p>
+<pre><code class="language-csharp">client.AnalyzeDocumentAsync(&quot;prebuilt-invoice&quot;, stream)
+</code></pre>
+<hr />
+<h3 id="fr-3-custom-model-training-steps"><strong>FR-3 — Custom Model Training Steps</strong></h3>
+<p><strong>Q:</strong> Steps to create custom model?
+<strong>A:</strong></p>
+<ol>
+<li>Upload documents</li>
+<li>Label fields</li>
+<li>Train model</li>
+<li>Analyze documents</li>
+</ol>
+<hr />
+<h3 id="fr-4-handwriting-complex-layout"><strong>FR-4 — Handwriting / Complex Layout</strong></h3>
+<p><strong>Q:</strong> Which model type handles noisy layouts or handwriting?
+<strong>A:</strong> <strong>Custom Neural model</strong></p>
+<hr />
+<h3 id="fr-5-azure-storage-requirement"><strong>FR-5 — Azure Storage Requirement</strong></h3>
+<p><strong>Q:</strong> Does training require storage account?
+<strong>A:</strong> Yes — sample docs stored in a container.</p>
+<hr />
+<hr />
+<h2 id="language-text-analytics-clu-pii">🟨 <strong>Language (Text Analytics + CLU + PII)</strong></h2>
+<h3 id="ta-1-client-initialization"><strong>TA-1 — Client Initialization</strong></h3>
+<p><strong>Q:</strong> Which client is used for Text Analytics?
+<strong>A:</strong> <code>TextAnalyticsClient</code></p>
+<hr />
+<h3 id="ta-2-disable-logging"><strong>TA-2 — Disable Logging</strong></h3>
+<p><strong>Q:</strong> How to disable logging for privacy?
+<strong>A:</strong> Add <code>?loggingOptOut=true</code> to your endpoint.</p>
+<hr />
+<h3 id="ta-3-sentiment-analysis"><strong>TA-3 — Sentiment Analysis</strong></h3>
+<p><strong>Q:</strong> Which method performs sentiment analysis?
+<strong>A:</strong> <code>AnalyzeSentimentAsync()</code></p>
+<hr />
+<h3 id="ta-4-language-detection-endpoint"><strong>TA-4 — Language Detection endpoint</strong></h3>
+<p><strong>Q:</strong> What is the language detection endpoint path?
+<strong>A:</strong> <code>/text/analytics/v3.1/languages</code></p>
+<hr />
+<h3 id="ta-5-pii-recognition"><strong>TA-5 — PII Recognition</strong></h3>
+<p><strong>Q:</strong> Which method detects PII entities?
+<strong>A:</strong> <code>RecognizePiiEntitiesAsync()</code></p>
+<hr />
+<h3 id="clu-1-clu-client"><strong>CLU-1 — CLU Client</strong></h3>
+<p><strong>Q:</strong> What is the CLU SDK package?
+<strong>A:</strong> <code>Azure.AI.Language.Conversations</code></p>
+<hr />
+<h3 id="clu-2-misclassified-none-intent"><strong>CLU-2 — Misclassified "None" Intent</strong></h3>
+<p><strong>Q:</strong> How to reduce misclassification into "None"?
+<strong>A:</strong> Add more examples to the None intent.</p>
+<hr />
+<h3 id="luis-1-enable-active-learning"><strong>LUIS-1 — Enable Active Learning</strong></h3>
+<p><strong>Q:</strong> How to collect utterances for review?
+<strong>A:</strong> Use query parameter <code>log=true</code>.</p>
+<h2 id="cognitive-search-sdk">🟫 <strong>Cognitive Search SDK</strong></h2>
+<h3 id="cs-1-search-index-client"><strong>CS-1 — Search Index Client</strong></h3>
+<p><strong>Q:</strong> Which client uploads documents?
+<strong>A:</strong> <code>SearchClient</code> (or <code>SearchIndexClient</code> for schema)</p>
+<hr />
+<h3 id="cs-2-field-attributes"><strong>CS-2 — Field Attributes</strong></h3>
+<p><strong>Q:</strong> What does <em>searchable</em> mean?
+<strong>A:</strong> Full-text search enabled.</p>
+<hr />
+<h3 id="cs-3-facetable"><strong>CS-3 — Facetable</strong></h3>
+<p><strong>Q:</strong> What is the field attribute used for aggregations / drill-down?
+<strong>A:</strong> <code>facetable</code></p>
+<hr />
+<h3 id="cs-4-filterable"><strong>CS-4 — Filterable</strong></h3>
+<p><strong>Q:</strong> What is filterable used for?
+<strong>A:</strong> OData filters (no text analysis)</p>
+<hr />
+<h3 id="cs-5-sorting"><strong>CS-5 — Sorting</strong></h3>
+<p><strong>Q:</strong> Which attribute must be enabled to sort on a field?
+<strong>A:</strong> <code>sortable</code></p>
+<hr />
+<h3 id="cs-6-high-throughput-ingestion"><strong>CS-6 — High throughput ingestion</strong></h3>
+<p><strong>Q:</strong> For heavy indexing, what should be increased?
+<strong>A:</strong> <strong>Partitions</strong></p>
+<hr />
+<h3 id="cs-7-high-query-load"><strong>CS-7 — High query load</strong></h3>
+<p><strong>Q:</strong> For many queries, what should be increased?
+<strong>A:</strong> <strong>Replicas</strong></p>
+<hr />
+<h3 id="cs-8-indexer-form-recognizer"><strong>CS-8 — Indexer + Form Recognizer</strong></h3>
+<p><strong>Q:</strong> What projection is required for Power BI export?
+<strong>A:</strong> <strong>Table projection</strong></p>
+<hr />
+<hr />
+<h2 id="bot-framework-sdk">🟧 <strong>Bot Framework SDK</strong></h2>
+<h3 id="bot-1-state-storage"><strong>BOT-1 — State Storage</strong></h3>
+<p><strong>Q:</strong> Which classes manage user and conversation state?
+<strong>A:</strong></p>
+<ul>
+<li><code>UserState</code></li>
+<li><code>ConversationState</code></li>
+</ul>
+<hr />
+<h3 id="bot-2-clear-conversation"><strong>BOT-2 — Clear Conversation</strong></h3>
+<p><strong>Q:</strong> How to reset bot conversation?
+<strong>A:</strong> <code>conversationState.clear_state(turn_context)</code></p>
+<hr />
+<h3 id="bot-3-qna-maker-language-question-answering"><strong>BOT-3 — QnA Maker / Language Question Answering</strong></h3>
+<p><strong>Q:</strong> Which dialog queries the KB?
+<strong>A:</strong> <code>QnAMakerDialog</code></p>
+<hr />
+<h3 id="bot-4-memory-storage-behavior"><strong>BOT-4 — Memory Storage Behavior</strong></h3>
+<p><strong>Q:</strong> Does MemoryStorage persist between restarts?
+<strong>A:</strong> No — volatile only.</p>
+<hr />
+<h3 id="bot-5-add-speech-to-bot"><strong>BOT-5 — Add speech to bot</strong></h3>
+<p><strong>Q:</strong> What must be configured for voice bots?
+<strong>A:</strong></p>
+<ul>
+<li>Speech key</li>
+<li>Speech region</li>
+<li>Output voice</li>
+<li>Set response as speech-enabled</li>
+</ul>
+<hr />
+<hr />
+<h2 id="containers-vision-language-luis-etc">🟪 <strong>Containers (Vision, Language, LUIS, etc.)</strong></h2>
+<h3 id="ct-1-deployable-luis-version"><strong>CT-1 — Deployable LUIS version</strong></h3>
+<p><strong>Q:</strong> Which LUIS versions can run in a container?
+<strong>A:</strong> Only <strong>deployable</strong> versions.</p>
+<hr />
+<h3 id="ct-2-luis-container-deployment-steps"><strong>CT-2 — LUIS container deployment steps</strong></h3>
+<p><strong>Q:</strong> Steps?
+<strong>A:</strong></p>
+<ol>
+<li>Export container package (GZIP)</li>
+<li>Run Docker container</li>
+<li>Mount model folder</li>
+<li>Call container endpoint</li>
+</ol>
+<hr />
+<h3 id="ct-3-container-test-urls"><strong>CT-3 — Container Test URLs</strong></h3>
+<p><strong>Q:</strong> What does <code>/status</code> return?
+<strong>A:</strong> API key validation.</p>
+<hr />
+<h3 id="ct-4-swagger"><strong>CT-4 — Swagger</strong></h3>
+<p><strong>Q:</strong> Which endpoint exposes API documentation?
+<strong>A:</strong> <code>/swagger</code></p>
+<hr />
+<h3 id="trap-1-wrong-computer-vision-method">❗ <strong>Trap 1 — Wrong Computer Vision method</strong></h3>
+<p>If question says <em>“full sentence for visually impaired”</em>
+→ <code>DescribeImageInStreamAsync()</code></p>
+<h3 id="trap-2-read-api-requires-polling">❗ <strong>Trap 2 — Read API requires polling</strong></h3>
+<p>Never pick "immediate result" methods.</p>
+<h3 id="trap-3-cognitive-search-load">❗ <strong>Trap 3 — Cognitive Search load</strong></h3>
+<ul>
+<li>Ingestion → partitions</li>
+<li>Queries → replicas</li>
+</ul>
+<h3 id="trap-4-clu-vs-text-analytics">❗ <strong>Trap 4 — CLU vs. Text Analytics</strong></h3>
+<ul>
+<li>Intent classification → CLU</li>
+<li>Entity extraction → Text Analytics</li>
+</ul>
+<h3 id="trap-5-logging-for-active-learning">❗ <strong>Trap 5 — Logging for Active Learning</strong></h3>
+<ul>
+<li>Enable: <code>log=true</code></li>
+<li>Disable: <code>loggingOptOut=true</code></li>
+</ul>
+<hr />
+<p>Great — below is a <strong>100-question, dev-focused AI-102 SDK practice exam</strong>.
+Questions focus on code, SDK classes/methods, call patterns, and common exam traps across <strong>Computer Vision, Speech, Form Recognizer / Document Intelligence, Language/CLU, Cognitive Search, Bot Framework, and Containers</strong>.</p>
+<p>I kept questions short and tightly targeted. After the 100 questions you’ll find a compact <strong>answer key</strong> with one-line rationales so you can self-grade quickly.</p>
+<hr />
+<h2 id="ai-102-100-dev-focused-sdk-questions">AI-102 — 100 Dev-Focused SDK Questions</h2>
+<p>(Each question is multiple choice: A, B, C, or D.)</p>
+<hr />
+<h3 id="1">1</h3>
+<p>You want a full-sentence description for an image to present to visually impaired users. Which method should you call?</p>
+<ul>
+<li>A. TagImageInStreamAsync</li>
+<li>B. DescribeImageInStreamAsync</li>
+<li>C. ReadInStreamAsync</li>
+<li>D. AnalyzeImageByDomainInStreamAsync</li>
+</ul>
+<h3 id="2">2</h3>
+<p>You need to poll the Computer Vision Read API until OCR completes. Which sequence is correct?</p>
+<ul>
+<li>A. ReadAsync → GetReadResultAsync with operation ID loop</li>
+<li>B. GetReadResultAsync → ReadAsync</li>
+<li>C. ReadInStreamAsync → DescribeImageInStreamAsync</li>
+<li>D. TagImageInStreamAsync → GetReadResultAsync</li>
+</ul>
+<h3 id="3">3</h3>
+<p>Which class is used to perform speech-to-text in the Speech SDK (C#)?</p>
+<ul>
+<li>A. SpeechSynthesizer</li>
+<li>B. KeywordRecognizer</li>
+<li>C. SpeechRecognizer</li>
+<li>D. SpeakerRecognizer</li>
+</ul>
+<h3 id="4">4</h3>
+<p>To stream MP3-encoded audio into the Speech SDK push stream, which method sets the format?</p>
+<ul>
+<li>A. AudioStreamFormat.GetWaveFormatPCM()</li>
+<li>B. AudioStreamFormat.GetCompressedFormat(AudioStreamContainerFormat.MP3)</li>
+<li>C. AudioStreamFormat.CreateDefault()</li>
+<li>D. AudioStreamFormat.GetFloat32Format()</li>
+</ul>
+<h3 id="5">5</h3>
+<p>Which method produces tags (keywords) for an image (no sentences)?</p>
+<ul>
+<li>A. DescribeImageInStreamAsync</li>
+<li>B. ReadInStreamAsync</li>
+<li>C. TagImageInStreamAsync</li>
+<li>D. AnalyzeImagesByDomainInStreamAsync</li>
+</ul>
+<h3 id="6">6</h3>
+<p>You must disable logging/persistence of user text to the Language service. Which query parameter is used?</p>
+<ul>
+<li>A. model-version</li>
+<li>B. log=true</li>
+<li>C. loggingOptOut=true</li>
+<li>D. showStats=true</li>
+</ul>
+<h3 id="7">7</h3>
+<p>Which SDK package provides conversational intent recognition support in C#?</p>
+<ul>
+<li>A. Azure.AI.Language.Conversations</li>
+<li>B. Azure.AI.TextAnalytics</li>
+<li>C. Microsoft.Cognitive.Speech</li>
+<li>D. Azure.CognitiveServices.Vision</li>
+</ul>
+<h3 id="8">8</h3>
+<p>You need to extract structured fields from receipts using the prebuilt Form Recognizer model with the SDK. Which client+method is correct?</p>
+<ul>
+<li>A. FormTrainingClient + StartRecognizeReceiptsFromUri</li>
+<li>B. FormRecognizerClient + StartRecognizeReceiptsFromUri</li>
+<li>C. DocumentAnalysisClient + AnalyzeDocumentAsync("prebuilt-receipt", uri)</li>
+<li>D. ComputerVisionClient + ReadAsync</li>
+</ul>
+<h3 id="9">9</h3>
+<p>Which attribute must be set on a Cognitive Search field to allow drill-down filters (facets)?</p>
+<ul>
+<li>A. searchable</li>
+<li>B. retrievable</li>
+<li>C. facetable</li>
+<li>D. filterable</li>
+</ul>
+<h3 id="10">10</h3>
+<p>To increase query throughput for Azure Cognitive Search, you should:</p>
+<ul>
+<li>A. add partitions</li>
+<li>B. add replicas</li>
+<li>C. add indexes</li>
+<li>D. enable CMK encryption</li>
+</ul>
+<h3 id="11">11</h3>
+<p>You want to synthesize speech (text-to-speech). Which class do you instantiate?</p>
+<ul>
+<li>A. SpeechRecognizer</li>
+<li>B. SpeechSynthesizer</li>
+<li>C. TranslationRecognizer</li>
+<li>D. SpeechClient</li>
+</ul>
+<h3 id="12">12</h3>
+<p>Which code fragment correctly polls a Read OCR operation?</p>
+<ul>
+<li>A. <code>await client.ReadAsync(stream); results = await client.GetReadResultAsync(Guid.Parse(id));</code> // no loop</li>
+<li>B. <code>Do { results = await client.GetReadResultAsync(Guid.Parse(id)); await Task.Delay(1000); } while (status==Running)</code></li>
+<li>C. <code>results = await client.ReadAsync(stream);</code> // no follow-up</li>
+<li>D. <code>await client.GetReadResultAsync(Guid.NewGuid());</code> // random id</li>
+</ul>
+<h3 id="13">13</h3>
+<p>Which Speech SDK object would you use to perform real-time translation and add target languages?</p>
+<ul>
+<li>A. SpeechRecognizer</li>
+<li>B. TranslationRecognizer</li>
+<li>C. SpeechSynthesizer</li>
+<li>D. AudioConfig</li>
+</ul>
+<h3 id="14">14</h3>
+<p>When building a bot that queries a Q&amp;A knowledge base, which dialog class is most appropriate?</p>
+<ul>
+<li>A. ComponentDialog</li>
+<li>B. AdaptiveDialog</li>
+<li>C. QnAMakerDialog</li>
+<li>D. SkillDialog</li>
+</ul>
+<h3 id="15">15</h3>
+<p>You need to collect utterances for active learning so reviewers can improve the model. Which query parameter must you include when calling the prediction endpoint?</p>
+<ul>
+<li>A. show-all-intents=true</li>
+<li>B. log=true</li>
+<li>C. loggingOptOut=true</li>
+<li>D. verbose=false</li>
+</ul>
+<h3 id="16">16</h3>
+<p>Which client class is appropriate to call prebuilt Document Intelligence analysis in new SDKs?</p>
+<ul>
+<li>A. DocumentAnalysisClient</li>
+<li>B. FormRecognizerClient only</li>
+<li>C. DocumentClient</li>
+<li>D. AnalysisClient</li>
+</ul>
+<h3 id="17">17</h3>
+<p>You must stream MP3 audio input and use SpeechRecognizer with a push stream. Which AudioConfig is correct?</p>
+<ul>
+<li>A. AudioConfig.FromDefaultMicrophoneInput()</li>
+<li>B. AudioConfig.FromStreamInput(pushStream, AudioStreamFormat.GetCompressedFormat(...))</li>
+<li>C. AudioConfig.FromWavFileInput(filePath)</li>
+<li>D. AudioConfig.FromCustomStream(pushStream) // no format</li>
+</ul>
+<h3 id="18">18</h3>
+<p>To call a domain-specific Vision model for landmark detection, which method is appropriate?</p>
+<ul>
+<li>A. DescribeImageInStreamAsync</li>
+<li>B. AnalyzeImagesByDomainInStreamAsync</li>
+<li>C. TagImageInStreamAsync</li>
+<li>D. ReadInStreamAsync</li>
+</ul>
+<h3 id="19">19</h3>
+<p>You want to create a new CLU conversational client in Python to call intent model. Which package would you install?</p>
+<ul>
+<li>A. azure-ai-language-conversations</li>
+<li>B. azure-cognitiveservices-language-luis</li>
+<li>C. azure-cognitiveservices-speech</li>
+<li>D. azure-ai-textanalytics</li>
+</ul>
+<h3 id="20">20</h3>
+<p>Which Cognitive Search field attribute allows full-text search inside a field?</p>
+<ul>
+<li>A. filterable</li>
+<li>B. retrievable</li>
+<li>C. searchable</li>
+<li>D. facetable</li>
+</ul>
+<h3 id="21">21</h3>
+<p>Which method is used to generate a smart-cropped thumbnail (resized image) using Computer Vision?
+A. generateThumbnail endpoint
+B. DescribeImage endpoint
+C. TagImage endpoint
+D. Read API</p>
+<h3 id="22">22</h3>
+<p>Which Bot Framework state storage is non-persistent and loses data on restart?</p>
+<ul>
+<li>A. BlobStorage</li>
+<li>B. CosmosDbStorage</li>
+<li>C. MemoryStorage</li>
+<li>D. AzureTableStorage</li>
+</ul>
+<h3 id="23">23</h3>
+<p>Which command-line behavior should you avoid when running Cognitive Services containers to prevent keys being saved in command history?</p>
+<ul>
+<li>A. Passing keys via environment variables in a script loaded at runtime</li>
+<li>B. Passing keys directly in <code>docker run</code> command line</li>
+<li>C. Using Azure Key Vault and mounting secrets at runtime</li>
+<li>D. Using a docker run script that reads keys from protected file</li>
+</ul>
+<h3 id="24">24</h3>
+<p>You exported a LUIS app for container use. Which file format should you export to run in a container?</p>
+<ul>
+<li>A. .json (plain)</li>
+<li>B. .zip with model files</li>
+<li>C. Export for container (GZIP)</li>
+<li>D. .yaml</li>
+</ul>
+<h3 id="25">25</h3>
+<p>Which Form Recognizer method returns general layout (lines, tables) rather than receipts-specific fields?</p>
+<ul>
+<li>A. StartRecognizeReceiptsFromUri</li>
+<li>B. StartRecognizeContentFromUri</li>
+<li>C. AnalyzeDocumentAsync("prebuilt-invoice")</li>
+<li>D. ReadAsync</li>
+</ul>
+<h3 id="26">26</h3>
+<p>Which SDK parameter disables service-side logging for PII-sensitive calls?
+A. piiCategories
+B. loggingOptOut=true
+C. showStats=false
+D. model-version=latest</p>
+<h3 id="27">27</h3>
+<p>What is the typical response when you call the Computer Vision Read API immediately (before completion)?</p>
+<ul>
+<li>A. Final text results</li>
+<li>B. OperationLocation header with operation ID</li>
+<li>C. 404 Not Found</li>
+<li>D. Tag list</li>
+</ul>
+<h3 id="28">28</h3>
+<p>Which method should you call to add a phrase list to a LUIS model programmatically (per the book snippet)?
+A. client.Features.AddPhraseListAsync(...)
+B. client.Models.AddPhrases(...)
+C. client.PhraseLists.Create(...)
+D. client.AddPhrasesToModel(...)</p>
+<h3 id="29">29</h3>
+<p>Which Speech SDK method performs a single utterance synchronous recognition?</p>
+<ul>
+<li>A. StartContinuousRecognitionAsync</li>
+<li>B. RecognizeOnceAsync</li>
+<li>C. RecognizeAsyncMultiple</li>
+<li>D. GetRecognitionResult</li>
+</ul>
+<h3 id="30">30</h3>
+<p>Which field attributes must you set so a field appears in results and is searchable and can be used for facets?</p>
+<ul>
+<li>A. retrievable, filterable, sortable</li>
+<li>B. searchable, facetable, retrievable</li>
+<li>C. retrievable, facetable, key</li>
+<li>D. searchable, retrievable, sortable</li>
+</ul>
+<h3 id="31">31</h3>
+<p>You want to use the prebuilt Text Analytics language detection endpoint. Which path is correct?
+A. /text/analytics/v3.1/languages
+B. /language/detect/v1
+C. /translate?api-version=3.0
+D. /language/identify</p>
+<h3 id="32">32</h3>
+<p>Which class is used to train custom Form Recognizer models (older SDK)?</p>
+<ul>
+<li>A. FormTrainingClient</li>
+<li>B. FormRecognizerClient</li>
+<li>C. DocumentTrainingClient</li>
+<li>D. TrainingClient</li>
+</ul>
+<h3 id="33">33</h3>
+<p>You want translation in a speech app (speech in → speech out). Which combination best fits minimal work?</p>
+<ul>
+<li>A. SpeechRecognizer + custom model + SpeechSynthesizer</li>
+<li>B. TranslationRecognizer + SpeechSynthesizer (or built-in TTS)</li>
+<li>C. SpeechRecognizer + Text Analytics + SpeechSynthesizer</li>
+<li>D. KeywordRecognizer + Translation API</li>
+</ul>
+<h3 id="34">34</h3>
+<p>Which Bot Framework method resets conversation state in Python?</p>
+<ul>
+<li>A. conversationState.delete(turn_context)</li>
+<li>B. conversationState.clear_state(turn_context)</li>
+<li>C. bot.clear()</li>
+<li>D. conversationState.reset()</li>
+</ul>
+<h3 id="35">35</h3>
+<p>Which attribute in an Azure Cognitive Search index is required to allow sorting on a field?</p>
+<ul>
+<li>A. facetable</li>
+<li>B. retrievable</li>
+<li>C. sortable</li>
+<li>D. searchable</li>
+</ul>
+<h3 id="36">36</h3>
+<p>Which Speech SDK method is used to synthesize SSML or text to speaker?</p>
+<ul>
+<li>A. recognizer.SpeakAsync()</li>
+<li>B. synthesizer.SpeakSsmlAsync or SpeakTextAsync</li>
+<li>C. translator.SpeakAsync()</li>
+<li>D. audioPlayer.PlayText()</li>
+</ul>
+<h3 id="37">37</h3>
+<p>Which Computer Vision method returns domain-specific outputs like celebrity names?</p>
+<ul>
+<li>A. TagImageInStreamAsync</li>
+<li>B. DescribeImageInStreamAsync</li>
+<li>C. AnalyzeImagesByDomainInStreamAsync</li>
+<li>D. ReadInStreamAsync</li>
+</ul>
+<h3 id="38">38</h3>
+<p>Which SDK client is used to call Text Analytics sentiment analysis?</p>
+<ul>
+<li>A. TextAnalyticsClient</li>
+<li>B. LanguageClient</li>
+<li>C. SentimentClient</li>
+<li>D. AITextClient</li>
+</ul>
+<h3 id="39">39</h3>
+<p>Which property must you check in Read/GetReadResult responses to know if status is still running?</p>
+<ul>
+<li>A. results.State</li>
+<li>B. results.Status</li>
+<li>C. results.IsComplete</li>
+<li>D. results.Progress</li>
+</ul>
+<h3 id="40">40</h3>
+<p>Which approach allows only VNet resources to access a Language service (ta1) — per exam patterns?</p>
+<ul>
+<li>A. Configure NSG on vnet1</li>
+<li>B. Configure virtual network (private endpoint) settings on ta1</li>
+<li>C. Deploy language service container in vnet1 only</li>
+<li>D. Use Azure Firewall for vnet1</li>
+</ul>
+<h3 id="41">41</h3>
+<p>Which SDK method is appropriate to extract receipts from a remote URI using prebuilt model (per snippet)?</p>
+<ul>
+<li>A. FormRecognizerClient.StartRecognizeReceiptsFromUri(new Uri(...))</li>
+<li>B. DocumentAnalysisClient.AnalyzeDocumentAsync("prebuilt-receipt", new Uri(...))</li>
+<li>C. ComputerVisionClient.ReadAsync(new Uri(...))</li>
+<li>D. TextAnalyticsClient.RecognizeEntitiesFromUri(...)</li>
+</ul>
+<h3 id="42">42</h3>
+<p>Which Bot Framework dialog should be used to route user queries across multiple skills/recognizers (Orchestrator-like)?</p>
+<ul>
+<li>A. QnAMakerDialog</li>
+<li>B. AdaptiveDialog</li>
+<li>C. Orchestrator runtime component (not a dialog)</li>
+<li>D. ComponentDialog</li>
+</ul>
+<h3 id="43">43</h3>
+<p>When running a Cognitive Services container, which local endpoint helps you verify API key validity?</p>
+<ul>
+<li>A. /health</li>
+<li>B. /status</li>
+<li>C. /validateKey</li>
+<li>D. /keycheck</li>
+</ul>
+<h3 id="44">44</h3>
+<p>Which service is best for detecting anomalies across many correlated IoT sensor time series with root cause analysis and alerting out-of-the-box?</p>
+<ul>
+<li>A. Anomaly Detector</li>
+<li>B. Metrics Advisor (Azure Metrics Advisor)</li>
+<li>C. Azure Machine Learning</li>
+<li>D. Custom Vision</li>
+</ul>
+<h3 id="45">45</h3>
+<p>Which Search indexer projection should you use if you want Power BI to work with results easily?</p>
+<ul>
+<li>A. object projection</li>
+<li>B. file projection</li>
+<li>C. table projection</li>
+<li>D. projection group</li>
+</ul>
+<h3 id="46">46</h3>
+<p>What must you configure in a bot to support speech channels using Bot Framework Composer? (Choose the trio that belongs together in exam-style)</p>
+<ul>
+<li>A. Add Orchestrator, Add endpoint key, Add App Insights</li>
+<li>B. Configure Speech language/voice, Add endpoint &amp; key of Speech resource, Add speech to bot responses</li>
+<li>C. Add LUIS, Add QnA Maker, Add Direct Line</li>
+<li>D. Add MemoryStorage, Add BlobStorage, Add CosmosDB</li>
+</ul>
+<h3 id="47">47</h3>
+<p>Which method returns the operation ID location for async Read OCR?</p>
+<ul>
+<li>A. response.Headers.OperationLocation</li>
+<li>B. response.Content.OperationId</li>
+<li>C. response.Json.operation_id</li>
+<li>D. response.Headers.CorrelationId</li>
+</ul>
+<h3 id="48">48</h3>
+<p>You must avoid logging API keys or billing info into shell history when launching containers. Best practice:</p>
+<ul>
+<li>A. Hardcode keys in scripts and run them once.</li>
+<li>B. Provide keys as command-line args to docker run.</li>
+<li>C. Use environment variables injected from a secure store or mount files with restricted permissions.</li>
+<li>D. Paste keys interactively into terminal before running container.</li>
+</ul>
+<h3 id="49">49</h3>
+<p>Which class (package) is used in C# to call Language Conversations models (per earlier snippet)?</p>
+<ul>
+<li>A. Azure.AI.Language.Conversations (package)</li>
+<li>B. Microsoft.Cognitive.LUIS.Client</li>
+<li>C. Azure.CognitiveServices.LanguageClient</li>
+<li>D. Azure.AI.LanguageSDK</li>
+</ul>
+<h3 id="50">50</h3>
+<p>Which method would you use to analyze layout (tables, lines) rather than extracting semantic key/value pairs?</p>
+<ul>
+<li>A. StartRecognizeReceiptsFromUri</li>
+<li>B. StartRecognizeContentFromUri / AnalyzeLayout equivalent</li>
+<li>C. AnalyzeDocumentAsync("prebuilt-receipt")</li>
+<li>D. DescribeImageInStreamAsync</li>
+</ul>
+<h3 id="51">51</h3>
+<p>Which of these is the correct pattern to add a phrase list to many LUIS models programmatically (based on the book)?</p>
+<ul>
+<li>A. client.Features.AddPhraseListAsync(appId, versionId, new PhraselistCreateObject{...})</li>
+<li>B. client.Models.AddPhraseList(appId, phrases)</li>
+<li>C. client.AddPhrases(appId, new PhraseObject(phrases))</li>
+<li>D. client.CreatePhraseList(appId, phrases)</li>
+</ul>
+<h3 id="52">52</h3>
+<p>Which Text Analytics method detects PII entities?</p>
+<ul>
+<li>A. AnalyzeSentimentAsync</li>
+<li>B. RecognizePiiEntitiesAsync</li>
+<li>C. ExtractKeyPhrasesAsync</li>
+<li>D. DetectLanguageAsync</li>
+</ul>
+<h3 id="53">53</h3>
+<p>Which Speech SDK flow is appropriate for long-running continuous recognition from microphone?</p>
+<ul>
+<li>A. RecognizeOnceAsync</li>
+<li>B. StartContinuousRecognitionAsync / StopContinuousRecognitionAsync</li>
+<li>C. ContinuousRecognizeOnce</li>
+<li>D. BeginContinuousTranscribe</li>
+</ul>
+<h3 id="54">54</h3>
+<p>Which Computer Vision SDK output type helps visually impaired users by providing complete-sentence descriptions?</p>
+<ul>
+<li>A. Tag list</li>
+<li>B. Read text only</li>
+<li>C. Descriptions (full sentences)</li>
+<li>D. Domain model metadata</li>
+</ul>
+<h3 id="55">55</h3>
+<p>You want to use the latest deployable LUIS version for a container. Which is correct sequence?</p>
+<ul>
+<li>A. Select latest version → Export for container (GZIP) → Run container and mount model</li>
+<li>B. Train locally → Run container → Upload model</li>
+<li>C. Export JSON → Import into container → Train in container</li>
+<li>D. Run container → Publish version → Export</li>
+</ul>
+<h3 id="56">56</h3>
+<p>Which Bot Framework pattern will display a QnA answer only when score &gt;= threshold? (Config in QnAMakerOptions)</p>
+<ul>
+<li>A. QnAMakerOptions.ScoreThreshold</li>
+<li>B. QnAMakerOptions.MaxAnswers</li>
+<li>C. QnAMakerOptions.RankerType</li>
+<li>D. QnAMakerOptions.CardNoMatchText</li>
+</ul>
+<h3 id="57">57</h3>
+<p>Which Document Intelligence resource name type should you create if you want to use prebuilt invoice analysis and download JSON output?</p>
+<ul>
+<li>A. ComputerVision resource</li>
+<li>B. Document Intelligence (Form Recognizer) resource</li>
+<li>C. Text Analytics resource</li>
+<li>D. Custom Vision resource</li>
+</ul>
+<h3 id="58">58</h3>
+<p>Which Azure Search change will NOT help reduce throttling for query load?</p>
+<ul>
+<li>A. Add replicas</li>
+<li>B. Move to higher tier</li>
+<li>C. Add indexes</li>
+<li>D. Increase number of replicas</li>
+</ul>
+<h3 id="59">59</h3>
+<p>Which SDK concept do you use to avoid persisting sensitive user text in Language service logs?</p>
+<ul>
+<li>A. set header X-Privacy: true</li>
+<li>B. append ?disableLogging=true</li>
+<li>C. use query parameter loggingOptOut=true</li>
+<li>D. set model-version=0</li>
+</ul>
+<h3 id="60">60</h3>
+<p>Which endpoint is used to detect language with Text Analytics v3.1 (per book snippet)?
+A. https://<region>.api.cognitive.microsoft.com/text/analytics/v3.1/languages
+B. https://<region>.api.cognitive.microsoft.com/language/detect
+C. https://<region>.api.cognitive.microsoft.com/translate/detect
+D. https://<region>.api.cognitive.microsoft.com/text/language</p>
+<h3 id="61">61</h3>
+<p>You need to run a Text Analytics Sentiment Analysis container on VM with Docker. Which docker image name is correct (per snippet)?</p>
+<ul>
+<li>A. mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment</li>
+<li>B. microsoft/textanalytics:sentiment</li>
+<li>C. azure/textanalytics/sentiment:latest</li>
+<li>D. mcr.microsoft.com/cognitive/text/sentiment</li>
+</ul>
+<h3 id="62">62</h3>
+<p>Which Form Recognizer client method should you use to analyze receipts from a URI and wait for completion (older SDK snippet)?</p>
+<ul>
+<li>A. StartRecognizeReceiptsFromUri(...).WaitForCompletionAsync()</li>
+<li>B. StartAnalyzeReceipts(new Uri(...))</li>
+<li>C. AnalyzeDocumentAsync("prebuilt-receipt") // no wait</li>
+<li>D. RecognizeContentAsync(uri)</li>
+</ul>
+<h3 id="63">63</h3>
+<p>Which Bot Framework storage accessor creation syntax is correct in C#?</p>
+<ul>
+<li>A. <code>_userState.CreateProperty&lt;UserProfile&gt;(nameof(UserProfile));</code></li>
+<li>B. <code>_userState.GetProperty&lt;UserProfile&gt;("UserProfile");</code></li>
+<li>C. <code>_conversationState.CreateAccessor&lt;UserProfile&gt;();</code></li>
+<li>D. <code>UserState.CreateProperty&lt;UserProfile&gt;("UserProfile");</code> // static</li>
+</ul>
+<h3 id="64">64</h3>
+<p>Which Speech SDK action is required to use Custom Neural Voice generation?</p>
+<ul>
+<li>A. Create voice model in Speech Studio and then generate using Text-to-Speech API</li>
+<li>B. Train voice model with SpeechSynthesizer locally</li>
+<li>C. Use TTS with a special SDK flag <code>UseCustomVoice=true</code> only</li>
+<li>D. No special steps needed; just pass voice name</li>
+</ul>
+<h3 id="65">65</h3>
+<p>Which of the following is NOT a correct reason to attach an S0 Cognitive Services resource to a Search skillset when processing 50k scanned docs?</p>
+<ul>
+<li>A. F0 (free) tier has too few enrichments → choose S0</li>
+<li>B. S0 supports scale for many documents</li>
+<li>C. S0 eliminates need for Form Recognizer entirely</li>
+<li>D. Free tier would quickly exceed limits</li>
+</ul>
+<h3 id="66">66</h3>
+<p>Which property of Search index fields increases index size and slightly increases query times when using CMK?</p>
+<ul>
+<li>A. adding more replicas</li>
+<li>B. enabling encryption (CMK)</li>
+<li>C. setting <code>searchable=true</code></li>
+<li>D. adding facetable fields</li>
+</ul>
+<h3 id="67">67</h3>
+<p>Which SDK/class would you use to call Azure Video Analyzer (Video Indexer) insights programmatically?</p>
+<ul>
+<li>A. VideoIndexer REST APIs (or SDK)</li>
+<li>B. ComputerVisionClient</li>
+<li>C. FormRecognizerClient</li>
+<li>D. SpeechRecognizer</li>
+</ul>
+<h3 id="68">68</h3>
+<p>Which method would you use to get the operation status for a Read request in Computer Vision?</p>
+<ul>
+<li>A. GetReadResultAsync(Guid)</li>
+<li>B. GetReadStatus()</li>
+<li>C. CheckReadOperation()</li>
+<li>D. ReadStatusAsync()</li>
+</ul>
+<h3 id="69">69</h3>
+<p>Which package should be added to a C# app to call conversational Language service model (Model1) per earlier snippet?</p>
+<ul>
+<li>A. Azure.AI.Language.Conversations</li>
+<li>B. azure-cognitiveservices-language-luis</li>
+<li>C. Universal.Microsoft.CognitiveServices.Speech</li>
+<li>D. Xamarin.Cognitive.Speech</li>
+</ul>
+<h3 id="70">70</h3>
+<p>Which SDK method is used to start a recognition of general content (layout) from a URI (older Form Recognizer naming)?</p>
+<ul>
+<li>A. StartRecognizeContentFromUri</li>
+<li>B. StartRecognizeReceiptsFromUri</li>
+<li>C. StartRecognizeLayoutFromUri</li>
+<li>D. AnalyzeDocumentFromUri</li>
+</ul>
+<h3 id="71">71</h3>
+<p>Which setting in QnAMakerOptions controls minimum confidence to return an answer?</p>
+<ul>
+<li>A. RankerType</li>
+<li>B. ScoreThreshold</li>
+<li>C. Top = 1</li>
+<li>D. ConfidenceMin</li>
+</ul>
+<h3 id="72">72</h3>
+<p>Which is the correct order to move a Language (QnA) project to a different region?</p>
+<ul>
+<li>A. Export project → Import into new Language service → Train &amp; Publish</li>
+<li>B. Recreate KB manually → Train → Publish</li>
+<li>C. Train in new region → Export from old → Import old</li>
+<li>D. Export → Publish → Import</li>
+</ul>
+<h3 id="73">73</h3>
+<p>When calling the Speech SDK for streaming MP3 audio, what is essential to include?</p>
+<ul>
+<li>A. set SpeechRecognitionLanguage="en-US" only</li>
+<li>B. use <code>AudioStreamFormat.GetCompressedFormat(AudioStreamContainerFormat.MP3)</code> for audio config</li>
+<li>C. use <code>AudioConfig.FromWavFileInput</code> with mp3 path</li>
+<li>D. use default audio config and set Format="MP3"</li>
+</ul>
+<h3 id="74">74</h3>
+<p>Which of these is required to allow only VNet1 to access a Cognitive Services resource?</p>
+<ul>
+<li>A. configure the Cognitive Services resource virtual network / private endpoint</li>
+<li>B. set NSG on VNet1 only</li>
+<li>C. add firewall rules only</li>
+<li>D. deploy service to public endpoint and add IP restrictions</li>
+</ul>
+<h3 id="75">75</h3>
+<p>Which method is used to analyze a remote image using the Describe API (older SDK)?</p>
+<ul>
+<li>A. client.DescribeImageInStreamAsync(stream)</li>
+<li>B. client.DescribeImageAsync(imageUrl)</li>
+<li>C. client.AnalyzeImageByDomainInStreamAsync(stream)</li>
+<li>D. client.TagImageAsync(imageUrl)</li>
+</ul>
+<h3 id="76">76</h3>
+<p>Which attribute must be true for an Azure Search field to be returned in search results?</p>
+<ul>
+<li>A. retrievable = true</li>
+<li>B. searchable = true</li>
+<li>C. facetable = true</li>
+<li>D. filterable = true</li>
+</ul>
+<h3 id="77">77</h3>
+<p>Which of the following is NOT true about MemoryStorage in Bot Framework?</p>
+<ul>
+<li>A. It's in-memory only and non-persistent.</li>
+<li>B. It persists data across app restarts.</li>
+<li>C. Good for local testing.</li>
+<li>D. Lost when process restarts.</li>
+</ul>
+<h3 id="78">78</h3>
+<p>You need to ensure your bot's QnA responses are only shown when confidence &gt;= 0.6. Which option do you set?</p>
+<ul>
+<li>A. QnAMakerOptions.ScoreThreshold = 0.6F</li>
+<li>B. QnAMakerOptions.MaxAnswers = 0.6F</li>
+<li>C. QnAMakerOptions.RankerType = "High"</li>
+<li>D. QnAMakerOptions.CardNoMatchText = "No match"</li>
+</ul>
+<h3 id="79">79</h3>
+<p>Which Azure SDK client is used for general Text Analytics (sentiment, key phrases)?</p>
+<ul>
+<li>A. TextAnalyticsClient</li>
+<li>B. LanguageClient</li>
+<li>C. SentimentClient</li>
+<li>D. AnalyzeTextClient</li>
+</ul>
+<h3 id="80">80</h3>
+<p>Which of the following best practice avoids exposing keys in terminal history when running docker run?</p>
+<ul>
+<li>A. use environment variables read from a file with 600 permissions and <code>--env-file</code></li>
+<li>B. pass <code>-e "API_KEY=..."</code> on command line</li>
+<li>C. echo key into terminal then run docker run in same line</li>
+<li>D. use <code>history -c</code> afterwards</li>
+</ul>
+<h3 id="81">81</h3>
+<p>Which of the following identifies the correct method to run sentiment analysis on text?</p>
+<ul>
+<li>A. textClient.AnalyzeSentimentAsync(document)</li>
+<li>B. textClient.RecognizePiiEntitiesAsync(document)</li>
+<li>C. textClient.DetectLanguageAsync(document)</li>
+<li>D. textClient.ExtractKeyPhrasesAsync(document)</li>
+</ul>
+<h3 id="82">82</h3>
+<p>Which Cognitive Search change increases the capacity for indexing (ingestion) operations?</p>
+<ul>
+<li>A. Add replicas</li>
+<li>B. Add partitions</li>
+<li>C. Add more indexes</li>
+<li>D. Enable CMK</li>
+</ul>
+<h3 id="83">83</h3>
+<p>Which SDK method would you use to start recognition of content (layout) locally with file stream?</p>
+<ul>
+<li>A. client.StartRecognizeContentFromStream(stream)</li>
+<li>B. client.ReadAsync(stream)</li>
+<li>C. client.StartAnalyzeLayoutFromStream(stream)</li>
+<li>D. client.StartRecognizeReceiptsFromStream(stream)</li>
+</ul>
+<h3 id="84">84</h3>
+<p>Which method is typically used to regenerate the secondary subscription key of a Cognitive Services account via management REST API?</p>
+<ul>
+<li>A. POST .../regenerateKey with body {"keyName":"Key2"}</li>
+<li>B. PUT .../keys/rotate secondary</li>
+<li>C. GET .../keys/regenerate</li>
+<li>D. PATCH .../keys with "rotate"</li>
+</ul>
+<h3 id="85">85</h3>
+<p>Which of these is the correct way to create SpeechConfig in C#?</p>
+<ul>
+<li>A. <code>var speechConfig = SpeechConfig.FromSubscription("key", "region");</code></li>
+<li>B. <code>var speechConfig = new SpeechConfig("key", "region");</code></li>
+<li>C. <code>var speechConfig = SpeechConfig.Create("key");</code></li>
+<li>D. <code>var speechConfig = SpeechConfig.FromKeyVault(kvUri);</code></li>
+</ul>
+<h3 id="86">86</h3>
+<p>Which of these is correct for using TranslationRecognizer to translate from French to German?</p>
+<ul>
+<li>A. <code>speechConfig.SpeechRecognitionLanguage = "fr"; translator.AddTargetLanguage("de");</code></li>
+<li>B. <code>speechConfig.SpeechRecognitionLanguage = "de"; translator.AddTargetLanguage("fr");</code></li>
+<li>C. <code>speechConfig.SpeechRecognitionLanguage = "fr"; translator.AddSourceLanguage("de");</code></li>
+<li>D. <code>translator.SetSource("fr"); translator.AddTarget("de");</code> // not SDK</li>
+</ul>
+<h3 id="87">87</h3>
+<p>Which resource should you attach to a Search skillset to perform OCR and text analytics at scale?</p>
+<ul>
+<li>A. free Cognitive Services (F0)</li>
+<li>B. S0 Cognitive Services resource</li>
+<li>C. Computer Vision resource only</li>
+<li>D. No resource required</li>
+</ul>
+<h3 id="88">88</h3>
+<p>Which class do you use to call AnalyzeDocumentAsync for prebuilt invoice in new SDK?</p>
+<ul>
+<li>A. DocumentAnalysisClient</li>
+<li>B. FormRecognizerClient</li>
+<li>C. InvoiceAnalysisClient</li>
+<li>D. DocumentIntelligenceClient</li>
+</ul>
+<h3 id="89">89</h3>
+<p>Which method on SpeechRecognizer returns the recognized text result for a single utterance?</p>
+<ul>
+<li>A. RecognizeOnceAsync()</li>
+<li>B. GetResultAsync()</li>
+<li>C. StartSingleRecognition()</li>
+<li>D. TranscribeAsync()</li>
+</ul>
+<h3 id="90">90</h3>
+<p>When processing receipts with Form Recognizer prebuilt model, which fields are commonly returned?</p>
+<ul>
+<li>A. merchantName, transactionTotal, transactionDate</li>
+<li>B. descriptionOnly</li>
+<li>C. imageColors</li>
+<li>D. facialAttributes</li>
+</ul>
+<h3 id="91">91</h3>
+<p>Which of these endpoints should you call to check swagger docs of a Cognitive Services container?</p>
+<ul>
+<li>A. /swagger</li>
+<li>B. /docs</li>
+<li>C. /api-docs</li>
+<li>D. /help</li>
+</ul>
+<h3 id="92">92</h3>
+<p>Which is the correct practice for programmatically creating a free Computer Vision resource via a helper method <code>create_resource</code>? Example from book: <code>create_resource(client, "res1", "ComputerVision", "FO", "westus")</code>. What does "FO" indicate?</p>
+<ul>
+<li>A. Free tier (F0)</li>
+<li>B. Standard tier</li>
+<li>C. Billing region</li>
+<li>D. Resource group</li>
+</ul>
+<h3 id="93">93</h3>
+<p>Which is the correct SDK client for analyzing video insights from Azure Video Indexer?</p>
+<ul>
+<li>A. Use Video Indexer REST APIs / SDK</li>
+<li>B. ComputerVisionClient.AnalyzeVideo</li>
+<li>C. FormRecognizerClient.AnalyzeVideo</li>
+<li>D. VideoClient from Speech SDK</li>
+</ul>
+<h3 id="94">94</h3>
+<p>Which of the following is true about QnA Maker provisioning in a resource group with an App Service plan? (Per book)</p>
+<ul>
+<li>A. Azure Cognitive Search and an App Service instance are automatically created</li>
+<li>B. LUIS authoring is automatically created</li>
+<li>C. Azure SQL DB is always created</li>
+<li>D. Azure Storage is never used</li>
+</ul>
+<h3 id="95">95</h3>
+<p>Which Speech SDK method provides continuous recognition for long audio files?</p>
+<ul>
+<li>A. RecognizeOnceAsync</li>
+<li>B. StartContinuousRecognitionAsync</li>
+<li>C. TranscribeFileOnce</li>
+<li>D. GetLongRecognition</li>
+</ul>
+<h3 id="96">96</h3>
+<p>Which of these is the correct approach to avoid storing billing/API keys in container command history?</p>
+<ul>
+<li>A. Use an <code>docker run</code> script that loads secrets from a file not in shell history</li>
+<li>B. Always paste the key into terminal directly</li>
+<li>C. Hardcode key in the docker image</li>
+<li>D. Print keys as part of container logs</li>
+</ul>
+<h3 id="97">97</h3>
+<p>Which attribute must be set for a Search field to be used for OData filter expressions?</p>
+<ul>
+<li>A. facetable</li>
+<li>B. filterable</li>
+<li>C. searchable</li>
+<li>D. retrievable</li>
+</ul>
+<h3 id="98">98</h3>
+<p>Which SDK action logs endpoint utterances for LUIS active learning?
+A. add header X-Active-Learning: true
+B. include <code>log=true</code> in predict request
+C. call <code>/logUtterance</code> endpoint
+D. set <code>verbose=true</code> only</p>
+<h3 id="99">99</h3>
+<p>Which class is more appropriate to call Text Analytics PII detection in C#?</p>
+<ul>
+<li>A. Azure.AI.TextAnalytics.TextAnalyticsClient</li>
+<li>B. Azure.AI.Language.Conversations.ConversationsClient</li>
+<li>C. Azure.AI.FormRecognizer.FormRecognizerClient</li>
+<li>D. Azure.CognitiveServices.Speech.SpeechClient</li>
+</ul>
+<h3 id="100">100</h3>
+<p>Which of the following is the recommended sequence to move a QnA/Language project into a new Language service instance in a different region?</p>
+<ul>
+<li>A. Export existing project → Import into new instance → Train &amp; Publish</li>
+<li>B. Create new instance → Copy endpoints → Delete old</li>
+<li>C. Export → Delete → Import</li>
+<li>D. Train first in new region then export</li>
+</ul>
+<hr />
+<h4 id="answer-key">✅ Answer Key</h4>
+<ol>
+<li><strong>B</strong> — DescribeImageInStreamAsync returns full-sentence descriptions.</li>
+<li><strong>A</strong> — ReadAsync then poll GetReadResultAsync loop with operation ID.</li>
+<li><strong>C</strong> — SpeechRecognizer is for STT.</li>
+<li><strong>B</strong> — Use GetCompressedFormat with MP3 container.</li>
+<li><strong>C</strong> — TagImageInStreamAsync returns tags.</li>
+<li><strong>C</strong> — loggingOptOut=true disables persistence/logging.</li>
+<li><strong>A</strong> — Azure.AI.Language.Conversations is correct package.</li>
+<li><strong>C</strong> — DocumentAnalysisClient + AnalyzeDocumentAsync("prebuilt-receipt", uri).</li>
+<li><strong>C</strong> — facetable enables facets/drill-down.</li>
+<li><strong>B</strong> — Add replicas for increased query throughput.</li>
+<li><strong>B</strong> — SpeechSynthesizer for TTS.</li>
+<li><strong>B</strong> — Polling loop with delay until status is not Running/NotStarted.</li>
+<li><strong>B</strong> — TranslationRecognizer is for speech translation.</li>
+<li><strong>C</strong> — QnAMakerDialog queries KBs.</li>
+<li><strong>B</strong> — log=true collects utterances for active learning.</li>
+<li><strong>A</strong> — DocumentAnalysisClient is the modern client.</li>
+<li><strong>B</strong> — FromStreamInput with compressed MP3 format.</li>
+<li><strong>B</strong> — AnalyzeImagesByDomainInStreamAsync for domain models.</li>
+<li><strong>A</strong> — azure-ai-language-conversations for Python.</li>
+<li><strong>C</strong> — searchable enables full-text search.</li>
+<li><strong>A</strong> — generateThumbnail endpoint performs smart cropping.</li>
+<li><strong>C</strong> — MemoryStorage is in-memory and non-persistent.</li>
+<li><strong>B</strong> — Avoid passing keys on CLI (they get stored in history).</li>
+<li><strong>C</strong> — Export for container (GZIP) is the container export.</li>
+<li><strong>B</strong> — StartRecognizeContentFromUri for layout/content.</li>
+<li><strong>B</strong> — loggingOptOut=true disables logging.</li>
+<li><strong>B</strong> — Read returns OperationLocation header with ID.</li>
+<li><strong>A</strong> — client.Features.AddPhraseListAsync(...) per snippet.</li>
+<li><strong>B</strong> — RecognizeOnceAsync for single utterance.</li>
+<li><strong>B</strong> — searchable + facetable + retrievable for those requirements.</li>
+<li><strong>A</strong> — /text/analytics/v3.1/languages is the language detection path.</li>
+<li><strong>A</strong> — FormTrainingClient used in older SDKs to train models.</li>
+<li><strong>B</strong> — TranslationRecognizer simplifies speech→speech translation.</li>
+<li><strong>B</strong> — conversationState.clear_state(turn_context) in Python snippet.</li>
+<li><strong>C</strong> — sortable enables sorting.</li>
+<li><strong>B</strong> — synthesizer.SpeakSsmlAsync or SpeakTextAsync.</li>
+<li><strong>C</strong> — AnalyzeImagesByDomainInStreamAsync for celebrity/landmark domain.</li>
+<li><strong>A</strong> — TextAnalyticsClient is the main client.</li>
+<li><strong>B</strong> — results.Status holds OperationStatusCodes (Running/Succeeded).</li>
+<li><strong>B</strong> — Configure virtual network / private endpoint settings on the resource.</li>
+<li><strong>A</strong> — StartRecognizeReceiptsFromUri is the receipts convenience method.</li>
+<li><strong>C</strong> — Orchestrator is the runtime routing component (not a dialog class).</li>
+<li><strong>B</strong> — /status checks container/service status and key validity.</li>
+<li><strong>B</strong> — Metrics Advisor offers RCA and multi-metric monitoring.</li>
+<li><strong>C</strong> — table projection is best for Power BI tabular export.</li>
+<li><strong>B</strong> — Configure language/voice, add speech resource keys, add speech to responses.</li>
+<li><strong>A</strong> — OperationLocation header contains the operation ID.</li>
+<li><strong>C</strong> — Use secure env-file or mounted secrets (not CLI args).</li>
+<li><strong>A</strong> — Azure.AI.Language.Conversations package for CLU.</li>
+<li><strong>B</strong> — StartRecognizeContentFromUri (layout/content).</li>
+<li><strong>A</strong> — client.Features.AddPhraseListAsync(...).</li>
+<li><strong>B</strong> — RecognizePiiEntitiesAsync detects PII.</li>
+<li><strong>B</strong> — StartContinuousRecognitionAsync for continuous realtime.</li>
+<li><strong>C</strong> — Descriptions provide full-sentence outputs.</li>
+<li><strong>A</strong> — Select latest → export for container → run/mount model.</li>
+<li><strong>A</strong> — QnAMakerOptions.ScoreThreshold sets min confidence.</li>
+<li><strong>B</strong> — Document Intelligence (Form Recognizer) for invoices.</li>
+<li><strong>C</strong> — Adding indexes does not reduce query throttling (replicas do).</li>
+<li><strong>C</strong> — loggingOptOut=true is the privacy parameter.</li>
+<li><strong>A</strong> — That is the documented v3.1 languages endpoint.</li>
+<li><strong>A</strong> — mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment.</li>
+<li><strong>A</strong> — StartRecognizeReceiptsFromUri(...).WaitForCompletionAsync() is the pattern.</li>
+<li><strong>A</strong> — _userState.CreateProperty<UserProfile>(nameof(UserProfile));</li>
+<li><strong>A</strong> — Create voice in Speech Studio, then use TTS to generate audio.</li>
+<li><strong>C</strong> — S0 doesn’t eliminate need for Form Recognizer; statement is false.</li>
+<li><strong>B</strong> — CMK encryption adds metadata; index size &amp; query time may increase.</li>
+<li><strong>A</strong> — Video Indexer / Video Analyzer REST APIs or SDK.</li>
+<li><strong>A</strong> — GetReadResultAsync(Guid) returns status/result.</li>
+<li><strong>A</strong> — Azure.AI.Language.Conversations package.</li>
+<li><strong>A</strong> — StartRecognizeContentFromUri for general layout.</li>
+<li><strong>B</strong> — ScoreThreshold sets the min score returned.</li>
+<li><strong>A</strong> — Export → Import → Train &amp; Publish.</li>
+<li><strong>B</strong> — Use GetCompressedFormat for MP3 streaming audio.</li>
+<li><strong>A</strong> — Configure the resource's virtual network/private endpoint.</li>
+<li><strong>B</strong> — Describe an image from URL uses DescribeImage API; for streams there is DescribeImageInStreamAsync; older pattern is DescribeImageAsync(imageUrl). (Exam picks describe) — <strong>(B)</strong></li>
+<li><strong>A</strong> — retrievable=true to be included in results.</li>
+<li><strong>B</strong> — MemoryStorage does NOT persist across restarts (so statement B is false).</li>
+<li><strong>A</strong> — QnAMakerOptions.ScoreThreshold = 0.6F.</li>
+<li><strong>A</strong> — TextAnalyticsClient.</li>
+<li><strong>A</strong> — Use an env-file with proper permissions and <code>--env-file</code>.</li>
+<li><strong>A</strong> — AnalyzeSentimentAsync performs sentiment analysis.</li>
+<li><strong>B</strong> — Partitions scale ingestion.</li>
+<li><strong>A</strong> — StartRecognizeContentFromStream (or equivalent) for content/layout.</li>
+<li><strong>A</strong> — POST regenerateKey with {"keyName":"Key2"} regenerates secondary key.</li>
+<li><strong>A</strong> — SpeechConfig.FromSubscription("key","region") is correct.</li>
+<li><strong>A</strong> — Set recognition language fr and add target de.</li>
+<li><strong>B</strong> — Attach S0 Cognitive Services for scale.</li>
+<li><strong>A</strong> — DocumentAnalysisClient for prebuilt invoice.</li>
+<li><strong>A</strong> — RecognizeOnceAsync().</li>
+<li><strong>A</strong> — merchantName, transactionTotal, transactionDate are typical receipt fields.</li>
+<li><strong>A</strong> — /swagger exposes OpenAPI docs in many containers.</li>
+<li><strong>A</strong> — "FO" indicates Free tier (F0) in the sample helper usage.</li>
+<li><strong>A</strong> — Use Video Indexer REST APIs/SDK for Azure Video Analyzer insights.</li>
+<li><strong>A</strong> — QnA Maker provisioning creates Cognitive Search and App Service instances.</li>
+<li><strong>B</strong> — StartContinuousRecognitionAsync for long audio.</li>
+<li><strong>A</strong> — Read secrets from a protected file/script, not pass them in CLI.</li>
+<li><strong>B</strong> — filterable allows OData filter expressions.</li>
+<li><strong>B</strong> — Include log=true in prediction requests for active learning.</li>
+<li><strong>A</strong> — Azure.AI.TextAnalytics.TextAnalyticsClient is correct.</li>
+<li><strong>A</strong> — Export → Import → Train &amp; Publish is the standard move sequence.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,7064 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../../az104/21az104Qs/">
+      
+      
+        <link rel="next" href="../2ai102/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Azure AI Engineer Associate Certification - AI102 - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-ai-engineer-associate-certification-ai102" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure AI Engineer Associate Certification - AI102
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ai-vs-genai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 AI VS GenAI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 AI VS GenAI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-what-is-artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 What is Artificial Intelligence (AI)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-what-is-generative-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 What is Generative AI?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Artificial Intelligence (AI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-generative-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Generative AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-what-is-a-foundational-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 What is a Foundational Model?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-large-language-model-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 What is a Large Language Model (LLM)?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 What is a Large Language Model (LLM)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-transformer-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Transformer Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-tokens-and-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Tokens and Capacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-what-are-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 What are Embeddings?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Positional encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Attention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-5 Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-head Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-supervised-vs-unsupervised-vs-reinforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Supervised vs Unsupervised vs Reinforcement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Supervised vs Unsupervised vs Reinforcement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-supervised-learning-sl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Supervised Learning (SL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-unsupervised-learning-sl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Unsupervised Learning (SL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-reinforcement-learning-ri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Reinforcement Learning (RI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-neural-networks-and-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Neural Networks and Deep Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-what-is-a-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 What is a GPU?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 What is a GPU?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-what-is-cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 What is CUDA?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-what-is-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 What is Jupyter Notebook?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-what-is-jupyterlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 What is JupyterLab?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-responsible-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Responsible AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Responsible AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-fairness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1 Fairness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-responsible-ai-reliability-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Responsible AI - Reliability and safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-responsible-ai-privacy-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Responsible AI - Privacy and security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4-responsible-ai-inclusiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-4 Responsible AI - Inclusiveness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5-responsible-ai-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-5 Responsible AI - Transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-6-responsible-ai-accountability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-6 Responsible AI - Accountability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-guidelines-for-human-ai-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Guidelines for Human-AI Interaction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Guidelines for Human-AI Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1-responsible-ai-standard-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1 Responsible AI Standard V2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2-ai-transparency-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2 AI Transparency Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-azure-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Azure AI Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Azure AI Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-1-azure-ai-services-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-1 Azure AI Services Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-2-available-azure-ai-services-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-2 Available Azure AI Services containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-3-configure-diagnostic-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-3 Configure Diagnostic Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-4-view-diagnostic-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-4 View Diagnostic Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-an-azure-ai-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor an Azure AI Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitor an Azure AI Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-an-azure-ai-resource_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor an Azure AI Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitor an Azure AI Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-alert-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining the Alert Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-metrics-to-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add metrics to a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ai-services-vs-azure-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Services vs Azure AI Studio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure AI Services vs Azure AI Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-open-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Open AI Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-open-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Open AI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-openai-services-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI Services - Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure OpenAI Services - Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-completion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Completion Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openal-services-deployment-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAl Services - Deployment Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is RAG?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is RAG?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-rag_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is RAG?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-document-cracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Document Cracking?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-hnsw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is HNSW?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-semantic-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Semantic Ranking?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-search-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Search - Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Processing (NLP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Natural Language Processing (NLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Processing (NLP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-vision-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Vision Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-analysis-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Analysis SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-image-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Image Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-character-recognition-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optical Character Recognition (OCR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-custom-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Custom Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Custom Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-image-classification-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Image Classification Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-object-detection-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Object Detection Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Object Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-quick-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Quick Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-smart-labeler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Smart Labeler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-al-document-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Al Document Intelligence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ai-content-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Content Safety
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure AI Content Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-moderation-in-content-safety-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Moderation in Content Safety Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-content-safety-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Content Safety Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-online-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Online Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-understanding-service-luis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language Understanding Service (LUIS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language Understanding Service (LUIS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-luis-application-is-composed-of-a-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A LUIS application is composed of a schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa-maker-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QA Maker Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QA Maker Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-the-exan-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - the Exan Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-knowledgebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Knowledgebase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-chat-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Chat box
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-chit-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Chit Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-multi-turn-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Multi-turn conversation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#face-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Face Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Face Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#face-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Face Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ai-vs-genai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 AI VS GenAI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 AI VS GenAI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-what-is-artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 What is Artificial Intelligence (AI)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-what-is-generative-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 What is Generative AI?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 Artificial Intelligence (AI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-generative-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 Generative AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-what-is-a-foundational-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 What is a Foundational Model?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-large-language-model-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 What is a Large Language Model (LLM)?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 What is a Large Language Model (LLM)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-transformer-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Transformer Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-tokens-and-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Tokens and Capacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-what-are-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 What are Embeddings?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 Positional encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 Attention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-5 Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-head Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-supervised-vs-unsupervised-vs-reinforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Supervised vs Unsupervised vs Reinforcement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Supervised vs Unsupervised vs Reinforcement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-supervised-learning-sl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Supervised Learning (SL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-unsupervised-learning-sl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Unsupervised Learning (SL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-reinforcement-learning-ri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Reinforcement Learning (RI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-neural-networks-and-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 Neural Networks and Deep Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-what-is-a-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 What is a GPU?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 What is a GPU?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-what-is-cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 What is CUDA?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-what-is-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 What is Jupyter Notebook?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-what-is-jupyterlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 What is JupyterLab?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-responsible-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Responsible AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Responsible AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-fairness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1 Fairness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-responsible-ai-reliability-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Responsible AI - Reliability and safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-responsible-ai-privacy-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Responsible AI - Privacy and security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4-responsible-ai-inclusiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-4 Responsible AI - Inclusiveness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5-responsible-ai-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-5 Responsible AI - Transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-6-responsible-ai-accountability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-6 Responsible AI - Accountability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-guidelines-for-human-ai-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Guidelines for Human-AI Interaction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Guidelines for Human-AI Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1-responsible-ai-standard-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1 Responsible AI Standard V2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2-ai-transparency-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2 AI Transparency Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-azure-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Azure AI Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Azure AI Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-1-azure-ai-services-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-1 Azure AI Services Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-2-available-azure-ai-services-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-2 Available Azure AI Services containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-3-configure-diagnostic-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-3 Configure Diagnostic Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-4-view-diagnostic-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-4 View Diagnostic Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-an-azure-ai-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor an Azure AI Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitor an Azure AI Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-an-azure-ai-resource_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor an Azure AI Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitor an Azure AI Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-alert-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining the Alert Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-metrics-to-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add metrics to a dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ai-services-vs-azure-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Services vs Azure AI Studio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure AI Services vs Azure AI Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-open-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Open AI Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-open-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Open AI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-openai-services-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAI Services - Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure OpenAI Services - Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-completion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Completion Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-openal-services-deployment-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure OpenAl Services - Deployment Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is RAG?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is RAG?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-rag_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is RAG?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-document-cracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Document Cracking?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-hnsw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is HNSW?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-semantic-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Semantic Ranking?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-search-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Search - Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Processing (NLP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Natural Language Processing (NLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Processing (NLP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-vision_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-vision-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Vision Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-analysis-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Analysis SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-image-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Image Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-character-recognition-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optical Character Recognition (OCR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-custom-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Custom Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Custom Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-image-classification-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Image Classification Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-object-detection-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Object Detection Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Object Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-quick-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Quick Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-vision-smart-labeler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Vision - Smart Labeler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-al-document-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Al Document Intelligence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ai-content-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Content Safety
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure AI Content Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-moderation-in-content-safety-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Moderation in Content Safety Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-ai-content-safety-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure AI Content Safety Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-online-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Online Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-understanding-service-luis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language Understanding Service (LUIS)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language Understanding Service (LUIS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-luis-application-is-composed-of-a-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A LUIS application is composed of a schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa-maker-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QA Maker Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QA Maker Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-the-exan-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - the Exan Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-knowledgebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Knowledgebase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-chat-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Chat box
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-chit-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Chit Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qna-maker-service-multi-turn-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QnA Maker Service - Multi-turn conversation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#face-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Face Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Face Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#face-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Face Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="azure-ai-engineer-associate-certification-ai102">Azure AI Engineer Associate Certification - AI102</h1>
+<h2 id="1-ai-vs-genai">1 AI VS GenAI</h2>
+<h3 id="1-1-what-is-artificial-intelligence-ai">1-1 What is Artificial Intelligence (AI)?</h3>
+<p>AI is computer systems that perform tasks typically requiring human intelligence.</p>
+<p>These include:</p>
+<ul>
+<li>problem-solving</li>
+<li>decision-making</li>
+<li>understanding natural language</li>
+<li>recognizing speech and images</li>
+</ul>
+<blockquote>
+<p>AI's goal is to <strong>interpret, analyze, and respond to human actions</strong>.</p>
+<p>To simulate human intelligence in machines.</p>
+</blockquote>
+<ul>
+<li><strong>Simulate</strong>: mimic aspects, resembles behaviour</li>
+<li><strong>Emulate</strong>: replicates exact processes and mechanisms.</li>
+</ul>
+<p>AI applications are vast and include areas like:</p>
+<ul>
+<li>expert systems</li>
+<li>natural language processing</li>
+<li>speech recognition</li>
+<li>robotics</li>
+</ul>
+<p><strong>AI is used in various industries for tasks such as:</strong></p>
+<ul>
+<li><strong>B2C</strong> : customer service chatbots</li>
+<li><strong>commerce</strong>: recommendation systems</li>
+<li><strong>Auto</strong>: autonomous vehicles</li>
+<li><strong>Medical</strong>: medical diagnosis.</li>
+</ul>
+<h3 id="1-2-what-is-generative-ai">1-2 What is Generative AI?</h3>
+<p>Generative AI (GenAI) is a subset of AI that focuses on <strong>creating new content or data</strong> that is novel and realistic. </p>
+<p>It can interpret or analyze data but also <strong>generates new data itself</strong>.</p>
+<p><strong>It includes generating text, images, music, speech, and other forms of media.</strong></p>
+<p>It often involves advanced machine learning techniques:</p>
+<ul>
+<li>Generative Adversarial Networks (GANs)</li>
+<li>Variational Autoencoders (VAEs)</li>
+<li>Transformer models gGPT</li>
+</ul>
+<p><strong>Generative AI has multiple modalities:</strong></p>
+<ul>
+<li><strong>Vision</strong>: realistic images and videos</li>
+<li><strong>Text</strong>: generating human-like text</li>
+<li><strong>Audio</strong>: composing music</li>
+<li><strong>Molecular</strong>: Drug discovery via genomic data</li>
+</ul>
+<blockquote>
+<p>Large Language Models (LLMs) which generate out human-like text is a subset of GenAI but is often conflating with being AI due to it being the most popular and developed.</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_1.png" title="Body image" /></p>
+<h3 id="1-3-artificial-intelligence-ai">1-3 Artificial Intelligence (AI)</h3>
+<p><strong>Functionality</strong>: AI focuses on understanding and decision-making</p>
+<p><strong>Data Handling</strong> AI analyzes and makes decisions based on existing data</p>
+<p><strong>Applications</strong>: Spans across various sectors, including data analysis, automation, natural language processing, and healthcare</p>
+<h3 id="1-4-generative-ai">1-4 Generative AI</h3>
+<p><strong>Functionality</strong> Generative AI is about creating new, original outputs.</p>
+<p><strong>Data Handling</strong> Generative AI uses existing data to generate new, unseen outputs. </p>
+<p><strong>Applications</strong>: creative and innovative, focusing on content creation, synthetic data generation, deepfakes, and design</p>
+<h3 id="1-5-what-is-a-foundational-model">1-5 What is a Foundational Model?</h3>
+<p>A Foundational Model (FM) is a general purpose model that is trained on vast amounts of data.</p>
+<p>We say that an FM is pretrained because it can be fined tuned for specific tasks.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_2.png" title="Body image" /></p>
+<blockquote>
+<p>Ms are a specialized subset of FMs that uses transformer architecture.</p>
+</blockquote>
+<h2 id="2-what-is-a-large-language-model-llm">2 What is a Large Language Model (LLM)?</h2>
+<p>A Large Language Model (LLM) is a Foundational Model <strong>that implements the transformer architecture.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_3.png" title="Body image" /></p>
+<p>During this training phase, the model learns semantics (patterns) of language, such as grammar, word usage, sentence structure, style and tone.</p>
+<blockquote>
+<p>It is simple to say that LLM just predicts the next sequences of words, but researchers don't know how LLMs generate their outputs.</p>
+</blockquote>
+<h3 id="2-1-transformer-architecture">2-1 Transformer Architecture</h3>
+<p><mark><strong>Transformer Architecture</strong> was developed by researchers at Google that is effective at <strong>Natural Language Processing (NLP)</strong> due to <strong>multi-head attention</strong> and <strong>positional encoding</strong>.</mark></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_4.png" title="Body image" /></p>
+<p><strong>1. Encoder: reads and understands the input text</strong>. </p>
+<p>It's like a smart system that goes through everything it's been taught (which is a lot of text) and picks up on the meanings of words and how they're used in different contexts.</p>
+<h3 id="2-2-tokens-and-capacity">2-2 <strong>Tokens and Capacity</strong></h3>
+<p><strong>When using transformers the decoder continuously feeds the sequence of tokens back</strong> in as output to help predict the next word in the input.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_5.png" title="Body image" /></p>
+<p><strong>Memory</strong></p>
+<ul>
+<li>
+<p>Each token in a sequence requires memory</p>
+</li>
+<li>
+<p>As the token count increases, the memory increases.</p>
+</li>
+<li>
+<p>The memory usage eventually becomes exhausted.</p>
+</li>
+</ul>
+<p><strong>Compute</strong></p>
+<ul>
+<li>model perform more operations for each additional token</li>
+<li>Longer sequences require more compute</li>
+</ul>
+<blockquote>
+<p>AI services that offer Models-as-a-Service will often have a limit of combined input and output.</p>
+</blockquote>
+<h3 id="2-3-what-are-embeddings">2-3 What are Embeddings?</h3>
+<p><strong>What is a Vector?</strong></p>
+<p>An arrow with a length and a direction</p>
+<p><strong>What is a Vector Space Model?</strong></p>
+<p>Represents text documents or other types of data as vectors in a High Dimensional space</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_6.png" title="Body image" /></p>
+<p><strong>What are embeddings?</strong></p>
+<p>They are vectors of data used by ML models to <strong>find relationships between data.</strong></p>
+<p>ML models can also create embeddings.</p>
+<p><em><strong>Different embedding algorithms capture different kinds of relationships.</strong></em></p>
+<blockquote>
+<p>You can think of embeddings as external memory for performing a task for ML models.</p>
+<p>Embeddings can be shared across models (Multi-model pattern) to help coordinate a task between models.</p>
+</blockquote>
+<h3 id="2-4-positional-encoding">2-4 Positional encoding</h3>
+<p><strong>Positional encoding</strong> is a technique used to preserve <strong>order of words</strong> when processing natural language.</p>
+<p>Transformers need positional encoders because <strong>they do not process data sequentially</strong> and would lose order of understanding when analyze large bodies of text.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_7.png" title="Body image" /></p>
+<blockquote>
+<p>Positional encoding adds a <strong>positional vector</strong> to each word to keep track of the positions of the words.</p>
+</blockquote>
+<h3 id="2-5-attention">2-5 Attention</h3>
+<p><strong>Attention</strong> figures out how each word (or token) <strong>in a sequence</strong> is important to other words within that sequence <strong>by assigning the words weights</strong>.</p>
+<h4 id="self-attention"><strong>Self-Attention</strong></h4>
+<p>Computes attention weights within the same input sequence, where each element attends to all other elements.</p>
+<blockquote>
+<p>Used in transformers to model relationships in sequences (e.g., words in a sentence).</p>
+</blockquote>
+<h4 id="cross-attention"><strong>Cross-Attention</strong></h4>
+<p>Computes attention weights between two different sequences. <strong>allowing one sequence to attend to another sequence</strong>.</p>
+<blockquote>
+<p>Used in tasks like translation where the output sequence (decoder) needs to focus on the input sequence (encoder).</p>
+</blockquote>
+<h4 id="multi-head-attention"><strong>Multi-head Attention</strong></h4>
+<p><strong>Combines multiple self-attention (or cross-attention) heads in parallel, each focusing on different aspects of the input.</strong></p>
+<blockquote>
+<p>Used in transformers to improve performance and capture various dependencies simultaneously.</p>
+</blockquote>
+<p><strong>Multi-headed</strong> because it receiving multiple inputs</p>
+<p><strong>Self-Attention</strong> Self-attention because it feeds back its own sequence</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_8.png" title="Body image" /></p>
+<p><strong>Multi-headed</strong> because it receiving multiple inputs</p>
+<p><strong>Cross-attention</strong> because it feeds sequence inputs from two different sources</p>
+<h2 id="3-supervised-vs-unsupervised-vs-reinforcement">3 Supervised  vs Unsupervised vs Reinforcement</h2>
+<h3 id="3-1-supervised-learning-sl">3-1 Supervised Learning (SL)</h3>
+<p>Data that has been labeled for training Task-driven - <strong>make a prediction</strong></p>
+<ul>
+<li><strong>When the labels are known and you want a precise outcome.</strong></li>
+<li>When you need a specific value returned</li>
+</ul>
+<p><strong><mark>eg. Classification, Regression</mark></strong></p>
+<h3 id="3-2-unsupervised-learning-sl">3-2 Unsupervised Learning (SL)</h3>
+<p>Data has not been labeled, the ML model needs to do its own labeling</p>
+<p><strong>Data-driven - recognize a structure or pattern</strong></p>
+<ul>
+<li><strong>When the labels are not known and the outcome does not need to be precise.</strong></li>
+<li>When you're trying to make sense of data.</li>
+</ul>
+<p><strong><mark>eg. Clustering, Dimensionality Reduction, Association</mark></strong></p>
+<h3 id="3-3-reinforcement-learning-ri">3-3 Reinforcement Learning (RI)</h3>
+<p>There is no data, there is an environment and an <strong>ML model generates data any many attempt to reach a goal</strong></p>
+<p><strong>Decisions-driven - Game AI, Learning Tasks, Robot Navigation</strong></p>
+<h3 id="3-4-neural-networks-and-deep-learning">3-4 Neural Networks and Deep Learning</h3>
+<p><strong>Activation Functions</strong></p>
+<p>An algorithm applied to a hidden layer node that affects connected output e.g. ReLu</p>
+<p><strong>Dense</strong></p>
+<p>When the next layer increases the amount of nodes</p>
+<p><strong>Sparse</strong></p>
+<p>When the next layer decreases the amount of nodes</p>
+<p><strong>What are Neural Networks? (NN)</strong></p>
+<ul>
+<li>Often described as <strong>mimicking the brain</strong>, a <strong>neuron/node represents an algorithm</strong>.</li>
+<li>Data is inputted into a neuron and based on the output the data will be passed to</li>
+<li>one of many other connected neurals.</li>
+<li><strong>The connection between neurons is weighted</strong>.</li>
+<li>The network is organized in layers.</li>
+<li><strong>There will be a input layer, 1 to many hidden layers and an output layer.</strong></li>
+</ul>
+<p><strong>What is Deep Learning?</strong></p>
+<p>A neural network that has <strong>3 or more hidden layers</strong> is considered deep learning.</p>
+<p><strong>What is Feed Forward? (FNN)</strong></p>
+<p>Neural Networks where connections between nodes do not form a cycle (always move forward)</p>
+<p><strong>What is Backpropagation (BP)?</strong></p>
+<p><strong>Moves backwards through the neural network adjusting weights</strong> to improve outcome on next iteration. This is how a neural net learns.</p>
+<p><strong>Loss Function</strong></p>
+<p>A function that compares the ground truth to the prediction to determine the error rate (how bad the network performed)</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_9.png" title="Body image" /></p>
+<h2 id="4-what-is-a-gpu">4 What is a GPU?</h2>
+<p><strong>A General Processing Unit (GPU)</strong> that is specially designed to quickly render high-resolution images and video <strong>concurrently</strong>.</p>
+<p>GPUs can perform <strong><mark>parallel operations on multiple sets of data</mark></strong>, and so they are commonly used for <strong>non-graphical tasks such as machine learning</strong> and scientific computation.</p>
+<p>CPU can have <strong>average 4 to 16 processor cores.</strong></p>
+<p>GPU can thousands of processor cores 4 to 8 GPUs can provide as many as 40.000 cores</p>
+<p>GPUs are best suited for repetitive and highly-parallel computing tasks:</p>
+<ul>
+<li>Rendering graphics</li>
+<li>Cryptocurrency mining</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_10.png" title="Body image" /></p>
+<h3 id="4-1-what-is-cuda">4-1 What is CUDA?</h3>
+<p><strong>What is NVIDA?</strong></p>
+<p>NVIDA is a company that manufactures <strong>graphical processing units (GPUs)</strong> for gaming and professional markets</p>
+<p><strong>What is CUDA?</strong></p>
+<p><strong>Compute Unified Device Architecture (CUDA)</strong> is a <strong>parallel computing platform</strong> and <strong>API</strong> by NVIDIA that allows developers to use <strong>CUDA-enabled GPUs</strong> for <strong>general-purpose computing on GPUs (GPGPU)</strong></p>
+<p>All major deep learning frameworks are integrated with <strong>NVIDIA Deep Learning SDK</strong></p>
+<p>The NVIDA Deep Learning SDK is a collection of NVIDIA libraries for deep learning.</p>
+<p>One of those libraries is the <strong>CUDA Deep Neural Network library (cuDNN)</strong></p>
+<p>cuDNN provides highly tuned implementations for standard routines such as:</p>
+<ul>
+<li>forward and backward convolution</li>
+<li>Pooling</li>
+<li>Normalization</li>
+<li>activation layers</li>
+</ul>
+<h3 id="4-2-what-is-jupyter-notebook">4-2 What is Jupyter Notebook?</h3>
+<p><strong>Jupyter Notebook</strong></p>
+<p>A Web-based application for authoring documents that combine:</p>
+<ul>
+<li>live-code</li>
+<li>narrative text</li>
+<li>equations</li>
+<li>visualizations</li>
+</ul>
+<p>iPython's notebook feature became Jupyter Notebook</p>
+<p>Jupyter Notebooks were overhauled and better <strong>integrated into an IDE called JupyterLab</strong></p>
+<p>You generally want to open Notebooks in Labs</p>
+<p>The legacy web-based interface is known as <strong>Jupyter classic notebook</strong></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_11.png" title="Body image" /></p>
+<h3 id="4-3-what-is-jupyterlab">4-3 What is JupyterLab?</h3>
+<p><strong>JupyterLab is a a next-generation web-based user interface</strong></p>
+<p>All the familiar features of the classic Jupyter Notebook in a flexible and powerful user interface:</p>
+<ul>
+<li>notebook</li>
+<li>Terminal</li>
+<li>text editor</li>
+<li>file browser</li>
+<li>rich outputs</li>
+</ul>
+<p>JupyterLab will <strong><em>eventually replace</em></strong> the classic Jupyter Notebook</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_13.png" title="Body image" /></p>
+<h2 id="5-responsible-ai">5 Responsible AI</h2>
+<p><strong>Responsible AI focuses on ethical, transparent and accountable use of AI</strong> technologies</p>
+<p>Microsoft puts into practice Responsible AI via its six Microsoft AI principles</p>
+<ol>
+<li><strong>Fairness</strong> - AI systems should treat all people fairly</li>
+<li><strong>Reliability and Safety</strong> - AI systems should perform reliably and safely</li>
+<li><strong>Privacy and Security</strong> - AI systems should be secure and respect privacy</li>
+<li><strong>Inclusiveness</strong> - AI systems should empower everyone and engage people</li>
+<li><strong>Transparency</strong> - AI systems should be understandable</li>
+<li><strong>Accountability</strong> - People should be accountable for AI systems</li>
+</ol>
+<h3 id="5-1-fairness">5-1 Fairness</h3>
+<ul>
+<li><strong>AI systems should treat all people fairly</strong></li>
+<li>AI systems can reinforce existing societal stereotypical</li>
+<li><strong>Bias can be introduced during the development of a pipeline</strong></li>
+</ul>
+<p><strong>AI systems that are used to allocate or withhold:</strong></p>
+<ul>
+<li>opportunities</li>
+<li>resources</li>
+<li>Information</li>
+</ul>
+<p><strong>In domains:</strong></p>
+<ul>
+<li>Criminal Justice</li>
+<li>Employment and Hiring</li>
+<li>Finance and Credit</li>
+</ul>
+<p>eg. an ML model designed to select final applicants <strong>for a hiring pipeline without incorporating any bias based on gender, ethnicity or may result in an unfair advantage</strong></p>
+<p><strong><em>Azure ML can tell you how each feature can influence a model's prediction for bias</em></strong></p>
+<p><strong>Fairlearn</strong> is an open-source python project to help data scientist to improve fairness in their AI systems</p>
+<h3 id="5-2-responsible-ai-reliability-and-safety">5-2 Responsible AI - Reliability and safety</h3>
+<p><strong><em>AI systems should perform reliably and safely</em></strong></p>
+<p>AI software must be rigorous tested to ensure they work as expected before release to the end user</p>
+<p>If there are scenarios where AI is making mistakes its important to release a report <strong>quantified risks and harms</strong> to end-users so they are informed of the short-comings of an AI solution</p>
+<p>AI where concern for reliability and safety for humans is critically important:</p>
+<ul>
+<li>Autonomous Vehicle</li>
+<li>AI health diagnosis, AI suggesting prescriptions</li>
+<li>Autonomous Weapon Systems</li>
+</ul>
+<h3 id="5-3-responsible-ai-privacy-and-security">5-3 Responsible AI - Privacy and security</h3>
+<p><strong><em>AI systems should be secure and respect privacy</em></strong></p>
+<p>AI can require vasts amounts of data to train Deep Learning ML models.</p>
+<p>The nature of the ML model may require <strong>personally identifiable information (PII)</strong></p>
+<p><strong><em>It is important that we ensure protection of user data that it is not leaked or disclosed</em></strong></p>
+<p>In some cases ML Models can be run locally on a user's device so their PII remains on their device avoiding that vulnerability</p>
+<p>AI Security Principles to detect malicious actors:</p>
+<ul>
+<li>Data Origin and Lineage</li>
+<li>Data Use Internal vs External</li>
+<li>Data Corruption Considerations</li>
+<li>Anomaly detection</li>
+</ul>
+<h3 id="5-4-responsible-ai-inclusiveness">5-4 Responsible AI - Inclusiveness</h3>
+<p><strong>AI systems should empower everyone and engage people</strong></p>
+<p>If we can design AI solutions for the minority of users </p>
+<p>Then we can design AI solutions for the majority of users</p>
+<p><strong>Minority Groups</strong></p>
+<ul>
+<li>physical ability</li>
+<li>gender</li>
+<li>sexual orientation</li>
+<li>ethnicity</li>
+<li>other factors</li>
+</ul>
+<h3 id="5-5-responsible-ai-transparency">5-5 Responsible AI - Transparency</h3>
+<p><strong>AI systems should be understandable</strong></p>
+<p>Interpretability / Intelligibility is when end-users can understand the behaviour of the UI</p>
+<p>Transparency of AI systems can result in</p>
+<ul>
+<li>Mitigating unfairness</li>
+<li>Help developers debug their AI systems</li>
+<li><strong>Gaining more trust from our users</strong></li>
+</ul>
+<p>Those build AI systems should be:</p>
+<ul>
+<li>open about the why they are using AI</li>
+<li>open about the limitations of their AI systems</li>
+</ul>
+<p>Adopting an open-source AI framework can provide transparency (at least from a technical perceptive) on the internal workings of an AI systems</p>
+<h3 id="5-6-responsible-ai-accountability">5-6 Responsible AI - Accountability</h3>
+<p><strong>People should be accountable for AI systems</strong></p>
+<p><strong>The structure put in place to consistently enacting AI principles and taking them into account</strong></p>
+<p>AI systems should work within:</p>
+<ul>
+<li>framework of governance</li>
+<li>organizational principles</li>
+</ul>
+<p>ethical and legal standards that are clearly defined</p>
+<p>Principles guide Microsoft on how they <strong>Develop, Sell and Advocate</strong> when working with third-parties and this can push towards regulations towards Al Principles</p>
+<h2 id="6-guidelines-for-human-ai-interaction">6 Guidelines for Human-AI Interaction</h2>
+<p>Microsoft has a free web-app that goes through practical scenarios to teach Microsoft Al Principle</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_14.png" title="Body image" /></p>
+<h3 id="6-1-responsible-ai-standard-v2">6-1 Responsible AI Standard V2</h3>
+<p><strong>The Microsoft Responsible AI Standard</strong> is <strong>playbook</strong> that organizations can use to <strong>implement responsibility controls</strong> to ensure governance of the AI Responsibility</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_15.png" title="Body image" /></p>
+<h3 id="6-2-ai-transparency-report">6-2 AI Transparency Report</h3>
+<p><strong>Responsible AI (RAI) Transparency Report</strong> is a <strong>PDF Report</strong> that outlines the steps the Microsoft has taken to be responsible with AI technologies.</p>
+<p>The report includes:</p>
+<ul>
+<li>How they build GenAl: Govern, Map, Measure, Manage</li>
+<li>AI Customer Commitments</li>
+<li>Governance of Responsible AI at Microsoft</li>
+<li>and more ...</li>
+</ul>
+<blockquote>
+<p>AI Transparency Report is not an industry wide report and its just something Microsoft made up.</p>
+</blockquote>
+<h2 id="7-azure-ai-services">7 Azure AI Services</h2>
+<p><strong>What is Azure AI Services?</strong></p>
+<p>Azure AI Services is a consolidation of fully-managed, and serverless Azure
+AI Services APIs.</p>
+<p>When you create an Azure AI Service you don't need to create a resource for each targeted API. You use a <strong>single key</strong> for multiple endpoints.</p>
+<p>You manage security, monitoring and automation from one interface.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_16.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_17.png" title="Body image" /></p>
+<h3 id="7-1-azure-ai-services-containers">7-1 Azure AI Services Containers</h3>
+<p><strong>Azure AI Services Containers</strong> allow you to <strong>deploy a subset of AI service APIs via a container</strong>.</p>
+<p>Containers can be deployed to:</p>
+<ul>
+<li>Local Docker servers for on-premise workloads</li>
+<li>Azure Container Instances (ACI)</li>
+<li>Azure Kubernetes Service (AKS)</li>
+</ul>
+<p>Step 1: Download the container image from the <strong>Microsoft Container Registry</strong>,</p>
+<p>Step 2: Deploy the container image to your chosen container host.</p>
+<p>Step 3: Configure the container with necessary settings (API key, billing endpoint, EULA acceptance).</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_18.png" title="Body image" /></p>
+<p><strong>Client Interaction</strong></p>
+<ul>
+<li>Client applications send data to the containerized service endpoint.</li>
+<li>The service processes the data and returns results to the client.</li>
+</ul>
+<p><strong>Billing and Metrics</strong></p>
+<ul>
+<li>Usage metrics are periodically sent to Azure to calculate billing.</li>
+<li>Ensure the container can connect to the Azure AI services resource for this purpose.</li>
+</ul>
+<h3 id="7-2-available-azure-ai-services-containers">7-2 Available Azure AI Services containers</h3>
+<p><strong>Language Containers</strong></p>
+<ul>
+<li><strong>Key Phrase Extraction</strong>: mcr.microsoft.com/azure-cognitive-services/textanalytics/keyphrase</li>
+<li><strong>Sentiment Analysis</strong>: mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment</li>
+<li><strong>Translator</strong>: mcr.microsoft.com/product/azure-cognitive-services/translator/text-translation/about</li>
+</ul>
+<p><strong>Speech Containers</strong></p>
+<ul>
+<li><strong>Speech to Text</strong>: mcr.microsoft.com/product/azure-cognitive-services/speechservices/speech-to-text/about</li>
+<li><strong>Neural Text to Speech</strong>: mcr.microsoft.com/product/azure-cognitive-services/speechservices/neural-text-to-speech/about</li>
+</ul>
+<p><strong>Vision Containers</strong></p>
+<ul>
+<li><strong>Read OCR:</strong> mcr.microsoft.com/product/azure-cognitive-services/vision/read/about</li>
+<li><strong>Spatial Analysis</strong>: mcr.microsoft.com/product/azure-cognitive-services/vision/spatial-analysis/about</li>
+</ul>
+<h3 id="7-3-configure-diagnostic-logging">7-3 Configure Diagnostic Logging</h3>
+<p><strong>Enable Diagnostic Settings</strong></p>
+<p>Configure diagnostic settings to send logs and metrics to various destinations like Log Analytics, Event Hubs, or Storage Accounts.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_19.png" title="Body image" /></p>
+<p><strong>Enable Diagnostic Settings</strong></p>
+<ul>
+<li>Configure diagnostic settings to send logs and metrics</li>
+<li>to various destinations like Log Analytics, Event Hubs, or Storage Accounts.</li>
+</ul>
+<p><strong>Select Log Categories</strong></p>
+<p>Choose specific log categories to capture, such as
+requests, errors, and performance metrics.</p>
+<p><strong>Define Retention Policy</strong></p>
+<p>Specify how long the logs and metrics should be
+retained.</p>
+<h3 id="7-4-view-diagnostic-logging">7-4 View Diagnostic Logging</h3>
+<p><strong>Log Analytics</strong>: Use Log Analytics to query and analyze logs. Create custom queries to filter and visualize data.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_20.png" title="Body image" /></p>
+<p><strong>Capturing Diagnostic Data</strong></p>
+<ul>
+<li>It may take up to an hour or more for diagnostic data to start flowing to your specified destinations.</li>
+<li>Once the data is captured, it can be analyzed using Azure Log Analytics.</li>
+</ul>
+<p><strong>Accessing Log Data</strong></p>
+<ul>
+<li>Navigate to your Azure Log Analytics resource in the Azure portal.</li>
+<li>Use the query editor to run queries against your log data.</li>
+</ul>
+<h2 id="monitor-an-azure-ai-resource">Monitor an Azure AI Resource</h2>
+<h3 id="azure-monitor">Azure Monitor</h3>
+<p><strong>Azure Monitor</strong></p>
+<ul>
+<li>Integrate with Azure Monitor to set up alerts based on specific log or metric conditions.</li>
+<li>Centralized platform for collecting, analyzing, and acting on telemetry from Azure AI resources.</li>
+</ul>
+<p><strong>Azure Metrics</strong></p>
+<ul>
+<li><strong>Request Count</strong>: Track the number of API requests to the service.</li>
+<li><strong>Latency</strong>: Measure the time taken to process requests.</li>
+<li><strong>Error Rates</strong>: Monitor the frequency of errors and failures.</li>
+<li><strong>Resource Utilization</strong>: Keep an eye on CPU, memory, and other resource usage.</li>
+</ul>
+<p><strong>Event Hubs</strong></p>
+<p>Stream logs to Event Hubs for real-time analytics and integration with third-party monitoring tools.</p>
+<h3 id="monitor-an-azure-ai-resource_1">Monitor an Azure AI Resource</h3>
+<p>Azure provides alerting support for resources through the creation of alert rules.</p>
+<p>These rules ensure the correct team is notified when an issue arises.</p>
+<h4 id="defining-the-alert-rule"><strong>Defining the Alert Rule</strong></h4>
+<p><strong>Scope</strong>: Specify the resource you want to monitor.</p>
+<p><strong>Condition</strong>: Define the trigger based on a signal type:</p>
+<ul>
+<li><strong>Activity Log</strong>: An entry in the activity log created by an action performed on the resource (e.g.,
+regenerating subscription keys).</li>
+<li><strong>Metric</strong>: A metric threshold (e.g., number of errors exceeding 10 in an hour).</li>
+</ul>
+<p><strong>Optional Actions</strong>: Configure actions such as sending an email to an administrator or running an Azure Logic App to address the issue automatically.</p>
+<p><strong>Alert Rule Details</strong>: Provide a name for the alert rule and select the resource group.</p>
+<h3 id="add-metrics-to-a-dashboard">Add metrics to a dashboard</h3>
+<p><strong>Dashboard Overview</strong></p>
+<ul>
+<li>Combine multiple visualizations from different resources.</li>
+<li>Gain an overall view of Azure resource health and performance.</li>
+</ul>
+<p><strong>Steps to Create a Dashboard</strong></p>
+<ul>
+<li>Select <strong>Dashboard</strong> in the Azure portal menu.</li>
+<li>Add up to 100 named dashboards.</li>
+<li>Add a range of tiles and visualizations.</li>
+<li>Include charts from the <strong>Metrics</strong> page.</li>
+</ul>
+<p><strong>Monitoring Dashboards</strong></p>
+<ul>
+<li>Customize dashboards to visualize key metrics and alerts.</li>
+<li>Use them for real-time monitoring and historical analysis.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_21.png" title="Body image" /></p>
+<h2 id="azure-ai-services-vs-azure-ai-studio">Azure AI Services vs Azure AI Studio</h2>
+<h4 id="azure-open-ai-services"><strong>Azure Open AI Services</strong></h4>
+<p>A resource that provides API access to allow you to
+deploy and programmatically work with OpenAl LLM
+models.</p>
+<h4 id="azure-ai-services">Azure AI Services</h4>
+<p>A collection of Azure AI Services APls intended to
+be used programmatically via single API key.</p>
+<h4 id="azure-open-ai-studio">Azure Open AI Studio</h4>
+<p>A GUI that provides an easy way to interact with
+OpenAI Services API and Azure AI Services APIs</p>
+<h4 id="azure-ai-studio">Azure AI Studio</h4>
+<p>A GUI that provides an easy way to interact with Azure AI Services, LLMs, Generative Images and more.</p>
+<p>When you provision Azure AI Studio it will create
+an Azure AI Service resource so it can programmatically interact with Azure API Services</p>
+<ul>
+<li>Similar to OpenAI Studio but: <ul>
+<li>provides access to a wider range of IM models.</li>
+</ul>
+</li>
+<li>allows you to scope workloads into projects.</li>
+</ul>
+<h3 id="azure-openai-service">Azure OpenAI Service</h3>
+<p><strong>Azure OpenAI Service</strong> is an API that allows you to deploy, use and manage multiple OpenAI's LLM models.</p>
+<p><strong>The same python library</strong> used to interact with
+OpenAI's API allows also lets you interact via the
+Azure OpenAI Service.</p>
+<pre><code>from openai import AzureOpenAI
+
+endpoint = &quot;https://###.openai.azure.com/'
+deployment = &quot;gpt-35-turbo'
+api_key = &quot;###&quot;
+
+client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key)
+
+completion = client.chat.completions.create(
+    model=deployment,
+    messages=[
+            {&quot;roles&quot;:&quot;system&quot;, &quot;content&quot;: prompt_documenrt },
+            {&quot;roles&quot;:&quot;user&quot;, &quot;content&quot;: &quot;Hello&quot; },],
+    max_tokens=800,
+    temperature=0.7,
+    temperature=0.7,
+   top_p=0.95,
+    ...
+)
+</code></pre>
+<p>In order to use an OpenAI LLM model you will need
+to first deploy it within the Azure OpenAI Studio.</p>
+<h3 id="azure-openai-studio">Azure OpenAI Studio</h3>
+<p>Azure OpenAI Studio is a GUI for the Azure OpenAI Services</p>
+<p>You can do the following in OpenAI Studio:</p>
+<ul>
+<li>View available models in the Model Catalog</li>
+<li>Use a Chat completion LLM Model</li>
+<li>Use a Completion model</li>
+<li>Generate images with Dalle</li>
+<li>Fine tune a select amount of models</li>
+<li>Upload data to be used for RAG</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_22.png" title="Body image" /></p>
+<h2 id="azure-openai-services-models">Azure OpenAI Services - Models</h2>
+<h3 id="chat-completion-models"><strong>Chat Completion Models</strong></h3>
+<p><strong>GPT-3.5-Turbo-0125</strong></p>
+<ul>
+<li>An earlv version of GPT 3.5, better than GPT3</li>
+<li>Turbo because its optimized for performance</li>
+<li>16K Context</li>
+</ul>
+<p><strong>GPT-3.5-Turbo-Instruct</strong></p>
+<p>Fine-tuned to to accept and return step by step instructions  4K Context</p>
+<p><strong>GPT4</strong></p>
+<ul>
+<li>Better than GPT 3.5</li>
+<li>128K Context</li>
+</ul>
+<p><strong>GPT4 Turbo</strong></p>
+<p>Faster, more cost effective variant with less reasoning capabilities 128K Context</p>
+<p><strong>GPT4 Turbo Vision</strong></p>
+<ul>
+<li>MultiModal (Text and images) variant</li>
+<li>128K Context</li>
+</ul>
+<p><strong>GPT4o (omni)</strong></p>
+<p>MultiModal (Text and images) with improved reasons and understanding 128K Context</p>
+<p><strong>GPT4o-mini</strong></p>
+<p>MonoModal (Text) trained</p>
+<h3 id="completion-models">Completion Models</h3>
+<ul>
+<li>Babbage-002</li>
+<li>Davinci-002</li>
+</ul>
+<blockquote>
+<p>These were the early models of OpenAI, in the GPT3 series</p>
+</blockquote>
+<ul>
+<li>Small, less complex very fast for low compute 4K Context</li>
+<li>Largest and most complex of the GPT3 series ~4K Context</li>
+</ul>
+<p><strong>Embedding Models</strong></p>
+<ul>
+<li>Ada</li>
+<li>Text-embedding-3-small</li>
+<li>
+<p>Text-embedding-3-large</p>
+</li>
+<li>
+<p>GPT3 Family (old)</p>
+</li>
+<li>Less complex embedding</li>
+<li>More complex embedding</li>
+</ul>
+<p><strong>Speech-to-Text Models</strong></p>
+<p>Whisper</p>
+<p><strong>Text-to-Speech Models</strong></p>
+<ul>
+<li>TTS</li>
+<li>TTS-HD</li>
+</ul>
+<p><strong>Image Models</strong></p>
+<ul>
+<li>Dall-e-2</li>
+<li>Dall-e-3</li>
+</ul>
+<p><strong>Fine-Tuning Models</strong></p>
+<ul>
+<li>Babbage-002</li>
+<li>Davinci-002</li>
+<li>GPT-3.5-Turbo-Instruct</li>
+<li>GPT4o-mini</li>
+</ul>
+<h3 id="azure-openal-services-deployment-types">Azure OpenAl Services - Deployment Types</h3>
+<p>When you deploy a model you may have varying deployment type available.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_23.png" title="Body image" /></p>
+<h2 id="what-is-rag">What is RAG?</h2>
+<h4 id="what-is-rag_1"><strong>What is RAG?</strong></h4>
+<p>Retrieval-Augmented-Generation (RAG) is <strong>access patterns for retrieving external data to inform an LLM agent</strong> prior to providing a response to the user.</p>
+<p>A common RAG pattern is representing information as vectors in a vector database and then
+using a Search Engine to vectorize a search term to return relevant documents</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_24.png" title="Body image" /></p>
+<ul>
+<li>Returned information is directly inserted into the context windows of an LLM.</li>
+<li>A RAG access pattern doesn't require a vector database<ul>
+<li>What's important to remember is if you have to fetch external data, than you are utilizing a RAG.</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-is-document-cracking">What is Document Cracking?</h3>
+<p><strong>What is Document Cracking?</strong></p>
+<ul>
+<li>Document cracking is the <strong>process of opening files and extracting content</strong>.</li>
+<li>It's an alternative (and cooler sounding) term for <strong><em>Document Extraction</em></strong>.</li>
+<li>When we say document we are not limiting to just text, could also be images or video.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_25.png" title="Body image" /></p>
+<p>Various file mediums, and file formats the LLM can't understand</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_26.png" title="Body image" /></p>
+<p><strong>Parsers</strong> are used to convert data into a format the the LLM can understand.</p>
+<h3 id="what-is-hnsw">What is HNSW?</h3>
+<p><strong>Hierarchical Navigable Small World (HNSW)</strong> is a <strong>graph-based algorithm</strong> that performs Approximate Nearest Neighbor searches (ANN) in vector databases</p>
+<ul>
+<li>Skip Link Lists (SLL) is a data structure that lets you jump to farther away nodes</li>
+<li>Navigable Small Word (NSW) is graph structure to relate similar nodes. </li>
+<li>SLL + NWS = HNSW</li>
+</ul>
+<p><strong>HNSW is an efficient algorithm for querying a vector database.</strong></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_27.png" title="Body image" /></p>
+<h3 id="what-is-semantic-ranking">What is Semantic Ranking?</h3>
+<p><strong>Semantic Ranking</strong> are algorithms used to <strong>rerank search queries based on semantic understanding</strong>,</p>
+<p>Embeddings are algorithms that vectorize data, and embedding captures semantic understanding, so by using a Vector database <strong><em>you don't need a Semantic Reranker.</em></strong></p>
+<p>Traditional engines use keyword search so they cannot <strong><em>contextually understand</em></strong> if the result they are returning are correct.</p>
+<ul>
+<li>Companies that want to use their traditional datastores instead of a vectorstore to search against for their
+RAGS can get similar results that a vector store would provide.</li>
+<li>A Semantic Rerank can be combined with a vectorstore (which can vield better even better results)<ul>
+<li>Cohere's Reranker claims it works better without even a vectorstore</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_28.png" title="Body image" /></p>
+<h3 id="azure-ai-search">Azure AI Search</h3>
+<p><strong>Azure AI Search</strong> (formally Azure Cognitive Search) is a search engine for both traditional search and for RAG</p>
+<blockquote>
+<p>It combines a search engine with AI features to provide advanced search capabilities, ideal for
+applications needing full-text search, vector similarity search, and hybrid search.</p>
+</blockquote>
+<ul>
+<li>The <strong>Vectorstore</strong> of the Azure AI Search <strong>is the Index</strong></li>
+<li>The vectors aren't being stored in CosmosDB</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_29.png" title="Body image" /></p>
+<p>Azure AI Search has some additional paid addons:</p>
+<ul>
+<li>Customized Entity Lookup Skill</li>
+<li>Document Cracking: Image Extraction</li>
+</ul>
+<p><strong>Azure AI Search - Pricing</strong></p>
+<p>If you want to use any add ons you have to <strong>at least the Basic offering</strong>:</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_30.png" title="Body image" /></p>
+<h3 id="azure-ai-search-components">Azure AI Search - Components</h3>
+<p>Data source - data that will be indexed for retrieval:</p>
+<ul>
+<li>Unstructured Files in <strong>Azure Blob Storage</strong>.</li>
+<li>Tables in <strong>Azure SQL Database</strong></li>
+<li>Documents in <strong>Azure Cosmos DB</strong></li>
+</ul>
+<p><strong>Index</strong> - stores vector data, chunked data and reference to your data sources.</p>
+<p><strong>Default fields:</strong></p>
+<ul>
+<li><strong>Key</strong>: A unique identifier for each document in the index.</li>
+<li><strong>Searchable</strong>: queried using full-text search.</li>
+<li><strong>Filterable</strong>: used in filter expressions to return only documents that match specified criteria.</li>
+<li><strong>Sortable</strong>: used to order the search results.</li>
+<li><strong>Facetable</strong>: used to create facets, which are Ul elements that help filter results based on a list of known values.</li>
+<li><strong>Retrievable</strong>: Fields included in the search results. By default, all fields are retrievable unless explicitly excluded</li>
+</ul>
+<p><strong>Indexer</strong> - A data crawler that extract data from the data source and populate the indexes</p>
+<p><strong>Skillets</strong> - Attached to indexers to process data extract from the data source</p>
+<ul>
+<li>Can create custom skills sets</li>
+<li>Often leverage Azure AI Services g. Translate text into different languages</li>
+</ul>
+<h2 id="natural-language-processing-nlp">Natural Language Processing (NLP)</h2>
+<p><strong>Natural Language Processing</strong> is Machine Learning technique that can <strong>understand the context of a corpus (a body of related text).</strong></p>
+<p>NLP enables you to:</p>
+<ul>
+<li>Analyze and interpret text within documents, email messages</li>
+<li>Interpret or contextualise spoken token e.g., sentiment analysis</li>
+<li>Synthesize speech e.g., a voice assistance talking to you</li>
+<li>Automatically translate spoken or written phrases and sentences between languages.</li>
+<li>Interpret spoken or written commands and determine appropriate actions.</li>
+</ul>
+<p><strong>Cortana was a virtual assistant</strong> developed by Microsoft which uses the Bing search engine to perform tasks such as setting reminders and answering questions for the user. (Retired in 2023)</p>
+<blockquote>
+<p>Microsoft AI Powered Assistants called Copilots is current Al agents.</p>
+</blockquote>
+<h3 id="natural-language-processing-nlp_1">Natural Language Processing (NLP)</h3>
+<p><strong>Azure's LP Service Offering</strong></p>
+<p><strong>Text Analytics</strong></p>
+<ul>
+<li>Sentiment analysis to find out what customers think</li>
+<li>Find topic-relevant phrases using key phrase extraction</li>
+<li>Identify the language of the text with language detection</li>
+<li>Detect and categorize entities in your text with named entity recognition</li>
+</ul>
+<p><strong>Language Understanding (LUIS)</strong></p>
+<p>Natural language processing service that enables you to understand human language in your own application, website, chatbot, loT device, and more</p>
+<p><strong>Question Answering</strong></p>
+<ul>
+<li><strong>Custom Question Answering</strong>: Allows for the creation of custom question-answering models from your content.</li>
+<li><strong>Prebuilt Question Answering</strong>: Provides a prebuilt model that can answer questions from a set of documents.</li>
+</ul>
+<p><strong>Speech</strong></p>
+<p>Transcribe audible speech into readable, searchable text</p>
+<h3 id="computer-vision">Computer Vision</h3>
+<p>Computer Vision is when we use Machine Learning Neural Networks to <strong>gain high-level understanding from digital images or video</strong></p>
+<p><strong>Computer Vision Deep Learning Algorithms:</strong></p>
+<ul>
+<li><strong>Convolutional neural network (CNN)</strong> - image and video recognition<ul>
+<li>Inspired after how human eyes actually process information and send it back to brain to be processed</li>
+</ul>
+</li>
+<li><strong>Recurrent neural network (RNN)</strong> - handwriting recognition or speech recognition</li>
+</ul>
+<h3 id="types-of-computer-vision">Types of Computer Vision</h3>
+<ul>
+<li><strong>Image Classification</strong> - look at an image or video and classify (place it in a category)</li>
+<li><strong>Object Detection</strong> - identify objects within an image or video and apply labels and location boundaries</li>
+<li><strong>Semantic Segmentation</strong> - identify segments or objects by drawing pixel mask (great for objects in movement)</li>
+<li><strong>Image Analysis</strong> - analyze an and image or video to apply descriptive and context labels<ul>
+<li>e.g., An employee sitting at a desk in Tokyo</li>
+</ul>
+</li>
+<li><strong>Optical Character Recognition</strong> - Find text in images or videos and extract them into digital text for editing</li>
+</ul>
+<h3 id="computer-vision_1">Computer Vision</h3>
+<p><strong>Azure's Computer Vision Service Offering</strong></p>
+<p><strong>Azure AI Vision</strong> analyze images and video, and extract descriptions, tags, objects, and text</p>
+<p><strong>Azure AI Custom Vision</strong> custom image classification and object detection models using your own images</p>
+<p><strong>Optical Character Recognition (OCR)</strong> uses the Read API to extract printed and handwritten text from various surfaces, supporting multiple languages.</p>
+<p><strong>Image Analysis</strong> extracts visual features from images, including objects, faces, adult content and auto-generated text descriptions.</p>
+<p><strong>Face</strong> detect and identify people and emotions in images.</p>
+<p><strong>Video Analysis</strong> includes Spatial Analysis for detecting movement and Video Retrieval
+for creating searchable video indexes using natural language.</p>
+<h3 id="azure-ai-vision-studio">Azure AI Vision Studio</h3>
+<p><strong>Azure AI Vision Image Studio</strong> is a no-code/low-code playground to perform various ML Vision tasks.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_31.png" title="Body image" /></p>
+<blockquote>
+<p>Azure AI Vision Studio using the various Azure AI APIs g. Computer Vision, Face, Image Analysis</p>
+</blockquote>
+<h3 id="image-analysis-sdk"><strong>Image Analysis SDK</strong></h3>
+<p><strong>Image Analysis SDK</strong> can analyze various visual features in images, such as detecting adult content, identifying brands or objects, and recognizing human faces.</p>
+<p><strong>Key Features</strong></p>
+<ul>
+<li><strong>Image Analysis 4.0 (Latest Version)</strong>: Recommended for most use cases.</li>
+<li><strong>Image Analysis 3.2:</strong> Offers a broader range of features. Use this if 4.0 doesn't support your needs.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_32.png" title="Body image" /></p>
+<p><strong>Image Analysis SDK will use a Computer Visions' resource endpoint</strong></p>
+<pre><code>client = ImageAnalysisClient(
+    endpoint=endpoint,
+    credential=AzureKeyCredential(key)
+)
+
+result = client.analyze_from_url(
+    image_url=&quot;https://myimage.com/myimage.png&quot;,
+    visual_features=[VisualFeatures.CAPTION, VisualFeatures.READ],
+    gender_neutral_caption=True,  # Optional (default is False)
+</code></pre>
+<h3 id="types-of-image-analysis">Types of Image Analysis</h3>
+<ul>
+<li><strong>Model Customization (v4.0)</strong>: Create custom models for image classification or object detection.</li>
+<li><strong>Read Text from Images (v4.0 only)</strong>: Extract text from images using OCR.</li>
+<li><strong>Detect People in Images (v4.0 only)</strong>: Identify and locate people in images.</li>
+<li><strong>Generate Image Captions</strong>: Create human-readable captions for images.</li>
+<li><strong>Detect Objects</strong>: Identify objects and their locations in images.</li>
+<li><strong>Tag Visual Features</strong>: Tag objects, scenery, and actions in images.</li>
+<li><strong>Get the Area of Interest / Smart Crop</strong>: Identify the most important part of an image.</li>
+<li><strong>Detect Brands (v3.2 only)</strong>: Identify commercial brands in images.</li>
+<li><strong>Categorize an Image (v3.2 only)</strong>: Categorize images using a hierarchical taxonomy.</li>
+<li><strong>Detect Faces (v3.2 only)</strong>: Detect faces and provide basic details.</li>
+<li><strong>Detect Image Types (v3.2 only</strong>): Determine if an image is a line drawing, clip art, or photo.</li>
+<li><strong>Detect Domain-Specific Content (v3.2 only)</strong>: Identify celebrities or landmarks in images.</li>
+<li><strong>Detect the Color Scheme (v3.2 only)</strong>: Analyze color usage in images.</li>
+<li><strong>Moderate Content in Images (v3.2 only)</strong>: Detect and classify adult content in images.</li>
+</ul>
+<h3 id="optical-character-recognition-ocr">Optical Character Recognition (OCR)</h3>
+<p><strong>Optical character recognition (OCR)</strong> is the process of extracting printed or handwritten textinto a digital and editable format</p>
+<p>OCR can be applied to:</p>
+<ul>
+<li>photos of street signs</li>
+<li>Products</li>
+<li>Documents</li>
+<li>Invoices</li>
+<li>Bills</li>
+<li>Financial Reports</li>
+<li>Articles</li>
+<li>and more</li>
+</ul>
+<p>Azure has two different APIs that can perform OCR: <strong>OCR API and Read API</strong></p>
+<p><strong>OCR API</strong></p>
+<ul>
+<li>older recognition model</li>
+<li>supports only images</li>
+<li>executes synchronouslv<ul>
+<li>returning immediately with the detected text</li>
+<li>Suited for less text</li>
+</ul>
+</li>
+<li>Support more languages</li>
+<li>Easier to implement</li>
+</ul>
+<p><strong>Read API</strong></p>
+<ul>
+<li>updated recognition model</li>
+<li>Supports images and PDFs</li>
+<li>Executes asynchronously<ul>
+<li>parallelizes tasks per line for faster results</li>
+<li>Suited for lots of text</li>
+</ul>
+</li>
+<li>Supports fewer languages</li>
+<li>A bit more difficult to implement</li>
+</ul>
+<p><strong>OCR is performed via the Computer Vision SDK</strong></p>
+<h2 id="introduction-to-custom-vision">Introduction to Custom Vision</h2>
+<p>Within Custom Vision you setup projects and <strong>you need to select a Project Type</strong></p>
+<p><strong>Classification</strong></p>
+<ul>
+<li>
+<p><strong>Multi-label</strong></p>
+<ul>
+<li>When we want to apply many tags to an image</li>
+<li>Image contains both a Cat and a Dog</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-class</strong></p>
+<ul>
+<li>when we only have one possible tag to apply to an image:<ul>
+<li>It is either a Apple, Banana, Orange</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Object Detection</strong></p>
+<ul>
+<li>When we to detect various objects in an image</li>
+</ul>
+</li>
+</ul>
+<p>You will need to also choose a <strong>Domain</strong></p>
+<p>A Domain is a Microsoft Managed dataset that is used for training the ML model、</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_33.png" title="Body image" /></p>
+<h3 id="custom-vision-image-classification-domains">Custom Vision - Image Classification Domains</h3>
+<p><strong>Classification Domains</strong></p>
+<ul>
+<li><strong>General</strong> Optimized for a broad range of image classification tasks. If none of the other specific domains are appropriate, or if you're unsure of which domain to choose, select one of the General domains.</li>
+<li><strong>General [A1]</strong> Optimized for better accuracy with comparable inference time as General domain.
+Recommended for larger datasets or more difficult user scenarios. This domain requires more training time.</li>
+<li><strong>General [A2]</strong> Optimized for better accuracy with faster inference time than General[A1] and
+General domains. Recommended for most datasets. This domain requires less training time than General and General [A1] domains.</li>
+<li><strong>Food</strong> Optimized for photographs of dishes as you would see them on a restaurant menu. If you
+want to classify photographs of individual fruits or vegetables, use the Food domain.</li>
+<li><strong>Landmarks</strong> Optimized for recognizable landmarks, both natural and artificial. This domain works
+best when the landmark is clearly visible in the photograph. This domain works even if the landmark is slightly obstructed by people in front of it.</li>
+<li><strong>Retail</strong> Optimized for images that are found in a shopping catalog or shopping website. If you want high-precision classifying between dresses, pants, and shirts, use this domain.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_34.png" title="Body image" /></p>
+<h3 id="custom-vision-object-detection-domains">Custom Vision - Object Detection Domains</h3>
+<p><strong>Object Detection Domains</strong></p>
+<p><strong>General</strong></p>
+<p>Optimized for a broad range of object detection tasks. If none of the other domains are appropriate, or you are unsure of which domain to choose, select the General domain.</p>
+<p><strong>General [A1]</strong></p>
+<ul>
+<li>Optimized for better accuracy with comparable inference time as General domain.</li>
+<li>Recommended for more accurate region location needs, larger datasets, or more difficult user scenarios. </li>
+<li>This domain requires more training time, and results are not deterministic:<ul>
+<li>expect a +-1% mean Average Precision (mAP) difference with the same training data provided.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Logo</strong>: Optimized for finding brand logos in images.</p>
+<p><strong>Products on shelves</strong>: Optimized for detecting and classifying products on shelves.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_35.png" title="Body image" /></p>
+<h3 id="custom-vision-object-detection">Custom Vision - Object Detection</h3>
+<p><strong>For Object Detection</strong> you apply tags to objects in an image for data labeling</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_36.png" title="Body image" /></p>
+<h3 id="custom-vision-training">Custom Vision - Training</h3>
+<p>When you are ready to train you model you have two options:</p>
+<ul>
+<li><strong>Quick Training</strong> - trains quickly but can be less accurate</li>
+<li><strong>Advanced Training</strong> - increase the compute time to improve your results</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_37.png" title="Body image" /></p>
+<p>With each iteration of training our ML model will improve the evaluation metrics <strong>(precision and recall</strong>) </p>
+<p><strong>The probability threshold value</strong> determines when to stop training when our evaluation metrics meet our desired threshold</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_38.png" title="Body image" /></p>
+<p>Once the <strong>Classification</strong> training job is complete we will get a report of the evaluation metrics <strong>outcome</strong></p>
+<p><strong>Precision</strong></p>
+<ul>
+<li>being exact and accurate</li>
+<li>select items that are relevant</li>
+</ul>
+<p><strong>Recall (Sensitivity or True Positive Rate)</strong></p>
+<ul>
+<li>How many relevant items returned</li>
+</ul>
+<p><strong>Average Precision (AP)</strong></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_39.png" title="Body image" /></p>
+<h3 id="custom-vision-quick-test">Custom Vision - Quick Test</h3>
+<p>Before deploying our final trained model that can be invoked via an API Endpoint </p>
+<p>It is good practice to test our ML model using the <strong>Quick Test</strong> feature</p>
+<h3 id="custom-vision-publish">Custom Vision - Publish</h3>
+<p>To deploy our ML model to be accessible using our API Key and Endpoint we need to trigger the <strong>Publish</strong> action.</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_40.png" title="Body image" /></p>
+<h3 id="custom-vision-smart-labeler"><strong><em>Custom Vision - Smart Labeler</em></strong></h3>
+<p>When you have a very large dataset you can use Smart Labeler to predict labels.</p>
+<p>Smart Labeler only works if you have trained the label</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_41.png" title="Body image" /></p>
+<p>Smart labeler is when you want to increase your training set, and want to ML-assisted labeling to speed up this process.</p>
+<h2 id="azure-al-document-intelligence">Azure Al Document Intelligence</h2>
+<p><strong>Azure Al Document Intelligence (formerly Form Recognizer)</strong> is a <strong>specialize OCR service</strong> (translates printed text into digital and editable content) and <strong>preserves that structure and relationship of form-like data</strong></p>
+<p><strong>Document Intelligence can automate data entry in your applications</strong> and <strong>enrich your documents search capabilities</strong></p>
+<p>It can identify:</p>
+<ul>
+<li>Key Value Pairs</li>
+<li>Selection Marks</li>
+<li>Table Structures</li>
+</ul>
+<p><strong>Document Intelligence</strong> outputs structures such as:</p>
+<ul>
+<li>Original file relationships</li>
+<li>Bounding boxes</li>
+<li>Confidence scores</li>
+</ul>
+<p><strong>Azure Al Document Intelligence</strong> is composed of</p>
+<ul>
+<li>Custom document processing models</li>
+<li>Prebuilt models for invoices, receipts, IDs, business cards</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_42.png" title="Body image" /></p>
+<h2 id="azure-ai-content-safety">Azure AI Content Safety</h2>
+<p>Azure AI Content Safety API detects harmful user.
+generated and AI-generated content in apps and services.</p>
+<p>It <strong>includes text and image APIs</strong> that allow you to detect material that is harmful.</p>
+<p><strong>Regulatory Compliance:</strong> Helps applications adhere to regulations and maintain a safe and appropriate user environment.</p>
+<p>Use Cases</p>
+<ul>
+<li>Generative AI services</li>
+<li>Online marketplaces</li>
+<li>Gaming companies</li>
+<li>Social messaging platforms</li>
+<li>Enterprise media companies</li>
+<li>K-12 education solutions</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_43.png" title="Body image" /></p>
+<h3 id="image-moderation-in-content-safety-studio">Image Moderation in Content Safety Studio</h3>
+<p><strong>Image Moderation</strong> with Azure AI Content Safety Studio provides a streamlined way to ensure your images comply with your content standards.</p>
+<p><strong>User-Friendly Interface:</strong></p>
+<ul>
+<li>Easily test images for content compliance.</li>
+<li>Evaluate results directly in the portal for immediate feedback.</li>
+</ul>
+<p><strong>Customizable Sensitivity:</strong></p>
+<ul>
+<li>Adjust sensitivity levels to fine-tune content filters.</li>
+<li>Tailor settings to meet specific moderation needs.</li>
+</ul>
+<p><strong>Streamlined Integration:</strong></p>
+<ul>
+<li>Export code to implement the image moderation tool in your application.</li>
+<li>Simplify your workflow and save time with easy integration.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_44.png" title="Body image" /></p>
+<h3 id="azure-ai-content-safety-studio">Azure AI Content Safety Studio</h3>
+<p>Azure AI Content Safety Studio is an is GUI for Azure AI Content Safety API.</p>
+<ul>
+<li>Handle offensive, risky, or undesirable content using advanced content moderation ML models.</li>
+<li>Provide templates and customized workflows to build your own content moderation system.</li>
+</ul>
+<p><strong>Key Features</strong></p>
+<ul>
+<li>
+<p><strong>Out-of-the-Box AI Models</strong>: Includes pre-trained models and Microsoft's built-in blocklists for flagging profanities.</p>
+</li>
+<li>
+<p><strong>Custom Blocklists</strong>: Allows users to upload their own blocklists for specific use cases.</p>
+</li>
+<li>
+<p><strong>Content Upload</strong>: Users can upload their content or use provided sample content to test the system.</p>
+</li>
+</ul>
+<p>Three main features:</p>
+<ul>
+<li>Moderate Text Content</li>
+<li>Moderate Image Content</li>
+<li>Monitor Online Activity</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_45.png" title="Body image" /></p>
+<h2 id="monitor-online-activity">Monitor Online Activity</h2>
+<p>Monitor Online Activity provides a comprehensive overview of your content moderation performance, enabling you to track API usage and trends across different content types.</p>
+<p><strong>Detailed Response Information:</strong></p>
+<ul>
+<li>Access detailed metrics such as category and severity distribution.</li>
+<li>Monitor latency, errors, and blocklist detections.</li>
+</ul>
+<p><strong>Complete Performance Overview:</strong></p>
+<p>Get a full picture of your content moderation performance.
+Optimize your workflow based on detailed insights.</p>
+<p><strong>User-Friendly Interface:</strong></p>
+<ul>
+<li>Easily navigate the monitoring page to access necessary information.</li>
+<li>Make informed decisions about your content moderation strategy.</li>
+</ul>
+<p><strong>Performance Tracking Tools:</strong></p>
+<ul>
+<li>Track trends and usage across different modalities.</li>
+<li>Stay on top of your content moderation performance and achieve your content goals.</li>
+</ul>
+<h2 id="language-understanding-service-luis">Language Understanding Service (LUIS)</h2>
+<p><strong>Language Understanding (LUIS) is a no-code ML service to build natural language into apps</strong>, bots, and IoT devices.</p>
+<p>Quickly create enterprise-ready, custom models that continuously improve.</p>
+<p>LUIS is accessed via its own isolate domain at luis.ai</p>
+<p>LUIS utilizes Natural Language Processing (NLP) and <strong>Natural Language Understanding (NLU)</strong></p>
+<p>NLU is the ability to transform a linguistic statement to a representation that enables you to understand your users naturally</p>
+<p>LUIS is intended to focus on <strong>intention and extraction</strong>:</p>
+<ul>
+<li>What the user wants</li>
+<li>What they are talking about</li>
+</ul>
+<h3 id="a-luis-application-is-composed-of-a-schema">A LUIS application is composed of a schema</h3>
+<p>This schema is autogenerated for you when you use the LUIS.ai web interface</p>
+<p>The schema defines:</p>
+<ul>
+<li><strong>intentions</strong> - what the user is asking for<ul>
+<li>a LUIS app always contains a None Intent</li>
+</ul>
+</li>
+<li><strong>entities</strong> - what parts of the intent is used to determine the answer</li>
+<li>
+<p><strong>utterances</strong> - Examples of user input that includes intent and entities to train the ML model to match predictions against real user input</p>
+<ul>
+<li>An intent requires one or more example utterance for training</li>
+<li>It is recommended to have 15-30 example utterances</li>
+<li>To explicitly train to ignore an utterance use the None Intent</li>
+</ul>
+</li>
+<li>
+<p>Intents <strong>classify</strong> user utterances</p>
+</li>
+<li>Entities <strong>extract</strong> data from utterance</li>
+</ul>
+<blockquote>
+<p>Example Utterance</p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_46.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_47.png" title="Body image" /></p>
+<h2 id="qa-maker-service">QA Maker Service</h2>
+<p><strong>QA Maker</strong> is a <strong>cloud-based Natural Language Processing (NLP) service</strong> that allows you to c<strong>reate a natural conversational layer over your data.</strong></p>
+<p>QnAMaker is hosted on its own isolate domain at <strong>www.gnamaker.ai</strong></p>
+<p>It will find the most appropriate answer for any input from your <strong>custom knowledge base (KB) of information</strong></p>
+<p>Commonly used to build conversationalclient applications, which include:</p>
+<ul>
+<li>social media applications</li>
+<li>chat bots</li>
+<li>speech-enabled desktop applications</li>
+</ul>
+<hr />
+<ul>
+<li>QnA Maker doesn't store customer data</li>
+<li>All customer data is stored in the region the customer deploys the dependent service instances in</li>
+</ul>
+<h3 id="qna-maker-service-the-exan-use-cases">QnA Maker Service - the Exan Use Cases</h3>
+<p><strong>When you have static information</strong></p>
+<ul>
+<li>Use QnA Maker when you have static information in your knowledge base of answers. </li>
+<li>This knowledge base is custom to your needs, which you've built with documents such as PDFs and URLs.</li>
+</ul>
+<p><strong>When you want to provide the same answer to a request, question, or command</strong></p>
+<ul>
+<li>when different users submit the same question, the same answer is returned.</li>
+</ul>
+<p><strong>When you want to filter static information based on meta-information</strong></p>
+<ul>
+<li>add metadata tags to provide additional filtering options relevant to your client application's users and the information. </li>
+<li>Common metadata information includes chit-chat, content type or format, content purpose, and content freshness.</li>
+</ul>
+<p><strong>When you want to manage a bot conversation that includes static information</strong></p>
+<ul>
+<li>your knowledge base takes a user's conversational text or command and answers it. </li>
+<li>If the answer is part of a pre-determined conversation flow, represented in your knowledge base with multi-turn context, the bot can easily provide this flow.</li>
+</ul>
+<h3 id="qna-maker-service-knowledgebase">QnA Maker Service - Knowledgebase</h3>
+<p>QnA Maker imports your content into a knowledge base of question and answer pairs.</p>
+<p>QnA Maker can build you knowledge base from an <strong>existing document, manual or website (URL, DOCX, PDF)</strong></p>
+<p>It will use ML to extract the question and answer pairs.</p>
+<p>The content of the question and answer pair includes:</p>
+<ul>
+<li>All the alternate forms of the question</li>
+<li>Metadata tags used to filter answer choices during the search</li>
+<li>Follow-up prompts to continue the search refinement</li>
+</ul>
+<p>QnA Maker stores answer text as <strong>markdown</strong></p>
+<p>Once your Knowledge Base is imported you can <strong>fine-tune the imported results by editing the Question and Answer pairs</strong></p>
+<h3 id="qna-maker-service-chat-box">QnA Maker Service - Chat box</h3>
+<ul>
+<li>You converse with your bot through a Chat Box.</li>
+<li>There are many oppuritines to interact with your bot in QNAMaker.ai, Azure Bot Service, Bot Composer.</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_48.png" title="Body image" /></p>
+<p>Via Channels you can even get embeddable chatbox code</p>
+<h3 id="qna-maker-service-chit-chat">QnA Maker Service - Chit Chat</h3>
+<p>The chit-chat feature in QnA maker allows you to easily add a <strong>pre-populated set of the top chit-chat</strong>, into your knowledge base.</p>
+<p>This dataset has about <strong>100 scenarios</strong> of chit-chat in the voice of multiple personas</p>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_49.png" title="Body image" /></p>
+<h3 id="qna-maker-service-multi-turn-conversation">QnA Maker Service - Multi-turn conversation</h3>
+<p><strong>Multi-turn conversation</strong> is <strong>follow-up prompts</strong> and context to manage the multiple</p>
+<p>When a question <strong>can't be answered in a single turn</strong></p>
+<p>QA Maker provides multi-turn prompts and active learning to help you improve your basic question and answer pairs.</p>
+<p><strong>Multi-turn prompts</strong> give you the opportunity to connect question and answer pairs. This connection allows the client application to provide a top answer and provides more questions to refine the search for a final answer.</p>
+<p>After the knowledge base receives questions from users at the published endpoint, QnA Maker applies <strong>active learning</strong> to these real-world questions to suggest changes to your knowledge base to improve the quality.</p>
+<h2 id="face-service">Face Service</h2>
+<p>Azure Face service provides Al algorithms that <strong>detect, recognize, and analyze human faces in images</strong></p>
+<p>Azure Face can detect:</p>
+<ul>
+<li>faces in an image</li>
+<li>faces with specific attributes</li>
+<li>face landmarks</li>
+<li>similar faces</li>
+<li>the same face as a specific identity across a gallery of images</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/ai102_1_50.png" title="Body image" /></p>
+<h3 id="face-attributes">Face Attributes</h3>
+<ul>
+<li>Accessories. (Wearing accessories)</li>
+<li>Age</li>
+<li>Blur (blurriness of the face in the image)</li>
+<li>Emotion.</li>
+<li>Exposure</li>
+<li>Facial hair</li>
+<li>Gender</li>
+<li>Glasses</li>
+<li>Hair</li>
+<li>Head pose</li>
+<li>Makeup</li>
+<li>Mask. (are they wearing a mask?)</li>
+<li>Noise. The visual noise detected in the face image</li>
+<li>Occlusion. (objects blocking parts of the face)</li>
+<li>Smile</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

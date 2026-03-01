@@ -1,0 +1,4528 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../dp3/">
+      
+      
+        <link rel="next" href="../dp5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Module 4 Large-scale data warehousing - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#large-scale-data-warehousing" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 4 Large-scale data warehousing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#describe-data-warehousing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describe data warehousing architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describe data warehousing architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-ingestion-and-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data ingestion and processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-data-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytical data store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytical data model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-data-model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytical data model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-data-ingestion-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore data ingestion pipelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-analytical-data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore analytical data stores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore analytical data stores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-warehouses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data warehouses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-lakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data lakes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-services-for-analytical-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure services for analytical stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        real-time analytics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="real-time analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understand-batch-and-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand batch and stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand batch processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-differences-between-batch-and-streaming-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand differences between batch and streaming data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combine-batch-and-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combine batch and stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-common-elements-of-stream-processing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore common elements of stream processing architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-analytics-in-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-time analytics in Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sources-for-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources for stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinks-for-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sinks for stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-stream-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Stream Analytics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Stream Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-stream-analytics-jobs-and-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Stream Analytics jobs and clusters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark-on-microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apache Spark on Microsoft Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#describe-data-warehousing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describe data warehousing architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describe data warehousing architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-ingestion-and-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data ingestion and processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-data-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytical data store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytical data model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-data-model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytical data model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-data-ingestion-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore data ingestion pipelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-analytical-data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore analytical data stores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore analytical data stores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-warehouses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data warehouses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-lakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data lakes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-services-for-analytical-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure services for analytical stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        real-time analytics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="real-time analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understand-batch-and-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand batch and stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand batch processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-differences-between-batch-and-streaming-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand differences between batch and streaming data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combine-batch-and-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combine batch and stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-common-elements-of-stream-processing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore common elements of stream processing architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-analytics-in-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-time analytics in Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sources-for-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources for stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinks-for-stream-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sinks for stream processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-stream-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Stream Analytics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Stream Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-stream-analytics-jobs-and-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Stream Analytics jobs and clusters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark-on-microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apache Spark on Microsoft Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-data-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Data Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="large-scale-data-warehousing">Large-scale data warehousing</h1>
+<h2 id="describe-data-warehousing-architecture"><strong>Describe data warehousing architecture</strong></h2>
+<h3 id="data-ingestion-and-processing"><strong>Data ingestion and processing</strong></h3>
+<ul>
+<li>Data from one or more transactional data stores, files, real-time streams, or other sources is loaded into a <strong>data lake or a relational data warehouse</strong>. </li>
+<li>The load operation usually involves an extract, transform, and load (ETL) or extract, load, and transform (ELT) process in which the data is cleaned, filtered, and restructured for analysis. </li>
+<li>In ETL processes, the data is transformed before being loaded into an analytical store, while in an ELT process the data is copied to the store and then transformed. </li>
+<li>Either way, the resulting <strong>data structure is optimized for analytical queries</strong>. </li>
+<li>The data processing is often performed by distributed systems that can process high volumes of data in parallel using multi-node clusters. </li>
+<li><strong>Data ingestion includes both batch processing of static data and real-time processing of streaming data</strong>.</li>
+</ul>
+<h3 id="analytical-data-store"><strong>Analytical data store</strong></h3>
+<ul>
+<li>Data stores for large scale analytics include <strong>relational data warehouses, file-system based data lakes, and hybrid architectures</strong> that combine features of data warehouses and data lakes (sometimes called data lakehouses or lake databases). </li>
+</ul>
+<h3 id="analytical-data-model"><strong>Analytical data model</strong></h3>
+<p>while data analysts and data scientists can work with the data directly in the analytical data store, it’s common to create one or more data models that pre-aggregate the data to make it easier to <strong>produce reports, dashboards, and interactive visualizations</strong>. </p>
+<p>Often these data models are described as <strong>cubes</strong>, in which <strong>numeric data values are aggregated across one or more dimensions</strong> (for example, to determine total sales by product and region). </p>
+<p>The model encapsulates the relationships between data values and dimensional entities to support "drill-up/drill-down" analysis.</p>
+<h3 id="analytical-data-model_1"><strong>Analytical data model</strong></h3>
+<ul>
+<li>The data analysts consume data from analytical models, and directly from analytical stores to create reports, dashboards, and other visualizations.</li>
+<li>The visualizations from the data show trends, comparisons, and key performance indicators (KPIs) for a business or other organization, and can take the form of printed reports, graphs and charts in documents or PowerPoint presentations, web-based dashboards, and interactive environments in which users can explore data visually.</li>
+</ul>
+<h2 id="explore-data-ingestion-pipelines">Explore data ingestion pipelines</h2>
+<p>how data is ingested into an analytical data store from one or more sources.</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_1.png" title="Body image" /></p>
+<p><strong>On Azure, large-scale data ingestion is best implemented by creating pipelines that orchestrate ETL processes</strong>. </p>
+<p>You can create and <strong>run pipelines using Azure Data Factory</strong>, or you can use the <strong>same pipeline engine in Azure Synapse Analytics</strong> if you want to <strong>manage all of the components of your data warehousing solution in a unified workspace</strong>.</p>
+<p>In either case, pipelines <strong>consist of one or more activities that operate on data</strong>. </p>
+<p>An input dataset provides the source data, and activities can be defined as a data flow that incrementally manipulates the data until an output dataset is produced. </p>
+<p>Pipelines use linked services to load and process data – enabling you to use the right technology for each step of the workflow. </p>
+<p>For example, you might use an <strong>Azure Blob Store linked service to ingest the input dataset</strong>, and then use services such as Azure SQL Database to run a stored procedure that looks up related data values, before running a <strong>data processing task on Azure Databricks or Azure HDInsight</strong>, or apply custom logic using an Azure Function. </p>
+<p>Finally, you can save the output dataset in a linked service such as Azure Synapse Analytics. </p>
+<p>Pipelines can also include some built-in activities, which don’t require a linked service.</p>
+<h2 id="explore-analytical-data-stores"><strong>Explore analytical data stores</strong></h2>
+<h3 id="data-warehouses"><strong>Data warehouses</strong></h3>
+<p>A data warehouse is a <strong>relational database in which the data is stored in a schema that is optimized for data analytics</strong> rather than <strong>transactional workloads</strong>. </p>
+<p>Commonly, the data from a transactional store is transformed into a schema in which <strong>numeric values are stored in central fact tables</strong>, which are related to one or more dimension tables that represent entities by which the data can be aggregated. </p>
+<p>For example a fact table might contain sales order data, which can be aggregated by customer, product, store, and time dimensions (enabling you, for example, to easily find monthly total sales revenue by product for each store). </p>
+<p><strong>This kind of fact and dimension table schema is called a star schema;</strong> though it's often extended into a <strong>snowflake schema</strong> by adding <strong>additional tables related to the dimension tables to represent dimensional hierarchies</strong> (for example, product might be related to product categories).</p>
+<p>A data warehouse is a great choice when you have transactional data that can be organized into a structured schema of tables, and you want to use SQL to query them.</p>
+<h3 id="data-lakes"><strong>Data lakes</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_2.png" title="Body image" /></p>
+<p><strong>A data lake is a file store, usually on a distributed file system for high performance data access.</strong> </p>
+<p>Technologies like <strong>Spark or Hadoop</strong> are often used to process queries on the stored files and return data for reporting and analytics. </p>
+<p>These systems often apply a <strong>schema-on-read approach</strong> to define <strong>tabular schemas on semi-structured data</strong> files at the point where the data is read for analysis, without applying constraints when it's stored. </p>
+<p>Data lakes are great for supporting a <strong>mix of structured, semi-structured, and even unstructured data that you want to analyze</strong> without the need for schema enforcement when the data is written to the store.</p>
+<h3 id="hybrid-approaches"><strong>Hybrid approaches</strong></h3>
+<p>You can use a hybrid approach that combines features of data lakes and data warehouses in a l<strong>ake database or data lakehouse</strong>. </p>
+<p>The raw data is <strong>stored as files in a data lake, and a relational storage layer abstracts the underlying files and expose them as tables</strong>, which can be queried using SQL. </p>
+<p>SQL pools in <strong>Azure Synapse Analytics include PolyBase</strong>, which enables you to <strong>define external tables based on files in a datalake (and other sources) and query them using SQL</strong>. </p>
+<p><strong>Synapse Analytics</strong> also supports a <strong>Lake Database approach in which you can use database templates to define the relational schema of your data warehouse</strong>, while storing the underlying data in data lake storage – separating the storage and compute for your data warehousing solution. </p>
+<p>Data lakehouses are a relatively new approach in Spark-based systems, and are enabled through technologies like Delta Lake; which adds relational storage capabilities to Spark, so you can define tables that enforce schemas and transactional consistency, support batch-loaded and streaming data sources, and provide a SQL API for querying.</p>
+<h3 id="azure-services-for-analytical-stores"><strong>Azure services for analytical stores</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_3.png" title="Body image" /></p>
+<ul>
+<li><strong>Azure Synapse Analytics</strong> </li>
+</ul>
+<p>Unified, end-to-end solution for large scale data analytics. </p>
+<p>It brings together multiple technologies and capabilities, enabling you to combine the data integrity and reliability of a scalable, <strong>high-performance SQL Server based relational data warehouse with the flexibility of a data lake and open-source Apache Spark</strong></p>
+<p><strong>It also includes native support for log and telemetry analytics with Azure Synapse Data Explorer pools, as well as built in data pipelines for data ingestion and transformation</strong>. </p>
+<p>All Azure Synapse Analytics services can be managed through a single, interactive user interface called <strong>Azure Synapse Studio</strong>, which includes the ability to create <strong>interactive notebooks in which Spark code and markdown content can be combined</strong>. </p>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_4.png" title="Body image" /></p>
+<ul>
+<li><strong>Azure Databricks</strong> </li>
+</ul>
+<p>Azure implementation of the popular Databricks platform. </p>
+<p>Databricks is a comprehensive data analytics solution built on <strong>Apache Spark</strong>, and <strong>offers native SQL capabilities</strong> as well as <strong>workload-optimized Spark clusters for data analytics and data science</strong>. </p>
+<p>Databricks provides an interactive user interface through which the system can be managed and data can be explored in interactive notebooks. </p>
+<p><strong>Due to its common use on multiple cloud platforms, you might want to consider using Azure Databricks as your analytical store if you want to use existing expertise with the platform or if you need to operate in a multi-cloud environment or support a cloud-portable solution</strong></p>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_5.png" title="Body image" /></p>
+<ul>
+<li><strong>Azure HDInsight</strong></li>
+</ul>
+<p>Azure service that supports multiple open-source data analytics cluster types. Although not as user-friendly as Azure Synapse Analytics and Azure Databricks, it can be a suitable option if <strong>your analytics solution relies on multiple open-source frameworks or if you need to migrate an existing on-premises Hadoop-based solution to the cloud.</strong></p>
+<ul>
+<li>Each of these services can be thought of <strong>as an analytical data store</strong>, in the sense that they provide a schema and interface through which the data can be queried. </li>
+<li>In many cases however, the data is actually stored in a data lake and the service is used to process the data and run queries. </li>
+<li>Some solutions might even combine the use of these services. An extract, load, and transform (ELT) ingestion process might <strong>copy data into the data lake, and then use one of these services to transform the data, and another to query it</strong>. </li>
+<li>
+<p>For example, a pipeline <strong>might use a MapReduce job running in HDInsight or a notebook running in Azure Databricks to process a large volume of data in the data lake, and then load it into tables in a SQL pool in Azure Synapse Analytics</strong>.</p>
+</li>
+<li>
+<p>Which Azure services can you use to create a pipeline for data ingestion and processing?</p>
+<ul>
+<li><strong><mark>Azure Synapse Analytics and Azure Data Factory</mark></strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>That's correct. <strong>Both Azure Synapse Analytics and Azure Data Factory include the capability to create pipelines</strong>.</p>
+</blockquote>
+<ul>
+<li>What must you define to implement a pipeline that reads data from Azure Blob Storage?<ul>
+<li><strong>A linked service for your Azure Blob Storage account</strong>  </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>You need to create linked services for external services you want to use in the pipeline.</p>
+</blockquote>
+<ul>
+<li>Which open-source distributed processing engine does Azure Synapse Analytics include?<ul>
+<li>Apache Spark<blockquote>
+<p>Azure Synapse Analytics includes an Apache Spark runtime.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="real-time-analytics"><strong>real-time analytics</strong></h2>
+<h3 id="understand-batch-and-stream-processing"><strong>Understand batch and stream processing</strong></h3>
+<p>There are two general ways to process data:</p>
+<ul>
+<li><strong>Batch processing</strong>, in which multiple data records are <strong>collected and stored before being processed together in a single operation</strong>.</li>
+<li><strong>Stream processing</strong>, in which a source of <strong>data is constantly monitored and processed in real time as new data events occur</strong>.</li>
+</ul>
+<h3 id="understand-batch-processing"><strong>Understand batch processing</strong></h3>
+<p>In batch processing, newly arriving data elements are collected and stored, and the whole group is processed together as a batch. </p>
+<p>Exactly when each group is processed can be determined in a number of ways. For example, you can process data based on a <strong><mark>scheduled time interval</mark></strong> (for example, every hour), or it could be triggered when a certain amount of data has arrived, or as the result of some other event.</p>
+<p><strong>Advantages of batch processing include:</strong></p>
+<ul>
+<li>Large volumes of data can be processed at a convenient time.</li>
+<li>It can be scheduled to run at a time when computers or systems might otherwise be idle, such as overnight, or during off-peak hours.</li>
+</ul>
+<p><strong>Disadvantages of batch processing include:</strong></p>
+<ul>
+<li><strong>The time delay</strong> between ingesting the data and getting the results.</li>
+<li><strong>All of a batch job's input data must be ready before a batch can be processed</strong>. <ul>
+<li><strong>This means data must be carefully checked</strong>. Problems with data, errors, and program crashes that occur during batch jobs bring the whole process to a halt. </li>
+<li><strong>The input data must be carefully checked before the job can be run again</strong>. Even minor data errors can prevent a batch job from running.</li>
+</ul>
+</li>
+</ul>
+<h3 id="understand-stream-processing"><strong>Understand stream processing</strong></h3>
+<p><strong>In stream processing, each new piece of data is processed when it arrives.</strong></p>
+<p>Unlike batch processing, there's no waiting until the next batch processing interval - <strong>data is processed as individual units in real-time rather than being processed a batch at a time</strong>. </p>
+<p>Stream data processing is beneficial in scenarios <strong>where new, dynamic data is generated on a continual basis</strong>.</p>
+<p>Real world examples of streaming data include:</p>
+<ul>
+<li>A financial institution tracks changes in the stock market in real time, computes value-at-risk, and automatically rebalances portfolios based on stock price movements.</li>
+<li>An online gaming company collects real-time data about player-game interactions, and feeds the data into its gaming platform. It then analyzes the data in real time, offers incentives and dynamic experiences to engage its players.</li>
+<li>A real-estate website that tracks a subset of data from mobile devices, and makes real-time property recommendations of properties to visit based on their geo-location.</li>
+</ul>
+<p>Stream processing is ideal for time-critical operations that require an instant real-time response. <strong>For example, a system that monitors a building for smoke and heat needs to trigger alarms and unlock doors to allow residents to escape immediately in the event of a fire</strong>.</p>
+<h3 id="understand-differences-between-batch-and-streaming-data"><strong>Understand differences between batch and streaming data</strong></h3>
+<p>Apart from the way in which batch processing and streaming processing handle data, there are other differences:</p>
+<ul>
+<li>
+<p><strong>Data scope: Batch processing can process all the data in the dataset</strong>. </p>
+<ul>
+<li><strong>Stream processing typically only has access to the most recent data received</strong>, or within a rolling time window (the last 30 seconds, for example).</li>
+</ul>
+</li>
+<li>
+<p><strong>Data size</strong>: Batch processing is suitable for handling large datasets efficiently. </p>
+<ul>
+<li>Stream processing is intended for individual records or micro batches consisting of few records.</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance: Latency is the time taken for the data to be received and processed</strong>. </p>
+<ul>
+<li>The latency for batch processing is typically a <strong>few hours</strong>. </li>
+<li>Stream processing typically occurs immediately, with latency in the order of seconds or milliseconds.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis</strong>: <strong>You typically use batch processing to perform complex analytics.</strong> </p>
+<ul>
+<li>Stream processing is used for simple <strong>response functions, aggregates, or calculations such as rolling averages</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="combine-batch-and-stream-processing"><strong>Combine batch and stream processing</strong></h3>
+<p>Many large-scale analytics solutions include a mix of batch and stream processing, enabling <strong>both historical and real-time data analysis.</strong></p>
+<p>It's common for stream processing solutions to capture real-time data, process it by filtering or aggregating it, and present it through real-time dashboards and visualizations. </p>
+<p>while also persisting the processed results in a data store for historical analysis alongside batch processed data .</p>
+<p>Even when real-time analysis or visualization of data is not required, streaming technologies are often used to capture real-time data and store it in a data store for subsequent batch processing.</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_6.png" title="Body image" /></p>
+<ol>
+<li>Data events from a streaming data source are captured in real-time.</li>
+<li>Data from other sources is ingested into a data store (often a data lake) for batch processing.</li>
+<li><strong>If real-time analytics is not required, the captured streaming data is written to the data store for subsequent batch processing</strong>.</li>
+<li>When real-time analytics is required, a stream processing technology is used to prepare the streaming data for real-time analysis or visualization; often by filtering or aggregating the data over temporal windows.</li>
+<li>The non-streaming data is periodically batch processed to prepare it for analysis, and the results are persisted in an analytical data store (often referred to as a data warehouse) for historical analysis.</li>
+<li>The results of stream processing may also be persisted in the analytical data store to support historical analysis.</li>
+<li>Analytical and visualization tools are used to present and explore the real-time and historical data.</li>
+</ol>
+<blockquote>
+<p>Commonly used solution architectures for combined batch and stream data processing include lambda and delta architectures</p>
+</blockquote>
+<h3 id="explore-common-elements-of-stream-processing-architecture"><strong>Explore common elements of stream processing architecture</strong></h3>
+<p><strong>A general architecture for stream processing</strong></p>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_7.png" title="Body image" /></p>
+<ul>
+<li><strong>An event generates some data</strong>. <ul>
+<li>This might be a signal being emitted by a sensor, </li>
+<li>a social media message being posted</li>
+<li>a log file entry being written, </li>
+<li>any other occurrence that results in some digital data.</li>
+</ul>
+</li>
+<li>The generated data is captured in a <strong>streaming source</strong> for processing. <ul>
+<li>In simple cases, the source may be a folder in a cloud data store or a table in a database. </li>
+<li>In more robust streaming solutions, the source may be a "queue" that encapsulates logic to ensure that event data is processed in order and that each event is processed only once.</li>
+</ul>
+</li>
+<li>The event data is processed, often by a perpetual query that operates on the event data to select data for specific types of events, project data values, or aggregate data values over temporal (time-based) periods (or windows) - for example, by counting the number of sensor emissions per minute.</li>
+<li>The results of the stream processing operation are written to an output (or sink), <strong>which may be a file, a database table, a real-time visual dashboard, or another queue for further processing by a subsequent downstream query.</strong></li>
+</ul>
+<h3 id="real-time-analytics-in-azure"><strong>Real-time analytics in Azure</strong></h3>
+<ul>
+<li><strong>Azure Stream Analytics</strong>: A platform-as-a-service (PaaS) solution that you can use to <strong>define streaming jobs that ingest data from a streaming source, apply a perpetual query, and write the results to an output</strong>.</li>
+<li><strong>Spark Structured Streaming</strong>: An <strong>open-source library that enables you to develop complex streaming solutions on Apache Spark based services</strong>, including <strong>Azure Synapse Analytics, Azure Databricks, and Azure HDInsight</strong>.</li>
+<li><strong>Azure Data Explorer</strong>: A <strong>high-performance database and analytics service that is optimized for ingesting and querying batch or streaming data with a time-series element,</strong> and which can be used as a standalone Azure service or as an Azure Synapse Data Explorer runtime in an Azure Synapse Analytics workspace.</li>
+</ul>
+<h3 id="sources-for-stream-processing"><strong>Sources for stream processing</strong></h3>
+<p>ingest data for stream processing on Azure:</p>
+<ul>
+<li><strong>Azure Event Hubs: A data ingestion service that you can use to manage queues of event data</strong>, ensuring that each event is processed in order, exactly once.</li>
+<li><strong>Azure IoT Hub</strong>: A data ingestion service that is similar to Azure Event Hubs, but which is <strong>optimized for managing event data from Internet-of-things (IoT)</strong> devices.</li>
+<li>Azure Data Lake Store Gen 2: A highly scalable storage service that is <strong>often used in batch processing scenarios, but which can also be used as a source of streaming data</strong>.</li>
+<li><strong>Apache Kafka</strong>: An open-source <strong>data ingestion solution that is commonly used together with Apache Spark</strong>. You can use Azure HDInsight to create a Kafka cluster.</li>
+</ul>
+<h3 id="sinks-for-stream-processing">Sinks for stream processing</h3>
+<ul>
+<li>Azure Event Hubs: Used to queue the processed data <strong>for further downstream processing</strong>.</li>
+<li><strong>Azure Data Lake Store Gen 2 or Azure blob storage</strong>: Used to persist the processed results as a file.</li>
+<li><strong>Azure SQL Database or Azure Synapse Analytics, or Azure Databricks</strong>: Used to persist the processed results in a <strong>database table for querying and analysis</strong>.</li>
+<li><strong>Microsoft Power BI</strong>: Used to generate real time data visualizations in reports and dashboards.</li>
+</ul>
+<h2 id="azure-stream-analytics"><strong>Azure Stream Analytics</strong></h2>
+<p>Azure Stream Analytics is a service for complex event processing and analysis of streaming data. Stream Analytics is used to:</p>
+<ul>
+<li><strong>Ingest data from an input</strong>, such as an <strong>Azure event hub, Azure IoT Hub, or Azure Storage blob container</strong>.</li>
+<li>Process the data by using <strong>a query to select, project, and aggregate data values</strong>.</li>
+<li>Write the <strong>results to an output</strong>, such as <strong>Azure Data Lake Gen 2, Azure SQL Database, Azure Synapse Analytics, Azure Functions, Azure event hub, Microsoft Power BI, or others.</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_8.png" title="Body image" /></p>
+<p>Once started, a Stream Analytics query will run perpetually, processing new data as it arrives in the input and storing results in the output.</p>
+<p>Azure Stream Analytics is a great technology choice when you need to continually capture data from a <strong>streaming source, filter or aggregate it, and send the results to a data store or downstream process for analysis and reporting</strong>.</p>
+<h3 id="azure-stream-analytics-jobs-and-clusters"><strong>Azure Stream Analytics jobs and clusters</strong></h3>
+<p>The easiest way to use <strong>Azure Stream Analytics</strong> is to create a <strong>Stream Analytics</strong> job in an Azure subscription, configure <strong>its input(s) and output(s)</strong>, and define the query that the job will use to process the data. </p>
+<p>If your stream process requirements are complex or resource-intensive, you can <strong>create a Stream Analysis cluster</strong>, which uses the same underlying processing engine <strong>as a Stream Analytics job</strong>, but <strong>in a dedicated tenant (so your processing is not affected by other customers) and with configurable scalability</strong> that enables you to define the right balance of throughput and cost for your specific scenario.</p>
+<h3 id="apache-spark-on-microsoft-azure"><strong>Apache Spark on Microsoft Azure</strong></h3>
+<p>Apache Spark is a distributed processing framework for large scale data analytics. You can use Spark on Microsoft Azure in the following services:</p>
+<ul>
+<li>Azure Synapse Analytics</li>
+<li>Azure Databricks</li>
+<li>Azure HDInsight</li>
+</ul>
+<p><strong>Spark can be used to run code (usually written in Python, Scala, or Java) in parallel across multiple cluster nodes</strong>, enabling it to process very large volumes of data efficiently. </p>
+<p>Spark can be used for both batch processing and stream processing.</p>
+<ul>
+<li><strong>Spark Structured Streaming</strong></li>
+</ul>
+<p>To process streaming data on Spark, you can use the <strong>Spark Structured Streaming library</strong>, which <strong>provides an application programming interface (API) for ingesting, processing, and outputting results from perpetual streams of data</strong>.</p>
+<p>Spark Structured Streaming is built on a ubiquitous structure in Spark called a <strong>dataframe</strong>, which <strong>encapsulates a table of data</strong>. </p>
+<p>You use the Spark Structured Streaming API to read data from a real-time data source, <strong>such as a Kafka hub, a file store, or a network port</strong>, into a "boundless" dataframe that <strong>is continually populated with new data from the stream</strong>. </p>
+<p>You then define a <strong>query on the dataframe that selects, projects, or aggregates the data - often in temporal windows.</strong> </p>
+<p>The results of the query generate another dataframe, which can be persisted for analysis or further processing.</p>
+<p>Spark Structured Streaming is a great choice for real-time analytics when you need to incorporate streaming data into a Spark based data lake or analytical data store.</p>
+<ul>
+<li><strong>Delta Lake</strong></li>
+</ul>
+<p><strong>Delta Lake</strong> is an <strong>open-source storage layer</strong> that adds support for <strong>transactional consistency</strong>, <strong>schema enforcement</strong>, and other common data warehousing features to data lake storage. </p>
+<p>It also unifies <strong>storage for streaming and batch data</strong>, and can be used in Spark to define relational tables for <strong>both batch and stream processing</strong>. </p>
+<p>When used for stream processing, a <strong>Delta Lake table can be used as a streaming source for queries</strong> against real-time data, or <strong>as a sink to which a stream of data is written.</strong></p>
+<p><strong>The Spark runtimes in Azure Synapse Analytics and Azure Databricks include support for Delta Lake.</strong></p>
+<p>Delta Lake combined with Spark Structured Streaming is a good solution when you need to abstract batch and stream processed data in a data lake behind a relational schema for SQL-based querying and analysis.</p>
+<h3 id="azure-data-explorer"><strong>Azure Data Explorer</strong></h3>
+<p>Azure Data Explorer is a standalone Azure service for efficiently analyzing data. </p>
+<p>You can use the service as the output for analyzing large volumes of diverse data from data sources such as websites, applications, IoT devices, and more. </p>
+<p>For example, <strong>by outputting Azure Stream Analytics logs to Azure Data Explorer</strong>, you can <strong>complement Stream Analytics low latency alerts handling with Data Explorer's deep investigation capabilities</strong>. </p>
+<p>The service is also <strong>encapsulated as a runtime in Azure Synapse Analytics, where it is referred to as Azure Synapse Data Explorer</strong>; </p>
+<p>enabling you to build and manage analytical solutions that combine SQL, Spark, and Data Explorer analytics in a single workspace.</p>
+<p><img alt="Alt Image Text" src="../../images/chap5_4_9.png" title="Body image" /></p>
+<p>Data is ingested into Data Explorer through one or more connectors or by writing a minimal amount of code. </p>
+<p>This enables you to quickly ingest data from a wide variety of data sources, including both static and streaming sources. </p>
+<p>Data Explorer supports batching and streaming in near real time to optimize data ingestion. </p>
+<p>The ingested data is stored in tables in a Data Explorer database, where automatic indexing enables high-performance queries.</p>
+<p>Azure Data Explorer is a great choice of technology when you need to:</p>
+<ul>
+<li>Capture and analyze real-time or batch data that includes a time-series element; <ul>
+<li><strong>Such as log telemetry or values emitted by Internet-of-things (IoT) devices</strong>.</li>
+</ul>
+</li>
+<li>Explore, filter, and aggregate data quickly by <strong>using the intuitive and powerful Kusto Query Language (KQL)</strong>.</li>
+</ul>
+<p>Azure Synapse Data Explorer is an especially good choice when you need to perform these tasks in a centralized environment used for other kinds of analytics, such as SQL and Spark based queries.</p>
+<ul>
+<li><strong>Kusto Query Language (KQL)</strong></li>
+</ul>
+<p><strong>To query Data Explorer tables, you can use Kusto Query Language (KQL), a language that is specifically optimized for fast read performance</strong> – particularly with telemetry data that includes a timestamp attribute.</p>
+<p>The most <strong>basic KQL query</strong> consists simply of a table name, in which case the query returns all of the data in the table. </p>
+<p>For example, the following query would return the contents of the <strong>LogEvents</strong> table:</p>
+<pre><code>LogEvents
+</code></pre>
+<p>You can add clauses to a Kusto query to filter, sort, aggregate, and return (project) specific columns. Each clause is prefixed by a <code>|</code> character. </p>
+<p>For example, the following query returns the <strong>StartTime, EventType, and Message columns from the LogEvents table for errors that were recorded after December 31st 2021</strong>.</p>
+<pre><code>LogEvents
+| where StartTime &gt; datetime(2021-12-31) 
+| where EventType == 'Error'
+| project StartTime, EventType , Message
+</code></pre>
+<p>Kusto query language is a versatile but intuitive language that enables data analysts to quickly gain insights from data captured and stored in a Data Explorer database.</p>
+<p>1.Which definition of stream processing is correct? </p>
+<ul>
+<li><strong>Data is processed continually as new data records arrives</strong></li>
+</ul>
+<blockquote>
+<p>Stream processing is used to continually process new data as it arrives.</p>
+<p>Collecting and processing data periodically as a batch is referred to as batch processing.</p>
+</blockquote>
+<p>2.Which service would you use to continually capture data from an IoT Hub, aggregate it over temporal periods, and store results in Azure SQL Database?</p>
+<ul>
+<li><strong>Azure Stream Analytics</strong></li>
+</ul>
+<blockquote>
+<p>Azure Stream Analytics can be used to query a stream of data from Azure IoT Hub and store the results in Azure SQL Database.</p>
+</blockquote>
+<p>3.Which language would you use to query real-time log data in Azure Synapse Data Explorer?</p>
+<ul>
+<li><strong>KQL</strong></li>
+</ul>
+<blockquote>
+<p>Kusto Query Language is an intuitive but powerful language for querying Data Explorer tables.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

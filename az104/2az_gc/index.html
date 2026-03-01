@@ -1,0 +1,5116 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../1az_admin/">
+      
+      
+        <link rel="next" href="../3indentity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>2 Governance and Compliance - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-governance-and-compliance" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Governance and Compliance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-managing-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Managing Subscriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Managing Subscriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Subscriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-subscriptions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Subscriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from GPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-management-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Using Management Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Using Management Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-defining-management-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Defining Management Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-defining-management-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Defining Management Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-understanding-azure-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Understanding Azure Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Understanding Azure Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-enforce-compliance-and-enable-auditing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Enforce Compliance and Enable Auditing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of a Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-policy-example-require-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Policy Example --- Require Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tagging-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Tagging Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Tagging Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-what-are-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 What Are Tags?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chatgpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-locking-and-moving-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Locking and Moving Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Locking and Moving Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-describing-resource-locks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1 Describing Resource Locks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-types-of-resource-locks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Types of Resource Locks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-moving-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Moving Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-managing-azure-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Managing Azure Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Managing Azure Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-affects-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Affects Cost?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-best-practices-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Best Practices and Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chatgpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-building-a-cloud-governance-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Building a Cloud Governance Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Building a Cloud Governance Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planning-cloud-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planning Cloud Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bringing It All Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-managing-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Managing Subscriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Managing Subscriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Subscriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describing-subscriptions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Subscriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-from-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary from GPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-management-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Using Management Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Using Management Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-defining-management-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 Defining Management Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-defining-management-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 Defining Management Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-understanding-azure-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Understanding Azure Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Understanding Azure Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-enforce-compliance-and-enable-auditing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 Enforce Compliance and Enable Auditing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of a Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-policy-example-require-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Policy Example --- Require Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tagging-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Tagging Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Tagging Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-what-are-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 What Are Tags?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chatgpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-locking-and-moving-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Locking and Moving Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Locking and Moving Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-describing-resource-locks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1 Describing Resource Locks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-types-of-resource-locks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2 Types of Resource Locks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-moving-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3 Moving Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-managing-azure-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Managing Azure Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Managing Azure Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-affects-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Affects Cost?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-best-practices-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Best Practices and Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chatgpt summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-building-a-cloud-governance-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Building a Cloud Governance Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Building a Cloud Governance Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planning-cloud-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planning Cloud Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bringing It All Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-summary_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2-governance-and-compliance">2 Governance and Compliance</h1>
+<h2 id="1-managing-subscriptions">1 Managing Subscriptions</h2>
+<h3 id="describing-subscriptions"><strong>Describing Subscriptions</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_2_1.png" title="Body image" /></p>
+<p><strong><mark>What are subscriptions? </mark></strong></p>
+<ul>
+<li><strong>Billing unit that aggregates all costs of underlying resources</strong></li>
+<li>Contain <strong>resource groups</strong> and <strong>their associated resources</strong><ul>
+<li>Such as virtual machines, virtual networks, and storage accounts.</li>
+<li>Resource groups don't cost us anything, but some resources do, like virtual machines, storage accounts, virtual networks, public IP addresses</li>
+</ul>
+</li>
+<li><strong>Scoping level for governance and security</strong></li>
+</ul>
+<h3 id="describing-subscriptions_1"><strong>Describing Subscriptions</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_2_2.png" title="Body image" /></p>
+<p><strong>Types of Subscriptions</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_3.png" title="Body image" /></p>
+<p><strong>Subscription Naming Conventions</strong></p>
+<ul>
+<li><strong>Prod/Dev/Staging</strong></li>
+</ul>
+<p>Subscriptions named based on whether or not they are production, development, or staging environments.</p>
+<ul>
+<li><strong>Department/Teams</strong></li>
+</ul>
+<p>Subscriptions named based on the department or team the subscription is intended for, so that billing can then be easily associated with a given business unit.</p>
+<ul>
+<li><strong>Region</strong></li>
+</ul>
+<p>Subscriptions named based on the region of the business that uses the subscription.</p>
+<p><strong>Takeway</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_4.png" title="Body image" /></p>
+<ul>
+<li>Billing unit that aggregates all costs of underlying resources</li>
+<li>Scoping level for <strong>governance and security</strong></li>
+<li>Contain resource groups and their associated resources</li>
+<li><strong><mark>Can only be associated with a single organization (Azure AD tenant) at a time</mark></strong></li>
+</ul>
+<h3 id="summary-from-gpt">Summary from GPT</h3>
+<p>Summary of key points for the AZ-104 exam from the article:</p>
+<ol>
+<li>Subscriptions in Azure are the billing unit for cloud costs generated by underlying resources.</li>
+<li>Resources in subscriptions include resource groups containing resources like virtual machines, storage accounts, and networks.</li>
+<li>Subscriptions provide a level for scoping governance, security, and deployments using ARM templates.</li>
+<li>Organizational subscriptions help in segmenting billing units and managing costs for different teams or workloads.</li>
+<li>Azure identities can be assigned roles like billing admin for managing subscriptions.</li>
+<li>Types of subscriptions include Azure Plan, Enterprise Agreement Support, Pay-As-You-Go, and free trial plans.</li>
+<li>Naming conventions for subscriptions can help in governance, compliance, and logical segmentation of resources.</li>
+<li>Subscriptions are associated with Azure AD tenants, enabling trust relationships and authentication processes.</li>
+<li>Subscriptions are used for aggregating cloud costs, scoping governance, security, authorization, and resource deployments in Azure.</li>
+</ol>
+<p>List of exam key points for the AZ-104 test:</p>
+<ul>
+<li>Understanding the role of subscriptions as billing units in Azure for cloud costs.</li>
+<li>Knowledge of resources within subscriptions, including resource groups and associated resources.</li>
+<li>Importance of subscriptions for governance, security, and scoping deployments using ARM templates.</li>
+<li>Segmentation of organizational workloads and teams using subscriptions.</li>
+<li>Assignment of roles to Azure identities for managing subscriptions.</li>
+<li>Different types of Azure subscriptions such as Azure Plan, Enterprise Agreement Support, Pay-As-You-Go, and free trial plans.</li>
+<li>Use of naming conventions for subscriptions to aid in governance, compliance, and logical resource segmentation.</li>
+<li>Relationship between subscriptions and Azure AD tenants for authentication and authorization.</li>
+<li>Applications of subscriptions for managing cloud costs, governance, security, and resource deployments in Azure.</li>
+</ul>
+<h2 id="2-using-management-groups">2 Using Management Groups</h2>
+<h3 id="2-1-defining-management-groups">2-1 <strong>Defining Management Groups</strong></h3>
+<ul>
+<li><strong>Managing Subscriptions</strong></li>
+</ul>
+<p>Organize and manage subscriptions by logically grouping them into management subscriptions.</p>
+<ul>
+<li><strong>Organizational hierarchy</strong></li>
+<li><strong>Provides another scope for enforcing governance and compliance</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_5.png" title="Body image" /></p>
+<h3 id="2-2-defining-management-groups">2-2 Defining Management Groups</h3>
+<blockquote>
+<p>Management groups as this kind of <strong>logical container</strong> that we can use to <strong>manage subscriptions</strong></p>
+<p>Place subscriptions inside of <strong>management groups</strong> to organize and manage them</p>
+</blockquote>
+<p><strong>Parent-Child Relationships</strong></p>
+<ul>
+<li><mark>Root management group is the top level</mark></li>
+<li><mark>Management groups and subscriptions can have a single parent</mark></li>
+<li>
+<p><strong>Supports 6 levels of hierarchy</strong></p>
+</li>
+<li>
+<p>For management groups, there is always this <strong>parent-child relationship between the root-level management group</strong>, which is the top-level management group </p>
+</li>
+<li>This management group is the root parent</li>
+<li>All management groups underneath that and subscriptions underneath that, have a <strong>parent-child relationship with one another</strong></li>
+</ul>
+<p><strong>Compliance support</strong></p>
+<ul>
+<li>Azure Policies</li>
+<li>Azure role-based access control（RBAC)</li>
+</ul>
+<blockquote>
+<p>The compliance support for management groups is <strong>Azure Policies</strong> and <strong>Azure role-based access control</strong>.</p>
+<p>Deploy something known as Azure Policies into our management groups, and <strong>that will trickle down to all the other management groups and subscriptions underneath it</strong>.</p>
+</blockquote>
+<p><strong>Understanding Hierarchy</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_6.png" title="Body image" /></p>
+<p>Under this root management group we have a marketing management group. </p>
+<p><strong>Scoping</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_7.png" title="Body image" /></p>
+<p>use management groups as scope levels</p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_15.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_16.png" title="Body image" /></p>
+<p>For example, we have users that we want to provide access for a specific management group using a <strong>contributor role for example, so that they can act as contributors for the IT management group.</strong> </p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_17.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_18.png" title="Body image" /></p>
+<ul>
+<li>
+<p><strong><mark>Root management group access is not given by default</mark></strong></p>
+<ul>
+<li>Microsoft is very careful about providing access to this as it would provide access to do things throughout your entire environment. </li>
+</ul>
+</li>
+<li>
+<p><strong><mark>Root management cannot be moved or deleted</mark></strong></p>
+</li>
+<li><strong><mark>Azure RBAC supported for management groups</mark></strong></li>
+<li><strong><mark>Global Administrators must be elevated to User Access Administrator of root group</mark></strong></li>
+</ul>
+<h3 id="gpt-summary">Gpt summary</h3>
+<ol>
+<li><strong>Management Groups Overview</strong>:</li>
+<li>Management groups are logical containers used to manage subscriptions.</li>
+<li>They provide a hierarchy for organizing and managing subscriptions and resources.</li>
+<li>
+<p>Management groups have a parent-child relationship, allowing for organizational hierarchy in Azure environments.</p>
+</li>
+<li>
+<p><strong>Hierarchy and Scope</strong>:</p>
+</li>
+<li>There is a parent-child relationship between management groups, with a root-level management group at the top.</li>
+<li>Management groups can support up to 6 levels of hierarchy.</li>
+<li>
+<p>Role-based access control (RBAC) roles and Azure Policies can be deployed at various scopes within management groups to enforce governance and compliance.</p>
+</li>
+<li>
+<p><strong>Azure Portal Demonstration</strong>:</p>
+</li>
+<li>In the Azure portal, management groups are set up to create hierarchical structures for organizations.</li>
+<li>Management groups can be created, renamed, deleted, and have child objects added to them.</li>
+<li>RBAC roles can be assigned to management groups to control access and permissions.</li>
+<li>
+<p>Policies can be used at the management group level to enforce rules and standards across subscriptions and resources.</p>
+</li>
+<li>
+<p><strong>Root Management Group</strong>:</p>
+</li>
+<li>The root management group is the top-level resource that cannot be moved or deleted.</li>
+<li>Access to the root management group requires Global Administrator access in Azure AD tenant.</li>
+<li>Elevating to User Access Administrator of the root management group may be necessary in certain situations, but should be revoked after the task is completed.</li>
+</ol>
+<h2 id="3-understanding-azure-policy"><strong>3 Understanding Azure Policy</strong></h2>
+<h3 id="3-1-enforce-compliance-and-enable-auditing">3-1 Enforce Compliance and Enable Auditing</h3>
+<p>Organizations need to implement enterprise-level governance and compliance capabilities.</p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_8.png" title="Body image" /></p>
+<p>Defining Azure Policy</p>
+<ul>
+<li>
+<p><strong>Prohibit Resources</strong></p>
+<blockquote>
+<p>prohibit specific VM sizes inside of our environments.</p>
+</blockquote>
+<ul>
+<li>Control costs</li>
+<li>Restrict service access</li>
+</ul>
+</li>
+<li>
+<p><strong>Allowed Locations</strong></p>
+<ul>
+<li>Geographical compliance</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_11.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_9.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_10.png" title="Body image" /></p>
+<blockquote>
+<p>organization that operates inside of the EU, operate inside of the EU, we have to be compliant to data sovereignty rules of GDPR. And so we need to make sure that workloads that we're deploying for those related purposes inside of the EU follow specific geographical compliance requirements. </p>
+</blockquote>
+<p><strong>Compliance dashboard on the Azure Policy</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_12.png" title="Body image" /></p>
+<h3 id="components-of-a-policy">Components of a Policy</h3>
+<ul>
+<li>
+<p><strong>Policy Definition</strong></p>
+<ul>
+<li><strong>Defines the evaluation criteria for compliance, and defines the actions that take place</strong>. </li>
+<li>Either audit or deny should something be outside of compliance</li>
+</ul>
+</li>
+<li>
+<p><strong>Policy Assignment</strong></p>
+<ul>
+<li>The scope at which we will assign our policy. </li>
+<li><mark>The scope <strong>could be a management group, subscription, resource group, or resource</strong></mark>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Initiative Defintion</strong></p>
+</li>
+</ul>
+<p><strong>A collection of policies that are tailored to achieving a singular high-level goal together.</strong></p>
+<p><strong>For example, ensuring that VMs meet standards.</strong></p>
+<h3 id="3-2-policy-example-require-tags"><strong>3-2 Policy Example</strong> --- Require Tags</h3>
+<p><strong>Policy Definition</strong></p>
+<p>Evaluate if a VM is being created with our tag <code>Project: az104</code>. If the VM is missing the tag then deny creation of the resource.</p>
+<blockquote>
+<p>For example, if we try to create a virtual machine inside of this resource group, and we create it without the appropriate tags, it's going to fail that deployment, it will not pass validation, and we won't be able to deploy that virtual machine.</p>
+</blockquote>
+<p><strong>Policy Assignment</strong></p>
+<p>Assign the policy at the scope of the resource group where the VMs will be created.</p>
+<h3 id="3-3-key-takeaways">3-3 Key Takeaways</h3>
+<ul>
+<li>Policy Definition</li>
+<li>Policy Assignment</li>
+<li>Initiative Definition</li>
+</ul>
+<p>--</p>
+<ul>
+<li>Create, Manage, and Assign policies</li>
+<li>Enforce compliance with resources</li>
+<li>Audit compliance</li>
+<li>Deny creation of resources outside of compliance</li>
+</ul>
+<p>For example, requiring the tag, Allowed Locations, specific allowed VM SKUs.</p>
+<h3 id="gpt-summary_1">GPT Summary</h3>
+<ol>
+<li><strong>Azure Policies Overview:</strong></li>
+<li>Azure Policies are similar to a set of rules that enforce compliance and enable auditing in Azure environments.</li>
+<li>
+<p>They help organizations implement enterprise-level governance and compliance in Azure.</p>
+</li>
+<li>
+<p><strong>Components of Azure Policy:</strong></p>
+</li>
+<li><strong>Policy Definitions:</strong> Define specific rules or criteria for compliance, such as allowed locations or prohibited resources.</li>
+<li><strong>Policy Assignments:</strong> Put policy definitions into action at a specific scope, like a management group or subscription.</li>
+<li>
+<p><strong>Initiative Definitions:</strong> Collections of policies tailored to achieve a high-level goal, ensuring compliance through various policies.</p>
+</li>
+<li>
+<p><strong>Real-Life Use Case Example:</strong></p>
+</li>
+<li>For instance, requiring specific tags on resources to enforce compliance.</li>
+<li>Create a policy definition that checks for tags like "project: az104" on virtual machines and denies creation without them.</li>
+<li>
+<p>Assign this policy at the scope of a resource group to enforce compliance on resources deployed there.</p>
+</li>
+<li>
+<p><strong>Azure Policy Management in Azure Portal:</strong></p>
+</li>
+<li>Use the Azure Portal to author, review, and assign policy definitions.</li>
+<li>Assign policies at different scopes like subscriptions or resource groups.</li>
+<li>
+<p>Monitor compliance through the Compliance dashboard in Azure Policy.</p>
+</li>
+<li>
+<p><strong>Key Takeaways for Understanding Azure Policy:</strong></p>
+</li>
+<li>Azure Policy enforces compliance and governance in organizations' Azure environments.</li>
+<li>Components include policy definitions, policy assignments, and initiative definitions.</li>
+<li>Policies can audit compliance, deny non-compliant resource creation, or enforce specific standards across resources.</li>
+</ol>
+<h2 id="4-tagging-resources"><strong>4 Tagging Resources</strong></h2>
+<h3 id="4-1-what-are-tags">4-1 What Are Tags?</h3>
+<p><strong>Describing Resource Tagging</strong></p>
+<blockquote>
+<p>Tags inside of Azure are simply just a name-value pair.</p>
+</blockquote>
+<ul>
+<li><code>Name:Value</code></li>
+<li><code>Dept:Marketing</code></li>
+<li>
+<p><code>Env:Prod</code></p>
+</li>
+<li>
+<p>Name can be 512 characters and value can be 256 characters</p>
+</li>
+<li>Storage accounts can only have a name with 128 characters</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_13.png" title="Body image" /></p>
+<blockquote>
+<p>could create a name for a tag that says department. </p>
+<p>Cost analysis where we're trying to derive how much money is the marketing team spending.</p>
+<p>Determine our costs geographically.</p>
+</blockquote>
+<p>We can use it for things like performing automated operations by doing things like getting all of the resources, <strong>such as virtual machines, running inside of Azure that are part of the development workload, using that development tag</strong>.</p>
+<p><strong>Resource Tag Assignment Hierarchy</strong></p>
+<ul>
+<li><strong>Tags are not inherited</strong></li>
+</ul>
+<p>The department marketing tag in the marketing subscription is <strong>not going to be inherited by all of the underlying resource groups and resources that they contain.</strong> </p>
+<ul>
+<li><strong>A resource can have 50 tags</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_14.png" title="Body image" /></p>
+<p>Example: add tags to the resource group</p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_19.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_20.png" title="Body image" /></p>
+<p><strong><mark>Tags are not inherited from the higher scope</mark></strong></p>
+<h3 id="4-2-key-takeaways">4-2 Key Takeaways</h3>
+<ul>
+<li>Manage resources via tags. For example, shutting down all VMs with a specific tag.</li>
+<li><strong>Tags are not inherited from the higher scope like a resource group. Each resource must be tagged.</strong></li>
+</ul>
+<h3 id="chatgpt-summary">Chatgpt summary</h3>
+<p>Here is a summary and list of key points for the AZ-104 exam based on the provided article:</p>
+<ol>
+<li>
+<p><strong>Tags in Azure</strong>: Tags in Azure are name-value pairs used for various purposes such as organizing resources, cost analysis, and resource management.</p>
+</li>
+<li>
+<p><strong>Tagging Conventions</strong>: Tags can be used to categorize resources based on departments, environments (e.g., production, dev, test), or geographical locations.</p>
+</li>
+<li>
+<p><strong>Tag Limits</strong>: Tags have limits where the name can be up to 512 characters and the value up to 256 characters, except for storage accounts where the name can only be 128 characters long. Resources can have up to 50 tags at a time.</p>
+</li>
+<li>
+<p><strong>Tag Assignment Hierarchy</strong>: Tags are not inherited from higher scopes like resource groups or subscriptions. Each resource must be tagged independently.</p>
+</li>
+<li>
+<p><strong>Azure Policies</strong>: Azure Policies can be used to enforce tagging inheritance within resource groups or subscriptions.</p>
+</li>
+<li>
+<p><strong>Resource Tagging Demonstration</strong>: The article provides a demonstration on how to assign tags to a resource group in the Azure portal and emphasizes that tags are not inherited by the resources within the group.</p>
+</li>
+<li>
+<p><strong>Automation with Tags</strong>: Automation scripts using PowerShell or Azure CLI can be used to apply tags at scale to multiple resources within a resource group or subscription.</p>
+</li>
+<li>
+<p><strong>Key Takeaways</strong>: Tags are flexible and versatile tools in Azure that can be used for resource management, cost analysis, and automation. Tags are not inherited by resources and must be applied individually.</p>
+</li>
+</ol>
+<h2 id="5-locking-and-moving-resources">5 Locking and Moving Resources</h2>
+<h3 id="5-1-describing-resource-locks">5-1 Describing Resource Locks</h3>
+<ul>
+<li>Locks allow you to <strong>override permissions to resources</strong></li>
+<li>Can <strong>lock subscriptions, resource groups, or resources</strong><ul>
+<li>They can perform read operations and specific write operations, as long as one of those write operations is not deleting that resource</li>
+</ul>
+</li>
+<li>Lock restrictions apply to <strong>all users and roles</strong></li>
+</ul>
+<blockquote>
+<p><strong>.So regardless of a role assignment of a user and what permissions we may have, they have to abide by these resource locks, which will override their permissions.</strong></p>
+</blockquote>
+<p><img alt="Alt Image Text" src="../../images/az104_2_21.png" title="Body image" /></p>
+<h3 id="5-2-types-of-resource-locks">5-2 Types of Resource Locks</h3>
+<p>Lock Types</p>
+<ul>
+<li><strong>ReadOnly</strong> allows authorized users to read a resource, <strong>but they cannot delete or update the resource</strong></li>
+<li><strong>CanNotDelete</strong> allows authorized users to read and modify a resource, but they cannot delete the resource</li>
+<li><strong><mark>Locks are inherited from the parent scope</mark></strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_22.png" title="Body image" /></p>
+<p>So if we have one assigned here at the subscription as we see with marketing subscription, it's going to be inherited by all of the resource groups and resources that are inside of that subscription. </p>
+<h3 id="5-3-moving-resources">5-3 Moving Resources</h3>
+<p>Moving resources that are contained in a specific place in Azure, for example, inside of a subscription,  these resources nested inside of a logical container like a resource group. </p>
+<ul>
+<li><strong>we could move resources inside of Azure between resource groups</strong>.</li>
+<li><strong>we can also move resources inside of Azure from subscription to subscription</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_23.png" title="Body image" /></p>
+<h3 id="demo">Demo</h3>
+<p>Add a ReadOnly lock on a virtual machine</p>
+<p><strong>Add CanNotDelete Lock</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_25.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_26.png" title="Body image" /></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_27.png" title="Body image" /></p>
+<p><strong>Add Readonly Lock</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_28.png" title="Body image" /></p>
+<p>Move a virtual machine from one resource group to another</p>
+<h3 id="moving-resources">Moving Resources</h3>
+<p>moving resources, we can also <strong>move them between subscriptions in Azure for cross-subscription movement and also move them between regions.</strong></p>
+<p><strong><mark>Supported Resources</mark></strong></p>
+<ul>
+<li>Virtual Machines</li>
+<li>Storage Accounts</li>
+<li>Virtual Networks</li>
+</ul>
+<p><strong><mark>Unsupported Resources</mark></strong></p>
+<ul>
+<li><strong>Azure Active Directory Domain Services</strong></li>
+<li><strong>Azure Backup Vaults</strong></li>
+<li><strong>Azure App Service Gateways</strong></li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_24.png" title="Body image" /></p>
+<h3 id="gpt-summary_2">Gpt summary</h3>
+<ol>
+<li><strong>Azure Locks</strong>: </li>
+<li>Feature to put a lock on a resource to override permissions for authorized users.</li>
+<li>Locks can be applied at different scopes - subscriptions, resource groups, or individual resources.</li>
+<li>Types of locks include ReadOnly lock (allows read but blocks delete/write operations) and CannotDelete lock (allows read and specific write operations but blocks delete).</li>
+<li>
+<p>Locks are inherited from the parent scope to child scopes and resources.</p>
+</li>
+<li>
+<p><strong>Moving Resources in Azure</strong>:</p>
+</li>
+<li>Moving resources involves transferring resources between resource groups or subscriptions.</li>
+<li>Cross-subscription resource movement requires specific role assignments and permissions.</li>
+<li>Moving resources is considered a write operation.</li>
+<li>
+<p>Locks on resources can affect the ability to move resources - ReadOnly locks can restrict movement.</p>
+</li>
+<li>
+<p><strong>Demonstration and Practical Application</strong>:</p>
+</li>
+<li>Demonstrated adding and testing locks on Azure resources (e.g., adding a Delete lock).</li>
+<li>Showed how locks restrict certain operations (e.g., delete, update) on resources.</li>
+<li>Moving resources within Azure involves selecting resources and choosing the destination (resource group, subscription, region).</li>
+<li>
+<p>Some resource types may not support moving operations, requiring careful planning.</p>
+</li>
+<li>
+<p><strong>Key Takeaways</strong>:</p>
+</li>
+<li>Understand different types of resource locks (e.g., ReadOnly, CannotDelete) and their effects on operations.</li>
+<li>Resource locks can be inherited and impact the movement of resources.</li>
+<li>Considerations for moving resources include permissions, supported operations, and planning for resource movement.</li>
+</ol>
+<h2 id="6-managing-azure-costs">6 Managing Azure Costs</h2>
+<p><strong>On-premise resources</strong></p>
+<p>And we're only paying for how much we use this resource. And that's things such as the CPU, the memory, the disk size. We're also paying for things like traffic for our network. </p>
+<p>We are not paying for the underlying infrastructure, nor are we paying to have people manage the underlying infrastructure of the Azure cloud. </p>
+<p><strong>So we're minimizing our costs and minimizing our responsibility in the shared responsibility model.</strong> </p>
+<h3 id="what-affects-cost">What Affects Cost?</h3>
+<ul>
+<li><strong>Subscription Type</strong>： <strong>Free, pay-as-you-go</strong>, <strong>Enterprise Agreement</strong>, and <strong>Cloud Solution Provider (CSP)</strong></li>
+</ul>
+<blockquote>
+<p>There are free subscriptions, where you're going to get only specific services for free, or you'll get free up to a limited point.</p>
+<p>There's Enterprise Agreements. And then there's even <strong>subscription types such as a Cloud Solutions Provider</strong>, and <strong>this is where you're using a cloud solutions provider</strong>, a third party, to help manage your Azure environment. because they are managing <strong>multiple environments for multiple organizations</strong>, they are then afforded savings on costs inside of Azure from Microsoft that they can then choose to pass on to you as a customer. </p>
+</blockquote>
+<ul>
+<li><strong>Resource Type</strong>： For example, storage account Blob storage vs. table storage</li>
+<li><strong>Usage Meters</strong>： Utilities like overall CPU time, ingress/egress network traffic, and disk size</li>
+<li><strong>Resource Usage</strong>： The costs of actually using a resource</li>
+<li><strong>Location</strong>： The costs for various services vary across geographical regions</li>
+</ul>
+<h3 id="cost-best-practices-and-tools">Cost Best Practices and Tools</h3>
+<p><strong>Best Practices</strong></p>
+<ul>
+<li>Select the appropriate resource for use case</li>
+<li>Understand resource needs (sizing)</li>
+<li><strong>Deallocate resources when not needed</strong></li>
+<li><strong>Use cloud capabilities where possible (Scalability, Elasticity)</strong></li>
+<li><strong>Plan costs prior to purchase</strong></li>
+</ul>
+<p><strong>Cost Tools</strong></p>
+<ul>
+<li><strong>Pricing Calculator</strong>：<ul>
+<li>Can be used to <strong>create quotes of workloads that we define so that we understand</strong> how much they will cost us before we actually provision any of these resources inside of Azure. </li>
+</ul>
+</li>
+<li><strong>Total Cost of Ownership (TCO)  Calculator</strong><ul>
+<li><strong>This tool will help us understand how much workloads we have running on-prem would cost us if we were to run the equivalent workloads on Azure services</strong>.</li>
+<li>This is a tool that we can utilize to perform some <strong>cost analysis once we actually have our Azure resources running, and this is the Microsoft Cost Management tool</strong>.</li>
+</ul>
+</li>
+<li><strong>Cost Management</strong><ul>
+<li>Allows us to analyze our costs by performing specific cost analysis functions</li>
+</ul>
+</li>
+</ul>
+<p><strong>Using Cost Management</strong></p>
+<ul>
+<li>Create Budget</li>
+<li>Analyze Costs</li>
+</ul>
+<p><img alt="Alt Image Text" src="../../images/az104_2_29.png" title="Body image" /></p>
+<h3 id="demo_1">Demo</h3>
+<p><strong>Cost Management</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_30.png" title="Body image" /></p>
+<p><strong>Cost analysis</strong></p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_31.png" title="Body image" /></p>
+<p>Maybe we want to look at our <strong>costs on a DailyCosts basis to see how much we're spending on a daily basis</strong> inside of Azure so that we can identify a specific point in which our costs have gone up or down to understand what was taking place at that time. </p>
+<p><img alt="Alt Image Text" src="../../images/az104_2_32.png" title="Body image" /></p>
+<p>We also see we have other views that <strong>allow us to break out our costs into services, for example, Azure Bastion, Application Gateway, Storage, Virtual Machines</strong>. We can break out our cost into <mark>location, resource group name</mark>. </p>
+<ul>
+<li>For example, Compute, Networking, Storage. And we can build out a quote by selecting specific workloads. </li>
+<li>Then maybe we're going to need a networking resource, such as a virtual network, to have this VM running inside of that. VPN gateway to connect that virtual network into our on-premise environment. </li>
+</ul>
+<h3 id="key-takeaways">Key Takeaways</h3>
+<ul>
+<li><mark>Pricing Calculator： Estimate workload costs for prospective workloads</mark></li>
+<li><mark>TCO Calculator： Compare costs to determine cost savings between on-premises and TCO cloud solutions</mark></li>
+<li><mark><strong>Cost Management： Analyze costs, apply filtering, and create budgets</strong></mark></li>
+</ul>
+<h3 id="chatgpt-summary_1">Chatgpt summary</h3>
+<ol>
+<li><strong>Understanding Azure Costs</strong>:</li>
+<li>Azure costs are impacted by various components such as subscription types, resource types, usage meters, resource usage, location, etc.</li>
+<li>
+<p>Azure costs are different from traditional on-premise costs as Azure handles the underlying infrastructure, and users only pay for the resources they use.</p>
+</li>
+<li>
+<p><strong>Cost Best Practices</strong>:</p>
+</li>
+<li>Select appropriate resources for the use case to avoid wasting money.</li>
+<li>Understand resource needs and choose the right sizing for resources.</li>
+<li>Deallocate resources when not needed to save costs.</li>
+<li>Utilize cloud capabilities like scalability and elasticity to match resource usage with demand.</li>
+<li>
+<p>Plan costs in advance before purchasing Azure services.</p>
+</li>
+<li>
+<p><strong>Cost Management Tools</strong>:</p>
+</li>
+<li><strong>Microsoft Cost Management</strong>: Allows for cost analysis and budget creation to monitor Azure spending.</li>
+<li><strong>Pricing Calculator</strong>: Estimates workload costs by defining workload details before provisioning resources.</li>
+<li>
+<p><strong>Total Cost of Ownership (TCO) Calculator</strong>: Compares on-premise workload costs with Azure costs to determine potential savings by migrating to Azure.</p>
+</li>
+<li>
+<p><strong>Key Takeaways</strong>:</p>
+</li>
+<li>Understanding cost best practices is crucial for optimizing Azure spending.</li>
+<li>Tools like the Pricing Calculator and TCO Calculator help in estimating and comparing costs for workloads in Azure.</li>
+<li>Microsoft Cost Management tool provides insights into Azure spending and enables budget creation.</li>
+</ol>
+<h2 id="7-building-a-cloud-governance-strategy">7 Building a Cloud Governance Strategy</h2>
+<p>Defining Governance</p>
+<ul>
+<li><strong>Rules / Policies /Compliance standards</strong></li>
+<li>Control over resources </li>
+<li>Enforce rules, policies, and standards</li>
+</ul>
+<blockquote>
+<p>Policies and standards: Data sovereignty, such as GDPR</p>
+<p>Regulatory compliance, such as PCI or HIPAA</p>
+</blockquote>
+<h3 id="planning-cloud-strategy">Planning Cloud Strategy</h3>
+<ul>
+<li><strong>Define</strong><ul>
+<li>Define the cloud governance needs of the organization.</li>
+</ul>
+</li>
+<li><strong>Plan</strong><ul>
+<li>Plan which tools will be used to implement governance.</li>
+</ul>
+</li>
+<li><strong>Ready</strong><ul>
+<li>Understand how those tools will be used to implement governance.</li>
+</ul>
+</li>
+<li><strong>Adopt</strong><ul>
+<li>Implement governance for the organization using cloud strategy</li>
+</ul>
+</li>
+</ul>
+<h3 id="governance-services">Governance Services</h3>
+<p><img alt="Alt Image Text" src="../../images/az104_2_33.png" title="Body image" /></p>
+<p><strong>Management Groups And Subscriptions</strong></p>
+<p>Organize subscriptions into hierarchical structures.</p>
+<blockquote>
+<p>So that we have varying scopes in our organization to do things like provide <strong>Azure RBAC role assignments so that we can use these RBAC roles and provide identities with these role assignments at varying scopes</strong>, like management groups and subscriptions</p>
+<p>Subscriptions are also our <strong>billing entity inside of Azure</strong> where we have an accumulative cost for those Azure resources that we've used</p>
+</blockquote>
+<p><strong>Azure RBAC</strong></p>
+<p>Provide access to resources at varying scopes.</p>
+<p><strong>Policies And Blueprints</strong></p>
+<p>Implement policies to enforce standards and provide blueprints for cloud environments.</p>
+<blockquote>
+<p>providing governance compliance strategies for our cloud environments.</p>
+</blockquote>
+<p><strong>Locks And Tagging</strong></p>
+<p>Lock resources to prevent deletion and tag resources to categorize</p>
+<ul>
+<li>
+<p>Locks: Such as read-only locks or delete locks to prevent deletions of resources or to prevent update operations of resources. </p>
+</li>
+<li>
+<p><strong>Resource tagging conventions</strong> to categorize and organize our resources for various reasons </p>
+<ul>
+<li>all the way from automation, </li>
+<li>Cost analysis, </li>
+<li>Getting a high-level overview of all of our resources inside of Azure so that we can organize them</li>
+</ul>
+</li>
+</ul>
+<h3 id="bringing-it-all-together"><strong>Bringing It All Together</strong></h3>
+<p><img alt="Alt Image Text" src="../../images/az104_2_34.png" title="Body image" /></p>
+<ul>
+<li>Management groups as container like subscriptions to help us create some hierarchal structure for organizations. <ul>
+<li>These subscriptions are that <strong>billing entity</strong> that <strong>contains our resource groups</strong> and the resources that they contain. </li>
+<li>Can perform some sort of <strong>cost analysis</strong> on these resources from our subscriptions. </li>
+</ul>
+</li>
+<li>
+<p>The <strong>governance tooling</strong> of also using <strong>Azure Policies to enforce compliance standards</strong>, </p>
+<ul>
+<li>such as a tagging name convention for resources inside of Azure.  </li>
+<li>Role assignment with these Azure RBAC roles</li>
+</ul>
+</li>
+<li>
+<p><strong>Role assignment with locks</strong></p>
+<ul>
+<li>when users have role assignments to access specific resources, there are specific things like locks, like a <strong>read-only lock or a delete lock that are going to override those permissions that they may have to prevent specific operations</strong>. </li>
+</ul>
+</li>
+<li>
+<p>read-only locks that prevent any other operation other than reads. </p>
+</li>
+<li>delete locks that prevent delete operations but still allow authorized users to perform those read and update operations on resources. </li>
+</ul>
+<h3 id="gpt-summary_3">GPT summary</h3>
+<ol>
+<li><strong>Defining Governance and Planning a Cloud Strategy</strong>:</li>
+<li>Establishing rules, policies, and compliance standards for the organization.</li>
+<li>Defining governance needs, policies, and standards based on organizational requirements.</li>
+<li>
+<p>Planning tools and services for implementing governance in Azure environments.</p>
+</li>
+<li>
+<p><strong>Governance Services in Azure</strong>:</p>
+</li>
+<li>Management groups and subscriptions for organizational hierarchy and structure.</li>
+<li>Azure RBAC role assignments for managing identities at varying scopes.</li>
+<li>Azure Policies for enforcing standards and compliance initiatives.</li>
+<li>
+<p>Resource locks and tagging for resource management and organization.</p>
+</li>
+<li>
+<p><strong>Key Takeaways</strong>:</p>
+</li>
+<li>Management groups and subscriptions help create hierarchical structures.</li>
+<li>Azure Policies enforce compliance standards like tagging naming conventions.</li>
+<li>Role assignments and resource locks ensure proper access control and operations.</li>
+<li>Azure Blueprints (optional) offer advanced features for packaging organizational structures and policies.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
