@@ -2748,7 +2748,7 @@ This approach directly monitors **VMSS autoscaling events** and sends emails as 
 ✅ **Final answer: B. No**
 
 
-### Question-54 ？
+### Question-54
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
 
@@ -3268,6 +3268,7 @@ You have an Azure DevOps organization named Contoso that contains a project name
 You provision an Azure key vault named Keyvault 1.
 
 You need to reference Keyvault1 secrets in a build pipeline of Praject1.
+
 What should you do first?
 
 * A. Add a secure file to Project1.
@@ -3336,13 +3337,13 @@ Your company uses Azure DevOps.
 
 Only users who have accounts in Azure Active Directory can access the Azure DevOps environment.
 
-You need to ensure that only devices that are connected to the on-premises network can access the Azure DevOps environment.
+You need to **ensure that only devices that are connected to the on-premises network** can access the Azure DevOps environment.
 
 What should you do?
 
 * A. Assign the Stakeholder access level to all users.
 * B. In Azure Active Directory, configure risky sign-ins.
-* C.In Azure DevOps, configure Security in Project Settings.
+* C. In Azure DevOps, configure Security in Project Settings.
 * **D. In Azure Active Directory, configure conditional access.**
 
 The correct answer is:
@@ -3490,7 +3491,7 @@ Final Answer:
 **B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
 
 
-### Question-65
+### Question-65 - Duplicate
 
 You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
 
@@ -3555,7 +3556,7 @@ Use a variable group to store values that you want to control and make available
 
 
 
-### Question-66
+### Question-66 - Duplicated
 
 You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
 
@@ -3608,7 +3609,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-67 ？？？
+### Question-67
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -3616,27 +3617,16 @@ You need to identify package dependencies that have known security issues and ca
 
 What should you use?
 
-* **A. Octopus Deploy**
+* A. Octopus Deploy
 * B. Jenkins
 * C. Gradle
 * D. SonarQube
-
-
-Answer: A
-
-
-Incorrect Answers:
-
-* B: Jenkins is a popular open-source automation server used to set up continuous integration and delivery (CI/CD) for your software projects.
-* D: SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future.
 
 The correct answer is:
 
 **D. SonarQube** ✅
 
-
-
- Explanation:
+Explanation:
 
 **SonarQube** is a static analysis tool that can:
 
@@ -3645,7 +3635,7 @@ The correct answer is:
 * Suggest fixes or updates for the vulnerable dependencies
 * Integrate with **Azure DevOps pipelines** for automated scanning
 
-This makes it ideal for detecting **security issues in dependencies**.
+<mark>This makes it ideal for detecting **security issues in dependencies**.</mark>
 
 
 
@@ -3698,9 +3688,7 @@ Explanation:
 * Identifies **known vulnerabilities** in open source components
 * Integrates into **build pipelines** for automated checks
 
-This makes it ideal for **automating the detection of new open source libraries and enforcing licensing compliance**.
-
-
+<mark>This makes it ideal for **automating the detection of new open source libraries and enforcing licensing compliance**.</mark>
 
 Why the other options are incorrect:
 
@@ -3727,16 +3715,16 @@ Answer. C
 
 Secure and Manage Open Source Software
 
-Black Duck helps organizations identify and migate open source secunty, license compliance and code-quality risks across application and container portfolios.
+**Black Duck helps organizations identify and migate open source secunty, license compliance and code-quality risks across application and container portfolios.**
 
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the buiki process, so you can proactively manage risk. The integration allows you to receive alerts and fail bulds when any Black Duck
 
 Hub policy violations are met.
 
-There are several versions of this question in the exam. The question has two possible correct answers:
+**<mark>There are several versions of this question in the exam. The question has two possible correct answers:</mark>**
 
-* Black Duck
-* White Source Bolt
+* **Black Duck**
+* **White Source Bolt**
 
 Other incorrect answer options you may see on the exam include the following:
 
@@ -3806,14 +3794,14 @@ Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to aut
 The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question-70 ？？？
+### Question-70  ✅✅✅
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
 
 You plan to distribute a new release of the app
 
-You need to identify which certificate file you require to distribute the new release from App Center.
+**You need to identify which certificate file you require to distribute the new release from App Center.**
 
 Which file type should you upload to App Center?
 
@@ -3824,45 +3812,20 @@ Which file type should you upload to App Center?
 
 The correct answer is:
 
-**B. .pfx** ✅
-
-
+The correct answer is **C. .p12**.
 
 Explanation:
 
-For distributing **iOS apps** via **Microsoft Visual Studio App Center** (private distribution):
+To distribute an iOS app through App Center, the app must be signed with a valid **Distribution Certificate**.
 
-* You need a **signing certificate** that includes the **private key**, which is required to sign the app for deployment.
-* The **.pfx file** contains both the **certificate** and the **private key**, and is the standard format used for iOS app distribution.
+*   **Why .p12?** An iOS certificate alone (usually a `.cer` file) only contains the public key. To sign an app on a build server or a distribution platform like App Center, you need both the certificate and its associated **private key**. In the Apple ecosystem, the standard way to export a certificate along with its private key is as a **PKCS #12** archive, which uses the **.p12** extension.
+*   **The Process:** You typically generate a Certificate Signing Request (CSR) on a Mac, download the `.cer` from the Apple Developer portal, install it into your Keychain, and then export it from Keychain Access as a `.p12` file.
 
-**Steps in App Center:**
+Why other options are incorrect:
 
-1. Upload the `.pfx` file for the iOS distribution certificate.
-2. Provide the associated password.
-3. App Center can then sign and distribute the app to the private distribution group.
-
-
-
-Why the other options are incorrect:
-
-❌ **A. .cer**
-
-* Contains only the public certificate, **does not include the private key**, cannot sign the app
-
-❌ **C. .p12**
-
-* Similar to `.pfx`, sometimes used interchangeably on macOS, but **App Center specifically expects `.pfx` for Windows environments**
-
-❌ **D. .pvk**
-
-* Private key only, not a full certificate bundle
-
-
-
-Final Answer:
-
-**B. .pfx** ✅
-
+*   **A. .cer:** This is just the public certificate. It does not contain the private key required for signing the app.
+*   <mark>**B. .pfx:** This is a similar container format to .p12, but it is primarily used in Windows/Microsoft environments. While modern tools sometimes treat them interchangeably, **.p12** is the specific standard required for iOS/Apple development.</mark>
+*   **D. .pvk:** This is a legacy format used to store private keys only and is not used in the iOS code-signing process.
 
 Answer. C
 
@@ -3874,7 +3837,8 @@ To sign the builds produced from a branch, enable code signing in the configurat
 
 ### Question-71
 
-Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
+Your company is concerned that when developers introduce **open source libraries, it creates licensing compliance issues.**
+
 You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
 
 What should you use?
@@ -3940,7 +3904,7 @@ Other incorrect answer options you may see on the exam include the following:
 
 ### Question-72
 
-You plan to use a NuGet package in a project in Azure DevOps. The NuGet package is in a feed that requires authentication.
+You plan to use a NuGet package in a project in Azure DevOps. **The NuGet package is in a feed that requires authentication.**
 
 You need to ensure that the project can restore the NuGet package automatically.
 
@@ -3990,7 +3954,7 @@ Final Answer:
 
 Answer. B
 
-The Azure Artifacts Credential Provider automates the acquisition of credentials needed to restore NuGet packages as part of your NET development workfiow. It integrates with MSBuild, dotnet, and NuGet exe) and works on Windows, Mac, and Linux. Any time you want to use packages from an Azure Artifacts feed,
+**The Azure Artifacts Credential Provider automates the acquisition of credentials needed to restore NuGet packages as part of your NET development workfiow.** It integrates with MSBuild, dotnet, and NuGet exe) and works on Windows, Mac, and Linux. Any time you want to use packages from an Azure Artifacts feed,
 
 the Credential Provider will automatically acquire and securely store a token on behalf of the NuGet client you’re using.
 
@@ -4062,7 +4026,7 @@ Final Answer:
 
 You have an existing project in Azure DevOps.
 
-You plan to integrate Github as the repository for the project
+**You plan to integrate Github as the repository for the project**
 
 You need to ensure that Azure Pipelines runs under the Azure Pipelines identity.
 
@@ -4085,7 +4049,7 @@ To integrate **GitHub** as the repository for an **Azure DevOps** project **and 
 
 This provides:
 
-* Native integration between Azure DevOps and GitHub
+* **Native integration between Azure DevOps and GitHub**
 * Secure, scoped permissions
 * Pipeline execution under the **Azure Pipelines identity**
 * Automatic token management
@@ -4116,7 +4080,7 @@ GitHub App uses the Azure Pipelines identity.
 
 A: Personal access token and Auth use your personal GitHub identity
 
-### Question-75 ？？？
+### Question-75 
 
 You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
 
@@ -4143,6 +4107,30 @@ Incorrect Answers:
 - B: Never pass secrets on the command line
 - C: Adding a prefix does not make the variable a secret. The issecret property makes it secret but does not prevent logging of the secret.
 - D: Never echo secrets as output.
+
+The correct answer is **A. Store the secrets in the environment variables instead of the pipeline variables.**
+
+Explanation:
+
+While Azure Pipelines automatically masks variables marked as **Secrets** (replacing them with `***` in the logs), simply marking them as secrets is sometimes not enough to satisfy strict security requirements when **command logging** is enabled.
+
+1.  **The Problem with Pipeline Variables (Substitution):** When you use a pipeline variable in a script using the `$(Variable)` syntax, the agent replaces the placeholder with the actual value *before* executing the command. If command logging is enabled, the log will show the invocation of the command. Even if masked, the log might show `myscript.sh --password ***`.
+2.  **The Solution (Environment Variables):** The security best practice for Azure Pipelines is to map secrets to **environment variables**. Secret variables are not automatically made available to scripts/tasks as environment variables for security reasons. By explicitly mapping a secret to an environment variable in the YAML or task settings, the script can access the value directly from the process environment.
+3.  **Why this prevents logging:** When a secret is accessed via an environment variable, it does not appear in the command-line string at all. The log will simply show `myscript.sh`, and the secret remains entirely within the process memory, never appearing in the agent's command invocation logs (even as asterisks).
+
+**Example of the correct implementation in YAML:**
+
+```yaml
+- script: ./myscript.sh
+  env:
+    MY_SECRET: $(vso_secret_variable) # Map pipeline secret to env var
+```
+
+Why the other options are incorrect:
+
+*   **B. Pass the secrets on the command line:** This is the worst practice. Even if masked, it puts the secret in the process tree and the command invocation log.
+*   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
+*   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
 ### Question-76
 
@@ -4231,7 +4219,7 @@ Final Answer:
 
 
 
-### Question-77 ？？？
+### Question-77 
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -4246,58 +4234,30 @@ What should you recommend?
 
 Answer: C
 
-The correct answer is:
+The correct answer is **C. Encrypt the secret value and store the value in the repository. Store the decryption key in the repository-level GitHub secrets.**
 
-**B. Store the secret in the repository-level GitHub secrets.** ✅
+**Explanation:**
 
-Explanation:
+This recommendation is based on a specific technical limitation of GitHub Actions:
 
-For **GitHub Actions** workflows, the best practice for storing secrets that must be:
+1.  **GitHub Secret Size Limit:** GitHub Secrets have a maximum size limit of **64 KB**. Since your secret is **256 KB**, it is too large to be stored directly in the standard GitHub Secrets store. This eliminates options A and B.
+2.  **Handling Large Secrets:** The standard procedure for handling secrets larger than 64 KB (such as large certificates or configuration files) is to:
+    *   Encrypt the large file locally.
+    *   Commit the **encrypted** file into the source code repository.
+    *   Store the **decryption key** (which is small and fits within the 64 KB limit) as a GitHub Secret.
+3.  **Scope and Security:** The requirement specifies that the secret must be accessible **only to the workflow**. Storing the decryption key as a **repository-level** secret ensures that only workflows within that specific repository can access the key to decrypt the data. **Organization-level** secrets (Option D) would potentially make the key available to other repositories within the organization, violating the "accessible only to the workflow" requirement and increasing administrative complexity.
 
-* 🔐 **Encrypted**
-* 👤 **Accessible only to the workflow**
-* 🧩 **Scoped to a single repository**
-* ⚙️ **Minimal administrative overhead**
+**Why this minimizes administrative effort:**
 
-is to use:
+Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
-👉 **Repository-level GitHub Secrets**
-
-Why this is the best solution:
-
-Repository-level secrets:
-
-* Are **encrypted at rest**
-* Are **only accessible to workflows in that repository**
-* Are **not visible to users**
-* Require **no custom encryption**
-* Require **no key management**
-* Are **native to GitHub Actions**
-* Support secrets well above 256 KB
-* Are automatically injected into workflows securely
-
-This perfectly meets all requirements.
-
-Why the other options are worse:
-
-❌ **A. Organization-level GitHub secrets**
-→ Broader scope than required (accessible by multiple repos unless restricted)
-
-❌ **C. Encrypt + store in repo + key in repo secrets**
-→ Unnecessary complexity, manual crypto, more admin overhead
-
-❌ **D. Encrypt + store in repo + key in org secrets**
-→ Even more complexity + broader access scope
-Final Answer:
-
-**B. Store the secret in the repository-level GitHub secrets.** ✅
 
 
 ### Question-78
 
 You have a GitHub Enterprise account.
 
-You need to enable push pratection for secret scanning of the account repositories.
+**You need to enable push protection for secret scanning of the account repositories.**
 
 What should you do first?
 
@@ -4351,11 +4311,11 @@ Final Answer:
 
 
 
-### Question-79 ？？？
+### Question-79 
 
 You have an Azure subscription that contains four Azure virtual machines.
 
-You need to configure the virtual machines to use a single identity. The solution must meet the following requirements:
+**You need to configure the virtual machines to use a single identity.** The solution must meet the following requirements:
 
 - Ensure that the credentials for the identity are managed automatically.
 - Support granting privileges to the identity.
@@ -4364,10 +4324,8 @@ Which type of identity should you use?
 
 - A. a system-assigned managed identity
 - B. a user-assigned managed identity
-- **C. a service principal**
+- C. a service principal
 - D. a user account
-
-Answer: C
 
 
 The correct answer is:
