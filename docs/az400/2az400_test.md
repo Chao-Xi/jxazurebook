@@ -4439,53 +4439,33 @@ Final Answer:
 
 You are designing the development process for your company.
 
-You need to recommend a solution for continuous inspection of the company's code base to locate common code patterns that are known to be problematic.
+You need to recommend a solution for continuous inspection of the company's code base to **locate common code patterns that are known to be problematic.**
 What should you include in the recommendation?
 
 - A. Microsoft Visual Studio test plans
 - B. Gradle wrapper scripts
-- **C. SonarCloud analysis**
+- C. SonarCloud analysis
 - D. the JavaScript task runner
 
+----
 
-The correct answer is:
+The correct answer is **C. SonarCloud analysis.**
 
-**B. Recreate the secret at the repository level.** ✅
+**Explanation:**
 
-Explanation:
+**SonarCloud** (and its on-premises version, SonarQube) is a leading tool for **Static Code Analysis (SCA)** and is specifically designed for **continuous inspection**.
 
-In **GitHub**, secrets have different scopes:
+*   **Continuous Inspection:** It integrates directly into your CI/CD pipelines (Azure DevOps, GitHub Actions, Bitbucket, etc.) to automatically scan code every time a developer pushes a change or creates a pull request.
+*   <mark>**Locating Problematic Patterns:** It uses thousands of rules to identify **Bugs** (reliability), **Vulnerabilities** (security), and **Code Smells** (maintainability). These are the "problematic patterns" mentioned in the requirement.</mark>
+*   <mark>**Quality Gates:** It allows teams to set "Quality Gates" that can stop a build or prevent a pull request from being merged if the new code contains too many issues or doesn't meet coverage standards.</mark>
 
-* **Environment-level secrets** → Only available to workflows/jobs that explicitly reference that **environment**
-* **Repository-level secrets** → Available to **all workflows in the repository**
-* **Organization-level secrets** → Shared across multiple repositories (broader scope)
+**Why other options are incorrect:**
 
-Since your requirement is:
-
-> ensure that the secret can be used by **all workflows** in the repository
-
-👉 The correct solution is to **store the secret at the repository level**.
-
-This provides:
-
-* 🔐 Encryption at rest
-* ⚙️ Automatic availability to all workflows
-* 🧩 No environment dependency
-* 🧑‍💻 Minimal administrative effort
-* 🎯 Correct scope (not too broad, not too narrow)
-
- Why the other options are wrong:
-
-❌ **A. Recreate the secret at the organization level**
-→ Over-scoped (available to multiple repositories unnecessarily)
-
-❌ **C. Enable required reviewers**
-→ This is for environment approvals, not secret visibility
+*   **A. Microsoft Visual Studio test plans:** These are used for managing and executing manual and automated functional tests (e.g., "Does the login button work?"). They do not analyze the source code for structural patterns or technical debt.
+*   **B. Gradle wrapper scripts:** Gradle is a build automation tool for Java/Kotlin projects. While a Gradle script might *trigger* a SonarCloud scan, the script itself is just a build tool, not the inspection solution.
+*   **D. The JavaScript task runner:** Tools like Gulp or Grunt automate repetitive tasks (like minifying files or transpiling code). While they can run simple "linters," they do not provide the deep, centralized, cross-language continuous inspection platform that SonarCloud offers.
 
 Final Answer:
-
-**B. Recreate the secret at the repository level.** ✅
-
 
 Answer. C
 
@@ -4496,7 +4476,7 @@ Incorrect Answers:
 
 A: Test plans are used to group together test suites and individual test cases. This includes static test suites, requirement-based suites, and query-based suites.
 
-### Question-82 ？？？
+### Question-82 
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -4507,13 +4487,7 @@ Sclution: You recommend reducing the code coupling and the dependency cycles?
 Does this meet the goal?
 
 - A. Yes
-- **B. No**
-
-Answer: B
-
-Instead reduce the code complexity.
-
-Note: Technical debt is the accumulation of sub-optimal technical decisions made over the lifetime of an application. Eventually, it gets harder and harder to change things: it's the 'sand in the gears" that sees IT initiatives grind to a halt.
+- B. No
 
 
 The correct answer is:
@@ -4543,7 +4517,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-83 ？？？
+### Question-83
 
 Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
 
@@ -4553,50 +4527,62 @@ Which two actions should you include in the recommendation? Each correct answer 
 
 NOTE: Each correct selection is worth one point.
 
-- **A. Configure post-deployment approvals in the deployment pipeline**.
+- A. Configure post-deployment approvals in the deployment pipeline
 - B. Configure pre-deployment approvals in the deployment pipeline.
 - C. Integrate Azure DevOps and SonarQube
-- **D.Integrate Azure DevOps and Azure DevTest Labs.**
-
+- D. Integrate Azure DevOps and Azure DevTest Labs.
 
 The correct answers are:
 
-**C. Integrate Azure DevOps and SonarQube** ✅
-**D. Integrate Azure DevOps and Azure DevTest Labs** ✅
+✅ **B. Configure pre-deployment approvals in the deployment pipeline.**
+✅ **C. Integrate Azure DevOps and SonarQube**
 
-Explanation:
+**Why these are correct**
 
-To **manage technical debt** in Java-based projects using Azure DevOps:
+Managing **technical debt** in Java projects requires:
 
-1. **Integrate Azure DevOps and SonarQube (C)**
+✅ C. Integrate Azure DevOps and SonarQube
 
-   * **SonarQube** analyzes code for:
+* **SonarQube** performs:
 
-     * Code smells
-     * Bugs
-     * Security vulnerabilities
-     * Technical debt
-   * Integrating it into the **build pipeline** provides **automatic detection and measurement of technical debt**.
+  * Static code analysis
+  * Code smell detection
+  * Vulnerability scanning
+  * Technical debt measurement
+* It provides a **technical debt ratio** and quality gates.
+* Integrating with Azure DevOps ensures:
 
-2. **Integrate Azure DevOps and Azure DevTest Labs (D)**
+  * Code is analyzed during builds
+  * Pull requests can be blocked if quality gates fail
+  * Continuous monitoring of code quality
 
-   * DevTest Labs allows you to create **clean test environments** quickly.
-   * Reduces **environment-related technical debt**, ensures consistent testing, and improves reliability of deployment verification.
+This directly addresses technical debt.
 
-Why the other options are incorrect:
+✅ B. Configure pre-deployment approvals
 
-❌ **A. Configure post-deployment approvals**
+* Prevents low-quality or non-compliant builds from reaching production
+* Ensures review before deployment
+* Supports governance and quality control
 
-* Controls release, **does not directly manage technical debt**
+**While not directly reducing debt, it helps prevent more debt from being introduced.**
 
-❌ **B. Configure pre-deployment approvals**
+Why the others are incorrect
 
-* Ensures approval before deployment, **does not reduce technical debt**
+| Option                         | Reason                                                                 |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| A. Post-deployment approvals ❌ | Happens after deployment — too late to prevent technical debt          |
+| D. Azure DevTest Labs ❌        | Used for provisioning test environments, not for managing code quality |
 
-Final Answer:
+Key exam principle
 
-**C. Integrate Azure DevOps and SonarQube** ✅
-**D. Integrate Azure DevOps and Azure DevTest Labs** ✅
+> Technical debt management = **Code quality analysis + Quality gates**
+
+✅ Final Answer:
+
+**B and C**
+
+
+
 
 
 Answer: BC
@@ -4640,7 +4626,7 @@ You want to **analyze and monitor Java code quality** in **Azure DevOps pipeline
 
 **Key points:**
 
-1. **Gradle** is a **build automation tool for Java**.
+1. <mark>**Gradle** is a **build automation tool for Java**.</mark>
 
    * It integrates with **SonarQube** via the **SonarQube Gradle plugin**.
    * You can add a **Gradle task** to your build pipeline to:
@@ -4677,24 +4663,6 @@ SonarQube is a set of static analyzers that can be used to identify areas of imp
 Prepare Analysis Configuration task, to configure all the required settings before executing the build.
 
 This task is mandatory.
-
-In case of NET solutions or Java projects, it helps to integrate seamlessly with MSBuild, Maven and Gradle tasks.
-
-Incorrect Answers:
-
-B: CocoaPods is the dependency manager for Swift and Objective-C Cocoa projects.
-
-Note: There are several versions of this question in the exam. The question can have three correct answers:
-
-* MSBuild
-* Maven Gradle
-
-The question can also have different incorrect options, including:
-
-* Chef
-* Octopus xCODE
-* CocoaPods
-
 
 ### Question-85
 
@@ -4759,7 +4727,7 @@ Prepare Analysis Configuration task, to configure all the required settings befo
 
 This task is mandatory.
 
-In case of NET solutions or Java projects, it helps to integrate seamlessly with MSBuiki, Maven and Gradle tasks.
+**In case of NET solutions or Java projects, it helps to integrate seamlessly with MSBuiki, Maven and Gradle tasks.**
 
 Note: There are several versions of this question in the exam. The question can have three correct 
 
@@ -4775,7 +4743,7 @@ The question can also have different incorrect options, including:
 * xCODE
 * CocoaPods
 
-### Question-86
+### Question-86 - Duplicated
 
 Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
 
@@ -4835,7 +4803,7 @@ SonarQube an open source platform for continuous inspection of code quality to p
 * Centralize Quality
 
 
-### Question-87
+### Question-87  💩💩💩
 
 During a code review, you discover many quality issues. Many modules contain unused variables and empty catch blocks.
 
@@ -4883,7 +4851,7 @@ Tool comparison:
 
 | Tool       | Best for                                               |
 | ---------- | ------------------------------------------------------ |
-| **PMD**    | Logic issues, unused code, empty blocks, code smells ✅ |
+| **PMD**    | <mark>Logic issues, unused code, empty blocks, code smells ✅</mark> |
 | Checkstyle | Formatting, naming conventions, style rules            |
 | SonarQube  | Aggregated analysis platform                           |
 | PMD        | Static defect detection (best match here) ✅            |
@@ -4898,7 +4866,7 @@ Final Answer:
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
 
-You need to make a custom package available to all the developers. The package must be managed centrally, and the latest version must be available for consumption in Visual Studio automatically.
+You need to make a custom package available to all the developers. **The package must be managed centrally, and the latest version must be available for consumption in Visual Studio automatically.**
 
 Which three actions should you perform? Each correct answer presents part of the solution.
 NOTE: Each correct selection is worth one point.
@@ -5037,7 +5005,7 @@ Final Answer:
 
 ### Question-90
 
-after you answer a question in this section, you wil NOT be able to return to it. As a result, these questions will not appear in the review screen The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
+The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
 You need to recommend changes to reduce the accumulated technical debt.
 
@@ -5084,9 +5052,7 @@ Solution: You recommend increasing the test coverage.
 Does this meet the goal?
 
 * A. Yes
-* **B. No**
-
-**Answer: B**
+* B. No
 
 **A. Yes** ✅
 
@@ -5147,7 +5113,7 @@ What should you recommend?
 
 **PMD** is a static code analysis tool specifically designed to detect common Java code quality issues, including:
 
-* Unused variables
+* **Unused variables**
 * Empty `catch` blocks
 * Dead code
 * Unused imports
@@ -5208,7 +5174,7 @@ Final Answer:
 👉 **D. Publish the package to a public NuGet repository.**
 
 
-### Question-95
+### Question-95   💩💩
 
 You have an Azure Automation account that contains a runbook. The runbook is used to configure the application infrastructure of an Azure subscription.
 
@@ -5227,6 +5193,46 @@ What should you configure?
 
 **Answer: C**
 
+
+The correct answer is:
+
+✅ **C. the Source control settings for the Automation account**
+
+
+Why this is correct
+
+Azure Automation supports **source control integration** directly within the Automation account.
+
+When you configure **Source control settings** in the Automation account:
+
+* It links the Automation account to an Azure DevOps repository.
+* It can automatically:
+
+  * **Sync runbooks**
+  * **Update runbooks when changes are committed**
+  * **Publish runbooks automatically**
+
+This ensures:
+
+> Every committed change updates and publishes the runbook automatically.
+
+ Why the other options are incorrect
+
+| Option                  | Reason                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------- |
+| A. Service hooks        | Used for event notifications between services, not for continuous runbook synchronization   |
+| B. Connections settings | Used for authentication assets inside Automation, not source integration                    |
+| D. Service connections  | Used by Azure Pipelines to connect to Azure resources, not for automatic runbook publishing |
+
+Key exam principle
+
+> Automatic runbook sync from Azure DevOps = **Configure Source control in the Automation account**
+
+✅ Final Answer:
+
+**C. the Source control settings for the Automation account**
+
+
 ### Question-96
 
 You have a GitHub repository that contains multiple versions of an Azure Pipelines template
@@ -5244,37 +5250,42 @@ What should you use to reference which version of the template repository to use
 
 The correct answer is:
 
-**C. the Source control settings for the Automation account** ✅
+✅ **B. the SHA-based hashes**
 
+Why this is correct
 
+When referencing templates in Azure Pipelines from a GitHub repository, you can specify:
 
-Explanation:
+* A branch
+* A tag
+* A specific commit (SHA)
 
-To **automatically update and publish a runbook** in an **Azure Automation account** whenever code changes are committed to a repository in Azure DevOps, you should configure **source control integration** for the Automation account.
+To ensure you use a **fixed and immutable version**, you must reference the:
 
-* Azure Automation supports **linking a runbook to a source control repository** (GitHub or Azure DevOps Git).
-* Once configured:
+> **Specific commit SHA (hash)**
 
-  * Any commit or merge to the configured branch can automatically **update and publish the runbook**.
-* This ensures **continuous delivery of runbooks** from source control.
+A **SHA-based hash**:
 
+* Points to an exact commit
+* Cannot change
+* Guarantees template consistency
+* Prevents unexpected changes if the branch is updated
 
-Why the other options are incorrect:
+Why the other options are incorrect
 
-* **A. Service hooks for Project1** ❌
-  → Service hooks can trigger events but don’t directly sync runbook code.
+| Option      | Reason                                                    |
+| ----------- | --------------------------------------------------------- |
+| A. serial ❌ | Not used for version referencing in Git                   |
+| C. runner ❌ | Refers to GitHub Actions runners, not template versioning |
+| D. branch ❌ | Branches move forward and are not fixed versions          |
 
-* **B. Connections for the Automation account** ❌
-  → Connections store credentials for resources, not source code.
+Key exam principle
 
-* **D. Service connections for Project1** ❌
-  → Service connections allow pipelines to access Azure resources, not automated source sync of runbooks.
+> Fixed version in Git = **Commit SHA**
 
+✅ Final Answer:
 
-
-Final Answer:
-
-**C. the Source control settings for the Automation account** ✅
+**B. the SHA-based hashes**
 
 
 
@@ -5282,7 +5293,7 @@ Final Answer:
 
 You manage source code control and versioning by using GitHub.
 
-You need to ensure that a PowerShell script is executed automatically before rebase operations are performed.
+You need to ensure that a **PowerShell script** is executed automatically before rebase operations are performed.
 
 What should you use?
 
