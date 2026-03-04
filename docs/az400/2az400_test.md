@@ -5495,24 +5495,25 @@ Final Answer:
 
 
 
-### Question-101 ？？？
+### Question-101  💩💩
 
 You use GitHub for source control.
 
-You are evaluating whether to use proxying to add a private upstream MyGet package feed to your MyGet feed.
+**You are evaluating whether to use proxying to add a private upstream MyGet package feed to your MyGet feed**.
+
 What are two possible advantages of this approach? Each correct answer presents a complete solution.
 
 NOTE: Each correct selection is worth one point.
 
 * A. minimizes the impact of upstream source availability issues
 * B. minimizes latency when accessing the package
-* **C. provides automatic authentication**
-* **D. minimizes the impact on your storage quota**
-
+* C. provides automatic authentication
+* D. minimizes the impact on your storage quota
 
 The correct answers are:
 
 **A. minimizes the impact of upstream source availability issues** ✅
+
 **B. minimizes latency when accessing the package** ✅
 
  Why these are correct:
@@ -5549,7 +5550,7 @@ You need to reduce the size of the repository. The solution must remove the file
 What should you use?
 
 
-* **A. bfg**
+* A. bfg
 
 * B. Its
 
@@ -5557,6 +5558,8 @@ What should you use?
 
 * D. init
 
+
+----
 
 The correct answer is:
 
@@ -5597,6 +5600,7 @@ Which Azure DevOps component should you use?
 * C. delivery plans
 * D. portfolio backlogs
 
+-----
 
 The correct answer is:
 
@@ -5607,9 +5611,9 @@ Explanation:
 To **visualize the flow of work using an agile methodology**, Azure DevOps **Kanban boards** are designed specifically for this purpose. They provide:
 
 * Visual workflow columns (e.g., To Do → Doing → Done)
-* Work-in-progress (WIP) limits
+* **Work-in-progress (WIP) limits**
 * Flow tracking
-* Continuous delivery visualization
+* **Continuous delivery visualization**
 * Agile and Lean workflow support
 
 Why the others are incorrect:
@@ -5622,20 +5626,19 @@ Final Answer:
 
 **A. Kanban boards** ✅
 
-
 ### Question-104
 
 Your team uses an agile development approach.
 
 You need to recommend a branching strategy for the team's Git repository. The strategy must meet the following requirements.
 
-Provide the ability to work on multiple independent tasks in parallel.
+- Provide the ability to work on multiple independent tasks in parallel.
 
-Ensure that checked-in code remains in a releasable state always.
+- Ensure that checked-in code remains in a releasable state always.
 
-Ensure that new features can be abandoned at any time.
+- Ensure that new features can be abandoned at any time.
 
-Encourage experimentation.
+- Encourage experimentation.
 
 What should you recommend?
 
@@ -5693,18 +5696,16 @@ Final Answer:
 
 ### Question-105
 
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
-
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
 You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
 
-Solution: You create a service hook subscription that uses the build completed event.
+**Solution: You create a service hook subscription that uses the build completed event.**
+
 Does this meet the goal?
 
 * A. Yes
 * **B. No**
-
 
 **Answer: B. No** ❌
 
@@ -5720,7 +5721,7 @@ That event only triggers **after a build finishes**, not when code is committed.
 
 Correct approach would be:
 
-Use a **Service Hook** with a **code-related event**, such as:
+<mark>Use a **Service Hook** with a **code-related event**, such as<mark>:
 
 * **Code pushed**
 * **Pull request created/updated**
@@ -5745,13 +5746,13 @@ Final Answer:
 
 You have a project in Azure DevOps that has a release pipeline.
 
-You need to integrate work item tracking and an Agile project management system to meet the following requirements:
+**You need to integrate work item tracking and an Agile project management system **to meet the following requirements:
 
-Ensure that developers can track whether their commits are deployed to production.
+- Ensure that developers can track whether their commits are deployed to production.
 
-Report the deployment status.
+- Report the deployment status.
 
-Minimize integration effort.
+- Minimize integration effort.
 
 Which system should you use?
 
@@ -5790,11 +5791,9 @@ Final Answer:
 
 ### Question-108
 
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
-
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
-You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+**You need Azure DevOps to send a notification to Jenkins** when a developer commits changes to a branch in Azure Repos.
 
 Solution: You create an email subscription to an Azure DevOps notification.
 
@@ -5802,6 +5801,8 @@ Does this meet the goal?
 
 * A. Yes
 * B. No
+
+----
 
 **Correct answer: B. No** ❌
 
@@ -5841,7 +5842,7 @@ You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
 You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
 
-Solution: You create a service hook subscription that uses the code pushed event.
+Solution: **You create a service hook subscription that uses the code pushed event.**
 
 Does this meet the goal?
 
@@ -5875,7 +5876,7 @@ You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
 You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
 
-Solution: You add a trigger to the build pipeline.
+<mark>Solution: You add a trigger to the build pipeline.</mark>
 
 Does this meet the goal?
 
@@ -5889,7 +5890,7 @@ Explanation:
 
 Creating a **service hook subscription** in Azure DevOps with the ***Code pushed*** event:
 
-* Triggers automatically whenever a developer pushes commits to a branch.
+* **Triggers automatically whenever a developer pushes commits to a branch**.
 * Sends a notification (usually via **webhook**) to Jenkins.
 * Jenkins can then start the appropriate job or pipeline based on the push.
 
@@ -5998,11 +5999,10 @@ Final Answer:
 You plan to onboard 10 new developers.
 
 You need to recommend a development environment that meets the following requirements:
-Integrates with GitHub
 
-Provides integrated debugging tools
-
-Supports remote workers and hot-desking environments
+- Integrates with GitHub
+- Provides integrated debugging tools
+- Supports remote workers and hot-desking environments
 
 Supports developers who use browsers, tablets, and Chromebooks What should you recommend?
 
@@ -6109,7 +6109,7 @@ Final Answer:
 
 You have an Azure DevOps organization that contains a project named Project1
 
-You need to create a published wiki in Project1.
+You need to create a **published wiki in Project1**.
 
 What should you do first?
 
@@ -6266,54 +6266,65 @@ Final Answer:
 **D. Slack** ✅
 
 
-### Question-118 ？？
+### Question-118
 
 
-You are designing a YAML template for use with Azure Pipelines. The template will include the outputfile parameter.
+You are designing a YAML template for use with Azure Pipelines. **The template will include the outputfile parameter.**
 
 Which two methods can you use to reference the parameter? Each correct answer presents a complete solution.
 NOTE: Each correct selection is worth one point.
 
-* A. `${{parameters.outputfile})`
-* B. `$(parameters'outputfile)`
-* C. `$(parameters.outputfile)`
+* A. `${{parameters.outputfile}}`
+* B. `$(parameters.outputfile)`
+* C. `${parameters.outputfile}`
 * D. `$(parameters[outputfile])`
-* E. `${{parameters|'outputfile']))`
+* E. `${{parameters['outputfile’]}}`
 
 Answer: AE
 
 The correct answers are:
 
-* **A. ${{ parameters.outputfile }}** ✅
-* **C. $(parameters.outputfile)** ✅
+✅ **A. `${{ parameters.outputfile }}`**
+✅ **E. `${{ parameters['outputfile'] }}`**
 
 Explanation
 
-In **Azure Pipelines YAML templates**, parameters can be referenced in two main ways depending on **compile-time vs runtime**:
+In Azure DevOps YAML templates, **parameters** are referenced using **template expression syntax**, which is evaluated at compile time.
 
-1. **Compile-time (template expression)**
+There are two valid ways to reference a parameter named `outputfile`:
 
-   * Syntax: `${{ parameters.parameterName }}`
-   * Example: `${{ parameters.outputfile }}`
-   * Evaluated **before the pipeline runs**, usually for template expansion.
+✅ 1️⃣ Dot notation
 
-2. **Runtime (macro expression)**
+```yaml
+${{ parameters.outputfile }}
+```
 
-   * Syntax: `$(parameters.parameterName)`
-   * Example: `$(parameters.outputfile)`
-   * Evaluated **during the pipeline run**, often used in scripts or tasks.
+* Most common method
+* Clean and readable
+* Works when the parameter name contains no special characters
 
-Why the other options are incorrect
+✅ 2️⃣ Index notation
 
-| Option                           | Reason                                                                 |                                                            |
-| -------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- |
-| **B. $(parameters'outputfile)**  | Invalid syntax; single quotes aren’t used here.                        |                                                            |
-| **D. $(parameters[outputfile])** | Incorrect for parameters; this syntax is for **variables** in runtime. |                                                            |
-| **E. ${{parameters.outputfile'}})**                                                      | Invalid syntax; extra characters and pipe are not allowed. |
+```yaml
+${{ parameters['outputfile'] }}
+```
 
-Final Answer:
+* Also valid
+* Required if parameter names contain special characters or spaces
 
-**A and C** ✅
+❌ Why the others are incorrect
+
+| Option | Reason                                                            |
+| ------ | ----------------------------------------------------------------- |
+| B      | `$(...)` is runtime variable syntax, not parameter syntax         |
+| C      | `${ ... }` is invalid in Azure Pipelines                          |
+| D      | Invalid bracket syntax (missing quotes and wrong expression type) |
+
+✅ Final Answer:
+
+**A and E**
+
+
 
 
 ### Question-119
@@ -6361,15 +6372,14 @@ You have a project in Azure DevOps named Project that contains a Kanban board na
 
 You create a Microsoft Teams channel and add the Azure Boards app to the channel.
 
-You need to ensure that users can create work items in Board1 from Microsoft Teams.
+**You need to ensure that users can create work items in Board1 from Microsoft Teams.**
 
 Which command should you run?
 
 * A. @azure boards subscriptions
 * B. @azure boards create
 * C. @azure boards sign in
-* **D. @azure boards** 
-
+* D. @azure boards
 
 The correct answer is:
 
