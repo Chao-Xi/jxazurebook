@@ -6366,7 +6366,7 @@ Final Answer:
 
 
 
-### Question-120 ？？
+### Question-120
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
