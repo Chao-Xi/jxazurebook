@@ -6513,7 +6513,8 @@ Final Answer:
 
 You are integrating an Azure Boards project and a GitHub repository.
 
-You need to authenticate Azure Boards to GitHub.
+**You need to authenticate Azure Boards to GitHub**.
+
 Which two authentication methods can you use? Each correct answer presents a complete solution.
 
 NOTE: Each correct selection is worth one point.
@@ -6656,7 +6657,7 @@ Where should you create the file?
 
 * A.. github/actions/
 * B. .github/
-* **C.`.git/`**
+* C.`.git/`
 * D. .github/workflows/
 
 The correct answer is:
@@ -6714,29 +6715,6 @@ Does this meet the goal?
 * A. Yes
 * **B. No**
 
-
-Answer: B
-
-
-### Question-132
-
-You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
-
-The builds must access an on-premises dependency management system.
-
-The build outputs must be stored as Server artifacts in Azure DevOps.
-
-The source code must be stored in a Git repository in Azure DevOps.
-
-Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
-
-Does this meet the goal?
-
-* A. Yes
-* B. No
-
-**Correct answer: B. No** ❌
-
 Why this does **not** meet the goal
 
 The solution proposes using a **hosted agent pool (Hosted VS 2019)** in **Azure DevOps**, but this fails one of the key requirements:
@@ -6776,13 +6754,37 @@ Final Verdict:
 Because a **hosted agent** cannot access **on-premises dependency management systems**.
 
 
+### Question-132
+
+You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+
+The builds must access an on-premises dependency management system.
+
+The build outputs must be stored as Server artifacts in Azure DevOps.
+
+The source code must be stored in a Git repository in Azure DevOps.
+
+Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
+
+Does this meet the goal?
+
+* A. Yes
+* B. No
+
+**Correct answer: B. No** ❌
+
+**Answer: B. No**
+
+The solution does not meet the requirement because a hosted Ubuntu agent runs in the Azure cloud and cannot directly access an on-premises dependency management system without additional network configuration (such as a VPN or self-hosted agent). The Java Tool Installer task only ensures the correct Java version is used, but does not address on-premises connectivity.
+
+
 ### Question-133
 
 Your company uses a Git repository in Azure Repos to manage the source code of a web application. The master branch is protected from direct updates.
 
 Developers work on new features in the topic branches.
 
-Because of the high volume of requested features, it is difficult to follow the history of the changes to the master branch.
+**Because of the high volume of requested features,** it is difficult to follow the history of the changes to the master branch.
 
 You need to enforce a pull request merge strategy. The strategy must meet the following requirements:
 
@@ -6792,10 +6794,12 @@ Merge the changes into a single commit.
 
 Which merge strategy should you use in the branch policy?
 
-* **A. squash merge**
+* A. squash merge
 * B. fast-forward merge
 * C. Git fetch
 * D. no-fast-forward merge
+
+----
 
 
 **Correct answer: A. squash merge** ✅
@@ -6833,14 +6837,17 @@ Final Answer:
 ### Question-134
 
 You are automating the build process for a Java-based application by using Azure DevOps.
+
 You need to add code coverage testing and publish the outcomes to the pipeline.
+
 What should you use?
 
 * A. Bullseye Coverage
 * B. JUnit
-* **C. JaCoCo**
+* C. JaCoCo
 * D. MSTest
 
+----
 
 **Correct answer: C. JaCoCo** ✅
 
@@ -6873,10 +6880,12 @@ You need to add code coverage testing and publish the outcomes to the pipeline.
 
 What should you use?
 
-* **A. Cobertura**
+* A. Cobertura
 * B. Bullseye Coverage
 * C. MSTest
 * D. Coverlet
+
+---
 
 **Correct answer: A. Cobertura** ✅
 
@@ -6941,7 +6950,7 @@ Final Answer:
 
 You have a private project in Azure DevOps.
 
-You need to ensure that a project manager can create custom work item queries to report on the project's progress. The solution must use the principle of least privilege.
+**You need to ensure that a project manager can create custom work item queries to report on the project's progress**. The solution must use the principle of least privilege.
 
 To which security group should you add the project manager?
 
@@ -6990,7 +6999,7 @@ You need to implement a change management procedure that meets the tollowing req
 What should you configure in Azure Repos?
 
 
-* **A. branch policies of the default branch**
+* A. branch policies of the default branch
 * B. Services in Project Settings
 * C. Deployment pools in Project Settings
 * D. branch security of the default branch
@@ -7032,9 +7041,9 @@ Your company uses Azure DevOps to manage the build and release processes for app
 
 You use a Git repository for applications source control
 
-You need to implement a pull request strategy that reduces the history volume in the master branch.
+You need to implement a pull request strategy that **reduces the history volume in the master branc**h.
 
-Solution: You implement a pull request strategy that uses an explicit merge.
+Solution: **You implement a pull request strategy that uses an explicit merg**e.
 
 Does this meet the goal?
 
@@ -7157,20 +7166,22 @@ To meet the goal:
 **B. No**
 
 
-### Question-143 ？？？
+### Question-143
 
 You have 50 Node.js-based projects that you scan by using WhiteSource. Each project includes Package.json, Package-lock.json, and Npm-shrinkwrap.json files.
 
-You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference.
+**You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference**.
 
 What should you do?
 
 * A. Configure the File System Agent plug-in.
-* **B. Add a devDependencies section to Package-lock.json.**
+* B. Add a devDependencies section to Package-lock.json.
 * C. Configure the Artifactory plug-in.
 * D. Delete Package-lock.json.
 
-Answer: B
+----
+
+Answer: D
 
 **Correct answer: D. Delete `Package-lock.json`.** ✅
 
@@ -7261,7 +7272,7 @@ Nhat should you use to execute the build
 * A. a Microsoft-hosted agent
 * B. Azure DevOps self-hosted agents on Azure DeTest Labs virtual machines.
 * C. Azure DevOps self-hosted agents on Hyper-V virtual machines
-* **D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack**
+* D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack
 
 **Correct answer: D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack** ✅
 
@@ -7313,7 +7324,7 @@ What should you recommend?
 * A. the number of code modules in an application
 * B. the number of unit test failures
 * C. the percentage of unit test failures
-* **D. the percentage of overall time spent on rework**
+* D. the percentage of overall time spent on rework
 
 **Correct answer: D. the percentage of overall time spent on rework** ✅
 
@@ -7367,7 +7378,7 @@ You are developing an open source solution that uses a GitHub repository.
 You create a new public project in Azure DevOps.
 
 
-You plan to use Azure Pipelines for continuous build. The solution will use the GitHub Checks API.
+**You plan to use Azure Pipelines for continuous build. The solution will use the GitHub Checks API.**
 Which authentication type should you use?
 
 * A. OpenID
@@ -7433,6 +7444,48 @@ Does this meet the goal?
 
 Answer: B
 
+The correct answer is:
+
+**B. No**
+
+Explanation
+
+In Azure DevOps:
+
+To ensure that **a build runs automatically when code is checked in**, you must configure:
+
+> **Continuous Integration (CI) trigger** in the **build pipeline**
+
+The proposed solution enables:
+
+> **Pull request trigger in the Continuous deployment trigger settings of the release pipeline**
+
+This does **not** meet the goal because:
+
+* Release pipeline triggers control **deployment**, not **build execution**
+* Pull request triggers validate PRs — they do not automatically trigger builds on every code check-in
+* The requirement is about running a build when code is checked in (CI)
+
+What should be configured instead?
+
+You should enable:
+
+* CI trigger in YAML:
+
+  ```yaml
+  trigger:
+    - main
+  ```
+
+  or
+
+Enable **Continuous integration** in classic build pipeline settings
+
+Final Answer:
+
+**B. No**
+
+
 ### Question-149
 
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
@@ -7442,6 +7495,7 @@ Your company has a project in Azure DevOps for a new web application.
 You need to ensure that when code is checked in, a build runs automatically.
 
 Solution: From the Pre-deployment conditions settings of the release pipeline, you select After stage.
+
 Does this meet the goal?
 
 * A. Yes
@@ -7538,8 +7592,11 @@ Solution: From the Triggers tab of the build pipeline, you select Enable continu
 
 Does this meet the goal?
 
-* **A. Yes**
+* A. Yes
 * B. No
+
+
+—--
 
 **Correct answer: A. Yes** ✅
 
@@ -7571,14 +7628,16 @@ Summary
 
 Your company has a project in Azure DevOps.
 
-You need to ensure that when there are multiple builds pending deployment, only the most recent build is deployed
+You need to ensure that when there are multiple builds pending deployment, **only the most recent build is deployed**
 
 What should you use?
 
 * A. deployment conditions
-* **B. deployment queue settings**
+* B. deployment queue settings
 * C. release gates
 * D. pull request triggers
+
+----
 
 **Correct answer: B. deployment queue settings** ✅
 
@@ -7609,12 +7668,13 @@ Final Answer
 **B. deployment queue settings** ✅
 
 
-### Question-153 ？？？
+### Question-153
 
 You use Azure Pipelines to build and test a React js application.
+
 You have a pipeline that has a single job
 
-You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
+**You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.**
 
 You need to recommend a solution to reduce the pipeline execution time.
 
@@ -7625,7 +7685,7 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-**Answer: B**
+----
 
 **Correct answer: A. Yes** ✅
 
@@ -7666,12 +7726,14 @@ You discover that installing Java Script packages from npm takes approximately f
 
 You need to recommend a solution to reduce the pipeline execution time.
 
-Solution: You recommend enabling pipeline caching.
+**Solution: You recommend enabling pipeline caching.**
 
 Does this meet the goal?
 
 * A. Yes
 * B. No
+
+---
 
 **Answer. A**
 
@@ -7711,12 +7773,14 @@ You discover that installing JavaScript packages from npm takes approximately fi
 
 You need to recommend a solution to reduce the pipeline execution time.
 
-Solution: You recommend enabling parallel jobs for the pipeline.
+Solution: **You recommend enabling parallel jobs for the pipeline**.
 
 Does this meet the goal?
 
 * A. Yes
 * B. No
+
+------
 
 **Answer: B**
 
@@ -7761,6 +7825,8 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
+-----
+
 **Correct answer: A. Yes** ✅
 
 Explanation
@@ -7801,12 +7867,14 @@ Two resource groups
 Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
 You need to recommend a solution to deploy the resources.
 
-Solution: Create a single standalone template that will deploy all the resources.
+**Solution: Create a single standalone template that will deploy all the resources.**
 
 Does this meet the goal?
 
 * A. Yes
 * B. No
+
+----
 
 **Correct answer: B. No** ❌
 
@@ -7841,12 +7909,15 @@ Your build process creates several artifacts.
 
 You need to deploy the artifacts to on-premises servers.
 
-Solution: You deploy a Kubernetes cluster on-premises. You deploy a Helm agent to the cluster. You add a Download Build Artifacts task to the deployment pipeline.
+Solution: **You deploy a Kubernetes cluster on-premises. You deploy a Helm agent to the cluster. You add a Download Build Artifacts task to the deployment pipeline.**
 
 Does this meet the goal?
 
 * A. Yes
 * B. No
+
+
+----
 
 **Correct answer: B. No** ❌
 
@@ -7890,6 +7961,8 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
+-----
+
 **Correct answer: B. No** ❌
 
 Explanation
@@ -7916,58 +7989,44 @@ Final Answer
 **B. No** ❌
 
 
-### Question-160 ？？？
+### Question-160
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1
 
 to an Azure container registry named ACR1. Image uses a base image stored in Docker Hub.
 
-You need to ensure that Image1 is updated automatically whenever the base image is updated.
+**You need to ensure that Image1 is updated automatically whenever the base image is updated.**
+
 What should you do?
 
 * A. Enable the Azure Event Grid resource provider and subscribe to registry events.
 * B. Add a Docker Hub service connection to Azure Pipelines.
-* **C. Create and run an Azure Container Registry task.**
+* C. Create and run an Azure Container Registry task.
 * D. Create a service hook in Project.
+
+
+-----
 
 **Answer: C**
 
-**Correct answer: B. Add a Docker Hub service connection to Azure Pipelines** ✅
+The correct answer is **C. Create and run an Azure Container Registry task.**
 
-Explanation
+**Explanation:**
 
-The scenario:
+Azure Container Registry (ACR) Tasks include a feature specifically designed for this scenario called **Base image update triggers**.
 
-* You have a **container image (Image1)** built in Azure Pipelines.
-* **Image1 uses a base image from Docker Hub**.
-* You want **Image1 to rebuild automatically whenever the base image changes**.
+1.  **How it works:** When you create an ACR Task to build a container image, ACR automatically tracks the dependencies of that image. It identifies the base image used in your `Dockerfile` (even if it is hosted on **Docker Hub**).
+2.  **Automation:** ACR monitors the base image for changes. When a new version of the base image is pushed to Docker Hub, the ACR Task detects the update and automatically triggers a new build of your image (`Image1`) and pushes it to your registry (`ACR1`).
+3.  **Efficiency:** This ensures that your application always includes the latest security patches and performance improvements from the base image without requiring manual intervention or complex pipeline triggers.
 
-How to achieve this in Azure Pipelines:
+**Why other options are incorrect:**
 
-1. **Connect to Docker Hub**:
+*   **A. Azure Event Grid:** While Event Grid can handle events *within* Azure, it does not natively provide a "turn-key" solution for monitoring image tags on Docker Hub to trigger builds.
+*   **B. Docker Hub service connection:** This allows Azure Pipelines to *access* Docker Hub, but it does not provide an automated "watch" mechanism to trigger a rebuild when a third-party image changes.
+*   **D. Service hook:** Service hooks in Azure DevOps are used to integrate with external services (like sending a message to Slack when a build fails). They are not designed to monitor external container registries for image updates.
 
-   * Add a **Docker Hub service connection** in Azure DevOps.
-   * This allows the pipeline to authenticate with Docker Hub and detect new versions of the base image.
-
-2. **Trigger pipeline on base image update**:
-
-   * You can use a **pipeline trigger based on a schedule** or **webhook from Docker Hub** (via the service connection) to rebuild your image when the base image is updated.
-
-Why other options are less appropriate
-
-| Option                              | Reason                                                                                                                                                |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A. Enable Azure Event Grid on ACR   | Event Grid triggers notify **ACR events**, not Docker Hub base image updates                                                                          |
-| C. Create and run an ACR task       | ACR tasks can rebuild images on **ACR base images**, not automatically detect external Docker Hub base image changes without additional configuration |
-| D. Create a service hook in Project | Service hooks are for **Azure DevOps events**, not Docker Hub base image updates                                                                      |
-
-Final Answer
-
-**B. Add a Docker Hub service connection to Azure Pipelines** ✅
-
-
-### Question-161 ？？
+### Question-161
 
 You have an Azure DevOps project.
 
@@ -7975,13 +8034,14 @@ Your build process creates several artifacts.
 
 You need to deploy the artifacts to on-premises servers.
 
-Solution: You deploy an Octopus Deploy server. You deploy a polled Tentacle agent to an on-premises server. You add an Octopus task to the deployment pipeline.
+Solution: You deploy an Octopus Deploy server. **You deploy a polled Tentacle agent to an on-premises server**. 
+
+You add an Octopus task to the deployment pipeline.
+
 Does this meet the goal?
 
 * A. Yes
 * B. No
-
-Answer: B
 
 **Correct answer: A. Yes** ✅
 
@@ -7995,20 +8055,35 @@ This solution **does meet the goal**:
 
 This setup is a **standard enterprise CI/CD pattern** for deploying build artifacts from Azure DevOps to **on-premises infrastructure**.
 
-Why this works
+**Answer: A. Yes**
 
-* ✔ Supports on-prem deployments
-* ✔ Secure connectivity (polled Tentacle = no inbound firewall rules needed)
-* ✔ Native Azure DevOps integration
-* ✔ Designed specifically for artifact deployment workflows
-* ✔ Scalable and production-grade
+This solution meets the goal because it correctly addresses the challenge of deploying artifacts from Azure DevOps to on-premises servers using a well-established deployment tool.
 
-Final Answer
+✅ Why This Solution Works
+
+1.  **Octopus Deploy Integration**: Octopus Deploy is specifically designed for complex deployments and integrates seamlessly with Azure DevOps. Adding an Octopus task to your Azure Pipeline allows you to trigger deployments orchestrated by Octopus.
+
+2.  **Polled Tentacle for On-Premises**: Using a **polled Tentacle** on your on-premises server is the correct choice for environments behind a firewall. Polled Tentacles initiate outbound connections to the Octopus Server to check for tasks, eliminating the need to open inbound firewall ports to the on-premises server.
+
+3.  **Artifact Deployment**: The combination of the Octopus Server (orchestration), the polled Tentacle (execution agent), and the Octopus task in the pipeline creates a complete workflow:
+    - Azure Pipelines builds the artifacts.
+    - The Octopus task in the pipeline pushes the artifacts to Octopus and triggers a release.
+    - The on-premises polled Tentacle regularly checks in with the Octopus Server, receives the deployment instructions, downloads the artifacts, and deploys them to the server.
+
+📝 How the Components Fit Together
+
+| Component | Role | Meets Requirement? |
+| :--- | :--- | :--- |
+| **Octopus Deploy Server** | Central orchestration for releases and deployments | ✅ Yes, manages the deployment process. |
+| **Polled Tentacle Agent** | Lightweight agent installed on the on-premises target server; polls the server for work. | ✅ Yes, executes the deployment steps locally and works through firewalls. |
+| **Octopus Task in Pipeline** | Azure DevOps task that creates a release in Octopus and initiates the deployment. | ✅ Yes, connects the CI pipeline to the CD tool (Octopus). |
+
+Therefore, the proposed architecture is a standard and effective pattern for deploying Azure DevOps build artifacts to on-premises infrastructure.
 
 **A. Yes** ✅
 
 
-### Question-162 ？？
+### Question-162 
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
 
@@ -8018,12 +8093,14 @@ Four Azure virtual machines in one resource group Two Azure SQL databases in oth
 
 You need to recommend a solution to deploy the resources.
 
-Solution: Create a main template that will deploy the resources in one resource group and a nested template that will deploy the resources in the other resource group.
+Solution: **Create a main template that will deploy the resources in one resource group and a nested template that will deploy the resources in the other resource group.**
 
 Does this meet the goal?
 
 * A. Yes
 * B. No
+
+-----
 
 **Correct answer: A. Yes** ✅
 
@@ -8065,15 +8142,16 @@ Four Azure virtual machines in one resource group Two Azure SQL databases in oth
 
 You need to recommend a solution to deploy the resources.
 
-Solution: Create a main template that has two linked templates, each of which will deploy the resources in its respective group
+Solution: **Create a main template that has two linked templates, each of which will deploy the resources in its respective group**
 
 Does this meet the goal?
 
-* **A. Yes**
+* A. Yes
 * B. No
 
-Answer: A
+------
 
+Answer: A
 
 **Correct answer: A. Yes** ✅
 
@@ -8085,8 +8163,8 @@ Using a **main ARM template** with **two linked templates**, where each linked t
 
 Each linked template can be scoped to a specific resource group using `Microsoft.Resources/deployments` with a `resourceGroup` property, for example:
 
-* Linked template 1 → deploys VMs to Resource Group A
-* Linked template 2 → deploys SQL databases to Resource Group B
+* **Linked template 1 → deploys VMs to Resource Group A**
+* **Linked template 2 → deploys SQL databases to Resource Group B**
 
 Why this works
 
@@ -8105,11 +8183,16 @@ Final Answer
 
 You have a project in Azure DevOps named Project. Project contains a build pipeline named Pipe1 that builds an application named App1.
 
-You have an agent pool
- named Pool1 that contains a Windows Server 2019-based self-hosted agent. Pipe1 uses Pool1.
-You plan to implement another project named Project2. Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+You have an agent pool named Pool1 that contains a Windows Server 2019-based self-hosted agent. 
 
-App1 and App2 have conflicting dependencies.
+Pipe1 uses Pool1.
+
+
+You plan to implement another project named Project2. 
+
+Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+
+**App1 and App2 have conflicting dependencies.**
 
 You need to minimize the possibility that the two build pipelines will conflict with each other. The solution must minimize infrastructure costs.
 
@@ -8118,7 +8201,10 @@ What should you do?
 * A. Add another self-hosted agent.
 * B. Add a Docker Compose task to the build pipelines.
 * C. Change the self-hosted agent to use Red Hat Enterprise Linux (RHEL) 8.
-* **D. Create two container jobs.**
+* D. Create two container jobs.
+
+
+----
 
 
 **Correct answer: D. Create two container jobs.** ✅
@@ -8171,8 +8257,9 @@ Which task must you perform manually?
 * A. modifying group memberships
 * B. adding users
 * C. assigning entitlements
-* **D. procuring licenses**
+* D. procuring licenses
 
+------
 
 **Correct answer: D. procuring licenses** ✅
 
@@ -8221,7 +8308,9 @@ Which task types should you add to the build pipeline?
 * A. Octopus
 * B. Chef
 * C. CocoaPods
-* **D. Gradle**
+* D. Gradle
+
+------
 
 **Answer: D**
 
@@ -8263,14 +8352,16 @@ Your company is building a new solution in Java.
 
 The company currently uses a SonarQube server to analyze the code of NET solutions.
 
-You need to analyze and monitor the code quality of the Java solution.
+You need to analyze and monitor the **code quality of the Java solution**.
 
 Which task types should you add to the build pipeline?
 
-* **A. Maven**
+* A. Maven
 * B. CocoaPods
 * C.Xcode
 * D. Gulp
+
+------
 
 **Correct answer: A. Maven** ✅
 
@@ -8306,26 +8397,44 @@ You have a pipeline named Pipeline 1 in Azure Pipelines. Pipeline 1 deploys Azur
 You need to ensure that the resources deployed by Pipeline 1 comply with Policy1.
 What should you add to Pipeline 1?
 
-* **A. a pre-deployment task that runs a security and compliance assessment**
+* A. a pre-deployment task that runs a security and compliance assessment
 * B. a post-deployment task that runs a security and compliance assessment
 * C. an ARM template deployment task to assign Policy1 to Subscription 1
 * D. an ARM template deployment task to deploy Policy1 to Subscription1
 
-Answer: A
+The correct answer is **B. a post-deployment task that runs a security and compliance assessment.**
+
+Explanation:
+
+
+Since the policy in question is an **Audit policy**, it will not block the deployment of resources even if they violate the naming conventions. The ARM template deployment will technically "succeed," but the resources will be flagged as non-compliant in Azure.
+
+To "ensure" compliance within the context of the pipeline:
+
+1.  **Deployment:** The pipeline first deploys the resources using the ARM template.
+2.  **Assessment:** You add a **post-deployment task** (often using the "Security and Compliance Assessment" task or an Azure Policy compliance check). 
+3.  **Validation:** This task triggers a scan to check if the newly deployed resources comply with the assigned Azure Policies. 
+4.  **Failure:** If the task finds that the resources are non-compliant (audit violation), it will **fail the pipeline**. This forces the team to address the naming convention issue immediately, effectively ensuring that non-compliant code does not move further through the release process or remain unaddressed.
+
+Why other options are incorrect:
+
+*   **A. Pre-deployment task:** While you can run static analysis on a template, a "security and compliance assessment" against an active Azure Policy usually requires the resources or the deployment intent to be evaluated against the current state of the subscription, which is most accurately done during or after the deployment process.
+*   **C & D. ARM template deployment task:** These options deal with the *infrastructure* of the policy itself (creating or assigning it). The question states the policy already exists; the goal is to make sure the app's resources follow that policy.
 
 ### Question-169
 
 You have a project in Azure DevOps.
 
-You need to push notifications about pull requests to a Microsoft Teams channel. The solution must minimize development effort.
+**You need to push notifications about pull requests to a Microsoft Teams channel.** The solution must minimize development effort.
 
 What should you do?
 
 * A. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in the channel.
 * B. Use Azure Automation to connect to the Azure DevOps REST API and send messages to Teams.
-* **C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel**.
+* C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel
 * D. Use an Azure function to connect to the Azure DevOps REST API and send messages to Teams.
 
+---------
 
 **Correct answer: C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel.** ✅
 
@@ -8373,8 +8482,9 @@ What should you do?
 * A. Create two feed views named @prerelease and @release, Set @release as the default view. Configure a release pipeline that tags the packages as release after successful testing.
 * B. Create a feed view named @prerelease. Configure a release pipeline that tags the packages as release after successful testing.
 * C. Create two feed views named @prerelease and @default. Configure a release pipeline that promotes a package to the @default view after successful testing.
-* **D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing**.
+* D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing
 
+----
 
 **Correct answer: D**
 
