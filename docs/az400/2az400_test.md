@@ -8550,12 +8550,13 @@ You need to ensure that only tested packages are available for consumption. The 
 
 What should you do?
 
-* **A. Create a feed view named @release and set @release as the default view. After the pm packages test successfully, configure a release pipeline that promotes a package to the @release view.**
-* B. Create a feed view named @release and set @release as the default view. Affer the npm packages test successfully, configure a release
-* pipeline that tags the packages as release.
-* C. Create a feed view named @default. After the nom packages test successfully configure a release pipeline that tags the packages as
-* release.
+* A. Create a feed view named @release and set @release as the default view. After the pm packages test successfully, configure a release pipeline that promotes a package to the @release view.
+* B. Create a feed view named @release and set @release as the default view. Affer the npm packages test successfully, configure a release pipeline that tags the packages as release.
+* C. Create a feed view named @default. After the nom packages test successfully configure a release pipeline that tags the packages as release.
 * D. Create a feed view named @default. After the npm packages test successfully, configure a release pipeline that promotes a package to the @default view
+
+------
+
 
 **Correct answer: A**
 
@@ -8641,9 +8642,12 @@ You need to minimize the amount of disk space used by older packages in Azure Ar
 What should you modify?
 
 * A. the retention settings of the project's release
-* **B. the retention settings of the project's pipeline**
+* B. the retention settings of the project's pipeline
 * C. the retention settings of the project's tests
 * D. the retention settings of the company pipeline
+
+
+-------
 
 The correct answer is: **B. the retention settings of the project's pipeline** ✅
 
@@ -8685,16 +8689,19 @@ Your team prepares an Azure Resource Manager template of the virtual machine tha
 
 You need to create a staging environment in Azure that meets the following requirements:
 
-* Minimizes the cost of Azure hosting
+* **Minimizes the cost of Azure hosting**
 * Provisions the virtual machines automatically
-* Uses the custom Azure Resource Manager template to provision the virtual machines
+* **Uses the custom Azure Resource Manager template to provision the virtual machines**
 
 What should you do?
 
 * A. In Azure Cloud Shell, run Azure CLI commands to create and delete the new virtual machines in a staging resource group.
 * B. In Azure DevOps, configure new tasks in the release pipeline to deploy to Azure Cloud Services
 * C. From Azure Cloud Shell, run Azure PowerShell commands to create and delete the new virtual machines in a staging resource group.
-* **D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DeTest Labs**.
+* D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in **Azure DeTest Labs**
+
+
+-------
 
 The correct answer is: **D. In Azure DevOps, configure new tasks in the release pipeline to create and delete the virtual machines in Azure DevTest Labs** ✅
 
@@ -8751,9 +8758,12 @@ Which pull request action should you use?
 
 * A. Set as default branch
 * B. Approve with suggestions
-* **C. Cherry-pick**
+* C. Cherry-pick
 * D. Reactivate
 * E. Revert
+
+-----------
+
 
 The correct answer is: **C. Cherry-pick** ✅
 
@@ -8782,7 +8792,7 @@ Why the other options are incorrect
 ✅ **Answer: C**
 
 
-### Question-175 ？？？
+### Question-175
 
 You are designing a build pipeline in Azure Pipelines.
 
@@ -8793,40 +8803,28 @@ You need to recommend a compute type for the agent. The solution must minimize c
 What should you recommend?
 
 * A. an Azure Kubernetes Service (AKS) cluster
-* **B. Azure Container Instances**
+* B. Azure Container Instances
 * C. an Azure virtual machine scale set
 * D. Azure virtual machines
 
-The correct answer is: **D. Azure virtual machines** ✅
 
-Explanation
+-----------
 
-The scenario requirements:
+The correct answer is **B. Azure Container Instances.**
 
-1. **Self-hosted agent** → the agent must run on infrastructure you manage, not Microsoft-hosted.
-2. **Runs once daily** → low frequency.
-3. **Build duration ~30 minutes** → moderate runtime.
-4. **Minimize costs** → avoid over-provisioned or always-on infrastructure.
+Explanation:
 
- Analysis of options
+To minimize costs for a task that runs for only 30 minutes once per day, you need a solution that supports **per-second billing** and **zero cost while idle**.
 
-| Option                           | Pros                                                                            | Cons                                                                      | Suitability                                        |
-| -------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------- |
-| **A. AKS cluster**               | Can run containerized agents at scale                                           | Complex, always-on cluster, higher cost for a single daily build          | ❌ Overkill for 1 build/day                         |
-| **B. Azure Container Instances** | Quick startup, pay per use                                                      | Limited management options for self-hosted agents, may need orchestration | ❌ Not ideal for persistent self-hosted agent setup |
-| **C. VM scale set**              | Autoscaling VMs                                                                 | Designed for multiple simultaneous agents / high throughput               | ❌ Overkill for 1 agent running once daily          |
-| **D. Azure virtual machines**    | Easy to set up, self-hosted agent can be installed, can stop VM when not in use | Pay only for running time if VM is deallocated                            | ✅ Best cost/effort balance for 1 build/day         |
+*   **Cost Efficiency:** Azure Container Instances (ACI) is a "serverless" container service. You only pay for the exact amount of CPU and memory resources consumed while the container is running. **For a 30-minute daily task, you would only be billed for 15 hours of compute per month**.
+*   **No Idle Costs:** Unlike a standard Virtual Machine (Option D), which incurs costs 24/7 unless manually deallocated, or an AKS cluster (Option A), which has ongoing management and node costs, ACI can be spun up at the start of the pipeline and deleted immediately after the build completes.
+*   **Ease of Use:** You can easily run a Dockerized Azure Pipelines agent in ACI.
 
-Recommended approach to minimize cost
+Why other options are incorrect:
 
-* Use an **Azure VM** for the self-hosted agent.
-* **Deallocate the VM** when not running builds (e.g., using Azure Automation or pipeline pre/post tasks).
-* Only start the VM for the daily build → pay for ~30–60 minutes instead of 24/7.
-
-
-
-✅ **Answer: D. Azure virtual machines**
-
+*   **A. Azure Kubernetes Service (AKS):** This requires maintaining a cluster, which involves ongoing costs for the control plane (if using paid tiers) and the worker nodes. It is far too complex and expensive for a single daily 30-minute job.
+*   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
+*   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
 
 ### Question-176
@@ -8835,15 +8833,15 @@ You have a project in Azure DevOps.
 
 You have an Azure Resource Group deployment project in Microsoft Visual Studio that is checked in to the Azure DevOps project.
 
-You need to create a release pipeline that will deploy resources by using Azure Resource Manager templates. 
+**You need to create a release pipeline that will deploy resources by using Azure Resource Manager templates.**
 
-The solution must minimize administrative effort.
+**The solution must minimize administrative effort.**
 
 Which task type should you include in the solution?
 
 * A. Azure Cloud Service Deployment
 * B. Azure RM Web App Deployment
-* **C. Azure PowerShell**
+* C. Azure PowerShell
 * D. Azure App Service Manage
 
 The correct answer is: **C. Azure PowerShell** ✅
@@ -8882,7 +8880,7 @@ How it works
 
 
 
-### Question-177 ？？？
+### Question-177
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -8894,11 +8892,11 @@ You need to ensure that release information for the pipeline is added automatica
 What should you do?
 
 * A. Modify the Integrations options for the pipeline.
-* **B. Modify the post-deployment conditions for the last stage of the pipeline.**
+* B. Modify the post-deployment conditions for the last stage of the pipeline.
 * C. Add an agentless job to the pipeline.
 * D. Modify the service hooks for the project.
 
-Answer: B
+------------
 
 Configure your release definition to post deployment information to Work items.
 
@@ -8932,6 +8930,7 @@ Why the other options are incorrect
 
 
 **Key point:**
+
 Enabling **pipeline integrations** is the standard way to ensure that **release information is automatically added to associated work items** in Azure DevOps.
 
 ✅ **Answer: A**
@@ -8954,9 +8953,45 @@ Which service should you install?
 
 Answer: D
 
+----
+
+
+The correct answer is:
+
+✅ **D. Tiller**
+
+to deploy applications to a Kubernetes cluster such as Azure Kubernetes Service (AKS), Helm v2 requires a server-side component called **Tiller**.
+
+Helm architecture (v2):
+
+* **Helm client** – runs commands from the pipeline or local machine
+* **Tiller** – runs inside the Kubernetes cluster and manages releases
+
+Tiller must be installed in the **Kubernetes namespace** so Helm can:
+
+* Install charts
+* Manage releases
+* Upgrade or roll back deployments
+
+Therefore, before using the **Helm package and deploy task**, the **Tiller service** must be installed.
+
+Why the other options are incorrect
+
+| Option                          | Reason                                                                   |
+| ------------------------------- | ------------------------------------------------------------------------ |
+| **A. Azure Container Registry** | Stores container images, not required as a Helm service in the namespace |
+| **B. Chart**                    | A Helm package, not a service                                            |
+| **C. Kubectl**                  | A CLI tool, not a service installed in the namespace                     |
+
+
+✅ **Final Answer:**
+
+**D. Tiller**
+
+
 ### Question-179
 
-You plan to use Terraform to deploy an Azure resource group from a Windows system.
+**You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
 You need to install the required frameworks to support the planned deployment.
 
@@ -8965,11 +9000,12 @@ Which two frameworks should you install? Each correct answer presents part of th
 NOTE: Each correct selection is worth one point.
 
 * A. Vault
-* **B. Terratest**
+* B. Terratest
 * C. Node.js
-* **D. Yeoman**
+* D. Yeoman
 * E. Tiller
 
+------------
 
 The correct answers are: **C. Node.js** and **D. Yeoman** ✅✅
 
@@ -9008,13 +9044,16 @@ You have a policy stating that approvals must occur within eight hours.
 
 You discover that deployment fail if the approvals take longer than two hours
 
-You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+**You need to ensure that the deployments only fail if the approvals take longer than eight hours.**
 
 Solution: From Post-deployment conditions, you modify the Time between re-evaluation of gates option.
+
 Does this meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No
+
+----------
 
 The correct answer is: **B. No** ✅
 
@@ -9034,15 +9073,15 @@ Why modifying **“Time between re-evaluation of gates”** does **not** help
 
 Correct approach
 
-* Modify the **pre-deployment approval timeout** for the stage to **8 hours**.
-* This ensures that the deployment waits up to 8 hours for team leader approval before failing.
+* <mark>Modify the **pre-deployment approval timeout** for the stage to **8 hours**.</mark>
+* <mark>This ensures that the deployment waits up to 8 hours for team leader approval before failing.</mark>
 
 
 ✅ **Answer: B. No**
 
 
 
-### Question-181 ？？
+### Question-181
 
 
 You have a policy stating that approvals must occur within eight hours.
@@ -9140,17 +9179,17 @@ Your company develops an application named App1 that is deployed in production.
 
 As part of an application update, a new service is being added to App1. The new service requires access to an application named App2 that is currently in development.
 
-You need to ensure that you can deploy the update to App1 before App2 becomes available. You must be able to enable the service in App1 once 
-
-App2 is deployed.
+You need to ensure that you can deploy the update to App1 before App2 becomes available. You must be able to enable the service in App1 once App2 is deployed.
 
 What should you do?
 
-* **A. Implement a feature flag**
+* A. Implement a feature flag
 * B. Create a fork in the build
 * C. Create a branch in the build
 * D. Implement a branch policy.
 
+
+------------
 
 The correct answer is: **A. Implement a feature flag** ✅
 
@@ -9195,9 +9234,12 @@ You need to distribute a new iOS application to the distribution group by using 
 What should you do?
 
 * A. Request the Apple ID associated with the user of each device.
-* **B. Register the devices on the Apple Developer portal.**
+* B. Register the devices on the Apple Developer portal.
 * C. Create an active subscription in App Center Test.
 * D. Add the device owner to the organization in App Center.
+
+-------------
+
 
 The correct answer is: **B. Register the devices on the Apple Developer portal** ✅
 
@@ -9235,10 +9277,12 @@ You need to distribute a new iOS application to the distribution group by using 
 
 What should you do?
 
-* **A. Select Register devices and sign my app.**
+* A. Select Register devices and sign my app.
 * B. Create an active subscription in App Center Test.
 * C. Create an unsigned build.
 * D. Add the device owner to the collaborators group.
+
+-----------
 
 The correct answer is: **A. Select Register devices and sign my app** ✅
 
@@ -9290,6 +9334,9 @@ NOTE: Each correct selection is worth one point.
 * D. a self-hosted agent
 * E. an External Git service connection
 
+
+---------
+
 The correct answers are: **D. a self-hosted agent** and **E. an External Git service connection** ✅✅
 
 Explanation
@@ -9334,17 +9381,20 @@ Why the others are incorrect
 
 You have a project in Azure DevOps.
 
-You plan to deploy a self-hosted agent by using an unattended configuration script.
+**You plan to deploy a self-hosted agent by using an unattended configuration script.**
 
 Which two values should you define in the configuration script? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
-* **A. authorization credentials**
+* A. authorization credentials
 * B. the project name
 * C. the deployment group name
-* **D. the organization URL**
+* D. the organization URL
 * E. the agent pool name
+
+-------------
+
 
 The correct answers are: **A. authorization credentials** and **D. the organization URL** ✅✅
 
@@ -9386,13 +9436,13 @@ You have Azure Pipelines and GitHub integrated as a source code repository.
 
 The build pipeline has continuous integration enabled.
 
-You plan to trigger an automated build whenever code changes are committed to the repository.
+- You plan to trigger an automated build whenever code changes are committed to the repository.
+- You need to ensure that the system will wait until a build completes before queuing another build.
 
-You need to ensure that the system will wait until a build completes before queuing another build.
 What should you implement?
 
 * A. path filters
-* **B. batch changes**
+* B. batch changes
 * C. scheduled builds
 * D. branch filters
 
@@ -9422,7 +9472,7 @@ Why the other options are incorrect
 | **C. Scheduled builds** | Triggers builds at specific times, not automatically on commits.                |
 | **D. Branch filters**   | Restrict CI triggers to certain branches; **does not control queuing**.         |
 
----
+
 
 **Key point:**
 
@@ -9437,7 +9487,7 @@ You are using GitHub as a source code repository.
 
 You create a client-side Git hook on the commit-msg event. The hook requires that each commit message contain a custom work item tag.
 
-You need to make a commit that does not have a work item tag.
+**You need to make a commit that does not have a work item tag.**
 
 Which git commit parameter should you use?
 
@@ -9446,6 +9496,8 @@ Which git commit parameter should you use?
 * B. `--no-verify`
 * C. `--message`
 * D. `--no-post-rewrite`
+
+-----------
 
 The correct answer is: **B. --no-verify** ✅
 
@@ -9498,6 +9550,8 @@ What should you do?
 * C. Add the device owner to the organization in App Center.
 * D. Create an unsigned build.
 
+-------------
+
 The correct answer is: **A. Select Register devices and sign my app** ✅
 
 Explanation
@@ -9537,10 +9591,13 @@ You need to distribute a new iOS application to the distribution group by using 
 
 What should you do?
 
-* **A. Register the devices on the Apple Developer portal.**
+* A. Register the devices on the Apple Developer portal.
 * B. Add the device owner to the organization in App Center.
 * C. Create an unsigned build.
 * D. Add the device owner to the collaborators group.
+
+---------------
+
 
 The correct answer is: **A. Register the devices on the Apple Developer portal** ✅
 
@@ -9573,7 +9630,7 @@ Why the other options are incorrect
 
 Your company uses Azure Artifacts for package management.
 
-You need to configure an upstream source in Azure Artifacts for Python packages.
+You need to configure an **upstream source in Azure Artifacts for Python packages.**
 
 Which repository type should you use as an upstream source?
 
@@ -9581,6 +9638,9 @@ Which repository type should you use as an upstream source?
 * B. PyPI
 * C. Maven Central
 * D. third-party trusted Python
+
+
+-------
 
 The correct answer is: **B. PyPI** ✅
 
@@ -9616,7 +9676,7 @@ Why the other options are incorrect
 ### Question-194
 
 
-You have a GitHub repository that contains workflows. The workflows contain steps that execute predefined actions. Each action has one or more versions.
+You have a GitHub repository that contains workflows. **The workflows contain steps that execute predefined actions. Each action has one or more versions.**
 
 You need to request the specific version of an action to execute.
 
@@ -9624,12 +9684,13 @@ Which three attributes can you use to identify the version? Each correct answer 
 
 NOTE: Each correct selection is worth one point.
 
-* **A. the SHA-based hashes**
-* **B. the tag**
+* A. the SHA-based hashes
+* B. the tag
 * C. the runner
-* **D. the branch**
+* D. the branch
 * E. the serial
 
+------------
 
 The correct answers are: **A. the SHA-based hashes**, **B. the tag**, and **D. the branch** ✅✅✅
 
@@ -9685,18 +9746,19 @@ Why the other options are incorrect
 
 You have an Azure subscription that contains multiple Azure pipelines.
 
-You need to deploy a monitoring solution for the pipelines. The solution must meet the following requirements:
+**You need to deploy a monitoring solution for the pipelines**. The solution must meet the following requirements:
 
 * Parse logs from multiple sources.
 * Identify the root cause of issues.
 
-What advanced feature of a monitoring tool should you include in the solution?
+What **advanced feature of a monitoring tool** should you include in the solution?
 
-* **A. analytics**
+* A. analytics
 * B. synthetic monitoring
 * C. directed monitoring
 * D. Alert Management
 
+---------
 
 The correct answer is: **A. analytics** ✅
 
@@ -9729,7 +9791,7 @@ Why the other options are incorrect
 
 | Option                      | Reason                                                                                                         |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **B. Synthetic monitoring** | Used to **simulate user actions** and monitor app performance; not for parsing pipeline logs.                  |
+| **B. Synthetic monitoring** | Used to **simulate user actions** and monitor app performance; **not for parsing pipeline logs.**                  |
 | **C. Directed monitoring**  | Not a standard Azure Monitor / DevOps feature; does not provide log analytics or root cause analysis.          |
 | **D. Alert Management**     | Useful for **sending notifications** when issues occur, but does **not analyze logs** or identify root causes. |
 
@@ -9746,9 +9808,9 @@ Why the other options are incorrect
 
 You have an on-premises app named App1 that accesses Azure resources by using credentials stored in a configuration file.
 
-You plan to upgrade App1 to use an Azure service principal.
+**You plan to upgrade App1 to use an Azure service principal.**
 
-What is required for App1 to programmatically sign in to Azure Active Directory (Azure AD)?
+What is required for **App1 to programmatically sign in to Azure Active Directory (Azure AD)?**
 
 * A. the application ID, a client secret, and the object ID
 * B. a client secret, the object ID, and the tenant ID
@@ -9799,7 +9861,7 @@ Why the other options are incorrect
 
 Your team uses Azure Pipelines to deploy applications.
 
-You need to ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams.
+You need to **ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams**.
 
 The solution must minimize development effort.
 
@@ -9808,7 +9870,10 @@ What should you do?
 * A. Install the Azure Boards app for Teams and configure a subscription to receive notifications in a channel.
 * B. Use Azure Automation to connect to the Azure DevOps REST API and notify the team members.
 * C. Use an Azure function to connect to the Azure DevOps REST API and notify the team members.
-* **D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel**.
+* D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel.
+
+
+--------------
 
 The correct answer is: **D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel** ✅
 
@@ -9851,7 +9916,7 @@ Why the other options are incorrect
 
 You use Calendar Versioning (CalVer) for code assets.
 
-You need to store an optional tag of beta as part of the version.
+**You need to store an optional tag of beta as part of the version**.
 
 Which part of the version should you use for the tag?
 
@@ -9859,6 +9924,9 @@ Which part of the version should you use for the tag?
 * B. major
 * C. micro
 * D. modifier
+
+
+-----------
 
 The correct answer is: **D. modifier** ✅
 
@@ -9911,11 +9979,11 @@ Why the other options are incorrect
 
 You have a project in Azure DevOps named Project1.
 
-You need to ensure that all new pipelines in Project1 execute three specific tasks during pipeline execution.
+**You need to ensure that all new pipelines in Project1 execute three specific tasks during pipeline execution.**
 
 What should you create?
 
-* **A. a task group**
+* A. a task group
 * B. a JSON template
 * C. a YAML template
 * D. a PowerShell task
@@ -9988,10 +10056,12 @@ issues found in released code.
 
 Which KPI should you use?
 
-* **A. defect escape rate**
+* A. defect escape rate
 * B. unplanned work rate
 * C. defect rate
 * D. rework rate
+
+---------------
 
 The correct answer is: **A. defect escape rate** ✅
 
@@ -10009,9 +10079,11 @@ What is **Defect Escape Rate**?
 * **Defect escape rate (DER)** measures **the proportion of defects found in production compared to defects found during development**.
 * Formula:
 
+```
 [
 \text{Defect Escape Rate} = \frac{\text{Defects found in production}}{\text{Defects found in development + production}} \times 100
 ]
+```
 
 * A **high escape rate** indicates that many defects are **escaping development testing**, requiring troubleshooting in production.
 * Tracking DER helps compare **effort spent fixing issues in development vs post-release**.
@@ -10030,7 +10102,7 @@ Why the other options are incorrect
 
 **Key point:**
 
-> **Defect escape rate** is the KPI that helps you compare troubleshooting effort **before and after release**.
+**<mark>Defect escape rate** is the KPI that helps you compare troubleshooting effort **before and after release</mark>**
 
 ✅ **Answer: A. defect escape rate**
 
@@ -10040,17 +10112,18 @@ Why the other options are incorrect
 
 You have a project in Azure DevOps named Project1.
 
-You implement a Continuous Integration/Continuous Deployment (CI/CD) pipeline that uses PowerShell Desired State
-Configuration (DSC) to configure the application infrastructure.
+You implement a Continuous Integration/Continuous Deployment (CI/CD) pipeline that uses PowerShell **Desired State Configuration (DSC) to configure the application infrastructure**.
 
 You need to perform a unit test and an integration test of the configuration before Project is deployed.
+
 What should you use?
 
 * A. the PSScriptAnalyzer tool
-* **B. the Pester test framework**
+* B. the Pester test framework
 * C. the PSCodeHealth module
 * D. the Test-DscConfiguration cmdlet
 
+----
 
 The correct answer is: **B. the Pester test framework** ✅
 
@@ -10102,7 +10175,7 @@ Why the other options are incorrect
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
 
-You need to ensure that all comments on pull requests are resolved before the pull requests are included in a build.
+**You need to ensure that all comments on pull requests are resolved before the pull requests are included in a build.**
 
 The solution must minimize administrative effort.
 
@@ -10111,10 +10184,9 @@ What should you include in the solution?
 * A. a custom action
 * B. a post-deployment gate
 * C. a branch policy
-* **D. a pre-deployment gate**
+* D. a pre-deployment gate
 
-
-Answer: D
+-------
 
 The correct answer is: **C. a branch policy** ✅
 
@@ -10169,7 +10241,9 @@ What should you do?
 * A. Add another self-hosted agent
 * B. Add a Docker Compose task to the build pipelines.
 * C. Change the self-hosted agent to use Red Hat Enterprise Linux (RHEL) 9.
-* **D. Create two container jobs.**
+* D. Create two container jobs.
+
+-----------------
 
 The correct answer is: **D. Create two container jobs** ✅
 
@@ -10246,10 +10320,37 @@ Which version number should you assign to the release?
 * A. 3.4.4
 * B. 3.4.8
 * C. 3.5.0
-* **D. 4.0.1**
+* D. 4.0.1
+
+----
 
 **Answer: D**
 
+**Answer: D. 4.0.1**
+
+Explanation
+
+According to semantic versioning (SemVer), a backward-compatible bug fix should increment the **patch** version. The current release is 4.0.0, and the bug fix applies to the current codebase, so the new version should be 4.0.1. Releasing a patch for the previous major version (3.4.8) would be appropriate only if you maintain multiple release branches, but the scenario does not indicate that.
+
+The correct answer is **D. 4.0.1**.
+
+Explanation:
+
+This question follows the logic of **Semantic Versioning (SemVer)**, which is the industry standard for versioning software. SemVer uses the format **Major.Minor.Patch**.
+
+1.  **Current State:** The table indicates that the **Current release** is **4.0.0**. 
+2.  **Type of Change:** You are applying a **bug fix**. According to SemVer rules, a bug fix that does not add new features or break backward compatibility should increment the **Patch** version (the third number).
+3.  **The Calculation:** 
+    *   Current: 4.0.0
+    *   Action: Bug fix (Patch increment)
+    *   New Version: **4.0.1**
+
+Why other options are incorrect:
+
+*   **A. 3.4.4:** This version is olde
+*   r than the "Previous release" (3.4.7). You cannot release a version number that has already been surpassed in that branch.
+*   **B. 3.4.8:** This would be a patch to the *old* release branch. While companies sometimes "backport" fixes to older versions, the standard procedure for a release pipeline is to update the **Current release** (4.0.0).
+*   **C. 3.5.0:** This would indicate a new feature (Minor increment) on an old Major version (3), which contradicts having already moved to version 4.0.0.
 
 
 ### Question-206
@@ -10264,6 +10365,8 @@ Which framework should you use?
 * B. Playwright
 * C. Xamarin. UlTest
 * D. Microsoft.CodeAnalysis
+
+-------
 
 Answer: B
 
@@ -10321,21 +10424,23 @@ You use Azure Pipelines to build and test code projects.
 
 You notice an increase in cycle times.
 
-You need to identify whether agent pool exhaustion is causing the issue.
+**You need to identify whether agent pool exhaustion is causing the issue.**
 
 What are two possible ways to achieve this goal? Each correct answer presents a complete solution.
 
 NOTE: Each correct selection is worth one point.
 
 * A. Query the PipelineRun/PipelineRuns endpoint.
-* **B. Query the TaskAgentPoolSizeSnapshots endpoint**.
+* B. Query the TaskAgentPoolSizeSnapshots endpoint.
 * C. View the Pipeline duration report.
-* **D. View the pool consumption report at the organization level.**
+* D. View the pool consumption report at the organization level.
+
+-----
+
 
 **Answer: BD**
 
 The correct answers are: **B. Query the TaskAgentPoolSizeSnapshots endpoint** and **D. View the pool consumption report at the organization level** ✅✅
-
 
 Explanation
 
