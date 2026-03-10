@@ -6,7 +6,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 * A. Cumulative Flow Diagram
 * B. Burnup
-* **C. Cycle time**
+* C. Cycle time
 * D. Burndown
 
 ---
@@ -136,7 +136,7 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 You have been tasked with strengthening the security of your team's development process. You need to suggest a security tool type for the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?
 
 * A. Penetration testing
-* **B. Static code analysis**
+* B. Static code analysis
 * C. Threat modeling
 * D. Dynamic code analysis
 
@@ -192,7 +192,7 @@ Foundation Version Control changesets dates, as well as the changes dates of wor
  The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release. Which of the following should also be suggested?
 
 * A. Installing the TFS kava SDK
-* **B. Using the TFS Database Import Service to perform the upgrade**.
+* B. Using the TFS Database Import Service to perform the upgrade.
 * C. Upgrading PowerShell Core to the latest version.
 * D. Using the TFS Integration Platform to perform the upgrade.
 
@@ -212,17 +212,72 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
+### Question 5
+
+You intend to manage the build and release processes using Azure DevOps. 
+
+This plan requires you to integrate Azure DevOps and Bitbucket. Which of the following will allow for this integration? Answer by dragging the correct options from the list to the answer area.
+
+**Options**
+
+- A self-hosted agent
+- A Microsoft-hosted agent
+- An External Git service connection
+- Service hooks
+
+------
+
+To integrate **Azure DevOps** with **Bitbucket** for managing build and release processes, the correct options are:
+
+✅ **An External Git service connection**
+✅ **Service hooks**
+
+
+Explanation
+
+1️⃣ **External Git service connection**
+
+In Azure DevOps, a **service connection** allows pipelines to authenticate and connect to external repositories such as Bitbucket.
+
+* Used to connect Azure Pipelines to **Bitbucket repositories**
+* Enables pipelines to **clone, build, and deploy code** from Bitbucket.
+
+2️⃣ **Service hooks**
+
+**Service hooks** allow external services like Bitbucket to notify Azure DevOps when events occur.
+
+Examples:
+
+* Code push
+* Pull request creation
+* Repository updates
+
+These events can trigger **build pipelines automatically**.
+
+Why the other options are incorrect
+
+| Option                       | Reason                                                                       |
+| ---------------------------- | ---------------------------------------------------------------------------- |
+| **A self-hosted agent**      | Only executes pipeline jobs; it does not integrate repositories              |
+| **A Microsoft-hosted agent** | Also just runs pipeline tasks; it does not connect Azure DevOps to Bitbucket |
+
+✅ **Final Answer:**
+
+* **External Git service connection**
+* **Service hooks**
+
 
 
 ### Question 6
 
 You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for **requirements, change requests, risks, and reviews to be tracked.**
+
 Which of the following is the option you would choose?
 
 * A. Basic
 * B. Agile
 * C. Scrum
-* **D. CMMI**
+* D. CMMI
 
 ---
 
@@ -278,9 +333,9 @@ You run the Register-AzureRm AutomationDscNode command in your company's environ
 Solution: You set the -Configuration Mode parameter to ApplyOnly. Does the solution meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No
 
----
+————
 
 Correct Answer: B
 
@@ -334,7 +389,7 @@ Solution: You set the -ConfigurationMode parameter to **ApplyAndMonitor**, Does 
 * A. Yes
 * B. No
 
----
+------
 
 **Answer: B - No**
 
@@ -383,7 +438,7 @@ Solution: You set the -ConfigurationMode parameter to **ApplyAndAutocorrect**, D
 * A. Yes
 * B. No
 
----
+------
 
 **Correct Answer: A**
 
@@ -434,6 +489,40 @@ So the solution **does meet the goal**.
 
 Note: The choice between these modes depends on the specific requirements and preferences of the environment and administrators.
 
+### Question - 9 
+
+You need to consider the underlined segment to establish whether it is accurate.
+
+To compile an Internet Information Services (IIS) web application that runs docker, you should use a Default build agent pool.
+
+Select `No adjustment required` if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
+
+A. No adjustment required.
+
+B. Hosted Windows Container
+
+C. Hosted
+
+D. Hosted macOS
+
+-----
+
+The correct answer is **B. Hosted Windows Container**.
+
+Explanation:
+
+To build a Docker image for an **Internet Information Services (IIS)** web application, you must use **Windows Containers**. 
+
+1.  **Windows Dependency:** IIS is a feature of the Windows operating system. Therefore, the Docker image must be based on a Windows base image (such as `mcr.microsoft.com/windows/servercore/iis`).
+2.  **The Agent Requirement:** To build a Windows-based Docker image, the build agent must be running on a Windows host that has the **Docker engine configured for Windows Containers**. 
+3.  **Why "Hosted Windows Container":** In Azure DevOps, the specific Microsoft-hosted agent pool that provides the environment necessary to build these images is the **Hosted Windows Container** pool.
+
+Why other options are incorrect:
+
+*   **A. Default build agent pool:** The "Default" pool is typically used for **self-hosted agents**. While you *could* configure a self-hosted agent to build IIS containers, the question asks for the specific type required, and "Default" does not guarantee the necessary Windows Container capabilities.
+*   **C. Hosted:** This is a legacy/generic term for Microsoft-hosted agents. It does not specify whether it is Linux or Windows, or if it supports containers.
+*   **D. Hosted macOS:** macOS agents are used for building iOS and Mac applications. They cannot build or run Windows-based IIS containers.
+
 ### Question -10
 
 Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. 
@@ -443,8 +532,9 @@ You are instructed to make sure that the Azure DevOps environment **can only be 
 * A. Assign the devices to a security group.
 * B. Create a GPO.
 * C. Configure Security in Project Settings from Azure DevOps.
-* **D. Configure conditional access in Azure Active Directory.**
+* D. Configure conditional access in Azure Active Directory.
 
+--------------------
 
 Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users.
 
@@ -490,12 +580,12 @@ You are making use of Azure DevOps to configure Azure Pipelines for project, nam
 
 You are preparing to use a version control system that allows for source code to be stored on a managed Windows server located on the company network. Which of the following is the version control system you should use?
 
-* **A. Github Enterprise**
+* A. Github Enterprise
 * B. Bitbucket cloud
 * C. Github Professional
 * D. Git in Azure Repos
 
----
+----
 
 Correct Answer: A Github Enterprise
 
@@ -533,6 +623,65 @@ Why the others are incorrect:
 ✅ **Final answer: A. GitHub Enterprise**
 
 
+### Question - 11
+
+You need to consider the underlined segment to establish whether it is accurate.
+
+When moving to Azure DevOps, JIRA must be replaced with the build pipelines Azure DevOps service.
+
+Select `No adjustment required` if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
+
+A. No adjustment required.
+
+B. repos
+
+C. release pipelines
+
+D. boards
+
+---
+
+
+The correct answer is:
+
+✅ **D. boards**
+
+
+Explanation
+
+Jira is primarily used for:
+
+* Issue tracking
+* Agile planning
+* Work item management
+* Backlog and sprint tracking
+
+In Azure DevOps, the equivalent service is **Azure Boards**.
+
+**Azure Boards provides:**
+
+* Work items
+* Backlogs
+* Kanban boards
+* Sprint planning
+* Issue tracking
+
+Therefore, when moving from Jira to Azure DevOps, **Jira should be replaced by Azure Boards**, not build pipelines.
+
+Why the other options are incorrect
+
+| Option                        | Reason                                                      |
+| ----------------------------- | ----------------------------------------------------------- |
+| **A. No adjustment required** | Incorrect because Jira is not equivalent to build pipelines |
+| **B. Repos**                  | Used for source code repositories                           |
+| **C. Release pipelines**      | Used for deployments, not issue tracking                    |
+
+
+✅ **Final Answer:** **D. boards**
+
+
+
+
 ### Question -12
 
 You scan a Node.js application using WhiteSource Bolt. 
@@ -548,7 +697,7 @@ Bolt. Which of the following is a command you should run?
 * C. npm install
 * D. npm update
 
----
+------
 
 > Correct Answer: **C. npm install**
 
@@ -586,6 +735,64 @@ npm install --production
 
 This installs only production dependencies for WhiteSource Bolt scanning.
 
+### Question -12
+
+You are currently defining a release strategy for an app, named APP-01.
+
+The strategy should allow you to keep the time it takes to deploy new releases of the app to a minimum. The strategy should also allow you to roll back in the shortest time required.
+
+Which of the following is the release strategy you should use?
+
+A. Red/Black deployment
+
+B. Rolling deployment
+
+C. Big Bang deployment
+
+D. Canary deployment 
+
+-------
+
+✅ **Correct answer: A. Red/Black deployment**
+
+Explanation
+
+**Red/Black deployment** (often called **Blue/Green deployment**) maintains **two identical production environments**:
+
+* **Red** → current live version
+* **Black** → new version
+
+Deployment process:
+
+1. Deploy the new release to the **inactive environment**.
+2. Test it.
+3. **Switch traffic instantly** to the new environment.
+
+Advantages:
+
+* ⚡ **Very fast deployment**
+* 🔁 **Instant rollback** (switch traffic back)
+* 🚫 **Near-zero downtime**
+
+Because the requirement is:
+
+* **Minimum deployment time**
+* **Fastest rollback**
+
+Red/Black deployment is the best choice.
+
+Why the others are not correct
+
+| Option                  | Reason                                                |
+| ----------------------- | ----------------------------------------------------- |
+| **Rolling deployment**  | Updates instances gradually; rollback takes longer    |
+| **Big Bang deployment** | High risk and downtime; rollback slow                 |
+| **Canary deployment**   | Gradual rollout to a subset of users; slower rollback |
+
+
+✅ **Final Answer:** **A. Red/Black deployment**
+
+
 
 ### Question -13
 
@@ -602,7 +809,7 @@ Which of the following actions should you take?
 * C. You should make use of a gate.
 * D. You should make use of an approval check.
 
-----
+------
 
 
 Correct Answer: **C. You should make use of a gate.**
@@ -639,6 +846,7 @@ Why the other options are incorrect:
 ### Question -14
 
 You need to consider the underlined segment to establish whether it is accurate. To deploy an application to a number of Azure virtual machines, you should create a universal group. Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
+
 Which of the following actions should you take?
 
 * A. No adjustment required.
@@ -646,6 +854,7 @@ Which of the following actions should you take?
 * C. Deployment
 * D. Resource
 
+----
 
 The correct answer is:
 
@@ -677,7 +886,87 @@ Correct terminology:
 
 When authoring an Azure Pipelines or TFS Release pipeline, you can specify the deployment targets for a job using a deployment group If the target machines are Azure VMs, you can quickly and easily prepare them by installing the Azure Pipelines Agent Azure VM extension on each of the VMs, or by using the Azure Resource Group Deployment task in your release pipeline to create a deployment group dynamically.
 
+### Question -14
 
+You are preparing to deploy an Azure resource group via Terraform.
+
+To achieve your goal, you have to install the necessary frameworks.
+
+Which of the following are the frameworks you should use? 
+
+Options
+
+- Yeoman
+- Vault
+- Terratest
+- Tiller
+
+To achieve the goal of deploying an Azure resource group via Terraform while following the standard development practices recommended by Microsoft (specifically for the AZ-400: DevOps Engineer Expert curriculum), you should use:
+
+1.  **Yeoman**
+2.  **Terratest**
+
+Explanation:
+
+*   **Yeoman:** This is a scaffolding framework used to generate the boilerplate code and directory structure for a Terraform project. By using the `generator-az-terraform` with Yeoman, you can quickly create a consistent project that includes the necessary files (`main.tf`, `variables.tf`, etc.) pre-configured for Azure.
+*   **Terratest:** This is a Go-based framework used for writing automated tests for your Infrastructure as Code (IaC). In a professional DevOps pipeline, you use Terratest to validate that your Terraform templates correctly provision the Azure resource group and its properties before or during the deployment process.
+
+Why the other options are incorrect:
+
+*   **Vault:** While Vault (by HashiCorp) is an excellent tool for managing secrets, it is considered an auxiliary security tool rather than a core "framework" required to support the deployment of a resource group.
+*   **Tiller:** This was the server-side component for Helm v2 (a Kubernetes package manager). It is deprecated in Helm v3 and is completely unrelated to deploying Azure resources using Terraform.
+
+
+You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
+
+### Question -14
+
+You want to use a solitary feed to release several builds of each package. You have to make sure that the release of packages that are in development is restricted.
+
+Which of the following actions should you take?
+
+A. You should make use of static code analysis.
+
+B. You should make use of views.
+
+C. You should make use of dynamic code analysis.
+
+D. You should make use of upstream sources.
+
+
+✅ **Correct answer: B. You should make use of views.**
+
+Explanation
+
+In Azure Artifacts, **views** allow you to control which package versions are visible to different consumers while using **a single feed**.
+
+Typical views include:
+
+* **@Local** → packages being developed
+* **@Prerelease** → testing versions
+* **@Release** → stable packages
+
+Using **views**, you can:
+
+* Publish all builds to the same feed
+* **Promote stable packages to the Release view**
+* **Restrict development packages** so they are not visible to production consumers
+
+This directly satisfies the requirement:
+
+* Use **one feed**
+* Restrict **development packages**
+
+Why the other options are incorrect
+
+| Option                    | Reason                                                                                       |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| **Static code analysis**  | Used for code quality checks, not package visibility                                         |
+| **Dynamic code analysis** | Runtime testing of applications                                                              |
+| **Upstream sources**      | Used to connect to external package feeds (e.g., npm, NuGet), not control release visibility |
+
+
+✅ **Final Answer:** **B. Views**
 
 
 ### Question -15
@@ -690,9 +979,11 @@ If the underlined segment is inaccurate, select the accurate option.
 
 * A. No adjustment required.
 * B. SourceGear Vault
-* **C. WhiteSource**
+* C. WhiteSource
 * D. OWASP ZAP
 
+
+------
 
 The correct answer is:
 
