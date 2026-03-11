@@ -1381,11 +1381,13 @@ You manage an Azure web app that supports an e-commerce website. You need to inc
 Which two resources should you include in the solution? Each correct answer presents part of the solution.
 
 
-* **A. an Azure Automation runbook**
-* **B. an Azure Monitor alert that has a dynamic threshold**
+* A. an Azure Automation runbook
+* B. an Azure Monitor alert that has a dynamic threshold
 * C. an Azure Monitor alert that has a static threshold
 * D. the Azure Monitorautoscale settings
 * E. an Azure Monitoralert that uses an action group that has an email action
+
+----------
 
 **Correct Answer: AB**
 
@@ -1434,23 +1436,287 @@ Architecture Flow:
 
 ✅ **Final answer: A and B**
 
+### Question - 22
+
+You have recently created a web application for your company.
+
+
+You have been tasked with making sure that a summary of the exceptions that transpire in the application is automatically sent to Microsoft Teams on a daily basis.
+
+Which of the following Azure services should you use? Answer by dragging the correct two options from the list to the answer area.
+
+Select and Place:
+
+Options
+
+- Azure DevOps Project
+- Azure Logic Apps
+- Azure Pipelines
+- Azure Application Insights
+
+------
+
+The correct two services are:
+
+- ✅ **Azure Application Insights**
+- ✅ **Azure Logic Apps**
+
+Explanation
+
+1. **Azure Application Insights**
+
+   * Monitors the web application.
+   * Collects telemetry including **exceptions, failures, and performance data**.
+   * Provides the **exception summary** that you want to send.
+
+2. **Azure Logic Apps**
+
+   * Automates workflows and integrations.
+   * Can be scheduled **daily**.
+   * Retrieves data from Application Insights and **sends a message to Microsoft Teams**.
+
+Why the others are incorrect
+
+* **Azure DevOps Project** – Used for development lifecycle management, not for monitoring application exceptions.
+* **Azure Pipelines** – Used for CI/CD, not for collecting runtime exception summaries.
+
+✅ **Final Answer:**
+
+- **Azure Logic Apps**
+- **Azure Application Insights**
+
+### Question -22
+
+You are in the process of building a mobile app aimed at Android and iOS devices.
+
+All work items and release cycles are managed via Azure DevOps.
+
+You want to make sure that crash reports for issue analysis is collected, and that beta releases are distributed to your testers. Also, you want to ensure that user feedback on the functionality of new apps is received.
+
+Which of the following must be part of your solution?
+
+A. The Microsoft Test & Feedback extension.
+
+B. OWASP ZAP
+
+C. TFS Integration Platform
+
+D. Code Style
+
+---------------
+
+The correct answer is:
+
+✅ **A. The Microsoft Test & Feedback extension**
+
+Explanation
+
+Your requirements include:
+
+1. **Collect crash reports**
+2. **Distribute beta releases to testers**
+3. **Collect tester/user feedback**
+4. Integration with **Azure DevOps**
+
+The **Microsoft Test & Feedback extension** supports:
+
+* Submitting **bugs and crash information**
+* Collecting **feedback from testers**
+* Creating **work items directly in Azure DevOps Boards**
+* Allowing testers to report issues while using the app
+
+Why the other options are incorrect
+
+* **OWASP ZAP** – A security vulnerability scanning tool for web apps, not for crash reporting or beta distribution.
+* **TFS Integration Platform** – Used for migrating or synchronizing TFS/Azure DevOps environments.
+* **Code Style** – Refers to coding conventions, not testing, feedback, or crash reporting.
+
+✅ **Final Answer: A**
+
+If you'd like, I can also show the **common AZ-400 exam combo for mobile apps (App Center + Test & Feedback)** because that pattern appears frequently in certification questions.
+
+
+
+## Topic 2 - Question Set 2
+
+### Question -1
+
+You need to recommend project metrics for dashboards in Azure DevOps.
+
+![Alt Image Text](../images/az400_2_1.png "Body image")
+
+Which chart widgets should you recommend for each metric? To answer, drag the appropriate chart widgets to the correct metrics. Each chart widget may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+-----------
+
+Correct mapping of **Azure DevOps dashboard metrics**:
+
+| Metric                                                               | Chart Widget   |
+| -------------------------------------------------------------------- | -------------- |
+| The elapsed time from the creation of work items to their completion | **Lead Time**  |
+| The elapsed time to complete work items once they are active         | **Cycle Time** |
+| The remaining work                                                   | **Burndown**   |
+
+Explanation
+
+* **Lead Time**
+  Measures the **total time from work item creation until completion**.
+
+* **Cycle Time**
+  Measures **how long work takes once development actually starts** (Active → Done).
+
+* **Burndown Chart**
+  Shows **remaining work over time**, typically in sprints.
+
+* **Velocity** (not used here) measures how many **story points are completed per sprint**, not the metrics asked in the question.
+
+✅ **Final Answer**
+
+- 1️⃣ Creation → Completion → **Lead Time**
+- 2️⃣ Active → Completion → **Cycle Time**
+- 3️⃣ Remaining Work → **Burndown**
+
+### Question -2
+
+You plan to create alerts that will be triggered based on the page load performance of a home page. 
+
+You have the Application Insights log query shown in the following exhibit.
+
+![Alt Image Text](../images/az400_2_2.png)
+
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic. NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+![Alt Image Text](../images/az400_2_3.png)
+
+Correct selections
+
+**1️⃣ To create an alert based on the page load experience of most users:**
+✅ **percentile_duration_90**
+
+**2️⃣ To only create an alert when an authentication error occurs on the server:**
+✅ **resultCode**
+
+Explanation
+
+Page load experience of most users
+
+In Azure Application Insights performance metrics:
+
+* **percentile_duration_50 (P50)** → median (half of users faster/slower)
+* **percentile_duration_90 (P90)** → performance experienced by **most users**
+* **percentile_duration_95 (P95)** → focuses on worst cases/outliers
+
+To represent **most users’ experience**, monitoring usually uses **P90 latency**.
+
+✔ Therefore: **percentile_duration_90**
+
+Detecting authentication errors
+
+Authentication failures correspond to HTTP status codes like:
+
+* **401 – Unauthorized**
+* **403 – Forbidden**
+
+These are captured in the **result code field** of requests.
+
+✔ Therefore the query must filter on **resultCode**.
+
+
+✅ **Final Answer**
+
+| Requirement                        | Selection                  |
+| ---------------------------------- | -------------------------- |
+| Page load experience of most users | **percentile_duration_90** |
+| Authentication error occurs        | **resultCode**             |
+
+
+### Question -4
+
+You have an Azure Kubernetes Service (AKS) pod.
+
+You need to configure a probe to perform the following actions:
+
+✑ Confirm that the pod is responding to service requests.
+
+✑ Check the status of the pod four times a minute.
+
+✑ Initiate a shutdown if the pod is unresponsive.
+
+How should you complete the YAML configuration file? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_4.png)
+
+----------
+
+Based on the requirements provided, here is how you should complete the YAML configuration:
+
+Answer Area
+
+**Box 1: `livenessProbe:`**
+
+*   **Reasoning:** The requirement states the probe must **"initiate a shutdown if the pod is unresponsive."** In Kubernetes, a `livenessProbe` is used to determine if a container is still running correctly. If the liveness probe fails, Kubernetes kills the container, and the container is subjected to its restart policy. A `readinessProbe`, by contrast, only stops sending network traffic to the pod but does not restart/shut it down.
+
+**Box 2: `periodSeconds: 15`**
+
+*   **Reasoning:** The requirement is to **"check the status of the pod four times a minute."** There are 60 seconds in a minute. To perform a check 4 times, you must run the check every 15 seconds ($60 \div 4 = 15$). The `periodSeconds` field specifies the frequency of the probe.
+
+
+**Summary of selections:**
+
+1.  **livenessProbe:**
+2.  **periodSeconds: 15**
+
+
+### Question -9
+
+Your company is building a new web application.
+
+You plan to collect feedback from pilot users on the features being delivered.
+
+All the pilot users have a corporate computer that has Google Chrome and the Microsoft Test & Feedback extension installed. The pilot users will test the application by using Chrome.
+
+You need to identify which access levels are required to ensure that developers can request and gather feedback from the pilot users. The solution must use the principle of least privilege.
+
+Which access levels in Azure DevOps should you identify? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+  
+![Alt Image Text](../images/az400_2_5.png)
+
+Based on the requirements and the Principle of Least Privilege in Azure DevOps, here are the correct access levels:
+
+-------
+
+Answer Area
+
+**Developers: `Basic`**
+
+*   **Reasoning:** To **request** feedback from users within the Azure DevOps interface, a user must have at least the **Basic** access level. Stakeholders do not have the permissions required to initiate feedback requests or manage the comprehensive test plans associated with gathering feedback.
+
+**Pilot users: `Stakeholder`**
+
+*   **Reasoning:** Users with the **Stakeholder** access level can provide feedback in response to a request using the Microsoft Test & Feedback extension. Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
 ### Question -23
 
 You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. You need to run a URL ping test once every five minutes and create an alert when the web app is unavailable from specific Azure regions. The solution must minimize development time. What should you do?
 
 * A. Create an Azure Monitor Availability metric and alert.
-* **B. Create an Azure Application Insights availability test and alert.**
+* B. Create an Azure Application Insights availability test and alert.
 * C. Write an Azure function and deploy the function to the specific regions.
 * D. Create an Azure Service Health alert for the specific regions.
+
+---------
 
 **Correct Answer: B. Create an Azure Application Insights availability test and alert.**
 
 The correct answer is:
 
 **B. Create an Azure Application Insights availability test and alert.** ✅
-
-
 
 Explanation:
 
@@ -1487,8 +1753,6 @@ Why the other options are incorrect:
 ✅ **Final answer: B. Create an Azure Application Insights availability test and alert.**
 
 
-
-
 There are three types of Application Insights availability tests:
 
 * 1) URL ping test a simple test that you can create in the Azure portal. 
@@ -1505,11 +1769,12 @@ You have a multi-tier application. The front end of the application is hosted in
 You need to **identify the average load times** of the application pages. What should you use?
 
 
-* **A. Azure Application Insights**
+* A. Azure Application Insights
 * B. the activity log of the App Service
 * C. the diagnostics logs of the App Service
 * D. Azure Advisor
 
+---------
 
 **Correct Answer: A. Azure Application Insights**
 
@@ -1559,8 +1824,10 @@ Which Azure Log Analytics solution should you use?
 
 * A. Application Insights Connector
 * B. Automation & Control
-* **C. IT Service Management Connector (ITSM)**
+* C. IT Service Management Connector (ITSM)
 * D. Insight & Analytics
+
+--------
 
 Correct Answer: **C. IT Service Management Connector (ITSM)**
 
@@ -1604,10 +1871,13 @@ You use **Azure SQL Database Intelligent Insights and Azure Application Insights
 You need to write ad-hoc queries against the monitoring data. Which query language should you use?
 
 
-* **A. Kusto Query Language (KQL)**
+* A. Kusto Query Language (KQL)
 * B. PL/pgSQL
 * C. PL/SQL
 * D. Transact-SQL
+
+
+--------
 
 **Correct Answer: A. Kusto Query Language (KQL)**
 
@@ -1647,11 +1917,14 @@ Which two Azure services should you recommend?
 
 Each correct answer presents part of the solution.
 
-* **A. Azure Logic Apps**
+* A. Azure Logic Apps
 * B. Azure Pipelines
 * C. Microsoft Visual Studio App Center
 * D. Azure DevOps Project
-* **E. Azure Application Insights**
+* E. Azure Application Insights
+
+
+------
 
 Correct Answer: **AE (Azure Logic Apps and Azure Application Insights)**
 
