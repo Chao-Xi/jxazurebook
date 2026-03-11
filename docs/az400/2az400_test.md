@@ -990,7 +990,6 @@ The correct answer is:
 **C. WhiteSource**
 
 
-
 **Explanation:**
 
 The statement is **inaccurate**.
@@ -1041,10 +1040,12 @@ You have been tasked with making sure that you are able to **scan project for co
 
 Which of the following actions should you take?
 
-* **A. You should create a build task and use the White Source Bolt service.**
+* A. You should create a build task and use the White Source Bolt service.
 * B. You should create a deployment task and use the WhiteSource Bolt service.
 * C. You should create a build task and use the Chef service.
 * D. You should create a deployment task and use the Chef service.
+
+------
 
 Correct Answer: **A. You should create a build task and use the WhiteSource Bolt service.**
 
@@ -1085,6 +1086,18 @@ Black Duck can be used to make sure that all the open source libraries conform t
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
 
+A. No adjustment required.
+
+B. Maven
+
+C. Bamboo
+
+D. CMAKE
+
+
+-------
+
+
 The statement is **accurate**.
 
 **Black Duck** is specifically designed to:
@@ -1110,6 +1123,79 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
+### Question -17
+
+
+You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
+
+You are preparing a deployment solution that allows for the virtual machines to maintain a uniform con¬guration, and also keep administrative effort with regards to con¬guring the virtual machines to a minimum.
+
+Which of the following should be part of your solution? (Choose two.)
+
+
+A. Azure Resource Manager templates
+
+B. The PowerShell Desired State Con¬guration (DSC) extension for Windows
+
+C. Azure pipeline deployment groups
+
+D. The Custom Script Extension for Windows
+
+E. Azure pipeline stage templates
+
+
+-------
+
+✅ **Correct answers:**
+
+- **B. The PowerShell Desired State Configuration (DSC) extension for Windows**
+- **C. Azure pipeline deployment groups**
+
+Explanation
+
+The goal is to:
+
+* Keep **Windows Server VMs configured consistently**
+* **Minimize administrative effort**
+* Deploy the application to **multiple Azure VMs**
+
+1️⃣ PowerShell Desired State Configuration (DSC)
+
+PowerShell Desired State Configuration ensures that machines maintain a **consistent configuration state**.
+
+Benefits:
+
+* Automatically enforces configuration
+* Ensures all VMs have the same setup
+* Ideal for **Windows Server environments**
+
+Using the **DSC extension for Windows** allows Azure VMs to automatically apply these configurations.
+
+2️⃣ Azure Pipeline Deployment Groups
+
+Azure DevOps **deployment groups** allow you to deploy applications to multiple VMs simultaneously.
+
+Benefits:
+
+* Target multiple Azure VMs
+* Centralized deployment management
+* Easy integration with Azure Pipelines
+
+This reduces manual administration when deploying to many machines.
+
+Why the other options are incorrect
+
+| Option                       | Reason                                                                                  |
+| ---------------------------- | --------------------------------------------------------------------------------------- |
+| **ARM templates**            | Used for provisioning infrastructure, not maintaining VM configuration after deployment |
+| **Custom Script Extension**  | Executes scripts once but does not maintain ongoing configuration                       |
+| **Pipeline stage templates** | Reusable pipeline logic, not related to VM configuration                                |
+
+---
+
+✅ **Final Answer:** **B and C**
+
+
 ### Question -18
 
 Your company has an application that contains a number of Azure App Service web apps and Azure functions. **You would like to view recommendations with regards to the security of the web apps and functions.**
@@ -1119,8 +1205,10 @@ You plan to navigate to Compute and Apps to achieve your goal. Which of the foll
 * A. Azure Log Analytics
 * B. Azure Event Hubs
 * C. Azure Advisor
-* **D. Azure Security Center**
+* D. Azure Security Center
 
+
+------------
 
 The correct answer is:
 
@@ -1231,10 +1319,26 @@ language.
 
 Solution: You use the Contextual Query Language (CQL)
 
+
+####  Question - 20(1)
+
+Solution: You use the Transact-SQL.
+
+
+####  Question - 20(2)
+
+Solution: You use Azure Log Analytics.
+
 Does the solution meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No
+
+-----------
+
+**Correct Answer: B**
+
+**Correct Answer: B**
 
 **Correct Answer: B**
 
