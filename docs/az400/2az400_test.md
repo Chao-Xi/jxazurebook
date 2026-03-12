@@ -1128,14 +1128,14 @@ Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to aut
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
 
-You are preparing a deployment solution that allows for the virtual machines to maintain a uniform con¬guration, and also keep administrative effort with regards to con¬guring the virtual machines to a minimum.
+You are preparing a deployment solution that allows for the virtual machines to maintain a uniform configuration, and also keep administrative effort with regards to configuring the virtual machines to a minimum.
 
 Which of the following should be part of your solution? (Choose two.)
 
 
 A. Azure Resource Manager templates
 
-B. The PowerShell Desired State Con¬guration (DSC) extension for Windows
+B. The PowerShell Desired State Configuration (DSC) extension for Windows
 
 C. Azure pipeline deployment groups
 
@@ -1701,6 +1701,217 @@ Answer Area
 
 *   **Reasoning:** Users with the **Stakeholder** access level can provide feedback in response to a request using the Microsoft Test & Feedback extension. Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
+
+### Question -10
+
+Your company wants to use Azure Application Insights to understand how user behaviors affect an application.
+
+Which Application Insights tool should you use to analyze each behavior? To answer, drag the appropriate tools to the correct behaviors. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/az400_2_6.png)
+
+-------
+
+- **Feature usage:** User Flows  
+- **Number of people who used the actions and its features:** Users  
+- **The effect that the performance of the application has on the usage of a page or a feature:** Impact
+
+
+To analyze user behavior in Azure Application Insights, you should match the tools as follows:
+
+**Answer Area**
+
+*   **Feature usage:** **User Flows**
+    *   *Reasoning:* **User Flows** visualizes the paths users take through your application. It helps you understand which features are used and the sequence in which users interact with different parts of your site.
+*   **Number of people who used the actions and its features:** **Users**
+    *   *Reasoning:* The **Users** tool provides data on the count of unique individuals who interact with your application, allowing you to see how many distinct people are using specific actions or features.
+*   **The effect that the performance of the application has on the usage of a page or a feature:** **Impact**
+    *   *Reasoning:* The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
+
+
+### Question - 13
+
+Your company is building a mobile app that targets Android and iOS devices. Your team uses Azure DevOps to manage all work items and release cycles. You need to recommend a solution to perform the following tasks:
+
+✑ Collect crash reports for issue analysis.
+
+✑ Distribute beta releases to your testers.
+
+✑ Get user feedback on the functionality of new apps.
+
+What should you include in the recommendation?
+
+A. the Microsoft Test & Feedback extension
+
+B. Microsoft Visual Studio App Center integration
+
+C. Azure Application Insights widgets
+
+D. Jenkins integration
+
+----------
+
+
+The correct answer is **B. Microsoft Visual Studio App Center integration**.
+
+Explanation:
+
+**Microsoft Visual Studio App Center** is specifically designed for mobile application lifecycles (iOS, Android, Windows, and macOS) and perfectly addresses all three requirements:
+
+*   **Collect crash reports:** App Center's **Diagnostics** service provides real-time crash reports, stack traces, and error logging to help you prioritize and fix issues.
+*   **Distribute beta releases:** App Center's **Distribute** service allows you to quickly get your builds onto the devices of testers (Beta distribution) or even deploy directly to the App Store or Google Play.
+*   **Get user feedback:** App Center includes analytics and integrated feedback mechanisms to help developers understand how users are interacting with the application.
+
+Why other options are incorrect:
+
+*   **A. Microsoft Test & Feedback extension:** This is primarily used for exploratory testing of **web applications** from within a browser. It is not designed for mobile app crash reporting or distribution.
+*   **C. Azure Application Insights widgets:** While Application Insights can monitor apps, Microsoft's official recommendation for mobile-specific scenarios (like distribution and crash reporting for iOS/Android) is App Center.
+*   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
+
+
+### Question - 14
+
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure virtual machine scale set named VMSS1.
+
+VMSS1 hosts a web application named WebApp1. WebApp1 uses stateful sessions.
+
+The WebApp1 installation is managed by using the Custom Script extension. The script resides in an Azure Storage account named sa1.
+
+You plan to make a minor change to a UI element of WebApp1 and to gather user feedback about the change.
+
+You need to implement limited user testing for the new version of WebApp1 on VMSS1.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Modify the load balancer settings of VMSS1.
+
+B. Redeploy VMSS1.
+
+C. Upload a custom script file to sa1.
+
+D. Modify the Custom Script extension settings of VMSS1.
+
+E. Update the configuration of a virtual machine in VMSS1.
+
+----------
+
+To implement limited user testing for a new version of WebApp1 on VMSS1, you need to deploy the updated UI to a subset of instances and ensure that only a portion of users are routed to them. The custom script extension manages the installation, so you must update the script and apply it to specific VMs.
+
+- **C. Upload a custom script file to sa1.** – The new version requires an updated script stored in the storage account.
+- **D. Modify the Custom Script extension settings of VMSS1.** – This points the scale set to the new script, updating the model.
+- **E. Update the configuration of a virtual machine in VMSS1.** – After updating the model, manually upgrade one or more instances to apply the new script, creating a test group.
+
+The load balancer will naturally distribute traffic to the updated instances, providing limited exposure for user feedback.
+
+**Selected actions: C, D, E**
+
+### Question #18
+
+You have several Azure virtual machines that run Windows Server 2019.
+
+You need to identify the distinct event IDs of each virtual machine as shown in the following table.
+
+
+![Alt Image Text](../images/az400_2_7.png)
+
+-----
+
+Based on the requirement to identify **distinct** event IDs and present them in a list grouped by each virtual machine, here is the correct completion of the Azure Monitor (KQL) query:
+
+**Answer Area**
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| **\|** | **`summarize`** | **`makeset(EventID)`** | **by Computer** |
+
+ **Explanation:**
+
+1.  **`summarize`**: This operator is required to group the data by a specific column (in this case, `Computer`).
+2.  **`makeset(EventID)`**: This aggregation function is the key to the solution. It creates a dynamic (JSON) array of the **distinct** values of a column within the group. The requirement specifically asks for "distinct event IDs"; if you used `makelist(EventID)`, the result would include duplicate IDs for every time an event occurred.
+
+**The complete query would look like this:**
+
+```kusto
+Event
+| where TimeGenerated > ago(12h)
+| order by TimeGenerated desc
+| summarize makeset(EventID) by Computer
+```
+
+To identify distinct event IDs per virtual machine, you need to use the `summarize` operator with the `makeset` aggregation function. This creates an array of unique event IDs for each computer.
+
+- First blank: **summarize**
+- Second blank: **makeset(EventID)**
+
+### Question -19
+
+You have an Azure web app named Webapp1.
+
+You need to use an Azure Monitor query to create a report that details the top 10 pages of Webapp1 that failed. How should you complete the query? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/az400_2_9.png)
+
+----------
+
+Based on the requirements to identify the top 10 failed pages of a web application, here is how you should complete the Azure Monitor query:
+
+**Answer Area**
+
+**Box 1 (Source Table): `requests`**
+*   **Reasoning:** In Application Insights, server-side requests (including the processing of web pages) are stored in the **`requests`** table. This table includes columns for the page/operation `name` and the `resultCode`, both of which are used in the subsequent `summarize` line of the query.
+
+**Box 2 (Filter Condition): `success == false`**
+*   **Reasoning:** The goal is to report on pages that **failed**. The most efficient and standard way to filter for failures in Application Insights is to use the **`success`** boolean field. When `success == false`, it indicates the request resulted in an error (typically a 4xx or 5xx HTTP status code).
+
+***
+
+**The complete query would look like this:**
+```kusto
+requests
+| where success == false
+| summarize failedCount=sum(itemCount) by name, resultCode
+| top 10 by failedCount desc
+| render barchart
+```
+
+
+### Question -21
+
+You have a project in Azure DevOps named Contoso App that contains pipelines in Azure Pipelines for GitHub repositories. 
+
+You need to ensure that developers receive Microsoft Teams notifications when there are failures in a pipeline of Contoso App. What should you run in Teams? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/az400_2_10.png)
+
+
+To ensure that developers receive Microsoft Teams notifications for failures in the Contoso App project, you should use the following command syntax in the Teams channel:
+
+**Answer Area**
+
+**Box 1: `subscribe`**
+
+*   **Reasoning:** The `subscribe` command is the specific action used to create a new notification subscription. The `subscriptions` command (plural) is used to list or manage existing ones, while `signin` is only for authentication.
+
+**Box 2: `https://dev.azure.com/contoso/contoso-app/`**
+
+*   **Reasoning:** To subscribe to all pipelines within a project, you provide the **base project URL**. While the bot can also accept URLs for specific pipelines, the project URL is the standard way to initiate the configuration for the entire "Contoso App" project. The other URLs provided (`_build`, `_packaging`, `_work-items`) point to specific sub-features and are not the standard project identifiers for the subscription command.
+
+
+**The complete command entered would be:**
+
+`@azure pipelines subscribe https://dev.azure.com/contoso/contoso-app/`
+
+
 ### Question -23
 
 You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. You need to run a URL ping test once every five minutes and create an alert when the web app is unavailable from specific Azure regions. The solution must minimize development time. What should you do?
@@ -1761,6 +1972,85 @@ There are three types of Application Insights availability tests:
 
 Note: After you've deployed your web app/website, you can set up recurring tests to monitor availability and responsiveness. Azure Application Insights sends web requests to your application at regular intervals from points around the world. It can alert you if your application isn't responding, or if it responds too slowly. You can set up availability tests for any HTTP or HTTPS endpoint that is accessible from the public internet. You don't have to make any changes to the website you're testing. In fact, it doesn't even have to be a site you own. You can test the availability of a REST API that your service depends on
 
+### Question #23
+
+You are integrating Azure Pipelines and Microsoft Teams.
+
+You install the Azure Pipelines app in Microsoft Teams.
+
+You have an Azure DevOps organization named Contoso that contains a project name Project1. You subscribe to Project1 in Microsoft Teams.
+
+You need to ensure that you only receive events about failed builds in Microsoft Teams.
+
+What should you do first?
+
+A. From Microsoft Teams, run @azure pipelines subscribe https://dev.azure.com/Contoso/Project1.
+
+B. From Azure Pipelines, add a Publish Build Artifacts task to Project1.
+
+C. From Microsoft Teams, run @azure pipelines subscriptions.
+
+D. From Azure Pipelines, enable continuous integration for Project1
+
+-------
+
+
+The correct answer is **C. From Microsoft Teams, run @azure pipelines subscriptions.**
+
+Explanation:
+
+When you first subscribe to an Azure DevOps project in Microsoft Teams using the `@azure pipelines subscribe [URL]` command, the app creates several **default subscriptions** (such as "Build completed," which includes both successes and failures).
+
+To meet the requirement of receiving **only** events about **failed builds**, you need to manage and filter these subscriptions:
+
+1.  **View Current Subscriptions:** Running `@azure pipelines subscriptions` lists all the active subscriptions for that specific Teams channel.
+2.  **Modify/Add:** From the resulting list, you can see the default "Build completed" subscription. You can then click to **Add** a new subscription specifically for **"Build failed"** and **Remove** the generic "Build completed" one that includes successful builds.
+
+Why other options are incorrect:
+
+*   **A. @azure pipelines subscribe...:** The prompt states you have already subscribed to Project1. Running the base subscribe command again is redundant and does not allow you to filter for failures only.
+*   **B. Add a Publish Build Artifacts task:** This is a task within the build pipeline to save files. it has no impact on how notifications are sent to Microsoft Teams.
+*   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, it does not control the logic of the notification system in Teams.
+
+
+### Question -24
+
+You have an Azure DevOps organization named Contoso.
+
+You need to receive Microsoft Teams notifications when work items are updated. What should you do?
+
+A. From Azure DevOps, configure a service hook subscription
+
+B. From Microsoft Teams, configure a connector
+
+C. From the Microsoft Teams admin center, configure external access
+
+D. From Microsoft Teams, add a channel
+
+E. From Azure DevOps, install an extension
+
+
+--------
+
+The correct answer is **A. From Azure DevOps, configure a service hook subscription.**
+
+Explanation:
+
+**Service Hooks** are the standard mechanism used by Azure DevOps to send notifications to external services (like Microsoft Teams, Slack, or Trello) when specific events occur.
+
+1.  **The Process:** To set up these notifications, you go to **Project Settings** in Azure DevOps, select **Service Hooks**, and create a new subscription.
+2.  **The Trigger:** You select **Microsoft Teams** as the service and choose the specific trigger: **"Work item updated."**
+3.  **The Result:** Whenever a user modifies a work item, Azure DevOps sends a JSON payload to the configured Teams webhook, which then displays the notification in the selected channel.
+
+Why other options are incorrect:
+
+*   **B. Configure a connector:** While Teams "Connectors" were a valid method in the past, Microsoft has deprecated legacy connectors in favor of the **Azure Boards App** (which manages service hooks automatically) or direct **Service Hook** configuration.
+*   **C. Configure external access:** This is an administrative setting in the Teams Admin Center that controls whether users can chat with people in other companies; it has nothing to do with automation or bots.
+*   **D. Add a channel:** This provides a destination for the notifications, but it does not configure the logic to actually send them from Azure DevOps.
+*   **E. Install an extension:** Most Azure DevOps-to-Teams integrations require installing an **App in Teams**, not an **Extension in Azure DevOps**. The core functionality for the notification itself is built directly into the Service Hooks feature.
+
+
+
 
 ### Question -24
 
@@ -1812,6 +2102,44 @@ Why the others are incorrect:
 
 ✅ **Final answer: A. Azure Application Insights**
 
+
+### Question #25
+
+You create an alert rule in Azure Monitor as shown in the following exhibit.
+
+![Alt Image Text](../images/az400_2_11.png)
+
+Which action will trigger an alert?
+
+A. a failed attempt to delete the ASP-9bb7 resource
+
+B. a change to a role assignment for the ASP-9bb7 resource
+
+C. a successful attempt to delete the ASP-9bb7 resource
+
+D. a failed attempt to scale up the ASP-9bb7 resource
+
+-------
+
+Based on the exhibit of the Azure Monitor alert rule, the correct answer is **A. a failed attempt to delete the ASP-9bb7 resource.**
+
+**Explanation:**
+
+To determine which action triggers the alert, we look at the **Condition** defined in the image:
+
+1.  **Category:** `Administrative`
+    *   In Azure, the **Administrative** category in the Activity Log records all *create, update, delete,* and *action* operations performed on a resource through Azure Resource Manager (ARM).
+2.  **Signal name:** `All Administrative operations`
+    *   This means the alert is not restricted to a single type of action (like just "Delete"); it covers any task classified as an administrative operation.
+3.  **Status:** `failed`
+    *   The alert will *only* trigger if the operation does not succeed.
+
+**Evaluating the Options:**
+
+*   **A is correct:** Attempting to **delete** a resource is a standard administrative operation. Because the attempt **failed**, it matches all three criteria of the alert rule.
+*   **B is incorrect:** Changing a role assignment is typically categorized under the `Security` or `Administrative` category at a higher scope, but the alert rule specifically filters for **failed** status. A "change" (implying it happened) would be a "Success."
+*   **C is incorrect:** The alert rule is specifically set to trigger on `Status == 'failed'`. A **successful** attempt will not trigger this specific rule.
+*   **D is incorrect (in the context of exam logic):** While scaling up an App Service Plan is technically an administrative "update" operation, **Delete** is the most definitive and commonly tested example of an "Administrative" lifecycle event in the Activity Log. In most standardized Azure examinations (like AZ-400 or AZ-104), "Delete" is the intended answer for the "Administrative" category.
 
 ### Question -25
 
@@ -1988,10 +2316,12 @@ What should you use?
 * A. Custom events
 * B. Application Insights Profiler
 * C. Usage analysis
-* **D. Smart Detection**
+* D. Smart Detection
 * E. Continuous export
 
 The correct answer is:
+
+---------
 
 **D. Smart Detection** ✅
 
@@ -2031,6 +2361,47 @@ Correct Answer: D. Smart Detection
 
 Smart Detection automatically warns you of potential performance problems and failure anomalies in your web application. It performs proactive analysis of the telemetry that your app sends to Application Insights. If there is a sudden rise in failure rates, or abnormal patterns in client or server performance, you get an alert.
 
+
+### Question #27
+
+You use Azure DevOps to manage the build and deployment of an app named App1.
+
+You have a release pipeline that deploys a virtual machine named VM1.
+
+You plan to monitor the release pipeline by using Azure Monitor.
+
+You need to create an alert to monitor the performance of VM1. The alert must be triggered when the average CPU usage exceeds 70 percent for five minutes.
+
+The alert must calculate the average once every minute.
+
+How should you configure the alert rule? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_13.png)
+
+-------------
+
+Based on the requirements described for the Azure Monitor alert rule, here is the correct configuration:
+
+**Answer Area**
+
+**Aggregation granularity (Period): `5 minutes`**
+*   **Reasoning:** The requirement states the alert must be triggered when the average CPU usage exceeds the threshold **"for five minutes."** In Azure Monitor, the "Aggregation granularity (Period)" defines the time window over which the data is averaged. Therefore, to evaluate a 5-minute average, the period must be set to 5 minutes. 
+*   *Note:* The requirement to "calculate the average once every minute" refers to the **Frequency of evaluation**, which is a separate setting in Azure Monitor not shown in the dropdowns.
+
+**Threshold value: `Static`**
+*   **Reasoning:** A **Static** threshold is used when you have a specific, fixed number as a target (in this case, **70 percent**). **Dynamic** thresholds are used for anomaly detection where the system learns the "normal" behavior of the metric over time.
+
+**Operator: `Greater than`**
+*   **Reasoning:** The requirement uses the word **"exceeds."** In mathematical terms, to exceed a value means to be strictly **Greater than** that value.
+
+
+**Summary of selections:**
+1.  **5 minutes**
+2.  **Static**
+3.  **Greater than**
+
 ### Question -29
 
 
@@ -2040,9 +2411,11 @@ What should you do first?
 
 * A. Configure multi-factor authentication (MFA) for your GitHub account.
 * B. Add the Azure Pipelines app to the GitHub repository.
-* **C. Add the Azure Boards app to the repository.**
+* C. Add the Azure Boards app to the repository.
 * D. Create a GitHub action in GitHub.
 
+
+-------
 
 The correct answer is:
 
@@ -2099,7 +2472,7 @@ You need to generate an alert when there are 10,000 simultaneous connections to 
 **The solution must minimize development effort**. Which option should you select in the Diagnostics settings of the database?
 
 
-* **A. Send to Log Analytics**
+* A. Send to Log Analytics
 * B. Stream to an event hub
 * C. Archive to a storage account
 
@@ -2153,6 +2526,8 @@ You have an Azure virtual machine that is monitored by using Azure Monitor, The 
 * B. the Telegraf agent
 * C. the Windows Azure diagnostics extension (WAD)
 * D. the Azure monitor agent
+
+------
 
 
 **Correct Answer: A. the Dependency agent**
