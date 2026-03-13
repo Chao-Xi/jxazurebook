@@ -2517,6 +2517,113 @@ HOW TO ENABLE DIAGNOSTICS TO LOG ANALYTICS (This configuration is done PER DATAB
 2. Selectto Sendto Log Analytics and selectthe Log Analytics workspace. For this sample I will selected only Errors
 
 
+### Question #29
+
+You have a project in Azure DevOps that contains a Continuous Integration/Continuous Deployment (CI/CD) pipeline. 、
+
+You need to enable detailed logging by defining a pipeline variable.
+
+How should you configure the variable? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_14.png)
+
+----
+
+To enable detailed logging (verbose output) in an Azure DevOps CI/CD pipeline, you should configure the following pipeline variable:
+
+**Answer Area**
+
+**Name: `System.Debug`**
+*   **Reasoning:** `System.Debug` is a pre-defined system variable in Azure Pipelines specifically designed to control the logging level of the agent and individual tasks. When this is set, the agent provides significantly more detail in the logs, which is essential for troubleshooting.
+
+**Value: `true`**
+*   **Reasoning:** The variable acts as a toggle. Setting it to **`true`** enables the verbose logging mode. While some systems accept `1`, `true` is the standard and documented value for Azure Pipelines.
+
+
+**Summary of selections:**
+
+1.  **Name:** `System.Debug`
+2.  **Value:** `true`
+
+### Question #30
+
+You build an iOS app.
+
+You receive crash reports from Crashlytics. You need to capture the following data: 
+
+✑ Crash-free users 
+
+✑ Custom events 
+
+✑ Breadcrumbs 
+
+
+What should you do?
+
+
+A. Configure the xcworkspace file in the project
+
+B. Add the GoogleAnalytics pod to the app.
+
+C. Configure the Crashlytics pod in the app.
+
+D. Import the Firebase module to UIApplicationDelegate.
+
+
+
+-----------
+
+✅ **Correct answer:**
+
+
+**D. Import the Firebase module to UIApplicationDelegate.**
+
+Explanation
+
+You are already receiving crash reports from **Firebase Crashlytics**.
+To collect additional analytics data such as:
+
+* **Crash-free users**
+* **Custom events**
+* **Breadcrumbs (event logs before a crash)**
+
+you must integrate **Firebase Analytics** with the iOS application.
+
+This is done by importing Firebase and initializing it in **`UIApplicationDelegate`**:
+
+```swift
+import Firebase
+
+func application(_ application: UIApplication,
+  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    FirebaseApp.configure()
+    return true
+}
+```
+
+This enables:
+
+* Crashlytics to capture **breadcrumbs**
+* Firebase Analytics to track **custom events**
+* calculation of **crash-free users**
+
+Why the other options are incorrect
+
+| Option                                | Reason                                                                                                                      |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **A. Configure the xcworkspace file** | Workspace configuration does not enable analytics or crash metrics.                                                         |
+| **B. Add GoogleAnalytics pod**        | Crashlytics now relies on **Firebase Analytics**, not the deprecated Google Analytics SDK.                                  |
+| **C. Configure Crashlytics pod**      | Crashlytics alone only captures crashes; it does not provide full analytics metrics like crash-free users or custom events. |
+
+
+✅ **Final Answer:** **D**
+
+
+
+
 ### Question-31
 
 
@@ -2634,6 +2741,122 @@ Only the **Dependency Tracker extension** meets all requirements:
 ✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
 
 
+### Question #32
+
+
+You have a GitHub repository that contains the source code for an app named App1.
+
+You need to create process documentation for App1. The solution must include a diagram that displays the relationships between the phases of App1 as shown in the following exhibit.
+
+![Alt Image Text](../images/az400_2_15.png)
+
+How should you complete the markdown code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point
+
+![Alt Image Text](../images/az400_2_16.png)
+
+-----------------
+
+To complete the Mermaid markdown code for the state diagram shown in the exhibit, you should use the following values:
+
+**Answer Area**
+
+**Box 1: `stateDiagram`**
+*   **Reasoning:** The exhibit displays a flowchart of states (Waiting, Processing, etc.) and transitions. In Mermaid syntax, this specific type of diagram is initiated with the keyword **`stateDiagram`** (or `stateDiagram-v2`). Keywords like `flowchart` or `sequenceDiagram` would produce different visual styles.
+
+**Box 2: `Processing`**
+*   **Reasoning:** The diagram shows a "composite state" (a state that contains other states). The outer container is labeled **"Processing"**, and it contains "Incomplete" and "Complete". In Mermaid, the syntax to define a composite state is `state [Name] { ... }`. Therefore, the word **`Processing`** belongs in the second box to define the container.
+
+***
+
+**The complete Mermaid code would look like this:**
+
+```mermaid
+stateDiagram
+    direction LR
+    [*] --> Waiting
+    Waiting --> Processing
+    Processing --> Successful
+    state Processing {
+        direction LR
+        Incomplete --> Complete
+    }
+    Processing --> Failed
+```
+
+### Question-33
+
+You have an Azure web app named webapp1 that uses the .NET Core runtime stack. You have an Azure Application Insights resource named AppInsights1 that collects telemetry data generated by webapp1.
+
+You plan to deploy webapp1 by using an Azure DevOps pipeline.
+
+You need to modify the sampling rate of the telemetry data processed by AppInsights1 without having to redeploy webapp1 after each modi¬cation.
+
+What should you do? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/az400_2_17.png)
+
+
+-------------
+
+✅ The goal is to **change the telemetry sampling rate without redeploying the app**. Therefore, the sampling must be controlled from **Azure Application Insights** instead of only inside the app code.
+
+
+Correct selections
+
+**From the code repository of webapp1:**
+✔ **Disable adaptive sampling**
+
+**From AppInsights1:**
+✔ **Modify the Usage and estimated costs settings**
+
+
+Explanation
+
+1️⃣ Disable adaptive sampling in the app
+
+Adaptive sampling is configured in the application SDK and dynamically adjusts the telemetry volume.
+
+If adaptive sampling remains enabled, it will override changes made in Application Insights.
+
+So in the application configuration (for example in **ApplicationInsights.config** or startup configuration for **.NET Core** apps), you must:
+
+➡ **Disable adaptive sampling**
+
+This allows sampling to be controlled externally.
+
+2️⃣ Configure sampling in Application Insights
+
+In **Application Insights → Usage and estimated costs**, you can configure **data sampling / daily cap**.
+
+This lets you:
+
+* Adjust the telemetry volume
+* Change sampling without redeploying the application
+
+Why the other options are incorrect
+
+| Option                                | Reason                                                             |
+| ------------------------------------- | ------------------------------------------------------------------ |
+| **Enable fixed-rate sampling**        | Still requires changing application configuration and redeploying. |
+| **Modify ApplicationInsights.config** | Changing this requires redeployment.                               |
+| **Configure Continuous export**       | Used to export telemetry to storage/Event Hub, not sampling.       |
+| **Configure Smart Detection**         | Used for anomaly detection alerts.                                 |
+
+✅ **Final Answer**
+
+| Location                            | Action                                            |
+| ----------------------------------- | ------------------------------------------------- |
+| From the code repository of webapp1 | **Disable adaptive sampling**                     |
+| From AppInsights1                   | **Modify the Usage and estimated costs settings** |
+
+
+
+
 ### Question-33
 
 Your company has multiple microservices-based apps that use the following tracing libraries:
@@ -2649,15 +2872,17 @@ Which two libraries should you identify? Each correct answer presents a complete
 * A. Honeycomb
 * B. Open Tracing
 * C. Jaeger
-* **D. Open Telemtry**
-* **E. OpenCensus**
+* D. Open Telemtry
+* E. OpenCensus
+
+
+--------------
 
 The correct answers are:
 
 **D. OpenTelemetry**
+
 **E. OpenCensus** ✅
-
-
 
 Explanation:
 
@@ -2709,9 +2934,11 @@ What should you do?
 
 
 * A. From the code repository of webapp1, modify the Applicationinsights.config file.
-* **B. From the code repository of webapp1, modify the Startup.cs file.**
+* B. From the code repository of webapp1, modify the Startup.cs file.
 * C. From Applnsights1, modify the Usage and estimated costs settings.
 * D. From Appinsights1, configure the Continuous export settings.
+
+--------------
 
 **Correct Answer: B**
 
@@ -2751,10 +2978,12 @@ Why other options are incorrect:
 
 You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. **You need to configure App1 to use Al1.** Which file should you modify?
 
-* **A. appsettings.json**
+* A. appsettings.json
 * B. launchSettings.json
 * C. startup.cs
 * D. project.json
+
+-----
 
 
 **Correct Answer: A. appsettings.json**
@@ -2792,6 +3021,34 @@ Why the others are incorrect:
 
 
 ✅ **Final answer: A. appsettings.json**
+
+### Question #36
+
+You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains two tables named Events and Logs. App1 manages events in multiple locations and writes logs to Workspace1.
+
+You need to query Workspace1 for all log entries related to Asia that occurred during the last two days.
+
+In which order should you arrange the query statements? To answer, move all statements from the list of statements to the answer area and arrange them in the correct order.
+
+
+![Alt Image Text](../images/az400_2_18.png)
+
+To query the Log Analytics workspace correctly for logs related to Asia from the last two days, you should arrange the statements in the following order:
+
+**Correct Order**
+
+1.  **`Logs`**
+2.  **`| where timestamp > ago(2d)`**
+3.  **`| join ( Events`**
+4.  **`) on RequestId`**
+5.  **`| where continent == 'Asia'`**
+
+**Explanation:**
+
+*   **Step 1 (`Logs`):** Every Kusto Query Language (KQL) query must begin with the name of the source table you are querying.
+*   **Step 2 (`| where timestamp > ago(2d)`):** It is a performance best practice to apply time-based filters as early as possible in the query. This reduces the amount of data processed in subsequent steps.
+*   **Step 3 & 4 (`| join ( Events` and `) on RequestId`):** The prompt implies that information about the "continent" is stored in the `Events` table, while the activity is in the `Logs` table. You must join the two tables on a common key (in this case, `RequestId`) to correlate the logs with their geographic metadata.
+*   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
 ### Question-36
@@ -2857,6 +3114,69 @@ Creating planned maintenance alerts using Azure Service Health
 5. Selector create an Action group. (An Action group is a group of actions to be taken, should an event be logged.)
 6. Configure the actions to be taken. We are only configuring an email alert, so we first name the action, then chose Email/SMS/Push/Voice from the drop down list.
 
+
+### Question #37
+
+You have a web app named App1 that uses Application Insights in Azure Monitor.
+
+
+You need to compare the hourly CPU usage of App1 from the last 24 hours. The solution must include a graph that has a threshold line at 75 percent.
+
+How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/az400_2_19.png)
+
+To build the query in **Azure Application Insights** using **Kusto Query Language (KQL)**, you must:
+
+* Aggregate CPU usage **hourly**
+* Show the **average CPU value**
+* Add a **threshold line (75%)** to the chart
+
+---
+
+✅ **Correct selections**
+
+1️⃣ For the **summarize grouping**
+➡ **`bin(TimeGenerated, 1h)`**
+
+2️⃣ To create the **threshold field**
+➡ **`extend`**
+
+Completed Query
+
+```kusto
+performanceCounters
+| where TimeGenerated > ago(1d)
+| where counter == "% Processor Time"
+| summarize avg(value) by cloud_RoleInstance, bin(TimeGenerated, 1h)
+| extend Threshold = 75
+```
+
+**Why these are correct**
+
+* **`bin(TimeGenerated, 1h)`**
+  Groups results **per hour** for the last 24 hours.
+
+* **`extend Threshold = 75`**
+  Creates a constant column used to **draw the threshold line on the chart**.
+
+Why the other options are incorrect
+
+| Option                   | Reason                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| `bin(TimeGenerated, 1d)` | Would group results daily, not hourly                                           |
+| `project`                | Removes columns rather than creating the threshold                              |
+| `render`                 | Visualization command; not needed for defining the threshold line in this query |
+
+✅ **Final Answer**
+
+| Blank                   | Value                      |
+| ----------------------- | -------------------------- |
+| After `summarize`       | **bin(TimeGenerated, 1h)** |
+| Before `Threshold = 75` | **extend**                 |
 
 
 ### Question-37
@@ -2982,7 +3302,46 @@ So test failures during this learning window **will not generate notifications**
 
 **B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app.**
 
+### Question #39
 
+You have an Azure virtual machine named web1.
+
+
+You need to query the amount of free memory that was available on web1 during the past seven days. The solution must meet the following requirements:
+
+• Display the data as a time chart.
+
+• Calculate the average value per hour.
+
+How should you complete the KQL query? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_20.png)
+
+---------
+
+
+To query the average amount of free memory per hour for "web1" over the past seven days and display it as a time chart, you should complete the KQL query as follows:
+
+**Answer Area**
+
+**Box 1: `TimeGenerated > ago(7d)`**
+*   **Reasoning:** The requirement is to look at data from the **past seven days**. In KQL, the `> ago(7d)` filter retrieves all records that were generated between seven days ago and the current moment.
+
+**Box 2: `bin(TimeGenerated, 1h)`**
+*   **Reasoning:** The requirement is to **"calculate the average value per hour."** The `bin()` function (also known as `floor()`) is used to group timestamps into specific time intervals. Setting the interval to `1h` ensures that the `avg(CounterValue)` is calculated for every one-hour bucket, which is then plotted on the time chart.
+
+
+**The complete query would look like this:**
+```kusto
+Perf
+| where TimeGenerated > ago(7d)
+| where Computer == "web1"
+| where CounterName == "Available MBytes"
+| summarize avg(CounterValue) by bin(TimeGenerated, 1h)
+| render timechart
+```
 
 
 ### Question-39
@@ -3001,11 +3360,12 @@ You need to recommend a solution to detect an abnormal rise in the rate of faile
 
 What should you include in the recommendation?
 
-* **A. the Smart Detection feature in Azure Application Insights**
+* A. the Smart Detection feature in Azure Application Insights
 * B. the Failures feature in Azure Application Insights
 * C. an Azure Service Health alert
 * D. an Azure Monitor alert that uses an Azure Log Analytics query
 
+-----
 
 The correct answer is:
 
@@ -3053,6 +3413,42 @@ Why the other options are incorrect:
 
 After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.
 
+
+### Question #40
+
+You have a web app named App1 that uses Application Insights in Azure Monitor to store log data. App1 has users in multiple locations.
+
+You need to query App1 requests from London and Paris that return a 404 error. The solution must meet the following requirements:
+
+Return the timestamp url, resultCode, and duration fields
+
+Only show requests made during the last hour.
+
+
+How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
+
+![Alt Image Text](../images/az400_2_21.png)
+
+To complete the KQL query based on the requirements provided, you should drag the following values to the answer area:
+
+**Answer Area**
+
+**Box 1 (Time filter): `timestamp >= ago(1hr)`**
+*   **Reasoning:** The requirement is to "Only show requests made during the last hour." In KQL, the standard way to filter for a time range relative to the current time is using the `ago()` function. The operator `>=` (or simply `>`) ensures you only retrieve records within that one-hour window. Note that `-gt` is a PowerShell operator, not a KQL one.
+
+**Box 2 (Column selection): `project`**
+*   **Reasoning:** The requirement is to "Return the timestamp, url, resultCode, and duration fields." In KQL, the **`project`** operator is used to specify which columns should be included in the results and in what order.
+
+
+
+**The complete query would look like this:**
+```kusto
+requests
+| where timestamp >= ago(1hr)
+| where resultCode == "404" and (client_City == "London" or client_City == "Paris")
+| project timestamp, url, resultCode, duration
+```
+
 ### Question-40
 
 
@@ -3063,9 +3459,11 @@ You need to automate Ul testing of a web application.
 Which framework should you use?
 
 * A. JaCoco
-* **B. Selenium**
+* B. Selenium
 * C. Xamarin.UlTest
 * D. Microsoft.CodeAnalysis
+
+----
 
 
 Correct Answer: B. Selenium
@@ -3097,6 +3495,45 @@ Why the others are incorrect:
 
 
 ✅ **Final answer: B. Selenium**
+
+
+### Question #41
+
+DRAG DROP -
+
+You have a project in Azure DevOps.
+
+You need to con¬gure a dashboard. The solution must include the following metrics:
+
+• Bottlenecks in the software development process
+
+• A burndown chart for the work in a single iteration
+
+• How long it takes to close a work item after the item was started
+
+
+Which type of widget should you use for each metric? To answer, drag the appropriate widget types to the correct metrics. Each widget type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_22.png)
+
+
+------
+
+To configure the Azure DevOps dashboard with the correct widgets for each metric, you should match them as follows:
+
+**Answer Area**
+
+*   **Bottlenecks in the software development process:** **Cumulative flow diagram (CFD)**
+    *   *Reasoning:* The CFD widget shows the distribution of work items across various states over time. By observing the width of the different bands (e.g., "In Progress"), you can easily identify where work is piling up, which indicates a process bottleneck.
+
+*   **How long it takes to close a work item after the item was started:** **Cycle time**
+    *   *Reasoning:* **Cycle time** specifically measures the time elapsed from the moment work on an item begins (it moves to an active state) until it is completed. **Lead time**, by contrast, measures the entire duration from the item's creation until its completion.
+
+*   **A burndown chart for the work in a single iteration:** **Sprint burndown**
+    *   *Reasoning:* In Azure DevOps, an iteration is known as a Sprint. The **Sprint burndown** widget is designed specifically to track the remaining work (usually in hours or story points) within that single, defined timebox.
+
 
 
 ### Question-41
