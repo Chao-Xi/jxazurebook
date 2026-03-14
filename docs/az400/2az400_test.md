@@ -3062,6 +3062,7 @@ Which two actions should you perform? Each correct answer presents part of the s
 * C. Create an Azure Service Health alert.
 * D. Create and configure an action group.
 
+---------
 
 **Correct Answer: CD**
 
@@ -3617,6 +3618,58 @@ Monitoring your application health is an important signal for managing and upgra
 
 Azure virtual machine scale sets provide support for rolling upgrades including automatic OS-image upgrades, which rely on health monitoring of the individual instances to upgrade your deployment. You can also use health extension to monitor the application health of each instance in your scale set and perform instance repairs using automatic instance repairs.
 
+### Question #42
+
+You have an Azure subscription that contains a Log Analytics workspace named WS1 and a virtual machine named VM1.
+
+You need to install the Microsoft Enterprise Cloud Monitoring extension on VM1.
+
+Which two values are required to con¬gure the extension? Each correct answer presents part of the solution.
+
+NOTE: Each correct answer is worth one point.
+
+A. the secret key of WS1
+
+B. the ID of the subscription
+
+C. the system-assigned managed identity of VM1
+
+D. the ID of WS1
+
+E. the resource ID of VM1
+
+-----
+
+✅ **Correct answers:**
+**A. the secret key of WS1**
+**D. the ID of WS1**
+
+Explanation
+
+To install the **Microsoft monitoring agent / Log Analytics agent** (often referred to as the **Microsoft Enterprise Cloud Monitoring extension**) on a VM so it can send data to **Azure Log Analytics**, you must configure two required parameters:
+
+1. **Workspace ID**
+2. **Workspace Key (Primary or Secondary key)**
+
+These allow the VM agent to authenticate and send telemetry to the workspace.
+
+Mapping to the options
+
+| Option                              | Reason                                     |
+| ----------------------------------- | ------------------------------------------ |
+| **A. the secret key of WS1**        | ✅ Required (Workspace Key)                 |
+| **D. the ID of WS1**                | ✅ Required (Workspace ID)                  |
+| B. subscription ID                  | ❌ Not required for the agent configuration |
+| C. system-assigned managed identity | ❌ Not used by this extension               |
+| E. resource ID of VM1               | ❌ The extension already runs on the VM     |
+
+
+✅ **Final Answer:**
+
+
+**A and D**
+
+
 
 ### Question-42
 
@@ -3628,11 +3681,17 @@ Which two actions should you perform? Each correct answer presents part of the s
 
 NOTE: Each correct selection is worth one point.
 
+
+
+
 - A. Set Flaky test detection to Off.
-- **B. Clear Flaky tests included in test pass percentage.**
+- B. Clear Flaky tests included in test pass percentage.**
 - C. Enable Test Impact Analysis (TIA).
-- **D. Manually mark the test as flaky.**
+- D. Manually mark the test as flaky.
 - E. Enable test slicing.
+
+-------------
+
 
 Correct Answer: BD
 
@@ -3677,6 +3736,52 @@ Why the others are incorrect:
 
 
 ✅ **Final answer: D and B**
+
+
+### Question #43
+
+You have an app named App1 that uses Application Insights to monitor application performance.
+
+You need to analyze how often a page in App1 is accessed.
+
+Which pane in Application Insights should you use?
+
+
+A. Events
+
+B. Sessions
+
+C. Impact
+
+D. Users
+
+----------
+
+
+✅ **Correct answer:** **A. Events**
+
+Explanation
+
+In **Azure Application Insights**, page visits are tracked as **page view events**. To analyze **how often a specific page is accessed**, you use the **Events** blade where telemetry such as:
+
+* **Page views**
+* **Custom events**
+* **Browser events**
+
+are recorded.
+
+From **Events**, you can filter by **page name** and see how frequently it is accessed.
+
+Why the other options are incorrect
+
+| Option          | Reason                                                                      |
+| --------------- | --------------------------------------------------------------------------- |
+| **B. Sessions** | Shows user session duration and counts, not specific page access frequency. |
+| **C. Impact**   | Used to analyze performance impact of issues on users.                      |
+| **D. Users**    | Shows unique users, not how often a page is accessed.                       |
+
+
+✅ **Final Answer:** **A. Events**
 
 
 
@@ -3736,6 +3841,30 @@ Scenarios and use cases for gates include: Quality validation.
 Query metrics from tests on the build artifacts such as pass rate or code coverage and deploy only if they are within required thresholds. Use Quality Gates to integrate monitoring into your pre-deployment or post-leployment. This ensures that you are meeting the key health/performance metrics (KPls) as your applications move from dev to production and any differences in the infrastructure environment or scale is not negatively impacting your KPIs.
 
 
+### Question #44
+
+You have a project in Azure DevOps that includes two users named User1 and User2.
+
+You plan to use Azure Monitor to manage logs.
+
+You need to ensure that the users can perform the actions shown in following the table.
+
+![Alt Image Text](../images/az400_2_23.png)
+
+
+The solution must follow the principle of least privilege.
+
+Which role should you assign to each user? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+![Alt Image Text](../images/az400_2_24.png)
+
+**User1:** Monitoring Contributor
+
+**User2:** Monitoring Reader
+
 
 ### Question-44
 
@@ -3793,6 +3922,53 @@ To actually **prevent configuration drift**, you would need solutions such as:
 
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
+
+### Question #45
+
+DRAG DROP -
+
+You have a project in Azure DevOps.
+
+You need to con¬gure a dashboard that will provide information on the following metrics.
+
+• How long it takes to close a work item
+
+• The number of completed backlog items
+
+• How long it takes to restore failed services
+
+
+Which type of widget should you use for each metric? To answer, drag the appropriate widget types to the correct metrics. Each widget type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Correct Answer:
+
+
+![Alt Image Text](../images/az400_2_25.png)
+
+
+----------
+
+To configure the Azure DevOps dashboard correctly, you should match the widgets to the metrics as follows:
+
+**Answer Area**
+
+*   **How long it takes to close a work item:** **Cycle time**
+    *   *Reasoning:* **Cycle time** measures the time it takes to complete a work item once work has actually started on it (i.e., when it moves from a "New" state to an "Active" or "In Progress" state).
+
+*   **The number of completed backlog items:** **Velocity**
+    *   *Reasoning:* **Velocity** tracks how much work a team can complete in a single sprint. It is the standard metric for calculating the number of backlog items (or story points) finished per iteration.
+
+*   **How long it takes to restore failed services:** **Lead time**
+    *   *Reasoning:* In a DevOps context, the time taken to restore a failed service (Mean Time to Repair/Recovery) is measured using **Lead time**. Lead time tracks the total duration from the moment an issue is identified (work item created) until it is resolved (work item closed).
+
+
+**Summary of selections:**
+
+1.  How long it takes to close a work item: **Cycle time**
+2.  The number of completed backlog items: **Velocity**
+3.  How long it takes to restore failed services: **Lead time**
 
 ### Question-45
 
@@ -3891,7 +4067,40 @@ To **prevent project configuration from changing**, you would need:
 > Note: The Subscription Security health check features in ASK contains a set of scripts that examines a subscription and flags off security issues, misconfigurations or obsolete artifacts/settings which can put your subscription at higher risk.
 
 
+### Question #47
 
+You have an Azure subscription that contains an Azure Kubernetes Service (AKS) instance named AKS1.
+
+You collect and analyze metrics for AKS1 by using the Azure Monitor managed service for Prometheus.
+
+You need to analyze the performance of AKS1.
+
+Which query language should you use?
+
+A. PL/SQL
+
+B. PromQL
+
+C. SparkQL
+
+D. KQL
+
+---------
+
+
+The correct answer is **B. PromQL**.
+
+Explanation:
+
+The **Azure Monitor managed service for Prometheus** is a Prometheus-compatible environment. Prometheus uses its own native, functional query language called **PromQL** (Prometheus Query Language) to select and aggregate real-time time-series data.
+
+While **KQL** (Kusto Query Language) is the standard language for Azure Log Analytics and Application Insights, when you specifically opt into the **Prometheus** managed service for AKS monitoring, you use PromQL to interact with that data (typically visualized via Grafana).
+
+Why other options are incorrect:
+
+*   **A. PL/SQL:** This is used for Oracle databases.
+*   **C. SparkQL:** This is used for processing data within Apache Spark.
+*   **D. KQL:** This is used for Azure logs and standard Azure Monitor metrics, but not for data stored in the Prometheus managed service.
 
 ### Question-47
 
@@ -3968,6 +4177,31 @@ Since Dependabot has already performed the detection and created the PR, the fir
 *   **C. Create a branch:** Dependabot creates the branch for the update automatically.
 *   **D. Perform a commit:** Dependabot performs the version-bump commit within the branch it creates.
 
+### Question #48
+
+
+![Alt Image Text](../images/az400_2_26.png)
+
+Based on the KQL query provided in the exhibit, here are the correct selections for the Answer Area:
+
+**1. Number of columns returned in the query output**
+
+**Selection: `Six`**
+
+**Reasoning:**
+1.  The `project` operator (Line 3) selects five specific columns: `StartTime`, `EndTime`, `EpisodeId`, `State`, and `Level`.
+2.  The `extend` operator (Line 4) adds one **new** column to the existing result set: `Duration`.
+3.  Since there are no subsequent `project` or `project-away` operators to remove columns, the final output will contain the 5 projected columns plus the 1 extended column, totaling **six**.
+
+**2. Data type of the Duration column**
+
+**Selection: `timespan`**
+
+**Reasoning:**
+
+*   In Kusto (KQL), the `Duration` column is calculated by subtracting one `datetime` (`StartTime`) from another `datetime` (`EndTime`).
+*   The result of a subtraction between two `datetime` objects is always a **`timespan`** (representing the elapsed time).
+*   This is confirmed in Line 5, where the `Duration` is compared against a value generated by the `make_timespan` function.
 
 ### Question-49
 
@@ -4176,6 +4410,43 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 * pull requests 
 * source control files 
 * builds
+
+### Question-52
+
+You have an Azure subscription that contains multiple web apps.
+
+You need to enable Change Analysis for the web apps.
+
+How should you complete the script? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_27.png)
+
+------
+
+
+To enable Change Analysis for multiple web apps via a script, you should complete the PowerShell commands as follows:
+
+**Answer Area**
+
+**Box 1: `Register-AzResourceProvider -ProviderNamespace`**
+
+*   **Reasoning:** To use Azure Change Analysis, the **`Microsoft.ChangeAnalysis`** resource provider must be registered at the subscription level. The command `Register-AzResourceProvider` is the standard way to ensure that the subscription has access to the services provided by that specific namespace.
+
+**Box 2: `Set-AzResource -ResourceId`**
+
+*   **Reasoning:** The script enables "Change Analysis Scan" for each web app by adding a specific hidden tag (`hidden-related:diagnostics/changeAnalysisScanEnabled`) to the resource. To apply these updated tags to the existing web app resource in Azure, the **`Set-AzResource`** command is used. It targets the resource by its ID and overwrites the properties (the tags) with the new values provided in the `$tags` variable.
+
+
+
+**Summary of selections:**
+
+1.  **Register-AzResourceProvider -ProviderNamespace**
+2.  **Set-AzResource -ResourceId**
+
+
+##  Topic 3 - Question Set 3
 
 ### Question-53
 
