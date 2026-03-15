@@ -48,7 +48,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 You need to consider **the underlined segment** to **establish whether it is accurate.** 
 
-**The Burnup widget measures the elapsed time from creation of work items to their completion**. 
+**The Burnup widget measures the elapsed time from creation of work items to their completion**.     
 
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate
 
@@ -3190,9 +3190,11 @@ Which two agents should you deploy? Each correct answer presents part of the sol
 
 
 * A. the Telegraf agent
-* **B. the Azure Log Analytics agent**
+* B. the Azure Log Analytics agent
 * C. the Azure Network Watcher Agent for Windows
-* **D. the Dependency agent**
+* D. the Dependency agent
+
+----------
 
 Correct Answer: BD
 
@@ -3259,9 +3261,12 @@ What prevents the Smart Detection notification from being sent?
 
 
 * A. You must enable the Snapshot Debugger for the web app.
-* **B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app**.
+* B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app
 * C. The web app is configured to use the shared service plan tier.
 * D. You must restart the web app before Smart Detection is enabled.
+
+
+----------
 
 **Correct Answer: B**
 
@@ -3302,6 +3307,10 @@ So test failures during this learning window **will not generate notifications**
 ✅ Final Answer:
 
 **B. Smart Detection uses the first 24 hours to establish the normal behavior of the web app.**
+
+
+
+
 
 ### Question #39
 
@@ -3455,7 +3464,7 @@ requests
 
 You are automating the testing process for your company.
 
-You need to automate Ul testing of a web application.
+You need to automate UI testing of a web application.
 
 Which framework should you use?
 
@@ -3558,7 +3567,9 @@ What should you include in the recommendation?
 - A. an Azure Load Balancer health probe
 - B. Azure Monitor autoscale
 - C. the Custom Script Extension
-- **D. the Application Health extension**
+- D. the Application Health extension
+
+---------------
 
 **Correct Answer: D. the Application Health extension**
 
@@ -3801,8 +3812,10 @@ What should you use to prevent the deployment of releases that fall to meet the 
 
 - A. an Azure Scheduler job
 - B. a trigger
-- **C. a gate**
+- C. a gate
 - D. an Azure function
+
+----------
 
 Correct Answer: C. a gate
 
@@ -4147,6 +4160,10 @@ incorrect Options presents in part of this series Questions are
 
 
 
+
+
+
+
 ### Question-48
 
 You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. You have an app named App1. Dependabot detects a dependency in App1 that requires an update. What should you do first to apply the update?
@@ -4156,6 +4173,7 @@ You use Azure Pipelines to manage build pipelines, Github to store source code, 
 * C. Create a branch.
 * D. Perform a commit.
 
+---------
 
 **Correct Answer: B. Approve the pull request.**
 
@@ -4222,6 +4240,8 @@ Which Azure service should you recommend as the configuration management solutio
 * C. Azure App Configuration
 * D. Azure Key Vault
 
+-------
+
 **Correct Answer: C - Azure App Configuration**
 
 The correct answer is:
@@ -4257,6 +4277,75 @@ Why the others are incorrect:
 
 ✅ **Final answer: C. Azure App Configuration**
 
+### Question #4
+
+You are planning projects for three customers. Each customer's preferred process for work items is shown in the following table.
+
+The customers all plan to use Azure DevOps for work item management.
+
+![Alt Image Text](../images/az400_2_28.png)
+
+
+
+Which work item process should you use for each customer? To answer, drag the appropriate work item processes to the correct customers. Each work item process may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_29.png)
+
+---------
+
+To match the customers with the correct Azure DevOps work item processes based on their specific terminology, you should use the following mappings:
+
+**Answer Area**
+
+*   **Litware:** **Scrum**
+    *   *Reasoning:* The use of the term **"Product Backlog Item" (PBI)** is specific to the Scrum process template in Azure DevOps. 
+
+*   **Contoso:** **Agile**
+    *   *Reasoning:* The term **"User Story"** is the standard backlog item used in the Agile process template.
+
+*   **A. Datum:** **CMMI**
+    *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
+
+
+### Question #5
+
+You configure an Azure Application Insights availability test.
+
+You need to notify the customer services department at your company by email when availability is degraded. You create an Azure logic app that will handle the email and follow up actions.
+
+Which type of trigger should you use to invoke the logic app?
+
+A. an HTTPWebhook trigger
+
+B. an HTTP trigger
+
+C. a Request trigger
+
+D. an ApiConnection trigger
+
+---------------
+
+
+The correct answer is **C. a Request trigger**.
+
+Explanation:
+
+To integrate an **Azure Application Insights availability test** with an **Azure Logic App**, you typically use an **Azure Monitor Alert**. When the availability test fails, the alert is triggered and calls an **Action Group**.
+
+1.  **Request trigger:** This is the specific trigger in Logic Apps (formally known as "When a HTTP request is received") that generates a unique URL. When you configure an Action Group to call a Logic App, the Azure alerting system sends an HTTP POST request to this URL containing the alert data in a JSON payload.
+2.  **HTTP trigger vs. Request trigger:** While "HTTP trigger" is a common term used in Azure Functions, in the context of Azure Logic Apps, the specific trigger used to receive incoming webhooks from Azure services like Monitor or Application Insights is the **Request trigger**.
+3.  **HTTPWebhook trigger:** This is used for a "subscribe/unsubscribe" pattern where the Logic App registers a callback URL with a service and waits for a specific event. This is not the mechanism used by Azure Monitor Action Groups.
+4.  **ApiConnection trigger:** This is used for triggers that rely on external connectors (like "When a new email arrives" in Outlook or "When a file is created" in OneDrive). It does not provide an endpoint for Azure Alerts to call.
+
+**Correct Configuration Flow:**
+1. Create a Logic App starting with a **Request trigger** ("When a HTTP request is received").
+2. Create an **Action Group** in Azure Monitor.
+3. Add an action to the group, select the **Logic App** type, and point it to the Logic App you created.
+4. Associate the Action Group with the **Availability Test alert**.
+
+
 
 ### Question-50
 
@@ -4264,12 +4353,16 @@ You have a containerized solution that runs in Azure Container Instances.
 
 The solution contains a frontend container named App1 and a backend container named DB1. DB1 loads a large amount of data during startup. 
 
-You need to verify that DB1 can handle incoming requests before users can submit requests to App1. What should you configure?
+You need to verify that DB1 can handle incoming requests before users can submit requests to App1. 
+
+What should you configure?
 
 * A. a liveness probe
 * B. a performance log
-* **C. a readiness probe**
+* C. a readiness probe
 * D. an Azure Load Balancer health probe
+
+----------
 
 The correct answer is:
 
@@ -4448,6 +4541,413 @@ To enable Change Analysis for multiple web apps via a script, you should complet
 
 ##  Topic 3 - Question Set 3
 
+
+### Question #6
+
+You have an Azure DevOps organization named Contoso and an Azure subscription.
+
+You use Azure DevOps to build a containerized app named App1 and deploy App1 to an Azure container instance named ACI1. You need to restart ACI1 when App1 stops responding.
+
+What should you do?
+
+A. Add a liveness probe to the YAML configuration of App1.
+
+B. Add a readiness probe to the YAML configuration of App1.
+
+C. Use Connection Monitor in Azure Network Watcher.
+
+D. Use IP low verify in Azure Network Watcher.
+
+The correct answer is **A. Add a liveness probe to the YAML configuration of App1.**
+
+Explanation:
+
+*   **Liveness Probe:** In Azure Container Instances (ACI), a liveness probe is specifically designed to determine if a containerized application is running and healthy. If the application stops responding (the probe fails), ACI automatically restarts the container. This matches your requirement exactly.
+*   **Readiness Probe:** This is used to determine if a container is ready to start accepting traffic. If a readiness probe fails, the container is not restarted; instead, it is temporarily removed from being reachable (it won't receive traffic).
+*   **Connection Monitor (Network Watcher):** This is a tool for monitoring network connectivity between endpoints. While it can detect that a service is down, it does not have the built-in capability to automatically restart a container instance.
+*   **IP flow verify (Network Watcher):** This is a diagnostic tool used to check if a packet is allowed or denied to or from a virtual machine based on security rules (NSG rules). It is not used for monitoring application health or restarting services.
+
+**How to implement it:**
+In the YAML file for the Azure Container Instance, you define the `livenessProbe` under the container properties:
+
+```yaml
+properties:
+  containers:
+    - name: app1
+      properties:
+        image: contoso.azurecr.io/app1:latest
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+```
+
+### Question #7
+
+You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
+
+You need to recommend a solution to capture and store telemetry data. The solution must meet the following requirements: ✑ Support using ad-hoc queries to identify baselines.
+
+✑ Trigger alerts when metrics in the baseline are exceeded.
+
+✑ Store application and database metrics in a central location.
+
+What should you include in the recommendation?
+
+A. Azure Event Hubs
+
+B. Azure SQL Database Intelligent Insights
+
+C. Azure Application Insights
+
+D. Azure Log Analytics
+
+-----------
+
+The correct answer is **D. Azure Log Analytics**.
+
+Explanation:
+
+Azure Log Analytics is the primary tool within Azure Monitor used to collect, aggregate, and analyze data from various sources in a central location.
+
+Here is how it meets all your requirements:
+
+*   **Central Location:** You can configure **Diagnostic Settings** on both the **Azure Web App** (front end) and the **Azure SQL Database** (back end) to send their metrics and logs to a single **Log Analytics workspace**.
+*   **Ad-hoc Queries:** Log Analytics uses **Kusto Query Language (KQL)**. This allows you to perform complex, ad-hoc queries across both application and database data to identify performance patterns and establish baselines.
+*   **Trigger Alerts:** Once you have defined a baseline using a KQL query, you can create **Log Search Alerts**. These alerts trigger automatically when the results of a query exceed your specified threshold.
+
+Why other options are incorrect:
+
+*   **Azure Event Hubs:** This is a data streaming service. While it can ingest data, it does not provide built-in storage for long-term analysis or a query engine to identify baselines.
+*   **Azure SQL Database Intelligent Insights:** This is a specialized feature for monitoring SQL performance. It does not capture telemetry for the Web App front end, so it fails the "central location" requirement.
+*   **Azure Application Insights:** While excellent for application-level telemetry (Web Apps), it is not the primary repository for platform-level database logs (like SQL execution plans or deadlock logs). While Application Insights now often stores data in a Log Analytics workspace, **Log Analytics** is the comprehensive solution for the entire multi-tier stack.
+
+
+### Question #10
+
+You have an Azure subscription that contains resources in several resource groups.
+
+You need to design a monitoring strategy that will provide a consolidated view. The solution must support the following requirements: ✑ Support role-based access control (RBAC) by using Azure Active Directory (Azure AD) identi¬es.
+
+✑ Include visuals from Azure Monitor that are generated by using the Kusto query language.
+
+✑ Support documentation written in markdown.
+
+✑ Use the latest data available for each visual.
+
+What should you use to create the consolidated view?
+
+A. Azure Monitor
+
+B. Microsoft Power BI
+
+C. Azure Data Explorer
+
+D. Azure dashboards
+
+
+The correct answer is **D. Azure dashboards**.
+
+**Explanation:**
+
+Azure Dashboards are specifically designed to provide a "single pane of glass" view for Azure resources. Here is how they meet all the specified requirements:
+
+*   **Consolidated View:** You can pin tiles from multiple different resource groups and even different subscriptions onto a single dashboard.
+*   **RBAC support:** Azure Dashboards are Azure resources themselves. You can share a dashboard with specific users or groups using standard **Azure Role-Based Access Control (RBAC)**.
+*   **Kusto Query Language (KQL):** You can run queries in **Log Analytics** or **Application Insights** using KQL and then "Pin" the resulting chart or table directly to an Azure dashboard.
+*   **Markdown Support:** Azure Dashboards include a specific **Markdown tile**, which allows you to add formatted text, links, and documentation alongside your metrics.
+*   **Latest Data:** Tiles on an Azure dashboard refresh automatically when the dashboard is loaded or refreshed, ensuring you see the most recent telemetry data available.
+
+**Why other options are incorrect:**
+
+*   **Azure Monitor:** This is the service that *collects* the data, but it is not a "consolidated view" tool in itself. While it contains "Workbooks," the specific mention of Markdown tiles and pinning queries is a hallmark of Azure Dashboards in the context of this certification-style question.
+*   **Microsoft Power BI:** While Power BI is powerful for visualization, it often has a delay in data refresh (unless using DirectQuery, which can be complex) and is generally considered external to the immediate "Azure portal experience" for operational monitoring.
+*   **Azure Data Explorer:** This is a standalone big data analytics service. While it uses KQL, it is used for analyzing massive datasets rather than acting as a standard operational dashboard for Azure resource monitoring.
+
+
+
+### Question #12
+
+You are building an ASP.NET Core application.
+
+You plan to create an application utilization baseline by capturing telemetry data.
+
+You need to add code to the application to capture the telemetry data. The solution must minimize the costs of storing the telemetry data. Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point
+
+A. Add the <InitialSamplingPercentage>99</InitialSamplingPercentage> parameter to the ApplicationInsights.con¬g ¬le.
+
+B. From the code of the application, enable adaptive sampling.
+
+C. From the code of the application, add Azure Application Insights telemetry.
+
+D. Add the <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond> parameter to the ApplicationInsights.con¬g ¬le.
+
+E. From the code of the application, disable adaptive sampling.
+
+Question 1
+
+You monitor **AKS metrics using Azure Monitor managed service for Prometheus**.
+
+✅ **Correct answer:** **B. PromQL**
+
+Explanation
+
+**Azure Monitor managed service for Prometheus** stores metrics in **Prometheus format**, and queries are written using **PromQL**.
+
+PromQL is used to:
+
+* Analyze Kubernetes metrics
+* Create dashboards
+* Build alerts for AKS workloads
+
+❌ Other options:
+
+* **PL/SQL** → Oracle database language
+* **SparkQL** → Apache Spark SQL-like language
+* **KQL** → Used in **Azure Log Analytics** and **Azure Application Insights**, not Prometheus metrics
+
+✅ **Answer:** **B**
+
+Question 2
+
+Goal:
+
+* Capture telemetry in an **ASP.NET Core** application
+* **Minimize telemetry storage cost**
+
+Key concept
+
+To minimize cost when sending telemetry to **Azure Application Insights**, you should enable **adaptive sampling**, which automatically reduces telemetry volume during high traffic.
+
+✅ **Correct answers**
+
+**B. From the code of the application, enable adaptive sampling.**
+**C. From the code of the application, add Azure Application Insights telemetry.**
+
+Explanation
+
+| Option | Reason                                                                         |
+| ------ | ------------------------------------------------------------------------------ |
+| **B**  | Adaptive sampling dynamically reduces telemetry volume → lowers storage cost   |
+| **C**  | Required to collect telemetry in the application                               |
+| A      | Static sampling via config; not the recommended cost-optimized approach        |
+| D      | Limits telemetry rate but does not intelligently adjust like adaptive sampling |
+| E      | Disabling adaptive sampling would **increase cost**                            |
+
+✅ **Final Answers**
+
+| Question                        | Answer        |
+| ------------------------------- | ------------- |
+| AKS Prometheus query language   | **B. PromQL** |
+| ASP.NET Core telemetry baseline | **B and C**   |
+
+
+### Question #14
+
+You have an application named App1 that has a custom domain of app.contoso.com. 
+
+
+You create a test in Azure Application Insights as shown in the following exhibit.
+
+![Alt Image Text](../images/az400_2_30.png)
+
+![Alt Image Text](../images/az400_2_31.png)
+
+From the configuration shown in **Azure Application Insights**:
+
+Key settings visible in the screenshot:
+
+* **Test type:** URL ping test
+* **Test frequency:** **5 minutes**
+* **Test locations:** **4 locations configured**
+* **Parse dependent requests:** Enabled
+* **Timeout:** **30 seconds**
+* **Success criteria:**
+
+  * HTTP status code **200**
+  * Content must contain **"Copyright Contoso"**
+
+1️⃣ The test will execute
+
+Because the frequency is **5 minutes** and tests run from **each configured location**, the test runs from **every location every interval**.
+
+✅ **Answer:** **every five minutes per location**
+
+2️⃣ The test will pass if
+
+Since **Parse dependent requests** is enabled, Application Insights verifies that:
+
+* The **HTML page loads**
+* The **resources referenced in `<script>`, `<img>`, etc. also load**
+
+Thus the test passes when **all HTML, JavaScript, and images load successfully within the timeout**.
+
+✅ **Answer:**
+
+**all the HTML, JavaScripts, and images of App1 load**
+
+✅ **Final Answers**
+
+| Statement             | Answer                                                 |
+| --------------------- | ------------------------------------------------------ |
+| The test will execute | **every five minutes per location**                    |
+| The test will pass if | **all the HTML, JavaScripts, and images of App1 load** |
+
+
+### Question #18
+
+Your company uses the following resources:
+
+✑ Windows Server 2019 container images hosted in an Azure Container Registry.
+
+✑ Azure virtual machines that run the latest version of Ubuntu 
+
+✑ An Azure Log Analytics workspace 
+
+✑ Azure Active Directory (Azure AD) 
+
+✑ An Azure key vault For which two resources can you receive vulnerability assessments in Azure Security Center? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. the Azure Log Analytics workspace
+
+B. the Azure key vault
+
+C. the Azure virtual machines that run the latest version of Ubuntu
+
+D. Azure Active Directory (Azure AD)
+
+E. The Windows Server 2019 container images hosted in the Azure Container Registry.
+
+✅ **Correct answers:**
+
+- **C. the Azure virtual machines that run the latest version of Ubuntu**
+- **E. The Windows Server 2019 container images hosted in the Azure Container Registry**
+
+Explanation
+
+**Microsoft Defender for Cloud** (formerly Azure Security Center) provides **vulnerability assessment** capabilities for certain resource types.
+
+1️⃣ Azure Virtual Machines
+
+For **Azure Virtual Machines**, Defender for Cloud can run vulnerability scans using built-in scanners (such as Qualys).
+This works for both **Windows and Linux VMs**, including **Ubuntu**.
+
+✔ Therefore **Ubuntu VMs can receive vulnerability assessments.**
+
+2️⃣ Container Images
+
+For images stored in **Azure Container Registry**, Defender for Cloud can scan container images for vulnerabilities.
+
+✔ Therefore **Windows Server 2019 container images in ACR can receive vulnerability assessments.**
+
+Why the other options are incorrect
+
+| Option                         | Reason                                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| **A. Log Analytics workspace** | Used for log storage/queries, not vulnerability scanning.                                                    |
+| **B. Azure Key Vault**         | Security posture is monitored, but vulnerability assessments are not performed.                              |
+| **D. Azure AD**                | Identity protection and security monitoring exist, but not vulnerability assessments like VMs or containers. |
+
+
+
+✅ **Final Answer:**
+
+**C and E**
+
+### Question #26
+
+DRAG DROP 
+
+
+You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
+
+You configure an Azure Monitor alert that is triggered when WebApp1 generates an error.
+
+You need to configure the alert to forward details of the error to a third-party system. The solution must minimize administrative effort. Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+![Alt Image Text](../images/az400_2_32.png)
+
+To forward **Azure Monitor alert details** to a third-party system with **minimal administrative effort**, the best approach is to use **Azure Logic Apps** triggered by an HTTP webhook from **Azure Monitor**.
+
+Azure Monitor **Action Groups** can call a **webhook**, and a Logic App can expose an **HTTP request trigger** endpoint.
+
+
+Correct order of actions
+
+- 1️⃣ **Create an Azure logic app.**
+- 2️⃣ **Select the HTTP request trigger.**
+- 3️⃣ **Update the action group in Azure Monitor.**
+
+Explanation
+
+* **Create Azure Logic App** → provides the workflow to send alert data to the third-party system.
+* **HTTP request trigger** → generates a **webhook endpoint URL** that Azure Monitor can call when the alert fires.
+* **Update the Azure Monitor Action Group** → configure it to send alert data to the Logic App endpoint.
+
+This approach avoids custom scripts or additional infrastructure.
+
+
+❌ Why the other options are incorrect
+
+| Option                 | Reason                                   |
+| ---------------------- | ---------------------------------------- |
+| Recurrence trigger     | Used for scheduled workflows, not alerts |
+| Sliding Window trigger | Used for streaming/event processing      |
+| Create Azure Event Hub | Adds unnecessary complexity              |
+
+
+✅ **Final sequence**
+
+1. **Create an Azure logic app**
+2. **Select the HTTP request trigger**
+3. **Update the action group in Azure Monitor**
+
+### Question #30
+
+DRAG DROP 
+
+You are using the Dependency Tracker extension in a project in Azure DevOps.
+
+You generate a risk graph for the project.
+
+What should you use in the risk graph to identify the number of dependencies and the risk level of the project? To answer, drag the appropriate elements to the correct data points. Each element may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_33.png)
+
+In the **Dependency Tracker risk graph** in **Azure DevOps**, different visual properties represent different metrics.
+
+Correct mapping
+
+| Data point                 | Element to use |
+| -------------------------- | -------------- |
+| **Number of dependencies** | **Link width** |
+| **Risk level**             | **Node color** |
+
+Explanation
+
+* **Link width** → Thicker links indicate **more dependencies** between items.
+* **Node color** → Colors (for example green/yellow/red) represent the **risk level** of the node/project.
+
+Why the other options are incorrect
+
+* **Link color** → Typically used for relationship types, not dependency counts.
+* **Link length** → Usually just layout spacing in graph visualization.
+
+✅ **Final Answer**
+
+* **Number of dependencies → Link width**
+* **Risk level → Node color**
+
+
+
 ### Question-53
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
@@ -4551,9 +5051,27 @@ Why the solution fails
 
 > “From Azure Monitor, create an action group”
 
-❌ Missing alert rule
-❌ No trigger condition
-❌ No scale-event detection
+- ❌ Missing alert rule
+- ❌ No trigger condition
+- ❌ No scale-event detection
+
+#### Question-54 (1)
+
+Solution: From Azure Monitor, configure the autoscale settings.
+
+The correct answer is **A. Yes**.
+
+Explanation:
+
+Azure Virtual Machine Scale Sets use **Autoscale settings** (managed through Azure Monitor) to define the rules for scaling. Within the configuration of these autoscale settings, there is a dedicated **Notify** tab.
+
+In this section, you can:
+
+1.  Check a box to send email notifications to subscription administrators and co-administrators.
+2.  Specify **additional custom email addresses** to be notified whenever an autoscale action (Scale In or Scale Out) occurs.
+
+Because this feature is built directly into the autoscale configuration within Azure Monitor, the proposed solution meets the goal.
+
 
 ### Question-55
 
@@ -4617,6 +5135,10 @@ Final Answer:
 Answer: AB
 
 To entirely remove unwanted files from a repository's history you can use either the git filter-branch command or the BFG Repo-Cleaner open source tool.
+
+## Topic 4 - Question Set 4
+
+
 
 
 
@@ -7815,11 +8337,13 @@ NOTE: Each correct selection is worth one point.
 
 
 * A. Create an Azure Monitor workbook.
-* **B. Create an Azure logic app that has an HTTP request trigger.**
+* B. Create an Azure logic app that has an HTTP request trigger.
 * C. Create an Azure logic app that has an Azure DevOps trigger.
-* **D. Modify an action group in Azure Monitor.**
+* D. Modify an action group in Azure Monitor.
 * E. Modify the Diagnostics settings in Azure Monitor,
 
+
+----------
 
 The correct answers are:
 
