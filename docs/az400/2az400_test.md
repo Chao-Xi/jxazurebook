@@ -5283,7 +5283,7 @@ You plan to create a release pipeline that will deploy resources by using Azure 
 
 You need to recommend a solution for accessing the secrets stored in the key vault during deployments. The solution must use the principle of least privilege.
 
-What should you include in the recommendation? To answer, drag the appropriate con¬gurations to the correct targets. Each con¬guration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+What should you include in the recommendation? To answer, drag the appropriate configurations to the correct targets. Each configuration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -5677,6 +5677,530 @@ Correct Answer
 
 *(Because HTTPS-only enforcement ensures encrypted communication.)*
 
+
+### Question #24
+
+
+You use GitHub Enterprise Server as a source code repository.
+
+You create an Azure DevOps organization named Contoso.
+
+In the Contoso organization, you create a project named Project1.
+
+You need to link GitHub commits, pull requests, and issues to the work items of Project1. The solution must use OAuth-based authentication. Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Actions
+
+- From Developer settings in GitHub Enterprise Server, register a new OAuth app.
+- From Project Settings in Azure DevOps, create a service hook subscription.
+- From Organization settings in Azure DevOps, connect to Azure Active Directory (Azure AD).
+- From Project Settings in Azure DevOps, add a GitHub connection.
+- From Organization settings in Azure DevOps, add an OAuth configuration.
+- From Developer settings in GitHub Enterprise Server, generate a private key.
+
+--------------
+
+
+To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Azure DevOps work items using OAuth-based authentication, you should perform these three actions in the following sequence:
+
+**Answer Area**
+
+1.  **From Developer settings in GitHub Enterprise Server, register a new OAuth app.**
+2.  **From Organization settings in Azure DevOps, add an OAuth configuration.**
+3.  **From Project Settings in Azure DevOps, add a GitHub connection.**
+
+**Explanation:**
+
+*   **Step 1:** First, you must go to your GitHub Enterprise Server instance and **register a new OAuth app**. This process generates the **Client ID** and **Client Secret** that Azure DevOps will need to authenticate and communicate with your private GitHub server.
+*   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
+*   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
+
+### Question-25
+
+DRAG DROP 
+
+You are configuring an Azure DevOps deployment pipeline. The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.
+
+You need to use the secret in the deployment pipeline.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions**
+
+- Create a service principal in Azure Active Directory (Azure AD).
+- Add an app registration in Azure Active Directory (Azure AD).
+- Configure an access policy in the key vault.
+- Generate a self-signed certificate.
+- Add an Azure Resource Manager service connection to the pipeline.
+- Export a certificate from the key vault.
+
+**Answer Area**
+
+------
+
+
+To configure an Azure DevOps deployment pipeline to use a secret from Azure Key Vault, you should perform these three actions in this sequence:
+**Answer Area**
+
+1.  **Create a service principal in Azure Active Directory (Azure AD).**
+2.  **Configure an access policy in the key vault.**
+3.  **Add an Azure Resource Manager service connection to the pipeline.**
+
+**Explanation:**
+
+*   **Step 1: Create a service principal in Azure Active Directory (Azure AD).**
+    You first need to create a dedicated identity (the Service Principal) that Azure DevOps will use to communicate with your Azure subscription. This identity consists of an Application ID and a Client Secret (or certificate).
+
+*   **Step 2: Configure an access policy in the key vault.**
+    Once the Service Principal is created, you must go to the Azure Key Vault and create an **Access Policy**. You select the Service Principal from Step 1 as the principal and grant it the **Secret: Get** and **Secret: List** permissions. This authorization ensures that when the pipeline attempts to fetch the secret, the Key Vault will allow the request.
+
+*   **Step 3: Add an Azure Resource Manager service connection to the pipeline.**
+    Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
+
+### Question #26
+
+DRAG DROP You have a private project in Azure DevOps and two users named User1 and User2.
+
+You need to add User1 and User2 to groups to meet the following requirements:
+
+✑ User1 must be able to create a code wiki.
+
+✑ User2 must be able to edit wiki pages.
+
+✑ The solution must use the principle of least privilege.
+
+
+To which group should you add each user? To answer, drag the appropriate groups to the correct users. Each group may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**Groups**
+
+- Build Administrators
+- Contributors
+- Project Administrators
+- Project Valid Users
+- Stakeholders
+
+Answer Area
+
+- User1:
+- User2:
+
+------
+
+To meet the requirements for Azure DevOps wiki management while following the principle of least privilege, the users should be added to the following groups:
+
+**Answer Area**
+
+*   **User1:** **Project Administrators**
+*   **User2:** **Contributors**
+
+**Explanation:**
+
+1.  **User1 (Create a code wiki):**
+
+    In Azure DevOps, there is a distinction between a "Project Wiki" (provisioned) and a "**Code Wiki**" (published from a Git repository). To publish code as a wiki, a user requires the **Manage Wiki** permission. By default, this permission is granted only to the **Project Administrators** group. While you could technically grant this permission to a specific user, within the context of the standard Azure DevOps security groups, Project Administrator is the role required to create/manage the wiki structure itself.
+
+3.  **User2 (Edit wiki pages):**
+
+   
+    The **Contributors** group is the standard group for team members who need to perform day-to-day tasks. Members of the Contributors group have the necessary permissions to create, edit, and delete pages within an existing wiki by default. 
+
+**Why not others?**
+
+*   **Stakeholders:** In a private project, Stakeholders have very limited access and generally cannot edit wiki pages.
+*   **Build Administrators:** This group is focused on CI/CD pipeline management and does not grant specific wiki management rights.
+*   **Project Valid Users:** This is a system group that includes everyone in the project; it is not used to grant specific functional permissions like editing or creating wikis.
+
+
+### Question #27
+
+You use WhiteSource Bolt to scan a Node.js application.
+
+The WhiteSource Bolt scan identifies numerous libraries that have invalid licenses. The libraries are used only during development and are not part of a production deployment.
+
+You need to ensure that WhiteSource Bolt only scans production dependencies.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Run npm install and specify the --production flag.
+
+B. Modify the WhiteSource Bolt policy and set the action for the licenses used by the development tools to Reassign.
+
+C. Modify the devDependencies section of the project's Package.json file.
+
+D. Configure WhiteSource Bolt to scan the node_modules directory only.
+
+---------
+
+
+To ensure WhiteSource Bolt (now Mend) only scans production dependencies and ignores libraries with invalid licenses used during development, you should perform the following two actions:
+
+**A. Run `npm install` and specify the `--production` flag.**
+
+**D. Configure WhiteSource Bolt to scan the `node_modules` directory only.**
+
+Explanation:
+
+1.  **Run `npm install --production` (A):** In a Node.js environment, this command ensures that only the packages listed under the `dependencies` section of your `package.json` are installed. It explicitly skips everything in the `devDependencies` section. This effectively "cleans" the build environment so that development-only libraries are physically absent from the disk.
+
+2.  **Configure WhiteSource Bolt to scan the `node_modules` directory only (D):** By default, WhiteSource Bolt scans the entire project directory, including manifest files like `package.json`. Even if you didn't install the dev dependencies, the scanner might still "see" them listed in the `package.json` file and report them as risks. By directing the scanner to look **only** at the `node_modules` folder, you force it to report on the actual files present on the disk. Since you only installed production dependencies in the previous step, only those will be scanned.
+
+Why other options are incorrect:
+
+*   **B (Policy/Reassign):** WhiteSource Bolt is a simplified, free version of the full Mend product. It lacks the advanced policy engine and "Reassign" workflow features found in the Enterprise version.
+*   **C (Modify devDependencies):** The prompt states the libraries are already identified as development-only. Modifying the `package.json` file to move them wouldn't change the scanner's behavior unless you also performed the production-only install and targeted scan.
+
+
+### Question #28
+
+After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+
+You plan to update the Azure DevOps strategy of your company.
+
+You need to identify the following issues as they occur during the company's development process:
+
+✑ Licensing violations 
+
+
+✑ Prohibited libraries Solution: You implement continuous integration.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+--------
+
+
+The correct answer is **B. No**.
+
+Explanation:
+
+While implementing **Continuous Integration (CI)** is a prerequisite for automating these checks, the CI process itself does not identify licensing violations or prohibited libraries. 
+
+A standard CI pipeline is designed to automate the building and testing of code. To identify licensing issues and prohibited libraries, you must integrate a **Software Composition Analysis (SCA)** tool—such as **WhiteSource Bolt (Mend)**, **Snyk**, or **Black Duck**—into your CI pipeline. 
+
+Without the specific scanning tool, the CI pipeline will successfully build the application but will remain unaware of any legal or policy risks within the third-party dependencies.
+
+
+### Question #33
+
+Your company has an Azure subscription.
+
+The company requires that all resource groups in the subscription have a tag named organization set to a value of Contoso. You need to implement a policy to meet the tagging requirement.
+
+How should you complete the policy? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+```json
+{
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": [Dropdown 1]
+        },
+        {
+          "not": {
+            "field": "tags['organization']",
+            "equals": "Contoso"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": [Dropdown 2],
+      "details": [
+        {
+          "field": "tags['organization']",
+          "value": "Contoso"
+        }
+      ]
+    }
+  }
+}
+```
+
+**Dropdown Options**
+
+**Dropdown 1 (field: "type"):**
+
+*   "Microsoft.Resources/deployments"
+*   "Microsoft.Resources/subscriptions"
+*   "Microsoft.Resources/subscriptions/resourceGroups"
+
+**Dropdown 2 (effect):**
+
+*   "Append"
+*   "Deny"
+*   "DeployIfNotExists"
+
+--------
+
+To complete the Azure Policy to ensure all resource groups have the required tag, you should select the following options:
+
+**Answer Area**
+
+*   **Dropdown 1 (field: "type"):** **"Microsoft.Resources/subscriptions/resourceGroups"**
+*   **Dropdown 2 (effect):** **"Append"**
+
+**Explanation:**
+
+1.  **Dropdown 1 ("Microsoft.Resources/subscriptions/resourceGroups"):**
+
+    The requirement specifically states that "all **resource groups**" must have the tag. In Azure Resource Manager, the specific resource type for a resource group is `Microsoft.Resources/subscriptions/resourceGroups`. Targeting this type ensures the policy only evaluates resource groups and not the resources contained within them.
+
+2.  **Dropdown 2 ("Append"):**
+
+   
+    The **Append** effect is used to add fields to a resource during creation or update. The JSON structure in the "then" block (containing `"details"` with a `"field"` and `"value"`) is the specific syntax used by the Append effect. 
+    *   **Logic:** If the resource is a Resource Group AND the `organization` tag is not already set to `Contoso`, the policy will automatically **append** (add) that tag to the resource group upon deployment.
+    *   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
+    *   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
+
+### Question #34
+
+You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication. What should you do first?
+
+A. Create a conditional access policy in Azure AD.
+
+B. Register GitHub in Azure AD.
+
+C. Create an Azure Active Directory B2C (Azure AD B2C) tenant.
+
+D. Modify the Security settings of the GitHub organization.
+
+---------
+
+The correct answer is **B. Register GitHub in Azure AD.**
+
+Explanation:
+
+To configure Single Sign-On (SSO) between GitHub and Azure Active Directory (now Microsoft Entra ID), you are establishing a relationship where Azure AD acts as the **Identity Provider (IdP)** and GitHub acts as the **Service Provider (SP)**.
+
+1.  **Why Register First:** Before you can configure settings in GitHub, Azure AD needs to know that GitHub is a trusted application. You do this by adding the "GitHub Enterprise Cloud" application from the Azure AD Gallery. This "registration" provides you with the essential pieces of information required by GitHub:
+    *   The **SAML Signing Certificate**.
+    *   The **Login URL**.
+    *   The **Azure AD Identifier (Entity ID)**.
+2.  **Why not D (Modify GitHub settings):** You cannot complete the security settings in GitHub until you have the URLs and the certificate generated by the Azure AD registration process. 
+3.  **Why not A (Conditional Access):** Conditional Access policies are applied to an existing application registration to enforce rules (like MFA). You must register the app before you can apply a policy to it.
+4.  **Why not C (Azure AD B2C):** B2C is used for consumer-facing applications. Standard organizational integration uses a standard Azure AD tenant.
+
+**The standard workflow is:**
+
+1.  **Register GitHub** in Azure AD (Add the Enterprise Application).
+2.  Configure the **Identifier** and **Reply URL** in Azure AD.
+3.  Copy the **SAML details** from Azure AD.
+4.  Navigate to GitHub **Security settings** and enable SAML SSO using those details.
+
+### Question #35
+
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1.
+
+You need to prevent releases from being deployed unless the releases comply with the Azure Policy rules assigned to Sub1. What should you do in the release pipeline of Project1?
+
+A. Add a deployment gate.
+
+B. Modify the Deployment queue settings.
+
+C. Configure a deployment trigger.
+
+D. Create a pipeline variable
+
+-------
+
+The correct answer is **A. Add a deployment gate**.
+
+Explanation:
+
+Azure Pipelines includes a specific feature called **Deployment Gates** designed to integrate with external systems to validate the health and compliance of a release before it is allowed to deploy to an environment.
+
+*   **How it works:** You can add a pre-deployment gate called **Check Azure Policy compliance**.
+*   **The Process:** When a release starts, the pipeline pauses at the gate. Azure DevOps then queries the **Azure Policy** service to check the compliance status of the resources in the target subscription or resource group.
+*   **The Result:** If the resources are found to be non-compliant with the assigned Azure Policies, the gate will fail, and the release will be prevented from proceeding. You can configure the gate to re-evaluate at specific intervals until the timeout is reached.
+
+Why the other options are incorrect:
+
+*   **B. Deployment queue settings:** These settings control how many releases can run concurrently or how to handle multiple waiting releases. They have no mechanism for policy validation.
+*   **C. Deployment trigger:** Triggers (like "Continuous Deployment" or "Scheduled") determine *when* a release starts, but they do not perform security or compliance checks.
+*   **D. Pipeline variable:** Variables simply store data (like connection strings or environment names); they do not have the logic to enforce compliance rules.
+
+### Question #36
+
+DRAG DROP You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
+
+You plan to use Azure Container Instances as a hosted development environment to run containers in the AKS implementation.
+
+You need to configure Azure Container Instances as a hosted environment for running the containers in AKS.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions**
+
+Run helm init.
+
+Run az aks install-connector.
+
+Create a YAML file.
+
+Run az role assignment create
+
+Run kubectl apply.
+
+----------
+
+
+To use **Azure Container Instances** as a hosted development environment with **Azure Kubernetes Service**, you are essentially enabling the **virtual node (ACI connector)** for AKS.
+
+With RBAC enabled, the correct sequence focuses on:
+
+1. Installing the ACI connector
+2. Defining the deployment
+3. Applying it to the cluster
+
+✅ Correct Order
+
+1. **Run `az aks install-connector`**
+   → Installs the ACI connector (virtual node) into the AKS cluster.
+
+2. **Create a YAML file**
+   → Define the pod/deployment that will run on ACI (using virtual node).
+
+3. **Run `kubectl apply`**
+   → Deploy the YAML configuration to the cluster.
+
+❌ Why not the others?
+
+* **Run helm init** → Deprecated (Helm v3 doesn’t require it)
+* **Run az role assignment create** → Not required for this setup in this context
+* YAML must exist before applying, so order matters
+
+🧠 Quick exam tip
+
+Whenever you see:
+
+* **AKS + ACI + hosted/virtual node**
+  → Think:
+  **install connector → define workload → deploy (kubectl apply)**
+
+
+
+### Question #39
+
+You administer an Azure DevOps project that includes package feeds.
+
+You need to ensure that developers can unlist and deprecate packages. The solution must use the principle of least privilege. Which access level should you grant to the developers?
+
+A. Collaborator
+
+B. Contributor
+
+C. Owner
+
+----------
+
+In **Azure Artifacts**, feed roles determine what users can do with packages:
+
+* **Collaborator (Reader)** → Can view and download packages only
+* **Contributor** → Can publish, update, **unlist, and deprecate packages**
+* **Owner** → Full control including permissions management
+
+Requirement
+
+* Developers must **unlist and deprecate packages**
+* Must follow **least privilege**
+
+Conclusion
+
+* **Contributor** provides exactly the required permissions without over-privileging
+
+✅ **Correct Answer: B. Contributor**
+
+
+### Question #40
+
+![Alt Image Text](../images/az400_2_39.png)
+
+---------
+
+Based on the exhibits provided, here is the analysis and the solution for the Hot Area.
+
+**Analysis of Exhibits**
+
+1.  **Teams Exhibit:** There are three teams in the "Contoso" project: **Contoso Team**, **DB Team**, and **Web Team**.
+2.  **Permissions Exhibit:** You are viewing the **Dashboards** permissions specifically for the **Contoso Team**. For this group, the following permissions have been explicitly toggled **OFF** (Greyed out):
+    *   Create dashboards
+    *   Edit dashboards
+    *   Delete dashboards
+3.  **Global Context:** The prompt states that "All other permissions have the **default values** set." By default in Azure DevOps, members of the **Contributors** group (which team members belong to) have permissions to create, edit, and delete dashboards.
+
+**Answer Area**
+
+| Statement | Yes | No |
+| :--- | :---: | :---: |
+| Members of the **Contoso Team** can create a new dashboard. | | **[X]** |
+| Members of the **DB Team** can edit Dash1. | **[X]** | |
+| Members of the **Web Team** can delete Dash1. | **[X]** | |
+
+**Explanation**
+
+*   **Statement 1 (No):** The permissions exhibit explicitly shows that for the **Contoso Team**, the "Create dashboards" permission is toggled off. This explicit setting overrides any default project permissions.
+*   **Statement 2 (Yes):** No specific permissions were modified for the **DB Team**. Therefore, they use the **default values**. In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.
+*   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
+
+### Question #42
+
+
+DRAG DROP You are implementing a package management solution for a Node.js application by using Azure Artifacts.
+
+
+
+You need to configure the development environment to connect to the package repository. The solution must minimize the likelihood that credentials will be leaked.
+
+Which file should you use to configure each connection? To answer, drag the appropriate files to the correct connections. Each file may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+Files
+
+- The .npmrc file in the project
+- The .npmrc file in the user’s home folder
+- The Package.json file in the project
+- The Project.json file in the project
+
+- Feed registry information:
+- Credentials:
+
+---------
+
+To configure a Node.js development environment to connect to Azure Artifacts while minimizing the risk of leaking credentials, use the following configuration:
+
+**Answer Area**
+
+*   **Feed registry information:** **The .npmrc file in the project**
+*   **Credentials:** **The .npmrc file in the user’s home folder**
+
+**Explanation:**
+
+1.  **Feed registry information:** To ensure that all developers working on the project use the correct Azure Artifacts feed, the registry URL should be stored in the **`.npmrc` file within the project's root directory**. This file is typically checked into source control (Git) so that the configuration is consistent across the team. Since the feed URL itself is not a secret, this is the standard and safe practice.
+
+2.  **Credentials:** To follow the requirement of **minimizing the likelihood that credentials will be leaked**, you must never store authentication tokens (like a Personal Access Token) in a file that is checked into source control. Instead, credentials should be stored in the **global `.npmrc` file located in the user's home folder** (`~/.npmrc` on Linux/macOS or `%USERPROFILE%\.npmrc` on Windows). This file remains local to the developer's machine and is not part of the project repository, preventing secrets from being accidentally pushed to the server.
 
 ### Question-56
 
@@ -6387,8 +6911,11 @@ Which service should you use?
 
 * A. Ansible
 * B. Maven
-* **C. White Source Bolt**
+* C. White Source Bolt
 * D. Helm
+
+-----------
+
 
 The correct answer is:
 
@@ -6445,6 +6972,9 @@ What should you use?
 
 The correct answer is:
 
+----
+
+
 **D. SonarQube** ✅
 
 Explanation:
@@ -6492,8 +7022,10 @@ What should you use?
 
 * A. Microsoft Visual SourceSafe
 * B. Code Style
-* **C. Black Duck**
+* C. Black Duck
 * D. Jenkins
+
+-----------
 
 The correct answer is:
 
