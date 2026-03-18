@@ -6202,6 +6202,447 @@ To configure a Node.js development environment to connect to Azure Artifacts whi
 
 2.  **Credentials:** To follow the requirement of **minimizing the likelihood that credentials will be leaked**, you must never store authentication tokens (like a Personal Access Token) in a file that is checked into source control. Instead, credentials should be stored in the **global `.npmrc` file located in the user's home folder** (`~/.npmrc` on Linux/macOS or `%USERPROFILE%\.npmrc` on Windows). This file remains local to the developer's machine and is not part of the project repository, preventing secrets from being accidentally pushed to the server.
 
+### Question #43
+
+
+You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries. You need to ensure that the project can be scanned for known security vulnerabilities in the open source libraries.
+
+What should you do? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+**Answer Area** 
+
+**Object to create:**
+
+- A build task
+- A deployment task
+- An artifacts repository
+
+**Service to use:**
+
+- WhiteSource Bolt
+- Bamboo
+- CMake
+- Chef
+
+--------
+
+To ensure that your project is scanned for known security vulnerabilities in open-source libraries, the correct selections are:
+
+**Answer Area**
+
+*   **Object to create:** **A build task**
+*   **Service to use:** **WhiteSource Bolt**
+
+Explanation:
+
+1.  **Service to use (WhiteSource Bolt):** WhiteSource Bolt (now known as Mend) is a Software Composition Analysis (SCA) tool specifically integrated into Azure DevOps. Its primary purpose is to scan your project's open-source dependencies (like your 50 libraries) to identify known security vulnerabilities and license compliance issues.
+2.  **Object to create (A build task):** To automate this process within a CI/CD workflow, you add the WhiteSource Bolt extension to your project and then add a **build task** to your pipeline. This ensures that the scan runs automatically every time a build is triggered, allowing you to catch vulnerabilities before the code is even ready for deployment.
+
+**Why not other options?**
+*   **Bamboo** is a competing CI/CD platform.
+*   **CMake** is a build system generator.
+*   **Chef** is an infrastructure configuration management tool.
+*   **A deployment task** is too late in the process; security scanning should happen during the build (CI) phase to "shift left" security.
+
+
+### Question #45
+
+
+You plan to use Azure Kubernetes Service (AKS) to host containers deployed from images hosted in a Docker Trusted Registry.
+
+You need to recommend a solution for provisioning and connecting to AKS. The solution must ensure that AKS is RBAC-enabled and uses a custom service principal.
+
+Which three commands should you recommend be run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+Commands
+
+- az role assignment create
+- az aks get-credentials
+- az aks create
+- az ad sp create-for-rbac
+- kubectl create
+
+**Answer Area**
+
+----------
+
+
+To provision an Azure Kubernetes Service (AKS) cluster that is RBAC-enabled and uses a custom service principal, you should run the following three commands in sequence:
+
+**Answer Area**
+
+1.  **`az ad sp create-for-rbac`**
+2.  **`az aks create`**
+3.  **`az aks get-credentials`**
+
+**Explanation:**
+
+1.  **`az ad sp create-for-rbac`**: Since the requirement specifies using a **custom service principal**, you must create this identity first. This command creates a Service Principal in Azure Active Directory (Microsoft Entra ID) and returns the `appId` and `password` (client secret) required by the AKS cluster to interact with other Azure resources (like Load Balancers or Managed Disks).
+
+2.  **`az aks create`**: This is the primary command to provision the cluster. You will pass the `appId` and `password` from the previous step into this command using the `--service-principal` and `--client-secret` parameters. By default, `az aks create` enables RBAC (unless `--disable-rbac` is specified), meeting the requirement.
+
+3.  **`az aks get-credentials`**: Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
+
+
+### Question #48
+
+You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
+
+You need to ensure that Pipeline1 can deploy code successfully to an Azure web app named webapp1. The solution must ensure that Pipeline2 does not have permission to webapp1.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions**
+
+- Create a service principal in Azure Active Directory.
+- In Project1, create a service connection.
+- In Pipeline1, authorize the service connection.
+- Create a system-assigned managed identity in Azure Active Directory.
+- In Project1, configure permissions.
+- In Pipeline1, create a variable.
+
+**Answer Area**
+
+----------------
+
+To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restricted, you should perform the following three actions in sequence:
+
+**Answer Area**
+
+1.  **Create a service principal in Azure Active Directory.**
+2.  **In Project1, create a service connection.**
+3.  **In Project1, configure permissions.**
+
+**Explanation:**
+
+1.  **Create a service principal in Azure Active Directory:** 
+    - A Service Principal is the identity that allows Azure DevOps to authenticate with your Azure subscription. You must create this identity first (manually or via the automated setup) to establish the link to `webapp1`.
+
+2.  **In Project1, create a service connection:** 
+    - Once the Service Principal exists, you create an **Azure Resource Manager service connection** in `Project1`. This connection uses the Service Principal to provide the pipeline with the necessary authorization to perform deployments to the subscription where `webapp1` resides.
+
+3.  **In Project1, configure permissions:** 
+    - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
+
+
+### Question #49
+
+You need to increase the security of your team's development process.
+
+Which type of security tool should you recommend for each stage of the development process? To answer, drag the appropriate security tools to the correct stages. Each security tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**Security Tools**
+
+- Penetration testing  
+- Static code analysis  
+- Threat modeling  
+
+**Answer Area**
+
+- Pull request: [______]  
+- Continuous integration: [______]  
+- Continuous delivery: [______]
+
+-------
+
+
+To secure a development pipeline in **Azure DevOps**, align each security practice with the stage where it is most effective:
+
+---
+
+✅ Correct Mapping
+
+* **Pull request:** → **Threat modeling**
+* **Continuous integration:** → **Static code analysis**
+* **Continuous delivery:** → **Penetration testing**
+
+💡 Explanation
+
+* **Threat modeling (PR stage)**
+  → Evaluate design and code changes early to identify potential security risks before merging.
+
+* **Static code analysis (CI stage)**
+  → Automatically scans source code for vulnerabilities during builds.
+
+* **Penetration testing (CD stage)**
+  → Simulates real-world attacks against deployed applications before/after release.
+
+
+🧠 Exam tip
+
+Think of the flow:
+
+* **Before merge (PR)** → *Think about threats*
+* **During build (CI)** → *Scan code*
+* **After deploy (CD)** → *Attack/test system*
+
+
+### Question #50
+
+You plan to use a NuGet package in a project in Azure DevOps. The NuGet package is in a feed that requires authentication. You need to ensure that the project can restore the NuGet package automatically.
+
+What should the project use to automate the authentication?
+
+A. an Azure Automation account
+
+B. an Azure Artifacts Credential Provider
+
+C. an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
+
+D. an Azure Active Directory (Azure AD) service principal
+
+-----------
+
+
+To automatically restore a NuGet package from an authenticated feed in **Azure DevOps**, the solution must handle authentication **non-interactively** during builds.
+
+Key point
+
+* Builds and restores run in automated pipelines → **no manual sign-in**
+* Therefore, you need a mechanism that can **securely supply credentials automatically**
+
+Correct approach
+
+The **Azure Artifacts Credential Provider** is designed specifically for this:
+
+* Integrates with NuGet tooling
+* Automatically retrieves and injects credentials for Azure Artifacts feeds
+* Works seamlessly in CI/CD pipelines
+
+
+❌ Why not the others?
+
+* **Azure Automation account** → Not used for package authentication
+* **Azure AD account with MFA** → Requires interactive login (not suitable for automation)
+* **Azure AD service principal** → Not directly used for NuGet feed authentication in this scenario
+
+✅ Final Answer
+
+**B. an Azure Artifacts Credential Provider**
+
+ 🧠 Exam tip
+
+If you see **“NuGet + Azure DevOps + automatic restore/authentication”**, the answer is almost always:
+
+➡️ **Credential Provider**
+
+### Question #52
+
+You use Azure Pipelines to manage project builds and deployments.
+
+You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release. You need to con¬gure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams. What should you turn on?
+
+A. Third-party application access via OAuth
+
+B. Azure Active Directory Conditional Access Policy Validation
+
+C. Alternate authentication credentials
+
+D. SSH authentication
+
+--------
+
+To integrate **Azure Pipelines** with **Microsoft Teams**, Azure DevOps must allow external apps (like Teams) to connect and receive notifications.
+
+Key requirement
+
+* Teams integration relies on **OAuth** to securely connect Azure DevOps with external services.
+
+Evaluation of options
+
+* **A. Third-party application access via OAuth** ✅
+  → Enables external apps (like Microsoft Teams) to authenticate and integrate with Azure DevOps.
+
+* B. Azure AD Conditional Access Policy Validation ❌
+  → Related to security policies, not integration enablement.
+
+* C. Alternate authentication credentials ❌
+  → Deprecated / legacy authentication method.
+
+* D. SSH authentication ❌
+  → Used for Git access, not service integrations.
+
+✅ Final Answer
+
+**A. Third-party application access via OAuth**
+
+🧠 Exam tip
+
+Whenever you see:
+
+* **“integrate Azure DevOps with Teams / external service”**
+
+   → Think: **OAuth must be enabled**
+
+
+### Question #53
+
+You have an existing project in Azure DevOps.
+
+You plan to integrate GitHub as the repository for the project.
+
+You need to ensure that Azure Pipelines runs under the Azure Pipelines identity. Which authentication mechanism should you use?
+
+A. personal access token (PAT)
+
+B. GitHub App
+
+C. Azure Active Directory (Azure AD)
+
+D. OAuth
+
+----
+
+
+To ensure that **Azure Pipelines** runs under the **Azure Pipelines identity** (not a user identity), you must use an authentication method that represents a **service/app**, not an individual user.
+
+Evaluation of options
+
+* **A. Personal Access Token (PAT)** ❌
+  → Tied to a specific user → violates requirement
+
+* **B. GitHub App** ✅
+  → Uses a dedicated **service identity ("Azure Pipelines")**
+  → Not tied to any individual user
+  → Recommended and most secure approach
+
+* **C. Azure Active Directory (Azure AD)** ❌
+  → Not used for GitHub integration in this scenario
+
+* **D. OAuth** ❌
+  → Authenticates as a user → not a service identity
+
+✅ Final Answer
+
+**B. GitHub App**
+
+🧠 Exam tip
+
+If the requirement says:
+
+* **“run as Azure Pipelines identity”** or
+* **“not tied to a user”**
+
+→ Always choose **GitHub App**, not OAuth or PAT.
+
+
+### Question #54
+
+You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
+
+You have an encryption key.
+
+You need to con¬gure Azure Monitor to use the key to encrypt log data.
+
+Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
+
+Select and Place:
+
+Actions
+
+- Configure the key vault properties for the cluster
+- Link the Log Analytics workspace to the cluster
+- Grant the system-assigned managed identity Key permissions for the key vault
+- Grant the system-assigned managed identity Certificate permissions for the key vault
+- Create an Azure Monitor Logs dedicated cluster that has a system-assigned managed identity
+- Create an Azure key vault and store the key
+
+Answer Area
+
+-----------
+
+
+To configure **customer-managed keys (CMK)** for encrypting log data in **Azure Monitor** with a **Log Analytics workspace**, you must use a **dedicated cluster** and integrate it with **Azure Key Vault**.
+
+✅ Correct Sequence
+
+1. **Create an Azure key vault and store the key**
+2. **Create an Azure Monitor Logs dedicated cluster that has a system-assigned managed identity**
+3. **Grant the system-assigned managed identity Key permissions for the key vault**
+4. **Configure the key vault properties for the cluster**
+5. **Link the Log Analytics workspace to the cluster**
+
+💡 Key Points
+
+* CMK for Azure Monitor **requires a dedicated cluster**
+* The cluster uses a **managed identity** to access the key
+* Only **Key permissions** are needed (not Certificate permissions ❌)
+* The workspace must be **linked after encryption is configured**
+
+❌ Incorrect Option
+
+* **Grant Certificate permissions** → Not required for encryption keys
+
+🧠 Exam tip
+
+Whenever you see **Azure Monitor + CMK**, think:
+
+➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
+
+### Question #55
+
+You have an Azure Key Vault that contains an encryption key named key1.
+
+You plan to create a Log Analytics workspace that will store logging data.
+
+You need to encrypt the workspace by using key1.
+
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions**
+
+- Link the workspace.
+- Register the Azure subscription to allow cluster creation.
+- Grant permissions to the key vault.
+- Create a Log Analytics cluster.
+- Enable soft delete for the key vault.
+
+**Answer Area**
+
+-------
+
+
+To encrypt a **Log Analytics workspace** using a customer-managed key from **Azure Key Vault**, you must use a **dedicated cluster-based encryption flow**.
+
+✅ Correct Sequence
+
+1. **Register the Azure subscription to allow cluster creation**
+2. **Create a Log Analytics cluster**
+3. **Grant permissions to the key vault**
+4. **Link the workspace**
+
+
+* **Register subscription** → Required to enable dedicated cluster resource provider
+* **Create cluster** → CMK encryption is applied at the cluster level
+* **Grant permissions** → The cluster’s managed identity must access the key
+* **Link workspace** → Workspace inherits encryption from the cluster
+
+❌ Why not the others?
+
+* **Enable soft delete for the key vault** → Recommended best practice, but **not required** in this sequence for the exam scenario
+
+🧠 Exam tip
+
+For **Azure Monitor CMK questions**, remember:
+
+➡️ **Register → Cluster → Permissions → Link workspace**
+
+
+
 ### Question-56
 
 You plan to provision a self-hosted Linux agent.
@@ -6326,6 +6767,117 @@ Answer: B
 
 Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.
 
+
+### Question #57
+
+DRAG DROP You need to deploy a new project in Azure DevOps that has the following requirements:
+
+* The lead developer must be able to create repositories, manage permissions, manage policies, and contribute to the repository.
+
+* Developers must be able to contribute to the repository and create branches, but NOT bypass policies when pushing builds.
+
+* Project managers must only be able to view the repository.
+
+* The principle of least privilege must be used.
+
+You create a new Azure DevOps project team for each role.
+
+To which Azure DevOps groups should you add each team? To answer, drag the appropriate groups to the correct teams. Each group may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Azure DevOps groups
+
+- Build Administrators
+- Contributors
+- Project Administrators
+- Project Collection Administrators
+- Project Collection Valid Users
+- Readers
+
+Answer Area
+
+- Project manager:
+- Lead developer:
+- Developer:
+
+---------
+
+To deploy the project while following the principle of least privilege and meeting the functional requirements, you should assign the roles to the following Azure DevOps groups:
+
+**Answer Area**
+
+*   **Project manager:** **Readers**
+*   **Lead developer:** **Project Administrators**
+*   **Developer:** **Contributors**
+
+**Explanation:**
+
+1.  **Project manager (Readers):**
+   
+    The requirement is for them to "only be able to view the repository." The **Readers** group provides read-only access to the project's contents, including the source code, without allowing any modifications or contributions.
+
+3.  **Lead developer (Project Administrators):**
+
+
+    The lead developer needs to "create repositories, manage permissions, and manage policies." In Azure DevOps, these administrative tasks—specifically managing security permissions and setting up branch policies—require the **Project Administrators** role. While "Contributors" can push code, they do not have the rights to manage the repository's security or structure.
+
+4.  **Developer (Contributors):**
+
+
+    Developers must "contribute and create branches." The **Contributors** group is the standard role for day-to-day development work. Crucially, by default, members of the Contributors group are **not** allowed to bypass branch policies (the "Exempt from policy enforcement" permission is not granted to them), which perfectly matches the requirement that they must not bypass policies when pushing builds.
+
+### Question #58
+
+You have an Azure subscription that contains a project in Azure DevOps named Project1. You have three Azure Active Directory (Azure AD) users that require access to Project1 as shown in the following table.
+
+| Name    | Title    | Requirement    |
+|---|---|---|
+| User1   | Project Manager    | View repositories.    |
+| User2   | Development Lead    | Create repositories and manage permissions. |
+| User3   | Developer    | Create branches and tags.    |
+
+
+You need to ensure that the users have the appropriate permissions. The solution must use the principle of least privilege.
+
+To which permission group in Azure DevOps should you add each user? To answer, drag the appropriate permission groups to the correct users. Each permission group may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+Permission Groups
+
+- Build Administrators
+- Contributors
+- Project Administrators
+- Readers
+
+Answer Area
+
+- User1:
+- User2:
+- User3:
+
+------
+
+To assign permissions in **Azure DevOps** using the **principle of least privilege**, match each role to the minimum required access level:
+
+ ✅ Correct Mapping
+
+* **User1 (Project Manager – View repositories):** → **Readers**
+* **User2 (Development Lead – Create repos & manage permissions):** → **Project Administrators**
+* **User3 (Developer – Create branches and tags):** → **Contributors**
+
+💡 Explanation
+
+* **Readers** → Read-only access (view repositories)
+* **Contributors** → Can create branches, tags, and contribute code
+* **Project Administrators** → Full control, including managing repositories and permissions
+* **Build Administrators** → Only manages build pipelines (not relevant here)
+
+
+🧠 Exam tip
+
+* **View only** → Readers
+* **Code work (branches, commits)** → Contributors
+* **Manage permissions / repos** → Project Administrators
 
 
 
@@ -6674,6 +7226,68 @@ Open the Access Policies in the Key Vault and add a new one. Choose the principl
 
 
 
+### Question #62
+
+Your company has a project in Azure DevOps named Project1.
+
+All the developers at the company have Windows 10 devices.
+
+You need to create a Git repository for Project1. The solution must meet the following requirements:
+
+• Support large binary files.
+
+• Store binary files outside of the repository.
+
+• Use a standard Git worklow to maintain the metadata of the binary ¬les by using commits to the repository.
+
+
+Which three actions should you perform in sequence on each developer’s device? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Actions
+
+- Configure SSH key-based authentication.
+
+- Configure personal access token (PAT)-based authentication.
+
+- Perform a custom installation of Git for Windows that includes Git Virtual File System (GVFS).
+
+- Configure Git Large File Storage (LFS) file tracking.
+
+- Perform a custom installation of Git for Windows that includes Git Large File Storage (LFS).
+
+------
+
+To support **large binary files**, store them **outside the repository**, and still use a **standard Git workflow**, you should use **Git LFS** in **Azure DevOps**.
+
+
+
+ ✅ Correct Sequence
+
+1. **Perform a custom installation of Git for Windows that includes Git Large File Storage (LFS)**
+2. **Configure Git Large File Storage (LFS) file tracking**
+3. **Configure personal access token (PAT)-based authentication**
+
+💡 Explanation
+
+* **Git LFS** stores large binaries outside the Git repo while keeping metadata in commits
+* Installing Git with **LFS support** is required before using it
+* **LFS tracking** defines which file types (e.g., `.zip`, `.bin`) are stored externally
+* **PAT authentication** is required to securely connect to Azure DevOps repos
+
+❌ Why not the others?
+
+* **GVFS (Git Virtual File System)** → Used for very large repos, not for handling binary storage
+* **SSH authentication** → Optional, but PAT is the standard/recommended method in Azure DevOps exam scenarios
+
+🧠 Exam tip
+
+If requirements say:
+
+* **“large binary files” + “outside repo” + “Git workflow”**
+  → Always think: **Git LFS (install → track → authenticate)**
+
+
+
 ### Question-63
 
 Your company uses Azure DevOps.
@@ -6687,7 +7301,9 @@ What should you do?
 * A. Assign the Stakeholder access level to all users.
 * B. In Azure Active Directory, configure risky sign-ins.
 * C. In Azure DevOps, configure Security in Project Settings.
-* **D. In Azure Active Directory, configure conditional access.**
+* D. In Azure Active Directory, configure conditional access.
+
+----------------
 
 The correct answer is:
 
@@ -6899,6 +7515,67 @@ Answer: A
 
 Use a variable group to store values that you want to control and make available across multiple pipelines.
 
+### Question #65
+
+You have an Azure subscription that contains an Azure key vault named Vault1, an Azure pipeline named Pipeline1, and an Azure SQL database named DB1.
+
+Pipeline1 is used to deploy an app that will authenticate to DB1 by using a password.
+
+You need to store the password in Vault1. The solution must ensure that the password can be accessed by Pipeline1.
+
+What should you do? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Answer Area
+
+**Store the password as a:**
+
+- Certificate  
+- Key  
+- Secret  
+
+**Grant Pipeline1 access to Vault1 by modifying the:**
+
+- Access control (IAM) settings  
+- Access policies  
+- Security settings
+
+-------------
+
+For this scenario:
+
+You want to store a **password** in **Azure Key Vault** and allow an **Azure Pipeline** to retrieve it.
+
+ ✅ Correct Answers
+
+**Store the password as a:**
+
+* **Secret** ✅
+
+  * Passwords and other sensitive strings are stored as **secrets** in Key Vault.
+  * **Keys** are for cryptographic operations, and **certificates** are for TLS/PKI; neither is appropriate for plain passwords.
+
+**Grant Pipeline1 access to Vault1 by modifying the:**
+
+* **Access policies** ✅
+
+  * For Key Vault **secrets**, you grant permissions via **Key Vault access policies** (Get, List, etc.) for the managed identity of the pipeline.
+  * **IAM roles** can also be used for some scenarios, but the exam scenario typically expects **access policies** for secret access.
+
+💡 Explanation
+
+* Pipeline1 likely uses a **system-assigned managed identity** or **service connection**.
+* You configure **access policy** in Vault1 to **allow Get** on secrets for that identity.
+* Then Pipeline1 can retrieve the password securely during the deployment.
+
+✅ Answer Area
+
+- **Store the password as a:** Secret
+- **Grant Pipeline1 access to Vault1 by modifying the:** Access policies
+
+
+
 
 
 ### Question-66 - Duplicated
@@ -7011,6 +7688,63 @@ Final Answer:
 **D. SonarQube** ✅
 
 
+### Question #67
+
+You have a GitHub organization that contains three users named User1, User2, and User3. You have a project that contains a repository named repo1.
+
+You need to con¬gure permissions for repo1. The solution must meet the following requirements:
+
+• Ensure that User1 can actively push to repo1.
+
+• Ensure that User2 can manage issues and pull requests for repo1.
+
+• Ensure that User3 can manage repo1.
+
+• Prevent User3 from accessing sensitive data in repo1.
+
+Which role should you assign to each user? To answer, drag the appropriate roles to the correct users. Each role may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+**Roles**
+
+- Admin
+- Maintain
+- Read
+
+**Answer Area**
+
+- User1:
+- User2:
+- User3:
+
+
+------
+
+To meet the requirements for repository permissions in GitHub while following the principle of least privilege, you should assign the following roles:
+
+**Answer Area**
+
+*   **User 1:** **Write**
+*   **User 2:** **Triage**
+*   **User 3:** **Maintain**
+
+
+
+**Explanation:**
+
+1.  **User 1 (Write):** 
+    The **Write** role is the standard role for active contributors. It allows users to push code to the repository, create branches, and open pull requests. It provides the "push" access required without giving them management rights over the repository itself.
+
+2.  **User 2 (Triage):** 
+    The **Triage** role is designed for users who need to help organize the project without necessarily writing code. It allows users to manage issues and pull requests (applying labels, assigning users, closing/reopening), but it does **not** allow them to push code to the repository.
+
+3.  **User 3 (Maintain):** 
+    The requirement is to "manage the repo" while being "prevented from accessing sensitive data."
+    *   The **Admin** role allows full management but also grants access to **sensitive data** such as repository secrets, deployment keys, and the ability to delete or change the visibility of the repo.
+    *   The **Maintain** role is specifically designed for project managers. It allows them to manage almost all aspects of the repository (settings, wikis, labels, and organization) but **restricts access to sensitive data** like repository secrets. This perfectly matches the requirement for User 3.
+
+
 ### Question-68
 
 Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
@@ -7097,8 +7831,10 @@ Which service should you use?
 
 * A. NuGet
 * B. Maven
-* **C. Black Duck**
+* C. Black Duck
 * D. Helm
+
+-----
 
 The correct answer is:
 
@@ -7160,8 +7896,10 @@ Which file type should you upload to App Center?
 
 * A..cer
 * B..pfx
-* **C..p12**
+* C..p12
 * D..pvk
+
+------------
 
 The correct answer is:
 
@@ -7199,7 +7937,9 @@ What should you use?
 - A. OWASP ZAP
 - B. Jenkins
 - C. Code Style
-- **D. White Source Bolt**
+- D. White Source Bolt
+
+--------
 
 The correct answer is:
 
@@ -7444,10 +8184,12 @@ You need to prevent the values of the secrets from being logged.
 What should you do?
 
 
-- **A. Store the secrets in the environment variables instead of the pipeline variables.**
+- A. Store the secrets in the environment variables instead of the pipeline variables.
 - B. Pass the secrets on the command line instead of in the pipeline variables.
 - C.Apply a prefix of secret to the name of the variables.
 - D.Echo the values of the secrets to the command line.
+
+--------
 
 Answer: A
 
@@ -7502,7 +8244,7 @@ What should you do first?
 - A. Configure notifications when privileged roles are activated.
 - B. Configure alerts for the activation of privleged roles
 - C. Enforce Azure Multi-Factor Authentication (MFA) for role activation.
-- **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.**
+- D. Upgrade the license of the Azure Active Directory (Azure AD) 
 
 The correct answer is:
 
@@ -7614,10 +8356,12 @@ You have a GitHub Enterprise account.
 
 What should you do first?
 
-- **A. Purchase a GitHub Advanced Security license.**
+- A. Purchase a GitHub Advanced Security license.
 - B. Purchase Premium Plus support.
 - C. Enforce multi-factor authentication (MFA).
 - D. Create an access policy for secrets.
+
+------------
 
 Answer: A
 
@@ -7679,6 +8423,8 @@ Which type of identity should you use?
 - B. a user-assigned managed identity
 - C. a service principal
 - D. a user account
+
+-------
 
 
 The correct answer is:
@@ -7746,8 +8492,10 @@ You need to ensure that the secret can be used by all the workflows.
 What should you do first?
 
 - A. Recreate the secret at the organization level.
-- **B. Recreate the secret at the repository level.**
+- B. Recreate the secret at the repository level.
 - C. Enable required reviewers.
+
+----------
 
 The correct answer is:
 
