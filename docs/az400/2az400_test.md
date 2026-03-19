@@ -5092,6 +5092,8 @@ NOTE: Each correct selection is worth one point.
 * C. the git rebase command
 * D. GitHub Desktop
 
+-----------
+
 The correct answers are:
 
 **A. the `git filter-branch` command**
@@ -7820,6 +7822,65 @@ Other incorrect answer options you may see on the exam include the following:
 * SourceGear
 * SourceGear Vault 
 
+
+
+### Question #68
+
+You have an Azure key vault named KV1 and three web servers.
+
+You plan to deploy an app named App1 to the web servers.
+
+You need to ensure that App1 can retrieve a secret from KV1. The solution must meet the following requirements:
+
+• Minimize the number of permission grants required.
+
+• Follow the principle of least privilege.
+
+What should you include in the solution?
+
+A. role-based access control (RBAC) permission
+
+B. a system-assigned managed identity
+
+C. a user-assigned managed identity
+
+D. a service principal
+
+------
+
+To allow **App1** (running on multiple web servers) to access a secret in **Azure Key Vault** while minimizing permission assignments and following least privilege:
+
+✅ Correct Answer: **C. a user-assigned managed identity**
+
+💡 Why this is correct
+
+* A **user-assigned managed identity** can be **shared across multiple resources** (your three web servers).
+* You grant **Key Vault access once** to this identity.
+* All servers use the same identity → **fewer permission grants** ✅
+* You can scope access (e.g., **Get secret only**) → **least privilege** ✅
+
+❌ Why not the others?
+
+* **A. RBAC permission** → This is *how* you grant access, not the identity itself
+* **B. System-assigned managed identity** → Each server gets its own identity → requires **multiple permission grants** ❌
+* **D. Service principal** → Requires manual credential management → less secure than managed identities ❌
+
+🧠 Exam tip
+
+If you see:
+
+* **Multiple resources need same access**
+
+  → Use **user-assigned managed identity**
+
+If:
+
+* **Single resource**
+
+  → Use **system-assigned managed identity**
+
+
+
 ### Question-69
 
 
@@ -7882,6 +7943,61 @@ Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to aut
 
 The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
+### Question #69
+
+You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
+
+You need to scan the app image for vulnerabilities before the image is deployed to the cluster.
+
+What should you include in the solution?
+
+A. Microsoft Defender for Containers
+
+B. Microsoft Defender for App Service
+
+C. Microsoft Defender for DevOps
+
+D. Microsoft Defender for Storage
+
+--------
+
+
+To scan container images for vulnerabilities **before deployment** in a CI/CD pipeline using **Azure DevOps**, you need a tool that integrates with the **development pipeline**.
+
+✅ Correct Answer: **C. Microsoft Defender for DevOps**
+
+💡 Explanation
+
+* **Microsoft Defender for DevOps**:
+
+  * Integrates directly with Azure DevOps pipelines
+  * Scans container images and code during build
+  * Detects vulnerabilities **before deployment**
+  * Designed for **shift-left security**
+
+❌ Why not the others?
+
+* **A. Microsoft Defender for Containers**
+  → Focuses on runtime protection and post-deployment insights
+
+* **B. Microsoft Defender for App Service**
+  → Secures web apps, not container images in pipelines
+
+* **D. Microsoft Defender for Storage**
+  → Protects storage accounts, unrelated to container image scanning
+
+🧠 Exam tip
+
+If the question says:
+
+* **“scan before deployment” / “in pipeline”**
+  → Think **Defender for DevOps**
+
+If it says:
+
+* **“runtime protection” / “Kubernetes cluster security”**
+  → Think **Defender for Containers**
+
 
 ### Question-70  ✅✅✅
 
@@ -7924,6 +8040,45 @@ A successful IOS device build will produce an ipa file. In order to install the 
 
 To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (mobileprovision) and a valid certificate (p12), along with the password for the certificate.
 
+### Question #70
+
+DRAG DROP -
+
+You have an Azure Pipelines application CI/CD pipeline named Pipeline1.
+
+You need to add OWASP ZAP testing to Pipeline1.
+
+Which four actions should you add to Pipeline1 in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+**Actions**
+
+- Spider the site.
+- Report the results.
+- Run the baseline.
+- Start a container.
+- Pull OWASP ZAP weekly.
+- Run an active scan.
+
+**Answer Area**
+
+-------
+
+
+To integrate OWASP ZAP security testing into an Azure Pipelines CI/CD pipeline, you should perform the following four actions in sequence:
+
+**Answer Area**
+
+1.  **Pull OWASP ZAP weekly.**
+2.  **Start a container.**
+3.  **Run the baseline.**
+4.  **Report the results.**
+
+**Explanation:**
+
+1.  **Pull OWASP ZAP weekly:** This is the initial step where you download the latest Docker image of OWASP ZAP. Using the "weekly" build ensures you have the most up-to-date vulnerability definitions and features.
+2.  **Start a container:** Once the image is pulled, you must instantiate a Docker container. This creates an isolated environment where the ZAP proxy can run and perform its analysis on your application's endpoint.
+3.  **Run the baseline:** This is the actual execution of the security scan. In a standard CI/CD pipeline, you typically run a **baseline scan**. This is a passive scan that explores the application and identifies common security flaws (like missing headers or cross-site scripting risks) without performing aggressive "attacks" that might crash a testing environment.
+4.  **Report the results:** After the scan is complete, the generated findings must be converted into a format (such as JUnit or NUnit) that Azure Pipelines understands. This allows the results to be published and displayed directly in the "Tests" or "Security" tab of the pipeline run, enabling the build to fail if critical vulnerabilities are discovered.
 
 
 ### Question-71
@@ -7995,6 +8150,105 @@ Other incorrect answer options you may see on the exam include the following:
 4. SourceGear Vault
 
 
+### Question #71
+
+
+You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
+
+You need to identify security vulnerabilities in the open source code.
+
+What should you use?
+
+A. Mend Bolt
+
+B. Rollbar
+
+C. Code Climate
+
+D. DeepSource
+
+------
+
+
+To identify vulnerabilities in **open-source dependencies** within a project in **Azure Repos**, you need a tool specifically designed for **software composition analysis (SCA)**.
+
+---
+
+✅ Correct Answer: **A. Mend Bolt**
+
+ 💡 Explanation
+
+* **Mend Bolt** (formerly WhiteSource Bolt):
+
+  * Scans open-source libraries for known vulnerabilities
+  * Integrates directly with Azure DevOps pipelines
+  * Provides alerts and remediation guidance
+  * Designed specifically for **dependency security**
+
+❌ Why not the others?
+
+* **Rollbar** → Error monitoring, not security scanning
+* **Code Climate** → Code quality and maintainability
+* **DeepSource** → Static code analysis, not focused on open-source vulnerabilities
+
+ 🧠 Exam tip
+
+If the question says:
+
+* **“open-source libraries” + “vulnerabilities”**
+  → Think **Mend Bolt (WhiteSource)**
+
+
+### Question #72
+
+You manage code by using GitHub.
+
+You plan to use Dependabot to scan for code dependencies.
+
+You need to identify when scanning will be triggered automatically.
+
+Which two actions will trigger a scan? Each correct answer presents a complete solution.
+
+NOTE: Each correct solution is worth one point.
+
+A. The dependency graph of a repository changes.
+
+B. A pull request is created.
+
+C. A branch is forked.
+
+D. Any commit is pushed.
+
+E. A new advisory is added.
+
+
+-------------
+
+
+When using **Dependabot** in **GitHub**, scans are triggered based on **dependency changes** or **new vulnerability information**.
+
+✅ Correct Answers
+
+* **A. The dependency graph of a repository changes.**
+  → Triggers a scan because dependencies were added/updated/removed.
+
+* **E. A new advisory is added.**
+  → When a new vulnerability is published, Dependabot re-evaluates existing dependencies.
+
+❌ Why not the others?
+
+* **B. A pull request is created** → Not a direct trigger (unless it changes dependencies, which maps back to A)
+* **C. A branch is forked** → No scan triggered
+* **D. Any commit is pushed** → Only triggers if it affects dependencies (covered by A)
+
+ 🧠 Exam tip
+
+Dependabot triggers =
+
+➡️ **Dependency changes** OR **new vulnerability discovered**
+
+
+
 ### Question-72
 
 You plan to use a NuGet package in a project in Azure DevOps. **The NuGet package is in a feed that requires authentication.**
@@ -8051,6 +8305,24 @@ Answer. B
 
 the Credential Provider will automatically acquire and securely store a token on behalf of the NuGet client you’re using.
 
+### Question #73
+
+![Alt Image Text](../images/az400_2_40.png)
+
+-------
+
+
+
+Based on the exhibit, here is the correct completion for each statement:
+
+*   **Classic PATs [cannot] access the public resources of the organization.**
+*   **SSH keys created by using classic PATs [can] access the resources of the organization.**
+
+**Explanation:**
+
+1.  **Classic PATs (cannot):** The selected option in the exhibit explicitly states: *"Organization members will not be allowed to access your organization using a personal access token (classic)."* The text above the options clarifies that this restriction covers both **public and private** resources. When an organization enables this restriction, any request made using a classic PAT to access that organization's data (via the API or Git over HTTPS) will be rejected, regardless of the visibility of the resource.
+
+2.  **SSH keys (can):** The restriction shown in the graphic specifically targets the **Personal Access Token (classic)** authentication protocol (Git over HTTPS and API). It does not apply to **SSH keys**. Even if an SSH key was uploaded to a user's profile using the GitHub API with a classic PAT, the key itself functions as a separate credential type. Once the SSH key is added to the account, it can still be used to access the organization's repositories via the SSH protocol.
 
 ### Question-73
 
@@ -8113,6 +8385,56 @@ Why the other options are incorrect:
 Final Answer:
 
 **A. Third-party application access via OAuth** ✅
+
+
+### Question #74
+
+DRAG DROP -
+
+You have an Azure Repos repository named Repo1 that is used for source control.
+
+You need to configure code scanning for Repo1.
+
+Which three tasks should the pipeline perform in sequence? To answer, move the appropriate tasks from the list of tasks to the answer area and arrange them in the correct order.
+
+**Tasks**
+
+- Advanced Security Dependency Scanning
+- Advanced Security Initialize CodeQL
+- Advanced Security AutoBuild
+- Microsoft Purview Scan
+- Advanced Security Perform CodeQL Analysis
+
+**Answer Area**
+
+----
+
+To configure code scanning for **Azure Repos** using Advanced Security (CodeQL), the pipeline follows the standard **CodeQL workflow**:
+
+
+✅ Correct Sequence
+
+1. **Advanced Security Initialize CodeQL**
+2. **Advanced Security AutoBuild**
+3. **Advanced Security Perform CodeQL Analysis**
+
+💡 Explanation
+
+* **Initialize CodeQL** → Sets up the CodeQL environment and prepares analysis
+* **AutoBuild** → Builds the application so CodeQL can analyze compiled artifacts
+* **Perform CodeQL Analysis** → Runs the actual security scan and generates results
+
+❌ Why not the others?
+
+* **Advanced Security Dependency Scanning** → Separate feature (for dependencies, not CodeQL flow)
+* **Microsoft Purview Scan** → Used for data governance, not code scanning
+
+🧠 Exam tip
+
+For **CodeQL pipeline steps**, always remember:
+
+➡️ **Initialize → Build → Analyze**
+
 
 
 ### Question-74
@@ -8312,6 +8634,55 @@ Final Answer:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
 
+### Question #76
+
+
+You have a GitHub repository that uses GitHub Actions and stores access keys by using GitHub encrypted secrets.
+
+You plan to update the secrets by using the GitHub REST API.
+
+You need to wrap the secrets before adding them to a REST-based call.
+
+Which encryption library should you use?
+
+A. CryptoNet
+
+B. BouncyCastle
+
+C. libsodium
+
+D. hashlib
+
+----
+
+To update secrets via the **GitHub REST API**, GitHub requires that secrets be **encrypted on the client side** before sending them.
+
+🔑 Key Requirement
+
+GitHub specifically uses **public-key encryption based on libsodium** for encrypting secrets.
+
+✅ Correct Answer: **C. libsodium**
+
+💡 Explanation
+
+* **libsodium**:
+
+  * Officially required by GitHub for encrypting secrets
+  * Uses the repository’s public key
+  * Ensures secrets are securely transmitted via API
+
+❌ Why not the others?
+
+* **CryptoNet** → Not a GitHub-supported standard
+* **BouncyCastle** → General-purpose crypto library, but not used for GitHub secrets API
+* **hashlib** → Hashing library (not encryption)
+
+🧠 Exam tip
+
+If you see:
+
+* **“GitHub secrets + REST API + encrypt”**
+  → Answer is always **libsodium**
 
 
 ### Question-77 
@@ -8346,6 +8717,82 @@ This recommendation is based on a specific technical limitation of GitHub Action
 
 Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
+### Question #77
+
+You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the source code for App1.
+
+You need to perform the following tests:
+
+
+• Test1: Run a ZAP spider against App1 for one minute and wait for passive scanning to complete. The test must NOT perform active attacks.
+
+• Test2: Run a ZAP spider against App1, and when complete, execute an AJAX spider scan.
+
+Which GitHub action should you use for each test? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Answer Area
+
+Test1:
+
+- ZAP API Scan
+- ZAP Baseline Scan
+- ZAP Full Scan
+
+Test2:
+
+- ZAP API Scan
+- ZAP Baseline Scan
+- ZAP Full Scan
+
+------
+
+
+To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type does:
+
+🔍 Scan Types
+
+* **ZAP Baseline Scan**
+
+  * Passive scan only (no active attacks)
+  * Includes a short spider (default ~1 minute)
+  * Waits for passive scanning to complete
+
+* **ZAP Full Scan**
+
+  * Includes spider + **active scan (attacks)**
+
+* **ZAP API Scan**
+
+  * Used for APIs (OpenAPI/Swagger), not general web crawling
+
+---
+
+✅ Correct Answers
+
+* **Test1:** → **ZAP Baseline Scan**
+* **Test2:** → **ZAP Full Scan**
+
+💡 Explanation
+
+* **Test1 requirements:**
+
+  * Spider for 1 minute ✅
+  * Passive scan only (NO attacks) ✅
+    → Matches **Baseline Scan**
+
+* **Test2 requirements:**
+
+  * Spider the site ✅
+  * Then run **AJAX spider** (deeper crawling)
+    → Best match among options is **Full Scan** (includes deeper scanning capabilities)
+
+🧠 Exam tip
+
+* **No attack / passive only** → Baseline
+* **Includes active scan / deeper testing** → Full
+* **API-specific** → API Scan
 
 
 ### Question-78
@@ -8406,6 +8853,52 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
+### Question #78
+
+You use Azure Pipelines pipeline to build and deploy an app named App1.
+
+You need to ensure that before App1 is deployed, all the code for the app passes a security validation by using a custom tool.
+
+What should you do?
+
+A. Add a status check to the policies of the branch used by your company's development department.
+
+B. Add a status check to the policies of the main branch.
+
+C. Add a service hook to the project.
+
+D. Limit the job authorization scope to the current project for all the release 
+
+
+-------
+
+
+To ensure code **passes a security validation before deployment**, you need to enforce a check **before code is merged into the main branch** that triggers the pipeline.
+
+In **Azure DevOps**, this is done using **branch policies with status checks**.
+
+ ✅ Correct Answer: **B. Add a status check to the policies of the main branch**
+
+💡 Explanation
+
+* **Status checks on the main branch**:
+
+  * Ensure that pull requests **cannot be merged** unless the custom security validation passes
+  * Effectively blocks insecure code from ever reaching the deployment pipeline
+  * Enforces validation at the **right control point (before deployment)**
+
+❌ Why not the others?
+
+* **A. Development branch policies** → Too early; code could still bypass and reach main
+* **C. Service hook** → Used for notifications/integrations, not enforcement
+* **D. Job authorization scope** → Related to permissions, not validation
+
+🧠 Exam tip
+
+If requirement says:
+
+* **“must pass validation before deployment”**
+  → Think **branch policy + status check on main branch**
 
 
 ### Question-79 
@@ -8535,6 +9028,240 @@ Final Answer:
 
 **B. Recreate the secret at the repository level.** ✅
 
+## Topic 5 - Question Set 5
+
+### Question #5
+
+Your company uses GitHub for source control. GitHub repositories store source code and store process documentation. The process documentation is saved as Microsoft Word documents that contain simple flow charts stored as .bmp files.
+
+
+You need to optimize the integration and versioning of the process documentation and the flow charts. The solution must meet the following requirements:
+
+✑ Store documents as plain text.
+
+✑ Minimize the number of files that must be maintained.
+
+✑ Simplify the modification, merging, and reuse of flow charts.
+
+Simplify the modification, merging, and reuse of documents.
+
+**Answer Area**
+
+**Convert the .docx files to:**
+
+- LaTex Typesetting (.tex)  
+- Markdown (.md)  
+- Portable Document Format (.pdf)  
+
+**Convert the flow charts to:**
+
+- Mermaid diagrams  
+- Portable Network Graphics (.png)  
+- Tagged Image File Format (.tiff)
+
+------
+
+To meet your requirements—storing documents as plain text, simplifying version control, and improving the maintainability and mergeability of both documents and diagrams—the optimal choices are:
+
+**Convert the .docx files to:**
+
+* **Markdown (.md)** ✅ – Markdown is plain text, version-control friendly, easy to edit, merge, and reuse.
+
+**Convert the flow charts to:**
+
+* **Mermaid diagrams** ✅ – Mermaid is a text-based diagram format that integrates directly with Markdown, is version-control friendly, and allows easy modification, merging, and reuse.
+
+**Explanation:**
+
+* **LaTeX (.tex)** is plain text but adds complexity and is less widely used for simple process documentation.
+* **PDF (.pdf)** is not plain text and is hard to merge or modify.
+* **PNG or TIFF** are binary image formats and do not simplify merging or editing.
+
+So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
+
+If you want, I can outline **a workflow to automatically convert your existing .docx + .bmp files to Markdown + Mermaid diagrams** so it integrates with GitHub. Do you want me to do that?
+
+### Question #7
+
+DRAG DROP You are developing a full Microsoft .NET Framework solution that includes unit tests.
+
+You need to configure SonarQube to perform a code quality validation of the C# code as part of the build pipelines.
+
+Which four tasks should you perform in sequence? To answer, move the appropriate tasks from the list of tasks to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+Actions Commands Cmdlets Statements
+
+
+- Run Code Analysis
+- Visual Studio Test
+- Publish Build Artifacts
+- Visual Studio Build
+- Prepare Analysis Configuration
+
+
+Answer area 
+
+----
+
+To perform code quality validation of C# code using SonarQube in an Azure DevOps build pipeline, you should perform the following four tasks in sequence:
+
+**Answer Area**
+
+1.  **Prepare Analysis Configuration**
+2.  **Visual Studio Build**
+3.  **Visual Studio Test**
+4.  **Run Code Analysis**
+
+**Explanation:**
+
+1.  **Prepare Analysis Configuration:** This is the mandatory first step. It initializes the SonarQube scanner, connects it to your SonarQube server (or SonarCloud), and provides the project key and authentication token. For .NET projects, this step must occur **before** the build task.
+2.  **Visual Studio Build:** SonarQube's scanner for .NET works by "hooking" into the MSBuild process. As the code is compiled, the scanner analyzes the source files and identifies code smells, bugs, and vulnerabilities.
+3.  **Visual Studio Test:** To include **code coverage** metrics in your SonarQube report, you must run your unit tests after the build. The scanner will pick up the test execution results and coverage files generated during this step.
+4.  **Run Code Analysis:** This final SonarQube task completes the analysis process. It aggregates all the data from the build and test steps, generates the final report, and uploads it to the SonarQube server for viewing.
+
+**Note:** "Publish Build Artifacts" is a standard DevOps task, but it is not part of the specific SonarQube code quality validation workflow.
+
+
+### Question #9
+
+DRAG DROP You need to and and isolate shared code. The shared code will be maintained in a series of packages.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+Actions
+
+
+- Group the related components.
+- Assign ownership to each component group.
+- Create a dependency graph for the application.
+- Identify the most common language used.
+- Rewrite the components in the most common language.
+
+Answer Area
+
+----
+
+Based on the scenario of identifying and isolating shared code to be maintained in packages, the correct logical sequence is:
+
+1.  **Create a dependency graph for the application.** (You need to visualize the relationships and dependencies between components to identify what code is shared.)
+2.  **Group the related components.** (Once you see the dependencies, you can identify clusters of related code that should be grouped into logical packages.)
+3.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
+
+**Answer Area:**
+
+1.  Create a dependency graph for the application.
+2.  Group the related components.
+3.  Assign ownership to each component group.
+
+
+### Question #10
+
+DRAG DROP You are creating a NuGet package.
+
+You plan to distribute the package to your development team privately.
+
+You need to share the package and test that the package can be consumed.
+
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+
+- Create a new Azure Artifacts feed.
+- Configure a self-hosted agent.
+- Publish a package.
+- Install a package.
+- Connect to an Azure Artifacts feed.
+
+Answer Area
+
+
+-------
+
+
+To **create, share, and test a private NuGet package** with your development team using Azure Artifacts, the correct sequence is:
+
+**Answer Area (in order):**
+
+1. **Create a new Azure Artifacts feed** ✅
+
+   * Set up a private feed to host the NuGet package.
+
+2. **Connect to an Azure Artifacts feed** ✅
+
+   * Configure your development environment or project to use the feed.
+
+3. **Publish a package** ✅
+
+   * Upload the NuGet package to the private feed.
+
+4. **Install a package** ✅
+
+   * Consume the package in a project to verify it works correctly.
+
+**Notes:**
+
+* **Configure a self-hosted agent** is unnecessary for sharing and testing a package; it’s only needed if you want custom build agents.
+* This sequence ensures the package is properly hosted, accessible, and testable by your team.
+
+
+### Question #14
+
+Your company uses GitHub for source control. The company has a team that performs code reviews.
+
+You need to automate the assignment of the code reviews. The solution must meet the following requirements: 
+
+
+✑ Prioritize the assignment of code reviews to team members who have the fewest outstanding assignments. 
+
+
+✑ Ensure that each team member performs an equal number of code reviews in any 30-day period.
+
+✑ Prevent the assignment of code reviews to the team leader.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Clear Never assign certain team members.
+
+B. Select If assigning team members, don't notify the entire team.
+
+C. Select Never assign certain team members.
+
+D. Set Routing algorithm to Round robin.
+
+E. Set Routing algorithm to Load balance.
+
+
+--------
+
+To meet the requirements for **automating code review assignments** in GitHub:
+
+* You want to **exclude the team leader** → that means marking them as someone who should never be assigned.
+* You want to **prioritize team members with fewer outstanding assignments and equalize workload over 30 days** → that aligns with a **load balancing routing algorithm** rather than simple round-robin.
+
+**Correct Answers:**
+
+**C. Select Never assign certain team members** ✅
+
+* Ensures the team leader is excluded from code review assignments.
+
+**E. Set Routing algorithm to Load balance** ✅
+
+* Assigns reviews based on who has the fewest outstanding reviews, ensuring equitable distribution over time.
+
+**Explanation:**
+
+* **Round robin** just cycles through the team in order, ignoring workload or past assignments.
+* The "Clear Never assign" and notification options do not affect workload distribution.
+
+This combination satisfies all three requirements: exclusion of the leader, prioritization of less-busy reviewers, and equal distribution over time.
+
 
 ### Question-81
 
@@ -8590,6 +9317,7 @@ Does this meet the goal?
 - A. Yes
 - B. No
 
+------
 
 The correct answer is:
 
@@ -8632,6 +9360,8 @@ NOTE: Each correct selection is worth one point.
 - B. Configure pre-deployment approvals in the deployment pipeline.
 - C. Integrate Azure DevOps and SonarQube
 - D. Integrate Azure DevOps and Azure DevTest Labs.
+
+-----
 
 The correct answers are:
 
@@ -8712,10 +9442,13 @@ You need to analyze and monitor the code quality of the Java solution.
 
 Which task types should you add to the build pipeline?
 
-- **A. Gradle**
+- A. Gradle
 - B. CocoaPods
 - C. Grunt
 - D. Gulp
+
+-----------
+
 
 The correct answer is:
 
@@ -8853,9 +9586,10 @@ You need to recommend a strategy for managing technical debt.
 Which action should you include in the recommendation?
 
 * A. Configure post-deployment approvals in the deployment pipeline.
-* **B. Integrate Azure DevOps and SonarQube.**
+* B. Integrate Azure DevOps and SonarQube.
 * C. Integrate Azure DevOps and Azure DeTest Labs.
 
+-----
 
 The correct answer is:
 
@@ -8972,12 +9706,14 @@ You need to make a custom package available to all the developers. **The package
 Which three actions should you perform? Each correct answer presents part of the solution.
 NOTE: Each correct selection is worth one point.
 
-* **A. Publish the package to a feed**.
-* **B. Create a new feed in Azure Artifacts.**
+* A. Publish the package to a feed
+* B. Create a new feed in Azure Artifacts.
 * C. Upload a package to a Git repository.
 * D. Add the package URL to the Environment settings in Visual Studio.
-* **E. Add the package URL to the NuGet Package Manager settings in Visual Studio.**
+* E. Add the package URL to the NuGet Package Manager settings in Visual Studio.
 * F. Create a Git repository in Azure Repos
+
+------------
 
 The correct answers are:
 
@@ -9204,7 +9940,7 @@ You need to recommend a solution to detect quality issues including unused varia
 
 What should you recommend?
 
-* **A. In a Maven build task, select Run PMD**
+* A. In a Maven build task, select Run PMD
 * B. In an Xcode build task, select Use xepretty from Advanced.
 * C. In a Gulp build task, specify a custom condition expression.
 * D. In a Grunt build task, select Enabled from Control Options.
