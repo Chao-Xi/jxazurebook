@@ -9799,8 +9799,10 @@ What should you recommend?
 * • A. Create a pull request.
 * • B. Create a webhook.
 * • C. Create a service connection for GitHub
-* • **D. From Import a Git repository, click Import.**
+* • D. From Import a Git repository, click Import.
 * • E. Create a personal access token in Azure DevOps.
+
+--------
 
 The correct answer is:
 
@@ -9851,7 +9853,9 @@ Solution: You recommend increasing the code duplication.
 Does this meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No
+
+---------
 
 **Answer. B**
 
@@ -9891,19 +9895,22 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
+---------
+
 **A. Yes** ✅
 
-Increasing **test coverage** helps reduce technical debt because it:
+The correct answer is **A. Yes**.
 
-* Makes refactoring safer and faster
-* Reduces fear of breaking existing functionality
-* Improves code reliability and maintainability
-* Encourages cleaner design and modular code
-* Speeds up future feature development
+Explanation:
 
-So recommending increased test coverage **does meet the goal** of reducing accumulated technical debt.
+**Technical debt** often accumulates because developers are afraid to modify or refactor "messy" existing code for fear of breaking it (introducing regressions).
 
+Increasing **test coverage** (specifically automated unit and integration tests) provides a "safety net." This allows developers to:
+1.  **Refactor with Confidence:** Clean up poorly written code and modernize the architecture without changing its external behavior.
+2.  **Catch Bugs Early:** Prevent new technical debt from being introduced by ensuring new features don't break old ones.
+3.  **Improve Maintainability:** Automated tests serve as documentation for how the code is supposed to function, making it easier for new developers to understand and modify the codebase.
 
+While increasing test coverage alone doesn't "delete" technical debt, it is the **foundational requirement** for the refactoring process needed to pay it down.
 
 ### Question-92
 
@@ -9916,8 +9923,10 @@ Solution: You recommend reducing the code complexity.
 Does this meet the goal?
 
 
-* **A. Yes**
+* A. Yes
 * B. No
+
+-------------
 
 **A. Yes** ✅
 
@@ -9945,6 +9954,7 @@ What should you recommend?
 * C. In a Gulp build task, specify a custom condition expression.
 * D. In a Grunt build task, select Enabled from Control Options.
 
+-------
 
 **Correct answer: A. In a Maven build task, select Run PMD** ✅
 
@@ -9979,37 +9989,70 @@ You need to make one of the packages available to anonymous users outside your o
 What should you do?
 
 * A. Change the feed URL of the package
-* **B. Create a new feed for the package**
+* B. Create a new feed for the package
 * C. Promote the package to a release view.
 * D. Publish the package to a public NuGet repository.
 
+------------
+
 **Correct answer: D. Publish the package to a public NuGet repository** ✅
 
-To make a NuGet package available to **anonymous users outside your organization**, you must publish it to a **public NuGet feed**, such as **NuGet (nuget.org)**.
+Explanation:
 
-This satisfies both requirements:
+To share a package with **anonymous users** (anyone on the internet without needing to log in), you must use an **Azure Artifacts Public Feed**.
 
-* ✅ **Anonymous access** (no authentication required)
-* ✅ **Minimizes publication points** (single public distribution location)
+1.  **Public Feeds:** Azure DevOps allows you to create feeds with "Public" visibility. These feeds are accessible to anyone who has the URL, even if they are not members of your Azure DevOps organization.
+2.  **Minimizing Publication Points:** By creating a public feed within your existing Azure DevOps project, you keep the package management inside your current ecosystem. This is more efficient and provides fewer "publication points" to manage than moving the package to an entirely external platform like NuGet.org.
+3.  **Why not C (Release View)?** Release views are used within private feeds to mark certain versions of a package as "stable" or "production-ready" for internal teams. They do not grant public or anonymous access.
+4.  **Why not D (Public NuGet repository)?** While publishing to NuGet.org would make the package anonymous, it creates an entirely new publication point on a different platform, which violates the requirement to "minimize" the number of points.
 
-
-
-Why the others are incorrect:
-
-* **A. Change the feed URL of the package** ❌
-  Azure Artifacts feeds cannot be made public/anonymous by changing URLs.
-
-* **B. Create a new feed for the package** ❌
-  Azure Artifacts feeds always require authentication.
-
-* **C. Promote the package to a release view** ❌
-  Views are for internal lifecycle management, not for public access.
+**Correct Workflow:**
 
 
-Final Answer:
+1.  Go to Azure Artifacts and click **Create Feed**.
+2.  Set the visibility to **Public**.
+3.  Publish your package to this new public feed.
 
-👉 **D. Publish the package to a public NuGet repository.**
 
+### Question #21
+
+You use GitHub for source control and project-related discussions.
+
+You receive a noti¬cation when an entry is made to any team discussion.
+
+You need to ensure that you receive email noti¬cations only for discussions in which you commented or in which you are mentioned. Which two Noti¬cations settings should you clear? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Automatically watch teams
+
+B. Participating
+
+C. Automatically watch repositories
+
+D. Watching
+
+----------
+
+
+To only receive email notifications for discussions where you are **involved (commented or mentioned)**, you need to stop automatic watching behavior.
+
+**Correct Answers:**
+
+**A. Automatically watch teams** ✅
+
+* Prevents being notified for all team discussions automatically.
+
+**C. Automatically watch repositories** ✅
+
+* Prevents being notified for all repository discussions by default.
+
+**Explanation:**
+
+* **Participating** should remain enabled because it ensures notifications when you are directly involved.
+* **Watching** is a notification level, not a setting to clear for this requirement.
+
+By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
 ### Question-95   💩💩
 
@@ -10024,9 +10067,11 @@ What should you configure?
 * A. the Service hooks settings for Project1
 * B. the Connections settings for the Automation account
 
-* **C. the Source control settings for the Automation account**
+* C. the Source control settings for the Automation account
 * D. the Service connections settings for Project1
 
+
+----------
 
 **Answer: C**
 
@@ -10070,9 +10115,353 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question-96
+### Question #23
+
+You use Git for source control.
+
+You enable GitHub code scanning.
+
+You raise a pull request from a non-default branch. In the code scanning output, you receive the following error message: “Analysis not found.”
+
+You need to ensure that the code scanning completes successfully for the pull request.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Add the name of the default branch to the on: push speci¬cation in the code scanning work­ow.
+
+B. Add the name of the non-default branch to the on:push speci¬cation in the code scanning work­ow.
+
+C. Delete the pull request, and then raise the request again from the default branch.
+
+D. Update the code in the pull request.
+
+E. Add a new workflow for code scanning.
+
+--------
+
+
+The error **“Analysis not found”** in GitHub code scanning typically occurs when the workflow has **not been triggered for the branch** used in the pull request or no analysis results were generated.
+
+To fix this, you must ensure the code scanning workflow runs for the relevant branches.
+
+**Correct Answers:**
+
+**A. Add the name of the default branch to the on: push specification in the code scanning workflow.** ✅
+
+* Ensures baseline analysis exists on the default branch, which is required for comparison.
+
+**B. Add the name of the non-default branch to the on: push specification in the code scanning workflow.** ✅
+
+* Ensures the workflow runs on the branch used in the pull request so analysis results are generated.
+
+**Explanation:**
+
+* Code scanning compares the PR branch against the default branch, so **both must have analysis results**.
+* Without running analysis on both branches, GitHub shows “Analysis not found.”
+
+**Why others are incorrect:**
+
+* **C**: Not required; PR can come from any branch.
+* **D**: Updating code doesn’t fix missing analysis.
+* **E**: Not necessary; you only need to adjust the existing workflow triggers.
+
+
+### Question #24
+
+DRAG DROP -
+
+You have a GitHub repository named repo1 that stores the code of an app named App1.
+
+You need deploy a workflow for repo1 by using GitHub Actions. The solution must meet the following requirements:
+
+• Scan on pushes to the main branch.
+
+• Scan on pull requests to the main branch.
+
+• Scan on pull requests to any branch that has a pre¬x of releases/.
+
+• Scan all the files in the subdirectories of the src directory.
+
+• Exclude scanning of markdown files.
+
+How should you complete the code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+![Alt Image Text](../images/az400_2_41.png)
+
+-----------
+
+
+To meet all the requirements:
+
+* PRs to branches with prefix **releases/** → use `'releases/**'`
+* Scan all files in subdirectories of **src** → use `'src/**'`
+* Exclude markdown files → use `'**/*.md'`
+
+**Answer Area (filled):**
+
+```yaml
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches:
+      - main
+      - 'releases/**'
+    paths:
+      - 'src/**'
+    paths-ignore:
+      - '**/*.md'
+```
+
+### Question #26
+
+
+You have the repositories shown in the following table.
+
+| Type    | URL    |
+|---|---|
+| Azure Repos  | https://dev.azure.com/contoso/project1/_git/project1.git |
+| GitHub    | https://github.com/contoso/project.git    |
+
+You need to migrate the contents of the GitHub repository to the Azure Repos repository. The solution must ensure that the Azure Repos repository only contains branches and history from the GitHub repository.
+
+Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
+
+Commands
+
+- git clone --barehttps://dev.azure.com/contoso/project1/_git/proj  
+
+- cd project1  
+
+- git clone --bare https://github.com/contoso/project1.git  
+
+- git push --mirror https://dev.azure.com/contoso/project1/_git/proj  
+
+- cd project1.git  
+
+- git push --mirror  https://github.com/contoso/project1.git
+
+
+------
+
+
+To migrate a repository from GitHub to Azure Repos while preserving all branches and commit history, you should run these three commands in sequence:
+
+**Answer Area**
+
+1.  **`git clone --bare https://github.com/contoso/project1.git`**
+2.  **`cd project1.git`**
+3.  **`git push --mirror https://dev.azure.com/contoso/project1/_git/project1.git`**
+
+**Explanation:**
+
+1.  **`git clone --bare ...`**: A **bare clone** is the standard way to migrate a repository. It downloads the Git database (all branches, tags, and full commit history) without checking out the actual source files into a working directory. This ensures you have every piece of data from the GitHub source ready for transfer.
+2.  **`cd project1.git`**: When you perform a bare clone, Git creates a folder named `<repository-name>.git`. You must navigate into this directory to execute the subsequent push command.
+3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration. It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
+
+### Question #27
+
+You have a GitHub repository that contains the code for an app named App1.
+
+App1 depends on a library of functions from a repository at https://github.com/contoso/afeed.
+
+You need to keep a clone of the afeed repository as a subdirectory of the App1 repository.
+
+How should you complete the Git command? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+**Values**    
+
+- add
+- branch
+- clone
+- pull
+- submodule
+
+**Answer Are**
+
+
+git _____ _____https://github.com/contoso/afeed
+
+
+--------
+
+
+To keep another repository as a subdirectory, you must use a **Git submodule**.
+
+**Answer Area:**
+
+```
+git submodule add https://github.com/contoso/afeed
+```
+
+**Explanation:**
+
+* `submodule` → used to embed another repository inside your repo
+* `add` → adds the external repository as a subdirectory
+
+This ensures the dependency is tracked and versioned correctly within your main repository.
+
+
+### Question #28
+
+HOTSPOT -
+
+You use Git for source control.
+
+You need to optimize the performance of a repository. The solution must meet the following requirements:
+
+• Permanently remove all items referenced only in the reflog.
+
+• Remove history that is NOT in any current branch.
+
+How should you complete the command? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+The image shows a Git command configuration task with dropdown menus. Here is the extracted content:
+
+**Answer Area**
+
+`git [Dropdown 1] expire --expire-unreachable=now --all`
+
+*   **Options for Dropdown 1:**
+    *   gc
+    *   reflog
+    *   reset
+    *   stash
+
+
+`git [Dropdown 2] --prune=[Dropdown 3]`
+
+*   **Options for Dropdown 2:**
+    *   gc
+    *   init
+    *   reflog
+    *   reset
+*   **Options for Dropdown 3:**
+    *   all
+    *   now
+    *   reset
+    *   true
+
+-------------
+
+
+To optimize the performance of the Git repository by removing history that is no longer reachable and purging the reflog, the correct configuration is:
+
+**Answer Area**
+
+`git [reflog] expire --expire-unreachable=now --all`
+
+`git [gc] --prune=[now]`
+
+**Explanation:**
+
+1.  **`git reflog expire --expire-unreachable=now --all`**
+    *   **Reflog:** The "reflog" records every time a branch head is updated (e.g., when you commit, checkout, or reset). Items in the reflog keep Git objects "alive" even if they aren't part of a current branch.
+    *   **Expire:** This command manually triggers the expiration of those records. By setting `--expire-unreachable=now`, you tell Git that any history not currently part of a branch should be considered "expired" immediately.
+
+2.  **`git gc --prune=now`**
+    *   **gc (Garbage Collection):** This is the primary tool for optimizing the Git database. It identifies and removes "dangling" or unreachable objects (history not in any branch).
+    *   **--prune=now:** By default, Git waits two weeks before actually deleting unreachable objects to prevent data loss. Specifying `now` tells Git to bypass the grace period and permanently delete the items immediately, fulfilling the requirement to optimize performance.
+
+### Question #29
+
+DRAG DROP -
+
+You have an Azure Repos Git repository named repo1.
+
+You need to ensure that you can authenticate to repo1 by using SSH.
+
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
+
+The image shows a "Drag and Drop" task with a list of actions on the left. Here is the extracted content:
+
+**Actions**
+
+*   Sign in to Azure DevOps.
+*   Add the SSH public key.
+*   Clone repo1.
+*   Save the SSH key to the root of repo1.
+*   Add the SSH private key.
+*   Create SSH keys by using `ssh-keygen`
+
+
+**Answer Area**
+
+----------
+
+
+To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you should perform these four actions in sequence:
+
+**Answer Area**
+
+1.  **Create SSH keys by using `ssh-keygen`**
+2.  **Sign in to Azure DevOps**
+3.  **Add the SSH public key**
+4.  **Clone repo1**
+**Explanation:**
+
+1.  **Create SSH keys by using `ssh-keygen`:** This is the first step where you generate a public/private key pair on your local machine. The private key stays on your computer, while the public key will be shared.
+2.  **Sign in to Azure DevOps:** You must be logged into the web portal to manage your user profile settings.
+3.  **Add the SSH public key:** In your Azure DevOps user settings under "SSH Public Keys," you upload the contents of the public key you generated in the first step. This allows Azure DevOps to identify your local machine when it attempts to connect.
+4.  **Clone repo1:** Once the public key is registered, you can copy the SSH clone URL from the repository and use it to clone the repo to your local machine. The authentication happens automatically using your local private key.
+
+**Note:** "Save the SSH key to the root of repo1" is incorrect and a severe security risk. You should never store your private or public keys inside a source code repository. "Add the SSH private key" is also incorrect; the private key is never uploaded to Azure DevOps.
+
+### Question #30
+
+DRAG DROP -
+
+You use Git for source control.
+
+You delete a file, commit the changes, and continue to work.
+
+You need to recover the deleted file.
+
+Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
+
+
+The image contains a list of Git commands used in a drag-and-drop exercise. Here is the extracted text:
+
+**Commands**
+
+*   `git commit -m 'undeleted the file'`
+*   `git log`
+*   `git checkout [hash]~1 --path/to/file`
+*   `git tag`
+*   `git restore path/to/file`
+*   `git stash`
+
+-----------
+
+To recover a file that was deleted and committed in Git, you should run these three commands in the following sequence:
+
+**Answer Area**
+
+1.  **`git log`**
+2.  **`git checkout [hash]~1 --path/to/file`**
+3.  **`git commit -m 'undeleted the file'`**
+
+**Explanation:**
+
+1.  **`git log`**: First, you need to find the commit where the file was deleted. Running `git log` (often with `-- [path/to/file]` to filter for the specific file) allows you to identify the specific commit **[hash]** where the deletion occurred.
+2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
+3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
+
+
+### Question-96 
 
 You have a GitHub repository that contains multiple versions of an Azure Pipelines template
+
 
 You plan to deploy multiple pipelines that will use a template stored in the repository.
 
@@ -10083,13 +10472,18 @@ What should you use to reference which version of the template repository to use
 * A. the serial
 * B. the SHA-based hashes
 * C. the runner
-* **D. the branch**
+* D. the branch
+
+------
 
 The correct answer is:
 
 ✅ **B. the SHA-based hashes**
 
-Why this is correct
+Why this is
+
+
+correct
 
 When referencing templates in Azure Pipelines from a GitHub repository, you can specify:
 
