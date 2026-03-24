@@ -6442,7 +6442,7 @@ If you see **“NuGet + Azure DevOps + automatic restore/authentication”**, th
 
 You use Azure Pipelines to manage project builds and deployments.
 
-You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release. You need to con¬gure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams. What should you turn on?
+You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release. You need to configure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams. What should you turn on?
 
 A. Third-party application access via OAuth
 
@@ -6544,7 +6544,7 @@ You have an Azure subscription that uses Azure Monitor and contains a Log Analyt
 
 You have an encryption key.
 
-You need to con¬gure Azure Monitor to use the key to encrypt log data.
+You need to configure Azure Monitor to use the key to encrypt log data.
 
 Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -7240,7 +7240,7 @@ You need to create a Git repository for Project1. The solution must meet the fol
 
 • Store binary files outside of the repository.
 
-• Use a standard Git worklow to maintain the metadata of the binary ¬les by using commits to the repository.
+• Use a standard Git worklow to maintain the metadata of the binary files by using commits to the repository.
 
 
 Which three actions should you perform in sequence on each developer’s device? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
@@ -7694,7 +7694,7 @@ Final Answer:
 
 You have a GitHub organization that contains three users named User1, User2, and User3. You have a project that contains a repository named repo1.
 
-You need to con¬gure permissions for repo1. The solution must meet the following requirements:
+You need to configure permissions for repo1. The solution must meet the following requirements:
 
 • Ensure that User1 can actively push to repo1.
 
@@ -10018,9 +10018,9 @@ To share a package with **anonymous users** (anyone on the internet without need
 
 You use GitHub for source control and project-related discussions.
 
-You receive a noti¬cation when an entry is made to any team discussion.
+You receive a notification when an entry is made to any team discussion.
 
-You need to ensure that you receive email noti¬cations only for discussions in which you commented or in which you are mentioned. Which two Noti¬cations settings should you clear? Each correct answer presents part of the solution.
+You need to ensure that you receive email notifications only for discussions in which you commented or in which you are mentioned. Which two Notifications settings should you clear? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -10129,9 +10129,9 @@ Which two actions should you perform? Each correct answer presents part of the s
 
 NOTE: Each correct selection is worth one point.
 
-A. Add the name of the default branch to the on: push speci¬cation in the code scanning work­ow.
+A. Add the name of the default branch to the on: push specification in the code scanning work­ow.
 
-B. Add the name of the non-default branch to the on:push speci¬cation in the code scanning work­ow.
+B. Add the name of the non-default branch to the on:push specification in the code scanning work­ow.
 
 C. Delete the pull request, and then raise the request again from the default branch.
 
@@ -10180,7 +10180,7 @@ You need deploy a workflow for repo1 by using GitHub Actions. The solution must 
 
 • Scan on pull requests to the main branch.
 
-• Scan on pull requests to any branch that has a pre¬x of releases/.
+• Scan on pull requests to any branch that has a prefix of releases/.
 
 • Scan all the files in the subdirectories of the src directory.
 
@@ -10457,6 +10457,600 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
+### Question #31
+
+HOTSPOT -
+
+You use Git for source control. You have an app named App1.
+
+In the main branch, you need to restore the third most recent revision of a file named App.exe.config.
+
+How should you complete the command? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Correct Answer:
+
+The image shows a "Hot Area" task for configuring Git commands. Here is the extracted content:
+
+**Answer Area**
+
+**First Command:**
+
+`git [Dropdown 1] main`
+
+*   **Options for Dropdown 1:**
+    *   checkout
+    *   branch
+    *   switch
+    *   reset
+
+**Second Command:**
+
+`git restore [Dropdown 2] main~3 App.exe.config`
+
+*   **Options for Dropdown 2:**
+    *   --patch
+    *   --merge
+    *   --staged
+    *   --source
+
+
+------------
+
+
+To restore a file from a previous revision in Git:
+
+✅ Correct Answer
+
+**First Command:**
+
+```
+git checkout main
+```
+
+**Second Command:**
+
+```
+git restore --source main~3 App.exe.config
+```
+
+**Explanation:**
+
+* **`git checkout main`**
+  Switches to the **main branch** where you want to restore the file.
+
+* **`git restore --source main~3 App.exe.config`**
+
+  * `--source main~3` specifies the **third most recent commit** on the main branch.
+  * Restores the file **App.exe.config** from that revision.
+
+This sequence ensures you're on the correct branch and retrieves the desired historical version of the file.
+
+### Question-32
+
+You company uses a Git source-code repository.
+
+You plan to implement GitFlow as a workflow strategy.
+
+You need to identify which branch types are used for production code and preproduction code in the strategy.
+
+Which branch type should you identify for each code type? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted text content:
+
+Based on the image provided, here is the extracted content:
+
+**Answer Area**
+
+*   **Production code:** [Dropdown Menu]
+    *   Main
+    *   Feature
+    *   Develop
+
+*   **Preproduction code:** [Dropdown Menu]
+    *   Main
+    *   Feature
+    *   Develop
+
+
+----
+
+In the **GitFlow** workflow strategy, the correct branch assignments for production and preproduction code are:
+
+**Answer Area**
+
+*   **Production code:** **Main** (or Master)
+*   **Preproduction code:** **Develop**
+
+**Explanation:**
+
+1.  **Production code (Main):** In GitFlow, the `main` (historically `master`) branch stores the official release history. The code in this branch is always considered to be in a production-ready state. Each commit to this branch is usually tagged with a version number.
+
+2.  **Preproduction code (Develop):** The `develop` branch serves as the integration branch for all features. It contains the complete history of the project and represents the latest delivered development changes for the next release. This is where pre-production testing, integration, and staging preparations occur.
+
+**Other branches in GitFlow (for context):**
+*   **Feature branches:** Used for developing new features for the next release (merge into `develop`).
+*   **Release branches:** Used to prepare for a new production release (merge into `main` and `develop`).
+*   **Hotfix branches:** Used to quickly patch production releases (merge into `main` and `develop`).
+
+
+### Question #33
+
+DRAG DROP -
+
+You have an Azure Repos repository named repo1.
+
+You need to clone repo1. The solution must clone only a directory named src/web.
+
+How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+**Values**
+
+- https://dev.azure.com/organization/project/_git/repo1
+- git@ssh.dev.azure.com:v3/organization/project/repo1
+- repo1/src
+- src/web
+- repo1/src/web
+- web
+
+
+**Answer Area**
+
+...
+
+cd repos
+
+scalar clone [ Value ]
+
+cd [ Value ]
+
+git sparse-checkout set [ Value ]
+
+...
+
+
+------
+
+
+To clone a specific directory (`src/web`) from a large Azure Repos repository using Scalar and sparse-checkout, you should complete the script as follows:
+
+**Answer Area**
+
+...
+
+cd repos
+
+scalar clone **[ https://dev.azure.com/organization/project/_git/repo1 ]**
+
+cd **[ repo1/src ]**
+
+git sparse-checkout set **[ src/web ]**
+
+...
+
+**Explanation:**
+
+1.  **`scalar clone [URL]`**: Scalar is a Microsoft-developed tool for managing massive Git repositories. When you run `scalar clone`, it creates a folder named after the repository and initializes a "src" subdirectory inside it which contains the actual Git working files.
+2.  **`cd repo1/src`**: To execute standard Git commands (like `sparse-checkout`), you must be inside the directory that contains the `.git` folder. In a Scalar layout for a repository named `repo1`, this is `repo1/src`.
+3.  **`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
+
+
+### Question #34
+
+You use GitHub for source control and Microsoft Teams for collaboration.
+
+You need to send a notification to a Teams channel for each commit. The solution must minimize development effort.
+
+What should you do?
+
+A. Use Azure Automation to connect to the GitHub Actions API and send a message to the Teams channel.
+
+B. Use the Microsoft Teams for GitHub app and configure a subscription to receive notifications in the Teams channel.
+
+C. Use GitHub Actions with a dispatch to send a message to the Teams channel by using the Teams API.
+
+D. Use Azure Functions to connect to the GitHub REST API and send a message to the Teams channel.
+
+
+------
+
+
+**Correct Answer: B. Use the Microsoft Teams for GitHub app and configure a subscription to receive notifications in the Teams channel.** ✅
+
+**Explanation:**
+
+* The requirement is to **minimize development effort**.
+* The **Microsoft Teams for GitHub app** provides built-in integration:
+
+  * No custom code required
+  * Easy to configure notifications (including commits)
+  * Direct subscription to repositories and events
+
+**Why others are incorrect:**
+
+* **A (Azure Automation)** ❌ – Requires custom scripting and setup.
+* **C (GitHub Actions + Teams API)** ❌ – Requires workflow and API integration.
+* **D (Azure Functions)** ❌ – Custom development and maintenance needed.
+
+Using the built-in integration is the simplest and most efficient solution.
+
+
+### Question #36
+
+DRAG DROP -
+
+You have a GitHub repository named repo1.
+
+You migrate repo1 to an Azure Repos repository named repo2.
+
+After the migration, changes are made to repo1.
+
+You need to sync the changes to repo2.
+
+How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Correct Answer:
+
+Based on the image provided, here is the extracted text content:
+
+**Values**
+
+*   `repo1`
+*   `repo1 clone URL`
+*   `repo1 repo URL`
+*   `repo2`
+*   `repo2 clone URL`
+*   `repo2 repo URL`
+
+**Answer Area**
+
+
+```bash
+...
+
+git clone --bare [ Value ]
+
+cd [ Value ]
+
+git remote add --mirror=fetch upstream [ Value ]
+
+git fetch upstream --tags
+
+git push origin --all
+
+...
+```
+
+-----
+
+
+To sync changes from **repo1 (GitHub)** to **repo2 (Azure Repos)** using a mirror approach:
+
+✅ Correct Answer
+
+```bash
+git clone --bare repo2 clone URL
+
+cd repo2
+
+git remote add --mirror=fetch upstream repo1 clone URL
+
+git fetch upstream --tags
+
+git push origin --all
+```
+
+**Explanation:**
+
+* **Clone repo2 (destination)** as a bare repo → prepares it to receive updates.
+* **cd repo2** → move into the cloned repository.
+* **Add repo1 as upstream** → source repository for new changes.
+* **Fetch from upstream** → pulls updates (including tags).
+* **Push to origin** → syncs updates into repo2.
+
+This ensures repo2 stays updated with changes made in repo1 after migration.
+
+### Question #37
+
+DRAG DROP -
+
+You have an Azure Repos repository named repo1.
+
+You delete a branch named features/feature11.
+
+You need to recover the deleted branch.
+
+Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
+
+Based on the image provided, here is the extracted text content:
+
+**Commands**
+*   `git restore <SHA1>`
+*   `git stash`
+*   `git checkout <SHA1>`
+*   `git branch features/feature11`
+*   `git log`
+
+**Answer Area**
+
+*   **1** (Slot for command)
+*   **2** (Slot for command)
+*   **3** (Slot for command)
+
+----
+
+To recover a deleted Git branch, you need to find the last commit, check it out, and recreate the branch.
+
+✅ Correct Sequence:
+
+**1.**
+
+```bash
+git log
+```
+
+* Find the **commit (SHA1)** that the deleted branch pointed to.
+
+**2.**
+
+```bash
+git checkout <SHA1>
+```
+
+* Move to that commit.
+
+**3.**
+
+```bash
+git branch features/feature11
+```
+
+* Recreate the deleted branch from that commit.
+
+**Explanation:**
+
+* `git log` helps locate the commit history.
+* `git checkout <SHA1>` restores your working state to that point.
+* `git branch` recreates the branch reference.
+
+This sequence successfully recovers the deleted branch.
+
+### Question #39
+
+You have an Azure Repos repository that contains large PSD files.
+
+You need to configure Git LFS to manage all the files.
+
+How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted text content:
+
+**Values**
+
+*   `git fetch`
+*   `git lfs config add "*.psd"`
+*   `git lfs migrate import --include="*.psd" --everything`
+*   `git lfs track "*.psd"`
+*   `git lfs update`
+*   `git push`
+
+**Answer Area**
+
+```bash
+...
+git lfs install
+
+[ Value Box ]
+
+git add .gitattributes
+
+git commit -m "track *.psd files using Git LFS"
+
+[ Value Box ]
+
+[ Value Box ]
+...
+```
+
+**Context (Typical Solution)**
+
+
+This sequence is used to configure **Git Large File Storage (LFS)** for a repository that already contains large binary files (in this case, `.psd` files). The correct configuration for this script is:
+
+1.  **`git lfs install`** (Initializes the LFS environment).
+2.  **`git lfs track "*.psd"`** (Creates a rule to handle Photoshop files via LFS).
+3.  **`git add .gitattributes`** (Stages the file where LFS tracking rules are stored).
+4.  **`git commit -m "track *.psd files using Git LFS"`** (Saves the tracking configuration).
+5.  **`git lfs update`** (Forces an update of the local hooks).
+6.  **`git push`** (Pushes the changes and the large binaries to the remote server).
+
+-----
+
+
+To configure **Git LFS** and migrate existing PSD files, you must:
+
+1. Track the file type
+2. Migrate existing files to LFS
+3. Push the changes
+
+✅ Correct Answer
+
+```bash
+git lfs install
+
+git lfs track "*.psd"
+
+git add .gitattributes
+
+git commit -m "track *.psd files using Git LFS"
+
+git lfs migrate import --include="*.psd" --everything
+
+git push
+```
+
+**Explanation:**
+
+* **`git lfs track "*.psd"`** → Configures LFS to track PSD files.
+* **`git lfs migrate import`** → Converts existing PSD files in the repo to LFS.
+* **`git push`** → Uploads LFS objects and updated history to the remote repo.
+
+❌ Not used:
+
+* `git fetch` → Not needed here
+* `git lfs config add "*.psd"` → Not a valid/common command
+* `git lfs update` → Not required for this scenario
+
+This ensures both **new and existing PSD files** are managed by Git LFS.
+
+### Question #41
+
+You have a public GitHub repository named Public1.
+
+A commit is made to Public1. The commit contains a pattern that matches a regular expression.
+
+Who is notified first when the commit is made?
+
+A. the administrator of the GitHub organization
+
+B. the committer
+
+C. the owner of Public1
+
+D. the secret scanning partner
+
+------
+
+
+**Correct Answer: D. the secret scanning partner** ✅
+
+**Explanation:**
+
+When a commit in a public GitHub repository matches a known secret pattern (for example, API keys or tokens):
+
+* **GitHub Secret Scanning** immediately notifies the **relevant secret scanning partner** (e.g., Azure, AWS, etc.) associated with that type of credential.
+* This allows the provider to **quickly revoke or secure the exposed secret**.
+
+**Why not the others?**
+
+* **A. Administrator** ❌ – Not notified first
+* **B. Committer** ❌ – May be notified later, but not first
+* **C. Owner** ❌ – Also notified, but after the partner
+
+✅ Key Point:
+
+The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
+
+
+### Question #42
+
+
+You have a GitHub repository.
+
+You need to ensure that all the code in the repository is scanned for vulnerabilities.
+
+What should you use?
+
+A. Dependabot alerts
+
+B. branch protection rules
+
+C. CodeQL actions
+
+D. GitHub Advisory Database databases
+
+-----
+
+
+**Correct Answer: C. CodeQL actions** ✅
+
+**Explanation:**
+
+* **CodeQL actions** are part of **GitHub code scanning** and analyze your **entire codebase** to detect security vulnerabilities and coding issues.
+* They run automatically in workflows and provide detailed security alerts.
+
+**Why others are incorrect:**
+
+* **A. Dependabot alerts** ❌ → Only scans **dependencies**, not your actual source code.
+* **B. Branch protection rules** ❌ → Enforce policies (e.g., reviews), not scanning.
+* **D. GitHub Advisory Database** ❌ → A database of known vulnerabilities, not a scanning mechanism.
+
+✅ Conclusion:
+
+To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
+
+
+### Question #43
+
+DRAG DROP -
+
+You create a Git repository named Repo1 in Azure Repos.
+
+You need to configure Repo1 to meet the following requirements:
+
+• Work items must be linked to a pull request.
+
+• Pull requests must have a minimum of two reviewers.
+
+• Pull requests must complete a code review by using a third-party tool.
+
+The solution must minimize administrative effort.
+
+
+Which type of policy should you use for each requirement? To answer, drag the appropriate policy types to the correct requirements. Each type policy may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted text content:
+
+**Policies**
+
+*   Branch
+*   Build
+*   Check-in
+*   Status
+
+**Answer Area**
+
+*   Work items must be linked to a pull request: **[Empty Slot]**
+*   Pull requests must complete a code review by a third party tool: **[Empty Slot]**
+*   Pull requests must have a minimum of two reviewers: **[Empty Slot]**
+
+
+----------------
+
+
+To meet the requirements for **Repo1** in Azure Repos while minimizing administrative effort, the following policy types should be used:
+
+**Answer Area**
+
+*   Work items must be linked to a pull request: **Branch**
+*   Pull requests must complete a code review by a third-party tool: **Status**
+*   Pull requests must have a minimum of two reviewers: **Branch**
+
+**Explanation:**
+
+1.  **Work items must be linked to a pull request (Branch):** 
+    In the branch policy settings for Azure Repos Git repositories, there is a built-in toggle called **"Check for linked work items."** Enabling this is a standard **Branch** policy that ensures traceability between code changes and tasks/bugs.
+
+2.  **Pull requests must complete a code review by a third-party tool (Status):** 
+    To integrate external services or third-party tools into the PR workflow, you use a **Status Check**. The external tool performs its scan and then posts a status (e.g., "Succeeded") to the pull request via the Azure DevOps API. You configure a **Status** policy within the branch settings to make this specific status a mandatory requirement for merging.
+
+3.  **Pull requests must have a minimum of two reviewers (Branch):** 
+    Similar to the work item requirement, this is a native feature in Azure DevOps branch policy settings titled **"Require a minimum number of reviewers."** Setting the count to two is a standard **Branch** policy.
+
+**Note on "Check-in":** Check-in policies are specific to Team Foundation Version Control (TFVC) and are not used for Git repositories.
 
 ### Question-96 
 
@@ -10530,7 +11124,7 @@ What should you use?
 
 * A. a package
 * B. GitHub Copilot
-* **C. a webhook**
+* C. a webhook
 * D. a gist
 
 
@@ -10558,7 +11152,6 @@ Why the other options are incorrect:
 * **D. a gist** ❌
   → Gists are for sharing code snippets; they don’t trigger scripts automatically.
 
-=
 
 Final Answer:
 
@@ -10576,10 +11169,11 @@ You change the code of App1 to fix a bug that was introduced in version 10.5.1.
 Which version number should you assign to the release?
 
 * A. 10.5.1-PATCH
-* **B. 11.2.1**
+* B. 11.2.1
 * C. 10.5.2
 * D. 10.6.0
 
+----
 
 The correct answer is:
 
@@ -10623,6 +11217,7 @@ Why the others are wrong:
 **11.2.1**
 
 
+
 ### Question-99
 
 You manage code by using GitHub.
@@ -10632,10 +11227,11 @@ You need to ensure that repository owners are notified if a new vulnerable depen
 What should you do?
 
 * A. Configure CodeQL scanning actions.
-* **B. Configure Dependabot alerts.**
+* B. Configure Dependabot alerts.
 * C. Configure branch protection rules for each repository.
 * D. Subscribe all the repository owners to the GitHub Advisory Database.
 
+------
 
 The correct answer is:
 
@@ -10818,6 +11414,633 @@ Final Answer:
 **A. bfg** ✅
 
 
+### Question #47
+
+DRAG DROP -
+
+You have a GitHub repository.
+
+You need to configure Dependabot dependency scanning. The solution must meet the following requirements:
+
+• Automatically open a pull request to resolve an alert.
+
+• Automatically open a pull request when a dependency is updated.
+
+
+What should you enable for each requirement? To answer, drag the appropriate features to the correct requirements. Each feature may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted text content:
+
+**Features**
+
+*   Alerts
+*   A dependency graph
+*   Security updates
+*   Version updates
+
+**Answer Area**
+
+*   Automatically open a pull request to resolve an alert: **[Empty Slot]**
+*   Automatically open a pull request when a dependency is updated: **[Empty Slot]**
+
+----
+
+To configure Dependabot dependency scanning in a GitHub repository to meet the specified requirements, you should enable the following features:
+
+**Answer Area**
+
+*   Automatically open a pull request to resolve an alert: **Security updates**
+*   Automatically open a pull request when a dependency is updated: **Version updates**
+
+**Explanation:**
+
+1.  **Automatically open a pull request to resolve an alert (Security updates):**
+    This functionality is provided by Dependabot's **Security updates**. When GitHub identifies a vulnerability in one of your dependencies (via its security advisory database), Dependabot can automatically open a pull request to update that dependency to a non-vulnerable version, thereby "resolving the alert."
+
+2.  **Automatically open a pull request when a dependency is updated (Version updates):**
+    This functionality is provided by Dependabot's **Version updates**. Regardless of security vulnerabilities, Dependabot can be configured to check for new minor or major versions of your dependencies and automatically open pull requests to update them, helping you keep your project up-to-date.
+
+**Why other options are incorrect:**
+
+*   **Alerts:** This is the general term for notifications about vulnerabilities, but "Security updates" is the specific Dependabot feature that *creates the PR* to resolve them.
+*   **A dependency graph:** This is a tool to visualize your dependencies, not a feature that automates PR creation.
+
+
+### Question #48
+
+DRAG DROP -
+
+You have a large repository named Repo1 that contains a directory named directory1.
+
+You plan to modify files in directory1.
+
+You need to create a clone of Repo1. The solution must minimize the amount of transferred data.
+
+
+How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted text content:
+
+**Values**
+
+*   `git clone`
+*   `git fetch`
+*   `git sparse-checkout`
+*   `git worktree`
+*   `scalar clone`
+*   `scalar run`
+
+**Answer Area**
+
+```bash
+...
+
+cd repos
+
+[ Value ] https://dev.azure.com/organisation/_git/Repo1
+
+[ Value ] set directory1
+
+...
+```
+
+---------
+
+
+To minimize the amount of transferred data and work only with a specific directory, you should use **Scalar with sparse checkout**.
+
+✅ Correct Answer
+
+```bash id="r8g2hf"
+cd repos
+
+scalar clone https://dev.azure.com/organisation/_git/Repo1
+
+git sparse-checkout set directory1
+```
+
+**Explanation:**
+
+* **`scalar clone`**
+
+  * Optimized for large repositories
+  * Minimizes data transfer using partial clone
+
+* **`git sparse-checkout set directory1`**
+
+  * Limits the working directory to only **directory1**
+
+❌ Why not others:
+
+* `git clone` → Clones entire repo (more data)
+* `git fetch` → Not used for initial clone
+* `git worktree` → Used for multiple working directories, not reducing data
+* `git sparse-checkout` alone → Requires repo already initialized
+
+✅ Key Point:
+
+Use **Scalar + sparse checkout** to **reduce data transfer and focus on a specific folder**.
+
+
+### Question #49
+
+You have a project in Azure DevOps.
+
+You need to implement a new branching solution. The solution must ensure that all pull requests meet the following requirements:
+
+• Include linked work items.
+
+• Pass build validation policies.
+
+• Require at least three reviewers.
+
+What should you include in the solution?
+
+A. branch policies
+
+B. pull request templates
+
+C. branch security
+
+D. pull request permissions
+
+---------
+
+**Correct Answer: A. branch policies** ✅
+
+**Explanation:**
+
+**Branch policies in Azure DevOps** allow you to enforce all the listed requirements on pull requests:
+
+* ✅ **Linked work items required** → Enforced via branch policy
+* ✅ **Build validation policies** → Ensures PRs pass CI builds before completion
+* ✅ **Minimum number of reviewers (e.g., 3)** → Configurable in branch policy
+
+❌ Why not others:
+
+* **B. Pull request templates** → فقط provide guidance, not enforcement
+* **C. Branch security** → Controls access/permissions, not PR requirements
+* **D. Pull request permissions** → Controls who can act, not validation rules
+
+✅ Key Point:
+
+Use **branch policies** to enforce **quality gates and PR requirements automatically**.
+
+
+### Question #50
+
+You use Git for source control.
+
+You need to commit a 3-GB ZIP file that contains virtual machines used for testing. The solution must meet the following requirements:
+
+• The file must be versioned.
+
+• The file must be associated with the corresponding code commits.
+
+Which two actions should you include in the solution? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Install the git-fat extension and associate the extension to ZIP files.
+
+B. Install the Git LFS extension and associate the extension to ZIP files.
+
+Most Voted
+
+C. Install the git-stash extension and associate the extension to ZIP files.
+
+D. Use GZip to compress the file before committing the file.
+
+E. Store files in Azure Storage and enable blob versions
+
+-------
+
+**Correct Answers: A and B** ❌➡️ **Correct is: B only (paired with tracking action conceptually)**
+
+But since this is a **“two actions”** question from exam context, the correct selections are:
+
+**B. Install the Git LFS extension and associate the extension to ZIP files.** ✅
+
+**E. Store files in Azure Storage and enable blob versions** ❌ (not correct for Git association)
+
+👉 Let’s clarify properly:
+
+✅ Best Answer (Exam Intent)
+
+**B. Install the Git LFS extension and associate the extension to ZIP files.** ✅
+
+**(Implicit second step: track the file type with Git LFS)**
+
+**Explanation:**
+
+* A **3-GB file is too large for normal Git**.
+* **Git LFS (Large File Storage)**:
+
+  * Stores large files outside the main repo
+  * Keeps **pointers in Git**, so files are:
+
+    * ✅ Versioned
+    * ✅ Linked to commits
+
+ ❌ Why others are incorrect:
+
+* **A. git-fat** ❌ – Not a standard or recommended Microsoft/GitHub solution
+* **C. git-stash** ❌ – Used for temporary changes, not storage
+* **D. GZip compression** ❌ – Doesn’t solve large file versioning problem
+* **E. Azure Storage** ❌ – Files won’t be tied to Git commits
+
+⚠️ Important Insight:
+
+Even though the question says “two actions,” the **only valid solution is Git LFS + tracking**, and the exam maps that to **option B**.
+
+✅ Final Answer:
+
+**B**
+
+
+### Question #51
+
+You manage source control by using GitHub.
+
+You have a file named Data.txt that contains sensitive data. A user pushes Data.txt to a repository.
+
+You need to purge the file from the repository.
+
+Which two commands can you use? Each correct answer presents a complete solution.
+
+NOTE: Each correct solution is worth one point.
+
+A. git checkout \ git reset -hard -pathspec data.txt
+
+B. git checkout \ git clean -d data.txt --force
+
+C. bfg --delete-files data.txt \ git push --force Most Voted
+
+D. git rm data.txt \ git push --force
+
+E. git filter-repo --invert-paths --path data.txt \ git push origin --force --all
+
+F. git revert -edit data.txt \ git push -force
+
+
+--------
+
+
+**Correct Answers: C and E** ✅✅
+
+
+**Explanation:**
+
+To **completely purge a sensitive file from a GitHub repository**, you must **rewrite the repository history** and then force push.
+
+✅ Valid Solutions:
+
+**C.**
+
+```bash
+bfg --delete-files data.txt
+git push --force
+```
+
+* Uses **BFG Repo-Cleaner** (fast and commonly recommended)
+* Removes the file from **entire history**
+
+
+**E.**
+
+```bash
+git filter-repo --invert-paths --path data.txt
+git push origin --force --all
+```
+
+* Uses **git filter-repo** (modern replacement for filter-branch)
+* Fully removes the file from all commits
+
+
+❌ Why others are incorrect:
+
+* **A / B** ❌ → Only affect working directory, not history
+* **D** ❌ → Removes file only from latest commit, not history
+* **F** ❌ → `git revert` does not remove history, only adds a new commit
+
+✅ Key Point:
+
+To remove sensitive data, you must:
+
+1. **Rewrite history**
+2. **Force push**
+
+Only **BFG** and **git filter-repo** achieve this properly.
+
+### Question #52
+
+You use GitHub Enterprise for source control repositories. The repositories store C# code.
+
+You need to enable CodeQL scanning for the repositories.
+
+What should you do?
+
+A. Enable Dependabot security updates.
+
+B. Enable Dependabot alerts.
+
+C. Configure a required GitHub Actions workflow for all the repositories.
+
+D. Push a GitHub Actions workflow to all the repositories.
+
+---------
+
+
+**Correct Answer: D. Push a GitHub Actions workflow to all the repositories.** ✅
+
+
+**Explanation:**
+
+To enable **CodeQL scanning** in GitHub Enterprise:
+
+* You must **add a GitHub Actions workflow** that runs CodeQL analysis.
+* This is done by **pushing a workflow file (e.g., in `.github/workflows/`)** to each repository.
+* The workflow defines when and how CodeQL scans the code.
+
+❌ Why others are incorrect:
+
+* **A. Dependabot security updates** ❌ → Handles dependency vulnerabilities, not code scanning
+* **B. Dependabot alerts** ❌ → Only alerts, does not scan code
+* **C. Configure a required GitHub Actions workflow** ❌ → You cannot enforce it before the workflow exists
+
+✅ Key Point:
+
+CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
+
+### Question #53
+
+HOTSPOT -
+
+You have a GitHub repository that contains a workflow named WF1. WF1 is used to build code for an app named App1.
+
+You need to add a build status badge to the README.md file in the repository for App1.
+
+How should you complete the URL for the badge? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+**Answer Area**
+
+**URL Structure:**
+
+`https://github.com/` **[ Dropdown 1 ]** / **[ Dropdown 2 ]** `/actions/workflows/WF1/badge.svg`
+
+**Options for both Dropdown 1 and Dropdown 2:**
+
+*   Badge type
+*   Branch name
+*   Organization name
+*   Repository name
+*   Repository owner
+
+------
+
+To complete the URL for a GitHub Actions build status badge, the correct configuration is:
+
+**Answer Area**
+
+**URL Structure:**
+
+`https://github.com/` **[ Repository owner ]** / **[ Repository name ]** `/actions/workflows/WF1/badge.svg`
+
+**Explanation:**
+
+GitHub Actions uses a standard, predictable URL format to serve status badges (SVG images) for specific workflows. The structure of that URL is:
+
+1.  **Repository owner (Dropdown 1):** This is the username or organization name that owns the repository (e.g., `microsoft` or `john-doe`).
+2.  **Repository name (Dropdown 2):** This is the specific name of the repository being built (e.g., `my-app`).
+3.  **Actions/workflows/WF1/badge.svg:** This part identifies the specific workflow file (in your case, `WF1.yml`) and requests the visual badge.
+
+By adding this full URL to your `README.md` file using image syntax (e.g., `![Build Status](URL)`), you will display a real-time status indicating whether the most recent build succeeded or failed.
+
+**Note:** While "Organization name" could be technically correct if the owner *is* an organization, "Repository owner" is the most accurate and universal term used in this context.
+
+### Question #54
+
+You have a GitHub repository.
+
+You need to create a tag named v3.0.5 and ensure that the tag is available in the remote repository.
+
+Which two commands should you run? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. git push -force
+
+B. git push origin v3.0.5
+
+C. git tag v3.0.5
+
+D. git commit -m ‘tag v3.0.5’
+
+E. git add ‘tag v3.0.5’
+
+----
+
+
+**Correct Answers: C and B** ✅✅
+
+**Explanation:**
+
+To create a tag and make it available in the remote repository:
+
+1️⃣ Create the tag locally
+
+**C. `git tag v3.0.5`** ✅
+
+2️⃣ Push the tag to the remote repository
+
+**B. `git push origin v3.0.5`** ✅
+
+❌ Why others are incorrect:
+
+* **A. git push -force** ❌ → Not needed and unrelated
+* **D. git commit -m ‘tag v3.0.5’** ❌ → Tags are not commits
+* **E. git add ‘tag v3.0.5’** ❌ → Tags are not files
+
+✅ Key Point:
+
+* Tags are **created locally** and must be **explicitly pushed** to the remote.
+
+### Question #55
+
+You have a GitHub repository.
+
+You need to ensure that all changes to code are validated by your company’s security department before the main branch is deployed.
+
+Which two actions can you perform? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Require signed commits. Most Voted
+
+B. Create a branch protection rule for the feature branches.
+
+C. Create a LICENSE file.
+
+D. Create a branch protection rule for the main branch.
+
+E. Create a CODEOWNERS file.
+
+-------
+
+**Correct Answers: D and E** ✅✅
+
+---
+
+**Explanation:**
+
+To ensure **all changes are validated by the security department before deployment**, you need to enforce **review requirements on the main branch**.
+
+✅ Valid Solutions:
+
+**D. Create a branch protection rule for the main branch**
+
+* Enforces pull request requirements before merging
+* Can require approvals and block direct pushes
+
+**E. Create a CODEOWNERS file**
+
+* Automatically assigns specific reviewers (e.g., security team)
+* Can require their approval before changes are merged
+
+❌ Why others are incorrect:
+
+* **A. Require signed commits** ❌ → Verifies identity, not security review
+* **B. Branch protection for feature branches** ❌ → Doesn’t protect main deployment path
+* **C. LICENSE file** ❌ → Unrelated
+
+✅ Key Point:
+
+Combine:
+
+* **Branch protection (enforcement)**
+* **CODEOWNERS (who must approve)**
+
+→ Ensures **security team validation before deployment**
+
+### Question #56
+
+HOTSPOT -
+
+You have a .NET app named App1.
+
+You need to upload App1 to GitHub Packages.
+
+How should you complete the command? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted text content:
+
+**Answer Area**
+
+**Command Structure:**
+
+`[ Dropdown 1 ]` `[ Dropdown 2 ]` `"bin/Release/app1.1.0.0.nupkg" --api-key PAT_TOKEN --source "github"`
+
+**Options for Dropdown 1:**
+
+*   dotnet
+*   git
+*   make
+*   npm
+
+**Options for Dropdown 2:**
+
+*   nuget add source
+*   nuget push
+*   pack
+*   publish
+
+----
+
+
+✅ Correct Answer
+
+**Command:**
+
+```bash
+dotnet nuget push "bin/Release/app1.1.0.0.nupkg" --api-key PAT_TOKEN --source "github"
+```
+
+**Selections:**
+
+* **Dropdown 1:** `dotnet` ✅
+* **Dropdown 2:** `nuget push` ✅
+
+**Explanation:**
+
+* **`dotnet nuget push`** is the correct command to **publish a NuGet package** to a repository such as **GitHub Packages**.
+* The `.nupkg` file is uploaded using:
+
+  * **`--api-key`** → Personal Access Token (PAT)
+  * **`--source`** → GitHub package source
+
+❌ Why not others:
+
+* **git / npm / make** ❌ → Not used for NuGet publishing
+* **nuget add source** ❌ → Adds a source, does not publish
+* **pack** ❌ → Creates a package, doesn’t upload
+* **publish** ❌ → Not valid for NuGet push
+
+✅ Key Point:
+
+Use **`dotnet nuget push`** to upload packages to **GitHub Packages**.
+
+### Question #59
+
+DRAG DROP -
+
+You have a GitHub repository named repo1 and an Azure key vault named kv1.
+
+In repo1, you plan to create a workflow named Workflow1 that will deploy a database server by using credentials stored in kv1.
+
+You need to ensure that Workflow1 can retrieve the credentials from kv1.
+
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
+
+---------
+
+
+Based on the image provided, here is the extracted text content:
+
+**Actions**
+
+*   Grant secret permissions to kv1.
+*   Reference the credentials in Workflow1.
+*   Create a personal access token (PAT) in GitHub.
+*   Grant key permissions to kv1.
+*   Create a service principal in Microsoft Entra ID.
+
+**Answer Area**
+
+*   **[Slot 1]**
+*   **[Slot 2]**
+*   **[Slot 3]**
+
+**Context (Typical Solution)**
+
+This task describes the sequence for configuring a **GitHub Actions workflow (Workflow1)** to securely retrieve secrets from an **Azure Key Vault (kv1)**. The correct order is:
+
+1.  **Create a service principal in Microsoft Entra ID.** (This provides the identity that GitHub will use to log in to Azure).
+2.  **Grant secret permissions to kv1.** (You add an Access Policy to the Key Vault to allow the service principal from Step 1 to "Get" and "List" secrets).
+3.  **Reference the credentials in Workflow1.** (You store the service principal's JSON credentials as a GitHub Action Secret and then use the `azure/login` and `azure/get-keyvault-secrets` actions in your YAML file).
+
 ### Question-103
 
 Your company creates a new Azure DevOps team You plan to use Azure DevOps for sprint planning.
@@ -10898,11 +12121,9 @@ This is the classic **feature-branch workflow**, which perfectly matches all req
 ✅ Features can be abandoned safely
 
 * If a feature is no longer needed → simply **delete the feature branch**.
-* No impact on the main codebase.
+\\o impact on the main codebase.
 
-✅ Encourages experimentation
-
-* Developers can freely experiment in isolated branches without risk.
+✅ Encourages experimentatiomuevelopers can freely experiment in isolated branches without risk.
 
 Why the others are wrong:
 
@@ -10919,7 +12140,6 @@ Recommended Strategy Name:
 
 **Trunk-based development with short-lived feature branches**
 (or simply **Feature Branch Workflow**)
-
 Final Answer:
 
 **D. a single long-running branch with multiple short-lived feature branches** ✅
@@ -10971,6 +12191,57 @@ Why this fails the requirement:
 Final Answer:
 
 **B. No** ❌
+
+### Question #59
+
+DRAG DROP -
+
+You have a GitHub repository named repo1 and an Azure key vault named kv1.
+
+In repo1, you plan to create a workflow named Workflow1 that will deploy a database server by using credentials stored in kv1.
+
+You need to ensure that Workflow1 can retrieve the credentials from kv1.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
+
+**Actions**
+
+
+*   Grant secret permissions to kv1.
+*   Reference the credentials in Workflow1.
+*   Create a personal access token (PAT) in GitHub.
+*   Grant key permissions to kv1.
+*   Create a service principal in Microsoft Entra ID.
+
+**Answer Area**
+
+*   **[Slot 1]**
+*   **[Slot 2]**
+*   **[Slot 3]**
+
+-------
+
+
+To allow **Workflow1** in GitHub to access secrets in **kv1** (Azure Key Vault), the proper sequence is:
+
+1. **Create a service principal in Microsoft Entra ID** – This gives an identity that can authenticate with Azure.
+2. **Grant secret permissions to kv1** – The service principal needs permissions (like `Get` or `List`) on secrets in the Key Vault.
+3. **Reference the credentials in Workflow1** – Finally, you configure the GitHub workflow to use the service principal credentials to retrieve secrets.
+
+So the answer is:
+
+* **[Slot 1]** → Create a service principal in Microsoft Entra ID
+* **[Slot 2]** → Grant secret permissions to kv1
+* **[Slot 3]** → Reference the credentials in Workflow1
+
+**Notes:**
+
+* Creating a **PAT** is not needed here; that’s for GitHub API access.
+* Key permissions are for encrypt/decrypt operations, not retrieving secrets.
+
+This is the standard pattern for GitHub Actions + Azure Key Vault integration.
 
 
 ### Question-106
