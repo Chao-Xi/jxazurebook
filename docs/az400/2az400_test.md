@@ -12041,7 +12041,201 @@ This task describes the sequence for configuring a **GitHub Actions workflow (Wo
 2.  **Grant secret permissions to kv1.** (You add an Access Policy to the Key Vault to allow the service principal from Step 1 to "Get" and "List" secrets).
 3.  **Reference the credentials in Workflow1.** (You store the service principal's JSON credentials as a GitHub Action Secret and then use the `azure/login` and `azure/get-keyvault-secrets` actions in your YAML file).
 
+## Topic 6 - Question Set 6
+
+### Question #1
+
+Your company has 60 developers who are assigned to four teams. Each team has 15 members.
+
+The company uses an agile development methodology.
+
+You need to structure the work of the development teams so that each team owns their respective work while working together to reach a common goal.
+
+Which parts of the taxonomy should you enable the team to perform autonomously?
+
+A. Features and Tasks
+
+B. Initiatives and Epics
+
+C. Epics and Features
+
+D. Stories and Tasks
+
+
+------
+
+
+
+The correct answer is:
+
+**D. Stories and Tasks**
+
+Explanation
+
+In Agile (especially when using frameworks like **Scrum** in Azure DevOps):
+
+* **Epics** and **Features** represent **high-level planning and cross-team alignment** → typically managed centrally to ensure all teams are working toward a **common goal**.
+* **User Stories** and **Tasks** represent **team-level execution** → these should be owned and managed **autonomously by each team**.
+
+Why this fits the requirement
+
+* The question asks for **team autonomy + shared goal**
+* Teams should independently decide **how** to implement work → **Stories & Tasks**
+* Leadership/product management coordinates **what** and **why** → **Epics & Features**
+
+Summary
+
+* **Centralized (shared goal):** Epics, Features
+* **Team-owned (autonomous):** ✅ Stories, Tasks
+
+If you want, I can map this to Azure DevOps Boards hierarchy to make it even clearer.
+
+### Question #3
+
+Your company implements an Agile development methodology.
+
+You plan to implement retrospectives at the end of each sprint.
+
+Which three questions should you include? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+
+A. Who performed well?
+
+B. Who should have performed better?
+
+C. What could have gone better?
+
+D. What went well?
+
+E. What should we try next?
+
+--------
+
+
+The correct answers are:
+
+**C. What could have gone better?**
+**D. What went well?**
+**E. What should we try next?**
+
+Explanation
+
+Agile retrospectives focus on **continuous improvement of the team and process**, not on blaming individuals. The standard retrospective themes are:
+
+* ✅ **What went well?** → Reinforce good practices
+* ✅ **What could have gone better?** → Identify improvement areas
+* ✅ **What should we try next?** → Define actionable improvements
+
+Why others are incorrect
+
+* ❌ **A. Who performed well?** → Focuses on individuals, not team/process
+* ❌ **B. Who should have performed better?** → Blame-oriented, ضد Agile principles
+
+Key Principle
+
+Retrospectives should be **safe, blameless, and team-focused**, encouraging collaboration and continuous improvement.
+
+### Question #13
+
+You have a build pipeline in Azure Pipelines.
+
+You create a Slack App Integration.
+
+You need to send build notifications to a Slack channel named #Development. What should you do first?
+
+A. Create a project-level notification.
+
+B. Configure a service connection.
+
+C. Create a global notification.
+
+D. Creates a service hook subscription.
+
+-------
+
+The correct answer is:
+
+**D. Create a service hook subscription.**
+
+Explanation
+
+To send notifications from Azure Pipelines to Slack, you use **service hooks**:
+
+* A **service hook subscription** connects Azure DevOps events (like build completed) to external services (like Slack).
+* After creating the Slack App Integration, the **first step in Azure DevOps** is to set up a **service hook** targeting Slack.
+
+Why not the others?
+
+* ❌ **A. Project-level notification** → Used for email or built-in notifications, not Slack integration
+* ❌ **B. Configure a service connection** → Used for connecting to external resources (e.g., Azure), not for notifications
+* ❌ **C. Global notification** → Also for internal notifications, not Slack
+
+Flow Summary
+
+1. Create Slack App Integration
+2. ✅ Create **service hook subscription** in Azure DevOps
+3. Configure it to trigger on build events and post to `#Development`
+
+If you want, I can walk you through the exact steps in the Azure DevOps UI.
+
+
+### Question #15
+
+Your company uses Azure DevOps for Git source control.
+
+You have a project in Azure DevOps named Contoso App that contains the following repositories:
+
+✑ https://dev.azure.com/contoso/contoso-app/core-api 
+
+✑ https://dev.azure.com/contoso/contoso-app/core-spa 
+
+✑ https://dev.azure.com/contoso/contoso-app/core-db 
+
+
+You need to ensure that developers receive Slack notifications when there are pull requests created for Contoso App. What should you run in Slack? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+**Answer Area**
+
+**Command Syntax:**
+`/azrepos` **[ Dropdown 1 ]** **[ Dropdown 2 ]**
+
+**Options for Dropdown 1:**
+
+*   feedback
+*   signin
+*   subscribe
+*   subscriptions
+
+**Options for Dropdown 2:**
+
+*   `https://dev.azure.com/contoso/contoso-app`
+*   `https://dev.azure.com/contoso/contoso-app/core-api`
+*   `https://dev.azure.com/contoso/contoso-app/core-db`
+*   `https://dev.azure.com/contoso/contoso-app/core-spa`
+
+---
+
+To ensure that developers receive Slack notifications for pull requests in the **entire project** (Contoso App), you should run the following command in Slack:
+
+**Answer Area**
+
+`/azrepos [ subscribe ] [ https://dev.azure.com/contoso/contoso-app ]`
+
+**Explanation:**
+
+1.  **Dropdown 1 (subscribe):** In the Slack/Teams integration with Azure DevOps, the `subscribe` command is used to set up notifications for events like pull requests, commits, and code pushes.
+2.  **Dropdown 2 (Project URL):** The requirement is to receive notifications for **all pull requests created for "Contoso App"** (the project). In Azure DevOps, you can subscribe at the **project level** or the **repository level**.
+    *   Subscribing to the project URL (`https://dev.azure.com/contoso/contoso-app`) means you will automatically receive notifications for any pull requests across all three repositories (`core-api`, `core-spa`, and `core-db`) within that project.
+    *   Subscribing to a specific repository URL (like `.../core-api`) would only notify the team for that single repository, requiring three separate commands to cover everything.
+
+**Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
+
+
 ### Question-103
+
 
 Your company creates a new Azure DevOps team You plan to use Azure DevOps for sprint planning.
 
@@ -12049,7 +12243,7 @@ You need to visualize the flow of your work by using an agile methodology.
 
 Which Azure DevOps component should you use?
 
-* **A. Kanban boards**
+* A. Kanban boards
 * B. sprint planning
 * C. delivery plans
 * D. portfolio backlogs
@@ -12099,7 +12293,9 @@ What should you recommend?
 * A. a single long-running branch without forking
 * B. multiple long-running branches
 * C. a single fork per team member
-* **D. a single long-running branch with multiple short-lived feature branches**
+* D. a single long-running branch with multiple short-lived feature branches
+
+---------------
 
 The correct answer is:
 
@@ -12156,7 +12352,10 @@ You need Azure DevOps to send a notification to Jenkins when a developer commits
 Does this meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No
+
+
+------
 
 **Answer: B. No** ❌
 
@@ -12258,10 +12457,15 @@ You have a project in Azure DevOps that has a release pipeline.
 
 Which system should you use?
 
+
+
 * A. Asana
 * B. Basecamp
 * C. Trello
 * D. Jira
+
+
+-------------
 
 **Correct answer: D. Jira** ✅
 
@@ -12512,7 +12716,10 @@ Supports developers who use browsers, tablets, and Chromebooks What should you r
 * A. VS Code
 * B. Xamarin Studio
 * C. MonoDevelop
-* **D. Github Codespaces**
+* D. Github Codespaces
+
+----------
+
 
 The correct answer is:
 
