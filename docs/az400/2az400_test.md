@@ -12216,7 +12216,6 @@ Hot Area:
 *   `https://dev.azure.com/contoso/contoso-app/core-db`
 *   `https://dev.azure.com/contoso/contoso-app/core-spa`
 
----
 
 To ensure that developers receive Slack notifications for pull requests in the **entire project** (Contoso App), you should run the following command in Slack:
 
@@ -12232,6 +12231,150 @@ To ensure that developers receive Slack notifications for pull requests in the *
     *   Subscribing to a specific repository URL (like `.../core-api`) would only notify the team for that single repository, requiring three separate commands to cover everything.
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
+
+###  Question #19
+
+You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
+
+You need to change the order of pages in the navigation pane of the published wiki in the Azure DevOps portal. What should you do?
+
+A. At the root of the wiki, create a file named .order that defines the page hierarchy.
+
+B. At the root of the wiki, create a file named wiki.md that defines the page hierarchy.
+
+C. Rename the pages in the navigation pane.
+
+D. Drag and drop the pages in the navigation pane.
+
+----
+
+
+The correct answer is **A. At the root of the wiki, create a file named .order that defines the page hierarchy.**
+
+Explanation:
+
+In Azure DevOps, there are two types of wikis:
+
+1.  **Project Wiki (Provisioned):** This is a standalone wiki where you can easily drag and drop pages to reorder them directly in the UI.
+2.  **Published Wiki (Code Wiki):** This is a wiki where the content is stored in a **Git repository**. 
+
+**Why A is the correct solution for a Published Wiki:**
+Because a Published Wiki is powered by a Git repository, the order of the pages is not managed through the web interface. Instead, it is controlled by metadata files stored in the repository alongside your Markdown (`.md`) files.
+
+*   To set a custom order for your pages, you must create a file named **`.order`** in the same directory as the Markdown files. 
+*   In this file, you simply list the names of the Markdown files (without the `.md` extension) in the specific order you want them to appear in the navigation pane.
+*   Once you commit and push this `.order` file to the repository, the Azure DevOps portal will automatically refresh the navigation pane to reflect the new sequence.
+
+Why other options are incorrect:
+
+*   **B (wiki.md):** This is not a recognized system file for managing page hierarchy in Azure DevOps wikis.
+*   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
+*   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
+
+### Question #20
+
+DRAG DROP You have a GitHub organization named org1 and an Azure tenant named Tenant1.
+
+You need to enable single sign-on (SSO) in Azure Active Directory (Azure AD) for the users in org1.
+
+
+Which URIs should you use for the SAML configuration in Azure AD? To answer, drag the appropriate URIs to the correct settings. Each URI may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**URIs**
+
+*   `https://github.com/orgs/org1`
+*   `https://github.com/orgs/org1/sso`
+*   `https://login.microsoftonline.com/tenant1`
+*   `https://github.com/orgs/org1/saml/consume`
+*   `https://login.microsoftonline.com/tenant1.com`
+
+**Answer Area**
+
+*   **Identifier (Entity ID):** `[ Empty Slot ]`
+*   **Reply URL (Assertion Consumer Service URL):** `[ Empty Slot ]`
+*   **Sign on URL:** `[ Empty Slot ]`
+
+-----
+
+
+To configure **SAML SSO between Azure AD and GitHub organization org1**, you must use GitHub’s SAML endpoints in Azure AD.
+
+Correct mappings
+
+* **Identifier (Entity ID):**
+  **`https://github.com/orgs/org1`**
+
+* **Reply URL (Assertion Consumer Service URL):**
+  **`https://github.com/orgs/org1/saml/consume`**
+
+* **Sign on URL:**
+  **`https://github.com/orgs/org1/sso`**
+
+Explanation
+
+* **Identifier (Entity ID)** identifies the GitHub organization as the service provider.
+* **Reply URL (ACS)** is where Azure AD sends the SAML assertion after authentication.
+* **Sign-on URL** is where users are redirected to initiate SSO for the organization.
+
+Why the other URIs are incorrect
+
+* `https://login.microsoftonline.com/tenant1` and `https://login.microsoftonline.com/tenant1.com` are Azure AD endpoints, not GitHub SAML endpoints, so they are not used in these fields.
+
+
+### Question #33
+
+You manage a project by using Azure Boards. You manage the project code by using GitHub.
+
+You have three work items that have IDs of 456, 457, and 458.
+
+You need to create a pull request that will be linked to all the work items. The solution must set the state of work item 456 to done.
+
+What should you add to the commit message?
+
+- A. Fixes #456, #457, #458
+- B. Fixes #AB456, #AB457, #AB458
+- C. #456, #457, #458 Completed #456
+- D. #AB456, #AB457, #AB458
+
+----
+
+
+The correct answer is:
+
+**B. Fixes #AB456, #AB457, #AB458**
+
+Explanation
+
+When integrating **GitHub with Azure Boards**, work items must be referenced using the format:
+
+* **`#AB<WorkItemID>`**
+
+To **link and automatically transition a work item to Done**, you use keywords like:
+
+* **Fixes**, **Resolves**, or **Closes**
+
+So:
+
+* **`Fixes #AB456`** → Links the work item **and sets it to Done**
+* Adding the others (`#AB457`, `#AB458`) links them to the PR
+
+Why not the others?
+
+* ❌ **A. Fixes #456, #457, #458** → Missing `AB` prefix (won’t link to Azure Boards)
+* ❌ **C. #456, #457, #458 Completed #456** → Invalid syntax
+* ❌ **D. #AB456, #AB457, #AB458** → Links only, does NOT change state
+
+Key Point
+
+* Use **`Fixes #AB<ID>`** to both **link and complete** Azure Boards work items from GitHub commits/PRs.
+
+
+
+
 
 
 ### Question-103
@@ -12442,6 +12585,147 @@ So the answer is:
 
 This is the standard pattern for GitHub Actions + Azure Key Vault integration.
 
+### Question #16
+
+You have an Azure DevOps organization that contains a project named Project1. You need to create a published wiki in Project1.
+
+What should you do first?
+
+A. Modify the Storage settings of Project1.
+
+B. In Project1, create an Azure DevOps pipeline.
+
+C. In Project1, create an Azure DevOps repository.
+
+D. Modify the Team configuration settings of Project1.
+
+-----
+
+
+The correct answer is **C. In Project1, create an Azure DevOps repository**.
+
+Explanation:
+
+In Azure DevOps, there are two types of wikis:
+
+1.  **Project Wiki (Provisioned):** This is a standalone wiki that is automatically created for the project. You don't need to do anything to enable it.
+2.  **Published Wiki (Code Wiki):** This is a wiki where the content is stored in a **Git repository** within the same project. This allows you to treat your documentation like code (version control, branches, pull requests).
+
+**Why C is the first step:**
+
+To "publish" a wiki, you must have a source to publish it from. You first create a **Git repository** (or use an existing one) and add your Markdown (`.md`) files to it. Only after the repository exists can you go to the Wiki section and select the option to **"Publish code as wiki,"** pointing it to the specific repository and branch you created.
+
+Why other options are incorrect:
+
+*   **A (Storage settings):** Wiki content is stored either in a system-managed database (Project Wiki) or a Git repo (Published Wiki); standard "Storage settings" do not control this.
+*   **B (Pipeline):** While you can use a pipeline to automate documentation, it is not a requirement to create or publish a wiki.
+*   **D (Team configuration):** This handles area paths, iterations, and team members, not documentation storage.
+
+### Question-25
+
+You manage a project by using Azure Board, and you manage the project code by using Azure Repos.
+
+You have a bug work item that has an ID of 123.
+
+You need to set the work item state to Resolved.
+
+What should you add to the commit message?
+
+A. #123 completes
+
+B. #123 Resolved
+
+C. Completed #123
+
+D. Fixes #123
+
+-----
+
+The correct answer is **D. Fixes #123**.
+
+Explanation:
+
+Azure DevOps supports **commit message keywords** to automatically update the state of a work item when code is pushed to a repository.
+
+1.  **Fixes #<ID>:** When you include the word **Fixes**, **Fixed**, or **Fix** followed by the work item number in your commit message, Azure DevOps will automatically change the state of the linked work item to **Resolved** (or a similar state depending on your process template).
+2.  **Why not the others?**
+    *   **A and C:** These keywords ("completes," "completed," or "closes") are used to set a work item state to **Closed** or **Done**. While they link the work item, they go past the "Resolved" state.
+    *   **B (#123 Resolved):** Simply typing "Resolved" after the work item number does not trigger a state transition; the system requires specific recognized keywords like *Fixes* or *Closes* to perform the automatic update.
+
+**Note on Linked Items:** Simply mentioning `#123` in a commit message will **link** the commit to the work item so you can see it in the "Development" section of the bug, but it will not change the **state** unless you use a triggering keyword like `Fixes`.
+
+### Question #29
+
+HOTSPOT -
+
+You are using Agile process methodologies in Azure DevOps.
+
+You need to deploy a dashboard that will provide progress reports for the following work items:
+
+• How long it took to close a work item after it was created.
+
+• How long it took to close a work item after the work was started.
+
+Which type of widget should you use for each work item? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted text content:
+
+**Answer Area**
+
+*   **How long it took [to] close a work item after it was created:** **[ Dropdown 1 ]**
+
+
+    *   **Dropdown 1 Options:**
+
+        *   Burndown chart
+        *   Cumulative flow diagram
+        *   Cycle time
+        *   Lead time
+        *   Velocity
+
+*   **How long it took to close a work item after the work was started:** **[ Dropdown 2 ]**
+
+
+    *   **Dropdown 2 Options:**
+
+        *   Burndown chart
+        *   Burnup chart
+        *   Cycle time
+        *   Lead time
+        *   Velocity
+
+----
+
+The correct selections are:
+
+* **How long it took to close a work item after it was created:**
+
+
+  **Lead time**
+
+* **How long it took to close a work item after the work was started:**
+
+
+  **Cycle time**
+
+Explanation
+
+* **Lead time** → Measures the total time from **creation to completion** of a work item.
+* **Cycle time** → Measures the time from **when work starts to completion**.
+
+Why not the others?
+
+* **Burndown / Burnup / Velocity** → Focus on sprint progress and capacity
+* **Cumulative flow diagram** → Shows work distribution across states, not duration
+
+Key takeaway
+
+* **Lead time = Created → Done**
+* **Cycle time = In Progress → Done**
+
 
 ### Question-106
 
@@ -12492,6 +12776,60 @@ Why the others are wrong
 Final Answer:
 
 **D. Jira** ✅
+
+### Question #27
+
+DRAG DROP -
+
+You use Exabeam Fusion SIEM and the Azure cloud platform.
+
+You need to integrate Exabeam and Azure. The solution must use OAuth authentication.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Based on the image provided, here is the extracted text content:
+
+**Actions**
+
+*   Upload a certificate.
+*   Create a client secret.
+*   Register an Exabeam application in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra.
+*   Configure the Exabeam Azure cloud connector.
+*   Configure API permissions.
+
+**Answer Area**
+
+*   **1** (Slot for action)
+*   **2** (Slot for action)
+*   **3** (Slot for action)
+
+------
+
+
+To integrate **Exabeam Fusion SIEM with Azure using OAuth**, you must follow the standard Microsoft Entra (Azure AD) app integration flow.
+
+Correct sequence:
+
+1. **Register an Exabeam application in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra**
+2. **Configure API permissions**
+3. **Create a client secret**
+
+Explanation
+
+* **Step 1 (App registration):** Establishes the identity (service principal) for Exabeam in Azure AD.
+* **Step 2 (API permissions):** Grants the app access to required Azure resources (e.g., logs, Graph API).
+* **Step 3 (Client secret):** Provides credentials used for OAuth authentication.
+
+Why not the others?
+
+* **Upload a certificate** → Alternative to client secret (not required if using secret-based OAuth)
+* **Configure the Exabeam Azure cloud connector** → Happens after Azure-side setup is complete
+
+Final Answer
+
+* **1:** Register an Exabeam application in Microsoft Azure AD
+* **2:** Configure API permissions
+* **3:** Create a client secret
 
 
 
@@ -12881,6 +13219,7 @@ What should you recommend?
 * C. Microsoft Lync
 * D. Microsoft Teams
 
+-----
 
 The correct answer is:
 
@@ -12937,7 +13276,9 @@ What should you recommend?
 * A. Skype for Business
 * B. Bamboo
 * C. Octopus
-* **D. Slack**
+* D. Slack
+
+-------
 
 The correct answer is:
 
@@ -12986,10 +13327,12 @@ Which two methods can you use to reference the parameter? Each correct answer pr
 NOTE: Each correct selection is worth one point.
 
 * A. `${{parameters.outputfile}}`
-* B. `$(parameters.outputfile)`
+* B. `$(parameters[‘outputfile’])`
 * C. `${parameters.outputfile}`
 * D. `$(parameters[outputfile])`
 * E. `${{parameters['outputfile’]}}`
+
+---------
 
 Answer: AE
 
@@ -13051,6 +13394,7 @@ Which type of service connection should you create?
 * C. Azure Service Fabric
 * D. Azure Kubernetes Service (AKS)
 
+--------
 
 The correct answer is:
 
@@ -13090,7 +13434,7 @@ Which command should you run?
 * A. @azure boards subscriptions
 * B. @azure boards create
 * C. @azure boards sign in
-* D. @azure boards
+* D. @azure boards link
 
 The correct answer is:
 
@@ -13114,7 +13458,7 @@ Why the other options are incorrect
 | ---------------------------------- | ------------------------------------------------------------------------------------- |
 | **A. @azure boards subscriptions** | Used to manage **notifications or subscriptions** in Teams, not to create work items. |
 | **C. @azure boards sign in**       | Used to **sign in** to Azure DevOps from Teams; required only once.                   |
-| **D. @azure boards**               | Shows a **list of commands/help**, but doesn’t create a work item directly.           |
+| **D. @azure boards link**               | Shows a **list of commands/help**, but doesn’t create a work item directly.           |
 
 Final Answer:
 
@@ -13137,6 +13481,8 @@ In which format should you export the logs?
 * B. EVTX
 * C. EVT
 * D. binary
+
+---
 
 
 The correct answer is:
@@ -13173,6 +13519,9 @@ Final Answer:
 **A. JSON** ✅
 
 
+
+
+
 ### Question-123
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
@@ -13188,9 +13537,11 @@ NOTE: Each correct selection is worth one point.
 
 * A. milestone
 * B. label
-* **C. title**
+* C. title
 * D. comment
-* **E. description**
+* E. description
+
+------------
 
 The correct answers are:
 
@@ -13233,9 +13584,10 @@ NOTE: Each correct selection is worth one point.
 * A. a publisher certificate
 * B. a trusted root certificate
 * C. Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra
-* **D. GitHub user credentials**
-* **E. a personal access token (PAT)**\
+* D. GitHub user credentials
+* E. a personal access token (PAT)
 
+-----
 
 Answer: DE
 
@@ -13275,9 +13627,12 @@ You need to ensure that when you commit source code in GitHub, the work item is 
 What should you include in the commit comments?
 
 * A. the URL of the work item
-* **B. AB#715**
+* B. AB#715
 * C. @715
 * D. #715
+
+
+-----
 
 Answer: B
 
@@ -13320,11 +13675,13 @@ You need to visualize the time from when work starts on a work item until the wo
 
 Which type of widget should you use?
 
-* **A. cycle time**
+* A. cycle time
 * B. velocity
 * C. cumulative flow
 * D. lead time
 
+
+-----
 
 The correct answer is:
 
@@ -13365,6 +13722,8 @@ You create a branch protection rule requiring that code changes be reviewed by c
 You need to create the CODEOWNERS file.
 
 Where should you create the file?
+
+----------------------
 
 * A.. github/actions/
 * B. .github/
