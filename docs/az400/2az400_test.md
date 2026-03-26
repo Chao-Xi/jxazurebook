@@ -11052,6 +11052,130 @@ To meet the requirements for **Repo1** in Azure Repos while minimizing administr
 
 **Note on "Check-in":** Check-in policies are specific to Team Foundation Version Control (TFVC) and are not used for Git repositories.
 
+
+
+### Question #44
+
+You manage projects by using Azure Boards. You manage project code by using GitHub.
+
+You have a work item that has an ID of 123.
+
+You need to link work item 123 to a new pull request.
+
+What are two ways to achieve this goal? Each correct answer presents a complete solution.
+
+NOTE: Each correct solution is worth one point.
+
+A. In the Development section for work item 123, select Add link, and then enter the URL of the pull request.
+
+B. To the description of the pull request, add #AB123.
+
+C. To work item 123 add a comment that includes the URL of the pull request.
+
+D. From work item 123, open the Links tab, select Add link, select Existing item, and then enter the URL of the commit.
+
+----
+
+
+The correct answers are:
+
+**A. In the Development section for work item 123, select Add link, and then enter the URL of the pull request.**
+**B. To the description of the pull request, add #AB123.**
+
+Explanation
+
+There are two valid ways to link a **GitHub pull request** to an Azure Boards work item:
+
+✅ Option A
+
+* Manually link from Azure Boards:
+
+  * Go to the work item → **Development section** → **Add link**
+  * Paste the **PR URL**
+* This directly creates the association
+
+✅ Option B
+
+* Use GitHub integration syntax:
+
+  * Add **`#AB123`** in the PR description
+* This automatically links the PR to the work item
+
+Why not the others?
+
+* ❌ **C. Add URL in a comment** → Does NOT create a formal link
+* ❌ **D. (incomplete/invalid option)** → Not a valid method
+
+Key Point
+
+* Use **`#AB<ID>`** in PRs/commits OR
+* Link manually via the **Development section** in Azure Boards
+
+### Question #45
+
+DRAG DROP -
+
+You plan to use Azure DevOps in development processes.
+
+You identify the following issues with the existing development processes:
+
+• Frequent discovery of bugs in production
+
+• Increasing detection of bugs by customers
+
+• Slow resolution of bugs and slow resumption of production
+
+You need to implement Key Performance Indicators (KPIs) to track each issue.
+
+Based on the image provided, here is the extracted text content:
+
+**KPIs**
+
+*   Application failure rates
+*   Bug report rates
+*   Defect escape rate
+*   Deployment failure rates
+
+**Answer Area**
+
+*   Frequent discovery of bugs in production: **[Empty Slot]**
+*   Increasing detection of bugs by customers: **[Empty Slot]**
+*   Slow resolution of bugs and slow resumption of production: **[Empty Slot]**
+
+-----
+
+Correct mapping:
+
+* **Frequent discovery of bugs in production:**
+  **Defect escape rate**
+
+* **Increasing detection of bugs by customers:**
+  **Bug report rates**
+
+* **Slow resolution of bugs and slow resumption of production:**
+  **Application failure rates**
+
+
+Explanation
+
+* **Defect escape rate** → Measures defects that **escape to production**, directly matching frequent production bugs
+
+* **Bug report rates** → Tracks how often **customers report bugs**, matching increased customer detection
+
+* **Application failure rates** → Reflects how often the application fails in production, which correlates with **slow recovery and instability**
+
+Why not Deployment failure rates?
+
+* **Deployment failure rates** measure issues during deployment, not **post-production recovery speed**
+
+Final Answer
+
+* **Slot 1:** Defect escape rate
+* **Slot 2:** Bug report rates
+* **Slot 3:** Application failure rates
+
+
+
 ### Question-96 
 
 You have a GitHub repository that contains multiple versions of an Azure Pipelines template
@@ -12372,7 +12496,720 @@ Key Point
 
 * Use **`Fixes #AB<ID>`** to both **link and complete** Azure Boards work items from GitHub commits/PRs.
 
+### Question #35
 
+DRAG DROP -
+
+You are implementing a new project in Azure DevOps.
+
+You need to assess the performance of the project. The solution must identify the following metrics:
+
+• How long it takes to complete a work item
+
+• The percentage of defects found in production
+
+Which DevOps KPI should you review for each metric? To answer, drag the appropriate KPIs to the correct metrics. Each KPI may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+-----
+
+
+Based on the image provided, here is the extracted text content:
+
+**KPIs**
+
+*   Lead time
+*   Application failure rates
+*   Bug report rates
+*   Burndown trend
+*   Cycle time
+*   Defect escape rate
+*   Deployment speed
+*   Mean time to recover
+
+**Answer Area**
+
+*   How long it takes to complete a work item: **[Empty Slot]**
+*   The percentage of defects found in production: **[Empty Slot]**
+
+------
+
+
+The correct mappings are:
+
+* **How long it takes to complete a work item:**
+  **Cycle time**
+
+* **The percentage of defects found in production:**
+  **Defect escape rate**
+
+Explanation
+
+* **Cycle time** → Measures the time from when work starts to when it is completed, which directly reflects how long it takes to complete a work item.
+
+* **Defect escape rate** → Measures the percentage of defects that are **not caught during development/testing and are found in production**.
+
+Why not others?
+
+* **Lead time** → Includes time before work starts (creation → completion)
+* **Bug report rates** → Number of bugs, not where they were found
+* **Application failure rates / MTTR** → Focus on system reliability
+* **Burndown / Deployment speed** → Not related to these metrics
+
+Final Answer
+
+* **Slot 1:** Cycle time
+* **Slot 2:** Defect escape rate
+
+### Question #36
+
+You manage a project by using Azure Boards. You manage the project code by using GitHub.
+
+You have three work items that have IDs of 456, 457, and 458.
+
+You need to create a pull request that will be linked to all the work items. The solution must set the state of work item 456 to done.
+
+What should you add to the commit message?
+
+A. Done #456, #457, #458
+
+B. #AB456, #AB457, #AB458
+
+C. #456, #457, #458 Completed #456
+
+D. #AB456, #AB457, #AB458 Completed #AB456
+
+-----
+
+
+The correct answer is:
+
+**D. #AB456, #AB457, #AB458 Completed #AB456**
+
+Explanation
+
+When linking **GitHub commits/PRs to Azure Boards work items**:
+
+* You must use the format: **`#AB<WorkItemID>`**
+* To **change the state to Done**, you use keywords like **Completed**, **Fixes**, or **Resolves**
+
+Breakdown of the correct option:
+
+* **#AB456, #AB457, #AB458** → Links all three work items
+* **Completed #AB456** → Sets work item **456 to Done**
+
+Why not the others?
+
+* ❌ **A. Done #456, #457, #458** → Missing `AB` prefix
+* ❌ **B. #AB456, #AB457, #AB458** → Only links, does NOT change state
+* ❌ **C. #456, #457, #458 Completed #456** → Missing `AB` prefix
+
+Key Point
+
+* Use **`#AB<ID>`** for linking
+* Use **keywords (Completed/Fixes/Resolves)** to update state
+
+
+### Question #37
+
+You have an Azure subscription that contains an Azure container registry. The container registry contains an ACR Tasks task named Task1. Task1 is configured to run once every five days.
+
+You need to trigger Task1 to run immediately.
+
+Which command should you run?
+
+A. az acr task run
+
+B. az acr build
+
+C. az acr taskrun
+
+D. az acr run
+
+---------
+
+
+The correct answer is:
+
+**A. az acr task run**
+
+Explanation
+
+To manually trigger an existing **Azure Container Registry (ACR) Task**, you use:
+
+* ✅ **`az acr task run`** → Runs an existing ACR task immediately
+
+Why not the others?
+
+* ❌ **az acr build** → Builds an image and optionally pushes it, not for running an existing task
+* ❌ **az acr taskrun** → Not a valid Azure CLI command
+* ❌ **az acr run** → Runs a quick task (ad-hoc), not a preconfigured ACR Task
+
+Key Point
+
+Use **`az acr task run`** whenever you need to **manually trigger a scheduled or existing ACR task on demand**.
+
+### Question #38
+
+You manage a project by using Azure Boards. You manage the project code by using GitHub.
+
+You have three work items that have IDs of 456, 457, and 458.
+
+You need to create a pull request that will be linked to all the work items. The solution must set the state of work item 456 to done.
+
+What should you add to the commit message?
+
+A. #AB456, #AB457, #AB458 Completed #AB456
+
+B. #456, #457, #458 Completed #456
+
+C. Done #AB456, #AB457, #AB458
+
+D. #AB456, #AB457, #AB458 Verifies #AB456
+
+-----
+
+The correct answer is:
+
+**A. #AB456, #AB457, #AB458 Completed #AB456**
+
+Explanation
+
+When integrating **GitHub with Azure Boards**:
+
+* Work items must be referenced using **`#AB<ID>`**
+* To **change the state to Done**, you must use a valid keyword such as:
+
+  * **Completed**
+  * Fixes / Fix / Fixed
+  * Resolves / Resolved
+
+Why option A is correct
+
+* **#AB456, #AB457, #AB458** → Links all three work items
+* **Completed #AB456** → Sets work item **456 to Done**
+
+Why others are incorrect
+
+* ❌ **B** → Missing `AB` prefix (won’t link to Azure Boards)
+* ❌ **C** → "Done" is **not a supported keyword** for state transition
+* ❌ **D** → "Verifies" does not change the state to Done
+
+Key Point
+
+* Use **`#AB<ID>`** for linking
+* Use **supported keywords** like **Completed / Fixes / Resolves** to update state
+
+
+### Question #39
+
+You manage projects by using Azure Boards.
+
+You have a current work item name itemA that is dependant on a work item named itemB.
+
+You need to define the dependency for itemA.
+
+What should you do in the web portal for Azure DevOps?
+
+A. Add a Parent link to the user story of itemA.
+
+B. From Backlogs, open the context menu, select Add link, and then select itemA. Set Link type to Successor and add the ID of itemB.
+
+C. From itemA, open the Links tab, and then select Add link. Set Link type to References and add the ID of itemB.
+
+D. From Backlogs, open he context menu, select Add link, and then select itemA. Set Link type to References and add the ID of itemB.
+
+-----
+
+
+The correct answer is:
+
+**B. From Backlogs, open the context menu, select Add link, and then select itemA. Set Link type to Successor and add the ID of itemB.**
+
+Explanation
+
+In Azure Boards, dependencies between work items are defined using **Predecessor/Successor** relationships:
+
+* **Successor** → The current item (**itemA**) depends on another item (**itemB**)
+* **Predecessor** → The item that must be completed first (**itemB**)
+
+Since:
+
+* **itemA depends on itemB**,
+  → **itemA is the Successor**, and **itemB is the Predecessor**
+
+Why not the others?
+
+* ❌ **A. Parent link** → Used for hierarchy (Epic → Feature → Story), not dependencies
+* ❌ **C. References link** → Generic link, does not define dependency
+* ❌ **D. References link** → Same issue, not a dependency relationship
+
+Key Point
+
+Use **Successor/Predecessor links** to model dependencies between work items in Azure Boards.
+
+
+### Question #40
+
+You manage projects by using Azure Boards.
+
+You have a current work item name itemA that is dependant on a work item named itemB.
+
+You need to define the dependency for itemA.
+
+What should you do in the web portal for Azure DevOps?
+
+A. From itemA, open the Links tab, and then select Add link. Set Link type to Related and add the ID of itemB.
+
+B. From Backlogs, open the context menu, select Add link, and then select itemA. Set Link type to Successor and add the ID of itemB.
+
+C. From itemA, open the Links tab, and then select Add link. Set Link type to References and add the ID of itemB.
+
+D. From Queries, open the context menu, select Add link, and then select Existing Item. Set Link type to Affected By and add the ID of itemB.
+
+-----
+
+
+The correct answer is:
+
+**B. From Backlogs, open the context menu, select Add link, and then select itemA. Set Link type to Successor and add the ID of itemB.**
+
+Explanation
+
+To define a **dependency** in Azure Boards, you must use **Predecessor/Successor** link types:
+
+* If **itemA depends on itemB**, then:
+
+  * **itemA = Successor**
+  * **itemB = Predecessor**
+
+So you link:
+
+* **itemA → Successor → itemB**
+
+Why not the others?
+
+* ❌ **A. Related** → Only a loose association, no dependency meaning
+* ❌ **C. References** → Generic link, no dependency semantics
+* ❌ **D. Affected By** → Not a standard dependency link type in Azure Boards
+
+Key Point
+
+Use **Successor/Predecessor** links to correctly model dependencies between work items.
+
+
+### Question #41
+
+You have the services shown in the following table.
+
+| Name | Interface type |
+| :--- | :--- |
+| Service1 | HTTP |
+| Service2 | HTTPS |
+
+You manage a project by using Azure Boards.
+
+You need to notify the services of build status changes.
+
+Which services can be notified by using a webhook?
+
+
+A. Service1 only
+
+B. Service2 only
+
+C. Service1 and Service2
+
+-----
+
+
+The correct answer is:
+
+**C. Service1 and Service2**
+
+Explanation
+
+Azure DevOps **webhooks** can send notifications over both:
+
+* **HTTP**
+* **HTTPS**
+
+Although **HTTPS is recommended** for security reasons, Azure DevOps still supports **HTTP endpoints** for webhook delivery.
+
+Key Point
+
+* Webhooks are protocol-flexible → both **HTTP and HTTPS endpoints can receive notifications**
+* Best practice: use **HTTPS** for secure communication
+
+So, both services can be notified.
+
+### Question #42
+
+DRAG DROP -
+
+You are using Agile process methodologies and Azure Boards in Azure DevOps.
+
+You import the work items shown in the following table.
+
+| Name | Description |
+| :--- | :--- |
+| **Item1** | The solution was implemented but **NOT** verified. The item must appear on the backlog. |
+| **Item2** | The work was **NOT** started. The item must appear on the backlog. |
+| **Item3** | The work is complete. The item must **NOT** appear on the backlog. The item must appear on the board. |
+
+You need to categorize the items.
+
+Which state should you assign to each item? To answer, drag the appropriate states to the correct items. Each state may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+
+**States:**
+
+*   Completed
+*   In Progress
+*   Proposed
+*   Removed
+*   Resolved
+
+**Answer Area:**
+
+*   **Item1:** [ Empty Slot ]
+*   **Item2:** [ Empty Slot ]
+*   **Item3:** [ Empty Slot ]
+
+
+---------
+
+Correct mapping:
+
+* **Item1:** **Resolved**
+* **Item2:** **Proposed**
+* **Item3:** **Completed**
+
+Explanation
+
+In Azure Boards (Agile process):
+
+* **Proposed** → Work **not started** and appears in the **backlog**
+* **Resolved** → Work **implemented but not yet verified** (still appears in backlog)
+* **Completed** → Work is **done and verified**, appears on the **board but not backlog**
+
+Apply to items:
+
+* **Item1** (implemented but NOT verified, must be on backlog) → ✅ **Resolved**
+* **Item2** (not started, must be on backlog) → ✅ **Proposed**
+* **Item3** (complete, not on backlog, but on board) → ✅ **Completed**
+
+Key Insight
+
+* **Backlog includes:** Proposed, Active/Resolved
+* **Board includes:** Active, Resolved, Completed
+* **Completed items are removed from backlog view** but still visible on boards for tracking
+
+### Question #43
+
+
+You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. Pipeline1 is used to automate the building of App1.
+
+You have a Slack channel named App1chat that includes an incoming webhook.
+
+You need to ensure that when a successful build of App1 is created, a noti¬cation is sent to App1chat by using the webhook.
+
+What should you use?
+
+A. a notification
+
+B. an alert rule
+
+C. a subscription
+
+D. an action group
+
+--------
+
+The correct answer is:
+
+**C. a subscription**
+
+Explanation
+
+To send notifications from Azure DevOps (Azure Pipelines) to external services like Slack via a webhook, you use a **service hook subscription**:
+
+* A **subscription** defines:
+
+  * **Event** → e.g., build succeeded
+  * **Action** → send payload to a webhook (Slack incoming webhook)
+
+Why not the others?
+
+* ❌ **A. a notification** → Refers to built-in notifications (email, UI), not webhook integrations
+* ❌ **B. an alert rule** → Used in Azure Monitor, not Azure DevOps Pipelines
+* ❌ **D. an action group** → Also part of Azure Monitor, not DevOps
+
+Key Point
+
+* Use a **service hook subscription** to connect Azure DevOps events to external services like Slack via webhooks.
+
+
+### Question #47
+
+You have a project in Azure DevOps named App Project that is used to develop an app named App1. App1Project has an Azure Boards team dashboard that is used to monitor the progress of App1 and track work items.
+
+You need to track how long it takes to close a work item once work for the item has commenced.
+
+Which type of widget should you add to the dashboard?
+
+A. sprint burndown
+
+B. velocity
+
+C. lead time
+
+D. cycle time
+
+-----
+
+
+The correct answer is:
+
+**D. cycle time**
+
+Explanation
+
+* **Cycle time** measures the time from when **work starts (In Progress)** to when it is **completed (Done)**.
+* This exactly matches the requirement: *“how long it takes to close a work item once work has commenced.”*
+
+Why not the others?
+
+* ❌ **Sprint burndown** → Tracks remaining work in a sprint
+* ❌ **Velocity** → Measures team capacity over sprints
+* ❌ **Lead time** → Measures time from **creation to completion** (includes time before work starts)
+
+Key Point
+
+* **Cycle time = Start → Done**
+* **Lead time = Created → Done**
+
+### Question #49
+
+You manage a project by using Azure Boards, and you manage the project code by using GitHub repositories.
+
+You have a work item that has an ID of 123.
+
+You need to link a commit message in GitHub to work item 123 on the board.
+
+What are two ways to achieve the goal? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. From the Development settings of work item 123, select Add link, and then enter the URL of the commit.
+
+B. Add AB#123 to the text of the commit message.
+
+C. Add GH-123 to the text of the commit message.
+
+D. From the Links settings of work item 123, select Add link, select Existing item, and then enter the URL of the commit.
+
+E. To work item 123, add a comment that includes the URL of the commit.
+
+-----
+
+
+The correct answers are:
+
+**A. From the Development settings of work item 123, select Add link, and then enter the URL of the commit.**
+**B. Add AB#123 to the text of the commit message.**
+
+Explanation
+
+There are two supported ways to link a **GitHub commit** to an Azure Boards work item:
+
+✅ Option A
+
+* Go to the work item → **Development section** → **Add link**
+* Paste the **commit URL**
+* This creates a direct association
+
+✅ Option B
+
+* Add **`AB#123`** in the commit message
+* This automatically links the commit to the Azure Boards work item
+
+Why not the others?
+
+* ❌ **C. GH-123** → Not a valid Azure Boards syntax
+* ❌ **D. Links → Existing item** → Used to link work items, not commits
+* ❌ **E. Comment with URL** → Does not create a formal link
+
+Key Point
+
+* Use **`AB#<ID>`** in commits/PRs OR
+* Link manually via the **Development section** in Azure Boards
+
+
+### Question #50
+
+
+You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. The repository contains a ¬le named README.md.
+
+You need to ensure that README.md includes the status of the work items on the board. The solution must minimize administrative effort.
+
+What should you do ¬rst?
+
+A. Create a GitHub personal access token (PAT).
+
+B. Enable GitHub annotations for the board.
+
+C. Install the Azure Boards app for GitHub.
+
+D. Select Allow anonymous users to access the status badge.
+
+------
+
+
+The correct answer is:
+
+**C. Install the Azure Boards app for GitHub.**
+
+Explanation
+
+To display Azure Boards work item status in a GitHub repository (like in `README.md`), you must first **integrate Azure Boards with GitHub**.
+
+* Installing the **Azure Boards app for GitHub** establishes the connection between:
+
+  * Azure DevOps Boards
+  * GitHub repository
+
+Once installed, you can:
+
+* Link work items to commits/PRs
+* Add **status badges** or references in `README.md`
+
+Why not the others?
+
+* ❌ **A. Create a GitHub PAT** → Not required for this integration
+* ❌ **B. Enable GitHub annotations** → Not a valid feature for this purpose
+* ❌ **D. Allow anonymous access to status badge** → This is done *after* integration
+
+Key Point
+
+The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
+
+
+### Question #51
+
+You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
+
+You have a bug work item that has an ID of 123.
+
+You need to set the work item state to Resolved.
+
+What should you add to the commit message?
+
+A. #123 fixed
+
+B. #123 Resolved-
+
+C. Verifies #123-
+
+D. Resolves #123-
+
+_____
+
+The correct answer is **A. #123 fixed**.
+
+Explanation:
+
+Azure DevOps (Azure Repos) uses a specific set of **reserved keywords** to trigger automatic state transitions for work items.
+
+1.  **Reserved Keywords:** To transition a work item to a "Resolved" or "Completed" state, you must use one of the following keywords:
+    *   `Fix`, `Fixed`, `Fixes`
+    *   `Close`, `Closed`, `Closes`
+2.  **Target State (Resolved):** In the Agile and CMMI process templates used by Azure Boards, the keywords **`Fix`**, **`Fixed`**, or **`Fixes`** are the specific triggers that move a Bug from "Active" to **"Resolved."**
+3.  **Keyword Recognition:** While the official documentation often suggests the format `Fixed #ID`, the Azure DevOps parser is generally flexible regarding the placement of the ID as long as a valid reserved keyword is present in the commit message.
+
+Why other options are incorrect:
+
+*   **B & C:** "Resolved" and "Verifies" are **not** reserved transition keywords. While they will link the commit to the work item, they will not change its state.
+*   **D:** Although "Resolves" is commonly used in other platforms (like GitHub's native issues), it is **not** part of the official reserved keyword list for Azure Boards state transitions. Therefore, it would link the item but fail to move it to the "Resolved" state.
+
+
+
+### Question #55
+
+HOTSPOT -
+
+You have an Azure DevOps project that is used to build and test an app named App1.
+
+You need to troubleshoot the following issues:
+
+• Most bugs are detected and reported by customers.
+
+• It takes a long time to detect failures.
+
+Which metric should you review for each issue? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+-----
+
+
+Based on the image provided, here is the extracted text content:
+
+**Answer Area**
+
+*   **Most bugs being detected and reported by customers:** **[ Dropdown 1 ]**
+
+
+    *   **Dropdown 1 Options:**
+        *   Application failure rates
+        *   Bug report rates
+        *   Defect escape rate
+        *   Mean time to detection
+        *   Mean time to recover
+
+*   **It takes a long time to detect failures:** **[ Dropdown 2 ]**
+
+
+    *   **Dropdown 2 Options:**
+        *   Application failure rates
+        *   Bug report rates
+        *   Defect escape rate
+        *   Mean time to detection
+        *   Mean time to recover
+
+
+-------
+
+
+The correct selections are:
+
+* **Most bugs being detected and reported by customers:** **Defect escape rate**
+* **It takes a long time to detect failures:** **Mean time to detection**
+
+Explanation
+
+1. **Defect escape rate**
+
+   * Measures the percentage of defects that **escape testing and are found by customers**.
+   * This directly addresses the issue of “most bugs being detected and reported by customers.”
+
+2. **Mean time to detection (MTTD)**
+
+   * Measures how long it takes to **detect failures after they occur**.
+   * This directly addresses the issue of “it takes a long time to detect failures.”
+
+Why not the others?
+
+* **Application failure rates** → Measures how often the application fails, not specifically customer-detected bugs or detection speed
+* **Bug report rates** → Counts reported bugs, but does not measure **escaped defects**
+* **Mean time to recover** → Measures time to restore after failure, not detection
+
+
+✅ **Answer Area:**
+
+* **Dropdown 1:** Defect escape rate
+* **Dropdown 2:** Mean time to detection
 
 
 
