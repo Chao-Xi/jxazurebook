@@ -16759,6 +16759,899 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
+### Question #59
+
+HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
+
+![Alt Image Text](../images/az400_2_44.png)
+
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic. NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted text content:
+
+**Answer Area**
+
+*   **The pipeline has:** [ Dropdown Menu ] job(s).
+    *   0
+    *   1
+    *   4
+
+*   **The pipeline has:** [ Dropdown Menu ] task(s).
+    *   0
+    *   1
+    *   4
+
+---------
+
+
+Based on the information presented in the exhibit, here is the analysis of the Azure DevOps pipeline:
+
+**1. The pipeline has: 1 job(s)**
+
+In a Classic Build pipeline (as shown), the item labeled **"Cloud Agent (Run on agent)"** represents an **Agent Job**. Since there is only one such entry listed under the "Pipeline" and "Get sources" section, the pipeline contains exactly one job.
+
+**2. The pipeline has: 4 task(s)**
+
+The individual units of work listed under the Agent Job are the **Tasks**. Counting the items indented under "Cloud Agent," we see:
+
+1.  **NuGet restore**
+2.  **Compile Application**
+3.  **Copy Files**
+4.  **Publish Artifact**
+
+Total = 4 tasks.
+
+**Summary for Answer Area:**
+
+*   The pipeline has: **1** job(s).
+*   The pipeline has: **4** task(s).
+
+### Question #61
+
+DRAG DROP You need to use Azure Automation State Con¬guration to manage the ongoing consistency of virtual machine con¬gurations.
+
+Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
+
+Select and Place:
+
+Actions
+
+
+- Onboard the virtual machines to Azure Automation State Configuration.
+- Check the compliance status of the node.
+- Create a management group.
+- Assign the node configuration.
+- Compile a configuration into a node configuration.
+- Upload a configuration to Azure Automation State Configuration.
+- Assign tags to the virtual machines.
+
+Answer Area
+
+----
+✅ Correct sequence:
+
+1. **Upload a configuration to Azure Automation State Configuration**
+2. **Compile a configuration into a node configuration**
+3. **Onboard the virtual machines to Azure Automation State Configuration**
+4. **Assign the node configuration**
+5. **Check the compliance status of the node**
+
+---
+
+Explanation:
+
+To manage VM configuration consistency using **Azure Automation State Configuration (DSC)**:
+
+1. Upload configuration
+
+* Import your PowerShell DSC configuration into Azure Automation
+
+2. Compile configuration
+
+* Converts configuration into **node-specific MOF files**
+
+3. Onboard VMs
+
+* Registers VMs as **DSC nodes**
+
+4. Assign node configuration
+
+* Applies the desired state to the VMs
+
+5. Check compliance
+
+* Monitor whether nodes match the desired configuration
+
+Why others are incorrect:
+
+* **Create a management group** → unrelated to DSC workflow
+* **Assign tags** → useful for organization, not required for DSC process
+
+Final Answer:
+
+**Upload configuration → Compile → Onboard VMs → Assign configuration → Check compliance**
+
+### Question #62
+
+You are developing an application. The application source has multiple branches.
+
+You make several changes to a branch used for experimentation.
+
+You need to update the main branch to capture the changes made to the experimentation branch and override the history of the Git repository.
+
+Which Git option should you use?
+
+A. Rebase
+
+B. Fetch
+
+C. Merge
+
+D. Push
+
+----
+
+Correct answer: **A. Rebase**
+
+Explanation:
+
+You need to:
+
+* Apply changes from an experimental branch to **main**
+* **Override history** of the repository
+
+Why **Rebase** is correct:
+
+* **Rebase** rewrites commit history by:
+
+  * Reapplying commits onto another branch
+  * Creating a **linear history**
+* Can be combined with **force push** to override history on the target branch
+
+✔ This matches the requirement to **override history**
+
+Why others are incorrect:
+
+* **B. Fetch**
+
+  * Only downloads changes, does not modify branches
+
+* **C. Merge**
+
+  * Preserves history (creates merge commits)
+  * Does **not override history**
+
+* **D. Push**
+
+  * Sends commits to remote, but does not control history behavior itself
+
+
+Final Answer:
+
+✅ **A. Rebase**
+
+
+### Question #63
+
+You use Azure Pipelines to build and test a React.js application.
+
+You have a pipeline that has a single job.
+
+You discover that installing JavaScript packages from npm takes approximately ¬ve minutes each time you run the pipeline.
+
+You need to recommend a solution to reduce the pipeline execution time.
+
+Solution: You recommend defining a container job that uses a custom container that has the JavaScript packages preinstalled.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+---
+
+Correct answer: **A. Yes**
+
+Explanation:
+
+The problem is that:
+
+> Installing npm packages takes ~5 minutes on every pipeline run
+
+Why this solution works:
+
+Using a **container job with a custom image that already has npm packages installed**:
+
+* Eliminates the need to run `npm install` every time
+* Reuses prebuilt dependencies
+* Significantly reduces pipeline execution time
+
+✔ This directly addresses the bottleneck
+
+Additional insight:
+
+This is a valid alternative to caching:
+
+* **Caching** → reuse downloaded packages between runs
+* **Custom container** → avoid installation entirely
+
+Final Answer:
+
+✅ **A. Yes**
+
+
+### Question #64
+
+You use Azure Pipelines to build and test a React.js application.
+
+You have a pipeline that has a single job.
+
+You discover that installing JavaScript packages from npm takes approximately ¬ve minutes each time you run the pipeline.
+
+You need to recommend a solution to reduce the pipeline execution time.
+
+Solution: You recommend enabling pipeline caching.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+### Question #64
+
+You use Azure Pipelines to build and test a React.js application.
+
+You have a pipeline that has a single job.
+
+You discover that installing JavaScript packages from npm takes approximately ¬ve minutes each time you run the pipeline.
+
+You need to recommend a solution to reduce the pipeline execution time.
+
+Solution: You recommend enabling pipeline caching.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+----
+Correct answer: **A. Yes**
+
+Explanation:
+
+Enabling **pipeline caching** is a recommended way to reduce time spent installing npm packages.
+
+* Caches the contents of `node_modules` or npm cache directory
+* On subsequent runs:
+
+  * Dependencies are restored from cache instead of downloading again
+* Significantly reduces the ~5-minute install time
+
+Why this meets the goal:
+
+- ✔ Speeds up pipeline execution
+- ✔ Avoids repeated package downloads
+- ✔ Native and efficient solution in Azure Pipelines
+
+Final Answer:
+
+✅ **A. Yes**
+
+
+### Question #70
+
+You have an Azure DevOps project.
+
+
+Your build process creates several artifacts.
+
+You need to deploy the artifacts to on-premises servers.
+
+Solution: You deploy an Azure self-hosted agent to an on-premises server. You add a Copy and Publish Build Artifacts task to the deployment pipeline.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+----------
+
+Correct answer: **B. No**
+
+Explanation:
+
+The goal is to **deploy build artifacts to on-premises servers**.
+
+What the solution does:
+
+* ✔ Uses a **self-hosted agent on-premises** → correct approach for reaching on-prem servers
+* ❌ Uses **Copy and Publish Build Artifacts task** → incorrect purpose
+
+Why this does NOT meet the goal:
+
+* **Publish Build Artifacts**:
+
+  * Uploads artifacts **from pipeline to Azure DevOps**
+  * Does NOT deploy artifacts to target servers
+
+* **Copy task (in this context)**:
+
+  * Typically copies files **within the agent**, not to remote machines unless specifically configured
+
+What should be used instead:
+
+* **Deployment jobs** or **deployment group agents**
+* Tasks like:
+
+  * **Windows Machine File Copy**
+  * **PowerShell Remoting**
+  * **Deployment Group jobs**
+
+Final Answer:
+
+❌ **B. No**
+
+
+### Question #75
+
+DRAG DROP You are building an application that has the following assets:
+
+✑ Source code ✑ Logs from automated tests and builds 
+
+✑ Large and frequently updated binary assets
+
+✑ A common library used by multiple applications 
+
+
+Where should you store each asset? To answer, drag the appropriate Azure services to the correct assets. Each service may be used once. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**Azure Services**
+
+*   Azure Artifacts
+*   Azure Pipelines
+*   Azure Repos
+*   Azure Storage
+*   Azure Test Plans
+
+**Answer Area**
+
+*   **Source code:** [ Drop zone ]
+*   **A common library used by multiple applications:** [ Drop zone ]
+*   **Logs from automated tests and builds:** [ Drop zone ]
+*   **Large and frequently updated binary assets:** [ Drop zone ]
+
+--------
+
+
+✅ Correct mapping:
+
+* **Source code:** → **Azure Repos**
+* **A common library used by multiple applications:** → **Azure Artifacts**
+* **Logs from automated tests and builds:** → **Azure Pipelines**
+* **Large and frequently updated binary assets:** → **Azure Storage**
+
+Explanation:
+
+🔹 Source code → Azure Repos
+
+* Git-based version control for managing application source code
+
+🔹 Common library → Azure Artifacts
+
+* Designed for **package management** (NuGet, npm, Maven, etc.)
+* Ideal for sharing reusable libraries across projects
+
+🔹 Logs → Azure Pipelines
+
+* Pipelines automatically generate and store **build/test logs**
+
+🔹 Large binary assets → Azure Storage
+
+* Optimized for **large, frequently updated files**
+* More efficient and scalable than storing in repos
+
+Final Answer:
+
+| Asset                  | Service         |
+| ---------------------- | --------------- |
+| Source code            | Azure Repos     |
+| Common library         | Azure Artifacts |
+| Logs from builds/tests | Azure Pipelines |
+| Large binary assets    | Azure Storage   |
+
+
+### Question #76
+
+You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
+
+You need to release multiple builds of each package by using a single feed. The solution must limit the release of packages that are in development.
+
+What should you use?
+
+A. local symbols
+
+B. views
+
+C. global symbols
+
+D. upstream sources
+
+-----
+
+
+✅ Correct answer: **B. views**
+
+Explanation:
+
+In **Azure Artifacts**, **views** are used to control package visibility and release stages within a single feed.
+
+Why **views** are correct:
+
+* A feed can have multiple views such as:
+
+  * **@local** → all packages (including development)
+  * **@prerelease** → testing/validation stage
+  * **@release** → stable, approved packages
+
+* You can:
+
+  * Publish all packages to the feed
+  * Promote only validated packages to the **release view**
+  * Restrict consumers to only see approved packages
+
+✔ This meets the requirement:
+
+> “limit the release of packages that are in development”
+
+Why others are incorrect:
+
+* **A. Local symbols / C. Global symbols**
+
+  * Related to debugging symbols, not package release control
+
+* **D. Upstream sources**
+
+  * Used to consume external feeds, not manage release stages
+
+Final Answer:
+
+✅ **B. views**
+
+
+### Question #77
+
+You have a project in Azure DevOps named Project1. Project1 contains a build pipeline named Pipe1 that builds an application named App1. You have an agent pool named Pool1 that contains a Windows Server 2019-based self-hosted agent. Pipe1 uses Pool1.
+
+You plan to implement another project named Project2. Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+
+App1 and App2 have conflicting dependencies.
+
+You need to minimize the possibility that the two build pipelines will con­ict with each other. The solution must minimize infrastructure costs. What should you do?
+
+A. Add another self-hosted agent.
+
+B. Add a Docker Compose task to the build pipelines.
+
+C. Change the self-hosted agent to use Red Hat Enterprise Linux (RHEL) 8.
+
+D. Create two container jobs
+
+-----
+
+
+✅ Correct answer: **D. Create two container jobs**
+
+Explanation:
+
+You have:
+
+* A **shared self-hosted agent (Pool1)**
+* Two pipelines (**Pipe1 and Pipe2**) with **conflicting dependencies**
+* Requirement:
+  - ✔ Avoid conflicts
+  - ✔ Minimize infrastructure cost
+
+Why **container jobs** are the best solution:
+
+* Each pipeline runs inside its **own isolated container**
+* Dependencies are **fully separated**
+* No need for additional machines/agents
+* Containers are **lightweight and cost-efficient**
+
+- ✔ Provides isolation
+- ✔ Reuses the same agent
+- ✔ Minimizes cost
+
+Why others are incorrect:
+
+* **A. Add another self-hosted agent**
+
+  * Works, but ❌ increases infrastructure cost
+
+* **B. Docker Compose task**
+
+  * Used for multi-container apps, ❌ not for pipeline isolation
+
+* **C. Change OS to RHEL 8**
+
+  * ❌ Does not solve dependency conflicts
+
+Final Answer:
+
+✅ **D. Create two container jobs**
+
+
+
+### Question #80
+
+HOTSPOT Your company uses Team Foundation Server 2013 (TFS 2013).
+
+You plan to migrate to Azure DevOps.
+
+You need to recommend a migration strategy that meets the following requirements: 
+
+
+✑ Preserves the dates of Team Foundation Version Control changesets 
+
+✑ Preserves the changed dates of work items revisions
+
+Minimizes migration effort -
+
+✑ Migrates all TFS artifacts 
+
+
+What should you recommend? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+**Answer Area**
+
+**On the TFS server:**
+
+*   Install the TFS Java SDK.
+*   Upgrade TFS to the most recent RTW release.
+*   Upgrade to the most recent version of PowerShell Core.
+
+**To perform the migration:**
+
+*   Copy the assets manually.
+*   Use public API-based tools.
+*   Use the TFS Database Import Service.
+*   Use the TFS Integration Platform.
+
+-----
+
+
+To meet the requirements (preserve changeset and work item revision dates, migrate all artifacts, and minimize effort), the correct approach is the **Azure DevOps Server Database Import Service** path.
+
+**Answer Area**
+
+**On the TFS server:**
+
+* ✅ **Upgrade TFS to the most recent RTW release.**
+
+**To perform the migration:**
+
+* ✅ **Use the TFS Database Import Service.**
+
+**Why this is correct**
+
+* The **Database Import Service** is the only supported migration method that preserves:
+
+  * TFVC changeset dates
+  * Work item revision timestamps
+  * Full project history and artifacts
+* Upgrading TFS 2013 to the latest RTW version is required before import, because direct import from older versions is not supported.
+
+**Why the other options are incorrect**
+
+* Java SDK / PowerShell Core → Not used for migration scenarios.
+* API-based tools → Do not preserve full historical metadata (dates).
+* TFS Integration Platform → Deprecated and does not meet full fidelity requirements.
+
+### Question #83
+
+You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy1. Policy1 is an audit policy that monitors naming convention compliance for the resources deployed to Subscription1.
+
+You have a pipeline named Pipeline1 in Azure Pipelines. Pipeline1 deploys Azure Resource Manager (ARM) resources to Subscription1. You need to ensure that the resources deployed by Pipeline1 comply with Policy1.
+
+What should you add to Pipeline1?
+
+A. a pre-deployment task that runs a security and compliance assessment
+
+B. a post-deployment task that runs a security and compliance assessment
+
+C. an ARM template deployment task to assign Policy1 to Subscription1
+
+D. an ARM template deployment task to deploy Policy1 to Subscription1
+
+-----
+
+✅ Correct answer: **A. a pre-deployment task that runs a security and compliance assessment**
+
+**Explanation**
+
+You already have:
+
+* A custom Azure Policy (**Policy1**) that audits naming compliance
+* An Azure Pipelines deployment (**Pipeline1**) deploying ARM templates
+
+To ensure compliance **before resources are created**, you should add a **pre-deployment validation step** in the pipeline.
+
+This typically uses:
+
+* ARM template **What-If analysis**, or
+* Policy compliance scanning tasks in Azure Pipelines
+
+These checks validate whether the deployment will violate Azure Policy **before execution**, helping enforce compliance proactively.
+
+❌ Why the other options are incorrect
+
+* **B. Post-deployment assessment**
+  → Detects non-compliance only after deployment (too late to prevent it)
+
+* **C. ARM template task to assign Policy1**
+  → Policy is already created; assigning it is not the pipeline enforcement requirement
+
+* **D. ARM template task to deploy Policy1**
+  → Same issue; deploying policy is not the goal (it already exists)
+
+💡 Key takeaway
+
+To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.
+
+
+### Question #84
+
+HOTSPOT You plan to use Desired State Con¬guration (DSC) to maintain the con¬guration state of virtual machines that run Windows Server. You need to perform the following:
+
+✑ Install Internet Information Services (IIS) on the virtual machines.
+
+✑ Update the default home page of the IIS web server.
+
+How should you con¬gure the DSC con¬guration ¬le? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+```
+Configuration WebServerConfig {
+Import-DscResource -ModuleName PsDesiredStateConfiguration
+Node 'localhost' {
+    [ Drop-down 1 ] WebServer {
+        Ensure = "Present"
+        Name = "Web-Server"
+    }
+
+    [ Drop-down 2 ] DefaultHomePage {
+        Ensure = 'Present'
+        SourcePath = '\\server1\DSCResources\web\index.htm'
+        DestinationPath = 'c:\inetpub\wwwroot'
+    }
+}
+}
+```
+
+-----
+
+✅ Correct DSC configuration answers
+
+To achieve:
+
+* Install IIS
+* Update default IIS home page
+
+You must use the correct DSC resource types for each task.
+
+🟩 Answer Area
+
+**Drop-down 1:**
+
+✅ **WindowsFeature**
+
+**Drop-down 2:**
+
+✅ **File**
+
+🔍 Final corrected configuration
+
+```powershell
+Configuration WebServerConfig {
+Import-DscResource -ModuleName PsDesiredStateConfiguration
+
+Node 'localhost' {
+
+    WindowsFeature WebServer {
+        Ensure = "Present"
+        Name = "Web-Server"
+    }
+
+    File DefaultHomePage {
+        Ensure = 'Present'
+        SourcePath = '\\server1\DSCResources\web\index.htm'
+        DestinationPath = 'c:\inetpub\wwwroot\index.htm'
+    }
+}
+}
+```
+
+
+💡 Explanation
+
+✅ WindowsFeature
+
+* Used to install Windows roles/features
+* `Web-Server` = IIS role
+
+✅ File
+
+* Used to copy/replace files
+* Ensures IIS default page is updated with custom HTML content
+
+🚀 Key takeaway
+
+* **WindowsFeature → installs roles/features (like IIS)**
+* **File → manages file content (like default web page)**
+
+
+### Question #86
+
+HOTSPOT You are creating a YAML-based Azure pipeline to deploy an Azure Data Factory instance that has the following requirements: 
+
+
+✑ If a Data Factory instance exists already, the instance must be overwritten.
+
+✑ No other resources in a resource group named Fabrikam must be affected.
+
+How should you complete the code? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted content from the Azure Pipelines YAML task configuration:
+
+**YAML Configuration Snippet**
+
+```yaml
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Fabrikam Corporate(a41fb3ed-a2aa-42f0-a7ac-8fcc6ef0c5db)'
+    subscriptionId: 'a41de0ed-a2aa-42f0-a7ac-8fcc6ef0c5db'
+    action: [ Drop-down 1 ]
+    resourceGroupName: 'Fabrikam'
+    location: 'West US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: [ Drop-down 2 ]
+```
+
+
+**Drop-down Menu Options**
+
+
+**Drop-down 1 (for "action"):**
+
+*   'Create Or Update Resource Group'
+*   'Select Resource Group'
+*   'Start'
+
+**Drop-down 2 (for "deploymentMode"):**
+
+*   'Complete'
+*   'Incremental'
+*   'Validation Only'
+
+
+------
+
+✅ Correct answers
+
+**Drop-down 1 (action):**
+
+✔ **Create Or Update Resource Group**
+
+**Drop-down 2 (deploymentMode):**
+
+✔ **Incremental**
+
+🔍 Explanation
+
+🟦 Drop-down 1: Create Or Update Resource Group
+
+* This action is used for **ARM template deployments targeting a resource group**
+* It ensures the deployment applies to the specified resource group (**Fabrikam**) without affecting others
+* Other options are invalid because:
+
+  * **Select Resource Group** → not a valid ARM deployment action
+  * **Start** → not used in ARM template tasks
+
+🟦 Drop-down 2: Incremental
+
+* Required to ensure:
+
+  * Existing Data Factory is **updated (overwritten if needed)**
+  * **No other resources in the resource group are deleted or modified**
+* Incremental mode:
+
+  * Adds/updates resources in template
+  * Does NOT remove extra resources
+
+❌ Why not Complete?
+
+* Complete mode **deletes resources not defined in the template**, which violates:
+
+  > “No other resources in the resource group must be affected”
+
+❌ Why not Validation Only?
+
+* Only checks template validity, does not deploy
+
+🎯 Final Answer
+
+* **action:** Create Or Update Resource Group
+* **deploymentMode:** Incremental
+
+
+### Question #89
+
+
+Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
+
+You need to minimize the amount of disk space used by older packages in Azure Artifacts.
+
+What should you modify?
+
+A. the retention settings of the project’s release
+
+B. the retention settings of the project’s pipeline
+
+C. the retention settings of the project’s tests
+
+D. the retention settings of the company pipeline
+
+-----
+
+✅ Correct answer: **B. the retention settings of the project’s pipeline**
+
+🔍 Explanation
+
+In Azure DevOps, **Azure Artifacts storage cleanup for older package versions** is controlled indirectly through **pipeline retention policies**, especially when packages are published as part of builds.
+
+Pipeline retention settings determine:
+
+* How long build runs and their associated artifacts (including published npm packages) are kept
+* When older package-related artifacts can be automatically removed
+* Reduction of storage usage over time
+
+Since npm packages are typically published from pipelines, **pipeline retention is what governs cleanup behavior**.
+
+❌ Why the other options are incorrect
+
+* **A. release retention settings**
+  → Applies to classic release pipelines, not npm artifact storage management
+
+* **C. test retention settings**
+  → Only controls test results retention, unrelated to package storage
+
+* **D. company pipeline retention**
+  → Not a valid configuration scope in Azure DevOps
+
+💡 Key takeaway
+
+To reduce storage usage for **Azure Artifacts published via pipelines**, you should configure:
+
+> ✔ **Pipeline retention policies** to automatically clean up older builds and their associated package artifacts.
 
 
 ### Question-136
@@ -18466,6 +19359,8 @@ What should you add to Pipeline 1?
 * B. a post-deployment task that runs a security and compliance assessment
 * C. an ARM template deployment task to assign Policy1 to Subscription 1
 * D. an ARM template deployment task to deploy Policy1 to Subscription1
+
+
 
 The correct answer is **B. a post-deployment task that runs a security and compliance assessment.**
 
