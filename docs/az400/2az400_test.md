@@ -16249,9 +16249,9 @@ Final Answer:
 You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant.
 
 
-You are con¬guring a build pipeline in Azure Pipelines that will include a task named Task1. Task1 will authenticate by using an Azure AD service principal.
+You are configuring a build pipeline in Azure Pipelines that will include a task named Task1. Task1 will authenticate by using an Azure AD service principal.
 
-Which three values should you con¬gure for Task1? Each correct answer presents part of the solution.
+Which three values should you configure for Task1? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -16416,7 +16416,7 @@ Why other options are incorrect:
 
 You are creating a build pipeline in Azure Pipelines.
 
-You de¬ne several tests that might fail due to third-party applications.
+You define several tests that might fail due to third-party applications.
 
 You need to ensure that the build pipeline completes successfully if the third-party applications are unavailable. What should you do?
 
@@ -16808,7 +16808,7 @@ Total = 4 tasks.
 
 ### Question #61
 
-DRAG DROP You need to use Azure Automation State Con¬guration to manage the ongoing consistency of virtual machine con¬gurations.
+DRAG DROP You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
 Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -16939,7 +16939,7 @@ You use Azure Pipelines to build and test a React.js application.
 
 You have a pipeline that has a single job.
 
-You discover that installing JavaScript packages from npm takes approximately ¬ve minutes each time you run the pipeline.
+You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
 
 You need to recommend a solution to reduce the pipeline execution time.
 
@@ -16989,7 +16989,7 @@ You use Azure Pipelines to build and test a React.js application.
 
 You have a pipeline that has a single job.
 
-You discover that installing JavaScript packages from npm takes approximately ¬ve minutes each time you run the pipeline.
+You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
 
 You need to recommend a solution to reduce the pipeline execution time.
 
@@ -17007,7 +17007,7 @@ You use Azure Pipelines to build and test a React.js application.
 
 You have a pipeline that has a single job.
 
-You discover that installing JavaScript packages from npm takes approximately ¬ve minutes each time you run the pipeline.
+You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
 
 You need to recommend a solution to reduce the pipeline execution time.
 
@@ -17413,13 +17413,13 @@ To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deplo
 
 ### Question #84
 
-HOTSPOT You plan to use Desired State Con¬guration (DSC) to maintain the con¬guration state of virtual machines that run Windows Server. You need to perform the following:
+HOTSPOT You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. You need to perform the following:
 
 ✑ Install Internet Information Services (IIS) on the virtual machines.
 
 ✑ Update the default home page of the IIS web server.
 
-How should you con¬gure the DSC con¬guration ¬le? To answer, select the appropriate options in the answer area.
+How should you configure the DSC configuration file? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -19430,6 +19430,808 @@ Final Answer
 **C. Install the Azure Repos app for Teams and configure a subscription to receive notifications in the channel.** ✅
 
 
+## Topic 8 - Question Set 8
+
+### Question #1
+
+HOTSPOT You manage the Git repository for a large enterprise application.
+
+You need to minimize the data size of the repository.
+
+How should you complete the commands? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted content from the Git command configuration area:
+
+**Answer Area**
+
+**First Command:**
+
+`git gc [ Drop-down 1 ]`
+
+*   **Options for Drop-down 1:**
+    *   `--aggressive`
+    *   `--auto`
+    *   `--force`
+    *   `--no-prune`
+
+**Second Command:**
+
+`git [ Drop-down 2 ] --expire now`
+
+*   **Options for Drop-down 2:**
+    *   `merge`
+    *   `prune`
+    *   `rebase`
+    *   `reset`
+
+
+
+------
+
+✅ Correct answers
+
+**First Command:**
+
+✔ `git gc --aggressive`
+
+**Second Command:**
+
+✔ `git prune --expire now`
+
+
+🔍 Explanation
+
+To **minimize the size of a Git repository**, you need to:
+
+1. Optimize and compress repository data
+2. Remove unreachable (dangling) objects
+
+---
+
+🟦 `git gc --aggressive`
+
+* Performs deep garbage collection
+* Rewrites and compresses objects more thoroughly than default GC
+* Reduces repository size significantly
+
+❌ Why not others:
+
+* `--auto` → runs only when needed (not aggressive cleanup)
+* `--force` → not valid here for size optimization
+* `--no-prune` → prevents cleanup (opposite goal)
+
+🟦 `git prune --expire now`
+
+* Deletes all unreachable objects immediately
+* Frees disk space by removing unused data
+
+❌ Why not others:
+
+* `merge`, `rebase`, `reset` → unrelated to repository cleanup
+
+🎯 Final Answer
+
+```bash
+git gc --aggressive
+git prune --expire now
+```
+
+💡 Key takeaway
+
+* **`git gc --aggressive` → compress & optimize**
+* **`git prune --expire now` → delete unused objects**
+
+Together, they **minimize repository size effectively**.
+
+### Question #4
+
+DRAG DROP You provision an Azure Kubernetes Service (AKS) cluster that has RBAC enabled. You have a Helm chart for a client application.
+
+You need to configure Helm and Tiller on the cluster and install the chart.
+
+Which three commands should you recommend be run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
+
+Commands
+
+- helm install
+- kubectl create
+- helm completion
+- helm init
+- helm serve
+
+------
+
+å✅ Correct sequence of commands
+
+To configure Helm (with Tiller, i.e., Helm v2) on an AKS cluster with RBAC and then install a chart, the correct order is:
+
+1. **kubectl create**
+2. **helm init**
+3. **helm install**
+
+---
+
+🔍 Explanation
+
+🟦 1. `kubectl create`
+
+* Used to create a **service account and role binding** for Tiller
+* Required because the cluster has **RBAC enabled**
+* Grants Tiller the necessary permissions in the cluster
+
+
+🟦 2. `helm init`
+
+* Initializes Helm and installs **Tiller** into the AKS cluster
+* Must be done after RBAC permissions are configured
+
+🟦 3. `helm install`
+
+* Deploys the Helm chart (client application) to the cluster
+
+❌ Why the others are incorrect
+
+* **helm completion** → enables shell auto-completion (not required)
+* **helm serve** → used for serving charts locally (not needed here)
+
+🎯 Final Answer Order
+
+```
+kubectl create
+helm init
+helm install
+```
+
+💡 Key takeaway
+
+When using **Helm v2 with RBAC-enabled AKS**:
+
+1. Create RBAC permissions
+2. Initialize Helm (Tiller)
+3. Install the chart
+
+### Question #6
+
+You are implementing an Azure DevOps strategy for mobile devices using App Center. 
+
+
+You plan to use distribution groups to control access to releases.
+
+You need to create the distribution groups shown in the following table.
+
+| Name | Use |
+| :--- | :--- |
+| **Group1** | Application testers who are invited by email |
+| **Group2** | Early release users who use unauthenticated public links |
+| **Group3** | Application testers for all the apps of your company |]
+
+Which type of distribution group should you use for each group? 
+
+To answer, drag the appropriate group types to the correct locations. Each group type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content. NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**Labels**
+
+*   Private
+*   Public
+*   Shared
+
+**Answer Area**
+
+*   **Group 1:** [ Drop zone ]
+*   **Group 2:** [ Drop zone ]
+*   **Group 3:** [ Drop zone ]
+
+-----
+
+✅ Correct mapping of distribution group types
+
+| Group                                        | Correct Type  |
+| -------------------------------------------- | ------------- |
+| **Group1** (invited testers via email)       | ✅ **Private** |
+| **Group2** (unauthenticated public links)    | ✅ **Public**  |
+| **Group3** (testers across all company apps) | ✅ **Shared**  |
+
+---
+
+🔍 Explanation
+
+ 🟦 **Group1 → Private**
+
+* Access is controlled via **email invitations**
+* Only explicitly invited users can download builds
+* Best for **internal testers or restricted access**
+
+ 🟦 **Group2 → Public**
+
+* Allows access via **public link**
+* No authentication required
+* Ideal for **early adopters or external preview users**
+
+
+🟦 **Group3 → Shared**
+
+* Can be used **across multiple apps**
+* Centralized tester group for the entire organization
+* Perfect for **company-wide testing teams**
+
+🎯 Final Answer
+
+* **Group1:** Private
+* **Group2:** Public
+* **Group3:** Shared
+
+💡 Key takeaway
+
+* **Private = controlled access (email-based)**
+* **Public = open link access**
+* **Shared = reusable across multiple apps**
+
+
+### Question #8
+
+
+HOTSPOT You need to create deployment files for an Azure Kubernetes Service (AKS) cluster. 
+
+The deployments must meet the provisioning storage requirements shown in the following table.
+
+
+| Deployment    | Requirement    |
+|---|---|
+| Deployment 1   | Use files stored on an SMB-based share from the container’s file system.    |
+| Deployment 2   | Use files stored on a managed disk from the container’s file system.    |
+| Deployment 3   | Securely access X.509 certificates from the container’s file system.    |
+
+Which resource type should you use for each deployment? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+Answer Area
+
+Deployment 1: [ Drop zone ]
+
+- driver: secrets-store.csi.k8s.io
+- blobfuse-flexvol
+- provisioner: kubernetes.io/azure-disk
+- provisioner: kubernetes.io/azure-file
+- volume.beta.kubernetes.io/storage-provisioner
+
+Deployment 2:  [ Drop zone ]
+
+- driver: secrets-store.csi.k8s.io
+- blobfuse-flexvol
+- provisioner: kubernetes.io/azure-disk
+- provisioner: kubernetes.io/azure-file
+- volume.beta.kubernetes.io/storage-provisioner
+
+
+Deployment 3: [ Drop zone ]
+
+- driver: secrets-store.csi.k8s.io
+- blobfuse-flexvol
+- provisioner: kubernetes.io/azure-disk
+- provisioner: kubernetes.io/azure-file
+- volume.beta.kubernetes.io/storage-provisioner
+
+
+-----
+
+✅ Correct answers
+
+| Deployment       | Resource Type                               |
+| ---------------- | ------------------------------------------- |
+| **Deployment 1** | ✅ **provisioner: kubernetes.io/azure-file** |
+| **Deployment 2** | ✅ **provisioner: kubernetes.io/azure-disk** |
+| **Deployment 3** | ✅ **driver: secrets-store.csi.k8s.io**      |
+
+🔍 Explanation
+
+🟦 **Deployment 1: SMB-based share**
+
+* Requirement: Access files via **SMB protocol**
+* Solution: **Azure Files**
+* Kubernetes provisioner:
+  ✔ `kubernetes.io/azure-file`
+
+🟦 **Deployment 2: Managed disk**
+
+* Requirement: Use **Azure managed disk storage**
+* Solution: **Azure Disk**
+* Kubernetes provisioner:
+  ✔ `kubernetes.io/azure-disk`
+
+🟦 **Deployment 3: X.509 certificates**
+
+* Requirement: Securely access certificates from filesystem
+* Best practice: Use **Secrets Store CSI Driver**
+* Supports integration with Azure Key Vault
+* Resource:
+  ✔ `secrets-store.csi.k8s.io`
+
+
+❌ Why not the others
+
+* **blobfuse-flexvol** → used for Azure Blob Storage, not SMB or disks
+* **volume.beta.kubernetes.io/storage-provisioner** → generic/legacy, not specific
+* **azure-file / azure-disk swapped** → would not meet protocol/storage requirements
+
+
+🎯 Final Answer
+
+* **Deployment 1:** `kubernetes.io/azure-file`
+* **Deployment 2:** `kubernetes.io/azure-disk`
+* **Deployment 3:** `secrets-store.csi.k8s.io`
+
+💡 Key takeaway
+
+* **Azure Files (SMB) → azure-file**
+* **Managed disks → azure-disk**
+* **Secrets/certs → CSI Secrets Store driver**
+
+
+### Question #10
+
+DRAG DROP You manage the Git repository for a large enterprise application.
+
+During the development of the application, you use a file named Config.json.
+
+You need to prevent Config.json from being committed to the source control whenever changes to the application are committed.
+
+
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+Actions
+
+- Delete and recreate the repository.
+- Run the git reflog expire command.
+- Runthe git add. gitignore command.
+- Add Config json to the gitignore file.
+- Run the git commit command.
+
+----
+
+
+✅ Correct sequence of actions
+
+1. **Add Config.json to the gitignore file**
+2. **Run the git add .gitignore command**
+3. **Run the git commit command**
+
+🔍 Explanation
+
+🟦 1. Add `Config.json` to `.gitignore`
+
+* This tells Git to **ignore the file** in future commits
+* Prevents it from being tracked going forward
+
+🟦 2. `git add .gitignore`
+
+* Stages the updated `.gitignore` file
+* Prepares it to be committed
+
+🟦 3. `git commit`
+
+* Saves the change so `.gitignore` takes effect in the repository
+
+❌ Why the other options are incorrect
+
+* **Delete and recreate the repository** → unnecessary and extreme
+* **git reflog expire** → unrelated (used for cleanup/history expiration)
+* ❌ Note: You must add `.gitignore`, not the ignored file itself
+
+Key takeaway
+
+To prevent files from being committed:
+
+1. Add them to `.gitignore`
+2. Stage the `.gitignore`
+3. Commit the change
+
+This ensures the file is **excluded from future commits** 🚀
+
+
+### Question #12
+
+HOTSPOT You are ¬nalizing a release in GitHub.
+
+You need to apply the following labels to the release:
+
+✑ Name 
+
+✑ Email 
+
+✑ Release v3.0 
+
+✑ Release date How should you complete the git command? 
+
+
+To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted content from the Git command configuration area:
+
+**Answer Area**
+
+The command structure is:
+
+`git [ Drop-down 1 ] [ Drop-down 2 ] v3.0 [ Drop-down 3 ] "Release v3.0"`
+
+**Drop-down Options**
+
+**Drop-down 1:**
+
+*   `add`
+*   `commit`
+*   `push`
+*   `tag`
+
+**Drop-down 2:**
+
+*   `-a`
+*   `-b`
+*   `-c`
+*   `-m`
+
+**Drop-down 3:**
+
+*   `-a`
+*   `-b`
+*   `-c`
+*   `-m`
+
+
+------
+
+
+✅ Correct answers
+
+* **Drop-down 1:** ✔ `tag`
+* **Drop-down 2:** ✔ `-a`
+* **Drop-down 3:** ✔ `-m`
+
+🔍 Explanation
+
+To finalize a release in GitHub using Git, you typically create an **annotated tag**, which includes:
+
+* Tag name (e.g., `v3.0`)
+* Tag message (e.g., "Release v3.0")
+* Metadata such as **name, email, and date**
+
+🟦 Correct command
+
+```bash
+git tag -a v3.0 -m "Release v3.0"
+```
+
+🟦 Why this works
+
+* **`git tag`** → Creates a tag for the release
+* **`-a` (annotated tag)** → Stores metadata (name, email, date)
+* **`-m`** → Adds a message describing the release
+
+❌ Why the other options are incorrect
+
+* `add`, `commit`, `push` → Not used to create release tags
+* `-b`, `-c` → Not valid in this context
+* `-m` alone without `-a` → Creates lightweight tag behavior mismatch
+
+🎯 Final Answer
+
+```bash
+git tag -a v3.0 -m "Release v3.0"
+```
+
+💡 Key takeaway
+
+Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
+
+
+### Question #14
+
+DRAG DROP Your company has a project in Azure DevOps.
+
+You plan to create a release pipeline that will deploy resources by using Azure Resource Manager templates. The templates will reference secrets stored in Azure Key Vault.
+
+You need to recommend a solution for accessing the secrets stored in the key vault during deployments. The solution must use the principle of least privilege.
+
+What should you include in the recommendation? To answer, drag the appropriate con¬gurations to the correct targets. Each con¬guration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+**Configurations**
+
+*   an Azure Key Vault access policy
+*   a personal access token (PAT)
+*   RBAC
+
+**Answer Area**
+
+*   **Restrict access to delete the key vault:** [ Drop zone ]
+*   **Restrict access to the secrets in Key Vault by using:** [ Drop zone ]
+
+--------
+
+
+✅ Correct mapping
+
+* **Restrict access to delete the key vault:** ✔ **RBAC**
+* **Restrict access to the secrets in Key Vault by using:** ✔ **an Azure Key Vault access policy**
+
+🔍 Explanation
+
+🟦 **RBAC**
+
+* Controls **management plane** operations
+* Used for actions like:
+
+  * Delete Key Vault
+  * Create/update resources
+* Ensures least privilege at the **resource level**
+
+🟦 **Azure Key Vault access policy**
+
+* Controls **data plane** access
+* Used for:
+
+  * Reading secrets during ARM deployments
+* Allows fine-grained permissions like:
+
+  * `Get`, `List` (only what’s needed)
+
+❌ Why not PAT?
+
+* **Personal Access Token (PAT)** is for **Azure DevOps authentication**
+* Not used for accessing Azure Key Vault secrets
+
+🎯 Final Answer
+
+* **Restrict access to delete the key vault:** RBAC
+* **Restrict access to the secrets in Key Vault by using:** Azure Key Vault access policy
+
+💡 Key takeaway
+
+* **RBAC → resource management (who can delete/manage vault)**
+* **Access policy → secret access (who can read secrets)**
+
+
+### Question #15
+
+DRAG DROP As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
+
+Which three action should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place
+
+Actions
+
+Answer Area
+
+- Set the template parameters.
+- Create a package.
+- Create a release pipeline.
+- Create a job agent.
+- Add an Azure Resource Group Deployment task.
+
+------
+
+✅ Correct sequence of actions
+
+1. **Create a release pipeline**
+2. **Add an Azure Resource Group Deployment task**
+3. **Set the template parameters**
+
+🔍 Explanation
+
+🟦 1. Create a release pipeline
+
+* You need a pipeline to orchestrate the deployment process
+* This is the starting point for deploying ARM templates from GitHub
+
+🟦 2. Add an Azure Resource Group Deployment task
+
+* This task is specifically used to deploy **ARM templates**
+* It connects to Azure and executes the deployment
+
+🟦 3. Set the template parameters
+
+* Define values required by the ARM template (e.g., names, locations)
+* Ensures the deployment is configured correctly
+
+❌ Why the other options are incorrect
+
+* **Create a package** → not required for ARM template deployments
+* **Create a job agent** → agents are already managed or predefined in Azure Pipelines
+
+🎯 Final Answer Order
+
+1. Create a release pipeline
+2. Add an Azure Resource Group Deployment task
+3. Set the template parameters
+
+💡 Key takeaway
+
+Deploying ARM templates via Azure DevOps follows:
+
+> **Pipeline → Deployment task → Configure parameters** 🚀
+
+
+### Question #20
+
+HOTSPOT You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
+
+
+![Alt Image Text](../images/az400_2_45.png)
+
+
+Use the drop-down menus to select the answer choice that answers each question based on the information presented in the graphic. NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+
+**Answer Area**
+
+**How many stages have triggers set?**
+
+*   0
+*   1
+*   2
+*   3
+*   4
+*   5
+*   6
+*   7
+
+**Which component should you modify to enable continuous delivery?**
+
+*   The Development stage
+*   The Internal Review stage
+*   The Production stage
+*   The Web Application artifact
+-----
+
+✅ Answers
+
+**1. How many stages have triggers set?**
+✔ **7**
+
+**2. Which component should you modify to enable continuous delivery?**
+✔ **The Web Application artifact**
+
+---
+
+🔍 Explanation
+
+🟦 Number of stages with triggers
+
+From the diagram, all stages show the **lightning bolt icon**, which indicates that a **trigger (automatic deployment trigger)** is configured.
+
+The stages are:
+
+* Development
+* QA
+* Pre-Prod
+* Production
+* Stakeholder Review
+* Load Test
+* Internal Review
+
+➡️ Total = **7 stages with triggers**
+
+🟦 Enabling Continuous Delivery
+
+To enable **continuous delivery (CD)** in a classic release pipeline:
+
+* You must configure the **artifact trigger**
+* Specifically, enable the **Continuous deployment trigger** on the artifact
+
+✔ This is done on:
+
+> **The Web Application artifact**
+
+💡 Key takeaway
+
+* **Stage triggers (lightning icons)** = automatic stage execution
+* **Continuous delivery** is controlled at the **artifact level**, not the stage level
+
+🎯 Final Answer
+
+* **7**
+* **The Web Application artifact**
+
+
+### Question #21
+
+
+DRAG DROP Your company plans to deploy an application to the following endpoints:
+
+✑ Ten virtual machines hosted in Azure 
+
+✑ Ten virtual machines hosted in an on-premises data center environment All the virtual machines have the Azure Pipelines agent.
+
+You need to implement a release strategy for deploying the application to the endpoints.
+
+
+What should you recommend using to deploy the application to the endpoints? To answer, drag the appropriate components to the correct endpoints. Each component may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+--------
+
+
+**Components**
+
+*   A deployment group
+*   A management group
+*   A resource group
+*   Application roles
+
+**Answer Area**
+
+Ten virtual machines hosted in Azure: [ ]
+
+Ten virtual machines hosted in an on-premises data center environment: [ ]
+
+--------
+
+✅ Correct mapping
+
+* **Ten virtual machines hosted in Azure:** ✔ **A deployment group**
+* **Ten virtual machines hosted in an on-premises data center environment:** ✔ **A deployment group**
+
+ 🔍 Explanation
+
+🟦 **Deployment group**
+
+* Designed specifically for **deploying to multiple machines (targets)**
+* Works with:
+
+  * Azure VMs
+  * On-premises VMs
+* Requires Azure Pipelines agent (which is already installed ✅)
+* Enables:
+
+  * Coordinated deployments
+  * Rolling deployments
+  * Environment-based targeting
+
+❌ Why the other options are incorrect
+
+* **Management group**
+  → Used for organizing Azure subscriptions, not deployments
+
+* **Resource group**
+  → Logical container for Azure resources, not deployment targeting
+
+* **Application roles**
+  → Used in Service Fabric / app-level role definitions, not VM deployment
+
+
+🎯 Final Answer
+
+| Endpoint    | Component        |
+| ----------- | ---------------- |
+| Azure VMs   | Deployment group |
+| On-prem VMs | Deployment group |
+
+💡 Key takeaway
+
+**Deployment groups** are the correct choice when deploying to:
+
+* Multiple VMs
+* Mixed environments (Azure + on-prem)
+* Agent-based deployment targets 🚀
+
+
+
+
+
+
 ### Question-170
 
 
@@ -19492,6 +20294,91 @@ CI build → publish → @prerelease
 This is the standard enterprise pattern for npm feeds in **Azure DevOps** with multi-project consumption.
 
 ✅ **Final Answer: D**
+
+
+### Question #31
+
+
+You are defining release strategies for two applications as shown in the following table.
+
+| Application name | Goal |
+| :--- | :--- |
+| App1 | Failure of App1 has a major impact on your company. You need a small group of users, who opted in to a testing App1, to test new releases of the application. |
+| App2 | You need to minimize the time it takes to deploy new releases of App2, and you must be able to roll back as quickly as possible. |
+
+
+Which release strategy should you use for each application? To answer, drag the appropriate release strategies to the correct applications. Each release strategy may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Release Strategies**
+
+*   Blue/Green deployment
+*   Canary deployment
+*   Rolling deployment
+
+**Answer Area:**
+
+App1: [ ]
+
+App2: [ ]
+
+----
+
+
+✅ Correct mapping
+
+* **App1:** ✔ **Canary deployment**
+* **App2:** ✔ **Blue/Green deployment**
+
+🔍 Explanation
+
+🟦 **App1 → Canary deployment**
+
+* Requirement:
+
+  * High impact if failure occurs
+  * Test with a **small, opted-in group of users**
+* Canary deployment:
+
+  * Releases to a **small subset of users first**
+  * Gradually expands if no issues are found
+    ✔ Perfect for minimizing risk
+
+🟦 **App2 → Blue/Green deployment**
+
+* Requirement:
+
+  * **Fast deployment**
+  * **Immediate rollback capability**
+* Blue/Green:
+
+  * Two identical environments (current + new)
+  * Switch traffic instantly
+  * Rollback = switch back
+    ✔ Best for speed and reliability
+
+❌ Why not Rolling deployment?
+
+* Updates instances gradually
+* Slower rollback compared to Blue/Green
+* Not ideal when **instant rollback** is required
+
+🎯 Final Answer
+
+* **App1:** Canary deployment
+* **App2:** Blue/Green deployment
+
+💡 Key takeaway
+
+* **Canary → small group testing (risk reduction)**
+* **Blue/Green → fast deploy + instant rollback** 🚀
+
+
+
 
 
 ### Question-171
@@ -19786,6 +20673,372 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
+### Question #25
+
+HOTSPOT You use Azure Pipelines to manage the build and deployment of apps.
+
+You are planning the release strategies for a new app.
+
+You need to choose strategies for the following scenarios:
+
+Releases will be made available to users who are grouped by their tolerance for software faults.
+
+✑ Code will be deployed to enable functionality that will be available in later releases of the app.
+
+✑ When a new release occurs, the existing deployment will remain active to minimize recovery time if a return to the previous version is required.
+
+Which strategy should you choose for each scenario? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+**Answer Area**
+
+Releases will be made available to users who are grouped by their tolerance for software faults:
+
+*   Progressive exposure
+*   Blue/green
+*   Feature flags
+
+Code will be deployed to enable functionality that will be available in later releases of the app:
+
+*   Progressive exposure
+*   Blue/green
+*   Feature flags
+
+When a new release occurs, the existing deployment will remain active to minimize recovery time if a return to the previous version is required:
+
+*   Progressive exposure
+*   Blue/green
+*   Feature flags
+
+------
+
+ ✅ Correct answers
+
+| Scenario                                              | Strategy                   |
+| ----------------------------------------------------- | -------------------------- |
+| Releases grouped by users’ tolerance for faults       | ✅ **Progressive exposure** |
+| Code deployed for future functionality                | ✅ **Feature flags**        |
+| Existing deployment remains active for quick rollback | ✅ **Blue/green**           |
+
+🔍 Explanation
+
+🟦 **Progressive exposure**
+
+* Releases are rolled out gradually to different user groups
+* Users are segmented based on:
+
+  * Risk tolerance
+  * Geography
+  * Roles
+* Ideal for controlled rollout and monitoring
+
+🟦 **Feature flags**
+
+* Code is deployed but features are **disabled by default**
+* Features can be turned on/off without redeployment
+* Perfect for:
+
+  * Future functionality
+  * Testing in production safely
+
+🟦 **Blue/green deployment**
+
+* Two environments:
+
+  * **Blue (current live)**
+  * **Green (new version)**
+* Both run simultaneously
+* Enables:
+
+  * Instant rollback
+  * Minimal downtime
+
+🎯 Final Answer
+
+* **Progressive exposure**
+* **Feature flags**
+* **Blue/green**
+
+💡 Key takeaway
+
+* **Progressive exposure → gradual rollout**
+* **Feature flags → control features without redeploy**
+* **Blue/green → safe deployments with fast rollback** 🚀
+
+
+### Question #26
+
+DRAG DROP You have a project in Azure DevOps.
+
+You need to associate an automated test to a test case.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions**
+
+- Debug the project
+- Answer Area
+- Create a test project
+- Create a work item
+- Check in a project to the Azure DevOps repository
+- Add the automated test to a build pipeline
+
+
+------
+
+✅ Correct sequence of actions
+
+1. **Create a test project**
+2. **Check in a project to the Azure DevOps repository**
+3. **Create a work item**
+
+🔍 Explanation
+
+To associate an automated test with a test case in Azure DevOps:
+
+🟦 1. Create a test project
+
+* You need a project that contains automated tests (e.g., unit/UI tests)
+
+🟦 2. Check in the project
+
+* The test code must be stored in the **Azure DevOps repository**
+* Enables tracking and linking to pipelines and test cases
+
+🟦 3. Create a work item
+
+* Create a **Test Case work item**
+* From there, you can associate the automated test method
+
+
+❌ Why the other options are incorrect
+
+* **Debug the project** → not required for association
+* **Add automated test to a build pipeline** → useful for execution, but not required for linking
+
+🎯 Final Answer Order
+
+1. Create a test project
+2. Check in a project to the Azure DevOps repository
+3. Create a work item
+
+💡 Key takeaway
+
+To link automated tests:
+
+> **Create test → store in repo → associate via test case work item** 🚀
+
+### Question #27
+
+DRAG DROP You have an Azure Kubernetes Service (AKS) cluster.
+
+You need to deploy an application to the cluster by using Azure DevOps.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+
+**Actions**
+
+*   Create a service account in the cluster.
+*   Create a service principal in Azure Active Directory (Azure AD).
+*   Add an Azure Function App for Container task to the deployment pipeline.
+*   Add a Helm package and deploy a task to the deployment pipeline.
+*   Add a Docker Compose task to the deployment pipeline.
+*   Configure RBAC roles in the cluster.
+
+**Answer Area**
+
+- [ ]
+- [ ]
+- [ ]
+
+
+-------
+
+
+✅ Correct sequence of actions
+
+1. **Create a service principal in Azure Active Directory (Azure AD)**
+2. **Configure RBAC roles in the cluster**
+3. **Add a Helm package and deploy a task to the deployment pipeline**
+
+🔍 Explanation
+
+🟦 1. Create a service principal in Azure AD
+
+* Provides **secure authentication** from Azure DevOps to AKS
+* Required for pipeline to interact with the cluster
+
+🟦 2. Configure RBAC roles in the cluster
+
+* Grants the service principal the necessary permissions
+* Ensures **least privilege access** to Kubernetes resources
+
+🟦 3. Add a Helm package and deploy task
+
+* Helm is the standard way to **deploy applications to AKS**
+* The pipeline uses Helm to install/update the application
+
+❌ Why the other options are incorrect
+
+* **Create a service account in the cluster** → optional; not required when using service principal + RBAC
+* **Azure Function App for Container task** → unrelated to AKS deployment
+* **Docker Compose task** → used for multi-container Docker apps, not Kubernetes
+
+🎯 Final Answer Order
+
+1. Create a service principal in Azure AD
+2. Configure RBAC roles in the cluster
+3. Add a Helm package and deploy task
+
+💡 Key takeaway
+
+AKS deployment via Azure DevOps follows:
+
+> **Authenticate (SPN) → Authorize (RBAC) → Deploy (Helm)** 🚀
+
+### Question #33
+
+DRAG DROP You have an Azure DevOps organization named Contoso.
+
+You have 10 Azure virtual machines that run Windows Server 2019. The virtual machines host an application that you build and deploy by using Azure Pipelines.
+
+Each virtual machine has the Web Server (IIS) role installed and con¬gured.
+
+You need to ensure that the web server con¬gurations on the virtual machines is maintained automatically. The solution must provide centralized management of the con¬guration settings and minimize management overhead.
+
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+Actions   
+
+- Create an Azure Automation account.
+
+- Install the custom Desired State Configuration (DSC) extension on the virtual machines.
+
+- Create a .zip file and upload it to Azure Blob storage.
+
+- Onboard the virtual machines to the Azure Automation account.
+
+- Compile the Desired State Configuration (DSC) configuration.
+
+----------
+
+
+Here is the correct sequence of four actions to maintain web server configurations automatically using Azure Automation State Configuration (DSC), with centralized management and minimal overhead:
+
+1. **Create an Azure Automation account.**  
+   This provides the centralized management service for DSC configurations.
+
+2. **Compile the Desired State Configuration (DSC) configuration.**  
+   Compiling converts the DSC configuration (e.g., maintaining IIS settings) into a MOF file (node configuration) that can be applied to nodes.
+
+3. **Onboard the virtual machines to the Azure Automation account.**  
+   This registers the VMs as DSC nodes in Azure Automation State Configuration.
+
+4. **Install the custom Desired State Configuration (DSC) extension on the virtual machines.**  
+   The DSC extension allows each VM to pull and apply the assigned node configuration from Azure Automation and continuously enforce desired state.
+
+Final answer arrangement:
+
+| Order | Action |
+|-------|--------|
+| 1 | Create an Azure Automation account. |
+| 2 | Compile the Desired State Configuration (DSC) configuration. |
+| 3 | Onboard the virtual machines to the Azure Automation account. |
+| 4 | Install the custom Desired State Configuration (DSC) extension on the virtual machines. |
+
+> **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
+
+
+### Question #34
+
+
+You have a free tier of an Azure DevOps organization named Contoso. Contoso contains 10 private projects. Each project has multiple jobs with no dependencies. The build process requires access to resource ¬les located in an on-premises ¬le system.
+
+You frequently run the jobs on ¬ve self-hosted agents but experience long build times and frequently queued builds.
+
+You need to minimize the number of queued builds and the time it takes to run the builds.
+
+What should you do?
+
+A. Con¬gure the pipelines to use the Microsoft-hosted agents.
+
+B. Register additional self-hosted agents.
+
+C. Purchase self-hosted parallel jobs.
+
+D. Purchase Microsoft-hosted parallel jobs
+
+
+----
+
+
+✅ Correct answer: **B. Register additional self-hosted agents**
+
+
+🔍 Explanation
+
+🟦 Current situation
+
+* Pipelines require access to **on-premises file system**
+* Using **self-hosted agents (5 agents)**
+* Experiencing:
+
+  * **Queued builds**
+  * **Long execution times**
+* Jobs have **no dependencies → can run in parallel**
+
+ 🟦 Why B is correct
+
+* Adding more **self-hosted agents**:
+
+  * Increases **parallel execution capacity**
+  * Reduces **queue time**
+  * Keeps **direct access to on-prem resources**
+
+✔ This directly solves both problems:
+
+* Faster builds
+* Fewer queued jobs
+
+---
+
+❌ Why the other options are incorrect
+
+A. Microsoft-hosted agents
+
+* Cannot easily access **on-premises file system**
+* Would require complex networking (VPN, self-hosted proxy)
+
+C. Purchase self-hosted parallel jobs
+
+* Only increases allowed concurrency **limit**
+* Does NOT help if you only have **5 physical agents**
+* Bottleneck remains
+
+
+D. Purchase Microsoft-hosted parallel jobs
+
+* Same issue as A (no direct on-prem access)
+
+🎯 Key takeaway
+
+For pipelines that depend on **on-prem resources**:
+
+> ✅ Scale **self-hosted agents**, not hosted parallel jobs
+
+🚀 Final Answer:
+
+**B. Register additional self-hosted agents**
+
 
 ### Question-176
 
@@ -20079,8 +21332,59 @@ Key point
 > The **Timeout setting on approval** is the correct control for aligning approval time limits with organizational policies.
 
 
-
 ✅ **Answer: A. Yes**
+
+
+### Question-182
+
+
+You have a policy stating that approvals must occur within eight hours.
+
+You discover that deployment fail if the approvals take longer than two hours.
+
+You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+
+Solution: From Pre-deployment conditions, you modify the Timeout setting for pre-deployment approvals.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+-----
+
+
+✅ Correct answer: **A. Yes**
+
+🔍 Explanation
+
+In Azure DevOps release pipelines:
+
+* **Pre-deployment approvals** have a configurable **timeout setting**
+* If approval is not granted within this timeout, the deployment **fails automatically**
+
+🟦 What the solution does
+
+* Modifying the **Timeout setting for pre-deployment approvals** directly controls:
+
+  * How long the system waits for approval
+  * When the deployment should fail if no approval is given
+
+🟦 Requirement
+
+* Current failure: after **2 hours**
+* Required: fail only after **8 hours**
+
+✔ Adjusting the timeout to **8 hours** satisfies this requirement exactly
+
+
+🎯 Conclusion
+
+The proposed solution correctly addresses the requirement.
+
+**Answer: A. Yes**
+
 
 
 ### Question-183 ？？？
