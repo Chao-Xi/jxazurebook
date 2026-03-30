@@ -19838,7 +19838,7 @@ This ensures the file is **excluded from future commits** 🚀
 
 ### Question #12
 
-HOTSPOT You are ¬nalizing a release in GitHub.
+HOTSPOT You are finalizing a release in GitHub.
 
 You need to apply the following labels to the release:
 
@@ -19940,7 +19940,7 @@ You plan to create a release pipeline that will deploy resources by using Azure 
 
 You need to recommend a solution for accessing the secrets stored in the key vault during deployments. The solution must use the principle of least privilege.
 
-What should you include in the recommendation? To answer, drag the appropriate con¬gurations to the correct targets. Each con¬guration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+What should you include in the recommendation? To answer, drag the appropriate configurations to the correct targets. Each configuration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -20909,9 +20909,9 @@ DRAG DROP You have an Azure DevOps organization named Contoso.
 
 You have 10 Azure virtual machines that run Windows Server 2019. The virtual machines host an application that you build and deploy by using Azure Pipelines.
 
-Each virtual machine has the Web Server (IIS) role installed and con¬gured.
+Each virtual machine has the Web Server (IIS) role installed and configured.
 
-You need to ensure that the web server con¬gurations on the virtual machines is maintained automatically. The solution must provide centralized management of the con¬guration settings and minimize management overhead.
+You need to ensure that the web server configurations on the virtual machines is maintained automatically. The solution must provide centralized management of the configuration settings and minimize management overhead.
 
 Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -20961,15 +20961,15 @@ Final answer arrangement:
 ### Question #34
 
 
-You have a free tier of an Azure DevOps organization named Contoso. Contoso contains 10 private projects. Each project has multiple jobs with no dependencies. The build process requires access to resource ¬les located in an on-premises ¬le system.
+You have a free tier of an Azure DevOps organization named Contoso. Contoso contains 10 private projects. Each project has multiple jobs with no dependencies. The build process requires access to resource files located in an on-premises file system.
 
-You frequently run the jobs on ¬ve self-hosted agents but experience long build times and frequently queued builds.
+You frequently run the jobs on five self-hosted agents but experience long build times and frequently queued builds.
 
 You need to minimize the number of queued builds and the time it takes to run the builds.
 
 What should you do?
 
-A. Con¬gure the pipelines to use the Microsoft-hosted agents.
+A. Configure the pipelines to use the Microsoft-hosted agents.
 
 B. Register additional self-hosted agents.
 
@@ -21038,6 +21038,439 @@ For pipelines that depend on **on-prem resources**:
 🚀 Final Answer:
 
 **B. Register additional self-hosted agents**
+
+
+### Question #36
+
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure SQL database named DB1. You need to create a release pipeline that uses the Azure SQL Database Deployment task to update DB1.
+
+Which artifact should you deploy?
+
+A. a BACPAC
+
+B. a DACPAC
+
+C. an LDF file
+
+D. an MDF file
+
+
+-----
+
+
+✅ Correct answer: **B. a DACPAC**
+
+
+🔍 Explanation
+
+The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy **database schema changes** using a **DACPAC** file.
+
+🟦 What is a DACPAC?
+
+* A **Data-tier Application Package**
+* Contains:
+
+  * Database schema (tables, views, stored procedures, etc.)
+* Used for:
+
+  * **Deploying and updating database structure**
+
+❌ Why the other options are incorrect
+
+* **A. BACPAC**
+  → Used for **data + schema export/import**, not for incremental deployments
+
+* **C. LDF file**
+  → SQL Server **transaction log file**, not used for deployment
+
+* **D. MDF file**
+  → SQL Server **database file**, not used in Azure DevOps pipelines
+
+🎯 Final Answer
+
+**B. a DACPAC**
+
+💡 Key takeaway
+
+* **DACPAC → schema deployment (CI/CD pipelines)**
+* **BACPAC → backup/migration (data + schema)** 🚀
+
+
+### Question #37
+
+
+HOTSPOT You have a project in Azure DevOps.
+
+
+You plan to create a build pipeline that will deploy resources by using Azure Resource Manager templates. The templates will reference secrets stored in Azure Key Vault.
+
+You need to ensure that you can dynamically generate the resource ID of the key vault during template deployment.
+
+What should you include in the template? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Here is the extracted content from the image:
+
+```
+"resources": [
+  {
+    "apiVersion": "2018-05-01",
+    "name": "secrets",
+    "type": "<Drop-down>",
+    
+    "properties": {
+      "mode": "Incremental",
+      "<Drop-down>": {
+        "contentVersion": "1.0.0.0",
+        "uri": "[uri(parameters('_artifactsLocation'), concat('./nested/sqlserver.json', parameters('_artifactsLocationSasToken')))]"
+      },
+      "parameters": {
+        "secret": {
+          "reference": {
+            "keyVault": {
+              "id": "[resourceId(parameters('vaultSubscription'), parameters('vaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]"
+            },
+            "secretName": "[parameters('secretName')]"
+          }
+        }
+      }
+    }
+  }
+]
+```
+
+Dropdown options visible in the image:
+
+**For `"type"`:**
+
+* `Microsoft.KeyVault/vaults`
+* `Microsoft.Resources/deployments`
+* `Microsoft.Subscription/subscriptions`
+
+**For second dropdown inside `properties`:**
+
+* `deployment`
+* `template`
+* `templateLink`
+
+
+-----------
+
+
+✅ Correct answers
+
+* **Drop-down 1 (`type`):** ✔ `Microsoft.Resources/deployments`
+* **Drop-down 2 (inside `properties`):** ✔ `templateLink`
+
+🔍 Explanation
+
+🟦 `Microsoft.Resources/deployments`
+
+* This defines a **nested deployment** in ARM templates
+* Required when:
+
+  * You want to **dynamically reference resources**
+  * You are passing parameters (like Key Vault secrets)
+* Enables use of functions like:
+
+  * `resourceId()` (as shown in the template)
+
+🟦 `templateLink`
+
+* Used to reference an **external ARM template** via a URI
+* Matches the provided snippet:
+
+  ```json
+  "uri": "[uri(parameters('_artifactsLocation'), concat('./nested/sqlserver.json', parameters('_artifactsLocationSasToken')))]"
+  ```
+* Required when templates are stored externally (e.g., GitHub, storage)
+
+❌ Why not the other options
+
+* **Microsoft.KeyVault/vaults** → used to create a Key Vault, not for deployment orchestration
+* **Microsoft.Subscription/subscriptions** → unrelated to this scenario
+* **deployment / template** → not valid in this context with a URI (must use `templateLink`)
+
+🎯 Final Answer
+
+```json
+"type": "Microsoft.Resources/deployments",
+"templateLink": { ... }
+```
+
+💡 Key takeaway
+
+To dynamically reference Key Vault secrets in ARM templates:
+
+* Use **nested deployments (`Microsoft.Resources/deployments`)**
+* Use **`templateLink`** for external templates
+* Combine with **`resourceId()`** for dynamic resource resolution 🚀
+
+
+### Question #41
+
+You are developing an iOS application by using Azure DevOps.
+
+You need to test the application manually on 10 devices without releasing the application to the public. Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Create a Microsoft Intune device compliance policy.
+
+B. Deploy a certificate from an internal certification authority (CA) to each device.
+
+C. Register the application in the iTunes store.
+
+D. Onboard the devices into Microsoft Intune.
+
+E. Distribute a new release of the application.
+
+F. Register the IDs of the devices in the Apple Developer portal.
+
+----------
+
+
+✅ Correct answers:
+
+- ✔ **E. Distribute a new release of the application**
+- ✔ **F. Register the IDs of the devices in the Apple Developer portal**
+
+---
+
+🔍 Explanation
+
+To manually test an iOS app on specific devices **without publishing to the App Store**, you use **Ad Hoc distribution** (or similar App Center distribution).
+
+🟦 **F. Register device IDs (UDIDs)**
+
+* Apple requires devices to be **explicitly registered**
+* Only registered devices can install the app
+* Done via **Apple Developer portal**
+
+
+
+🟦 **E. Distribute a new release**
+
+* Use **Azure DevOps / App Center** to distribute the build
+* Sends the app to testers for installation on their devices
+
+❌ Why the other options are incorrect
+
+* **A. Intune compliance policy** → unrelated to iOS app distribution
+* **B. Internal CA certificate** → not required for iOS app testing
+* **C. Register in iTunes store** → would make the app public (not desired)
+* **D. Onboard into Intune** → not needed for simple manual testing
+
+🎯 Final Answer
+
+* **E**
+* **F**
+
+💡 Key takeaway
+
+For private iOS testing:
+
+> Register devices (UDIDs) → distribute build (Ad Hoc/App Center) 🚀
+
+### Question #45
+
+HOTSPOT Your company uses Git as a source code control system for a complex app named App1.
+
+You plan to add a new functionality to App1.
+
+You need to design a branching model for the new functionality.
+
+Which branch lifetime and branch time should you use in the branching model? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+**Branch lifetime:**
+
+*   Long-lived
+*   Short-lived
+
+**Branch type:**
+
+*   Master
+*   Feature
+*   Integration
+
+-----
+
+
+✅ Correct answers
+
+* **Branch lifetime:** ✔ **Short-lived**
+* **Branch type:** ✔ **Feature**
+
+🔍 Explanation
+
+🟦 **Short-lived branch**
+
+* New functionality should be developed in branches that:
+
+  * Exist only during development
+  * Are merged back quickly
+* Helps:
+
+  * Reduce merge conflicts
+  * Improve collaboration
+  * Support continuous integration
+
+🟦 **Feature branch**
+
+* Specifically used for:
+
+  * Developing **new features or functionality**
+* Isolated from main code until complete and tested
+
+❌ Why the other options are incorrect
+
+* **Long-lived** → used for stable branches like `main` or `develop`, not new features
+* **Master** → main production branch, not for development
+* **Integration** → used for combining multiple features, not building a single feature
+
+🎯 Final Answer
+
+* **Short-lived**
+* **Feature**
+
+💡 Key takeaway
+
+For new functionality:
+
+> Use **short-lived feature branches** to enable faster, safer development 🚀
+
+### Question #47
+
+HOTSPOT You have an Azure virtual machine named VM1 that runs Linux.
+
+You plan to deploy the Desired State Con¬guration (DSC) extension to VM1.
+
+You need to grant the Log Analytics agent the appropriate directory permissions.
+
+How should you complete the command? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+Hot Area
+
+**Answer Area**
+
+`setfacl -m u:omsagent:` [Dropdown 1] [Dropdown 2]
+
+**Dropdown 1 Options:**
+
+* r
+* x
+* rx
+* rwx
+
+**Dropdown 2 Options:**
+
+* /lib
+* /etc
+* /tmp
+* /usr
+
+
+----
+
+
+**Correct Answers:**
+
+* **Dropdown 1:** `rwx`
+* **Dropdown 2:** `/tmp`
+
+**Complete Command:**
+
+`setfacl -m u:omsagent:rwx /tmp`
+
+**Explanation:**
+
+To deploy and run the Desired State Configuration (DSC) extension properly, the Log Analytics agent (which runs under the `omsagent` user context) needs to be able to create, write to, and execute temporary scripts and files. 
+
+By default, in many hardened Linux environments, permissions are restricted. You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) permissions to the `/tmp` directory so it can successfully process the configurations. 
+
+Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.
+
+### Question #47
+
+HOTSPOT You are using PowerShell to administer Azure Log Analytics workspaces.
+
+You need to list the available workspaces and their properties.
+
+How should you complete the command? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+Here is the content extracted from the image:
+
+**Answer Area**
+
+[Dropdown 1] [Dropdown 2] `Microsoft.OperationalInsights/workspaces - ExpandProperties`
+
+**Dropdown 1 Options:**
+
+* Get-AzResource
+* Get-AzResourceGroup
+* Get-AzResourceProvider
+
+**Dropdown 2 Options:**
+
+* -ResourceGroupName
+* -ResourceId
+* -ResourceType
+
+-----
+
+✅ Correct answers
+
+* **Dropdown 1:** ✔ **Get-AzResource**
+* **Dropdown 2:** ✔ **-ResourceType**
+
+🔍 Explanation
+
+🟦 Correct command
+
+```powershell id="r3gk2a"
+Get-AzResource -ResourceType Microsoft.OperationalInsights/workspaces -ExpandProperties
+```
+
+🟦 Why this works
+
+* **Get-AzResource**
+
+  * Retrieves Azure resources across the subscription
+* **-ResourceType**
+
+  * Filters resources by type:
+
+    * `Microsoft.OperationalInsights/workspaces` = Log Analytics workspaces
+* **-ExpandProperties**
+
+  * Returns detailed properties of each workspace
+
+
+❌ Why the other options are incorrect
+
+* **Get-AzResourceGroup**
+  → Lists resource groups, not resources
+
+* **Get-AzResourceProvider**
+  → Lists providers, not instances
+
+* **-ResourceGroupName**
+  → Filters by group, but does not specify resource type
+
+* **-ResourceId**
+  → Requires a specific resource, not for listing all
+
+🎯 Final Answer
+
+* **Get-AzResource**
+* **-ResourceType**
+
+💡 Key takeaway
+
+To list Azure resources with details:
+
+> Use **Get-AzResource + -ResourceType + -ExpandProperties** 🚀
 
 
 ### Question-176
@@ -21405,36 +21838,23 @@ NOTE: Each correct selection is worth one point.
 * D. Define a post-deployment gate after the deployment to the QA stage.
 
 
-**Answer: BD**
+-----
 
-The correct answers are: **A. Define a deployment control that invokes the ServiceNow REST API** and **B. Define a pre-deployment gate before the deployment to the Prod stage** ✅✅
+Multiple-Choice Question Answer
 
-Explanation
+**Correct Answers: B & D**
 
-The requirement:
+**Explanation:**
 
-> Ensure that a **change request is approved in ServiceNow before deploying to production**.
+To ensure a change request is processed before components are deployed to the Production environment, you use **Release Gates** in Azure DevOps. Azure DevOps provides a ServiceNow Change Management extension specifically for this purpose. 
 
-Analysis of options
+You can place this gate in two locations within the release pipeline to achieve the goal:
 
-| Option                                                     | Explanation                                                                                                                                                                              | Correct?                    |
-| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| **A. Deployment control that invokes ServiceNow REST API** | Azure DevOps allows you to use **service hooks or scripts** to call ServiceNow’s REST API to verify change requests. This enforces that a valid change request exists before deployment. | ✅ Correct                   |
-| **B. Pre-deployment gate before Prod stage**               | Pre-deployment gates run **before the stage starts**. You can configure a gate to call the ServiceNow REST API and block the deployment until the change request is approved.            | ✅ Correct                   |
-| **C. Deployment control invoking ServiceNow SOAP API**     | SOAP API is legacy and not natively supported; requires custom scripts. REST API is the standard integration approach.                                                                   | ❌ Not recommended           |
-| **D. Post-deployment gate after QA stage**                 | Post-deployment gates run **after a stage completes**, which is too late for controlling production deployment.                                                                          | ❌ Does not meet requirement |
+*   **B. Define a pre-deployment gate before the deployment to the Prod stage:** This is placed directly on the Production stage. The pipeline will pause before the Production deployment starts, query ServiceNow, and only proceed once the Change Request is approved/processed.
+*   **D. Define a post-deployment gate after the deployment to the QA stage:** If your pipeline flows from QA directly to Prod, placing a gate *after* QA finishes ensures that the pipeline cannot even queue up or progress toward the Prod deployment until the ServiceNow Change Request condition is met. 
 
+*(Options A and C refer to "deployment controls invoking APIs," which isn't the standard native terminology for halting pipeline progression for change management. Azure DevOps natively handles this via Gates).*
 
-
-Recommended integration approach
-
-1. **Configure a pre-deployment gate** on the **Production stage**.
-2. Use **ServiceNow REST API** in the gate to verify that the change request is approved.
-3. Deployment proceeds only if the change request is processed successfully.
-
-
-
-✅ **Answer: A and B**
 
 
 ### Question-184
@@ -21479,8 +21899,6 @@ Why the other options are incorrect
 | **B. Create a fork in the build**   | Forks are for source control branching; they don’t control runtime features.                                                  |
 | **C. Create a branch in the build** | Branching allows parallel development, but you **cannot deploy unfinished code** to production safely without a feature flag. |
 | **D. Implement a branch policy**    | Branch policies enforce code quality and merge rules; they **do not control deployment behavior**.                            |
-
-
 
 **Key point:**
 
@@ -21530,6 +21948,8 @@ Why the other options are incorrect
 > For iOS **ad-hoc distribution**, devices must be **registered in Apple Developer portal** and included in the app’s provisioning profile before App Center can distribute the app.
 
 ✅ **Answer: B. Register the devices on the Apple Developer portal**
+
+
 
 
 
@@ -21809,7 +22229,7 @@ You need to distribute a new iOS application to the distribution group by using 
 
 What should you do?
 
-* **A. Select Register devices and sign my app.**
+* A. Select Register devices and sign my app.
 * B. Create an active subscription in App Center Test.
 * C. Add the device owner to the organization in App Center.
 * D. Create an unsigned build.
