@@ -16993,13 +16993,57 @@ You discover that installing JavaScript packages from npm takes approximately fi
 
 You need to recommend a solution to reduce the pipeline execution time.
 
-Solution: You recommend enabling pipeline caching.
+Solution: You recommend using pipeline artifacts.
 
 Does this meet the goal?
 
 A. Yes
 
 B. No
+
+-----
+
+❌ Correct answer: **B. No**
+
+🔍 Explanation
+
+🟦 Problem
+
+* `npm install` takes ~5 minutes every run
+* Goal: **reduce pipeline execution time**
+
+🟦 Why pipeline artifacts do NOT solve this
+
+* **Pipeline artifacts** are used to:
+
+  * Share files **between jobs/stages**
+  * Store build outputs (e.g., compiled app)
+* They do **not cache dependencies across runs**
+
+➡️ So npm packages would still be downloaded every time
+
+🟦 Correct approach (what should be used)
+
+* Use **pipeline caching** (`Cache@2` task)
+* Cache:
+
+  * `node_modules` OR
+  * npm cache (`~/.npm`)
+
+This allows reuse of dependencies across runs → **major speed improvement**
+
+🎯 Conclusion
+
+The proposed solution does NOT meet the goal.
+
+**Answer: B. No**
+
+💡 Key takeaway
+
+* **Artifacts → share outputs**
+* **Cache → speed up builds (correct solution)** 🚀
+
+
 
 ### Question #64
 
@@ -21344,7 +21388,7 @@ For new functionality:
 
 HOTSPOT You have an Azure virtual machine named VM1 that runs Linux.
 
-You plan to deploy the Desired State Con¬guration (DSC) extension to VM1.
+You plan to deploy the Desired State Configuration (DSC) extension to VM1.
 
 You need to grant the Log Analytics agent the appropriate directory permissions.
 
@@ -21525,8 +21569,1105 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
+### Question #59
+
+You use GitHub for source control of .NET applications.
+
+You need to deploy a documentation solution that meets the following requirements:
+
+✑ Documents will be written in Markdown as developers make code changes.
+
+✑ Changes to the documents will trigger the recompilation of a static website.
+
+✑ Users will access the documents from the static website.
+
+✑ Documents will be stored in a GitHub repository.
+
+Which two tools can you use to compile the website? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
+
+A. Word Press
+
+B. Jekyll
+
+C. DocFX
+
+D. caret
+
+E. Medium
+
+
+--------
+
+✅ Correct answers:
+
+- ✔ **B. Jekyll**
+- ✔ **C. DocFX**
+
+🔍 Explanation
+
+You need a solution that:
+
+* Uses **Markdown files**
+* Automatically **builds a static website**
+* Integrates with **GitHub workflows**
+* Stores docs in a repository
+
+🟦 **Jekyll**
+
+* Native static site generator for GitHub (used by GitHub Pages)
+* Supports:
+
+  * Markdown → HTML
+  * Automatic rebuild on commits
+* Ideal for:
+
+  * Simple documentation sites
+
+🟦 **DocFX**
+
+* Microsoft tool designed for **.NET documentation**
+* Supports:
+
+  * Markdown + API documentation
+  * Static site generation
+* Integrates well with CI/CD pipelines
+
+❌ Why the other options are incorrect
+
+* **WordPress** → dynamic CMS, not static site generation from repo
+* **caret** → text editor, not a build tool
+* **Medium** → publishing platform, not repo-based documentation
+
+🎯 Final Answer
+
+* **B. Jekyll**
+* **C. DocFX**
+
+💡 Key takeaway
+
+For documentation-as-code:
+
+> Use **static site generators** like Jekyll or DocFX 🚀
+
+### Question #61
+
+You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
+
+You have the following DSC configuration.
+
+```powershell
+configuration WebConfiguration
+{
+    
+    File WebsiteContent {
+        Ensure          = 'Present'
+        SourcePath      = 'c:\test\index.htm'
+        DestinationPath = 'c:\inetpub\wwwroot'
+        DependsOn       = '[WindowsFeature]Web-Server'
+    }
+
+    WindowsFeature Web-Server
+    {
+        Ensure = 'Present'
+        Name   = 'Web-Server'
+    }
+
+}
+```
+
+You have the following Local Configuration Manager (LCM) configuration.
+
+```powershell
+LocalConfigurationManager
+{
+    ConfigurationMode = "ApplyAndMonitor"
+    RefreshFrequencyMins = 30
+    ConfigurationModeFrequencyMins = 60
+    RefreshMode = 'Push'
+}
+```
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No. NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+```
+Here is the content extracted from the image:
+
+**Hot Area:**
+
+| Statements | Yes | No |
+| :--- | :---: | :---: |
+| The Index.htm file will be copied to the C:\Test folder before the Web-Server Windows feature is installed. | &#9711; | &#9711; |
+| If manual changes are made to the configuration of the virtual machine, the configuration will reapply automatically. | &#9711; | &#9711; |
+| If the Web-Server Windows feature is uninstalled from the virtual machine, the discrepancy will be reported in a log entry within 60 minutes. | &#9711; | &#9711; |
+```
+
+
+------
+
+
+✅ Answers
+
+| Statement                                                                                                                                     | Answer    |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| The Index.htm file will be copied to the C:\Test folder before the Web-Server Windows feature is installed.                                   | ❌ **No**  |
+| If manual changes are made to the configuration of the virtual machine, the configuration will reapply automatically.                         | ❌ **No**  |
+| If the Web-Server Windows feature is uninstalled from the virtual machine, the discrepancy will be reported in a log entry within 60 minutes. | ✅ **Yes** |
+
+🔍 Explanation
+
+🟦 1. File copy before Web-Server install
+
+* The `File` resource has:
+
+  ```powershell
+  DependsOn = '[WindowsFeature]Web-Server'
+  ```
+* This ensures:
+
+  * **Web-Server installs first**
+  * Then the file is copied
+
+❌ Statement says *before* → incorrect
+
+🟦 2. Automatic reapplication of configuration
+
+* LCM setting:
+
+  ```powershell
+  ConfigurationMode = "ApplyAndMonitor"
+  ```
+* Meaning:
+
+  * Applies configuration **once**
+  * Then **only monitors** for drift
+  * Does NOT fix automatically
+
+❌ No automatic reapply
+
+🟦 3. Drift reporting within 60 minutes
+
+* Setting:
+
+  ```powershell
+  ConfigurationModeFrequencyMins = 60
+  ```
+* Every 60 minutes:
+
+  * DSC checks compliance
+  * Logs drift (e.g., feature removed)
+
+✔ Discrepancy is detected and logged
+
+💡 Key takeaway
+
+* **DependsOn → controls execution order**
+* **ApplyAndMonitor → detect drift, don’t fix**
+* **ConfigurationModeFrequencyMins → drift detection interval** 🚀
+
+### Question #62
+
+DRAG DROP You have a web app named App1 that is hosted on multiple servers. App1 uses Application Insights in Azure Monitor.
+
+You need to compare the daily CPU usage from the last week for all servers.
+
+
+How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
+
+You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+
+**Values**
+
+*   `bin(timestamp,1d)`
+*   `bin(timestamp,1h)`
+*   `project timechart`
+*   `render chart`
+*   `render timechart`
+
+**Answer Area**
+
+```kusto
+...
+performanceCounters
+| where counter == "% Processor Time"
+| where timestamp >= ago(7d)
+| summarize avg(value) by cloud_RoleInstance, [Box 1]
+| [Box 2]
+...
+```
+
+
+--------
+
+✅ Correct answers
+
+* **Box 1:** ✔ `bin(timestamp,1d)`
+* **Box 2:** ✔ `render timechart`
+
+🔍 Explanation
+
+🟦 `bin(timestamp,1d)`
+
+* Groups data into **daily intervals**
+* Requirement:
+
+  > Compare **daily CPU usage from the last week**
+* So aggregation must be per **day**
+
+🟦 `render timechart`
+
+* Visualizes the results as a **time-based chart**
+* Ideal for:
+
+  * Trends over time
+  * Comparing multiple servers (`cloud_RoleInstance`)
+
+❌ Why the other options are incorrect
+
+* **bin(timestamp,1h)** → hourly, not daily
+* **project timechart** → invalid syntax
+* **render chart** → generic, not time-based
+
+🎯 Final Query
+
+```kusto id="8f3l2x"
+performanceCounters
+| where counter == "% Processor Time"
+| where timestamp >= ago(7d)
+| summarize avg(value) by cloud_RoleInstance, bin(timestamp,1d)
+| render timechart
+```
+
+💡 Key takeaway
+
+* **bin() → controls time granularity**
+* **timechart → best for time-series visualization** 🚀
+
+
+### Question #63
+
+You have an Azure subscription that contains 50 virtual machines.
+
+You plan to manage the configuration of the virtual machines by using Azure Automation State Configuration. You need to create the Desired State Configuration (DSC) configuration files.
+
+How should you structure the code blocks?
+
+A. Node > Configuration > Resource
+
+B. Configuration > Resource > Node
+
+C. Resource > Configuration > Node
+
+D. Configuration > Node > Resource
+
+-------
+
+✅ Correct answer: **D. Configuration > Node > Resource**
+
+🔍 Explanation
+
+Desired State Configuration (DSC) follows a **specific hierarchical structure**:
+
+🟦 1. **Configuration**
+
+* The top-level block
+* Defines the overall configuration
+
+🟦 2. **Node**
+
+* Specifies the target machine(s)
+* Example: `Node localhost` or multiple VMs
+
+🟦 3. **Resource**
+
+* Defines what to configure on the node
+* Examples:
+
+  * `WindowsFeature`
+  * `File`
+  * `Service`
+
+🟦 Correct structure
+
+```powershell id="dsc123"
+Configuration MyConfig {
+    Node "VM1" {
+        WindowsFeature WebServer {
+            Ensure = "Present"
+            Name   = "Web-Server"
+        }
+    }
+}
+```
+
+❌ Why the other options are incorrect
+
+* **A. Node > Configuration > Resource** → wrong order
+* **B. Configuration > Resource > Node** → resources must be inside Node
+* **C. Resource > Configuration > Node** → completely invalid structure
+
+🎯 Final Answer
+
+**D. Configuration > Node > Resource**
+
+💡 Key takeaway
+
+DSC always follows:
+
+> **Configuration → Node → Resource** 🚀
+
+
+### Question #64
+
+Your team uses Azure Pipelines to deploy applications.
+
+
+
+You need to ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams. The solution must minimize development effort.
+
+What should you do?
+
+A. Install the Azure Boards app for Teams and configure a subscription to receive notifications in a channel.
+
+B. Use Azure Automation to connect to the Azure DevOps REST API and notify the team members.
+
+C. Use an Azure function to connect to the Azure DevOps REST API and notify the team members.
+
+D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel.
+
+-----
+
+
+✅ Correct answer: **D. Install the Azure Pipelines app for Teams and configure a subscription to receive notifications in a channel.**
+
+🔍 Explanation
+
+🟦 Why D is correct
+
+* The **Azure Pipelines app for Microsoft Teams** provides:
+
+  * Built-in integration with Azure DevOps pipelines
+  * Notifications for:
+
+    * Build failures
+    * Release failures
+* Requires **minimal setup**:
+
+  * Install app in Teams
+  * Configure a subscription to a channel
+
+✔ Meets requirement:
+
+> “Minimize development effort”
+
+❌ Why the other options are incorrect
+
+* **A. Azure Boards app**
+  → Used for work items, not pipeline/build notifications
+
+* **B. Azure Automation + REST API**
+  → Custom solution, higher effort
+
+* **C. Azure Function + REST API**
+  → Also custom development, not minimal effort
+ 🎯 Final Answer
+
+**D**
+
+💡 Key takeaway
+
+For notifications in Azure DevOps:
+
+> Use built-in integrations (like Teams apps) instead of custom code 🚀
+
+
+### Question #65
+
+
+DRAG DROP You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. App1 writes logs to Workspace1.
+
+You need to query the AppEvents table. The solution must meet the following requirements:
+
+✑ Only query rows for a column named Name that starts with the following text: "Clicked Create New Ticket."
+
+✑ Calculate the number of daily clicks per user.
+
+✑ Return the top 10 users based on their number of clicks for any day.
+
+✑ Sort the results based on the highest number of clicks.
+
+✑ Ignore any users who have less than three daily clicks.
+
+In which order should you arrange the query statements? To answer, move all statements from the list of statements to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+Here is the content extracted from the image, formatted as markdown:
+
+**Actions Commands Cmdlets Statements**
+
+*   `| summarize NumberOfClicks = count() by bin(TimeGenerated, 1d), UserId`
+*   `AppEvents`
+*   `| top 10 by NumberOfClicks desc`
+*   `| where NumberOfClicks >= 3`
+*   `| where Name startswith "Clicked Create New Ticket"`
+
+**Answer Area**
+
+*(Empty)*
+
+
+-----
+
+
+✅ Correct order of query statements
+
+```kusto
+AppEvents
+| where Name startswith "Clicked Create New Ticket"
+| summarize NumberOfClicks = count() by bin(TimeGenerated, 1d), UserId
+| where NumberOfClicks >= 3
+| top 10 by NumberOfClicks desc
+```
+
+---
+
+🔍 Explanation
+
+🟦 1. `AppEvents`
+
+* Start with the target table
+
+ 🟦 2. Filter by event name
+
+```kusto
+| where Name startswith "Clicked Create New Ticket"
+```
+
+* Ensures only relevant events are included
+
+🟦 3. Aggregate daily clicks per user
+
+```kusto
+| summarize NumberOfClicks = count() by bin(TimeGenerated, 1d), UserId
+```
+
+* Groups by:
+
+  * **UserId**
+  * **Day (1d bin)**
+
+🟦 4. Filter users with at least 3 clicks
+
+```kusto
+| where NumberOfClicks >= 3
+```
+
+🟦 5. Get top 10 users
+
+```kusto
+| top 10 by NumberOfClicks desc
+```
+
+* Sorts by highest clicks
+* Returns top 10
+
+🎯 Key takeaway
+
+Correct query flow in Kusto:
+
+> **Filter → Aggregate → Filter → Sort/Top** 🚀
+
+### Question #66
+
+HOTSPOT -
+
+
+You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, and a release pipeline in Azure Pipelines named Pipeline1.
+
+You plan to deploy Contoso Data Factory to ContosoRG by using Pipeline1.
+
+You add the Azure Resource Manager (ARM) template deployment task shown in the following exhibit.
+
+
+![Alt Image Text](../images/az400_2_46.png)
+
+
+Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic
+
+NOTE: Each correct selection is worth one point.
+
+Here is the content extracted from the image, formatted as markdown:
+
+The [answer choice] setting must be changed to prevent the modification of existing databases and web apps in ContosoRG. **[Dropdown 1]**
+
+**Dropdown 1 Options:**
+
+* Action
+* Template location
+* Deployment mode
+* Deployment scope
+
+
+Pipeline1 will retrieve the ARM template from the [answer choice]. **[Dropdown 2]**
+
+**Dropdown 2 Options:**
+
+* output of the continuous integration build
+* location specified in the Linked artifact variable
+* default branch of the Git repository of Contoso Data Factory
+
+
+-------
+
+✅ Correct answers
+
+1. **The setting that must be changed:** ✔ **Deployment mode**
+2. **Pipeline1 will retrieve the ARM template from:** ✔ **output of the continuous integration build**
+
+ 🔍 Explanation
+
+🟦 1. Deployment mode
+
+* Current setting (from image): **Complete**
+* Problem:
+
+  * **Complete mode deletes any resources not in the template**
+  * This could modify/remove existing databases and web apps in **ContosoRG**
+
+✔ To prevent this:
+
+* Change to **Incremental mode**
+* Only updates resources defined in the template
+
+
+🟦 2. Template retrieval source
+
+* Template location is set to **Linked artifact**
+* This means:
+
+  * The ARM template is taken from the **pipeline artifact**
+  * Typically produced by the **CI build**
+
+✔ Therefore:
+
+> Pipeline retrieves template from **output of the continuous integration build**
+
+ 
+ ❌ Why other options are incorrect
+
+* **Action** → not related to resource deletion behavior
+
+* **Template location** → already correct (Linked artifact)
+
+* **Deployment scope** → unrelated to preventing modification
+
+* **Default branch of Git repo** → not used when artifact is selected
+
+* **Linked artifact variable** → indirect; actual source is CI output
+
+ 🎯 Final Answer
+
+* **Deployment mode**
+* **output of the continuous integration build**
+
+💡 Key takeaway
+
+* **Complete mode = destructive (avoid unless intentional)**
+* **Incremental mode = safe updates**
+* **Linked artifact = CI pipeline output** 🚀
+
+### Question #67
+
+
+You have an Azure Pipeline.
+
+You need to store configuration values as variables.
+
+At which four scopes can the variables be defined, and what is the precedence of the variables from the highest precedence to lowest precedence? To answer, move the appropriate scope from the list of scopes to the answer area and arrange them in the correct order.
+
+
+
+**Scopes**
+
+* stage
+* job
+* pipeline settings UI
+* pipeline root
+* task
+
+**Answer Area**
+
+* *(Empty box)*
+* *(Empty box)*
+* *(Empty box)*
+* *(Empty box)*
+
+-----
+
+
+Here are the four correct scopes for defining variables in Azure Pipelines, arranged in order of precedence from **highest to lowest**:
+
+1. **job** (Highest precedence - applies only to the specific job and overrides broader scopes)
+2. **stage** (Applies to all jobs within the stage, overriding pipeline-level variables)
+3. **pipeline root** (Defined at the top of the YAML file; applies to the entire pipeline unless overridden by a stage or job)
+4. **pipeline settings UI** (Lowest precedence - defined in the Azure DevOps web interface; overridden by any identically named variable in the YAML file)
+
+*(Note: **task** is the distractor. While you can map variables to task inputs or environments, you do not declare variable blocks at the task scope in Azure Pipelines.)*
+
+
+### Question #68
+
+You have a project in Azure DevOps named Project1 that contains two environments named environment1 and environment2.
+
+When a new version of Project is released, the latest version is deployed to environment2, and the previous version is redeployed to environment1.
+
+You need to distribute users across the environments. The solution must meet the following requirements:
+
+• New releases must be available to only a subset of the users.
+
+• You must gradually increase the number of users that can access environment2.
+
+What should you use?
+
+A. VIP swaping
+
+B. web app deployment slots
+
+C. Azure Load Balancer
+
+D. Azure Traffic Manager
+
+
+-----
+
+
+The correct answer is **B. web app deployment slots**.
+
+**Explanation:**
+
+Azure App Service **deployment slots** allow you to run different versions of your web application simultaneously. They have a built-in feature called **Traffic Routing** (sometimes referred to as "Testing in Production"). 
+
+This feature allows you to meet both of your requirements perfectly:
+
+
+* **Subset of users:** You can specify a small percentage of incoming user traffic (e.g., 10%) to be routed to `environment2` (the slot with the new release), while the rest remains on `environment1`.
+* **Gradual increase:** You can manually or automatically adjust that percentage upward (e.g., from 10% to 30% to 50%) as you gain confidence in the new release until 100% of the users are on the new version.
+
+**Why the other options are less suitable:**
+
+* **A. VIP swapping** is an "all-or-nothing" cutover. It instantly swaps 100% of the traffic from one environment to the other, which does not allow for gradual user distribution.
+* **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
+* **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
+
+### Question #69
+
+DRAG DROP -
+
+You are designing a versioning strategy for Git-based packages.
+
+You plan to use a Semantic Versioning (SemVer)-based strategy.
+
+You need to identify when to change the build version.
+
+What should you identify for each scenario? To answer, drag the appropriate versions to the correct scenarios. Each version may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Here is the content extracted from the image, formatted as markdown:
+
+**Version**
+
+*   Major
+*   Minor
+*   Patch
+
+**Answer Area**
+
+*   You rename a parameter in an API: [ ]
+*   You deprecate functionality in an API: [ ]
+*   You add a feature and maintain backwards compatibility: [ ]
+
+-----
+
+
+✅ Correct mapping (Semantic Versioning)
+
+* **You rename a parameter in an API:** ✔ **Major**
+* **You deprecate functionality in an API:** ✔ **Minor**
+* **You add a feature and maintain backwards compatibility:** ✔ **Minor**
+
+🔍 Explanation
+
+🟦 **Major (X.0.0)**
+
+* Used for **breaking changes**
+* Renaming a parameter:
+
+  * Breaks existing clients → requires major version bump
+
+
+🟦 **Minor (0.X.0)**
+
+* Used for:
+
+  * **Backward-compatible changes**
+  * New features
+  * Deprecations (still works but marked for future removal)
+
+✔ Both apply:
+
+* Deprecating functionality
+* Adding new features (without breaking existing code)
+
+🟦 **Patch (0.0.X)**
+
+* Used only for:
+
+  * Bug fixes
+  * No new features or breaking changes
+
+🎯 Final Answer
+
+* Rename parameter → **Major**
+* Deprecate functionality → **Minor**
+* Add feature (backward compatible) → **Minor**
+
+💡 Key takeaway
+
+* **Major → breaking changes**
+* **Minor → new features / deprecations**
+* **Patch → bug fixes only** 🚀
+
+
+### Question #70
+
+You use Calendar Versioning (CalVer) for code assets.
+
+You need to store an optional tag of beta as part of the version.
+
+Which part of the version should you use for the tag?
+
+A. minor
+
+B. major
+
+C. micro
+
+D. modifier
+
+---
+
+✅ Correct answer: **D. modifier**
+
+🔍 Explanation
+
+In **Calendar Versioning (CalVer)**, versions are typically structured like:
+
+```
+YYYY.MM.DD[-modifier]
+```
+
+🟦 Modifier
+
+* Used for **optional labels/tags**, such as:
+
+  * `beta`
+  * `alpha`
+  * `rc`
+* Example:
+
+  ```
+  2026.04.01-beta
+  ```
+
+❌ Why the other options are incorrect
+
+* **Major / Minor / Micro**
+
+  * These are numeric version components
+  * Used for ordering versions, not labeling release types
+
+🎯 Final Answer
+
+**D. modifier**
+
+💡 Key takeaway
+
+In CalVer:
+
+> **Modifier = optional label (beta, alpha, rc)** 🚀
+
+
+### Question #71
+
+DRAG DROP -
+
+You have an Azure subscription that uses Azure Automation State Con¬guration to manage the con¬guration of virtual machines.
+
+You need to identify which nodes are noncompliant.
+
+Topic 8
+
+How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+------
+
+**Values**
+
+*   Category
+*   DscReportStatus
+*   Message
+*   OperationName
+*   Resource
+*   ResultType
+
+**Answer Area**
+
+```kusto
+AzureDiagnostics
+| where [Box 1] == "DscNodeStatus"
+| where [Box 2] contains ""
+| where [Box 3] != "Compliant"
+```
+
+------
+
+✅ Correct answers
+
+* **Box 1:** ✔ **Category**
+* **Box 2:** ✔ **OperationName**
+* **Box 3:** ✔ **ResultType**
+
+🔍 Explanation
+
+🟦 Box 1: `Category`
+
+```kusto
+| where Category == "DscNodeStatus"
+```
+
+* Filters logs related specifically to **DSC node status**
+
+🟦 Box 2: `OperationName`
+
+```kusto
+| where OperationName contains ""
+```
+
+* Used to filter specific DSC operations (e.g., consistency checks)
+
+🟦 Box 3: `ResultType`
+
+```kusto
+| where ResultType != "Compliant"
+```
+
+* Identifies nodes that are **noncompliant**
+
+🎯 Final Query
+
+```kusto id="v9k3lx"
+AzureDiagnostics
+| where Category == "DscNodeStatus"
+| where OperationName contains ""
+| where ResultType != "Compliant"
+```
+
+💡 Key takeaway
+
+To find noncompliant DSC nodes:
+
+> Filter by **Category → Operation → ResultType** 🚀
+
+
+### Question #73
+
+HOTSPOT -
+
+You have a project in Azure DevOps that contains a release pipeline. The pipeline contains two stages named QA and Prod. QA deploys code to an Azure web app named webapp1. Prod deploys code to an Azure web app named webapp2.
+
+You need to ensure that code deployments to webapp2 are blocked if Azure Application Insights generates Failed requests alerts following the deployment of new code to webapp1.
+
+What should you do for each stage? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+**Answer Area**
+
+QA: [Dropdown 1]
+
+**Dropdown 1 Options:**
+* Add a task to configure
+alert rules in Application Insights.
+* Configure a gate in the pre-deployment conditions.
+* Configure an auto-redeploy trigger in the post-deployment conditions
+* Configure a post-deployment approval in the post-deployment conditions
+
+Prod: [Dropdown 2]
+
+**Dropdown 2 Options:**
+
+* Add a task to configure an alert rule in Application Insights.
+* Configure a gate in the pre-deployment conditions.
+* Configure a trigger in the pre-deployment conditions.
+* Configure the Deployment queue settings in the pre-deployment conditions.
+
+
+-----
+
+
+✅ Correct answers
+
+* **QA:** ✔ **Add a task to configure alert rules in Application Insights.**
+* **Prod:** ✔ **Configure a gate in the pre-deployment conditions.**
+
+🔍 Explanation
+
+🟦 QA stage
+
+* Requirement:
+
+  * Detect **failed requests after deployment to webapp1**
+* Solution:
+
+  * Configure **Application Insights alert rules**
+  * These alerts will be evaluated before promoting to Prod
+
+✔ So you must:
+
+> Add a task to configure alert rules in Application Insights
+
+🟦 Prod stage
+
+* Requirement:
+
+  * **Block deployment** if alerts are triggered in QA
+* Solution:
+
+  * Use **Release Gates**
+  * Gates evaluate conditions (like Application Insights alerts) before deployment
+
+✔ So you must:
+
+> Configure a gate in the **pre-deployment conditions**
+
+
+❌ Why other options are incorrect
+
+* **Approvals / triggers / queue settings**
+  → Do not evaluate telemetry or alerts
+
+* **Auto-redeploy**
+  → Not related to blocking based on health signals
+
+🎯 Final Answer
+
+* **QA:** Add a task to configure alert rules in Application Insights
+* **Prod:** Configure a gate in the pre-deployment conditions
+
+💡 Key takeaway
+
+* **QA → generate signals (alerts)**
+* **Prod → enforce decision (gates)** 🚀
+
+
+### Question #77
+
+DRAG DROP -
+
+You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
+
+
+You need to ensure that when a new release is generated for ReleaseP1, a new release note document is created. The release notes must contain new features and bug ¬xes.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
+
+
+**Actions**
+
+*   Create a personal access token (PAT).
+*   Create a service principal.
+*   Create a PowerShell task in ReleaseP1 that writes the retrieved data to a markdown file.
+*   Create a query that retrieves the feature and bug fix information.
+*   Add a dashboard widget that retrieves the feature and bug fix information.
+
+**Answer Area**
+
+1.  
+2.  
+3.  
+
+
+------
+
+
+✅ Correct sequence of actions
+
+1. **Create a personal access token (PAT).**
+2. **Create a query that retrieves the feature and bug fix information.**
+3. **Create a PowerShell task in ReleaseP1 that writes the retrieved data to a markdown file.**
+
+🔍 Explanation
+
+🟦 1. Create a PAT
+
+* Needed to authenticate against **Azure DevOps REST API**
+* Allows pipeline to securely retrieve work item data
+
+🟦 2. Create a query
+
+* Define a query to fetch:
+
+  * **Features**
+  * **Bug fixes**
+* Typically based on:
+
+  * Work item type
+  * Iteration / release scope
+
+🟦 3. PowerShell task
+
+* Executes during the release pipeline
+* Uses:
+
+  * REST API + PAT
+* Outputs:
+
+  * **Release notes in Markdown format**
+
+❌ Why the other options are incorrect
+
+* **Service principal** → used for Azure resources, not Azure DevOps data
+* **Dashboard widget** → visualization only, not automated document generation
+
+🎯 Final Answer
+
+1. Create a personal access token (PAT)
+2. Create a query that retrieves the feature and bug fix information
+3. Create a PowerShell task in ReleaseP1 that writes the retrieved data to a markdown file
+
+💡 Key takeaway
+
+To generate release notes automatically:
+
+> **Authenticate → Query work items → Generate document in pipeline** 🚀
+
 
 ### Question-177
+
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -22267,6 +23408,125 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
+### Question #52
+
+DRAG DROP You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
+
+Topic 8
+
+How should you complete the Desired State Configuration (DSC) configuration script? To answer, drag the appropriate values to the correct locations. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+```
+configuration RequiredFeatures
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    Node localhost
+    {
+        WindowsFeatureSet RequiredWindowsFeatures
+        {
+            Name [Dropdown 1]
+            
+            [Dropdown 2] = 'Present'
+
+            IncludeAllSubFeature = $true
+        }
+    }
+}
+```
+
+**Dropdown 1 Options:**
+
+- = @("Mail-Server", "IIS")
+- = @("SMTP-Server", "IIS")
+- = @("Mail-Server", "Web-Server")
+- = @("SMTP-Server", "Web-Server")
+
+**Dropdown 2 Options:**
+
+- Install
+- Ensure
+- Enforce
+- Required
+
+------
+
+✅ Correct answers
+
+* **Dropdown 1:** ✔ `= @("SMTP-Server", "Web-Server")`
+* **Dropdown 2:** ✔ `Ensure`
+
+🔍 Explanation
+
+🟦 `WindowsFeatureSet`
+
+* Used to install **multiple Windows features**
+* Requires:
+
+  * `Name` → array of feature names
+  * `Ensure` → defines desired state (`Present` or `Absent`)
+
+🟦 Why `"SMTP-Server"` and `"Web-Server"`
+
+* These are the **valid Windows feature names**:
+
+  * **SMTP-Server** → SMTP service
+  * **Web-Server** → IIS
+
+❌ Invalid options:
+
+* `"Mail-Server"` → not a valid Windows feature name
+* `"IIS"` → alias, not the actual feature name
+
+🟦 Why `Ensure`
+
+* Correct DSC property to define state:
+
+  ```powershell
+  Ensure = 'Present'
+  ```
+* Ensures features are installed
+
+❌ Other options:
+
+* `Install`, `Enforce`, `Required` → not valid DSC properties
+
+🎯 Final Configuration
+
+```powershell id="y0ep2v"
+configuration RequiredFeatures
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    Node localhost
+    {
+        WindowsFeatureSet RequiredWindowsFeatures
+        {
+            Name = @("SMTP-Server", "Web-Server")
+            
+            Ensure = 'Present'
+
+            IncludeAllSubFeature = $true
+        }
+    }
+}
+```
+
+💡 Key takeaway
+
+* Use **actual feature names** (e.g., `Web-Server`)
+* Use **Ensure = 'Present'** to enforce installation 🚀
+
+
+
+
+
+
+
+
+
 ### Question-192
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
@@ -22498,8 +23758,10 @@ What is required for **App1 to programmatically sign in to Azure Active Director
 
 * A. the application ID, a client secret, and the object ID
 * B. a client secret, the object ID, and the tenant ID
-* **C. the application ID, a client secret, and the tenant ID**
+* C. the application ID, a client secret, and the tenant ID
 * D. the application ID, a client secret, and the subscription ID
+
+---------
 
 **Answer: C**
 
