@@ -22410,7 +22410,7 @@ In CalVer:
 
 DRAG DROP -
 
-You have an Azure subscription that uses Azure Automation State Con¬guration to manage the con¬guration of virtual machines.
+You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
 
 You need to identify which nodes are noncompliant.
 
@@ -22589,7 +22589,7 @@ DRAG DROP -
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
 
-You need to ensure that when a new release is generated for ReleaseP1, a new release note document is created. The release notes must contain new features and bug ¬xes.
+You need to ensure that when a new release is generated for ReleaseP1, a new release note document is created. The release notes must contain new features and bug fixes.
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -22664,6 +22664,626 @@ NOTE: More than one order of answer choices is correct. You will receive credit 
 To generate release notes automatically:
 
 > **Authenticate → Query work items → Generate document in pipeline** 🚀
+
+
+## Topic 9 - Question Set 9
+
+### Question #1
+
+You plan to create an image that will contain a .NET Core application.
+
+
+You have a Dockerfile file that contains the following code. (Line numbers are included for reference only.
+
+```
+01 FROM mcr.microsoft.com/dotnet/sdk:6.0
+02 COPY . /
+03 RUN dotnet publish -c Release -o out
+04 FROM mcr.microsoft.com/dotnet/sdk:6.0
+05 COPY -from=0 /out /
+06 WORKDIR /
+07 ENTRYPOINT ["dotnet", "app1.dll"]
+```
+
+You need to ensure that the image is as small as possible when the image is built.
+
+Which line should you modify in the file?
+
+A. 1
+
+B. 3
+
+C. 4
+
+D. 7
+
+-------
+
+
+✅ Correct answer: **C. 4**
+
+ 🔍 Explanation
+
+🟦 Problem
+
+You are already using a **multi-stage build**, which is good. However:
+
+```dockerfile
+04 FROM mcr.microsoft.com/dotnet/sdk:6.0
+```
+
+* The **SDK image** is large (includes build tools)
+* It is being used in the **final runtime image**, which increases size unnecessarily
+
+🟦 Correct approach
+
+* Use a **lighter runtime image** for the final stage:
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+```
+
+or for console apps:
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/runtime:6.0
+```
+
+🟦 Why this works
+
+* First stage → build using SDK
+* Second stage → run using **runtime-only image**
+* Eliminates unnecessary build tools → **smaller image**
+
+
+❌ Why other options are incorrect
+
+* **Line 1** → correct (SDK needed for build stage)
+* **Line 3** → correct (publish step)
+* **Line 7** → correct (entry point)
+
+🎯 Final Answer
+
+**C. 4**
+
+
+💡 Key takeaway
+
+For small Docker images:
+
+> **Use SDK for build → runtime image for final stage** 🚀
+
+
+
+### Question #3
+
+You have an Azure subscription that contains the resources shown in the following table.
+
+
+| Name | Type |
+| :--- | :--- |
+| DepPipeline1 | Azure DevOps deployment pipeline |
+| ADFPipeline1 | Azure Data Factory pipeline |
+| Vault1 | Azure Key Vault |
+
+DepPipeline1 and ADFPipeline1 use a single credential that is stored in Vault1.
+
+You need to con¬gure ADFPipeline1 to retrieve the credential from Vault1.
+
+Which type of activity should you use?
+
+A. Lookup
+
+B. Get Metadata
+
+C. Сoрy
+
+D. Web
+
+-----
+
+
+✅ Correct answer: **D. Web**
+
+ 🔍 Explanation
+
+To retrieve a secret from **Azure Key Vault** in an **Azure Data Factory pipeline**, you need to call the **Key Vault REST API**.
+
+🟦 Why Web activity
+
+* The **Web activity** is used to:
+
+  * Call REST endpoints
+  * Retrieve data from external services
+* Azure Key Vault exposes secrets via a **REST API**
+* Therefore, Web activity is the correct choice to fetch the credential
+
+
+❌ Why the other options are incorrect
+
+* **Lookup**
+  → Used for querying data sources (e.g., SQL, files), not REST APIs
+
+* **Get Metadata**
+  → Retrieves metadata (file size, structure), not secrets
+
+* **Copy**
+  → Used for data movement between sources and sinks
+
+🎯 Final Answer
+
+**D. Web**
+
+💡 Key takeaway
+
+In Azure Data Factory:
+
+> Use **Web activity** to call APIs (like Key Vault) and retrieve secrets 🚀
+
+
+### Question #4
+
+You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
+
+• The pipeline must fail if any tests fail.
+
+• The test results must be published to the pipeline.
+
+• The test for every pipeline run must be triggered unless the pipeline is cancelled.
+
+Solution: You include the following elements in the YAML de¬nition of the pipeline.
+
+
+```
+...
+- task: PublishTestResults@2
+  displayName: 'Publish Unit Test Results'
+  condition: always()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/junit.xml'
+    failTaskOnMissingResultsFile: true
+    testRunTitle: 'App Test'
+...
+```
+
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+
+-----
+
+
+❌ Correct answer: **B. No**
+
+🔍 Explanation
+
+The provided YAML uses:
+
+```yaml
+condition: always()
+```
+
+🟦 What `always()` does
+
+* Runs the task **even if previous tasks fail**
+* Also runs when the pipeline is **canceled**
+
+🟦 Requirement mismatch
+
+❌ Requirement:
+
+> “The test for every pipeline run must be triggered **unless the pipeline is cancelled**”
+
+* `always()` → **runs even when canceled** ❌
+* Required behavior → should **NOT run when canceled**
+
+🟦 Correct condition should be:
+
+```yaml
+condition: succeededOrFailed()
+```
+
+* Runs when:
+
+  * Succeeded ✔
+  * Failed ✔
+* Does NOT run when:
+
+  * Canceled ✔ (matches requirement)
+
+🟦 Other requirements check
+
+✔ Publish test results → satisfied
+✔ Fail pipeline if tests fail → handled by test task (not this task)
+
+🎯 Conclusion
+
+The solution does **NOT** meet all requirements.
+
+**Answer: B. No**
+
+
+💡 Key takeaway
+
+* **always() → runs even on cancel ❌**
+* **succeededOrFailed() → correct for most CI scenarios ✅** 🚀
+
+
+### Question #5
+
+You have an Azure web app that is deployed by using Azure Pipelines.
+
+You need to ensure that when a new version of the app is deployed to production, you can roll back to the previous version. The solution must meet the following requirements:
+
+• Minimize downtime during the deployment.
+
+• Minimize the time it takes for the rollback.
+
+What should you use?
+
+A. a single web app and two deployment slots
+
+B. a single web app and two deployment pipelines
+
+C. two web apps and an Azure Standard Load Balancer
+
+D. two web apps and an Azure Traffic Manager instanc
+
+
+------------
+
+
+✅ Correct answer: **A. a single web app and two deployment slots**
+
+🔍 Explanation
+
+🟦 Why deployment slots are ideal
+
+Using **deployment slots** (e.g., *staging* and *production*) in an Azure Web App provides:
+
+* **Zero/near-zero downtime deployments**
+
+  * Deploy to staging slot first
+  * Swap to production instantly
+
+* **Fast rollback**
+
+  * Simply swap back to the previous slot
+  * Takes seconds
+
+✔ Meets both requirements:
+
+* Minimize downtime ✅
+* Minimize rollback time ✅
+
+❌ Why the other options are incorrect
+
+* **B. Two pipelines**
+  → Does not help with rollback or downtime
+
+* **C. Two web apps + Load Balancer**
+  → More complex, slower to manage, not optimal for quick rollback
+
+* **D. Two web apps + Traffic Manager**
+  → Useful for global routing, not fast rollback
+
+🎯 Final Answer
+
+**A. a single web app and two deployment slots**
+
+💡 Key takeaway
+
+For safe deployments:
+
+> **Use deployment slots → swap for release, swap back for rollback** 🚀
+
+
+### Question #8
+
+You have a project in Azure DevOps named Project1 that references an Azure Artifacts feed named Feed1.
+
+You have a package named Package1 that has the versions shown in the following table.
+
+```
+| Version | Description |
+| :--- | :--- |
+| 1.0.3 | Manually pushed to Feed1 |
+| 1.4.0 | Manually pushed to Feed1 |
+| 2.0.0 | Available from an upstream source |
+| 2.3.1 | Saved from an upstream source |
+```
+
+You need to perform a build of Project1.
+
+Which version of Package1 will be used?
+
+A. 1.0.3
+
+B. 1.4.0
+
+C. 2.0.0
+
+D. 2.3.1
+
+-----
+
+
+✅ Correct answer: **D. 2.3.1**
+
+🔍 Explanation
+
+Azure Artifacts resolves packages based on:
+
+1. **Highest available version**
+2. Across:
+
+   * Local feed (manually pushed)
+   * Upstream sources (if enabled)
+
+🟦 Key detail: *Saved from upstream*
+
+* **2.3.1 (Saved from upstream)**
+  → Already **cached in Feed1**
+  → Treated like a local package
+
+* **2.0.0 (Available from upstream)**
+  → Not yet used/downloaded
+  → Only fetched if specifically requested
+
+🟦 Version selection logic
+
+Available versions:
+
+* 1.0.3 (local)
+* 1.4.0 (local)
+* 2.0.0 (upstream, not saved)
+* 2.3.1 (**saved locally**)
+
+✔ Highest version available in the feed:
+
+> **2.3.1**
+
+❌ Why the other options are incorrect
+
+* **1.0.3 / 1.4.0** → lower versions
+* **2.0.0** → not saved; 2.3.1 is higher
+
+🎯 Final Answer
+
+**D. 2.3.1**
+
+💡 Key takeaway
+
+* **Saved upstream packages behave like local packages**
+* **Highest version wins** 🚀
+
+
+### Question #9
+
+HOTSPOT -
+
+You have an Azure subscription.
+
+You need to create a storage account by using a Bicep file.
+
+How should you complete the file? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+**Answer Area**
+
+```bicep
+param storageAccount string
+
+var storageAccountNameToUse = '${storageAccount}${uniqueString(resourceGroup().id)}'
+
+resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+  name: storageAccountNameToUse
+  location: 'eastus'
+  sku: {
+    name: 'Standard_GRS'
+  }
+  [Dropdown 1] 'StorageV2'
+  [Dropdown 2] {
+    supportsHttpsTrafficOnly: true
+  }
+}
+```
+
+**Dropdown 1 Options:**
+
+* `kind:`
+* `param:`
+* `properties:`
+* `type:`
+* `var:`
+
+**Dropdown 2 Options:**
+
+* `kind:`
+* `param:`
+* `properties:`
+* `type:`
+* `var:`
+
+
+------
+
+✅ Correct answers
+
+* **Dropdown 1:** ✔ `kind:`
+* **Dropdown 2:** ✔ `properties:`
+
+🔍 Explanation
+
+🟦 `kind:`
+
+* Specifies the **type of storage account**
+* Valid values include:
+
+  * `StorageV2` (recommended general-purpose v2)
+
+✔ Correct usage:
+
+```bicep
+kind: 'StorageV2'
+```
+
+🟦 `properties:`
+
+* Contains configuration settings for the resource
+* Example:
+
+```bicep
+properties: {
+  supportsHttpsTrafficOnly: true
+}
+```
+
+🎯 Final Bicep snippet
+
+```bicep id="6q7k2v"
+param storageAccount string
+
+var storageAccountNameToUse = '${storageAccount}${uniqueString(resourceGroup().id)}'
+
+resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+  name: storageAccountNameToUse
+  location: 'eastus'
+  sku: {
+    name: 'Standard_GRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    supportsHttpsTrafficOnly: true
+  }
+}
+```
+
+💡 Key takeaway
+
+* **kind → defines storage type**
+* **properties → defines configuration settings** 🚀
+
+
+
+### Question #10
+
+DRAG DROP -
+
+You have a GitHub repository named repo1 that stores the code of an app named App1. You need deploy a workflow for repo1 by using GitHub Actions. The solution must meet the following requirements:
+
+• Scan on pushes to the main branch.
+
+• Scan on pull requests to the main branch.
+
+• Scan on pull requests to any branch that has a pre¬x of releases/.
+
+• Scan all the ¬les in the subdirectories of the src directory.
+
+How should you complete the code? To answer, drag he appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
+
+
+Here is the extracted content from the image, formatted as **markdown**:
+
+**Values**
+
+```text
+- '**/*.md'
+- '*.md'
+- 'release*'
+- 'releases/**'
+- 'src/*'
+- 'src/**'
+```
+
+**Answer Area**
+
+```yaml
+...
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    - main
+      [Blank]
+
+      paths:
+        [Blank]
+
+      paths-ignore:
+        [Blank]
+
+...
+```
+
+
+------
+
+✅ Correct completion
+
+```yaml
+...
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    - main
+    - 'releases/**'
+
+      paths:
+        - 'src/**'
+
+      paths-ignore:
+        - '**/*.md'
+
+...
+```
+
+🔍 Explanation
+
+🟦 Branch conditions
+
+* **`main`** → required for PRs to main
+* **`releases/**`** → matches any branch with prefix `releases/`
+
+🟦 Paths
+
+* **`src/**`**
+
+  * Includes all files in `src` and **all subdirectories**
+    ✔ Matches requirement
+
+🟦 Paths ignore
+
+* **`**/*.md`**
+
+  * Excludes markdown files from triggering scans
+    ✔ Common optimization
+
+🎯 Final mapping
+
+* **[Blank 1]** → `'releases/**'`
+* **[Blank 2] (paths)** → `'src/**'`
+* **[Blank 3] (paths-ignore)** → `'**/*.md'`
+
+💡 Key takeaway
+
+* `releases/**` → branch prefix matching
+* `src/**` → recursive directory match
+* `**/*.md` → ignore markdown files 🚀
+
+
 
 
 ### Question-177
@@ -24243,7 +24863,7 @@ Why the other options are incorrect
 ✅ **Answer: D. Create two container jobs**
 
 
-### Question-205 ??
+### Question-205
 
 
 You have an app named App1 that you release by using Azure Pipelines. App1 has the versions shown in the following table.
