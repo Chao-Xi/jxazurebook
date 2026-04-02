@@ -22768,7 +22768,7 @@ You have an Azure subscription that contains the resources shown in the followin
 
 DepPipeline1 and ADFPipeline1 use a single credential that is stored in Vault1.
 
-You need to con¬gure ADFPipeline1 to retrieve the credential from Vault1.
+You need to configure ADFPipeline1 to retrieve the credential from Vault1.
 
 Which type of activity should you use?
 
@@ -22831,7 +22831,7 @@ You need to use an Azure Pipelines pipeline to test an app. The solution meet th
 
 • The test for every pipeline run must be triggered unless the pipeline is cancelled.
 
-Solution: You include the following elements in the YAML de¬nition of the pipeline.
+Solution: You include the following elements in the YAML definition of the pipeline.
 
 
 ```
@@ -23183,9 +23183,9 @@ You have a GitHub repository named repo1 that stores the code of an app named Ap
 
 • Scan on pull requests to the main branch.
 
-• Scan on pull requests to any branch that has a pre¬x of releases/.
+• Scan on pull requests to any branch that has a prefix of releases/.
 
-• Scan all the ¬les in the subdirectories of the src directory.
+• Scan all thefiles in the subdirectories of the src directory.
 
 How should you complete the code? To answer, drag he appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
 
@@ -23284,7 +23284,1087 @@ on:
 * `**/*.md` → ignore markdown files 🚀
 
 
+### Question #12
 
+
+You have an Azure subscription that contains an Azure pipeline named Pipeline1 and a GitHub repository named Repo1. Repo1 contains Bicep modules. Pipeline1 deploys Azure resources by using the Bicep modules.
+
+You need to ensure that all releases comply with Azure Policy before they are deployed to production.
+
+What should you do?
+
+A. To Pipeline1, add a step that runs a What if deployment before the deployment step.
+
+B. Configure a deployment gate for Pipeline1 that uses Azure Automation to run a What If deployment.
+
+C. Create an Azure DevOps build that runs on the creation of a pull request and assesses the code for compliance.
+
+D. Configure a deployment gate for Pipeline1 and include the Azure DevOps Security and compliance assessment task
+
+--------
+
+
+✅ The Correct Solution (Option D)
+
+A deployment gate acts as an automatic health check before your release proceeds to a production stage. By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as a gate, your pipeline will automatically query Azure Policy for the target resources. The deployment only continues if all resources are compliant; otherwise, the release is rejected.
+
+**Why this is the best choice:**
+
+- **Purpose-built:** This task is explicitly designed for security and compliance assessment for Azure Policy.
+- **Automatic enforcement:** Unlike manual checks, the gate continuously evaluates and blocks non-compliant deployments automatically.
+- **Asynchronous evaluation:** The task triggers an on-demand compliance scan and waits (with configurable retry duration) for results before proceeding.
+
+
+❌ Why Other Options Are Incorrect
+
+| Option | Why It Doesn't Work |
+| :--- | :--- |
+| **A: Add a What-If deployment step** | A What-If deployment only shows a preview of changes but does **not** automatically enforce or check against Azure Policy. It requires manual interpretation and doesn't block the pipeline automatically. |
+| **B: Deployment gate using Azure Automation What-If** | This adds unnecessary complexity and still relies on the What-If output rather than native Azure Policy compliance evaluation. |
+| **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
+
+
+### Question #13
+
+DRAG DROP -
+
+You use Semantic Versioning (SemVer) as a dependency versioning strategy.
+
+You perform changes to code as shown in the following table.
+
+| Name | New functionality | Change incompatibility |
+|---|---|---|
+| Change1 | Yes | Minor |
+| Change2 | Yes | Significant |
+| Change3 | No | Minor |
+
+
+Which part of the version should you increment for each change? To answer, drag the appropriate parts to the correct changes. Each part may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Parts
+
+- Major
+- Minor
+- Patch
+
+Answer Area
+
+- Change1: [ ]
+- Change2: [ ]
+- Change3: [ ]
+
+------
+
+
+According to **Semantic Versioning (SemVer)** , the version number follows the format:  
+
+**Major.Minor.Patch**
+
+The rules for incrementing are:
+
+- **Major** → Incompatible API changes (breaking changes)
+- **Minor** → New functionality, backwards-compatible
+- **Patch** → Backwards-compatible bug fixes / changes with no new functionality
+
+Based on the given table:
+
+| Change | New functionality | Change incompatibility | Rule applied | Version part to increment |
+|--------|------------------|------------------------|--------------|---------------------------|
+| Change1 | Yes              | Minor                  | Minor incompatibility means **new functionality, but backwards-compatible** → increment Minor | **Minor** |
+| Change2 | Yes              | Significant            | Significant incompatibility = breaking change → increment Major | **Major** |
+| Change3 | No               | Minor                  | No new functionality, minor incompatibility = backwards-compatible fix/change → increment Patch | **Patch** |
+
+**Answer:**
+
+- **Change1:** Minor
+- **Change2:** Major
+- **Change3:** Patch
+
+### Question #14
+
+You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
+
+TestSuite1 fails intermittently.
+
+You identify that the failures are unrelated to changes in the source code and execution environment.
+
+You need to minimize troubleshooting effort for the TestSuite1 failures.
+
+Solution: You enable flaky test management.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+------
+
+**A. Yes**
+
+Enabling **flaky test management** is the correct solution because:
+
+- **Flaky tests** are defined as tests that produce both passing and failing results without any changes to the source code or execution environment — exactly matching your scenario where failures are unrelated to code or environment changes.
+
+- **Flaky test management** features (available in Azure Pipelines) help by:
+  - Automatically detecting and tracking flaky tests
+  - Rerunning only the flaky tests to determine if failures are transient
+  - Reducing the need for manual investigation of intermittent, non-deterministic failures
+  - Minimizing troubleshooting effort by distinguishing between real bugs and test instability
+
+Therefore, enabling flaky test management directly addresses the need to minimize troubleshooting effort for intermittent, code-unrelated test failures.
+
+
+### Question #15
+
+
+You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
+
+TestSuite1 fails intermittently.
+
+You identify that the failures are unrelated to changes in the source code and execution environment.
+
+You need to minimize troubleshooting effort for the TestSuite1 failures.
+
+Solution: You implement the Test Results Trend widget.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+
+------
+
+
+**B. No**
+
+The **Test Results Trend widget** displays historical test pass/fail rates over time but does **not** actively reduce troubleshooting effort for intermittent failures unrelated to code or environment changes.
+
+Why this does **not** meet the goal:
+
+- **Passive visibility only** — The widget shows trends but does not automatically handle or retry flaky tests
+- **No mitigation for flakiness** — It does not rerun failing tests, detect non-deterministic failures, or differentiate between real bugs and test instability
+- **Requires manual investigation** — You would still need to analyze each failure individually to determine if it was a true failure or a flaky test
+
+In contrast, **flaky test management** (the correct solution from the previous question) would automatically retry flaky tests and reduce manual troubleshooting. The Test Results Trend widget merely reports the problem without solving it.
+
+
+### Question #16
+
+You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
+
+TestSuite1 fails intermittently.
+
+You identify that the failures are unrelated to changes in the source code and execution environment.
+
+You need to minimize troubleshooting effort for the TestSuite1 failures.
+
+Solution: You enable Test Impact Analysis (TIA).
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+------
+
+
+**B. No**
+
+**Test Impact Analysis (TIA)** is designed to **reduce test execution time** by automatically selecting and running only the tests affected by recent code changes — not to handle intermittent, flaky test failures.
+
+Why this does **not** meet the goal:
+
+- **TIA filters tests** — It determines which tests are necessary to run based on code changes, but it does not address test instability or non-deterministic failures
+- **No retry or detection of flakiness** — TIA does not identify, rerun, or mitigate flaky tests
+- **Your failures are unrelated to code changes** — TIA is most effective when failures correlate with code modifications. Since you've already determined the failures are *not* related to source code changes, TIA provides no benefit for minimizing troubleshooting effort in this scenario
+
+The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
+
+
+### Question #17
+
+You plan to publish build artifacts by using an Azure pipeline.
+
+You need to create an .artifactignore file that meets the following requirements:
+
+• Includes allfiles in the build output folder and all subfolders
+
+• Excludesfiles that have the .dll extension
+
+What should you include in the file?
+
+A. `./** !*.dll`
+
+B. `**/* !*.dll` 
+
+C. `*/** *.dll`
+
+D. `**/* #*.dll`
+
+
+------
+
+
+The correct answer for this specific exam question is **Option B**.
+
+However, it is important to note that the wording in your prompt ("*Includes* all files... *Excludes* files that have the .dll extension") is likely a mis-transcription of the actual exam question, or the exam author confused `.artifactignore` syntax with Azure Pipeline task matching syntax. 
+
+Here is the detailed breakdown of why **B** is the recognized answer:
+
+Understanding `.artifactignore` semantics
+
+The `.artifactignore` file uses the exact same syntax as a `.gitignore` file:
+
+* **By default**, all files are included/published. 
+* Writing a file path or glob pattern **ignores/excludes** it.
+* Writing a pattern starting with an exclamation mark (`!`) **un-ignores/includes** it.
+
+If the requirement is exactly as you pasted (*Include all, exclude .dll*), you would actually only need to write `**/*.dll` in the file. Since that is not an option, we have to look at how Microsoft structures this question on the AZ-400 exam.
+
+The Real Exam Scenario
+
+On the actual certification exam, this question is historically written with the requirements reversed:
+
+* **Excludes** all files in the build output folder and all subfolders
+* **Includes** files that have the .dll extension
+
+Under those reversed requirements, **Option B** is perfectly correct because:
+
+* `**/*` tells the system to **ignore** all files and folders.
+* `!*.dll` tells the system to **un-ignore (include)** the `.dll` files.
+
+*Note: If the author of the question accidentally used Azure Pipeline Task minimatch logic (where `**/*` means include everything, and `!*.dll` means exclude .dlls), they still intend for **Option B** to be the answer.*
+
+
+### Question #18
+
+HOTSPOT -
+
+You have a GitHub repository.
+
+You plan to use the repository to create a container.
+
+You need to configure GitHub Actions to deploy the container to GitHub Container Registry.
+
+How should you complete the script? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+**Answer Area**
+
+...
+
+`steps:`
+
+`- name: Step 1`
+
+`run:`
+
+- `docker build. --file Dockerfile --tag ${{ github.repository }}:latest --label "runnumber=${{ github.run_number }}"`
+- `docker login ghcr.io -u USERNAME --password-stdin`
+- `docker pull ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+- `docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+- `echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin`
+- `uses: azure/docker-login@v1`
+
+`- name: Step 2`
+
+`run:`
+
+- `docker build. --file Dockerfile --tag ${{ github.repository }}:latest --label "runnumber=${{ github.run_number }}"`
+- `docker login ghcr.io -u USERNAME --password-stdin`
+- `docker pull ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+- `docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+- `echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin`
+- `uses: azure/docker-login@v1`
+
+`- name: Step 3`
+
+`run:`
+
+- `docker build. --file Dockerfile --tag ${{ github.repository }}:latest --label "runnumber=${{ github.run_number }}"`
+- `docker login ghcr.io -u USERNAME --password-stdin`
+- `docker pull ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+- `docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+- `echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin`
+- `uses: azure/docker-login@v1`
+...
+
+
+
+--------
+
+
+Based on the requirements (using GitHub Actions to deploy a container to **GitHub Container Registry (ghcr.io)** ), the correct completion is:
+
+**Answer Area**
+
+**Step 1 (Authentication):**
+
+`echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin`
+
+- This logs into GitHub Container Registry using the automatically available `GITHUB_TOKEN` secret
+- The token is piped to `--password-stdin` for secure authentication
+- `USERNAME` can be anything (often `${{ github.actor }}`), but the token handles permissions
+
+**Step 2 (Build & Tag):**
+
+`docker build . --file Dockerfile --tag ${{ github.repository }}:latest --label "runnumber=${{ github.run_number }}"`
+
+- This builds the Docker image from the Dockerfile in the current directory
+- Tags it using the repository name (e.g., `owner/repo:latest`)
+- Adds a label with the unique GitHub Actions run number
+
+**Step 3 (Push):**
+
+`docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+
+- Pushes the built image to GitHub Container Registry
+- Format: `ghcr.io/owner/repo:latest`
+- Note: For ghcr.io, the image path is `ghcr.io/OWNER/REPO`
+
+Why the other options are incorrect:
+
+| Option | Why it fails |
+|--------|--------------|
+| `docker login ghcr.io -u USERNAME --password-stdin` (without token) | Missing the token input; would prompt for password interactively and fail |
+| `docker pull ...` | Pulling is not needed when building and pushing a new image |
+| `uses: azure/docker-login@v1` | This is a step syntax (uses), not a `run` command — and would be placed as a separate step, not inside `run:` |
+
+Final Answer:
+
+- **Step 1:** `echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin`
+- **Step 2:** `docker build . --file Dockerfile --tag ${{ github.repository }}:latest --label "runnumber=${{ github.run_number }}"`
+- **Step 3:** `docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
+
+### Question #19
+
+You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
+
+TestSuite1 fails intermittently.
+
+You identify that the failures are unrelated to changes in the source code and execution environment.
+
+You need to minimize troubleshooting effort for the TestSuite1 failures.
+
+Solution: You increase code coverage.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+----
+
+
+Correct Answer: **B. No**
+
+**Explanation:**
+
+Increasing code coverage means ensuring that a higher percentage of your source code is executed during testing. While this is a good practice for overall software quality, it does absolutely nothing to address or minimize the troubleshooting effort for tests that are already failing intermittently (commonly known as "flaky tests"). 
+
+To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you should use solutions such as:
+
+*   **Configuring the Visual Studio Test task to automatically rerun failed tests:** This allows the pipeline to tolerate intermittent failures and pass if the test succeeds on a subsequent attempt.
+*   **Enabling Flaky Test Management:** Azure Test Plans has a "Flaky test management" feature that can automatically detect, mark, and hide flaky tests so they do not fail your pipeline. 
+*   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
+
+
+### Question #20
+
+You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
+
+The build job for App1 intermittently returns a timeout error.
+
+You need to ensure that the build job completes successfully. The solution must minimize administrative effort.
+
+What should you do?
+
+A. Change the configuration of the build agent.
+
+B. Deploy a self-hosted agent.
+
+C. Change to a Microsoft-hosted Linux agent.
+
+D. Purchase more parallel jobs.
+
+----
+
+
+The correct answer is **D. Purchase more parallel jobs.**
+
+Explanation:
+
+Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** based on the type of account:
+
+1.  **Free Tier:** Jobs have a maximum execution time of **60 minutes**.
+2.  **Paid Tier (Parallel Jobs):** Once you purchase a parallel job, the timeout limit increases to **360 minutes (6 hours)**.
+
+**Why this is the best solution:**
+
+*   **Timeout Error:** If the build intermittently fails due to a timeout, it is likely hitting the 60-minute limit of the free tier.
+*   **Minimum Administrative Effort:** Purchasing a parallel job is a simple billing change in the Azure DevOps settings. It requires no infrastructure management.
+*   **Self-hosted agents (Option B)** would also solve the timeout issue (as they have no inherent timeout limits), but they require significant administrative effort to set up, patch, scale, and maintain the underlying virtual machine or server.
+*   **Configuration changes (Option A)** are limited on Microsoft-hosted agents because the hardware specs (CPU/RAM) are fixed.
+*   **Changing to Linux (Option C)** might improve performance for some apps, but it often requires rewriting build scripts and may not solve a fundamental time limit issue.
+
+By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
+
+### Question #21
+
+
+You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. Pipeline1 is used to build and test an app named App1. User1 is assigned the Contributors role for Pipeline1.
+
+You plan to test App1 by using an Azure Deployment Environments environment.
+
+You need to ensure that User1 can provision the environment. The solution must follow the principle of least privilege.
+
+Which role should you assign to User1?
+
+A. DevCenter Project Admin
+
+B. Deployment Environments User
+
+C. Contributors
+
+D. Build Administrators
+
+-----
+
+
+The correct answer is **B. Deployment Environments User**.
+
+Explanation:
+
+**Azure Deployment Environments (ADE)** uses specific Azure Role-Based Access Control (RBAC) roles to manage permissions. To provision an environment, a user needs permissions at the **Project** level within the DevCenter.
+
+*   **Deployment Environments User:** This is the specific role designed for developers. It allows them to create, manage, and delete their own environments within the projects they are assigned to. This is the **least privilege** required for someone who only needs to provision and use environments.
+*   **DevCenter Project Admin (Option A):** This role has much broader permissions, including the ability to manage environment types, project settings, and mapping catalogs. This exceeds the "least privilege" requirement.
+*   **Contributors (Option C):** While "Contributor" is a general Azure role, it does not specifically grant the necessary permissions within the Azure Deployment Environments project structure to interact with the environment templates and resources in the intended way.
+*   **Build Administrators (Option D):** This is an Azure DevOps role. It manages build definitions and permissions within the pipeline, but it does not grant permissions to provision infrastructure or environments in Azure via Azure Deployment Environments.
+
+**Conclusion:**
+
+To allow User1 to provision environments in ADE while following the principle of least privilege, you should assign them the **Deployment Environments User** role.
+
+### Question #22
+
+HOTSPOT -
+
+You have an Azure subscription that contains Azure DevOps build pipelines.
+
+You need to implement pipeline caching by using the cache task.
+
+How should you complete the YAML definition? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+**Answer Area**
+
+```yaml
+variables:
+  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
+
+steps:
+- task: Cache@2
+  inputs:
+    [Dropdown 1] 'yarn" | "$(Agent.OS)" | yarn.lock'
+    [Dropdown 2] $(YARN_CACHE_FOLDER)
+  displayName: Cache Yarn packages
+
+- script: yarn --frozen-lockfile
+```
+
+**Dropdown 1 Options:**
+
+*   element:
+*   item:
+*   key:
+*   restoreKeys:
+
+**Dropdown 2 Options:**
+
+*   directory:
+*   folder:
+*   location:
+*   path:
+
+
+----
+
+
+To complete the YAML definition for the `Cache@2` task in Azure Pipelines, the correct selections are:
+
+*   **Dropdown 1:** `key:`
+*   **Dropdown 2:** `path:`
+
+Final YAML Configuration:
+
+```yaml
+variables:
+  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
+
+steps:
+- task: Cache@2
+  inputs:
+    key: 'yarn | "$(Agent.OS)" | yarn.lock'
+    path: $(YARN_CACHE_FOLDER)
+  displayName: Cache Yarn packages
+
+- script: yarn --frozen-lockfile
+```
+
+Explanation:
+
+1.  **key (Dropdown 1):** This is a required input for the Cache task. It is used to generate a unique identifier for the cache. The string `'yarn | "$(Agent.OS)" | yarn.lock'` uses the operating system and the contents of the `yarn.lock` file to ensure that if the dependencies change (updating the lockfile), a new cache is created.
+2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
+
+
+### Question #23
+
+
+You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
+
+You develop a new web app named App1.
+
+You plan to deploy an instance of App1 to each resource group.
+
+You need to create a Bicep template that will be used to deploy App1. The solution must meet the following requirements:
+
+• The name of each App1 instance must be consistent for each subscription and resource group.
+
+• The name of each App Service plan used to host App1 must be consistent.
+
+How should you complete the template? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Answer Area**
+
+```bicep
+...
+
+param location string = resourceGroup().location
+
+param planname string = toLower('AppServicePlan-${uniqueString[Dropdown 1]
+
+param appname string = toLower('app-${uniqueString[Dropdown 2]
+
+resource webappplan 'Microsoft.Web/serverfarms@2022-09-01' = {
+  name: planname
+  location: location
+  sku: {
+    name: 'B1'
+    tier: 'Basic'
+  }
+}
+```
+
+**Dropdown 1 & 2 Options:**
+
+*   `(deployment().name)')`
+*   `(resourceGroup().id)')`
+*   `('resourceGroupName')')`
+*   `(subscription().id)')`
+
+
+
+------
+
+
+To complete the Bicep template and ensure that the names are consistent and unique for each resource group across your subscriptions, you should use the **Resource Group ID**.
+
+The correct selections are:
+
+*   **Dropdown 1:** `(resourceGroup().id)')`
+*   **Dropdown 2:** `(resourceGroup().id)')`
+
+Final YAML/Bicep logic:
+
+```bicep
+param planname string = toLower('AppServicePlan-${uniqueString(resourceGroup().id)}')
+param appname string = toLower('app-${uniqueString(resourceGroup().id)}')
+```
+
+Explanation:
+
+1.  **Requirement for Uniqueness:** Web App names in Azure must be globally unique. Using `uniqueString()` creates a deterministic hash based on the input provided.
+2.  **Scope of Consistency:** 
+    *   **`resourceGroup().id`** provides the full resource ID of the current resource group (including the subscription ID and the resource group name). 
+    *   Because the problem states you are deploying to **each** resource group (16 total), using the Resource Group ID ensures that each of the 16 instances gets a unique, consistent name.
+3.  **Why other options are incorrect:**
+    *   `deployment().name`: This changes based on the name of the deployment operation, which is not reliable for consistent resource naming.
+    *   `'resourceGroupName'`: Passing a literal string would result in the same hash for every single resource group, causing naming collisions across your subscriptions.
+    *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
+
+
+### Question #24
+
+DRAG DROP -
+
+You use an Azure pipeline to build a .NET app that has NuGet dependencies.
+
+You need to ensure that the pipeline caches required NuGet packages.
+
+
+How should you con¬gure the pipeline? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the content extracted in Markdown format:
+
+**Values**
+
+*   `$(Agent.Id)`
+*   `$(Agent.OS)`
+*   `$(Build.ArtifactStagingDirectory)`
+*   `$(Build.SourcesDirectory)/**/packages.lock.json'`
+*   `$(NUGET_PACKAGES)`
+*   `cache/packages`
+
+**Answer Area**
+
+```yaml
+...
+variables:
+  NUGET_PACKAGES: $(Pipeline.Workspace)/.nuget/packages
+
+steps:
+- task: Cache@2
+  inputs:
+    key: 'nuget | "$(Agent.OS)" | [Value]
+    restoreKeys: |
+      nuget | [Value]
+      nuget
+    path: [Value]
+  displayName: Cache NuGet packages
+...
+```
+
+----
+
+
+To configure the `Cache@2` task for NuGet packages, you should use the following values:
+
+**Answer Area**
+
+```yaml
+...
+variables:
+  NUGET_PACKAGES: $(Pipeline.Workspace)/.nuget/packages
+
+steps:
+- task: Cache@2
+  inputs:
+    key: 'nuget | "$(Agent.OS)" | $(Build.SourcesDirectory)/**/packages.lock.json'
+    restoreKeys: |
+      nuget | "$(Agent.OS)"
+      nuget
+    path: $(NUGET_PACKAGES)
+  displayName: Cache NuGet packages
+...
+```
+
+
+**Explanation:**
+
+1.  **key:** **`$(Build.SourcesDirectory)/**/packages.lock.json'`**
+    *   The `key` is a unique identifier for the cache. By including the lock file, you ensure that the cache is invalidated and a new one is created whenever your project's dependencies change.
+
+2.  **restoreKeys:** **`$(Agent.OS)`**
+    *   `restoreKeys` provide a fallback if an exact match for the `key` is not found (e.g., when the lock file changes). This allows the task to restore the most recent cache for that specific Operating System, so only the *new* or *changed* packages need to be downloaded rather than starting from zero.
+
+3.  **path:** **`$(NUGET_PACKAGES)`**
+    *   This input defines the actual directory on the agent that will be saved to the cache and restored. In the YAML provided, the `NUGET_PACKAGES` variable is explicitly set to the directory where NuGet stores its downloaded packages.
+
+### Question #25
+
+You have an Azure pipeline that is used to deploy an app named App1.
+
+You need to ensure that new versions of App1 are released only if they exceed performance baselines. The solution must minimize administrative effort.
+
+What should you con¬gure?
+
+A. an Azure Pipelines release artifact
+
+B. an Azure Repos branch policy
+
+C. an Azure Monitor alert
+
+D. an Azure Pipelines deployment gate
+
+
+----
+
+The correct answer is **D. an Azure Pipelines deployment gate.**
+
+Explanation:
+
+**Deployment gates** are specifically designed to automate the process of checking health signals before a release is promoted to the next stage. 
+
+*   **How it works:** You can configure a gate to "Query Azure Monitor Alerts" or "Invoke REST API" to check performance metrics. If the performance does not meet the specified baseline (e.g., response time is too high or error rates have spiked), the gate will prevent the deployment from proceeding.
+*   **Minimal Administrative Effort:** Once the gate is configured, the check is fully automated. The pipeline handles the "wait and retry" logic without requiring manual intervention from a developer or administrator.
+
+**Why the other options are incorrect:**
+
+*   **A. an Azure Pipelines release artifact:** This is simply the package or code being deployed; it contains no logic for performance validation.
+*   **B. an Azure Repos branch policy:** Branch policies are used to maintain code quality in the repository (e.g., requiring a successful build or peer review before merging). They occur *before* the deployment process begins.
+*   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
+
+
+### Question #26
+
+DRAG DROP -
+
+You have an Azure subscription.
+
+You have the standards shown in the following table.
+
+
+| Name | Contents |
+| :--- | :--- |
+| Standard1 | Security requirements |
+| Standard2 | Software prerequisites |
+
+You plan to use Azure Pipelines to build and release web apps.
+
+You need to recommend a solution to build the pipelines. The solution must meet the following requirements:
+
+• Ensure that all new pipelines meet the security requirements de¬ned in Standard1.
+
+• Ensure that the ¬rst stage of all new pipelines contains the software prerequisites de¬ned in Standard2.
+
+• Minimize administrative effort.
+
+
+What should you use to implement each standard? To answer, drag the appropriate options to the correct standards. Each component may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Options**
+
+*   A pipeline permission
+*   A self-hosted agent
+*   A stage
+*   An extends template
+*   An includes template
+
+**Answer Area**
+
+*   **Standard1:** [Option]
+*   **Standard2:** [Option]
+
+
+------
+
+
+To implement the standards while minimizing administrative effort and ensuring compliance, you should use the following options:
+
+*   **Standard 1 (Security requirements):** An extends template
+*   **Standard 2 (Software prerequisites):** An includes template
+
+
+**Explanation:**
+
+1.  **Standard 1: An extends template**  
+    In Azure Pipelines, **extends templates** are the primary mechanism for enforcing security and governance. By using the `extends` keyword, you can create a "wrapper" template that contains mandatory security steps (like credential scanning or policy checks). The developer’s pipeline provides its content as a parameter to your template, allowing you to inject logic before or after their code and prevent them from bypassing required security measures.
+
+2.  **Standard 2: An includes template**  
+    An **includes template** (using the standard `template:` syntax) is best for reusability. Since you need to ensure software prerequisites are in the first stage, you can create a template containing those specific steps or stages. Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
+
+
+### Question #27
+
+You have an Azure subscription.
+
+You create two Bicep templates named Template1 and Template2 that will be used to create a virtual machine and a website.
+
+You need to create a template named Template3 that will reuse logic from Template1 and Template2.
+
+What should you de¬ne ¬rst?
+
+A. outputs
+
+B. resources
+
+C. modules
+
+D. parameters
+
+-----
+
+
+The correct answer is **C. modules**.
+
+Explanation:
+
+In Bicep, **modules** are the primary mechanism for code reuse and modularity. 
+
+*   **How it works:** To reuse the logic defined in `Template1` and `Template2` within a new file (`Template3`), you reference those files as modules. This allows `Template3` to act as an orchestrator, passing parameters to the modules and using their outputs.
+*   **Syntax example:** In `Template3.bicep`, you would write:
+    ```bicep
+    module virtualMachine './Template1.bicep' = {
+      name: 'vmDeployment'
+      params: { ... }
+    }
+
+    module webSite './Template2.bicep' = {
+      name: 'webDeployment'
+      params: { ... }
+    }
+    ```
+
+**Why other options are incorrect:**
+
+*   **A. outputs:** Outputs are used to return data from a deployment back to the caller; they do not facilitate the reuse of external template logic.
+*   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
+*   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
+
+### Question #28
+
+You have an Azure subscription.
+
+You use Bicep templates to deploy websites and Azure SQL infrastructure.
+
+You need to automate the deployments by using Azure Pipelines and a self-hosted agent that runs on two virtual machines. The solution must minimize administrative effort.
+
+What should you do first?
+
+A. Create a service principal.
+
+B. Create an Azure Automation account.
+
+C. Create a user-assigned managed identity.
+
+D. On each virtual machine, enable a system-assigned managed identity.
+
+
+-----
+
+
+The correct answer is **A. Create a service principal**.
+
+Explanation
+
+When using **Azure Pipelines** with a **self-hosted agent** to deploy Bicep templates, the agent needs authentication to Azure to perform deployments. The most common and appropriate method is to use a **service principal** that the pipeline references via an Azure Resource Manager service connection.
+
+Here's why a service principal is the correct **first** step:
+
+- **Purpose-built for pipelines** — Service principals are designed for automated, non-interactive authentication from CI/CD pipelines
+- **Supports Bicep deployments** — The service principal can be granted permissions (e.g., Contributor) on the subscription to deploy resources
+- **Works with self-hosted agents** — Once created, you create an Azure Resource Manager service connection in Azure DevOps using the service principal credentials; the self-hosted agent then uses that connection
+
+Why the other options are incorrect or not the first step:
+
+| Option | Why it's not correct first |
+|--------|---------------------------|
+| **B. Create an Azure Automation account** | Automation accounts are for runbooks, not for authenticating a self-hosted agent to deploy Bicep templates. This is unnecessary overhead. |
+| **C. Create a user-assigned managed identity** | Managed identities are better suited for Azure resources authenticating to other Azure resources, not for an external self-hosted agent running in your environment. They require additional configuration and are not the standard approach for Azure Pipelines authentication. |
+| **D. On each VM, enable a system-assigned managed identity** | While possible, using VM-managed identities adds complexity (both VMs must have the same identity/permissions, network routing, token handling). This increases administrative effort compared to a single service principal, violating the "minimize administrative effort" requirement. |
+
+Summary
+
+The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
+
+
+### Question #29
+
+HOTSPOT -
+
+You have an Azure subscription that contains a user named User1.
+
+You have an Azure Resource Manager (ARM) template named Template1.
+
+You plan to perform the following actions:
+
+• Deploy an Azure key vault named KV1.
+
+• Deploy Azure resources by using Template1 to retrieve secrets from KV1.
+
+You need to ensure that User1 can deploy Template1. The solution must follow the principle of least privilege.
+
+Which permission should you grant to User1, and which parameter should be speci¬ed when you create KV1? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+**Answer Area**
+
+**Permission:**
+
+*   Microsoft.KeyVault/vaults/deploy/action
+*   Microsoft.KeyVault/vaults/keys/read
+*   Microsoft.Resources/subscriptions/resourceGroups/read
+
+**Parameter:**
+
+*   --bypass
+*   --enable-rbac-authorization
+*   --enabled-for-deployment
+*   --enabled-for-template-deployment
+
+-----
+
+
+To ensure that User1 can deploy Template1 while following the principle of least privilege, the correct selections are:
+
+*   **Permission:** `Microsoft.KeyVault/vaults/deploy/action`
+*   **Parameter:** `--enabled-for-template-deployment`
+
+**Explanation:**
+
+**1. Permission: Microsoft.KeyVault/vaults/deploy/action**
+
+When an ARM template retrieves a secret from a Key Vault, the Azure Resource Manager (ARM) service acts on behalf of the user. To authorize this, the user (User1) needs the specific RBAC permission `Microsoft.KeyVault/vaults/deploy/action`. This allows the user to grant ARM the right to access the vault during the deployment process. 
+
+*   *Note:* Standard "read" permissions are not enough; this specific "deploy/action" is the least-privilege requirement for template secret injection.
+
+**2. Parameter: --enabled-for-template-deployment**
+
+By default, Key Vaults do not allow the Azure Resource Manager service to pull secrets from them during a deployment. You must explicitly enable this capability on the Key Vault resource itself. When using the Azure CLI or a template to create the Key Vault, you set the `enabledForTemplateDeployment` property to `true`. In the CLI, this is done via the `--enabled-for-template-deployment` parameter.
+
+*   *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
+
+
+### Question #30
+
+DRAG DROP -
+
+
+You have an Azure subscription that contains an Azure Tra®c Manager pro¬le named ATM1 and a web app named App1. ATM1 manages App1 tra®c. ATM1 is con¬gured to route callers to the endpoint that has the lowest latency.
+
+You need to con¬gure ATM1 to route all traffic from Asia to an endpoint in Australia.
+
+Which three actions should you perform in sequence from the Azure portal? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Actions**
+
+*   Add new endpoints that have geographic region mapping.
+*   Decrease the TTL value of the DNS records for App1.
+*   Configure performance routing.
+*   Delete all the existing endpoints.
+*   Configure geographic routing.
+
+**Answer Area**
+
+*(The answer area in the image is currently empty.)*
+
+-----
+
+
+To configure ATM1 to route all traffic from Asia to an endpoint in Australia, you must switch the routing logic of the Traffic Manager profile from "Performance" to "Geographic" and define the regional mapping.
+
+The three actions you should perform in sequence are:
+
+1.  **Delete all the existing endpoints.**
+2.  **Configure geographic routing.**
+3.  **Add new endpoints that have geographic region mapping.**
+
+**Explanation:**
+
+*   **Step 1 (Delete existing endpoints):** Traffic Manager profiles only support one routing method at a time. The existing endpoints are configured for "Performance" routing (latency-based) and do not have the geographic region mappings required for Geographic routing. To ensure a clean and valid configuration, you must remove the existing endpoints.
+*   **Step 2 (Configure geographic routing):** You must change the routing method in the ATM1 configuration settings from "Performance" to "Geographic". This tells Traffic Manager to look for regional source mappings rather than network latency.
+*   **Step 3 (Add new endpoints that have geographic region mapping):** Once the profile is set to Geographic mode, you add the endpoint (the web app instance in Australia) and specifically map the **Asia** region to that endpoint. This ensures that any DNS request originating from Asia is resolved to the Australian endpoint.
+
+**Why not the others?**
+
+*   *Decrease the TTL:* While this is a good practice during a migration to speed up DNS propagation, it is not a structural requirement for the configuration logic.
+*   *Configure performance routing:* This is the current setting that you are trying to change.
+
+### Question #31
+
+You plan to deploy a solution that will include multiple microservices.
+
+You need to recommend a deployment strategy for the microservices. The solution must meet the following requirements:
+
+• Enable users to test new features by using a specific URL.
+
+• Minimize the effort required to promote a test version to production.
+
+• Minimize the effort required to revert production code to the previous version.
+
+Which strategy should you recommend?
+
+A. A/B
+
+B. feature toggle
+
+C. progressive exposure
+
+D. blue/green
+
+-----
+
+
+The correct answer is **D. blue/green**.
+
+Explanation:
+
+**Blue/green deployment** is the strategy that best fits all three requirements:
+
+1.  **Enable users to test new features by using a specific URL:** In a blue/green setup, you have two identical environments. While the "Blue" environment is live (production), the "Green" environment (the new version) is also running. You can provide a specific, non-production URL (e.g., `green.myapp.com`) to testers or users to validate the new version before it goes live.
+2.  **Minimize the effort required to promote a test version to production:** Promotion is handled by simply updating the load balancer or router to point traffic from the Blue environment to the Green environment. This is a configuration change rather than a code deployment, making it extremely low effort.
+3.  **Minimize the effort required to revert production code to the previous version:** If a bug is found in the new version after promotion, you simply switch the traffic back to the Blue environment. The previous version is still running and "warm," allowing for a near-instantaneous rollback with minimal effort.
+
+Why the other options are less ideal:
+
+*   **A. A/B:** This is primarily used for experimentation and measuring user behavior between two variants. While it involves different versions, it is generally more complex to manage for entire microservice promotions/rollbacks compared to the simple traffic switch of blue/green.
+*   **B. Feature toggle:** This involves putting logic in the code to turn features on or off. While it makes reverting a specific feature easy, it doesn't naturally provide a "specific URL" for an entire new version of a microservice and increases code complexity (technical debt).
+*   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
+
+
+### Question #33
+
+You plan to deploy a solution that will include multiple microservices.
+
+You need to recommend a deployment strategy for the microservices. The solution must meet the following requirements:
+
+• Enable testing and monitoring of changes during a gradual rollout.
+
+• Control the number of users that will receive new code releases.
+
+Which strategy should you recommend?
+
+A. progressive exposure
+
+B. A/B
+
+C. feature toggle
+
+D. blue/green
+
+----
+
+
+The correct answer is **A. progressive exposure**.
+
+Explanation:
+
+**Progressive exposure** (often referred to as a **Canary deployment**) is the strategy specifically designed for these requirements:
+
+1.  **Enable testing and monitoring of changes during a gradual rollout:** In a progressive exposure scenario, you deploy the new version to a small, controlled subset of your infrastructure or user base (a "canary" group). You monitor this group for errors, latency, or other performance issues before rolling it out to more users.
+2.  **Control the number of users that will receive new code releases:** This strategy allows you to precisely define the percentage of traffic or specific user segments (e.g., internal users first, then 5%, then 25%) that see the new version. If the monitoring data is positive, you "progressively" increase the exposure until 100% of the users are on the new version.
+
+Why the other options are incorrect:
+
+*   **B. A/B Testing:** While this involves showing different versions to different users, its primary goal is **experimentation and data collection** (e.g., "Which button color leads to more clicks?") rather than a safe deployment rollout.
+*   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
+*   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
 
 ### Question-177
 
