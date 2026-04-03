@@ -23918,7 +23918,7 @@ You use an Azure pipeline to build a .NET app that has NuGet dependencies.
 You need to ensure that the pipeline caches required NuGet packages.
 
 
-How should you con¬gure the pipeline? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+How should you configure the pipeline? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -23995,7 +23995,7 @@ You have an Azure pipeline that is used to deploy an app named App1.
 
 You need to ensure that new versions of App1 are released only if they exceed performance baselines. The solution must minimize administrative effort.
 
-What should you con¬gure?
+What should you configure?
 
 A. an Azure Pipelines release artifact
 
@@ -24042,9 +24042,9 @@ You plan to use Azure Pipelines to build and release web apps.
 
 You need to recommend a solution to build the pipelines. The solution must meet the following requirements:
 
-• Ensure that all new pipelines meet the security requirements de¬ned in Standard1.
+• Ensure that all new pipelines meet the security requirements defined in Standard1.
 
-• Ensure that the ¬rst stage of all new pipelines contains the software prerequisites de¬ned in Standard2.
+• Ensure that the first stage of all new pipelines contains the software prerequisites defined in Standard2.
 
 • Minimize administrative effort.
 
@@ -24095,7 +24095,7 @@ You create two Bicep templates named Template1 and Template2 that will be used t
 
 You need to create a template named Template3 that will reuse logic from Template1 and Template2.
 
-What should you de¬ne ¬rst?
+What should you define first?
 
 A. outputs
 
@@ -24197,7 +24197,7 @@ You plan to perform the following actions:
 
 You need to ensure that User1 can deploy Template1. The solution must follow the principle of least privilege.
 
-Which permission should you grant to User1, and which parameter should be speci¬ed when you create KV1? To answer, select the appropriate options in the answer area.
+Which permission should you grant to User1, and which parameter should be specified when you create KV1? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -24244,9 +24244,9 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 DRAG DROP -
 
 
-You have an Azure subscription that contains an Azure Tra®c Manager pro¬le named ATM1 and a web app named App1. ATM1 manages App1 tra®c. ATM1 is con¬gured to route callers to the endpoint that has the lowest latency.
+You have an Azure subscription that contains an Azure Tra®c Manager profile named ATM1 and a web app named App1. ATM1 manages App1 tra®c. ATM1 is configured to route callers to the endpoint that has the lowest latency.
 
-You need to con¬gure ATM1 to route all traffic from Asia to an endpoint in Australia.
+You need to configure ATM1 to route all traffic from Asia to an endpoint in Australia.
 
 Which three actions should you perform in sequence from the Azure portal? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -24365,6 +24365,1401 @@ Why the other options are incorrect:
 *   **B. A/B Testing:** While this involves showing different versions to different users, its primary goal is **experimentation and data collection** (e.g., "Which button color leads to more clicks?") rather than a safe deployment rollout.
 *   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
 *   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
+
+### Question #34
+
+HOTSPOT -
+
+You have an Azure Pipelines pipeline named Pipeline1 that has the following YAML definition.
+
+For each of the following statements, select Yes if True. Otherwise select No.
+
+NOTE: Each correct selection is worth one point.
+
+```
+Based on the image provided, here is the extracted content in Markdown format:
+
+```yaml
+pool:
+  name: Azure Pipelines
+  demands:
+  - msbuild
+  - visualstudio
+
+steps:
+- task: VSBuild@1
+  displayName: 'Build solution **\*.sln'
+  inputs:
+    solution: '$(Parameters.Solution)'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: '**\bin\$(BuildConfiguration)\**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+  condition: succeededOrFailed()
+```
+```
+
+
+
+For each of the following statements, select Yes if True. Otherwise select No.
+
+NOTE: Each correct selection is worth one point.
+
+
+| Statements | Yes | No |
+| :--- | :---: | :---: |
+| Pipeline1 consists of three stages. | ◯ | ◯ |
+| $(BuildPlatform) is a predefined variable. | ◯ | ◯ |
+| $(System.DefaultWorkingDirectory) is a predefined variable. | ◯ | ◯ |
+
+----
+
+
+Let’s evaluate each statement based on the YAML:
+
+---
+
+**1. Pipeline1 consists of three stages.**
+
+**Answer: ❌ No**
+
+* The YAML defines:
+
+  * **1 job** (implicit, since no `jobs:` or `stages:` keyword is used)
+  * **3 steps/tasks**:
+
+    * `VSBuild@1`
+    * `CopyFiles@2`
+    * `PublishBuildArtifacts@1`
+* In Azure Pipelines, **stages must be explicitly defined** using `stages:`.
+* Since no stages are defined, this pipeline has **no explicit stages**, just steps.
+
+---
+
+**2. $(BuildPlatform) is a predefined variable.**
+
+**Answer: ❌ No**
+
+* `$(BuildPlatform)` is **not a predefined variable**.
+* It is typically a **user-defined variable** (often set in:
+
+  * Variables section
+  * Pipeline UI
+  * Variable group)
+* Predefined variables are things like:
+
+  * `$(Build.BuildId)`
+  * `$(Build.ArtifactStagingDirectory)`
+
+
+**3. $(System.DefaultWorkingDirectory) is a predefined variable.**
+
+**Answer: ✅ Yes**
+
+* `$(System.DefaultWorkingDirectory)` is a **built-in predefined variable** in Azure Pipelines.
+* It represents:
+
+  * The **local path on the agent** where source code is checked out.
+
+✅ Final Answers
+
+| Statements                                                  | Yes |  No |
+| :---------------------------------------------------------- | :-: | :-: |
+| Pipeline1 consists of three stages.                         |     |  ✅  |
+| $(BuildPlatform) is a predefined variable.                  |     |  ✅  |
+| $(System.DefaultWorkingDirectory) is a predefined variable. |  ✅  |     |
+
+
+
+If you want, I can show a quick version of this pipeline rewritten with **explicit stages and jobs**—that’s a common exam trap.
+
+### Question #35
+
+You use Azure Pipelines to build and test code.
+
+You need to analyze the agent pool usage.
+
+What are two ways to achieve the goal? Each correct answer presents a complete solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Review the historical graph for the agent pools.
+
+B. Review the Pipeline duration report.
+
+C. Query the TaskAgentPoolSizeSnapshot/TaskAgentPoolSizeSnapshots endpoint.
+
+D. Query the PipelineRun/PipelineRuns endpoint.
+
+-----
+
+
+The goal (from the earlier context) is to determine whether **agent pool exhaustion** is causing increased pipeline cycle times.
+
+✅ Correct Answers
+
+**A. Review the historical graph for the agent pools.**
+✔️ This shows:
+
+* Number of agents
+* Queue length
+* Running jobs over time
+  ➡️ Helps identify **whether jobs are waiting due to insufficient agents**
+
+**C. Query the TaskAgentPoolSizeSnapshot/TaskAgentPoolSizeSnapshots endpoint.**
+✔️ This REST API provides:
+
+* Historical data about agent pool size
+* Queue metrics and utilization
+  ➡️ Directly useful for diagnosing **agent pool exhaustion**
+
+❌ Incorrect Answers
+
+**B. Review the Pipeline duration report.**
+✖️ Shows how long pipelines take, but:
+
+* Does **not reveal agent availability or queue delays**
+  ➡️ Cannot confirm exhaustion
+
+
+**D. Query the PipelineRun/PipelineRuns endpoint.**
+✖️ Provides:
+
+* Pipeline run details (status, duration, etc.)
+  ➡️ Does **not include agent pool capacity or queue data**
+
+✅ Final Answer:
+
+**A and C**
+
+### Question #36
+
+DRAG DROP -
+
+You have a GitHub organization.
+
+You are creating a GitHub Actions workflow.
+
+You need to perform authenticated API requests by using a GitHub app name App1.
+
+Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Actions**
+
+*   Register App1 and store the app ID as a GitHub Actions secret.
+*   Generate a JSON Web Token (JWT).
+*   Generate a private key and store the key as a secret.
+*   Create an app manifest.
+*   Generate an installation access token.
+*   Install App1 in your organization.
+
+**Answer Area**
+
+*(The answer area in the image is currently empty.)*
+
+----
+
+
+To perform authenticated API requests using a GitHub App within a GitHub Actions workflow, you must first complete the administrative setup and then perform the runtime token exchange.
+
+The four actions you should perform in sequence are:
+
+1.  **Register App1 and store the app ID as a GitHub Actions secret.**
+2.  **Generate a private key and store the key as a secret.**
+3.  **Install App1 in your organization.**
+4.  **Generate an installation access token.**
+
+Explanation:
+
+*   **Step 1 (Register App1):** You must create the GitHub App first to obtain an **App ID**. Storing this ID as a secret allows your workflow to identify which app is making the request.
+*   **Step 2 (Generate a private key):** GitHub Apps use a private key to sign a JSON Web Token (JWT) for authentication. You generate this key in the app settings and store it as a secret so the runner can use it.
+*   **Step 3 (Install App1):** A GitHub App has no permissions until it is **installed** on a specific account or organization. The installation creates the link between the app and the resources (repositories) it is allowed to access.
+*   **Step 4 (Generate an installation access token):** Within the workflow, you use the App ID and Private Key (to create a temporary JWT) and exchange them for an **installation access token**. This token is the final credential used to authorize the actual API requests.
+
+### Question #37
+
+You use an Azure Pipelines pipeline to build and deploy an app.
+
+You have a custom test task that has the following inputs:
+
+• testResultsFiles: **/TEST-*.trx
+
+• searchFolder: $(System.DefaultWorkingDirectory)
+
+• mergeTestResults: true
+
+Which format should you use for the input data of testResultsFiles?
+
+
+A. VSTest
+
+B. NUnit
+
+C. CTest
+
+D. JUnit
+
+----
+
+
+The correct answer is **A. VSTest**.
+
+Explanation:
+
+The **`.trx`** file extension is the standard format for **Visual Studio Test Results**. 
+
+In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom test tasks that consume results, the file extension determines which parser the system uses:
+
+*   **VSTest:** Uses **`.trx`** files (XML-based).
+*   **JUnit:** Uses `.xml` files (standard for Java/generic).
+*   **NUnit:** Uses `.xml` files (NUnit 2 or 3 format).
+*   **CTest:** Uses `.xml` files (generated by CMake).
+
+Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
+
+
+### Question #38
+
+You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
+
+You need to reduce how long it takes to complete unit and integration tests for App1. The solution must ensure that the code coverage testing ratio is maintained.
+
+What should you do?
+
+A. Enable flaky test management.
+
+B. Purchase additional parallel jobs.
+
+C. Enable Test Impact Analysis (TIA).
+
+D. Add an agent pool.
+
+----
+
+✅ Correct Answer: **C. Enable Test Impact Analysis (TIA)**
+
+💡 Why this is correct
+
+**Test Impact Analysis (TIA)** in Azure Pipelines:
+
+* Runs **only the tests affected by recent code changes**
+* Skips unaffected tests → **reduces execution time significantly**
+* Still maintains **code coverage standards** by ensuring relevant tests are executed
+
+➡️ This directly meets both requirements:
+
+* ✅ Faster test execution
+* ✅ Maintains code coverage ratio
+
+❌ Why the other options are incorrect
+
+**A. Enable flaky test management**
+
+* Helps identify unstable tests
+* ❌ Does not reduce execution time significantly
+
+---
+
+**B. Purchase additional parallel jobs**
+
+* Speeds up pipelines via parallelism
+* ❌ Does **not ensure maintaining code coverage strategy**
+* Also increases cost unnecessarily
+
+---
+
+**D. Add an agent pool**
+
+* Provides more agents for execution
+* ❌ Does not optimize which tests are run
+* Less efficient than TIA for this goal
+
+🔥 Key Insight (Exam Tip)
+
+If the question mentions:
+
+* **Reduce test time**
+* **Maintain coverage**
+
+👉 The answer is almost always **Test Impact Analysis (TIA)**.
+
+
+### Question #39
+
+You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
+
+
+You need to configure a release pipeline that will mark the app as complete and ready for release into the Production-B environment. The solution must meet the following requirements:
+
+• Ensure that there are no active Azure Monitor alerts in the Production-A environment before the app is marked as complete.
+
+• Minimize administrative effort.
+
+What should you do?
+
+A. To the Production-B environment stage, add a pre-deployment gate that will query Azure Monitor.
+
+B. To the Production-A environment stage, add a post-deployment gate that will query Azure Monitor.
+
+C. To the Production-A environment stage, add a post-deployment approval.
+
+D. To the Production-A environment stage, add a pre-deployment gate that will query Azure Monitor.
+
+
+------------
+
+✅ Correct Answer: **B. To the Production-A environment stage, add a post-deployment gate that will query Azure Monitor.**
+
+
+💡 Why this is correct
+
+You need to:
+
+* Validate **after deployment to Production-A**
+* Ensure **no active Azure Monitor alerts**
+* Only then mark the app as **ready for Production-B**
+
+👉 A **post-deployment gate on Production-A**:
+
+* Runs **after deployment completes**
+* Can query **Azure Monitor alerts**
+* Automatically evaluates health before proceeding
+* Requires **minimal manual effort** (no human approval)
+
+🔄 Flow Explanation
+
+1. Deploy to **Production-A**
+2. Run **post-deployment gate**
+
+   * Check Azure Monitor alerts
+   * If **no alerts → pass**
+3. Mark release as ready → proceed to **Production-B**
+
+---
+
+❌ Why the other options are incorrect
+
+**A. Pre-deployment gate on Production-B**
+
+* Runs **before Production-B**, not tied to validating Production-A
+* ❌ Does not ensure Production-A is healthy *immediately after deployment*
+
+---
+
+**C. Post-deployment approval on Production-A**
+
+* Requires **manual intervention**
+* ❌ Violates *minimize administrative effort*
+
+---
+
+**D. Pre-deployment gate on Production-A**
+
+* Runs **before deployment to Production-A**
+* ❌ Cannot validate post-deployment health
+
+🔥 Key Exam Insight
+
+* **Post-deployment gate** = validate environment *after deployment*
+* **Pre-deployment gate** = validate *before entering stage*
+
+👉 When checking **environment health after deployment**, always choose **post-deployment gate**.
+
+### Question #40
+
+You manage package feeds by using Azure Artifacts.
+
+You plan to create a new package feed that will include the following views:
+
+• @Local
+
+• @Latest
+
+• @Release
+
+• @Prerelease
+
+Which view should you create manually?
+
+Topic 9
+
+A. @Local
+
+B. @Latest
+
+C. @Release
+
+D. @Prerelease
+
+----
+
+
+✅ Correct Answer: **B. @Latest**
+
+💡 Explanation
+
+In **Azure Artifacts feeds**, some views are **created automatically**, while others must be **created manually**.
+
+🔹 Default (automatically created) views:
+
+* **@Local** → ✅ Always created by default
+
+  * Contains all packages published directly to the feed
+
+
+🔹 Custom views (must be created manually):
+
+* **@Prerelease**
+* **@Release**
+* **@Latest**
+
+👉 However, in exam context, the key distinction is:
+
+* **@Latest** is **not a standard built-in or commonly preconfigured view**
+* It must be **explicitly created and managed**
+
+
+❌ Why the other options are incorrect
+
+* **A. @Local** → Automatically created
+* **C. @Release** → Typically created manually, but **@Latest is the best answer** because it's not a standard convention
+* **D. @Prerelease** → Also commonly created manually, but less uniquely required than @Latest in this context
+
+🔥 Key Exam Tip
+
+* Always remember:
+
+  * **@Local = default (auto-created)**
+  * Anything else = **usually manual**
+* If multiple valid manual options exist, choose the one that is **least standard / most clearly custom** → **@Latest**
+
+
+✅ Final Answer:
+
+**B. @Latest**
+
+### Question #42
+
+You have an Azure subscription that includes an app named App1.
+
+You have an Azure DevOps project that contains two environments named Staging and Production.
+
+You use Azure Pipelines to deploy App1.
+
+You need to validate the performance of App1 in the Staging environment before it is deployed to Production. The solution must minimize administrative effort.
+
+What should you do in the Azure DevOps project?
+
+A. In the production branch policy, add a status check to query Azure Monitor Alerts for active alerts.
+
+B. In the Production environment, add a check to query Azure Monitor Alerts for active alerts.
+
+C. In the Production environment stage, add a post-deployment approval for the Azure Monitor Alerts group.
+
+D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.
+
+----
+
+
+✅ Correct Answer: **D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.**
+
+---
+
+💡 Why this is correct
+
+You need to:
+
+* **Validate performance in Staging**
+* Do it **before deploying to Production**
+* **Minimize administrative effort** (automation preferred)
+
+👉 Adding a **check (gate) on the Staging environment**:
+
+* Runs automatically after deployment to Staging
+* Queries **Azure Monitor Alerts**
+* Ensures the app is healthy before progressing
+* Requires **no manual approvals**
+
+---
+
+🔄 Correct Flow
+
+1. Deploy to **Staging**
+2. Run **environment check (Azure Monitor alerts)**
+
+   * If no alerts → proceed
+   * If alerts exist → stop
+3. Deploy to **Production**
+
+❌ Why the other options are incorrect
+
+**A. Production branch policy (status check)**
+
+* Applies to **code (PRs)**, not runtime environment health
+* ❌ Not relevant to deployment validation
+
+
+**B. Check on Production environment**
+
+* Runs **before Production deployment**
+* ❌ Does not validate Staging performance directly
+
+
+**C. Post-deployment approval in Production**
+
+* Requires **manual intervention**
+* ❌ Violates *minimize administrative effort*
+
+🔥 Key Exam Insight
+
+* Validate **environment health before next stage** → put check on **current (Staging) environment**
+* Prefer **checks/gates over approvals** for automation
+
+✅ Final Answer:
+
+**D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.**
+
+
+### Question #43
+
+You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
+
+• The test stages must be run in parallel.
+
+• The Publish_Test_Results stage must always be run.
+
+• The test stages must be run after successful completion of the build stage.
+
+• The Publish_Test_Results stage must be run after completion of all the test stages.
+
+Solution: You include the following elements in the YAML definition of the pipeline.
+
+```yaml
+...
+stages:
+- stage: Build_App
+jobs:
+- stage: Test_App
+  dependsOn: [Build_App]
+jobs:
+- stage: Test_Database
+  dependsOn: [Build_App]
+jobs:
+- stage: Publish_Test_Results
+jobs:
+...
+```
+
+**Does this meet the goal?**
+
+*   A. Yes
+*   B. No
+
+-----
+
+❌ Correct Answer: **B. No**
+
+💡 Why this does NOT meet the requirements
+
+There are multiple issues in the provided YAML:
+
+🔴 1. Incorrect YAML structure
+
+* You are mixing **`stage` and `jobs` incorrectly**:
+
+  ```yaml
+  - stage: Test_App
+    dependsOn: [Build_App]
+  jobs:
+  ```
+* Each `stage` must contain its own `jobs:` block properly nested.
+
+➡️ This YAML is **invalid / improperly structured**
+
+🔴 2. Test stages may not run in parallel correctly
+
+* While both test stages depend on `Build_App`, the structure is broken
+* Even if fixed, parallel execution requires:
+
+  ```yaml
+  dependsOn: Build_App
+  ```
+
+  on both stages (correct idea, but poorly implemented here)
+
+🔴 3. Publish_Test_Results does NOT depend on test stages
+
+Requirement:
+
+> Must run **after completion of all test stages**
+
+But:
+
+```yaml
+- stage: Publish_Test_Results
+```
+
+* ❌ No `dependsOn` defined
+* ❌ No guarantee it waits for both test stages
+
+🔴 4. Publish_Test_Results must ALWAYS run
+
+Requirement:
+
+> Must always run (even if tests fail)
+
+But:
+
+* ❌ No `condition: always()`
+* So it will **not run if previous stages fail**
+
+✅ What is missing
+
+To meet requirements, you would need:
+
+* Proper stage structure
+* Parallel test stages:
+
+  ```yaml
+  dependsOn: Build_App
+  ```
+* Publish stage:
+
+  ```yaml
+  dependsOn:
+    - Test_App
+    - Test_Database
+  condition: always()
+  ```
+
+🔥 Key Exam Insight
+
+When you see:
+
+* **“run in parallel”** → same `dependsOn`
+* **“after all stages”** → explicit `dependsOn` list
+* **“always run”** → `condition: always()`
+
+✅ Final Answer:
+
+**B. No**
+
+
+### Question #44
+
+You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
+
+• The test stages must be run in parallel.
+
+• The Publish_Test_Results stage must always be run.
+
+• The test stages must be run after successful completion of the build stage.
+
+• The Publish_Test_Results stage must be run after completion of all the test stages.
+
+Solution: You include the following elements in the YAML definition of the pipeline.
+
+**YAML Definition**
+
+```yaml
+...
+stages:
+- stage: Build_App
+  jobs:
+- stage: Test_App
+  dependsOn: []
+  jobs:
+- stage: Test_Database
+  dependsOn: []
+  jobs:
+- stage: Publish_Test_Results
+  dependsOn: [
+  Build_App,
+  Test_App,
+  Test_Database
+  ]
+  condition: succeededOrFailed()
+  jobs:
+...
+```
+
+**Does this meet the goal?**
+
+*   A. Yes
+*   B. No
+
+
+-----
+
+❌ Correct Answer: **B. No**
+
+💡 Let’s validate each requirement against the YAML
+
+✅ Requirement 1: Test stages must run in parallel
+
+✔️ **Met**
+
+```yaml
+dependsOn: []
+```
+
+* Both **Test_App** and **Test_Database** have no dependencies
+* They will run **in parallel**
+
+
+❌ Requirement 2: Test stages must run after successful completion of the build stage
+
+✖️ **NOT met**
+
+* `dependsOn: []` means:
+
+  * These stages **do NOT depend on Build_App**
+  * They can run **immediately**, even before or alongside the build
+
+➡️ This violates the requirement
+
+✅ Requirement 3: Publish_Test_Results must run after all test stages
+
+✔️ **Met**
+
+```yaml
+dependsOn:
+  - Build_App
+  - Test_App
+  - Test_Database
+```
+
+* Ensures it runs after all stages complete
+
+ ✅ Requirement 4: Publish_Test_Results must always run
+
+✔️ **Met**
+
+```yaml
+condition: succeededOrFailed()
+```
+
+* Ensures execution regardless of success/failure
+
+🔴 Final Verdict
+
+Even though some requirements are met, **failing one requirement = incorrect solution**
+
+👉 The critical issue:
+
+* Test stages are **not dependent on Build_App**
+
+🔥 Key Fix (What it SHOULD be)
+
+```yaml
+dependsOn: Build_App
+```
+
+This would:
+
+* Ensure tests run **after build**
+* Still allow **parallel execution**
+
+✅ Final Answer:
+
+**B. No**
+
+
+
+### Question #45
+
+You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
+
+• The test stages must be run in parallel.
+
+• The Publish_Test_Results stage must always be run.
+
+• The test stages must be run after successful completion of the build stage.
+
+• The Publish_Test_Results stage must be run after completion of all the test stages.
+
+Solution: You include the following elements in the YAML definition of the pipeline.
+
+...
+stages:
+- stage: Build_App
+  jobs:
+- stage: Test_App
+  dependsOn: []
+  jobs:
+- stage: Test_Database
+  dependsOn: []
+  jobs:
+- stage: Publish_Test_Results
+  dependsOn: [
+    Build_App,
+    Test_App,
+    Test_Database
+  ]
+  condition: succeededOrFailed()
+  jobs:
+...
+
+
+Does this meet the goal?
+
+
+A. Yes
+
+B. No
+
+
+----
+
+
+❌ Correct Answer: **B. No**
+
+🔍 Requirement Check
+
+✅ 1. Test stages must run in parallel
+
+✔️ Met
+
+* `dependsOn: []` → both test stages run independently → **parallel**
+
+❌ 2. Test stages must run after successful completion of Build_App
+
+✖️ **Not met**
+
+* `dependsOn: []` means:
+
+  * **No dependency on Build_App**
+  * Test stages may start **before or at the same time as Build_App**
+
+➡️ This violates the requirement
+
+
+✅ 3. Publish_Test_Results must run after all test stages
+
+✔️ Met
+
+```yaml
+dependsOn:
+  - Build_App
+  - Test_App
+  - Test_Database
+```
+
+✅ 4. Publish_Test_Results must always run
+
+✔️ Met
+
+```yaml
+condition: succeededOrFailed()
+```
+
+🚨 Key Issue
+
+The **critical failure** is:
+
+> Test stages are NOT dependent on Build_App
+
+🔥 Correct Approach (for reference)
+
+```yaml
+- stage: Test_App
+  dependsOn: Build_App
+
+- stage: Test_Database
+  dependsOn: Build_App
+```
+
+➡️ This ensures:
+
+* Tests run **after build**
+* Tests still run **in parallel**
+
+✅ Final Answer:
+
+**B. No**
+
+
+### Question #46
+
+HOTSPOT -
+
+You have an Azure Pipelines pipeline that has the following definition.
+
+
+
+```yaml
+jobs:
+- job: A
+  steps:
+  # job A steps here
+
+- job: B
+  dependsOn: A
+  steps:
+  # job B steps here
+
+- job: C
+  dependsOn: A
+  steps:
+  # job C steps here
+
+- job: D
+  dependsOn:
+  - B
+  - C
+  steps:
+  # job D steps here
+
+- job: E
+  dependsOn:
+  - B
+  - D
+  steps:
+  # job E steps here
+```
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+**NOTE:** Each correct selection is worth one point.
+
+**Answer Area**
+
+| Statements | Yes | No |
+| :--- | :---: | :---: |
+| Job E can start before job C completes. | ◯ | ◯ |
+| Job B can run concurrently with job C. | ◯ | ◯ |
+| Job D can start before job B completes. | ◯ | ◯ |
+
+
+-----
+
+
+
+Let’s analyze the job dependency graph:
+
+🔗 Dependencies
+
+* **A** → root job (no dependencies)
+* **B** → depends on A
+* **C** → depends on A
+* **D** → depends on B and C
+* **E** → depends on B and D
+
+🌳 Execution Flow
+
+After **A completes**, these can run in parallel:
+
+* B
+* C
+
+Then:
+
+* D runs after **both B and C**
+* E runs after **B and D**
+
+✅ Statement Analysis
+
+1. Job E can start before job C completes.
+
+* E depends on:
+
+  * B
+  * D
+* D depends on:
+
+  * B and C
+
+👉 So E indirectly depends on **C through D**
+
+❌ If C is not finished, D cannot start, and therefore E cannot start.
+
+❌ Answer: **No**
+
+2. Job B can run concurrently with job C.
+
+* B depends on A
+* C depends on A
+* After A completes → both B and C are independent
+
+✔️ They can run in parallel
+
+✅ Answer: **Yes**
+
+3. Job D can start before job B completes.
+
+* D depends on:
+
+  * B
+  * C
+
+👉 D requires BOTH B and C to finish
+
+❌ Cannot start before B completes
+
+❌ Answer: **No**
+
+ ✅ Final Answers
+
+| Statement                               | Answer |
+| :-------------------------------------- | :----: |
+| Job E can start before job C completes. |  ❌ No  |
+| Job B can run concurrently with job C.  |  ✅ Yes |
+| Job D can start before job B completes. |  ❌ No  |
+
+
+### Question #47
+
+You are developing an Azure Pipelines pipeline.
+
+
+You need to con¬gure a check in the pipeline that will query Azure Boards to ensure that there are no active work item issues before the pipeline deploys a build to production.
+
+Which type of check should you implement?
+
+A. post-deployment approvals
+
+B. manual validations
+
+C. pre-deployment gates
+
+D. pre-deployment approvals
+
+----
+
+
+✅ Correct Answer: **C. pre-deployment gates**
+
+💡 Why this is correct
+
+You need an **automated check** that:
+
+* Queries **Azure Boards**
+* Ensures **no active work item issues exist**
+* Runs **before deployment to production**
+
+👉 This is exactly what **pre-deployment gates** are designed for:
+
+* Fully automated
+* Can integrate with **Azure Boards queries**
+* Blocks deployment if conditions are not met
+* Requires no manual intervention (minimizes effort)
+
+❌ Why the other options are incorrect
+
+**A. post-deployment approvals**
+
+* Runs *after* deployment
+* ❌ Too late to prevent bad releases
+
+---
+
+**B. manual validations**
+
+* Requires human intervention
+* ❌ Violates “minimize administrative effort”
+
+
+
+**D. pre-deployment approvals**
+
+* Manual approval step
+* ❌ Not automated (unlike gates)
+
+
+🔥 Key Exam Insight
+
+* **Gates = automated checks (REST, Azure Monitor, Azure Boards, etc.)**
+* **Approvals = human decision points**
+* If the requirement says:
+
+  > “query Azure Boards / Azure Monitor / external system”
+
+👉 Always choose **gates**
+
+✅ Final Answer:
+
+**C. pre-deployment gates**
+
+
+### Question #48
+
+You have an Azure Resource Manager (ARM) template that contains the following expression.
+
+`[if(parameters('isComplete'), '1a', '2a’)]`
+
+You need to migrate the template to Bicep.
+
+Which expression should you run?
+
+A. iif(isComplete, '1a', '2a')
+
+B. if(isComplete, '1a', '2a')
+
+C. if('isComplete') '1a' else '2a'
+
+D. isComplete ? '1a' '2a'
+
+------
+
+
+✅ Correct Answer: **D. `isComplete ? '1a' : '2a'`**
+
+💡 Explanation
+
+In **ARM templates**, conditional logic uses the `if()` function:
+
+```arm
+[if(parameters('isComplete'), '1a', '2a')]
+```
+
+🔄 Equivalent in Bicep
+
+Bicep uses a **ternary operator**, similar to many programming languages:
+
+```bicep
+condition ? trueValue : falseValue
+```
+
+So the correct conversion is:
+
+```bicep
+isComplete ? '1a' : '2a'
+```
+
+❌ Why the other options are incorrect
+
+* **A. `iif(...)`** → ❌ Not valid in Bicep
+* **B. `if(...)`** → ❌ Bicep does not use `if()` for inline expressions
+* **C. `if (...) else` syntax** → ❌ Invalid Bicep syntax
+* **D. `isComplete ? '1a' : '2a'`** → ✅ Correct ternary syntax
+
+🔥 Key Exam Tip
+
+* **ARM** → uses `if()`
+* **Bicep** → uses `condition ? value1 : value2`
+
+ ✅ Final Answer:
+
+**D. `isComplete ? '1a' : '2a'`**
+
+### Question #49
+
+
+You use an Azure Pipelines pipeline to build and release web apps.
+
+You need to con¬gure the pipeline to meet the following requirements:
+
+• Only run when there is a change in the /webapp folder.
+
+• Only run when a pr is created.
+
+Solution: You con¬gure the pipeline de¬nition by using the following elements.
+
+
+
+```yaml
+...
+trigger:
+  paths:
+    include: /webapp
+  branches:
+    include: refs/head/pr
+...
+```
+
+**Does this meet the goal?**
+
+*   A. Yes
+*   B. No
+
+-----
+
+
+❌ Correct Answer: **B. No**
+
+💡 Why this does NOT meet the goal
+
+The requirements are:
+
+1. ✔ Run only when changes occur in `/webapp`
+2. ✔ Run only when a **Pull Request (PR)** is created
+
+
+🔴 Problem 1: Wrong trigger type
+
+```yaml
+trigger:
+```
+
+* `trigger` = runs on **push (CI) events**
+* ❌ PRs are NOT handled by `trigger`
+
+👉 PRs require:
+
+```yaml
+pr:
+```
+
+🔴 Problem 2: Invalid PR branch syntax
+
+```yaml
+branches:
+  include: refs/head/pr
+```
+
+* ❌ This is not a valid Azure Pipelines branch pattern
+* PR validation does not use `refs/head/pr`
+
+
+🔴 Problem 3: PR requirement is not implemented
+
+Even if paths are correct:
+
+```yaml
+paths:
+  include: /webapp
+```
+
+* This only applies to **CI triggers**
+* ❌ PR trigger condition is missing entirely
+
+
+🔥 Correct Solution (what it should be)
+
+```yaml
+pr:
+  paths:
+    include:
+      - webapp/*
+```
+
+🧠 Key Exam Insight
+
+* `trigger` → push/commit builds
+* `pr` → pull request validation builds
+* You must choose the correct **event type first**, then apply filters (paths/branches)
+
+
+✅ Final Answer:
+
+**B. No**
+
+### Question #50
+
+You use an Azure Pipelines pipeline to build and release web apps.
+
+You need to con¬gure the pipeline to meet the following requirements:
+
+• Only run when there is a change in the /webapp folder.
+
+• Only run when a pr is created.
+
+Solution: You con¬gure the pipeline de¬nition by using the following elements.
+
+
+
+```yaml
+...
+trigger:
+  paths:
+    include: /webapp
+  branches:
+    include: pr
+...
+```
+
+**Does this meet the goal?**
+
+*   A. Yes
+*   B. No
+
+
+-----
+
+ ❌ Correct Answer: **B. No**
+
+ 💡 Why this does NOT meet the requirements
+
+You need:
+
+1. Run **only when a PR is created**
+2. Run **only when changes are in `/webapp`**
+
+🔴 Problem 1: Wrong trigger type
+
+```yaml
+trigger:
+```
+
+* `trigger` = runs on **push (CI) events**
+* ❌ PR events are NOT handled by `trigger`
+
+👉 Correct keyword for PRs is:
+
+```yaml
+pr:
+```
+
+ 🔴 Problem 2: Incorrect branch filter
+
+```yaml
+branches:
+  include: pr
+```
+
+* ❌ `pr` is not a valid branch name or ref
+* PR validation does not use branch names like this
+
+
+🔴 Problem 3: PR requirement is not implemented
+
+* Even though `/webapp` path filtering exists:
+
+  ```yaml
+  paths:
+    include: /webapp
+  ```
+* It only applies to **CI triggers**, not PRs
+* ❌ So PR-based execution requirement is not met at all
+
+🔥 Correct approach (for reference)
+
+```yaml
+pr:
+  paths:
+    include:
+      - webapp/*
+```
+
+🧠 Key Exam Insight
+
+* **trigger** → CI (push commits)
+* **pr** → pull request validation
+* If question says:
+
+
+> "only when a PR is created"
+
+👉 You must use **pr**, not trigger
+
+ ✅ Final Answer:
+
+**B. No**
+
+
 
 ### Question-177
 
