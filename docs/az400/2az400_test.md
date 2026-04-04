@@ -25425,7 +25425,7 @@ Then:
 You are developing an Azure Pipelines pipeline.
 
 
-You need to con¬gure a check in the pipeline that will query Azure Boards to ensure that there are no active work item issues before the pipeline deploys a build to production.
+You need to configure a check in the pipeline that will query Azure Boards to ensure that there are no active work item issues before the pipeline deploys a build to production.
 
 Which type of check should you implement?
 
@@ -25560,13 +25560,13 @@ isComplete ? '1a' : '2a'
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
-You need to con¬gure the pipeline to meet the following requirements:
+You need to configure the pipeline to meet the following requirements:
 
 • Only run when there is a change in the /webapp folder.
 
 • Only run when a pr is created.
 
-Solution: You con¬gure the pipeline de¬nition by using the following elements.
+Solution: You configure the pipeline definition by using the following elements.
 
 
 
@@ -25661,13 +25661,13 @@ pr:
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
-You need to con¬gure the pipeline to meet the following requirements:
+You need to configure the pipeline to meet the following requirements:
 
 • Only run when there is a change in the /webapp folder.
 
 • Only run when a pr is created.
 
-Solution: You con¬gure the pipeline de¬nition by using the following elements.
+Solution: You configure the pipeline definition by using the following elements.
 
 
 
@@ -25758,6 +25758,834 @@ pr:
  ✅ Final Answer:
 
 **B. No**
+
+### Question #52
+
+
+You are using an Azure Pipelines pipeline to build and deploy a web app.
+
+You need to implement a testing strategy that meets the following requirements:
+
+• Validates the scalability of the app
+
+• Tests a code module without testing the module's dependencies
+
+• Validates the interactions and dependencies between the app and its dependent services
+
+Which type of test should you implement for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Answer Area**
+
+**Validates the scalability of the app:**
+
+*   Acceptance
+*   Integration
+*   Load
+*   Smoke
+*   Unit
+
+**Tests a code module without testing the module's dependencies:**
+
+*   Acceptance
+*   Integration
+*   Load
+*   Smoke
+*   Unit
+
+**Validates the interactions and dependencies between the app and its dependent services:**
+
+*   Acceptance
+*   Integration
+*   Load
+*   Smoke
+*   Unit
+
+
+----
+
+✅ Correct Answers
+
+**Validates the scalability of the app:**
+
+**➡️ Load**
+
+* **Load testing** evaluates how the application behaves under heavy traffic or usage
+* Used to verify **scalability, performance, and stability under stress**
+
+**Tests a code module without testing the module's dependencies:**
+
+**➡️ Unit**
+
+* **Unit testing** focuses on individual components in isolation
+* Dependencies are typically **mocked or stubbed**
+
+**Validates the interactions and dependencies between the app and its dependent services:**
+
+**➡️ Integration**
+
+* **Integration testing** ensures different components/services work together correctly
+* Validates **APIs, databases, external services, etc.**
+
+✅ Final Answer Summary
+
+| Requirement                                      | Answer          |
+| :----------------------------------------------- | :-------------- |
+| Validates the scalability of the app             | **Load**        |
+| Tests a code module without testing dependencies | **Unit**        |
+| Validates interactions with dependent services   | **Integration** |
+
+🧠 Quick Exam Tip
+
+* **Load** → performance & scalability
+* **Unit** → isolated logic
+* **Integration** → component interaction
+
+### Question #53
+
+DRAG DROP -
+
+You have an Azure subscription that contains 50 virtual machines.
+
+You manage the configuration of the virtual machines by using Azure Automation State Configuration.
+
+You need to ensure that Windows Defender is installed on each virtual machine and the Windows Defender service is running.
+
+How should you complete the Desired State Configuration (DSC) code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Values**
+
+*   `'Automatic'`
+*   `'Enabled'`
+*   `'IncludeAllSubFeature'`
+*   `'Manual'`
+*   `'Present'`
+*   `'Running'`
+*   `'Started'`
+
+**Answer Area**
+
+```powershell
+Configuration EnsureSecure {
+    Node "localhost" {
+
+        WindowsFeature WindowsDefenderInstalled {
+            Ensure = [Value]
+            Name = 'Windows-Defender'
+        }
+
+        Service WindowsDefenderAvailable {
+            Name = 'WinDefend'
+            StartupType = 'Automatic'
+            State = [Value]
+        }
+    }
+}
+
+EnsureSecure -OutputPath C:\temp\
+```
+
+-----
+
+
+### ✅ Correct Answers
+
+Fill in the DSC configuration as follows:
+
+---
+
+### 🔧 Completed Code
+
+```powershell
+Configuration EnsureSecure {
+    Node "localhost" {
+
+        WindowsFeature WindowsDefenderInstalled {
+            Ensure = 'Present'
+            Name = 'Windows-Defender'
+        }
+
+        Service WindowsDefenderAvailable {
+            Name = 'WinDefend'
+            StartupType = 'Automatic'
+            State = 'Running'
+        }
+    }
+}
+
+EnsureSecure -OutputPath C:\temp\
+```
+
+---
+
+💡 Explanation
+
+✅ **Ensure = 'Present'**
+
+* Used with **WindowsFeature**
+* Ensures the feature (Windows Defender) is **installed**
+
+✅ **State = 'Running'**
+
+* Used with **Service**
+* Ensures the service is **currently running**
+
+❌ Why other options are incorrect
+
+* **'Started'** → Not valid for DSC `State` (correct is `'Running'`)
+* **'Enabled'** → Not valid for these properties
+* **'IncludeAllSubFeature'** → Used with feature installation options, not here
+* **'Manual' / 'Automatic'** → Used for `StartupType`, not `State`
+🧠 Key Exam Tip
+
+* **WindowsFeature → Ensure = 'Present'**
+* **Service → State = 'Running'**
+
+✅ Final Answer:
+
+* **Ensure = 'Present'**
+* **State = 'Running'**
+
+
+
+### Question #58
+
+You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
+
+• The pipeline must fail if any tests fail.
+
+• The test results must be published to the pipeline.
+
+• The test for every pipeline run must be triggered unless the pipeline is cancelled.
+
+Solution: You include the following elements in the YAML definition of the pipeline.
+
+
+```
+...
+- task: PublishTestResults@2
+  displayName: 'Publish Unit Test Results'
+  condition: not(canceled())
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/junit.xml'
+    failTaskOnMissingResultsFile: true
+    testRunTitle: 'App Test'
+...
+```
+
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+
+-----
+
+✅ Final Answer:
+
+A. YES 
+
+
+### Question #59
+
+You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
+
+• The pipeline must fail if any tests fail.
+
+• The test results must be published to the pipeline.
+
+• The test for every pipeline run must be triggered unless the pipeline is cancelled.
+
+Solution: You include the following elements in the YAML definition of the pipeline.
+
+
+```
+...
+- task: PublishTestResults@2
+  displayName: 'Publish Unit Test Results'
+  condition: succeededorFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/junit.xml'
+    failTaskOnMissingResultsFile: true
+    testRunTitle: 'App Test'
+...
+```
+
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+----
+
+
+❌ Correct Answer: **B. No**
+
+
+💡 Requirement Check
+
+
+✅ 1. Test results must be published
+
+✔️ **Met**
+
+* `PublishTestResults@2` will publish results
+
+
+❌ 2. Pipeline must fail if any tests fail
+
+✖️ **NOT met**
+
+* Missing:
+
+  ```yaml
+  failTaskOnFailedTests: true
+  ```
+* Without this:
+
+  * Test failures are reported
+  * ❌ Pipeline does **not fail**
+
+
+❌ 3. Tests must run unless pipeline is cancelled
+
+✖️ **NOT met**
+
+```yaml
+condition: succeededOrFailed()
+```
+
+* This runs:
+
+  * On success ✅
+  * On failure ✅
+* ❌ But **not guaranteed to skip when canceled** (behavior is not aligned with requirement)
+
+👉 Requirement explicitly says:
+
+> Run unless pipeline is canceled
+
+✔️ Correct condition should be:
+
+```yaml
+condition: not(canceled())
+```
+
+
+🔴 Final Verdict
+
+Fails:
+
+* ❌ Does not fail pipeline on test failures
+* ❌ Condition does not strictly match requirement
+
+
+🔥 Key Exam Insight
+
+* `succeededOrFailed()` → not ideal when requirement mentions cancellation
+* `not(canceled())` → correct condition
+* `failTaskOnFailedTests: true` → required to fail pipeline
+
+
+✅ Final Answer:
+
+**B. No**
+
+
+
+### Question #60
+
+HOTSPOT -
+
+You have an app named App1 that is built and deployed by using containers.
+
+The Dockerfile for App1 has the following definition.
+
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Dockerfile**
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS base
+WORKDIR /app1
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["App1.csproj", ""]
+RUN dotnet restore "./App1.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "App1.csproj" -c Release -o /app1/build
+
+FROM build AS publish
+RUN dotnet publish "App1.csproj" -c Release -o /app1/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "App1.dll"]
+```
+
+
+**Answer Area**
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+**NOTE:** Each correct selection is worth one point.
+
+| Statements | Yes | No |
+| :--- | :---: | :---: |
+| App1 is an ASP.NET Core app. | ◯ | ◯ |
+| The build uses a debug configuration. | ◯ | ◯ |
+| The Dockerfile uses the Docker multi-stage build feature. | ◯ | ◯ |
+
+-----
+
+
+Based on the provided Dockerfile, here are the correct selections for each statement:
+
+| Statements | Yes | No |
+| :--- | :---: | :---: |
+| App1 is an ASP.NET Core app. | **X** | ◯ |
+| The build uses a debug configuration. | ◯ | **X** |
+| The Dockerfile uses the Docker multi-stage build feature. | **X** | ◯ |
+
+**Explanation:**
+
+1.  **App1 is an ASP.NET Core app (Yes):** The Dockerfile uses the .NET SDK as its base and explicitly exposes ports **80** (HTTP) and **443** (HTTPS). This is the standard configuration for ASP.NET Core web applications.
+2.  **The build uses a debug configuration (No):** Both the `dotnet build` and `dotnet publish` commands in the Dockerfile include the **`-c Release`** flag. This explicitly tells the compiler to use the Release configuration, which includes performance optimizations and excludes debug symbols.
+3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
+
+
+### Question #61
+
+You have an Azure DevOps subscription that contains the projects shown in the following table.
+
+
+Based on the image provided, here is the extracted table in Markdown format:
+
+| Name | Number of users | Repository | Visibility |
+| :--- | :--- | :--- | :--- |
+| Project1 | 100 | Project1 public repository | Public |
+| Project2 | 5 | Project1 public repository | Public |
+| Project3 | 2 | Private GitHub repository | Private |
+| Project4 | 1,000 | Public GitHub repository | Public |
+| Project5 | 150 | Public GitHub repository | Private |
+
+
+You build apps for the projects by using Azure Pipelines.
+
+Which two projects meet the criteria for granting free parallel jobs? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Project1
+
+B. Project3
+
+C. Project4
+
+D. Project2
+
+E. Project5
+
+----
+
+✅ Correct Answers: **A. Project1** and **C. Project4**
+
+💡 Key Rule for Free Parallel Jobs in Azure Pipelines
+
+Azure DevOps grants **free parallel jobs** based on:
+
+🔓 Public projects (Azure Repos or GitHub)
+
+* **Unlimited free parallel jobs**
+
+🔒 Private projects
+
+* Limited free grants (not “free parallel jobs” in this context)
+
+🔍 Evaluate Each Project
+
+**A. Project1**
+
+* Visibility: **Public**
+* Repo: Azure Repos (public)
+  ✔️ Eligible for **free parallel jobs**
+
+
+**B. Project3**
+
+* Visibility: **Private**
+* ❌ Not eligible
+
+**C. Project4**
+
+* Visibility: **Public**
+* Repo: Public GitHub
+  ✔️ Eligible for **free parallel jobs**
+
+**D. Project2**
+
+* Uses Project1 repo, but:
+* Not clearly qualifying independently
+* Small team doesn’t matter
+  ❌ Not a clear qualifying case
+
+**E. Project5**
+
+* Visibility: **Private**
+* ❌ Not eligible
+
+🧠 Key Exam Insight
+
+* **Public project = free parallel jobs**
+* Repo type doesn’t matter as long as it is **public**
+* Private = limited/free tier constraints
+
+✅ Final Answer:
+
+- **A. Project1**
+- **C. Project4**
+
+### Question #62
+
+
+
+You have an Azure Pipelines pipeline that has the following definition.
+
+```yaml
+jobs:
+
+- job: A
+  steps:
+  # job A steps here
+
+- job: B
+  dependsOn: []
+  steps:
+  # job B steps here
+
+- job: C
+  dependsOn: []
+  steps:
+  # job C steps here
+
+- job: D
+  dependsOn: C
+  steps:
+  # job D steps here
+```
+
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+
+**NOTE:** Each correct selection is worth one point.
+
+**Answer Area**
+
+| Statements | Yes | No |
+| :--- | :---: | :---: |
+| Job B can run concurrently with job A. | ◯ | ◯ |
+| Job D can run concurrently with job B. | ◯ | ◯ |
+| Job C can run concurrently with job D. | ◯ | ◯ |
+
+-----
+
+
+🔍 Analyze Job Dependencies
+
+📌 Jobs Overview
+
+* **A** → no `dependsOn` → runs immediately
+* **B** → `dependsOn: []` → runs immediately (no dependency)
+* **C** → `dependsOn: []` → runs immediately
+* **D** → `dependsOn: C` → runs **after C completes**
+
+ ✅ Statement Analysis
+
+**1. Job B can run concurrently with job A.**
+
+* A → no dependency
+* B → no dependency (`dependsOn: []`)
+
+👉 Both can start at the same time
+
+✅ **Answer: Yes**
+
+**2. Job D can run concurrently with job B.**
+
+* D depends only on **C**
+* B is independent
+
+👉 Once **C finishes**, D can run regardless of B
+
+✔️ D and B **can overlap in execution**
+
+✅ **Answer: Yes**
+
+**3. Job C can run concurrently with job D.**
+
+* D depends on C
+
+👉 D **cannot start until C finishes**
+
+❌ They cannot run at the same time
+
+❌ **Answer: No**
+
+✅ Final Answers
+
+| Statements                             | Yes |  No |
+| :------------------------------------- | :-: | :-: |
+| Job B can run concurrently with job A. |  ✅  |     |
+| Job D can run concurrently with job B. |  ✅  |     |
+| Job C can run concurrently with job D. |     |  ❌  |
+
+🧠 Key Exam Insight
+
+* `dependsOn: []` → **no dependency → parallel execution**
+* If a job depends on another → **cannot overlap**
+* Jobs without dependencies can run **concurrently by default**
+
+
+### Question #63
+
+You use an Azure Pipelines pipeline to build and test an app named App1.
+
+Your company’s development department works in the feature branches.
+
+You need to ensure that a pull request will merge into the main branch only when testing covers more than 90 percent of the code.
+
+What should you do?
+
+A. Configure a branch policy for the feature branches.
+
+B. Configure a branch policy for the main branch.
+
+C. Create a Publish Test Results task,
+
+D. Create a code coverage configuration YAML file
+
+-----
+
+
+✅ Correct Answer: **B. Configure a branch policy for the main branch**
+
+💡 Why this is correct
+
+You need to enforce a rule:
+
+> A pull request can merge into `main` only if code coverage > 90%
+
+In Azure DevOps, **quality gates for PR completion** are enforced using:
+
+🔒 Branch Policies on the target branch (main)
+
+Specifically:
+
+* You configure a **Build validation policy** or **Code coverage policy**
+* This ensures PRs cannot complete unless conditions are met (like coverage threshold)
+
+❌ Why the other options are wrong
+
+**A. Feature branch policy**
+
+* Policies on feature branches do NOT control merging into main
+* ❌ Incorrect scope
+
+
+**C. Publish Test Results task**
+
+* Only publishes test results
+* ❌ Does not enforce merge rules or thresholds
+
+
+**D. Code coverage YAML file**
+
+* YAML alone only configures reporting
+* ❌ Enforcement happens in branch policies, not code files
+
+ 🧠 Key Exam Insight
+
+* **Enforcement = Branch Policies (target branch = main)**
+* **Reporting = pipeline tasks (PublishTestResults, etc.)**
+* Code coverage threshold checks are configured in **branch policies**
+
+✅ Final Answer:
+
+**B. Configure a branch policy for the main branch**
+
+
+### Question #64
+
+HOTSPOT -
+
+You plan to build an app named App1 by using GitHub.
+
+You need to recommend a build and deployment solution for App1. The solution must meet the following requirements:
+
+• Ensure that the code for App1 is submitted for testing only when a build has completed successfully.
+
+• Ensure that a build is approved by the change management team before the build is released.
+
+What should you include in the recommendation for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+**Answer Area**
+
+**Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**
+
+*   Environments
+*   Jobs
+*   Matrices
+*   Packages
+*   Pull requests
+
+**Ensure that a build is approved by the change management team before the build is released:**
+
+*   Environments
+*   Jobs
+*   Matrices
+*   Packages
+*   Pull requests
+
+----
+
+✅ Correct Answers
+
+**1. Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**
+
+👉 **Correct Answer: *Pull requests***
+
+✔️ Why:
+
+* Pull requests (PRs) ensure:
+
+  * Code is reviewed
+  * Builds/CI validations complete successfully before merge
+* This enforces **“test only after successful build”** via PR validation checks
+
+❌ Why others are wrong:
+
+* Environments → deployment stage control
+* Jobs → execution units inside workflows
+* Matrices → parallel build variations
+* Packages → artifact storage
+
+**2. Ensure that a build is approved by the change management team before the build is released:**
+
+👉 **Correct Answer: *Environments***
+
+✔️ Why:
+
+* GitHub **Environments** support:
+
+  * Required reviewers (approval gates)
+  * Deployment protection rules
+* Perfect for **change management approval before release**
+
+❌ Why others are wrong:
+
+* Jobs → execution logic only
+* Matrices → build variations
+* Packages → artifacts
+* Pull requests → pre-merge, not release approval
+
+🧠 Key Exam Insight
+
+* **Pull Requests = pre-merge validation (build + test gating)**
+* **Environments = release approval gates (manual approvals, change control)**
+
+✅ Final Answers
+
+| Requirement                                         | Answer            |
+| --------------------------------------------------- | ----------------- |
+| Submit code for testing only after successful build | **Pull requests** |
+| Require change management approval before release   | **Environments**  |
+
+
+### Question #65
+
+You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. Pipeline1 contains a temporary final stage named final1.
+
+You need to ensure that User1 can delete final1 when testing is complete. The solution must follow the principle of least privilege.
+
+At which level should you grant permissions to User1?
+
+A. pipeline
+
+B. organization
+
+C. stage
+
+D. project
+
+-----
+
+
+✅ Correct Answer: **C. stage**
+
+💡 Why this is correct
+
+You need to allow **User1 to delete a specific stage (`final1`) in a single pipeline**.
+
+That is the most granular level of control in Azure DevOps:
+
+* **Stage-level permissions** allow:
+
+  * Approve/reject stages
+  * Edit or remove a specific stage
+  * Manage stage-specific security settings
+
+This follows the **principle of least privilege** because:
+
+* You are not granting access to the whole pipeline
+* You are not granting project or organization-wide permissions
+
+❌ Why the other options are wrong
+
+**A. Pipeline**
+
+* Applies to the entire pipeline
+* ❌ Too broad (exceeds least privilege)
+
+**B. Organization**
+
+* Applies across all projects and pipelines
+* ❌ Way too broad and unrelated
+
+**D. Project**
+
+* Grants access to all pipelines and repos in the project
+* ❌ Still too broad
+
+🧠 Key Exam Insight
+
+* **Stage-level permissions = most granular control inside a pipeline**
+* Use this when:
+
+  * You need to control or modify a *specific stage only*
+
+✅ Final Answer:
+
+**C. stage**
 
 
 
@@ -27521,3 +28349,544 @@ Why the other options are incorrect
 > To detect **agent pool exhaustion**, you need **metrics on agent pool usage**, either via the **TaskAgentPoolSizeSnapshots API** or the **pool consumption report**.
 
 ✅ **Answer: B and D**
+
+ 
+## Topic 10 - Testlet 1
+
+### Question #1
+
+**Introductory Info**
+
+This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+
+Overview -
+
+General Overview Woodgrove Bank is a financial services company that has a main o®ce in the United Kingdom. Technical Requirements and Planned Changes
+
+Planned Changes Woodgrove Bank plans to implement the following project management changes: Implement Azure DevOps for project tracking.
+
+Centralize source code control in private GitHub repositories.
+
+Implement Azure Pipelines for build pipelines and release pipelines.
+
+Woodgrove Bank plans to implement the following changes to the identity environment: Deploy an Azure AD tenant named woodgrovebank.com.
+
+Sync the Active Directory domain to Azure AD.
+
+Configure App1 to use a service principal.
+
+Integrate GitHub with Azure AD.
+
+Woodgrove Bank plans to implement the following changes to the core apps:
+
+Migrate App1 to ASP.NET Core.
+
+Integrate Azure Pipelines and the third-party build tool used to develop App2.
+
+Woodgrove Bank plans to implement the following changes to the DevOps environment: Deploy App1 to Azure App Service.
+
+Implement source control for the DB1 schema.
+
+Migrate all the source code from TFS1 to GitHub.
+
+Deploy App2 to an Azure virtual machine named VM1.
+
+Merge the POC branch into the GitHub default branch.
+
+Implement an Azure DevOps dashboard for stakeholders to monitor development progress.
+
+Technical Requirements Woodgrove Bank identifies the following technical requirements:
+
+The initial databases for new environments must contain both schema and reference data. An Azure Monitor alert for VM1 must be configured to meet the following requirements:
+
+- Be triggered when average CPU usage exceeds 80 percent for 15 minutes.
+
+- Calculate CPU usage averages once every minute.
+
+The commit history of the POC branch must replace the history of the default branch. The Azure DevOps dashboard must display the metrics shown in the following table.
+
+
+Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
+
+**Question**
+
+HOTSPOT You need to configure the alert for VM1. The solution must meet the technical requirements.
+
+Which two settings should you configure? To answer, select the appropriate settings in the answer area. NOTE: Each correct selection is worth one point.
+
+
+| Number | Required data |
+| :--- | :--- |
+| 1 | A comparison between the work the development team planned to deliver and what was delivered |
+| 2 | The status of the environments in a release definition |
+| 3 | The total number of results from a work item query |
+
+![Alt Image Text](../images/az400_2_47.png)
+
+
+------
+
+
+To configure the Azure Monitor alert for VM1 based on the technical requirements, you must modify the settings that do not currently match the specified criteria.
+
+**Technical Requirements:**
+
+1.  **Threshold:** Exceeds 80 percent.
+2.  **Duration (Period):** 15 minutes.
+3.  **Frequency of evaluation:** Once every minute.
+
+Based on the image provided, the two settings you should configure (click on) are:
+
+1.  **Threshold value:** This must be set to **80**. (Currently, the field is empty in the image).
+2.  **Aggregation granularity (Period):** This must be changed to **15 minutes**. (Currently, it is set to "5 minutes" in the image).
+
+
+**Why these settings?**
+
+*   **Threshold value:** The requirement specifically states the alert should trigger when usage exceeds 80 percent.
+*   **Aggregation granularity (Period):** This defines the time window used to calculate the average. The requirement specifies "for 15 minutes," so the window must be expanded from the default 5 minutes to 15 minutes.
+*   **Frequency of evaluation:** The requirement specifies "once every minute." In the provided image, this is already correctly set to "Every 1 Minute," so it does not require a change.
+
+
+
+## Topic 11
+
+### Question #1
+
+
+Introductory Info
+
+Case Study This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+Overview Litware, Inc. is an independent software vendor (ISV). Litware has a main o®ce and five branch o®ces.
+
+Existing Environment -
+
+Application Architecture The company's primary application is a single monolithic retirement fund management system based on ASP.NET web forms that use logic written in VB.NET.
+
+Some new sections of the application are written in C#.
+
+Variations of the application are created for individual customers. Currently, there are more than 80 live code branches in the application's code base.
+
+The application was developed by using Microsoft Visual Studio. Source code is stored in Team Foundation Server (TFS) in the main o®ce. The branch o®ces access the source code by using TFS proxy servers.
+
+Architectural Issues Litware focuses on writing new code for customers. No resources are provided to refactor or remove existing code. Changes to the code base take a long time, as dependencies are not obvious to individual developers.
+
+Merge operations of the code often take months and involve many developers. Code merging frequently introduces bugs that are di®cult to locate and resolve.
+
+Customers report that ownership costs of the retirement fund management system increase continually. The need to merge unrelated code makes even minor code changes expensive.
+
+Customers report that bug reporting is overly complex.
+
+Requirements -
+
+Planned Changes Litware plans to develop a new suite of applications for investment planning. The investment planning applications will require only minor integration with the existing retirement fund management system.
+
+The investment planning applications suite will include one multi-tier web application and two iOS mobile applications. One mobile application will be used by employees; the other will be used by customers.
+
+Litware plans to move to a more agile development methodology. Shared code will be extracted into a series of packages.
+
+Litware has started an internal cloud transformation process and plans to use cloud-based services whenever suitable.
+
+Litware wants to become proactive in detecting failures, rather than always waiting for customer bug reports.
+
+Technical Requirements The company's investment planning applications suite must meet the following technical requirements: New incoming connections through the firewall must be minimized.
+
+Members of a group named Developers must be able to install packages.
+
+The principle of least privilege must be used for all permission assignments.
+
+A branching strategy that supports developing new functionality in isolation must be used.
+
+Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
+
+Visual Studio App Center must be used to centralize the reporting of mobile application crashes and device types in use.
+
+By default, all releases must remain available for 30 days, except for production releases, which must be kept for 60 days.
+
+Code quality and release quality are critical. During release, deployments must not proceed between stages if any active bugs are logged against the release.
+
+The mobile applications must be able to call the share pricing service of the existing retirement fund management system. Until the system is upgraded, the service will only support basic authentication over HTTPS.
+
+The required operating system configuration for the test servers changes weekly. Azure Automation State Configuration must be used to ensure that the operating system on each test server is configured the same way when the servers are created and checked periodically.
+
+Current Technical Issue The test servers are configured correctly when first deployed, but they experience configuration drift over time. Azure Automation State Configuration fails to correct the configurations.
+
+Azure Automation State Configuration nodes are registered by using the following command.
+
+
+```powershell
+Register-AzureRmAutomationDscNode
+-ResourceGroupName 'TestResourceGroup'
+-AutomationAccountName 'LitwareAutomationAccount'
+-AzureVMName $vmname
+-ConfigurationMode 'ApplyOnly'
+```
+
+**Question**
+
+**HOTSPOT -**
+How should you complete the code to initialize App Center in the mobile application? To answer, select the appropriate options in the answer area.
+**NOTE:** Each correct selection is worth one point.
+
+**Hot Area:**
+
+**Answer Area**
+
+```swift
+MSAppCenter.start
+( "{Your App Secret}",
+  withServices: [Dropdown 1] [Dropdown 2]
+)
+```
+
+**Dropdown 1 Options:**
+
+*   `[MSAnalytics.self,`
+*   `[MSDistribute.self,`
+*   `[MSPush.self,`
+
+**Dropdown 2 Options:**
+
+*   `MSAnalytics.self]`
+*   `MSCrashes.self]`
+*   `MSDistribute.self]`
+
+
+-----
+
+
+✅ Correct Answer
+
+```swift
+MSAppCenter.start(
+  "{Your App Secret}",
+  withServices: [MSAnalytics.self, MSCrashes.self]
+)
+```
+
+💡 Explanation
+
+The requirement states:
+
+> Use **Visual Studio App Center** to centralize:
+
+* **Crash reporting**
+* **Device usage analytics**
+
+🔍 Service Mapping
+
+* **MSAnalytics**
+  ✔️ Collects usage data (users, sessions, devices)
+
+* **MSCrashes**
+  ✔️ Collects crash reports and diagnostics
+
+ ❌ Why other options are incorrect
+
+* **MSDistribute**
+  → Used for app distribution (not required here)
+
+* **MSPush**
+  → Used for push notifications (not required)
+
+ 🧠 Key Insight
+
+For App Center initialization:
+
+* **Analytics + Crashes** = monitoring + diagnostics (most common combo)
+
+
+✅ Final Selection
+
+| Dropdown   | Answer               |
+| ---------- | -------------------- |
+| Dropdown 1 | `[MSAnalytics.self,` |
+| Dropdown 2 | `MSCrashes.self]`    |
+
+
+## Topic 12 - Testlet 3
+
+Introductory Info
+
+Case Study This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+Overview Contoso, Ltd. is a manufacturing company that has a main o®ce in Chicago.
+
+Existing Environment Contoso plans to improve its IT development and operations processes by implementing Azure DevOps principles. Contoso has an Azure subscription and creates an Azure DevOps organization.
+
+The Azure DevOps organization includes:
+
+The Docker extension A deployment pool named Pool7 that contains 10 Azure virtual machines that run Windows Server 2019 The Azure subscription contains an Azure Automation account.
+
+Requirements -
+
+Planned changes Contoso plans to create projects in Azure DevOps as shown in the following table.
+
+Based on the image provided, here is the extracted table in Markdown format:
+
+| Project name | Project details |
+| :--- | :--- |
+| Project 1 | Project1 will provide support for incremental builds and third-party SDK components |
+| Project 2 | Project2 will use an automatic build policy. A small team of developers named Team2 will work independently on changes to the project. The Team2 members will not have permissions to Project2. |
+| Project 3 | Project3 will be integrated with SonarQube |
+| Project 4 | Project4 will provide support for a build pipeline that creates a Docker image and pushes the image to the Azure Container Registry. Project4 will use an existing Dockerfile. |
+| Project 5 | Project5 will contain a Git repository in Azure Repos and a continuous integration trigger that will initiate a build in response to any change except for changes within /folder1 of the repository. |
+| Project 6 | Project6 will provide support for build and deployment pipelines. Deployment will be allowed only if the number of current work items representing active software bugs is 0. |
+| Project 7 | Project7 will contain a target deployment group named Group7 that maps to Pool7. Project7 will use Azure Automation State Configuration to maintain the desired state of the computers in Group7. |
+
+Technical requirements Contoso identifies the following technical requirements: Implement build agents for Project1.
+
+Whenever possible, use Azure resources.
+
+Avoid using deprecated technologies.
+
+Implement a code flow strategy for Project2 that will:
+
+- Enable Team2 to submit pull requests for Project2.
+
+- Enable Team2 to work independently on changes to a copy of Project2.
+
+- Ensure that any intermediary changes performed by Team2 on a copy of Project2 will be subject to the same restrictions as the ones defined in the build policy of Project2.
+
+Whenever possible, implement automation and minimize administrative effort.
+
+Implement Project3, Project5, Project6, and Project7 based on the planned changes.
+
+Implement Project4 and configure the project to push Docker images to Azure Container Registry.
+
+Question
+
+You add the virtual machines as managed nodes in Azure Automation State Configuration. You need to configure the managed computers in Pool7.
+
+What should you do next?
+
+A. Modify the RefreshMode property of the Local Configuration Manager (LCM).
+
+B. Run the Register-AzureRmAutomationDscNode Azure Powershell cmdlet.
+
+C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).
+
+D. Install PowerShell Core.
+
+
+----
+
+
+✅ Correct Answer: **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
+
+💡 Explanation
+
+From the case study:
+
+> Azure Automation State Configuration **fails to correct configuration drift**
+
+And current configuration uses:
+
+```powershell
+-ConfigurationMode 'ApplyOnly'
+```
+
+🔍 Key Issue
+
+* **ApplyOnly** means:
+
+  * Configuration is applied **once**
+  * ❌ Drift is **NOT corrected automatically**
+
+✅ Required Fix
+
+To ensure ongoing compliance, change LCM configuration to:
+
+* **ApplyAndMonitor** → Detect drift only
+* **ApplyAndAutoCorrect** → Detect + fix drift automatically ✅ (best choice)
+
+👉 This is done by modifying the **ConfigurationMode** property
+
+❌ Why other options are incorrect
+
+* **A. RefreshMode**
+
+  * Controls where configs come from (Push/Pull)
+  * ❌ Not related to drift correction
+
+* **B. Register-AzureRmAutomationDscNode**
+
+  * Already done (nodes are registered)
+  * ❌ Not the issue
+
+* **D. Install PowerShell Core**
+
+  * ❌ Not related to DSC behavior
+
+🧠 Key Exam Insight
+
+* **ApplyOnly** → one-time configuration ❌
+* **ApplyAndAutoCorrect** → continuous enforcement ✅
+
+ ✅ Final Answer:
+
+**C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
+
+
+### Question #2
+
+Question
+
+DRAG DROP You need to implement the code flow strategy for Project2 in Azure DevOps.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+
+**Actions**
+
+*   Create a fork
+*   Create a branch
+*   Add a build policy for the fork
+*   Add a build policy for the master branch
+*   Create a repository
+*   Add an application access policy.
+
+**Answer Area**
+
+*(This area is empty in the image)*
+
+------
+
+✅ Correct Sequence
+
+1. **Create a fork**
+2. **Add a build policy for the master branch**
+3. **Create a branch**
+
+💡 Explanation
+
+The requirements for **Project2** are key:
+
+* Team2 **cannot access the main project directly**
+* They must **work independently on a copy**
+* Their changes must still follow **the same build policies**
+* They must submit **pull requests**
+
+🔍 Step-by-step reasoning
+
+**1. Create a fork** ✅
+
+* Since Team2 **has no permissions to Project2**, they need:
+
+  * Their **own copy of the repository**
+* Forking allows:
+
+  * Independent work
+  * PRs back to the original repo
+
+ **2. Add a build policy for the master branch** ✅
+
+* Build policies must be enforced on:
+
+  * The **target branch (main/master)**
+* Ensures:
+
+  * All PRs (including from forks) must pass validation
+  * Same restrictions apply to Team2
+
+**3. Create a branch** ✅
+
+* Developers in Team2:
+
+  * Work on feature branches inside the fork
+  * Submit PRs from branch → upstream repo
+
+❌ Why other options are incorrect
+
+* **Add a build policy for the fork**
+
+  * ❌ Policies must be on the **target repo**, not fork
+
+* **Create a repository**
+
+  * ❌ Fork already provides the repo
+
+* **Add an application access policy**
+
+  * ❌ Not related to Git workflow
+
+🧠 Key Exam Insight
+
+* **Fork = isolation for external team**
+* **Branch policy on main = enforcement point**
+* **Feature branches = development workflow**
+
+✅ Final Answer (in order)
+
+1. Create a fork
+2. Add a build policy for the master branch
+3. Create a branch
+
+
+### Question #3
+
+Question
+
+DRAG DROP You need to configure Azure Automation for the computers in Pool7.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions**
+
+*   Run the `Import-AzureRmAutomationDscConfiguration` Azure PowerShell cmdlet.
+*   Create a Desired State Configuration (DSC) configuration file that has an extension of `.ps1`.
+*   Run the `New-AzureRmResourceGroupDeployment` Azure PowerShell cmdlet.
+*   Run the `Start-AzureRmAutomationDscCompilationJob` Azure PowerShell cmdlet.
+*   Create an Azure Resource Manager template file that has an extension of `.json`.
+
+**Answer Area**
+
+*(This area is empty in the image and intended for dragging and dropping the actions into the correct sequence.)*
+
+-------
+
+To configure Azure Automation State Configuration (DSC) for the computers in Pool7, you must follow the standard workflow of authoring, uploading, and compiling the configuration so that it can be applied to the nodes.
+
+The three actions you should perform in sequence are:
+
+1.  **Create a Desired State Configuration (DSC) configuration file that has an extension of `.ps1`.**
+2.  **Run the `Import-AzureRmAutomationDscConfiguration` Azure PowerShell cmdlet.**
+3.  **Run the `Start-AzureRmAutomationDscCompilationJob` Azure PowerShell cmdlet.**
+
+**Rationale:**
+
+*   **Step 1 (Authoring):** You must first write the PowerShell DSC script that defines the "desired state" (e.g., specific software installed, security settings) for the virtual machines in Pool7.
+*   **Step 2 (Importing):** Once the script is created, you use the `Import-AzureRmAutomationDscConfiguration` cmdlet to upload that script into your Azure Automation account. At this stage, it is simply a stored script.
+*   **Step 3 (Compiling):** Azure Automation cannot apply a `.ps1` script directly to a VM. You must run a compilation job using `Start-AzureRmAutomationDscCompilationJob`. This converts your script into a "Node Configuration" (a MOF file) that the virtual machines can actually download and implement.
+
+**Note:** While you could use an ARM template (`.json`) to automate the *registration* of the VMs to the Automation account, the specific configuration of the Automation service itself requires the Author -> Import -> Compile sequence.
+
+## Topic 13 - Testlet 4
+
+
+
+
