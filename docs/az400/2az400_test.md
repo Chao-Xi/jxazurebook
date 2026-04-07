@@ -48,12 +48,12 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 You need to consider **the underlined segment** to **establish whether it is accurate.** 
 
-**The Burnup widget measures the elapsed time from creation of work items to their completion**.     
+> **The Burnup widget measures the elapsed time from creation of work items to their completion**.     
 
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate
 
 * A. No adjustment required.
-* **B. Lead time**
+* B. Lead time
 * C. Test results trend
 * D. Burndown
 
@@ -94,7 +94,10 @@ You need to consider the underlined segment to establish whether it is accurate.
 
 ### Question 3
 
-You are making use of Azure DevOps manage build pipelines, and also deploy pipelines. The development team is quite large, and is regularly added to. You have been informed that the management of users and licenses must be automated when it can be. Which of the following is a task that can't be automated?
+You are making use of Azure DevOps manage build pipelines, and also deploy pipelines. The development team is quite large, and is regularly added to. You have been informed that **the management of users and licenses must be automated when it can be**. 
+
+
+Which of the following is a task that **can't be automated**?
 
 * A. Group membership changes
 * B. License assignment
@@ -133,7 +136,7 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 
 ### Question 4
 
-You have been tasked with strengthening the security of your team's development process. You need to suggest a security tool type for the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?
+You have been tasked with strengthening the security of your team's development process. You need to suggest a **security tool** type for the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?
 
 * A. Penetration testing
 * B. Static code analysis
@@ -182,7 +185,7 @@ You have been tasked with strengthening the security of your team's development 
 
 
 
-### Question 5
+### Question 5  💩💩💩
 
 Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure
 
@@ -216,7 +219,7 @@ Which of the following should also be suggested?
 
 You intend to manage the build and release processes using Azure DevOps. 
 
-This plan requires you to integrate Azure DevOps and Bitbucket. Which of the following will allow for this integration? Answer by dragging the correct options from the list to the answer area.
+**This plan requires you to integrate Azure DevOps and Bitbucket.** Which of the following will allow for this integration? Answer by dragging the correct options from the list to the answer area.
 
 **Options**
 
@@ -493,7 +496,7 @@ Note: The choice between these modes depends on the specific requirements and pr
 
 You need to consider the underlined segment to establish whether it is accurate.
 
-To compile an Internet Information Services (IIS) web application that runs docker, you should use a Default build agent pool.
+> To compile an Internet Information Services (IIS) web application that runs docker, you should use a Default build agent pool.
 
 Select `No adjustment required` if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -536,49 +539,64 @@ You are instructed to make sure that the Azure DevOps environment **can only be 
 
 --------------------
 
-Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users.
+✅ Correct Answer: **D. Configure conditional access in Azure Active Directory**
 
-You are instructed to make sure that the Azure DevOps environment can only be accessed from devices connected to the company's on-premises network. Which of the following actions should you take?
+💡 Why this is correct
 
-* A. Assign the devices to a security group.
-* B. Create a GPO.
-* C. Configure Security in Project Settings from Azure DevOps.
-* D. Configure conditional access in Azure Active Directory.
+Requirement:
 
+> Azure DevOps must **only be accessed from devices connected to the company's on-premises network**
 
-**Correct Answer: D - Configure conditional access in Azure Active Directory**
+This is about **controlling access based on location/network**.
 
-Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
+👉 In Azure Active Directory, **Conditional Access** allows you to:
 
-Conditional Access policies are enforced after the first-factor authentication has been completed.
+* Restrict access by **IP address / named locations**
+* Allow access **only from corporate network**
+* Block all other access
 
+✔ You can define a policy like:
 
-### Question -11
+* Allow access **ONLY from trusted IP ranges (on-prem network)**
+* Block all other locations
 
-Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. 
+❌ Why other options are wrong
 
-You are instructed to make sure that the Azure DevOps environment can only be accessed from devices connected to the company's on-premises network. Which of the following actions should you take?
+* **A. Assign devices to a security group**
 
-A. Assign the devices to a security group.
+  * Controls membership, not network/location access ❌
 
-B. Create a GPO.
+* **B. Create a GPO**
 
-C. Configure Security in Project Settings from Azure DevOps.
+  * Works for domain-joined machines, not cloud service access control ❌
 
-**D. Configure conditional access in Azure Active Directory.**
+* **C. Configure Security in Project Settings (Azure DevOps)**
 
-> Correct Answer: D - Configure conditional access in Azure Active Directory
+  * Controls permissions (who can do what), not **where they connect from** ❌
 
+🎯 Exam Tip
 
-Conditional Access is a capability of Azure Active Directory. 
+If the question mentions:
 
-With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions. Conditional Access policies are enforced after the first-factor authentication has been completed.
+* “restrict access by location”
+* “IP address”
+* “trusted network”
+* “only corporate network”
+
+👉 Always think: **Conditional Access (Azure AD)**
+
+🟢 Final Answer:
+
+**D. Configure conditional access in Azure Active Directory**
+
 
 ### Question -11
 
 You are making use of Azure DevOps to configure Azure Pipelines for project, named PROJ-01. 
 
-You are preparing to use a version control system that allows for source code to be stored on a managed Windows server located on the company network. Which of the following is the version control system you should use?
+You are preparing to use a version control system that allows for source code to be stored on a managed Windows server located on the company network. 
+
+Which of the following is the version control system you should use?
 
 * A. Github Enterprise
 * B. Bitbucket cloud
@@ -627,7 +645,7 @@ Why the others are incorrect:
 
 You need to consider the underlined segment to establish whether it is accurate.
 
-When moving to Azure DevOps, JIRA must be replaced with the build pipelines Azure DevOps service.
+> When moving to Azure DevOps, JIRA must be replaced with the build pipelines Azure DevOps service.
 
 Select `No adjustment required` if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -649,7 +667,7 @@ The correct answer is:
 
 Explanation
 
-Jira is primarily used for:
+**Jira is primarily used for:**
 
 * Issue tracking
 * Agile planning
@@ -845,7 +863,12 @@ Why the other options are incorrect:
 
 ### Question -14
 
-You need to consider the underlined segment to establish whether it is accurate. To deploy an application to a number of Azure virtual machines, you should create a universal group. Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
+You need to consider the underlined segment to establish whether it is accurate. 
+
+> To deploy an application to a number of Azure virtual machines, you should create a universal group.
+
+
+Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
 Which of the following actions should you take?
 
@@ -901,6 +924,8 @@ Options
 - Terratest
 - Tiller
 
+———
+
 To achieve the goal of deploying an Azure resource group via Terraform while following the standard development practices recommended by Microsoft (specifically for the AZ-400: DevOps Engineer Expert curriculum), you should use:
 
 1.  **Yeoman**
@@ -933,6 +958,8 @@ C. You should make use of dynamic code analysis.
 
 D. You should make use of upstream sources.
 
+
+------
 
 ✅ **Correct answer: B. You should make use of views.**
 
@@ -971,7 +998,9 @@ Why the other options are incorrect
 
 ### Question -15
 
-You need to consider the underlined segment to establish whether it is accurate. To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline. 
+You need to consider the underlined segment to establish whether it is accurate. 
+
+> **To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline. 
 
 Select '**No adjustment required**' if the underlined segment is accurate. 
 
@@ -1081,7 +1110,7 @@ To scan **open source libraries** for **common security weaknesses** (such as kn
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
-Black Duck can be used to make sure that all the open source libraries conform to your company's licensing criteria. 
+> **Black Duck can be used to make sure that all the open source libraries conform to your company's licensing criteria.** 
 
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
