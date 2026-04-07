@@ -25894,14 +25894,11 @@ EnsureSecure -OutputPath C:\temp\
 
 -----
 
-
-### ✅ Correct Answers
+✅ Correct Answers
 
 Fill in the DSC configuration as follows:
 
----
-
-### 🔧 Completed Code
+🔧 Completed Code
 
 ```powershell
 Configuration EnsureSecure {
@@ -25922,8 +25919,6 @@ Configuration EnsureSecure {
 
 EnsureSecure -OutputPath C:\temp\
 ```
-
----
 
 💡 Explanation
 
@@ -28536,6 +28531,8 @@ Register-AzureRmAutomationDscNode
 -ConfigurationMode 'ApplyOnly'
 ```
 
+
+
 **Question**
 
 **HOTSPOT -**
@@ -28888,5 +28885,1647 @@ The three actions you should perform in sequence are:
 ## Topic 13 - Testlet 4
 
 
+### Question #1
+
+
+Introductory Info
+
+Case Study This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+Overview Litware, Inc. is an independent software vendor (ISV). Litware has a main o®ce and five branch o®ces.
+
+Existing Environment -
+
+Application Architecture The company's primary application is a single monolithic retirement fund management system based on ASP.NET web forms that use logic written in VB.NET.
+
+Some new sections of the application are written in C#.
+
+Variations of the application are created for individual customers. Currently, there are more than 80 live code branches in the application's code base.
+
+The application was developed by using Microsoft Visual Studio. Source code is stored in Team Foundation Server (TFS) in the main o®ce. The branch o®ces access the source code by using TFS proxy servers.
+
+Architectural Issues Litware focuses on writing new code for customers. No resources are provided to refactor or remove existing code. Changes to the code base take a long time, as dependencies are not obvious to individual developers.
+
+Merge operations of the code often take months and involve many developers. Code merging frequently introduces bugs that are di®cult to locate and resolve.
+
+Customers report that ownership costs of the retirement fund management system increase continually. The need to merge unrelated code makes even minor code changes expensive.
+
+Customers report that bug reporting is overly complex.
+
+Requirements -
+
+Planned Changes Litware plans to develop a new suite of applications for investment planning. The investment planning applications will require only minor integration with the existing retirement fund management system.
+
+The investment planning applications suite will include one multi-tier web application and two iOS mobile applications. One mobile application will be used by employees; the other will be used by customers.
+
+Litware plans to move to a more agile development methodology. Shared code will be extracted into a series of packages.
+
+Litware has started an internal cloud transformation process and plans to use cloud-based services whenever suitable.
+
+Litware wants to become proactive in detecting failures, rather than always waiting for customer bug reports.
+
+Technical Requirements The company's investment planning applications suite must meet the following technical requirements: New incoming connections through the firewall must be minimized.
+
+Members of a group named Developers must be able to install packages.
+
+The principle of least privilege must be used for all permission assignments.
+
+A branching strategy that supports developing new functionality in isolation must be used.
+
+Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
+
+Visual Studio App Center must be used to centralize the reporting of mobile application crashes and device types in use.
+
+By default, all releases must remain available for 30 days, except for production releases, which must be kept for 60 days.
+
+Code quality and release quality are critical. During release, deployments must not proceed between stages if any active bugs are logged against the release.
+
+The mobile applications must be able to call the share pricing service of the existing retirement fund management system. Until the system is upgraded, the service will only support basic authentication over HTTPS.
+
+The required operating system configuration for the test servers changes weekly. Azure Automation State Configuration must be used to ensure that the operating system on each test server is configured the same way when the servers are created and checked periodically.
+
+Current Technical Issue The test servers are configured correctly when first deployed, but they experience configuration drift over time. Azure Automation State Configuration fails to correct the configurations.
+
+Azure Automation State Configuration nodes are registered by using the following command.
+
+```powershell
+Register-AzureRmAutomationDscNode
+-ResourceGroupName 'TestResourceGroup'
+-AutomationAccountName 'LitwareAutomationAccount'
+-AzureVMName $vmname
+-ConfigurationMode 'ApplyOnly'
+```
+
+
+
+
+
+Question
+
+HOTSPOT How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Answer Area**
+
+**Required secrets:**
+
+*   Certificate
+*   Personal access token
+*   Shared Access Authorization token
+*   Username and password
+
+**Storage location:**
+
+*   Azure Data Lake
+*   Azure Key Vault
+*   Azure Storage with HTTPS access
+*   Azure Storage with HTTP access
+
+
+-----
+
+**Box 1: Shared Access Authorization token** 
+
+
+Every request made against a storage service must be authorized, unless the request is for a blob or container resource that has been
+
+made available for public or signed access. One option for authorizing a request is by using Shared Key.
+
+**Box 2: Azure Storage with HTTPS access** 
+
+Scenario: The mobile applications must be able to call the share pricing service of the existing retirement fund management system. Until the system is upgraded, the service will only support basic authentication over HTTPS.
+
+The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
+
+
+### Question #3
+
+Question
+
+DRAG DROP Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? To answer, drag the appropriate access levels to the correct groups. Each access level may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Access Levels**
+
+*   Collaborator
+*   Contributor
+*   Owner
+*   Reader
+
+**Answer Area**
+
+*   **Developers:** [ ]
+*   **Team Leaders:** [ ]
+
+----
+
+
+✅ Correct Answer
+
+* **Developers:** **Contributor**
+* **Team Leaders:** **Owner**
+
+💡 Explanation
+
+This question is about **Azure Artifacts feed permissions**.
+
+🔹 Developers → Contributor
+
+* Developers must be able to:
+
+  * Install packages
+  * Use packages in builds/apps
+
+👉 **Contributor role allows:**
+
+* Install and consume packages
+* Publish packages (if allowed by feed settings)
+* Does NOT allow managing permissions
+
+✔ Matches requirement: *“Developers must be able to install packages”*
+
+🔹 Team Leaders → Owner
+
+* Team Leaders must be able to:
+
+  * Create new packages
+  * Edit feed permissions
+
+👉 **Owner role allows:**
+
+* Full control of the feed
+* Manage permissions (add/remove users/groups)
+* Manage packages and feed settings
+
+✔ Matches requirement: *“edit the permissions of package feeds”*
+
+❌ Why others are incorrect
+
+* **Reader**
+
+  * Can only consume packages
+  * Too limited for Developers requirement
+
+* **Collaborator**
+
+  * Legacy / limited role
+  * Not sufficient for required permissions
+
+🧠 Key Exam Insight
+
+| Role        | Purpose                               |
+| ----------- | ------------------------------------- |
+| Reader      | View/download only                    |
+| Contributor | Install + publish packages            |
+| Owner       | Full control + permissions management |
+
+✅ Final Answer
+
+* Developers → **Contributor**
+* Team Leaders → **Owner**
+
+Box 2: Owner Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
+
+
+### Question #4
+
+
+To resolve the current technical issue, what should you do to the Register-AzureRmAutomationDscNode command?
+
+A. Change the value of the ConfigurationMode parameter.
+
+B. Replace the Register-AzureRmAutomationDscNode cmdlet with Register-AzureRmAutomationScheduledRunbook
+
+C. Add the AllowModuleOverwrite parameter.
+
+D. Add the DefaultProfile parameter.
+
+-----
+
+
+The correct answer is:
+
+**A. Change the value of the ConfigurationMode parameter.**
+
+Explanation
+
+Currently the nodes are registered with:
+
+```powershell
+-ConfigurationMode 'ApplyOnly'
+```
+
+This mode:
+
+* Applies the configuration **only once**
+* Does **NOT** monitor or correct configuration drift
+
+What is required?
+
+The scenario states:
+
+> Servers experience configuration drift and Azure Automation State Configuration fails to correct it.
+
+To fix this, you must use a mode that **continuously enforces the desired state**.
+
+Correct ConfigurationMode options:
+
+* **ApplyAndMonitor** → detects drift but does NOT fix it
+* **ApplyAndAutoCorrect** → detects AND automatically fixes drift ✅
+
+Therefore:
+
+You should change:
+
+```powershell
+-ConfigurationMode 'ApplyOnly'
+```
+
+to:
+
+```powershell
+-ConfigurationMode 'ApplyAndAutoCorrect'
+```
+
+Final Answer:
+
+✅ **A. Change the value of the ConfigurationMode parameter**
+
+
+### Question 5
+
+Which branching strategy should you recommend for the investment planning applications suite?
+
+A. release isolation
+
+B. main only
+
+C. development isolation
+
+D. feature isolation
+
+----
+
+
+The correct answer is:
+
+**D. feature isolation**
+
+✅ Why feature isolation?
+
+The requirement clearly states:
+
+> “A branching strategy that supports developing new functionality in isolation must be used.”
+
+**Feature isolation branching** means:
+
+* Each new feature is developed in its **own branch**
+* Developers work independently without impacting others
+* Changes are merged back via **pull requests**
+* Supports modern Agile + CI/CD practices
+
+❌ Why not the others?
+
+* **A. release isolation**
+  → Focuses on stabilizing releases, not developing features independently
+
+* **B. main only**
+  → No isolation at all; everyone works on the same branch (high risk)
+
+* **C. development isolation**
+  → Not a standard or well-defined branching strategy
+
+💡 Key takeaway (exam tip)
+
+When you see:
+
+* “develop independently”
+* “isolation”
+* “pull requests”
+
+👉 Think **feature branches**
+
+Final Answer:
+
+✅ **D. feature isolation**
+
+
+### Question 6
+
+What should you use to implement the code quality restriction on the release pipeline for the investment planning applications suite?
+
+A. a pre-deployment approval
+
+B. a deployment gate
+
+C. a post-deployment approval
+
+D. a trigger
+
+
+----
+
+
+The correct answer is:
+
+**B. a deployment gate**
+
+✅ Why deployment gate?
+
+The requirement states:
+
+> “Deployments must not proceed between stages if any active bugs are logged against the release.”
+
+This means:
+
+* You need an **automated check**
+* It must run **before moving to the next stage**
+* It must evaluate **external data (work items / bugs)**
+
+👉 In Azure DevOps, this is exactly what a **deployment gate** does.
+
+A **deployment gate** can:
+
+* Query work items (e.g., active bugs)
+* Block the pipeline automatically
+* Enforce quality before stage progression
+
+❌ Why not the others?
+
+* **A. Pre-deployment approval**
+  → Manual approval, not automated or data-driven
+
+* **C. Post-deployment approval**
+  → Happens *after* deployment (too late)
+
+* **D. Trigger**
+  → Starts pipelines, doesn’t enforce quality conditions
+
+💡 Key exam tip
+
+If you see:
+
+* “Do not proceed unless condition is met”
+* “Check bugs / metrics / external system”
+
+👉 Think **Deployment Gates**
+
+Final Answer:
+
+✅ **B. a deployment gate**
+
+### Question 7
+
+HOTSPOT How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Answer Area**
+
+**Global release:**
+
+*   Set the default retention policy to 30 days.
+*   Set the maximum retention policy to 30 days.
+*   Set the stage retention policy to 30 days.
+*   Set the stage retention policy to 60 days.
+
+**Production stage:**
+
+*   Set the default retention policy to 30 days.
+*   Set the maximum retention policy to 60 days.
+*   Set the stage retention policy to 30 days.
+*   Set the stage retention policy to 60 days.
+
+----
+
+
+✅ Correct Configuration
+
+**Global release:**
+👉 **Set the default retention policy to 30 days.**
+
+**Production stage:**
+👉 **Set the stage retention policy to 60 days.**
+
+💡 Explanation
+
+The requirement clearly states:
+
+* **All releases → keep for 30 days**
+* **Production releases → keep for 60 days**
+
+🔍 How Azure DevOps retention works
+
+* **Global (pipeline-level)** retention = default for all stages
+* **Stage-level retention** = override for specific stages (like Production)
+
+🎯 Mapping requirement → configuration
+
+| Requirement                | Configuration                                        |
+| -------------------------- | ---------------------------------------------------- |
+| Default releases = 30 days | ✅ Set **default retention policy to 30 days**        |
+| Production = 60 days       | ✅ Override with **stage retention policy = 60 days** |
+
+❌ Why others are wrong
+
+* **Maximum retention** → not required here
+* **Stage retention (global)** → not needed for all stages
+* **Production default = 30** → contradicts requirement
+
+✅ Final Answer
+
+* **Global release:** Set the default retention policy to **30 days**
+* **Production stage:** Set the stage retention policy to **60 days**
+
+
+### Question 8
+
+Question
+
+HOTSPOT Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Answer Area**
+
+**Build agent:**
+
+*   A hosted service
+*   A source control system
+*   The developers' computers
+
+**Release agent:**
+
+*   A hosted service
+*   A source control system
+*   The developers' computers
+
+
+
+-----
+
+
+✅ Correct Answers with Explanation
+
+**1. Fix Azure Automation State Configuration drift issue**
+
+**Answer: A. Change the value of the ConfigurationMode parameter**
+
+* Current setting: `ApplyOnly` → applies configuration once and **does NOT fix drift**
+* Required: continuous enforcement
+
+✔ Change to:
+
+* `ApplyAndMonitor` (detect drift) OR
+* `ApplyAndAutoCorrect` (detect + fix drift automatically)
+
+👉 Best choice: **ApplyAndAutoCorrect**
+
+**2. Code quality restriction in release pipeline**
+
+**Answer: B. a deployment gate**
+
+* Requirement: *“deployment must not proceed if active bugs exist”*
+* Deployment gates can:
+
+  * Query work items
+  * Block pipeline automatically
+
+✔ This is exactly what **gates** are designed for
+
+**3. Release retention policy**
+
+Requirement:
+
+* Default: **30 days**
+* Production: **60 days**
+
+**Correct configuration:**
+
+**Global release:**
+
+* ✅ Set the default retention policy to **30 days**
+
+**Production stage:**
+
+* ✅ Set the stage retention policy to **60 days**
+
+**4. Build and Release agents location**
+
+Requirement:
+
+* Use cloud when possible
+* Minimize management overhead
+
+**Correct answers:**
+
+**Build agent:**
+
+* ✅ **A hosted service**
+
+**Release agent:**
+
+* ✅ **A hosted service**
+
+💡 Final Summary
+
+| Requirement            | Answer                   |
+| ---------------------- | ------------------------ |
+| Fix DSC drift          | Change ConfigurationMode |
+| Code quality gate      | Deployment gate          |
+| Retention (default)    | 30 days                  |
+| Retention (production) | 60 days                  |
+| Build agent            | Hosted                   |
+| Release agent          | Hosted                   |
+
+
+
+
+
+
+## Topic 14 - Testlet 5
+
+
+Introductory Info
+
+This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+Overview -
+
+General Overview Woodgrove Bank is a financial services company that has a main o®ce in the United Kingdom. Technical Requirements and Planned Changes
+
+Planned Changes Woodgrove Bank plans to implement the following project management changes: Implement Azure DevOps for project tracking.
+
+Centralize source code control in private GitHub repositories.
+
+Implement Azure Pipelines for build pipelines and release pipelines.
+
+Woodgrove Bank plans to implement the following changes to the identity environment: Deploy an Azure AD tenant named woodgrovebank.com.
+
+Sync the Active Directory domain to Azure AD.
+
+Configure App1 to use a service principal.
+
+Integrate GitHub with Azure AD.
+
+Woodgrove Bank plans to implement the following changes to the core apps:
+
+Migrate App1 to ASP.NET Core.
+
+Integrate Azure Pipelines and the third-party build tool used to develop App2.
+
+Woodgrove Bank plans to implement the following changes to the DevOps environment: Deploy App1 to Azure App Service.
+
+Implement source control for the DB1 schema.
+
+Migrate all the source code from TFS1 to GitHub.
+
+Deploy App2 to an Azure virtual machine named VM1.
+
+Merge the POC branch into the GitHub default branch.
+
+Implement an Azure DevOps dashboard for stakeholders to monitor development progress.
+
+Technical Requirements Woodgrove Bank identifies the following technical requirements:
+
+The initial databases for new environments must contain both schema and reference data. An Azure Monitor alert for VM1 must be configured to meet the following requirements:
+
+- Be triggered when average CPU usage exceeds 80 percent for 15 minutes.
+
+- Calculate CPU usage averages once every minute.
+
+The commit history of the POC branch must replace the history of the default branch. The Azure DevOps dashboard must display the metrics shown in the following table.
+
+
+| Number | Required data |
+| :--- | :--- |
+| 1 | A comparison between the work the development team planned to deliver and what was delivered |
+| 2 | The status of the environments in a release definition |
+| 3 | The total number of results from a work item query |
+
+Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. 
+
+Administrative effort must be minimized.
+
+### Question 1
+
+You need to meet the technical requirements for controlling access to Azure DevOps. What should you use?
+
+A. Azure Multi-Factor Authentication (MFA)
+
+B. on-premises firewall rules
+
+C. conditional access policies in Azure AD
+
+D. Azure role-based access control (Azure RBAC)
+
+-----
+
+✅ Correct Answer: **C. conditional access policies in Azure AD**
+
+💡 Explanation
+
+The requirement is:
+
+> **Restrict access to Azure DevOps to specific IP addresses**
+
+🔍 Why Conditional Access is correct
+
+**Conditional Access (in Azure AD)** allows you to:
+
+* Restrict access based on:
+
+  * IP address ranges ✅
+  * Location
+  * Device compliance
+* Apply policies to:
+
+  * Azure DevOps (as an Azure AD–integrated app)
+
+👉 This is the **standard and recommended approach** for access control
+
+
+❌ Why other options are incorrect
+
+**A. Azure Multi-Factor Authentication (MFA)**
+
+* Adds extra authentication step
+* ❌ Does NOT restrict by IP
+
+**B. On-premises firewall rules**
+
+* Azure DevOps is a **cloud service**
+* ❌ Firewall cannot control SaaS access globally
+
+**D. Azure RBAC**
+
+* Controls permissions **inside Azure resources**
+* ❌ Does NOT restrict access by IP
+
+🧠 Key Exam Insight
+
+* **IP restriction for SaaS apps (Azure DevOps, GitHub, etc.) → Conditional Access**
+* MFA ≠ access restriction
+* RBAC = authorization, not access filtering
+
+
+✅ Final Answer:
+
+**C. conditional access policies in Azure AD**
+
+### Question #2
+
+
+Question
+
+You need to configure Azure Pipelines to control App2 builds. Which authentication method should you use?
+
+A. Windows NTLM
+
+B. certificate
+
+C. SAML
+
+D. personal access token (PAT)
+
+-----
+
+✅ Correct Answer: **D. personal access token (PAT)**
+
+💡 Explanation
+
+You need to:
+
+> **Integrate Azure Pipelines with a third-party build tool for App2**
+
+🔍 Why PAT is correct
+
+A **Personal Access Token (PAT)** is used to:
+
+* Authenticate Azure DevOps with:
+
+  * External tools
+  * Scripts
+  * APIs
+* Provide **secure, scoped access**
+* Minimize administrative effort (as required)
+
+👉 PAT is the **standard method for Azure Pipelines integration with external systems**
+
+❌ Why other options are incorrect
+
+
+**A. Windows NTLM**
+
+* Used for on-prem authentication
+* ❌ Not suitable for cloud / cross-platform integration
+
+**B. Certificate**
+
+* Used for service principals / app-to-app auth
+* ❌ Overkill and not typical for Azure DevOps pipeline integrations
+
+**C. SAML**
+
+* Used for **user authentication (SSO)**
+* ❌ Not used for pipeline/tool authentication
+
+🧠 Key Exam Insight
+
+* **PAT = best choice for Azure DevOps + external tool integration**
+* Service principals → Azure resources
+* SAML → user login
+* NTLM → legacy/on-prem
+
+✅ Final Answer:
+
+**D. personal access token (PAT)**
+
+
+### Question #3
+
+
+You need to configure authentication for App1. The solution must support the planned changes.
+
+Which three actions should you perform in sequence? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+**Actions Commands Cmdlets Statements**
+
+*   Create an app.
+*   Add a secret.
+*   Create a credential.
+*   Configure the ID and secret for App1.
+*   Create a managed service identity.
+
+**Answer Area**
+
+*(Empty)*
+
+----
+
+✅ Correct Sequence
+
+1. **Create an app.**
+2. **Add a secret.**
+3. **Configure the ID and secret for App1.**
+
+💡 Explanation
+
+The requirement states:
+
+> **Configure App1 to use a service principal**
+
+🔍 Correct flow for Service Principal authentication
+
+**1. Create an app** ✅
+
+* Register an application in **Azure AD**
+* This creates:
+
+  * Application (client) ID
+  * Service principal identity
+
+**2. Add a secret** ✅
+
+* Generate a **client secret**
+* Used for authentication by the app
+
+**3. Configure the ID and secret for App1** ✅
+
+* Update App1 configuration with:
+
+  * Client ID
+  * Client secret
+* Enables authentication to Azure services
+
+❌ Why other options are incorrect
+
+* **Create a credential**
+
+  * Not a standard Azure AD step in this context
+
+* **Create a managed service identity**
+
+  * Used when app runs in Azure (e.g., App Service)
+  * ❌ Requirement explicitly says **service principal**
+
+🧠 Key Exam Insight
+
+* **Service Principal flow = App registration → Secret → Configure app**
+* **Managed Identity ≠ Service Principal (exam trick)**
+
+✅ Final Answer (in order)
+
+1. Create an app
+2. Add a secret
+3. Configure the ID and secret for App1
+
+
+### Question #4
+
+Question
+
+DRAG DROP You are configuring the Azure DevOps dashboard. The solution must meet the technical requirements.
+
+Which widget should you use for each metric? To answer, drag the appropriate widgets to the correct metrics. Each widget may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Widgets**
+
+*   Velocity
+*   Query tile
+*   Query results
+*   Sprint burndown
+*   Cumulative flow diagram
+*   Release pipeline overview
+
+**Metrics**
+
+*   **1:** [Empty Slot]
+*   **2:** [Empty Slot]
+*   **3:** [Empty Slot]
+
+----
+
+
+To meet the technical requirements for the Woodgrove Bank dashboard, you should use the following widgets for each metric:
+
+*   **1 (Planned vs. Delivered): Velocity**
+*   **2 (Status of environments): Release pipeline overview**
+*   **3 (Total number of results from a query): Query tile**
+
+ **Explanation:**
+
+1.  **Velocity (Metric 1):** The Velocity widget specifically tracks the work a team completes over multiple sprints. It provides a visual comparison between the amount of work **planned** (the items committed at the start of the sprint) and the work actually **delivered** (the items completed).
+2.  **Release pipeline overview (Metric 2):** This widget displays the status of a release pipeline across multiple **environments** (such as Dev, QA, and Production). It allows stakeholders to see at a glance which version of the software is deployed in each environment and whether those deployments were successful.
+3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
+
+
+### Question 5
+
+You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
+
+How should you format the export?
+
+A. NDF
+
+B. BACPAC
+
+C. DACPAC
+
+D. MDF
+
+----
+
+✅ Correct Answer: **B. BACPAC**
+
+💡 Why BACPAC is correct
+
+The requirement says:
+
+> “The initial databases for new environments must contain both schema and reference data.”
+
+A **BACPAC file** includes:
+
+* ✅ Database schema
+* ✅ Data (including reference/master data)
+
+It is designed for:
+
+* Moving databases to Azure SQL
+* Creating new environments with **schema + data**
+
+❌ Why other options are wrong
+
+* **A. NDF**
+
+  * Secondary data file in SQL Server
+  * Not used for export/migration
+
+* **C. DACPAC**
+
+  * Schema only ❌ (NO data included)
+
+* **D. MDF**
+
+  * Physical database file
+  * Not used for deployment export format in this context
+
+🎯 Exam Tip
+
+| Format  | Includes Data? | Use Case                 |
+| ------- | -------------- | ------------------------ |
+| DACPAC  | ❌ No           | Schema deployments       |
+| BACPAC  | ✅ Yes          | Schema + data migration  |
+| MDF/NDF | ❌ No           | SQL Server storage files |
+
+🟢 Final Answer:
+
+**B. BACPAC**
+
+
+### Question 6
+
+You need to meet the technical requirements for monitoring App1. What should you use?
+
+A. Splunk
+
+B. Azure Application Insights
+
+C. Azure Advisor
+
+D. App Service logs
+
+
+---------
+
+✅ Correct Answer: **B. Azure Application Insights**
+
+💡 Why Application Insights is correct
+
+The requirement says:
+
+> “Page load times for App1 must be captured and monitored.”
+
+This is a **classic Application Performance Management (APM)** requirement.
+
+👉 **Azure Application Insights** provides:
+
+* Page load time tracking (browser telemetry)
+* Request performance monitoring
+* Dependency tracking
+* End-to-end application diagnostics
+* User experience metrics
+
+Since App1 is deployed to **Azure App Service**, Application Insights integrates directly and is the **standard solution**.
+
+❌ Why the others are wrong
+
+* **A. Splunk**
+
+  * External tool
+  * Requires additional integration and overhead (not “minimize administrative effort”)
+
+* **C. Azure Advisor**
+
+  * Only gives recommendations (cost, security, reliability)
+  * Does NOT monitor application performance
+
+* **D. App Service logs**
+
+  * Provides raw logs only
+  * No built-in page load time / user experience analytics
+
+🎯 Exam Tip
+
+If you see:
+
+* “page load time”
+* “user experience”
+* “application performance”
+* “web app monitoring”
+
+👉 Think **Application Insights**
+
+🟢 Final Answer:
+
+**B. Azure Application Insights**
+
+
+
+
+
+
+
+
+
+## Topic 15 - Testlet 6
+
+### Question #1
+
+Introductory Info
+
+This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+Overview -
+
+General Overview Woodgrove Bank is a financial services company that has a main o®ce in the United Kingdom. Technical Requirements and Planned Changes
+
+Planned Changes Woodgrove Bank plans to implement the following project management changes: Implement Azure DevOps for project tracking.
+
+Centralize source code control in private GitHub repositories.
+
+Implement Azure Pipelines for build pipelines and release pipelines.
+
+Woodgrove Bank plans to implement the following changes to the identity environment: Deploy an Azure AD tenant named woodgrovebank.com.
+
+Sync the Active Directory domain to Azure AD.
+
+Configure App1 to use a service principal.
+
+Integrate GitHub with Azure AD.
+
+Woodgrove Bank plans to implement the following changes to the core apps:
+
+Migrate App1 to ASP.NET Core.
+
+Integrate Azure Pipelines and the third-party build tool used to develop App2.
+
+Woodgrove Bank plans to implement the following changes to the DevOps environment: Deploy App1 to Azure App Service.
+
+Implement source control for the DB1 schema.
+
+Migrate all the source code from TFS1 to GitHub.
+
+Deploy App2 to an Azure virtual machine named VM1.
+
+Merge the POC branch into the GitHub default branch.
+
+Implement an Azure DevOps dashboard for stakeholders to monitor development progress.
+
+Technical Requirements Woodgrove Bank identifies the following technical requirements:
+
+The initial databases for new environments must contain both schema and reference data. An Azure Monitor alert for VM1 must be configured to meet the following requirements:
+
+- Be triggered when average CPU usage exceeds 80 percent for 15 minutes.
+
+- Calculate CPU usage averages once every minute.
+
+The commit history of the POC branch must replace the history of the default branch. The Azure DevOps dashboard must display the metrics shown in the following table.
+
+
+| Number | Required data |
+| :--- | :--- |
+| 1 | A comparison between the work the development team planned to deliver and what was delivered |
+| 2 | The status of the environments in a release definition |
+| 3 | The total number of results from a work item query |
+
+
+Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
+
+Question
+
+DRAG DROP You need to replace the existing DevOps tools to support the planned changes.
+
+What should you use? To answer, drag the appropriate tools to the correct targets. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+**Tools**
+
+*   Azure Boards
+*   Azure Artifacts
+*   GitHub Actions
+*   Azure Pipelines
+*   Azure Test Plans
+*   GitHub repositories
+
+**Answer Area**
+
+*   **Trello:** [Tool]
+*   **Bamboo:** [Tool]
+*   **BitBucket:** [Tool]
+
+-----
+
+
+✅ Correct Answer
+
+* **Trello:** **Azure Boards**
+* **Bamboo:** **Azure Pipelines**
+* **BitBucket:** **GitHub repositories**
+
+💡 Explanation
+
+The goal is to **replace existing DevOps tools** with Azure DevOps + GitHub equivalents based on the planned changes.
+
+🔹 Trello → Azure Boards ✅
+
+* Trello = **project tracking / work management**
+* Azure Boards provides:
+
+  * Work items
+  * Backlogs
+  * Kanban boards
+
+✔ Matches requirement:
+
+> “Implement Azure DevOps for project tracking”
+
+🔹 Bamboo → Azure Pipelines ✅
+
+* Bamboo = **CI/CD tool**
+* Azure Pipelines provides:
+
+  * Build pipelines
+  * Release pipelines
+  * Integration with GitHub
+
+✔ Matches requirement:
+
+> “Implement Azure Pipelines for build and release pipelines”
+
+
+🔹 BitBucket → GitHub repositories ✅
+
+* Bitbucket = **source control (Git)**
+* Requirement:
+
+  > “Centralize source code control in private GitHub repositories”
+
+✔ Direct replacement = GitHub repos
+
+❌ Why others are incorrect
+
+* **Azure Artifacts**
+
+  * Package management, not source control or CI/CD
+
+* **GitHub Actions**
+
+  * CI/CD alternative, but requirement explicitly states **Azure Pipelines**
+
+* **Azure Test Plans**
+
+  * Testing tool, not replacing listed systems
+
+ 
+ 🧠 Key Exam Insight
+
+| Old Tool  | Replacement         |
+| --------- | ------------------- |
+| Trello    | Azure Boards        |
+| Bamboo    | Azure Pipelines     |
+| Bitbucket | GitHub repositories |
+
+
+✅ Final Answer
+
+* Trello → **Azure Boards**
+* Bamboo → **Azure Pipelines**
+* BitBucket → **GitHub repositories**
+
+### Question #2
+
+Question
+
+You need to the merge the POC branch into the default branch. The solution must meet the technical requirements. Which command should you run?
+
+A. git rebase
+
+B. git merge --squash
+
+C. git push
+
+D. git merge --allow-unrelated-histories
+
+
+----
+
+✅ Correct Answer: **A. git rebase**
+
+
+💡 Key Requirement
+
+> **“The commit history of the POC branch must replace the history of the default branch.”**
+
+🔍 Why `git rebase` is correct
+
+* `git rebase`:
+
+  * Rewrites commit history
+  * Allows one branch’s commits to be **reapplied on top of another**
+* This enables:
+
+  * The **POC branch history to effectively replace the default branch history**
+
+👉 This matches the requirement to **preserve and prioritize POC history**
+
+❌ Why other options are incorrect
+
+**B. git merge --squash**
+
+* Combines all commits into **one single commit**
+* ❌ Loses commit history → violates requirement
+
+**C. git push**
+
+* Only pushes changes
+* ❌ Does not control merge or history behavior
+
+**D. git merge --allow-unrelated-histories**
+
+* Used when histories are unrelated
+* ❌ Not relevant to replacing history
+
+🧠 Key Exam Insight
+
+* **Rebase = rewrite history (important for replacing history)**
+* **Merge = preserves both histories**
+* **Squash = destroys history granularity**
+
+✅ Final Answer:
+
+**A. git rebase**
+
+
+### Question #2
+
+Question
+
+You need to perform the GitHub code migration. The solution must support the planned changes for the DevOps environment. What should you use?
+
+A. git clone
+
+B. GitHub Importer
+
+C. Import repository in Azure Repos
+
+D. git-tfs
+
+
+---
+
+
+The correct answer is **B. GitHub Importer.**
+
+**Explanation:**
+
+To migrate source code from **TFS1 to GitHub** while minimizing administrative effort, **GitHub Importer** is the best choice.
+
+*   **GitHub Importer:** This is a built-in, web-based tool provided by GitHub specifically designed to import repositories from other version control systems, including Team Foundation Server (TFS), Subversion, and Mercurial. It automates the process of preserving commit history and moving the code to your new GitHub repository.
+*   **Minimal Administrative Effort:** Because it is a hosted service, you don't need to install local tools or run complex command-line sequences. You simply provide the source URL and credentials.
+
+**Why the other options are incorrect:**
+
+*   **A. git clone:** This only works if the source is already a Git repository. It is a manual process that doesn't handle the migration of non-Git history (like TFVC) or metadata as seamlessly as a specialized importer.
+*   **C. Import repository in Azure Repos:** This tool is used to move code *into* Azure DevOps, but the requirement is to migrate the code *to GitHub*.
+*   **D. git-tfs:** While this is a powerful tool for converting Team Foundation Version Control (TFVC) to Git, it is a command-line tool that requires manual installation and execution on a local machine. It would involve more administrative effort than the web-based GitHub Importer.
+
+
+## Topic 17 - Testlet 8
+
+### Question #1
+
+Introductory Info
+
+Case Study This is a case study. Case studies are not timed separately. You can use as much exam time as you would like to complete each case. However, there may be additional case studies and sections on this exam. You must manage your time to ensure that you are able to complete all questions included on this exam in the time provided.
+
+To answer the questions included in a case study, you will need to reference information that is provided in the case study. Case studies might contain exhibits and other resources that provide more information about the scenario that is described in the case study. Each question is independent of the other questions in this case study.
+
+At the end of this case study, a review screen will appear. This screen allows you to review your answers and to make changes before you move to the next section of the exam. After you begin a new section, you cannot return to this section.
+
+To start the case study To display the first question in this case study, click the Next button. Use the buttons in the left pane to explore the content of the case study before you answer the questions. Clicking these buttons displays information such as business requirements, existing environment, and problem statements. If the case study has an All Information tab, note that the information displayed is identical to the information displayed on the subsequent tabs. When you are ready to answer a question, click the Question button to return to the question.
+
+Overview Contoso, Ltd. is a manufacturing company that has a main o®ce in Chicago.
+
+Existing Environment Contoso plans to improve its IT development and operations processes by implementing Azure DevOps principles. Contoso has an Azure subscription and creates an Azure DevOps organization.
+
+The Azure DevOps organization includes:
+
+The Docker extension A deployment pool named Pool7 that contains 10 Azure virtual machines that run Windows Server 2019 The Azure subscription contains an Azure Automation account.
+
+Requirements -
+
+Planned changes Contoso plans to create projects in Azure DevOps as shown in the following table.
+
+
+| Project name | Project details |
+| :--- | :--- |
+| Project 1 | Project1 will provide support for incremental builds and third-party SDK components |
+| Project 2 | Project2 will use an automatic build policy. A small team of developers named Team2 will work independently on changes to the project. The Team2 members will not have permissions to Project2. |
+| Project 3 | Project3 will be integrated with SonarQube |
+| Project 4 | Project4 will provide support for a build pipeline that creates a Docker image and pushes the image to the Azure Container Registry. Project4 will use an existing Dockerfile. |
+| Project 5 | Project5 will contain a Git repository in Azure Repos and a continuous integration trigger that will initiate a build in response to any change except for changes within /folder1 of the repository. |
+| Project 6 | Project6 will provide support for build and deployment pipelines. Deployment will be allowed only if the number of current work items representing active software bugs is 0. |
+| Project 7 | Project7 will contain a target deployment group named Group7 that maps to Pool7. Project7 will use Azure Automation State Configuration to maintain the desired state of the computers in Group7. |
+
+
+Technical requirements 
+
+
+Contoso identifies the following technical requirements: Implement build agents for Project1.
+
+Whenever possible, use Azure resources.
+
+Avoid using deprecated technologies.
+
+Implement a code dlow strategy for Project2 that will:
+
+- Enable Team2 to submit pull requests for Project2.
+
+- Enable Team2 to work independently on changes to a copy of Project2.
+
+Ensure that any intermediary changes performed by Team2 on a copy of Project2 will be subject to the same restrictions as the ones defined in the build policy of Project2.
+
+Whenever possible, implement automation and minimize administrative effort.
+
+Implement Project3, Project5, Project6, and Project7 based on the planned changes.
+
+Implement Project4 and configure the project to push Docker images to Azure Container Registry.
+
+Question
+
+HOTSPOT How should you configure the filters for the Project5 trigger? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+
+Based on the image provided, here is the extracted content in Markdown format:
+
+**Answer Area**
+
+**Set a** [Dropdown 1] **/folder1.**
+
+**Set a** [Dropdown 2] **/.**
+
+
+**Dropdown Options (Same for both):**
+
+*   branch filter to exclude
+*   branch filter to include
+*   path filter to exclude
+*   path filter to include
+
+-----
+
+
+To meet the requirement:
+
+> “Trigger a build on any change **except** for changes within `/folder1`”
+
+You must configure **path filters**, not branch filters.
+
+✅ Correct configuration:
+
+* **Set a *path filter to exclude* `/folder1`.**
+* **Set a *path filter to include* `/.`.**
+
+✔️ Final Answer:
+
+| Setting    | Selection                  |
+| ---------- | -------------------------- |
+| Dropdown 1 | **path filter to exclude** |
+| Dropdown 2 | **path filter to include** |
+
+
+💡 Explanation:
+
+* **Exclude `/folder1`** → prevents builds when only that folder changes
+* **Include `/.`** → ensures all other paths trigger the pipeline
+* Branch filters are irrelevant here because the requirement is based on **file paths**, not branches
+
+✔️ This ensures the pipeline runs for all changes **except `/folder1`**.
+
+
+### Question #2
+
+Question
+
+In Azure DevOps, you create Project3.
+
+You need to meet the requirements of the project. What should you do first?
+
+A. From Azure DevOps, modify the build definition.
+
+B. From SonarQube, obtain an authentication token.
+
+C. From Azure DevOps, create a service endpoint.
+
+D. From SonarQube, create a project.
+
+-----
+
+
+The correct answer is:
+
+**B. From SonarQube, obtain an authentication token.**
+
+✅ Explanation
+
+To integrate Azure DevOps with SonarQube, the **first step** is to establish authentication.
+
+* SonarQube requires a **token** for secure communication.
+* This token is later used when:
+
+  * Creating a **service connection (endpoint)** in Azure DevOps
+  * Configuring the **build pipeline** to run analysis
+
+🔄 Correct sequence (important for exam logic)
+
+1. **Obtain authentication token from SonarQube** ✅ *(first step)*
+2. Create a **service endpoint** in Azure DevOps using the token
+3. Configure the **build pipeline** to include SonarQube analysis
+4. (Optionally) Create/configure the project in SonarQube if not auto-created
+
+❌ Why others are incorrect:
+
+* **A. Modify build definition** → Requires connection first
+* **C. Create a service endpoint** → Needs the token beforehand
+* **D. Create a project in SonarQube** → Can be auto-created during analysis; not first
+
+✔️ Final Answer:
+
+**B**
+
+
+### Question #3
+
+Question
+
+You need to implement Project4. What should you do first?
+
+A. Add the FROM instruction in the Dockerfile file.
+
+B. Add a Copy and Publish Build Artifacts task to the build pipeline.
+
+C. Add a Docker task to the build pipeline.
+
+D. Add the MAINTAINER instruction in the Dockerfile file.
+
+
+------
+
+
+
+The correct answer is:
+
+**C. Add a Docker task to the build pipeline.**
+
+✅ Explanation
+
+For **Project4**, the requirement is:
+
+> Build a Docker image and push it to Azure Container Registry using an existing Dockerfile.
+
+Since the Dockerfile already exists, the **first step** is to configure the pipeline to use it.
+
+* In Azure Pipelines, this is done by adding a **Docker task**.
+* The Docker task will:
+
+  * Build the image from the Dockerfile
+  * Push the image to the registry
+
+❌ Why others are incorrect:
+
+* **A. Add FROM instruction** → Dockerfile already exists; not needed
+* **B. Copy and Publish Build Artifacts** → Not required for container image builds
+* **D. MAINTAINER instruction** → Deprecated and unrelated
+
+✔️ Key Insight:
+
+When a **Dockerfile is already provided**, the pipeline configuration (Docker task) is the starting point—not modifying the Dockerfile.
+
+✔️ Final Answer:
+
+**C**
+
+
+
+### Question #4
+
+Question
+
+DRAG DROP You need to recommend a procedure to implement the build agent for Project1.
+
+Which three actions should you recommend be performed in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place
+
+**Actions**
+
+*   Sign in to Azure DevOps by using an account that is assigned the Administrator service connection security role.
+*   Install the Azure Pipelines agent on on-premises virtual machine.
+*   Create a personal access token in the Azure DevOps organization of Contoso.
+*   Install and register the Azure Pipelines agent on an Azure virtual machine.
+*   Sign in to Azure DevOps by using an account that is assigned the agent pool administrator role.
+
+**Answer Area**
+
+*(This area is empty in the image and intended for the correct sequence of actions to be placed here.)*
+
+-----
+
+
+To implement a **build agent using Azure resources** (as required), you should deploy a **self-hosted agent on an Azure VM**.
+
+✅ Correct sequence:
+
+1. **Sign in to Azure DevOps by using an account that is assigned the agent pool administrator role.**
+2. **Create a personal access token in the Azure DevOps organization of Contoso.**
+3. **Install and register the Azure Pipelines agent on an Azure virtual machine.**
+
+💡 Explanation
+
+* **Step 1:** You need **Agent Pool Administrator** permissions to register agents
+* **Step 2:** A **PAT (Personal Access Token)** is required to authenticate the agent
+* **Step 3:** Install and register the agent on an **Azure VM** (meets requirement: *use Azure resources*)
+
+❌ Why others are incorrect:
+
+* *Administrator service connection role* → unrelated to agent setup
+* *On-premises VM* → violates requirement to use Azure resources
+
+✔️ Final Answer Order:
+
+1 → Sign in (agent pool admin)
+2 → Create PAT
+3 → Install & register agent on Azure VM
+
+### Question #5
+
+You need to implement Project6.
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+Select and Place:
+
+
+**Actions**
+
+
+- Open the release pipeline editor.
+- Disable the continuous integration trigger.
+- Enable Gates.
+- Add a manual intervention task.
+- Open the Triggers tab.
+- Add Query Work Items.
+
+**Answer Area**
+
+
+----
+
+
+To implement **Project6**, the key requirement is:
+
+> ❗ Deployment must NOT proceed if there are **active bugs**
+
+This is achieved using **release gates with Azure Boards queries**.
+
+✅ Correct sequence:
+
+1. **Open the release pipeline editor**
+2. **Enable Gates**
+3. **Add Query Work Items**
+
+💡 Explanation
+
+* **Step 1:** Access the release pipeline configuration
+* **Step 2:** Enable **pre-deployment gates** to control stage progression
+* **Step 3:** Add a **Query Work Items gate** to check that **active bugs = 0**
+
+This ensures deployments are blocked if any active bugs exist.
+
+
+❌ Why others are incorrect:
+
+* **Disable CI trigger** → unrelated to release gating
+* **Manual intervention task** → requires human action, not automated validation
+* **Open Triggers tab** → not needed for gates
+
+ ✔️ Final Answer Order:
+
+- 1 → Open the release pipeline editor
+- 2 → Enable Gates
+- 3 → Add Query Work Items
 
 
