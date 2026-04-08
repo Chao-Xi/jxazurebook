@@ -816,7 +816,7 @@ Why the others are not correct
 
 Your company hosts a web application in Azure, and makes use of Azure Pipelines for managing the build and release of the application. When stakeholders report that system performance has been adversely affected by the most recent releases, you configure alerts in Azure Monitor. 
 
-You are informed that new releases must satisfy specified performance baseline conditions in the staging environment before they can be deployed to production. 
+**You are informed that new releases must satisfy specified performance baseline conditions in the staging environment before they can be deployed to production**. 
 
 You need to make sure that releases not satisfying the performance baseline are prevented from being deployed.
 
@@ -1000,7 +1000,7 @@ Why the other options are incorrect
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
-> **To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline. 
+> **To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline**. 
 
 Select '**No adjustment required**' if the underlined segment is accurate. 
 
@@ -1157,7 +1157,9 @@ Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to aut
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
 
-You are preparing a deployment solution that allows for the virtual machines to maintain a uniform configuration, and also keep administrative effort with regards to configuring the virtual machines to a minimum.
+You are preparing a deployment solution that 
+
+**allows for the virtual machines to maintain a uniform configuration, and also keep administrative effort with regards to configuring the virtual machines to a minimum.**
 
 Which of the following should be part of your solution? (Choose two.)
 
@@ -1227,7 +1229,10 @@ Why the other options are incorrect
 
 ### Question -18
 
-Your company has an application that contains a number of Azure App Service web apps and Azure functions. **You would like to view recommendations with regards to the security of the web apps and functions.**
+Your company has an application that contains a number of Azure App Service web apps and Azure functions. 
+
+
+**You would like to view recommendations with regards to the security of the web apps and functions.**
 
 You plan to navigate to Compute and Apps to achieve your goal. Which of the following should you access to make use of Compute and Apps?
 
@@ -1241,9 +1246,7 @@ You plan to navigate to Compute and Apps to achieve your goal. Which of the foll
 
 The correct answer is:
 
-**D. Azure Security Center** ✅
-
-(now known as **Microsoft Defender for Cloud**)
+<mark>**D. Azure Security Center** ✅ (now known as **Microsoft Defender for Cloud**)</mark>
 
 
 **Explanation:**
@@ -1288,8 +1291,9 @@ Monitor compute and app services: Compute & apps include the App Services tab, w
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
-Your company has a multi-tier application that has its front end hosted in Azure App Service. To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs. 
+Your company has a multi-tier application that has its front end hosted in Azure App Service. 
 
+**To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs.** 
 
 Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -1343,20 +1347,20 @@ Application Insights can monitor both Java and ASPNET web applications and servi
 
 ### Question -20
 
-Your company makes use of Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring purposes. You have been tasked with analyzing the monitoring using ad-hoc queries. You need to utilize the correct query
-language. 
+Your company makes use of Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring purposes. 
 
-Solution: You use the Contextual Query Language (CQL)
+**You have been tasked with analyzing the monitoring using ad-hoc queries. You need to utilize the correct query language.** 
+
+**Solution: You use the Contextual Query Language (CQL)**
 
 
 ####  Question - 20(1)
 
-Solution: You use the Transact-SQL.
-
+**Solution: You use the Transact-SQL.**
 
 ####  Question - 20(2)
 
-Solution: You use Azure Log Analytics.
+**Solution: You use Azure Log Analytics.**
 
 Does the solution meet the goal?
 
@@ -1561,8 +1565,6 @@ Why the other options are incorrect
 * **Code Style** – Refers to coding conventions, not testing, feedback, or crash reporting.
 
 ✅ **Final Answer: A**
-
-If you'd like, I can also show the **common AZ-400 exam combo for mobile apps (App Center + Test & Feedback)** because that pattern appears frequently in certification questions.
 
 
 
