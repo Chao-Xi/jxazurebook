@@ -1675,7 +1675,7 @@ You need to configure a probe to perform the following actions:
 
 ✑ Check the status of the pod four times a minute.
 
-✑ Initiate a shutdown if the pod is unresponsive.
+✑ **Initiate a shutdown if the pod is unresponsive**.
 
 How should you complete the YAML configuration file? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -1702,7 +1702,7 @@ Answer Area
 2.  **periodSeconds: 15**
 
 
-### Question -9
+### Question -9  💩💩💩
 
 Your company is building a new web application.
 
@@ -1710,7 +1710,7 @@ You plan to collect feedback from pilot users on the features being delivered.
 
 All the pilot users have a corporate computer that has Google Chrome and the Microsoft Test & Feedback extension installed. The pilot users will test the application by using Chrome.
 
-You need to identify which access levels are required to ensure that developers can request and gather feedback from the pilot users. The solution must use the principle of least privilege.
+**You need to identify which access levels are required to ensure that developers can request and gather feedback from the pilot users. The solution must use the principle of least privilege**.
 
 Which access levels in Azure DevOps should you identify? To answer, select the appropriate options in the answer area.
 
@@ -1726,14 +1726,16 @@ Answer Area
 
 **Developers: `Basic`**
 
-*   **Reasoning:** To **request** feedback from users within the Azure DevOps interface, a user must have at least the **Basic** access level. Stakeholders do not have the permissions required to initiate feedback requests or manage the comprehensive test plans associated with gathering feedback.
+*   **Reasoning:** To **request** feedback from users within the Azure DevOps interface, a user must have at least the **Basic** access level.
+  * Stakeholders do not have the permissions required to initiate feedback requests or manage the comprehensive test plans associated with gathering feedback.
 
 **Pilot users: `Stakeholder`**
 
-*   **Reasoning:** Users with the **Stakeholder** access level can provide feedback in response to a request using the Microsoft Test & Feedback extension. Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
+*   **Reasoning:** Users with the **Stakeholder** access level can provide feedback in response to a request using the Microsoft Test & Feedback extension.
+  *   Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
 
-### Question -10
+### Question -10   💩💩💩
 
 Your company wants to use Azure Application Insights to understand how user behaviors affect an application.
 
@@ -1852,20 +1854,16 @@ You need to identify the distinct event IDs of each virtual machine as shown in 
 
 -----
 
-Based on the requirement to identify **distinct** event IDs and present them in a list grouped by each virtual machine, here is the correct completion of the Azure Monitor (KQL) query:
+✅ Correct Answer
 
-**Answer Area**
+You need to return **distinct Event IDs per VM**, grouped by computer.
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| **\|** | **`summarize`** | **`makeset(EventID)`** | **by Computer** |
+👉 In KQL:
 
- **Explanation:**
+* `summarize` → used for aggregation
+* `makeset(EventID)` → returns **distinct values as a list**
 
-1.  **`summarize`**: This operator is required to group the data by a specific column (in this case, `Computer`).
-2.  **`makeset(EventID)`**: This aggregation function is the key to the solution. It creates a dynamic (JSON) array of the **distinct** values of a column within the group. The requirement specifically asks for "distinct event IDs"; if you used `makelist(EventID)`, the result would include duplicate IDs for every time an event occurred.
-
-**The complete query would look like this:**
+✔️ Completed Query
 
 ```kusto
 Event
@@ -1874,10 +1872,29 @@ Event
 | summarize makeset(EventID) by Computer
 ```
 
-To identify distinct event IDs per virtual machine, you need to use the `summarize` operator with the `makeset` aggregation function. This creates an array of unique event IDs for each computer.
+🎯 Fill in the blanks
 
-- First blank: **summarize**
-- Second blank: **makeset(EventID)**
+* First blank: **summarize**
+* Second blank: **makeset(EventID)**
+
+💡 Why this works
+
+* `summarize` groups results (**by Computer**)
+* `makeset(EventID)` ensures:
+
+  * Only **distinct Event IDs**
+  * Returned as a **list/array** (matches the table format in question)
+
+❌ Why not others
+
+* `make_list(EventID)` → includes duplicates ❌
+* `count()` → gives totals, not IDs ❌
+* `mv-expand` → expands arrays, not needed ❌
+
+🟢 Final Answer:
+
+**summarize + makeset(EventID)**
+
 
 ### Question -19
 
@@ -2011,7 +2028,7 @@ You install the Azure Pipelines app in Microsoft Teams.
 
 You have an Azure DevOps organization named Contoso that contains a project name Project1. You subscribe to Project1 in Microsoft Teams.
 
-You need to ensure that you only receive events about failed builds in Microsoft Teams.
+**You need to ensure that you only receive events about failed builds in Microsoft Teams.**
 
 What should you do first?
 
@@ -2048,7 +2065,7 @@ Why other options are incorrect:
 
 You have an Azure DevOps organization named Contoso.
 
-You need to receive Microsoft Teams notifications when work items are updated. What should you do?
+**You need to receive Microsoft Teams notifications when work items are updated***. What should you do?
 
 A. From Azure DevOps, configure a service hook subscription
 
@@ -2293,8 +2310,8 @@ E: Exceptions in your live web app are reported by Application Insights.
 
 The correct answers are:
 
-**A. Azure Logic Apps**
-**E. Azure Application Insights** ✅
+- **A. Azure Logic Apps**
+- **E. Azure Application Insights** ✅
 
 
 Explanation:
@@ -2429,6 +2446,7 @@ Based on the requirements described for the Azure Monitor alert rule, here is th
 
 
 **Summary of selections:**
+
 1.  **5 minutes**
 2.  **Static**
 3.  **Greater than**
@@ -2658,7 +2676,14 @@ Why the other options are incorrect
 ### Question-31
 
 
-You have an Azure virtual machine that is monitored by using Azure Monitor, The virtual machine has the Azure Log Analytics agent installed, You plan to **deploy the Service Map solution from the Azure Marketplace** What should you deploy to the virtual machine to support the Service Map solution?
+You have an Azure virtual machine that is monitored by using Azure Monitor, 
+
+**The virtual machine has the Azure Log Analytics agent installed**, 
+
+You plan to **deploy the Service Map solution from the Azure Marketplace** 
+
+
+What should you deploy to the virtual machine to support the Service Map solution?
 
 * A. the Dependency agent
 * B. the Telegraf agent
@@ -2717,7 +2742,7 @@ Note: Consider the following when using the Dependency agent:
 
 The Dependency agent requires the Log Analytics agent to be installed on the same machine. On Linux computers, the Log Analytics agent must be installed before the Azure Diagnostic Extension. On both the Windows and Linux versions of the Dependency Agent, data collection is done using a user-space service and a kernel driver.
 
-### Question-32
+### Question-32  💩💩💩
 
 **You have multiple teams that work on multiple projects in Azure DevOps**. You need to plan and manage the consumers and producers for each project. The solution must provide an overview of all the projects. What should you do?
 
@@ -2794,9 +2819,11 @@ To complete the Mermaid markdown code for the state diagram shown in the exhibit
 **Answer Area**
 
 **Box 1: `stateDiagram`**
+
 *   **Reasoning:** The exhibit displays a flowchart of states (Waiting, Processing, etc.) and transitions. In Mermaid syntax, this specific type of diagram is initiated with the keyword **`stateDiagram`** (or `stateDiagram-v2`). Keywords like `flowchart` or `sequenceDiagram` would produce different visual styles.
 
 **Box 2: `Processing`**
+
 *   **Reasoning:** The diagram shows a "composite state" (a state that contains other states). The outer container is labeled **"Processing"**, and it contains "Incomplete" and "Complete". In Mermaid, the syntax to define a composite state is `state [Name] { ... }`. Therefore, the word **`Processing`** belongs in the second box to define the container.
 
 ***
@@ -2822,7 +2849,7 @@ You have an Azure web app named webapp1 that uses the .NET Core runtime stack. Y
 
 You plan to deploy webapp1 by using an Azure DevOps pipeline.
 
-You need to modify the sampling rate of the telemetry data processed by AppInsights1 without having to redeploy webapp1 after each modification.
+<mark>You need to modify the sampling rate of the telemetry data processed by AppInsights1 without having to redeploy webapp1 after each modification.</mark>
 
 What should you do? To answer, select the appropriate options in the answer area.
 
@@ -2840,9 +2867,11 @@ NOTE: Each correct selection is worth one point.
 Correct selections
 
 **From the code repository of webapp1:**
+
 ✔ **Disable adaptive sampling**
 
 **From AppInsights1:**
+
 ✔ **Modify the Usage and estimated costs settings**
 
 
@@ -2896,7 +2925,9 @@ Open Telemetry | OpenCensus | OpenTracing | Honeycomb | Jaeger
 
 The company purchases an Azure subscription and implements Application Insights in Azure Monitor.
 
-You plan to centralize distributed tracing for the apps. You need to identify which libraries can  integrate directly with Application Insights.
+**You plan to centralize distributed tracing for the apps**. 
+
+**You need to identify which libraries can integrate directly with Application Insights.**
 
 Which two libraries should you identify? Each correct answer presents a complete solution.
 
@@ -2920,13 +2951,10 @@ Explanation:
 To **centralize distributed tracing** in **Azure Monitor / Application Insights**, you need libraries that **can export telemetry directly to Application Insights**.
 
 * **OpenTelemetry**
-
   * Industry-standard for distributed tracing and metrics
   * Provides **exporters** for Application Insights
   * Actively supported in Azure Monitor
-
 * **OpenCensus**
-
   * Predecessor to OpenTelemetry
   * Has **native support for Application Insights**
 
@@ -2937,8 +2965,6 @@ Why the others are incorrect:
 * **A. Honeycomb** ❌ → Proprietary tracing system, does **not directly integrate** with Application Insights
 * **B. OpenTracing** ❌ → Specification only, requires an implementation (like OpenTelemetry)
 * **C. Jaeger** ❌ → Open-source tracing backend, **cannot export directly** to Application Insights
-
-
 
 Summary Table:
 
@@ -2952,14 +2978,18 @@ Summary Table:
 
 
 
-✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
+**✅ **Final answer: D. OpenTelemetry and E. OpenCensus****
 
 
-### Question-34
+### Question-34 💩💩💩
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
-You have an Azure Application Insights resource named AppInsights1. Webapp1 sends telemetry data to Applnsights1. You need to ensure that webapp1 sends the telemetry data at a fixed sampling rate.
+**You have an Azure Application Insights resource named AppInsights1**. 
+
+Webapp1 sends telemetry data to Applnsights1. 
+
+**You need to ensure that webapp1 sends the telemetry data at a fixed sampling rate.**
 
 What should you do?
 
@@ -3005,7 +3035,7 @@ Why other options are incorrect:
 
 
 
-### Question-35
+### Question-35 💩💩💩
 
 You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. **You need to configure App1 to use Al1.** Which file should you modify?
 
@@ -3053,7 +3083,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: A. appsettings.json**
 
-### Question #36
+### Question #36 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains two tables named Events and Logs. App1 manages events in multiple locations and writes logs to Workspace1.
 
@@ -3190,9 +3220,13 @@ performanceCounters
 **Why these are correct**
 
 * **`bin(TimeGenerated, 1h)`**
+
+
   Groups results **per hour** for the last 24 hours.
 
 * **`extend Threshold = 75`**
+
+
   Creates a constant column used to **draw the threshold line on the chart**.
 
 Why the other options are incorrect
@@ -3368,9 +3402,11 @@ To query the average amount of free memory per hour for "web1" over the past sev
 **Answer Area**
 
 **Box 1: `TimeGenerated > ago(7d)`**
+
 *   **Reasoning:** The requirement is to look at data from the **past seven days**. In KQL, the `> ago(7d)` filter retrieves all records that were generated between seven days ago and the current moment.
 
 **Box 2: `bin(TimeGenerated, 1h)`**
+
 *   **Reasoning:** The requirement is to **"calculate the average value per hour."** The `bin()` function (also known as `floor()`) is used to group timestamps into specific time intervals. Setting the interval to `1h` ensures that the `avg(CounterValue)` is calculated for every one-hour bucket, which is then plotted on the time chart.
 
 
@@ -3475,9 +3511,11 @@ To complete the KQL query based on the requirements provided, you should drag th
 **Answer Area**
 
 **Box 1 (Time filter): `timestamp >= ago(1hr)`**
+
 *   **Reasoning:** The requirement is to "Only show requests made during the last hour." In KQL, the standard way to filter for a time range relative to the current time is using the `ago()` function. The operator `>=` (or simply `>`) ensures you only retrieve records within that one-hour window. Note that `-gt` is a PowerShell operator, not a KQL one.
 
 **Box 2 (Column selection): `project`**
+
 *   **Reasoning:** The requirement is to "Return the timestamp, url, resultCode, and duration fields." In KQL, the **`project`** operator is used to specify which columns should be included in the results and in what order.
 
 
@@ -3585,7 +3623,7 @@ LB1 distributes incoming requests across VMSS1 instances. You use Azure DevOps t
 
 App1 is accessible via HTTPS only and configured to require mutual authentication by using a client certificate. 
 
-You need to recommend a solution for implementing a health check of App1.
+**You need to recommend a solution for implementing a health check of App1**.
 
 The solution must meet the following requirements:
 
@@ -3683,8 +3721,9 @@ E. the resource ID of VM1
 -----
 
 ✅ **Correct answers:**
-**A. the secret key of WS1**
-**D. the ID of WS1**
+
+- **A. the secret key of WS1**
+- **D. the ID of WS1**
 
 Explanation
 
@@ -3727,7 +3766,7 @@ NOTE: Each correct selection is worth one point.
 
 
 - A. Set Flaky test detection to Off.
-- B. Clear Flaky tests included in test pass percentage.**
+- B. Clear Flaky tests included in test pass percentage.
 - C. Enable Test Impact Analysis (TIA).
 - D. Manually mark the test as flaky.
 - E. Enable test slicing.
@@ -3739,8 +3778,8 @@ Correct Answer: BD
 
 The correct answers are:
 
-**D. Manually mark the test as flaky** ✅
-**B. Clear Flaky tests included in test pass percentage** ✅
+- **D. Manually mark the test as flaky** ✅
+- **B. Clear Flaky tests included in test pass percentage** ✅
 
 
 
@@ -3782,11 +3821,11 @@ Why the others are incorrect:
 
 ### Question #43
 
-You have an app named App1 that uses Application Insights to monitor application performance.
+You have an app named App1 that uses **Application Insights to monitor application performance**.
 
 You need to analyze how often a page in App1 is accessed.
 
-Which pane in Application Insights should you use?
+Which plan in Application Insights should you use?
 
 
 A. Events
@@ -3839,7 +3878,7 @@ You need to ensure that new releases are only deployed to production if the rele
 
 baseline criteria in the staging environment first.
 
-What should you use to prevent the deployment of releases that fall to meet the performance baseline?
+**What should you use to prevent the deployment of releases that fall to meet the performance baseline?**
 
 - A. an Azure Scheduler job
 - B. a trigger
@@ -3853,8 +3892,6 @@ Correct Answer: C. a gate
 The correct answer is:
 
 **C. a gate** ✅
-
-
 
 Explanation:
 
@@ -3878,8 +3915,7 @@ Why the other options are incorrect:
 ✅ **Final answer: C. a gate**
 
 
-
-Scenarios and use cases for gates include: Quality validation. 
+**Scenarios and use cases for gates include: Quality validation.**
 
 
 Query metrics from tests on the build artifacts such as pass rate or code coverage and deploy only if they are within required thresholds. Use Quality Gates to integrate monitoring into your pre-deployment or post-leployment. This ensures that you are meeting the key health/performance metrics (KPls) as your applications move from dev to production and any differences in the infrastructure environment or scale is not negatively impacting your KPIs.
