@@ -136,7 +136,7 @@ You are making use of Azure DevOps manage build pipelines, and also deploy pipel
 
 ### Question 4
 
-You have been tasked with strengthening the security of your team's development process. You need to suggest a **security tool** type for the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?
+You have been tasked with strengthening the security of your team's development process. You need to suggest a **security tool** type for **the Continuous Integration (CI) phase of the development process**. Which of the following is the option you would suggest?
 
 * A. Penetration testing
 * B. Static code analysis
@@ -211,7 +211,7 @@ Which of the following should also be suggested?
 | Term | Explanation |
 |---|---|
 | **A. Installing the TFS kava SDK** | The process of installing the TFS (Team Foundation Server) kava SDK (Software Development Kit). |
-| **B. Using the TFS Database Import Service to perform the upgrade** | Utilizing a service provided by TFS to import data from databases to upgrade the system. |
+| **B. Using the TFS Database Import Service to perform the upgrade** | <mark>Utilizing a service provided by TFS to import data from databases to upgrade the system</mark>. |
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
@@ -232,8 +232,8 @@ You intend to manage the build and release processes using Azure DevOps.
 
 To integrate **Azure DevOps** with **Bitbucket** for managing build and release processes, the correct options are:
 
-✅ **An External Git service connection**
-✅ **Service hooks**
+- ✅ **An External Git service connection**
+- ✅ **Service hooks**
 
 
 Explanation
@@ -273,7 +273,9 @@ Why the other options are incorrect
 
 ### Question 6
 
-You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for **requirements, change requests, risks, and reviews to be tracked.**
+You are currently developing a project for a client that will be managing work items via Azure DevOps. 
+
+**You want to make sure that the work item process you use** for the client allows for **requirements, change requests, risks, and reviews to be tracked.**
 
 Which of the following is the option you would choose?
 
@@ -311,13 +313,9 @@ Correct Answer: D
 
 Choose CMMI when your team follows more formal project methods that require a framework for process improvement and an auditable record of decisions. With this process, you can track requirements, change requests, risks, and reviews
 
-Reference: https://docs.microsoft.com/en-us/azure/devops/boards/work-items/guidance/choose-process?view=azure-devops
-
 You are currently developing a project for a client that will be managing work items via Azure DevOps. You want to make sure that the work item process you use for the client allows for requirements, change requests, risks, and reviews to be tracked.
 
 Which of the following is the option you would choose?
-
-
 
 | Term | Explanation |
 |---|---|
@@ -433,7 +431,7 @@ So:
 
 You run the Register-AzureRmAutomationDscNode command in your company's environment. You need to make sure that
 
-your company's test servers remain correctly configured, regardless of configuration drift.
+**<mark>your company's test servers remain correctly configured, regardless of configuration drift.</mark>**
 
 Solution: You set the -ConfigurationMode parameter to **ApplyAndAutocorrect**, Does the solution meet the goal?
 
@@ -496,7 +494,7 @@ Note: The choice between these modes depends on the specific requirements and pr
 
 You need to consider the underlined segment to establish whether it is accurate.
 
-> To compile an Internet Information Services (IIS) web application that runs docker, you should use a Default build agent pool.
+<mark>**To compile an Internet Information Services (IIS) web application that runs docker, you should use a Default build agent pool**.</mark>
 
 Select `No adjustment required` if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -551,9 +549,9 @@ This is about **controlling access based on location/network**.
 
 👉 In Azure Active Directory, **Conditional Access** allows you to:
 
-* Restrict access by **IP address / named locations**
-* Allow access **only from corporate network**
-* Block all other access
+* <mark>Restrict access by **IP address / named locations**<mark>
+* <mark>Allow access **only from corporate network**<mark>
+* <mark>Block all other access<mark>
 
 ✔ You can define a policy like:
 
@@ -563,20 +561,17 @@ This is about **controlling access based on location/network**.
 ❌ Why other options are wrong
 
 * **A. Assign devices to a security group**
-
   * Controls membership, not network/location access ❌
 
 * **B. Create a GPO**
-
   * Works for domain-joined machines, not cloud service access control ❌
 
 * **C. Configure Security in Project Settings (Azure DevOps)**
-
   * Controls permissions (who can do what), not **where they connect from** ❌
 
 🎯 Exam Tip
 
-If the question mentions:
+**If the question mentions:**
 
 * “restrict access by location”
 * “IP address”
@@ -594,7 +589,7 @@ If the question mentions:
 
 You are making use of Azure DevOps to configure Azure Pipelines for project, named PROJ-01. 
 
-You are preparing to use a version control system that allows for source code to be stored on a managed Windows server located on the company network. 
+**You are preparing to use a version control system that allows for source code to be stored on a managed Windows server located on the company network.**
 
 Which of the following is the version control system you should use?
 
@@ -641,11 +636,12 @@ Why the others are incorrect:
 ✅ **Final answer: A. GitHub Enterprise**
 
 
+
 ### Question - 11
 
 You need to consider the underlined segment to establish whether it is accurate.
 
-> When moving to Azure DevOps, JIRA must be replaced with the build pipelines Azure DevOps service.
+<mark>**When moving to Azure DevOps, JIRA must be replaced with the build pipelines Azure DevOps service**</mark>.
 
 Select `No adjustment required` if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -706,9 +702,9 @@ You scan a Node.js application using WhiteSource Bolt.
 
 **The scan finds numerous libraries with invalid licenses**, but are only used during development. 
 
-You have to make sure that only production dependencies are scanned by WhiteSource
+You have to make sure that **only production dependencies are scanned by WhiteSource Bolt**. 
 
-Bolt. Which of the following is a command you should run?
+Which of the following is a command you should run?
 
 * A. npm edit
 * B. npm publish
@@ -757,7 +753,9 @@ This installs only production dependencies for WhiteSource Bolt scanning.
 
 You are currently defining a release strategy for an app, named APP-01.
 
-The strategy should allow you to keep the time it takes to deploy new releases of the app to a minimum. The strategy should also allow you to roll back in the shortest time required.
+The strategy should allow you to keep the time it takes to deploy new releases of the app to a minimum. 
+
+**The strategy should also allow you to roll back in the shortest time required.**
 
 Which of the following is the release strategy you should use?
 
@@ -818,7 +816,7 @@ Your company hosts a web application in Azure, and makes use of Azure Pipelines 
 
 **You are informed that new releases must satisfy specified performance baseline conditions in the staging environment before they can be deployed to production**. 
 
-You need to make sure that releases not satisfying the performance baseline are prevented from being deployed.
+<mark>You need to make sure that releases not satisfying the performance baseline are prevented from being deployed.<mark>
 
 Which of the following actions should you take?
 
@@ -865,7 +863,7 @@ Why the other options are incorrect:
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
-> To deploy an application to a number of Azure virtual machines, you should create a universal group.
+<mark>**To deploy an application to a number of Azure virtual machines, you should create a universal group.**</mark>
 
 
 Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
@@ -907,9 +905,7 @@ Correct terminology:
 ✅ **Final answer: C. Deployment**
 
 
-When authoring an Azure Pipelines or TFS Release pipeline, you can specify the deployment targets for a job using a deployment group If the target machines are Azure VMs, you can quickly and easily prepare them by installing the Azure Pipelines Agent Azure VM extension on each of the VMs, or by using the Azure Resource Group Deployment task in your release pipeline to create a deployment group dynamically.
-
-### Question -14
+### Question -15 💩💩
 
 You are preparing to deploy an Azure resource group via Terraform.
 
@@ -946,7 +942,9 @@ You intend to make use of Azure Artifacts to share packages that you wrote, test
 
 ### Question -14
 
-You want to use a solitary feed to release several builds of each package. You have to make sure that the release of packages that are in development is restricted.
+You want to use a solitary feed to release several builds of each package. 
+
+**You have to make sure that the release of packages that are in development is restricted.**
 
 Which of the following actions should you take?
 
@@ -1000,7 +998,7 @@ Why the other options are incorrect
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
-> **To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline**. 
+<mark>**To find when common open source libraries are added to the code base, you should add Jenkins to the build pipeline**. </mark>
 
 Select '**No adjustment required**' if the underlined segment is accurate. 
 
@@ -1057,9 +1055,6 @@ Azure DevOps integration with White Source Bolt will enable you to:
 3. Enforce open source license compliance, including dependencies' licenses.
 4. Identify outdated open source libraries with recommendationsto update.
 
-> **WhiteSource** is the leader in continuous open source software security and compliance management. WhiteSource integrates into your build process, irrespective of your programming languages, build tools, or development environments.
-> 
-> It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against White Source constantly updated definitive database of open source repositories.
 
 ### Question -16
 
@@ -1110,7 +1105,7 @@ To scan **open source libraries** for **common security weaknesses** (such as kn
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
-> **Black Duck can be used to make sure that all the open source libraries conform to your company's licensing criteria.** 
+<mark>**Black Duck can be used to make sure that all the open source libraries conform to your company's licensing criteria.**</mark>
 
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -1218,7 +1213,7 @@ Why the other options are incorrect
 
 | Option                       | Reason                                                                                  |
 | ---------------------------- | --------------------------------------------------------------------------------------- |
-| **ARM templates**            | Used for provisioning infrastructure, not maintaining VM configuration after deployment |
+| **ARM templates**            | **Used for provisioning infrastructure, not maintaining VM configuration after deployment** |
 | **Custom Script Extension**  | Executes scripts once but does not maintain ongoing configuration                       |
 | **Pipeline stage templates** | Reusable pipeline logic, not related to VM configuration                                |
 
@@ -1232,7 +1227,7 @@ Why the other options are incorrect
 Your company has an application that contains a number of Azure App Service web apps and Azure functions. 
 
 
-**You would like to view recommendations with regards to the security of the web apps and functions.**
+**You would like to view recommendations with regards to the <mark>security</mark> of the web apps and functions.**
 
 You plan to navigate to Compute and Apps to achieve your goal. Which of the following should you access to make use of Compute and Apps?
 
@@ -1265,7 +1260,6 @@ It provides:
 * Vulnerability assessments
 * Security recommendations
 * A dedicated **“Compute and Apps”** section for:
-
   * App Services
   * Functions
   * VMs
@@ -1293,7 +1287,7 @@ You need to consider the underlined segment to establish whether it is accurate.
 
 Your company has a multi-tier application that has its front end hosted in Azure App Service. 
 
-**To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs.** 
+<mark>**To pinpoint the average load times of the application pages, you should make use of Azure Event Hubs.**<mark> 
 
 Select 'No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate option.
 
@@ -1312,8 +1306,6 @@ The correct answer is:
 **Explanation:**
 
 The statement is **inaccurate**.
-
-> “To pinpoint the average load times of the application pages, you should make use of **Azure Event Hubs**.”
 
 **Azure Event Hubs** is used for **event streaming and ingestion**, not performance monitoring or page load analytics.
 
@@ -1339,10 +1331,6 @@ Why the others are incorrect:
 
 ✅ **Final answer: B. Azure Application Insights**
 
-
-Application Insights will tell you about any performance issues and exceptions, and help you find and diagnose the root causes.
-
-Application Insights can monitor both Java and ASPNET web applications and services, WCF services. They can be hosted on-premises, on virtual machines, or as Microsoft Azure websites. On the client side, Application Insights can take telemetry from web pages and a wide variety of devices including iOS, Android, and Windows Store apps.
 
 
 ### Question -20
@@ -1407,11 +1395,13 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -22
+### Question -21
 
-You manage an Azure web app that supports an e-commerce website. You need to increase the logging level when the web app exceeds normal usage patterns. The solution must minimize administrative overhead.
+You manage an Azure web app that supports an e-commerce website. You need to increase the logging level when the web app exceeds normal usage patterns. 
 
-Which two resources should you include in the solution? Each correct answer presents part of the solution.
+**The solution must minimize administrative overhead.**
+
+**Which two resources should you include in the solution**? Each correct answer presents part of the solution.
 
 
 * A. an Azure Automation runbook
@@ -1431,8 +1421,8 @@ B: Metric Alert with Dynamic Thresholds detection leverages advanced machine lea
 
 The correct answers are:
 
-**A. an Azure Automation runbook**
-**B. an Azure Monitor alert that has a dynamic threshold**
+- **A. an Azure Automation runbook**
+- **B. an Azure Monitor alert that has a dynamic threshold**
 
 
 
@@ -1474,7 +1464,7 @@ Architecture Flow:
 You have recently created a web application for your company.
 
 
-You have been tasked with making sure that a summary of the exceptions that transpire in the application is automatically sent to Microsoft Teams on a daily basis.
+You have been tasked with making sure that a **summary of the exceptions that transpire in the application is automatically sent to Microsoft Teams on a daily basis**.
 
 Which of the following Azure services should you use? Answer by dragging the correct two options from the list to the answer area.
 
@@ -1497,18 +1487,16 @@ The correct two services are:
 Explanation
 
 1. **Azure Application Insights**
-
-   * Monitors the web application.
-   * Collects telemetry including **exceptions, failures, and performance data**.
-   * Provides the **exception summary** that you want to send.
+  * Monitors the web application.
+  * Collects telemetry including **exceptions, failures, and performance data**.
+  * Provides the **exception summary** that you want to send.
 
 2. **Azure Logic Apps**
-
    * Automates workflows and integrations.
    * Can be scheduled **daily**.
    * Retrieves data from Application Insights and **sends a message to Microsoft Teams**.
 
-Why the others are incorrect
+**Why the others are incorrect**
 
 * **Azure DevOps Project** – Used for development lifecycle management, not for monitoring application exceptions.
 * **Azure Pipelines** – Used for CI/CD, not for collecting runtime exception summaries.
@@ -1524,7 +1512,9 @@ You are in the process of building a mobile app aimed at Android and iOS devices
 
 All work items and release cycles are managed via Azure DevOps.
 
-You want to make sure that crash reports for issue analysis is collected, and that beta releases are distributed to your testers. Also, you want to ensure that user feedback on the functionality of new apps is received.
+You want to make sure that crash reports for issue analysis is collected, and that beta releases are distributed to your testers. 
+
+Also, you want to ensure that user feedback on the functionality of new apps is received.
 
 Which of the following must be part of your solution?
 
@@ -1601,7 +1591,7 @@ Explanation
 * **Burndown Chart**
   Shows **remaining work over time**, typically in sprints.
 
-* **Velocity** (not used here) measures how many **story points are completed per sprint**, not the metrics asked in the question.
+* <mark>**Velocity** (not used here) measures how many **story points are completed per sprint**, not the metrics asked in the question</mark>.
 
 ✅ **Final Answer**
 
@@ -1758,14 +1748,14 @@ To analyze user behavior in Azure Application Insights, you should match the too
 **Answer Area**
 
 *   **Feature usage:** **User Flows**
-    *   *Reasoning:* **User Flows** visualizes the paths users take through your application. It helps you understand which features are used and the sequence in which users interact with different parts of your site.
+    *   **User Flows** visualizes the paths users take through your application. **It helps you understand which features** are used and the sequence in which users interact with different parts of your site.
 *   **Number of people who used the actions and its features:** **Users**
-    *   *Reasoning:* The **Users** tool provides data on the count of unique individuals who interact with your application, allowing you to see how many distinct people are using specific actions or features.
+    *   The **Users** tool provides data on the count of unique individuals who interact with your application, allowing you to see how many distinct people are using specific actions or features.
 *   **The effect that the performance of the application has on the usage of a page or a feature:** **Impact**
-    *   *Reasoning:* The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
+    *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 13
+### Question - 13 💩💩💩
 
 Your company is building a mobile app that targets Android and iOS devices. Your team uses Azure DevOps to manage all work items and release cycles. You need to recommend a solution to perform the following tasks:
 
@@ -1811,7 +1801,7 @@ You have an Azure DevOps project named Project1 and an Azure subscription named 
 
 VMSS1 hosts a web application named WebApp1. WebApp1 uses stateful sessions.
 
-The WebApp1 installation is managed by using the Custom Script extension. The script resides in an Azure Storage account named sa1.
+**The WebApp1 installation is managed by using the Custom Script extension. The script resides in an Azure Storage account named sa1.**
 
 You plan to make a minor change to a UI element of WebApp1 and to gather user feedback about the change.
 
@@ -1881,7 +1871,6 @@ Event
 
 * `summarize` groups results (**by Computer**)
 * `makeset(EventID)` ensures:
-
   * Only **distinct Event IDs**
   * Returned as a **list/array** (matches the table format in question)
 
@@ -1900,7 +1889,7 @@ Event
 
 You have an Azure web app named Webapp1.
 
-You need to use an Azure Monitor query to create a report that details the top 10 pages of Webapp1 that failed. How should you complete the query? To answer, select the appropriate options in the answer area.
+**You need to use an Azure Monitor query to create a report that details the top 10 pages of Webapp1 that failed.** How should you complete the query? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point
 
@@ -1913,12 +1902,14 @@ Based on the requirements to identify the top 10 failed pages of a web applicati
 **Answer Area**
 
 **Box 1 (Source Table): `requests`**
+
 *   **Reasoning:** In Application Insights, server-side requests (including the processing of web pages) are stored in the **`requests`** table. This table includes columns for the page/operation `name` and the `resultCode`, both of which are used in the subsequent `summarize` line of the query.
 
 **Box 2 (Filter Condition): `success == false`**
-*   **Reasoning:** The goal is to report on pages that **failed**. The most efficient and standard way to filter for failures in Application Insights is to use the **`success`** boolean field. When `success == false`, it indicates the request resulted in an error (typically a 4xx or 5xx HTTP status code).
 
-***
+*   **Reasoning:** The goal is to report on pages that **failed**. The most efficient and standard way to filter for failures in Application Insights is to use the **`success`** boolean field. When `success == false`,
+*   It indicates the request resulted in an error (typically a 4xx or 5xx HTTP status code).
+
 
 **The complete query would look like this:**
 ```kusto
