@@ -5638,7 +5638,7 @@ Applying the **principle of least privilege**:
 * **Group3:** User
 
 
-### Question #22
+### Question #11
 
 
 You have the following Azure policy.
@@ -5663,11 +5663,11 @@ then: {
 
 You assign the policy to the Tenant root group. What is the effect of the policy?
 
-A. prevents all HTTP tra®c to existing Azure Storage accounts
+A. prevents all HTTP traffic to existing Azure Storage accounts
 
-B. ensures that all tra®c to new Azure Storage accounts is encrypted
+B. ensures that all traffic to new Azure Storage accounts is encrypted
 
-C. prevents HTTPS tra®c to new Azure Storage accounts when the accounts are accessed over the Internet
+C. prevents HTTPS traffic to new Azure Storage accounts when the accounts are accessed over the Internet
 
 D. ensures that all data for new Azure Storage accounts is encrypted at rest
 
@@ -5708,16 +5708,21 @@ Correct Answer
 *(Because HTTPS-only enforcement ensures encrypted communication.)*
 
 
-### Question #24
+### Question #12💩💩💩
 
 
 You use GitHub Enterprise Server as a source code repository.
 
-You create an Azure DevOps organization named Contoso.
+**You create an Azure DevOps organization named Contoso**.
 
 In the Contoso organization, you create a project named Project1.
 
-You need to link GitHub commits, pull requests, and issues to the work items of Project1. The solution must use OAuth-based authentication. Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+You need to link GitHub commits, pull requests, and issues to the work items of Project1. 
+
+**The solution must use OAuth-based authentication.** 
+
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Actions
 
@@ -5745,11 +5750,11 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-25
+### Question-13 💩💩💩
 
 DRAG DROP 
 
-You are configuring an Azure DevOps deployment pipeline. The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.
+You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
 You need to use the secret in the deployment pipeline.
 
@@ -5781,23 +5786,23 @@ To configure an Azure DevOps deployment pipeline to use a secret from Azure Key 
 **Explanation:**
 
 *   **Step 1: Create a service principal in Azure Active Directory (Azure AD).**
-    You first need to create a dedicated identity (the Service Principal) that Azure DevOps will use to communicate with your Azure subscription. This identity consists of an Application ID and a Client Secret (or certificate).
+  * You first need to create a dedicated identity (the Service Principal) that Azure DevOps will use to communicate with your Azure subscription. This identity consists of an Application ID and a Client Secret (or certificate).
 
 *   **Step 2: Configure an access policy in the key vault.**
-    Once the Service Principal is created, you must go to the Azure Key Vault and create an **Access Policy**. You select the Service Principal from Step 1 as the principal and grant it the **Secret: Get** and **Secret: List** permissions. This authorization ensures that when the pipeline attempts to fetch the secret, the Key Vault will allow the request.
+  * Once the Service Principal is created, you must go to the Azure Key Vault and create an **Access Policy**. You select the Service Principal from Step 1 as the principal and grant it the **Secret: Get** and **Secret: List** permissions. This authorization ensures that when the pipeline attempts to fetch the secret, the Key Vault will allow the request.
 
 *   **Step 3: Add an Azure Resource Manager service connection to the pipeline.**
-    Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
+  * Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
 
-### Question #26
+### Question #14
 
 DRAG DROP You have a private project in Azure DevOps and two users named User1 and User2.
 
 You need to add User1 and User2 to groups to meet the following requirements:
 
-✑ User1 must be able to create a code wiki.
+✑ **User1 must be able to create a code wiki**.
 
-✑ User2 must be able to edit wiki pages.
+✑ **User2 must be able to edit wiki pages.**
 
 ✑ The solution must use the principle of least privilege.
 
@@ -5848,15 +5853,15 @@ To meet the requirements for Azure DevOps wiki management while following the pr
 *   **Project Valid Users:** This is a system group that includes everyone in the project; it is not used to grant specific functional permissions like editing or creating wikis.
 
 
-### Question #27
+### Question #15 💩💩💩
 
 You use WhiteSource Bolt to scan a Node.js application.
 
-The WhiteSource Bolt scan identifies numerous libraries that have invalid licenses. The libraries are used only during development and are not part of a production deployment.
+**The WhiteSource Bolt scan identifies numerous libraries that have invalid licenses.** The libraries are used only during development and are not part of a production deployment.
 
-You need to ensure that WhiteSource Bolt only scans production dependencies.
+You need to ensure that **WhiteSource Bolt only scans production dependencies.**
 
-Which two actions should you perform? Each correct answer presents part of the solution.
+Which **two actions** should you perform? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -5889,7 +5894,7 @@ Why other options are incorrect:
 *   **C (Modify devDependencies):** The prompt states the libraries are already identified as development-only. Modifying the `package.json` file to move them wouldn't change the scanner's behavior unless you also performed the production-only install and targeted scan.
 
 
-### Question #28
+### Question #16
 
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
@@ -5900,7 +5905,10 @@ You need to identify the following issues as they occur during the company's dev
 ✑ Licensing violations 
 
 
-✑ Prohibited libraries Solution: You implement continuous integration.
+✑ Prohibited libraries 
+
+
+Solution: You implement continuous integration.
 
 Does this meet the goal?
 
@@ -5922,11 +5930,13 @@ A standard CI pipeline is designed to automate the building and testing of code.
 Without the specific scanning tool, the CI pipeline will successfully build the application but will remain unaware of any legal or policy risks within the third-party dependencies.
 
 
-### Question #33
+### Question #17
 
 Your company has an Azure subscription.
 
-The company requires that all resource groups in the subscription have a tag named organization set to a value of Contoso. You need to implement a policy to meet the tagging requirement.
+The company requires that all resource groups in the subscription have a tag named organization set to a value of Contoso. 
+
+You need to implement a policy to meet the tagging requirement.
 
 How should you complete the policy? To answer, select the appropriate options in the answer area.
 
@@ -5994,15 +6004,15 @@ To complete the Azure Policy to ensure all resource groups have the required tag
 
 2.  **Dropdown 2 ("Append"):**
 
-   
-    The **Append** effect is used to add fields to a resource during creation or update. The JSON structure in the "then" block (containing `"details"` with a `"field"` and `"value"`) is the specific syntax used by the Append effect. 
-    *   **Logic:** If the resource is a Resource Group AND the `organization` tag is not already set to `Contoso`, the policy will automatically **append** (add) that tag to the resource group upon deployment.
-    *   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
-    *   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
+The **Append** effect is used to add fields to a resource during creation or update. The JSON structure in the "then" block (containing `"details"` with a `"field"` and `"value"`) is the specific syntax used by the Append effect. 
 
-### Question #34
+*   **Logic:** If the resource is a Resource Group AND the `organization` tag is not already set to `Contoso`, the policy will automatically **append** (add) that tag to the resource group upon deployment.
+*   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
+*   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
 
-You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication. What should you do first?
+### Question #18
+
+**You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication**. What should you do first?
 
 A. Create a conditional access policy in Azure AD.
 
@@ -6035,7 +6045,7 @@ To configure Single Sign-On (SSO) between GitHub and Azure Active Directory (now
 3.  Copy the **SAML details** from Azure AD.
 4.  Navigate to GitHub **Security settings** and enable SAML SSO using those details.
 
-### Question #35
+### Question #19
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1.
 
@@ -6067,7 +6077,7 @@ Why the other options are incorrect:
 *   **C. Deployment trigger:** Triggers (like "Continuous Deployment" or "Scheduled") determine *when* a release starts, but they do not perform security or compliance checks.
 *   **D. Pipeline variable:** Variables simply store data (like connection strings or environment names); they do not have the logic to enforce compliance rules.
 
-### Question #36
+### Question #20
 
 DRAG DROP You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
 
