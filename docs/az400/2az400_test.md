@@ -5163,28 +5163,34 @@ You have an Azure subscription that contains the resources shown in the followin
 
 ![Alt Image Text](../images/az400_2_34.png)
 
-Based on the requirements for Azure Data Factory (DF1) to retrieve a password from Azure Key Vault (KV1) using the principle of least privilege, the correct selections are:
+--------
 
-**1. Permission type: Secret**
 
-*   **Reason:** In Azure Key Vault, **Secrets** are specifically designed to store sensitive strings such as passwords, connection strings, and API keys. 
-*   **Why not others?** *Keys* are used for cryptographic operations (like encryption/decryption), and *Certificates* are used for managing X.509 certificates.
+To solve this, focus on **what is being stored** and **how Azure Data Factory (ADF) should access it securely with least privilege**.
 
-**2. Access method: Access policy**
+🔍 Key points:
 
-*   **Reason:** To follow the principle of least privilege, you create an **Access policy** in the Key Vault specifically for the Managed Identity of the Data Factory (DF1). You would grant it only the **"Get"** permission for **Secrets**. This ensures the Data Factory can only read the secret it needs and cannot list, delete, or modify any other contents.
-*   **Note on RBAC:** While Azure RBAC is a modern alternative, in the context of standard Azure implementation exams for this scenario, "Access policy" is the traditional and most common method used to grant specific "Secret Get" permissions to a service identity. 
+* The SQL password is stored in **Azure Key Vault**
+* A password is a **secret**, not a key or certificate
+* ADF (DF1) will retrieve it using its **managed identity**
+* We must follow **least privilege**
 
-**Summary of Configuration:**
+✅ Correct configuration:
 
-1.  Store the SQL password in **KV1** as a **Secret**.
-2.  In **KV1**, go to Access Policies and add a new policy.
-3.  Select **Secret Permissions** and check **Get**.
-4.  Select the **Principal** (the Managed Identity of **DF1**).
-5.  In **DF1**, create the linked service and point it to the Key Vault secret.
+* **Permission type:** **Secret**
+* **Access method:** **Access policy**
 
-### Question #7
 
+> ⚠️ RBAC works too in general, but **Access policies are more granular and commonly expected in exam scenarios for least privilege with Key Vault + ADF**
+
+✅ Final Answer:
+
+* **Permission type:** Secret
+* **Access method:** Access policy
+
+
+
+### Question #2
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5217,7 +5223,6 @@ The **Azure Key Vault task** in **Azure Pipelines**:
 
 * Retrieves secrets securely from **Azure Key Vault** at runtime.
 * Prevents secrets from being stored in:
-
   * pipeline YAML
   * scripts
   * source control
@@ -5245,7 +5250,7 @@ Why the other options are incorrect
 
 ✅ **Final Answer: C**
 
-###  Question #9
+###  Question #3
 
 
 You create a Microsoft ASP.NET Core application.
@@ -5263,6 +5268,7 @@ B. Get only
 
 C. Get and List
 
+--------------
 
 The correct answer is:
 
@@ -5290,7 +5296,7 @@ Why the other option is incorrect
 ✅ **Final Answer: B. Get only**
 
 
-### Question #10
+### Question #4
 
 DRAG DROP 
 
@@ -5298,7 +5304,7 @@ Your company has a project in Azure DevOps.
 
 You plan to create a release pipeline that will deploy resources by using Azure Resource Manager templates. The templates will reference secrets stored in Azure Key Vault.
 
-You need to recommend a solution for accessing the secrets stored in the key vault during deployments. The solution must use the principle of least privilege.
+**You need to recommend a solution for accessing the secrets stored in the key vault during deployments. The solution must use the principle of least privilege**.
 
 What should you include in the recommendation? To answer, drag the appropriate configurations to the correct targets. Each configuration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -5306,6 +5312,8 @@ NOTE: Each correct selection is worth one point.
 
 ![Alt Image Text](../images/az400_2_35.png)
 
+
+-------
 
 To deploy **ARM templates** that reference secrets in **Azure Key Vault**, two things must be configured:
 
@@ -5340,20 +5348,25 @@ Although **Azure role-based access control** can control resource permissions, *
 * Enable key vaults for template deployment → **A Key Vault advanced access policy**
 * Restrict access to the secrets → **A Key Vault access policy**
 
-### Question #11
+### Question #5
 
 DRAG DROP 
 
 You need to configure access to Azure DevOps agent pools to meet the following requirements:
 
-✑ Use a project agent pool when authoring build or release pipelines.
+✑ **Use a project agent pool when authoring build or release pipelines**.
 
-✑ View the agent pool and agents of the organization.
+✑ **View the agent pool and agents of the organization**.
 
 ✑ Use the principle of least privilege.
 
 
-Which role memberships are required for the Azure DevOps organization and the project? To answer, drag the appropriate role memberships to the correct targets. Each role membership may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which role memberships are required for the Azure DevOps organization and the project?
+
+
+To answer, drag the appropriate role memberships to the correct targets. 
+
+Each role membership may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -5392,11 +5405,11 @@ Project → **Service Account**
 * **Project:** Service Account
 
 
-### Question #16
+### Question #6
 
 Your company has an Azure subscription named Subscription1. Subscription1 is associated to an Azure Active Directory tenant named contoso.com.
 
-You need to provision an Azure Kubernetes Services (AKS) cluster in Subscription1 and set the permissions for the cluster by using RBAC roles that reference the identities in contoso.com.
+**You need to provision an Azure Kubernetes Services (AKS) cluster in Subscription1 and set the permissions for the cluster by using RBAC roles that reference the identities in contoso.com.**
 
 Which three objects should you create in sequence? To answer, move the appropriate objects from the list of objects to the answer area and arrange them in the correct order.
 
@@ -5413,9 +5426,9 @@ Relevant services:
 
 Correct Sequence
 
-1️⃣ **an application registration in contoso.com**
-2️⃣ **a cluster**
-3️⃣ **an RBAC binding**
+- 1️⃣ **an application registration in contoso.com**
+- 2️⃣ **a cluster**
+- 3️⃣ **an RBAC binding**
 
 Explanation
 
@@ -5441,14 +5454,11 @@ Explanation
 3. **an RBAC binding**
 
 
-If you're preparing for the **AZ-400 / DevOps exam**, I can also show you a **fast rule to answer all AKS RBAC questions in seconds** (these questions appear frequently).
-
-
-### Question #17
+### Question #7 💩💩💩
 
 HOTSPOT You manage build and release pipelines by using Azure DevOps. Your entire managed environment resides in Azure.
 
-You need to configure a service endpoint for accessing Azure Key Vault secrets. The solution must meet the following requirements: 
+**You need to configure a service endpoint for accessing Azure Key Vault secrets**. The solution must meet the following requirements: 
 
 ✑ Ensure that the secrets are retrieved by Azure DevOps.
 
@@ -5461,6 +5471,8 @@ NOTE: Each correct selection is worth one point.
 
 ![Alt Image Text](../images/az400_2_38.png)
 
+-------
+
 Based on the requirements to access Azure Key Vault while ensuring that no credentials or tokens are stored within Azure DevOps, here is the correct configuration:
 
 **Answer Area**
@@ -5471,7 +5483,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
 **Explanation:**
 
 1.  **Service connection type: Azure Resource Manager**
-    *   This is the standard service connection type required to allow Azure Pipelines to communicate with Azure subscription resources, including Azure Key Vault.
+    *   <mark>This is the standard service connection type required to allow Azure Pipelines to communicate with Azure subscription resources, including Azure Key Vault.</mark>
 
 2.  **Authentication/authorization method: Managed Service Identity Authentication**
     *   **The Requirement:** "Avoid persisting credentials and tokens in Azure DevOps."
@@ -5479,11 +5491,11 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #18
+### Question #8 💩💩💩
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
-You need to use the key vault to secure API secrets for third-party integrations.
+**You need to use the key vault to secure API secrets for third-party integrations.**
 
 Which three actions should you perform? Each correct answer presents part of the solution.
 
@@ -5504,9 +5516,9 @@ E. Deploy a virtual machine that uses a system-assigned managed identity.
 
 The three actions you should perform are:
 
-**B. Modify the application to access the key vault.**
-**C. Configure a Key Vault access policy.**
-**E. Deploy a virtual machine that uses a system-assigned managed identity.**
+- **B. Modify the application to access the key vault.**
+- **C. Configure a Key Vault access policy.**
+- **E. Deploy a virtual machine that uses a system-assigned managed identity.**
 
 Explanation:
 
@@ -5521,14 +5533,14 @@ Why others are not included:
 *   **A. Configure RBAC:** While RBAC can be used for Key Vault data plane access, **Access Policy** (C) is the traditional and most common method used in these certification scenarios. You generally use one or the other for the specific task of secret retrieval.
 *   **D. DSC extension:** Desired State Configuration is used for configuring the operating system and software on the VM, but it is not a requirement for an application to communicate with Key Vault.
 
-### Question #19
+### Question #9  💩💩💩
 
 
 **HOTSPOT -**
 
 Your company is creating a suite of three mobile applications.
 
-You need to control access to the application builds. The solution must must be managed at the organization level.
+You need to control access to the application builds. The solution must must be managed at the **organization level**.
 
 What should you use? To answer, select the appropriate options in the answer area.
 
@@ -5537,9 +5549,10 @@ NOTE: Each correct selection is worth one point.
 **Answer Area**
 
 *   **Groups to control the build access:**
-  *   [Dropdown: Active Directory groups / Azure Active Directory groups / Microsoft Visual Studio App Center distribution groups]
+  * [**Dropdown**: Active Directory groups / Azure Active Directory groups / Microsoft Visual Studio App Center distribution groups]
+
 *   **Group type:**
-  *    [Dropdown: Private / Public / Shared]
+  * [**Dropdown:** Private / Public / Shared]
 
 ---
 
@@ -5556,7 +5569,7 @@ NOTE: Each correct selection is worth one point.
     *   **Shared groups:** Are created at the **Organization** level. Once created at the org level, they can be associated with multiple apps in the suite. This allows you to manage one list of users (e.g., "Internal QA Team") across all three applications simultaneously.
 
 
-### Question #21
+### Question #10 💩💩💩
 
 You have a tenant in Microsoft Azure Active Directory (Azure AD), part of Microsoft Entra. The tenant contains three groups named Group1, Group2, and Group3.
 
@@ -5564,9 +5577,9 @@ You create a new project in Azure DevOps named Project1.
 
 You need to secure the service connections for Project1. The solution must meet the following requirements:
 
-- • The members of Group1 must be able to share and unshare a service connection with other projects.
-- • The members of Group2 must be able to rename a service connection and update the description.
-- • The members of Group3 must be able to use the service connection within build or release pipelines.
+- • The members of Group1 must be able to **share and unshare a service connection with other projects**.
+- • The members of Group2 must be able to **rename a service connection and update the description**.
+- • The members of Group3 must be able to **use the service connection within build or release pipelines**.
 - • The principle of least privilege must be followed.
 
 Which permission should you grant to each group? To answer, drag the appropriate permissions to the correct groups. Each permission may b used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
