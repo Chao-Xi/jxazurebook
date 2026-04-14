@@ -6139,11 +6139,14 @@ Whenever you see:
 
 
 
-### Question #39
+### Question #21
 
 You administer an Azure DevOps project that includes package feeds.
 
-You need to ensure that developers can unlist and deprecate packages. The solution must use the principle of least privilege. Which access level should you grant to the developers?
+You need to **ensure that developers can unlist and deprecate packages**. 
+
+
+The solution must use the principle of least privilege. Which access level should you grant to the developers?
 
 A. Collaborator
 
@@ -6171,7 +6174,7 @@ Conclusion
 ✅ **Correct Answer: B. Contributor**
 
 
-### Question #40
+### Question #22 💩💩💩
 
 ![Alt Image Text](../images/az400_2_39.png)
 
@@ -6198,16 +6201,16 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
 
 **Explanation**
 
-*   **Statement 1 (No):** The permissions exhibit explicitly shows that for the **Contoso Team**, the "Create dashboards" permission is toggled off. This explicit setting overrides any default project permissions.
+*   **Statement 1 (No):** The permissions exhibit explicitly shows that for the **Contoso Team**, <mark>the "Create dashboards" permission is toggled off. This explicit setting overrides any default project permissions.</mark>
 *   **Statement 2 (Yes):** No specific permissions were modified for the **DB Team**. Therefore, they use the **default values**. In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #42
+### Question #23 💩💩💩
 
 
-DRAG DROP You are implementing a package management solution for a Node.js application by using Azure Artifacts.
+DRAG DROP 
 
-
+You are implementing a package management solution for a Node.js application by using Azure Artifacts.
 
 You need to configure the development environment to connect to the package repository. The solution must minimize the likelihood that credentials will be leaked.
 
@@ -6217,12 +6220,15 @@ NOTE: Each correct selection is worth one point.
 
 Select and Place:
 
-Files
+**Files**
 
 - The .npmrc file in the project
 - The .npmrc file in the user’s home folder
 - The Package.json file in the project
 - The Project.json file in the project
+
+
+**Answer Area**
 
 - Feed registry information:
 - Credentials:
@@ -6231,10 +6237,9 @@ Files
 
 To configure a Node.js development environment to connect to Azure Artifacts while minimizing the risk of leaking credentials, use the following configuration:
 
-**Answer Area**
 
-*   **Feed registry information:** **The .npmrc file in the project**
-*   **Credentials:** **The .npmrc file in the user’s home folder**
+*   **Feed registry information:**   -> **The .npmrc file in the project**
+*   **Credentials:**  -> **The .npmrc file in the user’s home folder**
 
 **Explanation:**
 
@@ -6242,10 +6247,12 @@ To configure a Node.js development environment to connect to Azure Artifacts whi
 
 2.  **Credentials:** To follow the requirement of **minimizing the likelihood that credentials will be leaked**, you must never store authentication tokens (like a Personal Access Token) in a file that is checked into source control. Instead, credentials should be stored in the **global `.npmrc` file located in the user's home folder** (`~/.npmrc` on Linux/macOS or `%USERPROFILE%\.npmrc` on Windows). This file remains local to the developer's machine and is not part of the project repository, preventing secrets from being accidentally pushed to the server.
 
-### Question #43
+### Question #24
 
 
-You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries. You need to ensure that the project can be scanned for known security vulnerabilities in the open source libraries.
+You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries. 
+
+You need to ensure that the project can be scanned for known security vulnerabilities in the open source libraries.
 
 What should you do? To answer, select the appropriate options in the answer area.
 
@@ -6281,18 +6288,21 @@ Explanation:
 2.  **Object to create (A build task):** To automate this process within a CI/CD workflow, you add the WhiteSource Bolt extension to your project and then add a **build task** to your pipeline. This ensures that the scan runs automatically every time a build is triggered, allowing you to catch vulnerabilities before the code is even ready for deployment.
 
 **Why not other options?**
+
 *   **Bamboo** is a competing CI/CD platform.
 *   **CMake** is a build system generator.
 *   **Chef** is an infrastructure configuration management tool.
 *   **A deployment task** is too late in the process; security scanning should happen during the build (CI) phase to "shift left" security.
 
 
-### Question #45
+### Question #25. 💩💩💩
 
 
 You plan to use Azure Kubernetes Service (AKS) to host containers deployed from images hosted in a Docker Trusted Registry.
 
-You need to recommend a solution for provisioning and connecting to AKS. The solution must ensure that AKS is RBAC-enabled and uses a custom service principal.
+You need to recommend a solution for provisioning and connecting to AKS. 
+
+**The solution must ensure that AKS is RBAC-enabled and uses a custom service principal.**
 
 Which three commands should you recommend be run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
 
@@ -6328,11 +6338,13 @@ To provision an Azure Kubernetes Service (AKS) cluster that is RBAC-enabled and 
 3.  **`az aks get-credentials`**: Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #48
+### Question #26 💩💩
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
-You need to ensure that Pipeline1 can deploy code successfully to an Azure web app named webapp1. The solution must ensure that Pipeline2 does not have permission to webapp1.
+You need to ensure that Pipeline1 can deploy code successfully to an Azure web app named webapp1. 
+
+**The solution must ensure that Pipeline2 does not have permission to webapp1.**
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -6348,6 +6360,10 @@ Select and Place:
 - In Pipeline1, create a variable.
 
 **Answer Area**
+
+1. []
+2. []
+3. []
 
 ----------------
 
@@ -6371,7 +6387,7 @@ To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restri
     - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
 
 
-### Question #49
+### Question #27
 
 You need to increase the security of your team's development process.
 
@@ -6427,9 +6443,13 @@ Think of the flow:
 * **After deploy (CD)** → *Attack/test system*
 
 
-### Question #50
+### Question #28 💩
 
-You plan to use a NuGet package in a project in Azure DevOps. The NuGet package is in a feed that requires authentication. You need to ensure that the project can restore the NuGet package automatically.
+You plan to use a NuGet package in a project in Azure DevOps. 
+
+The NuGet package is in a feed that requires authentication. 
+
+You need to ensure that the project can restore the NuGet package automatically.
 
 What should the project use to automate the authentication?
 
@@ -6476,11 +6496,13 @@ If you see **“NuGet + Azure DevOps + automatic restore/authentication”**, th
 
 ➡️ **Credential Provider**
 
-### Question #52
+### Question #29
 
 You use Azure Pipelines to manage project builds and deployments.
 
-You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release. You need to configure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams. What should you turn on?
+You plan to use Azure Pipelines for **Microsoft Teams to notify the legal team when a new build is ready for release.** 
+
+You need to configure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams. What should you turn on?
 
 A. Third-party application access via OAuth
 
@@ -6501,16 +6523,16 @@ Key requirement
 Evaluation of options
 
 * **A. Third-party application access via OAuth** ✅
-  → Enables external apps (like Microsoft Teams) to authenticate and integrate with Azure DevOps.
+  * → Enables external apps (like Microsoft Teams) to authenticate and integrate with Azure DevOps.
 
 * B. Azure AD Conditional Access Policy Validation ❌
-  → Related to security policies, not integration enablement.
+  * → Related to security policies, not integration enablement.
 
 * C. Alternate authentication credentials ❌
-  → Deprecated / legacy authentication method.
+  * → Deprecated / legacy authentication method.
 
 * D. SSH authentication ❌
-  → Used for Git access, not service integrations.
+  * → Used for Git access, not service integrations.
 
 ✅ Final Answer
 
@@ -6525,13 +6547,15 @@ Whenever you see:
    → Think: **OAuth must be enabled**
 
 
-### Question #53
+### Question #30
 
 You have an existing project in Azure DevOps.
 
-You plan to integrate GitHub as the repository for the project.
+**You plan to integrate GitHub as the repository for the project.**
 
-You need to ensure that Azure Pipelines runs under the Azure Pipelines identity. Which authentication mechanism should you use?
+You need to ensure that Azure Pipelines runs under the Azure Pipelines identity. 
+
+Which authentication mechanism should you use?
 
 A. personal access token (PAT)
 
@@ -6549,18 +6573,18 @@ To ensure that **Azure Pipelines** runs under the **Azure Pipelines identity** (
 Evaluation of options
 
 * **A. Personal Access Token (PAT)** ❌
-  → Tied to a specific user → violates requirement
+  * → Tied to a specific user → violates requirement
 
 * **B. GitHub App** ✅
-  → Uses a dedicated **service identity ("Azure Pipelines")**
-  → Not tied to any individual user
-  → Recommended and most secure approach
+  * → Uses a dedicated **service identity ("Azure Pipelines")**
+  * → Not tied to any individual user
+  * → Recommended and most secure approach
 
 * **C. Azure Active Directory (Azure AD)** ❌
-  → Not used for GitHub integration in this scenario
+  * → Not used for GitHub integration in this scenario
 
 * **D. OAuth** ❌
-  → Authenticates as a user → not a service identity
+  * → Authenticates as a user → not a service identity
 
 ✅ Final Answer
 
@@ -6576,13 +6600,13 @@ If the requirement says:
 → Always choose **GitHub App**, not OAuth or PAT.
 
 
-### Question #54
+### Question #31
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
-You have an encryption key.
+**You have an encryption key.**
 
-You need to configure Azure Monitor to use the key to encrypt log data.
+**You need to configure Azure Monitor to use the key to encrypt log data.**
 
 Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -6631,7 +6655,7 @@ Whenever you see **Azure Monitor + CMK**, think:
 
 ➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
 
-### Question #55
+### Question #32
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
@@ -6660,11 +6684,6 @@ To encrypt a **Log Analytics workspace** using a customer-managed key from **Azu
 
 ✅ Correct Sequence
 
-1. **Register the Azure subscription to allow cluster creation**
-2. **Create a Log Analytics cluster**
-3. **Grant permissions to the key vault**
-4. **Link the workspace**
-
 
 * **Register subscription** → Required to enable dedicated cluster resource provider
 * **Create cluster** → CMK encryption is applied at the cluster level
@@ -6683,13 +6702,13 @@ For **Azure Monitor CMK questions**, remember:
 
 
 
-### Question-56
+### Question-33
 
 You plan to provision a self-hosted Linux agent.
 
 **Which authentication mechanism should you use to register the self-hosted agent?**
 
-* **A. personal access token (PAT)**
+* A. personal access token (PAT)
 * B. SSH key
 * C. Alternate credentials
 * D. certificate
@@ -6715,14 +6734,11 @@ To register a **self-hosted Azure DevOps agent** (including on **Linux**), the s
 
 Why the others are incorrect:
 
-❌ **B. SSH key**
-→ Used for Git authentication, **not agent registration**
+❌ **B. SSH key**   → Used for Git authentication, **not agent registration**
 
-❌ **C. Alternate credentials**
-→ Deprecated in Azure DevOps
+❌ **C. Alternate credentials**  → Deprecated in Azure DevOps
 
-❌ **D. certificate**
-→ Not supported for Azure DevOps agent registration
+❌ **D. certificate**  → Not supported for Azure DevOps agent registration
 
 
 
@@ -6731,17 +6747,12 @@ Final Answer:
 **A. personal access token (PAT)** ✅
 
 
-Note: PAT Supported only on Azure Pipelines and TFS 2017 and newer. 
 
-After you choose PAT, paste the PAT token you created into the command prompt window. 
-
-Use a personal access token (PAT) if your Azure DevOps Server or TFS instance and the agent machine are not in a trusted domain. PAT authentication is handled by your Azure DevOps Server or TFS instance instead of the domain controller.
-
-### Question-57
+### Question-34  💩💩💩
 
 You are building a Microsoft ASP.NET application that requires authentication.
 
-You need to authenticate users by using Azure Active Directory (Azure AD).
+**You need to authenticate users by using Azure Active Directory (Azure AD).**
 
 What should you do first?
 
@@ -6769,11 +6780,9 @@ This:
 
 * Creates an identity for your app in Azure AD
 * Generates:
-
   * Application (client) ID
   * Directory (tenant) ID
 * Enables configuration of:
-
   * Authentication flows (OAuth2 / OpenID Connect)
   * Redirect URIs
   * Certificates/secrets
@@ -6784,17 +6793,13 @@ Only **after app registration** can you configure authentication in your ASP.NET
 
 Why the other options are wrong:
 
-❌ **A. Assign an enterprise application to users and groups**
-→ Happens *after* app registration and only if using assignment-based access control
+❌ **A. Assign an enterprise application to users and groups**  → Happens *after* app registration and only if using assignment-based access control
 
-❌ **C. Configure the application to use a SAML endpoint**
-→ SAML is optional and legacy; modern apps use OpenID Connect/OAuth2
+❌ **C. Configure the application to use a SAML endpoint**  → SAML is optional and legacy; modern apps use OpenID Connect/OAuth2
 
-❌ **D. Create a new Auth token from the application**
-→ Tokens are issued by Azure AD after authentication is configured
+❌ **D. Create a new Auth token from the application** → Tokens are issued by Azure AD after authentication is configured
 
-❌ **E. Create a membership database in an Azure SQL database**
-→ That’s for custom auth, not Azure AD authentication
+❌ **E. Create a membership database in an Azure SQL database**  → That’s for custom auth, not Azure AD authentication
 
 
 
@@ -6802,13 +6807,12 @@ Final Answer:
 
 **B. Create an app registration in Azure AD** ✅
 
-
 Answer: B
 
-Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.
+**Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.**
 
 
-### Question #57
+### Question #35
 
 DRAG DROP You need to deploy a new project in Azure DevOps that has the following requirements:
 
@@ -6816,7 +6820,7 @@ DRAG DROP You need to deploy a new project in Azure DevOps that has the followin
 
 * Developers must be able to contribute to the repository and create branches, but NOT bypass policies when pushing builds.
 
-* Project managers must only be able to view the repository.
+* **Project managers must only be able to view the repository.**
 
 * The principle of least privilege must be used.
 
@@ -6867,7 +6871,7 @@ To deploy the project while following the principle of least privilege and meeti
 
     Developers must "contribute and create branches." The **Contributors** group is the standard role for day-to-day development work. Crucially, by default, members of the Contributors group are **not** allowed to bypass branch policies (the "Exempt from policy enforcement" permission is not granted to them), which perfectly matches the requirement that they must not bypass policies when pushing builds.
 
-### Question #58
+### Question #36
 
 You have an Azure subscription that contains a project in Azure DevOps named Project1. You have three Azure Active Directory (Azure AD) users that require access to Project1 as shown in the following table.
 
@@ -6921,7 +6925,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-58
+### Question-37
 
 You have an Azure DevOps organization named Contoso.
 
@@ -6951,16 +6955,15 @@ PATs meet **both requirements**:
 ✅ Supports authentication from Git
 
 * PATs are fully supported for:
-
   * `git clone`
   * `git pull`
   * `git push`
+    
 * They replace passwords for Git operations in Azure DevOps.
 
 ✅ Minimizes the need to provide credentials
 
 * PATs can be:
-
   * **Stored in Git credential managers**
   * **Cached securely**
   * Used non-interactively in scripts and CI/CD pipelines
@@ -6996,12 +6999,7 @@ Answer: A
 
 Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
 
-
-These tokens have an expiration date from when they're created. You can restrict the scope of the data they can access. 
-
-Use PATs to authenticate if you don't already have SSH keys set up on your system or if you need to restrict the permissions that are granted by the credential.
-
-### Question-59
+### Question-38
 
 You have an application that consists of several Azure App Service web apps and Azure functions.
 
@@ -7030,8 +7028,8 @@ Explanation:
 * Vulnerability assessments
 * Security recommendations
 * Threat protection
-  
-  for:
+
+for:
 
   
 * **Azure App Service web apps**
@@ -7046,12 +7044,15 @@ This is exactly what you need to **assess the security** of your application and
 Why the other options are incorrect:
 
 ❌ **A. Security & Compliance in Azure Log Analytics**
+
 → Focused on log analysis and compliance reporting, not security recommendations for apps/functions
 
 ❌ **B. Resource health in Azure Service Health**
+
 → Shows availability and outages, not security posture
 
 ❌ **C. Smart Detection in Azure Application Insights**
+
 → Detects anomalies and performance issues, not security vulnerabilities
 
 
@@ -7061,11 +7062,13 @@ Final Answer:
 
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
-### Question-60
+### Question-39
 
-You have a branch policy in a project in Azure DevOps. The policy requires that code always builds successfully.
+You have a branch policy in a project in Azure DevOps. 
 
-You need to ensure that a specific user can always merge changes to the master branch, even if the code fails to compile. The solution must use the principle of least privilege.
+The policy requires that code always builds successfully.
+
+**You need to ensure that a specific user can always merge changes to the master branch,** even if the code fails to compile. The solution must use the principle of least privilege.
 
 What should you do?
 
@@ -7102,12 +7105,15 @@ This is exactly what *least privilege* requires.
 Why the other options are wrong:
 
 ❌ **A. Build Administrators group**
+
 → Too broad; affects build pipelines, not branch policy bypass
 
 ❌ **B. Project Administrators group**
+
 → Excessive privilege; full project control (violates least privilege)
 
 ❌ **C. Repository security settings**
+
 → Repo-level permissions affect **all branches**, not just `master` (too broad)
 
 
@@ -7116,11 +7122,12 @@ Final Answer:
 **D. From the Security settings of the branch, modify the access control for the user.** ✅
 
 
-### Question-61
+### Question-49
 
 You have an Azure Resource Manager template that deploys a multi-tier application
 
-You need to prevent the user who performs the deployment from viewing the account credentials and connection strings used by the application.
+**You need to prevent the user who performs the deployment from viewing the account credentials and connection strings used by the application.**
+
 What should you use?
 
 * A. Azure Key Vault
@@ -7161,17 +7168,20 @@ This provides:
 Why the other options are wrong:
 
 ❌ **B. Web.config file**
+
 → Stores secrets in plaintext (not secure)
 
 ❌ **C. appsettings.json**
+
 → Plaintext secrets, visible to deployers and in source control
 
 ❌ **D. Azure Storage table**
+
 → Not a secure secret store
 
 ❌ **E. ARM parameter file**
-→ Parameters can still be viewed by the user deploying the template
 
+→ Parameters can still be viewed by the user deploying the template
 
 
 Security Best Practice Architecture:
