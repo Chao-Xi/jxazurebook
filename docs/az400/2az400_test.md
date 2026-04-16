@@ -7204,7 +7204,7 @@ You retrieve the value by referencing the key vault and secret in your parameter
 
 
 
-### Question-62
+### Question-50
 
 You have an Azure DevOps organization named Contoso that contains a project named Project1.
 
@@ -7230,7 +7230,8 @@ Explanation:
 
 To reference secrets from **Azure Key Vault** in an **Azure DevOps** build pipeline, the required first step is to:
 
-👉 **Create a Variable Group** in the project and **link it to Key Vault**.
+
+<mark>👉 **Create a Variable Group** in the project and **link it to Key Vault**.</mark>
 
 This enables:
 
@@ -7238,7 +7239,6 @@ This enables:
 * No secrets stored in pipeline YAML
 * Centralized secret management
 * RBAC-based access control
-
 
 
 Correct configuration flow:
@@ -7249,16 +7249,18 @@ Correct configuration flow:
 4. Reference variables in pipeline YAML
 
 
-
 Why the other options are wrong:
 
 ❌ **A. Add a secure file**
+
 → Secure files are for certificates/keys/files, not Key Vault secrets
 
 ❌ **B. Create an XAML build service**
+
 → XAML builds are deprecated and irrelevant
 
 ❌ **D. Configure the security policy of Contoso**
+
 → Not required for Key Vault integration with pipelines
 
 
@@ -7270,13 +7272,10 @@ Final Answer:
 
 Answer: D
 
-Before this will work, the build needs permission to access the Azure Key Vault. This can be added in the Azure Portal.
-
-Open the Access Policies in the Key Vault and add a new one. Choose the principle used in the DevOps build.
 
 
 
-### Question #62
+### Question #51 💩💩💩
 
 Your company has a project in Azure DevOps named Project1.
 
@@ -7310,8 +7309,7 @@ Actions
 To support **large binary files**, store them **outside the repository**, and still use a **standard Git workflow**, you should use **Git LFS** in **Azure DevOps**.
 
 
-
- ✅ Correct Sequence
+✅ Correct Sequence
 
 1. **Perform a custom installation of Git for Windows that includes Git Large File Storage (LFS)**
 2. **Configure Git Large File Storage (LFS) file tracking**
@@ -7334,11 +7332,11 @@ To support **large binary files**, store them **outside the repository**, and st
 If requirements say:
 
 * **“large binary files” + “outside repo” + “Git workflow”**
-  → Always think: **Git LFS (install → track → authenticate)**
+* → Always think: **Git LFS (install → track → authenticate)**
 
 
 
-### Question-63
+### Question-52
 
 Your company uses Azure DevOps.
 
@@ -7368,7 +7366,6 @@ With Conditional Access, you can:
 
 * Define **named locations** (e.g., on-premises IP ranges)
 * Create policies that:
-
   * Allow access **only from trusted network locations**
   * Block access from external/untrusted networks
 * Enforce device/network-based access control
@@ -7379,12 +7376,15 @@ This is exactly what Conditional Access is designed for. ✅
 Why the other options are incorrect:
 
 ❌ **A. Assign the Stakeholder access level**
+
 → Only controls permissions inside Azure DevOps, not network access
 
 ❌ **B. Configure risky sign-ins**
+
 → Related to identity risk detection, not network location restrictions
 
 ❌ **C. Configure Security in Project Settings**
+
 → Project-level permissions, not device/network access control
 
 
@@ -7396,13 +7396,15 @@ Final Answer:
 
 **Answer: D**
 
-Conditional Access is a capability of Azure Active Directory. With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
+Conditional Access is a capability of Azure Active Directory. 
+
+With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
 
 Conditional Access policies are enforced after the first-factor authentication has been completed.
 
 
 
-### Question-64
+### Question-53
 
 You have the following Azure policy.
 
@@ -7431,9 +7433,11 @@ What is the effect of the policy?
 
 * A. prevents all HTTP traffic to existing Azure Storage accounts
 * B. ensures that all traffic to new Azure Storage accounts is encrypted
-* C.prevents HTTPS traffic to new Azure Storage accounts when the accounts are accessed over the Internet
-* D.ensures that all data for new Azure Storage accounts is encrypted at rest
+* C. prevents HTTPS traffic to new Azure Storage accounts when the accounts are accessed over the Internet
+* D. ensures that all data for new Azure Storage accounts is encrypted at rest
 
+
+------
 
 The correct answer is:
 
@@ -7494,13 +7498,12 @@ This policy enforces:
 * ❌ Blocks creation if HTTPS-only is not enabled
 
 
-
 Final Answer:
 
 **B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
 
 
-### Question-65
+### Question-54
 
 You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
 
@@ -7519,8 +7522,6 @@ What should you do?
 The correct answer is:
 
 **A. Create a variable group in Project1** ✅
-
-
 
 Explanation:
 
@@ -7559,19 +7560,17 @@ Final Answer:
 
 **A. Create a variable group in Project1** ✅
 
-
-
 Answer: A
 
 Use a variable group to store values that you want to control and make available across multiple pipelines.
 
-### Question #65
+### Question #55 💩💩💩
 
 You have an Azure subscription that contains an Azure key vault named Vault1, an Azure pipeline named Pipeline1, and an Azure SQL database named DB1.
 
 Pipeline1 is used to deploy an app that will authenticate to DB1 by using a password.
 
-You need to store the password in Vault1. The solution must ensure that the password can be accessed by Pipeline1.
+**You need to store the password in Vault1. The solution must ensure that the password can be accessed by Pipeline1**.
 
 What should you do? To answer, select the appropriate options in the answer area.
 
@@ -7602,14 +7601,12 @@ You want to store a **password** in **Azure Key Vault** and allow an **Azure Pip
 **Store the password as a:**
 
 * **Secret** ✅
-
   * Passwords and other sensitive strings are stored as **secrets** in Key Vault.
   * **Keys** are for cryptographic operations, and **certificates** are for TLS/PKI; neither is appropriate for plain passwords.
 
 **Grant Pipeline1 access to Vault1 by modifying the:**
 
 * **Access policies** ✅
-
   * For Key Vault **secrets**, you grant permissions via **Key Vault access policies** (Get, List, etc.) for the managed identity of the pipeline.
   * **IAM roles** can also be used for some scenarios, but the exam scenario typically expects **access policies** for secret access.
 
@@ -7626,9 +7623,7 @@ You want to store a **password** in **Azure Key Vault** and allow an **Azure Pip
 
 
 
-
-
-### Question-66 - Duplicated
+### Question-56 - Duplicated
 
 You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
 
@@ -7678,17 +7673,16 @@ Why the other options are incorrect:
 * Kubernetes package manager, unrelated to license compliance for build libraries
 
 
-
 Final Answer:
 
 **C. WhiteSource Bolt** ✅
 
 
-### Question-67
+### Question-57
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
-You need to identify package dependencies that have known security issues and can be resolved by an update.
+You need to **identify package dependencies** that have known security issues and can be resolved by an update.
 
 What should you use?
 
@@ -7716,7 +7710,6 @@ Explanation:
 <mark>This makes it ideal for detecting **security issues in dependencies**.</mark>
 
 
-
  Why the other options are incorrect:
 
 ❌ **A. Octopus Deploy**
@@ -7732,13 +7725,12 @@ Explanation:
 * Build tool for Java/Kotlin; manages dependencies but does **not check security vulnerabilities by itself**
 
 
-
 Final Answer:
 
 **D. SonarQube** ✅
 
 
-### Question #67
+### Question #58 ？？
 
 You have a GitHub organization that contains three users named User1, User2, and User3. You have a project that contains a repository named repo1.
 
@@ -7761,6 +7753,8 @@ NOTE: Each correct selection is worth one point.
 - Admin
 - Maintain
 - Read
+- Triage
+- Write
 
 **Answer Area**
 
@@ -7780,26 +7774,51 @@ To meet the requirements for repository permissions in GitHub while following th
 *   **User 3:** **Maintain**
 
 
+✅ Correct Role Assignments:
 
-**Explanation:**
+* **User1:** **Write**
+* **User2:** **Triage**
+* **User3:** **Maintain**
 
-1.  **User 1 (Write):** 
-    The **Write** role is the standard role for active contributors. It allows users to push code to the repository, create branches, and open pull requests. It provides the "push" access required without giving them management rights over the repository itself.
+---
 
-2.  **User 2 (Triage):** 
-    The **Triage** role is designed for users who need to help organize the project without necessarily writing code. It allows users to manage issues and pull requests (applying labels, assigning users, closing/reopening), but it does **not** allow them to push code to the repository.
+💡 Explanation (based on GitHub roles):
 
-3.  **User 3 (Maintain):** 
-    The requirement is to "manage the repo" while being "prevented from accessing sensitive data."
-    *   The **Admin** role allows full management but also grants access to **sensitive data** such as repository secrets, deployment keys, and the ability to delete or change the visibility of the repo.
-    *   The **Maintain** role is specifically designed for project managers. It allows them to manage almost all aspects of the repository (settings, wikis, labels, and organization) but **restricts access to sensitive data** like repository secrets. This perfectly matches the requirement for User 3.
+🔹 **User1 → Write**
+
+* Can **push to the repository** ✔️
+* Meets requirement: *“actively push to repo1”*
+
+🔹 **User2 → Triage**
+
+* Can **manage issues and pull requests** (label, assign, close, reopen) ✔️
+* Cannot push code → aligns with requirement
+
+🔹 **User3 → Maintain**
+
+* Can **manage the repository** (settings, branches, etc.) ✔️
+* **Cannot access sensitive data** like secrets (unlike Admin) ✔️
+* Meets both:
+  * *“manage repo1”*
+  * *“prevent access to sensitive data”*
+
+❌ Why not Admin?
+
+* **Admin** has full access, including **secrets and sensitive settings** → violates requirement
+
+✅ Final Answer:
+
+* **User1:** Write
+* **User2:** Triage
+* **User3:** Maintain
 
 
-### Question-68
+
+### Question-59
 
 Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
 
-You need to add an automated process to the build pipeline to detect when common open source libraries are added to the code base.
+You need to add an automated process to the build pipeline to **detect when common open source libraries are added to the code base**.
 
 What should you use?
 
@@ -7841,12 +7860,9 @@ Why the other options are incorrect:
 
 * CI/CD server; can run scans but does **not inherently detect license issues**
 
-
-
 Final Answer:
 
 **C. Black Duck** ✅
-
 
 Answer. C
 
@@ -7863,22 +7879,15 @@ Hub policy violations are met.
 * **Black Duck**
 * **White Source Bolt**
 
-Other incorrect answer options you may see on the exam include the following:
-
-* OWASP ZAP
-* PDM
-* SourceGear
-* SourceGear Vault 
 
 
-
-### Question #68
+### Question #60   💩
 
 You have an Azure key vault named KV1 and three web servers.
 
 You plan to deploy an app named App1 to the web servers.
 
-You need to ensure that App1 can retrieve a secret from KV1. The solution must meet the following requirements:
+**You need to ensure that App1 can retrieve a secret from KV1**. The solution must meet the following requirements:
 
 • Minimize the number of permission grants required.
 
@@ -7917,9 +7926,7 @@ To allow **App1** (running on multiple web servers) to access a secret in **Azur
 
 If you see:
 
-* **Multiple resources need same access**
-
-  → Use **user-assigned managed identity**
+* **Multiple resources need same access**     → Use **user-assigned managed identity**
 
 If:
 
@@ -7929,7 +7936,7 @@ If:
 
 
 
-### Question-69
+### Question-61
 
 
 You have an Azure DevOps project that contains a build pipeline. The build pipeline uses approximately 50 open source libraries.
@@ -7962,17 +7969,11 @@ This makes it ideal for ensuring **all open source libraries comply with company
 
 Why the other options are incorrect:
 
-❌ **A. NuGet**
+* ❌ **A. NuGet** =>  Package manager for .NET; manages packages but **does not enforce license compliance**
 
-* Package manager for .NET; manages packages but **does not enforce license compliance**
+* ❌ **B. Maven** =>  Build tool for Java; manages dependencies but **does not check licenses automatically**
 
-❌ **B. Maven**
-
-* Build tool for Java; manages dependencies but **does not check licenses automatically**
-
-❌ **D. Helm**
-
-* Kubernetes package manager; unrelated to license compliance for application libraries
+* ❌ **D. Helm** => Kubernetes package manager; unrelated to license compliance for application libraries
 
 
 
@@ -7981,21 +7982,11 @@ Final Answer:
 **C. Black Duck** ✅
 
 
-**Answer: C**
-
-Secure and Manage Open Source Software
-
-Black Duck helps organizations identify and mitigate open source security, license compliance and code-quality risks across application and container portfolios.
-
-Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the buiki process, so you can proactively manage risk. 
-
-The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
-
-### Question #69
+### Question #62
 
 You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
 
-You need to scan the app image for vulnerabilities before the image is deployed to the cluster.
+**You need to scan the app image for vulnerabilities** before the image is deployed to the cluster.
 
 What should you include in the solution?
 
@@ -8017,7 +8008,6 @@ To scan container images for vulnerabilities **before deployment** in a CI/CD pi
 💡 Explanation
 
 * **Microsoft Defender for DevOps**:
-
   * Integrates directly with Azure DevOps pipelines
   * Scans container images and code during build
   * Detects vulnerabilities **before deployment**
@@ -8025,29 +8015,24 @@ To scan container images for vulnerabilities **before deployment** in a CI/CD pi
 
 ❌ Why not the others?
 
-* **A. Microsoft Defender for Containers**
-  → Focuses on runtime protection and post-deployment insights
+* **A. Microsoft Defender for Containers**  → Focuses on runtime protection and post-deployment insights
 
-* **B. Microsoft Defender for App Service**
-  → Secures web apps, not container images in pipelines
+* **B. Microsoft Defender for App Service** → Secures web apps, not container images in pipelines
 
-* **D. Microsoft Defender for Storage**
-  → Protects storage accounts, unrelated to container image scanning
+* **D. Microsoft Defender for Storage** → Protects storage accounts, unrelated to container image scanning
 
 🧠 Exam tip
 
 If the question says:
 
-* **“scan before deployment” / “in pipeline”**
-  → Think **Defender for DevOps**
+* **“scan before deployment” / “in pipeline”**   → Think **Defender for DevOps**
 
 If it says:
 
-* **“runtime protection” / “Kubernetes cluster security”**
-  → Think **Defender for Containers**
+* **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-70  ✅✅✅
+### Question-63  ✅✅✅
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -8073,8 +8058,9 @@ Explanation:
 
 To distribute an iOS app through App Center, the app must be signed with a valid **Distribution Certificate**.
 
-*   **Why .p12?** An iOS certificate alone (usually a `.cer` file) only contains the public key. To sign an app on a build server or a distribution platform like App Center, you need both the certificate and its associated **private key**. In the Apple ecosystem, the standard way to export a certificate along with its private key is as a **PKCS #12** archive, which uses the **.p12** extension.
-*   **The Process:** You typically generate a Certificate Signing Request (CSR) on a Mac, download the `.cer` from the Apple Developer portal, install it into your Keychain, and then export it from Keychain Access as a `.p12` file.
+* **Why .p12?** An iOS certificate alone (usually a `.cer` file) only contains the public key. To sign an app on a build server or a distribution platform like App Center, you need both the certificate and its associated **private key**.
+* In the Apple ecosystem, the standard way to export a certificate along with its private key is as a **PKCS #12** archive, which uses the **.p12** extension.
+* **The Process:** You typically generate a Certificate Signing Request (CSR) on a Mac, download the `.cer` from the Apple Developer portal, install it into your Keychain, and then export it from Keychain Access as a `.p12` file.
 
 Why other options are incorrect:
 
@@ -8084,11 +8070,8 @@ Why other options are incorrect:
 
 Answer. C
 
-A successful IOS device build will produce an ipa file. In order to install the build on a device, it needs to be signed with a valid provisioning profile and certificate.
 
-To sign the builds produced from a branch, enable code signing in the configuration pane and upload a provisioning profile (mobileprovision) and a valid certificate (p12), along with the password for the certificate.
-
-### Question #70
+### Question #64 💩💩💩
 
 DRAG DROP -
 
@@ -8129,7 +8112,8 @@ To integrate OWASP ZAP security testing into an Azure Pipelines CI/CD pipeline, 
 4.  **Report the results:** After the scan is complete, the generated findings must be converted into a format (such as JUnit or NUnit) that Azure Pipelines understands. This allows the results to be published and displayed directly in the "Tests" or "Security" tab of the pipeline run, enabling the build to fail if critical vulnerabilities are discovered.
 
 
-### Question-71
+
+### Question-65
 
 Your company is concerned that when developers introduce **open source libraries, it creates licensing compliance issues.**
 
@@ -8182,28 +8166,18 @@ Final Answer:
 
 WhiteSource provides WhiteSource Bolt, a lightweight open source security and management solution developed specifically for integration with Azure DevOps and Azure DevOps Server.
 
-
-Note: White Source is the leader in continuous open source software security and compliance management. WhiteSource integrates into your build process, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated definitive database of open source repositories.
-
 There are several versions of this question in the exam. The question has fwo possible correct answers:
 
 1. Black Duck
 2. White Source Bolt
 
-Other incorrect answer options you may see on the exam include the following:
 
-1. Microsoft Visual SourceSafe
-2. PDM
-3. SourceGear
-4. SourceGear Vault
-
-
-### Question #71
+### Question #66  💩💩💩
 
 
 You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
 
-You need to identify security vulnerabilities in the open source code.
+**You need to identify security vulnerabilities in the open source code.**
 
 What should you use?
 
@@ -8243,17 +8217,16 @@ To identify vulnerabilities in **open-source dependencies** within a project in 
 
 If the question says:
 
-* **“open-source libraries” + “vulnerabilities”**
-  → Think **Mend Bolt (WhiteSource)**
+* **“open-source libraries” + “vulnerabilities”**  → Think **Mend Bolt (WhiteSource)**
 
 
-### Question #72
+### Question #67  💩💩💩
 
 You manage code by using GitHub.
 
 You plan to use Dependabot to scan for code dependencies.
 
-You need to identify when scanning will be triggered automatically.
+**You need to identify when scanning will be triggered automatically.**
 
 Which two actions will trigger a scan? Each correct answer presents a complete solution.
 
@@ -8278,9 +8251,13 @@ When using **Dependabot** in **GitHub**, scans are triggered based on **dependen
 ✅ Correct Answers
 
 * **A. The dependency graph of a repository changes.**
+
+
   → Triggers a scan because dependencies were added/updated/removed.
 
 * **E. A new advisory is added.**
+
+
   → When a new vulnerability is published, Dependabot re-evaluates existing dependencies.
 
 ❌ Why not the others?
@@ -8297,18 +8274,20 @@ Dependabot triggers =
 
 
 
-### Question-72
+### Question-68
 
 You plan to use a NuGet package in a project in Azure DevOps. **The NuGet package is in a feed that requires authentication.**
 
-You need to ensure that the project can restore the NuGet package automatically.
+**You need to ensure that the project can restore the NuGet package automatically.**
 
 What should the project use to automate the authentication?
 
 - A. an Azure Automation account
-- **B. an Azure Artifacts Credential Provider**
-- C.an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
+- B. an Azure Artifacts Credential Provider
+- C. an Azure Active Directory (Azure AD) account that has multi-factor authentication (MFA) enabled
 - D. an Azure Active Directory (Azure AD) service principal
+
+-----
 
 The correct answer is:
 
@@ -8332,14 +8311,11 @@ It automatically:
 
 Why the other options are incorrect:
 
-❌ **A. Azure Automation account**
-→ Used for runbooks, not NuGet feed authentication
+❌ **A. Azure Automation account**   → Used for runbooks, not NuGet feed authentication
 
-❌ **C. Azure AD account with MFA**
-→ MFA blocks automation and cannot be used non-interactively
+❌ **C. Azure AD account with MFA**  → MFA blocks automation and cannot be used non-interactively
 
-❌ **D. Azure AD service principal**
-→ Not how NuGet feed auth is handled in Azure DevOps
+❌ **D. Azure AD service principal**  → Not how NuGet feed auth is handled in Azure DevOps
 
 
 
@@ -8353,13 +8329,13 @@ Answer. B
 
 the Credential Provider will automatically acquire and securely store a token on behalf of the NuGet client you’re using.
 
-### Question #73
+
+
+### Question #69  💩💩💩
 
 ![Alt Image Text](../images/az400_2_40.png)
 
 -------
-
-
 
 Based on the exhibit, here is the correct completion for each statement:
 
@@ -8372,21 +8348,22 @@ Based on the exhibit, here is the correct completion for each statement:
 
 2.  **SSH keys (can):** The restriction shown in the graphic specifically targets the **Personal Access Token (classic)** authentication protocol (Git over HTTPS and API). It does not apply to **SSH keys**. Even if an SSH key was uploaded to a user's profile using the GitHub API with a classic PAT, the key itself functions as a separate credential type. Once the SSH key is added to the account, it can still be used to access the organization's repositories via the SSH protocol.
 
-### Question-73
+### Question-70
 
 You use Azure Pipelines to manage project builds and deployments.
 
-You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release.
+**You plan to use Azure Pipelines for Microsoft Teams to notify the legal team when a new build is ready for release.**
 
 You need to configure the Organization Settings in Azure DevOps to support Azure Pipelines for Microsoft Teams.
 
 What should you turn on?
 
-- **A. Third-party application access via Auth**
+- A. Third-party application access via Auth
 - B. Azure Active Directory Conditional Access Policy Validation
-- C.Alternate authentication credentials
+- C. Alternate authentication credentials
 - D. SSH authentication
 
+-----
 
 Answer. A
 
@@ -8394,12 +8371,9 @@ The Azure Pipelines app uses the Auth authentication protocol, and requires Thir
 
 To enable this setting, navigate to Organization Settings > Security> Policies, and set the Third-party application access via Auth for the organization setting to On.
 
-
 The correct answer is:
 
 **A. Third-party application access via OAuth** ✅
-
-
 
 Explanation:
 
@@ -8411,10 +8385,9 @@ So in **Organization Settings → Policies**, you must enable:
 
 This allows:
 
-* Microsoft Teams app to authenticate to Azure DevOps
+* **Microsoft Teams app to authenticate to Azure DevOps**
 * Build/release notifications to Teams channels
 * Secure API access using OAuth tokens
-
 
 
 Why the other options are incorrect:
@@ -8435,7 +8408,7 @@ Final Answer:
 **A. Third-party application access via OAuth** ✅
 
 
-### Question #74
+### Question #71 💩💩💩
 
 DRAG DROP -
 
@@ -8485,7 +8458,7 @@ For **CodeQL pipeline steps**, always remember:
 
 
 
-### Question-74
+### Question-72 💩 💩 💩 
 
 You have an existing project in Azure DevOps.
 
@@ -8496,9 +8469,12 @@ You need to ensure that Azure Pipelines runs under the Azure Pipelines identity.
 Which authentication mechanism should you use?
 
 - A. personal access token (PAT)
-- **B. GitHub App**
+- B. GitHub App
 - C.Azure Active Directory (Azure AD)
 - D. OAuth
+
+
+------  
 
 The correct answer is:
 
@@ -8523,14 +8499,11 @@ This is the **modern, recommended** integration method.
 
 Why the other options are incorrect:
 
-❌ **A. personal access token (PAT)**
-→ Uses a **user identity**, not Azure Pipelines identity
+❌ **A. personal access token (PAT)**   → Uses a **user identity**, not Azure Pipelines identity
 
-❌ **C. Azure Active Directory (Azure AD)**
-→ GitHub does not authenticate repositories via Azure AD
+❌ **C. Azure Active Directory (Azure AD)**  → GitHub does not authenticate repositories via Azure AD
 
-❌ **D. OAuth**
-→ Legacy integration model; GitHub App replaces this method for Azure DevOps integration
+❌ **D. OAuth**  → Legacy integration model; GitHub App replaces this method for Azure DevOps integration
 
 Final Answer:
 
@@ -8543,7 +8516,7 @@ GitHub App uses the Azure Pipelines identity.
 
 A: Personal access token and Auth use your personal GitHub identity
 
-### Question-75 
+### Question-73  💩💩
 
 You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
 
@@ -8563,7 +8536,7 @@ What should you do?
 
 Answer: A
 
-Don't set secret variables in your YAML file. Operating systems often log commands for the processes that they run, and you wouldn't want the log to include a secret that you passed in as an input. 
+**Don't set secret variables in your YAML file. Operating systems often log commands for the processes that they run, and you wouldn't want the log to include a secret that you passed in as an input.** 
 
 Use the script's environment or map the variable within the variables block to pass secrets to your pipeline.
 
@@ -8597,7 +8570,7 @@ Why the other options are incorrect:
 *   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
 *   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
-### Question-76
+### Question-74 💩💩💩
 
 You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
 
@@ -8635,6 +8608,7 @@ These features are provided by **Azure AD Privileged Identity Management**, whic
 Current situation:
 
 You are on **Azure AD Premium Plan 1 (P1)** ❌
+
 P1 does **not** include PIM.
 
 So before you can configure:
@@ -8651,14 +8625,11 @@ So before you can configure:
 
 Why the other options are wrong as the *first* step:
 
-❌ **A. Configure notifications**
-→ Requires PIM (P2) to already be enabled
+❌ **A. Configure notifications**  → Requires PIM (P2) to already be enabled
 
-❌ **B. Configure alerts**
-→ Requires PIM (P2) to already be enabled
+❌ **B. Configure alerts**  → Requires PIM (P2) to already be enabled
 
-❌ **C. Enforce MFA for role activation**
-→ Requires PIM (P2) to exist first
+❌ **C. Enforce MFA for role activation** → Requires PIM (P2) to exist first
 
 All of these are **configuration steps after PIM is available**.
 
@@ -8669,7 +8640,6 @@ Correct sequence:
 1. ✅ **Upgrade Azure AD to Premium P2**
 2. Enable **Privileged Identity Management (PIM)**
 3. Configure:
-
    * Approval workflows
    * Time limits
    * MFA
@@ -8682,12 +8652,11 @@ Final Answer:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
 
-### Question #76
+### Question #75 💩💩💩
 
+You have a GitHub repository that uses **GitHub Actions and stores access keys by using GitHub encrypted secrets.**
 
-You have a GitHub repository that uses GitHub Actions and stores access keys by using GitHub encrypted secrets.
-
-You plan to update the secrets by using the GitHub REST API.
+**You plan to update the secrets by using the GitHub REST API.**
 
 You need to wrap the secrets before adding them to a REST-based call.
 
@@ -8714,7 +8683,6 @@ GitHub specifically uses **public-key encryption based on libsodium** for encryp
 💡 Explanation
 
 * **libsodium**:
-
   * Officially required by GitHub for encrypting secrets
   * Uses the repository’s public key
   * Ensures secrets are securely transmitted via API
@@ -8729,8 +8697,7 @@ GitHub specifically uses **public-key encryption based on libsodium** for encryp
 
 If you see:
 
-* **“GitHub secrets + REST API + encrypt”**
-  → Answer is always **libsodium**
+* **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
 ### Question-77 
@@ -8743,7 +8710,7 @@ What should you recommend?
 
 - A. Store the secret in the organization-level GitHub secrets.
 - B. Store the secret in the repository-level GitHub secrets.
-- **C. Encrypt the secret value and store the value in the repository. Store the decryption key in the repository-level Github secrets.**
+- C. Encrypt the secret value and store the value in the repository. Store the decryption key in the repository-level Github secrets.
 - D.Encrypt the secret value and store the value in the repository. Store the decryption key in the organization-level GitHub secrets.
 
 Answer: C
@@ -8765,14 +8732,14 @@ This recommendation is based on a specific technical limitation of GitHub Action
 
 Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
-### Question #77
+### Question #78
 
 You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the source code for App1.
 
 You need to perform the following tests:
 
 
-• Test1: Run a ZAP spider against App1 for one minute and wait for passive scanning to complete. The test must NOT perform active attacks.
+• **Test1: Run a ZAP spider against App1 for one minute and wait for passive scanning to complete**. The test must NOT perform active attacks.
 
 • Test2: Run a ZAP spider against App1, and when complete, execute an AJAX spider scan.
 
@@ -8802,17 +8769,14 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 🔍 Scan Types
 
 * **ZAP Baseline Scan**
-
   * Passive scan only (no active attacks)
   * Includes a short spider (default ~1 minute)
   * Waits for passive scanning to complete
 
 * **ZAP Full Scan**
-
   * Includes spider + **active scan (attacks)**
 
 * **ZAP API Scan**
-
   * Used for APIs (OpenAPI/Swagger), not general web crawling
 
 ---
@@ -8843,7 +8807,7 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 * **API-specific** → API Scan
 
 
-### Question-78
+### Question-79 💩💩💩
 
 You have a GitHub Enterprise account.
 
@@ -8901,7 +8865,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #78
+### Question #80
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
@@ -8949,7 +8913,7 @@ If requirement says:
   → Think **branch policy + status check on main branch**
 
 
-### Question-79 
+### Question-81
 
 You have an Azure subscription that contains four Azure virtual machines.
 
@@ -9024,11 +8988,11 @@ Final Answer:
 **B. a user-assigned managed identity** ✅
 
 
-### Question-80
+### Question-82
 
 You have a GitHub repository that contains multiple workflows and a secret stored at the environment level.
 
-You need to ensure that the secret can be used by all the workflows.
+**You need to ensure that the secret can be used by all the workflows.**
 
 What should you do first?
 
