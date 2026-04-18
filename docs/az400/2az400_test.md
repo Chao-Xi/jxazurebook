@@ -9042,7 +9042,7 @@ Final Answer:
 
 ## Topic 5 - Question Set 5
 
-### Question #5
+### Question #1
 
 Your company uses GitHub for source control. GitHub repositories store source code and store process documentation. The process documentation is saved as Microsoft Word documents that contain simple flow charts stored as .bmp files.
 
@@ -9059,13 +9059,13 @@ Simplify the modification, merging, and reuse of documents.
 
 **Answer Area**
 
-**Convert the .docx files to:**
+<mark>**Convert the .docx files to:**</mark>
 
 - LaTex Typesetting (.tex)  
 - Markdown (.md)  
 - Portable Document Format (.pdf)  
 
-**Convert the flow charts to:**
+<mark>**Convert the flow charts to:**</mark>
 
 - Mermaid diagrams  
 - Portable Network Graphics (.png)  
@@ -9091,9 +9091,8 @@ To meet your requirements—storing documents as plain text, simplifying version
 
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
-If you want, I can outline **a workflow to automatically convert your existing .docx + .bmp files to Markdown + Mermaid diagrams** so it integrates with GitHub. Do you want me to do that?
 
-### Question #7
+### Question #2
 
 DRAG DROP You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
@@ -9128,17 +9127,30 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 **Explanation:**
 
-1.  **Prepare Analysis Configuration:** This is the mandatory first step. It initializes the SonarQube scanner, connects it to your SonarQube server (or SonarCloud), and provides the project key and authentication token. For .NET projects, this step must occur **before** the build task.
-2.  **Visual Studio Build:** SonarQube's scanner for .NET works by "hooking" into the MSBuild process. As the code is compiled, the scanner analyzes the source files and identifies code smells, bugs, and vulnerabilities.
-3.  **Visual Studio Test:** To include **code coverage** metrics in your SonarQube report, you must run your unit tests after the build. The scanner will pick up the test execution results and coverage files generated during this step.
-4.  **Run Code Analysis:** This final SonarQube task completes the analysis process. It aggregates all the data from the build and test steps, generates the final report, and uploads it to the SonarQube server for viewing.
+1.  **Prepare Analysis Configuration:**
+   	* This is the mandatory first step.
+    * It initializes the SonarQube scanner, connects it to your SonarQube server (or SonarCloud), and provides the project key and authentication token.
+    * For .NET projects, this step must occur **before** the build task.
+2.  **Visual Studio Build:**
+     * SonarQube's scanner for .NET works by "hooking" into the MSBuild process.
+     * As the code is compiled, the scanner analyzes the source files and identifies code smells, bugs, and vulnerabilities.
+3.  **Visual Studio Test:**
+   * To include **code coverage** metrics in your SonarQube report, you must run your unit tests after the build.
+   * The scanner will pick up the test execution results and coverage files generated during this step.
 
-**Note:** "Publish Build Artifacts" is a standard DevOps task, but it is not part of the specific SonarQube code quality validation workflow.
+4. **Run Code Analysis:**
+	* This final SonarQube task completes the analysis process.
+    * It aggregates all the data from the build and test steps, generates the final report, and uploads it to the SonarQube server for viewing.
 
 
-### Question #9
 
-DRAG DROP You need to and and isolate shared code. The shared code will be maintained in a series of packages.
+### Question #3 💩💩💩
+
+DRAG DROP 
+
+You need to and and isolate shared code. 
+
+**The shared code will be maintained in a series of packages.**
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -9159,9 +9171,11 @@ Answer Area
 
 Based on the scenario of identifying and isolating shared code to be maintained in packages, the correct logical sequence is:
 
-1.  **Create a dependency graph for the application.** (You need to visualize the relationships and dependencies between components to identify what code is shared.)
-2.  **Group the related components.** (Once you see the dependencies, you can identify clusters of related code that should be grouped into logical packages.)
-3.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
+1. **Create a dependency graph for the application.**
+   * (You need to visualize the relationships and dependencies between components to identify what code is shared.)
+2.  **Group the related components.**
+  	* (Once you see the dependencies, you can identify clusters of related code that should be grouped into logical packages.)
+4.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
 
 **Answer Area:**
 
@@ -9170,9 +9184,11 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 3.  Assign ownership to each component group.
 
 
-### Question #10
+### Question #4
 
-DRAG DROP You are creating a NuGet package.
+DRAG DROP 
+
+You are creating a NuGet package.
 
 You plan to distribute the package to your development team privately.
 
@@ -9200,20 +9216,16 @@ To **create, share, and test a private NuGet package** with your development tea
 **Answer Area (in order):**
 
 1. **Create a new Azure Artifacts feed** ✅
-
-   * Set up a private feed to host the NuGet package.
+  * Set up a private feed to host the NuGet package.
 
 2. **Connect to an Azure Artifacts feed** ✅
-
-   * Configure your development environment or project to use the feed.
+  * Configure your development environment or project to use the feed.
 
 3. **Publish a package** ✅
-
-   * Upload the NuGet package to the private feed.
+  * Upload the NuGet package to the private feed.
 
 4. **Install a package** ✅
-
-   * Consume the package in a project to verify it works correctly.
+  * Consume the package in a project to verify it works correctly.
 
 **Notes:**
 
@@ -9221,21 +9233,21 @@ To **create, share, and test a private NuGet package** with your development tea
 * This sequence ensures the package is properly hosted, accessible, and testable by your team.
 
 
-### Question #14
+### Question #5 💩💩💩
 
 Your company uses GitHub for source control. The company has a team that performs code reviews.
 
-You need to automate the assignment of the code reviews. The solution must meet the following requirements: 
+**You need to automate the assignment of the code reviews**. 
 
+The solution must meet the following requirements: 
 
-✑ Prioritize the assignment of code reviews to team members who have the fewest outstanding assignments. 
-
+✑ **Prioritize the assignment of code reviews** to team members who have the fewest outstanding assignments. 
 
 ✑ Ensure that each team member performs an equal number of code reviews in any 30-day period.
 
-✑ Prevent the assignment of code reviews to the team leader.
+✑ **Prevent the assignment of code reviews to the team leader.**
 
-Which two actions should you perform? Each correct answer presents part of the solution.
+Which **two actions should you perform**? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -9272,14 +9284,13 @@ To meet the requirements for **automating code review assignments** in GitHub:
 * **Round robin** just cycles through the team in order, ignoring workload or past assignments.
 * The "Clear Never assign" and notification options do not affect workload distribution.
 
-This combination satisfies all three requirements: exclusion of the leader, prioritization of less-busy reviewers, and equal distribution over time.
 
-
-### Question-81
+### Question-6
 
 You are designing the development process for your company.
 
 You need to recommend a solution for continuous inspection of the company's code base to **locate common code patterns that are known to be problematic.**
+
 What should you include in the recommendation?
 
 - A. Microsoft Visual Studio test plans
@@ -9301,9 +9312,12 @@ The correct answer is **C. SonarCloud analysis.**
 
 **Why other options are incorrect:**
 
-*   **A. Microsoft Visual Studio test plans:** These are used for managing and executing manual and automated functional tests (e.g., "Does the login button work?"). They do not analyze the source code for structural patterns or technical debt.
-*   **B. Gradle wrapper scripts:** Gradle is a build automation tool for Java/Kotlin projects. While a Gradle script might *trigger* a SonarCloud scan, the script itself is just a build tool, not the inspection solution.
-*   **D. The JavaScript task runner:** Tools like Gulp or Grunt automate repetitive tasks (like minifying files or transpiling code). While they can run simple "linters," they do not provide the deep, centralized, cross-language continuous inspection platform that SonarCloud offers.
+*   **A. Microsoft Visual Studio test plans:**
+  *   These are used for managing and executing manual and automated functional tests (e.g., "Does the login button work?"). They do not analyze the source code for structural patterns or technical debt.
+*   **B. Gradle wrapper scripts:**
+  *   Gradle is a build automation tool for Java/Kotlin projects. While a Gradle script might *trigger* a SonarCloud scan, the script itself is just a build tool, not the inspection solution.
+*   **D. The JavaScript task runner:**
+  *   Tools like Gulp or Grunt automate repetitive tasks (like minifying files or transpiling code). While they can run simple "linters," they do not provide the deep, centralized, cross-language continuous inspection platform that SonarCloud offers.
 
 Final Answer:
 
@@ -9316,13 +9330,13 @@ Incorrect Answers:
 
 A: Test plans are used to group together test suites and individual test cases. This includes static test suites, requirement-based suites, and query-based suites.
 
-### Question-82 
+### Question-7  💩💩
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
-You need to recommend changes to reduce the accumulated technical debt.
+**You need to recommend changes to reduce the accumulated technical debt.**
 
-Sclution: You recommend reducing the code coupling and the dependency cycles?
+<mark>Sclution: You recommend reducing the code coupling and the dependency cycles?</mark>
 
 Does this meet the goal?
 
@@ -9358,7 +9372,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-83
+### Question-8
 
 Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
 
@@ -9377,8 +9391,8 @@ NOTE: Each correct selection is worth one point.
 
 The correct answers are:
 
-✅ **B. Configure pre-deployment approvals in the deployment pipeline.**
-✅ **C. Integrate Azure DevOps and SonarQube**
+- ✅ **B. Configure pre-deployment approvals in the deployment pipeline.**
+- ✅ **C. Integrate Azure DevOps and SonarQube**
 
 **Why these are correct**
 
@@ -9387,14 +9401,12 @@ Managing **technical debt** in Java projects requires:
 ✅ C. Integrate Azure DevOps and SonarQube
 
 * **SonarQube** performs:
-
   * Static code analysis
   * Code smell detection
   * Vulnerability scanning
   * Technical debt measurement
 * It provides a **technical debt ratio** and quality gates.
 * Integrating with Azure DevOps ensures:
-
   * Code is analyzed during builds
   * Pull requests can be blocked if quality gates fail
   * Continuous monitoring of code quality
@@ -9425,9 +9437,6 @@ Key exam principle
 **B and C**
 
 
-
-
-
 Answer: BC
 
 - B: With SonarQube pre-approval, you can set quality gate.
@@ -9444,11 +9453,11 @@ SonarQube an open source platform for continuous inspection of code quality to p
 - Security Vulnerabilities
 - Centralize Quality
 
-### Question-84
+### Question-8
 
 Your company is building a new solution in Java.
 
-The company currently uses a SonarQube server to analyze the code of NET solutions.
+**The company currently uses a SonarQube server to analyze the code of NET solutions.**
 
 You need to analyze and monitor the code quality of the Java solution.
 
@@ -9473,10 +9482,8 @@ You want to **analyze and monitor Java code quality** in **Azure DevOps pipeline
 **Key points:**
 
 1. <mark>**Gradle** is a **build automation tool for Java**.</mark>
-
    * It integrates with **SonarQube** via the **SonarQube Gradle plugin**.
    * You can add a **Gradle task** to your build pipeline to:
-
      * Compile the Java code
      * Run tests
      * Perform static code analysis with SonarQube
@@ -9503,15 +9510,9 @@ Final Answer:
 Answer. A
 
 
-SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical debt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps Services build task.
+### Question-9
 
-
-Prepare Analysis Configuration task, to configure all the required settings before executing the build.
-
-This task is mandatory.
-
-### Question-85
-
+ 
 Your company is building a new solution in Java.
 
 The company currently uses a SonarQube server to analyze the code of .NET solutions.
@@ -9567,29 +9568,7 @@ Final Answer:
 **C. Maven** ✅
 
 
-SonarQube is a set of static analyzers that can be used to identify areas of improvement in your code. It allows you to analyze the technical bt in your project and keep track of it in the future. With Maven and Gradle build tasks, you can run SonarQube analysis with minimal setup in a new or existing Azure DevOps Services build task.
-
-Prepare Analysis Configuration task, to configure all the required settings before executing the build.
-
-This task is mandatory.
-
-**In case of NET solutions or Java projects, it helps to integrate seamlessly with MSBuiki, Maven and Gradle tasks.**
-
-Note: There are several versions of this question in the exam. The question can have three correct 
-
-answers:
-
-* MSBuild
-* Maven
-* Gradle
-
-The question can also have different incorrect options, including:
-
-* Chef 
-* xCODE
-* CocoaPods
-
-### Question-86 - Duplicated
+### Question-10
 
 Your company uses Azure DevOps for the build pipelines and deployment pipelines of Java-based projects.
 
@@ -9628,9 +9607,11 @@ This directly supports:
 Why the other options are incorrect:
 
 ❌ **A. Configure post-deployment approvals**
+
 → Governance control, not technical debt management
 
 ❌ **C. Integrate Azure DevTest Labs**
+
 → Environment management/testing, not technical debt analysis
 
 Final Answer:
@@ -9638,19 +9619,8 @@ Final Answer:
 **B. Integrate Azure DevOps and SonarQube.** ✅
 
 
-You can manage technical debt with SonarQube and Azure DevOps.
 
-Note: Technical debt is the set of problems in a development effort that make forward progress on customer value inefficient. Technical debt saps productivity by making code hard to understand, fragile, time-consuming to change, difficult to validate, and creates unplanned work that blocks progress. Unless they are managed, technical debt can accumulate and hurt the overall quality of the software and the productivity of the development team in the long term
-
-SonarQube an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to:
-
-* Detect Bugs
-* Code Smells
-* Security Vulnerabilities
-* Centralize Quality
-
-
-### Question-87  💩💩💩
+### Question-11  💩💩
 
 During a code review, you discover many quality issues. Many modules contain unused variables and empty catch blocks.
 
@@ -9659,7 +9629,7 @@ You need to recommend a solution to improve the quality of the code.
 What should you recommend?
 
 * A. In a Grunt build task, select Enabled from Control Options.
-* **B. In a Maven build task, select Run PMD**
+* B. In a Maven build task, select Run PMD
 * C. In a Xcode build task, select Use xepretty from Advanced.
 * D.In a Gradle buld task, select Run Checkstyle.
 
@@ -9685,14 +9655,11 @@ When integrated into a **Maven build pipeline**, PMD automatically analyzes the 
 
 Why the other options are incorrect:
 
-❌ **A. Grunt build task**
-→ Grunt is for JavaScript, not Java
+❌ **A. Grunt build task**.   → Grunt is for JavaScript, not Java
 
-❌ **C. Xcode build task**
-→ Xcode is for iOS/macOS development, not Java
+❌ **C. Xcode build task**.  → Xcode is for iOS/macOS development, not Java
 
-❌ **D. Gradle – Run Checkstyle**
-→ Checkstyle focuses mainly on **formatting and coding standards**, not semantic issues like unused variables or empty catch blocks
+❌ **D. Gradle – Run Checkstyle**. → Checkstyle focuses mainly on **formatting and coding standards**, not semantic issues like unused variables or empty catch blocks
 
 Tool comparison:
 
@@ -9708,14 +9675,17 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-88
+### Question-12 💩💩💩
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
 
-You need to make a custom package available to all the developers. **The package must be managed centrally, and the latest version must be available for consumption in Visual Studio automatically.**
+You need to make a custom package available to all the developers.
+
+**The package must be managed centrally, and the latest version must be available for consumption in Visual Studio automatically.**
 
 Which three actions should you perform? Each correct answer presents part of the solution.
+
 NOTE: Each correct selection is worth one point.
 
 * A. Publish the package to a feed
@@ -9746,33 +9716,19 @@ You should use **Azure Artifacts** with **NuGet integration**.
 
 Correct workflow:
 
-1️⃣ **Create a feed in Azure Artifacts**
-→ Central package repository for your organization (**B**)
+1️⃣ **Create a feed in Azure Artifacts**. → Central package repository for your organization (**B**)
 
-2️⃣ **Publish the package to the feed**
-→ Makes the package available centrally (**A**)
+2️⃣ **Publish the package to the feed**. → Makes the package available centrally (**A**)
 
-3️⃣ **Add the feed URL to NuGet Package Manager in Visual Studio**
-→ Enables developers to consume packages automatically (**E**)
-
-This ensures:
-
-* Centralized package management
-* Versioning support
-* Automatic discovery in Visual Studio
-* Easy updates
-* Enterprise-grade access control
+3️⃣ **Add the feed URL to NuGet Package Manager in Visual Studio** → Enables developers to consume packages automatically (**E**)
 
 Why the other options are wrong:
 
-❌ **C. Upload a package to a Git repository**
-→ Git is not a package registry
+❌ **C. Upload a package to a Git repository**. → Git is not a package registry
 
-❌ **D. Add the package URL to Environment settings**
-→ Not how NuGet feeds are configured
+❌ **D. Add the package URL to Environment settings** → Not how NuGet feeds are configured
 
-❌ **F. Create a Git repository in Azure Repos**
-→ Source control ≠ package management
+❌ **F. Create a Git repository in Azure Repos**. → Source control ≠ package management
 
 Architecture:
 
@@ -9785,27 +9741,14 @@ Final Answer:
 **A, B, and E** ✅
 
 
-B: By using your custom NuGet package feed within your Azure DevOps (previously VSTS) instance, youll be able to distribute your packages within your organization with ease.
-Start by creating a new feed.
-
-A: We can publish, pack and push the built project to our NuGet feed
-
-E: Consume your private NuGet Feed
-
-Go back to the Packages area in Azure DevOps, select your feed and hit Connect to feed. You'll see some instructions for your feed, but it's fairly simple to set up.
-
-Just copy your package source URL, go to Visual Studio, open the NuGet Package Manager, go to its settings and add a new source. Choose a fancy name, insert the source URL. Done
-
-
-Search for your package in the NuGet Package Manager and it should appear there, ready for installation. Make sure to select the appropriate feed (or just all feeds) from the top right select box.
-
-### Question-89
+### Question-13
 
 You have a GitHub repository.
 
 You create a new repository in Azure DevOps.
 
 You need to recommend a procedure to clone the repository from GitHub to Azure DevOps.
+
 What should you recommend?
 
 * • A. Create a pull request.
@@ -9834,19 +9777,15 @@ Recommended procedure:
 
 This performs a **full clone** (history, branches, commits, tags) into **Azure Repos**.
 
- Why the other options are wrong:
+Why the other options are wrong:
 
-❌ **A. Create a pull request**
-→ PRs work within a repo or between connected repos, not for cloning/mirroring
+❌ **A. Create a pull request**. → PRs work within a repo or between connected repos, not for cloning/mirroring
 
-❌ **B. Create a webhook**
-→ Webhooks trigger events, they don’t copy repositories
+❌ **B. Create a webhook**. → Webhooks trigger events, they don’t copy repositories
 
-❌ **C. Create a service connection for GitHub**
-→ Used for pipelines integration, not repo cloning
+❌ **C. Create a service connection for GitHub**. → Used for pipelines integration, not repo cloning
 
-❌ **E. Create a personal access token in Azure DevOps**
-→ PAT is for authentication, not repository import
+❌ **E. Create a personal access token in Azure DevOps**. → PAT is for authentication, not repository import
 
 Final Answer:
 
@@ -9854,13 +9793,13 @@ Final Answer:
 
 
 
-### Question-90
+### Question-14
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
 You need to recommend changes to reduce the accumulated technical debt.
 
-Solution: You recommend increasing the code duplication.
+**Solution: You recommend increasing the code duplication.**
 
 Does this meet the goal?
 
@@ -9893,14 +9832,13 @@ To reduce technical debt, you would instead recommend things like:
 So the proposed solution **does not meet the goal**.
 
 
-### Question-91 ？？
-
+### Question-15
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
 You need to recommend changes to reduce the accumulated technical debt.
 
-Solution: You recommend increasing the test coverage.
+<mark>**Solution: You recommend increasing the test coverage.**</mark>
 
 Does this meet the goal?
 
@@ -9909,22 +9847,16 @@ Does this meet the goal?
 
 ---------
 
-**A. Yes** ✅
+**Answer: B. No**
 
-The correct answer is **A. Yes**.
+Increasing test coverage is a good practice for preventing future technical debt and catching regressions, but it **does not directly reduce already accumulated technical debt**. Accumulated technical debt typically requires refactoring, code cleanup, updating dependencies, or restructuring the architecture.
 
-Explanation:
+Therefore, the recommendation to increase test coverage alone does **not** meet the stated goal of reducing the existing accumulated technical debt.
 
-**Technical debt** often accumulates because developers are afraid to modify or refactor "messy" existing code for fear of breaking it (introducing regressions).
+**Answer: B. No**
 
-Increasing **test coverage** (specifically automated unit and integration tests) provides a "safety net." This allows developers to:
-1.  **Refactor with Confidence:** Clean up poorly written code and modernize the architecture without changing its external behavior.
-2.  **Catch Bugs Early:** Prevent new technical debt from being introduced by ensuring new features don't break old ones.
-3.  **Improve Maintainability:** Automated tests serve as documentation for how the code is supposed to function, making it easier for new developers to understand and modify the codebase.
 
-While increasing test coverage alone doesn't "delete" technical debt, it is the **foundational requirement** for the refactoring process needed to pay it down.
-
-### Question-92
+### Question-16
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -9953,7 +9885,7 @@ Reducing **code complexity** directly helps reduce technical debt because it:
 This directly supports faster development of new features, so it **does meet the goal**.
 
 
-### Question-93
+### Question-17
 
 During a code review, you discover quality issues in a Java application.
 
@@ -9992,11 +9924,13 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-94 ？？
+### Question-18 ？？
 
 You use Azure Artifacts to host NuGet packages that you create.
 
-You need to make one of the packages available to anonymous users outside your organization. The solution must minimize the number of publication points.
+**You need to make one of the packages available to anonymous users outside your organization**. 
+
+The solution must minimize the number of publication points.
 
 What should you do?
 
@@ -10009,30 +9943,29 @@ What should you do?
 
 **Correct answer: D. Publish the package to a public NuGet repository** ✅
 
-Explanation:
+The key requirement here is making the package available to **anonymous users outside your organization** while minimizing publication points.
 
-To share a package with **anonymous users** (anyone on the internet without needing to log in), you must use an **Azure Artifacts Public Feed**.
+Azure Artifacts feeds are private by default. 
 
-1.  **Public Feeds:** Azure DevOps allows you to create feeds with "Public" visibility. These feeds are accessible to anyone who has the URL, even if they are not members of your Azure DevOps organization.
-2.  **Minimizing Publication Points:** By creating a public feed within your existing Azure DevOps project, you keep the package management inside your current ecosystem. This is more efficient and provides fewer "publication points" to manage than moving the package to an entirely external platform like NuGet.org.
-3.  **Why not C (Release View)?** Release views are used within private feeds to mark certain versions of a package as "stable" or "production-ready" for internal teams. They do not grant public or anonymous access.
-4.  **Why not D (Public NuGet repository)?** While publishing to NuGet.org would make the package anonymous, it creates an entirely new publication point on a different platform, which violates the requirement to "minimize" the number of points.
+Even if you change the feed URL or create a new feed, Azure Artifacts requires authentication to access packages (unless you are using a public feed in a **public project**). However, the scenario implies a typical private Azure DevOps organization.
 
-**Correct Workflow:**
+- **A. Change the feed URL** – Does not remove the authentication requirement.
+- **B. Create a new feed** – Still requires authentication unless the project is public; this adds an extra publication point rather than minimizing them.
+- **C. Promote to a release view** – This manages quality stages within the **same feed** but does not make the package anonymous to the outside world.
+- **D. Publish to a public NuGet repository** – This meets the requirement of anonymous external access and uses a single, widely accessible publication point (nuget.org), minimizing the number of endpoints you need to manage for public distribution.
 
-
-1.  Go to Azure Artifacts and click **Create Feed**.
-2.  Set the visibility to **Public**.
-3.  Publish your package to this new public feed.
+**Answer: D. Publish the package to a public NuGet repository.**
 
 
-### Question #21
+### Question #19 💩💩💩
 
 You use GitHub for source control and project-related discussions.
 
 You receive a notification when an entry is made to any team discussion.
 
-You need to ensure that you receive email notifications only for discussions in which you commented or in which you are mentioned. Which two Notifications settings should you clear? Each correct answer presents part of the solution.
+You need to ensure that you receive email notifications only for discussions in which you commented or in which you are mentioned. Which two Notifications settings should you clear?
+
+Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -10066,13 +9999,15 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-95   💩💩
+### Question-20  💩💩
 
-You have an Azure Automation account that contains a runbook. The runbook is used to configure the application infrastructure of an Azure subscription.
+You have an Azure Automation account that contains a runbook. 
+
+The runbook is used to configure the application infrastructure of an Azure subscription.
 
 You have a project in Azure DevOps named Project. Project contains a repository that stores code for the runbook.
 
-You need to ensure that every committed change to the code will update automatically and publish the runbook to Azure Automation.
+**You need to ensure that every committed change to the code will update automatically and publish the runbook to Azure Automation**.
 
 What should you configure?
 
@@ -10101,7 +10036,6 @@ When you configure **Source control settings** in the Automation account:
 
 * It links the Automation account to an Azure DevOps repository.
 * It can automatically:
-
   * **Sync runbooks**
   * **Update runbooks when changes are committed**
   * **Publish runbooks automatically**
@@ -10127,7 +10061,7 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question #23
+### Question #21. 💩
 
 You use Git for source control.
 
@@ -10135,15 +10069,15 @@ You enable GitHub code scanning.
 
 You raise a pull request from a non-default branch. In the code scanning output, you receive the following error message: “Analysis not found.”
 
-You need to ensure that the code scanning completes successfully for the pull request.
+**You need to ensure that the code scanning completes successfully for the pull request**.
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
-A. Add the name of the default branch to the on: push specification in the code scanning work­ow.
+A. Add the name of the default branch to the on: push specification in the code scanning workflow.
 
-B. Add the name of the non-default branch to the on:push specification in the code scanning work­ow.
+B. Add the name of the non-default branch to the on:push specification in the code scanning workflow.
 
 C. Delete the pull request, and then raise the request again from the default branch.
 
@@ -10180,7 +10114,7 @@ To fix this, you must ensure the code scanning workflow runs for the relevant br
 * **E**: Not necessary; you only need to adjust the existing workflow triggers.
 
 
-### Question #24
+### Question #22
 
 DRAG DROP -
 
@@ -10192,9 +10126,9 @@ You need deploy a workflow for repo1 by using GitHub Actions. The solution must 
 
 • Scan on pull requests to the main branch.
 
-• Scan on pull requests to any branch that has a prefix of releases/.
+• <mark>Scan on pull requests to any branch that has a prefix of releases</mark>.
 
-• Scan all the files in the subdirectories of the src directory.
+• <mark>Scan all the files in the subdirectories of the src directory</mark>.
 
 • Exclude scanning of markdown files.
 
@@ -10229,7 +10163,7 @@ on:
       - '**/*.md'
 ```
 
-### Question #26
+### Question #23
 
 
 You have the repositories shown in the following table.
@@ -10239,9 +10173,11 @@ You have the repositories shown in the following table.
 | Azure Repos  | https://dev.azure.com/contoso/project1/_git/project1.git |
 | GitHub    | https://github.com/contoso/project.git    |
 
-You need to migrate the contents of the GitHub repository to the Azure Repos repository. The solution must ensure that the Azure Repos repository only contains branches and history from the GitHub repository.
+**You need to migrate the contents of the GitHub repository to the Azure Repos repository**. 
 
-Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
+The solution must ensure that the Azure Repos repository only contains branches and history from the GitHub repository.
+
+Which **three commands** should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
 
 Commands
 
@@ -10271,19 +10207,23 @@ To migrate a repository from GitHub to Azure Repos while preserving all branches
 
 **Explanation:**
 
-1.  **`git clone --bare ...`**: A **bare clone** is the standard way to migrate a repository. It downloads the Git database (all branches, tags, and full commit history) without checking out the actual source files into a working directory. This ensures you have every piece of data from the GitHub source ready for transfer.
+1.  **`git clone --bare ...`**: A **bare clone** is the standard way to migrate a repository
+    * It downloads the Git database (all branches, tags, and full commit history) without checking out the actual source files into a working directory. This ensures you have every piece of data from the GitHub source ready for transfer.
 2.  **`cd project1.git`**: When you perform a bare clone, Git creates a folder named `<repository-name>.git`. You must navigate into this directory to execute the subsequent push command.
-3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration. It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
+3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration.
+  * It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
 
-### Question #27
+### Question #24
 
 You have a GitHub repository that contains the code for an app named App1.
 
 App1 depends on a library of functions from a repository at https://github.com/contoso/afeed.
 
-You need to keep a clone of the afeed repository as a subdirectory of the App1 repository.
+**You need to keep a clone of the afeed repository as a subdirectory of the App1 repository.**
 
-How should you complete the Git command? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+How should you complete the Git command? 
+
+To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -10320,7 +10260,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #28
+### Question #25 💩💩💩
 
 HOTSPOT -
 
@@ -10328,9 +10268,9 @@ You use Git for source control.
 
 You need to optimize the performance of a repository. The solution must meet the following requirements:
 
-• Permanently remove all items referenced only in the reflog.
+• **Permanently remove all items referenced only in the reflog.**
 
-• Remove history that is NOT in any current branch.
+• **Remove history that is NOT in any current branch.**
 
 How should you complete the command? To answer, select the appropriate options in the answer area.
 
@@ -10383,7 +10323,7 @@ To optimize the performance of the Git repository by removing history that is no
     *   **gc (Garbage Collection):** This is the primary tool for optimizing the Git database. It identifies and removes "dangling" or unreachable objects (history not in any branch).
     *   **--prune=now:** By default, Git waits two weeks before actually deleting unreachable objects to prevent data loss. Specifying `now` tells Git to bypass the grace period and permanently delete the items immediately, fulfilling the requirement to optimize performance.
 
-### Question #29
+### Question #26
 
 DRAG DROP -
 
@@ -10420,6 +10360,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 2.  **Sign in to Azure DevOps**
 3.  **Add the SSH public key**
 4.  **Clone repo1**
+
 **Explanation:**
 
 1.  **Create SSH keys by using `ssh-keygen`:** This is the first step where you generate a public/private key pair on your local machine. The private key stays on your computer, while the public key will be shared.
@@ -10429,7 +10370,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 
 **Note:** "Save the SSH key to the root of repo1" is incorrect and a severe security risk. You should never store your private or public keys inside a source code repository. "Add the SSH private key" is also incorrect; the private key is never uploaded to Azure DevOps.
 
-### Question #30
+### Question #27
 
 DRAG DROP -
 
@@ -10469,7 +10410,7 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
-### Question #31
+### Question #28 💩💩💩
 
 HOTSPOT -
 
@@ -10539,7 +10480,7 @@ git restore --source main~3 App.exe.config
 
 This sequence ensures you're on the correct branch and retrieves the desired historical version of the file.
 
-### Question-32
+### Question-29
 
 You company uses a Git source-code repository.
 
@@ -10589,13 +10530,15 @@ In the **GitFlow** workflow strategy, the correct branch assignments for product
 *   **Hotfix branches:** Used to quickly patch production releases (merge into `main` and `develop`).
 
 
-### Question #33
+### Question #30
 
 DRAG DROP -
 
 You have an Azure Repos repository named repo1.
 
-You need to clone repo1. The solution must clone only a directory named src/web.
+You need to clone repo1. 
+
+The solution must clone only a directory named src/web.
 
 How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -10652,11 +10595,13 @@ git sparse-checkout set **[ src/web ]**
 3.  **`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
 
 
-### Question #34
+### Question #31
 
 You use GitHub for source control and Microsoft Teams for collaboration.
 
-You need to send a notification to a Teams channel for each commit. The solution must minimize development effort.
+**You need to send a notification to a Teams channel for each commit.** 
+
+The solution must minimize development effort.
 
 What should you do?
 
@@ -10692,7 +10637,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #36
+### Question #32
 
 DRAG DROP -
 
@@ -10702,7 +10647,7 @@ You migrate repo1 to an Azure Repos repository named repo2.
 
 After the migration, changes are made to repo1.
 
-You need to sync the changes to repo2.
+**You need to sync the changes to repo2.**
 
 How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -10769,7 +10714,7 @@ git push origin --all
 
 This ensures repo2 stays updated with changes made in repo1 after migration.
 
-### Question #37
+### Question #33
 
 DRAG DROP -
 
@@ -10777,13 +10722,14 @@ You have an Azure Repos repository named repo1.
 
 You delete a branch named features/feature11.
 
-You need to recover the deleted branch.
+**You need to recover the deleted branch.**
 
 Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
 
 Based on the image provided, here is the extracted text content:
 
 **Commands**
+
 *   `git restore <SHA1>`
 *   `git stash`
 *   `git checkout <SHA1>`
@@ -10834,11 +10780,11 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #39
+### Question #34 💩💩💩
 
 You have an Azure Repos repository that contains large PSD files.
 
-You need to configure Git LFS to manage all the files.
+**You need to configure Git LFS to manage all the files.**
 
 How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -10900,15 +10846,15 @@ To configure **Git LFS** and migrate existing PSD files, you must:
 ```bash
 git lfs install
 
-git lfs track "*.psd"
+**git lfs track "*.psd"**
 
 git add .gitattributes
 
 git commit -m "track *.psd files using Git LFS"
 
-git lfs migrate import --include="*.psd" --everything
+**git lfs migrate import --include="*.psd" --everything**
 
-git push
+**git push**
 ```
 
 **Explanation:**
@@ -10925,11 +10871,11 @@ git push
 
 This ensures both **new and existing PSD files** are managed by Git LFS.
 
-### Question #41
+### Question #35 💩💩💩
 
 You have a public GitHub repository named Public1.
 
-A commit is made to Public1. The commit contains a pattern that matches a regular expression.
+A commit is made to Public1. **The commit contains a pattern that matches a regular expression.**
 
 Who is notified first when the commit is made?
 
@@ -10964,12 +10910,12 @@ When a commit in a public GitHub repository matches a known secret pattern (for 
 The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
 
 
-### Question #42
+### Question #36 💩💩
 
 
 You have a GitHub repository.
 
-You need to ensure that all the code in the repository is scanned for vulnerabilities.
+**You need to ensure that all the code in the repository is scanned for vulnerabilities.**
 
 What should you use?
 
@@ -11002,7 +10948,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #43
+### Question #37
 
 DRAG DROP -
 
@@ -11022,9 +10968,6 @@ The solution must minimize administrative effort.
 Which type of policy should you use for each requirement? To answer, drag the appropriate policy types to the correct requirements. Each type policy may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
-
-
-Based on the image provided, here is the extracted text content:
 
 **Policies**
 
@@ -11054,19 +10997,22 @@ To meet the requirements for **Repo1** in Azure Repos while minimizing administr
 **Explanation:**
 
 1.  **Work items must be linked to a pull request (Branch):** 
-    In the branch policy settings for Azure Repos Git repositories, there is a built-in toggle called **"Check for linked work items."** Enabling this is a standard **Branch** policy that ensures traceability between code changes and tasks/bugs.
+
+In the branch policy settings for Azure Repos Git repositories, there is a built-in toggle called **"Check for linked work items."** Enabling this is a standard **Branch** policy that ensures traceability between code changes and tasks/bugs.
 
 2.  **Pull requests must complete a code review by a third-party tool (Status):** 
-    To integrate external services or third-party tools into the PR workflow, you use a **Status Check**. The external tool performs its scan and then posts a status (e.g., "Succeeded") to the pull request via the Azure DevOps API. You configure a **Status** policy within the branch settings to make this specific status a mandatory requirement for merging.
 
-3.  **Pull requests must have a minimum of two reviewers (Branch):** 
-    Similar to the work item requirement, this is a native feature in Azure DevOps branch policy settings titled **"Require a minimum number of reviewers."** Setting the count to two is a standard **Branch** policy.
+To integrate external services or third-party tools into the PR workflow, you use a **Status Check**. The external tool performs its scan and then posts a status (e.g., "Succeeded") to the pull request via the Azure DevOps API. You configure a **Status** policy within the branch settings to make this specific status a mandatory requirement for merging.
+
+3.  **Pull requests must have a minimum of two reviewers (Branch):**
+
+Similar to the work item requirement, this is a native feature in Azure DevOps branch policy settings titled **"Require a minimum number of reviewers."** Setting the count to two is a standard **Branch** policy.
 
 **Note on "Check-in":** Check-in policies are specific to Team Foundation Version Control (TFVC) and are not used for Git repositories.
 
 
 
-### Question #44
+### Question #38  💩
 
 You manage projects by using Azure Boards. You manage project code by using GitHub.
 
@@ -11092,6 +11038,7 @@ D. From work item 123, open the Links tab, select Add link, select Existing item
 The correct answers are:
 
 **A. In the Development section for work item 123, select Add link, and then enter the URL of the pull request.**
+
 **B. To the description of the pull request, add #AB123.**
 
 Explanation
@@ -11101,7 +11048,6 @@ There are two valid ways to link a **GitHub pull request** to an Azure Boards wo
 ✅ Option A
 
 * Manually link from Azure Boards:
-
   * Go to the work item → **Development section** → **Add link**
   * Paste the **PR URL**
 * This directly creates the association
@@ -11109,7 +11055,6 @@ There are two valid ways to link a **GitHub pull request** to an Azure Boards wo
 ✅ Option B
 
 * Use GitHub integration syntax:
-
   * Add **`#AB123`** in the PR description
 * This automatically links the PR to the work item
 
@@ -11123,7 +11068,7 @@ Key Point
 * Use **`#AB<ID>`** in PRs/commits OR
 * Link manually via the **Development section** in Azure Boards
 
-### Question #45
+### Question #39
 
 DRAG DROP -
 
@@ -11158,14 +11103,11 @@ Based on the image provided, here is the extracted text content:
 
 Correct mapping:
 
-* **Frequent discovery of bugs in production:**
-  **Defect escape rate**
+* **Frequent discovery of bugs in production:**    **Defect escape rate**
 
-* **Increasing detection of bugs by customers:**
-  **Bug report rates**
+* **Increasing detection of bugs by customers:**  **Bug report rates**
 
-* **Slow resolution of bugs and slow resumption of production:**
-  **Application failure rates**
+* **Slow resolution of bugs and slow resumption of production:**    **Application failure rates**
 
 
 Explanation
@@ -11188,14 +11130,13 @@ Final Answer
 
 
 
-### Question-96 
+### Question-40
 
 You have a GitHub repository that contains multiple versions of an Azure Pipelines template
 
-
 You plan to deploy multiple pipelines that will use a template stored in the repository.
 
-You need to ensure that you use a fixed version of the template.
+**You need to ensure that you use a fixed version of the template.**
 
 What should you use to reference which version of the template repository to use?
 
@@ -11250,7 +11191,7 @@ Key exam principle
 
 
 
-### Question-97
+### Question-41
 
 You manage source code control and versioning by using GitHub.
 
@@ -11279,14 +11220,11 @@ To **automatically execute a script in response to Git operations** (like a `reb
 
 Why the other options are incorrect:
 
-* **A. a package** ❌
-  → Packages are for distributing code/libraries, not triggering scripts.
+* **A. a package** ❌   → Packages are for distributing code/libraries, not triggering scripts.
 
-* **B. GitHub Copilot** ❌
-  → Copilot is an AI coding assistant, not an automation mechanism.
+* **B. GitHub Copilot** ❌   → Copilot is an AI coding assistant, not an automation mechanism.
 
-* **D. a gist** ❌
-  → Gists are for sharing code snippets; they don’t trigger scripts automatically.
+* **D. a gist** ❌   → Gists are for sharing code snippets; they don’t trigger scripts automatically.
 
 
 Final Answer:
@@ -11294,7 +11232,7 @@ Final Answer:
 **C. a webhook** ✅
 
 
-### Question-98
+### Question-42
 
 You use GitHub to host container packages that use Semantic Versioning (SemVer).
 
@@ -11354,11 +11292,11 @@ Why the others are wrong:
 
 
 
-### Question-99
+### Question-43 💩
 
 You manage code by using GitHub.
 
-You need to ensure that repository owners are notified if a new vulnerable dependency or malware is found in their repository.
+You need to ensure that repository owners are notified **if a new vulnerable dependency or malware is found in their repository.**
 
 What should you do?
 
@@ -11388,21 +11326,18 @@ This is exactly what the requirement describes:
 
  Why the others are wrong:
 
-* **A. Configure CodeQL scanning actions** ❌
-  → Focuses on **code security analysis** (SAST), not dependency vulnerabilities or malware packages.
+* **A. Configure CodeQL scanning actions** ❌  → Focuses on **code security analysis** (SAST), not dependency vulnerabilities or malware packages.
 
-* **C. Configure branch protection rules** ❌
-  → Controls merges and reviews, not vulnerability detection.
+* **C. Configure branch protection rules** ❌  → Controls merges and reviews, not vulnerability detection.
 
-* **D. Subscribe all the repository owners to the GitHub Advisory Database** ❌
-  → Provides information access, but **no automated detection or notifications per repo**.
+* **D. Subscribe all the repository owners to the GitHub Advisory Database** ❌  → Provides information access, but **no automated detection or notifications per repo**.
 
  ✅ Final Answer:
 
 **B. Configure Dependabot alerts.**
 
 
-### Question-100
+### Question-44 💩💩
 
 
 You have a 1-TB Azure Repos repository named repo1.
@@ -11415,7 +11350,7 @@ You need to clone repo1. The solution must meet the following requirements:
 Which command should you run?
 
 * A. git clone -depth-1 git@ssh.dev.azure.com:v3/org/Project1/repo1
-* **B. git clone - filter=blob:none git@ssh.dev.azure.comv3/org/Project1/repo1**
+* B. git clone --filter=blob:none git@ssh.dev.azure.com:v3/org/Project1/repo1
 * C. git clone git@ssh.dev.azure.com.com.v3/org/Project1/repo1
 * D. git clone -filter=true:0 git@ssh.dev.azure.com:v3/org/Project1/repo1
 
@@ -11428,10 +11363,8 @@ Why this is correct:
 
 This uses **Git partial clone** with a **blob filter**, which means:
 
-* ✅ **Full commit history is cloned**
-  → You can search commit history of `/src` (`git log`, `git blame`, etc.)
-* ❌ **File contents (blobs) are not downloaded initially**
-  → Drastically reduces clone time and bandwidth for a **1-TB repository**
+* ✅ **Full commit history is cloned**   → You can search commit history of `/src` (`git log`, `git blame`, etc.)
+* ❌ **File contents (blobs) are not downloaded initially**  → Drastically reduces clone time and bandwidth for a **1-TB repository**
 * 📥 Blobs are fetched **on-demand** only when files are accessed
 
 This perfectly matches the requirements:
@@ -11443,14 +11376,11 @@ This perfectly matches the requirements:
 
  Why the others are wrong:
 
-* **A. `--depth=1`** ❌
-  → Shallow clone → **no commit history**, fails history search requirement
+* **A. `--depth=1`** ❌   → Shallow clone → **no commit history**, fails history search requirement
 
-* **C. Normal clone** ❌
-  → Downloads **everything** → very slow for 1-TB repo
+* **C. Normal clone** ❌   → Downloads **everything** → very slow for 1-TB repo
 
-* **D. `--filter=true:0`** ❌
-  → Invalid / nonstandard Git filter syntax
+* **D. `--filter=true:0`** ❌   → Invalid / nonstandard Git filter syntax
 
 Final Answer:
 
@@ -11458,7 +11388,7 @@ Final Answer:
 
 
 
-### Question-101  💩💩
+### Question-45 💩💩💩
 
 You use GitHub for source control.
 
@@ -11479,15 +11409,17 @@ The correct answers are:
 
 **B. minimizes latency when accessing the package** ✅
 
- Why these are correct:
+Why these are correct:
 
 Using **proxying (upstream sources) in MyGet** means your feed acts as a **cache** for the private upstream feed:
 
 * **A. Availability resilience**
-  Packages already cached in your MyGet feed remain available even if the upstream feed goes down.
+
+Packages already cached in your MyGet feed remain available even if the upstream feed goes down.
 
 * **B. Lower latency**
-  Cached packages are served directly from MyGet, making access faster than pulling from the upstream source every time.
+
+Cached packages are served directly from MyGet, making access faster than pulling from the upstream source every time.
 
  Why the others are wrong:
 
@@ -11502,14 +11434,14 @@ Final Answer:
 **A and B** ✅
 
 
-
-### Question-102
+### Question-46
 
 You manage source code control and versioning by using GitHub.
 
 A large file is committed to a repository accidentally.
 
-You need to reduce the size of the repository. The solution must remove the file from the repository.
+**You need to reduce the size of the repository. The solution must remove the file from the repository.**
+
 What should you use?
 
 
@@ -11550,7 +11482,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47
+### Question #47  💩💩💩
 
 DRAG DROP -
 
@@ -11594,10 +11526,12 @@ To configure Dependabot dependency scanning in a GitHub repository to meet the s
 **Explanation:**
 
 1.  **Automatically open a pull request to resolve an alert (Security updates):**
-    This functionality is provided by Dependabot's **Security updates**. When GitHub identifies a vulnerability in one of your dependencies (via its security advisory database), Dependabot can automatically open a pull request to update that dependency to a non-vulnerable version, thereby "resolving the alert."
+
+This functionality is provided by Dependabot's **Security updates**. When GitHub identifies a vulnerability in one of your dependencies (via its security advisory database), Dependabot can automatically open a pull request to update that dependency to a non-vulnerable version, thereby "resolving the alert."
 
 2.  **Automatically open a pull request when a dependency is updated (Version updates):**
-    This functionality is provided by Dependabot's **Version updates**. Regardless of security vulnerabilities, Dependabot can be configured to check for new minor or major versions of your dependencies and automatically open pull requests to update them, helping you keep your project up-to-date.
+
+This functionality is provided by Dependabot's **Version updates**. Regardless of security vulnerabilities, Dependabot can be configured to check for new minor or major versions of your dependencies and automatically open pull requests to update them, helping you keep your project up-to-date.
 
 **Why other options are incorrect:**
 
@@ -11605,7 +11539,7 @@ To configure Dependabot dependency scanning in a GitHub repository to meet the s
 *   **A dependency graph:** This is a tool to visualize your dependencies, not a feature that automates PR creation.
 
 
-### Question #48
+### Question #48  💩💩
 
 DRAG DROP -
 
@@ -11684,7 +11618,7 @@ git sparse-checkout set directory1
 Use **Scalar + sparse checkout** to **reduce data transfer and focus on a specific folder**.
 
 
-### Question #49
+### Question #49 💩
 
 You have a project in Azure DevOps.
 
@@ -11747,8 +11681,6 @@ A. Install the git-fat extension and associate the extension to ZIP files.
 
 B. Install the Git LFS extension and associate the extension to ZIP files.
 
-Most Voted
-
 C. Install the git-stash extension and associate the extension to ZIP files.
 
 D. Use GZip to compress the file before committing the file.
@@ -11777,14 +11709,13 @@ But since this is a **“two actions”** question from exam context, the correc
 
 * A **3-GB file is too large for normal Git**.
 * **Git LFS (Large File Storage)**:
-
   * Stores large files outside the main repo
   * Keeps **pointers in Git**, so files are:
-
     * ✅ Versioned
     * ✅ Linked to commits
 
- ❌ Why others are incorrect:
+
+❌ Why others are incorrect:
 
 * **A. git-fat** ❌ – Not a standard or recommended Microsoft/GitHub solution
 * **C. git-stash** ❌ – Used for temporary changes, not storage
@@ -11806,7 +11737,7 @@ You manage source control by using GitHub.
 
 You have a file named Data.txt that contains sensitive data. A user pushes Data.txt to a repository.
 
-You need to purge the file from the repository.
+**You need to purge the file from the repository.**
 
 Which two commands can you use? Each correct answer presents a complete solution.
 
@@ -11855,7 +11786,7 @@ git filter-repo --invert-paths --path data.txt
 git push origin --force --all
 ```
 
-* Uses **git filter-repo** (modern replacement for filter-branch)
+* **Uses **git filter-repo** (modern replacement for filter-branch)**
 * Fully removes the file from all commits
 
 
@@ -11876,7 +11807,9 @@ Only **BFG** and **git filter-repo** achieve this properly.
 
 ### Question #52
 
-You use GitHub Enterprise for source control repositories. The repositories store C# code.
+You use GitHub Enterprise for source control repositories. 
+
+The repositories store C# code.
 
 You need to enable CodeQL scanning for the repositories.
 
@@ -11914,13 +11847,13 @@ To enable **CodeQL scanning** in GitHub Enterprise:
 
 CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
 
-### Question #53
+### Question #53 💩💩💩
 
 HOTSPOT -
 
 You have a GitHub repository that contains a workflow named WF1. WF1 is used to build code for an app named App1.
 
-You need to add a build status badge to the README.md file in the repository for App1.
+**You need to add a build status badge to the README.md file in the repository for App1.**
 
 How should you complete the URL for the badge? To answer, select the appropriate options in the answer area.
 
@@ -11966,7 +11899,7 @@ By adding this full URL to your `README.md` file using image syntax (e.g., `![Bu
 
 You have a GitHub repository.
 
-You need to create a tag named v3.0.5 and ensure that the tag is available in the remote repository.
+**You need to create a tag named v3.0.5 and ensure that the tag is available in the remote repository.**
 
 Which two commands should you run? Each correct answer presents part of the solution.
 
@@ -12009,11 +11942,11 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55
+### Question #55  💩💩💩
 
 You have a GitHub repository.
 
-You need to ensure that all changes to code are validated by your company’s security department before the main branch is deployed.
+**You need to ensure that all changes to code are validated by your company’s security department before the main branch is deployed.**
 
 Which two actions can you perform? Each correct answer presents a complete solution.
 
@@ -12066,13 +11999,13 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56
+### Question #56 💩💩
 
 HOTSPOT -
 
 You have a .NET app named App1.
 
-You need to upload App1 to GitHub Packages.
+**You need to upload App1 to GitHub Packages.**
 
 How should you complete the command? To answer, select the appropriate options in the answer area.
 
@@ -12135,7 +12068,7 @@ dotnet nuget push "bin/Release/app1.1.0.0.nupkg" --api-key PAT_TOKEN --source "g
 
 Use **`dotnet nuget push`** to upload packages to **GitHub Packages**.
 
-### Question #59
+### Question #57
 
 DRAG DROP -
 
@@ -12143,8 +12076,7 @@ You have a GitHub repository named repo1 and an Azure key vault named kv1.
 
 In repo1, you plan to create a workflow named Workflow1 that will deploy a database server by using credentials stored in kv1.
 
-You need to ensure that Workflow1 can retrieve the credentials from kv1.
-
+**You need to ensure that Workflow1 can retrieve the credentials from kv1.**
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
