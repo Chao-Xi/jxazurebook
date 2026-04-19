@@ -12132,8 +12132,6 @@ D. Stories and Tasks
 
 ------
 
-
-
 The correct answer is:
 
 **D. Stories and Tasks**
@@ -12156,15 +12154,15 @@ Summary
 * **Centralized (shared goal):** Epics, Features
 * **Team-owned (autonomous):** ✅ Stories, Tasks
 
-If you want, I can map this to Azure DevOps Boards hierarchy to make it even clearer.
 
-### Question #3
+### Question #2  💩💩
+
 
 Your company implements an Agile development methodology.
 
 You plan to implement retrospectives at the end of each sprint.
 
-Which three questions should you include? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+**Which three questions** should you include? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
 
 A. Who performed well?
 
@@ -12181,9 +12179,9 @@ E. What should we try next?
 
 The correct answers are:
 
-**C. What could have gone better?**
-**D. What went well?**
-**E. What should we try next?**
+- **C. What could have gone better?**
+- **D. What went well?**
+- **E. What should we try next?**
 
 Explanation
 
@@ -12196,13 +12194,13 @@ Agile retrospectives focus on **continuous improvement of the team and process**
 Why others are incorrect
 
 * ❌ **A. Who performed well?** → Focuses on individuals, not team/process
-* ❌ **B. Who should have performed better?** → Blame-oriented, ضد Agile principles
+* ❌ **B. Who should have performed better?** → Blame-oriented, ضAgileprinciples
 
 Key Principle
 
 Retrospectives should be **safe, blameless, and team-focused**, encouraging collaboration and continuous improvement.
 
-### Question #13
+### Question #3 💩💩
 
 You have a build pipeline in Azure Pipelines.
 
@@ -12243,10 +12241,8 @@ Flow Summary
 2. ✅ Create **service hook subscription** in Azure DevOps
 3. Configure it to trigger on build events and post to `#Development`
 
-If you want, I can walk you through the exact steps in the Azure DevOps UI.
 
-
-### Question #15
+### Question #4
 
 Your company uses Azure DevOps for Git source control.
 
@@ -12259,7 +12255,9 @@ You have a project in Azure DevOps named Contoso App that contains the following
 ✑ https://dev.azure.com/contoso/contoso-app/core-db 
 
 
-You need to ensure that developers receive Slack notifications when there are pull requests created for Contoso App. What should you run in Slack? To answer, select the appropriate options in the answer area.
+You need to ensure that developers receive Slack notifications when there are pull requests created for Contoso App. What should you run in Slack? 
+
+To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -12268,6 +12266,7 @@ Hot Area:
 **Answer Area**
 
 **Command Syntax:**
+
 `/azrepos` **[ Dropdown 1 ]** **[ Dropdown 2 ]**
 
 **Options for Dropdown 1:**
@@ -12293,18 +12292,20 @@ To ensure that developers receive Slack notifications for pull requests in the *
 
 **Explanation:**
 
-1.  **Dropdown 1 (subscribe):** In the Slack/Teams integration with Azure DevOps, the `subscribe` command is used to set up notifications for events like pull requests, commits, and code pushes.
+1.  **Dropdown 1 (subscribe):** In the Slack/Teams integration with Azure DevOps, the `subscribe` command is used to set up notifications for events **like pull requests, commits, and code pushes**.
 2.  **Dropdown 2 (Project URL):** The requirement is to receive notifications for **all pull requests created for "Contoso App"** (the project). In Azure DevOps, you can subscribe at the **project level** or the **repository level**.
     *   Subscribing to the project URL (`https://dev.azure.com/contoso/contoso-app`) means you will automatically receive notifications for any pull requests across all three repositories (`core-api`, `core-spa`, and `core-db`) within that project.
     *   Subscribing to a specific repository URL (like `.../core-api`) would only notify the team for that single repository, requiring three separate commands to cover everything.
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #19
+###  Question #5 💩💩
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
-You need to change the order of pages in the navigation pane of the published wiki in the Azure DevOps portal. What should you do?
+**You need to change the order of pages in the navigation pane of the published wiki in the Azure DevOps portal**. 
+
+What should you do?
 
 A. At the root of the wiki, create a file named .order that defines the page hierarchy.
 
@@ -12327,6 +12328,7 @@ In Azure DevOps, there are two types of wikis:
 2.  **Published Wiki (Code Wiki):** This is a wiki where the content is stored in a **Git repository**. 
 
 **Why A is the correct solution for a Published Wiki:**
+
 Because a Published Wiki is powered by a Git repository, the order of the pages is not managed through the web interface. Instead, it is controlled by metadata files stored in the repository alongside your Markdown (`.md`) files.
 
 *   To set a custom order for your pages, you must create a file named **`.order`** in the same directory as the Markdown files. 
@@ -12339,14 +12341,16 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #20
+### Question #6
 
-DRAG DROP You have a GitHub organization named org1 and an Azure tenant named Tenant1.
+You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
 You need to enable single sign-on (SSO) in Azure Active Directory (Azure AD) for the users in org1.
 
 
-Which URIs should you use for the SAML configuration in Azure AD? To answer, drag the appropriate URIs to the correct settings. Each URI may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which URIs should you use for the SAML configuration in Azure AD? 
+
+To answer, drag the appropriate URIs to the correct settings. Each URI may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -12393,13 +12397,15 @@ Why the other URIs are incorrect
 * `https://login.microsoftonline.com/tenant1` and `https://login.microsoftonline.com/tenant1.com` are Azure AD endpoints, not GitHub SAML endpoints, so they are not used in these fields.
 
 
-### Question #33
+### Question - 7
 
 You manage a project by using Azure Boards. You manage the project code by using GitHub.
 
 You have three work items that have IDs of 456, 457, and 458.
 
-You need to create a pull request that will be linked to all the work items. The solution must set the state of work item 456 to done.
+**You need to create a pull request that will be linked to all the work items**. 
+
+The solution must set the state of work item 456 to done.
 
 What should you add to the commit message?
 
@@ -12419,7 +12425,7 @@ Explanation
 
 When integrating **GitHub with Azure Boards**, work items must be referenced using the format:
 
-* **`#AB<WorkItemID>`**
+* **<mark>`#AB<WorkItemID>`</mark>**
 
 To **link and automatically transition a work item to Done**, you use keywords like:
 
@@ -12440,13 +12446,13 @@ Key Point
 
 * Use **`Fixes #AB<ID>`** to both **link and complete** Azure Boards work items from GitHub commits/PRs.
 
-### Question #35
-
-DRAG DROP -
+### Question #8
 
 You are implementing a new project in Azure DevOps.
 
-You need to assess the performance of the project. The solution must identify the following metrics:
+You need to assess the performance of the project. 
+
+The solution must identify the following metrics:
 
 • How long it takes to complete a work item
 
@@ -12482,11 +12488,9 @@ Based on the image provided, here is the extracted text content:
 
 The correct mappings are:
 
-* **How long it takes to complete a work item:**
-  **Cycle time**
+* **How long it takes to complete a work item:** **Cycle time**
 
-* **The percentage of defects found in production:**
-  **Defect escape rate**
+* **The percentage of defects found in production:** **Defect escape rate**
 
 Explanation
 
@@ -12506,7 +12510,7 @@ Final Answer
 * **Slot 1:** Cycle time
 * **Slot 2:** Defect escape rate
 
-### Question #36
+### Question #9
 
 You manage a project by using Azure Boards. You manage the project code by using GitHub.
 
@@ -12555,11 +12559,15 @@ Key Point
 * Use **keywords (Completed/Fixes/Resolves)** to update state
 
 
-### Question #37
+### Question #10
 
-You have an Azure subscription that contains an Azure container registry. The container registry contains an ACR Tasks task named Task1. Task1 is configured to run once every five days.
+You have an Azure subscription that contains an Azure container registry. 
 
-You need to trigger Task1 to run immediately.
+**The container registry contains an ACR Tasks task named Task1.**
+
+**Task1 is configured to run once every five days**.
+
+**You need to trigger Task1 to run immediately.**
 
 Which command should you run?
 
@@ -12594,7 +12602,7 @@ Key Point
 
 Use **`az acr task run`** whenever you need to **manually trigger a scheduled or existing ACR task on demand**.
 
-### Question #38
+### Question #11
 
 You manage a project by using Azure Boards. You manage the project code by using GitHub.
 
@@ -12624,7 +12632,6 @@ When integrating **GitHub with Azure Boards**:
 
 * Work items must be referenced using **`#AB<ID>`**
 * To **change the state to Done**, you must use a valid keyword such as:
-
   * **Completed**
   * Fixes / Fix / Fixed
   * Resolves / Resolved
@@ -12646,7 +12653,7 @@ Key Point
 * Use **supported keywords** like **Completed / Fixes / Resolves** to update state
 
 
-### Question #39
+### Question #12
 
 You manage projects by using Azure Boards.
 
@@ -12681,7 +12688,8 @@ In Azure Boards, dependencies between work items are defined using **Predecessor
 Since:
 
 * **itemA depends on itemB**,
-  → **itemA is the Successor**, and **itemB is the Predecessor**
+
+→ **itemA is the Successor**, and **itemB is the Predecessor**
 
 Why not the others?
 
@@ -12694,7 +12702,7 @@ Key Point
 Use **Successor/Predecessor links** to model dependencies between work items in Azure Boards.
 
 
-### Question #40
+### Question #13
 
 You manage projects by using Azure Boards.
 
@@ -12724,7 +12732,6 @@ Explanation
 To define a **dependency** in Azure Boards, you must use **Predecessor/Successor** link types:
 
 * If **itemA depends on itemB**, then:
-
   * **itemA = Successor**
   * **itemB = Predecessor**
 
@@ -12743,7 +12750,7 @@ Key Point
 Use **Successor/Predecessor** links to correctly model dependencies between work items.
 
 
-### Question #41
+### Question #14
 
 You have the services shown in the following table.
 
@@ -12788,7 +12795,7 @@ Key Point
 
 So, both services can be notified.
 
-### Question #42
+### Question #15
 
 DRAG DROP -
 
@@ -12850,10 +12857,12 @@ Key Insight
 * **Board includes:** Active, Resolved, Completed
 * **Completed items are removed from backlog view** but still visible on boards for tracking
 
-### Question #43
+### Question #16 💩
+
+You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. 
 
 
-You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. Pipeline1 is used to automate the building of App1.
+Pipeline1 is used to automate the building of App1.
 
 You have a Slack channel named App1chat that includes an incoming webhook.
 
@@ -12886,7 +12895,7 @@ To send notifications from Azure DevOps (Azure Pipelines) to external services l
 
 Why not the others?
 
-* ❌ **A. a notification** → Refers to built-in notifications (email, UI), not webhook integrations
+* ❌ <mark>**A. a notification** → Refers to built-in notifications (email, UI), not webhook integrations</mark>
 * ❌ **B. an alert rule** → Used in Azure Monitor, not Azure DevOps Pipelines
 * ❌ **D. an action group** → Also part of Azure Monitor, not DevOps
 
@@ -12895,9 +12904,11 @@ Key Point
 * Use a **service hook subscription** to connect Azure DevOps events to external services like Slack via webhooks.
 
 
-### Question #47
+### Question #17
 
-You have a project in Azure DevOps named App Project that is used to develop an app named App1. App1Project has an Azure Boards team dashboard that is used to monitor the progress of App1 and track work items.
+You have a project in Azure DevOps named App Project that is used to develop an app named App1. 
+
+App1Project has an Azure Boards team dashboard that is used to monitor the progress of App1 and track work items.
 
 You need to track how long it takes to close a work item once work for the item has commenced.
 
@@ -12934,13 +12945,13 @@ Key Point
 * **Cycle time = Start → Done**
 * **Lead time = Created → Done**
 
-### Question #49
+### Question #18 💩
 
 You manage a project by using Azure Boards, and you manage the project code by using GitHub repositories.
 
 You have a work item that has an ID of 123.
 
-You need to link a commit message in GitHub to work item 123 on the board.
+**You need to link a commit message in GitHub to work item 123 on the board**.
 
 What are two ways to achieve the goal? Each correct answer presents a complete solution.
 
@@ -12961,8 +12972,8 @@ E. To work item 123, add a comment that includes the URL of the commit.
 
 The correct answers are:
 
-**A. From the Development settings of work item 123, select Add link, and then enter the URL of the commit.**
-**B. Add AB#123 to the text of the commit message.**
+- **A. From the Development settings of work item 123, select Add link, and then enter the URL of the commit.**
+- **B. Add AB#123 to the text of the commit message.**
 
 Explanation
 
@@ -12991,12 +13002,16 @@ Key Point
 * Link manually via the **Development section** in Azure Boards
 
 
-### Question #50
+### Question #19 💩
 
 
-You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. The repository contains a file named README.md.
+You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. 
 
-You need to ensure that README.md includes the status of the work items on the board. The solution must minimize administrative effort.
+The repository contains a file named README.md.
+
+**You need to ensure that README.md includes the status of the work items on the board. **
+
+The solution must minimize administrative effort.
 
 What should you do first?
 
@@ -13020,7 +13035,6 @@ Explanation
 To display Azure Boards work item status in a GitHub repository (like in `README.md`), you must first **integrate Azure Boards with GitHub**.
 
 * Installing the **Azure Boards app for GitHub** establishes the connection between:
-
   * Azure DevOps Boards
   * GitHub repository
 
@@ -13040,13 +13054,13 @@ Key Point
 The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
 
 
-### Question #51
+### Question #20 💩
 
 You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
 
 You have a bug work item that has an ID of 123.
 
-You need to set the work item state to Resolved.
+**You need to set the work item state to Resolved**.
 
 What should you add to the commit message?
 
@@ -13060,26 +13074,45 @@ D. Resolves #123-
 
 _____
 
-The correct answer is **A. #123 fixed**.
+The correct answer is:
 
-Explanation:
+**D. Resolves #123-**
 
-Azure DevOps (Azure Repos) uses a specific set of **reserved keywords** to trigger automatic state transitions for work items.
+💡 Explanation:
 
-1.  **Reserved Keywords:** To transition a work item to a "Resolved" or "Completed" state, you must use one of the following keywords:
-    *   `Fix`, `Fixed`, `Fixes`
-    *   `Close`, `Closed`, `Closes`
-2.  **Target State (Resolved):** In the Agile and CMMI process templates used by Azure Boards, the keywords **`Fix`**, **`Fixed`**, or **`Fixes`** are the specific triggers that move a Bug from "Active" to **"Resolved."**
-3.  **Keyword Recognition:** While the official documentation often suggests the format `Fixed #ID`, the Azure DevOps parser is generally flexible regarding the placement of the ID as long as a valid reserved keyword is present in the commit message.
+In Azure Repos, you can update work items directly from commit messages using specific keywords.
 
-Why other options are incorrect:
+To **change the state of a work item (like moving it to Resolved)**, you must use action keywords such as:
 
-*   **B & C:** "Resolved" and "Verifies" are **not** reserved transition keywords. While they will link the commit to the work item, they will not change its state.
-*   **D:** Although "Resolves" is commonly used in other platforms (like GitHub's native issues), it is **not** part of the official reserved keyword list for Azure Boards state transitions. Therefore, it would link the item but fail to move it to the "Resolved" state.
+* **Fixes**
+* **Fixed**
+* **Resolves**
+* **Resolved**
+
+Correct format:
+
+```
+Resolves #123
+```
+
+This will:
+
+* Link the commit to work item **123**
+* Automatically transition its state to **Resolved**
+
+ ❌ Why the other options are wrong:
+
+* **A. #123 fixed** → Incorrect syntax (keyword must come before ID)
+* **B. #123 Resolved-** → Invalid format
+* **C. Verifies #123-** → Only links, does NOT change state
+
+✅ Final Answer:
+
+**D. Resolves #123-**
 
 
 
-### Question #55
+### Question #21 💩💩
 
 HOTSPOT -
 
@@ -13102,20 +13135,16 @@ Based on the image provided, here is the extracted text content:
 
 **Answer Area**
 
-*   **Most bugs being detected and reported by customers:** **[ Dropdown 1 ]**
-
-
-    *   **Dropdown 1 Options:**
-        *   Application failure rates
+*   <mark>**Most bugs being detected and reported by customers:** **[ Dropdown 1 ]**</mark>
+  *   **Dropdown 1 Options:**
+    	*   Application failure rates
         *   Bug report rates
         *   Defect escape rate
         *   Mean time to detection
         *   Mean time to recover
 
-*   **It takes a long time to detect failures:** **[ Dropdown 2 ]**
-
-
-    *   **Dropdown 2 Options:**
+*   <mark>**It takes a long time to detect failures:** **[ Dropdown 2 ]**</mark>
+  *   **Dropdown 2 Options:**
         *   Application failure rates
         *   Bug report rates
         *   Defect escape rate
@@ -13134,12 +13163,10 @@ The correct selections are:
 Explanation
 
 1. **Defect escape rate**
-
    * Measures the percentage of defects that **escape testing and are found by customers**.
    * This directly addresses the issue of “most bugs being detected and reported by customers.”
 
 2. **Mean time to detection (MTTD)**
-
    * Measures how long it takes to **detect failures after they occur**.
    * This directly addresses the issue of “it takes a long time to detect failures.”
 
@@ -13158,12 +13185,12 @@ Why not the others?
 
 
 
-### Question-103
+### Question-22 💩
 
 
-Your company creates a new Azure DevOps team You plan to use Azure DevOps for sprint planning.
+Your company creates a new Azure DevOps team You plan to use **Azure DevOps for sprint planning**.
 
-You need to visualize the flow of your work by using an agile methodology.
+**You need to visualize the flow of your work by using an agile methodology.**
 
 Which Azure DevOps component should you use?
 
@@ -13198,15 +13225,17 @@ Final Answer:
 
 **A. Kanban boards** ✅
 
-### Question-104
+### Question-23
 
 Your team uses an agile development approach.
 
-You need to recommend a branching strategy for the team's Git repository. The strategy must meet the following requirements.
+You need to recommend a branching strategy for the team's Git repository. 
+
+The strategy must meet the following requirements.
 
 - Provide the ability to work on multiple independent tasks in parallel.
 
-- Ensure that checked-in code remains in a releasable state always.
+- **Ensure that checked-in code remains in a releasable state always**.
 
 - Ensure that new features can be abandoned at any time.
 
@@ -13265,7 +13294,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-105
+### Question-24 💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13315,7 +13344,7 @@ Final Answer:
 
 **B. No** ❌
 
-### Question #59
+### Question #25  - duplicated  🐣
 
 DRAG DROP -
 
@@ -13366,9 +13395,11 @@ So the answer is:
 
 This is the standard pattern for GitHub Actions + Azure Key Vault integration.
 
-### Question #16
+### Question #26   💩
 
-You have an Azure DevOps organization that contains a project named Project1. You need to create a published wiki in Project1.
+You have an Azure DevOps organization that contains a project named Project1. 
+
+You need to create a published wiki in Project1.
 
 What should you do first?
 
@@ -13402,7 +13433,7 @@ Why other options are incorrect:
 *   **B (Pipeline):** While you can use a pipeline to automate documentation, it is not a requirement to create or publish a wiki.
 *   **D (Team configuration):** This handles area paths, iterations, and team members, not documentation storage.
 
-### Question-25
+### Question-27
 
 You manage a project by using Azure Board, and you manage the project code by using Azure Repos.
 
@@ -13457,21 +13488,15 @@ Based on the image provided, here is the extracted text content:
 **Answer Area**
 
 *   **How long it took [to] close a work item after it was created:** **[ Dropdown 1 ]**
-
-
-    *   **Dropdown 1 Options:**
-
-        *   Burndown chart
+  *   **Dropdown 1 Options:**
+    	*   Burndown chart
         *   Cumulative flow diagram
         *   Cycle time
         *   Lead time
         *   Velocity
 
 *   **How long it took to close a work item after the work was started:** **[ Dropdown 2 ]**
-
-
-    *   **Dropdown 2 Options:**
-
+  *   **Dropdown 2 Options:**
         *   Burndown chart
         *   Burnup chart
         *   Cycle time
@@ -13484,13 +13509,11 @@ The correct selections are:
 
 * **How long it took to close a work item after it was created:**
 
-
-  **Lead time**
+<mark>**Lead time**</mark>
 
 * **How long it took to close a work item after the work was started:**
 
-
-  **Cycle time**
+<mark>**Cycle time**</mark>
 
 Explanation
 
@@ -13508,7 +13531,7 @@ Key takeaway
 * **Cycle time = In Progress → Done**
 
 
-### Question-106
+### Question-30
 
 You have a project in Azure DevOps that has a release pipeline.
 
@@ -13558,15 +13581,15 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #27
+### Question #31
 
 DRAG DROP -
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
-You need to integrate Exabeam and Azure. The solution must use OAuth authentication.
+You need to integrate Exabeam and Azure. **The solution must use OAuth authentication.**
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which **three actions** should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Based on the image provided, here is the extracted text content:
 
@@ -13614,7 +13637,7 @@ Final Answer
 
 
 
-### Question-108
+### Question-32
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13660,7 +13683,7 @@ Final Answer:
 **B. No** ❌
 
 
-### Question-109
+### Question-33 💩
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
@@ -13695,7 +13718,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-110
+### Question-34
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13726,11 +13749,11 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-111
+### Question-35
 
 You plan to create in Azure DevOps. Multiple developers will work on the project. 
 
-The developers will work offline frequently and will require access to the full project history while they are offline.
+**The developers will work offline frequently and will require access to the full project history while they are offline.**
 
 Which version control solution should you use?
 
@@ -13738,6 +13761,8 @@ Which version control solution should you use?
 * B. Git
 * C. TortoiseSVN
 * D. Subversion
+
+----
 
 The correct answer is:
 
@@ -13763,20 +13788,22 @@ Why the others are wrong
 
 | Option                                        | Reason                                                                                        |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| **A. Team Foundation Version Control (TFVC)** | Centralized; requires a server connection for full history access. Offline access is limited. |
-| **C. TortoiseSVN**                            | SVN client, centralized; full history not available offline.                                  |
-| **D. Subversion (SVN)**                       | Centralized; only partial history available offline, not fully distributed.                   |
+| **A. Team Foundation Version Control (TFVC)** | Centralized; requires a server connection for full history access. **Offline access is limited**. |
+| **C. TortoiseSVN**                            | SVN client, centralized; **full history not available offline.**                                  |
+| **D. Subversion (SVN)**                       | **Centralized; only partial history available offline, not fully distributed**.                   |
 
 Final Answer:
 
 **B. Git** ✅
 
 
-### Question-112
+### Question-36  💩💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
-You need to simplity the project by using a single feed that stores packages produced by your company and packages consumed from remote feeds. The solution must support public feeds and authenticated feeds.
+You need to simplity the project by using a single feed that stores packages produced by your company and packages consumed from remote feeds. 
+
+The solution must support public feeds and authenticated feeds.
 
 What should you enable in DevOps?
 
@@ -13804,7 +13831,6 @@ The goal is to **simplify package management** by using **a single feed** that c
 
 * You configure a feed to have **upstream sources**, such as NuGet.org, Maven Central, or other private feeds.
 * When a package is requested from your feed:
-
   * If it exists locally, it’s served from the feed.
   * If it exists upstream, it’s cached and served automatically.
 * Supports **authenticated feeds** and **public feeds** transparently.
@@ -13822,7 +13848,7 @@ Final Answer:
 **B. upstream sources** ✅
 
 
-### Question-113
+### Question-37 🐣
 
 
 You plan to onboard 10 new developers.
@@ -13853,20 +13879,16 @@ Explanation
 The requirements:
 
 1. **Integrates with GitHub**
-
-   * Codespaces is a **cloud-hosted development environment built by GitHub**, fully integrated.
+  	* Codespaces is a **cloud-hosted development environment built by GitHub**, fully integrated.
 
 2. **Provides integrated debugging tools**
-
-   * Codespaces provides **VS Code in the browser**, with full debugging, extensions, and IntelliSense.
+    * Codespaces provides **VS Code in the browser**, with full debugging, extensions, and IntelliSense.
 
 3. **Supports remote workers and hot-desking**
-
-   * Developers can access their environment from **any machine with a browser**; no local setup required.
+    * Developers can access their environment from **any machine with a browser**; no local setup required.
 
 4. **Supports browsers, tablets, and Chromebooks**
-
-   * Codespaces is **browser-based**, so it works on laptops, tablets, and Chromebooks.
+    * Codespaces is **browser-based**, so it works on laptops, tablets, and Chromebooks.
 
 Why the others are incorrect
 
@@ -13882,13 +13904,15 @@ Final Answer:
 
 
 
-### Question-114
+### Question-38
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
-You use Azure DevOps to build and deploy a web app named App1. Azure Monitor is configured to generate an email notification in response to alerts generated whenever App1 generates a server-side error.
+You use Azure DevOps to build and deploy a web app named App1. 
 
-You need to receive notifications in Microsoft Teams whenever an Azure Monitor alert is generated.
+Azure Monitor is configured to generate an email notification in response to alerts generated whenever App1 generates a server-side error.
+
+**You need to receive notifications in Microsoft Teams whenever an Azure Monitor alert is generated.**
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -13906,8 +13930,8 @@ NOTE: Each correct selection is worth one point.
 
 The correct answers are:
 
-**B. Create an Azure Logic App that has an HTTP request trigger** ✅
-**D. Modify an action group in Azure Monitor** ✅
+- **B. Create an Azure Logic App that has an HTTP request trigger** ✅
+- **D. Modify an action group in Azure Monitor** ✅
 
 Explanation
 
@@ -13938,7 +13962,7 @@ Final Answer:
 **B and D** ✅
 
 
-### Question-115
+### Question-39 - Duplicated
 
 
 You have an Azure DevOps organization that contains a project named Project1
@@ -13950,9 +13974,10 @@ What should you do first?
 
 * A. Modify the Storage settings of Project1.
 * B. In Project, create an Azure DevOps pipeline.
-* **C. In Project1, create an Azure DevOps repository**.
+* C. In Project1, create an Azure DevOps repository.
 * D. Modify the Team configuration settings of Project1.
 
+-------
 
 The correct answer is:
 
@@ -13983,13 +14008,13 @@ Final Answer:
 **C. In Project1, create an Azure DevOps repository** ✅
 
 
-### Question-116
+### Question-40 💩💩💩
 
 Your company plans to use an agile approach to software development.
 
 You need to recommend an application to provide communication between members of the development team who work in locations around the world. The applications must meet the following requirements
-Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.
 
+**Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.**
 
 Be available on Windows 10, Mac OS, iOS, and Android operating systems.
 
@@ -14015,21 +14040,17 @@ Explanation
 The requirements:
 
 1. **Isolated channels for different project teams**
-
-   * Teams allows creating **channels** for projects, teams, or topics.
-   * Each channel keeps a **history of chats and files**.
+  * Teams allows creating **channels** for projects, teams, or topics.
+  * Each channel keeps a **history of chats and files**.
 
 2. **Cross-platform support**
-
-   * Teams is available on **Windows 10, MacOS, iOS, and Android**.
+  * Teams is available on **Windows 10, MacOS, iOS, and Android**.
 
 3. **External access for contractors/suppliers**
-
-   * Teams supports **guest access**, so external collaborators can participate in selected channels.
+  * Teams supports **guest access**, so external collaborators can participate in selected channels.
 
 4. **Integration with Azure DevOps**
-
-   * Teams can integrate with **Azure DevOps** to receive notifications, track work items, and create tasks directly from chat.
+  * Teams can integrate with **Azure DevOps** to receive notifications, track work items, and create tasks directly from chat.
 
 Why the other options are incorrect
 
@@ -14044,11 +14065,13 @@ Final Answer:
 **D. Microsoft Teams** ✅
 
 
-### Question-117
+### Question-41  💩💩
 
 Your company plans to use an agile approach to software development.
 
-You need to recommend an application to provide communication between members of the development team who work in locations around the world. The applications must meet the following requirements:
+You need to recommend an application to provide communication between members of the development team who work in locations around the world. 
+
+The applications must meet the following requirements:
 
 * Provide the ability to isolate the members of different project teams into separate communication channels and to keep a history of the chats within those channels.
 * Be available on Windows 10, Mac OS, iOS, and Android operating systems.
@@ -14074,21 +14097,17 @@ Explanation
 The requirements:
 
 1. **Isolated channels with chat history**
-
-   * Slack supports **channels** for each project, topic, or team.
-   * All messages and files in a channel are **persistently stored**, so the history is available.
+  * Slack supports **channels** for each project, topic, or team.
+  * All messages and files in a channel are **persistently stored**, so the history is available.
 
 2. **Cross-platform availability**
-
-   * Slack works on **Windows 10, MacOS, iOS, and Android**.
+  * Slack works on **Windows 10, MacOS, iOS, and Android**.
 
 3. **External collaborators**
-
-   * Slack supports **guest access** and shared channels, allowing contractors or suppliers to participate.
+  * Slack supports **guest access** and shared channels, allowing contractors or suppliers to participate.
 
 4. **Integration with Azure DevOps**
-
-   * Slack can integrate with Azure DevOps to **receive notifications about work items, builds, and releases** in channels.
+  * Slack can integrate with Azure DevOps to **receive notifications about work items, builds, and releases** in channels.
 
 Why the other options are incorrect
 
@@ -14103,12 +14122,13 @@ Final Answer:
 **D. Slack** ✅
 
 
-### Question-118
+### Question-42 💩💩
 
 
 You are designing a YAML template for use with Azure Pipelines. **The template will include the outputfile parameter.**
 
 Which two methods can you use to reference the parameter? Each correct answer presents a complete solution.
+
 NOTE: Each correct selection is worth one point.
 
 * A. `${{parameters.outputfile}}`
@@ -14123,8 +14143,8 @@ Answer: AE
 
 The correct answers are:
 
-✅ **A. `${{ parameters.outputfile }}`**
-✅ **E. `${{ parameters['outputfile'] }}`**
+- ✅ **A. `${{ parameters.outputfile }}`**
+- ✅ **E. `${{ parameters['outputfile'] }}`**
 
 Explanation
 
@@ -14166,7 +14186,7 @@ ${{ parameters['outputfile'] }}
 
 
 
-### Question-119
+### Question-43
 
 You have a pipeline named Pipeline1 in Azure Pipelines.
 
@@ -14206,11 +14226,11 @@ Final Answer:
 
 
 
-### Question-120
+### Question-44  💩💩💩
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
-You create a Microsoft Teams channel and add the Azure Boards app to the channel.
+**You create a Microsoft Teams channel and add the Azure Boards app to the channel.**
 
 **You need to ensure that users can create work items in Board1 from Microsoft Teams.**
 
@@ -14251,7 +14271,7 @@ Final Answer:
 
 
 
-### Question-121
+### Question-45
 
 You have an Azure subscription that contains a storage account and 20 virtual machines
 
@@ -14305,15 +14325,13 @@ Final Answer:
 
 
 
-
-
-### Question-123
+### Question-46  💩💩
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
 You plan to create a pull request in GitHub.
 
-You need to automatically link the request to an existing Azure Boards work item by using the text of AB#.
+**You need to automatically link the request to an existing Azure Boards work item by using the text of AB#**.
 
 To which two elements can you add the text? Each correct answer presents a complete solution.
 
@@ -14330,8 +14348,8 @@ NOTE: Each correct selection is worth one point.
 
 The correct answers are:
 
-**C. title**
-**E. description** ✅
+- **C. title**
+- **E. description** ✅
 
 Explanation
 
@@ -14354,9 +14372,7 @@ Final Answer:
 
 **C and E** ✅
 
-
-
-### Question-124
+### Question-47
 
 You are integrating an Azure Boards project and a GitHub repository.
 
@@ -14378,8 +14394,8 @@ Answer: DE
 
 The correct answers are:
 
-**D. GitHub user credentials**
-**E. a personal access token (PAT)** ✅
+- **D. GitHub user credentials**
+- **E. a personal access token (PAT)** ✅
 
 Explanation
 
@@ -14403,9 +14419,11 @@ Final Answer:
 **D and E** ✅
 
 
-### Question-125
+### Question-48
 
-You have a GitHub repository that is integrated with Azure Boards. Azure Boards has a work item that has the number 715.
+You have a GitHub repository that is integrated with Azure Boards. 
+
+Azure Boards has a work item that has the number 715.
 
 You need to ensure that when you commit source code in GitHub, the work item is updated automatically.
 
@@ -14452,7 +14470,7 @@ Why the others are incorrect
 **B. AB#715**
 
 
-### Question-126
+### Question-49
 
 You are creating a dashboard in Azure Boards.
 
@@ -14496,13 +14514,13 @@ If you'd like, I can also explain when to use **lead time vs cycle time** — it
 
 
 
-### Question-127 ？？
+### Question-50  💩💩
 
 You manage code by using GitHub.
 
 You plan to ensure that all GitHub Actions are validated by a security team.
 
-You create a branch protection rule requiring that code changes be reviewed by code owners.
+**You create a branch protection rule requiring that code changes be reviewed by code owners.**
 
 You need to create the CODEOWNERS file.
 
@@ -14553,22 +14571,26 @@ If you'd like, I can also provide a sample `CODEOWNERS` file for securing GitHub
 
 
 
-### Question-131
+### Question-51
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
-The builds must access an on-premises dependency management system.
+- The builds must access an on-premises dependency management system.
 
-The build outputs must be stored as Server artifacts in Azure DevOps.
+- The build outputs must be stored as Server artifacts in Azure DevOps.
 
-The source code must be stored in a Git repository in Azure DevOps.
+T- he source code must be stored in a Git repository in Azure DevOps.
 
-Solution: Configure the build pipeline to use a Hosted VS 2019 agent pool. Include the Java Tool Installer task in the build pipeline.
+Solution: Configure the build pipeline to use a Hosted VS 2019 agent pool. 
+
+**Include the Java Tool Installer task in the build pipeline.**
 
 Does this meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No
+
+------
 
 Why this does **not** meet the goal
 
