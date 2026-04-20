@@ -14632,7 +14632,7 @@ Because a **hosted agent** cannot access **on-premises dependency management sys
 
 ## Topic 7 - Question Set 7
 
-### Question #2
+### Question #1 💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -14672,7 +14672,7 @@ The correct answer is:
 
 Explanation
 
-To ensure a **template runs before the pipeline steps**, you must use the **`extends` keyword** in Azure Pipelines YAML.
+<markk>To ensure a **template runs before the pipeline steps**, you must use the **`extends` keyword** in Azure Pipelines YAML.</mark>
 
 * **`extends`** allows you to base your pipeline on a template
 * The template (`Template1.yml`) runs **first**, then additional steps are passed via parameters
@@ -14694,11 +14694,13 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #3
+### Question #2
 
-You have an Azure solution that contains a build pipeline in Azure Pipelines. You experience intermittent delays before the build pipeline starts.
+You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
-You need to reduce the time it takes to start the build pipeline.
+You experience intermittent delays before the build pipeline starts.
+
+**You need to reduce the time it takes to start the build pipeline.**
 
 What should you do?
 
@@ -14740,7 +14742,7 @@ Key Point
 * **Queue delay = not enough parallel jobs**
 * **Solution = increase parallelism (buy more parallel jobs or add agents)**
 
-### Question #4
+### Question #3 💩
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -14750,7 +14752,7 @@ You need to recommend an integration strategy for the build process of a Java ap
 
 ✑ The source code must be stored in a Git repository in Azure DevOps.
 
-Solution: Configure the build pipeline to use a Microsoft-hosted agent pool running a Linux image. Include the Java Tool Installer task in the build pipeline.
+Solution: **Configure the build pipeline to use a Microsoft-hosted agent pool running a Linux image. Include the Java Tool Installer task in the build pipeline.**
 
 Does this meet the goal?
 
@@ -14780,7 +14782,6 @@ What would work instead
 
 * Use a **self-hosted agent** deployed within the on-premises network
 * This ensures:
-
   * Access to the on-prem dependency system ✅
   * Ability to push artifacts to Azure DevOps ✅
   * Integration with Azure Repos Git ✅
@@ -14793,9 +14794,13 @@ Key Point
 
 If a pipeline must access **on-premises resources**, you typically need a **self-hosted agent**, not a Microsoft-hosted one.
 
-### Question #5
+### Question #4
 
-You store source code in a Git repository in Azure Repos. You use a third-party continuous integration (CI) tool to control builds. What will Azure DevOps use to authenticate with the tool?
+You store source code in a Git repository in Azure Repos. 
+
+**You use a third-party continuous integration (CI) tool to control buil**ds. 
+
+What will Azure DevOps use to authenticate with the tool?
 
 A. certificate authentication
 
@@ -14834,15 +14839,15 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #6
+### Question #5 💩💩💩
 
 DRAG DROP You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
 | Project name | Project Details |
 | :--- | :--- |
-| **Project1** | The project team provides preconfigured YAML files that it wants to use to manage future pipeline configuration changes. |
+| **Project1** | The project team provides **preconfigured YAML files that it wants to use to manage future pipeline configuration changes**. |
 | **Project2** | The sensitivity of the project requires that the source code be hosted on the managed Windows server on your company's network. |
-| **Project3** | The project team requires a centralized version control system to ensure that developers work with the most recent version. |
+| **Project3** | <mark>The project team requires a centralized version control system to ensure that developers work with the most recent version.</mark> |
 
 Which version control system should you recommend for each project? To answer, drag the appropriate version control systems to the correct projects. Each version control system may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -14912,9 +14917,11 @@ Final Answer
 * **Project3:** Assembla Subversion
 
 
-### Question #7
+### Question #6
 
-You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
+You need to recommend an integration strategy for the build process of a Java application. 
+
+The solution must meet the following requirements:
 
 ✑ The builds must access an on-premises dependency management system.
 
@@ -14956,7 +14963,6 @@ To meet the requirement, you need:
 
 * A **self-hosted Azure Pipelines agent** installed on-premises
 * This agent runs the build and can access:
-
   * On-prem dependency system ✅
   * Azure DevOps artifacts ✅
   * Azure Repos Git ✅
@@ -14969,17 +14975,19 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #8
+### Question #7 💩 
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
 ✑ The builds must access an on-premises dependency management system.
 
-✑ The build outputs must be stored as Server artifacts in Azure DevOps.
+✑ **The build outputs must be stored as Server artifacts in Azure DevOps**.
 
 The source code must be stored in a Git repository in Azure DevOps.
 
-Solution: Install and configure a self-hosted build agent on an on-premises machine. Configure the build pipeline to use the Default agent pool. Include the Java Tool Installer task in the build pipeline.
+<mark>Solution: Install and configure a self-hosted build agent on an on-premises machine.</mark> 
+
+Configure the build pipeline to use the Default agent pool. Include the Java Tool Installer task in the build pipeline.
 
 Does this meet the goal?
 
@@ -15001,6 +15009,7 @@ This solution satisfies all the requirements:
 ✅ Access to on-premises dependency management system
 
 * A **self-hosted build agent** installed on-premises can directly access internal systems
+
   ✔ Requirement met
 
 ✅ Store build outputs as Server artifacts in Azure DevOps
@@ -15025,7 +15034,8 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #12
+### Question #8 💩
+
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15079,7 +15089,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #13
+### Question #9  💩💩💩
 
 DRAG DROP Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15139,11 +15149,9 @@ Explanation
 **Project 2**
 
 * Requirement:
-
   * Minimum **2 reviewers**
   * Must be linked to **work items**
 * ✅ **Git** supports **branch policies**:
-
   * Required reviewers
   * Work item linking
 
@@ -15164,7 +15172,6 @@ Why not others?
 
 * ❌ **Perforce / Subversion** → Not used in Azure Repos
 * Azure Repos supports only:
-
   * **Git**
   * **TFVC**
 
@@ -15173,7 +15180,6 @@ Key Insights
 
 * **TFVC** → Best for **fine-grained (file-level) security**
 * **Git** → Best for:
-
   * Branch policies
   * Tool integrations (like Xcode)
   * Modern DevOps workflows
@@ -15185,7 +15191,7 @@ Final Answer
 * **Project 3:** Git
 * **Project 4:** Git
 
-### Question #15
+### Question #10 💩
 
 HOTSPOT You company uses Azure DevOps to deploy infrastructures to Azure.
 
@@ -15264,13 +15270,19 @@ Under **build_vm**, there is a single job named something like:
 
 
 
-### Question #16
+### Question #11 💩
 
 DRAG DROP You are configuring Azure DevOps build pipelines.
 
 You plan to use hosted build agents.
 
-Which build agent pool should you use to compile each application type? To answer, drag the appropriate build agent pools to the correct application types. Each build agent pool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which build agent pool should you use to compile each application type? 
+
+To answer, drag the appropriate build agent pools to the correct application types. 
+
+**Each build agent pool may be used once, more than once, or not at all. **
+
+You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -15297,12 +15309,14 @@ Based on the image provided, here is the extracted text content:
 * **An Internet Information Services (IIS) web application that runs in Docker:** **Hosted Windows Container**
 
 
-### Question #21
+### Question #12
 
 
 Your company has a project in Azure DevOps for a new application. The application will be deployed to several Azure virtual machines that run Windows Server 2019.
 
-You need to recommend a deployment strategy for the virtual machines. The strategy must meet the following requirements:
+You need to recommend a deployment strategy for the virtual machines. 
+
+The strategy must meet the following requirements:
 
 ✑ Ensure that the virtual machines maintain a consistent configuration.
 
@@ -15349,7 +15363,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #23
+### Question #13 💩
 
 DRAG DROP Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15382,16 +15396,13 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 ✅ Correct sequence:
 
 1. **Create a DSC metaconfiguration**
-
-   * Defines how the node communicates with Azure Automation (pull server, registration key, etc.).
+	* Defines how the node communicates with Azure Automation (pull server, registration key, etc.).
 
 2. **Copy the metaconfiguration to the virtual machines**
-
-   * The configuration must be present locally before applying it.
+  * The configuration must be present locally before applying it.
 
 3. **From the virtual machines, run `setdsclocalconfigurationmanager.py`**
-
-   * Applies the metaconfiguration to configure the LCM and complete onboarding.
+  * Applies the metaconfiguration to configure the LCM and complete onboarding.
 
 ❌ Why not the others?
 
@@ -15406,12 +15417,11 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 
 
 
-### Question #25
+### Question #14
 
 DRAG DROP You are creating a container for an ASP.NET Core app.
 
 You need to create a Dockerfile file to build the image. The solution must ensure that the size of the image is minimized.
-
 
 How should you configure the file? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -15488,7 +15498,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #26
+### Question #15
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -15546,7 +15556,7 @@ To enforce requirements on **pull requests in Azure Repos**, you use **branch po
 
 
 
-### Question-132
+### Question-16
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15556,7 +15566,9 @@ The build outputs must be stored as Server artifacts in Azure DevOps.
 
 The source code must be stored in a Git repository in Azure DevOps.
 
-Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
+**Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool.**
+
+Include the Java Tool Installer task in the build pipeline.
 
 Does this meet the goal?
 
@@ -15567,10 +15579,12 @@ Does this meet the goal?
 
 **Answer: B. No**
 
-The solution does not meet the requirement because a hosted Ubuntu agent runs in the Azure cloud and cannot directly access an on-premises dependency management system without additional network configuration (such as a VPN or self-hosted agent). The Java Tool Installer task only ensures the correct Java version is used, but does not address on-premises connectivity.
+The solution does not meet the requirement because a hosted Ubuntu agent runs in the Azure cloud and cannot directly access an on-premises dependency management system without additional network configuration (such as a VPN or self-hosted agent). 
+
+The Java Tool Installer task only ensures the correct Java version is used, but does not address on-premises connectivity.
 
 
-### Question-133
+### Question- 17
 
 Your company uses a Git repository in Azure Repos to manage the source code of a web application. The master branch is protected from direct updates.
 
@@ -15580,7 +15594,7 @@ Developers work on new features in the topic branches.
 
 You need to enforce a pull request merge strategy. The strategy must meet the following requirements:
 
-Consolidate commit histories.
+**Consolidate commit histories.**
 
 Merge the changes into a single commit.
 
@@ -15626,11 +15640,11 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-134
+### Question-18
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
-You need to add code coverage testing and publish the outcomes to the pipeline.
+**You need to add code coverage testing and publish the outcomes to the pipeline.**
 
 What should you use?
 
@@ -15664,7 +15678,7 @@ Final Answer:
 **C. JaCoCo** 🟢
 
 
-### Question-135
+### Question-19💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15701,7 +15715,7 @@ Final Answer:
 **A. Cobertura** 🟢
 
 
-### Question #19
+### Question #20
 
 HOTSPOT You are designing YAML-based Azure pipelines for the apps shown in the following table.
 
@@ -15752,7 +15766,7 @@ To minimize downtime and match each release requirement:
 * **App1:** rolling
 * **App2:** canary
 
-### Question #28
+### Question #21
 
 
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
