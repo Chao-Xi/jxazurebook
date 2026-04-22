@@ -15769,15 +15769,13 @@ To minimize downtime and match each release requirement:
 ### Question #21
 
 
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
-
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
 You use a Git repository for applications source control.
 
 You need to implement a pull request strategy that reduces the history volume in the master branch.
 
-Solution: You implement a pull request strategy that uses fast-forward merges.
+<mark>**Solution: You implement a pull request strategy that uses fast-forward merges**.</mark>
 
 Does this meet the goal?
 
@@ -15793,7 +15791,6 @@ The goal is to **reduce the history volume in the master branch**.
 🔍 Analysis:
 
 * **Fast-forward merge**:
-
   * Does **not create a merge commit**
   * Keeps history **linear and compact**
   * Reduces unnecessary commits → **less history clutter**
@@ -15805,15 +15802,13 @@ This directly satisfies the requirement.
 **A. Yes**
 
 
-### Question #29
-
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+### Question #22
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
 You use a Git repository for applications source control.
 
-You need to implement a pull request strategy that reduces the history volume in the master branch.
+**You need to implement a pull request strategy that reduces the history volume in the master branch**.
 
 Solution: You implement a pull request strategy that uses squash merges.
 
@@ -15829,31 +15824,27 @@ B. No
 🔍 Analysis:
 
 * **Squash merge**:
-
   * Combines all commits from the feature branch into **a single commit** when merging.
   * Significantly **reduces the number of commits** in the target branch.
   * Keeps history **clean and compact**.
 
 This directly meets the requirement to **reduce the history volume in the master branch**.
 
----
 
 ✅ Final Answer:
 
 **A. Yes**
 
 
-### Question #30
-
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+### Question #23
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
 You use a Git repository for applications source control.
 
-You need to implement a pull request strategy that reduces the history volume in the master branch.
+**You need to implement a pull request strategy that reduces the history volume in the master branch.**
 
-Solution: You implement a pull request strategy that uses an explicit merge.
+**Solution: You implement a pull request strategy that uses an explicit merge.**
 
 Does this meet the goal?
 
@@ -15861,13 +15852,11 @@ A. Yes
 
 B. No
 
-
 ----
 
 🔍 Analysis:
 
 * **Explicit merge (no fast-forward / merge commit)**:
-
   * Creates an additional **merge commit** for every pull request
   * Preserves full branch history (all commits + merge commits)
   * **Increases** history volume rather than reducing it
@@ -15879,7 +15868,7 @@ This does **not** meet the requirement to reduce history volume.
 **B. No**
 
 
-### Question #31
+### Question #24
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -15887,7 +15876,7 @@ You use a Git repository for applications source control.
 
 You need to implement a pull request strategy that reduces the history volume in the master branch.
 
-Solution: You implement a pull request strategy that uses a three-way merge.
+**Solution: You implement a pull request strategy that uses a three-way merge.**
 
 Does this meet the goal?
 
@@ -15900,7 +15889,6 @@ B. No
 🔍 Analysis:
 
 * A **three-way merge** (default merge commit):
-
   * Creates a **merge commit** for each pull request
   * Preserves all individual commits from the feature branch
   * Results in **more commits and a more complex history**
@@ -15911,16 +15899,17 @@ This **does not reduce** the history volume—in fact, it increases it.
 
 **B. No**
 
-
-
-### Question #32
+### Question #25
 
 You need to recommend a Docker container build strategy that meets the following requirements: 
 
 
 ✑ Minimizes image sizes 
 
-✑ Minimizes the security surface area of the final image What should you include in the recommendation?
+✑ Minimizes the security surface area of the final image 
+
+
+What should you include in the recommendation?
 
 A. multi-stage builds
 
@@ -15941,13 +15930,11 @@ To meet the requirements:
 🔍 Analysis:
 
 * **Multi-stage builds**:
-
   * Use a **build image** (with SDK/tools) and a **separate runtime image**
   * Final image contains **only necessary runtime artifacts**
   * Removes compilers, build tools → **smaller size + reduced attack surface**
 
 * **Other options**:
-
   * **DSC** → configuration management, not related to container builds
   * **Docker Swarm** → orchestration, not image optimization
   * **Single-stage builds** → include all tools → **larger and less secure**
@@ -15957,7 +15944,7 @@ To meet the requirements:
 **A. multi-stage builds**
 
 
-### Question #33
+### Question #26 💩💩💩
 
 You plan to create an image that will contain a .NET Core application.
 
@@ -15974,7 +15961,9 @@ You have a Docker file file that contains the following code. (Line numbers are 
 
 ```
 
-You need to ensure that the image is as small as possible when the image is built. Which line should you modify in the file?
+**You need to ensure that the image is as small as possible** when the image is built. 
+
+Which line should you modify in the file?
 
 A. 1
 
@@ -16011,13 +16000,13 @@ Answer:
 **C. 4**
 
 
-### Question #34
+### Question #27
 
 Your company has a project in Azure DevOps for a new web application.
 
 You need to ensure that when code is checked in, a build runs automatically.
 
-Solution: From the Triggers tab of the build pipeline, you select Batch changes while a build is in progress.
+<mark>**Solution: From the Triggers tab of the build pipeline, you select Batch changes while a build is in progress.**</mark>
 
 Does this meet the goal?
 
@@ -16051,13 +16040,15 @@ You need to configure:
 
 ✔ So the solution does not meet the goal.
 
-### Question #35
+### Question #28 💩 💩
 
-HOTSPOT You need to deploy Azure Kubernetes Service (AKS) to host an application. The solution must meet the following requirements: 
+HOTSPOT You need to deploy Azure Kubernetes Service (AKS) to host an application. 
+
+The solution must meet the following requirements: 
 
 ✑ Containers must only be published internally.
 
-✑ AKS clusters must be able to create and manage containers in Azure.
+ .
 
 What should you use for each requirement? To answer, select the appropriate options in the answer area.
 
@@ -16082,19 +16073,16 @@ Based on the image provided, here is the extracted text content:
 
 -----
 
-
 Correct answers
 
-**1. Containers must only be published internally:**
-👉 **Azure Container Registry**
+**1. Containers must only be published internally:**  👉 **Azure Container Registry**
 
 * ACR is a private container registry.
 * It allows images to be stored and accessed only within your organization or secured networks.
 
 ---
 
-**2. AKS clusters must be able to create and manage containers in Azure:**
-👉 **An Azure service principal**
+**2. AKS clusters must be able to create and manage containers in Azure:**  👉 **An Azure service principal**
 
 * AKS uses a service principal (or managed identity) to authenticate and interact with Azure resources.
 * It allows the cluster to pull images from ACR and manage resources securely.
@@ -16106,12 +16094,14 @@ Final selections:
 * **AKS access to Azure:** Azure service principal
 
 
-### Question #36
+### Question #29
 
 
-You have 50 Node.js-based projects that you scan by using WhiteSource. Each project includes Package.json, Package-lock.json, and Npmshrinkwrap.json files.
+You have 50 Node.js-based projects that you scan by using WhiteSource.
 
-You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference.
+Each project includes Package.json, Package-lock.json, and Npmshrinkwrap.json files.
+
+**You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference.**
 
 What should you do?
 
@@ -16158,7 +16148,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #39
+### Question #29 💩
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. You plan to use Azure DevOps to control the build process on the build server by using a self-hosted agent. You need to implement the self-hosted agent.
 
@@ -16183,8 +16173,8 @@ E. From the build server, run config.cmd.
 
 Correct answers:
 
-**D. From DevOps, create a personal access token (PAT)**
-**E. From the build server, run config.cmd**
+- **D. From DevOps, create a personal access token (PAT)**
+- **E. From the build server, run config.cmd**
 
 Explanation:
 
@@ -16224,12 +16214,16 @@ Final Answer:
 
 ✅ **D and E**
 
-### Question #40
+### Question #30 💩
 
 You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant.
 
 
-You are configuring a build pipeline in Azure Pipelines that will include a task named Task1. Task1 will authenticate by using an Azure AD service principal.
+You are configuring a build pipeline in Azure Pipelines that will include a task named Task1. 
+
+**Task1 will authenticate by using an Azure AD service principal.**
+
+
 
 Which three values should you configure for Task1? Each correct answer presents part of the solution.
 
@@ -16249,12 +16243,9 @@ E. the object ID
 
 Correct answers:
 
-**A. the tenant ID**
-**C. the client secret**
-**D. the app ID**
-
-
-
+- **A. the tenant ID**
+- **C. the client secret**
+- **D. the app ID**
 Explanation:
 
 When an Azure Pipelines task authenticates using an **Azure AD service principal**, it requires the standard service principal credentials:
@@ -16290,11 +16281,11 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #41
+### Question #31 💩
 
-DRAG DROP You are deploying a new application that uses Azure virtual machines.
+You are deploying a new application that uses Azure virtual machines.
 
-You plan to use the Desired State ConFIguration (DSC) extension on the virtual machines.
+You plan to use the Desired State Configuration (DSC) extension on the virtual machines.
 
 You need to ensure that the virtual machines always have the same Windows feature installed.
 
@@ -16357,10 +16348,13 @@ Final Answer (in order):
 3. **Configure the DSC extension on the virtual machines**
 
 
-### Question #42
+### Question #32
 
 
-You need to execute inline testing of an Azure DevOps pipeline that uses a Docker deployment model. The solution must prevent the results from being published to the pipeline.
+You need to execute inline testing of an Azure DevOps pipeline that uses a Docker deployment model. 
+
+
+**The solution must prevent the results from being published to the pipeline**.
 
 What should you use for the inline testing?
 
@@ -16392,13 +16386,13 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #51
+### Question #33 💩
 
 You are creating a build pipeline in Azure Pipelines.
 
 You define several tests that might fail due to third-party applications.
 
-You need to ensure that the build pipeline completes successfully if the third-party applications are unavailable. What should you do?
+**You need to ensure that the build pipeline completes successful**ly if the third-party applications are unavailable. What should you do?
 
 A. Configure the build pipeline to use parallel jobs
 
@@ -16424,7 +16418,6 @@ Why **flaky tests** is correct:
 
 * Azure Pipelines allows marking tests as **flaky**
 * Flaky tests can be:
-
   * **Retried automatically**
   * **Ignored in failure conditions** (depending on configuration)
 * Prevents pipeline failure due to **external/unreliable dependencies**
@@ -16434,15 +16427,12 @@ Why **flaky tests** is correct:
 Why others are incorrect:
 
 * **A. Parallel jobs**
-
   * Improves speed, not reliability or pass/fail behavior
 
 * **C. Increase test pass percentage**
-
   * Not a real Azure Pipelines feature
 
 * **D. Requirements quality widget**
-
   * Reporting/dashboard feature, does not affect pipeline execution
 
 Final Answer:
@@ -16450,9 +16440,11 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #52
+### Question #34 💩
 
-DRAG DROP You have an Azure subscription that contains a resources group named RG1. RG1 contains the following resources:
+You have an Azure subscription that contains a resources group named RG1. 
+
+RG1 contains the following resources:
 
 ✑ Four Azure virtual machines that run Windows Server and have Internet Information Services (IIS) installed.
 
@@ -16499,11 +16491,11 @@ To deploy an application to Azure Virtual Machines using Azure DevOps, you shoul
 **Note:** "Create an agent pool" is typically for build/private agents, and "Puppet" is a third-party configuration management tool that is not required for a native Azure Pipelines deployment.
 
 
-### Question #54
+### Question #35
 
 You have an Azure DevOps organization named Contoso and an Azure DevOps project named Project1.
 
-You plan to use Microsoft-hosted agents to build container images that will host full Microsoft .NET Framework apps in a YAML pipeline in Project1.
+You plan to use Microsoft-hosted agents to build container images that will host **full Microsoft .NET Framework apps in a YAML pipeline in Project1.**
 
 What are two possible virtual machine images that you can use for the Microsoft-hosted agent pool? Each correct answer presents a complete solution.
 
@@ -16525,8 +16517,8 @@ E. vs.2015-win2012r2
 
 ✅ Correct answers:
 
-**A. vs2017-win2016**
-**E. vs2015-win2012r2**
+- **A. vs2017-win2016**
+- **E. vs2015-win2012r2**
 
  Explanation:
 
@@ -16539,13 +16531,11 @@ You are building **full .NET Framework applications**, which:
 Why A and E are correct:
 
 * **A. vs2017-win2016**
-
   * Windows Server image
   * Includes Visual Studio 2017 and .NET Framework support
     ✔ Suitable for building full .NET Framework apps
 
 * **E. vs2015-win2012r2**
-
   * Windows Server image
   * Includes Visual Studio 2015 and .NET Framework support
     ✔ Also suitable
@@ -16555,15 +16545,12 @@ Why A and E are correct:
 Why others are incorrect:
 
 * **B. ubuntu-16.04**
-
   * Linux → ❌ does NOT support full .NET Framework
 
-* **C. win1803**
-
+* **C. win1803*
   * Windows, but lacks full Visual Studio toolchain needed for builds
 
 * **D. macOS-10.13**
-
   * macOS → ❌ does NOT support full .NET Framework
 
 
@@ -16571,7 +16558,7 @@ Final Answer:
 
 ✅ **A and E**
 
-### Question #55
+### Question #36
 
 HOTSPOT You currently use JIRA, Jenkins, and Octopus as part of your DevOps processes.
 
@@ -16582,21 +16569,21 @@ Which Azure DevOps service should you use to replace each tool? To answer, selec
 
 Answer Area
 
-JIRA:
+**JIRA:**
 
 - Boards
 - Build pipelines
 - Release pipelines
 - Repos
 
-Jenkins:
+**Jenkins:**
 
 - Boards
 - Build pipelines
 - Release pipelines
 - Repos
 
-Octopus:
+**Octopus:**
 
 - Boards
 - Build pipelines
@@ -16627,11 +16614,13 @@ Final Answer:
 | Octopus | Release pipelines    |
 
 
-### Question #57
+### Question #37
 
 Your company develops a client banking application that processes a large volume of data.
 
-Code quality is an ongoing issue for the company. Recently, the code quality has deteriorated because of an increase in time pressure on the development team.
+Code quality is an ongoing issue for the company. 
+
+Recently, the code quality has deteriorated because of an increase in time pressure on the development team.
 
 You need to implement static code analysis.
 
@@ -16650,7 +16639,6 @@ D. build
 
 Correct answer: **D. build**
 
----
 
 Explanation:
 
@@ -16661,7 +16649,6 @@ Why the **build phase** is correct:
 * Integrated into **CI (Continuous Integration) pipelines**
 * Runs automatically on every commit/build
 * Detects:
-
   * Code smells
   * Security vulnerabilities
   * Style and quality issues
@@ -16670,27 +16657,26 @@ Why the **build phase** is correct:
  Why others are incorrect:
 
 * **A. Integration testing**
-
   * Focuses on runtime behavior, not static analysis
 
 * **B. Staging**
-
-  * Too late; issues should be caught earlier
+	* Too late; issues should be caught earlier
 
 * **C. Production release**
-
   * Far too late; defects would already be deployed
+
 Final Answer:
 
 ✅ **D. build**
 
 
-### Question #58
+### Question #38 💩💩💩
 
-DRAG DROP You have a project in Azure DevOps that uses packages from multiple public feeds. Some of the feeds are unreliable.
+You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
-You need to consolidate the packages into a single feed.
+Some of the feeds are unreliable.
 
+**You need to consolidate the packages into a single feed.**
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -16739,7 +16725,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #59
+### Question #39 💩💩💩💩💩💩
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -16786,11 +16772,14 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #61
+### Question #40 💩💩💩💩💩💩
 
-DRAG DROP You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
+You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
-Which five actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which five actions should you perform in sequence? 
+
+
+To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select.
 
@@ -16809,7 +16798,6 @@ Actions
 
 Answer Area
 
-----
 ✅ Correct sequence:
 
 1. **Upload a configuration to Azure Automation State Configuration**
@@ -16825,24 +16813,19 @@ Explanation:
 To manage VM configuration consistency using **Azure Automation State Configuration (DSC)**:
 
 1. Upload configuration
-
-* Import your PowerShell DSC configuration into Azure Automation
+  * Import your PowerShell DSC configuration into Azure Automation
 
 2. Compile configuration
-
-* Converts configuration into **node-specific MOF files**
+  * Converts configuration into **node-specific MOF files**
 
 3. Onboard VMs
-
-* Registers VMs as **DSC nodes**
+	* Registers VMs as **DSC nodes**
 
 4. Assign node configuration
-
-* Applies the desired state to the VMs
+	* Applies the desired state to the VMs
 
 5. Check compliance
-
-* Monitor whether nodes match the desired configuration
+  * Monitor whether nodes match the desired configuration
 
 Why others are incorrect:
 
