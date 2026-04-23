@@ -16836,13 +16836,13 @@ Final Answer:
 
 **Upload configuration → Compile → Onboard VMs → Assign configuration → Check compliance**
 
-### Question #62
+### Question #41 🐣🐣🐣
 
 You are developing an application. The application source has multiple branches.
 
 You make several changes to a branch used for experimentation.
 
-You need to update the main branch to capture the changes made to the experimentation branch and override the history of the Git repository.
+**You need to update the main branch to capture the changes made to the experimentation branch and override the history of the Git repository.**
 
 Which Git option should you use?
 
@@ -16868,7 +16868,6 @@ You need to:
 Why **Rebase** is correct:
 
 * **Rebase** rewrites commit history by:
-
   * Reapplying commits onto another branch
   * Creating a **linear history**
 * Can be combined with **force push** to override history on the target branch
@@ -16878,16 +16877,13 @@ Why **Rebase** is correct:
 Why others are incorrect:
 
 * **B. Fetch**
-
-  * Only downloads changes, does not modify branches
+	* Only downloads changes, does not modify branches
 
 * **C. Merge**
-
   * Preserves history (creates merge commits)
   * Does **not override history**
 
 * **D. Push**
-
   * Sends commits to remote, but does not control history behavior itself
 
 
@@ -16896,7 +16892,7 @@ Final Answer:
 ✅ **A. Rebase**
 
 
-### Question #63
+### Question #42
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -16946,7 +16942,7 @@ Final Answer:
 ✅ **A. Yes**
 
 
-### Question #64
+### Question #43
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -16978,7 +16974,6 @@ B. No
 🟦 Why pipeline artifacts do NOT solve this
 
 * **Pipeline artifacts** are used to:
-
   * Share files **between jobs/stages**
   * Store build outputs (e.g., compiled app)
 * They do **not cache dependencies across runs**
@@ -16989,7 +16984,6 @@ B. No
 
 * Use **pipeline caching** (`Cache@2` task)
 * Cache:
-
   * `node_modules` OR
   * npm cache (`~/.npm`)
 
@@ -17008,7 +17002,7 @@ The proposed solution does NOT meet the goal.
 
 
 
-### Question #64
+### Question #44
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -17035,7 +17029,6 @@ Enabling **pipeline caching** is a recommended way to reduce time spent installi
 
 * Caches the contents of `node_modules` or npm cache directory
 * On subsequent runs:
-
   * Dependencies are restored from cache instead of downloading again
 * Significantly reduces the ~5-minute install time
 
@@ -17050,7 +17043,7 @@ Final Answer:
 ✅ **A. Yes**
 
 
-### Question #70
+### Question #45
 
 You have an Azure DevOps project.
 
@@ -17083,19 +17076,16 @@ What the solution does:
 Why this does NOT meet the goal:
 
 * **Publish Build Artifacts**:
-
   * Uploads artifacts **from pipeline to Azure DevOps**
   * Does NOT deploy artifacts to target servers
 
 * **Copy task (in this context)**:
-
   * Typically copies files **within the agent**, not to remote machines unless specifically configured
 
 What should be used instead:
 
 * **Deployment jobs** or **deployment group agents**
 * Tasks like:
-
   * **Windows Machine File Copy**
   * **PowerShell Remoting**
   * **Deployment Group jobs**
@@ -17105,18 +17095,24 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #75
+### Question #46
 
-DRAG DROP You are building an application that has the following assets:
+You are building an application that has the following assets:
 
-✑ Source code ✑ Logs from automated tests and builds 
+✑ Source code 
+
+✑ Logs from automated tests and builds 
 
 ✑ Large and frequently updated binary assets
 
 ✑ A common library used by multiple applications 
 
 
-Where should you store each asset? To answer, drag the appropriate Azure services to the correct assets. Each service may be used once. You may need to drag the split bar between panes or scroll to view content.
+Where should you store each asset? 
+
+To answer, drag the appropriate Azure services to the correct assets.
+
+Each service may be used once. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -17177,11 +17173,13 @@ Final Answer:
 | Large binary assets    | Azure Storage   |
 
 
-### Question #76
+### Question #47 💩💩💩
 
 You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
 
-You need to release multiple builds of each package by using a single feed. The solution must limit the release of packages that are in development.
+**You need to release multiple builds of each package by using a single feed**. 
+
+The solution must limit the release of packages that are in development.
 
 What should you use?
 
@@ -17205,13 +17203,11 @@ In **Azure Artifacts**, **views** are used to control package visibility and rel
 Why **views** are correct:
 
 * A feed can have multiple views such as:
-
   * **@local** → all packages (including development)
   * **@prerelease** → testing/validation stage
   * **@release** → stable, approved packages
 
 * You can:
-
   * Publish all packages to the feed
   * Promote only validated packages to the **release view**
   * Restrict consumers to only see approved packages
@@ -17223,11 +17219,9 @@ Why **views** are correct:
 Why others are incorrect:
 
 * **A. Local symbols / C. Global symbols**
-
   * Related to debugging symbols, not package release control
 
 * **D. Upstream sources**
-
   * Used to consume external feeds, not manage release stages
 
 Final Answer:
@@ -17235,15 +17229,25 @@ Final Answer:
 ✅ **B. views**
 
 
-### Question #77
+### Question #48
 
-You have a project in Azure DevOps named Project1. Project1 contains a build pipeline named Pipe1 that builds an application named App1. You have an agent pool named Pool1 that contains a Windows Server 2019-based self-hosted agent. Pipe1 uses Pool1.
+You have a project in Azure DevOps named Project1. 
 
-You plan to implement another project named Project2. Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+Project1 contains a build pipeline named Pipe1 that builds an application named App1. 
+
+You have an agent pool named Pool1 that contains a Windows Server 2019-based self-hosted agent. 
+
+Pipe1 uses Pool1.
+
+You plan to implement another project named Project2. 
+
+Project2 will have a build pipeline named Pipe2 that builds an application named App2.
 
 App1 and App2 have conflicting dependencies.
 
-You need to minimize the possibility that the two build pipelines will con­ict with each other. The solution must minimize infrastructure costs. What should you do?
+You need to minimize the possibility that the two build pipelines will conflict with each other. 
+
+The solution must minimize infrastructure costs. What should you do?
 
 A. Add another self-hosted agent.
 
@@ -17299,9 +17303,9 @@ Final Answer:
 
 
 
-### Question #80
+### Question #49  💩💩💩
 
-HOTSPOT Your company uses Team Foundation Server 2013 (TFS 2013).
+Your company uses Team Foundation Server 2013 (TFS 2013).
 
 You plan to migrate to Azure DevOps.
 
@@ -17312,12 +17316,14 @@ You need to recommend a migration strategy that meets the following requirements
 
 ✑ Preserves the changed dates of work items revisions
 
-Minimizes migration effort -
+✑ Minimizes migration effort
 
 ✑ Migrates all TFS artifacts 
 
 
-What should you recommend? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+What should you recommend? 
+
+To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
 Hot Area:
 
@@ -17338,7 +17344,6 @@ Hot Area:
 
 -----
 
-
 To meet the requirements (preserve changeset and work item revision dates, migrate all artifacts, and minimize effort), the correct approach is the **Azure DevOps Server Database Import Service** path.
 
 **Answer Area**
@@ -17354,7 +17359,6 @@ To meet the requirements (preserve changeset and work item revision dates, migra
 **Why this is correct**
 
 * The **Database Import Service** is the only supported migration method that preserves:
-
   * TFVC changeset dates
   * Work item revision timestamps
   * Full project history and artifacts
@@ -17366,11 +17370,17 @@ To meet the requirements (preserve changeset and work item revision dates, migra
 * API-based tools → Do not preserve full historical metadata (dates).
 * TFS Integration Platform → Deprecated and does not meet full fidelity requirements.
 
-### Question #83
+### Question #50 
 
-You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy1. Policy1 is an audit policy that monitors naming convention compliance for the resources deployed to Subscription1.
+You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy1. 
 
-You have a pipeline named Pipeline1 in Azure Pipelines. Pipeline1 deploys Azure Resource Manager (ARM) resources to Subscription1. You need to ensure that the resources deployed by Pipeline1 comply with Policy1.
+Policy1 is an audit policy that monitors naming convention compliance for the resources deployed to Subscription1.
+
+You have a pipeline named Pipeline1 in Azure Pipelines. 
+
+Pipeline1 deploys Azure Resource Manager (ARM) resources to Subscription1. 
+
+You need to ensure that the resources deployed by Pipeline1 comply with Policy1.
 
 What should you add to Pipeline1?
 
