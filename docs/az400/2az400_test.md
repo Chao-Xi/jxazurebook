@@ -17428,9 +17428,11 @@ These checks validate whether the deployment will violate Azure Policy **before 
 To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.
 
 
-### Question #84
+### Question #51
 
-HOTSPOT You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. You need to perform the following:
+You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
+
+You need to perform the following:
 
 ✑ Install Internet Information Services (IIS) on the virtual machines.
 
@@ -17489,12 +17491,12 @@ Import-DscResource -ModuleName PsDesiredStateConfiguration
 
 Node 'localhost' {
 
-    WindowsFeature WebServer {
+    **WindowsFeature** WebServer {
         Ensure = "Present"
         Name = "Web-Server"
     }
 
-    File DefaultHomePage {
+    **File** DefaultHomePage {
         Ensure = 'Present'
         SourcePath = '\\server1\DSCResources\web\index.htm'
         DestinationPath = 'c:\inetpub\wwwroot\index.htm'
@@ -17522,10 +17524,9 @@ Node 'localhost' {
 * **File → manages file content (like default web page)**
 
 
-### Question #86
+### Question #52 💩💩
 
-HOTSPOT You are creating a YAML-based Azure pipeline to deploy an Azure Data Factory instance that has the following requirements: 
-
+You are creating a YAML-based Azure pipeline to deploy an Azure Data Factory instance that has the following requirements: 
 
 ✑ If a Data Factory instance exists already, the instance must be overwritten.
 
@@ -17589,18 +17590,15 @@ steps:
 * This action is used for **ARM template deployments targeting a resource group**
 * It ensures the deployment applies to the specified resource group (**Fabrikam**) without affecting others
 * Other options are invalid because:
-
   * **Select Resource Group** → not a valid ARM deployment action
   * **Start** → not used in ARM template tasks
 
 🟦 Drop-down 2: Incremental
 
 * Required to ensure:
-
   * Existing Data Factory is **updated (overwritten if needed)**
   * **No other resources in the resource group are deleted or modified**
 * Incremental mode:
-
   * Adds/updates resources in template
   * Does NOT remove extra resources
 
@@ -17620,12 +17618,14 @@ steps:
 * **deploymentMode:** Incremental
 
 
-### Question #89
+### Question #53 
 
 
-Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
+Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. 
 
-You need to minimize the amount of disk space used by older packages in Azure Artifacts.
+**Multiple projects consume the packages.**
+
+**You need to minimize the amount of disk space used by older packages in Azure Artifacts**.
 
 What should you modify?
 
@@ -17671,7 +17671,7 @@ To reduce storage usage for **Azure Artifacts published via pipelines**, you sho
 > ✔ **Pipeline retention policies** to automatically clean up older builds and their associated package artifacts.
 
 
-### Question-136
+### Question-54 💩💩
 
 You have an existing build pipeline in Azure Pipelines.
 
@@ -17690,16 +17690,13 @@ Explanation
 The requirement is to **use incremental builds** and **retain the environment between pipeline runs**.
 
 * **Self-hosted agents** run on machines that you manage.
-
   * They **keep the workspace between builds** unless explicitly cleaned.
   * This allows **incremental builds** (e.g., only compiling changed files).
 
 * **Microsoft-hosted agents** ❌
-
   * Are **ephemeral**; the environment is **reset after each run**, so incremental builds are not possible.
 
 * **File Transform task** ❌
-
   * Used for modifying configuration files (e.g., appsettings.json) during deployment.
   * Does **not** preserve the build workspace.
 
@@ -17708,9 +17705,9 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #48
+### Question #55
 
-DRAG DROP You have an Azure DevOps release pipeline as shown in the following exhibit.
+You have an Azure DevOps release pipeline as shown in the following exhibit.
 
 ![Alt Image Text](../images/az400_2_43.png)
 
@@ -17735,7 +17732,8 @@ Answer Area
 - [Slot 1]
 - [Slot 2]
 - [Slot 3]
-
+- [Slot 4]
+- [Slot 5]
 
 ----
 
@@ -17763,16 +17761,20 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #49
+### Question #56 💩
 
-DRAG DROP -
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
 
-You need to ensure that the dependencies are cached between builds.
+**You need to ensure that the dependencies are cached between builds.**
 
+How should you configure the deployment YAML? 
 
-How should you configure the deployment YAML? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+To answer, drag the appropriate values to the correct targets. 
+
+Each value may be used once, more than once, or not at all. 
+
+You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -17837,9 +17839,11 @@ Final Answer:
 * **Slot 1:** `npm install`
 * **Slot 2:** `ne(variables.CACHE_RESTORED, 'true')`
 
-### Question #50
+### Question #57
 
-You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. The build pipeline takes approximately one day to complete.
+You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. 
+
+The build pipeline takes approximately one day to complete.
 
 You need to reduce the time it takes to execute the build pipeline.
 
@@ -17862,8 +17866,8 @@ E. Create an agent pool
 
 Correct answers:
 
-**C. Increase the number of parallel jobs**
-**E. Create an agent pool**
+- **C. Increase the number of parallel jobs**
+- **E. Create an agent pool**
 
 Explanation:
 
@@ -17882,15 +17886,12 @@ Your pipeline runs **multiple jobs (10 architectures)** and takes a long time (~
 Why others are incorrect:
 
 * **A. Blue/green deployment**
-
   * Related to release strategy, not build performance
 
 * **B. Deployment group**
-
   * Used for deployments to VMs, not build acceleration
 
 * **D. Reduce repository size**
-
   * May slightly improve checkout time, but **not significant** for a 1-day build across architectures
 
 Final Answer:
@@ -17900,13 +17901,13 @@ Final Answer:
 
 
 
-
-
-### Question-137
+### Question-58 💩💩
 
 You have a private project in Azure DevOps.
 
-**You need to ensure that a project manager can create custom work item queries to report on the project's progress**. The solution must use the principle of least privilege.
+**You need to ensure that a project manager can create custom work item queries to report on the project's progress**. 
+
+The solution must use the principle of least privilege.
 
 To which security group should you add the project manager?
 
@@ -17942,15 +17943,16 @@ So, the **Contributor** role provides just enough permissions for the project ma
 **D. Contributor**
 
 
-### Question-138
+### Question-59
 
+You use a Git repository in Azure Repos to manage the source code of a web application. 
 
-You use a Git repository in Azure Repos to manage the source code of a web application. Developers commit changes directly to the default branch.
+Developers commit changes directly to the default branch.
 
 You need to implement a change management procedure that meets the tollowing requirements:
 
 * The detault branch must be protected, and new changes must be built in the feature branches first.
-* Changes must be reviewed and approved by at least one release manager before each merge.
+* **Changes must be reviewed and approved by at least one release manager before each merge**.
 * Changes must be brought into the default branch by using pull requests.
 
 What should you configure in Azure Repos?
@@ -17995,21 +17997,23 @@ Why the others are incorrect
 **A. branch policies of the default branch**
 
 
-### Question-139
+### Question-60
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
 You use a Git repository for applications source control
 
-You need to implement a pull request strategy that **reduces the history volume in the master branc**h.
+You need to implement a pull request strategy that **reduces the history volume in the master branch**.
 
-Solution: **You implement a pull request strategy that uses an explicit merg**e.
+Solution: **You implement a pull request strategy that uses an explicit merge**.
 
 Does this meet the goal?
 
 * A. Yes
-* **B. No**
+* B. No**
 
+
+----
 
 **Correct answer: B. No** ❌
 
@@ -18031,7 +18035,6 @@ Correct approach
 To meet the goal, use:
 
 * **Squash merge** ✅
-
   * Combines all commits from the feature branch into **a single commit** on master
   * Keeps master branch history **concise**
 
@@ -18045,13 +18048,15 @@ Because an explicit merge **does not consolidate commit history**.
 
 
 
-### Question-141
+### Question-61
 
 You need to recommend a Docker container build strategy that meets the following requirements:
 
-Minimizes image sizes
+**Minimizes image sizes**
 
-Minimizes the security surface area of the final image What should you include in the recommendation?
+**Minimizes the security surface area of the final image** 
+
+What should you include in the recommendation?
 
 * A. multi-stage builds
 * B. PowerShell Desired State Configuration (DSC)
@@ -18088,12 +18093,12 @@ Why the others are incorrect
 **A. multi-stage builds**
 
 
-### Question-142
+### Question-62
 
 
 Your company has a project in Azure DevOps for a new web application.
 
-You need to ensure that when code is checked in, a build runs automatically.
+**You need to ensure that when code is checked in, a build runs automatically**.
 
 Solution: From the Triggers tab of the build pipeline, you select Batch changes while a build is in progress.
 
@@ -18101,6 +18106,8 @@ Does this meet the goal?
 
 * A. Yes
 * B. No
+
+----
 
 **Correct answer: B. No** ❌
 
@@ -18126,9 +18133,11 @@ To meet the goal:
 **B. No**
 
 
-### Question-143
+### Question-63 💩💩
 
-You have 50 Node.js-based projects that you scan by using WhiteSource. Each project includes Package.json, Package-lock.json, and Npm-shrinkwrap.json files.
+You have 50 Node.js-based projects that you scan by using WhiteSource. 
+
+Each project includes Package.json, Package-lock.json, and Npm-shrinkwrap.json files.
 
 **You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference**.
 
@@ -18173,13 +18182,15 @@ Why the others are wrong
 **D. Delete `Package-lock.json`.**
 
 
-### Question-144
+### Question-64 💩
 
 Your company deploys applications in Docker containers.
 
 You want to detect known exploits in the Docker images used to provision the Docker containers.
 
-You need to integrate image scanning into the application lifecycle. The solution must expose the exploits as early as possible during the application lifecycle.
+**You need to integrate image scanning into the application lifecycle.** 
+
+The solution must expose the exploits as early as possible during the application lifecycle.
 
 What should you configure?
 
@@ -18221,7 +18232,7 @@ Final Answer
 **A. a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry**
 
 
-### Question-145
+### Question-65 💩💩💩
 
 Your company has a hybrid cloud between Azure and Azure Stack.
 
@@ -18275,7 +18286,7 @@ Final Answer
 
 
 
-### Question-146
+### Question-66
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18336,7 +18347,7 @@ Final Answer
 **D. the percentage of overall time spent on rework**
 
 
-### Question-147
+### Question-67 💩💩💩
 
 You are developing an open source solution that uses a GitHub repository.
 
@@ -18344,6 +18355,7 @@ You create a new public project in Azure DevOps.
 
 
 **You plan to use Azure Pipelines for continuous build. The solution will use the GitHub Checks API.**
+
 Which authentication type should you use?
 
 * A. OpenID
@@ -18365,7 +18377,6 @@ This is because:
 
 * The **Checks API** is designed to work with **GitHub Apps** (not PATs or OAuth tokens).
 * Azure Pipelines integrates with GitHub using a **GitHub App** to:
-
   * Create check runs
   * Update build statuses
   * Report CI results
@@ -18393,11 +18404,13 @@ Final Answer
 **B. GitHub App** ✔️
 
 
-### Question-148
+### Question-68
 
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen
+After you answer a question in this section, you will NOT be able to return to it. 
 
-Your company has a project in Azure DevOps for a new web application.
+As a result, these questions will not appear in the review screen
+
+**Your company has a project in Azure DevOps for a new web application.**
 
 You need to ensure that when code is checked in, a build runs automatically.
 
@@ -18407,7 +18420,7 @@ Does this meet the goal?
 
 
 * A. Yes
-* **B. No**
+* B. No
 
 
 ----
@@ -18456,7 +18469,7 @@ Final Answer:
 **B. No**
 
 
-### Question-149
+### Question-69
 
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
@@ -18464,7 +18477,7 @@ Your company has a project in Azure DevOps for a new web application.
 
 You need to ensure that when code is checked in, a build runs automatically.
 
-Solution: From the Pre-deployment conditions settings of the release pipeline, you select After stage.
+**Solution: From the Pre-deployment conditions settings of the release pipeline, you select After stage.**
 
 Does this meet the goal?
 
@@ -18483,11 +18496,9 @@ Enabling a **Pull request trigger** in the **Continuous deployment trigger setti
 Why:
 
 * **Build pipelines** handle:
-
   * CI triggers
   * Automatic builds on commit (push)
 * **Release pipelines** handle:
-
   * Deployment after artifacts are produced
   * They do **not** trigger builds
 
@@ -18510,7 +18521,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-150
+### Question-70
 
 Your company has a project in Azure DevOps for a new web application.
 
