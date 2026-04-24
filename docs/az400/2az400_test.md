@@ -18570,7 +18570,7 @@ Final Answer
 
 
 
-### Question-151
+### Question-71
 
 Your company has a project in Azure DevOps for a new web application You need to ensure that when code is checked in, a build runs automatically.
 
@@ -18610,7 +18610,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-152
+### Question-72 💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -18654,7 +18654,7 @@ Final Answer
 **B. deployment queue settings** ✅
 
 
-### Question-153
+### Question-73
 
 You use Azure Pipelines to build and test a React js application.
 
@@ -18703,9 +18703,10 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-154
+### Question-74
 
 You use Azure Pipelines to build and test a React.js application.
+
 You have a pipeline that has a single job.
 
 You discover that installing Java Script packages from npm takes approximately five minutes each time you run the pipeline
@@ -18749,10 +18750,11 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-155
+### Question-75
 
 
 You use Azure Pipelines to build and test a React js application.
+
 You have a pipeline that has a single job.
 
 You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
@@ -18793,18 +18795,22 @@ Final Answer
 **B. No** ❌
 
 
-### Question-156
+### Question-76
 
 
-You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+You plan to create a release pipeline that will deploy Azure resources **by using Azure Resource Manager templates**. 
+
+The release pipeline will create the following resources:
 
 Two resource groups
 
-Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+- Four Azure virtual machines in one resource group 
+
+- Two Azure SQL databases in other resource group
 
 You need to recommend a solution to deploy the resources.
 
-Solution: Create two standalone templates, each of which will deploy the resources in its respective group.
+Solution: **Create two standalone templates, each of which will deploy the resources in its respective group**.
 
 Does this meet the goal?
 
@@ -18822,11 +18828,9 @@ In Azure Resource Manager (ARM) deployments, you can deploy resources either in 
 In your scenario:
 
 * You have **two resource groups**:
-
   1. One with **four VMs**
   2. One with **two SQL databases**
 * Creating **two standalone templates**, each targeting a specific resource group, is a valid and recommended approach because:
-
   * ARM templates are **scoped to a single resource group** (or subscription/management group)
   * This approach **isolates deployments per resource group**
   * Makes deployment **modular and easier to maintain**
@@ -18843,7 +18847,7 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-157
+### Question-77
 
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
@@ -18886,7 +18890,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-158
+### Question-78💩💩
 
 
 You have an Azure DevOps project.
@@ -18921,7 +18925,6 @@ To deploy artifacts to on-premises servers, you should use:
 
 1. **Azure Pipelines self-hosted agent** installed on the target on-premises servers or a management server.
 2. Tasks in the pipeline such as:
-
    * **Copy files / Windows Machine File Copy**
    * **PowerShell / Bash scripts** to deploy artifacts
 3. Optionally, configure **deployment groups** in Azure DevOps to manage multiple on-premises servers.
@@ -18931,7 +18934,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-159
+### Question-79 💩
 
 
 You have an Azure DevOps project.
@@ -18940,7 +18943,7 @@ Your build process creates several artifacts.
 
 You need to deploy the artifacts to on-premises servers.
 
-Solution: You deploy a Docker build to an on-premises server. You add a Download Build Artifacts task to the deployment pipeline.
+Solution: **You deploy a Docker build to an on-premises server**. You add a Download Build Artifacts task to the deployment pipeline.
 
 Does this meet the goal?
 
@@ -18975,12 +18978,14 @@ Final Answer
 **B. No** ❌
 
 
-### Question-160
+### Question-80 💩💩
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1
 
-to an Azure container registry named ACR1. Image uses a base image stored in Docker Hub.
+to an Azure container registry named ACR1. 
+
+Image uses a base image stored in Docker Hub.
 
 **You need to ensure that Image1 is updated automatically whenever the base image is updated.**
 
@@ -19012,7 +19017,7 @@ Azure Container Registry (ACR) Tasks include a feature specifically designed for
 *   **B. Docker Hub service connection:** This allows Azure Pipelines to *access* Docker Hub, but it does not provide an automated "watch" mechanism to trigger a rebuild when a third-party image changes.
 *   **D. Service hook:** Service hooks in Azure DevOps are used to integrate with external services (like sending a message to Slack when a build fails). They are not designed to monitor external container registries for image updates.
 
-### Question-161
+### Question- 81
 
 You have an Azure DevOps project.
 
@@ -19028,6 +19033,8 @@ Does this meet the goal?
 
 * A. Yes
 * B. No
+
+----
 
 **Correct answer: A. Yes** ✅
 
@@ -19069,13 +19076,15 @@ Therefore, the proposed architecture is a standard and effective pattern for dep
 **A. Yes** ✅
 
 
-### Question-162 
+### Question-82 
 
-You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create the following resources:
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. 
+
+The release pipeline will create the following resources:
 
 Two resource groups
 
-Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+**Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group**
 
 You need to recommend a solution to deploy the resources.
 
@@ -19116,7 +19125,7 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-163
+### Question-83
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create
 
@@ -19165,14 +19174,13 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-164
+### Question-84 💩💩
 
 You have a project in Azure DevOps named Project. Project contains a build pipeline named Pipe1 that builds an application named App1.
 
 You have an agent pool named Pool1 that contains a Windows Server 2019-based self-hosted agent. 
 
 Pipe1 uses Pool1.
-
 
 You plan to implement another project named Project2. 
 
@@ -19230,15 +19238,15 @@ Final Answer
 **D. Create two container jobs.** ✅
 
 
-### Question-165
+### Question-85
 
 You manage build pipelines and deployment pipelines by using Azure DevOps.
 
 Your company has a team of 500 developers. New members are added continually to the team.
 
 You need to automate the management of users and licenses whenever possible.
-
-Which task must you perform manually?
+**
+Which task must you perform manually?**
 
 * A. modifying group memberships
 * B. adding users
@@ -19281,7 +19289,7 @@ Final Answer
 **D. procuring licenses** ✅
 
 
-### Question-166
+### Question-86
 
 Your company is building a new solution in Java.
 
@@ -19331,7 +19339,7 @@ Final Answer
 **D. Gradle** ✅
 
 
-### Question-167
+### Question-87
 
 
 Your company is building a new solution in Java.
@@ -19372,7 +19380,7 @@ Final Answer
 **A. Maven** ✅
 
 
-### Question-168
+### Question-88
 
 You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. Policy is an audit policy that monitors
 
@@ -19380,7 +19388,8 @@ naming convention compliance for the resources deployed to Subscription1.
 
 You have a pipeline named Pipeline 1 in Azure Pipelines. Pipeline 1 deploys Azure Resource Manager (ARM) resources to Subscription1.
 
-You need to ensure that the resources deployed by Pipeline 1 comply with Policy1.
+**You need to ensure that the resources deployed by Pipeline 1 comply with Policy1.**
+
 What should you add to Pipeline 1?
 
 * A. a pre-deployment task that runs a security and compliance assessment
@@ -19409,7 +19418,7 @@ Why other options are incorrect:
 *   **A. Pre-deployment task:** While you can run static analysis on a template, a "security and compliance assessment" against an active Azure Policy usually requires the resources or the deployment intent to be evaluated against the current state of the subscription, which is most accurately done during or after the deployment process.
 *   **C & D. ARM template deployment task:** These options deal with the *infrastructure* of the policy itself (creating or assigning it). The question states the policy already exists; the goal is to make sure the app's resources follow that policy.
 
-### Question-169
+### Question-89
 
 You have a project in Azure DevOps.
 
@@ -19431,7 +19440,6 @@ Why this is correct
 To get **pull request notifications** into **Microsoft Teams** with **minimal development effort**, the built-in integration is the best solution:
 
 * The **Azure Repos app for Teams** natively supports:
-
   * Pull request events
   * Code push notifications
   * Repository activity
