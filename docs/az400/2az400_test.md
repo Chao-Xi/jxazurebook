@@ -19468,9 +19468,9 @@ Final Answer
 
 ## Topic 8 - Question Set 8
 
-### Question #1
+### Question #1 
 
-HOTSPOT You manage the Git repository for a large enterprise application.
+You manage the Git repository for a large enterprise application.
 
 You need to minimize the data size of the repository.
 
@@ -19559,9 +19559,11 @@ git prune --expire now
 
 Together, they **minimize repository size effectively**.
 
-### Question #4
+### Question #2
 
-DRAG DROP You provision an Azure Kubernetes Service (AKS) cluster that has RBAC enabled. You have a Helm chart for a client application.
+You provision an Azure Kubernetes Service (AKS) cluster that has RBAC enabled. 
+
+You have a Helm chart for a client application.
 
 You need to configure Helm and Tiller on the cluster and install the chart.
 
@@ -19577,7 +19579,7 @@ Commands
 
 ------
 
-å✅ Correct sequence of commands
+✅ Correct sequence of commands
 
 To configure Helm (with Tiller, i.e., Helm v2) on an AKS cluster with RBAC and then install a chart, the correct order is:
 
@@ -19626,10 +19628,9 @@ When using **Helm v2 with RBAC-enabled AKS**:
 2. Initialize Helm (Tiller)
 3. Install the chart
 
-### Question #6
+### Question #3 💩💩💩
 
 You are implementing an Azure DevOps strategy for mobile devices using App Center. 
-
 
 You plan to use distribution groups to control access to releases.
 
@@ -19705,7 +19706,7 @@ Select and Place:
 * **Shared = reusable across multiple apps**
 
 
-### Question #8
+### Question #3
 
 
 HOTSPOT You need to create deployment files for an Azure Kubernetes Service (AKS) cluster. 
@@ -19810,15 +19811,15 @@ Deployment 3: [ Drop zone ]
 
 ### Question #10
 
-DRAG DROP You manage the Git repository for a large enterprise application.
+You manage the Git repository for a large enterprise application.
 
 During the development of the application, you use a file named Config.json.
 
 You need to prevent Config.json from being committed to the source control whenever changes to the application are committed.
 
+**Which three actions should you perform in sequence?** 
 
-
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Select and Place:
 
@@ -19872,9 +19873,9 @@ To prevent files from being committed:
 This ensures the file is **excluded from future commits** 🚀
 
 
-### Question #12
+### Question #11 💩💩
 
-HOTSPOT You are finalizing a release in GitHub.
+You are finalizing a release in GitHub.
 
 You need to apply the following labels to the release:
 
@@ -19968,15 +19969,25 @@ git tag -a v3.0 -m "Release v3.0"
 Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
 
 
-### Question #14
+### Question #12
 
-DRAG DROP Your company has a project in Azure DevOps.
+Your company has a project in Azure DevOps.
 
-You plan to create a release pipeline that will deploy resources by using Azure Resource Manager templates. The templates will reference secrets stored in Azure Key Vault.
+You plan to create a release pipeline that will deploy resources by using Azure Resource Manager templates. 
 
-You need to recommend a solution for accessing the secrets stored in the key vault during deployments. The solution must use the principle of least privilege.
+**The templates will reference secrets stored in Azure Key Vault.**
 
-What should you include in the recommendation? To answer, drag the appropriate configurations to the correct targets. Each configuration may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+**You need to recommend a solution for accessing the secrets stored in the key vault during deployments.** 
+
+**The solution must use the principle of least privilege**.
+
+What should you include in the recommendation? 
+
+To answer, drag the appropriate configurations to the correct targets. 
+
+**Each configuration may be used once, more than once, or not at all**. 
+
+You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -20005,7 +20016,6 @@ NOTE: Each correct selection is worth one point.
 
 * Controls **management plane** operations
 * Used for actions like:
-
   * Delete Key Vault
   * Create/update resources
 * Ensures least privilege at the **resource level**
@@ -20014,10 +20024,8 @@ NOTE: Each correct selection is worth one point.
 
 * Controls **data plane** access
 * Used for:
-
   * Reading secrets during ARM deployments
 * Allows fine-grained permissions like:
-
   * `Get`, `List` (only what’s needed)
 
 ❌ Why not PAT?
@@ -20036,11 +20044,13 @@ NOTE: Each correct selection is worth one point.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #15
+### Question #13
 
-DRAG DROP As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
+As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
-Which three action should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which three action should you perform in sequence? 
+
+To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Select and Place
 
@@ -20097,18 +20107,18 @@ Deploying ARM templates via Azure DevOps follows:
 > **Pipeline → Deployment task → Configure parameters** 🚀
 
 
-### Question #20
+### Question #14
 
-HOTSPOT You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
+You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
 
 
 ![Alt Image Text](../images/az400_2_45.png)
 
+Use the drop-down menus to select the answer choice that answers each question based on the information presented in the graphic. 
 
-Use the drop-down menus to select the answer choice that answers each question based on the information presented in the graphic. NOTE: Each correct selection is worth one point.
+NOTE: Each correct selection is worth one point.
 
 Hot Area:
-
 
 **Answer Area**
 
@@ -20181,10 +20191,10 @@ To enable **continuous delivery (CD)** in a classic release pipeline:
 * **The Web Application artifact**
 
 
-### Question #21
+### Question #15 💩💩💩
 
 
-DRAG DROP Your company plans to deploy an application to the following endpoints:
+Your company plans to deploy an application to the following endpoints:
 
 ✑ Ten virtual machines hosted in Azure 
 
@@ -20192,8 +20202,9 @@ DRAG DROP Your company plans to deploy an application to the following endpoints
 
 You need to implement a release strategy for deploying the application to the endpoints.
 
+What should you recommend using to deploy the application to the endpoints? 
 
-What should you recommend using to deploy the application to the endpoints? To answer, drag the appropriate components to the correct endpoints. Each component may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+To answer, drag the appropriate components to the correct endpoints. Each component may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -20226,12 +20237,10 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 
 * Designed specifically for **deploying to multiple machines (targets)**
 * Works with:
-
   * Azure VMs
   * On-premises VMs
 * Requires Azure Pipelines agent (which is already installed ✅)
 * Enables:
-
   * Coordinated deployments
   * Rolling deployments
   * Environment-based targeting
@@ -20265,15 +20274,14 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 
 
 
+### Question-16
 
 
+You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
 
-### Question-170
+Multiple projects consume the packages.
 
-
-You have an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
-
-You need to configure Azure Artifacts to ensure that both the latest and pre-release versions of the packages are available for consumption.
+**You need to configure Azure Artifacts to ensure that both the latest and pre-release versions of the packages are available for consumption.**
 
 What should you do?
 
@@ -20293,7 +20301,6 @@ In **Azure Artifacts**, best practice for handling *release vs pre-release* pack
 Proper design
 
 * Create two views:
-
   * `@prerelease` → for preview/unstable builds
   * `@release` → for stable production-ready builds
 * Set `@release` as the **default view**
@@ -20332,7 +20339,7 @@ This is the standard enterprise pattern for npm feeds in **Azure DevOps** with m
 ✅ **Final Answer: D**
 
 
-### Question #31
+### Question #17
 
 
 You are defining release strategies for two applications as shown in the following table.
@@ -20341,7 +20348,6 @@ You are defining release strategies for two applications as shown in the followi
 | :--- | :--- |
 | App1 | Failure of App1 has a major impact on your company. You need a small group of users, who opted in to a testing App1, to test new releases of the application. |
 | App2 | You need to minimize the time it takes to deploy new releases of App2, and you must be able to roll back as quickly as possible. |
-
 
 Which release strategy should you use for each application? To answer, drag the appropriate release strategies to the correct applications. Each release strategy may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -20414,10 +20420,7 @@ App2: [ ]
 * **Blue/Green → fast deploy + instant rollback** 🚀
 
 
-
-
-
-### Question-171
+### Question-18 💩💩💩
 
 ```
 Name  Type
@@ -20426,9 +20429,11 @@ Feed1   Azure Artifacts feed
 Project1 Project in Azure DevOps
 ```
 
-Project produces pm packages that are published to Feed. Feed1 is consumed by multiple projects.
+**Project produces pm packages that are published to Feed. Feed1 is consumed by multiple projects**.
 
-You need to ensure that only tested packages are available for consumption. The solution must minimize development effort.
+You need to ensure that only tested packages are available for consumption. 
+
+The solution must minimize development effort.
 
 
 What should you do?
@@ -20508,6 +20513,7 @@ PROMOTE → @release (default view)
  Key principle
 
 > ✅ **Views + promotion = controlled consumption**
+>
 > ❌ Tags = labels only (no enforcement)
 
 
@@ -20517,11 +20523,12 @@ This is the enterprise-standard pattern in **Azure DevOps** for secure multi-pro
 ✅ **Final Answer: A**
 
 
-### Question-172 ？？
+### Question-19 💩💩
 
 Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
 
 You need to minimize the amount of disk space used by older packages in Azure Artifacts.
+
 What should you modify?
 
 * A. the retention settings of the project's release
@@ -20561,7 +20568,7 @@ Why the other options are incorrect
 
 
 
-### Question-173
+### Question-20 💩💩
 
 
 Your company builds a multi-tier web application.
@@ -20626,15 +20633,19 @@ For staging environments that **minimize cost, use custom templates, and can be 
 ✅ **Answer: D**
 
 
-### Question-174
+### Question-21
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
 You use a Git repository for applications source control.
 
-You plan to create a new branch from an existing pull request. Later, you plan to merge the new branch and the target branch of the pull request.
+You plan to create a new branch from an existing pull request. 
 
-You need to use a pull request action to create the new branch. The solution must ensure that the branch uses only a portion of the code in the pull request
+**Later, you plan to merge the new branch and the target branch of the pull request.**
+
+You need to use a pull request action to create the new branch. 
+
+The solution must ensure that the branch uses only a portion of the code in the pull request
 
 Which pull request action should you use?
 
@@ -20655,7 +20666,7 @@ Explanation
 You want to:
 
 1. Create a **new branch** from an existing pull request (PR).
-2. Ensure the new branch contains **only a portion of the code** in the original PR.
+2. <mark>Ensure the new branch contains **only a portion of the code** in the original PR.</mark>
 
 Why **Cherry-pick** is the right action
 
@@ -20671,15 +20682,16 @@ Why the other options are incorrect
 * **E. Revert** ❌ → Creates a commit that **undoes changes**, opposite of what you want.
 
 
-
 ✅ **Answer: C**
 
 
-### Question-175
+### Question-22
 
 You are designing a build pipeline in Azure Pipelines.
 
-The pipeline requires a self-hosted agent. The build pipeline will run once daily and will take 30 minutes to complete.
+The pipeline requires a self-hosted agent. 
+
+**The build pipeline will run once daily and will take 30 minutes to complete.**
 
 You need to recommend a compute type for the agent. The solution must minimize costs.
 
@@ -20711,13 +20723,13 @@ Why other options are incorrect:
 
 ### Question #25
 
-HOTSPOT You use Azure Pipelines to manage the build and deployment of apps.
+You use Azure Pipelines to manage the build and deployment of apps.
 
 You are planning the release strategies for a new app.
 
 You need to choose strategies for the following scenarios:
 
-Releases will be made available to users who are grouped by their tolerance for software faults.
+✑  Releases will be made available to users who are grouped by their tolerance for software faults.
 
 ✑ Code will be deployed to enable functionality that will be available in later releases of the app.
 
@@ -20764,7 +20776,6 @@ When a new release occurs, the existing deployment will remain active to minimiz
 
 * Releases are rolled out gradually to different user groups
 * Users are segmented based on:
-
   * Risk tolerance
   * Geography
   * Roles
@@ -20775,19 +20786,16 @@ When a new release occurs, the existing deployment will remain active to minimiz
 * Code is deployed but features are **disabled by default**
 * Features can be turned on/off without redeployment
 * Perfect for:
-
   * Future functionality
   * Testing in production safely
 
 🟦 **Blue/green deployment**
 
 * Two environments:
-
   * **Blue (current live)**
   * **Green (new version)**
 * Both run simultaneously
 * Enables:
-
   * Instant rollback
   * Minimal downtime
 
@@ -20804,13 +20812,15 @@ When a new release occurs, the existing deployment will remain active to minimiz
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #26
+### Question #26 💩💩
 
-DRAG DROP You have a project in Azure DevOps.
+You have a project in Azure DevOps.
 
-You need to associate an automated test to a test case.
+**You need to associate an automated test to a test case.**
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which three actions should you perform in sequence? 
+
+To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Select and Place:
 
@@ -20870,11 +20880,13 @@ To link automated tests:
 
 ### Question #27
 
-DRAG DROP You have an Azure Kubernetes Service (AKS) cluster.
+You have an Azure Kubernetes Service (AKS) cluster.
 
 You need to deploy an application to the cluster by using Azure DevOps.
 
-Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which three actions should you perform in sequence? 
+
+To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Select and Place:
 
@@ -20939,15 +20951,19 @@ AKS deployment via Azure DevOps follows:
 
 > **Authenticate (SPN) → Authorize (RBAC) → Deploy (Helm)** 🚀
 
-### Question #33
+### Question #28
 
-DRAG DROP You have an Azure DevOps organization named Contoso.
+You have an Azure DevOps organization named Contoso.
 
-You have 10 Azure virtual machines that run Windows Server 2019. The virtual machines host an application that you build and deploy by using Azure Pipelines.
+You have 10 Azure virtual machines that run Windows Server 2019. 
+
+The virtual machines host an application that you build and deploy by using Azure Pipelines.
 
 Each virtual machine has the Web Server (IIS) role installed and configured.
 
-You need to ensure that the web server configurations on the virtual machines is maintained automatically. The solution must provide centralized management of the configuration settings and minimize management overhead.
+You need to ensure that the web server configurations on the virtual machines is maintained automatically. 
+
+The solution must provide centralized management of the configuration settings and minimize management overhead.
 
 Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -20971,16 +20987,22 @@ Actions
 Here is the correct sequence of four actions to maintain web server configurations automatically using Azure Automation State Configuration (DSC), with centralized management and minimal overhead:
 
 1. **Create an Azure Automation account.**  
-   This provides the centralized management service for DSC configurations.
+
+> This provides the centralized management service for DSC configurations.
 
 2. **Compile the Desired State Configuration (DSC) configuration.**  
-   Compiling converts the DSC configuration (e.g., maintaining IIS settings) into a MOF file (node configuration) that can be applied to nodes.
 
-3. **Onboard the virtual machines to the Azure Automation account.**  
-   This registers the VMs as DSC nodes in Azure Automation State Configuration.
 
-4. **Install the custom Desired State Configuration (DSC) extension on the virtual machines.**  
-   The DSC extension allows each VM to pull and apply the assigned node configuration from Azure Automation and continuously enforce desired state.
+> Compiling converts the DSC configuration (e.g., maintaining IIS settings) into a MOF file (node configuration) that can be applied to nodes.
+
+4. **Onboard the virtual machines to the Azure Automation account.**  
+
+
+> This registers the VMs as DSC nodes in Azure Automation State Configuration.
+
+6. **Install the custom Desired State Configuration (DSC) extension on the virtual machines.**  
+
+> The DSC extension allows each VM to pull and apply the assigned node configuration from Azure Automation and continuously enforce desired state.
 
 Final answer arrangement:
 
@@ -20994,10 +21016,16 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #34
+### Question #34 💩
 
 
-You have a free tier of an Azure DevOps organization named Contoso. Contoso contains 10 private projects. Each project has multiple jobs with no dependencies. The build process requires access to resource files located in an on-premises file system.
+You have a free tier of an Azure DevOps organization named Contoso. 
+
+Contoso contains 10 private projects. 
+
+Each project has multiple jobs with no dependencies. 
+
+The build process requires access to resource files located in an on-premises file system.
 
 You frequently run the jobs on five self-hosted agents but experience long build times and frequently queued builds.
 
@@ -21027,7 +21055,6 @@ D. Purchase Microsoft-hosted parallel jobs
 * Pipelines require access to **on-premises file system**
 * Using **self-hosted agents (5 agents)**
 * Experiencing:
-
   * **Queued builds**
   * **Long execution times**
 * Jobs have **no dependencies → can run in parallel**
@@ -21035,7 +21062,6 @@ D. Purchase Microsoft-hosted parallel jobs
  🟦 Why B is correct
 
 * Adding more **self-hosted agents**:
-
   * Increases **parallel execution capacity**
   * Reduces **queue time**
   * Keeps **direct access to on-prem resources**
@@ -21076,9 +21102,13 @@ For pipelines that depend on **on-prem resources**:
 **B. Register additional self-hosted agents**
 
 
-### Question #36
+### Question #36 💩💩
 
-You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure SQL database named DB1. You need to create a release pipeline that uses the Azure SQL Database Deployment task to update DB1.
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
+
+Sub1 contains an Azure SQL database named DB1. 
+
+**You need to create a release pipeline that uses the Azure SQL Database Deployment task to updat**e DB1.
 
 Which artifact should you deploy?
 
@@ -21093,7 +21123,6 @@ D. an MDF file
 
 -----
 
-
 ✅ Correct answer: **B. a DACPAC**
 
 
@@ -21105,10 +21134,8 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 
 * A **Data-tier Application Package**
 * Contains:
-
   * Database schema (tables, views, stored procedures, etc.)
 * Used for:
-
   * **Deploying and updating database structure**
 
 ❌ Why the other options are incorrect
@@ -21132,15 +21159,15 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 * **BACPAC → backup/migration (data + schema)** 🚀
 
 
-### Question #37
+### Question #37  💩💩💩
 
+You have a project in Azure DevOps.
 
-HOTSPOT You have a project in Azure DevOps.
+You plan to create a build pipeline that will deploy resources by using Azure Resource Manager templates. 
 
+**The templates will reference secrets stored in Azure Key Vault**.
 
-You plan to create a build pipeline that will deploy resources by using Azure Resource Manager templates. The templates will reference secrets stored in Azure Key Vault.
-
-You need to ensure that you can dynamically generate the resource ID of the key vault during template deployment.
+**You need to ensure that you can dynamically generate the resource ID of the key vault during template deployment.**
 
 What should you include in the template? To answer, select the appropriate options in the answer area.
 
@@ -21205,7 +21232,6 @@ Dropdown options visible in the image:
 
 * This defines a **nested deployment** in ARM templates
 * Required when:
-
   * You want to **dynamically reference resources**
   * You are passing parameters (like Key Vault secrets)
 * Enables use of functions like:
@@ -21244,11 +21270,13 @@ To dynamically reference Key Vault secrets in ARM templates:
 * Combine with **`resourceId()`** for dynamic resource resolution 🚀
 
 
-### Question #41
+### Question #38  💩  💩
 
 You are developing an iOS application by using Azure DevOps.
 
-You need to test the application manually on 10 devices without releasing the application to the public. Which two actions should you perform? Each correct answer presents part of the solution.
+You need to test the application manually on 10 devices without releasing the application to the public. 
+
+Which two actions should you perform? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -21309,13 +21337,13 @@ For private iOS testing:
 
 > Register devices (UDIDs) → distribute build (Ad Hoc/App Center) 🚀
 
-### Question #45
+### Question #40
 
 HOTSPOT Your company uses Git as a source code control system for a complex app named App1.
 
 You plan to add a new functionality to App1.
 
-You need to design a branching model for the new functionality.
+**You need to design a branching model for the new functional**ity.
 
 Which branch lifetime and branch time should you use in the branching model? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -21343,11 +21371,9 @@ Which branch lifetime and branch time should you use in the branching model? To 
 🟦 **Short-lived branch**
 
 * New functionality should be developed in branches that:
-
   * Exist only during development
   * Are merged back quickly
 * Helps:
-
   * Reduce merge conflicts
   * Improve collaboration
   * Support continuous integration
@@ -21376,13 +21402,13 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #47
+### Question #41 💩
 
 HOTSPOT You have an Azure virtual machine named VM1 that runs Linux.
 
 You plan to deploy the Desired State Configuration (DSC) extension to VM1.
 
-You need to grant the Log Analytics agent the appropriate directory permissions.
+**You need to grant the Log Analytics agent the appropriate directory permissions**.
 
 How should you complete the command? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -21423,11 +21449,13 @@ Hot Area
 
 To deploy and run the Desired State Configuration (DSC) extension properly, the Log Analytics agent (which runs under the `omsagent` user context) needs to be able to create, write to, and execute temporary scripts and files. 
 
-By default, in many hardened Linux environments, permissions are restricted. You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) permissions to the `/tmp` directory so it can successfully process the configurations. 
+By default, in many hardened Linux environments, permissions are restricted. 
 
-Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.
+You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) permissions to the `/tmp` directory so it can successfully process the configurations. 
 
-### Question #47
+**Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
+
+### Question #42
 
 HOTSPOT You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21464,38 +21492,30 @@ Here is the content extracted from the image:
 
 🟦 Correct command
 
-```powershell id="r3gk2a"
-Get-AzResource -ResourceType Microsoft.OperationalInsights/workspaces -ExpandProperties
-```
+
+`Get-AzResource -ResourceType Microsoft.OperationalInsights/workspaces -ExpandProperties`
+
 
 🟦 Why this works
 
 * **Get-AzResource**
-
   * Retrieves Azure resources across the subscription
 * **-ResourceType**
-
   * Filters resources by type:
-
-    * `Microsoft.OperationalInsights/workspaces` = Log Analytics workspaces
+  * `Microsoft.OperationalInsights/workspaces` = Log Analytics workspaces
 * **-ExpandProperties**
-
   * Returns detailed properties of each workspace
 
 
 ❌ Why the other options are incorrect
 
-* **Get-AzResourceGroup**
-  → Lists resource groups, not resources
+* **Get-AzResourceGroup**   → Lists resource groups, not resources
 
-* **Get-AzResourceProvider**
-  → Lists providers, not instances
+* **Get-AzResourceProvider** → Lists providers, not instances
 
-* **-ResourceGroupName**
-  → Filters by group, but does not specify resource type
+*  **-ResourceGroupName**→ Filters by group, but does not specify resource type
 
-* **-ResourceId**
-  → Requires a specific resource, not for listing all
+* **-ResourceId** → Requires a specific resource, not for listing all
 
 🎯 Final Answer
 
@@ -21509,7 +21529,7 @@ To list Azure resources with details:
 > Use **Get-AzResource + -ResourceType + -ExpandProperties** 🚀
 
 
-### Question-176
+### Question-43
 
 You have a project in Azure DevOps. 
 
@@ -21551,31 +21571,30 @@ How it works
 1. In the release pipeline, add an **Azure PowerShell** task.
 2. Configure the task to run `New-AzResourceGroupDeployment` with your ARM template.
 3. This approach:
-
    * Works with **any Azure resource**.
    * Requires minimal administrative effort.
    * Integrates fully with **Azure DevOps**.
 
-
-
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #59
+### Question #44  💩💩
 
 You use GitHub for source control of .NET applications.
 
 You need to deploy a documentation solution that meets the following requirements:
 
-✑ Documents will be written in Markdown as developers make code changes.
+✑ **Documents will be written in Markdown as developers make code changes**.
 
 ✑ Changes to the documents will trigger the recompilation of a static website.
 
 ✑ Users will access the documents from the static website.
 
-✑ Documents will be stored in a GitHub repository.
+✑ **Documents will be stored in a GitHub repository.**
 
-Which two tools can you use to compile the website? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
+Which two tools can you use to compile the website? 
+
+Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
 
 A. Word Press
 
@@ -21608,18 +21627,15 @@ You need a solution that:
 
 * Native static site generator for GitHub (used by GitHub Pages)
 * Supports:
-
   * Markdown → HTML
   * Automatic rebuild on commits
 * Ideal for:
-
   * Simple documentation sites
 
 🟦 **DocFX**
 
 * Microsoft tool designed for **.NET documentation**
 * Supports:
-
   * Markdown + API documentation
   * Static site generation
 * Integrates well with CI/CD pipelines
@@ -21641,7 +21657,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #61
+### Question #45  💩💩💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -21683,9 +21699,6 @@ For each of the following statements, select Yes if the statement is true. Other
 
 Hot Area:
 
-```
-Here is the content extracted from the image:
-
 **Hot Area:**
 
 | Statements | Yes | No |
@@ -21693,10 +21706,7 @@ Here is the content extracted from the image:
 | The Index.htm file will be copied to the C:\Test folder before the Web-Server Windows feature is installed. | &#9711; | &#9711; |
 | If manual changes are made to the configuration of the virtual machine, the configuration will reapply automatically. | &#9711; | &#9711; |
 | If the Web-Server Windows feature is uninstalled from the virtual machine, the discrepancy will be reported in a log entry within 60 minutes. | &#9711; | &#9711; |
-```
 
-
-------
 
 
 ✅ Answers
@@ -21713,11 +21723,11 @@ Here is the content extracted from the image:
 
 * The `File` resource has:
 
-  ```powershell
-  DependsOn = '[WindowsFeature]Web-Server'
-  ```
-* This ensures:
+```powershell
+DependsOn = '[WindowsFeature]Web-Server'
+```
 
+* This ensures:
   * **Web-Server installs first**
   * Then the file is copied
 
@@ -21727,9 +21737,9 @@ Here is the content extracted from the image:
 
 * LCM setting:
 
-  ```powershell
-  ConfigurationMode = "ApplyAndMonitor"
-  ```
+```powershell
+ConfigurationMode = "ApplyAndMonitor"
+```
 * Meaning:
 
   * Applies configuration **once**
@@ -21742,11 +21752,10 @@ Here is the content extracted from the image:
 
 * Setting:
 
-  ```powershell
-  ConfigurationModeFrequencyMins = 60
-  ```
+```powershell
+ConfigurationModeFrequencyMins = 60
+```
 * Every 60 minutes:
-
   * DSC checks compliance
   * Logs drift (e.g., feature removed)
 
@@ -21758,12 +21767,13 @@ Here is the content extracted from the image:
 * **ApplyAndMonitor → detect drift, don’t fix**
 * **ConfigurationModeFrequencyMins → drift detection interval** 🚀
 
-### Question #62
+### Question #46
 
-DRAG DROP You have a web app named App1 that is hosted on multiple servers. App1 uses Application Insights in Azure Monitor.
+You have a web app named App1 that is hosted on multiple servers. 
 
-You need to compare the daily CPU usage from the last week for all servers.
+App1 uses Application Insights in Azure Monitor.
 
+**You need to compare the daily CPU usage from the last week for all servers.**
 
 How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
 
@@ -21809,14 +21819,14 @@ performanceCounters
 * Groups data into **daily intervals**
 * Requirement:
 
-  > Compare **daily CPU usage from the last week**
+> Compare **daily CPU usage from the last week**
+
 * So aggregation must be per **day**
 
 🟦 `render timechart`
 
 * Visualizes the results as a **time-based chart**
 * Ideal for:
-
   * Trends over time
   * Comparing multiple servers (`cloud_RoleInstance`)
 
@@ -21842,11 +21852,13 @@ performanceCounters
 * **timechart → best for time-series visualization** 🚀
 
 
-### Question #63
+### Question #47  💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
-You plan to manage the configuration of the virtual machines by using Azure Automation State Configuration. You need to create the Desired State Configuration (DSC) configuration files.
+You plan to manage the configuration of the virtual machines by using Azure Automation State Configuration. 
+
+You need to create the Desired State Configuration (DSC) configuration files.
 
 How should you structure the code blocks?
 
@@ -21880,7 +21892,6 @@ Desired State Configuration (DSC) follows a **specific hierarchical structure**:
 
 * Defines what to configure on the node
 * Examples:
-
   * `WindowsFeature`
   * `File`
   * `Service`
@@ -21915,13 +21926,13 @@ DSC always follows:
 > **Configuration → Node → Resource** 🚀
 
 
-### Question #64
+### Question #48
 
 Your team uses Azure Pipelines to deploy applications.
 
+You need to ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams. 
 
-
-You need to ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams. The solution must minimize development effort.
+The solution must minimize development effort.
 
 What should you do?
 
@@ -21943,10 +21954,8 @@ D. Install the Azure Pipelines app for Teams and configure a subscription to rec
 🟦 Why D is correct
 
 * The **Azure Pipelines app for Microsoft Teams** provides:
-
   * Built-in integration with Azure DevOps pipelines
   * Notifications for:
-
     * Build failures
     * Release failures
 * Requires **minimal setup**:
@@ -21979,10 +21988,12 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #65
+### Question #49 💩💩
 
 
-DRAG DROP You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. App1 writes logs to Workspace1.
+You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
+
+App1 writes logs to Workspace1.
 
 You need to query the AppEvents table. The solution must meet the following requirements:
 
@@ -22036,7 +22047,7 @@ AppEvents
 
 * Start with the target table
 
- 🟦 2. Filter by event name
+🟦 2. Filter by event name
 
 ```kusto
 | where Name startswith "Clicked Create New Ticket"
@@ -22051,7 +22062,6 @@ AppEvents
 ```
 
 * Groups by:
-
   * **UserId**
   * **Day (1d bin)**
 
@@ -22076,12 +22086,11 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #66
+### Question #50  💩 💩
 
-HOTSPOT -
+You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
-
-You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, and a release pipeline in Azure Pipelines named Pipeline1.
+and a release pipeline in Azure Pipelines named Pipeline1.
 
 You plan to deploy Contoso Data Factory to ContosoRG by using Pipeline1.
 
@@ -22095,9 +22104,8 @@ Use the drop-down menus to select the answer choice that completes each statemen
 
 NOTE: Each correct selection is worth one point.
 
-Here is the content extracted from the image, formatted as markdown:
 
-The [answer choice] setting must be changed to prevent the modification of existing databases and web apps in ContosoRG. **[Dropdown 1]**
+<mark>The [answer choice] setting must be changed to prevent the modification of existing databases and web apps in ContosoRG. **[Dropdown 1]**</mark>
 
 **Dropdown 1 Options:**
 
@@ -22107,7 +22115,7 @@ The [answer choice] setting must be changed to prevent the modification of exist
 * Deployment scope
 
 
-Pipeline1 will retrieve the ARM template from the [answer choice]. **[Dropdown 2]**
+<mark>Pipeline1 will retrieve the ARM template from the [answer choice]. **[Dropdown 2]**</mark>
 
 **Dropdown 2 Options:**
 
@@ -22129,7 +22137,6 @@ Pipeline1 will retrieve the ARM template from the [answer choice]. **[Dropdown 2
 
 * Current setting (from image): **Complete**
 * Problem:
-
   * **Complete mode deletes any resources not in the template**
   * This could modify/remove existing databases and web apps in **ContosoRG**
 
@@ -22143,7 +22150,6 @@ Pipeline1 will retrieve the ARM template from the [answer choice]. **[Dropdown 2
 
 * Template location is set to **Linked artifact**
 * This means:
-
   * The ARM template is taken from the **pipeline artifact**
   * Typically produced by the **CI build**
 
@@ -22175,7 +22181,7 @@ Pipeline1 will retrieve the ARM template from the [answer choice]. **[Dropdown 2
 * **Incremental mode = safe updates**
 * **Linked artifact = CI pipeline output** 🚀
 
-### Question #67
+### Question #51 💩💩
 
 
 You have an Azure Pipeline.
@@ -22214,17 +22220,17 @@ Here are the four correct scopes for defining variables in Azure Pipelines, arra
 *(Note: **task** is the distractor. While you can map variables to task inputs or environments, you do not declare variable blocks at the task scope in Azure Pipelines.)*
 
 
-### Question #68
+### Question #52
 
-You have a project in Azure DevOps named Project1 that contains two environments named environment1 and environment2.
+You have a project in Azure DevOps named Project1 that contains **two environments named environment1 and environment2.**
 
 When a new version of Project is released, the latest version is deployed to environment2, and the previous version is redeployed to environment1.
 
 You need to distribute users across the environments. The solution must meet the following requirements:
 
-• New releases must be available to only a subset of the users.
+- **New releases must be available to only a subset of the users.**
 
-• You must gradually increase the number of users that can access environment2.
+- **You must gradually increase the number of users that can access environment2**.
 
 What should you use?
 
@@ -22248,7 +22254,6 @@ Azure App Service **deployment slots** allow you to run different versions of yo
 
 This feature allows you to meet both of your requirements perfectly:
 
-
 * **Subset of users:** You can specify a small percentage of incoming user traffic (e.g., 10%) to be routed to `environment2` (the slot with the new release), while the rest remains on `environment1`.
 * **Gradual increase:** You can manually or automatically adjust that percentage upward (e.g., from 10% to 30% to 50%) as you gain confidence in the new release until 100% of the users are on the new version.
 
@@ -22258,9 +22263,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #69
-
-DRAG DROP -
+### Question #53
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22268,7 +22271,9 @@ You plan to use a Semantic Versioning (SemVer)-based strategy.
 
 You need to identify when to change the build version.
 
-What should you identify for each scenario? To answer, drag the appropriate versions to the correct scenarios. Each version may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+What should you identify for each scenario? 
+
+To answer, drag the appropriate versions to the correct scenarios. Each version may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -22302,14 +22307,12 @@ Here is the content extracted from the image, formatted as markdown:
 
 * Used for **breaking changes**
 * Renaming a parameter:
-
   * Breaks existing clients → requires major version bump
 
 
 🟦 **Minor (0.X.0)**
 
 * Used for:
-
   * **Backward-compatible changes**
   * New features
   * Deprecations (still works but marked for future removal)
@@ -22322,7 +22325,6 @@ Here is the content extracted from the image, formatted as markdown:
 🟦 **Patch (0.0.X)**
 
 * Used only for:
-
   * Bug fixes
   * No new features or breaking changes
 
@@ -22339,11 +22341,11 @@ Here is the content extracted from the image, formatted as markdown:
 * **Patch → bug fixes only** 🚀
 
 
-### Question #70
+### Question #54
 
 You use Calendar Versioning (CalVer) for code assets.
 
-You need to store an optional tag of beta as part of the version.
+**You need to store an optional tag of beta as part of the version**.
 
 Which part of the version should you use for the tag?
 
@@ -22370,20 +22372,18 @@ YYYY.MM.DD[-modifier]
 🟦 Modifier
 
 * Used for **optional labels/tags**, such as:
-
   * `beta`
   * `alpha`
   * `rc`
 * Example:
 
-  ```
-  2026.04.01-beta
-  ```
+```
+2026.04.01-beta
+```
 
 ❌ Why the other options are incorrect
 
 * **Major / Minor / Micro**
-
   * These are numeric version components
   * Used for ordering versions, not labeling release types
 
@@ -22398,15 +22398,13 @@ In CalVer:
 > **Modifier = optional label (beta, alpha, rc)** 🚀
 
 
-### Question #71
+### Question #55  💩💩💩
 
-DRAG DROP -
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
 
 You need to identify which nodes are noncompliant.
 
-Topic 8
 
 How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -22468,7 +22466,7 @@ AzureDiagnostics
 
 🎯 Final Query
 
-```kusto id="v9k3lx"
+```
 AzureDiagnostics
 | where Category == "DscNodeStatus"
 | where OperationName contains ""
@@ -22482,13 +22480,15 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #73
+### Question #56  💩💩💩
 
-HOTSPOT -
+You have a project in Azure DevOps that contains a release pipeline. 
 
-You have a project in Azure DevOps that contains a release pipeline. The pipeline contains two stages named QA and Prod. QA deploys code to an Azure web app named webapp1. Prod deploys code to an Azure web app named webapp2.
+The pipeline contains two stages named QA and Prod. QA deploys code to an Azure web app named webapp1. 
 
-You need to ensure that code deployments to webapp2 are blocked if Azure Application Insights generates Failed requests alerts following the deployment of new code to webapp1.
+Prod deploys code to an Azure web app named webapp2.
+
+**You need to ensure that code deployments to webapp2 are blocked if Azure Application Insights generates Failed requests alerts following the deployment of new code to webapp1.**
 
 What should you do for each stage? To answer, select the appropriate options in the answer area.
 
@@ -22500,8 +22500,8 @@ NOTE: Each correct selection is worth one point.
 QA: [Dropdown 1]
 
 **Dropdown 1 Options:**
-* Add a task to configure
-alert rules in Application Insights.
+
+* Add a task to configure alert rules in Application Insights.
 * Configure a gate in the pre-deployment conditions.
 * Configure an auto-redeploy trigger in the post-deployment conditions
 * Configure a post-deployment approval in the post-deployment conditions
@@ -22529,10 +22529,8 @@ Prod: [Dropdown 2]
 🟦 QA stage
 
 * Requirement:
-
   * Detect **failed requests after deployment to webapp1**
 * Solution:
-
   * Configure **Application Insights alert rules**
   * These alerts will be evaluated before promoting to Prod
 
@@ -22543,10 +22541,8 @@ Prod: [Dropdown 2]
 🟦 Prod stage
 
 * Requirement:
-
   * **Block deployment** if alerts are triggered in QA
 * Solution:
-
   * Use **Release Gates**
   * Gates evaluate conditions (like Application Insights alerts) before deployment
 
@@ -22574,14 +22570,14 @@ Prod: [Dropdown 2]
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #77
+### Question #57
 
-DRAG DROP -
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
+You need to ensure that when a new release is generated for ReleaseP1, a new release note document is created. 
 
-You need to ensure that when a new release is generated for ReleaseP1, a new release note document is created. The release notes must contain new features and bug fixes.
+The release notes must contain new features and bug fixes.
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -22622,11 +22618,9 @@ NOTE: More than one order of answer choices is correct. You will receive credit 
 🟦 2. Create a query
 
 * Define a query to fetch:
-
   * **Features**
   * **Bug fixes**
 * Typically based on:
-
   * Work item type
   * Iteration / release scope
 
@@ -22634,10 +22628,8 @@ NOTE: More than one order of answer choices is correct. You will receive credit 
 
 * Executes during the release pipeline
 * Uses:
-
   * REST API + PAT
 * Outputs:
-
   * **Release notes in Markdown format**
 
 ❌ Why the other options are incorrect
