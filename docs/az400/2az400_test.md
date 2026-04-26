@@ -22669,7 +22669,7 @@ You have a Dockerfile file that contains the following code. (Line numbers are i
 07 ENTRYPOINT ["dotnet", "app1.dll"]
 ```
 
-You need to ensure that the image is as small as possible when the image is built.
+**You need to ensure that the image is as small as possible when the image is built.**
 
 Which line should you modify in the file?
 
@@ -22739,7 +22739,7 @@ For small Docker images:
 
 
 
-### Question #3
+### Question #2
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -22750,7 +22750,7 @@ You have an Azure subscription that contains the resources shown in the followin
 | ADFPipeline1 | Azure Data Factory pipeline |
 | Vault1 | Azure Key Vault |
 
-DepPipeline1 and ADFPipeline1 use a single credential that is stored in Vault1.
+**DepPipeline1 and ADFPipeline1 use a single credential that is stored in Vault1**.
 
 You need to configure ADFPipeline1 to retrieve the credential from Vault1.
 
@@ -22776,7 +22776,6 @@ To retrieve a secret from **Azure Key Vault** in an **Azure Data Factory pipelin
 🟦 Why Web activity
 
 * The **Web activity** is used to:
-
   * Call REST endpoints
   * Retrieve data from external services
 * Azure Key Vault exposes secrets via a **REST API**
@@ -22805,7 +22804,7 @@ In Azure Data Factory:
 > Use **Web activity** to call APIs (like Key Vault) and retrieve secrets 🚀
 
 
-### Question #4
+### Question #3. 💩💩💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -22813,7 +22812,7 @@ You need to use an Azure Pipelines pipeline to test an app. The solution meet th
 
 • The test results must be published to the pipeline.
 
-• The test for every pipeline run must be triggered unless the pipeline is cancelled.
+• **The test for every pipeline run must be triggered unless the pipeline is cancelled.**
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
@@ -22873,17 +22872,15 @@ condition: succeededOrFailed()
 ```
 
 * Runs when:
-
   * Succeeded ✔
   * Failed ✔
 * Does NOT run when:
-
   * Canceled ✔ (matches requirement)
 
 🟦 Other requirements check
 
-✔ Publish test results → satisfied
-✔ Fail pipeline if tests fail → handled by test task (not this task)
+- ✔ Publish test results → satisfied
+- ✔ Fail pipeline if tests fail → handled by test task (not this task)
 
 🎯 Conclusion
 
@@ -22891,18 +22888,19 @@ The solution does **NOT** meet all requirements.
 
 **Answer: B. No**
 
-
 💡 Key takeaway
 
 * **always() → runs even on cancel ❌**
-* **succeededOrFailed() → correct for most CI scenarios ✅** 🚀
+* <mark>**succeededOrFailed() → correct for most CI scenarios ✅** 🚀</mark>
 
 
-### Question #5
+### Question #4
 
 You have an Azure web app that is deployed by using Azure Pipelines.
 
-You need to ensure that when a new version of the app is deployed to production, you can roll back to the previous version. The solution must meet the following requirements:
+You need to ensure that when a new version of the app is deployed to production, you can roll back to the previous version. 
+
+The solution must meet the following requirements:
 
 • Minimize downtime during the deployment.
 
@@ -22931,12 +22929,10 @@ D. two web apps and an Azure Traffic Manager instanc
 Using **deployment slots** (e.g., *staging* and *production*) in an Azure Web App provides:
 
 * **Zero/near-zero downtime deployments**
-
   * Deploy to staging slot first
   * Swap to production instantly
 
 * **Fast rollback**
-
   * Simply swap back to the previous slot
   * Takes seconds
 
@@ -22967,7 +22963,7 @@ For safe deployments:
 > **Use deployment slots → swap for release, swap back for rollback** 🚀
 
 
-### Question #8
+### Question #5
 
 You have a project in Azure DevOps named Project1 that references an Azure Artifacts feed named Feed1.
 
@@ -22982,7 +22978,7 @@ You have a package named Package1 that has the versions shown in the following t
 | 2.3.1 | Saved from an upstream source |
 ```
 
-You need to perform a build of Project1.
+**You need to perform a build of Project1.**
 
 Which version of Package1 will be used?
 
@@ -23005,19 +23001,18 @@ Azure Artifacts resolves packages based on:
 
 1. **Highest available version**
 2. Across:
-
    * Local feed (manually pushed)
    * Upstream sources (if enabled)
 
 🟦 Key detail: *Saved from upstream*
 
 * **2.3.1 (Saved from upstream)**
-  → Already **cached in Feed1**
-  → Treated like a local package
+  * Already **cached in Feed1**
+  * Treated like a local package
 
 * **2.0.0 (Available from upstream)**
-  → Not yet used/downloaded
-  → Only fetched if specifically requested
+  * Not yet used/downloaded
+  * Only fetched if specifically requested
 
 🟦 Version selection logic
 
@@ -23047,13 +23042,11 @@ Available versions:
 * **Highest version wins** 🚀
 
 
-### Question #9
-
-HOTSPOT -
+### Question #6 💩
 
 You have an Azure subscription.
 
-You need to create a storage account by using a Bicep file.
+**You need to create a storage account by using a Bicep file.**
 
 How should you complete the file? To answer, select the appropriate options in the answer area.
 
@@ -23062,7 +23055,7 @@ NOTE: Each correct selection is worth one point.
 
 **Answer Area**
 
-```bicep
+```
 param storageAccount string
 
 var storageAccountNameToUse = '${storageAccount}${uniqueString(resourceGroup().id)}'
@@ -23110,7 +23103,6 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 * Specifies the **type of storage account**
 * Valid values include:
-
   * `StorageV2` (recommended general-purpose v2)
 
 ✔ Correct usage:
@@ -23132,7 +23124,7 @@ properties: {
 
 🎯 Final Bicep snippet
 
-```bicep id="6q7k2v"
+```
 param storageAccount string
 
 var storageAccountNameToUse = '${storageAccount}${uniqueString(resourceGroup().id)}'
@@ -23157,21 +23149,26 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 
 
-### Question #10
+### Question #7
 
-DRAG DROP -
 
-You have a GitHub repository named repo1 that stores the code of an app named App1. You need deploy a workflow for repo1 by using GitHub Actions. The solution must meet the following requirements:
+You have a GitHub repository named repo1 that stores the code of an app named App1. 
 
-• Scan on pushes to the main branch.
+You need deploy a workflow for repo1 by using GitHub Actions. 
+
+The solution must meet the following requirements:
+
+• **Scan on pushes to the main branch.**
 
 • Scan on pull requests to the main branch.
 
-• Scan on pull requests to any branch that has a prefix of releases/.
+• Scan on pull requests to any **branch that has a prefix of releases/**.
 
-• Scan all thefiles in the subdirectories of the src directory.
+• Scan all the files in the **subdirectories of the src directory**.
 
-How should you complete the code? To answer, drag he appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
+How should you complete the code? To answer, drag he appropriate values to the correct targets. 
+
+Each value may be used once, more than once, or not at all.
 
 
 Here is the extracted content from the image, formatted as **markdown**:
@@ -23245,14 +23242,14 @@ on:
 
 * **`src/**`**
 
-  * Includes all files in `src` and **all subdirectories**
+* Includes all files in `src` and **all subdirectories**
     ✔ Matches requirement
 
 🟦 Paths ignore
 
 * **`**/*.md`**
 
-  * Excludes markdown files from triggering scans
+* Excludes markdown files from triggering scans
     ✔ Common optimization
 
 🎯 Final mapping
@@ -23268,12 +23265,15 @@ on:
 * `**/*.md` → ignore markdown files 🚀
 
 
-### Question #12
+### Question #8 💩💩💩
 
+You have an Azure subscription that contains an Azure pipeline named Pipeline1 and a GitHub repository named Repo1. 
 
-You have an Azure subscription that contains an Azure pipeline named Pipeline1 and a GitHub repository named Repo1. Repo1 contains Bicep modules. Pipeline1 deploys Azure resources by using the Bicep modules.
+Repo1 contains Bicep modules. 
 
-You need to ensure that all releases comply with Azure Policy before they are deployed to production.
+Pipeline1 deploys Azure resources by using the Bicep modules.
+
+**You need to ensure that all releases comply with Azure Policy before they are deployed to production.**
 
 What should you do?
 
@@ -23283,14 +23283,16 @@ B. Configure a deployment gate for Pipeline1 that uses Azure Automation to run a
 
 C. Create an Azure DevOps build that runs on the creation of a pull request and assesses the code for compliance.
 
-D. Configure a deployment gate for Pipeline1 and include the Azure DevOps Security and compliance assessment task
+D. Configure a deployment gate for Pipeline1 and include **the Azure DevOps Security and compliance assessment task**
 
 --------
 
 
 ✅ The Correct Solution (Option D)
 
-A deployment gate acts as an automatic health check before your release proceeds to a production stage. By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as a gate, your pipeline will automatically query Azure Policy for the target resources. The deployment only continues if all resources are compliant; otherwise, the release is rejected.
+A deployment gate acts as an automatic health check before your release proceeds to a production stage. 
+
+By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as a gate, your pipeline will automatically query Azure Policy for the target resources. The deployment only continues if all resources are compliant; otherwise, the release is rejected.
 
 **Why this is the best choice:**
 
@@ -23308,9 +23310,7 @@ A deployment gate acts as an automatic health check before your release proceeds
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #13
-
-DRAG DROP -
+### Question #9
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -23366,17 +23366,17 @@ Based on the given table:
 - **Change2:** Major
 - **Change3:** Patch
 
-### Question #14
+### Question #10 
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
 
 TestSuite1 fails intermittently.
 
-You identify that the failures are unrelated to changes in the source code and execution environment.
+**You identify that the failures are unrelated to changes in the source code and execution environment.**
 
 You need to minimize troubleshooting effort for the TestSuite1 failures.
 
-Solution: You enable flaky test management.
+**Solution: You enable flaky test management.**
 
 Does this meet the goal?
 
@@ -23401,7 +23401,7 @@ Enabling **flaky test management** is the correct solution because:
 Therefore, enabling flaky test management directly addresses the need to minimize troubleshooting effort for intermittent, code-unrelated test failures.
 
 
-### Question #15
+### Question #11
 
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
@@ -23437,17 +23437,19 @@ Why this does **not** meet the goal:
 In contrast, **flaky test management** (the correct solution from the previous question) would automatically retry flaky tests and reduce manual troubleshooting. The Test Results Trend widget merely reports the problem without solving it.
 
 
-### Question #16
+### Question #12 💩💩💩
 
-You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
+You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. 
+
+TestSuite1 is used to validate the operations of the web app.
 
 TestSuite1 fails intermittently.
 
 You identify that the failures are unrelated to changes in the source code and execution environment.
 
-You need to minimize troubleshooting effort for the TestSuite1 failures.
+**You need to minimize troubleshooting effort for the TestSuite1 failures.**
 
-Solution: You enable Test Impact Analysis (TIA).
+<mark>Solution: You enable Test Impact Analysis (TIA)</mark>.
 
 Does this meet the goal?
 
@@ -23471,15 +23473,15 @@ Why this does **not** meet the goal:
 The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
 
 
-### Question #17
+### Question #13 💩💩💩
 
 You plan to publish build artifacts by using an Azure pipeline.
 
-You need to create an .artifactignore file that meets the following requirements:
+**You need to create an .artifactignore file that meets the following requirements:**
 
-• Includes allfiles in the build output folder and all subfolders
+• **Includes all files in the build output folder and all subfolders**
 
-• Excludesfiles that have the .dll extension
+• Excludes files that have the .dll extension
 
 What should you include in the file?
 
@@ -23525,10 +23527,8 @@ Under those reversed requirements, **Option B** is perfectly correct because:
 
 *Note: If the author of the question accidentally used Azure Pipeline Task minimatch logic (where `**/*` means include everything, and `!*.dll` means exclude .dlls), they still intend for **Option B** to be the answer.*
 
-
-### Question #18
-
-HOTSPOT -
+ 
+### Question #14 💩💩💩
 
 You have a GitHub repository.
 
@@ -23628,7 +23628,7 @@ Final Answer:
 - **Step 2:** `docker build . --file Dockerfile --tag ${{ github.repository }}:latest --label "runnumber=${{ github.run_number }}"`
 - **Step 3:** `docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest`
 
-### Question #19
+### Question #15
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
 
@@ -23662,7 +23662,7 @@ To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you s
 *   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
 
 
-### Question #20
+### Question #16
 
 You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
 
@@ -23702,10 +23702,12 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #21
+### Question #17 💩
 
 
-You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. Pipeline1 is used to build and test an app named App1. User1 is assigned the Contributors role for Pipeline1.
+You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
+
+Pipeline1 is used to build and test an app named App1. User1 is assigned the Contributors role for Pipeline1.
 
 You plan to test App1 by using an Azure Deployment Environments environment.
 
@@ -23739,9 +23741,8 @@ Explanation:
 
 To allow User1 to provision environments in ADE while following the principle of least privilege, you should assign them the **Deployment Environments User** role.
 
-### Question #22
+### Question #18 
 
-HOTSPOT -
 
 You have an Azure subscription that contains Azure DevOps build pipelines.
 
@@ -23812,8 +23813,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #23
-
+### Question #19  💩💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -23823,9 +23823,9 @@ You plan to deploy an instance of App1 to each resource group.
 
 You need to create a Bicep template that will be used to deploy App1. The solution must meet the following requirements:
 
-• The name of each App1 instance must be consistent for each subscription and resource group.
+- • The name of each App1 instance must be consistent for each subscription and resource group.
 
-• The name of each App Service plan used to host App1 must be consistent.
+- • The name of each App Service plan used to host App1 must be consistent.
 
 How should you complete the template? To answer, select the appropriate options in the answer area.
 
@@ -23893,13 +23893,12 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #24
+### Question #20
 
-DRAG DROP -
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
 
-You need to ensure that the pipeline caches required NuGet packages.
+**You need to ensure that the pipeline caches required NuGet packages.**
 
 
 How should you configure the pipeline? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
@@ -23973,7 +23972,7 @@ steps:
 3.  **path:** **`$(NUGET_PACKAGES)`**
     *   This input defines the actual directory on the agent that will be saved to the cache and restored. In the YAML provided, the `NUGET_PACKAGES` variable is explicitly set to the directory where NuGet stores its downloaded packages.
 
-### Question #25
+### Question #21
 
 You have an Azure pipeline that is used to deploy an app named App1.
 
