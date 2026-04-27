@@ -23976,7 +23976,9 @@ steps:
 
 You have an Azure pipeline that is used to deploy an app named App1.
 
-You need to ensure that new versions of App1 are released only if they exceed performance baselines. The solution must minimize administrative effort.
+**You need to ensure that new versions of App1 are released only if they exceed performance baselines.** 
+
+The solution must minimize administrative effort.
 
 What should you configure?
 
@@ -24007,9 +24009,7 @@ Explanation:
 *   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
 
 
-### Question #26
-
-DRAG DROP -
+### Question #22  💩💩
 
 You have an Azure subscription.
 
@@ -24064,19 +24064,21 @@ To implement the standards while minimizing administrative effort and ensuring c
 **Explanation:**
 
 1.  **Standard 1: An extends template**  
-    In Azure Pipelines, **extends templates** are the primary mechanism for enforcing security and governance. By using the `extends` keyword, you can create a "wrapper" template that contains mandatory security steps (like credential scanning or policy checks). The developer’s pipeline provides its content as a parameter to your template, allowing you to inject logic before or after their code and prevent them from bypassing required security measures.
+
+In Azure Pipelines, **extends templates** are the primary mechanism for enforcing security and governance. By using the `extends` keyword, you can create a "wrapper" template that contains mandatory security steps (like credential scanning or policy checks). The developer’s pipeline provides its content as a parameter to your template, allowing you to inject logic before or after their code and prevent them from bypassing required security measures.
 
 2.  **Standard 2: An includes template**  
-    An **includes template** (using the standard `template:` syntax) is best for reusability. Since you need to ensure software prerequisites are in the first stage, you can create a template containing those specific steps or stages. Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
+
+An **includes template** (using the standard `template:` syntax) is best for reusability. Since you need to ensure software prerequisites are in the first stage, you can create a template containing those specific steps or stages. Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
 
 
-### Question #27
+### Question #23
 
 You have an Azure subscription.
 
 You create two Bicep templates named Template1 and Template2 that will be used to create a virtual machine and a website.
 
-You need to create a template named Template3 that will reuse logic from Template1 and Template2.
+**You need to create a template named Template3 that will reuse logic from Template1 and Template2.**
 
 What should you define first?
 
@@ -24099,7 +24101,8 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 
 *   **How it works:** To reuse the logic defined in `Template1` and `Template2` within a new file (`Template3`), you reference those files as modules. This allows `Template3` to act as an orchestrator, passing parameters to the modules and using their outputs.
 *   **Syntax example:** In `Template3.bicep`, you would write:
-    ```bicep
+
+```
     module virtualMachine './Template1.bicep' = {
       name: 'vmDeployment'
       params: { ... }
@@ -24109,7 +24112,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
       name: 'webDeployment'
       params: { ... }
     }
-    ```
+```
 
 **Why other options are incorrect:**
 
@@ -24117,13 +24120,15 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #28
+### Question #24
 
 You have an Azure subscription.
 
 You use Bicep templates to deploy websites and Azure SQL infrastructure.
 
-You need to automate the deployments by using Azure Pipelines and a self-hosted agent that runs on two virtual machines. The solution must minimize administrative effort.
+**You need to automate the deployments by using Azure Pipelines and a self-hosted agent that runs on two virtual machines.**
+
+The solution must minimize administrative effort.
 
 What should you do first?
 
@@ -24164,7 +24169,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #29
+### Question #25
 
 HOTSPOT -
 
@@ -24222,14 +24227,16 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 *   *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
 
 
-### Question #30
+### Question #26
 
 DRAG DROP -
 
 
-You have an Azure subscription that contains an Azure Tra®c Manager profile named ATM1 and a web app named App1. ATM1 manages App1 tra®c. ATM1 is configured to route callers to the endpoint that has the lowest latency.
+You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
 
-You need to configure ATM1 to route all traffic from Asia to an endpoint in Australia.
+**ATM1 manages App1 traffic. ATM1 is configured to route callers to the endpoint that has the lowest latency.**
+
+**You need to configure ATM1 to route all traffic from Asia to an endpoint in Australia.**
 
 Which three actions should you perform in sequence from the Azure portal? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -24269,7 +24276,7 @@ The three actions you should perform in sequence are:
 *   *Decrease the TTL:* While this is a good practice during a migration to speed up DNS propagation, it is not a structural requirement for the configuration logic.
 *   *Configure performance routing:* This is the current setting that you are trying to change.
 
-### Question #31
+### Question #27
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24311,11 +24318,13 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #33
+### Question #28
 
 You plan to deploy a solution that will include multiple microservices.
 
-You need to recommend a deployment strategy for the microservices. The solution must meet the following requirements:
+You need to recommend a deployment strategy for the microservices. 
+
+The solution must meet the following requirements:
 
 • Enable testing and monitoring of changes during a gradual rollout.
 
@@ -24333,7 +24342,6 @@ D. blue/green
 
 ----
 
-
 The correct answer is **A. progressive exposure**.
 
 Explanation:
@@ -24349,9 +24357,7 @@ Why the other options are incorrect:
 *   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
 *   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
 
-### Question #34
-
-HOTSPOT -
+### Question #29  💩💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 that has the following YAML definition.
 
@@ -24359,7 +24365,6 @@ For each of the following statements, select Yes if True. Otherwise select No.
 
 NOTE: Each correct selection is worth one point.
 
-```
 Based on the image provided, here is the extracted content in Markdown format:
 
 ```yaml
@@ -24389,11 +24394,7 @@ steps:
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-  condition: succeededOrFailed()
 ```
-```
-
-
 
 For each of the following statements, select Yes if True. Otherwise select No.
 
@@ -24406,29 +24407,22 @@ NOTE: Each correct selection is worth one point.
 | $(BuildPlatform) is a predefined variable. | ◯ | ◯ |
 | $(System.DefaultWorkingDirectory) is a predefined variable. | ◯ | ◯ |
 
-----
 
-
-Let’s evaluate each statement based on the YAML:
-
----
 
 **1. Pipeline1 consists of three stages.**
 
 **Answer: ❌ No**
 
 * The YAML defines:
-
   * **1 job** (implicit, since no `jobs:` or `stages:` keyword is used)
   * **3 steps/tasks**:
-
     * `VSBuild@1`
     * `CopyFiles@2`
-    * `PublishBuildArtifacts@1`
+    * `PublishBuildArtifacts@1` 
 * In Azure Pipelines, **stages must be explicitly defined** using `stages:`.
 * Since no stages are defined, this pipeline has **no explicit stages**, just steps.
 
----
+----
 
 **2. $(BuildPlatform) is a predefined variable.**
 
@@ -24436,15 +24430,14 @@ Let’s evaluate each statement based on the YAML:
 
 * `$(BuildPlatform)` is **not a predefined variable**.
 * It is typically a **user-defined variable** (often set in:
-
   * Variables section
   * Pipeline UI
   * Variable group)
 * Predefined variables are things like:
-
   * `$(Build.BuildId)`
   * `$(Build.ArtifactStagingDirectory)`
 
+----
 
 **3. $(System.DefaultWorkingDirectory) is a predefined variable.**
 
@@ -24452,8 +24445,9 @@ Let’s evaluate each statement based on the YAML:
 
 * `$(System.DefaultWorkingDirectory)` is a **built-in predefined variable** in Azure Pipelines.
 * It represents:
-
   * The **local path on the agent** where source code is checked out.
+
+
 
 ✅ Final Answers
 
@@ -24465,13 +24459,11 @@ Let’s evaluate each statement based on the YAML:
 
 
 
-If you want, I can show a quick version of this pipeline rewritten with **explicit stages and jobs**—that’s a common exam trap.
-
-### Question #35
+### Question #30  💩💩
 
 You use Azure Pipelines to build and test code.
 
-You need to analyze the agent pool usage.
+**You need to analyze the agent pool usage.**
 
 What are two ways to achieve the goal? Each correct answer presents a complete solution.
 
@@ -24493,42 +24485,41 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 ✅ Correct Answers
 
 **A. Review the historical graph for the agent pools.**
+
 ✔️ This shows:
 
 * Number of agents
 * Queue length
 * Running jobs over time
-  ➡️ Helps identify **whether jobs are waiting due to insufficient agents**
+
+➡️ Helps identify **whether jobs are waiting due to insufficient agents**
 
 **C. Query the TaskAgentPoolSizeSnapshot/TaskAgentPoolSizeSnapshots endpoint.**
+
 ✔️ This REST API provides:
 
 * Historical data about agent pool size
 * Queue metrics and utilization
-  ➡️ Directly useful for diagnosing **agent pool exhaustion**
+
+➡️ Directly useful for diagnosing **agent pool exhaustion**
 
 ❌ Incorrect Answers
 
 **B. Review the Pipeline duration report.**
 ✖️ Shows how long pipelines take, but:
 
-* Does **not reveal agent availability or queue delays**
-  ➡️ Cannot confirm exhaustion
+* Does **not reveal agent availability or queue delays**  ➡️ Cannot confirm exhaustion
 
 
-**D. Query the PipelineRun/PipelineRuns endpoint.**
-✖️ Provides:
+**D. Query the PipelineRun/PipelineRuns endpoint.** ✖️ Provides:
 
-* Pipeline run details (status, duration, etc.)
-  ➡️ Does **not include agent pool capacity or queue data**
+* Pipeline run details (status, duration, etc.) ➡️ Does **not include agent pool capacity or queue data**
 
 ✅ Final Answer:
 
 **A and C**
 
-### Question #36
-
-DRAG DROP -
+### Question #31. 💩💩💩
 
 You have a GitHub organization.
 
@@ -24572,7 +24563,7 @@ Explanation:
 *   **Step 3 (Install App1):** A GitHub App has no permissions until it is **installed** on a specific account or organization. The installation creates the link between the app and the resources (repositories) it is allowed to access.
 *   **Step 4 (Generate an installation access token):** Within the workflow, you use the App ID and Private Key (to create a temporary JWT) and exchange them for an **installation access token**. This token is the final credential used to authorize the actual API requests.
 
-### Question #37
+### Question #32 💩💩💩
 
 You use an Azure Pipelines pipeline to build and deploy an app.
 
@@ -24614,11 +24605,13 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #38
+### Question #33 💩💩💩💩
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
-You need to reduce how long it takes to complete unit and integration tests for App1. The solution must ensure that the code coverage testing ratio is maintained.
+**You need to reduce how long it takes to complete unit and integration tests for App1.** 
+
+The solution must ensure that the code coverage testing ratio is maintained.
 
 What should you do?
 
@@ -24680,14 +24673,15 @@ If the question mentions:
 👉 The answer is almost always **Test Impact Analysis (TIA)**.
 
 
-### Question #39
+### Question #34
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
+**You need to configure a release pipeline that will mark the app as complete and ready for release into the Production-B environment.** 
 
-You need to configure a release pipeline that will mark the app as complete and ready for release into the Production-B environment. The solution must meet the following requirements:
+The solution must meet the following requirements:
 
-• Ensure that there are no active Azure Monitor alerts in the Production-A environment before the app is marked as complete.
+• **Ensure that there are no active Azure Monitor alerts in the Production-A environment before the app is marked as complete.**
 
 • Minimize administrative effort.
 
@@ -24726,7 +24720,6 @@ You need to:
 
 1. Deploy to **Production-A**
 2. Run **post-deployment gate**
-
    * Check Azure Monitor alerts
    * If **no alerts → pass**
 3. Mark release as ready → proceed to **Production-B**
@@ -24740,14 +24733,10 @@ You need to:
 * Runs **before Production-B**, not tied to validating Production-A
 * ❌ Does not ensure Production-A is healthy *immediately after deployment*
 
----
-
 **C. Post-deployment approval on Production-A**
 
 * Requires **manual intervention**
 * ❌ Violates *minimize administrative effort*
-
----
 
 **D. Pre-deployment gate on Production-A**
 
@@ -24759,9 +24748,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-👉 When checking **environment health after deployment**, always choose **post-deployment gate**.
-
-### Question #40
+### Question #35 💩💩💩
 
 You manage package feeds by using Azure Artifacts.
 
@@ -24777,7 +24764,6 @@ You plan to create a new package feed that will include the following views:
 
 Which view should you create manually?
 
-Topic 9
 
 A. @Local
 
@@ -24801,7 +24787,6 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 * **@Local** → ✅ Always created by default
 
   * Contains all packages published directly to the feed
-
 
 🔹 Custom views (must be created manually):
 
@@ -24834,7 +24819,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #42
+### Question #36
 
 You have an Azure subscription that includes an app named App1.
 
@@ -24859,7 +24844,6 @@ D. In the Staging environment add a check to query Azure Monitor Alerts for acti
 
 ✅ Correct Answer: **D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.**
 
----
 
 💡 Why this is correct
 
@@ -24882,7 +24866,6 @@ You need to:
 
 1. Deploy to **Staging**
 2. Run **environment check (Azure Monitor alerts)**
-
    * If no alerts → proceed
    * If alerts exist → stop
 3. Deploy to **Production**
@@ -24916,17 +24899,20 @@ You need to:
 **D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.**
 
 
-### Question #43
+### Question #37 💩💩💩
 
-You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
+
+You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. 
+
+The solution must meet the following requirements.
 
 • The test stages must be run in parallel.
 
-• The Publish_Test_Results stage must always be run.
+• The `Publish_Test_Results` stage must always be run.
 
 • The test stages must be run after successful completion of the build stage.
 
-• The Publish_Test_Results stage must be run after completion of all the test stages.
+• The `Publish_Test_Results` stage must be run after completion of all the test stages.
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
@@ -25016,17 +25002,17 @@ To meet requirements, you would need:
 * Proper stage structure
 * Parallel test stages:
 
-  ```yaml
-  dependsOn: Build_App
-  ```
+```yaml
+dependsOn: Build_App
+```
 * Publish stage:
 
-  ```yaml
-  dependsOn:
-    - Test_App
-    - Test_Database
-  condition: always()
-  ```
+```yaml
+dependsOn:
+  - Test_App
+  - Test_Database
+condition: always()
+```
 
 🔥 Key Exam Insight
 
@@ -25041,7 +25027,7 @@ When you see:
 **B. No**
 
 
-### Question #44
+### Question #38
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25162,7 +25148,7 @@ This would:
 
 
 
-### Question #45
+### Question #39
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25275,7 +25261,7 @@ The **critical failure** is:
 **B. No**
 
 
-### Question #46
+### Question #40 💩💩💩
 
 HOTSPOT -
 
@@ -25358,11 +25344,9 @@ Then:
 1. Job E can start before job C completes.
 
 * E depends on:
-
   * B
   * D
 * D depends on:
-
   * B and C
 
 👉 So E indirectly depends on **C through D**
@@ -25403,12 +25387,14 @@ Then:
 | Job D can start before job B completes. |  ❌ No  |
 
 
-### Question #47
+### Question #41 💩💩
 
 You are developing an Azure Pipelines pipeline.
 
 
-You need to configure a check in the pipeline that will query Azure Boards to ensure that there are no active work item issues before the pipeline deploys a build to production.
+You need to configure a check in the pipeline that will query Azure Boards to 
+
+**ensure that there are no active work item issues before the pipeline deploys a build to production.**
 
 Which type of check should you implement?
 
@@ -25477,17 +25463,17 @@ You need an **automated check** that:
 **C. pre-deployment gates**
 
 
-### Question #48
+### Question #42 💩💩💩
 
 You have an Azure Resource Manager (ARM) template that contains the following expression.
 
 `[if(parameters('isComplete'), '1a', '2a’)]`
 
-You need to migrate the template to Bicep.
+**You need to migrate the template to Bicep.**
 
 Which expression should you run?
 
-A. iif(isComplete, '1a', '2a')
+A. if(isComplete, '1a', '2a')
 
 B. if(isComplete, '1a', '2a')
 
@@ -25538,8 +25524,7 @@ isComplete ? '1a' : '2a'
 
 **D. `isComplete ? '1a' : '2a'`**
 
-### Question #49
-
+### Question #43
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -25640,7 +25625,7 @@ pr:
 
 **B. No**
 
-### Question #50
+### Question #44
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
