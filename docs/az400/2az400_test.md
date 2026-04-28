@@ -25631,9 +25631,9 @@ You use an Azure Pipelines pipeline to build and release web apps.
 
 You need to configure the pipeline to meet the following requirements:
 
-• Only run when there is a change in the /webapp folder.
+• **Only run when there is a change in the /webapp folder**.
 
-• Only run when a pr is created.
+• **Only run when a pr is created**.
 
 Solution: You configure the pipeline definition by using the following elements.
 
@@ -25703,7 +25703,7 @@ branches:
 * It only applies to **CI triggers**, not PRs
 * ❌ So PR-based execution requirement is not met at all
 
-🔥 Correct approach (for reference)
+**🔥 Correct approach (for reference)**
 
 ```yaml
 pr:
@@ -25727,7 +25727,7 @@ pr:
 
 **B. No**
 
-### Question #52
+### Question #45 💩💩💩
 
 
 You are using an Azure Pipelines pipeline to build and deploy a web app.
@@ -25744,11 +25744,9 @@ Which type of test should you implement for each requirement? To answer, select 
 
 NOTE: Each correct selection is worth one point.
 
-Based on the image provided, here is the extracted content in Markdown format:
-
 **Answer Area**
 
-**Validates the scalability of the app:**
+<mark>**Validates the scalability of the app:**</mark>
 
 *   Acceptance
 *   Integration
@@ -25756,7 +25754,7 @@ Based on the image provided, here is the extracted content in Markdown format:
 *   Smoke
 *   Unit
 
-**Tests a code module without testing the module's dependencies:**
+<mark>**Tests a code module without testing the module's dependencies:**</mark>
 
 *   Acceptance
 *   Integration
@@ -25764,7 +25762,7 @@ Based on the image provided, here is the extracted content in Markdown format:
 *   Smoke
 *   Unit
 
-**Validates the interactions and dependencies between the app and its dependent services:**
+<mark>**Validates the interactions and dependencies between the app and its dependent services:**</mark>
 
 *   Acceptance
 *   Integration
@@ -25812,17 +25810,17 @@ Based on the image provided, here is the extracted content in Markdown format:
 * **Unit** → isolated logic
 * **Integration** → component interaction
 
-### Question #53
-
-DRAG DROP -
+### Question #46 💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
 You manage the configuration of the virtual machines by using Azure Automation State Configuration.
 
-You need to ensure that Windows Defender is installed on each virtual machine and the Windows Defender service is running.
+**You need to ensure that Windows Defender is installed on each virtual machine and the Windows Defender service is running.**
 
-How should you complete the Desired State Configuration (DSC) code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+How should you complete the Desired State Configuration (DSC) code? 
+
+To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -25918,7 +25916,7 @@ EnsureSecure -OutputPath C:\temp\
 
 
 
-### Question #58
+### Question #47
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -25959,7 +25957,7 @@ B. No
 A. YES 
 
 
-### Question #59
+### Question #48
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -25967,7 +25965,7 @@ You need to use an Azure Pipelines pipeline to test an app. The solution meet th
 
 • The test results must be published to the pipeline.
 
-• The test for every pipeline run must be triggered unless the pipeline is cancelled.
+• **The test for every pipeline run must be triggered unless the pipeline is cancelled.**
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
@@ -25994,6 +25992,7 @@ B. No
 
 ----
 
+**` condition: succeededorFailed()`**
 
 ❌ Correct Answer: **B. No**
 
@@ -26008,7 +26007,7 @@ B. No
 * `PublishTestResults@2` will publish results
 
 
-❌ 2. Pipeline must fail if any tests fail
+❌ 2. **Pipeline must fail if any tests fail**
 
 ✖️ **NOT met**
 
@@ -26032,7 +26031,6 @@ condition: succeededOrFailed()
 ```
 
 * This runs:
-
   * On success ✅
   * On failure ✅
 * ❌ But **not guaranteed to skip when canceled** (behavior is not aligned with requirement)
@@ -26069,9 +26067,7 @@ Fails:
 
 
 
-### Question #60
-
-HOTSPOT -
+### Question #49. 💩💩💩
 
 You have an app named App1 that is built and deployed by using containers.
 
@@ -26136,7 +26132,7 @@ Based on the provided Dockerfile, here are the correct selections for each state
 3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
 
 
-### Question #61
+### Question #50 💩💩
 
 You have an Azure DevOps subscription that contains the projects shown in the following table.
 
@@ -26154,7 +26150,7 @@ Based on the image provided, here is the extracted table in Markdown format:
 
 You build apps for the projects by using Azure Pipelines.
 
-Which two projects meet the criteria for granting free parallel jobs? Each correct answer presents part of the solution.
+**Which two projects meet the criteria for granting free parallel jobs**? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -26208,8 +26204,7 @@ Azure DevOps grants **free parallel jobs** based on:
 
 * Uses Project1 repo, but:
 * Not clearly qualifying independently
-* Small team doesn’t matter
-  ❌ Not a clear qualifying case
+* Small team doesn’t matter  ❌ Not a clear qualifying case
 
 **E. Project5**
 
@@ -26227,8 +26222,7 @@ Azure DevOps grants **free parallel jobs** based on:
 - **A. Project1**
 - **C. Project4**
 
-### Question #62
-
+### Question #51 💩💩
 
 
 You have an Azure Pipelines pipeline that has the following definition.
@@ -26327,13 +26321,13 @@ For each of the following statements, select Yes if the statement is true. Other
 * Jobs without dependencies can run **concurrently by default**
 
 
-### Question #63
+### Question #52
 
 You use an Azure Pipelines pipeline to build and test an app named App1.
 
 Your company’s development department works in the feature branches.
 
-You need to ensure that a pull request will merge into the main branch only when testing covers more than 90 percent of the code.
+**You need to ensure that a pull request will merge into the main branch only when testing covers more than 90 percent of the code**.
 
 What should you do?
 
@@ -26395,7 +26389,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #64
+### Question #53 💩💩💩
 
 HOTSPOT -
 
@@ -26413,7 +26407,7 @@ NOTE: Each correct selection is worth one point.
 
 **Answer Area**
 
-**Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**
+<mark>**Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**</mark>
 
 *   Environments
 *   Jobs
@@ -26421,7 +26415,7 @@ NOTE: Each correct selection is worth one point.
 *   Packages
 *   Pull requests
 
-**Ensure that a build is approved by the change management team before the build is released:**
+<mark>**Ensure that a build is approved by the change management team before the build is released:**</mark>
 
 *   Environments
 *   Jobs
@@ -26459,7 +26453,6 @@ NOTE: Each correct selection is worth one point.
 ✔️ Why:
 
 * GitHub **Environments** support:
-
   * Required reviewers (approval gates)
   * Deployment protection rules
 * Perfect for **change management approval before release**
@@ -26475,7 +26468,7 @@ NOTE: Each correct selection is worth one point.
 
 * **Pull Requests = pre-merge validation (build + test gating)**
 * **Environments = release approval gates (manual approvals, change control)**
-
+ 
 ✅ Final Answers
 
 | Requirement                                         | Answer            |
@@ -26484,11 +26477,15 @@ NOTE: Each correct selection is worth one point.
 | Require change management approval before release   | **Environments**  |
 
 
-### Question #65
+### Question #54 💩💩
 
-You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. Pipeline1 contains a temporary final stage named final1.
+You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
-You need to ensure that User1 can delete final1 when testing is complete. The solution must follow the principle of least privilege.
+Pipeline1 contains a temporary final stage named final1.
+
+**You need to ensure that User1 can delete final1 when testing is complete.** 
+
+The solution must follow the principle of least privilege.
 
 At which level should you grant permissions to User1?
 
@@ -26512,7 +26509,6 @@ You need to allow **User1 to delete a specific stage (`final1`) in a single pipe
 That is the most granular level of control in Azure DevOps:
 
 * **Stage-level permissions** allow:
-
   * Approve/reject stages
   * Edit or remove a specific stage
   * Manage stage-specific security settings
@@ -26552,12 +26548,12 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-177
+### Question-55
 
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
-When a new code revision is committed to the repository, a build and release is triggered.
+**When a new code revision is committed to the repository, a build and release is triggered.**
 
 You need to ensure that release information for the pipeline is added automatically to the work items associated to the Git commit.
 
@@ -26589,7 +26585,6 @@ How it works in Azure DevOps
 
 1. Azure DevOps has a **built-in integration** that links builds/releases to work items.
 2. In the **release pipeline settings → Integrations**, you can enable:
-
    * **Associate work items** with releases.
    * **Update work items** automatically when a release succeeds.
 3. Once enabled, any **work items linked to commits included in the release** are updated automatically with release details.
@@ -26609,7 +26604,7 @@ Enabling **pipeline integrations** is the standard way to ensure that **release 
 ✅ **Answer: A**
 
 
-### Question-178
+### Question-56
 
 Your company has a release pipeline in an Azure DevOps project.
 
@@ -26662,7 +26657,7 @@ Why the other options are incorrect
 **D. Tiller**
 
 
-### Question-179
+### Question-57 💩
 
 **You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
@@ -26708,8 +26703,7 @@ Key points
 ✅ **Answer: C and D**
 
 
-### Question-180
-
+### Question-58
 
 You have an approval process that contains a condition. The condition requires that releases be approved by a team leader before they are deployed.
 
@@ -26754,7 +26748,7 @@ Correct approach
 
 
 
-### Question-181
+### Question-59 💩💩💩
 
 
 You have a policy stating that approvals must occur within eight hours.
@@ -26764,38 +26758,17 @@ You discover that deployment fail if the approvals take longer than two hours.
 You need to ensure that the deployments only fail if the approvals take longer than eight hours.
 
 Solution: From Post-deployment conditions, you modify the Timeout setting tor post-deployment approvals.
+
 Does this meet the goal?
 
 * A. Yes
 * B. No
 
-The correct answer is: **A. Yes** ✅
-
-Explanation
-
-In **Azure DevOps release pipelines**:
-
-* **Pre- or post-deployment approvals** have a **Timeout setting** that defines how long the system waits for the approval before automatically failing the deployment.
-
-* In your case:
-
-  * Current timeout = 2 hours → deployment fails if approval takes longer than 2 hours.
-  * Policy requires approval within 8 hours.
-
-* By **modifying the Timeout for post-deployment approvals to 8 hours**, you ensure:
-
-  1. Deployments will **wait up to 8 hours** for approval.
-  2. Deployment only fails if approvals exceed **8 hours**.
-
-Key point
-
-> The **Timeout setting on approval** is the correct control for aligning approval time limits with organizational policies.
+The correct answer is: **B. No** ✅
 
 
-✅ **Answer: A. Yes**
 
-
-### Question-182
+### Question-60
 
 
 You have a policy stating that approvals must occur within eight hours.
@@ -26804,7 +26777,7 @@ You discover that deployment fail if the approvals take longer than two hours.
 
 You need to ensure that the deployments only fail if the approvals take longer than eight hours.
 
-Solution: From Pre-deployment conditions, you modify the Timeout setting for pre-deployment approvals.
+**Solution: From Pre-deployment conditions, you modify the Timeout setting for pre-deployment approvals.**
 
 Does this meet the goal?
 
