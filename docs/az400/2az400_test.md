@@ -27171,7 +27171,7 @@ Why the other options are incorrect
 ✅ **Answer: B. batch changes**
 
 
-### Question-68 💩
+### Question-68 💩💩💩
 
 You are using GitHub as a source code repository.
 
@@ -27229,9 +27229,9 @@ git commit --no-verify -m "Commit without work item tag"
 
 
 
-### Question-191
+### Question-69 💩💩💩
 
-You have a private distribution group that contains provisioned and unprovisioned devices.
+You have a **private distribution group that contains provisioned and unprovisioned devices**.
 
 You need to distribute a new iOS application to the distribution group by using Microsoft Visual Studio App Center.
 
@@ -27253,7 +27253,6 @@ When distributing an **iOS app** to a private distribution group via **Microsoft
 * **Provisioned devices** can install apps signed with a provisioning profile that includes their UDIDs.
 * **Unprovisioned devices** cannot install the app until they are **registered in Apple Developer portal** and included in a provisioning profile.
 * App Center provides the **“Register devices and sign my app”** option to:
-
   1. Register unprovisioned devices.
   2. Update the provisioning profile.
   3. Sign the app so all devices in the distribution group can install it.
@@ -27275,13 +27274,13 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #52
+### Question #70 💩💩 💩💩
 
-DRAG DROP You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
+You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
-Topic 8
+How should you complete the Desired State Configuration (DSC) configuration script? 
 
-How should you complete the Desired State Configuration (DSC) configuration script? To answer, drag the appropriate values to the correct locations. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+To answer, drag the appropriate values to the correct locations. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -27331,14 +27330,12 @@ configuration RequiredFeatures
 
 * Used to install **multiple Windows features**
 * Requires:
-
   * `Name` → array of feature names
   * `Ensure` → defines desired state (`Present` or `Absent`)
 
 🟦 Why `"SMTP-Server"` and `"Web-Server"`
 
 * These are the **valid Windows feature names**:
-
   * **SMTP-Server** → SMTP service
   * **Web-Server** → IIS
 
@@ -27388,13 +27385,7 @@ configuration RequiredFeatures
 
 
 
-
-
-
-
-
-
-### Question-192
+### Question-71 💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27436,7 +27427,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Register the devices on the Apple Developer portal**
 
 
-### Question-193
+### Question-72
 
 
 Your company uses Azure Artifacts for package management.
@@ -27463,7 +27454,6 @@ For **Python packages**:
 
 * The standard public repository is **PyPI (Python Package Index)**.
 * By configuring PyPI as an upstream source:
-
   * Your Python projects can consume public packages directly through Azure Artifacts.
   * Packages are **cached locally**, improving reliability and speed.
 
@@ -27484,14 +27474,14 @@ Why the other options are incorrect
 ✅ **Answer: B. PyPI**
 
 
-### Question-194
+### Question-73
 
 
 You have a GitHub repository that contains workflows. **The workflows contain steps that execute predefined actions. Each action has one or more versions.**
 
-You need to request the specific version of an action to execute.
+**You need to request the specific version of an action to execu**te.
 
-Which three attributes can you use to identify the version? Each correct answer presents a complete solution.
+**Which three attributes can you use to identify the version**? Each correct answer presents a complete solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -27514,9 +27504,9 @@ In **GitHub Actions**, when you reference an action in a workflow, you can speci
    * Pin to a **specific commit SHA** for maximum security and immutability.
    * Example:
 
-     ```yaml
-     uses: actions/checkout@a1b2c3d4e5f6g7h8i9j0
-     ```
+```yaml
+uses: actions/checkout@a1b2c3d4e5f6g7h8i9j0
+```
 
 2. **Tag (B)**
 
@@ -27524,18 +27514,18 @@ In **GitHub Actions**, when you reference an action in a workflow, you can speci
    * Common practice: use **release tags** like `v2`.
    * Example:
 
-     ```yaml
-     uses: actions/checkout@v2
-     ```
+```yaml
+uses: actions/checkout@v2
+```
 
 3. **Branch (D)**
 
-   * You can reference the **branch name** if you want to track the latest commit in that branch (less stable).
-   * Example:
+* You can reference the **branch name** if you want to track the latest commit in that branch (less stable).
+* Example:
 
-     ```yaml
-     uses: actions/checkout@main
-     ```
+```yaml
+uses: actions/checkout@main
+```
 
 Why the other options are incorrect
 
@@ -27553,11 +27543,13 @@ Why the other options are incorrect
 ✅ **Answer: A, B, D**
 
 
-### Question-195
+### Question-74 💩💩💩
 
 You have an Azure subscription that contains multiple Azure pipelines.
 
-**You need to deploy a monitoring solution for the pipelines**. The solution must meet the following requirements:
+**You need to deploy a monitoring solution for the pipelines**. 
+
+The solution must meet the following requirements:
 
 * Parse logs from multiple sources.
 * Identify the root cause of issues.
@@ -27579,7 +27571,6 @@ The scenario:
 
 * You have **multiple Azure pipelines**.
 * Requirement:
-
   1. **Parse logs from multiple sources** (build logs, release logs, errors).
   2. **Identify the root cause of issues**.
 
@@ -27587,13 +27578,11 @@ The scenario:
 Why **analytics** is the right choice
 
 * **Analytics** in monitoring tools (like **Azure Monitor / Application Insights**) allows you to:
-
   * Collect and **aggregate logs** from multiple sources.
   * Perform **queries and correlation** across pipelines, builds, and releases.
   * **Detect patterns** and help determine the **root cause** of failures.
 
 * Example features:
-
   * Kusto Query Language (KQL) queries for logs.
   * Correlation of errors across pipelines.
   * Trend analysis and dashboards.
@@ -27615,7 +27604,7 @@ Why the other options are incorrect
 
 
 
-### Question-196
+### Question-75
 
 You have an on-premises app named App1 that accesses Azure resources by using credentials stored in a configuration file.
 
@@ -27639,15 +27628,12 @@ Explanation
 When an application uses a **service principal** to authenticate to Azure AD, it needs the following credentials to sign in programmatically:
 
 1. **Application ID (Client ID)**
-
    * Uniquely identifies the **service principal / app registration**.
 
 2. **Client secret**
-
    * A password-like credential used to authenticate the service principal.
 
 3. **Tenant ID**
-
    * Identifies the **Azure AD tenant** where the service principal exists.
 
 With these three values, the application can request an **OAuth token** from Azure AD to access Azure resources.
@@ -27670,7 +27656,7 @@ Why the other options are incorrect
 ✅ **Answer: C. the application ID, a client secret, and the tenant ID**
 
 
-### Question-197
+### Question-76 💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -27701,7 +27687,6 @@ The scenario:
 Why **Azure Pipelines app for Teams** is the solution
 
 * The **Azure Pipelines app** for Teams allows you to:
-
   1. Connect your **Azure DevOps pipelines** to Teams channels.
   2. **Subscribe to events**, such as build/release failures, completions, or approvals.
   3. Automatically post **notifications to Teams** without custom coding.
@@ -27725,7 +27710,7 @@ Why the other options are incorrect
 ✅ **Answer: D**
 
 
-### Question-198
+### Question-77
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -27749,26 +27734,26 @@ When using **Calendar Versioning (CalVer)**:
 
 * Version format is typically:
 
-  ```
-  YYYY.MM.DD[-modifier]
-  ```
+```
+YYYY.MM.DD[-modifier]
+```
 
-  or
+or
 
-  ```
-  YYYY.MM[-modifier]
-  ```
+```
+YYYY.MM[-modifier]
+```
 
 * The **modifier** (sometimes called a **pre-release tag**) is used to indicate **optional tags** such as `beta`, `alpha`, `rc1`, etc.
 
 * Example:
 
-  ```
-  2026.02.24-beta
-  2026.02.24-alpha
-  ```
+```
+2026.02.24-beta
+2026.02.24-alpha
+```
 
-  Here, `beta` is stored in the **modifier** portion of the version.
+Here, `beta` is stored in the **modifier** portion of the version.
 
 
 Why the other options are incorrect
@@ -27787,7 +27772,7 @@ Why the other options are incorrect
 ✅ **Answer: D. modifier**
 
 
-### Question-199 ？？
+### Question-78
 
 
 You have a project in Azure DevOps named Project1.
@@ -27859,11 +27844,11 @@ Why the other options are incorrect
 ✅ **Answer: C. a YAML template**
 
 
-### Question-200
+### Question-79
 
 You use Azure DevOps processes to build and deploy code.
 
-You need to compare how much time is spent troubleshooting issues found during development and how much time is spent troubleshooting
+**You need to compare how much time is spent troubleshooting issues found during development** and how much time is spent troubleshooting
 
 issues found in released code.
 
@@ -27983,7 +27968,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-202
+### Question-80
 
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
@@ -28015,7 +28000,6 @@ Why **branch policy** is the right solution
 
 * **Branch policies** in Azure Repos allow you to enforce rules before a PR can be merged.
 * You can configure policies to require:
-
   * **All comments resolved** before completing the PR.
   * **Build validation** (ensure CI pipeline passes).
   * **Minimum number of reviewers**.
@@ -28037,15 +28021,21 @@ Why the other options are incorrect
 ✅ **Answer: C. a branch policy**
 
 
-### Question-203
+### Question-81  💩💩💩
 
-You have a project in Azure DevOps named Project. Project1 contains a build pipeline named Pipe1 that builds an application named App1.
+You have a project in Azure DevOps named Project. 
 
-You have an agent pool named Pool1 that contains a Windows Server 2022-based self-hosted agent. Pipe 1 uses Pool1.
+Project1 contains a build pipeline named Pipe1 that builds an application named App1.
 
-You plan to implement another project named Project. Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+You have an agent pool named Pool1 that contains a Windows Server 2022-based self-hosted agent. 
 
-App 1 and App2 have conflicting dependencies.
+Pipe 1 uses Pool1.
+
+You plan to implement another project named Project. 
+
+Project2 will have a build pipeline named Pipe2 that builds an application named App2.
+
+**App 1 and App2 have conflicting dependencies.**
 
 You need to minimize the possibility that the two build pipelines will conflict with each other. The solution must minimize infrastructure costs.
 
@@ -28073,7 +28063,6 @@ Why **container jobs** are the solution
 
 * **Container jobs** in Azure Pipelines allow each job to run inside a **separate container image**.
 * Benefits:
-
   1. **Isolate dependencies** for each application, avoiding conflicts.
   2. **Reuses the same agent**, so you **don’t need additional agents** (cost-effective).
   3. Works on **any agent** that supports Docker (self-hosted or Microsoft-hosted).
@@ -28110,10 +28099,12 @@ Why the other options are incorrect
 ✅ **Answer: D. Create two container jobs**
 
 
-### Question-205
+### Question-82 💩💩
 
 
-You have an app named App1 that you release by using Azure Pipelines. App1 has the versions shown in the following table.
+You have an app named App1 that you release by using Azure Pipelines. 
+
+App1 has the versions shown in the following table.
 
 
 ```
@@ -28166,11 +28157,11 @@ Why other options are incorrect:
 *   **C. 3.5.0:** This would indicate a new feature (Minor increment) on an old Major version (3), which contradicts having already moved to version 4.0.0.
 
 
-### Question-206
+### Question-82
 
 You are automating the testing process for your company.
 
-You need to automate Ul testing of a web application.
+**You need to automate UI testing of a web application.**
 
 Which framework should you use?
 
@@ -28196,7 +28187,6 @@ Why **Playwright** is the right choice
 
 * **Playwright** is a **modern open-source framework** for automating browser interactions.
 * Supports:
-
   * Chrome, Firefox, Edge, and WebKit (Safari)
   * **End-to-end UI testing**
   * Multi-language support: C#, JavaScript, Python, Java
@@ -28231,7 +28221,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-207
+### Question-83 💩💩💩
 
 You use Azure Pipelines to build and test code projects.
 
@@ -28266,14 +28256,11 @@ Scenario:
 Option analysis
 
 1. **B. Query the TaskAgentPoolSizeSnapshots endpoint** ✅
-
    * This **REST API endpoint** provides snapshots of **agent pool usage** over time.
    * You can see **how many agents are busy, idle, or offline**, helping identify if builds are delayed due to **insufficient available agents**.
 
 2. **D. View the pool consumption report at the organization level** ✅
-
    * Azure DevOps provides **built-in reports for agent pools**, showing:
-
      * Agent usage trends
      * Queued jobs
      * Pool saturation
