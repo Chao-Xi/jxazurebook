@@ -26820,13 +26820,15 @@ The proposed solution correctly addresses the requirement.
 
 
 
-### Question-183 ？？？
+### Question-61 💩💩💩
 
 Your company has a project in Azure DevOps for a new web application.
 
 The company uses ServiceNow for change management.
 
-You need to ensure that a change request is processed before any components can be deployed to the production environment What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? 
+**You need to ensure that a change request is processed before any components can be deployed to the production environment **
+
+What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? 
 
 Each correct answer presents a complete solution.
 
@@ -26857,11 +26859,13 @@ You can place this gate in two locations within the release pipeline to achieve 
 
 
 
-### Question-184
+### Question-62 💩💩
 
 Your company develops an application named App1 that is deployed in production.
 
-As part of an application update, a new service is being added to App1. The new service requires access to an application named App2 that is currently in development.
+As part of an application update, a new service is being added to App1. 
+
+The new service requires access to an application named App2 that is currently in development.
 
 You need to ensure that you can deploy the update to App1 before App2 becomes available. You must be able to enable the service in App1 once App2 is deployed.
 
@@ -26907,7 +26911,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Implement a feature flag**
 
 
-### Question-185
+### Question-63
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -26953,7 +26957,7 @@ Why the other options are incorrect
 
 
 
-### Question-186
+### Question-64 💩💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27001,9 +27005,11 @@ This ensures that all devices in the private distribution group—both previousl
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question-187
+### Question-65
 
-Your company has an on-premises Bitbucket Server that is used for Git-based source control. The server is protected by a firewall that blocks inbound Internet traffic.
+Your company has an on-premises Bitbucket Server that is used for Git-based source control. 
+
+**The server is protected by a firewall that blocks inbound Internet traffic.**
 
 You plan to use Azure DevOps to manage the build and release processes.
 
@@ -27021,7 +27027,9 @@ NOTE: Each correct selection is worth one point.
 
 ---------
 
-The correct answers are: **D. a self-hosted agent** and **E. an External Git service connection** ✅✅
+The correct answers are: 
+
+**D. a self-hosted agent** and **E. an External Git service connection** ✅✅
 
 Explanation
 
@@ -27032,13 +27040,11 @@ You want to **integrate an on-premises Bitbucket Server** with **Azure DevOps** 
 Required components
 
 1. **Self-hosted agent (D)**
-
    * Runs **inside the network** where Bitbucket Server is accessible.
    * Can **pull code from the on-premises Git repository** because it is behind the firewall.
    * Microsoft-hosted agents **cannot access repositories blocked by a firewall**.
 
 2. **External Git service connection (E)**
-
    * Azure DevOps uses a **service connection** to connect to external Git repositories.
    * For Bitbucket Server, you create an **“External Git” service connection** with the repository URL and credentials.
 
@@ -27060,14 +27066,15 @@ Why the others are incorrect
 
 
 
-### Question-188
-
+### Question-66 💩💩💩
 
 You have a project in Azure DevOps.
 
 **You plan to deploy a self-hosted agent by using an unattended configuration script.**
 
-Which two values should you define in the configuration script? Each correct answer presents part of the solution.
+Which two values should you define in the configuration script? 
+
+Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -27113,8 +27120,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-189
-
+### Question-67
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27165,11 +27171,13 @@ Why the other options are incorrect
 ✅ **Answer: B. batch changes**
 
 
-### Question-190
+### Question-68 💩
 
 You are using GitHub as a source code repository.
 
-You create a client-side Git hook on the commit-msg event. The hook requires that each commit message contain a custom work item tag.
+You create a client-side Git hook on the commit-msg event. 
+
+The hook requires that each commit message contain a custom work item tag.
 
 **You need to make a commit that does not have a work item tag.**
 
