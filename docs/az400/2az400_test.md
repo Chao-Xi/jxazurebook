@@ -48,7 +48,7 @@ You are configuring project metrics for dashboards in Azure DevOps. You need to 
 
 You need to consider **the underlined segment** to **establish whether it is accurate.** 
 
-> **The Burnup widget measures the elapsed time from creation of work items to their completion**.     
+<mark>The Burnup widget measures the elapsed time from **creation of work items to their completion**.</mark>     
 
 Select "No adjustment required' if the underlined segment is accurate. If the underlined segment is inaccurate, select the accurate
 
@@ -192,7 +192,10 @@ Your company is currently making use of Team Foundation Server 2013 (TFS 2013), 
 You have been tasked with supplying a migration approach that allows for the preservation of Team
 Foundation Version Control changesets dates, as well as the changes dates of work items revisions.
 
- The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. You have suggested upgrading TFS to the most recent RTW release. Which of the following should also be suggested?
+ The approach should also allow for the migration of all TFS artifacts, while keeping migration effort to a minimum. 
+ 
+ 
+ You have suggested upgrading TFS to the most recent RTW release. Which of the following should also be suggested?
 
 * A. Installing the TFS kava SDK
 * B. Using the TFS Database Import Service to perform the upgrade.
@@ -215,7 +218,7 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
-### Question 5
+### Question 6 💩💩💩
 
 You intend to manage the build and release processes using Azure DevOps. 
 
@@ -271,7 +274,7 @@ Why the other options are incorrect
 
 
 
-### Question 6
+### Question 7 💩💩💩
 
 You are currently developing a project for a client that will be managing work items via Azure DevOps. 
 
@@ -325,7 +328,7 @@ Which of the following is the option you would choose?
 | **D. CMMI** | Choose CMMI when your team follows more formal project methods that require a framework for process improvement and an auditable record of decisions. With this process, you can track requirements, change requests, risks, and reviews |
 
 
-### Question 7
+### Question 8
 
 You run the Register-AzureRm AutomationDscNode command in your company's environment. 
 
@@ -379,7 +382,7 @@ The solution does **not** meet the goal.
 
 
 
-### Question 8
+### Question 9
 
 You run the Register-AzureRm AutomationDscNode command in your company's environment. 
 
@@ -427,7 +430,7 @@ So:
 
 **B. No**
 
-### Question 9
+### Question 10
 
 You run the Register-AzureRmAutomationDscNode command in your company's environment. You need to make sure that
 
@@ -467,7 +470,7 @@ So the solution **does meet the goal**.
 ✅ **Correct answer: A. Yes**
 
 
-### Question 7,8,9-Explain
+### Question 8,9,10-Explain
 
 **ApplyAndMonitor:**
 
@@ -490,7 +493,7 @@ So the solution **does meet the goal**.
 
 Note: The choice between these modes depends on the specific requirements and preferences of the environment and administrators.
 
-### Question - 9 
+### Question - 11 💩💩
 
 You need to consider the underlined segment to establish whether it is accurate.
 
@@ -524,11 +527,13 @@ Why other options are incorrect:
 *   **C. Hosted:** This is a legacy/generic term for Microsoft-hosted agents. It does not specify whether it is Linux or Windows, or if it supports containers.
 *   **D. Hosted macOS:** macOS agents are used for building iOS and Mac applications. They cannot build or run Windows-based IIS containers.
 
-### Question -10
+### Question -12 💩💩
 
 Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. 
 
-You are instructed to make sure that the Azure DevOps environment **can only be accessed from devices connected to the company's on-premises network**. Which of the following actions should you take?
+You are instructed to make sure that the Azure DevOps environment <mark>**can only be accessed from devices connected to the company's on-premises network**.</mark> 
+
+Which of the following actions should you take?
 
 * A. Assign the devices to a security group.
 * B. Create a GPO.
@@ -585,7 +590,7 @@ This is about **controlling access based on location/network**.
 **D. Configure conditional access in Azure Active Directory**
 
 
-### Question -11
+### Question -13 💩💩💩
 
 You are making use of Azure DevOps to configure Azure Pipelines for project, named PROJ-01. 
 
@@ -637,7 +642,7 @@ Why the others are incorrect:
 
 
 
-### Question - 11
+### Question - 14
 
 You need to consider the underlined segment to establish whether it is accurate.
 
@@ -696,7 +701,7 @@ Why the other options are incorrect
 
 
 
-### Question -12
+### Question -15 💩💩💩
 
 You scan a Node.js application using WhiteSource Bolt. 
 
@@ -749,7 +754,7 @@ npm install --production
 
 This installs only production dependencies for WhiteSource Bolt scanning.
 
-### Question -12
+### Question -16 💩💩
 
 You are currently defining a release strategy for an app, named APP-01.
 
@@ -810,7 +815,7 @@ Why the others are not correct
 
 
 
-### Question -13
+### Question -17 💩💩
 
 Your company hosts a web application in Azure, and makes use of Azure Pipelines for managing the build and release of the application. When stakeholders report that system performance has been adversely affected by the most recent releases, you configure alerts in Azure Monitor. 
 
@@ -859,7 +864,7 @@ Why the other options are incorrect:
 ✅ **Final answer: C. You should make use of a gate.**
 
 
-### Question -14
+### Question -18
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
@@ -905,7 +910,7 @@ Correct terminology:
 ✅ **Final answer: C. Deployment**
 
 
-### Question -15 💩💩
+### Question -19 💩💩💩
 
 You are preparing to deploy an Azure resource group via Terraform.
 
@@ -940,7 +945,7 @@ Why the other options are incorrect:
 
 You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
 
-### Question -14
+### Question -20 💩💩💩
 
 You want to use a solitary feed to release several builds of each package. 
 
@@ -994,7 +999,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **B. Views**
 
 
-### Question -15
+### Question -21
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
@@ -1056,7 +1061,7 @@ Azure DevOps integration with White Source Bolt will enable you to:
 4. Identify outdated open source libraries with recommendationsto update.
 
 
-### Question -16
+### Question -22
 
 Your company has an Azure DevOps project, which includes a build pipeline that **makes use of roughly fifty open source libraries.** 
 
@@ -1101,7 +1106,7 @@ To scan **open source libraries** for **common security weaknesses** (such as kn
 ✅ **Final answer: A. You should create a build task and use the WhiteSource Bolt service.**
 
 
-### Question -17
+### Question -23
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
@@ -1147,7 +1152,7 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question -17
+### Question -24 💩💩💩
 
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
@@ -1222,7 +1227,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **B and C**
 
 
-### Question -18
+### Question -25
 
 Your company has an application that contains a number of Azure App Service web apps and Azure functions. 
 
@@ -1260,10 +1265,10 @@ It provides:
 * Vulnerability assessments
 * Security recommendations
 * A dedicated **“Compute and Apps”** section for:
-  * App Services
-  * Functions
-  * VMs
-  * Containers
+  - App Services
+  - Functions
+  - VMs
+  - Containers
 
 This is exactly where **Compute and Apps** is located.
 
@@ -1272,7 +1277,7 @@ This is exactly where **Compute and Apps** is located.
 
 * **A. Azure Log Analytics** ❌ → Monitoring and logs, not security recommendations
 * **B. Azure Event Hubs** ❌ → Event streaming platform
-* **C. Azure Advisor** ❌ → Cost, performance, reliability recommendations (not deep security posture for apps)
+* <mark>**C. Azure Advisor** ❌ → Cost, performance, reliability recommendations</mark> (not deep security posture for apps)
 
 
 ✅ **Final answer: D. Azure Security Center**
@@ -1281,7 +1286,7 @@ This is exactly where **Compute and Apps** is located.
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
 
-### Question -19
+### Question -26 💩💩
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
@@ -1333,22 +1338,24 @@ Why the others are incorrect:
 
 
 
-### Question -20
+### Question -27
 
-Your company makes use of Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring purposes. 
+Your company makes use of <mark>Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring purposes</mark>. 
 
 **You have been tasked with analyzing the monitoring using ad-hoc queries. You need to utilize the correct query language.** 
 
-**Solution: You use the Contextual Query Language (CQL)**
+####  Question - 27(0)
+
+<mark>**Solution: You use the Contextual Query Language (CQL)**<mark>
 
 
-####  Question - 20(1)
+####  Question - 27(1)
 
-**Solution: You use the Transact-SQL.**
+<mark>**Solution: You use the Transact-SQL.**<mark>
 
-####  Question - 20(2)
+####  Question - 27(2)
 
-**Solution: You use Azure Log Analytics.**
+<mark>**Solution: You use Azure Log Analytics.**<mark>
 
 Does the solution meet the goal?
 
@@ -1379,13 +1386,13 @@ use **KQL (Kusto Query Language)** for ad-hoc querying and analytics.
 
 Correct query language:
 
-* ✅ **KQL (Kusto Query Language)** → Used by:
-
-  * Azure Monitor
-  * Application Insights
-  * Log Analytics
-  * Intelligent Insights
-  * Microsoft Sentinel
+✅ **KQL (Kusto Query Language)** → Used by:
+  
+* Azure Monitor
+* Application Insights
+* Log Analytics
+* Intelligent Insights
+* Microsoft Sentinel
 
 
 Conclusion:
@@ -1395,9 +1402,11 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -21
+### Question -28 💩💩💩
 
-You manage an Azure web app that supports an e-commerce website. You need to increase the logging level when the web app exceeds normal usage patterns. 
+You manage an Azure web app that supports an e-commerce website. 
+
+**You need to increase the logging level when the web app exceeds normal usage patterns.** 
 
 **The solution must minimize administrative overhead.**
 
@@ -1459,10 +1468,9 @@ Architecture Flow:
 
 ✅ **Final answer: A and B**
 
-### Question - 22
+### Question - 29
 
 You have recently created a web application for your company.
-
 
 You have been tasked with making sure that a **summary of the exceptions that transpire in the application is automatically sent to Microsoft Teams on a daily basis**.
 
@@ -1487,14 +1495,16 @@ The correct two services are:
 Explanation
 
 1. **Azure Application Insights**
-  * Monitors the web application.
-  * Collects telemetry including **exceptions, failures, and performance data**.
-  * Provides the **exception summary** that you want to send.
+  
+- Monitors the web application.
+- Collects telemetry including **exceptions, failures, and performance data**.
+- Provides the **exception summary** that you want to send.
 
 2. **Azure Logic Apps**
-   * Automates workflows and integrations.
-   * Can be scheduled **daily**.
-   * Retrieves data from Application Insights and **sends a message to Microsoft Teams**.
+
+- Automates workflows and integrations.
+- Can be scheduled **daily**.
+- Retrieves data from Application Insights and **sends a message to Microsoft Teams**.
 
 **Why the others are incorrect**
 
@@ -1506,13 +1516,13 @@ Explanation
 - **Azure Logic Apps**
 - **Azure Application Insights**
 
-### Question -22
+### Question -30. 💩💩💩
 
 You are in the process of building a mobile app aimed at Android and iOS devices.
 
 All work items and release cycles are managed via Azure DevOps.
 
-You want to make sure that crash reports for issue analysis is collected, and that beta releases are distributed to your testers. 
+**You want to make sure that crash reports for issue analysis is collected, and that beta releases are distributed to your testers**. 
 
 Also, you want to ensure that user feedback on the functionality of new apps is received.
 
