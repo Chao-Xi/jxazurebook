@@ -4648,7 +4648,7 @@ properties:
           periodSeconds: 10
 ```
 
-### Question #2
+### Question #2  💩💩💩
 
 You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
 
@@ -4796,7 +4796,7 @@ Explanation
 | ASP.NET Core telemetry baseline | **B and C**   |
 
 
-### Question #14
+### Question #4
 
 You have an application named App1 that has a custom domain of app.contoso.com. 
 
@@ -4850,7 +4850,7 @@ Thus the test passes when **all HTML, JavaScript, and images load successfully w
 | The test will pass if | **all the HTML, JavaScripts, and images of App1 load** |
 
 
-### Question #4 💩💩💩
+### Question #5 💩💩
 
 Your company uses the following resources:
 
@@ -4864,7 +4864,7 @@ Your company uses the following resources:
 
 ✑ An Azure key vault 
 
-For which two resources can you receive vulnerability assessments in Azure Security Center? 
+**For which two resources can you receive vulnerability assessments in Azure Security Center?** 
 
 
 Each correct answer presents part of the solution.
@@ -4919,16 +4919,17 @@ Why the other options are incorrect
 
 **C and E**
 
-### Question #5 💩💩💩
-
-DRAG DROP 
-
+### Question #6 💩💩💩💩
 
 You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
 
 You configure an Azure Monitor alert that is triggered when WebApp1 generates an error.
 
-You need to configure the alert to forward details of the error to a third-party system. The solution must minimize administrative effort. Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+You need to configure the alert to forward details of the error to a third-party system. 
+
+The solution must minimize administrative effort. 
+
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 ![Alt Image Text](../images/az400_2_32.png)
 
@@ -4969,9 +4970,8 @@ This approach avoids custom scripts or additional infrastructure.
 2. **Select the HTTP request trigger**
 3. **Update the action group in Azure Monitor**
 
-### Question #6  💩💩💩
-
-DRAG DROP 
+### Question #7  💩💩💩
+ 
 
 You are using the Dependency Tracker extension in a project in Azure DevOps.
 
@@ -5013,7 +5013,7 @@ Why the other options are incorrect
 
 
 
-### Question-7
+### Question- 8
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. 
 
@@ -5063,12 +5063,14 @@ This approach directly monitors **VMSS autoscaling events** and sends emails as 
 
 
 
-✅ **Final answer: B. No**
+✅ **Final answer: B . No**
 
 
-### Question-8
+### Question-9
 
-You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
+You have an Azure DevOps organization named Contoso and an Azure subscription. 
+
+The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
 
 You have a project in Azure DevOps named Project. Project is used to build a web app named App1 and deploy App1 to VMSS1.
 
@@ -5097,7 +5099,7 @@ To meet the goal fully, you would:
 Since the solution specifies creating an action group (which is necessary for email alerts), it **meets the goal** in this context.
 
 
-#### Question-8 (1)
+#### Question-10 
 
 Solution: From Azure Monitor, configure the autoscale settings.
 
@@ -5117,7 +5119,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-9
+### Question-11 💩💩💩
 
 You use GitHub for source control.
 
