@@ -1609,7 +1609,7 @@ Explanation
 - 2️⃣ Active → Completion → **Cycle Time**
 - 3️⃣ Remaining Work → **Burndown**
 
-### Question -2
+### Question -2. 💩💩
 
 You plan to create alerts that will be triggered based on the page load performance of a home page. 
 
@@ -1665,7 +1665,7 @@ These are captured in the **result code field** of requests.
 | Authentication error occurs        | **resultCode**             |
 
 
-### Question -4
+### Question -3 💩
 
 You have an Azure Kubernetes Service (AKS) pod.
 
@@ -1677,7 +1677,9 @@ You need to configure a probe to perform the following actions:
 
 ✑ **Initiate a shutdown if the pod is unresponsive**.
 
-How should you complete the YAML configuration file? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+How should you complete the YAML configuration file? 
+
+To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
 ![Alt Image Text](../images/az400_2_4.png)
 
@@ -1702,7 +1704,7 @@ Answer Area
 2.  **periodSeconds: 15**
 
 
-### Question -9  💩💩💩
+### Question -4  💩💩
 
 Your company is building a new web application.
 
@@ -1727,19 +1729,21 @@ Answer Area
 **Developers: `Basic`**
 
 *   **Reasoning:** To **request** feedback from users within the Azure DevOps interface, a user must have at least the **Basic** access level.
-  * Stakeholders do not have the permissions required to initiate feedback requests or manage the comprehensive test plans associated with gathering feedback.
+* Stakeholders do not have the permissions required to initiate feedback requests or manage the comprehensive test plans associated with gathering feedback.
 
 **Pilot users: `Stakeholder`**
 
 *   **Reasoning:** Users with the **Stakeholder** access level can provide feedback in response to a request using the Microsoft Test & Feedback extension.
-  *   Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
+*   Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
 
-### Question -10   💩💩💩
+### Question -5   💩💩💩
 
 Your company wants to use Azure Application Insights to understand how user behaviors affect an application.
 
-Which Application Insights tool should you use to analyze each behavior? To answer, drag the appropriate tools to the correct behaviors. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which Application Insights tool should you use to analyze each behavior? 
+
+To answer, drag the appropriate tools to the correct behaviors. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -1765,13 +1769,17 @@ To analyze user behavior in Azure Application Insights, you should match the too
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 13 💩💩💩
+### Question - 6 💩💩
 
-Your company is building a mobile app that targets Android and iOS devices. Your team uses Azure DevOps to manage all work items and release cycles. You need to recommend a solution to perform the following tasks:
+Your company is building a mobile app that targets Android and iOS devices. 
 
-✑ Collect crash reports for issue analysis.
+**Your team uses Azure DevOps to manage all work items and release cycles.** 
 
-✑ Distribute beta releases to your testers.
+You need to recommend a solution to perform the following tasks:
+
+✑ **Collect crash reports for issue analysis.**
+
+✑ **Distribute beta releases to your testers.**
 
 ✑ Get user feedback on the functionality of new apps.
 
@@ -1805,17 +1813,19 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 14
+### Question - 7 💩💩
 
-You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. Sub1 contains an Azure virtual machine scale set named VMSS1.
+You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
-VMSS1 hosts a web application named WebApp1. WebApp1 uses stateful sessions.
+Sub1 contains an Azure virtual machine scale set named VMSS1.
+
+VMSS1 hosts a web application named WebApp1. **WebApp1 uses stateful sessions**.
 
 **The WebApp1 installation is managed by using the Custom Script extension. The script resides in an Azure Storage account named sa1.**
 
 You plan to make a minor change to a UI element of WebApp1 and to gather user feedback about the change.
 
-You need to implement limited user testing for the new version of WebApp1 on VMSS1.
+**You need to implement limited user testing for the new version of WebApp1 on VMSS1.**
 
 Which three actions should you perform? Each correct answer presents part of the solution.
 
@@ -1843,7 +1853,7 @@ The load balancer will naturally distribute traffic to the updated instances, pr
 
 **Selected actions: C, D, E**
 
-### Question #18
+### Question # 8 💩💩
 
 You have several Azure virtual machines that run Windows Server 2019.
 
@@ -1895,7 +1905,7 @@ Event
 **summarize + makeset(EventID)**
 
 
-### Question -19
+### Question -9 💩💩
 
 You have an Azure web app named Webapp1.
 
@@ -1931,7 +1941,7 @@ requests
 ```
 
 
-### Question -21
+### Question -10. 💩💩
 
 You have a project in Azure DevOps named Contoso App that contains pipelines in Azure Pipelines for GitHub repositories. 
 
@@ -1963,7 +1973,7 @@ To ensure that developers receive Microsoft Teams notifications for failures in 
 <mark>`@azure pipelines subscribe https://dev.azure.com/contoso/contoso-app/`</mark>
 
 
-### Question -23
+### Question -11 💩💩
 
 You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. 
 
@@ -1984,6 +1994,10 @@ The correct answer is:
 
 **B. Create an Azure Application Insights availability test and alert.** ✅
 
+**Best-practice solution flow:**
+
+**Application Insights → Availability Test → Multi-region probes → Alert rule**
+
 Explanation:
 
 To run a **URL ping test every five minutes** and generate **alerts when the app is unavailable from specific Azure regions**, with **minimal development time**, the best solution is to use **Azure Application Insights availability tests**.
@@ -1995,8 +2009,6 @@ To run a **URL ping test every five minutes** and generate **alerts when the app
 * Ability to select **specific Azure regions**
 * Native **alerting integration**
 * **No custom code** required → minimal development effort
-
-
 
 Why the other options are incorrect:
 
@@ -2010,28 +2022,21 @@ Why the other options are incorrect:
   * Monitors Azure service outages, **not your specific web app URL availability**.
 
 
-**Best-practice solution flow:**
-
-**Application Insights → Availability Test → Multi-region probes → Alert rule**
-
-
-
-✅ **Final answer: B. Create an Azure Application Insights availability test and alert.**
-
-
 There are three types of Application Insights availability tests:
 
 * 1) URL ping test a simple test that you can create in the Azure portal. 
 * 2) Multi-step webtest. 
 * 3) Custom Track Availability Test.
 
-### Question #23
+### Question #12 💩💩💩💩💩
 
 You are integrating Azure Pipelines and Microsoft Teams.
 
 You install the Azure Pipelines app in Microsoft Teams.
 
-You have an Azure DevOps organization named Contoso that contains a project name Project1. You subscribe to Project1 in Microsoft Teams.
+You have an Azure DevOps organization named Contoso that contains a project name Project1. 
+
+You subscribe to Project1 in Microsoft Teams.
 
 **You need to ensure that you only receive events about failed builds in Microsoft Teams.**
 
@@ -2067,11 +2072,11 @@ Why other options are incorrect:
 *   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, **it does not control the logic of the notification system in Teams**.
 
 
-### Question -24
+### Question -13
 
 You have an Azure DevOps organization named Contoso.
 
-**You need to receive Microsoft Teams notifications when work items are updated**. What should you do?
+**<mark>You need to receive Microsoft Teams notifications</mark> when work items are updated**. What should you do?
 
 A. From Azure DevOps, configure a service hook subscription
 
@@ -2106,7 +2111,7 @@ Why other options are incorrect:
 
 
 
-### Question -24
+### Question -14
 
 You have a multi-tier application. The front end of the application is hosted in Azure App Service.
 
@@ -2151,7 +2156,7 @@ Why the others are incorrect:
 ✅ **Final answer: A. Azure Application Insights**
 
 
-### Question #25
+### Question #15 💩💩💩
 
 You create an alert rule in Azure Monitor as shown in the following exhibit.
 
@@ -2191,7 +2196,7 @@ To determine which action triggers the alert, we look at the **Condition** defin
 *   **C is incorrect:** The alert rule is specifically set to trigger on `Status == 'failed'`. A **successful** attempt will not trigger this specific rule.
 *   **D is incorrect (in the context of exam logic):** While scaling up an App Service Plan is technically an administrative "update" operation, **Delete** is the most definitive and commonly tested example of an "Administrative" lifecycle event in the Activity Log. In most standardized Azure examinations (like AZ-400 or AZ-104), "Delete" is the intended answer for the "Administrative" category.
 
-### Question -25
+### Question -16
 
 
 Your company uses ServiceNow for incident management. You develop an application that runs on Azure.
@@ -2242,7 +2247,7 @@ Flow:
 ✅ **Final answer: C. IT Service Management Connector (ITSM)**
 
 
-### Question -26
+### Question -17
 
 You use **Azure SQL Database Intelligent Insights and Azure Application Insights for monitoring**.
 
@@ -2287,9 +2292,11 @@ Why the others are incorrect:
 ✅ **Final answer: A. Kusto Query Language (KQL)**
 
 
-### Question -27
+### Question -18 💩💩💩💩
 
-Your company creates a web application. You need to recommend a solution that **automatically sends to Microsoft Teams a daily summary of the exceptions that occur in the application**. 
+Your company creates a web application. 
+
+You need to recommend a solution that **automatically sends to Microsoft Teams a <mark>daily summary of the exceptions that occur in the application</mark>**. 
 
 Which two Azure services should you recommend?
 
@@ -2354,7 +2361,7 @@ Solution architecture:
 ✅ **Final answer: A and E**
 
 
-### Question -28
+### Question -19 💩💩💩
 
 You are monitoring the health and performance of an Azure web app by using Azure Application Insights.
 
@@ -2385,10 +2392,9 @@ To automatically send an alert when there is a **sudden rise in performance issu
 
 * Uses built-in **machine learning**
 * Detects **anomalies** such as sudden spikes in:
-  * Failures
-  * Exceptions
-  * Response times
-  * Performance degradation
+
+> Failures / Exceptions / Response times / Performance degradation
+
 * Automatically generates **alerts**
 * Requires **no custom configuration**
 * Minimizes administrative overhead
@@ -2413,7 +2419,8 @@ Smart Detection automatically warns you of potential performance problems and fa
 It performs proactive analysis of the telemetry that your app sends to Application Insights. If there is a sudden rise in failure rates, or abnormal patterns in client or server performance, you get an alert.
 
 
-### Question #27
+### Question #20 💩💩💩
+
 
 You use Azure DevOps to manage the build and deployment of an app named App1.
 
@@ -2421,7 +2428,9 @@ You have a release pipeline that deploys a virtual machine named VM1.
 
 You plan to monitor the release pipeline by using Azure Monitor.
 
-You need to create an alert to monitor the performance of VM1. The alert must be triggered when the average CPU usage exceeds 70 percent for five minutes.
+You need to create an alert to monitor the performance of VM1. 
+
+**The alert must be triggered when the average CPU usage exceeds 70 percent for five minutes.**
 
 The alert must calculate the average once every minute.
 
@@ -2449,7 +2458,7 @@ Based on the requirements described for the Azure Monitor alert rule, here is th
 
 **Operator: `Greater than`**
 
-* **<mark>Reasoning:** The requirement uses the word **"exceeds."** In mathematical terms, to exceed a value means to be strictly **Greater than** that value.</mark>**
+* **<mark>Reasoning:** The requirement uses the word **"exceeds."** In mathematical terms, to exceed a value means to be strictly **Greater than** that value.</mark>
 
 
 **Summary of selections:**
@@ -2458,10 +2467,10 @@ Based on the requirements described for the Azure Monitor alert rule, here is th
 2.  **Static**
 3.  **Greater than**
 
-### Question -29 💩💩💩
+### Question -21 💩💩💩
 
 
-You have a private GitHub repository. You need to display the commit status of the repository on Azure Boards.
+You have a private GitHub repository. You need to display the **commit status of the repository on Azure Boards**.
 
 What should you do first?
 
@@ -2518,7 +2527,7 @@ connect and configure from Azure Boards. Or, alternatively, install and configur
 
 Both methods have been streamlined and support authenticating and operating via the app rather than an individual.
 
-### Question -30 💩💩
+### Question -22 💩💩
 
 You have a web app hosted on Azure App Service. The web app stores data in an Azure SQL database. 
 
@@ -2569,11 +2578,11 @@ Correct Answer: A. Send to Log Analytics
 
 
 
-### Question #29
+### Question #23 💩💩💩
 
 You have a project in Azure DevOps that contains a Continuous Integration/Continuous Deployment (CI/CD) pipeline.
 
-You need to enable detailed logging by defining a pipeline variable.
+**You need to enable detailed logging by defining a pipeline variable.**
 
 How should you configure the variable? To answer, select the appropriate options in the answer area.
 
@@ -2601,7 +2610,7 @@ To enable detailed logging (verbose output) in an Azure DevOps CI/CD pipeline, y
 1.  **Name:** `System.Debug`
 2.  **Value:** `true`
 
-### Question #30  💩💩💩
+### Question #24  💩💩💩
 
 You build an iOS app.
 
@@ -2676,10 +2685,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **D**
 
 
-
-
-### Question-31  💩
-
+### Question-25  💩
 
 You have an Azure virtual machine that is monitored by using Azure Monitor, 
 
@@ -2742,12 +2748,7 @@ Requirement summary:
 ✅ **Final answer: A. the Dependency agent**
 
 
-Use the Dependency agent if you need to use the Map feature VM insights or the Service Map solution.
-Note: Consider the following when using the Dependency agent:
-
-The Dependency agent requires the Log Analytics agent to be installed on the same machine. On Linux computers, the Log Analytics agent must be installed before the Azure Diagnostic Extension. On both the Windows and Linux versions of the Dependency Agent, data collection is done using a user-space service and a kernel driver.
-
-### Question-32  💩💩💩
+### Question-26  💩💩💩
 
 You have multiple teams that work on multiple projects in Azure DevOps. 
 
@@ -2804,12 +2805,14 @@ Only the **Dependency Tracker extension** meets all requirements:
 ✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
 
 
-### Question #32 💩💩💩
+### Question #27 💩💩💩
 
 
 You have a GitHub repository that contains the source code for an app named App1.
 
-You need to create process documentation for App1. The solution must include a diagram that displays the relationships between the phases of App1 as shown in the following exhibit.
+You need to create process documentation for App1. 
+
+The solution must **include a diagram** that displays the relationships between the phases of App1 as shown in the following exhibit.
 
 ![Alt Image Text](../images/az400_2_15.png)
 
@@ -2850,9 +2853,11 @@ stateDiagram
     Processing --> Failed
 ```
 
-### Question-33 💩💩💩
+### Question-28 💩💩💩
 
-You have an Azure web app named webapp1 that uses the .NET Core runtime stack. You have an Azure Application Insights resource named AppInsights1 that collects telemetry data generated by webapp1.
+You have an Azure web app named webapp1 that uses the .NET Core runtime stack. 
+
+You have an Azure Application Insights resource named AppInsights1 that collects telemetry data generated by webapp1.
 
 You plan to deploy webapp1 by using an Azure DevOps pipeline.
 
@@ -2924,7 +2929,7 @@ Why the other options are incorrect
 
 
 
-### Question-33 
+### Question-29
 
 Your company has multiple microservices-based apps that use the following tracing libraries:
 
@@ -2958,14 +2963,13 @@ Explanation:
 To **centralize distributed tracing** in **Azure Monitor / Application Insights**, you need libraries that **can export telemetry directly to Application Insights**.
 
 * **OpenTelemetry**
-  * Industry-standard for distributed tracing and metrics
-  * Provides **exporters** for Application Insights
-  * Actively supported in Azure Monitor
+ * Industry-standard for distributed tracing and metrics
+ * Provides **exporters** for Application Insights
+ * Actively supported in Azure Monitor
 
 * **OpenCensus**
-  * Predecessor to OpenTelemetry
-  * Has **native support for Application Insights**
-
+ * Predecessor to OpenTelemetry
+ * Has **native support for Application Insights**
 
 
 Why the others are incorrect:
@@ -2986,10 +2990,10 @@ Summary Table:
 
 
 
-**✅ **Final answer: D. OpenTelemetry and E. OpenCensus****
+**✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-34 💩💩💩
+### Question-30 💩💩💩
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -2997,7 +3001,7 @@ You have an Azure web app named webapp1 that uses the NET Core runtime stack.
 
 Webapp1 sends telemetry data to Applnsights1. 
 
-**You need to ensure that webapp1 sends the telemetry data at a fixed sampling rate.**
+<mark>**You need to ensure that webapp1 sends the telemetry data at a fixed sampling rate.**</mark>
 
 What should you do?
 
@@ -3043,9 +3047,13 @@ Why other options are incorrect:
 
 
 
-### Question-35 💩💩💩
+### Question-31 💩💩💩
 
-You use Azure Pipelines to build and deploy an app named App1. You plan to monitor App1 by using Application Insights. You create an Application Insights instance named Al1. **You need to configure App1 to use Al1.** Which file should you modify?
+You use Azure Pipelines to build and deploy an app named App1. 
+
+You plan to monitor App1 by using Application Insights. 
+
+You create an Application Insights instance named Al1. **You need to configure App1 to use Al1.** Which file should you modify?
 
 * A. appsettings.json
 * B. launchSettings.json
@@ -3091,7 +3099,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: A. appsettings.json**
 
-### Question #36 
+### Question #32 💩💩💩
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains two tables named Events and Logs. App1 manages events in multiple locations and writes logs to Workspace1.
 
@@ -3120,7 +3128,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 *   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
-### Question-36
+### Question-33 💩💩
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
@@ -3148,8 +3156,8 @@ To receive an **SMS alert when scheduled maintenance is planned** for your Azure
 
 1. **Create an Azure Service Health alert** (**C**)
 
-   * Azure Service Health monitors the health of your Azure resources.
-   * You can configure alerts for:
+ * Azure Service Health monitors the health of your Azure resources.
+ * You can configure alerts for:
 
      * **Planned maintenance**
      * **Service issues**
@@ -3184,12 +3192,13 @@ Creating planned maintenance alerts using Azure Service Health
 6. Configure the actions to be taken. We are only configuring an email alert, so we first name the action, then chose Email/SMS/Push/Voice from the drop down list.
 
 
-### Question #37 💩💩💩
+### Question #34 💩💩💩
 
 You have a web app named App1 that uses Application Insights in Azure Monitor.
 
+**You need to compare the hourly CPU usage of App1 from the last 24 hours.**
 
-You need to compare the hourly CPU usage of App1 from the last 24 hours. The solution must include a graph that has a threshold line at 75 percent.
+The solution must include a graph that has a threshold line at 75 percent.
 
 How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -3209,9 +3218,11 @@ To build the query in **Azure Application Insights** using **Kusto Query Languag
 ✅ **Correct selections**
 
 1️⃣ For the **summarize grouping**
+
 ➡ **`bin(TimeGenerated, 1h)`**
 
 2️⃣ To create the **threshold field**
+
 ➡ **`extend`**
 
 Completed Query
@@ -3252,11 +3263,11 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
 
 
-### Question-37
+### Question-35 💩💩💩
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
-You need to collect detailed data about the processes running in the guest operating system.
+**You need to collect detailed data about the processes running in the guest operating system.**
 
 Which two agents should you deploy? Each correct answer presents part of the solution.
 
@@ -3282,6 +3293,7 @@ To collect **detailed process-level data** from inside the **guest operating sys
 🧩 Azure Log Analytics agent
 
 * Collects:
+
   * Performance counters
   * Event logs
   * Syslogs
@@ -3292,11 +3304,13 @@ To collect **detailed process-level data** from inside the **guest operating sys
 🔍 Dependency agent
 
 * Collects:
+
   * **Detailed process information**
   * Process dependencies
   * Network connections between processes
 
 * Enables:
+
   * **Service maps**
   * Deep process-level visibility
 
@@ -3324,9 +3338,13 @@ This combo is required for:
 **B and D**
 
 
-### Question-38
+### Question-36 💩💩💩
 
-You configure Azure Application Insights and the shared service plan tier for a web app. **You enable Smart Detection**. You confirm that standard metrics are visible in the logs, but when you test a failure, you do not receive a Smart Detection notification. 
+You configure Azure Application Insights and the shared service plan tier for a web app. 
+
+**You enable Smart Detection**. 
+
+You confirm that standard metrics are visible in the logs, but when you test a failure, you do not receive a Smart Detection notification. 
 
 What prevents the Smart Detection notification from being sent?
 
@@ -3381,12 +3399,9 @@ So test failures during this learning window **will not generate notifications**
 
 
 
-
-
-### Question #39
+### Question #37 💩💩💩
 
 You have an Azure virtual machine named web1.
-
 
 You need to query the amount of free memory that was **available on web1 during the past seven days**. 
 
@@ -3429,7 +3444,7 @@ Perf
 ```
 
 
-### Question-39
+### Question-38
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. 
 
@@ -3465,9 +3480,10 @@ You need to **detect an abnormal rise in the rate of failed requests** to a heav
 **Azure Application Insights – Smart Detection** is designed for this scenario:
 
 * Uses **machine learning** to automatically detect anomalies in telemetry data, including:
-  * Exception spikes
-  * Failed requests
-  * Performance degradations
+
+ * Exception spikes
+ * Failed requests
+ * Performance degradations
 
 * Automatically generates **alerts** when unusual behavior occurs
 * **No manual threshold configuration** is needed → minimizes administrative overhead
@@ -3476,27 +3492,24 @@ You need to **detect an abnormal rise in the rate of failed requests** to a heav
 Why the other options are incorrect:
 
 * **B. Failures feature in Application Insights** ❌
-  * Provides **historical metrics and charts** for failed requests
-  * Does **not automatically detect anomalies** or trigger alerts
+ * Provides **historical metrics and charts** for failed requests
+ * Does **not automatically detect anomalies** or trigger alerts
 
 * **C. Azure Service Health alert** ❌
-  * Monitors **Azure service outages or planned maintenance**, not your application’s request failures
+ * Monitors **Azure service outages or planned maintenance**, not your application’s request failures
 
 * **D. Azure Monitor alert with Log Analytics query** ❌
-  * Could detect anomalies, but requires **manual query authoring and thresholds** → higher administrative effort
-
+ * Could detect anomalies, but requires **manual query authoring and thresholds** → higher administrative effort
 
 
 ✅ **Final answer: A. the Smart Detection feature in Azure Application Insights**
 
-
 **Correct Answer: A**
-
 
 After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.
 
 
-### Question #40 💩💩💩
+### Question #39 💩💩💩
 
 You have a web app named App1 that uses Application Insights in Azure Monitor to store log data. App1 has users in multiple locations.
 
@@ -3504,7 +3517,7 @@ You need to query App1 requests from London and Paris that return a 404 error. T
 
 Return the timestamp url, resultCode, and duration fields
 
-Only show requests made during the last hour.
+**Only show requests made during the last hour.**
 
 
 How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all.
@@ -3528,6 +3541,7 @@ To complete the KQL query based on the requirements provided, you should drag th
 
 
 **The complete query would look like this:**
+
 ```kusto
 requests
 | where timestamp >= ago(1hr)
@@ -3622,7 +3636,7 @@ To configure the Azure DevOps dashboard with the correct widgets for each metric
 
 
 
-### Question-41
+### Question-41 💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 and an Azure Standard Load Balancer named LB1. 
 
@@ -3673,14 +3687,17 @@ You need to implement a **health check for App1** running on a **VMSS behind an 
 Why the others are incorrect:
 
 * **A. Azure Load Balancer health probe** ❌
-  * Can monitor endpoints for traffic distribution
-  * **Cannot directly integrate with VMSS upgrade eligibility** in the context of application-level health
+
+ * Can monitor endpoints for traffic distribution
+ * **Cannot directly integrate with VMSS upgrade eligibility** in the context of application-level health
 
 * **B. Azure Monitor autoscale** ❌
-  * Scales VMSS instances based on metrics, not application health for upgrades
+
+ * Scales VMSS instances based on metrics, not application health for upgrades
 
 * **C. Custom Script Extension** ❌
-  * Can implement health checks manually, but **higher administrative overhead** compared to the built-in Application Health extension
+
+ * Can implement health checks manually, but **higher administrative overhead** compared to the built-in Application Health extension
 
 
 
@@ -3703,7 +3720,9 @@ You have an Azure subscription that contains a Log Analytics workspace named WS1
 
 You need to install the Microsoft Enterprise Cloud Monitoring extension on VM1.
 
-Which two values are required to configure the extension? Each correct answer presents part of the solution.
+Which two values are required to configure the extension? 
+
+Each correct answer presents part of the solution.
 
 NOTE: Each correct answer is worth one point.
 
@@ -3749,9 +3768,7 @@ Mapping to the options
 
 **A and D**
 
-
-
-### Question-42 💩💩💩
+### Question-43 💩💩💩
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -3813,7 +3830,7 @@ Why the others are incorrect:
 ✅ **Final answer: D and B**
 
 
-### Question #43
+### Question #44 💩💩💩
 
 You have an app named App1 that uses **Application Insights to monitor application performance**.
 
@@ -3859,8 +3876,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **A. Events**
 
 
-
-### Question-43
+### Question-45
 
 Your company hosts a web application in Azure. 
 
@@ -3915,7 +3931,7 @@ Why the other options are incorrect:
 Query metrics from tests on the build artifacts such as pass rate or code coverage and deploy only if they are within required thresholds. Use Quality Gates to integrate monitoring into your pre-deployment or post-leployment. This ensures that you are meeting the key health/performance metrics (KPls) as your applications move from dev to production and any differences in the infrastructure environment or scale is not negatively impacting your KPIs.
 
 
-### Question #44
+### Question #46
 
 You have a project in Azure DevOps that includes two users named User1 and User2.
 
@@ -3940,9 +3956,9 @@ NOTE: Each correct selection is worth one point.
 **User2:** Monitoring Reader
 
 
-### Question-44 💩💩💩
+### Question-47 🐣🐣🐣
 
-You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.
+You manage a project in Azure DevOps. **You need to prevent the configuration of the project from changing over time**.
 
 Solution: Pertorm a subscription Health scan when packages are created 
 
@@ -3976,8 +3992,6 @@ To actually **prevent configuration drift**, you would need solutions such as:
 
 ✅ **Final answer: B. No**
 
-
-
 **Instead implement Continuous Assurance for the project.**
 
 > Incorrect Options presents in part of this series Questions are
@@ -3997,9 +4011,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
-### Question #45 💩💩
-
-DRAG DROP -
+### Question #48 💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -4044,7 +4056,7 @@ To configure the Azure DevOps dashboard correctly, you should match the widgets 
 2.  The number of completed backlog items: **Velocity**
 3.  How long it takes to restore failed services: **Lead time**
 
-### Question-45
+### Question-49
 
 You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.
 
@@ -4093,7 +4105,7 @@ incorrect Options presents in part of this series Questions are
 
 <mark>**Correct Option is Implement Continuous Assurance for the project**</mark>
 
-### Question-46
+### Question-50
 
 You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.
 
@@ -4138,11 +4150,11 @@ To **prevent project configuration from changing**, you would need:
 * 3- Perform a Subscription Health scan when packages are created  ❌.
 
 
-### Question #47
+### Question #51
 
 You have an Azure subscription that contains an Azure Kubernetes Service (AKS) instance named AKS1.
 
-You collect and analyze metrics for AKS1 by using the Azure Monitor managed service for Prometheus.
+You collect and analyze metrics for AKS1 by using the **Azure Monitor managed service for Prometheus**.
 
 You need to analyze the performance of AKS1.
 
@@ -4173,7 +4185,7 @@ Why other options are incorrect:
 *   **C. SparkQL:** This is used for processing data within Apache Spark.
 *   **D. KQL:** This is used for Azure logs and standard Azure Monitor metrics, but not for data stored in the Prometheus managed service.
 
-### Question-47
+### Question-52
 
 You manage a project in Azure DevOps. You need to prevent the configuration of the project from changing over time.
 
@@ -4205,9 +4217,15 @@ By implementing **Continuous Assurance**, you can effectively **prevent unintend
 ✅ **Final answer: A. Yes**
 
 
-### Question-48  💩💩💩
+### Question-53 💩💩💩
 
-You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. You have an app named App1. Dependabot detects a dependency in App1 that requires an update. What should you do first to apply the update?
+You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. 
+
+You have an app named App1. 
+
+**Dependabot detects a dependency in App1 that requires an update.** 
+
+What should you do first to apply the update?
 
 * A. Create a pull request.
 * B. Approve the pull request.
@@ -4236,7 +4254,7 @@ Since Dependabot has already performed the detection and created the PR, the fir
 *   **C. Create a branch:** Dependabot creates the branch for the update automatically.
 *   **D. Perform a commit:** Dependabot performs the version-bump commit within the branch it creates.
 
-### Question #48
+### Question #54
 
 
 ![Alt Image Text](../images/az400_2_26.png)
@@ -4263,19 +4281,18 @@ Based on the KQL query provided in the exhibit, here are the correct selections 
 *   The result of a subtraction between two `datetime` objects is always a **`timespan`** (representing the elapsed time).
 *   This is confirmed in Line 5, where the `Duration` is compared against a value generated by the `make_timespan` function.
 
-### Question-49  💩💩
+### Question-55  💩💩
 
-You are designing a configuration management solution to support five apps hosted on Azure Ap Service. Each app is available in the following three environments: development, test, and production
+You are designing a configuration management solution to support five apps hosted on Azure Ap Service. 
 
+Each app is available in the following three environments: development, test, and production
 
 You need to recommend a configuration management solution that meets the following requirements 
 
 
 **Supports teature flags, Tracks configuration changes from the past 30 days, Stores hierarchically structured contiguration values, Controls access to the configurations by using role-based access control (RBAC) permissions, Stores shared valur as key-value pairs that can be used by all the apps**
 
-
 Which Azure service should you recommend as the configuration management solution?
-
 
 * A. Azure Cosmos DB
 * B. Azure App Service
@@ -4319,14 +4336,13 @@ Why the others are incorrect:
 
 ✅ **Final answer: C. Azure App Configuration**
 
-### Question #49 💩💩
+### Question #56 💩💩💩
 
 You are planning projects for three customers. Each customer's preferred process for work items is shown in the following table.
 
 The customers all plan to use Azure DevOps for work item management.
 
 ![Alt Image Text](../images/az400_2_28.png)
-
 
 
 Which work item process should you use for each customer? To answer, drag the appropriate work item processes to the correct customers. Each work item process may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
@@ -4351,7 +4367,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #50 💩
+### Question #57 💩💩💩
 
 You configure an Azure Application Insights availability test.
 
@@ -4392,7 +4408,7 @@ To integrate an **Azure Application Insights availability test** with an **Azure
 
 
 
-### Question-50
+### Question-58
 
 You have a containerized solution that runs in Azure Container Instances. 
 
@@ -4437,7 +4453,7 @@ Why the others are incorrect:
 ✅ **Final answer: C. a readiness probe**
 
 
-### Question-51💩
+### Question-59 💩💩💩
 
 You have several Azure Active Directory (Azure AD) accounts.
 
@@ -4488,7 +4504,7 @@ Why the others are incorrect:
 ✅ **Final answer: D. conditional access**
 
 
-### Question-52 💩
+### Question-60 💩💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
 
@@ -4550,7 +4566,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 * source control files 
 * builds
 
-### Question-52
+### Question-61
 
 You have an Azure subscription that contains multiple web apps.
 
