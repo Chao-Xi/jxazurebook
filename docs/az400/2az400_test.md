@@ -18923,7 +18923,8 @@ You plan to create a release pipeline that will deploy Azure resources by using 
 
 Two resource groups
 
-Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+**Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group**
+
 You need to recommend a solution to deploy the resources.
 
 **Solution: Create a single standalone template that will deploy all the resources.**
@@ -18944,10 +18945,10 @@ In **Azure Resource Manager (ARM) templates**, a **standalone template scoped to
 In your scenario:
 
 * You have **two resource groups**:
-
   1. One with **four VMs**
   2. One with **two SQL databases**
-* A **single standalone template scoped to a single resource group** cannot deploy resources to the **second resource group**.
+
+* <mark>A **single standalone template scoped to a single resource group** cannot deploy resources to the **second resource group**</mark>.
 
 To deploy resources across multiple resource groups, you must use:
 
@@ -18959,7 +18960,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-78💩💩
+### Question-78  💩💩💩 
 
 
 You have an Azure DevOps project.
@@ -18993,9 +18994,12 @@ Correct approach
 To deploy artifacts to on-premises servers, you should use:
 
 1. **Azure Pipelines self-hosted agent** installed on the target on-premises servers or a management server.
+
 2. Tasks in the pipeline such as:
-   * **Copy files / Windows Machine File Copy**
-   * **PowerShell / Bash scripts** to deploy artifacts
+ 
+  * **Copy files / Windows Machine File Copy**
+  * **PowerShell / Bash scripts** to deploy artifacts
+
 3. Optionally, configure **deployment groups** in Azure DevOps to manage multiple on-premises servers.
 
 Final Answer
@@ -19050,9 +19054,7 @@ Final Answer
 ### Question-80 💩💩
 
 
-You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1
-
-to an Azure container registry named ACR1. 
+You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1 to an Azure container registry named ACR1. 
 
 Image uses a base image stored in Docker Hub.
 
@@ -19094,9 +19096,9 @@ Your build process creates several artifacts.
 
 You need to deploy the artifacts to on-premises servers.
 
-Solution: You deploy an Octopus Deploy server. **You deploy a polled Tentacle agent to an on-premises server**. 
+<mark>Solution: You deploy an Octopus Deploy server. **You deploy a polled Tentacle agent to an on-premises server**.</mark> 
 
-You add an Octopus task to the deployment pipeline.
+<mark>You add an Octopus task to the deployment pipeline.</mark>
 
 Does this meet the goal?
 
@@ -19121,16 +19123,6 @@ This setup is a **standard enterprise CI/CD pattern** for deploying build artifa
 
 This solution meets the goal because it correctly addresses the challenge of deploying artifacts from Azure DevOps to on-premises servers using a well-established deployment tool.
 
-✅ Why This Solution Works
-
-1.  **Octopus Deploy Integration**: Octopus Deploy is specifically designed for complex deployments and integrates seamlessly with Azure DevOps. Adding an Octopus task to your Azure Pipeline allows you to trigger deployments orchestrated by Octopus.
-
-2.  **Polled Tentacle for On-Premises**: Using a **polled Tentacle** on your on-premises server is the correct choice for environments behind a firewall. Polled Tentacles initiate outbound connections to the Octopus Server to check for tasks, eliminating the need to open inbound firewall ports to the on-premises server.
-
-3.  **Artifact Deployment**: The combination of the Octopus Server (orchestration), the polled Tentacle (execution agent), and the Octopus task in the pipeline creates a complete workflow:
-    - Azure Pipelines builds the artifacts.
-    - The Octopus task in the pipeline pushes the artifacts to Octopus and triggers a release.
-    - The on-premises polled Tentacle regularly checks in with the Octopus Server, receives the deployment instructions, downloads the artifacts, and deploys them to the server.
 
 📝 How the Components Fit Together
 
@@ -19145,7 +19137,7 @@ Therefore, the proposed architecture is a standard and effective pattern for dep
 **A. Yes** ✅
 
 
-### Question-82 
+### Question-82  💩💩💩
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. 
 
@@ -19196,17 +19188,17 @@ Final Answer
 
 ### Question-83
 
-You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. The release pipeline will create
+You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. 
 
-the following resources:
-Two resource groups
+The release pipeline will create the following resources:
 
+- Two resource groups
 
-Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
+- Four Azure virtual machines in one resource group Two Azure SQL databases in other resource group
 
 You need to recommend a solution to deploy the resources.
 
-Solution: **Create a main template that has two linked templates, each of which will deploy the resources in its respective group**
+<mark>Solution: **Create a main template that has two linked templates, each of which will deploy the resources in its respective group**</mark>
 
 Does this meet the goal?
 
@@ -19243,9 +19235,11 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-84 💩💩
+### Question-84 💩💩💩💩
 
-You have a project in Azure DevOps named Project. Project contains a build pipeline named Pipe1 that builds an application named App1.
+You have a project in Azure DevOps named Project. 
+
+Project contains a build pipeline named Pipe1 that builds an application named App1.
 
 You have an agent pool named Pool1 that contains a Windows Server 2019-based self-hosted agent. 
 
@@ -19268,7 +19262,6 @@ What should you do?
 
 
 ----
-
 
 **Correct answer: D. Create two container jobs.** ✅
 
@@ -19307,15 +19300,15 @@ Final Answer
 **D. Create two container jobs.** ✅
 
 
-### Question-85
+### Question-85 - Duplicated
 
 You manage build pipelines and deployment pipelines by using Azure DevOps.
 
 Your company has a team of 500 developers. New members are added continually to the team.
 
 You need to automate the management of users and licenses whenever possible.
-**
-Which task must you perform manually?**
+
+**Which task must you perform manually?**
 
 * A. modifying group memberships
 * B. adding users
@@ -19358,7 +19351,7 @@ Final Answer
 **D. procuring licenses** ✅
 
 
-### Question-86
+### Question-86 💩💩💩
 
 Your company is building a new solution in Java.
 
@@ -19451,9 +19444,9 @@ Final Answer
 
 ### Question-88
 
-You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. Policy is an audit policy that monitors
+You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. 
 
-naming convention compliance for the resources deployed to Subscription1.
+Policy is an audit policy that monitors naming convention compliance for the resources deployed to Subscription1.
 
 You have a pipeline named Pipeline 1 in Azure Pipelines. Pipeline 1 deploys Azure Resource Manager (ARM) resources to Subscription1.
 
@@ -19487,7 +19480,7 @@ Why other options are incorrect:
 *   **A. Pre-deployment task:** While you can run static analysis on a template, a "security and compliance assessment" against an active Azure Policy usually requires the resources or the deployment intent to be evaluated against the current state of the subscription, which is most accurately done during or after the deployment process.
 *   **C & D. ARM template deployment task:** These options deal with the *infrastructure* of the policy itself (creating or assigning it). The question states the policy already exists; the goal is to make sure the app's resources follow that policy.
 
-### Question-89
+### Question-89 💩💩💩
 
 You have a project in Azure DevOps.
 
