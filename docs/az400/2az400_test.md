@@ -20199,11 +20199,9 @@ Hot Area:
 
 ✅ Answers
 
-**1. How many stages have triggers set?**
-✔ **7**
+**1. How many stages have triggers set?**. ✔ **7**
 
-**2. Which component should you modify to enable continuous delivery?**
-✔ **The Web Application artifact**
+**2. Which component should you modify to enable continuous delivery?**. ✔ **The Web Application artifact**
 
 ---
 
@@ -20324,7 +20322,7 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Agent-based deployment targets 🚀
 
 
-### Question-16
+### Question-11 💩💩💩
 
 
 You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20351,8 +20349,9 @@ In **Azure Artifacts**, best practice for handling *release vs pre-release* pack
 Proper design
 
 * Create two views:
-  * `@prerelease` → for preview/unstable builds
-  * `@release` → for stable production-ready builds
+ * <mark>`@prerelease` → for preview/unstable builds</mark>
+ * <mark>`@release` → for stable production-ready builds</mark>
+
 * Set `@release` as the **default view**
 * Use a **release pipeline** to **promote** packages from `@prerelease` → `@release` after validation/testing
 
@@ -20389,7 +20388,7 @@ This is the standard enterprise pattern for npm feeds in **Azure DevOps** with m
 ✅ **Final Answer: D**
 
 
-### Question #17
+### Question #12
 
 
 You are defining release strategies for two applications as shown in the following table.
@@ -20399,7 +20398,7 @@ You are defining release strategies for two applications as shown in the followi
 | App1 | Failure of App1 has a major impact on your company. You need a small group of users, who opted in to a testing App1, to test new releases of the application. |
 | App2 | You need to minimize the time it takes to deploy new releases of App2, and you must be able to roll back as quickly as possible. |
 
-Which release strategy should you use for each application? To answer, drag the appropriate release strategies to the correct applications. Each release strategy may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which release strategy should you use for each application? 
 
 NOTE: Each correct selection is worth one point.
 
@@ -20431,32 +20430,27 @@ App2: [ ]
 🟦 **App1 → Canary deployment**
 
 * Requirement:
-
-  * High impact if failure occurs
-  * Test with a **small, opted-in group of users**
+ * High impact if failure occurs
+ * Test with a **small, opted-in group of users**
 * Canary deployment:
-
-  * Releases to a **small subset of users first**
-  * Gradually expands if no issues are found
-    ✔ Perfect for minimizing risk
+ * Releases to a **small subset of users first**
+ * Gradually expands if no issues are found ✔ Perfect for minimizing risk
 
 🟦 **App2 → Blue/Green deployment**
 
 * Requirement:
-
-  * **Fast deployment**
-  * **Immediate rollback capability**
+ * **Fast deployment**
+ * **Immediate rollback capability**
 * Blue/Green:
-
-  * Two identical environments (current + new)
-  * Switch traffic instantly
-  * Rollback = switch back
+ * Two identical environments (current + new)
+ * Switch traffic instantly
+ * Rollback = switch back
     ✔ Best for speed and reliability
 
 ❌ Why not Rolling deployment?
 
 * Updates instances gradually
-* Slower rollback compared to Blue/Green
+* **Slower rollback compared to Blue/Green**
 * Not ideal when **instant rollback** is required
 
 🎯 Final Answer
@@ -20470,7 +20464,7 @@ App2: [ ]
 * **Blue/Green → fast deploy + instant rollback** 🚀
 
 
-### Question-18 💩💩💩
+### Question-13 💩💩
 
 ```
 Name  Type
@@ -20529,8 +20523,8 @@ Why the others are wrong
 
 > uses **tagging**
 
-Azure Artifacts does **not use tags for consumption control**
-Tags are metadata only → consumers can still pull untested packages
+- Azure Artifacts does **not use tags for consumption control**
+- Tags are metadata only → consumers can still pull untested packages
 
 ❌ C
 
@@ -20573,9 +20567,11 @@ This is the enterprise-standard pattern in **Azure DevOps** for secure multi-pro
 ✅ **Final Answer: A**
 
 
-### Question-19 💩💩
+### Question-14 💩💩
 
-Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. Multiple projects consume the packages.
+Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. 
+
+Multiple projects consume the packages.
 
 You need to minimize the amount of disk space used by older packages in Azure Artifacts.
 
@@ -20618,7 +20614,7 @@ Why the other options are incorrect
 
 
 
-### Question-20 💩💩
+### Question-15 💩💩💩
 
 
 Your company builds a multi-tier web application.
@@ -20655,7 +20651,7 @@ The scenario requires:
 
 Why **Azure DevTest Labs** is ideal
 
-**Azure DevTest Labs** is designed specifically for:
+<mark>**Azure DevTest Labs** is designed specifically for:<mark>
 
 * Creating **temporary or short-lived environments**.
 * Using **custom ARM templates** to provision VMs.
@@ -20672,18 +20668,18 @@ Why the other options are less suitable
   * No built-in cost optimization like DevTest Labs.
 
 * **B (Azure Cloud Services)** ❌
-
-  * Azure Cloud Services is **legacy PaaS**; it doesn’t allow you to use custom ARM templates for VM provisioning.
+	* Azure Cloud Services is **legacy PaaS**; it doesn’t allow you to use custom ARM templates for VM provisioning.
 
 
 
 **Key takeaway:**
+
 For staging environments that **minimize cost, use custom templates, and can be automated**, **Azure DevTest Labs integrated with Azure DevOps** is the recommended solution.
 
 ✅ **Answer: D**
 
 
-### Question-21
+### Question-16
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -20735,7 +20731,7 @@ Why the other options are incorrect
 ✅ **Answer: C**
 
 
-### Question-22
+### Question-17 💩💩
 
 You are designing a build pipeline in Azure Pipelines.
 
@@ -20771,7 +20767,7 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #25
+### Question #18
 
 You use Azure Pipelines to manage the build and deployment of apps.
 
@@ -20792,19 +20788,19 @@ NOTE: Each correct selection is worth one point.
 
 **Answer Area**
 
-Releases will be made available to users who are grouped by their tolerance for software faults:
+**<mark>Releases will be made available to users who are grouped by their tolerance for software faults:</mark>**
 
 *   Progressive exposure
 *   Blue/green
 *   Feature flags
 
-Code will be deployed to enable functionality that will be available in later releases of the app:
+**<mark>Code will be deployed to enable functionality that will be available in later releases of the app:</mark>**
 
 *   Progressive exposure
 *   Blue/green
 *   Feature flags
 
-When a new release occurs, the existing deployment will remain active to minimize recovery time if a return to the previous version is required:
+**<mark>When a new release occurs, the existing deployment will remain active to minimize recovery time if a return to the previous version is required:</mark>**
 
 *   Progressive exposure
 *   Blue/green
@@ -20825,29 +20821,20 @@ When a new release occurs, the existing deployment will remain active to minimiz
 🟦 **Progressive exposure**
 
 * Releases are rolled out gradually to different user groups
-* Users are segmented based on:
-  * Risk tolerance
-  * Geography
-  * Roles
+* Users are segmented based on: Risk tolerance / Geography / Roles
 * Ideal for controlled rollout and monitoring
 
 🟦 **Feature flags**
 
 * Code is deployed but features are **disabled by default**
 * Features can be turned on/off without redeployment
-* Perfect for:
-  * Future functionality
-  * Testing in production safely
+* Perfect for: **Future functionality / Testing in production safely**
 
 🟦 **Blue/green deployment**
 
-* Two environments:
-  * **Blue (current live)**
-  * **Green (new version)**
+* Two environments: **Blue (current live)** / **Green (new version)**
 * Both run simultaneously
-* Enables:
-  * Instant rollback
-  * Minimal downtime
+* Enables: Instant rollback / Minimal downtime
 
 🎯 Final Answer
 
@@ -20862,7 +20849,7 @@ When a new release occurs, the existing deployment will remain active to minimiz
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #26 💩💩
+### Question #19 💩💩💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -20928,7 +20915,7 @@ To link automated tests:
 
 > **Create test → store in repo → associate via test case work item** 🚀
 
-### Question #27
+### Question #20
 
 You have an Azure Kubernetes Service (AKS) cluster.
 
@@ -21001,7 +20988,7 @@ AKS deployment via Azure DevOps follows:
 
 > **Authenticate (SPN) → Authorize (RBAC) → Deploy (Helm)** 🚀
 
-### Question #28
+### Question #21 💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21009,7 +20996,7 @@ You have 10 Azure virtual machines that run Windows Server 2019.
 
 The virtual machines host an application that you build and deploy by using Azure Pipelines.
 
-Each virtual machine has the Web Server (IIS) role installed and configured.
+**Each virtual machine has the Web Server (IIS) role installed and configured.**
 
 You need to ensure that the web server configurations on the virtual machines is maintained automatically. 
 
@@ -21066,18 +21053,18 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #34 💩
+### Question #22 💩💩💩
 
 
 You have a free tier of an Azure DevOps organization named Contoso. 
 
 Contoso contains 10 private projects. 
 
-Each project has multiple jobs with no dependencies. 
+**Each project has multiple jobs with no dependencies.** 
 
-The build process requires access to resource files located in an on-premises file system.
+**The build process requires access to resource files located in an on-premises file system.**
 
-You frequently run the jobs on five self-hosted agents but experience long build times and frequently queued builds.
+You frequently run the jobs on five self-hosted agents **but experience long build times and frequently queued builds.**
 
 You need to minimize the number of queued builds and the time it takes to run the builds.
 
@@ -21104,9 +21091,7 @@ D. Purchase Microsoft-hosted parallel jobs
 
 * Pipelines require access to **on-premises file system**
 * Using **self-hosted agents (5 agents)**
-* Experiencing:
-  * **Queued builds**
-  * **Long execution times**
+* Experiencing: **Queued builds** / **Long execution times**
 * Jobs have **no dependencies → can run in parallel**
 
  🟦 Why B is correct
@@ -21152,13 +21137,13 @@ For pipelines that depend on **on-prem resources**:
 **B. Register additional self-hosted agents**
 
 
-### Question #36 💩💩
+### Question #23 💩💩
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
 Sub1 contains an Azure SQL database named DB1. 
 
-**You need to create a release pipeline that uses the Azure SQL Database Deployment task to updat**e DB1.
+**You need to create a release pipeline that uses the Azure SQL Database Deployment task to update** DB1.
 
 Which artifact should you deploy?
 
@@ -21209,7 +21194,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 * **BACPAC → backup/migration (data + schema)** 🚀
 
 
-### Question #37  💩💩💩
+### Question #24  💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21293,9 +21278,10 @@ Dropdown options visible in the image:
 * Used to reference an **external ARM template** via a URI
 * Matches the provided snippet:
 
-  ```json
-  "uri": "[uri(parameters('_artifactsLocation'), concat('./nested/sqlserver.json', parameters('_artifactsLocationSasToken')))]"
-  ```
+```json
+"uri": "[uri(parameters('_artifactsLocation'), concat('./nested/sqlserver.json', parameters('_artifactsLocationSasToken')))]"
+```
+
 * Required when templates are stored externally (e.g., GitHub, storage)
 
 ❌ Why not the other options
@@ -21320,7 +21306,7 @@ To dynamically reference Key Vault secrets in ARM templates:
 * Combine with **`resourceId()`** for dynamic resource resolution 🚀
 
 
-### Question #38  💩  💩
+### Question #25 💩💩💩💩
 
 You are developing an iOS application by using Azure DevOps.
 
@@ -21387,9 +21373,9 @@ For private iOS testing:
 
 > Register devices (UDIDs) → distribute build (Ad Hoc/App Center) 🚀
 
-### Question #40
+### Question #26
 
-HOTSPOT Your company uses Git as a source code control system for a complex app named App1.
+Your company uses Git as a source code control system for a complex app named App1.
 
 You plan to add a new functionality to App1.
 
@@ -21431,7 +21417,6 @@ Which branch lifetime and branch time should you use in the branching model? To 
 🟦 **Feature branch**
 
 * Specifically used for:
-
   * Developing **new features or functionality**
 * Isolated from main code until complete and tested
 
@@ -21452,9 +21437,9 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #41 💩
+### Question #27 💩💩💩
 
-HOTSPOT You have an Azure virtual machine named VM1 that runs Linux.
+You have an Azure virtual machine named VM1 that runs Linux.
 
 You plan to deploy the Desired State Configuration (DSC) extension to VM1.
 
@@ -21505,9 +21490,9 @@ You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) p
 
 **Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #42
+### Question #28
 
-HOTSPOT You are using PowerShell to administer Azure Log Analytics workspaces.
+You are using PowerShell to administer Azure Log Analytics workspaces.
 
 You need to list the available workspaces and their properties.
 
@@ -21563,7 +21548,7 @@ Here is the content extracted from the image:
 
 * **Get-AzResourceProvider** → Lists providers, not instances
 
-*  **-ResourceGroupName**→ Filters by group, but does not specify resource type
+* **-ResourceGroupName**→ Filters by group, but does not specify resource type
 
 * **-ResourceId** → Requires a specific resource, not for listing all
 
@@ -21579,7 +21564,7 @@ To list Azure resources with details:
 > Use **Get-AzResource + -ResourceType + -ExpandProperties** 🚀
 
 
-### Question-43
+### Question-29 💩💩💩
 
 You have a project in Azure DevOps. 
 
@@ -21621,14 +21606,14 @@ How it works
 1. In the release pipeline, add an **Azure PowerShell** task.
 2. Configure the task to run `New-AzResourceGroupDeployment` with your ARM template.
 3. This approach:
-   * Works with **any Azure resource**.
-   * Requires minimal administrative effort.
-   * Integrates fully with **Azure DevOps**.
+  * Works with **any Azure resource**.
+  * Requires minimal administrative effort.
+  * Integrates fully with **Azure DevOps**.
 
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #44  💩💩
+### Question #30  💩💩💩💩
 
 You use GitHub for source control of .NET applications.
 
@@ -21707,7 +21692,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #45  💩💩💩
+### Question #31  💩💩💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -21793,7 +21778,7 @@ ConfigurationMode = "ApplyAndMonitor"
 * Meaning:
 
   * Applies configuration **once**
-  * Then **only monitors** for drift
+  * <mark>Then **only monitors** for drift<mark>
   * Does NOT fix automatically
 
 ❌ No automatic reapply
@@ -21806,8 +21791,8 @@ ConfigurationMode = "ApplyAndMonitor"
 ConfigurationModeFrequencyMins = 60
 ```
 * Every 60 minutes:
-  * DSC checks compliance
-  * Logs drift (e.g., feature removed)
+ * DSC checks compliance
+ * Logs drift (e.g., feature removed)
 
 ✔ Discrepancy is detected and logged
 
@@ -21817,7 +21802,7 @@ ConfigurationModeFrequencyMins = 60
 * **ApplyAndMonitor → detect drift, don’t fix**
 * **ConfigurationModeFrequencyMins → drift detection interval** 🚀
 
-### Question #46
+### Question #32 💩💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -21902,7 +21887,7 @@ performanceCounters
 * **timechart → best for time-series visualization** 🚀
 
 
-### Question #47  💩
+### Question #33  💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -21976,7 +21961,7 @@ DSC always follows:
 > **Configuration → Node → Resource** 🚀
 
 
-### Question #48
+### Question #34 💩💩💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -22023,7 +22008,7 @@ D. Install the Azure Pipelines app for Teams and configure a subscription to rec
   → Used for work items, not pipeline/build notifications
 
 * **B. Azure Automation + REST API**
-  → Custom solution, higher effort
+  → <mark>Custom solution, higher effort</mark>
 
 * **C. Azure Function + REST API**
   → Also custom development, not minimal effort
@@ -22038,7 +22023,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #49 💩💩
+### Question #35 💩💩💩💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22057,7 +22042,9 @@ You need to query the AppEvents table. The solution must meet the following requ
 
 ✑ Ignore any users who have less than three daily clicks.
 
-In which order should you arrange the query statements? To answer, move all statements from the list of statements to the answer area and arrange them in the correct order.
+In which order should you arrange the query statements? 
+
+To answer, move all statements from the list of statements to the answer area and arrange them in the correct order.
 
 Select and Place:
 
@@ -22111,9 +22098,7 @@ AppEvents
 | summarize NumberOfClicks = count() by bin(TimeGenerated, 1d), UserId
 ```
 
-* Groups by:
-  * **UserId**
-  * **Day (1d bin)**
+* Groups by: * **UserId** /  **Day (1d bin)**
 
 🟦 4. Filter users with at least 3 clicks
 
@@ -22136,7 +22121,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #50  💩 💩
+### Question #36  💩 💩
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22231,7 +22216,7 @@ NOTE: Each correct selection is worth one point.
 * **Incremental mode = safe updates**
 * **Linked artifact = CI pipeline output** 🚀
 
-### Question #51 💩💩
+### Question #37 💩💩
 
 
 You have an Azure Pipeline.
@@ -22270,7 +22255,7 @@ Here are the four correct scopes for defining variables in Azure Pipelines, arra
 *(Note: **task** is the distractor. While you can map variables to task inputs or environments, you do not declare variable blocks at the task scope in Azure Pipelines.)*
 
 
-### Question #52
+### Question #37
 
 You have a project in Azure DevOps named Project1 that contains **two environments named environment1 and environment2.**
 
@@ -22313,7 +22298,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #53
+### Question #38 💩💩💩
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22391,13 +22376,13 @@ Here is the content extracted from the image, formatted as markdown:
 * **Patch → bug fixes only** 🚀
 
 
-### Question #54
+### Question #39 💩💩💩
 
 You use Calendar Versioning (CalVer) for code assets.
 
 **You need to store an optional tag of beta as part of the version**.
 
-Which part of the version should you use for the tag?
+**Which part of the version should you use for the tag?**
 
 A. minor
 
@@ -22448,7 +22433,7 @@ In CalVer:
 > **Modifier = optional label (beta, alpha, rc)** 🚀
 
 
-### Question #55  💩💩💩
+### Question #40  💩💩💩
 
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
@@ -22530,7 +22515,7 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #56  💩💩💩
+### Question #41  💩💩💩
 
 You have a project in Azure DevOps that contains a release pipeline. 
 
@@ -22620,8 +22605,7 @@ Prod: [Dropdown 2]
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #57
-
+### Question #42 💩💩💩
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
