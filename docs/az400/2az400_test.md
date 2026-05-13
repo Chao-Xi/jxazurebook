@@ -19616,8 +19616,8 @@ git prune --expire now
 
 💡 Key takeaway
 
-* **`git gc --aggressive` → compress & optimize**
-* **`git prune --expire now` → delete unused objects**
+* <mark>**`git gc --aggressive` → compress & optimize**</mark>
+* <mark>**`git prune --expire now` → delete unused objects**</mark>
 
 Together, they **minimize repository size effectively**.
 
@@ -19629,8 +19629,7 @@ You have a Helm chart for a client application.
 
 You need to configure Helm and Tiller on the cluster and install the chart.
 
-Which three commands should you recommend be run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
-
+Which three commands should you recommend be run in sequence? 
 Commands
 
 - helm install
@@ -19768,10 +19767,10 @@ Select and Place:
 * **Shared = reusable across multiple apps**
 
 
-### Question #3
+### Question #4 💩💩💩
 
 
-HOTSPOT You need to create deployment files for an Azure Kubernetes Service (AKS) cluster. 
+You need to create deployment files for an Azure Kubernetes Service (AKS) cluster. 
 
 The deployments must meet the provisioning storage requirements shown in the following table.
 
@@ -19871,13 +19870,13 @@ Deployment 3: [ Drop zone ]
 * **Secrets/certs → CSI Secrets Store driver**
 
 
-### Question #10
+### Question #5
 
 You manage the Git repository for a large enterprise application.
 
 During the development of the application, you use a file named Config.json.
 
-You need to prevent Config.json from being committed to the source control whenever changes to the application are committed.
+**You need to prevent Config.json from being committed to the source control whenever changes to the application are committed**.
 
 **Which three actions should you perform in sequence?** 
 
@@ -19935,7 +19934,7 @@ To prevent files from being committed:
 This ensures the file is **excluded from future commits** 🚀
 
 
-### Question #11 💩💩
+### Question #6 💩💩
 
 You are finalizing a release in GitHub.
 
@@ -19947,7 +19946,9 @@ You need to apply the following labels to the release:
 
 ✑ Release v3.0 
 
-✑ Release date How should you complete the git command? 
+✑ Release date 
+
+How should you complete the git command? 
 
 
 To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
@@ -19999,7 +20000,7 @@ The command structure is:
 To finalize a release in GitHub using Git, you typically create an **annotated tag**, which includes:
 
 * Tag name (e.g., `v3.0`)
-* Tag message (e.g., "Release v3.0")
+* <mark>Tag message (e.g., "Release v3.0")<mark>
 * Metadata such as **name, email, and date**
 
 🟦 Correct command
@@ -20011,8 +20012,8 @@ git tag -a v3.0 -m "Release v3.0"
 🟦 Why this works
 
 * **`git tag`** → Creates a tag for the release
-* **`-a` (annotated tag)** → Stores metadata (name, email, date)
-* **`-m`** → Adds a message describing the release
+* <mark>**`-a` (annotated tag)** → Stores metadata (name, email, date)</mark>
+* <mark>**`-m`** → Adds a message describing the release</mark>
 
 ❌ Why the other options are incorrect
 
@@ -20031,7 +20032,7 @@ git tag -a v3.0 -m "Release v3.0"
 Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
 
 
-### Question #12
+### Question #7
 
 Your company has a project in Azure DevOps.
 
@@ -20049,9 +20050,6 @@ To answer, drag the appropriate configurations to the correct targets.
 
 **Each configuration may be used once, more than once, or not at all**. 
 
-You may need to drag the split bar between panes or scroll to view content.
-
-NOTE: Each correct selection is worth one point.
 
 **Configurations**
 
@@ -20077,18 +20075,14 @@ NOTE: Each correct selection is worth one point.
 🟦 **RBAC**
 
 * Controls **management plane** operations
-* Used for actions like:
-  * Delete Key Vault
-  * Create/update resources
+* Used for actions like: **Delete Key Vault,  Create/update resources**
 * Ensures least privilege at the **resource level**
 
 🟦 **Azure Key Vault access policy**
 
 * Controls **data plane** access
-* Used for:
-  * Reading secrets during ARM deployments
-* Allows fine-grained permissions like:
-  * `Get`, `List` (only what’s needed)
+* Used for: Reading secrets during ARM deployments
+* Allows fine-grained permissions like: `Get`, `List` (only what’s needed)
 
 ❌ Why not PAT?
 
@@ -20106,7 +20100,7 @@ NOTE: Each correct selection is worth one point.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #13
+### Question #8
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -20169,7 +20163,7 @@ Deploying ARM templates via Azure DevOps follows:
 > **Pipeline → Deployment task → Configure parameters** 🚀
 
 
-### Question #14
+### Question #9 💩💩💩
 
 You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
 
@@ -20253,7 +20247,7 @@ To enable **continuous delivery (CD)** in a classic release pipeline:
 * **The Web Application artifact**
 
 
-### Question #15 💩💩💩
+### Question #10 💩💩💩
 
 
 Your company plans to deploy an application to the following endpoints:
@@ -20298,14 +20292,9 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 🟦 **Deployment group**
 
 * Designed specifically for **deploying to multiple machines (targets)**
-* Works with:
-  * Azure VMs
-  * On-premises VMs
+* Works with: Azure VMs / On-premises VMs
 * Requires Azure Pipelines agent (which is already installed ✅)
-* Enables:
-  * Coordinated deployments
-  * Rolling deployments
-  * Environment-based targeting
+* Enables: Coordinated deployments / Rolling deployments /Environment-based targeting
 
 ❌ Why the other options are incorrect
 
@@ -20333,7 +20322,6 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Multiple VMs
 * Mixed environments (Azure + on-prem)
 * Agent-based deployment targets 🚀
-
 
 
 ### Question-16
