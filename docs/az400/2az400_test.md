@@ -22686,7 +22686,7 @@ To generate release notes automatically:
 
 ## Topic 9 - Question Set 9
 
-### Question #1
+### Question #1 💩
 
 You plan to create an image that will contain a .NET Core application.
 
@@ -22773,7 +22773,7 @@ For small Docker images:
 
 
 
-### Question #2
+### Question #2 💩💩💩💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -23035,18 +23035,18 @@ Azure Artifacts resolves packages based on:
 
 1. **Highest available version**
 2. Across:
-   * Local feed (manually pushed)
-   * Upstream sources (if enabled)
+ * Local feed (manually pushed)
+ * Upstream sources (if enabled)
 
 🟦 Key detail: *Saved from upstream*
 
 * **2.3.1 (Saved from upstream)**
-  * Already **cached in Feed1**
-  * Treated like a local package
+ * Already **cached in Feed1**
+ * Treated like a local package
 
 * **2.0.0 (Available from upstream)**
-  * Not yet used/downloaded
-  * Only fetched if specifically requested
+ * Not yet used/downloaded
+ * Only fetched if specifically requested
 
 🟦 Version selection logic
 
@@ -23076,7 +23076,7 @@ Available versions:
 * **Highest version wins** 🚀
 
 
-### Question #6 💩
+### Question #6 💩💩💩
 
 You have an Azure subscription.
 
@@ -23183,7 +23183,7 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 
 
-### Question #7
+### Question #7 💩💩
 
 
 You have a GitHub repository named repo1 that stores the code of an app named App1. 
@@ -23194,11 +23194,13 @@ The solution must meet the following requirements:
 
 • **Scan on pushes to the main branch.**
 
-• Scan on pull requests to the main branch.
+• **Scan on pull requests to the main branch**.
 
 • Scan on pull requests to any **branch that has a prefix of releases/**.
 
 • Scan all the files in the **subdirectories of the src directory**.
+
+
 
 How should you complete the code? To answer, drag he appropriate values to the correct targets. 
 
@@ -23317,7 +23319,7 @@ B. Configure a deployment gate for Pipeline1 that uses Azure Automation to run a
 
 C. Create an Azure DevOps build that runs on the creation of a pull request and assesses the code for compliance.
 
-D. Configure a deployment gate for Pipeline1 and include **the Azure DevOps Security and compliance assessment task**
+D. Configure a deployment gate for Pipeline1 and include the Azure DevOps Security and compliance assessment task
 
 --------
 
@@ -23400,7 +23402,7 @@ Based on the given table:
 - **Change2:** Major
 - **Change3:** Patch
 
-### Question #10 
+### Question #10 💩💩💩
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
 
@@ -23427,10 +23429,10 @@ Enabling **flaky test management** is the correct solution because:
 - **Flaky tests** are defined as tests that produce both passing and failing results without any changes to the source code or execution environment — exactly matching your scenario where failures are unrelated to code or environment changes.
 
 - **Flaky test management** features (available in Azure Pipelines) help by:
-  - Automatically detecting and tracking flaky tests
-  - Rerunning only the flaky tests to determine if failures are transient
-  - Reducing the need for manual investigation of intermittent, non-deterministic failures
-  - Minimizing troubleshooting effort by distinguishing between real bugs and test instability
+ - Automatically detecting and tracking flaky tests
+ - Rerunning only the flaky tests to determine if failures are transient
+ - Reducing the need for manual investigation of intermittent, non-deterministic failures
+ - Minimizing troubleshooting effort by distinguishing between real bugs and test instability
 
 Therefore, enabling flaky test management directly addresses the need to minimize troubleshooting effort for intermittent, code-unrelated test failures.
 
@@ -23446,7 +23448,7 @@ You identify that the failures are unrelated to changes in the source code and e
 
 You need to minimize troubleshooting effort for the TestSuite1 failures.
 
-Solution: You implement the Test Results Trend widget.
+<mark>Solution: You implement the Test Results Trend widget.</mark>
 
 Does this meet the goal?
 
@@ -23539,14 +23541,6 @@ Here is the detailed breakdown of why **B** is the recognized answer:
 
 Understanding `.artifactignore` semantics
 
-The `.artifactignore` file uses the exact same syntax as a `.gitignore` file:
-
-* **By default**, all files are included/published. 
-* Writing a file path or glob pattern **ignores/excludes** it.
-* Writing a pattern starting with an exclamation mark (`!`) **un-ignores/includes** it.
-
-If the requirement is exactly as you pasted (*Include all, exclude .dll*), you would actually only need to write `**/*.dll` in the file. Since that is not an option, we have to look at how Microsoft structures this question on the AZ-400 exam.
-
 The Real Exam Scenario
 
 On the actual certification exam, this question is historically written with the requirements reversed:
@@ -23559,7 +23553,6 @@ Under those reversed requirements, **Option B** is perfectly correct because:
 * `**/*` tells the system to **ignore** all files and folders.
 * `!*.dll` tells the system to **un-ignore (include)** the `.dll` files.
 
-*Note: If the author of the question accidentally used Azure Pipeline Task minimatch logic (where `**/*` means include everything, and `!*.dll` means exclude .dlls), they still intend for **Option B** to be the answer.*
 
  
 ### Question #14 💩💩💩
@@ -23672,7 +23665,7 @@ You identify that the failures are unrelated to changes in the source code and e
 
 You need to minimize troubleshooting effort for the TestSuite1 failures.
 
-Solution: You increase code coverage.
+<mark>**Solution: You increase code coverage.**</mark>
 
 Does this meet the goal?
 
@@ -23696,11 +23689,11 @@ To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you s
 *   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
 
 
-### Question #16
+### Question #16 💩💩
 
 You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
 
-The build job for App1 intermittently returns a timeout error.
+**The build job for App1 intermittently returns a timeout error.**
 
 You need to ensure that the build job completes successfully. The solution must minimize administrative effort.
 
@@ -23736,7 +23729,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩
+### Question #17 💩💩💩
 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
@@ -23775,7 +23768,7 @@ Explanation:
 
 To allow User1 to provision environments in ADE while following the principle of least privilege, you should assign them the **Deployment Environments User** role.
 
-### Question #18 
+### Question #18   💩💩💩
 
 
 You have an Azure subscription that contains Azure DevOps build pipelines.
@@ -23847,7 +23840,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩💩
+### Question #19  💩💩💩💩💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -23927,7 +23920,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20
+### Question #20 💩💩💩💩
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
