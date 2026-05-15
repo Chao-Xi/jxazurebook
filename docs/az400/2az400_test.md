@@ -23920,7 +23920,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩💩💩
+### Question #20 💩💩💩💩💩💩
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -23928,7 +23928,9 @@ You use an Azure pipeline to build a .NET app that has NuGet dependencies.
 **You need to ensure that the pipeline caches required NuGet packages.**
 
 
-How should you configure the pipeline? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+How should you configure the pipeline? 
+
+To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -24059,7 +24061,7 @@ You need to recommend a solution to build the pipelines. The solution must meet 
 • Minimize administrative effort.
 
 
-What should you use to implement each standard? To answer, drag the appropriate options to the correct standards. Each component may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+What should you use to implement each standard? 
 
 NOTE: Each correct selection is worth one point.
 
@@ -24092,14 +24094,20 @@ To implement the standards while minimizing administrative effort and ensuring c
 
 1.  **Standard 1: An extends template**  
 
-In Azure Pipelines, **extends templates** are the primary mechanism for enforcing security and governance. By using the `extends` keyword, you can create a "wrapper" template that contains mandatory security steps (like credential scanning or policy checks). The developer’s pipeline provides its content as a parameter to your template, allowing you to inject logic before or after their code and prevent them from bypassing required security measures.
+In Azure Pipelines, **extends templates** are the primary mechanism for **enforcing security and governance.** By using the `extends` keyword, **you can create a "wrapper" template that contains mandatory security steps** (like credential scanning or policy checks). 
+
+The developer’s pipeline provides its content as a parameter to your template, allowing you to inject logic before or after their code and prevent them from bypassing required security measures.
 
 2.  **Standard 2: An includes template**  
 
-An **includes template** (using the standard `template:` syntax) is best for reusability. Since you need to ensure software prerequisites are in the first stage, you can create a template containing those specific steps or stages. Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
+An **includes template** (using the standard `template:` syntax) is best for reusability. 
+
+**Since you need to ensure software prerequisites are in the first stage, you can create a template containing those specific steps or stages.** 
+
+Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
 
 
-### Question #23
+### Question #23 💩💩
 
 You have an Azure subscription.
 
@@ -24147,7 +24155,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24
+### Question #24 💩💩💩
 
 You have an Azure subscription.
 
@@ -24157,7 +24165,7 @@ You use Bicep templates to deploy websites and Azure SQL infrastructure.
 
 The solution must minimize administrative effort.
 
-What should you do first?
+**What should you do first?**
 
 A. Create a service principal.
 
@@ -24196,7 +24204,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25
+### Question #25 💩💩💩
 
 HOTSPOT -
 
@@ -24206,11 +24214,13 @@ You have an Azure Resource Manager (ARM) template named Template1.
 
 You plan to perform the following actions:
 
-• Deploy an Azure key vault named KV1.
+• **Deploy an Azure key vault named KV1.**
 
-• Deploy Azure resources by using Template1 to retrieve secrets from KV1.
+• **Deploy Azure resources by using Template1 to retrieve secrets from KV1**.
 
-You need to ensure that User1 can deploy Template1. The solution must follow the principle of least privilege.
+You need to ensure that User1 can deploy Template1. 
+
+The solution must follow the principle of **least privilege.**
 
 Which permission should you grant to User1, and which parameter should be specified when you create KV1? To answer, select the appropriate options in the answer area.
 
@@ -24243,9 +24253,11 @@ To ensure that User1 can deploy Template1 while following the principle of least
 
 **1. Permission: Microsoft.KeyVault/vaults/deploy/action**
 
-When an ARM template retrieves a secret from a Key Vault, the Azure Resource Manager (ARM) service acts on behalf of the user. To authorize this, the user (User1) needs the specific RBAC permission `Microsoft.KeyVault/vaults/deploy/action`. This allows the user to grant ARM the right to access the vault during the deployment process. 
+**When an ARM template retrieves a secret from a Key Vault, the Azure Resource Manager (ARM) service acts on be**half of the user. 
 
-*   *Note:* Standard "read" permissions are not enough; this specific "deploy/action" is the least-privilege requirement for template secret injection.
+To authorize this, the user (User1) needs the specific RBAC permission `Microsoft.KeyVault/vaults/deploy/action`. This allows the user to grant ARM the right to access the vault during the deployment process. 
+
+* <mark>*Note:* Standard "read" permissions are not enough; this specific "deploy/action" is the least-privilege requirement for template secret injection.</mark>
 
 **2. Parameter: --enabled-for-template-deployment**
 
@@ -24254,9 +24266,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 *   *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
 
 
-### Question #26
-
-DRAG DROP -
+### Question #26 💩💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24265,7 +24275,7 @@ You have an Azure subscription that contains an Azure Traffic Manager profile na
 
 **You need to configure ATM1 to route all traffic from Asia to an endpoint in Australia.**
 
-Which three actions should you perform in sequence from the Azure portal? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+Which **three actions should you perform in sequence from the Azure portal**? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Based on the image provided, here is the extracted content in Markdown format:
 
@@ -24353,7 +24363,7 @@ You need to recommend a deployment strategy for the microservices.
 
 The solution must meet the following requirements:
 
-• Enable testing and monitoring of changes during a gradual rollout.
+• <mark>**Enable testing and monitoring of changes during a gradual rollout.**</mark>
 
 • Control the number of users that will receive new code releases.
 
@@ -24384,7 +24394,7 @@ Why the other options are incorrect:
 *   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
 *   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
 
-### Question #29  💩💩💩
+### Question #29  💩💩💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 that has the following YAML definition.
 
@@ -24486,7 +24496,7 @@ NOTE: Each correct selection is worth one point.
 
 
 
-### Question #30  💩💩
+### Question #30  💩💩💩💩💩💩
 
 You use Azure Pipelines to build and test code.
 
@@ -24546,7 +24556,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31. 💩💩💩
+### Question #31. 💩💩💩💩💩
 
 You have a GitHub organization.
 
@@ -24596,7 +24606,7 @@ You use an Azure Pipelines pipeline to build and deploy an app.
 
 You have a custom test task that has the following inputs:
 
-• testResultsFiles: **/TEST-*.trx
+• **testResultsFiles: **/TEST-*.trx**
 
 • searchFolder: $(System.DefaultWorkingDirectory)
 
@@ -24624,7 +24634,7 @@ The **`.trx`** file extension is the standard format for **Visual Studio Test Re
 
 In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom test tasks that consume results, the file extension determines which parser the system uses:
 
-*   **VSTest:** Uses **`.trx`** files (XML-based).
+*   <mark>**VSTest:** Uses **`.trx`** files (XML-based).</mark>
 *   **JUnit:** Uses `.xml` files (standard for Java/generic).
 *   **NUnit:** Uses `.xml` files (NUnit 2 or 3 format).
 *   **CTest:** Uses `.xml` files (generated by CMake).
@@ -24638,7 +24648,7 @@ You use an Azure Pipelines pipeline to build, test, and deploy an app named App1
 
 **You need to reduce how long it takes to complete unit and integration tests for App1.** 
 
-The solution must ensure that the code coverage testing ratio is maintained.
+**The solution must ensure that the code coverage testing ratio is maintained.**
 
 What should you do?
 
@@ -24690,7 +24700,7 @@ D. Add an agent pool.
 * ❌ Does not optimize which tests are run
 * Less efficient than TIA for this goal
 
-🔥 Key Insight (Exam Tip)
+🔥 **<mark>Key Insight (Exam Tip)</mark>**
 
 If the question mentions:
 
@@ -24700,7 +24710,7 @@ If the question mentions:
 👉 The answer is almost always **Test Impact Analysis (TIA)**.
 
 
-### Question #34
+### Question #34 💩💩
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -24775,7 +24785,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 💩💩💩
+### Question #35 💩💩💩💩💩
 
 You manage package feeds by using Azure Artifacts.
 
@@ -24789,7 +24799,7 @@ You plan to create a new package feed that will include the following views:
 
 • @Prerelease
 
-Which view should you create manually?
+Which view should **you create manually**?
 
 
 A. @Local
@@ -24846,7 +24856,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36
+### Question #36 💩💩💩
 
 You have an Azure subscription that includes an app named App1.
 
@@ -24854,7 +24864,9 @@ You have an Azure DevOps project that contains two environments named Staging an
 
 You use Azure Pipelines to deploy App1.
 
-You need to validate the performance of App1 in the Staging environment before it is deployed to Production. The solution must minimize administrative effort.
+You need to validate the performance of App1 in the Staging environment before it is deployed to Production. 
+
+The solution must minimize administrative effort.
 
 What should you do in the Azure DevOps project?
 
@@ -25054,7 +25066,7 @@ When you see:
 **B. No**
 
 
-### Question #38
+### Question #38 💩💩💩💩
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25551,7 +25563,7 @@ isComplete ? '1a' : '2a'
 
 **D. `isComplete ? '1a' : '2a'`**
 
-### Question #43
+### Question #43. 💩💩
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -25754,7 +25766,7 @@ pr:
 
 **B. No**
 
-### Question #45 💩💩💩
+### Question #45 💩💩💩💩💩
 
 
 You are using an Azure Pipelines pipeline to build and deploy a web app.
@@ -25915,12 +25927,12 @@ EnsureSecure -OutputPath C:\temp\
 
 💡 Explanation
 
-✅ **Ensure = 'Present'**
+✅ <mark>**Ensure = 'Present’**  =>  WindowsFeature WindowsDefenderInstalled</mark>
 
 * Used with **WindowsFeature**
 * Ensures the feature (Windows Defender) is **installed**
 
-✅ **State = 'Running'**
+✅ <mark>**State = 'Running’**   => Service WindowsDefenderAvailable running</mark>
 
 * Used with **Service**
 * Ensures the service is **currently running**
@@ -25931,6 +25943,7 @@ EnsureSecure -OutputPath C:\temp\
 * **'Enabled'** → Not valid for these properties
 * **'IncludeAllSubFeature'** → Used with feature installation options, not here
 * **'Manual' / 'Automatic'** → Used for `StartupType`, not `State`
+
 🧠 Key Exam Tip
 
 * **WindowsFeature → Ensure = 'Present'**
@@ -25941,9 +25954,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-
-
-### Question #47
+### Question #47 💩💩💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -25951,7 +25962,7 @@ You need to use an Azure Pipelines pipeline to test an app. The solution meet th
 
 • The test results must be published to the pipeline.
 
-• The test for every pipeline run must be triggered unless the pipeline is cancelled.
+• <mark>The test for every pipeline run must be triggered unless the pipeline is cancelled.</mark>
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
@@ -26094,12 +26105,11 @@ Fails:
 
 
 
-### Question #49. 💩💩💩
+### Question #49 💩💩💩
 
 You have an app named App1 that is built and deployed by using containers.
 
 The Dockerfile for App1 has the following definition.
-
 
 Based on the image provided, here is the extracted content in Markdown format:
 
@@ -26155,7 +26165,8 @@ Based on the provided Dockerfile, here are the correct selections for each state
 **Explanation:**
 
 1.  **App1 is an ASP.NET Core app (Yes):** The Dockerfile uses the .NET SDK as its base and explicitly exposes ports **80** (HTTP) and **443** (HTTPS). This is the standard configuration for ASP.NET Core web applications.
-2.  **The build uses a debug configuration (No):** Both the `dotnet build` and `dotnet publish` commands in the Dockerfile include the **`-c Release`** flag. This explicitly tells the compiler to use the Release configuration, which includes performance optimizations and excludes debug symbols.
+2.  **The build uses a debug configuration (No):** Both the `dotnet build` and `dotnet publish` commands in the Dockerfile include the **`-c Release`** flag.
+  * This explicitly tells the compiler to use the Release configuration, which includes performance optimizations and excludes debug symbols.
 3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
 
 
@@ -26575,7 +26586,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55
+### Question-55 💩💩💩
 
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
@@ -26684,7 +26695,7 @@ Why the other options are incorrect
 **D. Tiller**
 
 
-### Question-57 💩
+### Question-57 💩💩💩
 
 **You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
@@ -26802,7 +26813,7 @@ You have a policy stating that approvals must occur within eight hours.
 
 You discover that deployment fail if the approvals take longer than two hours.
 
-You need to ensure that the deployments only fail if the approvals take longer than eight hours.
+**You need to ensure that the deployments only fail if the approvals take longer than eight hours.**
 
 **Solution: From Pre-deployment conditions, you modify the Timeout setting for pre-deployment approvals.**
 
@@ -26938,7 +26949,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Implement a feature flag**
 
 
-### Question-63
+### Question-63 💩💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -26979,8 +26990,6 @@ Why the other options are incorrect
 > For iOS **ad-hoc distribution**, devices must be **registered in Apple Developer portal** and included in the app’s provisioning profile before App Center can distribute the app.
 
 ✅ **Answer: B. Register the devices on the Apple Developer portal**
-
-
 
 
 
@@ -27038,7 +27047,7 @@ Your company has an on-premises Bitbucket Server that is used for Git-based sour
 
 **The server is protected by a firewall that blocks inbound Internet traffic.**
 
-You plan to use Azure DevOps to manage the build and release processes.
+**You plan to use Azure DevOps to manage the build and release process**es.
 
 Which two components are required to integrate Azure DevOps and Bitbucket? Each correct answer presents part of the solution.
 
@@ -27147,7 +27156,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-67
+### Question-67 💩💩💩
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27386,7 +27395,7 @@ configuration RequiredFeatures
 
 🎯 Final Configuration
 
-```powershell id="y0ep2v"
+```
 configuration RequiredFeatures
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
