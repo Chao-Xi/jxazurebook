@@ -27463,7 +27463,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Register the devices on the Apple Developer portal**
 
 
-### Question-72
+### Question-72 💩💩
 
 
 Your company uses Azure Artifacts for package management.
@@ -27808,7 +27808,7 @@ Why the other options are incorrect
 ✅ **Answer: D. modifier**
 
 
-### Question-78
+### Question-78 💩💩💩
 
 
 You have a project in Azure DevOps named Project1.
@@ -27822,7 +27822,6 @@ What should you create?
 * C. a YAML template
 * D. a PowerShell task
 
-Answer: A
 
 The correct answer is: **C. a YAML template** ✅
 
@@ -27942,7 +27941,7 @@ Why the other options are incorrect
 
 
 
-###  Question-201
+###  Question-80 💩💩💩
 
 You have a project in Azure DevOps named Project1.
 
@@ -28004,7 +28003,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-80
+### Question-81
 
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
@@ -28057,7 +28056,7 @@ Why the other options are incorrect
 ✅ **Answer: C. a branch policy**
 
 
-### Question-81  💩💩💩
+### Question-82  💩💩💩
 
 You have a project in Azure DevOps named Project. 
 
@@ -28105,7 +28104,7 @@ Why **container jobs** are the solution
 
 Example:
 
-```yaml id="h8xl38"
+```yaml
 jobs:
 - job: BuildApp1
   container: mcr.microsoft.com/dotnet/sdk:7.0
@@ -28135,7 +28134,7 @@ Why the other options are incorrect
 ✅ **Answer: D. Create two container jobs**
 
 
-### Question-82 💩💩
+### Question-83 💩💩
 
 
 You have an app named App1 that you release by using Azure Pipelines. 
@@ -28193,7 +28192,7 @@ Why other options are incorrect:
 *   **C. 3.5.0:** This would indicate a new feature (Minor increment) on an old Major version (3), which contradicts having already moved to version 4.0.0.
 
 
-### Question-82
+### Question-84 💩💩
 
 You are automating the testing process for your company.
 
@@ -28257,7 +28256,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-83 💩💩💩
+### Question-85 💩💩💩
 
 You use Azure Pipelines to build and test code projects.
 
