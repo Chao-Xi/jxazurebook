@@ -23301,7 +23301,7 @@ on:
 * `**/*.md` → ignore markdown files 🚀
 
 
-### Question #8 💩💩💩
+### Question #8 💩💩
 
 You have an Azure subscription that contains an Azure pipeline named Pipeline1 and a GitHub repository named Repo1. 
 
@@ -23509,7 +23509,7 @@ Why this does **not** meet the goal:
 The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
 
 
-### Question #13 💩💩💩
+### Question #13 💩💩💩💩💩
 
 You plan to publish build artifacts by using an Azure pipeline.
 
@@ -23689,7 +23689,7 @@ To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you s
 *   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
 
 
-### Question #16 💩💩
+### Question #16 💩💩💩💩
 
 You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
 
@@ -23729,7 +23729,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩💩💩
+### Question #17 💩💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
@@ -23738,7 +23738,7 @@ Pipeline1 is used to build and test an app named App1. User1 is assigned the Con
 
 You plan to test App1 by using an Azure Deployment Environments environment.
 
-You need to ensure that User1 can provision the environment. The solution must follow the principle of least privilege.
+**You need to ensure that User1 can provision the environment.** The solution must follow the principle of least privilege.
 
 Which role should you assign to User1?
 
@@ -24038,7 +24038,7 @@ Explanation:
 *   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
 
 
-### Question #22  💩💩
+### Question #22  💩💩💩💩
 
 You have an Azure subscription.
 
@@ -24355,7 +24355,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28
+### Question #28 💩💩
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24600,13 +24600,13 @@ Explanation:
 *   **Step 3 (Install App1):** A GitHub App has no permissions until it is **installed** on a specific account or organization. The installation creates the link between the app and the resources (repositories) it is allowed to access.
 *   **Step 4 (Generate an installation access token):** Within the workflow, you use the App ID and Private Key (to create a temporary JWT) and exchange them for an **installation access token**. This token is the final credential used to authorize the actual API requests.
 
-### Question #32 💩💩💩
+### Question #32 💩💩💩💩💩
 
 You use an Azure Pipelines pipeline to build and deploy an app.
 
 You have a custom test task that has the following inputs:
 
-• **testResultsFiles: **/TEST-*.trx**
+• **testResultsFiles: **`/TEST-*.trx`**
 
 • searchFolder: $(System.DefaultWorkingDirectory)
 
@@ -24642,7 +24642,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩💩💩💩
+### Question #33 💩💩💩💩💩💩
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -24700,17 +24700,17 @@ D. Add an agent pool.
 * ❌ Does not optimize which tests are run
 * Less efficient than TIA for this goal
 
-🔥 **<mark>Key Insight (Exam Tip)</mark>**
+🔥🔥🔥  **<mark>Key Insight (Exam Tip)</mark>**
 
 If the question mentions:
 
-* **Reduce test time**
-* **Maintain coverage**
+* **Reduce test time**. 🔥🔥🔥
+* **Maintain coverage**. 🔥🔥🔥
 
 👉 The answer is almost always **Test Impact Analysis (TIA)**.
 
 
-### Question #34 💩💩
+### Question #34 💩💩💩💩
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -25094,11 +25094,7 @@ stages:
   dependsOn: []
   jobs:
 - stage: Publish_Test_Results
-  dependsOn: [
-  Build_App,
-  Test_App,
-  Test_Database
-  ]
+  dependsOn: [Build_App, Test_App,Test_Database]
   condition: succeededOrFailed()
   jobs:
 ...
@@ -25187,7 +25183,7 @@ This would:
 
 
 
-### Question #39
+### Question #39 💩💩💩
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25201,7 +25197,7 @@ You need to use an Azure Pipelines pipeline to build and test an app and test th
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
-...
+```
 stages:
 - stage: Build_App
   jobs:
@@ -25219,7 +25215,7 @@ stages:
   ]
   condition: succeededOrFailed()
   jobs:
-...
+```
 
 
 Does this meet the goal?
@@ -25502,7 +25498,7 @@ You need an **automated check** that:
 **C. pre-deployment gates**
 
 
-### Question #42 💩💩💩
+### Question #42 💩💩💩💩
 
 You have an Azure Resource Manager (ARM) template that contains the following expression.
 
@@ -25766,7 +25762,7 @@ pr:
 
 **B. No**
 
-### Question #45 💩💩💩💩💩
+### Question #45 💩💩💩💩
 
 
 You are using an Azure Pipelines pipeline to build and deploy a web app.
@@ -25849,7 +25845,7 @@ NOTE: Each correct selection is worth one point.
 * **Unit** → isolated logic
 * **Integration** → component interaction
 
-### Question #46 💩💩💩
+### Question #46 💩💩💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -25954,7 +25950,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-### Question #47 💩💩💩
+### Question #47 💩💩💩💩💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26170,12 +26166,9 @@ Based on the provided Dockerfile, here are the correct selections for each state
 3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
 
 
-### Question #50 💩💩
+### Question #50 💩💩💩💩
 
 You have an Azure DevOps subscription that contains the projects shown in the following table.
-
-
-Based on the image provided, here is the extracted table in Markdown format:
 
 | Name | Number of users | Repository | Visibility |
 | :--- | :--- | :--- | :--- |
