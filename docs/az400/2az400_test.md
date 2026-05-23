@@ -26508,11 +26508,11 @@ NOTE: Each correct selection is worth one point.
 | Require change management approval before release   | **Environments**  |
 
 
-### Question #54 💩💩
+### Question #54 💩💩💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
-Pipeline1 contains a temporary final stage named final1.
+**Pipeline1 contains a temporary final stage named final1**.
 
 **You need to ensure that User1 can delete final1 when testing is complete.** 
 
@@ -26579,8 +26579,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩💩💩
-
+### Question-55 💩💩💩💩💩
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -26650,8 +26649,6 @@ Which service should you install?
 * C. Kubectl
 * D. Tiller
 
-Answer: D
-
 ----
 
 
@@ -26688,7 +26685,7 @@ Why the other options are incorrect
 **D. Tiller**
 
 
-### Question-57 💩💩💩
+### Question-57 💩💩💩💩
 
 **You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
@@ -26788,7 +26785,7 @@ You discover that deployment fail if the approvals take longer than two hours.
 
 You need to ensure that the deployments only fail if the approvals take longer than eight hours.
 
-Solution: From Post-deployment conditions, you modify the Timeout setting tor post-deployment approvals.
+<mark>Solution: From Post-deployment conditions, you modify the Timeout setting tor post-deployment approvals.</mark>
 
 Does this meet the goal?
 
@@ -26942,7 +26939,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Implement a feature flag**
 
 
-### Question-63 💩💩💩
+### Question-63 💩💩💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -26986,7 +26983,7 @@ Why the other options are incorrect
 
 
 
-### Question-64 💩💩💩
+### Question-64 💩💩💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27036,7 +27033,7 @@ This ensures that all devices in the private distribution group—both previousl
 
 ### Question-65
 
-Your company has an on-premises Bitbucket Server that is used for Git-based source control. 
+Your company has an **on-premises Bitbucket Server that is used for Git-based source control**. 
 
 **The server is protected by a firewall that blocks inbound Internet traffic.**
 
@@ -27089,13 +27086,13 @@ Why the others are incorrect
 
 **Key point:**
 
-> For on-premises Git repositories behind a firewall, you need a **self-hosted agent** inside the network and an **External Git service connection** in Azure DevOps.
+**<mark>For on-premises Git repositories behind a firewall, you need a **self-hosted agent** inside the network and an **External Git service connection** in Azure DevOps.</mark>**
 
 ✅ **Answer: D and E**
 
 
 
-### Question-66 💩💩💩
+### Question-66 💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -27208,7 +27205,7 @@ You create a client-side Git hook on the commit-msg event.
 
 The hook requires that each commit message contain a custom work item tag.
 
-**You need to make a commit that does not have a work item tag.**
+<mark>**You need to make a commit that does not have a work item tag.**</mark>
 
 Which git commit parameter should you use?
 
@@ -27303,7 +27300,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩💩 💩💩
+### Question #70 💩💩💩💩💩
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -27503,8 +27500,7 @@ Why the other options are incorrect
 ✅ **Answer: B. PyPI**
 
 
-### Question-73
-
+### Question-73 💩💩💩
 
 You have a GitHub repository that contains workflows. **The workflows contain steps that execute predefined actions. Each action has one or more versions.**
 
@@ -27581,7 +27577,7 @@ You have an Azure subscription that contains multiple Azure pipelines.
 The solution must meet the following requirements:
 
 * Parse logs from multiple sources.
-* Identify the root cause of issues.
+* **Identify the root cause of issues**.
 
 What **advanced feature of a monitoring tool** should you include in the solution?
 
@@ -27633,7 +27629,7 @@ Why the other options are incorrect
 
 
 
-### Question-75
+### Question-75 💩💩💩
 
 You have an on-premises app named App1 that accesses Azure resources by using credentials stored in a configuration file.
 
@@ -27657,13 +27653,16 @@ Explanation
 When an application uses a **service principal** to authenticate to Azure AD, it needs the following credentials to sign in programmatically:
 
 1. **Application ID (Client ID)**
-   * Uniquely identifies the **service principal / app registration**.
 
-2. **Client secret**
-   * A password-like credential used to authenticate the service principal.
+  * Uniquely identifies the **service principal / app registration**.
 
-3. **Tenant ID**
-   * Identifies the **Azure AD tenant** where the service principal exists.
+3. **Client secret**
+
+  * A password-like credential used to authenticate the service principal.
+
+5. **Tenant ID**
+
+  * Identifies the **Azure AD tenant** where the service principal exists.
 
 With these three values, the application can request an **OAuth token** from Azure AD to access Azure resources.
 
@@ -27674,18 +27673,16 @@ Why the other options are incorrect
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | **A. application ID, client secret, object ID**       | Object ID identifies the service principal object in Azure AD but is **not needed for authentication**. |
 | **B. client secret, object ID, tenant ID**            | Missing the **application ID** (Client ID), which is required to identify the application.              |
-| **D. application ID, client secret, subscription ID** | Subscription ID is used for resource management, but **not required for authentication** with Azure AD. |
-
-
+| **D. application ID, client secret, subscription ID** | <mark>Subscription ID is used for resource management, but **not required for authentication** with Azure AD.</mark> |
 
 **Key point:**
 
-> To authenticate a service principal programmatically, an app needs **Application ID (Client ID)**, **Client Secret**, and **Tenant ID**.
+<mark>To authenticate a service principal programmatically, an app needs **Application ID (Client ID)**, **Client Secret**, and **Tenant ID**.</mark>
 
 ✅ **Answer: C. the application ID, a client secret, and the tenant ID**
 
 
-### Question-76 💩
+### Question-76 💩💩💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -27739,7 +27736,7 @@ Why the other options are incorrect
 ✅ **Answer: D**
 
 
-### Question-77
+### Question-77 💩💩
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -27934,7 +27931,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 💩💩💩
+###  Question-80 💩💩💩💩
 
 You have a project in Azure DevOps named Project1.
 
@@ -27991,12 +27988,12 @@ Why the other options are incorrect
 
 **Key point:**
 
-> For **unit and integration testing** of PowerShell DSC configurations in CI/CD, **Pester** is the standard framework.
+<mark>For **unit and integration testing** of PowerShell DSC configurations in CI/CD, **Pester** is the standard framework.</mark>
 
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-81
+### Question-81  💩💩💩
 
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
@@ -28059,7 +28056,7 @@ You have an agent pool named Pool1 that contains a Windows Server 2022-based sel
 
 Pipe 1 uses Pool1.
 
-You plan to implement another project named Project. 
+You plan to implement another project named Project2. 
 
 Project2 will have a build pipeline named Pipe2 that builds an application named App2.
 
@@ -28249,7 +28246,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-85 💩💩💩
+### Question-85 💩💩💩💩💩
 
 You use Azure Pipelines to build and test code projects.
 
