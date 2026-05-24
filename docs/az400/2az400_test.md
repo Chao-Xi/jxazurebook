@@ -19699,9 +19699,9 @@ You need to create the distribution groups shown in the following table.
 
 | Name | Use |
 | :--- | :--- |
-| **Group1** | Application testers who are invited by email |
-| **Group2** | Early release users who use unauthenticated public links |
-| **Group3** | Application testers for all the apps of your company |]
+| **Group1** | Application **testers who are invited by email** |
+| **Group2** | **Early release users who use unauthenticated public links** |
+| **Group3** | Application testers for **all the apps of your company** |]
 
 Which type of distribution group should you use for each group? 
 
@@ -19762,9 +19762,9 @@ Select and Place:
 
 💡 Key takeaway
 
-* **Private = controlled access (email-based)**
-* **Public = open link access**
-* **Shared = reusable across multiple apps**
+* <mark>**Private = controlled access (email-based)**</mark>
+* <mark>**Public = open link access**</mark>
+* <mark>**Shared = reusable across multiple apps**</mark>
 
 
 ### Question #4 💩💩💩
@@ -20252,7 +20252,9 @@ Your company plans to deploy an application to the following endpoints:
 
 ✑ Ten virtual machines hosted in Azure 
 
-✑ Ten virtual machines hosted in an on-premises data center environment All the virtual machines have the Azure Pipelines agent.
+✑ Ten virtual machines hosted in an on-premises data center environment 
+
+✑ All the virtual machines have the Azure Pipelines agent.
 
 You need to implement a release strategy for deploying the application to the endpoints.
 
@@ -20322,7 +20324,7 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Agent-based deployment targets 🚀
 
 
-### Question-11 💩💩💩
+### Question-11 💩💩💩💩💩
 
 
 You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20349,15 +20351,15 @@ In **Azure Artifacts**, best practice for handling *release vs pre-release* pack
 Proper design
 
 * Create two views:
- * <mark>`@prerelease` → for preview/unstable builds</mark>
- * <mark>`@release` → for stable production-ready builds</mark>
+  * <mark>`@prerelease` → for preview/unstable builds</mark>
+  * <mark>`@release` → for stable production-ready builds</mark>
 
 * Set `@release` as the **default view**
 * Use a **release pipeline** to **promote** packages from `@prerelease` → `@release` after validation/testing
 
 Why option D is correct
 
-> **D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing.**
+<mark>**D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing.**</mark>
 
 This matches Azure Artifacts' intended workflow:
 
@@ -20388,7 +20390,7 @@ This is the standard enterprise pattern for npm feeds in **Azure DevOps** with m
 ✅ **Final Answer: D**
 
 
-### Question #12
+### Question #12 💩💩💩
 
 
 You are defining release strategies for two applications as shown in the following table.
@@ -20430,27 +20432,26 @@ App2: [ ]
 🟦 **App1 → Canary deployment**
 
 * Requirement:
- * High impact if failure occurs
- * Test with a **small, opted-in group of users**
+  * High impact if failure occurs
+  * Test with a **small, opted-in group of users**
 * Canary deployment:
- * Releases to a **small subset of users first**
- * Gradually expands if no issues are found ✔ Perfect for minimizing risk
+  * Releases to a **small subset of users first**
+  * Gradually expands if no issues are found ✔ Perfect for minimizing risk
 
 🟦 **App2 → Blue/Green deployment**
 
 * Requirement:
- * **Fast deployment**
- * **Immediate rollback capability**
+  * **Fast deployment**
+  * **Immediate rollback capability**
 * Blue/Green:
- * Two identical environments (current + new)
- * Switch traffic instantly
- * Rollback = switch back
-    ✔ Best for speed and reliability
+  * Two identical environments (current + new)
+  * Switch traffic instantly
+  * Rollback = switch back ✔ Best for speed and reliability
 
 ❌ Why not Rolling deployment?
 
 * Updates instances gradually
-* **Slower rollback compared to Blue/Green**
+* <mark>**Slower rollback compared to Blue/Green**</mark>
 * Not ideal when **instant rollback** is required
 
 🎯 Final Answer
@@ -20464,7 +20465,7 @@ App2: [ ]
 * **Blue/Green → fast deploy + instant rollback** 🚀
 
 
-### Question-13 💩💩
+### Question-13 💩💩💩
 
 ```
 Name  Type
@@ -20691,7 +20692,7 @@ You plan to create a new branch from an existing pull request.
 
 You need to use a pull request action to create the new branch. 
 
-The solution must ensure that the branch uses only a portion of the code in the pull request
+<mark>**The solution must ensure that the branch uses only a portion of the code in the pull request**</mark>
 
 Which pull request action should you use?
 
@@ -20767,7 +20768,7 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #18
+### Question #18 💩💩
 
 You use Azure Pipelines to manage the build and deployment of apps.
 
@@ -21169,8 +21170,11 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 
 * A **Data-tier Application Package**
 * Contains:
+
   * Database schema (tables, views, stored procedures, etc.)
+
 * Used for:
+
   * **Deploying and updating database structure**
 
 ❌ Why the other options are incorrect
@@ -21194,7 +21198,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 * **BACPAC → backup/migration (data + schema)** 🚀
 
 
-### Question #24  💩💩💩
+### Question #24  💩💩💩 💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21437,7 +21441,7 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #27 💩💩💩
+### Question #27 💩💩💩💩💩
 
 You have an Azure virtual machine named VM1 that runs Linux.
 
@@ -21490,7 +21494,7 @@ You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) p
 
 **Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28
+### Question #28 💩💩💩
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21564,7 +21568,7 @@ To list Azure resources with details:
 > Use **Get-AzResource + -ResourceType + -ExpandProperties** 🚀
 
 
-### Question-29 💩💩💩
+### Question-29 💩💩
 
 You have a project in Azure DevOps. 
 
@@ -21692,7 +21696,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #31  💩💩💩
+### Question #31  💩💩💩💩💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -21873,7 +21877,7 @@ performanceCounters
 
 🎯 Final Query
 
-```kusto id="8f3l2x"
+```
 performanceCounters
 | where counter == "% Processor Time"
 | where timestamp >= ago(7d)
@@ -22121,7 +22125,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩 💩
+### Question #36  💩💩💩💩
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22216,14 +22220,14 @@ NOTE: Each correct selection is worth one point.
 * **Incremental mode = safe updates**
 * **Linked artifact = CI pipeline output** 🚀
 
-### Question #37 💩💩
+### Question #37 💩💩💩💩
 
 
 You have an Azure Pipeline.
 
 You need to store configuration values as variables.
 
-At which four scopes can the variables be defined, and what is the precedence of the variables from the highest precedence to lowest precedence? To answer, move the appropriate scope from the list of scopes to the answer area and arrange them in the correct order.
+At which four scopes can the variables be defined, and **<mark>what is the precedence of the variables from the highest precedence to lowest precedence? To answer, move the appropriate scope from the list of scopes to the answer area and arrange them in the correct order</mark>**.
 
 
 
@@ -22255,7 +22259,7 @@ Here are the four correct scopes for defining variables in Azure Pipelines, arra
 *(Note: **task** is the distractor. While you can map variables to task inputs or environments, you do not declare variable blocks at the task scope in Azure Pipelines.)*
 
 
-### Question #37
+### Question #38 💩💩
 
 You have a project in Azure DevOps named Project1 that contains **two environments named environment1 and environment2.**
 
@@ -22298,7 +22302,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #38 💩💩💩
+### Question #39 💩💩💩
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22376,7 +22380,7 @@ Here is the content extracted from the image, formatted as markdown:
 * **Patch → bug fixes only** 🚀
 
 
-### Question #39 💩💩💩
+### Question #40 💩💩💩💩
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -22410,7 +22414,9 @@ YYYY.MM.DD[-modifier]
   * `beta`
   * `alpha`
   * `rc`
-* Example:
+
+
+Example:
 
 ```
 2026.04.01-beta
@@ -22430,18 +22436,17 @@ YYYY.MM.DD[-modifier]
 
 In CalVer:
 
-> **Modifier = optional label (beta, alpha, rc)** 🚀
+<mark>**Modifier = optional label (beta, alpha, rc)** 🚀</mark>
 
 
-### Question #40  💩💩💩
+### Question #41  💩💩💩💩💩
 
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
 
-You need to identify which nodes are noncompliant.
+**You need to identify which nodes are noncompliant.**
 
-
-How should you complete the query? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+How should you complete the query?
 
 NOTE: Each correct selection is worth one point.
 
@@ -22515,7 +22520,7 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #41  💩💩💩
+### Question #42  💩💩💩
 
 You have a project in Azure DevOps that contains a release pipeline. 
 
@@ -22532,7 +22537,7 @@ NOTE: Each correct selection is worth one point.
 
 **Answer Area**
 
-QA: [Dropdown 1]
+**QA**: [Dropdown 1]
 
 **Dropdown 1 Options:**
 
@@ -22541,7 +22546,7 @@ QA: [Dropdown 1]
 * Configure an auto-redeploy trigger in the post-deployment conditions
 * Configure a post-deployment approval in the post-deployment conditions
 
-Prod: [Dropdown 2]
+**Prod**: [Dropdown 2]
 
 **Dropdown 2 Options:**
 
@@ -22565,13 +22570,14 @@ Prod: [Dropdown 2]
 
 * Requirement:
   * Detect **failed requests after deployment to webapp1**
+
 * Solution:
   * Configure **Application Insights alert rules**
   * These alerts will be evaluated before promoting to Prod
 
 ✔ So you must:
 
-> Add a task to configure alert rules in Application Insights
+**<mark>Add a task to configure alert rules in Application Insights</mark>**
 
 🟦 Prod stage
 
@@ -22583,7 +22589,7 @@ Prod: [Dropdown 2]
 
 ✔ So you must:
 
-> Configure a gate in the **pre-deployment conditions**
+<mark>Configure a gate in the **pre-deployment conditions**</mark>
 
 
 ❌ Why other options are incorrect
@@ -22605,7 +22611,7 @@ Prod: [Dropdown 2]
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #42 💩💩💩
+### Question #43 💩💩💩💩
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
