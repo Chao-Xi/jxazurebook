@@ -14763,7 +14763,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2
+### Question #2  💩💩💩
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -14809,19 +14809,20 @@ Why not the others?
 Key Point
 
 * **Queue delay = not enough parallel jobs**
-* **Solution = increase parallelism (buy more parallel jobs or add agents)**
 
-### Question #3 💩
+<mark>**Solution = increase parallelism (buy more parallel jobs or add agents)**</mark>
+
+### Question #3 💩💩
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
-✑ The build must access an on-premises dependency management system.
+✑ <mark>The build must access an on-premises dependency management system.</mark>
 
 ✑ The build outputs must be stored as Server artifacts in Azure DevOps.
 
 ✑ The source code must be stored in a Git repository in Azure DevOps.
 
-Solution: **Configure the build pipeline to use a Microsoft-hosted agent pool running a Linux image. Include the Java Tool Installer task in the build pipeline.**
+Solution: **Configure the build pipeline to use a <mark>Microsoft-hosted agent pool</mark> running a Linux image. Include the Java Tool Installer task in the build pipeline.**
 
 Does this meet the goal?
 
@@ -14850,7 +14851,10 @@ Why the solution does NOT meet the goal
 What would work instead
 
 * Use a **self-hosted agent** deployed within the on-premises network
+
 * This ensures:
+
+
   * Access to the on-prem dependency system ✅
   * Ability to push artifacts to Azure DevOps ✅
   * Integration with Azure Repos Git ✅
@@ -14908,7 +14912,7 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩💩💩
+### Question #5 💩💩💩💩💩
 
 DRAG DROP You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
@@ -14918,7 +14922,11 @@ DRAG DROP You are configuring Azure Pipelines for three projects in Azure DevOps
 | **Project2** | The sensitivity of the project requires that the source code be hosted on the managed Windows server on your company's network. |
 | **Project3** | <mark>The project team requires a centralized version control system to ensure that developers work with the most recent version.</mark> |
 
-Which version control system should you recommend for each project? To answer, drag the appropriate version control systems to the correct projects. Each version control system may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which version control system should you recommend for each project? 
+
+To answer, drag the appropriate version control systems to the correct projects. 
+
+Each version control system may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -14986,7 +14994,7 @@ Final Answer
 * **Project3:** Assembla Subversion
 
 
-### Question #6
+### Question #6 💩💩
 
 You need to recommend an integration strategy for the build process of a Java application. 
 
@@ -14998,7 +15006,7 @@ The solution must meet the following requirements:
 
 ✑ The source code must be stored in a Git repository in Azure DevOps.
 
-Solution: Configure an Octopus Tentacle on an on-premises machine. Use the Package Application task in the build pipeline.
+Solution: **Configure an Octopus Tentacle on an on-premises machine**. Use the Package Application task in the build pipeline.
 
 Does this meet the goal?
 
@@ -15031,7 +15039,9 @@ What is missing
 To meet the requirement, you need:
 
 * A **self-hosted Azure Pipelines agent** installed on-premises
+
 * This agent runs the build and can access:
+
   * On-prem dependency system ✅
   * Azure DevOps artifacts ✅
   * Azure Repos Git ✅
@@ -15103,8 +15113,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩
-
+### Question #8 💩💩💩💩💩
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15160,7 +15169,7 @@ Key Point
 
 ### Question #9  💩💩💩
 
-DRAG DROP Your company has four projects. The version control requirements for each project are shown in the following table.
+Your company has four projects. The version control requirements for each project are shown in the following table.
 
 | Project | Requirement |
 | :--- | :--- |
@@ -15217,12 +15226,8 @@ Explanation
 
 **Project 2**
 
-* Requirement:
-  * Minimum **2 reviewers**
-  * Must be linked to **work items**
-* ✅ **Git** supports **branch policies**:
-  * Required reviewers
-  * Work item linking
+* Requirement:  Minimum **2 reviewers** / Must be linked to **work items**
+* ✅ **Git** supports **branch policies**: Required reviewers /Work item linking
 
 
 **Project 3**
@@ -15341,7 +15346,7 @@ Under **build_vm**, there is a single job named something like:
 
 ### Question #11 💩
 
-DRAG DROP You are configuring Azure DevOps build pipelines.
+You are configuring Azure DevOps build pipelines.
 
 You plan to use hosted build agents.
 
@@ -15349,7 +15354,7 @@ Which build agent pool should you use to compile each application type?
 
 To answer, drag the appropriate build agent pools to the correct application types. 
 
-**Each build agent pool may be used once, more than once, or not at all. **
+**Each build agent pool may be used once, more than once, or not at all.**
 
 You may need to drag the split bar between panes or scroll to view content.
 
@@ -15361,6 +15366,7 @@ Select and Place
 Based on the image provided, here is the extracted text content:
 
 **Build Agent Pools**
+
 *   Hosted Windows Container
 *   Hosted Linux
 *   Hosted macOS
@@ -15378,10 +15384,11 @@ Based on the image provided, here is the extracted text content:
 * **An Internet Information Services (IIS) web application that runs in Docker:** **Hosted Windows Container**
 
 
-### Question #12
+### Question #12 💩💩
 
+Your company has a project in Azure DevOps for a new application. 
 
-Your company has a project in Azure DevOps for a new application. The application will be deployed to several Azure virtual machines that run Windows Server 2019.
+The application will be deployed to several Azure virtual machines that run Windows Server 2019.
 
 You need to recommend a deployment strategy for the virtual machines. 
 
@@ -15432,9 +15439,9 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩
+### Question #13 💩💩💩
 
-DRAG DROP Your company has two virtual machines that run Linux in a third-party public cloud.
+Your company has two virtual machines that run Linux in a third-party public cloud.
 
 You plan to use the company's Azure Automation State Configuration implementation to manage the two virtual machines and detect configuration drift.
 
@@ -15459,6 +15466,13 @@ Based on the image provided, here is the extracted text content:
 
 -----
 
+✅ Final Answer (in order):
+
+1. Create a DSC metaconfiguration
+2. Copy the metaconfiguration to the virtual machines
+3. From the virtual machines, run `setdsclocalconfigurationmanager.py`
+
+----
 
 To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after installing DSC and running `register.py`, you must configure and apply the Local Configuration Manager (LCM).
 
@@ -15478,19 +15492,14 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Add the virtual machines as DSC nodes in Azure Automation** → Happens automatically after registration.
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
-✅ Final Answer (in order):
 
-1. Create a DSC metaconfiguration
-2. Copy the metaconfiguration to the virtual machines
-3. From the virtual machines, run `setdsclocalconfigurationmanager.py`
+### Question #14 💩💩💩
 
+You are creating a container for an **ASP.NET Core app.**
 
+You need to create a Dockerfile file to build the image. 
 
-### Question #14
-
-DRAG DROP You are creating a container for an ASP.NET Core app.
-
-You need to create a Dockerfile file to build the image. The solution must ensure that the size of the image is minimized.
+The solution must ensure that the size of the image is minimized.
 
 How should you configure the file? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -15567,7 +15576,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15
+### Question #15  💩💩💩💩
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -15577,7 +15586,10 @@ You need to ensure that pull requests in a branch meet the following criteria be
 
 ✑ Pull requests must have a Quality Gate status of Passed in SonarCloud.
 
-Which policy type should you configure for each requirement? To answer, drag the appropriate policy types to the correct requirements. Each policy type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content. NOTE: Each correct selection is worth one point.
+Which policy type should you configure for each requirement? 
+
+
+To answer, drag the appropriate policy types to the correct requirements. Each policy type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content. NOTE: Each correct selection is worth one point.
 
 Select and Place:
 
@@ -15603,11 +15615,9 @@ To enforce requirements on **pull requests in Azure Repos**, you use **branch po
 ✅ Mapping:
 
 * **Committed code must compile successfully:** **A build policy**
-
   * A build validation policy runs a pipeline to ensure the code builds successfully before merging.
 
 * **Pull requests must have a Quality Gate status of Passed in SonarCloud:** **A status policy**
-
   * SonarCloud reports its Quality Gate result as a **status check**, which is enforced using a status policy.
 
 ❌ Why not check-in policy?
@@ -15635,14 +15645,15 @@ The build outputs must be stored as Server artifacts in Azure DevOps.
 
 The source code must be stored in a Git repository in Azure DevOps.
 
-**Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool.**
-
-Include the Java Tool Installer task in the build pipeline.
+**Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool.** Include the Java Tool Installer task in the build pipeline.
 
 Does this meet the goal?
 
 * A. Yes
 * B. No
+
+--------------
+
 
 **Correct answer: B. No** ❌
 
@@ -15663,9 +15674,7 @@ Developers work on new features in the topic branches.
 
 You need to enforce a pull request merge strategy. The strategy must meet the following requirements:
 
-**Consolidate commit histories.**
-
-Merge the changes into a single commit.
+**Consolidate commit histories.** Merge the changes into a single commit.
 
 Which merge strategy should you use in the branch policy?
 
@@ -15709,7 +15718,7 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-18
+### Question-18  💩💩💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15747,7 +15756,7 @@ Final Answer:
 **C. JaCoCo** 🟢
 
 
-### Question-19💩
+### Question-19 💩💩💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15784,9 +15793,9 @@ Final Answer:
 **A. Cobertura** 🟢
 
 
-### Question #20
+### Question #20 💩💩
 
-HOTSPOT You are designing YAML-based Azure pipelines for the apps shown in the following table.
+You are designing YAML-based Azure pipelines for the apps shown in the following table.
 
 Based on the image provided, here is the extracted content and the correct solution for configuring the YAML pipeline strategies.
 
@@ -15835,7 +15844,7 @@ To minimize downtime and match each release requirement:
 * **App1:** rolling
 * **App2:** canary
 
-### Question #21
+### Question #21 💩💩💩
 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
@@ -15860,9 +15869,10 @@ The goal is to **reduce the history volume in the master branch**.
 🔍 Analysis:
 
 * **Fast-forward merge**:
-  * Does **not create a merge commit**
-  * Keeps history **linear and compact**
-  * Reduces unnecessary commits → **less history clutter**
+
+ * Does **not create a merge commit**
+ * Keeps history **linear and compact**
+ * Reduces unnecessary commits → **less history clutter**
 
 This directly satisfies the requirement.
 
@@ -15875,11 +15885,11 @@ This directly satisfies the requirement.
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
-You use a Git repository for applications source control.
+You use a <mark>**Git repository for applications source control**</mark>.
 
 **You need to implement a pull request strategy that reduces the history volume in the master branch**.
 
-Solution: You implement a pull request strategy that uses squash merges.
+<mark>**Solution: You implement a pull request strategy that uses squash merges.**</mark>
 
 Does this meet the goal?
 
@@ -16117,7 +16127,7 @@ The solution must meet the following requirements:
 
 ✑ Containers must only be published internally.
 
- .
+✑  AKS clusters must be able to create and manage containers in Azure
 
 What should you use for each requirement? To answer, select the appropriate options in the answer area.
 
@@ -16163,12 +16173,12 @@ Final selections:
 * **AKS access to Azure:** Azure service principal
 
 
-### Question #29
+### Question #29 💩💩💩
 
 
 You have 50 Node.js-based projects that you scan by using WhiteSource.
 
-Each project includes Package.json, Package-lock.json, and Npmshrinkwrap.json files.
+**Each project includes Package.json, Package-lock.json, and Npmshrinkwrap.json files.**
 
 **You need to minimize the number of libraries reports by WhiteSource to only the libraries that you explicitly reference.**
 
@@ -16217,9 +16227,11 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩
+### Question #29 💩💩💩
 
-Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. You plan to use Azure DevOps to control the build process on the build server by using a self-hosted agent. You need to implement the self-hosted agent.
+Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
+
+You plan to use Azure DevOps to control the build process on the build server by using a self-hosted agent. You need to implement the self-hosted agent.
 
 You download and install the agent on the build server.
 
@@ -16234,7 +16246,6 @@ C. From the build server, create a certificate, and then upload the certificate 
 D. From DevOps, create a personal access token (PAT).
 
 E. From the build server, run config.cmd.
-
 
 
 ---------
@@ -16265,10 +16276,9 @@ Required steps:
 
 * Run `config.cmd` (Windows) or `config.sh` (Linux/macOS)
 * This script:
-
-  * Connects the agent to your Azure DevOps organization
-  * Uses the PAT for authentication
-  * Registers the agent into an agent pool
+	* Connects the agent to your Azure DevOps organization
+    * Uses the PAT for authentication
+    * Registers the agent into an agent pool
 
 ✔ This corresponds to **option E**
 
@@ -16315,35 +16325,31 @@ Correct answers:
 - **A. the tenant ID**
 - **C. the client secret**
 - **D. the app ID**
+
 Explanation:
 
 When an Azure Pipelines task authenticates using an **Azure AD service principal**, it requires the standard service principal credentials:
 
 1. Tenant ID (A)
-
-* Identifies the Azure AD directory where the service principal exists
-* Required to scope authentication
+   * Identifies the Azure AD directory where the service principal exists
+   * Required to scope authentication
 
 2. App ID (D)
-
-* Also called **Client ID**
-* Identifies the service principal (application registration)
+   * Also called **Client ID**
+   * Identifies the service principal (application registration)
 
 3. Client Secret (C)
-
-* Password-like credential for the service principal
-* Used to prove identity securely
+   * Password-like credential for the service principal
+   * Used to prove identity securely
 
 Why the others are incorrect:
 
 * **B. Subscription ID**
-
-  * Used for targeting Azure resources, but not part of authentication itself
+   * Used for targeting Azure resources, but not part of authentication itself
 
 * **E. Object ID**
-
-  * Internal Azure AD identifier for directory objects
-  * Not used for authentication in pipelines
+    * Internal Azure AD identifier for directory objects
+    * Not used for authentication in pipelines
 
 Final Answer:
 
