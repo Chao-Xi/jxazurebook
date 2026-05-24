@@ -16356,7 +16356,7 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #31 💩
+### Question #31 💩💩💩
 
 You are deploying a new application that uses Azure virtual machines.
 
@@ -16461,7 +16461,7 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #33 💩
+### Question #33 💩💩💩
 
 You are creating a build pipeline in Azure Pipelines.
 
@@ -16485,7 +16485,7 @@ Explanation:
 
 You have tests that may **fail intermittently due to third-party dependencies** (not actual code issues). You want the pipeline to:
 
-> ✅ Still succeed even if those tests fail occasionally
+**<mark>✅ Still succeed even if those tests fail occasionally</mark>**
 
 ---
 
@@ -16527,7 +16527,7 @@ RG1 contains the following resources:
 
 ✑ An Azure Load Balancer.
 
-You need to deploy an application to the virtual machines in RG1 by using Azure Pipelines.
+**You need to deploy an application to the virtual machines in RG1 by using Azure Pipelines.**å
 
 Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -16584,7 +16584,7 @@ C. win1803
 
 D. macOS-10.13
 
-E. vs.2015-win2012r2
+E. vs2015-win2012r2
 
 
 -----
@@ -16635,7 +16635,7 @@ Final Answer:
 
 ### Question #36
 
-HOTSPOT You currently use JIRA, Jenkins, and Octopus as part of your DevOps processes.
+You currently use JIRA, Jenkins, and Octopus as part of your DevOps processes.
 
 You plan to use Azure DevOps to replace these tools.
 
@@ -16689,7 +16689,7 @@ Final Answer:
 | Octopus | Release pipelines    |
 
 
-### Question #37
+### Question #37 💩💩💩
 
 Your company develops a client banking application that processes a large volume of data.
 
@@ -16724,9 +16724,11 @@ Why the **build phase** is correct:
 * Integrated into **CI (Continuous Integration) pipelines**
 * Runs automatically on every commit/build
 * Detects:
-  * Code smells
-  * Security vulnerabilities
-  * Style and quality issues
+
+ * Code smells
+ * Security vulnerabilities
+ * Style and quality issues
+   
 * Prevents poor-quality code from progressing further
 
  Why others are incorrect:
@@ -16778,23 +16780,27 @@ Explanation:
 
 1. Create Azure Artifacts feed with upstream sources
 
-* This allows your feed to **aggregate packages from multiple public feeds**
-* Acts as a **single consolidated source**
+> This allows your feed to **aggregate packages from multiple public feeds**
+>
+> Acts as a **single consolidated source**
 
 2. Run an initial package restore
 
-* Downloads packages from upstream sources into your feed
-* Caches them for reliability and future use
+> Downloads packages from upstream sources into your feed
+>
+> Caches them for reliability and future use
 
 3. Modify configuration files
 
-* Update `nuget.config`, `.npmrc`, etc.
-* Ensures builds use the **new consolidated feed only**
+> Update `nuget.config`, `.npmrc`, etc.
+>
+> Ensures builds use the **new consolidated feed only**
 
 Why others are incorrect:
 
-* Creating Visual Studio project → not required
-* Creating NuGet/npm package → unrelated to consolidation
+> Creating Visual Studio project → not required
+>
+> Creating NuGet/npm package → unrelated to consolidation
 
 Final Answer:
 
@@ -16888,19 +16894,24 @@ Explanation:
 To manage VM configuration consistency using **Azure Automation State Configuration (DSC)**:
 
 1. Upload configuration
-  * Import your PowerShell DSC configuration into Azure Automation
+
+	> Import your PowerShell DSC configuration into Azure Automation
 
 2. Compile configuration
-  * Converts configuration into **node-specific MOF files**
+
+	> Converts configuration into **node-specific MOF files**
 
 3. Onboard VMs
-	* Registers VMs as **DSC nodes**
 
-4. Assign node configuration
-	* Applies the desired state to the VMs
+	> Registers VMs as **DSC nodes**
 
-5. Check compliance
-  * Monitor whether nodes match the desired configuration
+5. Assign node configuration
+
+	> Applies the desired state to the VMs
+
+6. Check compliance
+
+	> Monitor whether nodes match the desired configuration
 
 Why others are incorrect:
 
@@ -16973,11 +16984,11 @@ You use Azure Pipelines to build and test a React.js application.
 
 You have a pipeline that has a single job.
 
-You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.
+**You discover that installing JavaScript packages from npm takes approximately five minutes each time you run the pipeline.**
 
 You need to recommend a solution to reduce the pipeline execution time.
 
-Solution: You recommend defining a container job that uses a custom container that has the JavaScript packages preinstalled.
+**<mark>Solution: You recommend defining a container job that uses a custom container that has the JavaScript packages preinstalled.</mark>**
 
 Does this meet the goal?
 
@@ -17077,7 +17088,7 @@ The proposed solution does NOT meet the goal.
 
 
 
-### Question #44
+### Question #44 💩💩
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -17170,7 +17181,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46
+### Question #46 💩💩
 
 You are building an application that has the following assets:
 
@@ -17304,7 +17315,7 @@ Final Answer:
 ✅ **B. views**
 
 
-### Question #48
+### Question #48 -  Duplicated question
 
 You have a project in Azure DevOps named Project1. 
 
@@ -17378,14 +17389,13 @@ Final Answer:
 
 
 
-### Question #49  💩💩💩
+### Question #49  💩💩💩💩💩
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
 You plan to migrate to Azure DevOps.
 
 You need to recommend a migration strategy that meets the following requirements: 
-
 
 ✑ Preserves the dates of Team Foundation Version Control changesets 
 
