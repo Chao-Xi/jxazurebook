@@ -17455,7 +17455,7 @@ To meet the requirements (preserve changeset and work item revision dates, migra
 * API-based tools → Do not preserve full historical metadata (dates).
 * TFS Integration Platform → Deprecated and does not meet full fidelity requirements.
 
-### Question #50 
+### Question #50 💩💩
 
 You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy1. 
 
@@ -17510,10 +17510,10 @@ These checks validate whether the deployment will violate Azure Policy **before 
 
 💡 Key takeaway
 
-To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.
+<mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51
+### Question #51 💩💩💩
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17526,6 +17526,7 @@ You need to perform the following:
 How should you configure the DSC configuration file? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
+
 
 Hot Area:
 
@@ -17546,6 +17547,21 @@ Node 'localhost' {
 }
 }
 ```
+
+**Drop-down 1**
+
+- Service
+- WindowsFeature
+- WindowsOptionalFeature
+- WindowsProcess
+
+**Drop-down 2**
+
+- Archive
+- File
+- Package
+- Script
+
 
 -----
 
@@ -17605,17 +17621,17 @@ Node 'localhost' {
 
 🚀 Key takeaway
 
-* **WindowsFeature → installs roles/features (like IIS)**
-* **File → manages file content (like default web page)**
+* <mark>**WindowsFeature → installs roles/features (like IIS)**<mark>
+* <mark>**File → manages file content (like default web page)**<mark>
 
 
 ### Question #52 💩💩
 
-You are creating a YAML-based Azure pipeline to deploy an Azure Data Factory instance that has the following requirements: 
+You are creating a YAML-based Azure** pipeline to deploy an Azure Data Factory** instance that has the following requirements: 
 
-✑ If a Data Factory instance exists already, the instance must be overwritten.
+✑ If a Data Factory instance exists already, **the instance must be overwritten**.
 
-✑ No other resources in a resource group named Fabrikam must be affected.
+✑ No other resources in a resource group **named Fabrikam must be affected**.
 
 How should you complete the code? To answer, select the appropriate options in the answer area.
 
@@ -17675,6 +17691,7 @@ steps:
 * This action is used for **ARM template deployments targeting a resource group**
 * It ensures the deployment applies to the specified resource group (**Fabrikam**) without affecting others
 * Other options are invalid because:
+
   * **Select Resource Group** → not a valid ARM deployment action
   * **Start** → not used in ARM template tasks
 
@@ -17683,15 +17700,15 @@ steps:
 * Required to ensure:
   * Existing Data Factory is **updated (overwritten if needed)**
   * **No other resources in the resource group are deleted or modified**
-* Incremental mode:
-  * Adds/updates resources in template
-  * Does NOT remove extra resources
+* **Incremental mode**:
+  * **Adds/updates resources in template**
+  * **Does NOT remove extra resources**
 
 ❌ Why not Complete?
 
 * Complete mode **deletes resources not defined in the template**, which violates:
 
-  > “No other resources in the resource group must be affected”
+<mark>“No other resources in the resource group must be affected”</mark>
 
 ❌ Why not Validation Only?
 
@@ -17790,7 +17807,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55
+### Question #55 💩💩💩
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -17971,19 +17988,20 @@ Your pipeline runs **multiple jobs (10 architectures)** and takes a long time (~
 Why others are incorrect:
 
 * **A. Blue/green deployment**
-  * Related to release strategy, not build performance
+
+> Related to release strategy, not build performance
 
 * **B. Deployment group**
-  * Used for deployments to VMs, not build acceleration
+
+> Used for deployments to VMs, not build acceleration
 
 * **D. Reduce repository size**
-  * May slightly improve checkout time, but **not significant** for a 1-day build across architectures
+
+>May slightly improve checkout time, but **not significant** for a 1-day build across architectures
 
 Final Answer:
 
 ✅ **C and E**
-
-
 
 
 ### Question-58 💩💩
@@ -18028,7 +18046,7 @@ So, the **Contributor** role provides just enough permissions for the project ma
 **D. Contributor**
 
 
-### Question-59
+### Question-59 💩💩💩
 
 You use a Git repository in Azure Repos to manage the source code of a web application. 
 
@@ -18095,7 +18113,7 @@ Solution: **You implement a pull request strategy that uses an explicit merge**.
 Does this meet the goal?
 
 * A. Yes
-* B. No**
+* B. No
 
 
 ----
@@ -18106,8 +18124,7 @@ Explanation
 
 The goal:
 
-* **Reduce history volume in the master branch**
-  → Keep the master branch history **clean and concise**
+* <mark>**Reduce history volume in the master branch** → Keep the master branch history **clean and concise**</mark>
 
 **Explicit merge** (a regular merge commit) **does not reduce commit history**:
 
@@ -18210,7 +18227,7 @@ The goal:
 To meet the goal:
 
 1. Go to the **Triggers** tab of the pipeline
-2. **Enable Continuous Integration (CI)** by checking **“Enable continuous integration”** or selecting the branches to trigger on
+2. <mark>**Enable Continuous Integration (CI)** by checking **“Enable continuous integration”** or selecting the branches to trigger on</mark>
 3. Optionally, **batch changes** can be used to combine multiple pushes into a single build, but this **alone does not enable CI**
 
  ✅ Final Answer:
@@ -18367,11 +18384,11 @@ Key principle
 
 Final Answer
 
-**D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack**
+<mark>**D. Azure DevOps self-hosted agents on virtual machines that run on Azure Stack**</mark>
 
 
 
-### Question-66
+### Question-66  💩💩💩
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18386,6 +18403,8 @@ What should you recommend?
 * B. the number of unit test failures
 * C. the percentage of unit test failures
 * D. the percentage of overall time spent on rework
+
+----------
 
 **Correct answer: D. the percentage of overall time spent on rework** ✅
 
@@ -18655,7 +18674,7 @@ Final Answer
 
 
 
-### Question-71
+### Question-71 💩
 
 Your company has a project in Azure DevOps for a new web application You need to ensure that when code is checked in, a build runs automatically.
 
@@ -18695,7 +18714,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-72 💩💩
+### Question-72 💩💩💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -19067,7 +19086,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-80 💩💩
+### Question-80 💩💩💩💩
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1 to an Azure container registry named ACR1. 
@@ -19104,7 +19123,7 @@ Azure Container Registry (ACR) Tasks include a feature specifically designed for
 *   **B. Docker Hub service connection:** This allows Azure Pipelines to *access* Docker Hub, but it does not provide an automated "watch" mechanism to trigger a rebuild when a third-party image changes.
 *   **D. Service hook:** Service hooks in Azure DevOps are used to integrate with external services (like sending a message to Slack when a build fails). They are not designed to monitor external container registries for image updates.
 
-### Question- 81
+### Question- 81 💩💩💩
 
 You have an Azure DevOps project.
 
@@ -19251,7 +19270,7 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-84 💩💩💩💩
+### Question-84 💩💩💩💩 - Duplicated
 
 You have a project in Azure DevOps named Project. 
 
