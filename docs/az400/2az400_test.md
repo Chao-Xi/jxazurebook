@@ -9161,9 +9161,9 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2
+### Question #2  💩💩
 
-DRAG DROP You are developing a full Microsoft .NET Framework solution that includes unit tests.
+You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
 You need to configure SonarQube to perform a code quality validation of the C# code as part of the build pipelines.
 
@@ -9197,25 +9197,30 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 **Explanation:**
 
 1.  **Prepare Analysis Configuration:**
-   	* This is the mandatory first step.
-    * It initializes the SonarQube scanner, connects it to your SonarQube server (or SonarCloud), and provides the project key and authentication token.
-    * For .NET projects, this step must occur **before** the build task.
+
+  * This is the mandatory first step.
+  * It initializes the SonarQube scanner, connects it to your SonarQube server (or SonarCloud), and provides the project key and authentication token.
+  * For .NET projects, this step must occur **before** the build task.
+
 2.  **Visual Studio Build:**
-     * SonarQube's scanner for .NET works by "hooking" into the MSBuild process.
-     * As the code is compiled, the scanner analyzes the source files and identifies code smells, bugs, and vulnerabilities.
+  
+  * SonarQube's scanner for .NET works by "hooking" into the MSBuild process.
+  * As the code is compiled, the scanner analyzes the source files and identifies code smells, bugs, and vulnerabilities.
+
 3.  **Visual Studio Test:**
-   * To include **code coverage** metrics in your SonarQube report, you must run your unit tests after the build.
-   * The scanner will pick up the test execution results and coverage files generated during this step.
+  
+  * To include **code coverage** metrics in your SonarQube report, you must run your unit tests after the build.
+  * The scanner will pick up the test execution results and coverage files generated during this step.
 
 4. **Run Code Analysis:**
-	* This final SonarQube task completes the analysis process.
-    * It aggregates all the data from the build and test steps, generates the final report, and uploads it to the SonarQube server for viewing.
+  
+  * This final SonarQube task completes the analysis process.
+  * It aggregates all the data from the build and test steps, generates the final report, and uploads it to the SonarQube server for viewing.
 
 
 
 ### Question #3 💩💩💩
 
-DRAG DROP 
 
 You need to and and isolate shared code. 
 
@@ -9241,10 +9246,14 @@ Answer Area
 Based on the scenario of identifying and isolating shared code to be maintained in packages, the correct logical sequence is:
 
 1. **Create a dependency graph for the application.**
-   * (You need to visualize the relationships and dependencies between components to identify what code is shared.)
+  
+  * (You need to visualize the relationships and dependencies between components to identify what code is shared.)
+
 2.  **Group the related components.**
-  	* (Once you see the dependencies, you can identify clusters of related code that should be grouped into logical packages.)
-4.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
+  
+  * (Once you see the dependencies, you can identify clusters of related code that should be grouped into logical packages.)
+
+3.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
 
 **Answer Area:**
 
@@ -9254,8 +9263,6 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 
 
 ### Question #4
-
-DRAG DROP 
 
 You are creating a NuGet package.
 
@@ -9285,15 +9292,19 @@ To **create, share, and test a private NuGet package** with your development tea
 **Answer Area (in order):**
 
 1. **Create a new Azure Artifacts feed** ✅
+  
   * Set up a private feed to host the NuGet package.
 
 2. **Connect to an Azure Artifacts feed** ✅
+  
   * Configure your development environment or project to use the feed.
 
 3. **Publish a package** ✅
+  
   * Upload the NuGet package to the private feed.
 
 4. **Install a package** ✅
+  
   * Consume the package in a project to verify it works correctly.
 
 **Notes:**
@@ -9354,7 +9365,7 @@ To meet the requirements for **automating code review assignments** in GitHub:
 * The "Clear Never assign" and notification options do not affect workload distribution.
 
 
-### Question-6
+### Question-6  💩💩💩
 
 You are designing the development process for your company.
 
@@ -9511,16 +9522,6 @@ Answer: BC
 - B: With SonarQube pre-approval, you can set quality gate.
 - C: You can manage technical debt with SonarQube and Azure DevOps.
 
-Note: Technical debt is the set of problems in a development effort that make forward progress on customer value inefficient. 
-
-Technical debt saps productivity by making code hard to understand, fragile, time-consuming to change, difficult to validate, and creates unplanned work that blocks progress. Unless they are managed, technical debt can accumulate and hurt the overall quality of the software and the productivity of the development team in the long term
-
-SonarQube an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to:
-
-- Detect Bugs
-- Code Smells
-- Security Vulnerabilities
-- Centralize Quality
 
 ### Question-8
 
@@ -9728,7 +9729,7 @@ Why the other options are incorrect:
 
 ❌ **C. Xcode build task**.  → Xcode is for iOS/macOS development, not Java
 
-❌ **D. Gradle – Run Checkstyle**. → Checkstyle focuses mainly on **formatting and coding standards**, not semantic issues like unused variables or empty catch blocks
+❌ <mark>**D. Gradle – Run Checkstyle**. → Checkstyle focuses mainly on **formatting and coding standards**, not semantic issues like unused variables or empty catch blocks</mark>
 
 Tool comparison:
 
@@ -9744,7 +9745,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 💩💩💩
+### Question-12 💩💩💩💩💩
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
@@ -9810,7 +9811,7 @@ Final Answer:
 **A, B, and E** ✅
 
 
-### Question-13
+### Question-13 💩💩💩
 
 You have a GitHub repository.
 
@@ -9820,11 +9821,11 @@ You need to recommend a procedure to clone the repository from GitHub to Azure D
 
 What should you recommend?
 
-* • A. Create a pull request.
-* • B. Create a webhook.
-* • C. Create a service connection for GitHub
-* • D. From Import a Git repository, click Import.
-* • E. Create a personal access token in Azure DevOps.
+* A. Create a pull request.
+* B. Create a webhook.
+* C. Create a service connection for GitHub
+* D. From Import a Git repository, click Import.
+* E. Create a personal access token in Azure DevOps.
 
 --------
 
@@ -9901,7 +9902,7 @@ To reduce technical debt, you would instead recommend things like:
 So the proposed solution **does not meet the goal**.
 
 
-### Question-15
+### Question-15 💩💩💩
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -9993,7 +9994,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 ？？
+### Question-18 💩💩💩
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -10068,13 +10069,13 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩
+### Question-20  💩💩💩💩💩
 
 You have an Azure Automation account that contains a runbook. 
 
 The runbook is used to configure the application infrastructure of an Azure subscription.
 
-You have a project in Azure DevOps named Project. Project contains a repository that stores code for the runbook.
+<mark>You have a project in Azure DevOps named Project. Project contains a repository that stores code for the runbook.</mark>
 
 **You need to ensure that every committed change to the code will update automatically and publish the runbook to Azure Automation**.
 
@@ -10105,6 +10106,7 @@ When you configure **Source control settings** in the Automation account:
 
 * It links the Automation account to an Azure DevOps repository.
 * It can automatically:
+
   * **Sync runbooks**
   * **Update runbooks when changes are committed**
   * **Publish runbooks automatically**
@@ -10130,7 +10132,7 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question #21. 💩
+### Question #21. 💩💩💩💩💩
 
 You use Git for source control.
 
@@ -10183,9 +10185,7 @@ To fix this, you must ensure the code scanning workflow runs for the relevant br
 * **E**: Not necessary; you only need to adjust the existing workflow triggers.
 
 
-### Question #22
-
-DRAG DROP -
+### Question #22 💩💩💩
 
 You have a GitHub repository named repo1 that stores the code of an app named App1.
 
@@ -10230,10 +10230,9 @@ on:
       - 'src/**'
     paths-ignore:
       - '**/*.md'
-```
+``` 
 
-### Question #23
-
+### Question #23 
 
 You have the repositories shown in the following table.
 
@@ -10282,11 +10281,11 @@ To migrate a repository from GitHub to Azure Repos while preserving all branches
 3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration.
   * It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
 
-### Question #24
+### Question #24 💩💩💩💩
 
 You have a GitHub repository that contains the code for an app named App1.
 
-App1 depends on a library of functions from a repository at https://github.com/contoso/afeed.
+**App1 depends on a library of functions from a repository at https://github.com/contoso/afeed.**
 
 **You need to keep a clone of the afeed repository as a subdirectory of the App1 repository.**
 
@@ -10330,8 +10329,6 @@ This ensures the dependency is tracked and versioned correctly within your main 
 
 
 ### Question #25 💩💩💩
-
-HOTSPOT -
 
 You use Git for source control.
 
@@ -10439,9 +10436,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 
 **Note:** "Save the SSH key to the root of repo1" is incorrect and a severe security risk. You should never store your private or public keys inside a source code repository. "Add the SSH private key" is also incorrect; the private key is never uploaded to Azure DevOps.
 
-### Question #27
-
-DRAG DROP -
+### Question #27 💩💩💩
 
 You use Git for source control.
 
@@ -10607,7 +10602,7 @@ You have an Azure Repos repository named repo1.
 
 You need to clone repo1. 
 
-The solution must clone only a directory named src/web.
+**The solution must clone only a directory named src/web.**
 
 How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -10661,10 +10656,10 @@ git sparse-checkout set **[ src/web ]**
 
 1.  **`scalar clone [URL]`**: Scalar is a Microsoft-developed tool for managing massive Git repositories. When you run `scalar clone`, it creates a folder named after the repository and initializes a "src" subdirectory inside it which contains the actual Git working files.
 2.  **`cd repo1/src`**: To execute standard Git commands (like `sparse-checkout`), you must be inside the directory that contains the `.git` folder. In a Scalar layout for a repository named `repo1`, this is `repo1/src`.
-3.  **`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
+3.  <mark>**`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders</mark>. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
 
 
-### Question #31
+### Question #31 💩💩💩💩
 
 You use GitHub for source control and Microsoft Teams for collaboration.
 
@@ -10706,9 +10701,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #32
-
-DRAG DROP -
+### Question #32 💩💩💩
 
 You have a GitHub repository named repo1.
 
@@ -10791,7 +10784,7 @@ You have an Azure Repos repository named repo1.
 
 You delete a branch named features/feature11.
 
-**You need to recover the deleted branch.**
+<mark>**You need to recover the deleted branch.**</mark>
 
 Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
 
@@ -10849,13 +10842,13 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩💩
+### Question #34 💩💩💩💩💩
 
 You have an Azure Repos repository that contains large PSD files.
 
 **You need to configure Git LFS to manage all the files.**
 
-How should you complete the script? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+How should you complete the script? 
 
 NOTE: Each correct selection is worth one point.
 
@@ -11017,7 +11010,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37
+### Question #37  💩💩💩
 
 DRAG DROP -
 
@@ -11081,7 +11074,7 @@ Similar to the work item requirement, this is a native feature in Azure DevOps b
 
 
 
-### Question #38  💩
+### Question #38  💩💩💩
 
 You manage projects by using Azure Boards. You manage project code by using GitHub.
 
@@ -11137,7 +11130,7 @@ Key Point
 * Use **`#AB<ID>`** in PRs/commits OR
 * Link manually via the **Development section** in Azure Boards
 
-### Question #39
+### Question #39  💩💩💩
 
 DRAG DROP -
 
