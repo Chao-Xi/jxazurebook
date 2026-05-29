@@ -5188,7 +5188,7 @@ To entirely remove unwanted files from a repository's history you can use either
 
 ## Topic 4 - Question Set 4
 
-### Question #1 💩
+### Question #1 💩💩💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -5221,7 +5221,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩
+### Question #2 💩💩💩
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5258,6 +5258,7 @@ The **Azure Key Vault task** in **Azure Pipelines**:
   * pipeline YAML
   * scripts
   * source control
+
 * Supports **secret masking in logs**.
 * Uses **service connections and managed authentication**.
 
@@ -5328,7 +5329,7 @@ Why the other option is incorrect
 ✅ **Final Answer: B. Get only**
 
 
-### Question #4
+### Question #4 💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -5378,7 +5379,7 @@ Although **Azure role-based access control** can control resource permissions, *
 * Enable key vaults for template deployment → **A Key Vault advanced access policy**
 * Restrict access to the secrets → **A Key Vault access policy**
 
-### Question #5
+### Question #5 💩💩
 
 
 You need to configure access to Azure DevOps agent pools to meet the following requirements:
@@ -5783,7 +5784,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩💩💩💩
+### Question-13 💩💩💩💩💩
 
 DRAG DROP 
 
@@ -5927,7 +5928,7 @@ Why other options are incorrect:
 *   **C (Modify devDependencies):** The prompt states the libraries are already identified as development-only. Modifying the `package.json` file to move them wouldn't change the scanner's behavior unless you also performed the production-only install and targeted scan.
 
 
-### Question #16
+### Question #16 💩💩
 
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
@@ -6045,7 +6046,7 @@ The **Append** effect is used to add fields to a resource during creation or upd
 *   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
 *   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
 
-### Question #18  💩
+### Question #18  💩💩💩
 
 **You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication**. What should you do first?
 
@@ -6112,7 +6113,7 @@ Why the other options are incorrect:
 *   **C. Deployment trigger:** Triggers (like "Continuous Deployment" or "Scheduled") determine *when* a release starts, but they do not perform security or compliance checks.
 *   **D. Pipeline variable:** Variables simply store data (like connection strings or environment names); they do not have the logic to enforce compliance rules.
 
-### Question #20 💩
+### Question #20 💩💩💩
 
 DRAG DROP You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
 
@@ -6240,8 +6241,7 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
 *   **Statement 2 (Yes):** No specific permissions were modified for the **DB Team**. Therefore, they use the **default values**. In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #23 💩💩💩
-
+### Question #23 💩💩💩💩💩
 
 DRAG DROP 
 
@@ -6422,13 +6422,15 @@ To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restri
     - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
 
 
-### Question #27 💩💩💩💩
+### Question #27 💩💩💩💩💩💩
 
 You need to increase the security of your team's development process.
 
 Which type of security tool should you recommend for each stage of the development process? 
 
-To answer, drag the appropriate security tools to the correct stages. Each security tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+To answer, drag the appropriate security tools to the correct stages. 
+
+Each security tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -6588,7 +6590,7 @@ Whenever you see:
    → Think: **OAuth must be enabled**
 
 
-### Question #30 💩💩💩💩
+### Question #30 💩💩💩💩💩
 
 You have an existing project in Azure DevOps.
 
