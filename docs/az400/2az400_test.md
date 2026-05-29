@@ -11253,7 +11253,7 @@ Key exam principle
 
 
 
-### Question-41
+### Question-41 💩💩
 
 You manage source code control and versioning by using GitHub.
 
@@ -11354,7 +11354,7 @@ Why the others are wrong:
 
 
 
-### Question-43 💩
+### Question-43 💩💩💩  
 
 You manage code by using GitHub.
 
@@ -11399,14 +11399,14 @@ This is exactly what the requirement describes:
 **B. Configure Dependabot alerts.**
 
 
-### Question-44 💩💩
+### Question-44 💩💩💩 
 
 
 You have a 1-TB Azure Repos repository named repo1.
 
 You need to clone repo1. The solution must meet the following requirements:
 
-- You must be able to search the commit history of the /src directory
+- **You must be able to search the commit history of the /src directory**
 - The amount of time it takes to clone the repository must be minimized
 
 Which command should you run?
@@ -11496,7 +11496,7 @@ Final Answer:
 **A and B** ✅
 
 
-### Question-46
+### Question-46 💩💩
 
 You manage source code control and versioning by using GitHub.
 
@@ -11544,7 +11544,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩💩💩
+### Question #47  💩💩💩💩💩
 
 DRAG DROP -
 
@@ -11649,7 +11649,7 @@ To minimize the amount of transferred data and work only with a specific directo
 
 ✅ Correct Answer
 
-```bash id="r8g2hf"
+```
 cd repos
 
 scalar clone https://dev.azure.com/organisation/_git/Repo1
@@ -11725,7 +11725,7 @@ D. pull request permissions
 Use **branch policies** to enforce **quality gates and PR requirements automatically**.
 
 
-### Question #50
+### Question #50 💩💩💩💩
 
 You use Git for source control.
 
@@ -11771,8 +11771,10 @@ But since this is a **“two actions”** question from exam context, the correc
 
 * A **3-GB file is too large for normal Git**.
 * **Git LFS (Large File Storage)**:
+
   * Stores large files outside the main repo
   * Keeps **pointers in Git**, so files are:
+
     * ✅ Versioned
     * ✅ Linked to commits
 
@@ -11793,7 +11795,7 @@ Even though the question says “two actions,” the **only valid solution is Gi
 **B**
 
 
-### Question #51
+### Question #51 💩💩💩
 
 You manage source control by using GitHub.
 
@@ -11867,7 +11869,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52
+### Question #52 💩💩💩💩
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -11957,7 +11959,7 @@ By adding this full URL to your `README.md` file using image syntax (e.g., `![Bu
 
 **Note:** While "Organization name" could be technically correct if the owner *is* an organization, "Repository owner" is the most accurate and universal term used in this context.
 
-### Question #54
+### Question #54 💩💩
 
 You have a GitHub repository.
 
@@ -12130,9 +12132,7 @@ dotnet nuget push "bin/Release/app1.1.0.0.nupkg" --api-key PAT_TOKEN --source "g
 
 Use **`dotnet nuget push`** to upload packages to **GitHub Packages**.
 
-### Question #57
-
-DRAG DROP -
+### Question #57 💩💩
 
 You have a GitHub repository named repo1 and an Azure key vault named kv1.
 
