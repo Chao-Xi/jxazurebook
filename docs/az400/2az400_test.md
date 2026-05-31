@@ -169,12 +169,6 @@ Why the others are less suitable for CI:
 
 **Correct Answer: B**
 
-Validation in the CI/CD begins before the developer commits his or her code. Static code analysis tools in the IDE provide the first line of defense to help ensure that security vulnerabilities are not introduced into the CI/CD process. 
-
-
-You have been tasked with strengthening the security of your team's development process. You need to suggest a security tool type tor the Continuous Integration (CI) phase of the development process. Which of the following is the option you would suggest?
-
-
 
 | Term | Explanation |
 |---|---|
@@ -218,7 +212,7 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
-### Question 6 💩💩💩
+### Question 6 💩💩💩💩💩
 
 You intend to manage the build and release processes using Azure DevOps. 
 
@@ -515,7 +509,7 @@ The correct answer is **B. Hosted Windows Container**.
 
 Explanation:
 
-To build a Docker image for an **Internet Information Services (IIS)** web application, you must use **Windows Containers**. 
+<mark>To build a Docker image for an **Internet Information Services (IIS)** web application, you must use **Windows Containers**</mark>. 
 
 1.  **Windows Dependency:** IIS is a feature of the Windows operating system. Therefore, the Docker image must be based on a Windows base image (such as `mcr.microsoft.com/windows/servercore/iis`).
 2.  **The Agent Requirement:** To build a Windows-based Docker image, the build agent must be running on a Windows host that has the **Docker engine configured for Windows Containers**. 
@@ -701,7 +695,7 @@ Why the other options are incorrect
 
 
 
-### Question -15 💩💩💩
+### Question -15 💩💩💩💩💩
 
 You scan a Node.js application using WhiteSource Bolt. 
 
@@ -945,7 +939,7 @@ Why the other options are incorrect:
 
 You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
 
-### Question -20 💩💩💩
+### Question -20 💩💩💩💩
 
 You want to use a solitary feed to release several builds of each package. 
 
@@ -1227,7 +1221,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **B and C**
 
 
-### Question -25
+### Question -25 💩💩💩
 
 Your company has an application that contains a number of Azure App Service web apps and Azure functions. 
 
@@ -1264,11 +1258,7 @@ It provides:
 * Security posture management
 * Vulnerability assessments
 * Security recommendations
-* A dedicated **“Compute and Apps”** section for:
-  - App Services
-  - Functions
-  - VMs
-  - Containers
+* A dedicated **“Compute and Apps”** section for: App Services / Functions / VMs / Containers
 
 This is exactly where **Compute and Apps** is located.
 
@@ -1353,7 +1343,7 @@ Your company makes use of <mark>Azure SQL Database Intelligent Insights and Azur
 
 <mark>**Solution: You use the Transact-SQL.**<mark>
 
-####  Question - 27(2)
+####  Question - 27(2) 💩💩💩
 
 <mark>**Solution: You use Azure Log Analytics.**<mark>
 
@@ -1468,7 +1458,7 @@ Architecture Flow:
 
 ✅ **Final answer: A and B**
 
-### Question - 29
+### Question - 29 💩💩💩
 
 You have recently created a web application for your company.
 
@@ -1518,7 +1508,7 @@ Explanation
 
 ### Question -30. 💩💩💩
 
-You are in the process of building a mobile app aimed at Android and iOS devices.
+**You are in the process of building a mobile app aimed at Android and iOS devices.**
 
 All work items and release cycles are managed via Azure DevOps.
 
@@ -1769,9 +1759,9 @@ To analyze user behavior in Azure Application Insights, you should match the too
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 6 💩💩
+### Question - 6 💩💩💩💩💩
 
-Your company is building a mobile app that targets Android and iOS devices. 
+Your company is building a <mark>mobile app that targets Android and iOS devices.</mark> 
 
 **Your team uses Azure DevOps to manage all work items and release cycles.** 
 
@@ -1808,12 +1798,12 @@ Explanation:
 
 Why other options are incorrect:
 
-*   **A. Microsoft Test & Feedback extension:** This is primarily used for exploratory testing of **web applications** from within a browser. It is not designed for mobile app crash reporting or distribution.
+*   <mark>**A. Microsoft Test & Feedback extension:** This is primarily used for exploratory testing of **web applications** from within a browser. It is not designed for mobile app crash reporting or distribution.<?mark>
 *   **C. Azure Application Insights widgets:** While Application Insights can monitor apps, Microsoft's official recommendation for mobile-specific scenarios (like distribution and crash reporting for iOS/Android) is App Center.
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩💩
+### Question - 7 💩💩💩💩💩
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -1853,7 +1843,7 @@ The load balancer will naturally distribute traffic to the updated instances, pr
 
 **Selected actions: C, D, E**
 
-### Question # 8 💩💩
+### Question # 8 💩💩💩💩
 
 You have several Azure virtual machines that run Windows Server 2019.
 
@@ -1905,7 +1895,7 @@ Event
 **summarize + makeset(EventID)**
 
 
-### Question -9 💩💩
+### Question -9 💩💩💩
 
 You have an Azure web app named Webapp1.
 
@@ -2000,7 +1990,7 @@ The correct answer is:
 
 Explanation:
 
-To run a **URL ping test every five minutes** and generate **alerts when the app is unavailable from specific Azure regions**, with **minimal development time**, the best solution is to use **Azure Application Insights availability tests**.
+To run a **URL ping test every five minutes** and generate **alerts when the app is unavailable from <mark>specific Azure regions</mark>**, with **minimal development time**, the best solution is to use **Azure Application Insights availability tests**.
 
 **Application Insights Availability Tests** provide:
 
@@ -2012,14 +2002,11 @@ To run a **URL ping test every five minutes** and generate **alerts when the app
 
 Why the other options are incorrect:
 
-* **A. Azure Monitor Availability metric and alert** ❌
-  * Azure Monitor alone doesn’t provide built-in multi-region URL ping testing.
+* **A. Azure Monitor Availability metric and alert** ❌ => Azure Monitor alone doesn’t provide built-in multi-region URL ping testing.
 
-* **C. Write an Azure Function** ❌
-  * Requires custom development, deployment, and maintenance → high overhead.
+* **C. Write an Azure Function** ❌ => Requires custom development, deployment, and maintenance → high overhead.
 
-* **D. Azure Service Health alert** ❌
-  * Monitors Azure service outages, **not your specific web app URL availability**.
+* **D. Azure Service Health alert** ❌ => Monitors Azure service outages, **not your specific web app URL availability**.
 
 
 There are three types of Application Insights availability tests:
@@ -2038,7 +2025,7 @@ You have an Azure DevOps organization named Contoso that contains a project name
 
 You subscribe to Project1 in Microsoft Teams.
 
-**You need to ensure that you only receive events about failed builds in Microsoft Teams.**
+**You need to ensure that you <mark>only receive events about failed builds</mark> in Microsoft Teams.**
 
 What should you do first?
 
@@ -2067,12 +2054,12 @@ To meet the requirement of receiving **only** events about **failed builds**, yo
 Why other options are incorrect:
 
 *   **A. @azure pipelines subscribe...:** The prompt states you have already subscribed to Project1.
-  * <mark>Running the base subscribe command again is redundant and does not allow you to filter for failures only.</mark>
+  *   <mark>Running the base subscribe command again is redundant and does not allow you to filter for failures only.</mark>
 *   **B. Add a Publish Build Artifacts task:** This is a task within the build pipeline to save files. it has no impact on how notifications are sent to Microsoft Teams.
 *   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, **it does not control the logic of the notification system in Teams**.
 
 
-### Question -13
+### Question -13  💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -2419,7 +2406,7 @@ Smart Detection automatically warns you of potential performance problems and fa
 It performs proactive analysis of the telemetry that your app sends to Application Insights. If there is a sudden rise in failure rates, or abnormal patterns in client or server performance, you get an alert.
 
 
-### Question #20 💩💩💩
+### Question #20 💩💩💩💩💩
 
 
 You use Azure DevOps to manage the build and deployment of an app named App1.
@@ -2574,10 +2561,6 @@ Minimal-effort architecture:
 ✅ **Final answer: A. Send to Log Analytics**
 
 
-Correct Answer: A. Send to Log Analytics
-
-
-
 ### Question #23 💩💩💩
 
 You have a project in Azure DevOps that contains a Continuous Integration/Continuous Deployment (CI/CD) pipeline.
@@ -2610,7 +2593,7 @@ To enable detailed logging (verbose output) in an Azure DevOps CI/CD pipeline, y
 1.  **Name:** `System.Debug`
 2.  **Value:** `true`
 
-### Question #24  💩💩💩
+### Question #24  💩💩💩💩💩
 
 You build an iOS app.
 
@@ -2685,7 +2668,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **D**
 
 
-### Question-25  💩
+### Question-25  💩💩💩
 
 You have an Azure virtual machine that is monitored by using Azure Monitor, 
 
@@ -2805,7 +2788,7 @@ Only the **Dependency Tracker extension** meets all requirements:
 ✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
 
 
-### Question #27 💩💩💩
+### Question #27 💩💩💩💩💩
 
 
 You have a GitHub repository that contains the source code for an app named App1.
@@ -2853,7 +2836,7 @@ stateDiagram
     Processing --> Failed
 ```
 
-### Question-28 💩💩💩
+### Question-28 💩💩💩💩💩
 
 You have an Azure web app named webapp1 that uses the .NET Core runtime stack. 
 
@@ -2929,7 +2912,7 @@ Why the other options are incorrect
 
 
 
-### Question-29
+### Question-29 💩💩💩
 
 Your company has multiple microservices-based apps that use the following tracing libraries:
 
@@ -2963,13 +2946,14 @@ Explanation:
 To **centralize distributed tracing** in **Azure Monitor / Application Insights**, you need libraries that **can export telemetry directly to Application Insights**.
 
 * **OpenTelemetry**
- * Industry-standard for distributed tracing and metrics
- * Provides **exporters** for Application Insights
- * Actively supported in Azure Monitor
+  * Industry-standard for distributed tracing and metrics
+  * Provides **exporters** for Application Insights
+  * Actively supported in Azure Monitor
 
 * **OpenCensus**
- * Predecessor to OpenTelemetry
- * Has **native support for Application Insights**
+
+  * Predecessor to OpenTelemetry
+  * Has **native support for Application Insights**
 
 
 Why the others are incorrect:
@@ -2993,7 +2977,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 💩💩💩
+### Question-30 💩💩💩💩💩
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3022,9 +3006,11 @@ Explanation:
 For **.NET Core** applications, Application Insights configuration is handled primarily through code rather than external configuration files like `ApplicationInsights.config` (which is used for classic ASP.NET Framework apps).
 
 1.  **Adaptive vs. Fixed Sampling:** By default, .NET Core apps use **Adaptive Sampling**, which automatically adjusts the volume of telemetry sent to stay within quota limits.
-2.  **Configuring Fixed Sampling:** To use a fixed sampling rate in .NET Core, you must explicitly disable the default adaptive sampling and configure the sampling telemetry processor in the `ConfigureServices` method of the **Startup.cs** file (or `Program.cs` in newer versions of .NET).
+2.  **Configuring Fixed Sampling:** To use a fixed sampling rate in .NET Core,
+     * you must explicitly disable the default adaptive sampling and configure the sampling telemetry processor in the `ConfigureServices` method of the **Startup.cs** file (or `Program.cs` in newer versions of .NET).
 
 **Example of the code change required in Startup.cs:**
+
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -3047,7 +3033,7 @@ Why other options are incorrect:
 
 
 
-### Question-31 💩💩💩
+### Question-31 💩💩💩💩💩
 
 You use Azure Pipelines to build and deploy an app named App1. 
 
@@ -3092,18 +3078,17 @@ For a **.NET Core application**, Application Insights is typically configured vi
 Why the others are incorrect:
 
 * **B. launchSettings.json** ❌ → Used for local debugging and environment variables, not Application Insights configuration
-* **C. Startup.cs** ❌ → Optional; you can add Application Insights SDK here, but the question asks which file to modify for configuration
+* <mark>**C. Startup.cs** ❌ → Optional; you can add Application Insights SDK here, but the question asks which file to modify for configuration</mark>
 * **D. project.json** ❌ → Legacy .NET Core project file (pre-.NET Core 2.0), not used for runtime configuration
-
 
 
 ✅ **Final answer: A. appsettings.json**
 
-### Question #32 💩💩💩
+### Question #32 💩💩💩💩💩
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains two tables named Events and Logs. App1 manages events in multiple locations and writes logs to Workspace1.
 
-You need to query Workspace1 for all log entries related to Asia that occurred during the last two days.
+<mark>You need to query Workspace1 for all log entries related to Asia that occurred during the last two days.</mark>
 
 In which order should you arrange the query statements? To answer, move all statements from the list of statements to the answer area and arrange them in the correct order.
 
@@ -3132,7 +3117,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
-Which two actions should you perform? Each correct answer presents part of the solution.
+**Which two actions** should you perform? Each correct answer presents part of the solution.
 
 * A. Enable Azure Security Center.
 * B. Create and configure an Azure Monitor alert rule.
@@ -3180,23 +3165,11 @@ Why the others are incorrect:
 
 ✅ **Final answer: C and D**
 
-
-
-Creating planned maintenance alerts using Azure Service Health
-
-1. Login into the Azure portal and select Service Health.
-2. Select Health alerts followed by + Create service health alert from the top of the window on the right.
-3. In the Edit Alert blade, give the alert a Name, Description, check the subscription is correct and choose a resource group.
-4. The next step is to work through the Criteria section choosing which services, regions and types of event alerts should be monitored. For the purpose of this article all services and regions have been checked but only planned maintenance events.
-5. Selector create an Action group. (An Action group is a group of actions to be taken, should an event be logged.)
-6. Configure the actions to be taken. We are only configuring an email alert, so we first name the action, then chose Email/SMS/Push/Voice from the drop down list.
-
-
 ### Question #34 💩💩💩
 
 You have a web app named App1 that uses Application Insights in Azure Monitor.
 
-**You need to compare the hourly CPU usage of App1 from the last 24 hours.**
+**You need to compare the <mark>hourly CPU usage</mark> of App1 from the last 24 hours.**
 
 The solution must include a graph that has a threshold line at 75 percent.
 
@@ -3263,13 +3236,13 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
 
 
-### Question-35 💩💩💩
+### Question-35 💩💩💩💩💩
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
 **You need to collect detailed data about the processes running in the guest operating system.**
 
-Which two agents should you deploy? Each correct answer presents part of the solution.
+**Which two agents** should you deploy? Each correct answer presents part of the solution.
 
 
 * A. the Telegraf agent
@@ -3515,7 +3488,7 @@ You have a web app named App1 that uses Application Insights in Azure Monitor to
 
 You need to query App1 requests from London and Paris that return a 404 error. The solution must meet the following requirements:
 
-Return the timestamp url, resultCode, and duration fields
+<mark>Return the timestamp url, resultCode, and duration fields</mark>
 
 **Only show requests made during the last hour.**
 
@@ -3549,7 +3522,7 @@ requests
 | project timestamp, url, resultCode, duration
 ```
 
-### Question-40 💩💩💩
+### Question-40 💩💩💩💩💩
 
 
 You are automating the testing process for your company.
@@ -3650,7 +3623,7 @@ The solution must meet the following requirements:
 
 1- Identify whether individual instances of VMSS1 are eligible for an upgrade operation.
 
-2- Minimize administrative effort.
+**2- Minimize administrative effort.**
 
 What should you include in the recommendation?
 
@@ -3687,17 +3660,16 @@ You need to implement a **health check for App1** running on a **VMSS behind an 
 Why the others are incorrect:
 
 * **A. Azure Load Balancer health probe** ❌
-
- * Can monitor endpoints for traffic distribution
- * **Cannot directly integrate with VMSS upgrade eligibility** in the context of application-level health
+  * Can monitor endpoints for traffic distribution
+  * **Cannot directly integrate with VMSS upgrade eligibility** in the context of application-level health
 
 * **B. Azure Monitor autoscale** ❌
 
- * Scales VMSS instances based on metrics, not application health for upgrades
+  * Scales VMSS instances based on metrics, not application health for upgrades
 
 * **C. Custom Script Extension** ❌
 
- * Can implement health checks manually, but **higher administrative overhead** compared to the built-in Application Health extension
+  * Can implement health checks manually, but **higher administrative overhead** compared to the built-in Application Health extension
 
 
 
@@ -3768,7 +3740,7 @@ Mapping to the options
 
 **A and D**
 
-### Question-43 💩💩💩
+### Question-43 💩💩💩💩
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -3809,10 +3781,12 @@ The scenario:
 Azure Pipelines provides **flaky test management**:
 
 1. **Mark the test as flaky (D)**
-   * Manually mark the test so Azure DevOps knows **failures in this test shouldn’t fail the build**.
+
+     * Manually mark the test so Azure DevOps knows **failures in this test shouldn’t fail the build**.
 
 2. **Clear “Flaky tests included in test pass percentage” (B)**
-   * This ensures that **flaky tests are excluded from the pass/fail calculations** of the build.
+
+     * This ensures that **flaky tests are excluded from the pass/fail calculations** of the build.
 
 
 Why the others are incorrect:
@@ -3830,7 +3804,7 @@ Why the others are incorrect:
 ✅ **Final answer: D and B**
 
 
-### Question #44 💩💩💩
+### Question #44 💩💩💩💩💩
 
 You have an app named App1 that uses **Application Insights to monitor application performance**.
 
@@ -3869,7 +3843,7 @@ Why the other options are incorrect
 | Option          | Reason                                                                      |
 | --------------- | --------------------------------------------------------------------------- |
 | **B. Sessions** | Shows user session duration and counts, not specific page access frequency. |
-| **C. Impact**   | Used to analyze performance impact of issues on users.                      |
+| **C. Impact**   | <mark>Used to analyze performance impact of issues on users.</mark>                      |
 | **D. Users**    | Shows unique users, not how often a page is accessed.                       |
 
 
@@ -3996,13 +3970,13 @@ To actually **prevent configuration drift**, you would need solutions such as:
 
 > Incorrect Options presents in part of this series Questions are
 
-1- Implement Continuous Integration for the project   (wrong)
+**1- Implement Continuous Integration for the project   (wrong)**
 
-2- Add a code coverage step to the build pipelines.    (wrong)
+**2- Add a code coverage step to the build pipelines.    (wrong)**
  
-3- Perform a Subscription Health scan when packages are created.   (wrong)
+**3- Perform a Subscription Health scan when packages are created.   (wrong)**
 
-<mark>Correct Option is Implement Continuous Assurance for the project</mark>
+**<mark>Correct Option is Implement Continuous Assurance for the project</mark>**
 
 > Note: The Subscription Security health check features in ASK contains a set of scripts that examines a subscription and flags off security issues, 
 
@@ -4011,7 +3985,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
-### Question #48 💩💩💩💩
+### Question #48 💩💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -4217,7 +4191,7 @@ By implementing **Continuous Assurance**, you can effectively **prevent unintend
 ✅ **Final answer: A. Yes**
 
 
-### Question-53 💩💩💩
+### Question-53 💩💩💩💩💩
 
 You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. 
 
@@ -4281,7 +4255,7 @@ Based on the KQL query provided in the exhibit, here are the correct selections 
 *   The result of a subtraction between two `datetime` objects is always a **`timespan`** (representing the elapsed time).
 *   This is confirmed in Line 5, where the `Duration` is compared against a value generated by the `make_timespan` function.
 
-### Question-55  💩💩
+### Question-55  💩💩💩💩💩
 
 You are designing a configuration management solution to support five apps hosted on Azure Ap Service. 
 
@@ -4289,8 +4263,11 @@ Each app is available in the following three environments: development, test, an
 
 You need to recommend a configuration management solution that meets the following requirements 
 
-
-**Supports teature flags, Tracks configuration changes from the past 30 days, Stores hierarchically structured contiguration values, Controls access to the configurations by using role-based access control (RBAC) permissions, Stores shared valur as key-value pairs that can be used by all the apps**
+- Supports teature flags,
+- Tracks configuration changes from the past 30 days,
+- Stores hierarchically structured contiguration values,
+- Controls access to the configurations by using role-based access control (RBAC) permissions,
+- Stores shared valur as key-value pairs that can be used by all the apps**
 
 Which Azure service should you recommend as the configuration management solution?
 
@@ -4367,7 +4344,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 💩💩💩
+### Question #57 💩💩💩💩💩
 
 You configure an Azure Application Insights availability test.
 
@@ -4558,15 +4535,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-**Notifications** help you and your team stay informed about activity that occurs within your projects in Azure DevOps. You can get notified when changes occur to the following items: 
-
-* work items 
-* code reviews 
-* pull requests 
-* source control files 
-* builds
-
-### Question-61
+### Question-61  💩💩💩
 
 You have an Azure subscription that contains multiple web apps.
 
@@ -4651,7 +4620,7 @@ properties:
           periodSeconds: 10
 ```
 
-### Question #2  💩💩💩
+### Question #2  💩💩💩💩💩
 
 You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
 
@@ -4661,7 +4630,7 @@ You need to recommend a solution to capture and store telemetry data. The soluti
 
 ✑ Trigger alerts when metrics in the baseline are exceeded.
 
-✑ Store application and database metrics in a central location.
+✑ **<mark>Store application and database metrics in a central location.</mark>**
 
 What should you include in the recommendation?
 
@@ -4691,7 +4660,8 @@ Why other options are incorrect:
 
 *   **Azure Event Hubs:** This is a data streaming service. While it can ingest data, it does not provide built-in storage for long-term analysis or a query engine to identify baselines.
 *   **Azure SQL Database Intelligent Insights:** This is a specialized feature for monitoring SQL performance. It does not capture telemetry for the Web App front end, so it fails the "central location" requirement.
-*   **Azure Application Insights:** While excellent for application-level telemetry (Web Apps), it is not the primary repository for platform-level database logs (like SQL execution plans or deadlock logs). While Application Insights now often stores data in a Log Analytics workspace, **Log Analytics** is the comprehensive solution for the entire multi-tier stack.
+*   **Azure Application Insights:** While excellent for application-level telemetry (Web Apps), **it is not the primary repository for platform-level database logs** (like SQL execution plans or deadlock logs).
+    * While Application Insights now often stores data in a Log Analytics workspace, **Log Analytics** is the comprehensive solution for the entire multi-tier stack.
 
 
 ### Question #3 💩
@@ -4742,7 +4712,7 @@ Azure Dashboards are specifically designed to provide a "single pane of glass" v
 
 
 
-### Question #3  💩💩💩
+### Question #4  💩💩💩
 
 You are building an ASP.NET Core application.
 
@@ -4799,7 +4769,7 @@ Explanation
 | ASP.NET Core telemetry baseline | **B and C**   |
 
 
-### Question #4
+### Question #5
 
 You have an application named App1 that has a custom domain of app.contoso.com. 
 
@@ -4823,6 +4793,7 @@ Key settings visible in the screenshot:
 * **Parse dependent requests:** Enabled
 * **Timeout:** **30 seconds**
 * **Success criteria:**
+
   * HTTP status code **200**
   * Content must contain **"Copyright Contoso"**
 
@@ -4853,7 +4824,7 @@ Thus the test passes when **all HTML, JavaScript, and images load successfully w
 | The test will pass if | **all the HTML, JavaScripts, and images of App1 load** |
 
 
-### Question #5 💩💩
+### Question #6 💩💩
 
 Your company uses the following resources:
 
@@ -4922,13 +4893,11 @@ Why the other options are incorrect
 
 **C and E**
 
-### Question #6 💩💩💩💩
+### Question #7 💩💩💩💩
 
 You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
 
-You configure an Azure Monitor alert that is triggered when WebApp1 generates an error.
-
-You need to configure the alert to forward details of the error to a third-party system. 
+<mark>You configure an Azure Monitor alert that is triggered when WebApp1 generates an error. You need to configure the alert to forward details of the error to a third-party system.</mark> 
 
 The solution must minimize administrative effort. 
 
@@ -4973,7 +4942,7 @@ This approach avoids custom scripts or additional infrastructure.
 2. **Select the HTTP request trigger**
 3. **Update the action group in Azure Monitor**
 
-### Question #7  💩💩💩
+### Question #8 💩💩💩💩💩
  
 
 You are using the Dependency Tracker extension in a project in Azure DevOps.
@@ -5039,6 +5008,7 @@ The correct answer is:
 
 **B. No** ✅
 
+>  Attach an **action group** to send an **email notification**. ✅
 
 Explanation:
 
@@ -5088,7 +5058,7 @@ Does this meet the goal?
 
 ---
 
-Answer: A
+Answer: A   ✅
 
 **A. Yes**
 
@@ -5122,7 +5092,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-11 💩💩💩
+### Question-11 💩💩💩💩💩
 
 You use GitHub for source control.
 
@@ -6220,7 +6190,7 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
 
 **Analysis of Exhibits**
 
-1.  **Teams Exhibit:** There are three teams in the "Contoso" project: **Contoso Team**, **DB Team**, and **Web Team**.
+1.  **Teams Exhibit:** There are three teams in the "Contoso" project: <mark>**Contoso Team**, **DB Team**, and **Web Team**.</mark>
 2.  **Permissions Exhibit:** You are viewing the **Dashboards** permissions specifically for the **Contoso Team**. For this group, the following permissions have been explicitly toggled **OFF** (Greyed out):
     *   Create dashboards
     *   Edit dashboards
@@ -6238,7 +6208,9 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
 **Explanation**
 
 *   **Statement 1 (No):** The permissions exhibit explicitly shows that for the **Contoso Team**, <mark>the "Create dashboards" permission is toggled off. This explicit setting overrides any default project permissions.</mark>
-*   **Statement 2 (Yes):** No specific permissions were modified for the **DB Team**. Therefore, they use the **default values**. In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.
+*   **Statement 2 (Yes):** No specific permissions were modified for the **DB Team**.
+  *   Therefore, they use the **default values**.
+  *   <mark>In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.</mark>
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
 ### Question #23 💩💩💩💩💩
@@ -6366,11 +6338,17 @@ To provision an Azure Kubernetes Service (AKS) cluster that is RBAC-enabled and 
 
 **Explanation:**
 
-1.  **`az ad sp create-for-rbac`**: Since the requirement specifies using a **custom service principal**, you must create this identity first. This command creates a Service Principal in Azure Active Directory (Microsoft Entra ID) and returns the `appId` and `password` (client secret) required by the AKS cluster to interact with other Azure resources (like Load Balancers or Managed Disks).
+1.  **`az ad sp create-for-rbac`**:
 
-2.  **`az aks create`**: This is the primary command to provision the cluster. You will pass the `appId` and `password` from the previous step into this command using the `--service-principal` and `--client-secret` parameters. By default, `az aks create` enables RBAC (unless `--disable-rbac` is specified), meeting the requirement.
+   * Since the requirement specifies using a **custom service principal**, you must create this identity first. This command creates a Service Principal in Azure Active Directory (Microsoft Entra ID) and returns the `appId` and `password` (client secret) required by the AKS cluster to interact with other Azure resources (like Load Balancers or Managed Disks).
 
-3.  **`az aks get-credentials`**: Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
+2.  **`az aks create`**:
+
+    * This is the primary command to provision the cluster. You will pass the `appId` and `password` from the previous step into this command using the `--service-principal` and `--client-secret` parameters. By default, `az aks create` enables RBAC (unless `--disable-rbac` is specified), meeting the requirement.
+
+3.  **`az aks get-credentials`**:
+
+     * Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
 ### Question #26 💩💩💩💩💩
@@ -6482,7 +6460,7 @@ Think of the flow:
 * **After deploy (CD)** → *Attack/test system*
 
 
-### Question #28 💩💩💩
+### Question #28 💩💩💩💩💩
 
 You plan to use a NuGet package in a project in Azure DevOps. 
 
@@ -6535,7 +6513,7 @@ If you see **“NuGet + Azure DevOps + automatic restore/authentication”**, th
 
 ➡️ **Credential Provider**
 
-### Question #29 💩💩
+### Question #29 💩💩💩💩
 
 You use Azure Pipelines to manage project builds and deployments.
 
@@ -6585,9 +6563,7 @@ Evaluation of options
 
 Whenever you see:
 
-* **“integrate Azure DevOps with Teams / external service”**
-
-   → Think: **OAuth must be enabled**
+<mark>**“integrate Azure DevOps with Teams / external service”** → Think: **OAuth must be enabled**</mark>
 
 
 ### Question #30 💩💩💩💩💩
@@ -6596,7 +6572,7 @@ You have an existing project in Azure DevOps.
 
 **You plan to integrate GitHub as the repository for the project.**
 
-You need to ensure that Azure Pipelines runs under the Azure Pipelines identity. 
+You need to ensure that Azure Pipelines <mark>runs under the Azure Pipelines identity</mark>. 
 
 Which authentication mechanism should you use?
 
@@ -6622,20 +6598,13 @@ Evaluation of options
 
 * **B. GitHub App** ✅
 
-
   * → Uses a dedicated **service identity ("Azure Pipelines")**
   * → Not tied to any individual user
   * → Recommended and most secure approach
 
-* **C. Azure Active Directory (Azure AD)** ❌
+* **C. Azure Active Directory (Azure AD)** ❌ → Not used for GitHub integration in this scenario
 
-
-  * → Not used for GitHub integration in this scenario
-
-* **D. OAuth** ❌
-
-
-  * → Authenticates as a user → not a service identity
+* **D. OAuth** ❌  → Authenticates as a user → not a service identity
 
 ✅ Final Answer
 
@@ -6645,10 +6614,7 @@ Evaluation of options
 
 If the requirement says:
 
-* **“run as Azure Pipelines identity”** or
-* **“not tied to a user”**
-
-→ Always choose **GitHub App**, not OAuth or PAT.
+<mark>**“run as Azure Pipelines identity”** or **“not tied to a user”** → Always choose **GitHub App**, not OAuth or PAT.</mark>
 
 
 ### Question #31 💩💩💩💩
@@ -6706,7 +6672,7 @@ Whenever you see **Azure Monitor + CMK**, think:
 
 ➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
 
-### Question #32 💩💩💩💩
+### Question #32 💩💩💩💩💩💩
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
@@ -6831,9 +6797,11 @@ This:
 
 * Creates an identity for your app in Azure AD
 * Generates:
+
   * Application (client) ID
   * Directory (tenant) ID
 * Enables configuration of:
+
   * Authentication flows (OAuth2 / OpenID Connect)
   * Redirect URIs
   * Certificates/secrets
@@ -6860,18 +6828,18 @@ Final Answer:
 
 Answer: B
 
-**Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.**
+<mark>**Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.**</mark>
 
 
 ### Question #35
 
-DRAG DROP You need to deploy a new project in Azure DevOps that has the following requirements:
+You need to deploy a new project in Azure DevOps that has the following requirements:
 
 * **The lead developer must be able to create repositories, manage permissions, manage policies, and contribute to the repository.**
 
 * Developers must be able to contribute to the repository and create branches, but NOT bypass policies when pushing builds.
 
-* **Project managers must only be able to view the repository.**
+* <mark>**Project managers must only be able to view the repository.**</mark>
 
 * The principle of least privilege must be used.
 
@@ -6933,9 +6901,14 @@ You have an Azure subscription that contains a project in Azure DevOps named Pro
 | User3   | Developer    | Create branches and tags.    |
 
 
-You need to ensure that the users have the appropriate permissions. The solution must use the principle of least privilege.
+You need to ensure that the users have the appropriate permissions. 
 
-To which permission group in Azure DevOps should you add each user? To answer, drag the appropriate permission groups to the correct users. Each permission group may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+The solution must use the principle of least privilege.
+
+To which permission group in Azure DevOps should you add each user? 
+
+
+To answer, drag the appropriate permission groups to the correct users. Each permission group may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 Permission Groups
 
@@ -7006,6 +6979,7 @@ PATs meet **both requirements**:
 ✅ Supports authentication from Git
 
 * PATs are fully supported for:
+
   * `git clone`
   * `git pull`
   * `git push`
@@ -7015,6 +6989,7 @@ PATs meet **both requirements**:
 ✅ Minimizes the need to provide credentials
 
 * PATs can be:
+
   * **Stored in Git credential managers**
   * **Cached securely**
   * Used non-interactively in scripts and CI/CD pipelines
@@ -7050,7 +7025,7 @@ Answer: A
 
 Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
 
-### Question-38
+### Question-38 💩💩💩💩💩💩
 
 You have an application that consists of several Azure App Service web apps and Azure functions.
 
@@ -7113,7 +7088,7 @@ Final Answer:
 
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
-### Question-39
+### Question-39 💩💩💩
 
 You have a branch policy in a project in Azure DevOps. 
 
@@ -7218,21 +7193,13 @@ This provides:
 
 Why the other options are wrong:
 
-❌ **B. Web.config file**
+❌ **B. Web.config file** → Stores secrets in plaintext (not secure)
 
-→ Stores secrets in plaintext (not secure)
+❌ **C. appsettings.json** → Plaintext secrets, visible to deployers and in source control
 
-❌ **C. appsettings.json**
+❌ **D. Azure Storage table**  → Not a secure secret store
 
-→ Plaintext secrets, visible to deployers and in source control
-
-❌ **D. Azure Storage table**
-
-→ Not a secure secret store
-
-❌ **E. ARM parameter file**
-
-→ Parameters can still be viewed by the user deploying the template
+❌ **E. ARM parameter file** → Parameters can still be viewed by the user deploying the template
 
 
 Security Best Practice Architecture:
@@ -7300,17 +7267,11 @@ Correct configuration flow:
 
 Why the other options are wrong:
 
-❌ **A. Add a secure file**
+❌ **A. Add a secure file** → Secure files are for certificates/keys/files, not Key Vault secrets
 
-→ Secure files are for certificates/keys/files, not Key Vault secrets
+❌ **B. Create an XAML build service** → XAML builds are deprecated and irrelevant
 
-❌ **B. Create an XAML build service**
-
-→ XAML builds are deprecated and irrelevant
-
-❌ **D. Configure the security policy of Contoso**
-
-→ Not required for Key Vault integration with pipelines
+❌ **D. Configure the security policy of Contoso** → Not required for Key Vault integration with pipelines
 
 
 
@@ -7320,8 +7281,6 @@ Final Answer:
 
 
 Answer: D
-
-
 
 
 ### Question #42 💩💩💩
@@ -7380,12 +7339,11 @@ To support **large binary files**, store them **outside the repository**, and st
 
 If requirements say:
 
-* **“large binary files” + “outside repo” + “Git workflow”**
-* → Always think: **Git LFS (install → track → authenticate)**
+* **“large binary files” + “outside repo” + “Git workflow”** → Always think: **Git LFS (install → track → authenticate)**
 
 
 
-### Question-43
+### Question-43 💩💩💩
 
 Your company uses Azure DevOps.
 
@@ -7414,9 +7372,12 @@ To restrict access to **Azure DevOps** so that it’s **only accessible from dev
 With Conditional Access, you can:
 
 * Define **named locations** (e.g., on-premises IP ranges)
+
 * Create policies that:
+
   * Allow access **only from trusted network locations**
   * Block access from external/untrusted networks
+
 * Enforce device/network-based access control
 
 This is exactly what Conditional Access is designed for. ✅
@@ -7424,19 +7385,11 @@ This is exactly what Conditional Access is designed for. ✅
 
 Why the other options are incorrect:
 
-❌ **A. Assign the Stakeholder access level**
+❌ **A. Assign the Stakeholder access level** → Only controls permissions inside Azure DevOps, not network access
 
-→ Only controls permissions inside Azure DevOps, not network access
+❌ **B. Configure risky sign-ins**  → Related to identity risk detection, not network location restrictions
 
-❌ **B. Configure risky sign-ins**
-
-→ Related to identity risk detection, not network location restrictions
-
-❌ **C. Configure Security in Project Settings**
-
-→ Project-level permissions, not device/network access control
-
-
+❌ **C. Configure Security in Project Settings** → Project-level permissions, not device/network access control
 
 Final Answer:
 
@@ -7451,9 +7404,7 @@ With Conditional Access, you can implement automated access control decisions fo
 
 Conditional Access policies are enforced after the first-factor authentication has been completed.
 
-
-
-### Question-44
+### Question-44 💩 - Duplicated 
 
 You have the following Azure policy.
 
@@ -7552,7 +7503,7 @@ Final Answer:
 **B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
 
 
-### Question-45  💩💩💩
+### Question-45  💩💩
  
 You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
 
@@ -7630,13 +7581,13 @@ NOTE: Each correct selection is worth one point.
 
 Answer Area
 
-**Store the password as a:**
+<mark>**Store the password as a:**<mark>
 
 - Certificate  
 - Key  
 - Secret  
 
-**Grant Pipeline1 access to Vault1 by modifying the:**
+<mark>**Grant Pipeline1 access to Vault1 by modifying the:**<mark>
 
 - Access control (IAM) settings  
 - Access policies  
@@ -7732,7 +7683,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-48
+### Question-48. 💩💩💩
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -7792,9 +7743,9 @@ You need to configure permissions for repo1. The solution must meet the followin
 
 • Ensure that User1 can actively push to repo1.
 
-• Ensure that User2 can manage issues and pull requests for repo1.
+• <mark>Ensure that User2 can manage issues and pull requests for repo1.</mark>
 
-• Ensure that User3 can manage repo1.
+• <mark>Ensure that User3 can manage repo1.<mark>
 
 • Prevent User3 from accessing sensitive data in repo1.
 
@@ -7935,7 +7886,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩💩
+### Question #51  💩💩💩💩💩
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8086,7 +8037,7 @@ If it says:
 * **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-54 ✅✅✅💩💩💩
+### Question-54 💩💩💩💩💩
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -8330,7 +8281,7 @@ Dependabot triggers =
 
 
 
-### Question-59 - Duplicated
+### Question-59 - Duplicated 💩💩💩💩
  
 You plan to use a NuGet package in a project in Azure DevOps. **The NuGet package is in a feed that requires authentication.**
 
@@ -8414,7 +8365,7 @@ You need to configure the Organization Settings in Azure DevOps to support Azure
 
 What should you turn on?
 
-- A. Third-party application access via Auth
+- A. Third-party application access via OAuth
 - B. Azure Active Directory Conditional Access Policy Validation
 - C. Alternate authentication credentials
 - D. SSH authentication
@@ -8762,7 +8713,7 @@ If you see:
 * **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
-### Question-67 
+### Question-67 💩💩💩💩
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -8835,18 +8786,18 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 🔍 Scan Types
 
 * **ZAP Baseline Scan**
- 
- * Passive scan only (no active attacks)
- * Includes a short spider (default ~1 minute)
- * Waits for passive scanning to complete
+   
+   * Passive scan only (no active attacks)
+   * Includes a short spider (default ~1 minute)
+   * Waits for passive scanning to complete
 
 * **ZAP Full Scan**
 
- * Includes spider + **active scan (attacks)**
+   * Includes spider + **active scan (attacks)**
 
 * **ZAP API Scan**
 
- * Used for APIs (OpenAPI/Swagger), not general web crawling
+   * Used for APIs (OpenAPI/Swagger), not general web crawling
 
 ---
 
