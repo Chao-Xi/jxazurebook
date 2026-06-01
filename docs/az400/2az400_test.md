@@ -24058,7 +24058,7 @@ Explanation:
 *   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
 
 
-### Question #22  💩💩💩💩
+### Question #22  💩💩💩
 
 You have an Azure subscription.
 
@@ -24175,7 +24175,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24 💩💩💩
+### Question #24 💩💩
 
 You have an Azure subscription.
 
@@ -24286,7 +24286,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 *   *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
 
 
-### Question #26 💩💩💩💩💩
+### Question #26 💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24648,6 +24648,8 @@ D. JUnit
 
 The correct answer is **A. VSTest**.
 
+> <mark>**VSTest:** Uses **`.trx`** files (XML-based).</mark>
+
 Explanation:
 
 The **`.trx`** file extension is the standard format for **Visual Studio Test Results**. 
@@ -24662,7 +24664,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩💩💩💩💩💩
+### Question #33 💩💩💩💩💩
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -24684,6 +24686,16 @@ D. Add an agent pool.
 
 ✅ Correct Answer: **C. Enable Test Impact Analysis (TIA)**
 
+🔥🔥🔥  **<mark>Key Insight (Exam Tip)</mark>**
+
+If the question mentions:
+
+* **Reduce test time**. 🔥🔥🔥
+* **Maintain coverage**. 🔥🔥🔥
+
+👉 The answer is almost always **Test Impact Analysis (TIA)**.
+
+
 💡 Why this is correct
 
 **Test Impact Analysis (TIA)** in Azure Pipelines:
@@ -24704,8 +24716,6 @@ D. Add an agent pool.
 * Helps identify unstable tests
 * ❌ Does not reduce execution time significantly
 
----
-
 **B. Purchase additional parallel jobs**
 
 * Speeds up pipelines via parallelism
@@ -24720,15 +24730,6 @@ D. Add an agent pool.
 * ❌ Does not optimize which tests are run
 * Less efficient than TIA for this goal
 
-🔥🔥🔥  **<mark>Key Insight (Exam Tip)</mark>**
-
-If the question mentions:
-
-* **Reduce test time**. 🔥🔥🔥
-* **Maintain coverage**. 🔥🔥🔥
-
-👉 The answer is almost always **Test Impact Analysis (TIA)**.
-
 
 ### Question #34 💩💩💩💩
 
@@ -24738,9 +24739,8 @@ You have an app that is deployed to two environments named Production-A and Prod
 
 The solution must meet the following requirements:
 
-• **Ensure that there are no active Azure Monitor alerts in the Production-A environment before the app is marked as complete.**
-
-• Minimize administrative effort.
+- **Ensure that <mark>there are no active Azure Monitor alerts in the Production-A environment before the app is marked as complete<mark>.**
+- Minimize administrative effort.
 
 What should you do?
 
@@ -24809,7 +24809,7 @@ You need to:
 
 You manage package feeds by using Azure Artifacts.
 
-You plan to create a new package feed that will include the following views:
+You **plan to create a new package** feed that will include the following views:
 
 • @Local
 
@@ -24835,16 +24835,6 @@ D. @Prerelease
 
 ✅ Correct Answer: **B. @Latest**
 
-💡 Explanation
-
-In **Azure Artifacts feeds**, some views are **created automatically**, while others must be **created manually**.
-
-🔹 Default (automatically created) views:
-
-* **@Local** → ✅ Always created by default
-
-  * Contains all packages published directly to the feed
-
 🔹 Custom views (must be created manually):
 
 * **@Prerelease**
@@ -24856,6 +24846,15 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 * **@Latest** is **not a standard built-in or commonly preconfigured view**
 * It must be **explicitly created and managed**
 
+💡 Explanation
+
+In **Azure Artifacts feeds**, some views are **created automatically**, while others must be **created manually**.
+
+🔹 Default (automatically created) views:
+
+* **@Local** → ✅ Always created by default
+
+* Contains all packages published directly to the feed
 
 ❌ Why the other options are incorrect
 
@@ -24884,7 +24883,7 @@ You have an Azure DevOps project that contains two environments named Staging an
 
 You use Azure Pipelines to deploy App1.
 
-You need to validate the performance of App1 in the Staging environment before it is deployed to Production. 
+You need to validate the performance of App1 **in the Staging environment before it is deployed to Production.**
 
 The solution must minimize administrative effort.
 
@@ -24925,8 +24924,8 @@ You need to:
 
 1. Deploy to **Staging**
 2. Run **environment check (Azure Monitor alerts)**
-   * If no alerts → proceed
-   * If alerts exist → stop
+  * If no alerts → proceed
+  * If alerts exist → stop
 3. Deploy to **Production**
 
 ❌ Why the other options are incorrect
@@ -24958,7 +24957,7 @@ You need to:
 **D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.**
 
 
-### Question #37 💩💩💩
+### Question #37 💩💩
 
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. 
@@ -25000,6 +24999,27 @@ jobs:
 
 ❌ Correct Answer: **B. No**
 
+✅ What is missing
+
+To meet requirements, you would need:
+
+* Proper stage structure
+* Parallel test stages:
+
+```yaml
+dependsOn: Build_App
+```
+* Publish stage:
+
+```yaml
+dependsOn:
+  - Test_App
+  - Test_Database
+condition: always()
+```
+
+
+
 💡 Why this does NOT meet the requirements
 
 There are multiple issues in the provided YAML:
@@ -25013,6 +25033,7 @@ There are multiple issues in the provided YAML:
     dependsOn: [Build_App]
   jobs:
   ```
+
 * Each `stage` must contain its own `jobs:` block properly nested.
 
 ➡️ This YAML is **invalid / improperly structured**
@@ -25054,24 +25075,7 @@ But:
 * ❌ No `condition: always()`
 * So it will **not run if previous stages fail**
 
-✅ What is missing
 
-To meet requirements, you would need:
-
-* Proper stage structure
-* Parallel test stages:
-
-```yaml
-dependsOn: Build_App
-```
-* Publish stage:
-
-```yaml
-dependsOn:
-  - Test_App
-  - Test_Database
-condition: always()
-```
 
 🔥 Key Exam Insight
 
@@ -25086,7 +25090,7 @@ When you see:
 **B. No**
 
 
-### Question #38 💩💩💩💩
+### Question #38 💩💩💩
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25094,7 +25098,7 @@ You need to use an Azure Pipelines pipeline to build and test an app and test th
 
 • The Publish_Test_Results stage must always be run.
 
-• The test stages must be run after successful completion of the build stage.
+• <mark>**The test stages must be run after successful completion of the build stage**.</mark>
 
 • The Publish_Test_Results stage must be run after completion of all the test stages.
 
@@ -25203,7 +25207,7 @@ This would:
 
 
 
-### Question #39 💩💩💩
+### Question #39 💩💩
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25371,6 +25375,14 @@ For each of the following statements, select Yes if the statement is true. Other
 -----
 
 
+ ✅ Final Answers
+
+| Statement                               | Answer |
+| :-------------------------------------- | :----: |
+| Job E can start before job C completes. |  ❌ No  |
+| Job B can run concurrently with job C.  |  ✅ Yes |
+| Job D can start before job B completes. |  ❌ No  |
+
 
 Let’s analyze the job dependency graph:
 
@@ -25432,14 +25444,6 @@ Then:
 ❌ Cannot start before B completes
 
 ❌ Answer: **No**
-
- ✅ Final Answers
-
-| Statement                               | Answer |
-| :-------------------------------------- | :----: |
-| Job E can start before job C completes. |  ❌ No  |
-| Job B can run concurrently with job C.  |  ✅ Yes |
-| Job D can start before job B completes. |  ❌ No  |
 
 
 ### Question #41 💩💩
