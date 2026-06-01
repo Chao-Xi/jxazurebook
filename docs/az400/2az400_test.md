@@ -22774,7 +22774,7 @@ For small Docker images:
 
 
 
-### Question #2 💩💩💩💩
+### Question #2 💩💩💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -22803,6 +22803,9 @@ D. Web
 
 
 ✅ Correct answer: **D. Web**
+
+**<mark>In Azure Data Factory:  Use **Web activity** to call APIs (like Key Vault) and retrieve secrets 🚀</mark>**
+
 
  🔍 Explanation
 
@@ -22834,12 +22837,10 @@ To retrieve a secret from **Azure Key Vault** in an **Azure Data Factory pipelin
 
 💡 Key takeaway
 
-In Azure Data Factory:
-
-> Use **Web activity** to call APIs (like Key Vault) and retrieve secrets 🚀
 
 
-### Question #3. 💩💩💩
+
+### Question #3. 💩💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -22891,6 +22892,20 @@ condition: always()
 * Runs the task **even if previous tasks fail**
 * Also runs when the pipeline is **canceled**
 
+🟦 Correct condition should be:
+
+```yaml
+condition: succeededOrFailed()
+```
+
+💡 Key takeaway
+
+* **always() → runs even on cancel ❌**
+* <mark>**succeededOrFailed() → correct for most CI scenarios ✅** 🚀</mark>
+
+
+
+
 🟦 Requirement mismatch
 
 ❌ Requirement:
@@ -22900,17 +22915,13 @@ condition: always()
 * `always()` → **runs even when canceled** ❌
 * Required behavior → should **NOT run when canceled**
 
-🟦 Correct condition should be:
 
-```yaml
-condition: succeededOrFailed()
-```
 
 * Runs when:
+
   * Succeeded ✔
   * Failed ✔
-* Does NOT run when:
-  * Canceled ✔ (matches requirement)
+* Does NOT run when:  Canceled ✔ (matches requirement)
 
 🟦 Other requirements check
 
@@ -22922,11 +22933,6 @@ condition: succeededOrFailed()
 The solution does **NOT** meet all requirements.
 
 **Answer: B. No**
-
-💡 Key takeaway
-
-* **always() → runs even on cancel ❌**
-* <mark>**succeededOrFailed() → correct for most CI scenarios ✅** 🚀</mark>
 
 
 ### Question #4
@@ -22998,7 +23004,7 @@ For safe deployments:
 > **Use deployment slots → swap for release, swap back for rollback** 🚀
 
 
-### Question #5
+### Question #5 💩
 
 You have a project in Azure DevOps named Project1 that references an Azure Artifacts feed named Feed1.
 
@@ -23027,25 +23033,40 @@ D. 2.3.1
 
 -----
 
-
 ✅ Correct answer: **D. 2.3.1**
+
+
+❌ Why the other options are incorrect
+
+* **1.0.3 / 1.4.0** → lower versions
+* **2.0.0** → not saved; 2.3.1 is higher
+
+🎯 Final Answer
+
+**D. 2.3.1**
+
+💡 Key takeaway
+
+* **Saved upstream packages behave like local packages**
+* **Highest version wins** 🚀
+
 
 🔍 Explanation
 
 Azure Artifacts resolves packages based on:
 
 1. **Highest available version**
-2. Across:
- * Local feed (manually pushed)
- * Upstream sources (if enabled)
+2. Across:  Local feed (manually pushed) / Upstream sources (if enabled)
 
 🟦 Key detail: *Saved from upstream*
 
 * **2.3.1 (Saved from upstream)**
- * Already **cached in Feed1**
- * Treated like a local package
+
+  * Already **cached in Feed1**
+  * Treated like a local package
 
 * **2.0.0 (Available from upstream)**
+ 
  * Not yet used/downloaded
  * Only fetched if specifically requested
 
@@ -23062,19 +23083,6 @@ Available versions:
 
 > **2.3.1**
 
-❌ Why the other options are incorrect
-
-* **1.0.3 / 1.4.0** → lower versions
-* **2.0.0** → not saved; 2.3.1 is higher
-
-🎯 Final Answer
-
-**D. 2.3.1**
-
-💡 Key takeaway
-
-* **Saved upstream packages behave like local packages**
-* **Highest version wins** 🚀
 
 
 ### Question #6 💩💩💩
@@ -23132,6 +23140,12 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 * **Dropdown 1:** ✔ `kind:`
 * **Dropdown 2:** ✔ `properties:`
 
+💡 Key takeaway
+
+* **kind → defines storage type**
+* **properties → defines configuration settings** 🚀
+
+
 🔍 Explanation
 
 🟦 `kind:`
@@ -23175,12 +23189,7 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     supportsHttpsTrafficOnly: true
   }
 }
-```
 
-💡 Key takeaway
-
-* **kind → defines storage type**
-* **properties → defines configuration settings** 🚀
 
 
 
@@ -23201,14 +23210,9 @@ The solution must meet the following requirements:
 
 • Scan all the files in the **subdirectories of the src directory**.
 
-
-
 How should you complete the code? To answer, drag he appropriate values to the correct targets. 
 
 Each value may be used once, more than once, or not at all.
-
-
-Here is the extracted content from the image, formatted as **markdown**:
 
 **Values**
 
@@ -23310,7 +23314,7 @@ Repo1 contains Bicep modules.
 
 Pipeline1 deploys Azure resources by using the Bicep modules.
 
-**You need to ensure that all releases comply with Azure Policy before they are deployed to production.**
+<mark>**You need to ensure that all releases comply with Azure Policy before they are deployed to production.**</mark>
 
 What should you do?
 
@@ -23425,11 +23429,24 @@ B. No
 
 **A. Yes**
 
+<mark>Therefore, enabling flaky test management directly addresses the need to minimize troubleshooting effort for intermittent, code-unrelated test failures.</mark>
+
+**Solution: You enable flaky test management.**  ✅
+
+**Solution: You implement the Test Results Trend widget**.❌
+
+**Solution: You enable Test Impact Analysis (TIA)**. ❌ 
+
+**Solution: You increase code coverage.**  ❌ 
+
+
+
 Enabling **flaky test management** is the correct solution because:
 
 - **Flaky tests** are defined as tests that produce both passing and failing results without any changes to the source code or execution environment — exactly matching your scenario where failures are unrelated to code or environment changes.
 
-- **Flaky test management** features (available in Azure Pipelines) help by:
+**Flaky test management** features (available in Azure Pipelines) help by:
+ 
  - Automatically detecting and tracking flaky tests
  - Rerunning only the flaky tests to determine if failures are transient
  - Reducing the need for manual investigation of intermittent, non-deterministic failures
@@ -23482,7 +23499,7 @@ TestSuite1 is used to validate the operations of the web app.
 
 TestSuite1 fails intermittently.
 
-You identify that the failures are unrelated to changes in the source code and execution environment.
+**You identify that the failures are unrelated to changes in the source code and execution environment.**
 
 **You need to minimize troubleshooting effort for the TestSuite1 failures.**
 
@@ -23499,8 +23516,7 @@ B. No
 
 **B. No**
 
-**Test Impact Analysis (TIA)** is designed to **reduce test execution time** by automatically selecting and running only the tests affected by recent code changes — not to handle intermittent, flaky test failures.
-
+<mark>**Test Impact Analysis (TIA)** is designed to **reduce test execution time** by automatically selecting and running only the tests affected by recent code changes — not to handle intermittent, flaky test failures.</mark>
 Why this does **not** meet the goal:
 
 - **TIA filters tests** — It determines which tests are necessary to run based on code changes, but it does not address test instability or non-deterministic failures
@@ -23510,7 +23526,7 @@ Why this does **not** meet the goal:
 The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
 
 
-### Question #13 💩💩💩💩💩
+### Question #13 💩💩💩💩
 
 You plan to publish build artifacts by using an Azure pipeline.
 
@@ -23556,7 +23572,7 @@ Under those reversed requirements, **Option B** is perfectly correct because:
 
 
  
-### Question #14 💩💩💩
+### Question #14 💩💩
 
 You have a GitHub repository.
 
@@ -23681,7 +23697,10 @@ Correct Answer: **B. No**
 
 **Explanation:**
 
-Increasing code coverage means ensuring that a higher percentage of your source code is executed during testing. While this is a good practice for overall software quality, it does absolutely nothing to address or minimize the troubleshooting effort for tests that are already failing intermittently (commonly known as "flaky tests"). 
+Increasing code coverage means ensuring that a higher percentage of your source code is executed during testing. 
+
+
+<mark>While this is a good practice for overall software quality, it does absolutely nothing to address or minimize the troubleshooting effort for tests that are already failing intermittently (commonly known as "flaky tests")</mark>. 
 
 To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you should use solutions such as:
 
@@ -23690,7 +23709,7 @@ To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you s
 *   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
 
 
-### Question #16 💩💩💩💩
+### Question #16 💩💩💩
 
 You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
 
@@ -23730,7 +23749,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩💩💩💩💩
+### Question #17 💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
@@ -23841,7 +23860,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩💩💩💩💩
+### Question #19  💩💩💩💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
