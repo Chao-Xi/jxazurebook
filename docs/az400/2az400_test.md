@@ -26894,13 +26894,13 @@ The proposed solution correctly addresses the requirement.
 
 
 
-### Question-61 💩💩💩
+### Question-61 💩💩
 
 Your company has a project in Azure DevOps for a new web application.
 
 The company uses ServiceNow for change management.
 
-**You need to ensure that a change request is processed before any components can be deployed to the production environment **
+**You need to ensure that a change request is processed before any components can be deployed to the production environment**
 
 What are two ways to integrate ServiceNow into the Azure DevOps release pipeline? 
 
@@ -26920,6 +26920,9 @@ Multiple-Choice Question Answer
 
 **Correct Answers: B & D**
 
+**<mark>(Options A and C refer to "deployment controls invoking APIs," which isn't the standard native terminology for halting pipeline progression for change management. Azure DevOps natively handles this via Gates).<mark>**
+
+
 **Explanation:**
 
 To ensure a change request is processed before components are deployed to the Production environment, you use **Release Gates** in Azure DevOps. Azure DevOps provides a ServiceNow Change Management extension specifically for this purpose. 
@@ -26929,7 +26932,6 @@ You can place this gate in two locations within the release pipeline to achieve 
 *   **B. Define a pre-deployment gate before the deployment to the Prod stage:** This is placed directly on the Production stage. The pipeline will pause before the Production deployment starts, query ServiceNow, and only proceed once the Change Request is approved/processed.
 *   **D. Define a post-deployment gate after the deployment to the QA stage:** If your pipeline flows from QA directly to Prod, placing a gate *after* QA finishes ensures that the pipeline cannot even queue up or progress toward the Prod deployment until the ServiceNow Change Request condition is met. 
 
-*(Options A and C refer to "deployment controls invoking APIs," which isn't the standard native terminology for halting pipeline progression for change management. Azure DevOps natively handles this via Gates).*
 
 
 
@@ -27001,7 +27003,13 @@ What should you do?
 -------------
 
 
-The correct answer is: **B. Register the devices on the Apple Developer portal** ✅
+The correct answer is: <mark>**B. Register the devices on the Apple Developer portal** ✅<mark>
+
+
+> For iOS **ad-hoc distribution**, devices must be **registered in Apple Developer portal** and included in the app’s provisioning profile before App Center can distribute the app.
+
+✅ **Answer: B. Register the devices on the Apple Developer portal**
+
 
 Explanation
 
@@ -27023,13 +27031,9 @@ Why the other options are incorrect
 
 **Key point:**
 
-> For iOS **ad-hoc distribution**, devices must be **registered in Apple Developer portal** and included in the app’s provisioning profile before App Center can distribute the app.
-
-✅ **Answer: B. Register the devices on the Apple Developer portal**
 
 
-
-### Question-64 💩💩💩💩
+### Question-64 💩💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27077,7 +27081,7 @@ This ensures that all devices in the private distribution group—both previousl
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question-65
+### Question-65 💩💩💩💩
 
 Your company has an **on-premises Bitbucket Server that is used for Git-based source control**. 
 
@@ -27085,7 +27089,7 @@ Your company has an **on-premises Bitbucket Server that is used for Git-based so
 
 **You plan to use Azure DevOps to manage the build and release process**es.
 
-Which two components are required to integrate Azure DevOps and Bitbucket? Each correct answer presents part of the solution.
+**Which two components are required** to integrate Azure DevOps and Bitbucket? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -27111,14 +27115,16 @@ You want to **integrate an on-premises Bitbucket Server** with **Azure DevOps** 
 
 Required components
 
-1. **Self-hosted agent (D)**
-   * Runs **inside the network** where Bitbucket Server is accessible.
-   * Can **pull code from the on-premises Git repository** because it is behind the firewall.
-   * Microsoft-hosted agents **cannot access repositories blocked by a firewall**.
+**Self-hosted agent (D)**
 
-2. **External Git service connection (E)**
-   * Azure DevOps uses a **service connection** to connect to external Git repositories.
-   * For Bitbucket Server, you create an **“External Git” service connection** with the repository URL and credentials.
+* Runs **inside the network** where Bitbucket Server is accessible.
+* Can **pull code from the on-premises Git repository** because it is behind the firewall.
+* <mark>Microsoft-hosted agents **cannot access repositories blocked by a firewall**.</mark>
+
+**External Git service connection (E)**
+
+* Azure DevOps uses a **service connection** to connect to external Git repositories.
+* For Bitbucket Server, you create an **“External Git” service connection** with the repository URL and credentials.
 
 Why the others are incorrect
 
@@ -27138,7 +27144,7 @@ Why the others are incorrect
 
 
 
-### Question-66 💩💩💩💩
+### Question-66 💩💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -27165,15 +27171,16 @@ Explanation
 
 When you deploy an **Azure DevOps self-hosted agent** using an **unattended (non-interactive) configuration script**, you must provide the following key information so the agent can register with Azure DevOps:
 
-1. **Authorization credentials (A)**
+**Authorization credentials (A)**
 
-   * Typically a **personal access token (PAT)**.
-   * This allows the agent to authenticate to Azure DevOps and communicate securely with the organization.
+* Typically a **personal access token (PAT)**.
+* This allows the agent to authenticate to Azure DevOps and communicate securely with the organization.
 
-2. **Organization URL (D)**
 
-   * The URL of your Azure DevOps organization (e.g., `https://dev.azure.com/YourOrg`).
-   * Required so the agent knows **which Azure DevOps instance to connect to**.
+**Organization URL (D)**
+
+* The URL of your Azure DevOps organization (e.g., `https://dev.azure.com/YourOrg`).
+* Required so the agent knows **which Azure DevOps instance to connect to**.
 
 Why the other options are not required in the unattended script
 
@@ -27265,7 +27272,10 @@ Which git commit parameter should you use?
 
 The correct answer is: **B. --no-verify** ✅
 
+<mark>**`--no-verify` is the standard way to bypass client-side Git hooks for a commit**</mark>.
+
 Explanation
+
 
 The scenario:
 
@@ -27301,7 +27311,7 @@ git commit --no-verify -m "Commit without work item tag"
 
 
 
-### Question-69 💩💩💩
+### Question-69 - Duplicate 💩
 
 You have a **private distribution group that contains provisioned and unprovisioned devices**.
 
@@ -27396,7 +27406,16 @@ configuration RequiredFeatures
 * **Dropdown 1:** ✔ `= @("SMTP-Server", "Web-Server")`
 * **Dropdown 2:** ✔ `Ensure`
 
+
+💡 Key takeaway
+
+* Use **actual feature names** (e.g., `Web-Server`)
+* Use **Ensure = 'Present'** to enforce installation 🚀
+
+
 🔍 Explanation
+
+
 
 🟦 `WindowsFeatureSet`
 
@@ -27450,14 +27469,9 @@ configuration RequiredFeatures
 }
 ```
 
-💡 Key takeaway
-
-* Use **actual feature names** (e.g., `Web-Server`)
-* Use **Ensure = 'Present'** to enforce installation 🚀
 
 
-
-### Question-71 💩💩
+### Question-71 - Duplicated 💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27614,7 +27628,7 @@ Why the other options are incorrect
 ✅ **Answer: A, B, D**
 
 
-### Question-74 💩💩💩
+### Question-74 💩💩
 
 You have an Azure subscription that contains multiple Azure pipelines.
 
@@ -27698,17 +27712,11 @@ Explanation
 
 When an application uses a **service principal** to authenticate to Azure AD, it needs the following credentials to sign in programmatically:
 
-1. **Application ID (Client ID)**
+1. **Application ID (Client ID)**： Uniquely identifies the **service principal / app registration**.
 
-  * Uniquely identifies the **service principal / app registration**.
+3. **Client secret**： A password-like credential used to authenticate the service principal.
 
-3. **Client secret**
-
-  * A password-like credential used to authenticate the service principal.
-
-5. **Tenant ID**
-
-  * Identifies the **Azure AD tenant** where the service principal exists.
+5. **Tenant ID**： Identifies the **Azure AD tenant** where the service principal exists.
 
 With these three values, the application can request an **OAuth token** from Azure AD to access Azure resources.
 
@@ -27844,7 +27852,7 @@ Why the other options are incorrect
 ✅ **Answer: D. modifier**
 
 
-### Question-78 💩💩💩
+### Question-78 💩💩
 
 
 You have a project in Azure DevOps named Project1.
@@ -27977,7 +27985,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 💩💩💩💩
+###  Question-80 💩💩💩💩💩
 
 You have a project in Azure DevOps named Project1.
 
@@ -28039,7 +28047,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-81  💩💩💩
+### Question-81  💩💩💩💩
 
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
@@ -28199,8 +28207,6 @@ Which version number should you assign to the release?
 
 ----
 
-**Answer: D**
-
 **Answer: D. 4.0.1**
 
 Explanation
@@ -28247,6 +28253,9 @@ Answer: B
 
 The correct answer is: **B. Playwright** ✅
 
+<mark>**Playwright** is a **modern open-source framework** for automating browser interactions.</mark>
+
+
 Explanation
 
 Scenario:
@@ -28257,10 +28266,12 @@ Scenario:
 Why **Playwright** is the right choice
 
 * **Playwright** is a **modern open-source framework** for automating browser interactions.
+
 * Supports:
-  * Chrome, Firefox, Edge, and WebKit (Safari)
-  * **End-to-end UI testing**
-  * Multi-language support: C#, JavaScript, Python, Java
+
+* Chrome, Firefox, Edge, and WebKit (Safari)
+* **End-to-end UI testing**
+* Multi-language support: C#, JavaScript, Python, Java
 * Can be easily integrated into **CI/CD pipelines** for automated web testing.
 
 Example:
