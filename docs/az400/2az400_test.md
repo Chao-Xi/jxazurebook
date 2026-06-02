@@ -25446,7 +25446,7 @@ Then:
 ❌ Answer: **No**
 
 
-### Question #41 💩💩
+### Question #41 💩
 
 You are developing an Azure Pipelines pipeline.
 
@@ -25522,7 +25522,7 @@ You need an **automated check** that:
 **C. pre-deployment gates**
 
 
-### Question #42 💩💩💩💩
+### Question #42 💩💩💩
 
 You have an Azure Resource Manager (ARM) template that contains the following expression.
 
@@ -25619,6 +25619,16 @@ trigger:
 
 💡 Why this does NOT meet the goal
 
+
+🔥 Correct Solution (what it should be)
+
+```yaml
+pr:
+  paths:
+    include:
+      - webapp/*
+```
+
 The requirements are:
 
 1. ✔ Run only when changes occur in `/webapp`
@@ -25664,15 +25674,6 @@ paths:
 * ❌ PR trigger condition is missing entirely
 
 
-🔥 Correct Solution (what it should be)
-
-```yaml
-pr:
-  paths:
-    include:
-      - webapp/*
-```
-
 🧠 Key Exam Insight
 
 * `trigger` → push/commit builds
@@ -25684,7 +25685,7 @@ pr:
 
 **B. No**
 
-### Question #44
+### Question #44 💩💩
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -25786,8 +25787,7 @@ pr:
 
 **B. No**
 
-### Question #45 💩💩💩💩
-
+### Question #45 💩💩💩
 
 You are using an Azure Pipelines pipeline to build and deploy a web app.
 
@@ -25869,7 +25869,7 @@ NOTE: Each correct selection is worth one point.
 * **Unit** → isolated logic
 * **Integration** → component interaction
 
-### Question #46 💩💩💩💩💩
+### Question #46 💩💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -25974,7 +25974,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-### Question #47 💩💩💩💩💩
+### Question #47 💩💩💩💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26012,7 +26012,14 @@ B. No
 
 ✅ Final Answer:
 
-A. YES 
+A. YES   
+
+**`not(canceled())`**
+
+
+- succeededOrFailed() ❌→ not ideal when requirement mentions cancellation. 
+- not(canceled()) ✅ → correct condition
+- failTaskOnFailedTests ✅ : true → required to fail pipeline
 
 
 ### Question #48
@@ -26178,19 +26185,19 @@ Based on the provided Dockerfile, here are the correct selections for each state
 
 | Statements | Yes | No |
 | :--- | :---: | :---: |
-| App1 is an ASP.NET Core app. | **X** | ◯ |
+| App1 is an ASP.NET Core app. | **✅** | ◯ |
 | The build uses a debug configuration. | ◯ | **X** |
 | The Dockerfile uses the Docker multi-stage build feature. | **X** | ◯ |
 
 **Explanation:**
 
-1.  **App1 is an ASP.NET Core app (Yes):** The Dockerfile uses the .NET SDK as its base and explicitly exposes ports **80** (HTTP) and **443** (HTTPS). This is the standard configuration for ASP.NET Core web applications.
+1.  <mark>**App1 is an ASP.NET Core app (Yes):** The Dockerfile uses the .NET SDK as its base and explicitly exposes ports **80** (HTTP) and **443** (HTTPS). This is the standard configuration for ASP.NET Core web applications</mark>.
 2.  **The build uses a debug configuration (No):** Both the `dotnet build` and `dotnet publish` commands in the Dockerfile include the **`-c Release`** flag.
   * This explicitly tells the compiler to use the Release configuration, which includes performance optimizations and excludes debug symbols.
 3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
 
 
-### Question #50 💩💩💩💩
+### Question #50 💩💩💩
 
 You have an Azure DevOps subscription that contains the projects shown in the following table.
 
@@ -26319,6 +26326,21 @@ For each of the following statements, select Yes if the statement is true. Other
 
 -----
 
+✅ Final Answers
+
+| Statements                             | Yes |  No |
+| :------------------------------------- | :-: | :-: |
+| Job B can run concurrently with job A. |  ✅  |     |
+| Job D can run concurrently with job B. |  ✅  |     |
+| Job C can run concurrently with job D. |     |  ❌  |
+
+🧠 Key Exam Insight
+
+* `dependsOn: []` → **no dependency → parallel execution**
+* If a job depends on another → **cannot overlap**
+* Jobs without dependencies can run **concurrently by default**
+
+
 
 🔍 Analyze Job Dependencies
 
@@ -26361,22 +26383,10 @@ For each of the following statements, select Yes if the statement is true. Other
 
 ❌ **Answer: No**
 
-✅ Final Answers
-
-| Statements                             | Yes |  No |
-| :------------------------------------- | :-: | :-: |
-| Job B can run concurrently with job A. |  ✅  |     |
-| Job D can run concurrently with job B. |  ✅  |     |
-| Job C can run concurrently with job D. |     |  ❌  |
-
-🧠 Key Exam Insight
-
-* `dependsOn: []` → **no dependency → parallel execution**
-* If a job depends on another → **cannot overlap**
-* Jobs without dependencies can run **concurrently by default**
 
 
-### Question #52
+
+### Question #52 💩
 
 You use an Azure Pipelines pipeline to build and test an app named App1.
 
@@ -26480,6 +26490,21 @@ NOTE: Each correct selection is worth one point.
 
 ----
 
+
+🧠 Key Exam Insight
+
+* **Pull Requests = pre-merge validation (build + test gating)**
+* **Environments = release approval gates (manual approvals, change control)**
+ 
+✅ Final Answers
+
+| Requirement                                         | Answer            |
+| --------------------------------------------------- | ----------------- |
+| Submit code for testing only after successful build | **Pull requests** |
+| Require change management approval before release   | **Environments**  |
+
+
+
 ✅ Correct Answers
 
 **1. Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**
@@ -26519,20 +26544,8 @@ NOTE: Each correct selection is worth one point.
 * Packages → artifacts
 * Pull requests → pre-merge, not release approval
 
-🧠 Key Exam Insight
 
-* **Pull Requests = pre-merge validation (build + test gating)**
-* **Environments = release approval gates (manual approvals, change control)**
- 
-✅ Final Answers
-
-| Requirement                                         | Answer            |
-| --------------------------------------------------- | ----------------- |
-| Submit code for testing only after successful build | **Pull requests** |
-| Require change management approval before release   | **Environments**  |
-
-
-### Question #54 💩💩💩💩
+### Question #54 💩💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
@@ -26628,6 +26641,13 @@ Open Pipelines> Releases, choose to edit your release pipeline, then choose Opti
 
 The correct answer is: **A. Modify the Integrations options for the pipeline** ✅
 
+* **D. Service hooks** ❌ → Useful for external integrations (Slack, Jira, etc.), but **not needed** to update Azure DevOps work items.
+
+**Key point:**
+
+Enabling **pipeline integrations** is the standard way to ensure that **release information is automatically added to associated work items** in Azure DevOps.
+
+
 Explanation
 
 You want to:
@@ -26647,13 +26667,8 @@ Why the other options are incorrect
 
 * **B. Post-deployment conditions** ❌ → Controls stage execution (e.g., gates, approvals), not work item updates.
 * **C. Agentless job** ❌ → Used for calling services or running tasks that don’t require an agent; doesn’t update work items automatically.
-* **D. Service hooks** ❌ → Useful for external integrations (Slack, Jira, etc.), but **not needed** to update Azure DevOps work items.
 
 
-
-**Key point:**
-
-Enabling **pipeline integrations** is the standard way to ensure that **release information is automatically added to associated work items** in Azure DevOps.
 
 ✅ **Answer: A**
 
@@ -26709,7 +26724,7 @@ Why the other options are incorrect
 **D. Tiller**
 
 
-### Question-57 💩💩💩💩
+### Question-57 💩💩💩
 
 **You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
@@ -26775,6 +26790,13 @@ Does this meet the goal?
 ----------
 
 The correct answer is: **B. No** ✅
+
+Solution: From Post-deployment conditions, you modify the Time between re-evaluation of gates option. ❌
+
+Solution: From Post-deployment conditions, you modify the Timeout setting tor post-deployment approvals.</mark> ❌
+
+**Solution: From Pre-deployment conditions, you modify the Timeout setting for pre-deployment approvals.**. ✅
+
 
 Explanation
 
