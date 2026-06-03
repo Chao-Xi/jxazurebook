@@ -21094,6 +21094,11 @@ D. Purchase Microsoft-hosted parallel jobs
 
 ✅ Correct answer: **B. Register additional self-hosted agents**
 
+**C. Purchase self-hosted parallel jobs** ❌
+
+* Only increases allowed concurrency **limit**
+* Does NOT help if you only have **5 physical agents**
+* Bottleneck remains
 
 🔍 Explanation
 
@@ -21125,11 +21130,6 @@ A. Microsoft-hosted agents
 * Cannot easily access **on-premises file system**
 * Would require complex networking (VPN, self-hosted proxy)
 
-C. Purchase self-hosted parallel jobs
-
-* Only increases allowed concurrency **limit**
-* Does NOT help if you only have **5 physical agents**
-* Bottleneck remains
 
 
 D. Purchase Microsoft-hosted parallel jobs
@@ -21171,6 +21171,12 @@ D. an MDF file
 ✅ Correct answer: **B. a DACPAC**
 
 
+💡 Key takeaway
+
+* **DACPAC → schema deployment (CI/CD pipelines)**
+* **BACPAC → backup/migration (data + schema)** 🚀
+
+
 🔍 Explanation
 
 The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy **database schema changes** using a **DACPAC** file.
@@ -21201,13 +21207,8 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 
 **B. a DACPAC**
 
-💡 Key takeaway
 
-* **DACPAC → schema deployment (CI/CD pipelines)**
-* **BACPAC → backup/migration (data + schema)** 🚀
-
-
-### Question #24  💩💩💩 💩💩💩
+### Question #24  💩💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21274,15 +21275,27 @@ Dropdown options visible in the image:
 * **Drop-down 1 (`type`):** ✔ `Microsoft.Resources/deployments`
 * **Drop-down 2 (inside `properties`):** ✔ `templateLink`
 
+💡 Key takeaway
+
+To dynamically reference Key Vault secrets in ARM templates:
+
+* Use **nested deployments (`Microsoft.Resources/deployments`)**
+* <mark>Use **`templateLink`** for external templates</mark>
+* Combine with **`resourceId()`** for dynamic resource resolution 🚀
+
+
 🔍 Explanation
 
 🟦 `Microsoft.Resources/deployments`
 
 * This defines a **nested deployment** in ARM templates
-* Required when:
-  * You want to **dynamically reference resources**
-  * You are passing parameters (like Key Vault secrets)
-* Enables use of functions like:
+
+Required when:
+
+* You want to **dynamically reference resources**
+* You are passing parameters (like Key Vault secrets)
+
+Enables use of functions like:
 
   * `resourceId()` (as shown in the template)
 
@@ -21310,16 +21323,9 @@ Dropdown options visible in the image:
 "templateLink": { ... }
 ```
 
-💡 Key takeaway
-
-To dynamically reference Key Vault secrets in ARM templates:
-
-* Use **nested deployments (`Microsoft.Resources/deployments`)**
-* Use **`templateLink`** for external templates
-* Combine with **`resourceId()`** for dynamic resource resolution 🚀
 
 
-### Question #25 💩💩💩💩
+### Question #25 💩💩💩
 
 You are developing an iOS application by using Azure DevOps.
 
@@ -21372,7 +21378,7 @@ To manually test an iOS app on specific devices **without publishing to the App 
 
 * **A. Intune compliance policy** → unrelated to iOS app distribution
 * **B. Internal CA certificate** → not required for iOS app testing
-* **C. Register in iTunes store** → would make the app public (not desired)
+* <mark>**C. Register in iTunes store** → would make the app public (not desired)</mark>
 * **D. Onboard into Intune** → not needed for simple manual testing
 
 🎯 Final Answer
@@ -21499,9 +21505,10 @@ To deploy and run the Desired State Configuration (DSC) extension properly, the 
 
 By default, in many hardened Linux environments, permissions are restricted. 
 
-You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) permissions to the `/tmp` directory so it can successfully process the configurations. 
+<mark>**You must explicitly grant the `omsagent` user Read, Write, and Execute (`rwx`) permissions to the `/tmp` directory so it can successfully process the configurations. **
+**</mark>
 
-**Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
+Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
 ### Question #28 💩💩💩
 
@@ -21546,13 +21553,16 @@ Here is the content extracted from the image:
 
 🟦 Why this works
 
-* **Get-AzResource**
-  * Retrieves Azure resources across the subscription
-* **-ResourceType**
-  * Filters resources by type:
-  * `Microsoft.OperationalInsights/workspaces` = Log Analytics workspaces
-* **-ExpandProperties**
-  * Returns detailed properties of each workspace
+**Get-AzResource** Retrieves Azure resources across the subscription
+
+**-ResourceType**
+
+* Filters resources by type:
+* `Microsoft.OperationalInsights/workspaces` = Log Analytics workspaces
+
+**-ExpandProperties**
+
+* Returns detailed properties of each workspace
 
 
 ❌ Why the other options are incorrect
@@ -21593,6 +21603,9 @@ Which task type should you include in the solution?
 * B. Azure RM Web App Deployment
 * C. Azure PowerShell
 * D. Azure App Service Manage
+
+-----
+
 
 The correct answer is: **C. Azure PowerShell** ✅
 
@@ -21662,6 +21675,8 @@ E. Medium
 - ✔ **B. Jekyll**
 - ✔ **C. DocFX**
 
+<mark>Use static site generators like Jekyll or DocFX 🚀</mark>
+
 🔍 Explanation
 
 You need a solution that:
@@ -21673,16 +21688,18 @@ You need a solution that:
 
 🟦 **Jekyll**
 
-* Native static site generator for GitHub (used by GitHub Pages)
+* <mark>Native static site generator for GitHub (used by GitHub Pages)</mark>
+
 * Supports:
   * Markdown → HTML
   * Automatic rebuild on commits
+
 * Ideal for:
   * Simple documentation sites
 
 🟦 **DocFX**
 
-* Microsoft tool designed for **.NET documentation**
+* <mark>Microsoft tool designed for **.NET documentation**</mark>
 * Supports:
   * Markdown + API documentation
   * Static site generation
@@ -21705,7 +21722,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #31  💩💩💩💩💩
+### Question #31  💩💩💩💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -21765,6 +21782,14 @@ Hot Area:
 | If manual changes are made to the configuration of the virtual machine, the configuration will reapply automatically.                         | ❌ **No**  |
 | If the Web-Server Windows feature is uninstalled from the virtual machine, the discrepancy will be reported in a log entry within 60 minutes. | ✅ **Yes** |
 
+
+💡 Key takeaway
+
+* **DependsOn → controls execution order**
+* **ApplyAndMonitor → detect drift, don’t fix**
+* **ConfigurationModeFrequencyMins → drift detection interval** 🚀
+
+
 🔍 Explanation
 
 🟦 1. File copy before Web-Server install
@@ -21775,9 +21800,10 @@ Hot Area:
 DependsOn = '[WindowsFeature]Web-Server'
 ```
 
-* This ensures:
-  * **Web-Server installs first**
-  * Then the file is copied
+This ensures:
+
+* **Web-Server installs first**
+* Then the file is copied
 
 ❌ Statement says *before* → incorrect
 
@@ -21809,13 +21835,8 @@ ConfigurationModeFrequencyMins = 60
 
 ✔ Discrepancy is detected and logged
 
-💡 Key takeaway
 
-* **DependsOn → controls execution order**
-* **ApplyAndMonitor → detect drift, don’t fix**
-* **ConfigurationModeFrequencyMins → drift detection interval** 🚀
-
-### Question #32 💩💩💩
+### Question #32 💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -21860,6 +21881,11 @@ performanceCounters
 * **Box 1:** ✔ `bin(timestamp,1d)`
 * **Box 2:** ✔ `render timechart`
 
+💡 Key takeaway
+
+* **bin() → controls time granularity**
+* **timechart → best for time-series visualization** 🚀
+
 🔍 Explanation
 
 🟦 `bin(timestamp,1d)`
@@ -21874,9 +21900,11 @@ performanceCounters
 🟦 `render timechart`
 
 * Visualizes the results as a **time-based chart**
-* Ideal for:
-  * Trends over time
-  * Comparing multiple servers (`cloud_RoleInstance`)
+
+Ideal for:
+
+* Trends over time
+* Comparing multiple servers (`cloud_RoleInstance`)
 
 ❌ Why the other options are incorrect
 
@@ -21894,13 +21922,9 @@ performanceCounters
 | render timechart
 ```
 
-💡 Key takeaway
-
-* **bin() → controls time granularity**
-* **timechart → best for time-series visualization** 🚀
 
 
-### Question #33  💩💩💩
+### Question #33  💩💩💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -21922,6 +21946,16 @@ D. Configuration > Node > Resource
 
 ✅ Correct answer: **D. Configuration > Node > Resource**
 
+```powershell
+Configuration MyConfig {
+    Node "VM1" {
+        WindowsFeature WebServer {
+            Ensure = "Present"
+            Name   = "Web-Server"
+        }
+    }
+}
+```
 🔍 Explanation
 
 Desired State Configuration (DSC) follows a **specific hierarchical structure**:
@@ -21946,16 +21980,7 @@ Desired State Configuration (DSC) follows a **specific hierarchical structure**:
 
 🟦 Correct structure
 
-```powershell id="dsc123"
-Configuration MyConfig {
-    Node "VM1" {
-        WindowsFeature WebServer {
-            Ensure = "Present"
-            Name   = "Web-Server"
-        }
-    }
-}
-```
+
 
 ❌ Why the other options are incorrect
 
@@ -21978,7 +22003,7 @@ DSC always follows:
 
 Your team uses Azure Pipelines to deploy applications.
 
-You need to ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams. 
+You need to **ensure that when a failure occurs during the build or release process, all the team members are notified by using Microsoft Teams**. 
 
 The solution must minimize development effort.
 
@@ -22003,9 +22028,7 @@ D. Install the Azure Pipelines app for Teams and configure a subscription to rec
 
 * The **Azure Pipelines app for Microsoft Teams** provides:
   * Built-in integration with Azure DevOps pipelines
-  * Notifications for:
-    * Build failures
-    * Release failures
+    * Notifications for: Build failures / Release failures
 * Requires **minimal setup**:
 
   * Install app in Teams
@@ -22036,7 +22059,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #35 💩💩💩💩
+### Question #35 💩💩💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22081,7 +22104,7 @@ Here is the content extracted from the image, formatted as markdown:
 
 ✅ Correct order of query statements
 
-```kusto
+```
 AppEvents
 | where Name startswith "Clicked Create New Ticket"
 | summarize NumberOfClicks = count() by bin(TimeGenerated, 1d), UserId
@@ -22097,7 +22120,7 @@ AppEvents
 
 * Start with the target table
 
-🟦 2. Filter by event name
+🟦 **2. Filter by event name**
 
 ```kusto
 | where Name startswith "Clicked Create New Ticket"
@@ -22134,7 +22157,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩💩💩💩
+### Question #36  💩💩💩💩💩
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22311,7 +22334,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #39 💩💩💩
+### Question #39 💩💩💩💩
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22349,6 +22372,14 @@ Here is the content extracted from the image, formatted as markdown:
 * **You deprecate functionality in an API:** ✔ **Minor**
 * **You add a feature and maintain backwards compatibility:** ✔ **Minor**
 
+💡 Key takeaway
+
+* **Major → breaking changes**
+* **Minor → new features / deprecations**
+* **Patch → bug fixes only** 🚀
+
+
+
 🔍 Explanation
 
 🟦 **Major (X.0.0)**
@@ -22382,11 +22413,6 @@ Here is the content extracted from the image, formatted as markdown:
 * Deprecate functionality → **Minor**
 * Add feature (backward compatible) → **Minor**
 
-💡 Key takeaway
-
-* **Major → breaking changes**
-* **Minor → new features / deprecations**
-* **Patch → bug fixes only** 🚀
 
 
 ### Question #40 💩💩💩💩
@@ -22408,6 +22434,13 @@ D. modifier
 ---
 
 ✅ Correct answer: **D. modifier**
+
+💡 Key takeaway
+
+In CalVer:
+
+<mark>**Modifier = optional label (beta, alpha, rc)** 🚀</mark>
+
 
 🔍 Explanation
 
@@ -22441,11 +22474,6 @@ Example:
 
 **D. modifier**
 
-💡 Key takeaway
-
-In CalVer:
-
-<mark>**Modifier = optional label (beta, alpha, rc)** 🚀</mark>
 
 
 ### Question #41  💩💩💩💩💩
@@ -22683,7 +22711,7 @@ NOTE: More than one order of answer choices is correct. You will receive credit 
 
 ❌ Why the other options are incorrect
 
-* **Service principal** → used for Azure resources, not Azure DevOps data
+* <mark>**Service principal** → used for Azure resources, not Azure DevOps data</mark>
 * **Dashboard widget** → visualization only, not automated document generation
 
 🎯 Final Answer
