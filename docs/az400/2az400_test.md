@@ -19525,7 +19525,7 @@ Final Answer
 
 ## Topic 8 - Question Set 8
 
-### Question #1 
+### Question #1 💩💩
 
 You manage the Git repository for a large enterprise application.
 
@@ -19684,7 +19684,7 @@ When using **Helm v2 with RBAC-enabled AKS**:
 2. Initialize Helm (Tiller)
 3. Install the chart
 
-### Question #3 💩💩💩
+### Question #3 💩💩
 
 You are implementing an Azure DevOps strategy for mobile devices using App Center. 
 
@@ -19762,7 +19762,7 @@ Select and Place:
 * <mark>**Shared = reusable across multiple apps**</mark>
 
 
-### Question #4 💩💩💩
+### Question #4 💩💩
 
 
 You need to create deployment files for an Azure Kubernetes Service (AKS) cluster. 
@@ -19865,7 +19865,7 @@ Deployment 3: [ Drop zone ]
 * **Secrets/certs → CSI Secrets Store driver**
 
 
-### Question #5
+### Question #5 💩
 
 You manage the Git repository for a large enterprise application.
 
@@ -20095,7 +20095,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8
+### Question #8 💩💩
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -20158,7 +20158,7 @@ Deploying ARM templates via Azure DevOps follows:
 > **Pipeline → Deployment task → Configure parameters** 🚀
 
 
-### Question #9 💩💩💩
+### Question #9 💩💩
 
 You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
 
@@ -20240,7 +20240,7 @@ To enable **continuous delivery (CD)** in a classic release pipeline:
 * **The Web Application artifact**
 
 
-### Question #10 💩💩💩
+### Question #10 💩💩
 
 
 Your company plans to deploy an application to the following endpoints:
@@ -20352,6 +20352,16 @@ Proper design
 * Set `@release` as the **default view**
 * Use a **release pipeline** to **promote** packages from `@prerelease` → `@release` after validation/testing
 
+ Why the others are wrong
+
+* **A / B** ❌ → Azure Artifacts does not use *tagging* for release management — it uses **views + promotion**
+* **C** ❌ → `@default` is not a user-created view name; default view is a property, not a view
+
+
+
+
+
+
 Why option D is correct
 
 <mark>**D. Create two feed views named @prerelease and @release. Set @release as the default view. Configure a release pipeline that promotes a package to the @release view after successful testing.**</mark>
@@ -20363,10 +20373,7 @@ This matches Azure Artifacts' intended workflow:
 * Stable consumers automatically get packages from `@release` (default view)
 * Promotion = official release process
 
- Why the others are wrong
 
-* **A / B** ❌ → Azure Artifacts does not use *tagging* for release management — it uses **views + promotion**
-* **C** ❌ → `@default` is not a user-created view name; default view is a property, not a view
 
 Visual flow
 
@@ -20385,7 +20392,7 @@ This is the standard enterprise pattern for npm feeds in **Azure DevOps** with m
 ✅ **Final Answer: D**
 
 
-### Question #12 💩💩💩
+### Question #12 💩
 
 
 You are defining release strategies for two applications as shown in the following table.
@@ -20460,7 +20467,7 @@ App2: [ ]
 * **Blue/Green → fast deploy + instant rollback** 🚀
 
 
-### Question-13 💩💩💩
+### Question-13 💩💩
 
 ```
 Name  Type
@@ -20489,6 +20496,13 @@ What should you do?
 **Correct answer: A**
 
 > **A. Create a feed view named `@release` and set `@release` as the default view. After the npm packages test successfully, configure a release pipeline that promotes a package to the `@release` view.**
+
+
+ Key principle
+
+> ✅ **Views + promotion = controlled consumption**
+>
+> ❌ Tags = labels only (no enforcement)
 
 Why this is correct
 
@@ -20550,11 +20564,6 @@ release pipeline
 PROMOTE → @release (default view)
 ```
 
- Key principle
-
-> ✅ **Views + promotion = controlled consumption**
->
-> ❌ Tags = labels only (no enforcement)
 
 
 
@@ -20564,6 +20573,7 @@ This is the enterprise-standard pattern in **Azure DevOps** for secure multi-pro
 
 
 ### Question-14 💩💩
+
 
 Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. 
 
@@ -20610,7 +20620,7 @@ Why the other options are incorrect
 
 
 
-### Question-15 💩💩💩
+### Question-15 💩💩
 
 
 Your company builds a multi-tier web application.
@@ -20727,7 +20737,7 @@ Why the other options are incorrect
 ✅ **Answer: C**
 
 
-### Question-17 💩💩
+### Question-17 💩
 
 You are designing a build pipeline in Azure Pipelines.
 
@@ -20763,7 +20773,8 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #18 💩💩
+### Question #18 💩💩💩
+
 
 You use Azure Pipelines to manage the build and deployment of apps.
 
@@ -20845,13 +20856,13 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩💩💩💩💩
+### Question #19 💩💩💩💩💩
 
 You have a project in Azure DevOps.
 
 **You need to associate an automated test to a test case.**
 
-Which three actions should you perform in sequence? 
+**Which three actions** should you perform in sequence? 
 
 To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -20911,7 +20922,7 @@ To link automated tests:
 
 > **Create test → store in repo → associate via test case work item** 🚀
 
-### Question #20
+### Question #20 💩💩
 
 You have an Azure Kubernetes Service (AKS) cluster.
 
@@ -20948,6 +20959,9 @@ Select and Place:
 1. **Create a service principal in Azure Active Directory (Azure AD)**
 2. **Configure RBAC roles in the cluster**
 3. **Add a Helm package and deploy a task to the deployment pipeline**
+
+❌ **Create a service account in the cluster** → optional; not required when using service principal + RBAC
+
 
 🔍 Explanation
 
