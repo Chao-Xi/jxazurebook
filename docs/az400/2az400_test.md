@@ -14701,7 +14701,7 @@ The correct answer is:
 
 Explanation
 
-<markk>To ensure a **template runs before the pipeline steps**, you must use the **`extends` keyword** in Azure Pipelines YAML.</mark>
+<mark>To ensure a **template runs before the pipeline steps**, you must use the **`extends` keyword** in Azure Pipelines YAML.</mark>
 
 * **`extends`** allows you to base your pipeline on a template
 * The template (`Template1.yml`) runs **first**, then additional steps are passed via parameters
@@ -14723,7 +14723,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  💩💩💩
+### Question #2  💩💩
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -14796,6 +14796,8 @@ The correct answer is:
 
 **B. No**
 
+A **self-hosted agent** deployed within the on-premises network ✅
+
 Explanation
 
 The key requirement is:
@@ -14810,7 +14812,7 @@ Why the solution does NOT meet the goal
 
 What would work instead
 
-* Use a **self-hosted agent** deployed within the on-premises network
+Use a **self-hosted agent** deployed within the on-premises network
 
 * This ensures:
 
@@ -14872,7 +14874,7 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩💩💩💩💩
+### Question #5 💩💩💩💩
 
 DRAG DROP You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
@@ -15041,6 +15043,11 @@ The correct answer is:
 
 **A. Yes**
 
+❌ Solution: **Configure the build pipeline to use a <mark>Microsoft-hosted agent pool</mark> running a Linux image. Include the Java Tool Installer task in the build pipeline.**
+
+❌ Solution: **Configure an Octopus Tentacle on an on-premises machine**. Use the Package Application task in the build pipeline.
+
+❌  Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
 Explanation
 
 This solution satisfies all the requirements:
@@ -15073,7 +15080,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩💩💩💩💩
+### Question #8 💩💩💩💩
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15127,7 +15134,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩💩💩
+### Question #9  💩💩💩💩
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15284,9 +15291,7 @@ You can clearly see four top-level sections (stages):
 
 **Jobs inside Build_vm**
 
-Under **build_vm**, there is a single job named something like:
-
-* **initialize build** (with steps like checkout, cmdline, finalize job)
+<mark>Under **build_vm**, there is a single job named something like: **initialize build** (with steps like checkout, cmdline, finalize job)</mark>
 
 ➡️ This indicates **only one job**, with multiple **steps inside it**
 
@@ -15399,7 +15404,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩💩
+### Question #13 💩💩💩💩💩💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15453,7 +15458,7 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
 
-### Question #14 💩💩💩
+### Question #14 💩💩💩💩
 
 You are creating a container for an **ASP.NET Core app.**
 
@@ -15575,9 +15580,11 @@ To enforce requirements on **pull requests in Azure Repos**, you use **branch po
 ✅ Mapping:
 
 * **Committed code must compile successfully:** **A build policy**
+
   * A build validation policy runs a pipeline to ensure the code builds successfully before merging.
 
 * **Pull requests must have a Quality Gate status of Passed in SonarCloud:** **A status policy**
+
   * SonarCloud reports its Quality Gate result as a **status check**, which is enforced using a status policy.
 
 ❌ Why not check-in policy?
@@ -15678,7 +15685,7 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-18  💩💩💩
+### Question-18  💩💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15693,7 +15700,7 @@ What should you use?
 
 ----
 
-**Correct answer: C. JaCoCo** ✅
+**Correct answer: C. JaCoCo** ✅  /  Cobertura  ✅ 
 
 Why JaCoCo?
 

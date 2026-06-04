@@ -214,14 +214,164 @@ Key platforms:
 - Microsoft 365 Copilot extends with custom agents from Copilot Studio
 
 
+#### KEY TAKEAWAYS
+
+* Microsoft ecosystem is **modular** — mix platforms for the best fit
+* AB-100 tests **platform selection** based on business requirements
+* Always consider **governance, scale, and cost in your answers**
+* Know when to pick **speed (Copilot Studio) vs. customization (Azure Al Foundry)**
+
 ### 2-2 Microsoft AI Agent Types & Capabilities Explained
 
+**AB-100 AGENT TYPES**
+
+
+
+| Agent Type | Autonomy Level | Key Capabilities | Best Microsoft Platform(s) | Typical Use Case |
+|------------|----------------|------------------|----------------------------|--------------------|
+| Prompt/Response | Low | Responds to user input with reasoning | Copilot Studio, Microsoft 365 Copilot | Chat-based support, simple Q&A |
+| Task | Medium | Executes bounded tasks with tools | Copilot Studio + Power Automate | Escalation, data lookup, approval workflows |
+| Autonomous | High | Independent planning, multi-step actions | Copilot Studio + Azure AI Foundry Agent Service | Background monitoring, proactive workflows |
+
+![Alt Image Text](../images/ab100_1_1.png "Body image")
+
+
+#### **CAPABILITIES BY PLATFORM**
+
+
+* **Copilot Studio**: All three types + topics, actions, connectors
+* **Azure Al Foundry:** Enhances autonomous agents with custom models & multi-agent orchestration
+* **Power Platform**: Adds grounding & flows for task/autonomous agents
+* **Dynamics 365**: Prebuilt task & autonomous agents (e.g., Sales Copilot)
+* **Microsoft 365 Copilot**: Primarily prompt/response, extensible to task
+
+**KEY TAKEAWAYS**
+
+- Know the three agent types: prompt/response, task, autonomous
+- Autonomous agents are powerful but require strong guardrails
+- Exam favors **balancing autonomy with governance**
 
 ### 2-3 Copilot Studio Core Concepts: Topics, Tools & Connectors
 
+###$ **COPILOT STUDIO OVERVIEW**
+
+* No-code/low-code platform for building agents
+* Core building blocks: Topics, Tools, Connectors, Knowledge
+* Supports all agent types (prompt/response, task, autonomous)
+
+
+Exam focus: Designing agents in Copilot Studio (topics → tools → flows)
+
+
+
+
+#### CORE COMPONENTS TABLE
+
+
+| Component | Purpose | Exam Relevance |
+|-----------|---------|----------------|
+| Topics | Conversation scenarios & branching | Defines agent behavior & user interaction |
+| Tools | Connectors, API calls, prompts, agent flows | Enables agent to take real-world actions |
+| Connectors | 1000+ prebuilt (Dynamics, Dataverse, etc.) | Grounds agents in enterprise data |
+| Knowledge | Grounding sources (Dataverse, SharePoint, web) | Prevents hallucinations, improves accuracy |
+
+Example: Topic "Escalate Issue" → Tool "Create Case in Dynamics" → Connector to Dynamics
+365
+
+
+#### AGENT DESIGN FLOW IN COPILOT STUDIO
+
+GOVERNANCE & SECURITY IN COPILOT STUDIO
+
+* Built-in guardrails (content filters, data loss prevention)
+* Environment isolation (dev/test/prod)
+* Role-based access control
+
+#### KEY TAKEAWAYS
+
+* Copilot Studio is the primary no-code agent builder
+* Know the four core components: topics, tools, connectors, knowledge
+* Exam emphasizes grounding & guardrails for reliable agents
 
 ### 2-4 Azure AI Foundry Tools & Model Selection
 
+#### WHAT IS AZURE AI FOUNDRY?
+
+**Centralized platform for Al model discovery, hosting, and customization — your model headquarters.**
+
+1. **Model Catalog** - Thousands of models: Azure OpenAl (GPT-4), Anthropic Claude, Meta
+Llama, Mistral, and more
+2. **Fine-Tuning Tools** — Adapt models to your specific domain data and industry terminology
+3. **Agent Service** — Scalable agent hosting (LangGraph, Semantic Kernel)
+
+
+> Key distinction: Copilot Studio = speed & accessibility. 
+> 
+> Azure AI Foundry = deeper customization, scale, and control.
+
+#### WHEN TO USE AZURE AI FOUNDRY
+
+The exam loves testing this decision point. Use Foundry when:
+
+* **Off-the-shelf models lack accuracy** for your industry data (financial, medical, legal)
+* **Dynamic routing needed** - route simple queries to cheaper models, complex to premium (cost optimization)
+* Multi-agent orchestration or complex custom tool integration required
+* **Strict data privacy or compliance** — full control over where data goes and deployment
+
+**Trigger words: domain-specific, fine-tuning, compliance, multi-agents enterprise scale → Think Foundry**
+
+#### FOUNDRY CAPABILITIES FOR AGENTS
+
+Agent Service hosts your agents with built-in scaling, observability, and cost tracking.
+
+
+* **Dynamic model routing** — Cost optimization at scale
+* **Multi-agent orchestration** — Agent2Agent protocol support
+* **Built-in telemetry** - Performance metrics and cost tracking
+* **Tool integration via MCP** — Expose agents securely to other systems
+
+
+> "Quick deployment" → Copilot Studio. 
+
+> "Custom reasoning and scale" Azure Al Foundry. The answer depends on what the scenario emphasizes.
+
+#### KEY TAKEAWAYS
+
+* **Azure AI Foundry = custom models + agent hosting at enterprise scale**
+* Choose Foundry for fine-tuning, dynamic routing, complex workflows, or high-scale needs
+* Always weigh against Copilot Studio - simpler is better when it meets requirements
+* Foundry is the answer when off-the-shelf isn't enough
+
+
 ### 2-5 How AI Agents Talk to Each Other: MCP & AgentAgent Protocol 
+
+#### MODEL CONTEXT PROTOCOL (MCP)
+
+MCP — Originated from Anthropic, adopted by Microsoft Agents securely request tools, APIs, or context from MCP servers
+
+* Agent calls MCP server (not direct API endpoints)
+* MCP server acts as secure intermediary
+* Build your own with Azure Functions or use existing servers
+
+
+#### WHY MCP?
+
+* **Secure Access**:  Central control over what agents can call
+* **Auditability** All tool calls logged and traceable
+* **Reusability** Share MCP servers across multiple agents
+* **Interoperability** Works across Copilot Studio, Foundry, custom code
+
+
+#### **MCP EXAM EXAMPLE**
+
+"How do you let an Azure Al Foundry agent securely access a private database?"
+
+
+> Answer: Register an MCP server that connects to that database
+> 
+> **Agent → MCP Server → Database (with proper credentials & access control)**
+
+AGENTZAGENT (A2A) PROTOCOL
+
 
 ### 2-6 When to Build Custom Al Models in Azure Foundry
