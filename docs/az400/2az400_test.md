@@ -15945,6 +15945,13 @@ This **does not reduce** the history volume—in fact, it increases it.
 
 **B. No**
 
+
+- ✅ <mark>**Solution: You implement a pull request strategy that uses fast-forward merges**.</mark>
+- ✅ <mark>**Solution: You implement a pull request strategy that uses squash merges.**</mark>
+- ❌  **Solution: You implement a pull request strategy that uses an explicit merge.**
+- ❌ **Solution: You implement a pull request strategy that uses a three-way merge.**
+
+
 ### Question #25
 
 You need to recommend a Docker container build strategy that meets the following requirements: 
@@ -16086,7 +16093,7 @@ You need to configure:
 
 ✔ So the solution does not meet the goal.
 
-### Question #28 💩 💩
+### Question #28 💩
 
 HOTSPOT You need to deploy Azure Kubernetes Service (AKS) to host an application. 
 
@@ -16140,7 +16147,7 @@ Final selections:
 * **AKS access to Azure:** Azure service principal
 
 
-### Question #29 💩💩💩
+### Question #29 💩💩💩💩
 
 
 You have 50 Node.js-based projects that you scan by using WhiteSource.
@@ -16162,6 +16169,8 @@ D. Delete Package-lock.json.
 -----
 
 Correct answer: **D. Delete Package-lock.json**
+
+<mark>Removing `package-lock.json` reduces scanning of transitive dependencies<mark> 
 
 Explanation:
 
@@ -16223,6 +16232,15 @@ Correct answers:
 - **D. From DevOps, create a personal access token (PAT)**
 - **E. From the build server, run config.cmd**
 
+> * Run `config.cmd` (Windows) or `config.sh` (Linux/macOS)
+
+
+Why others are incorrect:
+
+* ❌ **A. SAS token** → used for Azure Storage access, not DevOps agents
+* ❌  **B & C. Certificates** → not required for standard Azure DevOps agent setup
+
+
 Explanation:
 
 To set up a **self-hosted Azure DevOps agent**, after downloading and installing the agent package, you must complete registration and authentication.
@@ -16237,8 +16255,6 @@ Required steps:
 
 ✔ This corresponds to **option D**
 
-
-
 2. Configure the agent on the server
 
 * Run `config.cmd` (Windows) or `config.sh` (Linux/macOS)
@@ -16248,13 +16264,6 @@ Required steps:
     * Registers the agent into an agent pool
 
 ✔ This corresponds to **option E**
-
-
-Why others are incorrect:
-
-* **A. SAS token** → used for Azure Storage access, not DevOps agents
-* **B & C. Certificates** → not required for standard Azure DevOps agent setup
-
 
 Final Answer:
 
@@ -16297,17 +16306,19 @@ Explanation:
 
 When an Azure Pipelines task authenticates using an **Azure AD service principal**, it requires the standard service principal credentials:
 
-1. Tenant ID (A)
-   * Identifies the Azure AD directory where the service principal exists
-   * Required to scope authentication
+1. **Tenant ID (A)**
 
-2. App ID (D)
-   * Also called **Client ID**
-   * Identifies the service principal (application registration)
+     * Identifies the Azure AD directory where the service principal exists
+     * Required to scope authentication
+
+2. **App ID (D)**
+	* Also called **Client ID**
+    * Identifies the service principal (application registration)
 
 3. Client Secret (C)
-   * Password-like credential for the service principal
-   * Used to prove identity securely
+
+     * Password-like credential for the service principal
+     * Used to prove identity securely
 
 Why the others are incorrect:
 
@@ -16428,7 +16439,7 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #33 💩💩💩
+### Question #33 💩💩💩💩💩
 
 You are creating a build pipeline in Azure Pipelines.
 
@@ -16482,7 +16493,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩
+### Question #34 💩💩💩
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16494,7 +16505,7 @@ RG1 contains the following resources:
 
 ✑ An Azure Load Balancer.
 
-**You need to deploy an application to the virtual machines in RG1 by using Azure Pipelines.**å
+**You need to deploy an application to the virtual machines in RG1 by using Azure Pipelines.**
 
 Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -16656,7 +16667,7 @@ Final Answer:
 | Octopus | Release pipelines    |
 
 
-### Question #37 💩💩💩
+### Question #37 💩💩
 
 Your company develops a client banking application that processes a large volume of data.
 
@@ -16714,7 +16725,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩
+### Question #38 💩💩💩💩💩
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -16773,7 +16784,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #39 💩💩💩💩💩💩
+### Question #39 💩💩💩💩
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -16820,7 +16831,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩💩💩💩💩
+### Question #40 💩💩💩💩
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -16889,7 +16900,7 @@ Final Answer:
 
 **Upload configuration → Compile → Onboard VMs → Assign configuration → Check compliance**
 
-### Question #41 🐣🐣🐣
+### Question #41 🐣🐣🐣💩💩💩
 
 You are developing an application. The application source has multiple branches.
 
@@ -17076,6 +17087,13 @@ B. No
 ----
 Correct answer: **A. Yes**
 
+✅ **<mark>Solution: You recommend defining a container job that uses a custom container that has the JavaScript packages preinstalled.</mark>**
+
+❌ Solution: You recommend using pipeline artifacts.
+
+✅ Solution: You recommend enabling pipeline caching.
+
+
 Explanation:
 
 Enabling **pipeline caching** is a recommended way to reduce time spent installing npm packages.
@@ -17096,7 +17114,7 @@ Final Answer:
 ✅ **A. Yes**
 
 
-### Question #45
+### Question #45 💩💩💩
 
 You have an Azure DevOps project.
 
@@ -17138,17 +17156,19 @@ Why this does NOT meet the goal:
 What should be used instead:
 
 * **Deployment jobs** or **deployment group agents**
-* Tasks like:
-  * **Windows Machine File Copy**
-  * **PowerShell Remoting**
-  * **Deployment Group jobs**
+
+Tasks like:
+
+* **Windows Machine File Copy**
+* **PowerShell Remoting**
+* **Deployment Group jobs**
 
 Final Answer:
 
 ❌ **B. No**
 
 
-### Question #46 💩💩
+### Question #46 💩💩💩
 
 You are building an application that has the following assets:
 
@@ -17255,15 +17275,17 @@ In **Azure Artifacts**, **views** are used to control package visibility and rel
 
 Why **views** are correct:
 
-* A feed can have multiple views such as:
-  * **@local** → all packages (including development)
-  * **@prerelease** → testing/validation stage
-  * **@release** → stable, approved packages
+A feed can have multiple views such as:
 
-* You can:
-  * Publish all packages to the feed
-  * Promote only validated packages to the **release view**
-  * Restrict consumers to only see approved packages
+* **@local** → all packages (including development)
+* **@prerelease** → testing/validation stage
+* **@release** → stable, approved packages
+
+You can:
+
+* Publish all packages to the feed
+* Promote only validated packages to the **release view**
+* Restrict consumers to only see approved packages
 
 ✔ This meets the requirement:
 
@@ -17272,10 +17294,12 @@ Why **views** are correct:
 Why others are incorrect:
 
 * **A. Local symbols / C. Global symbols**
-  * Related to debugging symbols, not package release control
+
+> Related to debugging symbols, not package release control
 
 * **D. Upstream sources**
-  * Used to consume external feeds, not manage release stages
+
+> Used to consume external feeds, not manage release stages
 
 Final Answer:
 
@@ -17321,9 +17345,11 @@ You have:
 
 * A **shared self-hosted agent (Pool1)**
 * Two pipelines (**Pipe1 and Pipe2**) with **conflicting dependencies**
-* Requirement:
-  - ✔ Avoid conflicts
-  - ✔ Minimize infrastructure cost
+
+Requirement:
+
+- ✔ Avoid conflicts
+- ✔ Minimize infrastructure cost
 
 Why **container jobs** are the best solution:
 
@@ -17339,15 +17365,12 @@ Why **container jobs** are the best solution:
 Why others are incorrect:
 
 * **A. Add another self-hosted agent**
-
-  * Works, but ❌ increases infrastructure cost
+	* Works, but ❌ increases infrastructure cost
 
 * **B. Docker Compose task**
-
   * Used for multi-container apps, ❌ not for pipeline isolation
 
 * **C. Change OS to RHEL 8**
-
   * ❌ Does not solve dependency conflicts
 
 Final Answer:
@@ -17356,7 +17379,7 @@ Final Answer:
 
 
 
-### Question #49  💩💩💩💩💩
+### Question #49  💩💩💩💩
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
