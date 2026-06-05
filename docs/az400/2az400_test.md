@@ -18720,7 +18720,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-72 💩💩💩💩
+### Question-72 💩💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -18937,13 +18937,16 @@ In Azure Resource Manager (ARM) deployments, you can deploy resources either in 
 
 In your scenario:
 
-* You have **two resource groups**:
-  1. One with **four VMs**
-  2. One with **two SQL databases**
-* Creating **two standalone templates**, each targeting a specific resource group, is a valid and recommended approach because:
-  * ARM templates are **scoped to a single resource group** (or subscription/management group)
-  * This approach **isolates deployments per resource group**
-  * Makes deployment **modular and easier to maintain**
+You have **two resource groups**:
+
+1. One with **four VMs**
+2. One with **two SQL databases**
+
+Creating **two standalone templates**, each targeting a specific resource group, is a valid and recommended approach because:
+  
+* ARM templates are **scoped to a single resource group** (or subscription/management group)
+* This approach **isolates deployments per resource group**
+* Makes deployment **modular and easier to maintain**
 
 Alternative approaches
 
@@ -19483,7 +19486,7 @@ Final Answer
 **A. Maven** ✅
 
 
-### Question-88
+### Question-88. 💩💩💩
 
 You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. 
 
@@ -19500,6 +19503,8 @@ What should you add to Pipeline 1?
 * C. an ARM template deployment task to assign Policy1 to Subscription 1
 * D. an ARM template deployment task to deploy Policy1 to Subscription1
 
+
+-------
 
 
 The correct answer is **B. a post-deployment task that runs a security and compliance assessment.**
