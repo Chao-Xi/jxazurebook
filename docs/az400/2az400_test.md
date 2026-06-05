@@ -17775,6 +17775,9 @@ What should you use?
 * B. Microsoft-hosted parallel jobs
 * C. a File Transform task
 
+
+------
+
 **Correct answer: A. a self-hosted agent** ✅
 
 Explanation
@@ -17782,13 +17785,16 @@ Explanation
 The requirement is to **use incremental builds** and **retain the environment between pipeline runs**.
 
 * **Self-hosted agents** run on machines that you manage.
+
   * They **keep the workspace between builds** unless explicitly cleaned.
   * This allows **incremental builds** (e.g., only compiling changed files).
 
 * **Microsoft-hosted agents** ❌
+
   * Are **ephemeral**; the environment is **reset after each run**, so incremental builds are not possible.
 
 * **File Transform task** ❌
+
   * Used for modifying configuration files (e.g., appsettings.json) during deployment.
   * Does **not** preserve the build workspace.
 
@@ -17797,13 +17803,13 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩💩💩
+### Question #55 💩💩💩💩💩
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
 ![Alt Image Text](../images/az400_2_43.png)
 
-You need to complete the pipeline to configure OWASP ZAP for security testing.
+**You need to complete the pipeline to configure OWASP ZAP for security testing**.
 
 Which five Azure CLI tasks should you add in sequence? To answer, move the tasks from the list of tasks to the answer area and arrange them in the correct order.
 
@@ -17853,7 +17859,7 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #56 💩
+### Question #56 💩💩💩
 
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
@@ -18090,7 +18096,7 @@ Why the others are incorrect
 **A. branch policies of the default branch**
 
 
-### Question-60
+### Question-60  - Duplicated -23
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -18225,7 +18231,7 @@ To meet the goal:
 **B. No**
 
 
-### Question-63 💩💩
+### Question-63 - Duplicated 29
 
 You have 50 Node.js-based projects that you scan by using WhiteSource. 
 
@@ -18354,11 +18360,11 @@ Your requirements are:
 
 Using **self-hosted agents on VMs running in Azure Stack** gives you:
 
-✅ Full control over runtime environments (install Erlang, Hack, custom toolchains)
-✅ Works natively in **hybrid cloud** (on-prem Azure Stack + Azure)
-✅ Centralized management via Azure DevOps
-✅ No dependency on Microsoft-hosted agent limitations
-✅ Consistent build environment across hybrid infrastructure
+- ✅ Full control over runtime environments (install Erlang, Hack, custom toolchains)
+- ✅ Works natively in **hybrid cloud** (on-prem Azure Stack + Azure)
+- ✅ Centralized management via Azure DevOps
+- ✅ No dependency on Microsoft-hosted agent limitations
+- ✅ Consistent build environment across hybrid infrastructure
 
 Why the others are wrong
 
@@ -18378,7 +18384,7 @@ Final Answer
 
 
 
-### Question-66  💩💩💩
+### Question-66  💩💩💩💩
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18679,6 +18685,16 @@ Does this meet the goal?
 —--
 
 **Correct answer: A. Yes** ✅
+
+
+❌ Solution: From the Continuous deployment trigger settings of the release pipeline, you enable the Pull request trigger setting.
+
+❌ Solution: From the Pre-deployment conditions settings of the release pipeline, you select After stage.
+
+❌ Solution: From the Pre-deployment conditions settings of the release pipeline, you select Batch changes while a build is in progress.
+
+✅ Solution: From the Triggers tab of the build pipeline, you select Enable continuous integration.
+
 
 Explanation
 

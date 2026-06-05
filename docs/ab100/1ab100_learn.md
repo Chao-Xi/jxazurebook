@@ -262,9 +262,6 @@ Key platforms:
 
 Exam focus: Designing agents in Copilot Studio (topics → tools → flows)
 
-
-
-
 #### CORE COMPONENTS TABLE
 
 
@@ -371,7 +368,85 @@ MCP — Originated from Anthropic, adopted by Microsoft Agents securely request 
 > 
 > **Agent → MCP Server → Database (with proper credentials & access control)**
 
-AGENTZAGENT (A2A) PROTOCOL
+#### AGENTZAGENT (A2A) PROTOCOL
 
+Open protocol — Originated from Google, supported by Microsoft
+
+- **MCP**： Agent-to-tool communication
+- **A2A**：  Agent-to-agent communication
+
+A2A enables agents to communicate, delegate, and collaborate across platform
+
+#### A2A IN ACTION
+
+Multi-agent workflow example:
+
+1. **Research Agent** → finds relevant documents
+2. **Summarizer Agent** → distills key points
+3. **Approver Agent** → validates before surfacing to user
+
+Works cross-platform: Copilot Studio + Azure Al Foundry + custom agents
+
+> INTEGRATION EXAMPLE
+
+![Alt Image Text](../images/ab100_1_3.png "Body image")
+
+> "Orchestrating multiple agents securely" → AZA + MCP
+
+- AZA handles agent-to-agent coordination
+- MCP handles agent-to-tool access
+- Together, they cover both bases for enterprise scenarios
+
+
+#### KEY TAKEAWAYS
+
+- MCP = secure, auditable tool access across agents
+- **A2A = multi-agent collaboration and delegation**
+- Use both for governance, scalability, or interoperability questions 
+- Together, these protocols enable enterprise-grade agentic systems
 
 ### 2-6 When to Build Custom Al Models in Azure Foundry
+
+#### THE PRAGMATIC HIERARCHY
+
+Start here — the exam expects this approach:
+
+1. **Off-the-shelf models + prompt engineering + RAG**
+2. Only escalate to custom fine-tuning when that fails
+
+"Fails" must mean something specific — not just preference
+
+#### WHEN TO ESCALATE TO CUSTOM
+
+| Trigger | Example |
+|---------|---------|
+| Domain accuracy critical | Legal, financial, medical terminology |
+| Privacy/compliance | Data must stay on your infrastructure |
+| Scale demands cost optimization | Thousands of queries daily |
+| Proprietary patterns | Internal jargon, unique business logic |
+
+#### DESIGNING CUSTOM MODELS IN FOUNDRY
+
+| Step | Action | Note |
+|------|--------|------|
+| 1 | Select base model from catalog | GPT-4, Llama, etc. |
+| 2 | Prepare training data | Clean, label, format — 80% of the work |
+| 3 | Fine-tune | Supervised or LoRA adapters |
+| 4 | Evaluate rigorously | Auto-scaling |
+| 5 | Deploy to Agent Service | Accuracy, safety, bias, hallucinations |
+| 6 | Expose via MCP | Other agents can call securely |
+
+
+#### ADVANCED FOUNDRY FEATURES
+
+- Dynamic routing — Simple queries → cheap model, complex → premium
+- Multi-agent orchestration — Custom models participate via A2A
+- Telemetry & governance — Track usage, costs, hallucination rates
+
+#### KEY TAKEAWAYS
+
+- Custom models solve domain accuracy and compliance gaps
+- Azure Al Foundry = fine-tuning, evaluation, and hosting
+- Always justify with business trade-offs (cost, governance, performance)
+- Evaluate first, deploy second, monitor continuously 
+- Exam mantra: "Start simple, escalate thoughtfully"
