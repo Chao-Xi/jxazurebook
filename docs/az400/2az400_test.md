@@ -12126,7 +12126,7 @@ This task describes the sequence for configuring a **GitHub Actions workflow (Wo
 
 ## Topic 6 - Question Set 6
 
-### Question #1 💩💩
+### Question #1 💩
 
 Your company has 60 developers who are assigned to four teams. Each team has 15 members.
 
@@ -12170,7 +12170,7 @@ Summary
 * **Team-owned (autonomous):** ✅ Stories, Tasks
 
 
-### Question #2  💩💩
+### Question #2  💩
 
 
 Your company implements an Agile development methodology.
@@ -12215,7 +12215,7 @@ Key Principle
 
 Retrospectives should be **safe, blameless, and team-focused**, encouraging collaboration and continuous improvement.
 
-### Question #3 💩💩
+### Question #3 💩
 
 You have a build pipeline in Azure Pipelines.
 
@@ -12315,7 +12315,7 @@ Hot Area:
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #5 💩💩💩
+###  Question #5 💩💩💩💩💩
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
@@ -12357,7 +12357,7 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #6 💩💩💩
+### Question #6 💩💩💩💩💩
 
 You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
@@ -12412,7 +12412,7 @@ Why the other URIs are incorrect
 * `https://login.microsoftonline.com/tenant1` and `https://login.microsoftonline.com/tenant1.com` are Azure AD endpoints, not GitHub SAML endpoints, so they are not used in these fields.
 
 
-### Question - 7 💩💩💩
+### Question - 7 💩💩
 
 You manage a project by using Azure Boards. You manage the project code by using GitHub.
 
@@ -12440,22 +12440,22 @@ Explanation
 
 When integrating **GitHub with Azure Boards**, work items must be referenced using the format:
 
-* **<mark>`#AB<WorkItemID>`</mark>**
+* <mark>**`#AB<WorkItemID>`**</mark>
 
 To **link and automatically transition a work item to Done**, you use keywords like:
 
-* **Fixes**, **Resolves**, or **Closes**
-
-So:
-
-* **`Fixes #AB456`** → Links the work item **and sets it to Done**
-* Adding the others (`#AB457`, `#AB458`) links them to the PR
+*  <mark>**Fixes**, **Resolves**, or **Closes**</mark>
 
 Why not the others?
 
 * ❌ **A. Fixes #456, #457, #458** → Missing `AB` prefix (won’t link to Azure Boards)
 * ❌ **C. #456, #457, #458 Completed #456** → Invalid syntax
 * ❌ **D. #AB456, #AB457, #AB458** → Links only, does NOT change state
+
+So:
+
+* **`Fixes #AB456`** → Links the work item **and sets it to Done**
+* Adding the others (`#AB457`, `#AB458`) links them to the PR
 
 Key Point
 
@@ -12574,7 +12574,7 @@ Key Point
 * Use **keywords (Completed/Fixes/Resolves)** to update state
 
 
-### Question #10 💩💩💩
+### Question #10 💩💩
 
 You have an Azure subscription that contains an Azure container registry. 
 
@@ -12623,7 +12623,7 @@ You manage a project by using Azure Boards. You manage the project code by using
 
 You have three work items that have IDs of 456, 457, and 458.
 
-You need to create a pull request that will be linked to all the work items. The solution must set the state of work item 456 to done.
+You need to create a pull request that will be linked to all the work items. **The solution must set the state of work item 456 to done.**
 
 What should you add to the commit message?
 
@@ -12659,7 +12659,7 @@ Why option A is correct
 Why others are incorrect
 
 * ❌ **B** → Missing `AB` prefix (won’t link to Azure Boards)
-* ❌ **C** → "Done" is **not a supported keyword** for state transition
+* ❌ <mark>**C** → "Done" is **not a supported keyword** for state transition </mark>
 * ❌ **D** → "Verifies" does not change the state to Done
 
 Key Point
@@ -12810,7 +12810,7 @@ Key Point
 
 So, both services can be notified.
 
-### Question #15 💩💩💩
+### Question #15 💩💩💩💩
 
 
 
@@ -13017,7 +13017,7 @@ Key Point
 * Link manually via the **Development section** in Azure Boards
 
 
-### Question #19 💩
+### Question #19 💩💩💩
 
 
 You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. 
@@ -13127,7 +13127,7 @@ This will:
 
 
 
-### Question #21 💩💩
+### Question #21 💩💩💩💩
 
 HOTSPOT -
 
@@ -13315,7 +13315,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-24 💩
+### Question-24 💩💩💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13365,9 +13365,8 @@ Final Answer:
 
 **B. No** ❌
 
-### Question #25  - duplicated  🐣
+### Question #25  - duplicated  💩💩💩
 
-DRAG DROP -
 
 You have a GitHub repository named repo1 and an Azure key vault named kv1.
 
@@ -13406,7 +13405,7 @@ To allow **Workflow1** in GitHub to access secrets in **kv1** (Azure Key Vault),
 So the answer is:
 
 * **[Slot 1]** → Create a service principal in Microsoft Entra ID
-* **[Slot 2]** → Grant secret permissions to kv1
+* **[Slot 2]** → <mark>Grant secret permissions to kv1</mark>
 * **[Slot 3]** → Reference the credentials in Workflow1
 
 **Notes:**
@@ -13416,7 +13415,7 @@ So the answer is:
 
 This is the standard pattern for GitHub Actions + Azure Key Vault integration.
 
-### Question #26   💩💩💩
+### Question #26   💩💩
 
 You have an Azure DevOps organization that contains a project named Project1. 
 
@@ -13482,7 +13481,7 @@ Azure DevOps supports **commit message keywords** to automatically update the st
 
 1.  **Fixes #<ID>:** When you include the word **Fixes**, **Fixed**, or **Fix** followed by the work item number in your commit message, Azure DevOps will automatically change the state of the linked work item to **Resolved** (or a similar state depending on your process template).
 2.  **Why not the others?**
-    *   **A and C:** These keywords ("completes," "completed," or "closes") are used to set a work item state to **Closed** or **Done**. While they link the work item, they go past the "Resolved" state.
+    *   <mark>**A and C:** These keywords ("completes," "completed," or "closes") are used to set a work item state to **Closed** or **Done**. While they link the work item, they go past the "Resolved” state.</mark>
     *   **B (#123 Resolved):** Simply typing "Resolved" after the work item number does not trigger a state transition; the system requires specific recognized keywords like *Fixes* or *Closes* to perform the automatic update.
 
 **Note on Linked Items:** Simply mentioning `#123` in a commit message will **link** the commit to the work item so you can see it in the "Development" section of the bug, but it will not change the **state** unless you use a triggering keyword like `Fixes`.
@@ -13722,8 +13721,16 @@ Does this meet the goal?
 * A. Yes
 * B. No
 
-
 **Answer: A. Yes** ✅
+
+-----
+
+
+❌ Solution: You create an email subscription to an Azure DevOps notification.
+
+✅ **You create a service hook subscription that uses the code pushed event.**
+
+✅  <mark>Solution: You add a trigger to the build pipeline.</mark>
 
 
 Explanation
@@ -13822,7 +13829,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩💩
+### Question-36  💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -13855,9 +13862,12 @@ The goal is to **simplify package management** by using **a single feed** that c
 **Upstream sources** in **Azure Artifacts** allow exactly this:
 
 * You configure a feed to have **upstream sources**, such as NuGet.org, Maven Central, or other private feeds.
-* When a package is requested from your feed:
-  * If it exists locally, it’s served from the feed.
-  * If it exists upstream, it’s cached and served automatically.
+
+When a package is requested from your feed:
+
+* If it exists locally, it’s served from the feed.
+* If it exists upstream, it’s cached and served automatically.
+
 * Supports **authenticated feeds** and **public feeds** transparently.
 
 Why the other options are incorrect
@@ -13894,10 +13904,11 @@ Supports developers who use browsers, tablets, and Chromebooks What should you r
 
 ----------
 
-
 The correct answer is:
 
 **D. GitHub Codespaces** ✅
+
+<mark>**Supports remote workers and hot-desking**： *Developers can access their environment from **any machine with a browser**; no local setup required.</mark>
 
 Explanation
 
@@ -14064,22 +14075,22 @@ Explanation
 
 The requirements:
 
-1. **Isolated channels for different project teams**
+**Isolated channels for different project teams**
   
-  * Teams allows creating **channels** for projects, teams, or topics.
-  * Each channel keeps a **history of chats and files**.
+* Teams allows creating **channels** for projects, teams, or topics.
+* Each channel keeps a **history of chats and files**.
 
-2. **Cross-platform support**
+**Cross-platform support**
 
-  * Teams is available on **Windows 10, MacOS, iOS, and Android**.
+* Teams is available on **Windows 10, MacOS, iOS, and Android**.
 
-3. **External access for contractors/suppliers**
+**External access for contractors/suppliers**
 
-  * Teams supports **guest access**, so external collaborators can participate in selected channels.
+Teams supports **guest access**, so external collaborators can participate in selected channels.
 
-4. **Integration with Azure DevOps**
+**Integration with Azure DevOps**
   
-  * Teams can integrate with **Azure DevOps** to receive notifications, track work items, and create tasks directly from chat.
+Teams can integrate with **Azure DevOps** to receive notifications, track work items, and create tasks directly from chat.
 
 Why the other options are incorrect
 
@@ -14122,21 +14133,6 @@ The correct answer is:
 **D. Slack** ✅
 
 Explanation
-
-The requirements:
-
-1. **Isolated channels with chat history**
-  * Slack supports **channels** for each project, topic, or team.
-  * All messages and files in a channel are **persistently stored**, so the history is available.
-
-2. **Cross-platform availability**
-  * Slack works on **Windows 10, MacOS, iOS, and Android**.
-
-3. **External collaborators**
-  * Slack supports **guest access** and shared channels, allowing contractors or suppliers to participate.
-
-4. **Integration with Azure DevOps**
-  * Slack can integrate with Azure DevOps to **receive notifications about work items, builds, and releases** in channels.
 
 Why the other options are incorrect
 
@@ -14354,7 +14350,7 @@ Final Answer:
 
 
 
-### Question-46  💩💩💩💩
+### Question-46  💩💩💩💩💩
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
@@ -14600,7 +14596,8 @@ If you'd like, I can also provide a sample `CODEOWNERS` file for securing GitHub
 
 
 
-### Question-51
+### Question-51  💩💩
+
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -14608,11 +14605,9 @@ You need to recommend an integration strategy for the build process of a Java ap
 
 - The build outputs must be stored as Server artifacts in Azure DevOps.
 
-T- he source code must be stored in a Git repository in Azure DevOps.
+The source code must be stored in a Git repository in Azure DevOps.
 
-Solution: Configure the build pipeline to use a Hosted VS 2019 agent pool. 
-
-**Include the Java Tool Installer task in the build pipeline.**
+Solution: Configure the build pipeline to use a Hosted VS 2019 agent pool.  **Include the Java Tool Installer task in the build pipeline.**
 
 Does this meet the goal?
 
@@ -14627,7 +14622,7 @@ The solution proposes using a **hosted agent pool (Hosted VS 2019)** in **Azure 
 
 ❌ Requirement not met:
 
-> **The builds must access an on-premises dependency management system**
+<mark>**The builds must access an on-premises dependency management system**</mark>
 
 **Hosted agents cannot access on-premises resources** because:
 
