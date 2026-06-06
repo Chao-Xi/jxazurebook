@@ -5158,7 +5158,7 @@ To entirely remove unwanted files from a repository's history you can use either
 
 ## Topic 4 - Question Set 4
 
-### Question #1 💩💩💩
+### Question #1 💩💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -5191,7 +5191,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩💩💩
+### Question #2 💩💩
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5299,7 +5299,7 @@ Why the other option is incorrect
 ✅ **Final Answer: B. Get only**
 
 
-### Question #4 💩💩
+### Question #4 💩
 
 Your company has a project in Azure DevOps.
 
@@ -5454,7 +5454,7 @@ Explanation
 3. **an RBAC binding**
 
 
-### Question #7 💩💩💩💩
+### Question #7 💩💩💩💩💩
 
 HOTSPOT You manage build and release pipelines by using Azure DevOps. Your entire managed environment resides in Azure.
 
@@ -5477,15 +5477,15 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
 
 **Answer Area**
 
-*   **Service connection type:** **Azure Resource Manager**
+*   **Service connection type:**  <mark>**Azure Resource Manager**<mark>
 *   **Authentication/authorization method for the connection:** **Managed Service Identity Authentication**
 
 **Explanation:**
 
-1.  <mark>**Service connection type: Azure Resource Manager**</mark>*
+1.  <mark>**Service connection type: Azure Resource Manager**</mark>
     *   <mark>This is the standard service connection type required to allow Azure Pipelines to communicate with Azure subscription resources, including Azure Key Vault.</mark>
 
-2.  <mark>**Authentication/authorization method: Managed Service Identity Authentication**</mark>*
+2.  <mark>**Authentication/authorization method: Managed Service Identity Authentication**</mark>
     *   **The Requirement:** "Avoid persisting credentials and tokens in Azure DevOps."
     *   **The Solution:** Managed Service Identity (MSI), now commonly referred to as **Managed Identities for Azure resources**, allows Azure services to authenticate to other Azure services without needing a client secret or password stored in the configuration. 
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
@@ -5562,7 +5562,8 @@ NOTE: Each correct selection is worth one point.
 
 <mark>**1. Groups to control the build access: Microsoft Visual Studio App Center distribution groups**</mark>
 
-*   **Reason:** Visual Studio App Center is the primary Microsoft service for managing the mobile application lifecycle (Build, Test, Distribute). To control who can download and install mobile builds, you use "Distribution Groups" within App Center.
+*   **Reason:** Visual Studio App Center is the primary Microsoft service for managing the mobile application lifecycle (Build, Test, Distribute).
+*   To control who can download and install mobile builds, you use "Distribution Groups" within App Center.
 
 <mark>**2. Group type: Shared**</mark>
 
@@ -5571,7 +5572,7 @@ NOTE: Each correct selection is worth one point.
     *   **Shared groups:** Are created at the **Organization** level. Once created at the org level, they can be associated with multiple apps in the suite. This allows you to manage one list of users (e.g., "Internal QA Team") across all three applications simultaneously.
 
 
-### Question #10 💩💩💩
+### Question #10 💩💩
 
 You have a tenant in Microsoft Azure Active Directory (Azure AD), **part of Microsoft Entra**. 
 
@@ -5617,6 +5618,16 @@ Based on the requirements for securing service connections in Azure DevOps using
 *   **Group 2:** **Contributor**
 *   **Group 3:** **User**
 
+Applying the **principle of least privilege**:
+
+| Group      | Required capability                                  | Correct permission              |
+| ---------- | ---------------------------------------------------- | ------------------------------- |
+| **Group1** | Share/unshare service connection with other projects | **Project-level Administrator** |
+| **Group2** | Rename service connection and update description     | **Contributor**                 |
+| **Group3** | Use service connection in build/release pipelines    | **User**                        |
+
+
+
 ---
 
 In Azure DevOps, **service connections** have role-based permissions. The relevant capabilities are:
@@ -5627,13 +5638,6 @@ In Azure DevOps, **service connections** have role-based permissions. The releva
   (From the options given, the closest match is **Project-level Administrator**.)
 * **Creator** – Can create service connections.
 
-Applying the **principle of least privilege**:
-
-| Group      | Required capability                                  | Correct permission              |
-| ---------- | ---------------------------------------------------- | ------------------------------- |
-| **Group1** | Share/unshare service connection with other projects | **Project-level Administrator** |
-| **Group2** | Rename service connection and update description     | **Contributor**                 |
-| **Group3** | Use service connection in build/release pipelines    | **User**                        |
 
 ✅ **Final Answer**
 
@@ -5680,6 +5684,13 @@ D. ensures that all data for new Azure Storage accounts is encrypted at rest
 
 The policy targets resources of type **Microsoft.Storage/storageAccounts** and checks the property **`supportsHttpsTrafficOnly`**.
 
+Correct Answer
+
+✅ **B. ensures that all traffic to new Azure Storage accounts is encrypted**
+
+*(Because HTTPS-only enforcement ensures encrypted communication.)*
+
+
 Policy Logic
 
 **IF**
@@ -5705,14 +5716,9 @@ Result
 
 * Any **new storage account** must have **HTTPS-only enabled**, meaning all traffic must be **encrypted in transit**.
 
-Correct Answer
-
-✅ **B. ensures that all traffic to new Azure Storage accounts is encrypted**
-
-*(Because HTTPS-only enforcement ensures encrypted communication.)*
 
 
-### Question #12 💩💩💩💩💩💩
+### Question #12 💩💩💩💩💩
 
 
 You use GitHub Enterprise Server as a source code repository.
@@ -5739,6 +5745,7 @@ Actions
 
 --------------
 
+<mark>**Developer -> Organization -> Project**<mark>
 
 To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Azure DevOps work items using OAuth-based authentication, you should perform these three actions in the following sequence:
 
@@ -5754,9 +5761,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩💩💩
-
-DRAG DROP 
+### Question-13 💩💩💩💩
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -5790,15 +5795,18 @@ To configure an Azure DevOps deployment pipeline to use a secret from Azure Key 
 **Explanation:**
 
 *   **Step 1: Create a service principal in Azure Active Directory (Azure AD).**
-  * You first need to create a dedicated identity (the Service Principal) that Azure DevOps will use to communicate with your Azure subscription. This identity consists of an Application ID and a Client Secret (or certificate).
+
+You first need to create a dedicated identity (the Service Principal) that Azure DevOps will use to communicate with your Azure subscription. This identity consists of an Application ID and a Client Secret (or certificate).
 
 *   **Step 2: Configure an access policy in the key vault.**
-  * Once the Service Principal is created, you must go to the Azure Key Vault and create an **Access Policy**. You select the Service Principal from Step 1 as the principal and grant it the **Secret: Get** and **Secret: List** permissions. This authorization ensures that when the pipeline attempts to fetch the secret, the Key Vault will allow the request.
+
+Once the Service Principal is created, you must go to the Azure Key Vault and create an **Access Policy**. You select the Service Principal from Step 1 as the principal and grant it the **Secret: Get** and **Secret: List** permissions. This authorization ensures that when the pipeline attempts to fetch the secret, the Key Vault will allow the request.
 
 *   **Step 3: Add an Azure Resource Manager service connection to the pipeline.**
-  * Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
 
-### Question #14 💩💩💩
+Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
+
+### Question #14 💩💩
 
 You have a private project in Azure DevOps and two users named User1 and User2.
 
@@ -5843,12 +5851,12 @@ To meet the requirements for Azure DevOps wiki management while following the pr
 
 1.  **User1 (Create a code wiki):**
 
-    In Azure DevOps, there is a distinction between a "Project Wiki" (provisioned) and a "**Code Wiki**" (published from a Git repository). To publish code as a wiki, a user requires the **Manage Wiki** permission. By default, this permission is granted only to the **Project Administrators** group. While you could technically grant this permission to a specific user, within the context of the standard Azure DevOps security groups, Project Administrator is the role required to create/manage the wiki structure itself.
+In Azure DevOps, there is a distinction between a "Project Wiki" (provisioned) and a "**Code Wiki**" (published from a Git repository). To publish code as a wiki, a user requires the **Manage Wiki** permission. By default, this permission is granted only to the **Project Administrators** group. While you could technically grant this permission to a specific user, within the context of the standard Azure DevOps security groups, Project Administrator is the role required to create/manage the wiki structure itself.
 
 3.  **User2 (Edit wiki pages):**
 
    
-    The **Contributors** group is the standard group for team members who need to perform day-to-day tasks. Members of the Contributors group have the necessary permissions to create, edit, and delete pages within an existing wiki by default. 
+The **Contributors** group is the standard group for team members who need to perform day-to-day tasks. Members of the Contributors group have the necessary permissions to create, edit, and delete pages within an existing wiki by default. 
 
 **Why not others?**
 
@@ -5907,7 +5915,6 @@ You plan to update the Azure DevOps strategy of your company.
 You need to identify the following issues as they occur during the company's development process:
 
 ✑ Licensing violations 
-
 
 ✑ Prohibited libraries 
 
@@ -6085,7 +6092,7 @@ Why the other options are incorrect:
 
 ### Question #20 💩💩💩
 
-DRAG DROP You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
+You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
 
 You plan to use Azure Container Instances as a hosted development environment to run containers in the AKS implementation.
 
@@ -6131,7 +6138,7 @@ With RBAC enabled, the correct sequence focuses on:
 
 ❌ Why not the others?
 
-* **Run helm init** → Deprecated (Helm v3 doesn’t require it)
+* <mark>**Run helm init** → Deprecated (Helm v3 doesn’t require it)</mark>
 * **Run az role assignment create** → Not required for this setup in this context
 * YAML must exist before applying, so order matters
 
