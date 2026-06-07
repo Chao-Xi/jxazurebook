@@ -19727,6 +19727,15 @@ To **minimize the size of a Git repository**, you need to:
 1. Optimize and compress repository data
 2. Remove unreachable (dangling) objects
 
+
+💡 Key takeaway
+
+* <mark>**`git gc --aggressive` → compress & optimize**</mark>
+* <mark>**`git prune --expire now` → delete unused objects**</mark>
+
+Together, they **minimize repository size effectively**.
+
+
 ---
 
 🟦 `git gc --aggressive`
@@ -19756,13 +19765,6 @@ To **minimize the size of a Git repository**, you need to:
 git gc --aggressive
 git prune --expire now
 ```
-
-💡 Key takeaway
-
-* <mark>**`git gc --aggressive` → compress & optimize**</mark>
-* <mark>**`git prune --expire now` → delete unused objects**</mark>
-
-Together, they **minimize repository size effectively**.
 
 ### Question #2
 
@@ -23379,7 +23381,7 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     supportsHttpsTrafficOnly: true
   }
 }
-
+```
 
 
 
@@ -23541,7 +23543,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9
+### Question #9 💩💩
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -23939,7 +23941,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩💩💩💩
+### Question #17 💩💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
@@ -23978,7 +23980,7 @@ Explanation:
 
 To allow User1 to provision environments in ADE while following the principle of least privilege, you should assign them the **Deployment Environments User** role.
 
-### Question #18   💩💩💩
+### Question #18   💩💩
 
 
 You have an Azure subscription that contains Azure DevOps build pipelines.
@@ -24050,7 +24052,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩💩💩💩
+### Question #19  💩💩💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -24130,7 +24132,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩💩💩💩💩
+### Question #20 💩💩💩💩💩
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24414,7 +24416,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25 💩💩💩
+### Question #25 💩💩💩💩
 
 HOTSPOT -
 
@@ -24476,7 +24478,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 *   *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
 
 
-### Question #26 💩💩💩💩
+### Question #26 💩💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24565,7 +24567,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28 💩💩
+### Question #28 💩💩💩
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24706,7 +24708,7 @@ NOTE: Each correct selection is worth one point.
 
 
 
-### Question #30  💩💩💩💩💩💩
+### Question #30  💩💩💩💩
 
 You use Azure Pipelines to build and test code.
 
@@ -24810,7 +24812,7 @@ Explanation:
 *   **Step 3 (Install App1):** A GitHub App has no permissions until it is **installed** on a specific account or organization. The installation creates the link between the app and the resources (repositories) it is allowed to access.
 *   **Step 4 (Generate an installation access token):** Within the workflow, you use the App ID and Private Key (to create a temporary JWT) and exchange them for an **installation access token**. This token is the final credential used to authorize the actual API requests.
 
-### Question #32 💩💩💩💩💩
+### Question #32 💩💩💩💩
 
 You use an Azure Pipelines pipeline to build and deploy an app.
 
@@ -24854,7 +24856,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩💩💩💩💩
+### Question #33 💩💩💩💩
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -24921,7 +24923,7 @@ If the question mentions:
 * Less efficient than TIA for this goal
 
 
-### Question #34 💩💩💩💩
+### Question #34 💩💩💩
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -24995,7 +24997,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 💩💩💩💩💩
+### Question #35 💩💩💩💩
 
 You manage package feeds by using Azure Artifacts.
 
@@ -25065,7 +25067,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36 💩💩💩
+### Question #36 💩💩💩💩
 
 You have an Azure subscription that includes an app named App1.
 
