@@ -6195,6 +6195,8 @@ Conclusion
 
 Based on the exhibits provided, here is the analysis and the solution for the Hot Area.
 
+<mark>The prompt states that "All other permissions have the **default values** set.”</mark> 
+
 **Analysis of Exhibits**
 
 1.  **Teams Exhibit:** There are three teams in the "Contoso" project: <mark>**Contoso Team**, **DB Team**, and **Web Team**.</mark>
@@ -6220,9 +6222,8 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
   *   <mark>In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.</mark>
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #23 💩💩💩💩💩
+### Question #23 💩💩💩💩
 
-DRAG DROP 
 
 You are implementing a package management solution for a Node.js application by using Azure Artifacts.
 
@@ -6347,18 +6348,20 @@ To provision an Azure Kubernetes Service (AKS) cluster that is RBAC-enabled and 
 
 1.  **`az ad sp create-for-rbac`**:
 
-   * Since the requirement specifies using a **custom service principal**, you must create this identity first. This command creates a Service Principal in Azure Active Directory (Microsoft Entra ID) and returns the `appId` and `password` (client secret) required by the AKS cluster to interact with other Azure resources (like Load Balancers or Managed Disks).
+Since the requirement specifies using a **custom service principal**, you must create this identity first. This command creates a Service Principal in Azure Active Directory (Microsoft Entra ID) and returns the `appId` and `password` (client secret) required by the AKS cluster to interact with other Azure resources (like Load Balancers or Managed Disks).
 
 2.  **`az aks create`**:
 
-    * This is the primary command to provision the cluster. You will pass the `appId` and `password` from the previous step into this command using the `--service-principal` and `--client-secret` parameters. By default, `az aks create` enables RBAC (unless `--disable-rbac` is specified), meeting the requirement.
+
+This is the primary command to provision the cluster. You will pass the `appId` and `password` from the previous step into this command using the `--service-principal` and `--client-secret` parameters. By default, `az aks create` enables RBAC (unless `--disable-rbac` is specified), meeting the requirement.
 
 3.  **`az aks get-credentials`**:
 
-     * Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
+
+Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #26 💩💩💩💩💩
+### Question #26 💩💩💩💩
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
@@ -6407,7 +6410,7 @@ To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restri
     - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
 
 
-### Question #27 💩💩💩💩💩💩
+### Question #27 💩💩💩💩
 
 You need to increase the security of your team's development process.
 
@@ -6487,6 +6490,16 @@ D. an Azure Active Directory (Azure AD) service principal
 
 -----------
 
+B. an Azure Artifacts Credential Provider ✅
+
+ 🧠 Exam tip
+
+If you see **“NuGet + Azure DevOps + automatic restore/authentication”**, the answer is almost always:
+
+➡️ **Credential Provider**
+
+* **Azure Automation account** → Not used for package authentication ❌
+
 
 To automatically restore a NuGet package from an authenticated feed in **Azure DevOps**, the solution must handle authentication **non-interactively** during builds.
 
@@ -6506,7 +6519,6 @@ The **Azure Artifacts Credential Provider** is designed specifically for this:
 
 ❌ Why not the others?
 
-* **Azure Automation account** → Not used for package authentication
 * **Azure AD account with MFA** → Requires interactive login (not suitable for automation)
 * **Azure AD service principal** → Not directly used for NuGet feed authentication in this scenario
 
@@ -6514,13 +6526,9 @@ The **Azure Artifacts Credential Provider** is designed specifically for this:
 
 **B. an Azure Artifacts Credential Provider**
 
- 🧠 Exam tip
 
-If you see **“NuGet + Azure DevOps + automatic restore/authentication”**, the answer is almost always:
 
-➡️ **Credential Provider**
-
-### Question #29 💩💩💩💩
+### Question #29 💩💩💩
 
 You use Azure Pipelines to manage project builds and deployments.
 
@@ -6548,6 +6556,13 @@ Evaluation of options
 
 * **A. Third-party application access via OAuth** ✅
 
+🧠 Exam tip
+
+Whenever you see:
+
+<mark>**“integrate Azure DevOps with Teams / external service”** → Think: **OAuth must be enabled**</mark>
+
+
 → Enables external apps (like Microsoft Teams) to authenticate and integrate with Azure DevOps.
 
 * B. Azure AD Conditional Access Policy Validation ❌
@@ -6566,14 +6581,8 @@ Evaluation of options
 
 **A. Third-party application access via OAuth**
 
-🧠 Exam tip
 
-Whenever you see:
-
-<mark>**“integrate Azure DevOps with Teams / external service”** → Think: **OAuth must be enabled**</mark>
-
-
-### Question #30 💩💩💩💩💩
+### Question #30 💩💩💩💩
 
 You have an existing project in Azure DevOps.
 
@@ -6596,6 +6605,13 @@ D. OAuth
 
 To ensure that **Azure Pipelines** runs under the **Azure Pipelines identity** (not a user identity), you must use an authentication method that represents a **service/app**, not an individual user.
 
+🧠 Exam tip
+
+If the requirement says:
+
+<mark>**“run as Azure Pipelines identity”** or **“not tied to a user”** → Always choose **GitHub App**, not OAuth or PAT.</mark>
+
+
 Evaluation of options
 
 * **A. Personal Access Token (PAT)** ❌
@@ -6617,14 +6633,9 @@ Evaluation of options
 
 **B. GitHub App**
 
-🧠 Exam tip
-
-If the requirement says:
-
-<mark>**“run as Azure Pipelines identity”** or **“not tied to a user”** → Always choose **GitHub App**, not OAuth or PAT.</mark>
 
 
-### Question #31 💩💩💩💩
+### Question #31 💩💩💩
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -6679,7 +6690,7 @@ Whenever you see **Azure Monitor + CMK**, think:
 
 ➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
 
-### Question #32 💩💩💩💩💩💩
+### Question #32 💩💩💩💩
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
@@ -6726,7 +6737,7 @@ For **Azure Monitor CMK questions**, remember:
 
 
 
-### Question-33 💩💩💩
+### Question-33 💩💩
 
 You plan to provision a self-hosted Linux agent.
 
@@ -6803,11 +6814,9 @@ To enable authentication using **Azure Active Directory (Azure AD)** for a Micro
 This:
 
 * Creates an identity for your app in Azure AD
-* Generates:
+* Generates: **Application (client) ID / Directory (tenant) ID**
 
-  * Application (client) ID
-  * Directory (tenant) ID
-* Enables configuration of:
+Enables configuration of:
 
   * Authentication flows (OAuth2 / OpenID Connect)
   * Redirect URIs
@@ -6838,7 +6847,7 @@ Answer: B
 <mark>**Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.**</mark>
 
 
-### Question #35
+### Question #35. 💩
 
 You need to deploy a new project in Azure DevOps that has the following requirements:
 
@@ -6956,7 +6965,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 💩💩💩
+### Question-37 💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -7032,7 +7041,7 @@ Answer: A
 
 Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
 
-### Question-38 💩💩💩💩💩💩
+### Question-38 💩💩💩💩
 
 You have an application that consists of several Azure App Service web apps and Azure functions.
 
@@ -7095,7 +7104,7 @@ Final Answer:
 
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
-### Question-39 💩💩💩
+### Question-39 💩💩
 
 You have a branch policy in a project in Azure DevOps. 
 
@@ -7227,7 +7236,7 @@ When you need to pass a secure value (like a password) as a parameter during dep
 You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault ID. The key vault can exist in a different subscription than the resource group you are deploying to.
 
 
-### Question-41 💩💩
+### Question-41 💩
 
 You have an Azure DevOps organization named Contoso that contains a project named Project1.
 
@@ -7290,7 +7299,7 @@ Final Answer:
 Answer: D
 
 
-### Question #42 💩💩💩
+### Question #42 💩💩💩💩
 
 Your company has a project in Azure DevOps named Project1.
 
@@ -7350,7 +7359,7 @@ If requirements say:
 
 
 
-### Question-43 💩💩💩
+### Question-43 💩💩
 
 Your company uses Azure DevOps.
 
@@ -7510,7 +7519,7 @@ Final Answer:
 **B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
 
 
-### Question-45  💩💩
+### Question-45  💩
  
 You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
 
@@ -7574,7 +7583,7 @@ Answer: A
 
 Use a variable group to store values that you want to control and make available across multiple pipelines.
 
-### Question #46 💩💩
+### Question #46 💩
 
 You have an Azure subscription that contains an Azure key vault named Vault1, an Azure pipeline named Pipeline1, and an Azure SQL database named DB1.
 
@@ -7610,14 +7619,14 @@ You want to store a **password** in **Azure Key Vault** and allow an **Azure Pip
 
 **Store the password as a:**
 
-* **Secret** ✅
+**Secret** ✅
 
   * Passwords and other sensitive strings are stored as **secrets** in Key Vault.
   * **Keys** are for cryptographic operations, and **certificates** are for TLS/PKI; neither is appropriate for plain passwords.
 
 **Grant Pipeline1 access to Vault1 by modifying the:**
 
-* **Access policies** ✅
+**Access policies** ✅
 
   * For Key Vault **secrets**, you grant permissions via **Key Vault access policies** (Get, List, etc.) for the managed identity of the pipeline.
   * **IAM roles** can also be used for some scenarios, but the exam scenario typically expects **access policies** for secret access.
@@ -7710,12 +7719,14 @@ The correct answer is:
 
 **D. SonarQube** ✅
 
+* Identify **open source/package dependencies with known security issues**
+
+
 Explanation:
 
 **SonarQube** is a static analysis tool that can:
 
 * Analyze code quality and security vulnerabilities
-* Identify **open source/package dependencies with known security issues**
 * Suggest fixes or updates for the vulnerable dependencies
 * Integrate with **Azure DevOps pipelines** for automated scanning
 
@@ -7826,7 +7837,7 @@ To meet the requirements for repository permissions in GitHub while following th
 
 
 
-### Question-50   💩💩💩
+### Question-50   💩
 
 Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
 
