@@ -179,7 +179,7 @@ Why the others are less suitable for CI:
 
 
 
-### Question 5  💩💩💩
+### Question 5  💩💩
 
 Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure
 
@@ -212,7 +212,7 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
-### Question 6 💩💩💩💩💩
+### Question 6 💩💩💩💩
 
 You intend to manage the build and release processes using Azure DevOps. 
 
@@ -487,7 +487,7 @@ So the solution **does meet the goal**.
 
 Note: The choice between these modes depends on the specific requirements and preferences of the environment and administrators.
 
-### Question - 11 💩💩
+### Question - 11 💩
 
 You need to consider the underlined segment to establish whether it is accurate.
 
@@ -521,7 +521,7 @@ Why other options are incorrect:
 *   **C. Hosted:** This is a legacy/generic term for Microsoft-hosted agents. It does not specify whether it is Linux or Windows, or if it supports containers.
 *   **D. Hosted macOS:** macOS agents are used for building iOS and Mac applications. They cannot build or run Windows-based IIS containers.
 
-### Question -12 💩💩
+### Question -12 💩
 
 Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. 
 
@@ -584,7 +584,7 @@ This is about **controlling access based on location/network**.
 **D. Configure conditional access in Azure Active Directory**
 
 
-### Question -13 💩💩💩
+### Question -13 💩💩
 
 You are making use of Azure DevOps to configure Azure Pipelines for project, named PROJ-01. 
 
@@ -695,7 +695,7 @@ Why the other options are incorrect
 
 
 
-### Question -15 💩💩💩💩💩
+### Question -15 💩💩💩💩
 
 You scan a Node.js application using WhiteSource Bolt. 
 
@@ -748,7 +748,7 @@ npm install --production
 
 This installs only production dependencies for WhiteSource Bolt scanning.
 
-### Question -16 💩💩
+### Question -16 💩
 
 You are currently defining a release strategy for an app, named APP-01.
 
@@ -809,7 +809,7 @@ Why the others are not correct
 
 
 
-### Question -17 💩💩
+### Question -17 💩
 
 Your company hosts a web application in Azure, and makes use of Azure Pipelines for managing the build and release of the application. When stakeholders report that system performance has been adversely affected by the most recent releases, you configure alerts in Azure Monitor. 
 
@@ -904,7 +904,7 @@ Correct terminology:
 ✅ **Final answer: C. Deployment**
 
 
-### Question -19 💩💩💩
+### Question -19 💩💩
 
 You are preparing to deploy an Azure resource group via Terraform.
 
@@ -959,6 +959,8 @@ D. You should make use of upstream sources.
 ------
 
 ✅ **Correct answer: B. You should make use of views.**
+
+❌ **Upstream sources**： Used to connect to external package feeds (e.g., npm, NuGet), not control release visibility |
 
 Explanation
 
@@ -1146,7 +1148,7 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question -24 💩💩💩
+### Question -24 💩💩
 
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
@@ -1221,7 +1223,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **B and C**
 
 
-### Question -25 💩💩💩
+### Question -25 💩💩
 
 Your company has an application that contains a number of Azure App Service web apps and Azure functions. 
 
@@ -1276,7 +1278,7 @@ This is exactly where **Compute and Apps** is located.
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
 
-### Question -26 💩💩
+### Question -26 💩
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
@@ -1392,7 +1394,7 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -28 💩💩💩
+### Question -28 💩💩
 
 You manage an Azure web app that supports an e-commerce website. 
 
@@ -1599,7 +1601,7 @@ Explanation
 - 2️⃣ Active → Completion → **Cycle Time**
 - 3️⃣ Remaining Work → **Burndown**
 
-### Question -2. 💩💩
+### Question -2 💩
 
 You plan to create alerts that will be triggered based on the page load performance of a home page. 
 
@@ -1616,9 +1618,11 @@ Hot Area:
 Correct selections
 
 **1️⃣ To create an alert based on the page load experience of most users:**
+
 ✅ **percentile_duration_90**
 
 **2️⃣ To only create an alert when an authentication error occurs on the server:**
+
 ✅ **resultCode**
 
 Explanation
@@ -1694,7 +1698,7 @@ Answer Area
 2.  **periodSeconds: 15**
 
 
-### Question -4  💩💩
+### Question -4  💩
 
 Your company is building a new web application.
 
@@ -1727,7 +1731,7 @@ Answer Area
 *   Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
 
-### Question -5   💩💩💩
+### Question -5   💩💩
 
 Your company wants to use Azure Application Insights to understand how user behaviors affect an application.
 
@@ -1752,14 +1756,14 @@ To analyze user behavior in Azure Application Insights, you should match the too
 **Answer Area**
 
 *   **Feature usage:** **User Flows**
-    *   **User Flows** visualizes the paths users take through your application. **It helps you understand which features** are used and the sequence in which users interact with different parts of your site.
+    *   <mark>**User Flows** visualizes the paths users take through your application. **It helps you understand which features** are used and the sequence in which users interact with different parts of your site.</mark>
 *   **Number of people who used the actions and its features:** **Users**
     *   The **Users** tool provides data on the count of unique individuals who interact with your application, allowing you to see how many distinct people are using specific actions or features.
 *   **The effect that the performance of the application has on the usage of a page or a feature:** **Impact**
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 6 💩💩💩💩💩
+### Question - 6 💩💩💩💩
 
 Your company is building a <mark>mobile app that targets Android and iOS devices.</mark> 
 
@@ -1788,6 +1792,8 @@ D. Jenkins integration
 
 The correct answer is **B. Microsoft Visual Studio App Center integration**.
 
+❌ <mark>**A. Microsoft Test & Feedback extension:** This is primarily used for exploratory testing of **web applications** from within a browser. It is not designed for mobile app crash reporting or distribution.</mark>
+
 Explanation:
 
 **Microsoft Visual Studio App Center** is specifically designed for mobile application lifecycles (iOS, Android, Windows, and macOS) and perfectly addresses all three requirements:
@@ -1798,12 +1804,12 @@ Explanation:
 
 Why other options are incorrect:
 
-*   <mark>**A. Microsoft Test & Feedback extension:** This is primarily used for exploratory testing of **web applications** from within a browser. It is not designed for mobile app crash reporting or distribution.<?mark>
+
 *   **C. Azure Application Insights widgets:** While Application Insights can monitor apps, Microsoft's official recommendation for mobile-specific scenarios (like distribution and crash reporting for iOS/Android) is App Center.
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩💩💩💩💩
+### Question - 7 💩💩💩💩
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -1880,9 +1886,11 @@ Event
 💡 Why this works
 
 * `summarize` groups results (**by Computer**)
-* `makeset(EventID)` ensures:
-  * Only **distinct Event IDs**
-  * Returned as a **list/array** (matches the table format in question)
+
+`makeset(EventID)` ensures:
+
+* Only **distinct Event IDs**
+* Returned as a **list/array** (matches the table format in question)
 
 ❌ Why not others
 
@@ -1922,6 +1930,8 @@ Based on the requirements to identify the top 10 failed pages of a web applicati
 
 
 **The complete query would look like this:**
+
+
 ```kusto
 requests
 | where success == false
@@ -1986,7 +1996,7 @@ The correct answer is:
 
 **Best-practice solution flow:**
 
-**Application Insights → Availability Test → Multi-region probes → Alert rule**
+<mark>**Application Insights → Availability Test → Multi-region probes → Alert rule**</mark>
 
 Explanation:
 
@@ -2015,7 +2025,7 @@ There are three types of Application Insights availability tests:
 * 2) Multi-step webtest. 
 * 3) Custom Track Availability Test.
 
-### Question #12 💩💩💩💩💩
+### Question #12 💩💩💩💩
 
 You are integrating Azure Pipelines and Microsoft Teams.
 
@@ -2023,7 +2033,7 @@ You install the Azure Pipelines app in Microsoft Teams.
 
 You have an Azure DevOps organization named Contoso that contains a project name Project1. 
 
-You subscribe to Project1 in Microsoft Teams.
+<mark>**You subscribe to Project1 in Microsoft Teams.**</mark>
 
 **You need to ensure that you <mark>only receive events about failed builds</mark> in Microsoft Teams.**
 
@@ -2042,6 +2052,8 @@ D. From Azure Pipelines, enable continuous integration for Project1
 
 The correct answer is **C. From Microsoft Teams, run @azure pipelines subscriptions.**
 
+> ❌  **A. @azure pipelines subscribe...:** The prompt states you have already subscribed to Project1.
+
 Explanation:
 
 When you first subscribe to an Azure DevOps project in Microsoft Teams using the `@azure pipelines subscribe [URL]` command, the app creates several **default subscriptions** (such as "Build completed," which includes both successes and failures).
@@ -2059,7 +2071,7 @@ Why other options are incorrect:
 *   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, **it does not control the logic of the notification system in Teams**.
 
 
-### Question -13  💩💩💩
+### Question -13  💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -2279,7 +2291,7 @@ Why the others are incorrect:
 ✅ **Final answer: A. Kusto Query Language (KQL)**
 
 
-### Question -18 💩💩💩💩
+### Question -18 💩💩💩
 
 Your company creates a web application. 
 
@@ -2348,7 +2360,7 @@ Solution architecture:
 ✅ **Final answer: A and E**
 
 
-### Question -19 💩💩💩
+### Question -19 💩💩
 
 You are monitoring the health and performance of an Azure web app by using Azure Application Insights.
 
@@ -2454,7 +2466,7 @@ Based on the requirements described for the Azure Monitor alert rule, here is th
 2.  **Static**
 3.  **Greater than**
 
-### Question -21 💩💩💩
+### Question -21 💩💩
 
 
 You have a private GitHub repository. You need to display the **commit status of the repository on Azure Boards**.
@@ -2528,6 +2540,9 @@ You need to generate an alert when there are 10,000 simultaneous connections to 
 * B. Stream to an event hub
 * C. Archive to a storage account
 
+------
+
+
 The correct answer is:
 
 **A. Send to Log Analytics** ✅
@@ -2593,7 +2608,7 @@ To enable detailed logging (verbose output) in an Azure DevOps CI/CD pipeline, y
 1.  **Name:** `System.Debug`
 2.  **Value:** `true`
 
-### Question #24  💩💩💩💩💩
+### Question #24  💩💩💩💩
 
 You build an iOS app.
 
@@ -2668,7 +2683,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **D**
 
 
-### Question-25  💩💩💩
+### Question-25  💩💩
 
 You have an Azure virtual machine that is monitored by using Azure Monitor, 
 
@@ -2731,7 +2746,7 @@ Requirement summary:
 ✅ **Final answer: A. the Dependency agent**
 
 
-### Question-26  💩💩💩
+### Question-26  💩💩💩💩
 
 You have multiple teams that work on multiple projects in Azure DevOps. 
 
@@ -2788,8 +2803,7 @@ Only the **Dependency Tracker extension** meets all requirements:
 ✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
 
 
-### Question #27 💩💩💩💩💩
-
+### Question #27 💩💩💩💩
 
 You have a GitHub repository that contains the source code for an app named App1.
 
@@ -2869,14 +2883,13 @@ Correct selections
 
 ✔ **Modify the Usage and estimated costs settings**
 
+<mark>**Adaptive sampling is configured in the application SDK and dynamically adjusts the telemetry volume.If adaptive sampling remains enabled, it will override changes made in Application Insights.**</mark>
 
 Explanation
 
 1️⃣ Disable adaptive sampling in the app
 
-Adaptive sampling is configured in the application SDK and dynamically adjusts the telemetry volume.
-
-If adaptive sampling remains enabled, it will override changes made in Application Insights.
+<mark>**Adaptive sampling is configured in the application SDK and dynamically adjusts the telemetry volume.If adaptive sampling remains enabled, it will override changes made in Application Insights.**</mark>
 
 So in the application configuration (for example in **ApplicationInsights.config** or startup configuration for **.NET Core** apps), you must:
 
@@ -2937,23 +2950,27 @@ Which two libraries should you identify? Each correct answer presents a complete
 
 The correct answers are:
 
-**D. OpenTelemetry**
+**D. OpenTelemetry**  ✅
 
-**E. OpenCensus** ✅
+**E. OpenCensus** ✅ => Predecessor to OpenTelemetry
+
+B. OpenTracing ❌ → Specification only, requires an implementation (like OpenTelemetry)
+
 
 Explanation:
 
 To **centralize distributed tracing** in **Azure Monitor / Application Insights**, you need libraries that **can export telemetry directly to Application Insights**.
 
-* **OpenTelemetry**
-  * Industry-standard for distributed tracing and metrics
-  * Provides **exporters** for Application Insights
-  * Actively supported in Azure Monitor
+**OpenTelemetry**
+  
+* Industry-standard for distributed tracing and metrics
+* Provides **exporters** for Application Insights
+* Actively supported in Azure Monitor
 
-* **OpenCensus**
+**OpenCensus**
 
-  * Predecessor to OpenTelemetry
-  * Has **native support for Application Insights**
+* Predecessor to OpenTelemetry
+* Has **native support for Application Insights**
 
 
 Why the others are incorrect:
@@ -2977,7 +2994,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 💩💩💩💩💩
+### Question-30 💩💩💩💩
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3033,7 +3050,7 @@ Why other options are incorrect:
 
 
 
-### Question-31 💩💩💩💩💩
+### Question-31 💩💩💩💩
 
 You use Azure Pipelines to build and deploy an app named App1. 
 
@@ -3055,7 +3072,7 @@ The correct answer is:
 
 **A. appsettings.json** ✅
 
-
+* <mark>**C. Startup.cs** ❌ → Optional; you can add Application Insights SDK here, but the question asks which file to modify for configuration</mark>
 
 Explanation:
 
@@ -3198,6 +3215,25 @@ To build the query in **Azure Application Insights** using **Kusto Query Languag
 
 ➡ **`extend`**
 
+<mark>**`extend Threshold = 75`** Creates a constant column used to **draw the threshold line on the chart**.</mark>
+
+核心原因：extend 保留原有列，project 只保留指定列。
+
+```
+// ❌ 错误 - 使用 project 会丢失分组信息
+| project Threshold = 75
+
+// ✅ 正确 - 使用 extend 保留所有聚合结果
+| extend Threshold = 75
+
+// 如果确实想只保留关键列，应该这样写：
+| project cloud_RoleInstance, TimeGenerated, avg_value, Threshold = 75
+```
+
+extend = 扩展表格（加列，不删东西）
+
+project = 投影（挑选列，删掉其他）
+
 Completed Query
 
 ```kusto
@@ -3215,10 +3251,7 @@ performanceCounters
 
   Groups results **per hour** for the last 24 hours.
 
-* **`extend Threshold = 75`**
-
-
-  Creates a constant column used to **draw the threshold line on the chart**.
+* **`extend Threshold = 75`** Creates a constant column used to **draw the threshold line on the chart**.
 
 Why the other options are incorrect
 
@@ -3236,7 +3269,7 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
 
 
-### Question-35 💩💩💩💩💩
+### Question-35 💩💩💩💩
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
@@ -3311,7 +3344,7 @@ This combo is required for:
 **B and D**
 
 
-### Question-36 💩💩💩
+### Question-36 💩💩
 
 You configure Azure Application Insights and the shared service plan tier for a web app. 
 
@@ -3372,7 +3405,7 @@ So test failures during this learning window **will not generate notifications**
 
 
 
-### Question #37 💩💩💩
+### Question #37 💩💩
 
 You have an Azure virtual machine named web1.
 
@@ -3416,6 +3449,19 @@ Perf
 | render timechart
 ```
 
+数据操作：where, extend, project, summarize, join, sort → 改变数据内容和结构
+
+可视化指令：render → 只改变显示方式，不改变数据
+
+```
+// 完整流程示例
+Perf
+| where TimeGenerated > ago(7d)
+| extend FormattedValue = CounterValue / 1024  // 数据处理：extend
+| project TimeGenerated, FormattedValue        // 数据处理：project
+| summarize avg(FormattedValue) by bin(TimeGenerated, 1h)  // 聚合
+| render timechart  // 呈现：画图 ← 最后一步
+```
 
 ### Question-38
 
@@ -3522,8 +3568,40 @@ requests
 | project timestamp, url, resultCode, duration
 ```
 
-### Question-40 💩💩💩💩💩
+为什么这里用 project 而不是 extend？
 
+```
+操作	结果列数	适用场景
+extend	增加1列，保留所有原列	添加计算字段，后续还需要其他列
+project	只保留指定列，删除其他所有	只关注少数列，减少数据量，提高性能
+
+
+| extend NewColumn = "test"  // 保留 requests 表的所有原始列（可能有50+列）
+```
+
+```
+// ❌ 错误 - 用 extend 但后续只用到3列，浪费资源
+requests
+| where resultCode == "404"
+| extend timestamp, url, resultCode  // extend 不能这样用！语法错误
+
+// ✅ 正确 - 明确需要的列
+| project timestamp, url, resultCode
+
+// ⚠️ 陷阱题 - 要求"减少查询返回的数据量"
+// 答案应该是 project（或 project-away），不是 extend
+```
+
+- 需要加东西 → extend（扩展）
+
+- 需要删东西只留几个 → project（投影）
+
+- 需要画图 → render（渲染）
+
+
+
+
+### Question-40 💩💩💩💩
 
 You are automating the testing process for your company.
 
@@ -3571,8 +3649,6 @@ Why the others are incorrect:
 
 
 ### Question #41 💩💩
-
-DRAG DROP -
 
 You have a project in Azure DevOps.
 
@@ -3640,6 +3716,14 @@ The correct answer is:
 
 **D. the Application Health extension** ✅
 
+Summary:
+
+| Requirement                 | Solution Fit                   |
+| --------------------------- | ------------------------------ |
+| App-level health monitoring | ✅ Application Health extension |
+| VMSS upgrade eligibility    | ✅ Application Health extension |
+| Minimize admin effort       | ✅ Application Health extension |
+
 
 Explanation:
 
@@ -3659,6 +3743,7 @@ You need to implement a **health check for App1** running on a **VMSS behind an 
 
 Why the others are incorrect:
 
+
 * **A. Azure Load Balancer health probe** ❌
   * Can monitor endpoints for traffic distribution
   * **Cannot directly integrate with VMSS upgrade eligibility** in the context of application-level health
@@ -3672,18 +3757,8 @@ Why the others are incorrect:
   * Can implement health checks manually, but **higher administrative overhead** compared to the built-in Application Health extension
 
 
-
-Summary:
-
-| Requirement                 | Solution Fit                   |
-| --------------------------- | ------------------------------ |
-| App-level health monitoring | ✅ Application Health extension |
-| VMSS upgrade eligibility    | ✅ Application Health extension |
-| Minimize admin effort       | ✅ Application Health extension |
-
-
-
 ✅ **Final answer: D. the Application Health extension**
+
 
 
 ### Question #42 💩💩
@@ -3740,7 +3815,7 @@ Mapping to the options
 
 **A and D**
 
-### Question-43 💩💩💩💩
+### Question-43 💩💩💩
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -3749,8 +3824,6 @@ You have a build pipeline in Azure Pipelines that occasionally fails. You discov
 Which two actions should you perform? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
-
-
 
 
 - A. Set Flaky test detection to Off.
@@ -4017,7 +4090,7 @@ To configure the Azure DevOps dashboard correctly, you should match the widgets 
 *   **How long it takes to close a work item:** **Cycle time**
     *   *Reasoning:* **Cycle time** measures the time it takes to complete a work item once work has actually started on it (i.e., when it moves from a "New" state to an "Active" or "In Progress" state).
 
-*   **The number of completed backlog items:** **Velocity**
+*   <mark>**The number of completed backlog items:** **Velocity**</mark>
     *   *Reasoning:* **Velocity** tracks how much work a team can complete in a single sprint. It is the standard metric for calculating the number of backlog items (or story points) finished per iteration.
 
 *   <mark>**How long it takes to restore failed services:** **Lead time**</mark>
@@ -4255,7 +4328,7 @@ Based on the KQL query provided in the exhibit, here are the correct selections 
 *   The result of a subtraction between two `datetime` objects is always a **`timespan`** (representing the elapsed time).
 *   This is confirmed in Line 5, where the `Duration` is compared against a value generated by the `make_timespan` function.
 
-### Question-55  💩💩💩💩💩
+### Question-55  💩💩💩💩
 
 You are designing a configuration management solution to support five apps hosted on Azure Ap Service. 
 
@@ -4344,7 +4417,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 💩💩💩💩💩
+### Question #57 💩💩💩💩
 
 You configure an Azure Application Insights availability test.
 
@@ -4505,6 +4578,13 @@ The correct answer is:
 
 **B. No** ✅
 
+
+**Correct approach:**
+
+1. <mark>Use **Azure Monitor alerts** on the **VMSS metrics** (like `Capacity` or `Instances`).</mark>
+2. <mark>Create an **action group** with **email notifications**.</mark>
+
+
 Explanation:
 
 The requirement:
@@ -4524,10 +4604,6 @@ The proposed solution:
   * Pull requests
 * **VMSS scaling events** are **Azure platform events**, not DevOps project events.
 
-**Correct approach:**
-
-1. <mark>Use **Azure Monitor alerts** on the **VMSS metrics** (like `Capacity` or `Instances`).</mark>
-2. <mark>Create an **action group** with **email notifications**.</mark>
 
 This ensures you receive an email whenever VMSS1 scales in or out.
 
@@ -4535,7 +4611,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-### Question-61  💩💩💩
+### Question-61  💩💩
 
 You have an Azure subscription that contains multiple web apps.
 
@@ -4620,7 +4696,7 @@ properties:
           periodSeconds: 10
 ```
 
-### Question #2  💩💩💩
+### Question #2  💩💩
 
 You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
 
