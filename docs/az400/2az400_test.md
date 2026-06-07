@@ -7904,7 +7904,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩💩💩💩
+### Question #51  💩💩💩
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8005,7 +8005,7 @@ Final Answer:
 **C. Black Duck** ✅
 
 
-### Question #53 💩💩💩💩💩
+### Question #53 💩💩💩💩
 
 You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
 
@@ -8028,17 +8028,20 @@ To scan container images for vulnerabilities **before deployment** in a CI/CD pi
 
 ✅ Correct Answer: **C. Microsoft Defender for DevOps**
 
+❌ * **A. Microsoft Defender for Containers**  → Focuses on runtime protection and post-deployment insights
+
+
 💡 Explanation
 
-* **Microsoft Defender for DevOps**:
-  * Integrates directly with Azure DevOps pipelines
-  * Scans container images and code during build
-  * Detects vulnerabilities **before deployment**
-  * Designed for **shift-left security**
+**Microsoft Defender for DevOps**:
+
+* Integrates directly with Azure DevOps pipelines
+* Scans container images and code during build
+* Detects vulnerabilities **before deployment**
+* Designed for **shift-left security**
 
 ❌ Why not the others?
 
-* **A. Microsoft Defender for Containers**  → Focuses on runtime protection and post-deployment insights
 
 * **B. Microsoft Defender for App Service** → Secures web apps, not container images in pipelines
 
@@ -8055,7 +8058,7 @@ If it says:
 * **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-54 💩💩💩💩💩
+### Question-54 💩💩💩💩
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -8094,7 +8097,7 @@ Why other options are incorrect:
 Answer. C
 
 
-### Question #55 💩💩💩💩
+### Question #55 💩💩💩
 
 DRAG DROP -
 
@@ -8197,7 +8200,7 @@ There are several versions of this question in the exam. The question has fwo po
 2. White Source Bolt
 
 
-### Question #57  💩💩💩💩💩
+### Question #57  💩💩💩💩
 
 
 You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
@@ -8283,14 +8286,6 @@ When using **Dependabot** in **GitHub**, scans are triggered based on **dependen
 * **E. A new advisory is added.**
 
 
-  → When a new vulnerability is published, Dependabot re-evaluates existing dependencies.
-
-❌ Why not the others?
-
-* **B. A pull request is created** → Not a direct trigger (unless it changes dependencies, which maps back to A)
-* **C. A branch is forked** → No scan triggered
-* **D. Any commit is pushed** → Only triggers if it affects dependencies (covered by A)
-
  🧠 Exam tip
 
 Dependabot triggers =
@@ -8299,7 +8294,16 @@ Dependabot triggers =
 
 
 
-### Question-59 - Duplicated 💩💩💩💩
+  → When a new vulnerability is published, Dependabot re-evaluates existing dependencies.
+
+❌ Why not the others?
+
+* **B. A pull request is created** → Not a direct trigger (unless it changes dependencies, which maps back to A)
+* **C. A branch is forked** → No scan triggered
+* **D. Any commit is pushed** → Only triggers if it affects dependencies (covered by A)
+
+
+### Question-59 - Duplicated 💩
  
 You plan to use a NuGet package in a project in Azure DevOps. **The NuGet package is in a feed that requires authentication.**
 
@@ -8356,7 +8360,7 @@ the Credential Provider will automatically acquire and securely store a token on
 
 
 
-### Question #60  💩💩💩
+### Question #60  💩💩
 
 ![Alt Image Text](../images/az400_2_40.png)
 
@@ -8433,7 +8437,7 @@ Final Answer:
 **A. Third-party application access via OAuth** ✅
 
 
-### Question #62 💩💩💩💩💩
+### Question #62 💩💩💩
 
 DRAG DROP -
 
@@ -8543,7 +8547,7 @@ GitHub App uses the Azure Pipelines identity.
 
 A: Personal access token and Auth use your personal GitHub identity
 
-### Question-64  💩💩💩💩
+### Question-64  💩💩💩
 
 
 You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
@@ -8598,8 +8602,7 @@ Why the other options are incorrect:
 *   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
 *   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
-### Question-65 💩💩💩💩💩
-
+### Question-65 💩💩💩💩
 
 You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
 
@@ -8607,7 +8610,7 @@ A security review indicates that too many users have privileged access to resour
 
 You need to deploy a privileged access management solution that meets the following requirements:
 
-- Enforces time limits on the use of privileged access
+- <mark>Enforces time limits on the use of privileged access</mark>
 - Requires approval to activate privileged access
 - Minimizes costs
 
@@ -8618,9 +8621,17 @@ What should you do first?
 - C. Enforce Azure Multi-Factor Authentication (MFA) for role activation.
 - D. Upgrade the license of the Azure Active Directory (Azure AD) 
 
+-------------
+
 The correct answer is:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
+
+Correct sequence:
+
+1. ✅ **Upgrade Azure AD to Premium P2**
+2. Enable **Privileged Identity Management (PIM)**
+
 
 Explanation:
 
@@ -8664,18 +8675,6 @@ All of these are **configuration steps after PIM is available**.
 
 
 
-Correct sequence:
-
-1. ✅ **Upgrade Azure AD to Premium P2**
-2. Enable **Privileged Identity Management (PIM)**
-3. Configure:
-  
-  * Approval workflows
-  * Time limits
-  * MFA
-  * Alerts
-  * Notifications
-
 
 
 Final Answer:
@@ -8713,10 +8712,11 @@ GitHub specifically uses **public-key encryption based on libsodium** for encryp
 
 💡 Explanation
 
-* **libsodium**:
- * Officially required by GitHub for encrypting secrets
- * Uses the repository’s public key
- * Ensures secrets are securely transmitted via API
+**libsodium**:
+ 
+* Officially required by GitHub for encrypting secrets
+* Uses the repository’s public key
+* Ensures secrets are securely transmitted via API
 
 ❌ Why not the others?
 
@@ -8767,7 +8767,7 @@ This recommendation is based on a specific technical limitation of GitHub Action
 
 Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
-### Question #68 💩💩💩💩💩
+### Question #68 💩💩💩💩
 
 You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the source code for App1.
 
@@ -8798,31 +8798,32 @@ Test2:
 
 ------
 
+✅ Correct Answers
+
+* **Test1:** → **ZAP Baseline Scan**
+* **Test2:** → **ZAP Full Scan**
+
+
 
 To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type does:
 
 🔍 Scan Types
 
-* **ZAP Baseline Scan**
+**ZAP Baseline Scan**
    
    * Passive scan only (no active attacks)
    * Includes a short spider (default ~1 minute)
    * Waits for passive scanning to complete
 
-* **ZAP Full Scan**
+**ZAP Full Scan**
 
    * Includes spider + **active scan (attacks)**
 
-* **ZAP API Scan**
+**ZAP API Scan**
 
    * Used for APIs (OpenAPI/Swagger), not general web crawling
 
 ---
-
-✅ Correct Answers
-
-* **Test1:** → **ZAP Baseline Scan**
-* **Test2:** → **ZAP Full Scan**
 
 💡 Explanation
 
@@ -8845,7 +8846,7 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 * **API-specific** → API Scan
 
 
-### Question-69 💩💩💩💩💩💩
+### Question-69 💩💩💩💩💩
 
 You have a GitHub Enterprise account.
 
@@ -8866,6 +8867,11 @@ The correct answer is:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
+
+❌ **B. Purchase Premium Plus support** → Support plan only, no security features
+
+
+
 Explanation:
 
 To enable **push protection for secret scanning** in a **GitHub Enterprise** account, you must first have:
@@ -8882,9 +8888,6 @@ GHAS provides:
 * 📦 Dependency scanning
 
 Why the other options are incorrect:
-
-❌ **B. Purchase Premium Plus support**
-→ Support plan only, no security features
 
 ❌ **C. Enforce MFA**
 → Security best practice, but **does not enable secret scanning**
@@ -8903,7 +8906,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #70
+### Question #70 💩💩💩
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
@@ -8929,6 +8932,8 @@ In **Azure DevOps**, this is done using **branch policies with status checks**.
 
  ✅ Correct Answer: **B. Add a status check to the policies of the main branch**
 
+❌* **C. Service hook** → Used for notifications/integrations, not enforcement
+
 💡 Explanation
 
 * **Status checks on the main branch**:
@@ -8940,7 +8945,6 @@ In **Azure DevOps**, this is done using **branch policies with status checks**.
 ❌ Why not the others?
 
 * **A. Development branch policies** → Too early; code could still bypass and reach main
-* **C. Service hook** → Used for notifications/integrations, not enforcement
 * **D. Job authorization scope** → Related to permissions, not validation
 
 🧠 Exam tip
