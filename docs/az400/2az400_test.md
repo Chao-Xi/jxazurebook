@@ -4620,7 +4620,7 @@ properties:
           periodSeconds: 10
 ```
 
-### Question #2  💩💩💩💩💩
+### Question #2  💩💩💩
 
 You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
 
@@ -4712,7 +4712,7 @@ Azure Dashboards are specifically designed to provide a "single pane of glass" v
 
 
 
-### Question #4  💩💩💩
+### Question #4  💩💩💩💩
 
 You are building an ASP.NET Core application.
 
@@ -4785,6 +4785,15 @@ You create a test in Azure Application Insights as shown in the following exhibi
 
 From the configuration shown in **Azure Application Insights**:
 
+✅ **Final Answers**
+
+| Statement             | Answer                                                 |
+| --------------------- | ------------------------------------------------------ |
+| The test will execute | **every five minutes per location**                    |
+| The test will pass if | **all the HTML, JavaScripts, and images of App1 load** |
+
+
+
 Key settings visible in the screenshot:
 
 * **Test type:** URL ping test
@@ -4816,21 +4825,14 @@ Thus the test passes when **all HTML, JavaScript, and images load successfully w
 
 **all the HTML, JavaScripts, and images of App1 load**
 
-✅ **Final Answers**
-
-| Statement             | Answer                                                 |
-| --------------------- | ------------------------------------------------------ |
-| The test will execute | **every five minutes per location**                    |
-| The test will pass if | **all the HTML, JavaScripts, and images of App1 load** |
-
 
 ### Question #6 💩💩
 
 Your company uses the following resources:
 
-✑ Windows Server 2019 container images hosted in an Azure Container Registry.
+✑ <mark>Windows Server 2019 container images hosted in an Azure Container Registry.</mark>
 
-✑ Azure virtual machines that run the latest version of Ubuntu 
+✑ <mark>Azure virtual machines that run the latest version of Ubuntu</mark>
 
 ✑ An Azure Log Analytics workspace 
 
@@ -4893,7 +4895,7 @@ Why the other options are incorrect
 
 **C and E**
 
-### Question #7 💩💩💩💩
+### Question #7 💩💩💩💩💩
 
 You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
 
@@ -4942,8 +4944,7 @@ This approach avoids custom scripts or additional infrastructure.
 2. **Select the HTTP request trigger**
 3. **Update the action group in Azure Monitor**
 
-### Question #8 💩💩💩💩💩
- 
+### Question #8 💩💩💩
 
 You are using the Dependency Tracker extension in a project in Azure DevOps.
 
@@ -4971,7 +4972,7 @@ Correct mapping
 Explanation
 
 * **Link width** → Thicker links indicate **more dependencies** between items.
-* **Node color** → Colors (for example green/yellow/red) represent the **risk level** of the node/project.
+* <mark>**Node color** → Colors (for example green/yellow/red) represent the **risk level** of the node/project.</mark>
 
 Why the other options are incorrect
 
@@ -5092,7 +5093,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-11 💩💩💩💩💩
+### Question-11 💩💩💩💩
 
 You use GitHub for source control.
 
