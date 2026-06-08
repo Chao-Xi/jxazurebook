@@ -27086,7 +27086,7 @@ The proposed solution correctly addresses the requirement.
 
 
 
-### Question-61 💩💩
+### Question-61 💩
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -27127,7 +27127,7 @@ You can place this gate in two locations within the release pipeline to achieve 
 
 
 
-### Question-62 💩💩
+### Question-62 💩
 
 Your company develops an application named App1 that is deployed in production.
 
@@ -27179,7 +27179,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Implement a feature flag**
 
 
-### Question-63 💩💩💩💩
+### Question-63 💩💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27225,7 +27225,7 @@ Why the other options are incorrect
 
 
 
-### Question-64 💩💩💩
+### Question-64 💩💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27298,6 +27298,8 @@ NOTE: Each correct selection is worth one point.
 The correct answers are: 
 
 **D. a self-hosted agent** and **E. an External Git service connection** ✅✅
+
+> ❌ A. Deployment group	Used for targeting machines for deployment; not required for source control integration.
 
 Explanation
 
@@ -27391,7 +27393,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-67 💩💩💩
+### Question-67 💩💩
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27548,7 +27550,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩💩💩💩💩
+### Question #70 💩💩💩💩
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -27608,6 +27610,25 @@ configuration RequiredFeatures
 🔍 Explanation
 
 
+```
+configuration RequiredFeatures
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    Node localhost
+    {
+        WindowsFeatureSet RequiredWindowsFeatures
+        {
+            Name = @("SMTP-Server", "Web-Server")
+            
+            Ensure = 'Present'
+
+            IncludeAllSubFeature = $true
+        }
+    }
+}
+```
+
 
 🟦 `WindowsFeatureSet`
 
@@ -27642,28 +27663,9 @@ configuration RequiredFeatures
 
 🎯 Final Configuration
 
-```
-configuration RequiredFeatures
-{
-    Import-DscResource -ModuleName PSDesiredStateConfiguration
-
-    Node localhost
-    {
-        WindowsFeatureSet RequiredWindowsFeatures
-        {
-            Name = @("SMTP-Server", "Web-Server")
-            
-            Ensure = 'Present'
-
-            IncludeAllSubFeature = $true
-        }
-    }
-}
-```
 
 
-
-### Question-71 - Duplicated 💩💩
+### Question-71 - Duplicated 💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27705,7 +27707,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Register the devices on the Apple Developer portal**
 
 
-### Question-72 💩💩
+### Question-72 💩
 
 
 Your company uses Azure Artifacts for package management.
@@ -27881,7 +27883,7 @@ Why the other options are incorrect
 
 
 
-### Question-75 💩💩💩
+### Question-75 💩💩
 
 You have an on-premises app named App1 that accesses Azure resources by using credentials stored in a configuration file.
 
@@ -27928,7 +27930,7 @@ Why the other options are incorrect
 ✅ **Answer: C. the application ID, a client secret, and the tenant ID**
 
 
-### Question-76 💩💩💩
+### Question-76 💩💩💩💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -27958,10 +27960,11 @@ The scenario:
 
 Why **Azure Pipelines app for Teams** is the solution
 
-* The **Azure Pipelines app** for Teams allows you to:
-  1. Connect your **Azure DevOps pipelines** to Teams channels.
-  2. **Subscribe to events**, such as build/release failures, completions, or approvals.
-  3. Automatically post **notifications to Teams** without custom coding.
+The **Azure Pipelines app** for Teams allows you to:
+ 1. Connect your **Azure DevOps pipelines** to Teams channels.
+ 2. 2. **Subscribe to events**, such as build/release failures, completions, or approvals.
+ ** 3. Automatically post **notifications to Teams** without custom coding.**
+
 
 * Minimal effort: just install the app and configure the subscription.
 
