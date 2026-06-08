@@ -27930,7 +27930,7 @@ Why the other options are incorrect
 ✅ **Answer: C. the application ID, a client secret, and the tenant ID**
 
 
-### Question-76 💩💩💩💩
+### Question-76 💩💩💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -28062,6 +28062,8 @@ What should you create?
 * D. a PowerShell task
 
 
+------
+
 The correct answer is: **C. a YAML template** ✅
 
 Explanation
@@ -28118,7 +28120,7 @@ Why the other options are incorrect
 ✅ **Answer: C. a YAML template**
 
 
-### Question-79
+### Question-79 💩
 
 You use Azure DevOps processes to build and deploy code.
 
@@ -28242,7 +28244,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-81  💩💩💩💩
+### Question-81  💩💩💩
 
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
@@ -28295,7 +28297,7 @@ Why the other options are incorrect
 ✅ **Answer: C. a branch policy**
 
 
-### Question-82  💩💩💩
+### Question-82  💩💩
 
 You have a project in Azure DevOps named Project. 
 
@@ -28373,7 +28375,7 @@ Why the other options are incorrect
 ✅ **Answer: D. Create two container jobs**
 
 
-### Question-83 💩💩
+### Question-83 💩
 
 
 You have an app named App1 that you release by using Azure Pipelines. 
@@ -28450,6 +28452,7 @@ The correct answer is: **B. Playwright** ✅
 
 <mark>**Playwright** is a **modern open-source framework** for automating browser interactions.</mark>
 
+❌ C. Xamarin.UITest	Used for mobile app UI testing, not web applications.
 
 Explanation
 
@@ -28498,7 +28501,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-85 💩💩💩💩💩
+### Question-85 💩💩💩💩
 
 You use Azure Pipelines to build and test code projects.
 
