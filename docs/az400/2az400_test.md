@@ -25714,7 +25714,7 @@ You need an **automated check** that:
 **C. pre-deployment gates**
 
 
-### Question #42 💩💩💩
+### Question #42 💩💩
 
 You have an Azure Resource Manager (ARM) template that contains the following expression.
 
@@ -25730,7 +25730,7 @@ B. if(isComplete, '1a', '2a')
 
 C. if('isComplete') '1a' else '2a'
 
-D. isComplete ? '1a' '2a'
+D. isComplete ? ‘1a' : '2a'
 
 ------
 
@@ -25775,7 +25775,7 @@ isComplete ? '1a' : '2a'
 
 **D. `isComplete ? '1a' : '2a'`**
 
-### Question #43. 💩💩
+### Question #43. 💩
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -25877,7 +25877,7 @@ paths:
 
 **B. No**
 
-### Question #44 💩💩
+### Question #44 💩å
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -25979,7 +25979,7 @@ pr:
 
 **B. No**
 
-### Question #45 💩💩💩
+### Question #45 💩💩
 
 You are using an Azure Pipelines pipeline to build and deploy a web app.
 
@@ -26061,7 +26061,7 @@ NOTE: Each correct selection is worth one point.
 * **Unit** → isolated logic
 * **Integration** → component interaction
 
-### Question #46 💩💩💩💩
+### Question #46 💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -26166,7 +26166,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-### Question #47 💩💩💩💩
+### Question #47 💩💩💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26324,7 +26324,7 @@ Fails:
 
 
 
-### Question #49 💩💩💩
+### Question #49 💩💩
 
 You have an app named App1 that is built and deployed by using containers.
 
@@ -26389,7 +26389,7 @@ Based on the provided Dockerfile, here are the correct selections for each state
 3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
 
 
-### Question #50 💩💩💩
+### Question #50 💩💩
 
 You have an Azure DevOps subscription that contains the projects shown in the following table.
 
@@ -26476,7 +26476,7 @@ Azure DevOps grants **free parallel jobs** based on:
 - **A. Project1**
 - **C. Project4**
 
-### Question #51 💩💩
+### Question #51 💩
 
 
 You have an Azure Pipelines pipeline that has the following definition.
@@ -26646,7 +26646,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩💩
+### Question #53 💩💩💩💩
 
 HOTSPOT -
 
@@ -26695,7 +26695,7 @@ NOTE: Each correct selection is worth one point.
 | Submit code for testing only after successful build | **Pull requests** |
 | Require change management approval before release   | **Environments**  |
 
-
+<mark>Environments → deployment stage control</mark>
 
 ✅ Correct Answers
 
@@ -26737,7 +26737,7 @@ NOTE: Each correct selection is worth one point.
 * Pull requests → pre-merge, not release approval
 
 
-### Question #54 💩💩💩
+### Question #54 💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
@@ -26916,7 +26916,7 @@ Why the other options are incorrect
 **D. Tiller**
 
 
-### Question-57 💩💩💩
+### Question-57 💩💩💩💩
 
 **You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
@@ -27014,7 +27014,7 @@ Correct approach
 
 
 
-### Question-59 💩💩💩
+### Question-59 💩💩
 
 
 You have a policy stating that approvals must occur within eight hours.
