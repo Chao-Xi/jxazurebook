@@ -19834,7 +19834,7 @@ When using **Helm v2 with RBAC-enabled AKS**:
 2. Initialize Helm (Tiller)
 3. Install the chart
 
-### Question #3 💩💩
+### Question #3 💩💩💩
 
 You are implementing an Azure DevOps strategy for mobile devices using App Center. 
 
@@ -19876,6 +19876,14 @@ Select and Place:
 | **Group2** (unauthenticated public links)    | ✅ **Public**  |
 | **Group3** (testers across all company apps) | ✅ **Shared**  |
 
+
+💡 Key takeaway
+
+* <mark>**Private = controlled access (email-based)**</mark>
+* <mark>**Public = open link access**</mark>
+* <mark>**Shared = reusable across multiple apps**</mark>
+
+
 ---
 
 🔍 Explanation
@@ -19905,11 +19913,6 @@ Select and Place:
 * **Group2:** Public
 * **Group3:** Shared
 
-💡 Key takeaway
-
-* <mark>**Private = controlled access (email-based)**</mark>
-* <mark>**Public = open link access**</mark>
-* <mark>**Shared = reusable across multiple apps**</mark>
 
 
 ### Question #4 💩💩
@@ -20079,7 +20082,7 @@ To prevent files from being committed:
 This ensures the file is **excluded from future commits** 🚀
 
 
-### Question #6 💩💩
+### Question #6 💩
 
 You are finalizing a release in GitHub.
 
@@ -20177,7 +20180,7 @@ git tag -a v3.0 -m "Release v3.0"
 Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
 
 
-### Question #7
+### Question #7 💩
 
 Your company has a project in Azure DevOps.
 
@@ -20245,7 +20248,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩
+### Question #8 💩💩💩
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -20308,7 +20311,7 @@ Deploying ARM templates via Azure DevOps follows:
 > **Pipeline → Deployment task → Configure parameters** 🚀
 
 
-### Question #9 💩💩
+### Question #9 💩
 
 You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
 
