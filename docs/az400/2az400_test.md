@@ -20472,7 +20472,7 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Agent-based deployment targets 🚀
 
 
-### Question-11 💩💩💩💩💩
+### Question-11 💩💩💩💩
 
 
 You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20620,7 +20620,7 @@ App2: [ ]
 * **Blue/Green → fast deploy + instant rollback** 🚀
 
 
-### Question-13 💩💩
+### Question-13 💩
 
 ```
 Name  Type
@@ -20657,6 +20657,13 @@ What should you do?
 >
 > ❌ Tags = labels only (no enforcement)
 
+**Release pipeline:**
+
+* **promotes** package → `@release`
+* `@release` is the **default view**
+* All consuming projects automatically get **only tested packages**
+
+
 Why this is correct
 
 In **Azure Artifacts**, the *official and supported mechanism* to control package availability is:
@@ -20673,11 +20680,8 @@ Correct architecture
 
 * CI publishes packages → default/internal view (e.g. `@prerelease`)
 * Tests run
-* Release pipeline:
 
-  * **promotes** package → `@release`
-* `@release` is the **default view**
-* All consuming projects automatically get **only tested packages**
+
 
 
 Why the others are wrong
@@ -20725,7 +20729,7 @@ This is the enterprise-standard pattern in **Azure DevOps** for secure multi-pro
 ✅ **Final Answer: A**
 
 
-### Question-14 💩💩
+### Question-14 💩
 
 
 Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20773,7 +20777,7 @@ Why the other options are incorrect
 
 
 
-### Question-15 💩💩
+### Question-15 💩
 
 
 Your company builds a multi-tier web application.
@@ -20838,7 +20842,7 @@ For staging environments that **minimize cost, use custom templates, and can be 
 ✅ **Answer: D**
 
 
-### Question-16
+### Question-16 💩
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -20926,7 +20930,7 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #18 💩💩💩
+### Question #18 💩💩💩💩
 
 
 You use Azure Pipelines to manage the build and deployment of apps.
@@ -21009,7 +21013,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩💩💩💩
+### Question #19 💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21151,7 +21155,7 @@ AKS deployment via Azure DevOps follows:
 
 > **Authenticate (SPN) → Authorize (RBAC) → Deploy (Helm)** 🚀
 
-### Question #21 💩💩💩
+### Question #21 💩💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21216,7 +21220,7 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #22 💩💩💩
+### Question #22 💩💩💩💩
 
 
 You have a free tier of an Azure DevOps organization named Contoso. 
@@ -21300,7 +21304,7 @@ For pipelines that depend on **on-prem resources**:
 **B. Register additional self-hosted agents**
 
 
-### Question #23 💩💩
+### Question #23 💩
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -21361,7 +21365,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 **B. a DACPAC**
 
 
-### Question #24  💩💩💩💩💩
+### Question #24  💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21478,11 +21482,11 @@ Enables use of functions like:
 
 
 
-### Question #25 💩💩💩
+### Question #25 💩💩💩💩
 
 You are developing an iOS application by using Azure DevOps.
 
-You need to test the application manually on 10 devices without releasing the application to the public. 
+You need to test the application manually on 10 devices **without releasing the application to the public.** 
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -21609,7 +21613,7 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #27 💩💩💩💩💩
+### Question #27 💩💩💩💩
 
 You have an Azure virtual machine named VM1 that runs Linux.
 
@@ -21667,7 +21671,7 @@ Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` perm
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
-You need to list the available workspaces and their properties.
+**You need to list the available workspaces and their properties.**
 
 How should you complete the command? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -21792,7 +21796,7 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #30  💩💩💩💩
+### Question #30  💩💩💩💩💩
 
 You use GitHub for source control of .NET applications.
 
@@ -21989,7 +21993,7 @@ ConfigurationModeFrequencyMins = 60
 ✔ Discrepancy is detected and logged
 
 
-### Question #32 💩💩
+### Question #32 💩💩💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -22152,7 +22156,7 @@ DSC always follows:
 > **Configuration → Node → Resource** 🚀
 
 
-### Question #34 💩💩💩
+### Question #34 💩💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -22212,7 +22216,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #35 💩💩💩
+### Question #35 💩💩💩💩💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22310,7 +22314,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩💩💩💩💩
+### Question #36  💩💩💩💩
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22405,7 +22409,7 @@ NOTE: Each correct selection is worth one point.
 * **Incremental mode = safe updates**
 * **Linked artifact = CI pipeline output** 🚀
 
-### Question #37 💩💩💩💩
+### Question #37 💩💩💩💩💩
 
 
 You have an Azure Pipeline.
@@ -22444,7 +22448,7 @@ Here are the four correct scopes for defining variables in Azure Pipelines, arra
 *(Note: **task** is the distractor. While you can map variables to task inputs or environments, you do not declare variable blocks at the task scope in Azure Pipelines.)*
 
 
-### Question #38 💩💩
+### Question #38 💩
 
 You have a project in Azure DevOps named Project1 that contains **two environments named environment1 and environment2.**
 
@@ -22568,7 +22572,7 @@ Here is the content extracted from the image, formatted as markdown:
 
 
 
-### Question #40 💩💩💩💩
+### Question #40 💩💩💩
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -22754,14 +22758,16 @@ NOTE: Each correct selection is worth one point.
 * **QA:** ✔ **Add a task to configure alert rules in Application Insights.**
 * **Prod:** ✔ **Configure a gate in the pre-deployment conditions.**
 
+**<mark>Add a task to configure alert rules in Application Insights</mark>**
+
 🔍 Explanation
 
 🟦 QA stage
 
-* Requirement:
-  * Detect **failed requests after deployment to webapp1**
+* Requirement: Detect **failed requests after deployment to webapp1**
 
-* Solution:
+Solution:
+
   * Configure **Application Insights alert rules**
   * These alerts will be evaluated before promoting to Prod
 
@@ -22801,7 +22807,7 @@ NOTE: Each correct selection is worth one point.
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩💩💩💩
+### Question #43 💩💩💩💩💩
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
