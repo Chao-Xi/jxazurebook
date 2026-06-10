@@ -14820,7 +14820,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  💩💩
+### Question #2  💩💩💩
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -14845,6 +14845,9 @@ D. Purchase an additional parallel job
 The correct answer is:
 
 **D. Purchase an additional parallel job**
+
+Solution = increase parallelism (buy more parallel jobs or add agents)
+
 
 Explanation
 
@@ -14893,7 +14896,7 @@ The correct answer is:
 
 **B. No**
 
-A **self-hosted agent** deployed within the on-premises network ✅
+<mark>A **self-hosted agent** deployed within the on-premises network ✅</mark>
 
 Explanation
 
@@ -14911,12 +14914,12 @@ What would work instead
 
 Use a **self-hosted agent** deployed within the on-premises network
 
-* This ensures:
+This ensures:
 
 
-  * Access to the on-prem dependency system ✅
-  * Ability to push artifacts to Azure DevOps ✅
-  * Integration with Azure Repos Git ✅
+* Access to the on-prem dependency system ✅
+* Ability to push artifacts to Azure DevOps ✅
+* Integration with Azure Repos Git ✅
 
 About the Java Tool Installer
 
@@ -14971,9 +14974,9 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩💩💩💩
+### Question #5 💩💩💩💩💩
 
-DRAG DROP You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
+You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
 | Project name | Project Details |
 | :--- | :--- |
@@ -15053,7 +15056,7 @@ Final Answer
 * **Project3:** Assembla Subversion
 
 
-### Question #6 💩💩
+### Question #6 💩
 
 You need to recommend an integration strategy for the build process of a Java application. 
 
@@ -15177,7 +15180,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩💩💩💩
+### Question #8 💩💩💩💩💩
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15202,6 +15205,8 @@ The correct answers are:
 - **B. Add the Team Foundation Server (TFS) plug-in to Jenkins.**
 - **D. Create a personal access token (PAT) in your Azure DevOps account.**
 - **C. Add a personal access token to your Jenkins account.**
+
+❌ A. Create a webhook in Jenkins → Used for triggering builds, not for code retrieval
 
 
 **Explanation**
@@ -15231,7 +15236,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩💩💩💩
+### Question #9  💩💩💩💩💩
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
