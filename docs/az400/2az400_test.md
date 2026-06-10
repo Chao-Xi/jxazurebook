@@ -15506,7 +15506,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩💩💩💩💩
+### Question #13 💩💩💩💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15560,7 +15560,7 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
 
-### Question #14 💩💩💩💩
+### Question #14 💩💩💩💩💩
 
 You are creating a container for an **ASP.NET Core app.**
 
@@ -15643,7 +15643,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩💩💩💩
+### Question #15  💩💩💩💩💩
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -15700,10 +15700,6 @@ To enforce requirements on **pull requests in Azure Repos**, you use **branch po
 
 
 
-
-
-
-
 ### Question-16
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
@@ -15727,6 +15723,15 @@ Does this meet the goal?
 **Correct answer: B. No** ❌
 
 **Answer: B. No**
+
+❌ Solution: Configure the build pipeline to use a Microsoft-hosted agent pool running a Linux image. Include the Java Tool Installer task in the build pipeline.
+
+❌ Solution: Configure an Octopus Tentacle on an on-premises machine. Use the Package Application task in the build pipeline.
+
+❌ Solution: Configure the build pipeline to use a Hosted Ubuntu agent pool. Include the Java Tool Installer task in the build pipeline.
+
+✅ Solution: Install and configure a self-hosted build agent on an on-premises machine.
+
 
 The solution does not meet the requirement because a hosted Ubuntu agent runs in the Azure cloud and cannot directly access an on-premises dependency management system without additional network configuration (such as a VPN or self-hosted agent). 
 
@@ -15787,7 +15792,7 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-18  💩💩
+### Question-18  💩💩💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15803,6 +15808,8 @@ What should you use?
 ----
 
 **Correct answer: C. JaCoCo** ✅  /  Cobertura  ✅ 
+
+* **B. JUnit** ❌ → Testing framework, **not** a coverage tool
 
 Why JaCoCo?
 
@@ -15829,7 +15836,7 @@ Final Answer:
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
-You need to add code coverage testing and publish the outcomes to the pipeline.
+<mark>You need to add code coverage testing and publish the outcomes to the pipeline.</mark>
 
 What should you use?
 
@@ -15862,7 +15869,7 @@ Final Answer:
 **A. Cobertura** 🟢
 
 
-### Question #20 💩💩
+### Question #20 💩
 
 You are designing YAML-based Azure pipelines for the apps shown in the following table.
 
@@ -15902,11 +15909,11 @@ To minimize downtime and match each release requirement:
 
 * **App1:** **rolling**
 
-  * A *rolling* strategy replaces a fixed set of instances in batches, which matches the requirement of updating a defined number of VMs per iteration with minimal downtime.
+A *rolling* strategy replaces a fixed set of instances in batches, which matches the requirement of updating a defined number of VMs per iteration with minimal downtime.
 
 * **App2:** **canary**
 
-  * A *canary* strategy deploys to a small subset first, validates functionality, and then gradually expands—exactly what the requirement describes.
+A *canary* strategy deploys to a small subset first, validates functionality, and then gradually expands—exactly what the requirement describes.
 
 ✅ Final Answer
 
@@ -15933,21 +15940,25 @@ B. No
 ----
 
 
+- ✅ Solution: You implement a pull request strategy that uses fast-forward merges.
+- ✅ Solution: You implement a pull request strategy that uses squash merges.
+- ❌ Solution: You implement a pull request strategy that uses an explicit merge.
+- ❌ Solution: You implement a pull request strategy that uses a three-way merge.
+
+
 The goal is to **reduce the history volume in the master branch**.
-
-🔍 Analysis:
-
-* **Fast-forward merge**:
-
- * Does **not create a merge commit**
- * Keeps history **linear and compact**
- * Reduces unnecessary commits → **less history clutter**
-
-This directly satisfies the requirement.
 
 ✅ Final Answer:
 
 **A. Yes**
+
+🔍 Analysis:
+
+**Fast-forward merge**:
+
+* Does **not create a merge commit**
+* Keeps history **linear and compact**
+* Reduces unnecessary commits → **less history clutter**
 
 
 ### Question #22
@@ -16084,22 +16095,24 @@ To meet the requirements:
 
 🔍 Analysis:
 
-* **Multi-stage builds**:
-  * Use a **build image** (with SDK/tools) and a **separate runtime image**
-  * Final image contains **only necessary runtime artifacts**
-  * Removes compilers, build tools → **smaller size + reduced attack surface**
+**Multi-stage builds**:
 
-* **Other options**:
-  * **DSC** → configuration management, not related to container builds
-  * **Docker Swarm** → orchestration, not image optimization
-  * **Single-stage builds** → include all tools → **larger and less secure**
+* Use a **build image** (with SDK/tools) and a **separate runtime image**
+* Final image contains **only necessary runtime artifacts**
+* Removes compilers, build tools → **smaller size + reduced attack surface**
+
+**Other options**:
+
+* **DSC** → configuration management, not related to container builds
+* **Docker Swarm** → orchestration, not image optimization
+* **Single-stage builds** → include all tools → **larger and less secure**
 
 ✅ Final Answer:
 
 **A. multi-stage builds**
 
 
-### Question #26 💩💩💩
+### Question #26 💩💩
 
 You plan to create an image that will contain a .NET Core application.
 
@@ -16171,6 +16184,10 @@ B. No
 
 
 -----
+
+
+❌ Solution: From the Triggers tab of the build pipeline, you select Batch changes while a build is in progress.
+
 
 
 **Correct answer: B. No**
@@ -16249,7 +16266,7 @@ Final selections:
 * **AKS access to Azure:** Azure service principal
 
 
-### Question #29 💩💩💩💩
+### Question #29 💩💩
 
 
 You have 50 Node.js-based projects that you scan by using WhiteSource.
@@ -16305,7 +16322,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩💩💩
+### Question #29 💩💩💩💩
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16334,7 +16351,7 @@ Correct answers:
 - **D. From DevOps, create a personal access token (PAT)**
 - **E. From the build server, run config.cmd**
 
-> * Run `config.cmd` (Windows) or `config.sh` (Linux/macOS)
+<mark>* Run `config.cmd` (Windows) or `config.sh` (Linux/macOS)</mark>
 
 
 Why others are incorrect:
@@ -16436,7 +16453,7 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #31 💩💩💩
+### Question #31 💩💩💩💩
 
 You are deploying a new application that uses Azure virtual machines.
 
@@ -16541,7 +16558,7 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #33 💩💩💩💩💩
+### Question #33 💩💩💩💩
 
 You are creating a build pipeline in Azure Pipelines.
 
@@ -16595,7 +16612,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩💩💩
+### Question #34 💩💩💩💩
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16685,14 +16702,16 @@ You are building **full .NET Framework applications**, which:
 
 Why A and E are correct:
 
-* **A. vs2017-win2016**
-  * Windows Server image
-  * Includes Visual Studio 2017 and .NET Framework support
+**A. vs2017-win2016**
+
+* Windows Server image
+* Includes Visual Studio 2017 and .NET Framework support
     ✔ Suitable for building full .NET Framework apps
 
-* **E. vs2015-win2012r2**
-  * Windows Server image
-  * Includes Visual Studio 2015 and .NET Framework support
+**E. vs2015-win2012r2**
+
+* Windows Server image
+* Includes Visual Studio 2015 and .NET Framework support
     ✔ Also suitable
 
 ---
@@ -16769,7 +16788,7 @@ Final Answer:
 | Octopus | Release pipelines    |
 
 
-### Question #37 💩💩
+### Question #37 💩
 
 Your company develops a client banking application that processes a large volume of data.
 
@@ -16886,7 +16905,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #39 💩💩💩💩
+### Question #39 💩💩💩
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -17002,7 +17021,7 @@ Final Answer:
 
 **Upload configuration → Compile → Onboard VMs → Assign configuration → Check compliance**
 
-### Question #41 🐣🐣🐣💩💩💩
+### Question #41 🐣🐣🐣💩
 
 You are developing an application. The application source has multiple branches.
 
@@ -17216,7 +17235,7 @@ Final Answer:
 ✅ **A. Yes**
 
 
-### Question #45 💩💩💩
+### Question #45 💩💩
 
 You have an Azure DevOps project.
 
@@ -17270,7 +17289,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46 💩💩💩
+### Question #46 💩💩💩💩
 
 You are building an application that has the following assets:
 
@@ -17318,6 +17337,16 @@ Select and Place:
 * **Logs from automated tests and builds:** → **Azure Pipelines**
 * **Large and frequently updated binary assets:** → **Azure Storage**
 
+
+Final Answer:
+
+| Asset                  | Service         |
+| ---------------------- | --------------- |
+| Source code            | Azure Repos     |
+| Common library         | Azure Artifacts |
+| Logs from builds/tests | Azure Pipelines |
+| Large binary assets    | Azure Storage   |
+
 Explanation:
 
 🔹 Source code → Azure Repos
@@ -17338,17 +17367,9 @@ Explanation:
 * Optimized for **large, frequently updated files**
 * More efficient and scalable than storing in repos
 
-Final Answer:
-
-| Asset                  | Service         |
-| ---------------------- | --------------- |
-| Source code            | Azure Repos     |
-| Common library         | Azure Artifacts |
-| Logs from builds/tests | Azure Pipelines |
-| Large binary assets    | Azure Storage   |
 
 
-### Question #47 💩💩💩
+### Question #47 💩💩
 
 You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
 
@@ -17481,7 +17502,7 @@ Final Answer:
 
 
 
-### Question #49  💩💩💩💩
+### Question #49  💩💩💩💩💩
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
@@ -17605,7 +17626,7 @@ These checks validate whether the deployment will violate Azure Policy **before 
 <mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51 💩💩💩
+### Question #51 💩💩
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17664,6 +17685,25 @@ To achieve:
 * Install IIS
 * Update default IIS home page
 
+
+💡 Explanation
+
+✅ WindowsFeature
+
+* Used to install Windows roles/features
+* `Web-Server` = IIS role
+
+✅ File
+
+* Used to copy/replace files
+* Ensures IIS default page is updated with custom HTML content
+
+🚀 Key takeaway
+
+* <mark>**WindowsFeature → installs roles/features (like IIS)**<mark>
+* <mark>**File → manages file content (like default web page)**<mark>
+
+
 You must use the correct DSC resource types for each task.
 
 🟩 Answer Area
@@ -17675,6 +17715,7 @@ You must use the correct DSC resource types for each task.
 **Drop-down 2:**
 
 ✅ **File**
+
 
 🔍 Final corrected configuration
 
@@ -17699,22 +17740,6 @@ Node 'localhost' {
 ```
 
 
-💡 Explanation
-
-✅ WindowsFeature
-
-* Used to install Windows roles/features
-* `Web-Server` = IIS role
-
-✅ File
-
-* Used to copy/replace files
-* Ensures IIS default page is updated with custom HTML content
-
-🚀 Key takeaway
-
-* <mark>**WindowsFeature → installs roles/features (like IIS)**<mark>
-* <mark>**File → manages file content (like default web page)**<mark>
 
 
 ### Question #52 💩💩
@@ -17865,7 +17890,7 @@ To reduce storage usage for **Azure Artifacts published via pipelines**, you sho
 > ✔ **Pipeline retention policies** to automatically clean up older builds and their associated package artifacts.
 
 
-### Question-54 💩💩
+### Question-54 💩💩💩
 
 You have an existing build pipeline in Azure Pipelines.
 
@@ -17961,7 +17986,7 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #56 💩💩💩
+### Question #56 💩💩💩💩💩
 
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
@@ -18102,7 +18127,7 @@ Final Answer:
 ✅ **C and E**
 
 
-### Question-58 💩💩
+### Question-58 💩
 
 You have a private project in Azure DevOps.
 
@@ -18144,7 +18169,7 @@ So, the **Contributor** role provides just enough permissions for the project ma
 **D. Contributor**
 
 
-### Question-59 💩💩💩
+### Question-59 💩💩
 
 You use a Git repository in Azure Repos to manage the source code of a web application. 
 
@@ -18293,7 +18318,7 @@ Why the others are incorrect
 **A. multi-stage builds**
 
 
-### Question-62
+### Question-62 - Duplicated 
 
 
 Your company has a project in Azure DevOps for a new web application.
@@ -18432,7 +18457,7 @@ Final Answer
 **A. a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry**
 
 
-### Question-65 💩💩💩
+### Question-65 💩💩
 
 Your company has a hybrid cloud between Azure and Azure Stack.
 
@@ -18486,7 +18511,7 @@ Final Answer
 
 
 
-### Question-66  💩💩💩💩
+### Question-66  💩💩💩💩💩
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18822,7 +18847,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-72 💩💩💩
+### Question-72 💩💩💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -19106,7 +19131,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-78  💩💩💩 
+### Question-78  💩💩 
 
 
 You have an Azure DevOps project.
@@ -19197,7 +19222,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-80 💩💩💩💩
+### Question-80 💩💩💩
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1 to an Azure container registry named ACR1. 
@@ -19234,7 +19259,7 @@ Azure Container Registry (ACR) Tasks include a feature specifically designed for
 *   **B. Docker Hub service connection:** This allows Azure Pipelines to *access* Docker Hub, but it does not provide an automated "watch" mechanism to trigger a rebuild when a third-party image changes.
 *   **D. Service hook:** Service hooks in Azure DevOps are used to integrate with external services (like sending a message to Slack when a build fails). They are not designed to monitor external container registries for image updates.
 
-### Question- 81 💩💩💩
+### Question- 81 💩💩
 
 You have an Azure DevOps project.
 
@@ -19381,7 +19406,7 @@ Final Answer
 **A. Yes** ✅
 
 
-### Question-84 💩💩💩💩 - Duplicated
+### Question-84 💩 - Duplicated
 
 You have a project in Azure DevOps named Project. 
 
@@ -19497,7 +19522,7 @@ Final Answer
 **D. procuring licenses** ✅
 
 
-### Question-86 💩💩💩
+### Question-86 💩💩
 
 Your company is building a new solution in Java.
 
