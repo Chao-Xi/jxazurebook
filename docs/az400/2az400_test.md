@@ -12228,7 +12228,7 @@ This task describes the sequence for configuring a **GitHub Actions workflow (Wo
 
 ## Topic 6 - Question Set 6
 
-### Question #1 💩
+### Question #1 💩💩 
 
 Your company has 60 developers who are assigned to four teams. Each team has 15 members.
 
@@ -12272,7 +12272,7 @@ Summary
 * **Team-owned (autonomous):** ✅ Stories, Tasks
 
 
-### Question #2  💩
+### Question #2  
 
 
 Your company implements an Agile development methodology.
@@ -12417,7 +12417,7 @@ Hot Area:
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #5 💩💩💩💩💩
+###  Question #5 💩💩💩💩
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
@@ -12435,8 +12435,10 @@ D. Drag and drop the pages in the navigation pane.
 
 ----
 
-
 The correct answer is **A. At the root of the wiki, create a file named .order that defines the page hierarchy.**
+
+
+❌ <mark>B (wiki.md): This is not a recognized system file for managing page hierarchy in Azure DevOps wikis.</mark>
 
 Explanation:
 
@@ -12497,6 +12499,11 @@ To configure **SAML SSO between Azure AD and GitHub organization org1**, you mus
 
 Correct mappings
 
+> **`https://github.com/orgs/org1`**
+>
+> Identifier (Entity ID) identifies the GitHub organization as the service provider.
+
+
 * **Identifier (Entity ID):**  **`https://github.com/orgs/org1`**
 
 * **Reply URL (Assertion Consumer Service URL):**   **`https://github.com/orgs/org1/saml/consume`**
@@ -12514,7 +12521,7 @@ Why the other URIs are incorrect
 * `https://login.microsoftonline.com/tenant1` and `https://login.microsoftonline.com/tenant1.com` are Azure AD endpoints, not GitHub SAML endpoints, so they are not used in these fields.
 
 
-### Question - 7 💩💩
+### Question - 7 💩
 
 You manage a project by using Azure Boards. You manage the project code by using GitHub.
 
@@ -12522,7 +12529,7 @@ You have three work items that have IDs of 456, 457, and 458.
 
 **You need to create a pull request that will be linked to all the work items**. 
 
-The solution must set the state of work item 456 to done.
+**The solution must set the state of work item 456 to done.**
 
 What should you add to the commit message?
 
@@ -12676,7 +12683,7 @@ Key Point
 * Use **keywords (Completed/Fixes/Resolves)** to update state
 
 
-### Question #10 💩💩
+### Question #10 💩
 
 You have an Azure subscription that contains an Azure container registry. 
 
@@ -12770,7 +12777,7 @@ Key Point
 * Use **supported keywords** like **Completed / Fixes / Resolves** to update state
 
 
-### Question #12 💩💩💩
+### Question #12 💩💩
 
 You manage projects by using Azure Boards.
 
@@ -12819,7 +12826,7 @@ Key Point
 Use **Successor/Predecessor links** to model dependencies between work items in Azure Boards.
 
 
-### Question #13 💩💩
+### Question #13 💩
 
 You manage projects by using Azure Boards.
 
@@ -12867,7 +12874,7 @@ Key Point
 Use **Successor/Predecessor** links to correctly model dependencies between work items.
 
 
-### Question #14 💩💩💩
+### Question #14 💩💩 d
 
 You have the services shown in the following table.
 
@@ -12912,7 +12919,7 @@ Key Point
 
 So, both services can be notified.
 
-### Question #15 💩💩💩💩
+### Question #15 💩💩💩
 
 
 
@@ -13021,7 +13028,7 @@ Key Point
 * Use a **service hook subscription** to connect Azure DevOps events to external services like Slack via webhooks.
 
 
-### Question #17 💩💩
+### Question #17 💩
 
 You have a project in Azure DevOps named App Project that is used to develop an app named App1. 
 
@@ -13062,7 +13069,7 @@ Key Point
 * **Cycle time = Start → Done**
 * **Lead time = Created → Done**
 
-### Question #18 💩💩💩
+### Question #18 💩💩
 
 You manage a project by using Azure Boards, and you manage the project code by using GitHub repositories.
 
@@ -13171,7 +13178,7 @@ Key Point
 The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
 
 
-### Question #20 💩💩💩
+### Question #20 💩💩
 
 You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
 
@@ -13229,7 +13236,7 @@ This will:
 
 
 
-### Question #21 💩💩💩💩
+### Question #21 💩💩💩💩💩
 
 HOTSPOT -
 
@@ -13283,12 +13290,12 @@ The correct selections are:
 
 Explanation
 
-1. **Defect escape rate**
+**Defect escape rate** ✅ ✅ ✅ ✅
 
   * Measures the percentage of defects that **escape testing and are found by customers**.
   * This directly addresses the issue of “most bugs being detected and reported by customers.”
 
-2. **Mean time to detection (MTTD)**
+**Mean time to detection (MTTD)**
   
   * Measures how long it takes to **detect failures after they occur**.
   * This directly addresses the issue of “it takes a long time to detect failures.”
@@ -13417,7 +13424,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-24 💩💩💩
+### Question-24 💩💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13467,7 +13474,7 @@ Final Answer:
 
 **B. No** ❌
 
-### Question #25  - duplicated  💩💩💩
+### Question #25 -duplicated  💩💩
 
 
 You have a GitHub repository named repo1 and an Azure key vault named kv1.
