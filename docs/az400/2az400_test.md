@@ -13562,7 +13562,7 @@ Why other options are incorrect:
 *   **B (Pipeline):** While you can use a pipeline to automate documentation, it is not a requirement to create or publish a wiki.
 *   **D (Team configuration):** This handles area paths, iterations, and team members, not documentation storage.
 
-### Question-27 💩💩💩💩
+### Question-27 💩💩💩
 
 You manage a project by using Azure Board, and you manage the project code by using Azure Repos.
 
@@ -13717,8 +13717,6 @@ Final Answer:
 
 ### Question #31 💩💩💩
 
-DRAG DROP -
-
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
 You need to integrate Exabeam and Azure. **The solution must use OAuth authentication.**
@@ -13771,7 +13769,7 @@ Final Answer
 
 
 
-### Question-32 💩💩
+### Question-32 💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13816,7 +13814,7 @@ Final Answer:
 **B. No** ❌
 
 
-### Question-33 💩💩💩
+### Question-33 💩💩
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
@@ -13938,7 +13936,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩
+### Question-36  💩💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -13992,8 +13990,7 @@ Final Answer:
 **B. upstream sources** ✅
 
 
-### Question-37 💩💩
-
+### Question-37 💩💩💩
 
 You plan to onboard 10 new developers.
 
@@ -14001,7 +13998,7 @@ You need to recommend a development environment that meets the following require
 
 - Integrates with GitHub
 - Provides integrated debugging tools
-- Supports remote workers and hot-desking environments
+- <mark>**Supports remote workers and hot-desking environments**</mark>
 
 Supports developers who use browsers, tablets, and Chromebooks What should you recommend?
 
@@ -14107,7 +14104,7 @@ Final Answer:
 **B and D** ✅
 
 
-### Question-39 - Duplicated 💩💩
+### Question-39 - Duplicated 
 
 
 You have an Azure DevOps organization that contains a project named Project1
@@ -14153,7 +14150,7 @@ Final Answer:
 **C. In Project1, create an Azure DevOps repository** ✅
 
 
-### Question-40 💩💩💩
+### Question-40 💩💩
 
 Your company plans to use an agile approach to software development.
 
@@ -14214,7 +14211,7 @@ Final Answer:
 **D. Microsoft Teams** ✅
 
 
-### Question-41  💩💩
+### Question-41  💩
 
 Your company plans to use an agile approach to software development.
 
@@ -14256,7 +14253,7 @@ Final Answer:
 **D. Slack** ✅
 
 
-### Question-42 💩💩
+### Question-42 💩💩💩
 
 
 You are designing a YAML template for use with Azure Pipelines. **The template will include the outputfile parameter.**
@@ -14360,7 +14357,7 @@ Final Answer:
 
 
 
-### Question-44  💩💩💩
+### Question-44  💩💩💩💩
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14405,7 +14402,7 @@ Final Answer:
 
 
 
-### Question-45 💩💩
+### Question-45 💩
 
 You have an Azure subscription that contains a storage account and 20 virtual machines
 
@@ -14506,7 +14503,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩💩
+### Question-47  💩💩💩💩
 
 You are integrating an Azure Boards project and a GitHub repository.
 
