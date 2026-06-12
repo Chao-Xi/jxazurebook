@@ -5235,7 +5235,7 @@ To entirely remove unwanted files from a repository's history you can use either
 
 ## Topic 4 - Question Set 4
 
-### Question #1 💩💩
+### Question #1 💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -5294,6 +5294,12 @@ The best approach is to **retrieve secrets directly from** **Azure Key Vault** d
 ✅ Correct Answer
 
 **C. Add an Azure Key Vault task to the pipeline.**
+
+❌ D. Key Vault references in ARM templates
+
+Used for deployments, but secrets may still appear in pipeline variables depending on configuration.
+Less secure than retrieving them at runtime via the pipeline task.
+
 
 Why this is correct
 
@@ -5426,7 +5432,7 @@ Although **Azure role-based access control** can control resource permissions, *
 * Enable key vaults for template deployment → **A Key Vault advanced access policy**
 * Restrict access to the secrets → **A Key Vault access policy**
 
-### Question #5 💩💩
+### Question #5 💩💩💩💩
 
 
 You need to configure access to Azure DevOps agent pools to meet the following requirements:
@@ -5610,7 +5616,7 @@ Why others are not included:
 *   **A. Configure RBAC:** While RBAC can be used for Key Vault data plane access, **Access Policy** (C) is the traditional and most common method used in these certification scenarios. You generally use one or the other for the specific task of secret retrieval.
 *   **D. DSC extension:** Desired State Configuration is used for configuring the operating system and software on the VM, but it is not a requirement for an application to communicate with Key Vault.
 
-### Question #9  💩💩💩
+### Question #9  💩💩💩💩
 
 
 **HOTSPOT -**
@@ -5649,7 +5655,7 @@ NOTE: Each correct selection is worth one point.
     *   **Shared groups:** Are created at the **Organization** level. Once created at the org level, they can be associated with multiple apps in the suite. This allows you to manage one list of users (e.g., "Internal QA Team") across all three applications simultaneously.
 
 
-### Question #10 💩💩
+### Question #10 💩
 
 You have a tenant in Microsoft Azure Active Directory (Azure AD), **part of Microsoft Entra**. 
 
@@ -5795,7 +5801,7 @@ Result
 
 
 
-### Question #12 💩💩💩💩💩
+### Question #12 💩💩💩💩
 
 
 You use GitHub Enterprise Server as a source code repository.
@@ -5883,7 +5889,7 @@ Once the Service Principal is created, you must go to the Azure Key Vault and cr
 
 Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
 
-### Question #14 💩💩
+### Question #14 💩
 
 You have a private project in Azure DevOps and two users named User1 and User2.
 
@@ -5946,7 +5952,7 @@ The **Contributors** group is the standard group for team members who need to pe
 
 You use WhiteSource Bolt to scan a Node.js application.
 
-**The WhiteSource Bolt scan identifies numerous libraries that have invalid licenses.** The libraries are used only during development and are not part of a production deployment.
+**The WhiteSource Bolt scan identifies numerous libraries that have invalid licenses.** <mark>The libraries are used only during development and are not part of a production deployment.</mark>
 
 You need to ensure that **WhiteSource Bolt only scans production dependencies.**
 
@@ -6011,7 +6017,7 @@ The correct answer is **B. No**.
 
 Explanation:
 
-While implementing **Continuous Integration (CI)** is a prerequisite for automating these checks, the CI process itself does not identify licensing violations or prohibited libraries. 
+<mark>While implementing **Continuous Integration (CI)** is a prerequisite for automating these checks, the CI process itself does not identify licensing violations or prohibited libraries.</mark> 
 
 A standard CI pipeline is designed to automate the building and testing of code. 
 
@@ -6020,11 +6026,11 @@ A standard CI pipeline is designed to automate the building and testing of code.
 Without the specific scanning tool, the CI pipeline will successfully build the application but will remain unaware of any legal or policy risks within the third-party dependencies.
 
 
-### Question #17 💩💩
+### Question #17 💩💩💩
 
 Your company has an Azure subscription.
 
-The company requires that all resource groups in the subscription have a tag named organization set to a value of Contoso. 
+The company requires that <mark>all resource groups</mark> in the subscription have a tag named organization set to a value of Contoso. 
 
 You need to implement a policy to meet the tagging requirement.
 
@@ -6100,7 +6106,7 @@ The **Append** effect is used to add fields to a resource during creation or upd
 *   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
 *   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
 
-### Question #18  💩💩💩
+### Question #18  💩💩
 
 **You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication**. What should you do first?
 
@@ -6167,7 +6173,7 @@ Why the other options are incorrect:
 *   **C. Deployment trigger:** Triggers (like "Continuous Deployment" or "Scheduled") determine *when* a release starts, but they do not perform security or compliance checks.
 *   **D. Pipeline variable:** Variables simply store data (like connection strings or environment names); they do not have the logic to enforce compliance rules.
 
-### Question #20 💩💩💩
+### Question #20 💩💩
 
 You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
 
@@ -6264,7 +6270,7 @@ Conclusion
 ✅ **Correct Answer: B. Contributor**
 
 
-### Question #22 💩💩💩💩💩
+### Question #22 💩💩💩💩
 
 ![Alt Image Text](../images/az400_2_39.png)
 
@@ -6547,7 +6553,7 @@ Think of the flow:
 * **After deploy (CD)** → *Attack/test system*
 
 
-### Question #28 💩💩💩💩💩
+### Question #28 💩💩💩💩
 
 You plan to use a NuGet package in a project in Azure DevOps. 
 
@@ -6605,7 +6611,7 @@ The **Azure Artifacts Credential Provider** is designed specifically for this:
 
 
 
-### Question #29 💩💩💩
+### Question #29 💩💩
 
 You use Azure Pipelines to manage project builds and deployments.
 
@@ -6659,7 +6665,7 @@ Whenever you see:
 **A. Third-party application access via OAuth**
 
 
-### Question #30 💩💩💩💩
+### Question #30 💩💩💩
 
 You have an existing project in Azure DevOps.
 
