@@ -1731,7 +1731,7 @@ Answer Area
 *   Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
 
-### Question -5   💩💩
+### Question -5   💩
 
 Your company wants to use Azure Application Insights to understand how user behaviors affect an application.
 
@@ -1763,7 +1763,7 @@ To analyze user behavior in Azure Application Insights, you should match the too
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 6 💩💩💩💩
+### Question - 6 💩💩💩
 
 Your company is building a <mark>mobile app that targets Android and iOS devices.</mark> 
 
@@ -1809,7 +1809,7 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩💩💩💩
+### Question - 7 💩💩💩
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -1849,7 +1849,7 @@ The load balancer will naturally distribute traffic to the updated instances, pr
 
 **Selected actions: C, D, E**
 
-### Question # 8 💩💩💩💩
+### Question # 8 💩💩💩
 
 You have several Azure virtual machines that run Windows Server 2019.
 
@@ -1877,6 +1877,9 @@ Event
 | order by TimeGenerated desc
 | summarize makeset(EventID) by Computer
 ```
+
+> make_list(EventID) → includes duplicates ❌
+
 
 🎯 Fill in the blanks
 
@@ -1941,7 +1944,7 @@ requests
 ```
 
 
-### Question -10. 💩💩
+### Question -10. 💩
 
 You have a project in Azure DevOps named Contoso App that contains pipelines in Azure Pipelines for GitHub repositories. 
 
@@ -1973,7 +1976,7 @@ To ensure that developers receive Microsoft Teams notifications for failures in 
 <mark>`@azure pipelines subscribe https://dev.azure.com/contoso/contoso-app/`</mark>
 
 
-### Question -11 💩💩
+### Question -11 💩💩💩
 
 You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. 
 
@@ -2025,7 +2028,7 @@ There are three types of Application Insights availability tests:
 * 2) Multi-step webtest. 
 * 3) Custom Track Availability Test.
 
-### Question #12 💩💩💩💩
+### Question #12 💩💩💩
 
 You are integrating Azure Pipelines and Microsoft Teams.
 
@@ -2071,7 +2074,7 @@ Why other options are incorrect:
 *   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, **it does not control the logic of the notification system in Teams**.
 
 
-### Question -13  💩💩
+### Question -13  💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -2155,7 +2158,7 @@ Why the others are incorrect:
 ✅ **Final answer: A. Azure Application Insights**
 
 
-### Question #15 💩💩💩
+### Question #15 💩💩
 
 You create an alert rule in Azure Monitor as shown in the following exhibit.
 
@@ -2291,13 +2294,13 @@ Why the others are incorrect:
 ✅ **Final answer: A. Kusto Query Language (KQL)**
 
 
-### Question -18 💩💩💩
+### Question -18 💩💩
 
 Your company creates a web application. 
 
 You need to recommend a solution that **automatically sends to Microsoft Teams a <mark>daily summary of the exceptions that occur in the application</mark>**. 
 
-Which two Azure services should you recommend?
+Which **two Azure services** should you recommend?
 
 Each correct answer presents part of the solution.
 
@@ -2411,15 +2414,7 @@ Why the others are incorrect:
 ✅ **Final answer: D. Smart Detection**
 
 
-Correct Answer: D. Smart Detection
-
-Smart Detection automatically warns you of potential performance problems and failure anomalies in your web application. 
-
-It performs proactive analysis of the telemetry that your app sends to Application Insights. If there is a sudden rise in failure rates, or abnormal patterns in client or server performance, you get an alert.
-
-
-### Question #20 💩💩💩💩💩
-
+### Question #20 💩💩💩💩
 
 You use Azure DevOps to manage the build and deployment of an app named App1.
 
@@ -2466,8 +2461,7 @@ Based on the requirements described for the Azure Monitor alert rule, here is th
 2.  **Static**
 3.  **Greater than**
 
-### Question -21 💩💩
-
+### Question -21 💩
 
 You have a private GitHub repository. You need to display the **commit status of the repository on Azure Boards**.
 
@@ -2576,7 +2570,7 @@ Minimal-effort architecture:
 ✅ **Final answer: A. Send to Log Analytics**
 
 
-### Question #23 💩💩💩
+### Question #23 💩💩
 
 You have a project in Azure DevOps that contains a Continuous Integration/Continuous Deployment (CI/CD) pipeline.
 
@@ -2683,7 +2677,7 @@ Why the other options are incorrect
 ✅ **Final Answer:** **D**
 
 
-### Question-25  💩💩
+### Question-25  💩
 
 You have an Azure virtual machine that is monitored by using Azure Monitor, 
 
@@ -2746,7 +2740,7 @@ Requirement summary:
 ✅ **Final answer: A. the Dependency agent**
 
 
-### Question-26  💩💩💩💩
+### Question-26  💩💩💩💩💩
 
 You have multiple teams that work on multiple projects in Azure DevOps. 
 
@@ -2803,7 +2797,7 @@ Only the **Dependency Tracker extension** meets all requirements:
 ✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
 
 
-### Question #27 💩💩💩💩
+### Question #27 💩💩💩
 
 You have a GitHub repository that contains the source code for an app named App1.
 
@@ -2850,7 +2844,7 @@ stateDiagram
     Processing --> Failed
 ```
 
-### Question-28 💩💩💩💩💩
+### Question-28 💩💩💩💩
 
 You have an Azure web app named webapp1 that uses the .NET Core runtime stack. 
 
@@ -2994,7 +2988,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 💩💩💩💩
+### Question-30 💩💩💩
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3050,7 +3044,7 @@ Why other options are incorrect:
 
 
 
-### Question-31 💩💩💩💩
+### Question-31 💩💩💩
 
 You use Azure Pipelines to build and deploy an app named App1. 
 
@@ -3101,7 +3095,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: A. appsettings.json**
 
-### Question #32 💩💩💩💩💩
+### Question #32 💩💩💩💩
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains two tables named Events and Logs. App1 manages events in multiple locations and writes logs to Workspace1.
 
@@ -3130,7 +3124,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 *   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
-### Question-33 💩💩
+### Question-33 💩💩💩
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
@@ -3269,7 +3263,7 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
 
 
-### Question-35 💩💩💩💩
+### Question-35 💩💩💩
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
@@ -3344,7 +3338,7 @@ This combo is required for:
 **B and D**
 
 
-### Question-36 💩💩
+### Question-36 💩
 
 You configure Azure Application Insights and the shared service plan tier for a web app. 
 
@@ -3415,7 +3409,7 @@ The solution must meet the following requirements:
 
 • Display the data as a time chart.
 
-• Calculate the average value per hour.
+• Calculate the <mark>average value per hour.</mark>
 
 How should you complete the KQL query? To answer, select the appropriate options in the answer area.
 
@@ -3601,7 +3595,7 @@ requests
 
 
 
-### Question-40 💩💩💩💩
+### Question-40 💩💩💩
 
 You are automating the testing process for your company.
 
@@ -3648,7 +3642,7 @@ Why the others are incorrect:
 ✅ **Final answer: B. Selenium**
 
 
-### Question #41 💩💩
+### Question #41 💩
 
 You have a project in Azure DevOps.
 
@@ -3685,7 +3679,7 @@ To configure the Azure DevOps dashboard with the correct widgets for each metric
 
 
 
-### Question-41 💩💩
+### Question-41 💩💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 and an Azure Standard Load Balancer named LB1. 
 
@@ -3761,7 +3755,7 @@ Why the others are incorrect:
 
 
 
-### Question #42 💩💩
+### Question #42 💩💩💩
 
 You have an Azure subscription that contains a Log Analytics workspace named WS1 and a virtual machine named VM1.
 
@@ -3877,7 +3871,7 @@ Why the others are incorrect:
 ✅ **Final answer: D and B**
 
 
-### Question #44 💩💩💩💩💩
+### Question #44 💩💩💩💩
 
 You have an app named App1 that uses **Application Insights to monitor application performance**.
 
@@ -4058,7 +4052,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
-### Question #48 💩💩💩💩💩
+### Question #48 💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -4264,7 +4258,7 @@ By implementing **Continuous Assurance**, you can effectively **prevent unintend
 ✅ **Final answer: A. Yes**
 
 
-### Question-53 💩💩💩💩💩
+### Question-53 💩💩💩💩
 
 You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. 
 
@@ -4342,7 +4336,7 @@ You need to recommend a configuration management solution that meets the followi
 - Controls access to the configurations by using role-based access control (RBAC) permissions,
 - Stores shared valur as key-value pairs that can be used by all the apps**
 
-Which Azure service should you recommend as the configuration management solution?
+Which Azure service should you recommend as the <mark>**configuration management solution**</mark>?
 
 * A. Azure Cosmos DB
 * B. Azure App Service
@@ -4408,7 +4402,7 @@ To match the customers with the correct Azure DevOps work item processes based o
 **Answer Area**
 
 *   **Litware:** **Scrum**
-    *   *Reasoning:* The use of the term **"Product Backlog Item" (PBI)** is specific to the Scrum process template in Azure DevOps. 
+    *   <mark>*Reasoning:* The use of the term **"Product Backlog Item" (PBI)** is specific to the Scrum process template in Azure DevOps.</mark> 
 
 *   **Contoso:** **Agile**
     *   *Reasoning:* The term **"User Story"** is the standard backlog item used in the Agile process template.
@@ -4417,7 +4411,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 💩💩💩💩
+### Question #57 💩💩💩
 
 You configure an Azure Application Insights availability test.
 
@@ -4507,7 +4501,7 @@ Why the others are incorrect:
 
 You have several Azure Active Directory (Azure AD) accounts.
 
-You need to ensure that users use multi-factor authentication (MA) to access Azure apps from untrusted networks.
+You need to ensure that users <mark>use multi-factor authentication (MA) to access Azure apps from untrusted networks</mark>.
 
 What should you configure in Azure
 
@@ -4554,7 +4548,7 @@ Why the others are incorrect:
 ✅ **Final answer: D. conditional access**
 
 
-### Question-60 💩💩💩
+### Question-60 💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 that is configured for autoscaling.
 
@@ -4577,6 +4571,10 @@ Answer: B
 The correct answer is:
 
 **B. No** ✅
+
+
+- ❌  Solution:  From Azure DevOps, configure the Service hooks settings for Project1.
+- ✅ Solution: From Azure Monitor, create an action group.
 
 
 **Correct approach:**
@@ -4696,7 +4694,7 @@ properties:
           periodSeconds: 10
 ```
 
-### Question #2  💩💩
+### Question #2  💩
 
 You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
 
@@ -4788,7 +4786,7 @@ Azure Dashboards are specifically designed to provide a "single pane of glass" v
 
 
 
-### Question #4  💩💩💩💩
+### Question #4  💩💩💩
 
 You are building an ASP.NET Core application.
 
@@ -4902,7 +4900,7 @@ Thus the test passes when **all HTML, JavaScript, and images load successfully w
 **all the HTML, JavaScripts, and images of App1 load**
 
 
-### Question #6 💩💩
+### Question #6 💩
 
 Your company uses the following resources:
 
@@ -4971,7 +4969,7 @@ Why the other options are incorrect
 
 **C and E**
 
-### Question #7 💩💩💩💩💩
+### Question #7 💩💩💩💩
 
 You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
 
@@ -5020,7 +5018,7 @@ This approach avoids custom scripts or additional infrastructure.
 2. **Select the HTTP request trigger**
 3. **Update the action group in Azure Monitor**
 
-### Question #8 💩💩💩
+### Question #8 💩💩
 
 You are using the Dependency Tracker extension in a project in Azure DevOps.
 
@@ -5099,7 +5097,7 @@ The proposed solution:
 
 **Why this does NOT meet the goal:**
 
-* **Azure DevOps Service Hooks** are used to integrate **Azure DevOps events** (like work items, builds, pull requests) with external services (Slack, Teams, Jenkins, etc.).
+* <mark>**Azure DevOps Service Hooks** are used to integrate **Azure DevOps events** (like work items, builds, pull requests) with external services (Slack, Teams, Jenkins, etc.).</mark>
 * **VMSS scaling events** are **Azure platform events**, not DevOps project events.
 * Service Hooks cannot natively monitor VMSS scaling or trigger alerts for it.
 
@@ -5151,7 +5149,7 @@ Since the solution specifies creating an action group (which is necessary for em
 
 #### Question-10 
 
-Solution: From Azure Monitor, configure the autoscale settings.
+<mark>Solution: From Azure Monitor, configure the autoscale settings.</mark>
 
 -----
 
@@ -5175,7 +5173,7 @@ You use GitHub for source control.
 
 A file that contains sensitive data is committed accidentally to the Git repository of a project.
 
-You need to delete the file and its history form the repository.
+<mark>You need to delete the file and its history form the repository.</mark>
 
 Which two tools can you use? Each correct answer presents a complete solution.
 
@@ -6697,20 +6695,20 @@ If the requirement says:
 
 Evaluation of options
 
-* **A. Personal Access Token (PAT)** ❌
+**A. Personal Access Token (PAT)** ❌
 
 
-  * → Tied to a specific user → violates requirement
+* → Tied to a specific user → violates requirement
 
-* **B. GitHub App** ✅
+**B. GitHub App** ✅
 
-  * → Uses a dedicated **service identity ("Azure Pipelines")**
-  * → Not tied to any individual user
-  * → Recommended and most secure approach
+* → Uses a dedicated **service identity ("Azure Pipelines")**
+* → Not tied to any individual user
+* → Recommended and most secure approach
 
-* **C. Azure Active Directory (Azure AD)** ❌ → Not used for GitHub integration in this scenario
+**C. Azure Active Directory (Azure AD)** ❌ → Not used for GitHub integration in this scenario
 
-* **D. OAuth** ❌  → Authenticates as a user → not a service identity
+**D. OAuth** ❌  → Authenticates as a user → not a service identity
 
 ✅ Final Answer
 
@@ -6718,7 +6716,7 @@ Evaluation of options
 
 
 
-### Question #31 💩💩💩
+### Question #31 💩💩
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -6773,7 +6771,7 @@ Whenever you see **Azure Monitor + CMK**, think:
 
 ➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
 
-### Question #32 💩💩💩💩
+### Question #32 💩💩💩
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
@@ -6820,7 +6818,7 @@ For **Azure Monitor CMK questions**, remember:
 
 
 
-### Question-33 💩💩
+### Question-33 💩
 
 You plan to provision a self-hosted Linux agent.
 
@@ -6866,7 +6864,7 @@ Final Answer:
 
 
 
-### Question-34  💩💩💩
+### Question-34  💩💩
 
 You are building a Microsoft ASP.NET application that requires authentication.
 
@@ -6886,6 +6884,9 @@ What should you do first?
 The correct answer is:
 
 **B. Create an app registration in Azure AD** ✅
+
+<mark>**Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.**</mark>
+
 
 
 Explanation:
@@ -6927,7 +6928,6 @@ Final Answer:
 
 Answer: B
 
-<mark>**Register your application to use Azure Active Directory. Registering the application means that your developers can use Azure AD to authenticate users and request access to user resources such as email, calendar, and documents.**</mark>
 
 
 ### Question #35. 💩
@@ -7048,7 +7048,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 💩💩
+### Question-37 💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -7124,7 +7124,7 @@ Answer: A
 
 Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
 
-### Question-38 💩💩💩💩
+### Question-38 💩💩💩
 
 You have an application that consists of several Azure App Service web apps and Azure functions.
 
@@ -7442,7 +7442,7 @@ If requirements say:
 
 
 
-### Question-43 💩💩
+### Question-43 💩
 
 Your company uses Azure DevOps.
 
@@ -7782,7 +7782,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-48. 💩💩💩
+### Question-48. 💩💩
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -7836,7 +7836,7 @@ Final Answer:
 **D. SonarQube** ✅
 
 
-### Question #49 💩💩💩💩💩
+### Question #49 💩💩💩
 
 You have a GitHub organization that contains three users named User1, User2, and User3. You have a project that contains a repository named repo1.
 
@@ -7987,7 +7987,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩💩
+### Question #51  💩💩💩💩
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8088,7 +8088,7 @@ Final Answer:
 **C. Black Duck** ✅
 
 
-### Question #53 💩💩💩💩
+### Question #53 💩💩💩
 
 You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
 
@@ -8180,7 +8180,7 @@ Why other options are incorrect:
 Answer. C
 
 
-### Question #55 💩💩💩
+### Question #55 💩💩💩💩
 
 DRAG DROP -
 
@@ -8283,7 +8283,7 @@ There are several versions of this question in the exam. The question has fwo po
 2. White Source Bolt
 
 
-### Question #57  💩💩💩💩
+### Question #57  💩💩💩
 
 
 You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
@@ -8520,7 +8520,7 @@ Final Answer:
 **A. Third-party application access via OAuth** ✅
 
 
-### Question #62 💩💩💩
+### Question #62 💩💩💩💩
 
 DRAG DROP -
 
@@ -8552,6 +8552,10 @@ To configure code scanning for **Azure Repos** using Advanced Security (CodeQL),
 1. **Advanced Security Initialize CodeQL**
 2. **Advanced Security AutoBuild**
 3. **Advanced Security Perform CodeQL Analysis**
+
+➡️ <mark>Initialize → Build → Analyze</mark>
+
+
 
 💡 Explanation
 
@@ -8630,7 +8634,7 @@ GitHub App uses the Azure Pipelines identity.
 
 A: Personal access token and Auth use your personal GitHub identity
 
-### Question-64  💩💩💩
+### Question-64  💩💩
 
 
 You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
@@ -8685,7 +8689,7 @@ Why the other options are incorrect:
 *   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
 *   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
-### Question-65 💩💩💩💩
+### Question-65 💩💩💩
 
 You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
 
@@ -8793,6 +8797,9 @@ GitHub specifically uses **public-key encryption based on libsodium** for encryp
 
 ✅ Correct Answer: **C. libsodium**
 
+> “GitHub secrets + REST API + encrypt” → Answer is always libsodium
+
+
 💡 Explanation
 
 **libsodium**:
@@ -8814,7 +8821,7 @@ If you see:
 * **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
-### Question-67 💩💩💩💩
+### Question-67 💩💩💩💩💩
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -8834,6 +8841,13 @@ What should you recommend?
 Answer: C
 
 The correct answer is **C. Encrypt the secret value and store the value in the repository. Store the decryption key in the repository-level GitHub secrets.**
+
+✅ Purchase GitHub Advanced Security
+
+- Enable Secret scanning
+- Enable Push protection
+- Configure org/repo policies
+
 
 **Explanation:**
 
@@ -9038,7 +9052,7 @@ If requirement says:
   → Think **branch policy + status check on main branch**
 
 
-### Question-71  💩💩💩
+### Question-71  💩💩
 
 You have an Azure subscription that contains four Azure virtual machines.
 
@@ -9115,7 +9129,7 @@ Final Answer:
 **B. a user-assigned managed identity** ✅
 
 
-### Question-72 💩💩
+### Question-72 💩
 
 You have a GitHub repository that contains multiple workflows and a secret stored at the environment level.
 
