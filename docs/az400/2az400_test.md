@@ -23029,7 +23029,7 @@ For small Docker images:
 
 
 
-### Question #2 💩💩💩
+### Question #2 💩💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -23044,7 +23044,7 @@ You have an Azure subscription that contains the resources shown in the followin
 
 You need to configure ADFPipeline1 to retrieve the credential from Vault1.
 
-Which type of activity should you use?
+<mark>Which type of activity</mark> should you use?
 
 A. Lookup
 
@@ -23095,7 +23095,7 @@ To retrieve a secret from **Azure Key Vault** in an **Azure Data Factory pipelin
 
 
 
-### Question #3. 💩💩
+### Question #3. 💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -23340,7 +23340,7 @@ Available versions:
 
 
 
-### Question #6 💩💩💩
+### Question #6 💩💩
 
 You have an Azure subscription.
 
@@ -23448,7 +23448,7 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 
 
-### Question #7 💩💩
+### Question #7 💩
 
 
 You have a GitHub repository named repo1 that stores the code of an app named App1. 
@@ -23561,7 +23561,7 @@ on:
 * `**/*.md` → ignore markdown files 🚀
 
 
-### Question #8 💩💩
+### Question #8 💩
 
 You have an Azure subscription that contains an Azure pipeline named Pipeline1 and a GitHub repository named Repo1. 
 
@@ -23606,7 +23606,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9 💩💩
+### Question #9 💩💩💩 
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -23662,7 +23662,7 @@ Based on the given table:
 - **Change2:** Major
 - **Change3:** Patch
 
-### Question #10 💩💩💩
+### Question #10 💩💩
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
 
@@ -23746,7 +23746,7 @@ Why this does **not** meet the goal:
 In contrast, **flaky test management** (the correct solution from the previous question) would automatically retry flaky tests and reduce manual troubleshooting. The Test Results Trend widget merely reports the problem without solving it.
 
 
-### Question #12 💩💩💩
+### Question #12 💩💩
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. 
 
@@ -23781,15 +23781,15 @@ Why this does **not** meet the goal:
 The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
 
 
-### Question #13 💩💩💩💩
+### Question #13 💩💩💩
 
 You plan to publish build artifacts by using an Azure pipeline.
 
 **You need to create an .artifactignore file that meets the following requirements:**
 
-• **Includes all files in the build output folder and all subfolders**
+• <mark>**Includes all files in the build output folder and all subfolders**</mark>
 
-• Excludes files that have the .dll extension
+• <mark>Excludes files that have the .dll extension</mark>
 
 What should you include in the file?
 
@@ -23964,7 +23964,7 @@ To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you s
 *   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
 
 
-### Question #16 💩💩💩
+### Question #16 💩💩
 
 You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
 
@@ -24030,11 +24030,13 @@ D. Build Administrators
 
 The correct answer is **B. Deployment Environments User**.
 
+<mark>**Deployment Environments User:** This is the specific role designed for developers. It allows them to create, manage, and delete their own environments within the projects they are assigned to. This is the **least privilege** required for someone who only needs to provision and use environments.</mark>
+
 Explanation:
 
 **Azure Deployment Environments (ADE)** uses specific Azure Role-Based Access Control (RBAC) roles to manage permissions. To provision an environment, a user needs permissions at the **Project** level within the DevCenter.
 
-*   **Deployment Environments User:** This is the specific role designed for developers. It allows them to create, manage, and delete their own environments within the projects they are assigned to. This is the **least privilege** required for someone who only needs to provision and use environments.
+*   <mark>**Deployment Environments User:** This is the specific role designed for developers. It allows them to create, manage, and delete their own environments within the projects they are assigned to. This is the **least privilege** required for someone who only needs to provision and use environments.</mark>
 *   **DevCenter Project Admin (Option A):** This role has much broader permissions, including the ability to manage environment types, project settings, and mapping catalogs. This exceeds the "least privilege" requirement.
 *   **Contributors (Option C):** While "Contributor" is a general Azure role, it does not specifically grant the necessary permissions within the Azure Deployment Environments project structure to interact with the environment templates and resources in the intended way.
 *   **Build Administrators (Option D):** This is an Azure DevOps role. It manages build definitions and permissions within the pipeline, but it does not grant permissions to provision infrastructure or environments in Azure via Azure Deployment Environments.
@@ -24195,7 +24197,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩💩💩💩
+### Question #20 💩💩💩💩
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24313,7 +24315,7 @@ Explanation:
 *   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
 
 
-### Question #22  💩💩💩
+### Question #22  💩💩
 
 You have an Azure subscription.
 
@@ -24382,7 +24384,7 @@ An **includes template** (using the standard `template:` syntax) is best for reu
 Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
 
 
-### Question #23 💩💩
+### Question #23 💩
 
 You have an Azure subscription.
 
@@ -24430,7 +24432,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24 💩💩
+### Question #24 💩💩💩
 
 You have an Azure subscription.
 
@@ -24455,6 +24457,10 @@ D. On each virtual machine, enable a system-assigned managed identity.
 
 
 The correct answer is **A. Create a service principal**.
+
+> ❌  **B. Create an Azure Automation account** :  Automation accounts are for runbooks, not for authenticating a self-hosted agent to deploy Bicep templates. This is unnecessary overhead. 
+
+
 
 Explanation
 
@@ -24497,7 +24503,9 @@ You need to ensure that User1 can deploy Template1.
 
 The solution must follow the principle of **least privilege.**
 
-Which permission should you grant to User1, and which parameter should be specified when you create KV1? To answer, select the appropriate options in the answer area.
+<mark>Which permission should you grant to User1, and which parameter should be specified when you create KV1</mark>? 
+
+To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -24524,6 +24532,11 @@ To ensure that User1 can deploy Template1 while following the principle of least
 *   **Permission:** `Microsoft.KeyVault/vaults/deploy/action`
 *   **Parameter:** `--enabled-for-template-deployment`
 
+---
+
+* <mark>*Note:* Standard "read" permissions are not enough; this specific "deploy/action" is the least-privilege requirement for template secret injection.</mark>
+* *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
+
 **Explanation:**
 
 **1. Permission: Microsoft.KeyVault/vaults/deploy/action**
@@ -24532,16 +24545,14 @@ To ensure that User1 can deploy Template1 while following the principle of least
 
 To authorize this, the user (User1) needs the specific RBAC permission `Microsoft.KeyVault/vaults/deploy/action`. This allows the user to grant ARM the right to access the vault during the deployment process. 
 
-* <mark>*Note:* Standard "read" permissions are not enough; this specific "deploy/action" is the least-privilege requirement for template secret injection.</mark>
 
 **2. Parameter: --enabled-for-template-deployment**
 
 By default, Key Vaults do not allow the Azure Resource Manager service to pull secrets from them during a deployment. You must explicitly enable this capability on the Key Vault resource itself. When using the Azure CLI or a template to create the Key Vault, you set the `enabledForTemplateDeployment` property to `true`. In the CLI, this is done via the `--enabled-for-template-deployment` parameter.
 
-*   *Note:* The parameter `--enabled-for-deployment` (without "template") is used specifically to allow the Azure Virtual Machine agent to retrieve secrets for things like disk encryption or certificates, which is not the requirement here.
 
 
-### Question #26 💩💩💩💩💩
+### Question #26 💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24630,7 +24641,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28 💩💩💩
+### Question #28 💩💩
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24669,7 +24680,7 @@ Why the other options are incorrect:
 *   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
 *   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
 
-### Question #29  💩💩💩💩
+### Question #29  💩💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 that has the following YAML definition.
 
@@ -24771,7 +24782,7 @@ NOTE: Each correct selection is worth one point.
 
 
 
-### Question #30  💩💩💩💩
+### Question #30  💩💩💩
 
 You use Azure Pipelines to build and test code.
 
