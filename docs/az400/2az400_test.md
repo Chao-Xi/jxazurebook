@@ -19888,7 +19888,7 @@ When using **Helm v2 with RBAC-enabled AKS**:
 2. Initialize Helm (Tiller)
 3. Install the chart
 
-### Question #3 💩💩💩
+### Question #3 💩💩
 
 You are implementing an Azure DevOps strategy for mobile devices using App Center. 
 
@@ -20302,7 +20302,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩💩
+### Question #8 💩💩💩💩
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -20447,8 +20447,7 @@ To enable **continuous delivery (CD)** in a classic release pipeline:
 * **The Web Application artifact**
 
 
-### Question #10 💩💩
-
+### Question #10 💩
 
 Your company plans to deploy an application to the following endpoints:
 
