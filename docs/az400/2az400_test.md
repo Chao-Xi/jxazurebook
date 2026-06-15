@@ -20525,7 +20525,7 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Agent-based deployment targets 🚀
 
 
-### Question-11 💩💩💩💩
+### Question-11 💩💩💩
 
 
 You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20983,7 +20983,7 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #18 💩💩💩💩
+### Question #18 💩💩💩
 
 
 You use Azure Pipelines to manage the build and deployment of apps.
@@ -21096,20 +21096,22 @@ Select and Place:
 2. **Check in a project to the Azure DevOps repository**
 3. **Create a work item**
 
+>  **Create test → store in repo → associate via test case work item** 🚀
+
 🔍 Explanation
 
 To associate an automated test with a test case in Azure DevOps:
 
-🟦 1. Create a test project
+🟦 <mark>1. Create a test project</mark>
 
 * You need a project that contains automated tests (e.g., unit/UI tests)
 
-🟦 2. Check in the project
+🟦 <mark>2. Check in the project</mark>
 
 * The test code must be stored in the **Azure DevOps repository**
 * Enables tracking and linking to pipelines and test cases
 
-🟦 3. Create a work item
+🟦 <mark>3. Create a work item</mark>
 
 * Create a **Test Case work item**
 * From there, you can associate the automated test method
@@ -21130,7 +21132,6 @@ To associate an automated test with a test case in Azure DevOps:
 
 To link automated tests:
 
-> **Create test → store in repo → associate via test case work item** 🚀
 
 ### Question #20 💩💩
 
@@ -21222,7 +21223,7 @@ You need to ensure that the web server configurations on the virtual machines is
 
 The solution must provide centralized management of the configuration settings and minimize management overhead.
 
-Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+**Which four actions should you perform in sequence**? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Select and Place:
 
@@ -21418,7 +21419,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 **B. a DACPAC**
 
 
-### Question #24  💩💩💩💩
+### Question #24  💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21666,7 +21667,7 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #27 💩💩💩💩
+### Question #27 💩💩💩
 
 You have an Azure virtual machine named VM1 that runs Linux.
 
@@ -21849,7 +21850,7 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #30  💩💩💩💩💩
+### Question #30  💩💩💩💩
 
 You use GitHub for source control of .NET applications.
 
@@ -21932,7 +21933,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #31  💩💩💩💩
+### Question #31  💩💩💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -22046,7 +22047,7 @@ ConfigurationModeFrequencyMins = 60
 ✔ Discrepancy is detected and logged
 
 
-### Question #32 💩💩💩💩
+### Question #32 💩💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -22134,7 +22135,7 @@ performanceCounters
 
 
 
-### Question #33  💩💩💩💩💩
+### Question #33  💩💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -22462,8 +22463,7 @@ NOTE: Each correct selection is worth one point.
 * **Incremental mode = safe updates**
 * **Linked artifact = CI pipeline output** 🚀
 
-### Question #37 💩💩💩💩💩
-
+### Question #37 💩💩💩💩
 
 You have an Azure Pipeline.
 
@@ -22544,7 +22544,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #39 💩💩💩💩
+### Question #39 💩💩💩
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22625,7 +22625,7 @@ Here is the content extracted from the image, formatted as markdown:
 
 
 
-### Question #40 💩💩💩
+### Question #40 💩💩
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -22767,7 +22767,7 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #42  💩💩💩
+### Question #42  💩💩
 
 You have a project in Azure DevOps that contains a release pipeline. 
 
