@@ -14802,7 +14802,7 @@ usersteps:
 
 - script: echo Done
 
-You need to ensure that Template1.yaml runs before File1.yml. How should you update File1.yml?
+You need to ensure that <mark>Template1.yaml runs before File1.yml</mark>. How should you update File1.yml?
 
 
 A. parameters: usersteps: extends: template: template1.yml - task: MyTask@1 - script: echo Done
@@ -14844,7 +14844,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  💩💩💩
+### Question #2  💩💩
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -14998,14 +14998,14 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩💩💩💩💩
+### Question #5 💩💩💩💩
 
 You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
 | Project name | Project Details |
 | :--- | :--- |
 | **Project1** | The project team provides **preconfigured YAML files that it wants to use to manage future pipeline configuration changes**. |
-| **Project2** | The sensitivity of the project requires that the source code be hosted on the managed Windows server on your company's network. |
+| **Project2** | The sensitivity of the project requires that the source code be hosted on the managed Windows server **on your company's network**. |
 | **Project3** | <mark>The project team requires a centralized version control system to ensure that developers work with the most recent version.</mark> |
 
 Which version control system should you recommend for each project? 
@@ -15059,7 +15059,7 @@ Explanation
 **Project3**
 
 * Requirement: *Centralized version control system*
-* Centralized systems = **not distributed (unlike Git)**
+* <mark>Centralized systems = **not distributed (unlike Git)**</mark>
 * ✅ **Assembla Subversion (SVN)** is a **centralized VCS**
 
 Why not Bitbucket Cloud?
@@ -15148,7 +15148,7 @@ You need to recommend an integration strategy for the build process of a Java ap
 
 ✑ **The build outputs must be stored as Server artifacts in Azure DevOps**.
 
-The source code must be stored in a Git repository in Azure DevOps.
+✑ The source code must be stored in a Git repository in Azure DevOps.
 
 <mark>Solution: Install and configure a self-hosted build agent on an on-premises machine.</mark> 
 
@@ -15204,7 +15204,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩💩💩💩💩
+### Question #8 💩💩💩💩
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15232,6 +15232,7 @@ The correct answers are:
 
 ❌ A. Create a webhook in Jenkins → Used for triggering builds, not for code retrieval
 
+**<mark>Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)</mark>**
 
 **Explanation**
 
@@ -15260,7 +15261,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩💩💩💩💩
+### Question #9  💩💩💩💩
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15314,7 +15315,7 @@ Explanation
 
 * Requirement: **Restrict access to individual files and folders**
 * ✅ **TFVC** supports **fine-grained, path-level permissions**
-* ❌ Git does not support file/folder-level security
+* <mark>❌ Git does not support file/folder-level security</mark>
 
 
 **Project 2**
@@ -15530,7 +15531,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩💩💩
+### Question #13 💩💩💩💩💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15584,7 +15585,7 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
 
-### Question #14 💩💩💩💩💩
+### Question #14 💩💩💩💩
 
 You are creating a container for an **ASP.NET Core app.**
 
@@ -15816,7 +15817,7 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-18  💩💩💩
+### Question-18  💩💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15944,7 +15945,7 @@ A *canary* strategy deploys to a small subset first, validates functionality, an
 * **App1:** rolling
 * **App2:** canary
 
-### Question #21 💩💩💩
+### Question #21 💩💩💩💩
 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
@@ -16236,7 +16237,7 @@ You need to configure:
 
 ✔ So the solution does not meet the goal.
 
-### Question #28 💩
+### Question #28 💩💩
 
 HOTSPOT You need to deploy Azure Kubernetes Service (AKS) to host an application. 
 
@@ -16290,7 +16291,7 @@ Final selections:
 * **AKS access to Azure:** Azure service principal
 
 
-### Question #29 💩💩
+### Question #29 💩
 
 
 You have 50 Node.js-based projects that you scan by using WhiteSource.
@@ -16533,9 +16534,9 @@ To ensure consistent Windows feature installation using DSC, you must:
 
 ❌ Why others are wrong:
 
-* **YAML configuration file** → used for Azure Pipelines, not DSC
-* **Azure Files** → not the standard DSC source location in this context
-* **Custom Script Extension** → runs scripts once, not continuous state enforcement
+* <mark>**YAML configuration file** → used for Azure Pipelines, not DSC</mark>
+* <mark>**Azure Files** → not the standard DSC source location in this context</mark>
+* <mark>**Custom Script Extension** → runs scripts once, not continuous state enforcement</mark>
 
 Final Answer (in order):
 
@@ -16582,7 +16583,7 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #33 💩💩💩💩
+### Question #33 💩💩💩
 
 You are creating a build pipeline in Azure Pipelines.
 
@@ -16929,7 +16930,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #39 💩💩💩
+### Question #39 💩💩
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -16976,7 +16977,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩💩💩
+### Question #40 💩💩💩💩💩
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -17045,7 +17046,7 @@ Final Answer:
 
 **Upload configuration → Compile → Onboard VMs → Assign configuration → Check compliance**
 
-### Question #41 🐣🐣🐣💩
+### Question #41 🐣🐣💩
 
 You are developing an application. The application source has multiple branches.
 
@@ -17151,7 +17152,7 @@ Final Answer:
 ✅ **A. Yes**
 
 
-### Question #43
+### Question #43 💩
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -17211,7 +17212,7 @@ The proposed solution does NOT meet the goal.
 
 
 
-### Question #44 💩💩
+### Question #44 💩
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -17313,7 +17314,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46 💩💩💩💩
+### Question #46 💩💩💩💩💩
 
 You are building an application that has the following assets:
 
@@ -17393,7 +17394,7 @@ Explanation:
 
 
 
-### Question #47 💩💩
+### Question #47 💩
 
 You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
 
@@ -17526,7 +17527,7 @@ Final Answer:
 
 
 
-### Question #49  💩💩💩💩💩
+### Question #49  💩💩💩💩
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
@@ -17650,7 +17651,7 @@ These checks validate whether the deployment will violate Azure Policy **before 
 <mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51 💩💩
+### Question #51 💩💩💩
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17914,7 +17915,7 @@ To reduce storage usage for **Azure Artifacts published via pipelines**, you sho
 > ✔ **Pipeline retention policies** to automatically clean up older builds and their associated package artifacts.
 
 
-### Question-54 💩💩💩
+### Question-54 💩💩
 
 You have an existing build pipeline in Azure Pipelines.
 
@@ -17935,16 +17936,16 @@ Explanation
 
 The requirement is to **use incremental builds** and **retain the environment between pipeline runs**.
 
-* **Self-hosted agents** run on machines that you manage.
+**Self-hosted agents** run on machines that you manage.
 
   * They **keep the workspace between builds** unless explicitly cleaned.
   * This allows **incremental builds** (e.g., only compiling changed files).
 
-* **Microsoft-hosted agents** ❌
+**Microsoft-hosted agents** ❌
 
   * Are **ephemeral**; the environment is **reset after each run**, so incremental builds are not possible.
 
-* **File Transform task** ❌
+**File Transform task** ❌
 
   * Used for modifying configuration files (e.g., appsettings.json) during deployment.
   * Does **not** preserve the build workspace.
@@ -17986,6 +17987,7 @@ Answer Area
 
 ----
 
+> Build machine image ❌
 
 To complete the Azure DevOps release pipeline and configure OWASP ZAP for security testing, you should add these five tasks in the following sequence:
 
@@ -18010,7 +18012,7 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #56 💩💩💩💩💩
+### Question #56 💩💩💩💩
 
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
@@ -18088,7 +18090,7 @@ Final Answer:
 * **Slot 1:** `npm install`
 * **Slot 2:** `ne(variables.CACHE_RESTORED, 'true')`
 
-### Question #57
+### Question #57. 
 
 You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. 
 
@@ -18151,7 +18153,7 @@ Final Answer:
 ✅ **C and E**
 
 
-### Question-58 💩
+### Question-58 💩💩
 
 You have a private project in Azure DevOps.
 
@@ -18193,7 +18195,7 @@ So, the **Contributor** role provides just enough permissions for the project ma
 **D. Contributor**
 
 
-### Question-59 💩💩
+### Question-59 💩
 
 You use a Git repository in Azure Repos to manage the source code of a web application. 
 
@@ -18267,6 +18269,10 @@ Does this meet the goal?
 
 **Correct answer: B. No** ❌
 
+* **Squash merge** ✅
+  * Combines all commits from the feature branch into **a single commit** on master
+  * Keeps master branch history **concise**
+
 Explanation
 
 The goal:
@@ -18283,9 +18289,7 @@ Correct approach
 
 To meet the goal, use:
 
-* **Squash merge** ✅
-  * Combines all commits from the feature branch into **a single commit** on master
-  * Keeps master branch history **concise**
+
 
 * **Rebase and fast-forward** can also reduce unnecessary merge commits if used carefully
 
@@ -18598,7 +18602,7 @@ Final Answer
 **D. the percentage of overall time spent on rework**
 
 
-### Question-67 💩💩💩
+### Question-67 💩💩
 
 You are developing an open source solution that uses a GitHub repository.
 
@@ -18617,6 +18621,8 @@ Which authentication type should you use?
 ----
 
 **Correct answer: B. GitHub App** ✅
+
+> C. PAT	❌ PATs do not support the Checks API
 
 Explanation
 
@@ -18871,7 +18877,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-72 💩💩💩💩
+### Question-72 💩💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -19155,7 +19161,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-78  💩💩 
+### Question-78  💩
 
 
 You have an Azure DevOps project.
@@ -19202,7 +19208,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-79 💩
+### Question-79
 
 
 You have an Azure DevOps project.
@@ -19332,7 +19338,7 @@ Therefore, the proposed architecture is a standard and effective pattern for dep
 **A. Yes** ✅
 
 
-### Question-82  💩💩💩
+### Question-82  💩💩
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. 
 
@@ -19637,47 +19643,8 @@ Final Answer
 **A. Maven** ✅
 
 
-### Question-88. 💩💩💩
 
-You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy. 
-
-Policy is an audit policy that monitors naming convention compliance for the resources deployed to Subscription1.
-
-You have a pipeline named Pipeline 1 in Azure Pipelines. Pipeline 1 deploys Azure Resource Manager (ARM) resources to Subscription1.
-
-**You need to ensure that the resources deployed by Pipeline 1 comply with Policy1.**
-
-What should you add to Pipeline 1?
-
-* A. a pre-deployment task that runs a security and compliance assessment
-* B. a post-deployment task that runs a security and compliance assessment
-* C. an ARM template deployment task to assign Policy1 to Subscription 1
-* D. an ARM template deployment task to deploy Policy1 to Subscription1
-
-
--------
-
-
-The correct answer is **B. a post-deployment task that runs a security and compliance assessment.**
-
-Explanation:
-
-
-Since the policy in question is an **Audit policy**, it will not block the deployment of resources even if they violate the naming conventions. The ARM template deployment will technically "succeed," but the resources will be flagged as non-compliant in Azure.
-
-To "ensure" compliance within the context of the pipeline:
-
-1.  **Deployment:** The pipeline first deploys the resources using the ARM template.
-2.  **Assessment:** You add a **post-deployment task** (often using the "Security and Compliance Assessment" task or an Azure Policy compliance check). 
-3.  **Validation:** This task triggers a scan to check if the newly deployed resources comply with the assigned Azure Policies. 
-4.  **Failure:** If the task finds that the resources are non-compliant (audit violation), it will **fail the pipeline**. This forces the team to address the naming convention issue immediately, effectively ensuring that non-compliant code does not move further through the release process or remain unaddressed.
-
-Why other options are incorrect:
-
-*   **A. Pre-deployment task:** While you can run static analysis on a template, a "security and compliance assessment" against an active Azure Policy usually requires the resources or the deployment intent to be evaluated against the current state of the subscription, which is most accurately done during or after the deployment process.
-*   **C & D. ARM template deployment task:** These options deal with the *infrastructure* of the policy itself (creating or assigning it). The question states the policy already exists; the goal is to make sure the app's resources follow that policy.
-
-### Question-89 💩💩💩
+### Question-8 💩💩
 
 You have a project in Azure DevOps.
 
