@@ -12248,7 +12248,7 @@ This task describes the sequence for configuring a **GitHub Actions workflow (Wo
 
 ## Topic 6 - Question Set 6
 
-### Question #1 💩💩 
+### Question #1 💩
 
 Your company has 60 developers who are assigned to four teams. Each team has 15 members.
 
@@ -12379,7 +12379,7 @@ Flow Summary
 3. Configure it to trigger on build events and post to `#Development`
 
 
-### Question #4 💩💩💩
+### Question #4 💩💩
 
 Your company uses Azure DevOps for Git source control.
 
@@ -12437,7 +12437,7 @@ Hot Area:
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #5 💩💩💩💩
+###  Question #5 💩💩💩
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
@@ -12481,7 +12481,7 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #6 💩💩💩💩💩
+### Question #6 💩💩💩💩
 
 You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
@@ -12797,7 +12797,7 @@ Key Point
 * Use **supported keywords** like **Completed / Fixes / Resolves** to update state
 
 
-### Question #12 💩💩
+### Question #12 💩
 
 You manage projects by using Azure Boards.
 
@@ -12894,7 +12894,7 @@ Key Point
 Use **Successor/Predecessor** links to correctly model dependencies between work items.
 
 
-### Question #14 💩💩 d
+### Question #14 💩
 
 You have the services shown in the following table.
 
@@ -12939,7 +12939,7 @@ Key Point
 
 So, both services can be notified.
 
-### Question #15 💩💩💩
+### Question #15 💩💩
 
 
 
@@ -13048,7 +13048,7 @@ Key Point
 * Use a **service hook subscription** to connect Azure DevOps events to external services like Slack via webhooks.
 
 
-### Question #17 💩
+### Question #17 
 
 You have a project in Azure DevOps named App Project that is used to develop an app named App1. 
 
@@ -13198,7 +13198,7 @@ Key Point
 The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
 
 
-### Question #20 💩💩
+### Question #20 💩
 
 You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
 
@@ -13256,7 +13256,7 @@ This will:
 
 
 
-### Question #21 💩💩💩💩💩
+### Question #21 💩💩💩💩
 
 HOTSPOT -
 
@@ -13335,7 +13335,7 @@ Why not the others?
 
 
 
-### Question-22 💩
+### Question-22 
 
 
 Your company creates a new Azure DevOps team You plan to use **Azure DevOps for sprint planning**.
@@ -13444,7 +13444,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-24 💩💩
+### Question-24 💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13582,7 +13582,7 @@ Why other options are incorrect:
 *   **B (Pipeline):** While you can use a pipeline to automate documentation, it is not a requirement to create or publish a wiki.
 *   **D (Team configuration):** This handles area paths, iterations, and team members, not documentation storage.
 
-### Question-27 💩💩💩
+### Question-27 💩💩
 
 You manage a project by using Azure Board, and you manage the project code by using Azure Repos.
 
@@ -13638,24 +13638,24 @@ Based on the image provided, here is the extracted text content:
 
 *   **How long it took [to] close a work item after it was created:** **[ Dropdown 1 ]**
   
-  *   **Dropdown 1 Options:**
+**Dropdown 1 Options:**
     
-    	*   Burndown chart
-    	*   Cumulative flow diagram
-    	*   Cycle time
-    	*   Lead time
-    	*   Velocity
+*   Burndown chart
+*   Cumulative flow diagram
+*   Cycle time
+*   Lead time
+*   Velocity
 
 *   **How long it took to close a work item after the work was started:** **[ Dropdown 2 ]**
   
-  *   **Dropdown 2 Options:**
+**Dropdown 2 Options:**
 
 
-        *   Burndown chart
-    	*   Burnup chart
-    	*   Cycle time
-    	*   Lead time
-    	*   Velocity
+*   Burndown chart
+*   Burnup chart
+*   Cycle time
+*   Lead time
+*   Velocity
 
 ----
 
@@ -13735,7 +13735,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩💩💩
+### Question #31 💩💩💩💩
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13877,7 +13877,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-34
+### Question-34 💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13956,7 +13956,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩💩
+### Question-36  💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -14010,7 +14010,7 @@ Final Answer:
 **B. upstream sources** ✅
 
 
-### Question-37 💩💩💩
+### Question-37 💩💩
 
 You plan to onboard 10 new developers.
 
@@ -14066,7 +14066,7 @@ Final Answer:
 
 
 
-### Question-38 💩💩💩💩
+### Question-38 💩💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
@@ -14170,7 +14170,7 @@ Final Answer:
 **C. In Project1, create an Azure DevOps repository** ✅
 
 
-### Question-40 💩💩
+### Question-40 💩
 
 Your company plans to use an agile approach to software development.
 
@@ -14231,7 +14231,7 @@ Final Answer:
 **D. Microsoft Teams** ✅
 
 
-### Question-41  💩
+### Question-41  
 
 Your company plans to use an agile approach to software development.
 
@@ -14273,7 +14273,7 @@ Final Answer:
 **D. Slack** ✅
 
 
-### Question-42 💩💩💩
+### Question-42 💩💩
 
 
 You are designing a YAML template for use with Azure Pipelines. **The template will include the outputfile parameter.**
@@ -14377,7 +14377,7 @@ Final Answer:
 
 
 
-### Question-44  💩💩💩💩
+### Question-44  💩💩💩💩💩
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14422,7 +14422,7 @@ Final Answer:
 
 
 
-### Question-45 💩
+### Question-45 
 
 You have an Azure subscription that contains a storage account and 20 virtual machines
 
@@ -14476,7 +14476,7 @@ Final Answer:
 
 
 
-### Question-46  💩💩💩💩💩
+### Question-46  💩💩💩💩
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
@@ -14523,7 +14523,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩💩💩
+### Question-47  💩💩💩💩💩
 
 You are integrating an Azure Boards project and a GitHub repository.
 
@@ -14545,7 +14545,7 @@ Answer: DE
 
 The correct answers are:
 
-- **D. GitHub user credentials**
+- **D. GitHub user credentials** ✅
 - **E. a personal access token (PAT)** ✅
 
 Explanation
@@ -14665,7 +14665,7 @@ If you'd like, I can also explain when to use **lead time vs cycle time** — it
 
 
 
-### Question-50  💩💩
+### Question-50  💩
 
 You manage code by using GitHub.
 
