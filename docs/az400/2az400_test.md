@@ -9233,7 +9233,7 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2  💩💩
+### Question #2  💩💩💩
 
 You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
@@ -9291,7 +9291,7 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 
 
-### Question #3 💩💩💩
+### Question #3 💩💩💩💩
 
 
 You need to and and isolate shared code. 
@@ -9336,7 +9336,7 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 
 
 
-### Question #4. 💩
+### Question #4 💩💩
 
 You are creating a NuGet package.
 
@@ -9387,7 +9387,7 @@ Consume the package in a project to verify it works correctly.
 * This sequence ensures the package is properly hosted, accessible, and testable by your team.
 
 
-### Question #5 💩💩
+### Question #5 💩
 
 Your company uses GitHub for source control. The company has a team that performs code reviews.
 
@@ -9439,7 +9439,7 @@ To meet the requirements for **automating code review assignments** in GitHub:
 * The "Clear Never assign" and notification options do not affect workload distribution.
 
 
-### Question-6  💩💩
+### Question-6  💩
 
 You are designing the development process for your company.
 
@@ -9483,7 +9483,7 @@ Final Answer:
 Answer. C
 
 
-### Question-7  💩
+### Question-7  
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -9601,7 +9601,7 @@ Answer: BC
 - C: You can manage technical debt with SonarQube and Azure DevOps.
 
 
-### Question-8 💩
+### Question-8
 
 Your company is building a new solution in Java.
 
@@ -9768,7 +9768,7 @@ Final Answer:
 
 
 
-### Question-11  💩💩
+### Question-11  💩
 
 During a code review, you discover many quality issues. Many modules contain unused variables and empty catch blocks.
 
@@ -9786,9 +9786,12 @@ The correct answer is:
 
 **B. In a Maven build task, select *Run PMD*.** ✅
 
+
 Explanation:
 
 The issues you described — **unused variables** and **empty catch blocks** — are classic **static code quality problems** that are best detected by **PMD**, a Java static analysis tool.
+
+❌ D. Gradle – Run Checkstyle. → Checkstyle focuses mainly on formatting and coding standards, not semantic issues like unused variables or empty catch blocks
 
 **PMD** specifically detects:
 
@@ -9823,7 +9826,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 💩💩💩💩
+### Question-12 💩💩💩
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
@@ -9889,7 +9892,7 @@ Final Answer:
 **A, B, and E** ✅
 
 
-### Question-13 💩💩💩
+### Question-13 💩💩💩💩
 
 You have a GitHub repository.
 
@@ -9965,7 +9968,7 @@ Does this meet the goal?
 
 ✅ Sclution: You recommend reducing the code coupling and the dependency cycles?
 
-✅  Solution: You recommend increasing the code duplication.
+❌ Solution: You recommend increasing the code duplication.
 
 ❌ Solution: You recommend increasing the test coverage.
 
@@ -9991,7 +9994,7 @@ To reduce technical debt, you would instead recommend things like:
 So the proposed solution **does not meet the goal**.
 
 
-### Question-15 💩💩💩
+### Question-15 💩💩
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -10083,7 +10086,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 💩💩
+### Question-18 💩💩💩💩1
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -10158,7 +10161,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩💩💩💩
+### Question-20  💩💩💩💩
 
 You have an Azure Automation account that contains a runbook. 
 
