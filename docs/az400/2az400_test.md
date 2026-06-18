@@ -10086,7 +10086,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 💩💩💩💩1
+### Question-18 💩💩💩💩
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -10372,7 +10372,7 @@ To migrate a repository from GitHub to Azure Repos while preserving all branches
 3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration.
   * It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
 
-### Question #24 💩💩💩💩
+### Question #24 💩💩💩
 
 You have a GitHub repository that contains the code for an app named App1.
 
@@ -10419,7 +10419,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #25 💩💩💩💩
+### Question #25 💩💩💩
 
 You use Git for source control.
 
@@ -10477,7 +10477,7 @@ To optimize the performance of the Git repository by removing history that is no
     *   **Expire:** This command manually triggers the expiration of those records. By setting `--expire-unreachable=now`, you tell Git that any history not currently part of a branch should be considered "expired" immediately.
 
 2.  **`git gc --prune=now`**
-    *   **gc (Garbage Collection):** This is the primary tool for optimizing the Git database. It identifies and removes "dangling" or unreachable objects (history not in any branch).
+    *   <mark>**gc (Garbage Collection):** This is the primary tool for optimizing the Git database. It identifies and removes "dangling" or unreachable objects (history not in any branch).</mark>
     *   **--prune=now:** By default, Git waits two weeks before actually deleting unreachable objects to prevent data loss. Specifying `now` tells Git to bypass the grace period and permanently delete the items immediately, fulfilling the requirement to optimize performance.
 
 ### Question #26 💩💩
@@ -10626,7 +10626,7 @@ git restore --source main~3 App.exe.config
 
 * **`git restore --source main~3 App.exe.config`**
 
-  * `--source main~3` specifies the **third most recent commit** on the main branch.
+  * <mark>`--source main~3` specifies the **third most recent commit** on the main branch</mark>
   * Restores the file **App.exe.config** from that revision.
 
 This sequence ensures you're on the correct branch and retrieves the desired historical version of the file.
@@ -10678,7 +10678,7 @@ In the **GitFlow** workflow strategy, the correct branch assignments for product
 *   **Hotfix branches:** Used to quickly patch production releases (merge into `main` and `develop`).
 
 
-### Question #30 💩
+### Question #30 💩💩
 
 DRAG DROP -
 
@@ -10743,7 +10743,7 @@ git sparse-checkout set **[ src/web ]**
 3.  <mark>**`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders</mark>. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
 
 
-### Question #31 💩💩💩
+### Question #31 💩💩
 
 You use GitHub for source control and Microsoft Teams for collaboration.
 
@@ -10785,7 +10785,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #32 💩💩
+### Question #32 💩
 
 You have a GitHub repository named repo1.
 
@@ -10970,11 +10970,11 @@ git commit -m "track *.psd files using Git LFS"
 This sequence is used to configure **Git Large File Storage (LFS)** for a repository that already contains large binary files (in this case, `.psd` files). The correct configuration for this script is:
 
 1.  **`git lfs install`** (Initializes the LFS environment).
-2.  **`git lfs track "*.psd"`** (Creates a rule to handle Photoshop files via LFS).
+2.  <mark>**`git lfs track "*.psd"`** (Creates a rule to handle Photoshop files via LFS).</mark>
 3.  **`git add .gitattributes`** (Stages the file where LFS tracking rules are stored).
 4.  **`git commit -m "track *.psd files using Git LFS"`** (Saves the tracking configuration).
-5.  **`git lfs update`** (Forces an update of the local hooks).
-6.  **`git push`** (Pushes the changes and the large binaries to the remote server).
+5.  <mark>**`git lfs update`** (Forces an update of the local hooks).<mark>
+6.  <mark>**`git push`** (Pushes the changes and the large binaries to the remote server).<mark>
 
 -----
 
@@ -11015,7 +11015,7 @@ git commit -m "track *.psd files using Git LFS"
 
 This ensures both **new and existing PSD files** are managed by Git LFS.
 
-### Question #35 💩💩💩
+### Question #35 💩💩
 
 You have a public GitHub repository named Public1.
 
