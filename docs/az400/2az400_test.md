@@ -7053,7 +7053,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 💩💩💩
+### Question-37 💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -7129,7 +7129,7 @@ Answer: A
 
 Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
 
-### Question-38 💩💩💩
+### Question-38 💩💩
 
 You have an application that consists of several Azure App Service web apps and Azure functions.
 
@@ -7192,7 +7192,7 @@ Final Answer:
 
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
-### Question-39 💩💩
+### Question-39 💩
 
 You have a branch policy in a project in Azure DevOps. 
 
