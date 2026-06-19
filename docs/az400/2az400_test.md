@@ -5233,7 +5233,7 @@ To entirely remove unwanted files from a repository's history you can use either
 
 ## Topic 4 - Question Set 4
 
-### Question #1 💩
+### Question #1 💩💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -5266,7 +5266,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩💩
+### Question #2 💩
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5430,7 +5430,7 @@ Although **Azure role-based access control** can control resource permissions, *
 * Enable key vaults for template deployment → **A Key Vault advanced access policy**
 * Restrict access to the secrets → **A Key Vault access policy**
 
-### Question #5 💩💩💩💩
+### Question #5 💩💩💩
 
 
 You need to configure access to Azure DevOps agent pools to meet the following requirements:
@@ -5486,7 +5486,7 @@ Project → **Service Account**
 * **Project:** Service Account
 
 
-### Question #6 💩💩💩
+### Question #6 💩💩
 
 Your company has an Azure subscription named Subscription1. Subscription1 is associated to an Azure Active Directory tenant named contoso.com.
 
@@ -5535,7 +5535,7 @@ Explanation
 3. **an RBAC binding**
 
 
-### Question #7 💩💩💩💩💩
+### Question #7 💩💩💩💩
 
 HOTSPOT You manage build and release pipelines by using Azure DevOps. Your entire managed environment resides in Azure.
 
@@ -5572,7 +5572,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 💩💩💩💩💩💩
+### Question #8 💩💩💩💩
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5799,7 +5799,7 @@ Result
 
 
 
-### Question #12 💩💩💩💩
+### Question #12 💩💩💩💩💩
 
 
 You use GitHub Enterprise Server as a source code repository.
@@ -5842,7 +5842,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩💩
+### Question-13 💩💩💩
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -6104,7 +6104,7 @@ The **Append** effect is used to add fields to a resource during creation or upd
 *   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
 *   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
 
-### Question #18  💩💩
+### Question #18  💩
 
 **You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication**. What should you do first?
 
@@ -6171,7 +6171,7 @@ Why the other options are incorrect:
 *   **C. Deployment trigger:** Triggers (like "Continuous Deployment" or "Scheduled") determine *when* a release starts, but they do not perform security or compliance checks.
 *   **D. Pipeline variable:** Variables simply store data (like connection strings or environment names); they do not have the logic to enforce compliance rules.
 
-### Question #20 💩💩
+### Question #20 💩
 
 You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
 
@@ -6334,7 +6334,7 @@ Select and Place:
 To configure a Node.js development environment to connect to Azure Artifacts while minimizing the risk of leaking credentials, use the following configuration:
 
 
-*   **Feed registry information:**   -> **The .npmrc file in the project**
+*   <mark>**Feed registry information:**   -> **The .npmrc file in the project**</mark>
 *   **Credentials:**  -> **The .npmrc file in the user’s home folder**
 
 **Explanation:**
@@ -6391,7 +6391,7 @@ Explanation:
 *   **A deployment task** is too late in the process; security scanning should happen during the build (CI) phase to "shift left" security.
 
 
-### Question #25. 💩💩💩💩💩
+### Question #25 💩💩💩💩
 
 
 You plan to use Azure Kubernetes Service (AKS) to host containers deployed from images hosted in a Docker Trusted Registry.
@@ -6491,7 +6491,7 @@ To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restri
     - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
 
 
-### Question #27 💩💩💩💩
+### Question #27 💩💩💩
 
 You need to increase the security of your team's development process.
 
@@ -6551,7 +6551,7 @@ Think of the flow:
 * **After deploy (CD)** → *Attack/test system*
 
 
-### Question #28 💩💩💩💩
+### Question #28 💩💩💩
 
 You plan to use a NuGet package in a project in Azure DevOps. 
 
@@ -6609,7 +6609,7 @@ The **Azure Artifacts Credential Provider** is designed specifically for this:
 
 
 
-### Question #29 💩💩
+### Question #29 💩
 
 You use Azure Pipelines to manage project builds and deployments.
 
@@ -6663,7 +6663,7 @@ Whenever you see:
 **A. Third-party application access via OAuth**
 
 
-### Question #30 💩💩💩
+### Question #30 💩💩
 
 You have an existing project in Azure DevOps.
 
@@ -6716,7 +6716,7 @@ Evaluation of options
 
 
 
-### Question #31 💩💩
+### Question #31 💩💩💩
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -6746,6 +6746,9 @@ Answer Area
 
 To configure **customer-managed keys (CMK)** for encrypting log data in **Azure Monitor** with a **Log Analytics workspace**, you must use a **dedicated cluster** and integrate it with **Azure Key Vault**.
 
+➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
+
+
 ✅ Correct Sequence
 
 1. **Create an Azure key vault and store the key**
@@ -6769,9 +6772,11 @@ To configure **customer-managed keys (CMK)** for encrypting log data in **Azure 
 
 Whenever you see **Azure Monitor + CMK**, think:
 
-➡️ **Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace**
+➡️ Key Vault → Cluster (with identity) → Permissions → Configure encryption → Link workspace
 
-### Question #32 💩💩💩
+
+
+### Question #32 💩💩
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
