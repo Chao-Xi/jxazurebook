@@ -1659,7 +1659,7 @@ These are captured in the **result code field** of requests.
 | Authentication error occurs        | **resultCode**             |
 
 
-### Question -3 💩
+### Question -3 
 
 You have an Azure Kubernetes Service (AKS) pod.
 
@@ -1763,7 +1763,7 @@ To analyze user behavior in Azure Application Insights, you should match the too
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 6 💩💩💩
+### Question - 6 💩💩
 
 Your company is building a <mark>mobile app that targets Android and iOS devices.</mark> 
 
@@ -1809,7 +1809,7 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩💩💩
+### Question - 7 💩💩💩💩
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -1906,7 +1906,7 @@ Event
 **summarize + makeset(EventID)**
 
 
-### Question -9 💩💩💩
+### Question -9 💩💩
 
 You have an Azure web app named Webapp1.
 
@@ -1944,7 +1944,7 @@ requests
 ```
 
 
-### Question -10. 💩
+### Question -10 
 
 You have a project in Azure DevOps named Contoso App that contains pipelines in Azure Pipelines for GitHub repositories. 
 
@@ -1997,6 +1997,8 @@ The correct answer is:
 
 **B. Create an Azure Application Insights availability test and alert.** ✅
 
+<mark>D. Azure Service Health alert ❌ => Monitors Azure service outages, not your specific web app URL availability.</mark>
+
 **Best-practice solution flow:**
 
 <mark>**Application Insights → Availability Test → Multi-region probes → Alert rule**</mark>
@@ -2028,7 +2030,7 @@ There are three types of Application Insights availability tests:
 * 2) Multi-step webtest. 
 * 3) Custom Track Availability Test.
 
-### Question #12 💩💩💩
+### Question #12 💩💩
 
 You are integrating Azure Pipelines and Microsoft Teams.
 
@@ -2097,7 +2099,7 @@ The correct answer is **A. From Azure DevOps, configure a service hook subscript
 
 Explanation:
 
-**Service Hooks** are the standard mechanism used by Azure DevOps to send notifications to external services (like Microsoft Teams, Slack, or Trello) when specific events occur.
+<mark>**Service Hooks** are the standard mechanism used by Azure DevOps to send notifications to external services (like Microsoft Teams, Slack, or Trello) when specific events occur.</mark>
 
 1.  **The Process:** To set up these notifications, you go to **Project Settings** in Azure DevOps, select **Service Hooks**, and create a new subscription.
 2.  **The Trigger:** You select **Microsoft Teams** as the service and choose the specific trigger: **"Work item updated."**
@@ -2158,7 +2160,7 @@ Why the others are incorrect:
 ✅ **Final answer: A. Azure Application Insights**
 
 
-### Question #15 💩💩
+### Question #15 💩
 
 You create an alert rule in Azure Monitor as shown in the following exhibit.
 
@@ -2294,7 +2296,7 @@ Why the others are incorrect:
 ✅ **Final answer: A. Kusto Query Language (KQL)**
 
 
-### Question -18 💩💩
+### Question -18 💩
 
 Your company creates a web application. 
 
@@ -2363,7 +2365,7 @@ Solution architecture:
 ✅ **Final answer: A and E**
 
 
-### Question -19 💩💩
+### Question -19 💩
 
 You are monitoring the health and performance of an Azure web app by using Azure Application Insights.
 
@@ -2414,7 +2416,7 @@ Why the others are incorrect:
 ✅ **Final answer: D. Smart Detection**
 
 
-### Question #20 💩💩💩💩
+### Question #20 💩💩💩
 
 You use Azure DevOps to manage the build and deployment of an app named App1.
 
@@ -2461,7 +2463,7 @@ Based on the requirements described for the Azure Monitor alert rule, here is th
 2.  **Static**
 3.  **Greater than**
 
-### Question -21 💩
+### Question -21 
 
 You have a private GitHub repository. You need to display the **commit status of the repository on Azure Boards**.
 
@@ -2520,7 +2522,7 @@ connect and configure from Azure Boards. Or, alternatively, install and configur
 
 Both methods have been streamlined and support authenticating and operating via the app rather than an individual.
 
-### Question -22 💩💩
+### Question -22 💩
 
 You have a web app hosted on Azure App Service. The web app stores data in an Azure SQL database. 
 
@@ -2602,7 +2604,7 @@ To enable detailed logging (verbose output) in an Azure DevOps CI/CD pipeline, y
 1.  **Name:** `System.Debug`
 2.  **Value:** `true`
 
-### Question #24  💩💩💩💩
+### Question #24  💩💩💩
 
 You build an iOS app.
 
@@ -2740,11 +2742,13 @@ Requirement summary:
 ✅ **Final answer: A. the Dependency agent**
 
 
-### Question-26  💩💩💩💩💩
+### Question-26  💩💩💩💩
 
 You have multiple teams that work on multiple projects in Azure DevOps. 
 
-**You need to plan and manage the consumers and producers for each project**. The solution must provide an overview of all the projects. What should you do?
+**You need to plan and manage the consumers and producers for each project**. <mark>The solution must provide an overview of all the projects</mark>. 
+
+What should you do?
 
 * A. Add a Predecessor or Successor link to the feature or user story for the items of each project.
 * B. Add a Parent or Child link to the feature or user story for the items of each project.
@@ -2797,7 +2801,7 @@ Only the **Dependency Tracker extension** meets all requirements:
 ✅ **Final answer: C. Install the Dependency Tracker extension and create dependencies for each project.**
 
 
-### Question #27 💩💩💩
+### Question #27 💩💩
 
 You have a GitHub repository that contains the source code for an app named App1.
 
@@ -2844,7 +2848,7 @@ stateDiagram
     Processing --> Failed
 ```
 
-### Question-28 💩💩💩💩
+### Question-28 💩💩💩
 
 You have an Azure web app named webapp1 that uses the .NET Core runtime stack. 
 
@@ -2919,7 +2923,7 @@ Why the other options are incorrect
 
 
 
-### Question-29 💩💩💩
+### Question-29 💩💩
 
 Your company has multiple microservices-based apps that use the following tracing libraries:
 
@@ -2988,7 +2992,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 💩💩💩
+### Question-30 💩💩
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3044,7 +3048,7 @@ Why other options are incorrect:
 
 
 
-### Question-31 💩💩💩
+### Question-31 💩💩
 
 You use Azure Pipelines to build and deploy an app named App1. 
 
@@ -3124,7 +3128,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 *   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
-### Question-33 💩💩💩
+### Question-33 💩💩
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
@@ -3176,7 +3180,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: C and D**
 
-### Question #34 💩💩💩
+### Question #34 💩💩💩💩
 
 You have a web app named App1 that uses Application Insights in Azure Monitor.
 
@@ -3263,7 +3267,7 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
 
 
-### Question-35 💩💩💩
+### Question-35 💩💩
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
@@ -3338,7 +3342,7 @@ This combo is required for:
 **B and D**
 
 
-### Question-36 💩
+### Question-36 
 
 You configure Azure Application Insights and the shared service plan tier for a web app. 
 
@@ -3399,7 +3403,7 @@ So test failures during this learning window **will not generate notifications**
 
 
 
-### Question #37 💩💩
+### Question #37 💩
 
 You have an Azure virtual machine named web1.
 
@@ -3522,7 +3526,7 @@ Why the other options are incorrect:
 After setting up Application Insights for your project, and if your app generates a certain minimum amount of data, Smart Detection of failure anomalies takes 24 hours to learn the normal behavior of your app, before it is switched on and can send alerts.
 
 
-### Question #39 💩💩💩
+### Question #39 💩💩
 
 You have a web app named App1 that uses Application Insights in Azure Monitor to store log data. App1 has users in multiple locations.
 
@@ -3595,7 +3599,7 @@ requests
 
 
 
-### Question-40 💩💩💩
+### Question-40 💩💩
 
 You are automating the testing process for your company.
 
@@ -3618,6 +3622,7 @@ The correct answer is:
 
 **B. Selenium** ✅
 
+* <mark>**C. Xamarin.UITest** ❌ → For **mobile app UI testing**, not web apps</mark>
 
 Explanation:
 
@@ -3679,7 +3684,7 @@ To configure the Azure DevOps dashboard with the correct widgets for each metric
 
 
 
-### Question-41 💩💩💩
+### Question-41 💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 and an Azure Standard Load Balancer named LB1. 
 
@@ -3755,7 +3760,7 @@ Why the others are incorrect:
 
 
 
-### Question #42 💩💩💩
+### Question #42 💩💩
 
 You have an Azure subscription that contains a Log Analytics workspace named WS1 and a virtual machine named VM1.
 
@@ -3809,7 +3814,7 @@ Mapping to the options
 
 **A and D**
 
-### Question-43 💩💩💩
+### Question-43 💩💩💩💩
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -3871,7 +3876,7 @@ Why the others are incorrect:
 ✅ **Final answer: D and B**
 
 
-### Question #44 💩💩💩💩
+### Question #44 💩💩💩
 
 You have an app named App1 that uses **Application Insights to monitor application performance**.
 
@@ -4052,7 +4057,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
-### Question #48 💩💩💩💩
+### Question #48 💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -4258,7 +4263,7 @@ By implementing **Continuous Assurance**, you can effectively **prevent unintend
 ✅ **Final answer: A. Yes**
 
 
-### Question-53 💩💩💩💩
+### Question-53 💩💩💩
 
 You use Azure Pipelines to manage build pipelines, Github to store source code, and Dependabot to manage dependencies. 
 
@@ -4322,7 +4327,7 @@ Based on the KQL query provided in the exhibit, here are the correct selections 
 *   The result of a subtraction between two `datetime` objects is always a **`timespan`** (representing the elapsed time).
 *   This is confirmed in Line 5, where the `Duration` is compared against a value generated by the `make_timespan` function.
 
-### Question-55  💩💩💩💩
+### Question-55  💩💩💩
 
 You are designing a configuration management solution to support five apps hosted on Azure Ap Service. 
 
@@ -4411,7 +4416,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 💩💩💩
+### Question #57 💩💩
 
 You configure an Azure Application Insights availability test.
 
@@ -4497,7 +4502,7 @@ Why the others are incorrect:
 ✅ **Final answer: C. a readiness probe**
 
 
-### Question-59 💩💩💩
+### Question-59 💩💩💩💩
 
 You have several Azure Active Directory (Azure AD) accounts.
 
@@ -4609,7 +4614,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-### Question-61  💩💩
+### Question-61  💩
 
 You have an Azure subscription that contains multiple web apps.
 
@@ -5083,7 +5088,13 @@ The correct answer is:
 
 **B. No** ✅
 
->  Attach an **action group** to send an **email notification**. ✅
+- Attach an **action group** to send an **email notification**. ✅
+
+- You need to ensure that an email alert is generated whenever VMSS1 ❌
+
+- From Azure DevOps, configure the Service hooks settings for Project1. ❌
+
+- Solution: From Azure Monitor, configure the autoscale settings. ❌
 
 Explanation:
 
