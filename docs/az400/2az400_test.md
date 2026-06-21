@@ -7387,7 +7387,7 @@ Final Answer:
 Answer: D
 
 
-### Question #42 💩💩💩💩
+### Question #42 💩💩💩
 
 Your company has a project in Azure DevOps named Project1.
 
@@ -7420,6 +7420,7 @@ Actions
 
 To support **large binary files**, store them **outside the repository**, and still use a **standard Git workflow**, you should use **Git LFS** in **Azure DevOps**.
 
+<mark>“large binary files” + “outside repo” + “Git workflow”** → Always think: **Git LFS (install → track → authenticate)</mark>
 
 ✅ Correct Sequence
 
@@ -7447,7 +7448,7 @@ If requirements say:
 
 
 
-### Question-43 💩
+### Question-43
 
 Your company uses Azure DevOps.
 
@@ -7499,14 +7500,6 @@ Final Answer:
 
 **D. In Azure Active Directory, configure conditional access.** ✅
 
-
-**Answer: D**
-
-Conditional Access is a capability of Azure Active Directory. 
-
-With Conditional Access, you can implement automated access control decisions for accessing your cloud apps that are based on conditions.
-
-Conditional Access policies are enforced after the first-factor authentication has been completed.
 
 ### Question-44 💩 - Duplicated 
 
@@ -7841,7 +7834,7 @@ Final Answer:
 **D. SonarQube** ✅
 
 
-### Question #49 💩💩💩
+### Question #49 💩💩
 
 You have a GitHub organization that contains three users named User1, User2, and User3. You have a project that contains a repository named repo1.
 
@@ -7853,7 +7846,7 @@ You need to configure permissions for repo1. The solution must meet the followin
 
 • <mark>Ensure that User3 can manage repo1.<mark>
 
-• Prevent User3 from accessing sensitive data in repo1.
+• <mark>Prevent User3 from accessing sensitive data in repo1.</mark>
 
 Which role should you assign to each user? To answer, drag the appropriate roles to the correct users. Each role may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -7893,6 +7886,12 @@ To meet the requirements for repository permissions in GitHub while following th
 
 ---
 
+
+❌ Why not Admin?
+
+* **Admin** has full access, including **secrets and sensitive settings** → violates requirement
+
+
 💡 Explanation (based on GitHub roles):
 
 🔹 **User1 → Write**
@@ -7925,7 +7924,7 @@ To meet the requirements for repository permissions in GitHub while following th
 
 
 
-### Question-50   💩
+### Question-50 
 
 Your company is concerned that when developers introduce open source libraries, it creates licensing compliance issues.
 
@@ -7992,7 +7991,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩💩💩
+### Question #51  💩💩💩💩💩
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8093,7 +8092,7 @@ Final Answer:
 **C. Black Duck** ✅
 
 
-### Question #53 💩💩💩
+### Question #53 💩💩
 
 You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
 
@@ -8146,7 +8145,7 @@ If it says:
 * **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-54 💩💩💩💩
+### Question-54 💩💩💩
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -8185,7 +8184,7 @@ Why other options are incorrect:
 Answer. C
 
 
-### Question #55 💩💩💩💩
+### Question #55 💩💩💩
 
 DRAG DROP -
 
@@ -8288,8 +8287,7 @@ There are several versions of this question in the exam. The question has fwo po
 2. White Source Bolt
 
 
-### Question #57  💩💩💩
-
+### Question #57  💩💩
 
 You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
 
@@ -8336,7 +8334,7 @@ If the question says:
 * **“open-source libraries” + “vulnerabilities”**  → Think **Mend Bolt (WhiteSource)**
 
 
-### Question #58  💩💩💩💩💩💩
+### Question #58  💩💩💩💩💩
 
 You manage code by using GitHub.
 
@@ -8391,7 +8389,7 @@ Dependabot triggers =
 * **D. Any commit is pushed** → Only triggers if it affects dependencies (covered by A)
 
 
-### Question-59 - Duplicated 💩
+### Question-59 - Duplicated
  
 You plan to use a NuGet package in a project in Azure DevOps. **The NuGet package is in a feed that requires authentication.**
 
@@ -8525,7 +8523,7 @@ Final Answer:
 **A. Third-party application access via OAuth** ✅
 
 
-### Question #62 💩💩💩💩
+### Question #62 💩💩💩
 
 DRAG DROP -
 
@@ -8639,8 +8637,7 @@ GitHub App uses the Azure Pipelines identity.
 
 A: Personal access token and Auth use your personal GitHub identity
 
-### Question-64  💩💩
-
+### Question-64  💩
 
 You use release pipelines in Azure Pipelines to deploy an app. Secrets required be the pipeline are stored as pipeline variables. 
 
@@ -8694,7 +8691,7 @@ Why the other options are incorrect:
 *   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
 *   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
-### Question-65 💩💩💩
+### Question-65 💩💩
 
 You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
 
@@ -8773,8 +8770,7 @@ Final Answer:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
 
-### Question #66 💩💩💩💩💩
-
+### Question #66 💩💩💩💩
 
 You have a GitHub repository that uses **GitHub Actions and stores access keys by using GitHub encrypted secrets.**
 
@@ -8826,7 +8822,7 @@ If you see:
 * **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
-### Question-67 💩💩💩💩💩
+### Question-67 💩💩💩💩
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -8876,7 +8872,7 @@ You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the
 You need to perform the following tests:
 
 
-• **Test1: Run a ZAP spider against App1 for one minute and wait for passive scanning to complete**. The test must NOT perform active attacks.
+• <mark>**Test1: Run a ZAP spider against App1 for one minute and wait for passive scanning to complete**. The test must NOT perform active attacks.</mark>
 
 • Test2: Run a ZAP spider against App1, and when complete, execute an AJAX spider scan.
 
@@ -8905,6 +8901,11 @@ Test2:
 * **Test1:** → **ZAP Baseline Scan**
 * **Test2:** → **ZAP Full Scan**
 
+🧠 Exam tip
+
+- <mark>No attack / passive only → Baseline<mark>
+- <mark>Includes active scan / deeper testing → Full<mark>
+- <mark>API-specific → API Scan<mark>
 
 
 To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type does:
@@ -8929,16 +8930,16 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 
 💡 Explanation
 
-* **Test1 requirements:**
+**Test1 requirements:**
 
-  * Spider for 1 minute ✅
-  * Passive scan only (NO attacks) ✅
+* Spider for 1 minute ✅
+* Passive scan only (NO attacks) ✅
     → Matches **Baseline Scan**
 
-* **Test2 requirements:**
+**Test2 requirements:**
 
-  * Spider the site ✅
-  * Then run **AJAX spider** (deeper crawling)
+* Spider the site ✅
+* Then run **AJAX spider** (deeper crawling)
     → Best match among options is **Full Scan** (includes deeper scanning capabilities)
 
 🧠 Exam tip
@@ -9008,7 +9009,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #70 💩💩💩
+### Question #70 💩💩
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
@@ -9057,7 +9058,7 @@ If requirement says:
   → Think **branch policy + status check on main branch**
 
 
-### Question-71  💩💩
+### Question-71  💩
 
 You have an Azure subscription that contains four Azure virtual machines.
 
@@ -9081,6 +9082,8 @@ Which type of identity should you use?
 The correct answer is:
 
 **B. a user-assigned managed identity** ✅
+
+❌ <mark>C. service principal → Requires manual secret/cert management ❌ → Does not meet "credentials managed automatically”</mark>
 
 Explanation:
 
@@ -9134,7 +9137,7 @@ Final Answer:
 **B. a user-assigned managed identity** ✅
 
 
-### Question-72 💩
+### Question-72 
 
 You have a GitHub repository that contains multiple workflows and a secret stored at the environment level.
 
