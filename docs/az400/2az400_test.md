@@ -4694,7 +4694,7 @@ properties:
           periodSeconds: 10
 ```
 
-### Question #2  💩
+### Question #2  
 
 You have a multi-tier application that has an Azure Web Apps front end and an Azure SQL Database back end.
 
@@ -4786,7 +4786,7 @@ Azure Dashboards are specifically designed to provide a "single pane of glass" v
 
 
 
-### Question #4  💩💩💩
+### Question #4  💩💩
 
 You are building an ASP.NET Core application.
 
@@ -4900,7 +4900,7 @@ Thus the test passes when **all HTML, JavaScript, and images load successfully w
 **all the HTML, JavaScripts, and images of App1 load**
 
 
-### Question #6 💩
+### Question #6 
 
 Your company uses the following resources:
 
@@ -4969,7 +4969,7 @@ Why the other options are incorrect
 
 **C and E**
 
-### Question #7 💩💩💩💩
+### Question #7 💩💩💩
 
 You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
 
@@ -5018,7 +5018,7 @@ This approach avoids custom scripts or additional infrastructure.
 2. **Select the HTTP request trigger**
 3. **Update the action group in Azure Monitor**
 
-### Question #8 💩💩
+### Question #8 💩
 
 You are using the Dependency Tracker extension in a project in Azure DevOps.
 
@@ -5147,7 +5147,7 @@ To meet the goal fully, you would:
 Since the solution specifies creating an action group (which is necessary for email alerts), it **meets the goal** in this context.
 
 
-#### Question-10 
+#### Question-10 💩
 
 <mark>Solution: From Azure Monitor, configure the autoscale settings.</mark>
 
@@ -5167,7 +5167,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-11 💩💩💩💩
+### Question-11 💩💩💩
 
 You use GitHub for source control.
 
