@@ -179,7 +179,7 @@ Why the others are less suitable for CI:
 
 
 
-### Question 5  💩💩
+### Question 5  💩
 
 Your company is currently making use of Team Foundation Server 2013 (TFS 2013), but intend to migrate to Azure
 
@@ -268,7 +268,7 @@ Why the other options are incorrect
 
 
 
-### Question 7 💩💩
+### Question 7 💩
 
 You are currently developing a project for a client that will be managing work items via Azure DevOps. 
 
@@ -302,7 +302,7 @@ Why the others are not suitable:
 
 * **A. Basic** ❌ → Very limited, simple tracking only.
 * **B. Agile** ❌ → Focused on user stories, epics, features — not formal risk/change tracking.
-* **C. Scrum** ❌ → Sprint-based, product backlog focus, no native risk/review/change request structure.
+* **C. Scrum** ❌ → <mark>Sprint-based, product backlog focus, no native risk/review/change request structure.</mark>
 
 ✅ **Final answer: D. CMMI**
 
@@ -521,7 +521,7 @@ Why other options are incorrect:
 *   **C. Hosted:** This is a legacy/generic term for Microsoft-hosted agents. It does not specify whether it is Linux or Windows, or if it supports containers.
 *   **D. Hosted macOS:** macOS agents are used for building iOS and Mac applications. They cannot build or run Windows-based IIS containers.
 
-### Question -12 💩
+### Question -12 
 
 Your company has an Azure DevOps environment that can only be accessed by Azure Active Directory users. 
 
@@ -695,7 +695,7 @@ Why the other options are incorrect
 
 
 
-### Question -15 💩💩💩
+### Question -15 💩💩
 
 You scan a Node.js application using WhiteSource Bolt. 
 
@@ -748,7 +748,7 @@ npm install --production
 
 This installs only production dependencies for WhiteSource Bolt scanning.
 
-### Question -16 💩
+### Question -16 
 
 You are currently defining a release strategy for an app, named APP-01.
 
@@ -904,7 +904,7 @@ Correct terminology:
 ✅ **Final answer: C. Deployment**
 
 
-### Question -19 💩💩
+### Question -19 💩
 
 You are preparing to deploy an Azure resource group via Terraform.
 
@@ -939,7 +939,7 @@ Why the other options are incorrect:
 
 You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
 
-### Question -20 💩💩💩
+### Question -20 💩💩
 
 You want to use a solitary feed to release several builds of each package. 
 
@@ -1148,7 +1148,7 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question -24 💩💩💩
+### Question -24 💩💩
 
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
@@ -1278,7 +1278,7 @@ This is exactly where **Compute and Apps** is located.
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
 
-### Question -26 💩
+### Question -26 
 
 You need to consider the underlined segment to establish whether it is accurate. 
 
@@ -1394,7 +1394,7 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -28 💩💩
+### Question -28 💩💩💩
 
 You manage an Azure web app that supports an e-commerce website. 
 
@@ -1508,7 +1508,7 @@ Explanation
 - **Azure Logic Apps**
 - **Azure Application Insights**
 
-### Question -30. 💩💩
+### Question -30. 💩💩💩💩
 
 **You are in the process of building a mobile app aimed at Android and iOS devices.**
 
