@@ -22930,7 +22930,7 @@ To generate release notes automatically:
 
 ## Topic 9 - Question Set 9
 
-### Question #1 💩
+### Question #1
 
 You plan to create an image that will contain a .NET Core application.
 
@@ -23083,7 +23083,7 @@ To retrieve a secret from **Azure Key Vault** in an **Azure Data Factory pipelin
 
 
 
-### Question #3. 💩
+### Question #3 
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -23198,7 +23198,7 @@ B. a single web app and two deployment pipelines
 
 C. two web apps and an Azure Standard Load Balancer
 
-D. two web apps and an Azure Traffic Manager instanc
+D. two web apps and an Azure Traffic Manager instance
 
 
 ------------
@@ -23247,7 +23247,7 @@ For safe deployments:
 > **Use deployment slots → swap for release, swap back for rollback** 🚀
 
 
-### Question #5 💩
+### Question #5
 
 You have a project in Azure DevOps named Project1 that references an Azure Artifacts feed named Feed1.
 
@@ -23328,7 +23328,7 @@ Available versions:
 
 
 
-### Question #6 💩💩
+### Question #6 💩
 
 You have an Azure subscription.
 
@@ -23436,7 +23436,7 @@ resource invoiceStorage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 
 
-### Question #7 💩
+### Question #7
 
 
 You have a GitHub repository named repo1 that stores the code of an app named App1. 
@@ -23594,7 +23594,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9 💩💩💩 
+### Question #9 💩💩
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -23650,7 +23650,7 @@ Based on the given table:
 - **Change2:** Major
 - **Change3:** Patch
 
-### Question #10 💩💩
+### Question #10 💩
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
 
@@ -23734,7 +23734,7 @@ Why this does **not** meet the goal:
 In contrast, **flaky test management** (the correct solution from the previous question) would automatically retry flaky tests and reduce manual troubleshooting. The Test Results Trend widget merely reports the problem without solving it.
 
 
-### Question #12 💩💩
+### Question #12 💩
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. 
 
@@ -23769,7 +23769,7 @@ Why this does **not** meet the goal:
 The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
 
 
-### Question #13 💩💩💩
+### Question #13 💩💩
 
 You plan to publish build artifacts by using an Azure pipeline.
 
@@ -23815,7 +23815,7 @@ Under those reversed requirements, **Option B** is perfectly correct because:
 
 
  
-### Question #14 💩💩
+### Question #14 💩
 
 You have a GitHub repository.
 
@@ -23992,7 +23992,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩💩💩💩💩
+### Question #17 💩💩💩💩
 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
@@ -24105,7 +24105,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩💩💩
+### Question #19  💩💩💩💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -24115,9 +24115,9 @@ You plan to deploy an instance of App1 to each resource group.
 
 You need to create a Bicep template that will be used to deploy App1. The solution must meet the following requirements:
 
-- • The name of each App1 instance must be consistent for each subscription and resource group.
+- <mark>The name of each App1 instance must be consistent for each subscription</mark> and resource group.
 
-- • The name of each App Service plan used to host App1 must be consistent.
+- <mark>The name of each App Service plan used to host App1 must be consistent</mark>.
 
 How should you complete the template? To answer, select the appropriate options in the answer area.
 
@@ -24185,7 +24185,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩💩💩
+### Question #20 💩💩💩💩💩
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24303,7 +24303,7 @@ Explanation:
 *   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
 
 
-### Question #22  💩💩
+### Question #22  💩
 
 You have an Azure subscription.
 
@@ -24372,7 +24372,7 @@ An **includes template** (using the standard `template:` syntax) is best for reu
 Developers then "include" this YAML file in their own pipeline definition. This ensures that the complex configuration of prerequisites is handled in one central place, reducing the effort needed to maintain and update those requirements across multiple pipelines.
 
 
-### Question #23 💩
+### Question #23 
 
 You have an Azure subscription.
 
@@ -24420,7 +24420,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24 💩💩💩
+### Question #24 💩💩
 
 You have an Azure subscription.
 
@@ -24473,9 +24473,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25 💩💩💩💩
-
-HOTSPOT -
+### Question #25 💩💩💩💩💩
 
 You have an Azure subscription that contains a user named User1.
 
@@ -24487,7 +24485,7 @@ You plan to perform the following actions:
 
 • **Deploy Azure resources by using Template1 to retrieve secrets from KV1**.
 
-You need to ensure that User1 can deploy Template1. 
+<mark>You need to ensure that User1 can deploy Template1.</mark> 
 
 The solution must follow the principle of **least privilege.**
 
@@ -24517,8 +24515,8 @@ NOTE: Each correct selection is worth one point.
 
 To ensure that User1 can deploy Template1 while following the principle of least privilege, the correct selections are:
 
-*   **Permission:** `Microsoft.KeyVault/vaults/deploy/action`
-*   **Parameter:** `--enabled-for-template-deployment`
+*   <mark>**Permission:** `Microsoft.KeyVault/vaults/deploy/action`</mark>
+*   <mark>**Parameter:** `--enabled-for-template-deployment`</mark>
 
 ---
 
@@ -24540,7 +24538,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 
 
 
-### Question #26 💩💩💩💩
+### Question #26 💩💩💩
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24629,7 +24627,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28 💩💩
+### Question #28 💩💩💩
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24639,7 +24637,7 @@ The solution must meet the following requirements:
 
 • <mark>**Enable testing and monitoring of changes during a gradual rollout.**</mark>
 
-• Control the number of users that will receive new code releases.
+• <mark>Control the number of users that will receive new code releases.</mark>
 
 Which strategy should you recommend?
 
@@ -24668,7 +24666,7 @@ Why the other options are incorrect:
 *   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
 *   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
 
-### Question #29  💩💩💩
+### Question #29  💩💩
 
 You have an Azure Pipelines pipeline named Pipeline1 that has the following YAML definition.
 
@@ -24770,7 +24768,7 @@ NOTE: Each correct selection is worth one point.
 
 
 
-### Question #30  💩💩💩
+### Question #30  💩💩
 
 You use Azure Pipelines to build and test code.
 
@@ -24830,7 +24828,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31. 💩💩💩💩💩
+### Question #31. 💩💩💩💩
 
 You have a GitHub organization.
 
@@ -24874,7 +24872,7 @@ Explanation:
 *   **Step 3 (Install App1):** A GitHub App has no permissions until it is **installed** on a specific account or organization. The installation creates the link between the app and the resources (repositories) it is allowed to access.
 *   **Step 4 (Generate an installation access token):** Within the workflow, you use the App ID and Private Key (to create a temporary JWT) and exchange them for an **installation access token**. This token is the final credential used to authorize the actual API requests.
 
-### Question #32 💩💩💩
+### Question #32 💩💩
 
 You use an Azure Pipelines pipeline to build and deploy an app.
 
@@ -25059,7 +25057,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 💩💩💩
+### Question #35 💩💩
 
 You manage package feeds by using Azure Artifacts.
 
@@ -25129,7 +25127,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36 💩💩💩💩💩
+### Question #36 💩💩💩💩
 
 You have an Azure subscription that includes an app named App1.
 
@@ -25461,7 +25459,7 @@ This would:
 
 
 
-### Question #39 💩💩
+### Question #39 💩
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
