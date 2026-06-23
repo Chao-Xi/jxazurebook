@@ -25698,7 +25698,7 @@ Then:
 ❌ Answer: **No**
 
 
-### Question #41 💩
+### Question #41 
 
 You are developing an Azure Pipelines pipeline.
 
@@ -25774,7 +25774,7 @@ You need an **automated check** that:
 **C. pre-deployment gates**
 
 
-### Question #42 💩
+### Question #42 
 
 You have an Azure Resource Manager (ARM) template that contains the following expression.
 
@@ -25835,7 +25835,7 @@ isComplete ? '1a' : '2a'
 
 **D. `isComplete ? '1a' : '2a'`**
 
-### Question #43. 💩
+### Question #43 💩
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -25937,7 +25937,7 @@ paths:
 
 **B. No**
 
-### Question #44 💩
+### Question #44
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -26039,7 +26039,7 @@ pr:
 
 **B. No**
 
-### Question #45 💩
+### Question #45 
 
 You are using an Azure Pipelines pipeline to build and deploy a web app.
 
@@ -26121,7 +26121,7 @@ NOTE: Each correct selection is worth one point.
 * **Unit** → isolated logic
 * **Integration** → component interaction
 
-### Question #46 💩💩
+### Question #46 💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -26226,7 +26226,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-### Question #47 💩💩
+### Question #47 
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26274,7 +26274,7 @@ A. YES
 - failTaskOnFailedTests ✅ : true → required to fail pipeline
 
 
-### Question #48
+### Question #48 💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26538,7 +26538,7 @@ Azure DevOps grants **free parallel jobs** based on:
 - **A. Project1**
 - **C. Project4**
 
-### Question #51 💩
+### Question #51
 
 
 You have an Azure Pipelines pipeline that has the following definition.
@@ -26640,7 +26640,7 @@ For each of the following statements, select Yes if the statement is true. Other
 
 
 
-### Question #52 💩
+### Question #52 
 
 You use an Azure Pipelines pipeline to build and test an app named App1.
 
@@ -26708,7 +26708,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩💩
+### Question #53 💩💩
 
 HOTSPOT -
 
@@ -26799,7 +26799,7 @@ NOTE: Each correct selection is worth one point.
 * Pull requests → pre-merge, not release approval
 
 
-### Question #54 💩
+### Question #54
 
 You have an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
@@ -26876,7 +26876,7 @@ You have an Azure DevOps project that contains a release pipeline and a Git repo
 
 **When a new code revision is committed to the repository, a build and release is triggered.**
 
-You need to ensure that release information for the pipeline is added automatically to the work items associated to the Git commit.
+You need to ensure that **release information for the pipeline is added automatically to the work items associated to the Git commit.**
 
 
 What should you do?
@@ -26978,7 +26978,7 @@ Why the other options are incorrect
 **D. Tiller**
 
 
-### Question-57 💩💩
+### Question-57 💩
 
 **You plan to use Terraform to deploy an Azure resource group from a Windows system.**
 
@@ -27052,8 +27052,7 @@ Correct approach
 
 
 
-### Question-59 💩
-
+### Question-59 
 
 You have a policy stating that approvals must occur within eight hours.
 
@@ -27217,7 +27216,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Implement a feature flag**
 
 
-### Question-63 💩💩
+### Question-63 💩
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27263,7 +27262,7 @@ Why the other options are incorrect
 
 
 
-### Question-64 💩
+### Question-64 
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27315,7 +27314,7 @@ This ensures that all devices in the private distribution group—both previousl
 
 
 
-### Question-65 💩💩💩
+### Question-65 💩💩
 
 Your company has an **<mark>on-premises Bitbucket Server that is used for Git-based source control</mark>**. 
 
