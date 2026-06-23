@@ -27402,13 +27402,15 @@ NOTE: Each correct selection is worth one point.
 
 The correct answers are: **A. authorization credentials** and **D. the organization URL** ✅✅
 
+**For unattended agent configuration, the script must at least include credentials and the organization URL so the agent can register automatically.**
+
 Explanation
 
 When you deploy an **Azure DevOps self-hosted agent** using an **unattended (non-interactive) configuration script**, you must provide the following key information so the agent can register with Azure DevOps:
 
-**Authorization credentials (A)**
+<mark>**Authorization credentials (A)**</mark>
 
-* Typically a **personal access token (PAT)**.
+* <mark>Typically a **personal access token (PAT)**.</mark>
 * This allows the agent to authenticate to Azure DevOps and communicate securely with the organization.
 
 
@@ -27434,7 +27436,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-67 💩💩
+### Question-67 💩
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27487,7 +27489,7 @@ Why the other options are incorrect
 ✅ **Answer: B. batch changes**
 
 
-### Question-68 💩💩
+### Question-68 💩
 
 You are using GitHub as a source code repository.
 
@@ -27593,7 +27595,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩💩💩
+### Question #70 💩💩💩💩
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -27708,7 +27710,7 @@ configuration RequiredFeatures
 
 
 
-### Question-71 - Duplicated 💩
+### Question-71 - Duplicated 
 
 You have a private distribution group that contains provisioned and unprovisioned devices.
 
@@ -27750,7 +27752,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Register the devices on the Apple Developer portal**
 
 
-### Question-72 💩
+### Question-72
 
 
 Your company uses Azure Artifacts for package management.
@@ -27797,7 +27799,7 @@ Why the other options are incorrect
 ✅ **Answer: B. PyPI**
 
 
-### Question-73 💩💩💩
+### Question-73 💩💩
 
 You have a GitHub repository that contains workflows. **The workflows contain steps that execute predefined actions. Each action has one or more versions.**
 
@@ -27887,27 +27889,33 @@ What **advanced feature of a monitoring tool** should you include in the solutio
 
 The correct answer is: **A. analytics** ✅
 
+> To parse logs from multiple pipelines and identify root causes, the **analytics** feature of a monitoring tool is required.
+
+
 Explanation
 
 The scenario:
 
 * You have **multiple Azure pipelines**.
 * Requirement:
-  1. **Parse logs from multiple sources** (build logs, release logs, errors).
-  2. **Identify the root cause of issues**.
+
+1. **Parse logs from multiple sources** (build logs, release logs, errors).
+2. **Identify the root cause of issues**.
 
 
 Why **analytics** is the right choice
 
-* **Analytics** in monitoring tools (like **Azure Monitor / Application Insights**) allows you to:
-  * Collect and **aggregate logs** from multiple sources.
-  * Perform **queries and correlation** across pipelines, builds, and releases.
-  * **Detect patterns** and help determine the **root cause** of failures.
+**Analytics** in monitoring tools (like **Azure Monitor / Application Insights**) allows you to:
+
+* Collect and **aggregate logs** from multiple sources.
+* Perform **queries and correlation** across pipelines, builds, and releases.
+* **Detect patterns** and help determine the **root cause** of failures.
 
 * Example features:
-  * Kusto Query Language (KQL) queries for logs.
-  * Correlation of errors across pipelines.
-  * Trend analysis and dashboards.
+
+* Kusto Query Language (KQL) queries for logs.
+* Correlation of errors across pipelines.
+* Trend analysis and dashboards.
 
 Why the other options are incorrect
 
@@ -27974,7 +27982,7 @@ Why the other options are incorrect
 ✅ **Answer: C. the application ID, a client secret, and the tenant ID**
 
 
-### Question-76 💩💩
+### Question-76 💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -28029,7 +28037,7 @@ Why the other options are incorrect
 ✅ **Answer: D**
 
 
-### Question-77 💩
+### Question-77
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -28091,7 +28099,7 @@ Why the other options are incorrect
 ✅ **Answer: D. modifier**
 
 
-### Question-78 💩
+### Question-78 
 
 
 You have a project in Azure DevOps named Project1.
@@ -28164,7 +28172,7 @@ Why the other options are incorrect
 ✅ **Answer: C. a YAML template**
 
 
-### Question-79 💩
+### Question-79 
 
 You use Azure DevOps processes to build and deploy code.
 
@@ -28226,7 +28234,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 💩💩💩💩
+###  Question-80 💩💩💩
 
 You have a project in Azure DevOps named Project1.
 
@@ -28290,10 +28298,9 @@ Why the other options are incorrect
 
 ### Question-81  💩💩
 
-
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
 
-**You need to ensure that all comments on pull requests are resolved before the pull requests are included in a build.**
+**You need to ensure that all comments on pull requests are resolved before the pull requests are <mark>included in a build.**</mark>
 
 The solution must minimize administrative effort.
 
@@ -28341,7 +28348,7 @@ Why the other options are incorrect
 ✅ **Answer: C. a branch policy**
 
 
-### Question-82  💩💩
+### Question-82  💩
 
 You have a project in Azure DevOps named Project. 
 
@@ -28419,7 +28426,7 @@ Why the other options are incorrect
 ✅ **Answer: D. Create two container jobs**
 
 
-### Question-83 💩
+### Question-83 
 
 
 You have an app named App1 that you release by using Azure Pipelines. 
@@ -28475,8 +28482,7 @@ Why other options are incorrect:
 *   **C. 3.5.0:** This would indicate a new feature (Minor increment) on an old Major version (3), which contradicts having already moved to version 4.0.0.
 
 
-### Question-84 💩
-
+### Question-84 
 You are automating the testing process for your company.
 
 **You need to automate UI testing of a web application.**
