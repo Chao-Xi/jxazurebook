@@ -212,7 +212,7 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
-### Question 6 💩💩💩
+### Question 6 💩💩
 
 You intend to manage the build and release processes using Azure DevOps. 
 
@@ -695,7 +695,7 @@ Why the other options are incorrect
 
 
 
-### Question -15 💩💩
+### Question -15 💩
 
 You scan a Node.js application using WhiteSource Bolt. 
 
@@ -713,6 +713,10 @@ Which of the following is a command you should run?
 ------
 
 > Correct Answer: **C. npm install**
+
+```
+npm install --production
+```
 
 The correct answer is:
 
@@ -904,7 +908,7 @@ Correct terminology:
 ✅ **Final answer: C. Deployment**
 
 
-### Question -19 💩
+### Question -19
 
 You are preparing to deploy an Azure resource group via Terraform.
 
@@ -939,7 +943,7 @@ Why the other options are incorrect:
 
 You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
 
-### Question -20 💩💩
+### Question -20 💩
 
 You want to use a solitary feed to release several builds of each package. 
 
@@ -1157,7 +1161,7 @@ You are preparing a deployment solution that
 
 **allows for the virtual machines to maintain a uniform configuration, and also keep administrative effort with regards to configuring the virtual machines to a minimum.**
 
-Which of the following should be part of your solution? (Choose two.)
+Which of the following should be part of your solution? (**Choose two**.)
 
 
 A. Azure Resource Manager templates
@@ -1394,7 +1398,7 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -28 💩💩💩
+### Question -28 💩💩
 
 You manage an Azure web app that supports an e-commerce website. 
 
@@ -1460,13 +1464,13 @@ Architecture Flow:
 
 ✅ **Final answer: A and B**
 
-### Question - 29 💩💩
+### Question - 29 💩
 
 You have recently created a web application for your company.
 
 You have been tasked with making sure that a **summary of the exceptions that transpire in the application is automatically sent to Microsoft Teams on a daily basis**.
 
-Which of the following Azure services should you use? Answer by dragging the correct two options from the list to the answer area.
+Which of the following Azure services should you use? Answer by dragging the **correct two options** from the list to the answer area.
 
 Select and Place:
 
@@ -1508,7 +1512,7 @@ Explanation
 - **Azure Logic Apps**
 - **Azure Application Insights**
 
-### Question -30. 💩💩💩💩
+### Question -30. 💩💩💩
 
 **You are in the process of building a mobile app aimed at Android and iOS devices.**
 
