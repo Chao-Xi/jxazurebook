@@ -19881,7 +19881,7 @@ When using **Helm v2 with RBAC-enabled AKS**:
 2. Initialize Helm (Tiller)
 3. Install the chart
 
-### Question #3 💩💩
+### Question #3 💩
 
 You are implementing an Azure DevOps strategy for mobile devices using App Center. 
 
@@ -19962,7 +19962,7 @@ Select and Place:
 
 
 
-### Question #4 💩💩
+### Question #4
 
 
 You need to create deployment files for an Azure Kubernetes Service (AKS) cluster. 
@@ -20227,7 +20227,7 @@ git tag -a v3.0 -m "Release v3.0"
 Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
 
 
-### Question #7 💩
+### Question #7 💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -20358,7 +20358,7 @@ Deploying ARM templates via Azure DevOps follows:
 > **Pipeline → Deployment task → Configure parameters** 🚀
 
 
-### Question #9 💩
+### Question #9
 
 You are configuring a release pipeline in Azure DevOps as shown in the exhibit.
 
@@ -20518,7 +20518,7 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Agent-based deployment targets 🚀
 
 
-### Question-11 💩💩💩
+### Question-11 💩💩
 
 
 You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20684,8 +20684,8 @@ The solution must minimize development effort.
 
 What should you do?
 
-* A. Create a feed view named @release and set @release as the default view. After the pm packages test successfully, configure a release pipeline that promotes a package to the @release view.
-* B. Create a feed view named @release and set @release as the default view. Affer the npm packages test successfully, configure a release pipeline that tags the packages as release.
+* A. Create a feed view named @release and set @release as the default view. After the pm packages test successfully, **configure a release pipeline that promotes a package to the @release view**.
+* B. Create a feed view named @release and set @release as the default view. Affer the npm packages test successfully, configure **a release pipeline that tags the packages as release.**
 * C. Create a feed view named @default. After the nom packages test successfully configure a release pipeline that tags the packages as release.
 * D. Create a feed view named @default. After the npm packages test successfully, configure a release pipeline that promotes a package to the @default view
 
@@ -20888,7 +20888,7 @@ For staging environments that **minimize cost, use custom templates, and can be 
 ✅ **Answer: D**
 
 
-### Question-16 💩
+### Question-16
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -20976,7 +20976,7 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #18 💩💩💩
+### Question #18 💩💩
 
 
 You use Azure Pipelines to manage the build and deployment of apps.
@@ -21126,7 +21126,7 @@ To associate an automated test with a test case in Azure DevOps:
 To link automated tests:
 
 
-### Question #20 💩💩
+### Question #20 💩💩💩
 
 You have an Azure Kubernetes Service (AKS) cluster.
 
@@ -21167,6 +21167,8 @@ Select and Place:
 ❌ **Create a service account in the cluster** → optional; not required when using service principal + RBAC
 
 
+> **Authenticate (SPN) → Authorize (RBAC) → Deploy (Helm)** 🚀
+
 🔍 Explanation
 
 🟦 1. Create a service principal in Azure AD
@@ -21200,9 +21202,8 @@ Select and Place:
 
 AKS deployment via Azure DevOps follows:
 
-> **Authenticate (SPN) → Authorize (RBAC) → Deploy (Helm)** 🚀
 
-### Question #21 💩💩💩💩
+### Question #21 💩💩💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21267,7 +21268,7 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #22 💩💩💩💩
+### Question #22 💩💩💩
 
 
 You have a free tier of an Azure DevOps organization named Contoso. 
@@ -21412,7 +21413,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 **B. a DACPAC**
 
 
-### Question #24  💩💩💩
+### Question #24  💩💩
 
 You have a project in Azure DevOps.
 
@@ -21529,7 +21530,7 @@ Enables use of functions like:
 
 
 
-### Question #25 💩💩💩💩
+### Question #25 💩💩💩
 
 You are developing an iOS application by using Azure DevOps.
 
@@ -21660,7 +21661,7 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #27 💩💩💩
+### Question #27 💩💩
 
 You have an Azure virtual machine named VM1 that runs Linux.
 
@@ -21714,7 +21715,7 @@ By default, in many hardened Linux environments, permissions are restricted.
 
 Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28 💩💩💩
+### Question #28 💩💩💩💩
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21791,7 +21792,7 @@ To list Azure resources with details:
 > Use **Get-AzResource + -ResourceType + -ExpandProperties** 🚀
 
 
-### Question-29 💩💩
+### Question-29 💩
 
 You have a project in Azure DevOps. 
 
@@ -21843,7 +21844,7 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #30  💩💩💩💩
+### Question #30  💩💩💩
 
 You use GitHub for source control of .NET applications.
 
@@ -21926,7 +21927,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #31  💩💩💩
+### Question #31  💩💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -22040,7 +22041,7 @@ ConfigurationModeFrequencyMins = 60
 ✔ Discrepancy is detected and logged
 
 
-### Question #32 💩💩💩
+### Question #32 💩💩💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -22088,7 +22089,7 @@ performanceCounters
 💡 Key takeaway
 
 * **bin() → controls time granularity**
-* **timechart → best for time-series visualization** 🚀
+* <mark>**timechart → best for time-series visualization</mark>** 🚀
 
 🔍 Explanation
 
@@ -22128,7 +22129,7 @@ performanceCounters
 
 
 
-### Question #33  💩💩💩💩
+### Question #33  💩💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -22203,7 +22204,7 @@ DSC always follows:
 > **Configuration → Node → Resource** 🚀
 
 
-### Question #34 💩💩
+### Question #34 💩
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -22263,7 +22264,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #35 💩💩💩💩💩
+### Question #35 💩💩💩💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22315,6 +22316,10 @@ AppEvents
 | where NumberOfClicks >= 3
 | top 10 by NumberOfClicks desc
 ```
+
+<mark>Filter → Aggregate → Filter → Sort/Top 🚀</mark>
+
+
 
 ---
 
@@ -22406,6 +22411,20 @@ NOTE: Each correct selection is worth one point.
 1. **The setting that must be changed:** ✔ **Deployment mode**
 2. **Pipeline1 will retrieve the ARM template from:** ✔ **output of the continuous integration build**
 
+
+ 🎯 Final Answer
+
+* **Deployment mode**
+* **output of the continuous integration build**
+
+💡 Key takeaway
+
+* **Complete mode = destructive (avoid unless intentional)**
+* **Incremental mode = safe updates**
+* **Linked artifact = CI pipeline output** 🚀
+
+
+
  🔍 Explanation
 
 🟦 1. Deployment mode
@@ -22445,17 +22464,6 @@ NOTE: Each correct selection is worth one point.
 
 * **Linked artifact variable** → indirect; actual source is CI output
 
- 🎯 Final Answer
-
-* **Deployment mode**
-* **output of the continuous integration build**
-
-💡 Key takeaway
-
-* **Complete mode = destructive (avoid unless intentional)**
-* **Incremental mode = safe updates**
-* **Linked artifact = CI pipeline output** 🚀
-
 ### Question #37 💩💩💩💩
 
 You have an Azure Pipeline.
@@ -22494,7 +22502,7 @@ Here are the four correct scopes for defining variables in Azure Pipelines, arra
 *(Note: **task** is the distractor. While you can map variables to task inputs or environments, you do not declare variable blocks at the task scope in Azure Pipelines.)*
 
 
-### Question #38 💩
+### Question #38 
 
 You have a project in Azure DevOps named Project1 that contains **two environments named environment1 and environment2.**
 
@@ -22537,7 +22545,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #39 💩💩💩
+### Question #39 💩💩
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22578,7 +22586,7 @@ Here is the content extracted from the image, formatted as markdown:
 💡 Key takeaway
 
 * **Major → breaking changes**
-* **Minor → new features / deprecations**
+* <mark>**Minor → new features / deprecations**</mark>
 * **Patch → bug fixes only** 🚀
 
 
@@ -22618,7 +22626,7 @@ Here is the content extracted from the image, formatted as markdown:
 
 
 
-### Question #40 💩💩
+### Question #40 💩
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -22853,7 +22861,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩💩💩💩💩
+### Question #43 💩💩💩💩
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
@@ -22889,6 +22897,9 @@ NOTE: More than one order of answer choices is correct. You will receive credit 
 1. **Create a personal access token (PAT).**
 2. **Create a query that retrieves the feature and bug fix information.**
 3. **Create a PowerShell task in ReleaseP1 that writes the retrieved data to a markdown file.**
+
+
+❌ * <mark>**Service principal** → used for Azure resources, not Azure DevOps data</mark>
 
 🔍 Explanation
 
