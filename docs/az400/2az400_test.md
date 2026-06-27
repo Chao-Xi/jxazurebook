@@ -12277,7 +12277,7 @@ This task describes the sequence for configuring a **GitHub Actions workflow (Wo
 
 ## Topic 6 - Question Set 6
 
-### Question #1 💩
+### Question #1 
 
 Your company has 60 developers who are assigned to four teams. Each team has 15 members.
 
@@ -12366,7 +12366,7 @@ Key Principle
 
 Retrospectives should be **safe, blameless, and team-focused**, encouraging collaboration and continuous improvement.
 
-### Question #3 💩
+### Question #3 
 
 You have a build pipeline in Azure Pipelines.
 
@@ -12408,7 +12408,7 @@ Flow Summary
 3. Configure it to trigger on build events and post to `#Development`
 
 
-### Question #4 💩💩
+### Question #4 💩
 
 Your company uses Azure DevOps for Git source control.
 
@@ -12466,7 +12466,7 @@ Hot Area:
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #5 💩💩💩
+###  Question #5 💩💩
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
@@ -12570,7 +12570,7 @@ Why the other URIs are incorrect
 * `https://login.microsoftonline.com/tenant1` and `https://login.microsoftonline.com/tenant1.com` are Azure AD endpoints, not GitHub SAML endpoints, so they are not used in these fields.
 
 
-### Question - 7 💩
+### Question - 7
 
 You manage a project by using Azure Boards. You manage the project code by using GitHub.
 
@@ -12875,7 +12875,7 @@ Key Point
 Use **Successor/Predecessor links** to model dependencies between work items in Azure Boards.
 
 
-### Question #13 💩
+### Question #13 
 
 You manage projects by using Azure Boards.
 
@@ -12923,7 +12923,7 @@ Key Point
 Use **Successor/Predecessor** links to correctly model dependencies between work items.
 
 
-### Question #14 💩
+### Question #14 
 
 You have the services shown in the following table.
 
@@ -12968,9 +12968,7 @@ Key Point
 
 So, both services can be notified.
 
-### Question #15 💩💩
-
-
+### Question #15 💩
 
 You are using Agile process methodologies and Azure Boards in Azure DevOps.
 
@@ -13030,7 +13028,7 @@ Key Insight
 * **Board includes:** Active, Resolved, Completed
 * **Completed items are removed from backlog view** but still visible on boards for tracking
 
-### Question #16 💩
+### Question #16 💩💩
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. 
 
@@ -13175,7 +13173,7 @@ Key Point
 * Link manually via the **Development section** in Azure Boards
 
 
-### Question #19 💩💩💩
+### Question #19 💩💩
 
 
 You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. 
@@ -13227,7 +13225,7 @@ Key Point
 The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
 
 
-### Question #20 💩
+### Question #20
 
 You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
 
@@ -13285,7 +13283,7 @@ This will:
 
 
 
-### Question #21 💩💩💩💩
+### Question #21 💩💩💩
 
 HOTSPOT -
 
@@ -13473,7 +13471,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-24 💩
+### Question-24
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13523,7 +13521,7 @@ Final Answer:
 
 **B. No** ❌
 
-### Question #25 -duplicated  💩💩
+### Question #25 -duplicated  💩
 
 
 You have a GitHub repository named repo1 and an Azure key vault named kv1.
@@ -13573,7 +13571,7 @@ So the answer is:
 
 This is the standard pattern for GitHub Actions + Azure Key Vault integration.
 
-### Question #26   💩💩
+### Question #26   💩
 
 You have an Azure DevOps organization that contains a project named Project1. 
 
@@ -13611,7 +13609,7 @@ Why other options are incorrect:
 *   **B (Pipeline):** While you can use a pipeline to automate documentation, it is not a requirement to create or publish a wiki.
 *   **D (Team configuration):** This handles area paths, iterations, and team members, not documentation storage.
 
-### Question-27 💩💩
+### Question-27 💩
 
 You manage a project by using Azure Board, and you manage the project code by using Azure Repos.
 
@@ -13764,7 +13762,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩💩💩💩
+### Question #31 💩💩💩💩💩
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13818,7 +13816,7 @@ Final Answer
 
 
 
-### Question-32 💩
+### Question-32
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13834,6 +13832,8 @@ Does this meet the goal?
 ----
 
 **Correct answer: B. No** ❌
+
+Service hook (webhook)	✅ Yes
 
 Explanation
 
@@ -13863,12 +13863,12 @@ Final Answer:
 **B. No** ❌
 
 
-### Question-33 💩💩
+### Question-33 💩🐣🐣
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
-You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.
+<mark>You need Azure DevOps to send a notification to Jenkins when a developer commits changes to a branch in Azure Repos.</mark>
 
 Solution: **You create a service hook subscription that uses the code pushed event.**
 
@@ -13906,7 +13906,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-34 💩
+### Question-34 💩💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13985,11 +13985,11 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩
+### Question-36  💩💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
-You need to simplity the project by using a single feed that stores packages produced by your company and packages consumed from remote feeds. 
+You need to simplity the project by **using a single feed that stores packages produced by your company and packages consumed from remote feeds.**
 
 The solution must support public feeds and authenticated feeds.
 
@@ -14007,6 +14007,8 @@ What should you enable in DevOps?
 The correct answer is:
 
 **B. upstream sources** ✅
+
+❌ **C. Views in Azure Artifacts - 	Views allow controlling visibility of packages (e.g., pre-release vs release), not upstream sourcing.**
 
 Explanation
 
@@ -14039,7 +14041,7 @@ Final Answer:
 **B. upstream sources** ✅
 
 
-### Question-37 💩💩
+### Question-37 💩
 
 You plan to onboard 10 new developers.
 
@@ -14095,7 +14097,7 @@ Final Answer:
 
 
 
-### Question-38 💩💩💩
+### Question-38 💩💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
@@ -14199,7 +14201,7 @@ Final Answer:
 **C. In Project1, create an Azure DevOps repository** ✅
 
 
-### Question-40 💩
+### Question-40
 
 Your company plans to use an agile approach to software development.
 
@@ -14302,7 +14304,7 @@ Final Answer:
 **D. Slack** ✅
 
 
-### Question-42 💩💩
+### Question-42 💩
 
 
 You are designing a YAML template for use with Azure Pipelines. **The template will include the outputfile parameter.**
@@ -14406,7 +14408,7 @@ Final Answer:
 
 
 
-### Question-44  💩💩💩💩💩
+### Question-44  💩💩💩💩
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14505,7 +14507,7 @@ Final Answer:
 
 
 
-### Question-46  💩💩💩💩
+### Question-46  💩💩💩
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
@@ -14599,7 +14601,7 @@ Final Answer:
 **D and E** ✅
 
 
-### Question-48 💩
+### Question-48
 
 You have a GitHub repository that is integrated with Azure Boards. 
 
@@ -14694,7 +14696,7 @@ If you'd like, I can also explain when to use **lead time vs cycle time** — it
 
 
 
-### Question-50  💩
+### Question-50 
 
 You manage code by using GitHub.
 
@@ -14751,7 +14753,7 @@ If you'd like, I can also provide a sample `CODEOWNERS` file for securing GitHub
 
 
 
-### Question-51  💩💩
+### Question-51  💩
 
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
