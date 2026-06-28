@@ -5251,7 +5251,7 @@ To entirely remove unwanted files from a repository's history you can use either
 
 ## Topic 4 - Question Set 4
 
-### Question #1 💩💩
+### Question #1 💩
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -5284,7 +5284,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩
+### Question #2 💩💩💩
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5321,8 +5321,9 @@ Why this is correct
 
 The **Azure Key Vault task** in **Azure Pipelines**:
 
-* Retrieves secrets securely from **Azure Key Vault** at runtime.
-* Prevents secrets from being stored in:
+Retrieves secrets securely from **Azure Key Vault** at runtime.
+
+Prevents secrets from being stored in:
 
   * pipeline YAML
   * scripts
@@ -5398,7 +5399,7 @@ Why the other option is incorrect
 ✅ **Final Answer: B. Get only**
 
 
-### Question #4 💩
+### Question #4 💩💩
 
 Your company has a project in Azure DevOps.
 
@@ -5424,7 +5425,7 @@ Correct configuration
 
 | Requirement                                              | Configuration                          |
 | -------------------------------------------------------- | -------------------------------------- |
-| **Enable key vaults for template deployment by using**   | **A Key Vault advanced access policy** |
+| **<mark>Enable key vaults for template deployment by using</mark>**  | **<mark>A Key Vault advanced access policy</mark>** |
 | **Restrict access to the secrets in Key Vault by using** | **A Key Vault access policy**          |
 
 Explanation
@@ -5448,7 +5449,7 @@ Although **Azure role-based access control** can control resource permissions, *
 * Enable key vaults for template deployment → **A Key Vault advanced access policy**
 * Restrict access to the secrets → **A Key Vault access policy**
 
-### Question #5 💩💩💩
+### Question #5 💩💩
 
 
 You need to configure access to Azure DevOps agent pools to meet the following requirements:
@@ -5504,7 +5505,7 @@ Project → **Service Account**
 * **Project:** Service Account
 
 
-### Question #6 💩💩
+### Question #6 💩
 
 Your company has an Azure subscription named Subscription1. Subscription1 is associated to an Azure Active Directory tenant named contoso.com.
 
@@ -5553,7 +5554,7 @@ Explanation
 3. **an RBAC binding**
 
 
-### Question #7 💩💩💩💩
+### Question #7 💩💩💩
 
 HOTSPOT You manage build and release pipelines by using Azure DevOps. Your entire managed environment resides in Azure.
 
@@ -5590,7 +5591,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 💩💩💩💩
+### Question #8 💩💩💩
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5632,12 +5633,12 @@ Why others are not included:
 *   **A. Configure RBAC:** While RBAC can be used for Key Vault data plane access, **Access Policy** (C) is the traditional and most common method used in these certification scenarios. You generally use one or the other for the specific task of secret retrieval.
 *   **D. DSC extension:** Desired State Configuration is used for configuring the operating system and software on the VM, but it is not a requirement for an application to communicate with Key Vault.
 
-### Question #9  💩💩💩💩
+### Question #9  💩💩💩💩💩
 
 
 **HOTSPOT -**
 
-Your company is creating a suite of three mobile applications.
+Your company is creating a suite of **three mobile applications**.
 
 You need to control access to the application builds. The solution must must be managed at the **organization level**.
 
@@ -5647,11 +5648,11 @@ NOTE: Each correct selection is worth one point.
 
 **Answer Area**
 
-*   **Groups to control the build access:**
+*   <mark>**Groups to control the build access:**</mark>
 
   * [**Dropdown**: Active Directory groups / Azure Active Directory groups / Microsoft Visual Studio App Center distribution groups]
 
-*   **Group type:**
+*   <mark>**Group type:**</mark>
 
   * [**Dropdown:** Private / Public / Shared]
 
@@ -5817,7 +5818,7 @@ Result
 
 
 
-### Question #12 💩💩💩💩💩
+### Question #12 💩💩💩💩
 
 
 You use GitHub Enterprise Server as a source code repository.
@@ -5860,7 +5861,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩
+### Question-13 💩💩💩💩
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -5905,7 +5906,7 @@ Once the Service Principal is created, you must go to the Azure Key Vault and cr
 
 Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
 
-### Question #14 💩
+### Question #14
 
 You have a private project in Azure DevOps and two users named User1 and User2.
 
@@ -5964,7 +5965,7 @@ The **Contributors** group is the standard group for team members who need to pe
 *   **Project Valid Users:** This is a system group that includes everyone in the project; it is not used to grant specific functional permissions like editing or creating wikis.
 
 
-### Question #15 💩💩💩💩💩
+### Question #15 💩💩💩💩
 
 You use WhiteSource Bolt to scan a Node.js application.
 
@@ -5997,7 +5998,9 @@ Explanation:
 
 1.  **Run `npm install --production` (A):** In a Node.js environment, this command ensures that only the packages listed under the `dependencies` section of your `package.json` are installed. It explicitly skips everything in the `devDependencies` section. This effectively "cleans" the build environment so that development-only libraries are physically absent from the disk.
 
-2.  **Configure WhiteSource Bolt to scan the `node_modules` directory only (D):** By default, WhiteSource Bolt scans the entire project directory, including manifest files like `package.json`. Even if you didn't install the dev dependencies, the scanner might still "see" them listed in the `package.json` file and report them as risks. By directing the scanner to look **only** at the `node_modules` folder, you force it to report on the actual files present on the disk. Since you only installed production dependencies in the previous step, only those will be scanned.
+2.  **Configure WhiteSource Bolt to scan the `node_modules` directory only (D):** By default, WhiteSource Bolt scans the entire project directory, including manifest files like `package.json`.
+
+  * Even if you didn't install the dev dependencies, the scanner might still "see" them listed in the `package.json` file and report them as risks. By directing the scanner to look **only** at the `node_modules` folder, you force it to report on the actual files present on the disk. Since you only installed production dependencies in the previous step, only those will be scanned.
 
 Why other options are incorrect:
 
@@ -6005,7 +6008,7 @@ Why other options are incorrect:
 *   **C (Modify devDependencies):** The prompt states the libraries are already identified as development-only. Modifying the `package.json` file to move them wouldn't change the scanner's behavior unless you also performed the production-only install and targeted scan.
 
 
-### Question #16 💩💩
+### Question #16 💩
 
 After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
 
@@ -6018,7 +6021,7 @@ You need to identify the following issues as they occur during the company's dev
 ✑ Prohibited libraries 
 
 
-Solution: You implement continuous integration.
+<mark>Solution: You implement continuous integration.</mark>
 
 Does this meet the goal?
 
@@ -6042,7 +6045,7 @@ A standard CI pipeline is designed to automate the building and testing of code.
 Without the specific scanning tool, the CI pipeline will successfully build the application but will remain unaware of any legal or policy risks within the third-party dependencies.
 
 
-### Question #17 💩💩💩
+### Question #17 💩💩
 
 Your company has an Azure subscription.
 
@@ -6122,7 +6125,7 @@ The **Append** effect is used to add fields to a resource during creation or upd
 *   **Why not Deny?** While `Deny` would stop a user from creating a group without the tag, it does not use the `"details"` block shown in the snippet.
 *   **Why not DeployIfNotExists?** This effect is used for deploying complex sub-resources or configurations via ARM templates (like enabling a diagnostic setting) and requires a much more extensive `details` block including role IDs and deployment templates.
 
-### Question #18  💩
+### Question #18 
 
 **You need to configure GitHub to use Azure Active Directory (Azure AD) for authentication**. What should you do first?
 
@@ -6147,7 +6150,7 @@ To configure Single Sign-On (SSO) between GitHub and Azure Active Directory (now
     *   The **Login URL**.
     *   The **Azure AD Identifier (Entity ID)**.
 2.  **Why not D (Modify GitHub settings):** You cannot complete the security settings in GitHub until you have the URLs and the certificate generated by the Azure AD registration process. 
-3.  **Why not A (Conditional Access):** Conditional Access policies are applied to an existing application registration to enforce rules (like MFA). You must register the app before you can apply a policy to it.
+3.  **<mark>Why not A (Conditional Access):** Conditional Access policies are applied to an existing application registration to enforce rules (like MFA). You must register the app before you can apply a policy to it</mark>.
 4.  **Why not C (Azure AD B2C):** B2C is used for consumer-facing applications. Standard organizational integration uses a standard Azure AD tenant.
 
 **The standard workflow is:**
@@ -6189,7 +6192,7 @@ Why the other options are incorrect:
 *   **C. Deployment trigger:** Triggers (like "Continuous Deployment" or "Scheduled") determine *when* a release starts, but they do not perform security or compliance checks.
 *   **D. Pipeline variable:** Variables simply store data (like connection strings or environment names); they do not have the logic to enforce compliance rules.
 
-### Question #20 💩
+### Question #20
 
 You have an Azure Kubernetes Service (AKS) implementation that is RBAC-enabled.
 
@@ -6286,7 +6289,7 @@ Conclusion
 ✅ **Correct Answer: B. Contributor**
 
 
-### Question #22 💩💩💩💩
+### Question #22 💩💩💩
 
 ![Alt Image Text](../images/az400_2_39.png)
 
@@ -6321,7 +6324,7 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
   *   <mark>In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.</mark>
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #23 💩💩💩💩
+### Question #23 💩💩💩💩💩
 
 
 You are implementing a package management solution for a Node.js application by using Azure Artifacts.
@@ -6409,8 +6412,7 @@ Explanation:
 *   **A deployment task** is too late in the process; security scanning should happen during the build (CI) phase to "shift left" security.
 
 
-### Question #25 💩💩💩💩
-
+### Question #25 💩💩💩💩💩
 
 You plan to use Azure Kubernetes Service (AKS) to host containers deployed from images hosted in a Docker Trusted Registry.
 
@@ -6509,7 +6511,7 @@ To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restri
     - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
 
 
-### Question #27 💩💩💩
+### Question #27 💩💩
 
 You need to increase the security of your team's development process.
 
@@ -6569,7 +6571,7 @@ Think of the flow:
 * **After deploy (CD)** → *Attack/test system*
 
 
-### Question #28 💩💩💩
+### Question #28 💩💩
 
 You plan to use a NuGet package in a project in Azure DevOps. 
 
@@ -6589,7 +6591,7 @@ D. an Azure Active Directory (Azure AD) service principal
 
 -----------
 
-B. an Azure Artifacts Credential Provider ✅
+<mark>B. an Azure Artifacts Credential Provider</mark> ✅
 
  🧠 Exam tip
 
@@ -6681,7 +6683,7 @@ Whenever you see:
 **A. Third-party application access via OAuth**
 
 
-### Question #30 💩💩
+### Question #30 💩
 
 You have an existing project in Azure DevOps.
 
@@ -6734,7 +6736,7 @@ Evaluation of options
 
 
 
-### Question #31 💩💩💩
+### Question #31 💩💩
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -6794,7 +6796,7 @@ Whenever you see **Azure Monitor + CMK**, think:
 
 
 
-### Question #32 💩💩
+### Question #32 💩
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
@@ -6887,7 +6889,7 @@ Final Answer:
 
 
 
-### Question-34  💩💩
+### Question-34  💩
 
 You are building a Microsoft ASP.NET application that requires authentication.
 
@@ -6953,7 +6955,7 @@ Answer: B
 
 
 
-### Question #35. 💩
+### Question #35 
 
 You need to deploy a new project in Azure DevOps that has the following requirements:
 
@@ -7071,7 +7073,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 💩💩
+### Question-37 💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -7100,11 +7102,11 @@ PATs meet **both requirements**:
 
 ✅ Supports authentication from Git
 
-* PATs are fully supported for:
+PATs are fully supported for:
 
-  * `git clone`
-  * `git pull`
-  * `git push`
+* `git clone`
+* `git pull`
+* `git push`
     
 * They replace passwords for Git operations in Azure DevOps.
 
@@ -7147,7 +7149,7 @@ Answer: A
 
 Personal access tokens (PATs) give you access to Azure DevOps and Team Foundation Server (TFS), without using your username and password directly.
 
-### Question-38 💩💩
+### Question-38 💩
 
 You have an application that consists of several Azure App Service web apps and Azure functions.
 
@@ -7210,7 +7212,7 @@ Final Answer:
 
 Monitor compute and app services: Compute & apps include the App Services tab, which App services: list of your App service environments and current security state of each.
 
-### Question-39 💩
+### Question-39
 
 You have a branch policy in a project in Azure DevOps. 
 
@@ -7342,7 +7344,7 @@ When you need to pass a secure value (like a password) as a parameter during dep
 You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault ID. The key vault can exist in a different subscription than the resource group you are deploying to.
 
 
-### Question-41 💩
+### Question-41 
 
 You have an Azure DevOps organization named Contoso that contains a project named Project1.
 
@@ -7401,11 +7403,7 @@ Final Answer:
 
 **C. Create a variable group in Project1** ✅
 
-
-Answer: D
-
-
-### Question #42 💩💩💩
+### Question #42 💩💩
 
 Your company has a project in Azure DevOps named Project1.
 
@@ -7519,7 +7517,7 @@ Final Answer:
 **D. In Azure Active Directory, configure conditional access.** ✅
 
 
-### Question-44 💩 - Duplicated 
+### Question-44 - Duplicated 
 
 You have the following Azure policy.
 
@@ -7618,7 +7616,7 @@ Final Answer:
 **B. ensures that all traffic to new Azure Storage accounts is encrypted** ✅
 
 
-### Question-45  💩
+### Question-45
  
 You have an Azure DevOps organization named Contoso, an Azure DevOps project named Project, an Azure subscription named Sub1, and an Azure key vault named vault1.
 
@@ -7682,7 +7680,7 @@ Answer: A
 
 Use a variable group to store values that you want to control and make available across multiple pipelines.
 
-### Question #46 💩
+### Question #46
 
 You have an Azure subscription that contains an Azure key vault named Vault1, an Azure pipeline named Pipeline1, and an Azure SQL database named DB1.
 
@@ -7798,7 +7796,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-48. 💩💩
+### Question-48. 💩
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -8009,7 +8007,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩💩💩💩
+### Question #51  💩💩💩💩
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8110,7 +8108,7 @@ Final Answer:
 **C. Black Duck** ✅
 
 
-### Question #53 💩💩
+### Question #53 💩
 
 You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
 
@@ -8163,7 +8161,7 @@ If it says:
 * **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-54 💩💩💩
+### Question-54 💩💩
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -8202,7 +8200,7 @@ Why other options are incorrect:
 Answer. C
 
 
-### Question #55 💩💩💩
+### Question #55 💩💩
 
 DRAG DROP -
 
@@ -8305,7 +8303,7 @@ There are several versions of this question in the exam. The question has fwo po
 2. White Source Bolt
 
 
-### Question #57  💩💩
+### Question #57  💩
 
 You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
 
@@ -8352,11 +8350,11 @@ If the question says:
 * **“open-source libraries” + “vulnerabilities”**  → Think **Mend Bolt (WhiteSource)**
 
 
-### Question #58  💩💩💩💩💩
+### Question #58  💩💩💩💩
 
 You manage code by using GitHub.
 
-You plan to use Dependabot to scan for code dependencies.
+<mark>You plan to use Dependabot to scan for code dependencies</mark>.
 
 **You need to identify when scanning will be triggered automatically.**
 
@@ -8464,7 +8462,7 @@ the Credential Provider will automatically acquire and securely store a token on
 
 
 
-### Question #60  💩💩
+### Question #60  💩
 
 ![Alt Image Text](../images/az400_2_40.png)
 
@@ -8541,7 +8539,7 @@ Final Answer:
 **A. Third-party application access via OAuth** ✅
 
 
-### Question #62 💩💩💩
+### Question #62 💩💩
 
 DRAG DROP -
 
@@ -8709,7 +8707,7 @@ Why the other options are incorrect:
 *   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
 *   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
-### Question-65 💩💩
+### Question-65 💩
 
 You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
 
@@ -8781,14 +8779,11 @@ Why the other options are wrong as the *first* step:
 All of these are **configuration steps after PIM is available**.
 
 
-
-
-
 Final Answer:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
 
-### Question #66 💩💩💩💩
+### Question #66 💩💩💩
 
 You have a GitHub repository that uses **GitHub Actions and stores access keys by using GitHub encrypted secrets.**
 
@@ -8840,7 +8835,7 @@ If you see:
 * **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
-### Question-67 💩💩💩💩
+### Question-67 💩💩💩
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -8856,6 +8851,8 @@ What should you recommend?
 - B. Store the secret in the repository-level GitHub secrets.
 - C. Encrypt the secret value and store the value in the repository. Store the decryption key in the repository-level Github secrets.
 - D. Encrypt the secret value and store the value in the repository. Store the decryption key in the organization-level GitHub secrets.
+
+--------------------------
  
 Answer: C
 
@@ -8883,7 +8880,7 @@ This recommendation is based on a specific technical limitation of GitHub Action
 
 Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
-### Question #68 💩💩💩💩
+### Question #68 💩💩💩
 
 You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the source code for App1.
 
@@ -8967,7 +8964,7 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 * **API-specific** → API Scan
 
 
-### Question-69 💩💩💩💩💩
+### Question-69 💩💩💩💩
 
 You have a GitHub Enterprise account.
 
@@ -9076,7 +9073,7 @@ If requirement says:
   → Think **branch policy + status check on main branch**
 
 
-### Question-71  💩
+### Question-71  💩💩
 
 You have an Azure subscription that contains four Azure virtual machines.
 
