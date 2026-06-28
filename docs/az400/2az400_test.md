@@ -10184,7 +10184,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩💩💩
+### Question-20  💩💩💩💩💩
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10219,11 +10219,12 @@ Azure Automation supports **source control integration** directly within the Aut
 When you configure **Source control settings** in the Automation account:
 
 * It links the Automation account to an Azure DevOps repository.
-* It can automatically:
 
-  * **Sync runbooks**
-  * **Update runbooks when changes are committed**
-  * **Publish runbooks automatically**
+It can automatically:
+
+* **Sync runbooks**
+* **Update runbooks when changes are committed**
+* **Publish runbooks automatically**
 
 This ensures:
 
@@ -10246,7 +10247,7 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question #21. 💩💩💩💩
+### Question #21. 💩💩💩
 
 You use Git for source control.
 
@@ -10299,7 +10300,7 @@ To fix this, you must ensure the code scanning workflow runs for the relevant br
 * **E**: Not necessary; you only need to adjust the existing workflow triggers.
 
 
-### Question #22 💩💩
+### Question #22 💩
 
 You have a GitHub repository named repo1 that stores the code of an app named App1.
 
@@ -10395,7 +10396,7 @@ To migrate a repository from GitHub to Azure Repos while preserving all branches
 3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration.
   * It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
 
-### Question #24 💩💩💩
+### Question #24 💩💩
 
 You have a GitHub repository that contains the code for an app named App1.
 
@@ -10442,7 +10443,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #25 💩💩💩
+### Question #25 💩💩
 
 You use Git for source control.
 
@@ -10503,7 +10504,7 @@ To optimize the performance of the Git repository by removing history that is no
     *   <mark>**gc (Garbage Collection):** This is the primary tool for optimizing the Git database. It identifies and removes "dangling" or unreachable objects (history not in any branch).</mark>
     *   **--prune=now:** By default, Git waits two weeks before actually deleting unreachable objects to prevent data loss. Specifying `now` tells Git to bypass the grace period and permanently delete the items immediately, fulfilling the requirement to optimize performance.
 
-### Question #26 💩💩
+### Question #26 💩
 
 You have an Azure Repos Git repository named repo1.
 
@@ -10548,7 +10549,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 
 **Note:** "Save the SSH key to the root of repo1" is incorrect and a severe security risk. You should never store your private or public keys inside a source code repository. "Add the SSH private key" is also incorrect; the private key is never uploaded to Azure DevOps.
 
-### Question #27 💩💩💩
+### Question #27 💩💩
 
 You use Git for source control.
 
@@ -10766,7 +10767,7 @@ git sparse-checkout set **[ src/web ]**
 3.  <mark>**`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders</mark>. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
 
 
-### Question #31 💩💩
+### Question #31 💩
 
 You use GitHub for source control and Microsoft Teams for collaboration.
 
@@ -10808,7 +10809,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #32 💩
+### Question #32
 
 You have a GitHub repository named repo1.
 
@@ -10947,7 +10948,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩💩💩💩
+### Question #34 💩💩💩💩
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11038,7 +11039,7 @@ git commit -m "track *.psd files using Git LFS"
 
 This ensures both **new and existing PSD files** are managed by Git LFS.
 
-### Question #35 💩💩
+### Question #35 💩
 
 You have a public GitHub repository named Public1.
 
@@ -11077,7 +11078,7 @@ When a commit in a public GitHub repository matches a known secret pattern (for 
 The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
 
 
-### Question #36 💩💩💩
+### Question #36 💩💩
 
 
 You have a GitHub repository.
@@ -11115,7 +11116,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩💩💩💩💩
+### Question #37  💩💩💩💩
 
 DRAG DROP -
 
@@ -11179,7 +11180,7 @@ Similar to the work item requirement, this is a native feature in Azure DevOps b
 
 
 
-### Question #38  💩 - Duplicated
+### Question #38  💩
 
 You manage projects by using Azure Boards. You manage project code by using GitHub.
 
@@ -11235,7 +11236,7 @@ Key Point
 * Use **`#AB<ID>`** in PRs/commits OR
 * Link manually via the **Development section** in Azure Boards
 
-### Question #39  💩💩💩💩
+### Question #39  💩💩💩
 
 DRAG DROP -
 
@@ -11358,7 +11359,7 @@ Key exam principle
 
 
 
-### Question-41 💩💩
+### Question-41 💩
 
 You manage source code control and versioning by using GitHub.
 
@@ -11459,7 +11460,7 @@ Why the others are wrong:
 
 
 
-### Question-43 💩💩  
+### Question-43 💩💩💩  
 
 You manage code by using GitHub.
 
@@ -11504,7 +11505,7 @@ This is exactly what the requirement describes:
 **B. Configure Dependabot alerts.**
 
 
-### Question-44 💩💩
+### Question-44 💩
 
 
 You have a 1-TB Azure Repos repository named repo1.
@@ -11555,7 +11556,7 @@ Final Answer:
 
 
 
-### Question-45 💩💩💩
+### Question-45 💩💩
 
 You use GitHub for source control.
 
@@ -11601,7 +11602,7 @@ Final Answer:
 **A and B** ✅
 
 
-### Question-46 💩💩
+### Question-46 💩
 
 You manage source code control and versioning by using GitHub.
 
@@ -11649,7 +11650,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩💩💩💩💩💩💩
+### Question #47  💩💩💩💩💩
 
 
 You have a GitHub repository.
@@ -11705,7 +11706,7 @@ This functionality is provided by Dependabot's **Version updates**. Regardless o
 *   **A dependency graph:** This is a tool to visualize your dependencies, not a feature that automates PR creation.
 
 
-### Question #48  💩💩💩💩
+### Question #48  💩💩💩
 
 You have a large repository named Repo1 that contains a directory named directory1.
 
@@ -11782,7 +11783,7 @@ git sparse-checkout set directory1
 Use **Scalar + sparse checkout** to **reduce data transfer and focus on a specific folder**.
 
 
-### Question #49 💩
+### Question #49
 
 You have a project in Azure DevOps.
 
@@ -11897,7 +11898,7 @@ Even though the question says “two actions,” the **only valid solution is Gi
 **B**
 
 
-### Question #51 💩💩💩💩
+### Question #51 💩💩💩
 
 You manage source control by using GitHub.
 
@@ -11977,7 +11978,7 @@ You use GitHub Enterprise for source control repositories.
 
 The repositories store C# code.
 
-You need to enable CodeQL scanning for the repositories.
+**You need to enable CodeQL scanning for the repositories**.
 
 What should you do?
 
@@ -12013,7 +12014,7 @@ To enable **CodeQL scanning** in GitHub Enterprise:
 
 CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
 
-### Question #53 💩💩💩
+### Question #53 💩💩💩💩
 
 HOTSPOT -
 
@@ -12061,7 +12062,7 @@ By adding this full URL to your `README.md` file using image syntax (e.g., `![Bu
 
 **Note:** While "Organization name" could be technically correct if the owner *is* an organization, "Repository owner" is the most accurate and universal term used in this context.
 
-### Question #54 💩💩
+### Question #54 💩
 
 You have a GitHub repository.
 
@@ -12108,7 +12109,7 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55  💩💩💩💩
+### Question #55  💩💩💩
 
 You have a GitHub repository.
 
@@ -12165,7 +12166,7 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56 💩💩💩
+### Question #56 💩💩💩💩
 
 
 You have a .NET app named App1.
@@ -12233,7 +12234,7 @@ dotnet nuget push "bin/Release/app1.1.0.0.nupkg" --api-key PAT_TOKEN --source "g
 
 Use **`dotnet nuget push`** to upload packages to **GitHub Packages**.
 
-### Question #57 💩- Duplicated 
+### Question #57 - Duplicated 
 
 You have a GitHub repository named repo1 and an Azure key vault named kv1.
 
