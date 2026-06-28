@@ -28727,7 +28727,7 @@ Based on the image provided, the two settings you should configure (click on) ar
 
 
 
-### Question 1
+### Question 2 💩💩💩
 
 You need to meet the technical requirements for controlling access to Azure DevOps. What should you use?
 
@@ -28753,14 +28753,15 @@ The requirement is:
 
 **Conditional Access (in Azure AD)** allows you to:
 
-* Restrict access based on:
+Restrict access based on:
 
-  * IP address ranges ✅
-  * Location
-  * Device compliance
-* Apply policies to:
+* IP address ranges ✅
+* Location
+* Device compliance
 
-  * Azure DevOps (as an Azure AD–integrated app)
+Apply policies to:
+
+* Azure DevOps (as an Azure AD–integrated app)
 
 👉 This is the **standard and recommended approach** for access control
 
@@ -28793,10 +28794,7 @@ The requirement is:
 
 **C. conditional access policies in Azure AD**
 
-### Question #2
-
-
-Question
+### Question #3 💩💩💩
 
 You need to configure Azure Pipelines to control App2 builds. Which authentication method should you use?
 
@@ -28822,11 +28820,13 @@ You need to:
 
 A **Personal Access Token (PAT)** is used to:
 
-* Authenticate Azure DevOps with:
+Authenticate Azure DevOps with:
 
-  * External tools
-  * Scripts
-  * APIs
+* External tools
+* Scripts
+* APIs
+
+
 * Provide **secure, scoped access**
 * Minimize administrative effort (as required)
 
@@ -28862,8 +28862,7 @@ A **Personal Access Token (PAT)** is used to:
 **D. personal access token (PAT)**
 
 
-### Question #3
-
+### Question #4 💩💩💩
 
 You need to configure authentication for App1. The solution must support the planned changes.
 
@@ -28943,11 +28942,16 @@ The requirement states:
 3. Configure the ID and secret for App1
 
 
-### Question #4
+### Question #5  💩💩💩
 
-Question
+| Number | Required data |
+| :--- | :--- |
+| 1 | A comparison between the work the development team planned to deliver and what was delivered |
+| 2 | The status of the environments in a release definition |
+| 3 | The total number of results from a work item query |
 
-DRAG DROP You are configuring the Azure DevOps dashboard. The solution must meet the technical requirements.
+
+You are configuring the Azure DevOps dashboard. The solution must meet the technical requirements.
 
 Which widget should you use for each metric? To answer, drag the appropriate widgets to the correct metrics. Each widget may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -28987,7 +28991,7 @@ To meet the technical requirements for the Woodgrove Bank dashboard, you should 
 3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
 
 
-### Question 5
+### Question 6 💩💩💩💩💩
 
 You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
 
@@ -29050,7 +29054,7 @@ It is designed for:
 **B. BACPAC**
 
 
-### Question 6
+### Question 7 💩💩💩
 
 You need to meet the technical requirements for monitoring App1. What should you use?
 
@@ -29118,9 +29122,9 @@ If you see:
 **B. Azure Application Insights**
 
 
-Question
+### Question 8 💩💩💩
 
-DRAG DROP You need to replace the existing DevOps tools to support the planned changes.
+You need to replace the existing DevOps tools to support the planned changes.
 
 What should you use? To answer, drag the appropriate tools to the correct targets. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -29220,9 +29224,7 @@ The goal is to **replace existing DevOps tools** with Azure DevOps + GitHub equi
 * Bamboo → **Azure Pipelines**
 * BitBucket → **GitHub repositories**
 
-### Question #2
-
-Question
+### Question #9
 
 You need to the merge the POC branch into the default branch. The solution must meet the technical requirements. Which command should you run?
 
@@ -29284,9 +29286,7 @@ D. git merge --allow-unrelated-histories
 **A. git rebase**
 
 
-### Question #2
-
-Question
+### Question #10 💩💩💩
 
 You need to perform the GitHub code migration. The solution must support the planned changes for the DevOps environment. What should you use?
 
@@ -29316,13 +29316,6 @@ To migrate source code from **TFS1 to GitHub** while minimizing administrative e
 *   **A. git clone:** This only works if the source is already a Git repository. It is a manual process that doesn't handle the migration of non-Git history (like TFVC) or metadata as seamlessly as a specialized importer.
 *   **C. Import repository in Azure Repos:** This tool is used to move code *into* Azure DevOps, but the requirement is to migrate the code *to GitHub*.
 *   **D. git-tfs:** While this is a powerful tool for converting Team Foundation Version Control (TFVC) to Git, it is a command-line tool that requires manual installation and execution on a local machine. It would involve more administrative effort than the web-based GitHub Importer.
-
-
-
-
-
-
-
 
 
 
@@ -29475,9 +29468,9 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2
+### Question #2 💩💩💩
 
-HOTSPOT How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
+How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -29506,7 +29499,6 @@ Based on the image provided, here is the extracted content in Markdown format:
 
 **Box 1: Shared Access Authorization token** 
 
-
 Every request made against a storage service must be authorized, unless the request is for a blob or container resource that has been
 
 made available for public or signed access. One option for authorizing a request is by using Shared Key.
@@ -29518,18 +29510,13 @@ Scenario: The mobile applications must be able to call the share pricing service
 The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
 
 
-### Question #3
+### Question #3 💩💩💩
 
-Question
-
-DRAG DROP Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? To answer, drag the appropriate access levels to the correct groups. Each access level may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? 
 
 NOTE: Each correct selection is worth one point.
 
-
-Based on the image provided, here is the extracted content in Markdown format:
-
-**Access Levels**
+<mark>**Access Levels**</mark>
 
 *   Collaborator
 *   Contributor
@@ -29611,7 +29598,7 @@ This question is about **Azure Artifacts feed permissions**.
 Box 2: Owner Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
 
 
-### Question #4
+### Question #4 💩💩💩
 
 
 To resolve the current technical issue, what should you do to the Register-AzureRmAutomationDscNode command?
@@ -29677,7 +29664,7 @@ Final Answer:
 
 
 
-### Question 5
+### Question 5 💩💩💩
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29737,7 +29724,7 @@ Final Answer:
 
 
 
-### Question 6
+### Question 6 💩💩💩
 
 What should you use to implement the code quality restriction on the release pipeline for the investment planning applications suite?
 
@@ -29803,9 +29790,9 @@ Final Answer:
 
 
 
-### Question 7
+### Question 7 💩💩💩
 
-HOTSPOT How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
+How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -29870,9 +29857,7 @@ The requirement clearly states:
 * **Production stage:** Set the stage retention policy to **60 days**
 
 
-### Question 8
-
-Question
+### Question 8  💩💩💩
 
 HOTSPOT Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
 
@@ -29880,7 +29865,6 @@ NOTE: Each correct selection is worth one point.
 
 Hot Area:
 
-Based on the image provided, here is the extracted content in Markdown format:
 
 **Answer Area**
 
@@ -29899,59 +29883,6 @@ Based on the image provided, here is the extracted content in Markdown format:
 
 
 -----
-
-
-✅ Correct Answers with Explanation
-
-**1. Fix Azure Automation State Configuration drift issue**
-
-**Answer: A. Change the value of the ConfigurationMode parameter**
-
-* Current setting: `ApplyOnly` → applies configuration once and **does NOT fix drift**
-* Required: continuous enforcement
-
-✔ Change to:
-
-* `ApplyAndMonitor` (detect drift) OR
-* `ApplyAndAutoCorrect` (detect + fix drift automatically)
-
-👉 Best choice: **ApplyAndAutoCorrect**
-
-**2. Code quality restriction in release pipeline**
-
-**Answer: B. a deployment gate**
-
-* Requirement: *“deployment must not proceed if active bugs exist”*
-* Deployment gates can:
-
-  * Query work items
-  * Block pipeline automatically
-
-✔ This is exactly what **gates** are designed for
-
-**3. Release retention policy**
-
-Requirement:
-
-* Default: **30 days**
-* Production: **60 days**
-
-**Correct configuration:**
-
-**Global release:**
-
-* ✅ Set the default retention policy to **30 days**
-
-**Production stage:**
-
-* ✅ Set the stage retention policy to **60 days**
-
-**4. Build and Release agents location**
-
-Requirement:
-
-* Use cloud when possible
-* Minimize management overhead
 
 **Correct answers:**
 
@@ -30101,9 +30032,7 @@ To ensure ongoing compliance, change LCM configuration to:
 
 ### Question #2 💩💩💩💩💩
 
-Question
-
-DRAG DROP You need to implement the code flow strategy for Project2 in Azure DevOps.
+You need to implement the code flow strategy for Project2 in Azure DevOps.
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -30236,16 +30165,7 @@ The three actions you should perform in sequence are:
 
 
 
-
-
-
-
-
-
-
-
-
-## Topic 17 - Testlet 8
+## Topic 13 
 
 
 Overview Contoso, Ltd. is a manufacturing company that has a main o®ce in Chicago.
@@ -30296,11 +30216,9 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1
+### Question #1 💩💩💩
 
 HOTSPOT How should you configure the filters for the Project5 trigger? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
-
-Based on the image provided, here is the extracted content in Markdown format:
 
 **Answer Area**
 
@@ -30347,9 +30265,8 @@ You must configure **path filters**, not branch filters.
 ✔️ This ensures the pipeline runs for all changes **except `/folder1`**.
 
 
-### Question #2
+### Question #2 💩💩💩
 
-Question
 
 In Azure DevOps, you create Project3.
 
@@ -30398,9 +30315,7 @@ To integrate Azure DevOps with SonarQube, the **first step** is to establish aut
 **B**
 
 
-### Question #3
-
-Question
+### Question #3  💩💩💩
 
 You need to implement Project4. What should you do first?
 
@@ -30451,11 +30366,9 @@ When a **Dockerfile is already provided**, the pipeline configuration (Docker ta
 
 
 
-### Question #4
+### Question #4 💩💩💩
 
-Question
-
-DRAG DROP You need to recommend a procedure to implement the build agent for Project1.
+You need to recommend a procedure to implement the build agent for Project1.
 
 Which three actions should you recommend be performed in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -30490,6 +30403,9 @@ To implement a **build agent using Azure resources** (as required), you should d
 * **Step 2:** A **PAT (Personal Access Token)** is required to authenticate the agent
 * **Step 3:** Install and register the agent on an **Azure VM** (meets requirement: *use Azure resources*)
 
+<mark>1 → Sign in (agent pool admin) 2 → Create PAT 3 → Install & register agent on Azure VM</mark>
+
+
 ❌ Why others are incorrect:
 
 * *Administrator service connection role* → unrelated to agent setup
@@ -30501,7 +30417,7 @@ To implement a **build agent using Azure resources** (as required), you should d
 2 → Create PAT
 3 → Install & register agent on Azure VM
 
-### Question #5
+### Question #5 💩💩💩
 
 You need to implement Project6.
 
