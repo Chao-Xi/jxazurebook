@@ -9256,7 +9256,7 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2  💩💩💩
+### Question #2  💩💩💩💩
 
 You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
@@ -9359,7 +9359,7 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 
 
 
-### Question #4 💩💩
+### Question #4 💩💩💩
 
 You are creating a NuGet package.
 
@@ -9462,7 +9462,7 @@ To meet the requirements for **automating code review assignments** in GitHub:
 * The "Clear Never assign" and notification options do not affect workload distribution.
 
 
-### Question-6  💩
+### Question-6
 
 You are designing the development process for your company.
 
@@ -9791,7 +9791,7 @@ Final Answer:
 
 
 
-### Question-11  💩
+### Question-11 
 
 During a code review, you discover many quality issues. Many modules contain unused variables and empty catch blocks.
 
@@ -9849,7 +9849,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 💩💩💩
+### Question-12 💩💩
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
@@ -9915,7 +9915,7 @@ Final Answer:
 **A, B, and E** ✅
 
 
-### Question-13 💩💩💩💩
+### Question-13 💩💩💩
 
 You have a GitHub repository.
 
@@ -10109,7 +10109,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 💩💩💩💩
+### Question-18 💩💩💩
 
 You use Azure Artifacts to host NuGet packages that you create.
 
