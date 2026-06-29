@@ -19727,7 +19727,7 @@ Final Answer
 
 ## Topic 8 - Question Set 8
 
-### Question #1 💩💩
+### Question #1 💩
 
 You manage the Git repository for a large enterprise application.
 
@@ -20234,7 +20234,7 @@ git tag -a v3.0 -m "Release v3.0"
 Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
 
 
-### Question #7 💩💩
+### Question #7 💩
 
 Your company has a project in Azure DevOps.
 
@@ -20302,7 +20302,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩💩💩
+### Question #8 💩💩💩💩💩
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -20525,7 +20525,7 @@ Ten virtual machines hosted in an on-premises data center environment: [ ]
 * Agent-based deployment targets 🚀
 
 
-### Question-11 💩💩
+### Question-11 💩
 
 
 You have an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20598,7 +20598,7 @@ This is the standard enterprise pattern for npm feeds in **Azure DevOps** with m
 ✅ **Final Answer: D**
 
 
-### Question #12 💩
+### Question #12
 
 
 You are defining release strategies for two applications as shown in the following table.
@@ -20673,7 +20673,7 @@ App2: [ ]
 * **Blue/Green → fast deploy + instant rollback** 🚀
 
 
-### Question-13 💩
+### Question-13
 
 ```
 Name  Type
@@ -20782,7 +20782,7 @@ This is the enterprise-standard pattern in **Azure DevOps** for secure multi-pro
 ✅ **Final Answer: A**
 
 
-### Question-14 💩
+### Question-14
 
 
 Your company has an Azure DevOps project that produces Node Package Manager (npm) packages. 
@@ -20947,7 +20947,7 @@ Why the other options are incorrect
 ✅ **Answer: C**
 
 
-### Question-17 💩
+### Question-17
 
 You are designing a build pipeline in Azure Pipelines.
 
@@ -20983,7 +20983,7 @@ Why other options are incorrect:
 *   **C. Azure virtual machine scale set (VMSS):** While Azure Pipelines supports "Elastic self-hosted agents" using VMSS (which can scale to zero), there is still a delay in spinning up VMs, and VMSS billing is typically less granular (per minute/hour) than ACI. Additionally, managing the VM image is more administrative effort than a container.
 *   **D. Azure virtual machines:** A standard VM is the most expensive option because you pay for the compute time even when the build isn't running, unless you build complex automation to start and stop the VM.
 
-### Question #18 💩💩
+### Question #18 💩
 
 
 You use Azure Pipelines to manage the build and deployment of apps.
@@ -21066,7 +21066,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩💩💩
+### Question #19 💩💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21133,7 +21133,7 @@ To associate an automated test with a test case in Azure DevOps:
 To link automated tests:
 
 
-### Question #20 💩💩💩
+### Question #20 💩💩
 
 You have an Azure Kubernetes Service (AKS) cluster.
 
@@ -21210,7 +21210,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 💩💩💩💩💩
+### Question #21 💩💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21275,7 +21275,7 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #22 💩💩💩
+### Question #22 💩💩
 
 
 You have a free tier of an Azure DevOps organization named Contoso. 
@@ -21537,7 +21537,7 @@ Enables use of functions like:
 
 
 
-### Question #25 💩💩💩
+### Question #25 💩💩
 
 You are developing an iOS application by using Azure DevOps.
 
@@ -21668,7 +21668,7 @@ For new functionality:
 
 > Use **short-lived feature branches** to enable faster, safer development 🚀
 
-### Question #27 💩💩
+### Question #27 💩
 
 You have an Azure virtual machine named VM1 that runs Linux.
 
@@ -21722,7 +21722,7 @@ By default, in many hardened Linux environments, permissions are restricted.
 
 Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28 💩💩💩💩
+### Question #28 💩💩💩
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21851,7 +21851,7 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #30  💩💩💩
+### Question #30  💩💩
 
 You use GitHub for source control of .NET applications.
 
@@ -21934,7 +21934,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #31  💩💩
+### Question #31  💩
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -22048,7 +22048,7 @@ ConfigurationModeFrequencyMins = 60
 ✔ Discrepancy is detected and logged
 
 
-### Question #32 💩💩💩💩
+### Question #32 💩💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -22136,7 +22136,7 @@ performanceCounters
 
 
 
-### Question #33  💩💩💩
+### Question #33  💩💩
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -22211,7 +22211,7 @@ DSC always follows:
 > **Configuration → Node → Resource** 🚀
 
 
-### Question #34 💩
+### Question #34 
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -22271,7 +22271,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #35 💩💩💩💩
+### Question #35 💩💩💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22471,7 +22471,7 @@ NOTE: Each correct selection is worth one point.
 
 * **Linked artifact variable** → indirect; actual source is CI output
 
-### Question #37 💩💩💩💩
+### Question #37 💩💩💩å
 
 You have an Azure Pipeline.
 
@@ -22552,7 +22552,7 @@ This feature allows you to meet both of your requirements perfectly:
 * **C. Azure Load Balancer** operates at Layer 4 (transport level). While it can distribute traffic, it does not natively support the percentage-based routing or user-session affinity needed to easily split users between application versions for testing.
 * **D. Azure Traffic Manager** operates at the DNS level. While it does support weighted routing, DNS caching on client machines makes it difficult to control the gradual shift of users accurately and in real-time.
 
-### Question #39 💩💩
+### Question #39 💩
 
 You are designing a versioning strategy for Git-based packages.
 
@@ -22694,7 +22694,7 @@ Example:
 
 
 
-### Question #41  💩💩💩💩💩
+### Question #41  💩💩💩💩
 
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
@@ -22775,7 +22775,7 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #42  💩💩
+### Question #42  💩
 
 You have a project in Azure DevOps that contains a release pipeline. 
 
