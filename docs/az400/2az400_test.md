@@ -14811,7 +14811,7 @@ Because a **hosted agent** cannot access **on-premises dependency management sys
 
 ## Topic 7 - Question Set 7
 
-### Question #1 💩💩
+### Question #1 💩
 
 You have a project in Azure DevOps.
 
@@ -15027,7 +15027,7 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩💩💩
+### Question #5 💩💩
 
 You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
@@ -15290,7 +15290,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩💩💩
+### Question #9  💩💩
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15505,7 +15505,7 @@ Based on the image provided, here is the extracted text content:
 * **An Internet Information Services (IIS) web application that runs in Docker:** **Hosted Windows Container**
 
 
-### Question #12 💩
+### Question #12 💩💩
 
 Your company has a project in Azure DevOps for a new application. 
 
@@ -15560,7 +15560,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩💩💩💩
+### Question #13 💩💩💩💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15617,7 +15617,7 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
 
-### Question #14 💩💩💩
+### Question #14 💩💩
 
 You are creating a container for an **ASP.NET Core app.**
 
@@ -15731,29 +15731,13 @@ Select and Place:
 *   **Committed code must compile successfully:** `[Empty Slot]`
 *   **Pull requests must have a <mark>Quality Gate status</mark> of Passed in SonarCloud:** `[Empty Slot]`
 
-------
+---
 
-
-To enforce requirements on **pull requests in Azure Repos**, you use **branch policies**:
-
-✅ Mapping:
-
-**Committed code must compile successfully:** **A build policy**
-
-  * A build validation policy runs a pipeline to ensure the code builds successfully before merging.
-
-**Pull requests must have a Quality Gate status of Passed in SonarCloud:** **A status policy**
-
-  * SonarCloud reports its Quality Gate result as a **status check**, which is enforced using a status policy.
-
-❌ Why not check-in policy?
-
-* **Check-in policies** apply to TFVC, not Git repositories.
 
 ✅ Final Answer:
 
-* **Committed code must compile successfully:** A build policy
-* **Pull requests must have a Quality Gate status of Passed in SonarCloud:** A status policy
+* **Committed code must compile successfully:**  **A check-in policy**
+* **Pull requests must have a Quality Gate status of Passed in SonarCloud:** **A build policy**
 
 
 
@@ -15851,7 +15835,7 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-18  💩💩
+### Question-18  💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15891,7 +15875,7 @@ Final Answer:
 **C. JaCoCo** 🟢
 
 
-### Question-19 💩💩
+### Question-19 💩
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15979,14 +15963,14 @@ A *canary* strategy deploys to a small subset first, validates functionality, an
 * **App1:** rolling
 * **App2:** canary
 
-### Question #21 💩💩💩
+### Question #21 💩💩
 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
 You use a Git repository for applications source control.
 
-You need to implement a pull request strategy that reduces the history volume in the master branch.
+You need to implement a pull request strategy that <mark>**reduces the history volume in the master branch**.</mark>
 
 <mark>**Solution: You implement a pull request strategy that uses fast-forward merges**.</mark>
 
@@ -16171,7 +16155,7 @@ To meet the requirements:
 **A. multi-stage builds**
 
 
-### Question #26 💩
+### Question #26
 
 You plan to create an image that will contain a .NET Core application.
 
@@ -16380,7 +16364,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩💩💩💩
+### Question #29 💩💩💩
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16616,7 +16600,7 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #33 💩💩
+### Question #33 💩
 
 You are creating a build pipeline in Azure Pipelines.
 
@@ -16904,7 +16888,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩💩💩
+### Question #38 💩💩💩💩
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -16963,7 +16947,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #39 💩
+### Question #39 💩💩
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -17245,7 +17229,7 @@ The proposed solution does NOT meet the goal.
 
 
 
-### Question #44 💩
+### Question #44
 
 You use Azure Pipelines to build and test a React.js application.
 
@@ -17347,7 +17331,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46 💩💩💩💩
+### Question #46 💩💩💩
 
 You are building an application that has the following assets:
 
@@ -17560,7 +17544,7 @@ Final Answer:
 
 
 
-### Question #49  💩💩💩
+### Question #49  💩💩
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
@@ -17684,7 +17668,7 @@ These checks validate whether the deployment will violate Azure Policy **before 
 <mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51 💩💩
+### Question #51 💩
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17983,7 +17967,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩💩💩💩
+### Question #55 💩💩💩
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18040,7 +18024,7 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #56 💩💩💩
+### Question #56 💩💩
 
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
@@ -18573,7 +18557,7 @@ Final Answer
 
 
 
-### Question-66  💩💩💩💩
+### Question-66  💩💩💩
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -19285,7 +19269,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-80 💩💩
+### Question-80 💩
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1 to an Azure container registry named ACR1. 
@@ -19371,7 +19355,7 @@ Therefore, the proposed architecture is a standard and effective pattern for dep
 **A. Yes** ✅
 
 
-### Question-82  💩💩
+### Question-82  💩
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. 
 
@@ -19585,7 +19569,7 @@ Final Answer
 **D. procuring licenses** ✅
 
 
-### Question-86 💩
+### Question-86
 
 Your company is building a new solution in Java.
 
@@ -19677,7 +19661,7 @@ Final Answer
 
 
 
-### Question-88 💩💩
+### Question-88 💩
 
 You have a project in Azure DevOps.
 
@@ -20302,7 +20286,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩💩💩💩
+### Question #8 💩💩💩💩
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -21066,7 +21050,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩💩💩💩
+### Question #19 💩💩💩💩
 
 You have a project in Azure DevOps.
 
@@ -21210,7 +21194,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 💩💩💩💩
+### Question #21 💩💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21537,7 +21521,7 @@ Enables use of functions like:
 
 
 
-### Question #25 💩💩
+### Question #25 💩
 
 You are developing an iOS application by using Azure DevOps.
 
@@ -21722,7 +21706,7 @@ By default, in many hardened Linux environments, permissions are restricted.
 
 Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28 💩💩💩
+### Question #28 💩💩
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21851,7 +21835,7 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #30  💩💩
+### Question #30  💩
 
 You use GitHub for source control of .NET applications.
 
@@ -22048,7 +22032,7 @@ ConfigurationModeFrequencyMins = 60
 ✔ Discrepancy is detected and logged
 
 
-### Question #32 💩💩💩
+### Question #32 💩💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -22271,7 +22255,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #35 💩💩💩
+### Question #35 💩💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22373,7 +22357,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩💩💩💩
+### Question #36  💩💩💩
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22471,7 +22455,7 @@ NOTE: Each correct selection is worth one point.
 
 * **Linked artifact variable** → indirect; actual source is CI output
 
-### Question #37 💩💩💩å
+### Question #37 💩💩💩
 
 You have an Azure Pipeline.
 
@@ -22694,7 +22678,7 @@ Example:
 
 
 
-### Question #41  💩💩💩💩
+### Question #41  💩💩💩
 
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
@@ -22868,7 +22852,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩💩💩💩
+### Question #43 💩💩💩
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
