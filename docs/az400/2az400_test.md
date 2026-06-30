@@ -12464,7 +12464,7 @@ Hot Area:
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #5 💩💩
+###  Question #5 💩
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
@@ -12508,7 +12508,7 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #6 💩💩💩💩
+### Question #6 💩💩💩
 
 You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
@@ -13114,7 +13114,7 @@ Key Point
 * **Cycle time = Start → Done**
 * **Lead time = Created → Done**
 
-### Question #18 💩💩
+### Question #18 💩
 
 You manage a project by using Azure Boards, and you manage the project code by using GitHub repositories.
 
@@ -13281,7 +13281,7 @@ This will:
 
 
 
-### Question #21 💩💩💩
+### Question #21 💩💩
 
 HOTSPOT -
 
@@ -13760,7 +13760,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩💩💩💩💩
+### Question #31 💩💩💩💩
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13983,7 +13983,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩💩
+### Question-36  💩💩💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -14406,7 +14406,7 @@ Final Answer:
 
 
 
-### Question-44  💩💩💩💩
+### Question-44  💩💩💩
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14505,7 +14505,7 @@ Final Answer:
 
 
 
-### Question-46  💩💩💩
+### Question-46  💩💩
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
@@ -14552,7 +14552,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩💩💩💩
+### Question-47  💩💩💩💩
 
 You are integrating an Azure Boards project and a GitHub repository.
 
@@ -14751,7 +14751,7 @@ If you'd like, I can also provide a sample `CODEOWNERS` file for securing GitHub
 
 
 
-### Question-51  💩
+### Question-51 
 
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
