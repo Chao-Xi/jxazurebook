@@ -28675,7 +28675,7 @@ The commit history of the POC branch must replace the history of the default bra
 
 Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
 
-### Question #1  💩💩💩💩💩
+### Question #1  💩💩💩💩
 
 You need to configure the alert for VM1. The solution must meet the technical requirements.
 
@@ -28879,6 +28879,9 @@ Select and Place:
 2. **Add a secret.**
 3. **Configure the ID and secret for App1.**
 
+**Service Principal flow = App registration → Secret → Configure app**
+
+
 💡 Explanation
 
 The requirement states:
@@ -28931,7 +28934,7 @@ The requirement states:
 3. Configure the ID and secret for App1
 
 
-### Question #5  💩💩💩
+### Question #5  💩💩💩💩
 
 | Number | Required data |
 | :--- | :--- |
@@ -28980,7 +28983,7 @@ To meet the technical requirements for the Woodgrove Bank dashboard, you should 
 3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
 
 
-### Question 6 💩💩💩💩💩
+### Question 6 💩💩💩💩
 
 You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
 
@@ -29213,9 +29216,9 @@ The goal is to **replace existing DevOps tools** with Azure DevOps + GitHub equi
 * Bamboo → **Azure Pipelines**
 * BitBucket → **GitHub repositories**
 
-### Question #9
+### Question #9 💩💩💩
 
-You need to the merge the POC branch into the default branch. The solution must meet the technical requirements. Which command should you run?
+You need to the merge the POC branch <mark>into the default branch</mark>. The solution must meet the technical requirements. Which command should you run?
 
 A. git rebase
 
@@ -29945,7 +29948,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩💩💩💩💩
+### Question #1 💩💩💩💩
 
 You add the virtual machines as managed nodes in Azure Automation State Configuration. You need to configure the managed computers in Pool7.
 
