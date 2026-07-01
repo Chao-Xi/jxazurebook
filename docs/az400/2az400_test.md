@@ -9256,7 +9256,7 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2  💩💩💩💩
+### Question #2  💩💩💩
 
 You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
@@ -9314,10 +9314,10 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 
 
-### Question #3 💩💩💩💩
+### Question #3 💩💩💩
 
 
-You need to and and isolate shared code. 
+You need to find and and isolate shared code. 
 
 **The shared code will be maintained in a series of packages.**
 
@@ -9849,7 +9849,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 💩💩
+### Question-12 💩
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
@@ -9915,7 +9915,7 @@ Final Answer:
 **A, B, and E** ✅
 
 
-### Question-13 💩💩💩
+### Question-13 💩💩
 
 You have a GitHub repository.
 
@@ -10017,7 +10017,7 @@ To reduce technical debt, you would instead recommend things like:
 So the proposed solution **does not meet the goal**.
 
 
-### Question-15 💩💩
+### Question-15 💩
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -10109,7 +10109,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 💩💩💩
+### Question-18 💩💩
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -10128,6 +10128,9 @@ What should you do?
 
 **Correct answer: D. Publish the package to a public NuGet repository** ✅
 
+<mark>**C. Promote to a release view** – This manages quality stages within the **same feed** but does not make the package anonymous to the outside world.</mark>
+
+
 The key requirement here is making the package available to **anonymous users outside your organization** while minimizing publication points.
 
 Azure Artifacts feeds are private by default. 
@@ -10142,7 +10145,7 @@ Even if you change the feed URL or create a new feed, Azure Artifacts requires a
 **Answer: D. Publish the package to a public NuGet repository.**
 
 
-### Question #19 💩💩
+### Question #19 💩
 
 You use GitHub for source control and project-related discussions.
 
@@ -10247,7 +10250,7 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question #21. 💩💩💩
+### Question #21 💩💩
 
 You use Git for source control.
 
@@ -10257,7 +10260,7 @@ You raise a pull request from a non-default branch. In the code scanning output,
 
 **You need to ensure that the code scanning completes successfully for the pull request**.
 
-Which two actions should you perform? Each correct answer presents part of the solution.
+<mark>Which two actions</mark> should you perform? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -10396,7 +10399,7 @@ To migrate a repository from GitHub to Azure Repos while preserving all branches
 3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration.
   * It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
 
-### Question #24 💩💩
+### Question #24 💩
 
 You have a GitHub repository that contains the code for an app named App1.
 
@@ -10443,7 +10446,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #25 💩💩
+### Question #25 💩
 
 You use Git for source control.
 
@@ -10549,7 +10552,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 
 **Note:** "Save the SSH key to the root of repo1" is incorrect and a severe security risk. You should never store your private or public keys inside a source code repository. "Add the SSH private key" is also incorrect; the private key is never uploaded to Azure DevOps.
 
-### Question #27 💩💩
+### Question #27 💩
 
 You use Git for source control.
 
@@ -10587,7 +10590,7 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
-### Question #28 💩💩💩💩
+### Question #28 💩💩💩
 
 You use Git for source control. You have an app named App1.
 
@@ -10884,7 +10887,7 @@ git push origin --all
 
 This ensures repo2 stays updated with changes made in repo1 after migration.
 
-### Question #33 💩💩
+### Question #33 💩
 
 You have an Azure Repos repository named repo1.
 
@@ -10948,7 +10951,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩💩💩
+### Question #34 💩💩💩
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11116,9 +11119,8 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩💩💩💩
+### Question #37  💩💩💩💩💩
 
-DRAG DROP -
 
 You create a Git repository named Repo1 in Azure Repos.
 
@@ -11158,7 +11160,7 @@ To meet the requirements for **Repo1** in Azure Repos while minimizing administr
 
 **Answer Area**
 
-*   Work items must be linked to a pull request: **Branch**
+*   Work items must be linked to a pull request: **Check-in**
 *   Pull requests must complete a code review by a third-party tool: **Status**
 *   Pull requests must have a minimum of two reviewers: **Branch**
 
@@ -11180,7 +11182,7 @@ Similar to the work item requirement, this is a native feature in Azure DevOps b
 
 
 
-### Question #38  💩
+### Question #38  💩💩
 
 You manage projects by using Azure Boards. You manage project code by using GitHub.
 
@@ -11236,9 +11238,7 @@ Key Point
 * Use **`#AB<ID>`** in PRs/commits OR
 * Link manually via the **Development section** in Azure Boards
 
-### Question #39  💩💩💩
-
-DRAG DROP -
+### Question #39  💩💩
 
 You plan to use Azure DevOps in development processes.
 
@@ -11460,7 +11460,7 @@ Why the others are wrong:
 
 
 
-### Question-43 💩💩💩  
+### Question-43 💩💩
 
 You manage code by using GitHub.
 
@@ -11556,7 +11556,7 @@ Final Answer:
 
 
 
-### Question-45 💩💩
+### Question-45 
 
 You use GitHub for source control.
 
@@ -11706,7 +11706,7 @@ This functionality is provided by Dependabot's **Version updates**. Regardless o
 *   **A dependency graph:** This is a tool to visualize your dependencies, not a feature that automates PR creation.
 
 
-### Question #48  💩💩💩
+### Question #48  💩💩
 
 You have a large repository named Repo1 that contains a directory named directory1.
 
@@ -11828,8 +11828,8 @@ D. pull request permissions
 Use **branch policies** to enforce **quality gates and PR requirements automatically**.
 
 
-### Question #50 💩💩💩💩
-
+### Question #50 💩💩💩💩		
+			
 You use Git for source control.
 
 You need to commit a 3-GB ZIP file that contains virtual machines used for testing. The solution must meet the following requirements:
@@ -11972,7 +11972,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 💩💩💩💩
+### Question #52 💩💩💩💩💩
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -12109,7 +12109,7 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55  💩💩💩
+### Question #55  💩💩
 
 You have a GitHub repository.
 
@@ -12166,7 +12166,7 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56 💩💩💩💩
+### Question #56 💩💩💩
 
 
 You have a .NET app named App1.
