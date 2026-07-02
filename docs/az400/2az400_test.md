@@ -4981,7 +4981,7 @@ Why the other options are incorrect
 
 **C and E**
 
-### Question #7 💩💩
+### Question #7 💩
 
 You use Azure Pipelines to automate Continuous Integration/Continuous Deployment (CI/CD) for an Azure web app named WebApp1.
 
@@ -5185,7 +5185,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-11 💩💩
+### Question-11 💩
 
 You use GitHub for source control.
 
@@ -7796,7 +7796,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-48. 💩
+### Question-48 
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -7862,7 +7862,7 @@ You need to configure permissions for repo1. The solution must meet the followin
 
 • <mark>Ensure that User3 can manage repo1.<mark>
 
-• <mark>Prevent User3 from accessing sensitive data in repo1.</mark>
+• <mark>**Prevent User3** from accessing sensitive data in repo1.</mark>
 
 Which role should you assign to each user? To answer, drag the appropriate roles to the correct users. Each role may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -8007,7 +8007,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩💩💩
+### Question #51  💩💩💩
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8108,7 +8108,7 @@ Final Answer:
 **C. Black Duck** ✅
 
 
-### Question #53 💩
+### Question #53
 
 You plan to use Azure DevOps to build and deploy an app that will be hosted in a Kubernetes cluster.
 
@@ -8161,7 +8161,7 @@ If it says:
 * **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-54 💩💩
+### Question-54 💩
 
 Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
@@ -8350,7 +8350,7 @@ If the question says:
 * **“open-source libraries” + “vulnerabilities”**  → Think **Mend Bolt (WhiteSource)**
 
 
-### Question #58  💩💩💩💩
+### Question #58  💩💩💩
 
 You manage code by using GitHub.
 
@@ -8541,7 +8541,6 @@ Final Answer:
 
 ### Question #62 💩💩
 
-DRAG DROP -
 
 You have an Azure Repos repository named Repo1 that is used for source control.
 
@@ -8783,7 +8782,7 @@ Final Answer:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
 
-### Question #66 💩💩💩
+### Question #66 💩💩
 
 You have a GitHub repository that uses **GitHub Actions and stores access keys by using GitHub encrypted secrets.**
 
@@ -8835,7 +8834,7 @@ If you see:
 * **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
-### Question-67 💩💩💩
+### Question-67 💩💩
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -8964,7 +8963,7 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 * **API-specific** → API Scan
 
 
-### Question-69 💩💩💩💩
+### Question-69 💩💩💩
 
 You have a GitHub Enterprise account.
 
@@ -9024,7 +9023,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #70 💩💩
+### Question #70 💩💩💩
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
@@ -9073,7 +9072,7 @@ If requirement says:
   → Think **branch policy + status check on main branch**
 
 
-### Question-71  💩💩
+### Question-71  💩
 
 You have an Azure subscription that contains four Azure virtual machines.
 
@@ -28675,7 +28674,7 @@ The commit history of the POC branch must replace the history of the default bra
 
 Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
 
-### Question #1  💩💩💩💩
+### Question #1  💩💩💩
 
 You need to configure the alert for VM1. The solution must meet the technical requirements.
 
@@ -29278,7 +29277,7 @@ D. git merge --allow-unrelated-histories
 **A. git rebase**
 
 
-### Question #10 💩💩💩
+### Question #10 💩💩
 
 You need to perform the GitHub code migration. The solution must support the planned changes for the DevOps environment. What should you use?
 
