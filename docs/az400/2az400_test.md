@@ -5284,7 +5284,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩💩💩
+### Question #2 💩💩💩💩
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5399,7 +5399,7 @@ Why the other option is incorrect
 ✅ **Final Answer: B. Get only**
 
 
-### Question #4 💩💩
+### Question #4 💩
 
 Your company has a project in Azure DevOps.
 
@@ -5449,7 +5449,7 @@ Although **Azure role-based access control** can control resource permissions, *
 * Enable key vaults for template deployment → **A Key Vault advanced access policy**
 * Restrict access to the secrets → **A Key Vault access policy**
 
-### Question #5 💩💩
+### Question #5 💩
 
 
 You need to configure access to Azure DevOps agent pools to meet the following requirements:
@@ -5591,7 +5591,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 💩💩💩
+### Question #8 💩💩
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5818,7 +5818,7 @@ Result
 
 
 
-### Question #12 💩💩💩💩
+### Question #12 💩💩💩💩💩
 
 
 You use GitHub Enterprise Server as a source code repository.
@@ -5861,7 +5861,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩💩
+### Question-13 💩💩💩💩💩
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -5965,7 +5965,7 @@ The **Contributors** group is the standard group for team members who need to pe
 *   **Project Valid Users:** This is a system group that includes everyone in the project; it is not used to grant specific functional permissions like editing or creating wikis.
 
 
-### Question #15 💩💩💩💩
+### Question #15 💩💩💩
 
 You use WhiteSource Bolt to scan a Node.js application.
 
@@ -6045,7 +6045,7 @@ A standard CI pipeline is designed to automate the building and testing of code.
 Without the specific scanning tool, the CI pipeline will successfully build the application but will remain unaware of any legal or policy risks within the third-party dependencies.
 
 
-### Question #17 💩💩
+### Question #17 💩
 
 Your company has an Azure subscription.
 
@@ -6289,7 +6289,7 @@ Conclusion
 ✅ **Correct Answer: B. Contributor**
 
 
-### Question #22 💩💩💩
+### Question #22 💩💩
 
 ![Alt Image Text](../images/az400_2_39.png)
 
@@ -6324,7 +6324,7 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
   *   <mark>In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.</mark>
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #23 💩💩💩💩💩
+### Question #23 💩💩💩💩
 
 
 You are implementing a package management solution for a Node.js application by using Azure Artifacts.
@@ -6462,7 +6462,7 @@ This is the primary command to provision the cluster. You will pass the `appId` 
 Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #26 💩💩💩💩
+### Question #26 💩💩💩💩💩
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
@@ -6511,7 +6511,7 @@ To ensure that `Pipeline1` can deploy to the web app while `Pipeline2` is restri
     - By default, a new service connection might be accessible to all pipelines in the project. To meet the requirement of allowing `Pipeline1` while blocking `Pipeline2`, you must go to the **Security** settings of the specific service connection. You will disable the "Grant access permission to all pipelines" option and then specifically add/authorize `Pipeline1`. This ensures `Pipeline2` is unable to use the connection and therefore cannot access `webapp1`.
 
 
-### Question #27 💩💩
+### Question #27 💩
 
 You need to increase the security of your team's development process.
 
@@ -6571,7 +6571,7 @@ Think of the flow:
 * **After deploy (CD)** → *Attack/test system*
 
 
-### Question #28 💩💩
+### Question #28 💩
 
 You plan to use a NuGet package in a project in Azure DevOps. 
 
@@ -6736,7 +6736,7 @@ Evaluation of options
 
 
 
-### Question #31 💩💩
+### Question #31 💩
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -6796,7 +6796,7 @@ Whenever you see **Azure Monitor + CMK**, think:
 
 
 
-### Question #32 💩
+### Question #32 💩💩
 
 You have an Azure Key Vault that contains an encryption key named key1.
 
@@ -7073,7 +7073,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 💩
+### Question-37 💩💩
 
 You have an Azure DevOps organization named Contoso.
 
@@ -7272,7 +7272,7 @@ Final Answer:
 **D. From the Security settings of the branch, modify the access control for the user.** ✅
 
 
-### Question-40 💩
+### Question-40
 
 You have an Azure Resource Manager template that deploys a multi-tier application
 
