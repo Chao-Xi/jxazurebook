@@ -19873,7 +19873,7 @@ When using **Helm v2 with RBAC-enabled AKS**:
 2. Initialize Helm (Tiller)
 3. Install the chart
 
-### Question #3 💩
+### Question #3 
 
 You are implementing an Azure DevOps strategy for mobile devices using App Center. 
 
@@ -20287,7 +20287,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩💩💩
+### Question #8 💩💩💩🐣
 
 As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
 
@@ -21051,7 +21051,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩💩💩
+### Question #19 💩💩💩🐣
 
 You have a project in Azure DevOps.
 
@@ -21118,7 +21118,7 @@ To associate an automated test with a test case in Azure DevOps:
 To link automated tests:
 
 
-### Question #20 💩💩
+### Question #20 💩🐣
 
 You have an Azure Kubernetes Service (AKS) cluster.
 
@@ -21195,7 +21195,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 💩💩💩
+### Question #21 💩💩🐣
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21260,7 +21260,7 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #22 💩💩
+### Question #22 💩
 
 
 You have a free tier of an Azure DevOps organization named Contoso. 
@@ -21405,7 +21405,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 **B. a DACPAC**
 
 
-### Question #24  💩💩
+### Question #24  💩🐣
 
 You have a project in Azure DevOps.
 
@@ -21522,7 +21522,7 @@ Enables use of functions like:
 
 
 
-### Question #25 💩
+### Question #25 💩🐣
 
 You are developing an iOS application by using Azure DevOps.
 
@@ -21707,7 +21707,7 @@ By default, in many hardened Linux environments, permissions are restricted.
 
 Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28 💩💩
+### Question #28 💩
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21836,7 +21836,7 @@ How it works
 ✅ **Answer: C. Azure PowerShell**
 
 
-### Question #30  💩
+### Question #30  
 
 You use GitHub for source control of .NET applications.
 
@@ -21919,7 +21919,7 @@ For documentation-as-code:
 
 > Use **static site generators** like Jekyll or DocFX 🚀
 
-### Question #31  💩
+### Question #31 
 
 You have a virtual machine that runs Windows Server 2019 and is managed by using Desired State Configuration (DSC). 
 
@@ -22033,7 +22033,7 @@ ConfigurationModeFrequencyMins = 60
 ✔ Discrepancy is detected and logged
 
 
-### Question #32 💩💩
+### Question #32 💩
 
 You have a web app named App1 that is hosted on multiple servers. 
 
@@ -22121,7 +22121,7 @@ performanceCounters
 
 
 
-### Question #33  💩💩
+### Question #33  💩🐣
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -22256,7 +22256,7 @@ For notifications in Azure DevOps:
 > Use built-in integrations (like Teams apps) instead of custom code 🚀
 
 
-### Question #35 💩💩
+### Question #35 💩
 
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains a table named AppEvents. 
@@ -22358,7 +22358,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩💩💩
+### Question #36  💩💩🐣
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22456,7 +22456,7 @@ NOTE: Each correct selection is worth one point.
 
 * **Linked artifact variable** → indirect; actual source is CI output
 
-### Question #37 💩💩💩
+### Question #37 💩💩🐣
 
 You have an Azure Pipeline.
 
@@ -22679,7 +22679,7 @@ Example:
 
 
 
-### Question #41  💩💩💩
+### Question #41  💩💩
 
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
@@ -22760,7 +22760,7 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #42  💩
+### Question #42  💩🐣
 
 You have a project in Azure DevOps that contains a release pipeline. 
 
@@ -22768,7 +22768,7 @@ The pipeline contains two stages named QA and Prod. QA deploys code to an Azure 
 
 Prod deploys code to an Azure web app named webapp2.
 
-**You need to ensure that code deployments to webapp2 are blocked if Azure Application Insights generates Failed requests alerts following the deployment of new code to webapp1.**
+<mark>**You need to ensure that code deployments to webapp2 are blocked if Azure Application Insights generates</mark> Failed requests alerts following the deployment of new code to webapp1.**
 
 What should you do for each stage? To answer, select the appropriate options in the answer area.
 
@@ -22853,7 +22853,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩💩💩
+### Question #43 💩💩
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
