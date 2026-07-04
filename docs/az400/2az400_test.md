@@ -14874,7 +14874,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  💩💩
+### Question #2  💩
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -15028,7 +15028,7 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩💩
+### Question #5 💩🐣
 
 You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
@@ -15170,7 +15170,7 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #7 💩 
+### Question #7 
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15234,7 +15234,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩💩💩
+### Question #8 💩💩💩🐣
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15291,7 +15291,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩💩
+### Question #9  💩🐣
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15389,7 +15389,7 @@ Final Answer
 * **Project 3:** Git
 * **Project 4:** Git
 
-### Question #10 💩
+### Question #10 
 
 HOTSPOT You company uses Azure DevOps to deploy infrastructures to Azure.
 
@@ -15506,7 +15506,7 @@ Based on the image provided, here is the extracted text content:
 * **An Internet Information Services (IIS) web application that runs in Docker:** **Hosted Windows Container**
 
 
-### Question #12 💩💩
+### Question #12 💩🐣
 
 Your company has a project in Azure DevOps for a new application. 
 
@@ -15561,7 +15561,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩💩💩
+### Question #13 💩💩💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15618,7 +15618,7 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
 
-### Question #14 💩💩
+### Question #14 💩🐣
 
 You are creating a container for an **ASP.NET Core app.**
 
@@ -15666,7 +15666,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 To **minimize the Docker image size**, you should use a **multi-stage build**:
 
 * Use the **SDK image** to build the app
-* Use the **ASP.NET runtime image** (smaller) for the final image
+* <mark>Use the **ASP.NET runtime image** (smaller) for the final image</mark>
 * Only copy the published output
 
 ✅ Correct configuration:
@@ -15701,7 +15701,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩💩💩💩
+### Question #15  💩💩💩
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -15876,7 +15876,7 @@ Final Answer:
 **C. JaCoCo** 🟢
 
 
-### Question-19 💩
+### Question-19 
 
 You are automating the build process for a Java-based application by using Azure DevOps.
 
@@ -15964,7 +15964,7 @@ A *canary* strategy deploys to a small subset first, validates functionality, an
 * **App1:** rolling
 * **App2:** canary
 
-### Question #21 💩💩
+### Question #21 💩🐣 
 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
@@ -16256,7 +16256,7 @@ You need to configure:
 
 ✔ So the solution does not meet the goal.
 
-### Question #28 💩
+### Question #28 💩🐣
 
 HOTSPOT You need to deploy Azure Kubernetes Service (AKS) to host an application. 
 
@@ -16365,7 +16365,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩💩💩
+### Question #29 💩💩🐣
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16496,7 +16496,7 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #31 💩💩💩
+### Question #31 💩💩
 
 You are deploying a new application that uses Azure virtual machines.
 
@@ -16655,7 +16655,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩💩💩
+### Question #34 💩💩
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16889,7 +16889,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩💩
+### Question #38 💩💩💩💩🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -16948,7 +16948,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #39 💩💩
+### Question #39 💩
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -16972,6 +16972,13 @@ Based on the image provided, here is the extracted text content:
 
 ---------
 
+- Job: Cloud Agent (Run on agent)" 
+
+
+1.  **NuGet restore**
+2.  **Compile Application**
+3.  **Copy Files**
+4.  **Publish Artifact**
 
 Based on the information presented in the exhibit, here is the analysis of the Azure DevOps pipeline:
 
@@ -16995,7 +17002,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩💩💩💩
+### Question #40 💩💩💩💩💩🐣
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -17064,7 +17071,7 @@ Final Answer:
 
 **Upload configuration → Compile → Onboard VMs → Assign configuration → Check compliance**
 
-### Question #41 🐣🐣
+### Question #41
 
 You are developing an application. The application source has multiple branches.
 
@@ -17332,7 +17339,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46 💩💩💩
+### Question #46 💩💩
 
 You are building an application that has the following assets:
 
@@ -17412,7 +17419,7 @@ Explanation:
 
 
 
-### Question #47 💩
+### Question #47 💩🐣
 
 You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
 
@@ -17545,7 +17552,7 @@ Final Answer:
 
 
 
-### Question #49  💩💩
+### Question #49  💩🐣
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
@@ -17669,7 +17676,7 @@ These checks validate whether the deployment will violate Azure Policy **before 
 <mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51 💩
+### Question #51 💩🐣
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17928,7 +17935,7 @@ To reduce storage usage for **Azure Artifacts published via pipelines**, you sho
 > ✔ **Pipeline retention policies** to automatically clean up older builds and their associated package artifacts.
 
 
-### Question-54 💩
+### Question-54 
 
 You have an existing build pipeline in Azure Pipelines.
 
@@ -17968,7 +17975,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩💩💩
+### Question #55 💩💩🐣
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18025,7 +18032,7 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #56 💩💩
+### Question #56 💩
 
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
@@ -18558,7 +18565,7 @@ Final Answer
 
 
 
-### Question-66  💩💩💩
+### Question-66  💩💩
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18621,7 +18628,7 @@ Final Answer
 **D. the percentage of overall time spent on rework**
 
 
-### Question-67 💩
+### Question-67 💩🐣
 
 You are developing an open source solution that uses a GitHub repository.
 
@@ -18896,7 +18903,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-72 💩💩
+### Question-72 💩
 
 Your company has a project in Azure DevOps.
 
@@ -19356,7 +19363,7 @@ Therefore, the proposed architecture is a standard and effective pattern for dep
 **A. Yes** ✅
 
 
-### Question-82  💩
+### Question-82  
 
 You plan to create a release pipeline that will deploy Azure resources by using Azure Resource Manager templates. 
 
@@ -19662,7 +19669,7 @@ Final Answer
 
 
 
-### Question-88 💩
+### Question-88 💩🐣
 
 You have a project in Azure DevOps.
 
