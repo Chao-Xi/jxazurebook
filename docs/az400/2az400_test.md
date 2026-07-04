@@ -23601,7 +23601,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9 💩💩💩
+### Question #9 💩💩
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -23741,7 +23741,7 @@ Why this does **not** meet the goal:
 In contrast, **flaky test management** (the correct solution from the previous question) would automatically retry flaky tests and reduce manual troubleshooting. The Test Results Trend widget merely reports the problem without solving it.
 
 
-### Question #12 💩
+### Question #12 
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. 
 
@@ -23822,7 +23822,7 @@ Under those reversed requirements, **Option B** is perfectly correct because:
 
 
  
-### Question #14 💩
+### Question #14
 
 You have a GitHub repository.
 
@@ -23999,7 +23999,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩💩💩
+### Question #17 💩💩
 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
@@ -24112,7 +24112,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩💩💩
+### Question #19  💩💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -24192,7 +24192,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩💩💩
+### Question #20 💩💩💩
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24480,7 +24480,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25 💩💩💩💩
+### Question #25 💩💩💩
 
 You have an Azure subscription that contains a user named User1.
 
@@ -24545,7 +24545,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 
 
 
-### Question #26 💩💩
+### Question #26 💩
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24634,7 +24634,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28 💩💩💩
+### Question #28 💩💩
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24648,7 +24648,7 @@ The solution must meet the following requirements:
 
 Which strategy should you recommend?
 
-A. progressive exposure
+A. progressive exposure （**Canary deployment**)
 
 B. A/B
 
@@ -24788,7 +24788,7 @@ What are two ways to achieve the goal? Each correct answer presents a complete s
 
 NOTE: Each correct selection is worth one point.
 
-A. Review the historical graph for the agent pools.
+A. Review the **historical graph** for the agent pools.
 
 B. Review the Pipeline duration report.
 
@@ -24838,7 +24838,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31. 💩💩💩💩💩
+### Question #31. 💩💩💩💩💩🐣
 
 You have a GitHub organization.
 
@@ -24926,7 +24926,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩💩💩💩
+### Question #33 💩💩💩🐣
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -25067,7 +25067,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 💩💩💩
+### Question #35 💩💩
 
 You manage package feeds by using Azure Artifacts.
 
@@ -25137,7 +25137,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36 💩💩💩
+### Question #36 💩💩
 
 You have an Azure subscription that includes an app named App1.
 
@@ -25145,7 +25145,7 @@ You have an Azure DevOps project that contains two environments named Staging an
 
 You use Azure Pipelines to deploy App1.
 
-You need to validate the performance of App1 **in the Staging environment before it is deployed to Production.**
+<mark>You need to validate the performance of App1 **in the Staging environment before it is deployed to Production.**</mark>
 
 The solution must minimize administrative effort.
 
@@ -25582,7 +25582,7 @@ The **critical failure** is:
 **B. No**
 
 
-### Question #40 💩
+### Question #40
 
 HOTSPOT -
 
@@ -25845,7 +25845,7 @@ isComplete ? '1a' : '2a'
 
 **D. `isComplete ? '1a' : '2a'`**
 
-### Question #43 💩
+### Question #43
 
 You use an Azure Pipelines pipeline to build and release web apps.
 
@@ -26461,7 +26461,7 @@ Based on the provided Dockerfile, here are the correct selections for each state
 3.  **The Dockerfile uses the Docker multi-stage build feature (Yes):** The Dockerfile contains multiple **`FROM`** instructions (`AS base`, `AS build`, `AS publish`, `AS final`). It also uses **`COPY --from=publish`** to transfer the final compiled files into a fresh image. This is the definition of a multi-stage build, which helps keep the final production image small by excluding the source code and build tools.
 
 
-### Question #50 💩
+### Question #50
 
 You have an Azure DevOps subscription that contains the projects shown in the following table.
 
@@ -26718,7 +26718,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩
+### Question #53 💩🐣
 
 HOTSPOT -
 
@@ -26880,7 +26880,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩💩💩💩
+### Question-55 💩💩💩
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -27133,7 +27133,7 @@ The proposed solution correctly addresses the requirement.
 
 
 
-### Question-61 💩
+### Question-61
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -27174,7 +27174,7 @@ You can place this gate in two locations within the release pipeline to achieve 
 
 
 
-### Question-62 💩
+### Question-62 💩💩🐣
 
 Your company develops an application named App1 that is deployed in production.
 
@@ -27182,7 +27182,7 @@ As part of an application update, a new service is being added to App1.
 
 The new service requires access to an application named App2 that is currently in development.
 
-You need to ensure that you can deploy the update to App1 before App2 becomes available. You must be able to enable the service in App1 once App2 is deployed.
+<mark>You need to ensure that you can deploy the update to App1 before App2 becomes available</mark>. You must be able to enable the service in App1 once App2 is deployed.
 
 What should you do?
 
@@ -27389,7 +27389,7 @@ Why the others are incorrect
 
 
 
-### Question-66 💩💩💩💩💩
+### Question-66 💩💩💩💩🐣
 
 You have a project in Azure DevOps.
 
@@ -27605,7 +27605,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩💩💩
+### Question #70 💩💩
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -27992,7 +27992,7 @@ Why the other options are incorrect
 ✅ **Answer: C. the application ID, a client secret, and the tenant ID**
 
 
-### Question-76 💩
+### Question-76
 
 Your team uses Azure Pipelines to deploy applications.
 
@@ -28244,7 +28244,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 💩💩💩
+###  Question-80 💩💩🐣
 
 You have a project in Azure DevOps named Project1.
 
@@ -28306,7 +28306,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-81  💩💩💩
+### Question-81  💩💩
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
 
@@ -28358,7 +28358,7 @@ Why the other options are incorrect
 ✅ **Answer: C. a branch policy**
 
 
-### Question-82  💩
+### Question-82 
 
 You have a project in Azure DevOps named Project. 
 
@@ -28561,7 +28561,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-85 💩💩💩
+### Question-85 💩💩
 
 You use Azure Pipelines to build and test code projects.
 
