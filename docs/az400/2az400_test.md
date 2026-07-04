@@ -12509,7 +12509,7 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #6 💩💩💩
+### Question #6 💩💩
 
 You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
@@ -12731,7 +12731,7 @@ Key Point
 * Use **keywords (Completed/Fixes/Resolves)** to update state
 
 
-### Question #10 💩
+### Question #10
 
 You have an Azure subscription that contains an Azure container registry. 
 
@@ -13027,7 +13027,7 @@ Key Insight
 * **Board includes:** Active, Resolved, Completed
 * **Completed items are removed from backlog view** but still visible on boards for tracking
 
-### Question #16 💩💩
+### Question #16 💩
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. 
 
@@ -13115,7 +13115,7 @@ Key Point
 * **Cycle time = Start → Done**
 * **Lead time = Created → Done**
 
-### Question #18 💩
+### Question #18 
 
 You manage a project by using Azure Boards, and you manage the project code by using GitHub repositories.
 
@@ -13172,7 +13172,7 @@ Key Point
 * Link manually via the **Development section** in Azure Boards
 
 
-### Question #19 💩💩
+### Question #19 💩🐣
 
 
 You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. 
@@ -13282,9 +13282,7 @@ This will:
 
 
 
-### Question #21 💩💩
-
-HOTSPOT -
+### Question #21 💩🐣
 
 You have an Azure DevOps project that is used to build and test an app named App1.
 
@@ -13520,8 +13518,7 @@ Final Answer:
 
 **B. No** ❌
 
-### Question #25 -duplicated  💩
-
+### Question #25 -duplicated 
 
 You have a GitHub repository named repo1 and an Azure key vault named kv1.
 
@@ -13570,7 +13567,7 @@ So the answer is:
 
 This is the standard pattern for GitHub Actions + Azure Key Vault integration.
 
-### Question #26   💩
+### Question #26  
 
 You have an Azure DevOps organization that contains a project named Project1. 
 
@@ -13761,7 +13758,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩💩💩💩
+### Question #31 💩💩💩🐣
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13862,7 +13859,7 @@ Final Answer:
 **B. No** ❌
 
 
-### Question-33 💩🐣🐣
+### Question-33 💩🐣
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
@@ -13905,7 +13902,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-34 💩💩
+### Question-34 💩🐣
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13984,7 +13981,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩💩💩
+### Question-36  💩💩💩
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -14096,7 +14093,7 @@ Final Answer:
 
 
 
-### Question-38 💩💩
+### Question-38 💩
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
@@ -14407,7 +14404,7 @@ Final Answer:
 
 
 
-### Question-44  💩💩💩
+### Question-44  💩💩🐣
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14506,7 +14503,7 @@ Final Answer:
 
 
 
-### Question-46  💩💩
+### Question-46  💩
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
@@ -14553,7 +14550,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩💩💩
+### Question-47  💩💩💩💩🐣
 
 You are integrating an Azure Boards project and a GitHub repository.
 
