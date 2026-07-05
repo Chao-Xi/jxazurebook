@@ -23603,7 +23603,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9 💩💩
+### Question #9 💩🐣
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -24001,12 +24001,11 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩💩
-
+### Question #17 💩
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
-Pipeline1 is used to build and test an app named App1. User1 is assigned the Contributors role for Pipeline1.
+Pipeline1 is used to build and test an app named App1. <mark>User1 is assigned the Contributors role for Pipeline1.</mark>
 
 You plan to test App1 by using an Azure Deployment Environments environment.
 
@@ -24114,7 +24113,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩💩
+### Question #19  💩💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -24194,7 +24193,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩💩
+### Question #20 💩💩🐣
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24482,7 +24481,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25 💩💩💩
+### Question #25 💩💩🐣
 
 You have an Azure subscription that contains a user named User1.
 
@@ -24636,7 +24635,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28 💩💩
+### Question #28 💩
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24790,7 +24789,7 @@ What are two ways to achieve the goal? Each correct answer presents a complete s
 
 NOTE: Each correct selection is worth one point.
 
-A. Review the **historical graph** for the agent pools.
+A. Review the **historical graph** for the **agent pools**.
 
 B. Review the Pipeline duration report.
 
@@ -24840,7 +24839,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31. 💩💩💩💩💩🐣
+### Question #31 💩💩💩💩🐣
 
 You have a GitHub organization.
 
@@ -24928,13 +24927,13 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩💩💩🐣
+### Question #33 💩💩🐣
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
-**You need to reduce how long it takes to complete unit and integration tests for App1.** 
+<mark>**You need to reduce how long it takes to complete unit and integration tests for App1.**<mark> 
 
-<mark>**The solution must ensure that the code coverage testing ratio is maintained.**</mark>
+**The solution must ensure that the code coverage testing ratio is maintained.**
 
 What should you do?
 
@@ -25069,7 +25068,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 💩💩
+### Question #35 💩🐣
 
 You manage package feeds by using Azure Artifacts.
 
@@ -25139,7 +25138,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36 💩💩
+### Question #36 💩🐣
 
 You have an Azure subscription that includes an app named App1.
 
@@ -25221,7 +25220,7 @@ You need to:
 **D. In the Staging environment add a check to query Azure Monitor Alerts for active alerts.**
 
 
-### Question #37 💩
+### Question #37
 
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. 
@@ -25234,7 +25233,7 @@ The solution must meet the following requirements.
 
 • The test stages must be run after successful completion of the build stage.
 
-• The `Publish_Test_Results` stage must be run after completion of all the test stages.
+• <mark>The `Publish_Test_Results` stage must be run after completion of all the test stages.</mark>
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
@@ -26294,7 +26293,7 @@ You need to use an Azure Pipelines pipeline to test an app. The solution meet th
 
 • The test results must be published to the pipeline.
 
-• **The test for every pipeline run must be triggered unless the pipeline is cancelled.**
+• **<mark>The test for every pipeline run must be triggered unless the pipeline is cancelled.</mark>**
 
 Solution: You include the following elements in the YAML definition of the pipeline.
 
@@ -26398,7 +26397,7 @@ Fails:
 
 
 
-### Question #49 💩
+### Question #49
 
 You have an app named App1 that is built and deployed by using containers.
 
@@ -26720,7 +26719,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩🐣
+### Question #53 💩💩💩🐣
 
 HOTSPOT -
 
@@ -26757,58 +26756,68 @@ NOTE: Each correct selection is worth one point.
 ----
 
 
-🧠 Key Exam Insight
+The correct answers are:
 
-* **Pull Requests = pre-merge validation (build + test gating)**
-* **Environments = release approval gates (manual approvals, change control)**
- 
-✅ Final Answers
+| Requirement                                                                                              | Correct Option   | Explanation                                                                                                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ensure that the code for App1 is submitted for testing only when a build has completed successfully.** | **Jobs**         | In GitHub Actions, **jobs** can be configured with `needs` dependencies. A testing job can be set to run only after the build job completes successfully. For example, `test` can depend on `build`, ensuring code is submitted for testing only after a successful build. |
+| **Ensure that a build is approved by the change management team before the build is released.**          | **Environments** | GitHub **Environments** support **required reviewers**. A deployment job targeting an environment (such as `production`) pauses until the designated reviewers (e.g., the change management team) approve the deployment.                                                  |
 
-| Requirement                                         | Answer            |
-| --------------------------------------------------- | ----------------- |
-| Submit code for testing only after successful build | **Pull requests** |
-| Require change management approval before release   | **Environments**  |
+**Final Answer:**
 
-<mark>Environments → deployment stage control</mark>
+* **Submitted for testing only when a build has completed successfully:** ✅ **Jobs**
+* **Approved by the change management team before the build is released:** ✅ **Environments**
 
-✅ Correct Answers
 
-**1. Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**
+Correct Answer
 
-👉 **Correct Answer: *Pull requests***
+**Ensure that the code for App1 is submitted for testing only when a build has completed successfully:**
 
-✔️ Why:
+* ✅ **Jobs**
 
-* Pull requests (PRs) ensure:
+**Ensure that a build is approved by the change management team before the build is released:**
 
-  * Code is reviewed
-  * Builds/CI validations complete successfully before merge
-* This enforces **“test only after successful build”** via PR validation checks
+* ✅ **Environments**
 
-❌ Why others are wrong:
+Why the other options are incorrect
 
-* Environments → deployment stage control
-* Jobs → execution units inside workflows
-* Matrices → parallel build variations
-* Packages → artifact storage
+* **Matrices** – Used to run the same workflow across multiple operating systems, language versions, or configurations simultaneously. They do not control workflow sequencing or approvals.
+* **Packages** – Used to publish and manage packages (e.g., container images or libraries). They are unrelated to build approvals or job dependencies.
+* **Pull requests** – Used for code review before merging changes into a branch. They do not enforce deployment approvals after a build has completed.
 
-**2. Ensure that a build is approved by the change management team before the build is released:**
 
-👉 **Correct Answer: *Environments***
+Example GitHub Actions Workflow
 
-✔️ Why:
 
-* GitHub **Environments** support:
-  * Required reviewers (approval gates)
-  * Deployment protection rules
-* Perfect for **change management approval before release**
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build application"
 
-❌ Why others are wrong:
+  test:
+    needs: build        # Runs only if build succeeds
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Run tests"
 
-* Jobs → execution logic only
-* Matrices → build variations
-* Packages → artifacts
-* Pull requests → pre-merge, not release approval
+  deploy:
+    needs: test
+    environment: production   # Production environment requires reviewers
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploy application"
+```
+
+In this workflow:
+
+* `test` runs **only after** `build` succeeds (`needs: build`).
+* `deploy` targets the `production` environment, where **required reviewers** can approve the deployment before it proceeds.
+
+
+
+
 
 
 ### Question #54
@@ -26882,7 +26891,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩💩💩
+### Question-55 💩💩🐣
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -27176,7 +27185,7 @@ You can place this gate in two locations within the release pipeline to achieve 
 
 
 
-### Question-62 💩💩🐣
+### Question-62 💩🐣
 
 Your company develops an application named App1 that is deployed in production.
 
@@ -27326,7 +27335,7 @@ This ensures that all devices in the private distribution group—both previousl
 
 
 
-### Question-65 💩
+### Question-65 💩🐣
 
 Your company has an **<mark>on-premises Bitbucket Server that is used for Git-based source control</mark>**. 
 
@@ -27391,7 +27400,7 @@ Why the others are incorrect
 
 
 
-### Question-66 💩💩💩💩🐣
+### Question-66 💩💩💩🐣
 
 You have a project in Azure DevOps.
 
@@ -27448,7 +27457,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-67 💩
+### Question-67 💩🐣
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27607,7 +27616,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩💩
+### Question #70 💩🐣A
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -27789,7 +27798,7 @@ In **Azure Artifacts**, an **upstream source** allows you to proxy and cache pac
 
 For **Python packages**:
 
-* The standard public repository is **PyPI (Python Package Index)**.
+* T | he standard public repository is **PyPI (Python Package Index)**.
 * By configuring PyPI as an upstream source:
   * Your Python projects can consume public packages directly through Azure Artifacts.
   * Packages are **cached locally**, improving reliability and speed.
@@ -27811,7 +27820,7 @@ Why the other options are incorrect
 ✅ **Answer: B. PyPI**
 
 
-### Question-73 💩
+### Question-73 
 
 You have a GitHub repository that contains workflows. **The workflows contain steps that execute predefined actions. Each action has one or more versions.**
 
@@ -28246,7 +28255,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 💩💩🐣
+###  Question-80 💩🐣
 
 You have a project in Azure DevOps named Project1.
 
@@ -28308,7 +28317,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-81  💩💩
+### Question-81  💩
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
 
