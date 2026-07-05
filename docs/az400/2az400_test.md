@@ -9257,11 +9257,11 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2  💩💩💩
+### Question #2  💩💩
 
 You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
-You need to configure SonarQube to perform a code quality validation of the C# code as part of the build pipelines.
+<mark>You need to configure SonarQube to perform a code quality validation of the C# code as part of the build pipelines.</mark>
 
 Which four tasks should you perform in sequence? To answer, move the appropriate tasks from the list of tasks to the answer area and arrange them in the correct order.
 
@@ -9272,7 +9272,7 @@ Actions Commands Cmdlets Statements
 
 - Run Code Analysis
 - Visual Studio Test
-- Publish Build Artifacts
+- Publish Build Artifacts. **跟你肯定没关系**
 - Visual Studio Build
 - Prepare Analysis Configuration
 
@@ -9315,7 +9315,7 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 
 
-### Question #3 💩💩💩
+### Question #3 💩💩🐣
 
 
 You need to find and and isolate shared code. 
@@ -9360,13 +9360,13 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 
 
 
-### Question #4 💩💩💩
+### Question #4 💩💩🐣
 
 You are creating a NuGet package.
 
 You plan to distribute the package to your development team privately.
 
-You need to share the package and test that the package can be consumed.
+<mark>You need to share the package and test that the package can be consumed.</mark>
 
 Which four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
@@ -9411,7 +9411,7 @@ Consume the package in a project to verify it works correctly.
 * This sequence ensures the package is properly hosted, accessible, and testable by your team.
 
 
-### Question #5 💩
+### Question #5 
 
 Your company uses GitHub for source control. The company has a team that performs code reviews.
 
@@ -9850,7 +9850,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 💩
+### Question-12 💩🐣
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
@@ -9876,7 +9876,7 @@ The correct answers are:
 
 * **A. Publish the package to a feed.** ✅
 * **B. Create a new feed in Azure Artifacts.** ✅
-* **E. Add the package URL to the NuGet Package Manager settings in Visual Studio.** ✅
+* <mark>**E. Add the package URL to the NuGet Package Manager settings in Visual Studio.** ✅</mark>
 
 Explanation:
 
@@ -9916,13 +9916,13 @@ Final Answer:
 **A, B, and E** ✅
 
 
-### Question-13 💩💩
+### Question-13 💩
 
 You have a GitHub repository.
 
 You create a new repository in Azure DevOps.
 
-You need to recommend a procedure to clone the repository from GitHub to Azure DevOps.
+<mark>You need to recommend a procedure to clone the repository from GitHub to Azure DevOps</mark>.
 
 What should you recommend?
 
@@ -10110,7 +10110,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 💩💩
+### Question-18 💩
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -10146,7 +10146,7 @@ Even if you change the feed URL or create a new feed, Azure Artifacts requires a
 **Answer: D. Publish the package to a public NuGet repository.**
 
 
-### Question #19 💩
+### Question #19 💩🐣
 
 You use GitHub for source control and project-related discussions.
 
@@ -10188,7 +10188,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩💩💩💩
+### Question-20  💩💩💩💩🐣
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10251,7 +10251,7 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question #21 💩💩
+### Question #21 💩
 
 You use Git for source control.
 
@@ -10304,7 +10304,7 @@ To fix this, you must ensure the code scanning workflow runs for the relevant br
 * **E**: Not necessary; you only need to adjust the existing workflow triggers.
 
 
-### Question #22 💩
+### Question #22
 
 You have a GitHub repository named repo1 that stores the code of an app named App1.
 
@@ -10447,7 +10447,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #25 💩
+### Question #25 💩🐣
 
 You use Git for source control.
 
@@ -10508,7 +10508,7 @@ To optimize the performance of the Git repository by removing history that is no
     *   <mark>**gc (Garbage Collection):** This is the primary tool for optimizing the Git database. It identifies and removes "dangling" or unreachable objects (history not in any branch).</mark>
     *   **--prune=now:** By default, Git waits two weeks before actually deleting unreachable objects to prevent data loss. Specifying `now` tells Git to bypass the grace period and permanently delete the items immediately, fulfilling the requirement to optimize performance.
 
-### Question #26 💩
+### Question #26 
 
 You have an Azure Repos Git repository named repo1.
 
@@ -10557,9 +10557,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 
 You use Git for source control.
 
-You delete a file, commit the changes, and continue to work.
-
-You need to recover the deleted file.
+<mark>You delete a file, commit the changes, and continue to work. You need to recover the deleted file.</mark>
 
 Which three commands should you run in sequence? To answer, move the appropriate commands from the list of commands to the answer area and arrange them in the correct order.
 
@@ -10591,7 +10589,7 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
-### Question #28 💩💩💩
+### Question #28 💩💩🐣
 
 You use Git for source control. You have an app named App1.
 
@@ -10706,7 +10704,7 @@ In the **GitFlow** workflow strategy, the correct branch assignments for product
 *   **Hotfix branches:** Used to quickly patch production releases (merge into `main` and `develop`).
 
 
-### Question #30 💩💩
+### Question #30 💩🐣
 
 DRAG DROP -
 
@@ -10952,7 +10950,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩💩
+### Question #34 💩💩🐣
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11082,12 +11080,12 @@ When a commit in a public GitHub repository matches a known secret pattern (for 
 The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
 
 
-### Question #36 💩💩
+### Question #36 💩💩🐣
 
 
 You have a GitHub repository.
 
-**You need to ensure that all the code in the repository is scanned for vulnerabilities.**
+<mark>**You need to ensure that all the code in the repository is scanned for vulnerabilities.**</mark>
 
 What should you use?
 
@@ -11120,7 +11118,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩💩💩💩💩
+### Question #37  💩💩💩💩🐣
 
 
 You create a Git repository named Repo1 in Azure Repos.
@@ -11173,7 +11171,9 @@ In the branch policy settings for Azure Repos Git repositories, there is a built
 
 2.  **Pull requests must complete a code review by a third-party tool (Status):** 
 
-To integrate external services or third-party tools into the PR workflow, you use a **Status Check**. The external tool performs its scan and then posts a status (e.g., "Succeeded") to the pull request via the Azure DevOps API. You configure a **Status** policy within the branch settings to make this specific status a mandatory requirement for merging.
+To integrate external services or third-party tools into the PR workflow, 
+
+<mark>you use a **Status Check**. The external tool performs its scan and then posts a status (e.g., "Succeeded") to the pull request via the Azure DevOps API. You configure a **Status** policy within the branch settings to make this specific status a mandatory requirement for merging.</mark>
 
 3.  **Pull requests must have a minimum of two reviewers (Branch):**
 
@@ -11183,7 +11183,7 @@ Similar to the work item requirement, this is a native feature in Azure DevOps b
 
 
 
-### Question #38  💩💩
+### Question #38  💩
 
 You manage projects by using Azure Boards. You manage project code by using GitHub.
 
@@ -11239,7 +11239,7 @@ Key Point
 * Use **`#AB<ID>`** in PRs/commits OR
 * Link manually via the **Development section** in Azure Boards
 
-### Question #39  💩💩
+### Question #39  💩
 
 You plan to use Azure DevOps in development processes.
 
@@ -11461,7 +11461,7 @@ Why the others are wrong:
 
 
 
-### Question-43 💩💩
+### Question-43 💩🐣
 
 You manage code by using GitHub.
 
@@ -11651,7 +11651,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩💩💩💩💩
+### Question #47  💩💩💩💩🐣
 
 
 You have a GitHub repository.
@@ -11666,9 +11666,6 @@ You need to configure Dependabot dependency scanning. The solution must meet the
 What should you enable for each requirement? To answer, drag the appropriate features to the correct requirements. Each feature may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
-
-
-Based on the image provided, here is the extracted text content:
 
 **Features**
 
@@ -11707,7 +11704,7 @@ This functionality is provided by Dependabot's **Version updates**. Regardless o
 *   **A dependency graph:** This is a tool to visualize your dependencies, not a feature that automates PR creation.
 
 
-### Question #48  💩💩
+### Question #48  💩🐣
 
 You have a large repository named Repo1 that contains a directory named directory1.
 
@@ -11829,7 +11826,7 @@ D. pull request permissions
 Use **branch policies** to enforce **quality gates and PR requirements automatically**.
 
 
-### Question #50 💩💩💩💩		
+### Question #50 💩💩💩		
 			
 You use Git for source control.
 
@@ -11861,7 +11858,7 @@ But since this is a **“two actions”** question from exam context, the correc
 
 **B. Install the Git LFS extension and associate the extension to ZIP files.** ✅
 
-**E. Store files in Azure Storage and enable blob versions** ❌ (not correct for Git association)
+**E. Store files in Azure Storage and enable blob versions** ✅ (not correct for Git association)
 
 👉 Let’s clarify properly:
 
@@ -11899,13 +11896,13 @@ Even though the question says “two actions,” the **only valid solution is Gi
 **B**
 
 
-### Question #51 💩💩💩
+### Question #51 💩💩🐣
 
 You manage source control by using GitHub.
 
 You have a file named Data.txt that contains sensitive data. A user pushes Data.txt to a repository.
 
-**You need to purge the file from the repository.**
+<mark>**You need to purge the file from the repository.**</mark>
 
 Which two commands can you use? Each correct answer presents a complete solution.
 
@@ -11973,7 +11970,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 💩💩💩💩💩
+### Question #52 💩💩💩💩🐣
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -12015,7 +12012,7 @@ To enable **CodeQL scanning** in GitHub Enterprise:
 
 CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
 
-### Question #53 💩💩💩💩
+### Question #53 💩💩💩🐣
 
 HOTSPOT -
 
@@ -12063,7 +12060,7 @@ By adding this full URL to your `README.md` file using image syntax (e.g., `![Bu
 
 **Note:** While "Organization name" could be technically correct if the owner *is* an organization, "Repository owner" is the most accurate and universal term used in this context.
 
-### Question #54 💩
+### Question #54 💩🐣
 
 You have a GitHub repository.
 
@@ -12110,7 +12107,7 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55  💩💩
+### Question #55  💩💩🐣
 
 You have a GitHub repository.
 
@@ -12167,8 +12164,7 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56 💩💩💩
-
+### Question #56 💩💩🐣
 
 You have a .NET app named App1.
 
