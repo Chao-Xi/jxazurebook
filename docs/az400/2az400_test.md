@@ -212,7 +212,7 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
-### Question 6 💩💩
+### Question 6 💩🐣
 
 You intend to manage the build and release processes using Azure DevOps. 
 
@@ -1152,7 +1152,7 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question -24 💩💩
+### Question -24 💩💩🐣
 
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
@@ -1181,6 +1181,9 @@ E. Azure pipeline stage templates
 
 - **B. The PowerShell Desired State Configuration (DSC) extension for Windows**
 - **C. Azure pipeline deployment groups**
+
+
+❌ ARM templates	Used for provisioning infrastructure, not maintaining VM configuration after deployment
 
 Explanation
 
@@ -1349,7 +1352,7 @@ Your company makes use of <mark>Azure SQL Database Intelligent Insights and Azur
 
 <mark>**Solution: You use the Transact-SQL.**<mark>
 
-####  Question - 27(2) 💩💩💩
+####  Question - 27(2) 💩💩
 
 <mark>**Solution: You use Azure Log Analytics.**<mark>
 
@@ -1398,7 +1401,7 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -28 💩💩
+### Question -28 💩💩🐣
 
 You manage an Azure web app that supports an e-commerce website. 
 
@@ -1464,7 +1467,7 @@ Architecture Flow:
 
 ✅ **Final answer: A and B**
 
-### Question - 29 💩
+### Question - 29 💩🐣
 
 You have recently created a web application for your company.
 
@@ -1512,7 +1515,7 @@ Explanation
 - **Azure Logic Apps**
 - **Azure Application Insights**
 
-### Question -30. 💩💩💩
+### Question -30. 💩💩🐣
 
 **You are in the process of building a mobile app aimed at Android and iOS devices.**
 
