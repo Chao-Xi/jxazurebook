@@ -20059,7 +20059,7 @@ Deployment 3: [ Drop zone ]
 * **Secrets/certs → CSI Secrets Store driver**
 
 
-### Question #5 💩
+### Question #5
 
 You manage the Git repository for a large enterprise application.
 
@@ -20123,7 +20123,7 @@ To prevent files from being committed:
 This ensures the file is **excluded from future commits** 🚀
 
 
-### Question #6 💩
+### Question #6
 
 You are finalizing a release in GitHub.
 
@@ -20289,9 +20289,9 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩💩🐣
+### Question #8 💩💩🐣
 
-As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.
+<mark>As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.</mark>
 
 Which three action should you perform in sequence? 
 
@@ -21053,7 +21053,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩💩🐣
+### Question #19 💩💩🐣
 
 You have a project in Azure DevOps.
 
@@ -21197,7 +21197,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 💩💩🐣
+### Question #21 💩💩💩🐣
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21346,7 +21346,7 @@ For pipelines that depend on **on-prem resources**:
 **B. Register additional self-hosted agents**
 
 
-### Question #23 💩
+### Question #23
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -21709,7 +21709,7 @@ By default, in many hardened Linux environments, permissions are restricted.
 
 Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28 💩
+### Question #28 💩🐣
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -22360,7 +22360,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩💩🐣
+### Question #36  💩🐣
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22458,7 +22458,7 @@ NOTE: Each correct selection is worth one point.
 
 * **Linked artifact variable** → indirect; actual source is CI output
 
-### Question #37 💩💩🐣
+### Question #37 💩🐣
 
 You have an Azure Pipeline.
 
@@ -22620,7 +22620,7 @@ Here is the content extracted from the image, formatted as markdown:
 
 
 
-### Question #40 💩
+### Question #40
 
 You use Calendar Versioning (CalVer) for code assets.
 
@@ -22855,7 +22855,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩💩
+### Question #43 💩💩💩🐣
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
