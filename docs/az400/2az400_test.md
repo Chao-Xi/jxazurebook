@@ -5134,7 +5134,7 @@ This approach directly monitors **VMSS autoscaling events** and sends emails as 
 ✅ **Final answer: B . No**
 
 
-### Question-9
+### Question-9 💩🐣
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. 
 
@@ -5286,7 +5286,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩💩💩🐣
+### Question #2 💩💩🐣
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5401,7 +5401,7 @@ Why the other option is incorrect
 ✅ **Final Answer: B. Get only**
 
 
-### Question #4 💩
+### Question #4 
 
 Your company has a project in Azure DevOps.
 
@@ -5556,7 +5556,7 @@ Explanation
 3. **an RBAC binding**
 
 
-### Question #7 💩💩🐣
+### Question #7 💩🐣
 
 HOTSPOT You manage build and release pipelines by using Azure DevOps. Your entire managed environment resides in Azure.
 
@@ -5593,7 +5593,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 💩💩🐣
+### Question #8 💩💩💩🐣
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5633,9 +5633,9 @@ To allow a server application running on a VM to securely retrieve secrets from 
 Why others are not included:
 
 *   **A. Configure RBAC:** While RBAC can be used for Key Vault data plane access, **Access Policy** (C) is the traditional and most common method used in these certification scenarios. You generally use one or the other for the specific task of secret retrieval.
-*   **D. DSC extension:** Desired State Configuration is used for configuring the operating system and software on the VM, but it is not a requirement for an application to communicate with Key Vault.
+*   <mark>**D. DSC extension:** Desired State Configuration is used for configuring the operating system and software on the VM, but it is not a requirement for an application to communicate with Key Vault.</mark>
 
-### Question #9  💩💩💩💩
+### Question #9  💩💩💩
 
 
 **HOTSPOT -**
@@ -5820,7 +5820,7 @@ Result
 
 
 
-### Question #12 💩💩💩💩🐣
+### Question #12 💩💩💩🐣
 
 You use GitHub Enterprise Server as a source code repository.
 
@@ -5862,7 +5862,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩💩
+### Question-13 💩💩💩
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -5966,7 +5966,7 @@ The **Contributors** group is the standard group for team members who need to pe
 *   **Project Valid Users:** This is a system group that includes everyone in the project; it is not used to grant specific functional permissions like editing or creating wikis.
 
 
-### Question #15 💩💩🐣
+### Question #15 💩🐣
 
 You use WhiteSource Bolt to scan a Node.js application.
 
@@ -6325,7 +6325,7 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
   *   <mark>In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.</mark>
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #23 💩💩💩
+### Question #23 💩💩🐣
 
 
 You are implementing a package management solution for a Node.js application by using Azure Artifacts.
@@ -6413,7 +6413,7 @@ Explanation:
 *   **A deployment task** is too late in the process; security scanning should happen during the build (CI) phase to "shift left" security.
 
 
-### Question #25 💩💩💩💩🐣
+### Question #25 💩💩💩🐣
 
 You plan to use Azure Kubernetes Service (AKS) to host containers deployed from images hosted in a Docker Trusted Registry.
 
@@ -6463,7 +6463,7 @@ This is the primary command to provision the cluster. You will pass the `appId` 
 Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #26 💩💩💩💩🐣
+### Question #26 💩💩💩🐣
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
@@ -6630,7 +6630,7 @@ The **Azure Artifacts Credential Provider** is designed specifically for this:
 
 
 
-### Question #29 💩
+### Question #29 💩🐣
 
 You use Azure Pipelines to manage project builds and deployments.
 
@@ -8011,7 +8011,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  💩💩🐣
+### Question #51  💩🐣
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -8204,7 +8204,7 @@ Why other options are incorrect:
 Answer. C
 
 
-### Question #55 💩
+### Question #55 💩🐣
 
 DRAG DROP -
 
@@ -8354,7 +8354,7 @@ If the question says:
 * **“open-source libraries” + “vulnerabilities”**  → Think **Mend Bolt (WhiteSource)**
 
 
-### Question #58  💩💩🐣
+### Question #58  💩🐣
 
 You manage code by using GitHub.
 
@@ -8883,7 +8883,7 @@ This recommendation is based on a specific technical limitation of GitHub Action
 
 Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
-### Question #68 💩💩
+### Question #68 💩🐣
 
 You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the source code for App1.
 
@@ -8967,7 +8967,7 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 * **API-specific** → API Scan
 
 
-### Question-69 💩💩🐣
+### Question-69 💩🐣
 
 You have a GitHub Enterprise account.
 
@@ -9027,7 +9027,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #70 💩💩
+### Question #70 💩🐣
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
