@@ -12405,7 +12405,7 @@ Flow Summary
 3. Configure it to trigger on build events and post to `#Development`
 
 
-### Question #4 💩
+### Question #4
 
 Your company uses Azure DevOps for Git source control.
 
@@ -12507,7 +12507,7 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #6 💩💩
+### Question #6 💩
 
 You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
@@ -13609,7 +13609,7 @@ You manage a project by using Azure Board, and you manage the project code by us
 
 You have a bug work item that has an ID of 123.
 
-You need to set the work item state to Resolved.
+You need to set the work item state to <mark>Resolved</mark>.
 
 What should you add to the commit message?
 
@@ -13756,7 +13756,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩💩💩🐣
+### Question #31 💩💩🐣
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13979,13 +13979,13 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩💩
+### Question-36  💩💩🐣
 
 You have an Azure DevOps project that uses many package feeds.
 
 You need to simplity the project by **using a single feed that stores packages produced by your company and packages consumed from remote feeds.**
 
-The solution must support public feeds and authenticated feeds.
+<mark>The solution must support public feeds and authenticated feeds.</mark>
 
 What should you enable in DevOps?
 
@@ -14091,7 +14091,7 @@ Final Answer:
 
 
 
-### Question-38 💩
+### Question-38 💩💩🐣
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
@@ -14402,7 +14402,7 @@ Final Answer:
 
 
 
-### Question-44  💩💩🐣
+### Question-44  💩🐣
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14548,7 +14548,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩💩💩🐣
+### Question-47  💩💩💩🐣
 
 You are integrating an Azure Boards project and a GitHub repository.
 
