@@ -28680,7 +28680,7 @@ The commit history of the POC branch must replace the history of the default bra
 
 Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
 
-### Question #1  💩💩💩
+### Question #1  💩💩
 
 You need to configure the alert for VM1. The solution must meet the technical requirements.
 
@@ -28721,7 +28721,7 @@ Based on the image provided, the two settings you should configure (click on) ar
 
 
 
-### Question 2 💩💩💩
+### Question 2 💩💩
 
 You need to meet the technical requirements for controlling access to Azure DevOps. What should you use?
 
@@ -28788,7 +28788,7 @@ Apply policies to:
 
 **C. conditional access policies in Azure AD**
 
-### Question #3 💩💩💩
+### Question #3 💩💩
 
 You need to configure Azure Pipelines to control App2 builds. Which authentication method should you use?
 
@@ -28856,7 +28856,7 @@ Authenticate Azure DevOps with:
 **D. personal access token (PAT)**
 
 
-### Question #4 💩💩💩
+### Question #4 💩💩
 
 You need to configure authentication for App1. The solution must support the planned changes.
 
@@ -28939,7 +28939,7 @@ The requirement states:
 3. Configure the ID and secret for App1
 
 
-### Question #5  💩💩💩💩
+### Question #5  💩💩💩
 
 | Number | Required data |
 | :--- | :--- |
@@ -28988,7 +28988,7 @@ To meet the technical requirements for the Woodgrove Bank dashboard, you should 
 3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
 
 
-### Question 6 💩💩💩💩
+### Question 6 💩💩💩
 
 You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
 
@@ -29051,7 +29051,7 @@ It is designed for:
 **B. BACPAC**
 
 
-### Question 7 💩💩💩
+### Question 7 💩💩
 
 You need to meet the technical requirements for monitoring App1. What should you use?
 
@@ -29119,7 +29119,7 @@ If you see:
 **B. Azure Application Insights**
 
 
-### Question 8 💩💩💩
+### Question 8 💩💩
 
 You need to replace the existing DevOps tools to support the planned changes.
 
@@ -29221,7 +29221,7 @@ The goal is to **replace existing DevOps tools** with Azure DevOps + GitHub equi
 * Bamboo → **Azure Pipelines**
 * BitBucket → **GitHub repositories**
 
-### Question #9 💩💩💩
+### Question #9 💩💩
 
 You need to the merge the POC branch <mark>into the default branch</mark>. The solution must meet the technical requirements. Which command should you run?
 
@@ -29283,7 +29283,7 @@ D. git merge --allow-unrelated-histories
 **A. git rebase**
 
 
-### Question #10 💩💩
+### Question #10 💩
 
 You need to perform the GitHub code migration. The solution must support the planned changes for the DevOps environment. What should you use?
 
@@ -29383,7 +29383,7 @@ Register-AzureRmAutomationDscNode
 -ConfigurationMode 'ApplyOnly'
 ```
 
-### Question #1 💩💩💩💩💩
+### Question #1 💩💩💩💩
 
 **HOTSPOT -**
 How should you complete the code to initialize App Center in the mobile application? To answer, select the appropriate options in the answer area.
@@ -29465,7 +29465,7 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2 💩💩💩
+### Question #2 💩💩
 
 How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
@@ -29507,7 +29507,7 @@ Scenario: The mobile applications must be able to call the share pricing service
 The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
 
 
-### Question #3 💩💩💩
+### Question #3 💩💩
 
 Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? 
 
@@ -29595,7 +29595,7 @@ This question is about **Azure Artifacts feed permissions**.
 Box 2: Owner Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
 
 
-### Question #4 💩💩💩
+### Question #4 💩💩
 
 
 To resolve the current technical issue, what should you do to the Register-AzureRmAutomationDscNode command?
@@ -29661,7 +29661,7 @@ Final Answer:
 
 
 
-### Question 5 💩💩💩
+### Question 5 💩💩
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29721,7 +29721,7 @@ Final Answer:
 
 
 
-### Question 6 💩💩💩
+### Question 6 💩💩
 
 What should you use to implement the code quality restriction on the release pipeline for the investment planning applications suite?
 
@@ -29787,7 +29787,7 @@ Final Answer:
 
 
 
-### Question 7 💩💩💩
+### Question 7 💩💩
 
 How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
 
@@ -29854,7 +29854,7 @@ The requirement clearly states:
 * **Production stage:** Set the stage retention policy to **60 days**
 
 
-### Question 8  💩💩💩
+### Question 8  💩💩
 
 HOTSPOT Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
 
@@ -29953,7 +29953,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩💩💩💩
+### Question #1 💩💩💩
 
 You add the virtual machines as managed nodes in Azure Automation State Configuration. You need to configure the managed computers in Pool7.
 
@@ -30122,7 +30122,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  💩💩💩💩💩
+### Question #3  💩💩💩💩
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
@@ -30262,7 +30262,7 @@ You must configure **path filters**, not branch filters.
 ✔️ This ensures the pipeline runs for all changes **except `/folder1`**.
 
 
-### Question #2 💩💩💩
+### Question #2 💩💩
 
 
 In Azure DevOps, you create Project3.
