@@ -9259,7 +9259,7 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2  💩💩
+### Question #2  💩
 
 You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
@@ -9317,7 +9317,7 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 
 
-### Question #3 💩💩🐣
+### Question #3 💩🐣
 
 
 You need to find and and isolate shared code. 
@@ -9362,7 +9362,7 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 
 
 
-### Question #4 💩💩🐣
+### Question #4 💩🐣
 
 You are creating a NuGet package.
 
@@ -10190,7 +10190,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩💩💩🐣
+### Question-20  💩💩💩🐣
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10402,7 +10402,7 @@ To migrate a repository from GitHub to Azure Repos while preserving all branches
 3.  **`git push --mirror ...`**: The **`--mirror`** flag is crucial for migration.
   * It tells Git to push every single branch, tag, and reference from your local bare clone to the destination Azure Repos URL. After this command finishes, the Azure Repos repository will be an exact replica of the original GitHub repository.
 
-### Question #24 💩
+### Question #24 
 
 You have a GitHub repository that contains the code for an app named App1.
 
@@ -10591,7 +10591,7 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
-### Question #28 💩💩🐣
+### Question #28 💩🐣
 
 You use Git for source control. You have an app named App1.
 
@@ -10952,7 +10952,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩🐣
+### Question #34 💩💩💩🐣
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -10991,18 +10991,6 @@ git commit -m "track *.psd files using Git LFS"
 [ Value Box ]
 ...
 ```
-
-**Context (Typical Solution)**
-
-
-This sequence is used to configure **Git Large File Storage (LFS)** for a repository that already contains large binary files (in this case, `.psd` files). The correct configuration for this script is:
-
-1.  **`git lfs install`** (Initializes the LFS environment).
-2.  <mark>**`git lfs track "*.psd"`** (Creates a rule to handle Photoshop files via LFS).</mark>
-3.  **`git add .gitattributes`** (Stages the file where LFS tracking rules are stored).
-4.  **`git commit -m "track *.psd files using Git LFS"`** (Saves the tracking configuration).
-5.  <mark>**`git lfs update`** (Forces an update of the local hooks).<mark>
-6.  <mark>**`git push`** (Pushes the changes and the large binaries to the remote server).<mark>
 
 -----
 
@@ -11082,12 +11070,12 @@ When a commit in a public GitHub repository matches a known secret pattern (for 
 The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
 
 
-### Question #36 💩💩🐣
+### Question #36 💩🐣
 
 
 You have a GitHub repository.
 
-<mark>**You need to ensure that all the code in the repository is scanned for vulnerabilities.**</mark>
+**You need to ensure that <mark>all the code in the repository</mark> is scanned for vulnerabilities.**
 
 What should you use?
 
@@ -11120,7 +11108,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩💩💩💩🐣
+### Question #37  💩💩💩🐣
 
 
 You create a Git repository named Repo1 in Azure Repos.
@@ -11185,7 +11173,7 @@ Similar to the work item requirement, this is a native feature in Azure DevOps b
 
 
 
-### Question #38  💩
+### Question #38
 
 You manage projects by using Azure Boards. You manage project code by using GitHub.
 
@@ -11463,7 +11451,7 @@ Why the others are wrong:
 
 
 
-### Question-43 💩🐣
+### Question-43 💩💩🐣
 
 You manage code by using GitHub.
 
@@ -11653,7 +11641,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩💩💩💩🐣
+### Question #47  💩💩💩🐣
 
 
 You have a GitHub repository.
@@ -11828,7 +11816,7 @@ D. pull request permissions
 Use **branch policies** to enforce **quality gates and PR requirements automatically**.
 
 
-### Question #50 💩💩💩		
+### Question #50 💩💩		
 			
 You use Git for source control.
 
@@ -11972,7 +11960,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 💩💩💩💩🐣
+### Question #52 💩💩💩🐣
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -12014,7 +12002,7 @@ To enable **CodeQL scanning** in GitHub Enterprise:
 
 CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
 
-### Question #53 💩💩💩🐣
+### Question #53 💩💩🐣
 
 HOTSPOT -
 
@@ -12109,7 +12097,7 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55  💩💩🐣
+### Question #55  💩🐣
 
 You have a GitHub repository.
 
@@ -12166,7 +12154,7 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56 💩💩🐣
+### Question #56 💩🐣
 
 You have a .NET app named App1.
 
