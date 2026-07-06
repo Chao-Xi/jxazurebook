@@ -24106,7 +24106,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩💩
+### Question #19  💩
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -24186,7 +24186,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩💩🐣
+### Question #20 💩🐣
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24421,7 +24421,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24 💩💩
+### Question #24 💩🐣
 
 You have an Azure subscription.
 
@@ -24474,7 +24474,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25 💩💩🐣
+### Question #25 💩
 
 You have an Azure subscription that contains a user named User1.
 
@@ -24539,7 +24539,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 
 
 
-### Question #26 💩
+### Question #26 💩🐣
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24832,7 +24832,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31 💩💩💩💩🐣
+### Question #31 💩💩💩🐣
 
 You have a GitHub organization.
 
@@ -24920,7 +24920,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩💩🐣
+### Question #33 💩🐣
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -24987,7 +24987,7 @@ If the question mentions:
 * Less efficient than TIA for this goal
 
 
-### Question #34 💩
+### Question #34 💩💩🐣
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -26712,7 +26712,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩💩🐣
+### Question #53 💩💩💩💩🐣
 
 HOTSPOT -
 
@@ -26884,7 +26884,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩💩🐣
+### Question-55 💩🐣
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -27393,7 +27393,7 @@ Why the others are incorrect
 
 
 
-### Question-66 💩💩💩🐣
+### Question-66 💩💩🐣
 
 You have a project in Azure DevOps.
 
@@ -27609,7 +27609,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩🐣A
+### Question #70 💩🐣
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -29465,15 +29465,13 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2 💩💩
+### Question #2 💩💩💩🐣
 
 How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
 Hot Area:
-
-Based on the image provided, here is the extracted content in Markdown format:
 
 **Answer Area**
 
@@ -29661,7 +29659,7 @@ Final Answer:
 
 
 
-### Question 5 💩💩
+### Question 5 💩💩🐣
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29787,7 +29785,7 @@ Final Answer:
 
 
 
-### Question 7 💩💩
+### Question 7 💩💩🐣
 
 How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
 
@@ -29854,7 +29852,7 @@ The requirement clearly states:
 * **Production stage:** Set the stage retention policy to **60 days**
 
 
-### Question 8  💩💩
+### Question 8  💩💩🐣
 
 HOTSPOT Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
 
@@ -30027,7 +30025,7 @@ To ensure ongoing compliance, change LCM configuration to:
 **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
 
 
-### Question #2 💩💩💩💩💩
+### Question #2 💩💩💩💩🐣
 
 You need to implement the code flow strategy for Project2 in Azure DevOps.
 
@@ -30122,7 +30120,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  💩💩💩💩
+### Question #3  💩💩💩💩🐣
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
@@ -30363,7 +30361,7 @@ When a **Dockerfile is already provided**, the pipeline configuration (Docker ta
 
 
 
-### Question #4 💩💩💩
+### Question #4 💩💩💩🐣
 
 You need to recommend a procedure to implement the build agent for Project1.
 
@@ -30414,7 +30412,7 @@ To implement a **build agent using Azure resources** (as required), you should d
 2 → Create PAT
 3 → Install & register agent on Azure VM
 
-### Question #5 💩💩💩
+### Question #5 💩💩💩🐣
 
 You need to implement Project6.
 
