@@ -14921,7 +14921,7 @@ Key Point
 
 <mark>**Solution = increase parallelism (buy more parallel jobs or add agents)**</mark>
 
-### Question #3 💩
+### Question #3
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15286,7 +15286,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩🐣
+### Question #9  💩🐣🐣
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15556,7 +15556,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩💩
+### Question #13 💩💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15696,7 +15696,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩💩💩
+### Question #15  💩💩🐣
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -16207,7 +16207,7 @@ Answer:
 **C. 4**
 
 
-### Question #27 💩
+### Question #27
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -16360,7 +16360,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩💩🐣
+### Question #29 💩💩💩🐣
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16491,7 +16491,7 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #31 💩💩
+### Question #31 💩🐣
 
 You are deploying a new application that uses Azure virtual machines.
 
@@ -16650,7 +16650,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩💩
+### Question #34 💩💩🐣
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16884,7 +16884,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩💩🐣
+### Question #38 💩💩💩🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -16997,7 +16997,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩💩💩💩🐣
+### Question #40 💩💩💩💩🐣
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -17334,7 +17334,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46 💩💩
+### Question #46 💩
 
 You are building an application that has the following assets:
 
@@ -17970,7 +17970,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩💩🐣
+### Question #55 💩🐣
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18560,7 +18560,7 @@ Final Answer
 
 
 
-### Question-66  💩💩
+### Question-66  💩
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18848,9 +18848,11 @@ Final Answer
 
 
 
-### Question-71 💩
+### Question-71 💩🐣
 
-Your company has a project in Azure DevOps for a new web application You need to ensure that when code is checked in, a build runs automatically.
+Your company has a project in Azure DevOps for a new web application 
+
+<mark>You need to ensure that when code is checked in, a build runs automatically.</mark>
 
 Solution: From the Triggers tab of the build pipeline, you select Enable continuous integration.
 
@@ -19272,7 +19274,7 @@ Final Answer
 **B. No** ❌
 
 
-### Question-80 💩
+### Question-80
 
 
 You have a project in Azure DevOps named Project. Project contains a pipeline that builds a container image named Image and pushes Image1 to an Azure container registry named ACR1. 
