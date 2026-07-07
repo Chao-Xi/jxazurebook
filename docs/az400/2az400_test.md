@@ -813,7 +813,7 @@ Why the others are not correct
 
 
 
-### Question -17 💩
+### Question -17 
 
 Your company hosts a web application in Azure, and makes use of Azure Pipelines for managing the build and release of the application. When stakeholders report that system performance has been adversely affected by the most recent releases, you configure alerts in Azure Monitor. 
 
@@ -943,7 +943,8 @@ Why the other options are incorrect:
 
 You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
 
-### Question -20 💩
+
+### Question -20 💩🐣
 
 You want to use a solitary feed to release several builds of each package. 
 
@@ -972,7 +973,7 @@ In Azure Artifacts, **views** allow you to control which package versions are vi
 
 Typical views include:
 
-* **@Local** → packages being developed
+* <mark>**@Local** → packages being developed</mark>
 * **@Prerelease** → testing versions
 * **@Release** → stable packages
 
@@ -1152,7 +1153,7 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question -24 💩💩🐣
+### Question -24 💩🐣
 
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
@@ -1352,7 +1353,7 @@ Your company makes use of <mark>Azure SQL Database Intelligent Insights and Azur
 
 <mark>**Solution: You use the Transact-SQL.**<mark>
 
-####  Question - 27(2) 💩💩
+####  Question - 27(2) 💩
 
 <mark>**Solution: You use Azure Log Analytics.**<mark>
 
@@ -1401,7 +1402,7 @@ Since **CQL** is incorrect and **KQL** is required, the solution does **not** me
 ✅ **Correct answer: B. No**
 
 
-### Question -28 💩💩🐣
+### Question -28 💩🐣
 
 You manage an Azure web app that supports an e-commerce website. 
 
@@ -1515,7 +1516,7 @@ Explanation
 - **Azure Logic Apps**
 - **Azure Application Insights**
 
-### Question -30. 💩💩🐣
+### Question -30. 💩🐣
 
 **You are in the process of building a mobile app aimed at Android and iOS devices.**
 
@@ -15220,7 +15221,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩💩💩🐣
+### Question #8 💩💩🐣
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15234,7 +15235,7 @@ B. Add the Team Foundation Server (TFS) plug-in to Jenkins.
 
 C. Add a personal access token to your Jenkins account.
 
-D. Create a personal access token (PAT) in your Azure DevOps account.
+D. Create a personal access token (PAT) in your Azure DevOps account.  (我是第一步，下一步要做什么呢？)
 
 E. Create a service hook in Azure DevOps.
 
@@ -15547,7 +15548,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩💩
+### Question #13 💩
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15687,7 +15688,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩💩🐣
+### Question #15  💩💩💩🐣
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -15824,7 +15825,7 @@ Final Answer:
 
 ### Question-18  💩
 
-You are automating the build process for a Java-based application by using Azure DevOps.
+You are automating the build process for a <mark>Java-based</mark> application by using Azure DevOps.
 
 **You need to add code coverage testing and publish the outcomes to the pipeline.**
 
@@ -16934,7 +16935,7 @@ Final Answer:
 
 **Create Azure Artifacts feed with upstream sources → Run initial package restore → Modify configuration files to reference the feed**
 
-### Question #39 💩
+### Question #39
 
 HOTSPOT You have the Azure DevOps pipeline shown in the following exhibit.
 
@@ -16988,7 +16989,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩💩💩🐣
+### Question #40 💩💩💩🐣
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -17016,11 +17017,16 @@ Answer Area
 
 ✅ Correct sequence:
 
+
+**4 configurations + 1 node check**
+
 1. **Upload a configuration to Azure Automation State Configuration**
 2. **Compile a configuration into a node configuration**
 3. **Onboard the virtual machines to Azure Automation State Configuration**
 4. **Assign the node configuration**
 5. **Check the compliance status of the node**
+
+
 
 ---
 
@@ -17604,7 +17610,7 @@ To meet the requirements (preserve changeset and work item revision dates, migra
 * API-based tools → Do not preserve full historical metadata (dates).
 * TFS Integration Platform → Deprecated and does not meet full fidelity requirements.
 
-### Question #50 💩
+### Question #50 💩🐣
 
 You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy1. 
 
