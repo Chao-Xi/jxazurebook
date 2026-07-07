@@ -28862,7 +28862,7 @@ Authenticate Azure DevOps with:
 **D. personal access token (PAT)**
 
 
-### Question #4 💩💩
+### Question #4 💩🐣
 
 You need to configure authentication for App1. The solution must support the planned changes.
 
@@ -28945,7 +28945,7 @@ The requirement states:
 3. Configure the ID and secret for App1
 
 
-### Question #5  💩💩💩
+### Question #5  💩💩🐣
 
 | Number | Required data |
 | :--- | :--- |
@@ -29389,7 +29389,7 @@ Register-AzureRmAutomationDscNode
 -ConfigurationMode 'ApplyOnly'
 ```
 
-### Question #1 💩💩💩💩
+### Question #1 💩💩💩
 
 **HOTSPOT -**
 How should you complete the code to initialize App Center in the mobile application? To answer, select the appropriate options in the answer area.
@@ -29471,7 +29471,7 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2 💩💩💩🐣
+### Question #2 💩💩🐣
 
 How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
@@ -29511,7 +29511,7 @@ Scenario: The mobile applications must be able to call the share pricing service
 The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
 
 
-### Question #3 💩💩
+### Question #3 💩
 
 Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? 
 
@@ -29599,7 +29599,7 @@ This question is about **Azure Artifacts feed permissions**.
 Box 2: Owner Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
 
 
-### Question #4 💩💩
+### Question #4 💩
 
 
 To resolve the current technical issue, what should you do to the Register-AzureRmAutomationDscNode command?
@@ -29665,7 +29665,7 @@ Final Answer:
 
 
 
-### Question 5 💩💩🐣
+### Question 5 💩💩】🐣
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29725,7 +29725,7 @@ Final Answer:
 
 
 
-### Question 6 💩💩
+### Question 6 💩
 
 What should you use to implement the code quality restriction on the release pipeline for the investment planning applications suite?
 
@@ -30031,7 +30031,7 @@ To ensure ongoing compliance, change LCM configuration to:
 **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
 
 
-### Question #2 💩💩💩💩🐣
+### Question #2 💩💩💩🐣
 
 You need to implement the code flow strategy for Project2 in Azure DevOps.
 
@@ -30126,7 +30126,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  💩💩💩💩🐣
+### Question #3  💩💩💩🐣
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
@@ -30217,7 +30217,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩💩💩
+### Question #1 💩💩
 
 HOTSPOT How should you configure the filters for the Project5 trigger? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
