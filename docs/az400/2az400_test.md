@@ -20282,7 +20282,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 💩💩🐣
+### Question #8 💩🐣
 
 <mark>As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.</mark>
 
@@ -21190,7 +21190,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 💩💩💩🐣
+### Question #21 💩💩🐣
 
 You have an Azure DevOps organization named Contoso.
 
