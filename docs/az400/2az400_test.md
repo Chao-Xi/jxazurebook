@@ -10194,7 +10194,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩💩🐣
+### Question-20  💩💩🐣
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10956,7 +10956,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩💩🐣
+### Question #34 💩💩🐣
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11112,7 +11112,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩💩💩🐣
+### Question #37  💩💩🐣
 
 
 You create a Git repository named Repo1 in Azure Repos.
@@ -11645,7 +11645,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩💩💩🐣
+### Question #47  💩💩🐣
 
 
 You have a GitHub repository.
@@ -11820,7 +11820,7 @@ D. pull request permissions
 Use **branch policies** to enforce **quality gates and PR requirements automatically**.
 
 
-### Question #50 💩💩		
+### Question #50 💩
 			
 You use Git for source control.
 
@@ -11890,7 +11890,7 @@ Even though the question says “two actions,” the **only valid solution is Gi
 **B**
 
 
-### Question #51 💩💩🐣
+### Question #51 💩🐣
 
 You manage source control by using GitHub.
 
@@ -11964,7 +11964,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 💩💩💩🐣
+### Question #52 💩💩🐣
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -12006,7 +12006,7 @@ To enable **CodeQL scanning** in GitHub Enterprise:
 
 CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
 
-### Question #53 💩💩🐣
+### Question #53 💩🐣
 
 HOTSPOT -
 
