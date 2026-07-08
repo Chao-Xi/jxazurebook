@@ -1817,7 +1817,7 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩💩🐣
+### Question - 7 💩🐣
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -2084,9 +2084,9 @@ Why other options are incorrect:
 *   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, **it does not control the logic of the notification system in Teams**.
 
 
-### Question -13  💩💩🐣
+### Question -13  💩🐣
 
-You have an Azure DevOps organization named Contoso.
+You have an Azure DevOps organization named Contoso. （From Azure DevOps）
 
 **<mark>You need to receive Microsoft Teams notifications</mark> when work items are updated**. What should you do?
 
@@ -2208,7 +2208,7 @@ To determine which action triggers the alert, we look at the **Condition** defin
 *   **C is incorrect:** The alert rule is specifically set to trigger on `Status == 'failed'`. A **successful** attempt will not trigger this specific rule.
 *   **D is incorrect (in the context of exam logic):** While scaling up an App Service Plan is technically an administrative "update" operation, **Delete** is the most definitive and commonly tested example of an "Administrative" lifecycle event in the Activity Log. In most standardized Azure examinations (like AZ-400 or AZ-104), "Delete" is the intended answer for the "Administrative" category.
 
-### Question -16
+### Question -16 🐣💩
 
 
 Your company uses ServiceNow for incident management. You develop an application that runs on Azure.
@@ -2373,7 +2373,7 @@ Solution architecture:
 ✅ **Final answer: A and E**
 
 
-### Question -19 
+### Question -19 💩
 
 You are monitoring the health and performance of an Azure web app by using Azure Application Insights.
 
@@ -2434,7 +2434,7 @@ You plan to monitor the release pipeline by using Azure Monitor.
 
 You need to create an alert to monitor the performance of VM1. 
 
-**The alert must be triggered when the average CPU usage exceeds 70 percent for five minutes.**
+**The alert must be triggered when the average CPU usage <mark>exceeds 70 percent for five minutes</mark>.**
 
 The alert must calculate the average once every minute.
 
@@ -3002,7 +3002,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 💩🐣
+### Question-30 💩💩🐣
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3138,7 +3138,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 *   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
-### Question-33 💩🐣
+### Question-33 💩🐣🐣
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
@@ -3275,9 +3275,9 @@ Why the other options are incorrect
 | ----------------------- | -------------------------- |
 | After `summarize`       | **bin(TimeGenerated, 1h)** |
 | Before `Threshold = 75` | **extend**                 |
+ 
 
-
-### Question-35 💩🐣
+### Question-35 💩🐣🐣
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
@@ -3471,7 +3471,7 @@ Perf
 | render timechart  // 呈现：画图 ← 最后一步
 ```
 
-### Question-38
+### Question-38 💩🐣
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. 
 
@@ -3824,7 +3824,7 @@ Mapping to the options
 
 **A and D**
 
-### Question-43 💩💩💩🐣
+### Question-43 💩💩🐣
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -28994,7 +28994,7 @@ To meet the technical requirements for the Woodgrove Bank dashboard, you should 
 3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
 
 
-### Question 6 💩💩💩
+### Question 6 💩💩
 
 You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
 
@@ -29389,7 +29389,7 @@ Register-AzureRmAutomationDscNode
 -ConfigurationMode 'ApplyOnly'
 ```
 
-### Question #1 💩💩💩
+### Question #1 💩💩
 
 **HOTSPOT -**
 How should you complete the code to initialize App Center in the mobile application? To answer, select the appropriate options in the answer area.
@@ -29665,7 +29665,7 @@ Final Answer:
 
 
 
-### Question 5 💩💩】🐣
+### Question 5 💩💩🐣
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29791,7 +29791,7 @@ Final Answer:
 
 
 
-### Question 7 💩💩🐣
+### Question 7 💩🐣
 
 How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
 
@@ -30316,7 +30316,7 @@ To integrate Azure DevOps with SonarQube, the **first step** is to establish aut
 **B**
 
 
-### Question #3  💩💩💩
+### Question #3  💩💩🐣
 
 You need to implement Project4. What should you do first?
 
