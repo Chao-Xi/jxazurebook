@@ -12957,7 +12957,7 @@ Key Point
 
 So, both services can be notified.
 
-### Question #15 💩
+### Question #15
 
 You are using Agile process methodologies and Azure Boards in Azure DevOps.
 
@@ -13748,7 +13748,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩💩🐣
+### Question #31 💩🐣
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13971,7 +13971,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩💩🐣
+### Question-36  💩🐣
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -14100,7 +14100,7 @@ NOTE: Each correct selection is worth one point.
 
 * A. Create an Azure Monitor workbook.
 * B. Create an Azure logic app that has an HTTP request trigger.
-* C. Create an Azure logic app that has an Azure DevOps trigger.
+* C. Create an Azure logic app that has an Azure DevOps trigger. （<mark>The alert comes from Azure Monitor, not DevOps; trigger would not fire.</mark>）
 * D. Modify an action group in Azure Monitor.
 * E. Modify the Diagnostics settings in Azure Monitor,
 
@@ -14540,7 +14540,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩💩🐣
+### Question-47  💩💩🐣
 
 You are integrating an Azure Boards project and a GitHub repository.
 
