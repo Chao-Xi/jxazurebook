@@ -5103,11 +5103,11 @@ The correct answer is:
 
 - Attach an **action group** to send an **email notification**. ✅
 
-- You need to ensure that an email alert is generated whenever VMSS1 ❌
+- <mark>You need to ensure that an email alert is generated whenever VMSS1</mark> ❌
 
-- From Azure DevOps, configure the Service hooks settings for Project1. ❌
+- <mark>From Azure DevOps, configure the Service hooks settings for Project1.</mark> ❌
 
-- Solution: From Azure Monitor, configure the autoscale settings. ❌
+- <mark>Solution: From Azure Monitor, configure the autoscale settings.</marj> ❌
 
 Explanation:
 
@@ -5290,7 +5290,7 @@ To solve this, focus on **what is being stored** and **how Azure Data Factory (A
 
 
 
-### Question #2 💩💩🐣
+### Question #2 💩🐣
 
 Your company has a project in Azure DevOps for a new web application.
 
@@ -5613,9 +5613,9 @@ B. Modify the application to access the key vault.
 
 C. Configure a Key Vault access policy.
 
-D. Deploy an Azure Desired State Configuration (DSC) extension.
+D. Deploy an Azure Desired State Configuration (DSC) extension.  (**Desired State Configuration is used for configuring the operating system and software on the VM**)
 
-E. Deploy a virtual machine that uses a system-assigned managed identity.
+E. Deploy a virtual machine that uses a system-assigned managed identity.  
 
 ----------
 
@@ -5639,7 +5639,7 @@ Why others are not included:
 *   **A. Configure RBAC:** While RBAC can be used for Key Vault data plane access, **Access Policy** (C) is the traditional and most common method used in these certification scenarios. You generally use one or the other for the specific task of secret retrieval.
 *   <mark>**D. DSC extension:** Desired State Configuration is used for configuring the operating system and software on the VM, but it is not a requirement for an application to communicate with Key Vault.</mark>
 
-### Question #9  💩💩💩
+### Question #9  💩💩
 
 
 **HOTSPOT -**
@@ -5824,7 +5824,7 @@ Result
 
 
 
-### Question #12 💩💩💩🐣
+### Question #12 💩💩🐣
 
 You use GitHub Enterprise Server as a source code repository.
 
@@ -5841,11 +5841,11 @@ Which three actions should you perform in sequence? To answer, move the appropri
 
 Actions
 
-- From Developer settings in GitHub Enterprise Server, register a new OAuth app.
+- From Developer settings in GitHub Enterprise Server, register a <mark>new OAuth app.<mark>
 - From Project Settings in Azure DevOps, create a service hook subscription.
 - From Organization settings in Azure DevOps, connect to Azure Active Directory (Azure AD).
 - From Project Settings in Azure DevOps, add a GitHub connection.
-- From Organization settings in Azure DevOps, add an OAuth configuration.
+- From Organization settings in Azure DevOps, add <mark>an OAuth configuration<mark>.
 - From Developer settings in GitHub Enterprise Server, generate a private key.
 
 --------------
@@ -5866,7 +5866,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩💩💩
+### Question-13 💩💩
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -5911,7 +5911,7 @@ Once the Service Principal is created, you must go to the Azure Key Vault and cr
 
 Finally, you go to Azure DevOps and create a **Service Connection** of the type "Azure Resource Manager." You use the credentials of the Service Principal you created in Step 1. This connects your DevOps project to your Azure subscription, allowing the pipeline tasks (such as the "Azure Key Vault" task) to use that authenticated connection to retrieve secrets and perform deployments.
 
-### Question #14
+### Question #14 💩
 
 You have a private project in Azure DevOps and two users named User1 and User2.
 
@@ -6329,7 +6329,7 @@ Based on the exhibits provided, here is the analysis and the solution for the Ho
   *   <mark>In a standard Azure DevOps project, the default permission for project members (Contributors) is "Allow" for editing dashboards.</mark>
 *   **Statement 3 (Yes):** Similar to the DB Team, the **Web Team** permissions remain at their **default values**. Since the default allows for dashboard management, they are able to delete dashboards.
 
-### Question #23 💩💩🐣
+### Question #23 💩🐣
 
 
 You are implementing a package management solution for a Node.js application by using Azure Artifacts.
@@ -6417,7 +6417,7 @@ Explanation:
 *   **A deployment task** is too late in the process; security scanning should happen during the build (CI) phase to "shift left" security.
 
 
-### Question #25 💩💩💩🐣
+### Question #25 💩💩🐣
 
 You plan to use Azure Kubernetes Service (AKS) to host containers deployed from images hosted in a Docker Trusted Registry.
 
@@ -6467,7 +6467,7 @@ This is the primary command to provision the cluster. You will pass the `appId` 
 Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #26 💩💩💩🐣
+### Question #26 💩💩🐣
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
@@ -6743,7 +6743,7 @@ Evaluation of options
 
 
 
-### Question #31 💩🐣
+### Question #31 💩🐣🐣
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -6962,7 +6962,7 @@ Answer: B
 
 
 
-### Question #35 
+### Question #35  💩
 
 You need to deploy a new project in Azure DevOps that has the following requirements:
 
@@ -7351,7 +7351,7 @@ When you need to pass a secure value (like a password) as a parameter during dep
 You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault ID. The key vault can exist in a different subscription than the resource group you are deploying to.
 
 
-### Question-41 
+### Question-41 💩
 
 You have an Azure DevOps organization named Contoso that contains a project named Project1.
 
@@ -7804,7 +7804,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-48 
+### Question-48  💩
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
