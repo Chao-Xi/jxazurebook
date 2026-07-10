@@ -15157,7 +15157,7 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #7 
+### Question #7  💩 💩
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15221,7 +15221,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩💩🐣
+### Question #8 💩🐣
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15278,7 +15278,7 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩🐣🐣
+### Question #9  💩🐣
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15688,7 +15688,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩💩💩🐣
+### Question #15  💩💩🐣
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -16352,7 +16352,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩💩💩🐣
+### Question #29 💩💩🐣
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16642,7 +16642,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩💩🐣
+### Question #34 💩💩🐣🐣
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16876,7 +16876,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩🐣
+### Question #38 💩💩💩💩🐣🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -17967,7 +17967,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩🐣
+### Question #55 💩💩🐣
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18102,7 +18102,7 @@ Final Answer:
 * **Slot 1:** `npm install`
 * **Slot 2:** `ne(variables.CACHE_RESTORED, 'true')`
 
-### Question #57. 
+### Question #57 💩 
 
 You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. 
 
@@ -18453,7 +18453,7 @@ Why the others are wrong
 **D. Delete `Package-lock.json`.**
 
 
-### Question-64
+### Question-64 💩
 
 Your company deploys applications in Docker containers.
 
@@ -18509,9 +18509,9 @@ Your company has a hybrid cloud between Azure and Azure Stack.
 
 The company uses Azure DevOps for its full CI/CD pipelines. Some applications are built by using Erlang and Hack.
 
-You need to ensure that Erlang and Hack are supported as part of the build strategy across the hybrid cloud. The solution must minimize nanagement overhead.
+You need to <mark>ensure that Erlang and Hack are supported as part of the build strategy across the hybrid cloud</mark>. The solution must minimize nanagement overhead.
 
-Nhat should you use to execute the build
+What should you use to execute the build
 
 * A. a Microsoft-hosted agent
 * B. Azure DevOps self-hosted agents on Azure DeTest Labs virtual machines.
@@ -18557,7 +18557,7 @@ Final Answer
 
 
 
-### Question-66  💩
+### Question-66 
 
 
 You are designing an Azure DevOps strategy for your company's development team.
@@ -18845,7 +18845,7 @@ Final Answer
 
 
 
-### Question-71 💩🐣
+### Question-71 💩💩🐣
 
 Your company has a project in Azure DevOps for a new web application 
 
@@ -19663,7 +19663,7 @@ Final Answer
 
 
 
-### Question-88 💩🐣
+### Question-88 💩💩🐣
 
 You have a project in Azure DevOps.
 
