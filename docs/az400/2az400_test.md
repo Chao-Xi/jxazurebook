@@ -12355,7 +12355,7 @@ Key Principle
 
 Retrospectives should be **safe, blameless, and team-focused**, encouraging collaboration and continuous improvement.
 
-### Question #3 
+### Question #3 💩
 
 You have a build pipeline in Azure Pipelines.
 
@@ -13214,7 +13214,7 @@ Key Point
 The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
 
 
-### Question #20
+### Question #20 💩
 
 You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
 
@@ -13458,7 +13458,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-24
+### Question-24 💩
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13698,7 +13698,7 @@ Key takeaway
 * **Cycle time = In Progress → Done**
 
 
-### Question-30
+### Question-30. 💩
 
 You have a project in Azure DevOps that has a release pipeline.
 
