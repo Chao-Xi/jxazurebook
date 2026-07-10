@@ -9469,7 +9469,7 @@ To meet the requirements for **automating code review assignments** in GitHub:
 * The "Clear Never assign" and notification options do not affect workload distribution.
 
 
-### Question-6
+### Question-6 💩
 
 You are designing the development process for your company.
 
@@ -10817,7 +10817,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #32
+### Question #32 💩🐣
 
 You have a GitHub repository named repo1.
 
