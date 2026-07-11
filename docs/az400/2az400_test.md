@@ -23777,7 +23777,7 @@ Why this does **not** meet the goal:
 The correct solution remains **flaky test management**, which automatically detects and retries flaky tests.
 
 
-### Question #13 💩
+### Question #13
 
 You plan to publish build artifacts by using an Azure pipeline.
 
@@ -24676,7 +24676,7 @@ Why the other options are incorrect:
 *   **C. Feature toggle:** This controls access to a specific piece of **functionality** within the code. While it can be used for gradual exposure, it doesn't manage the deployment of the microservice itself and can lead to increased code complexity.
 *   **D. Blue/green:** This involves switching **100% of traffic** from an old environment (Blue) to a new environment (Green) at once. It does not naturally support a gradual rollout or fine-grained control over the number of users receiving the new code during the transition.
 
-### Question #29  💩
+### Question #29 
 
 You have an Azure Pipelines pipeline named Pipeline1 that has the following YAML definition.
 
@@ -24778,7 +24778,7 @@ NOTE: Each correct selection is worth one point.
 
 
 
-### Question #30  💩
+### Question #30
 
 You use Azure Pipelines to build and test code.
 
@@ -26131,7 +26131,7 @@ NOTE: Each correct selection is worth one point.
 * **Unit** → isolated logic
 * **Integration** → component interaction
 
-### Question #46 💩
+### Question #46 
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -26236,7 +26236,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-### Question #47 
+### Question #47  💩
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26890,7 +26890,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩🐣
+### Question-55 💩🐣🐣
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -27887,7 +27887,7 @@ Why the other options are incorrect
 ✅ **Answer: A, B, D**
 
 
-### Question-74 💩
+### Question-74
 
 You have an Azure subscription that contains multiple Azure pipelines.
 
@@ -28316,7 +28316,7 @@ Why the other options are incorrect
 ✅ **Answer: B. the Pester test framework**
 
 
-### Question-81  💩
+### Question-81
 
 You use Azure Repos to manage source code and Azure Pipelines to implement continuous integration and continuous deployment (CI/CD).
 
@@ -28571,7 +28571,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-85 💩💩
+### Question-85 💩
 
 You use Azure Pipelines to build and test code projects.
 
@@ -28686,7 +28686,7 @@ The commit history of the POC branch must replace the history of the default bra
 
 Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
 
-### Question #1  💩
+### Question #1 
 
 You need to configure the alert for VM1. The solution must meet the technical requirements.
 
@@ -28727,7 +28727,7 @@ Based on the image provided, the two settings you should configure (click on) ar
 
 
 
-### Question 2 💩
+### Question 2
 
 You need to meet the technical requirements for controlling access to Azure DevOps. What should you use?
 
@@ -28794,7 +28794,7 @@ Apply policies to:
 
 **C. conditional access policies in Azure AD**
 
-### Question #3 💩
+### Question #3
 
 You need to configure Azure Pipelines to control App2 builds. Which authentication method should you use?
 
@@ -28994,7 +28994,7 @@ To meet the technical requirements for the Woodgrove Bank dashboard, you should 
 3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
 
 
-### Question 6 💩
+### Question 6
 
 You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
 
@@ -29057,7 +29057,7 @@ It is designed for:
 **B. BACPAC**
 
 
-### Question 7 💩
+### Question 7
 
 You need to meet the technical requirements for monitoring App1. What should you use?
 
@@ -29125,7 +29125,7 @@ If you see:
 **B. Azure Application Insights**
 
 
-### Question 8 💩
+### Question 8
 
 You need to replace the existing DevOps tools to support the planned changes.
 
@@ -29227,7 +29227,7 @@ The goal is to **replace existing DevOps tools** with Azure DevOps + GitHub equi
 * Bamboo → **Azure Pipelines**
 * BitBucket → **GitHub repositories**
 
-### Question #9 💩
+### Question #9 
 
 You need to the merge the POC branch <mark>into the default branch</mark>. The solution must meet the technical requirements. Which command should you run?
 
@@ -29289,7 +29289,7 @@ D. git merge --allow-unrelated-histories
 **A. git rebase**
 
 
-### Question #10 💩
+### Question #10 
 
 You need to perform the GitHub code migration. The solution must support the planned changes for the DevOps environment. What should you use?
 
@@ -29389,7 +29389,7 @@ Register-AzureRmAutomationDscNode
 -ConfigurationMode 'ApplyOnly'
 ```
 
-### Question #1 💩
+### Question #1
 
 **HOTSPOT -**
 How should you complete the code to initialize App Center in the mobile application? To answer, select the appropriate options in the answer area.
@@ -29511,7 +29511,7 @@ Scenario: The mobile applications must be able to call the share pricing service
 The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
 
 
-### Question #3 💩💩
+### Question #3 💩
 
 Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? 
 
@@ -29599,7 +29599,7 @@ This question is about **Azure Artifacts feed permissions**.
 Box 2: Owner Members of a group named Team Leaders must be able to create new packages and edit the permissions of package feeds.
 
 
-### Question #4 💩
+### Question #4
 
 
 To resolve the current technical issue, what should you do to the Register-AzureRmAutomationDscNode command?
@@ -29725,7 +29725,7 @@ Final Answer:
 
 
 
-### Question 6 💩
+### Question 6
 
 What should you use to implement the code quality restriction on the release pipeline for the investment planning applications suite?
 
@@ -29957,7 +29957,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩💩💩
+### Question #1 💩💩
 
 You add the virtual machines as managed nodes in Azure Automation State Configuration. You need to configure the managed computers in Pool7.
 
@@ -30031,7 +30031,7 @@ To ensure ongoing compliance, change LCM configuration to:
 **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
 
 
-### Question #2 💩💩💩🐣
+### Question #2 💩💩🐣
 
 You need to implement the code flow strategy for Project2 in Azure DevOps.
 
@@ -30126,7 +30126,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  💩💩💩🐣
+### Question #3  💩💩🐣
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
@@ -30217,7 +30217,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩💩
+### Question #1 💩
 
 HOTSPOT How should you configure the filters for the Project5 trigger? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -30266,8 +30266,7 @@ You must configure **path filters**, not branch filters.
 ✔️ This ensures the pipeline runs for all changes **except `/folder1`**.
 
 
-### Question #2 💩💩
-
+### Question #2 💩
 
 In Azure DevOps, you create Project3.
 
@@ -30316,7 +30315,7 @@ To integrate Azure DevOps with SonarQube, the **first step** is to establish aut
 **B**
 
 
-### Question #3  💩💩🐣
+### Question #3  💩🐣
 
 You need to implement Project4. What should you do first?
 
@@ -30367,7 +30366,7 @@ When a **Dockerfile is already provided**, the pipeline configuration (Docker ta
 
 
 
-### Question #4 💩💩💩🐣
+### Question #4 💩💩🐣
 
 You need to recommend a procedure to implement the build agent for Project1.
 
@@ -30418,7 +30417,7 @@ To implement a **build agent using Azure resources** (as required), you should d
 2 → Create PAT
 3 → Install & register agent on Azure VM
 
-### Question #5 💩💩💩🐣
+### Question #5 💩💩🐣
 
 You need to implement Project6.
 
