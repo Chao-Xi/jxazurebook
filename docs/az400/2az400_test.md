@@ -19713,7 +19713,7 @@ Final Answer
 
 ## Topic 8 - Question Set 8
 
-### Question #1 💩
+### Question #1 💩🐣
 
 You manage the Git repository for a large enterprise application.
 
@@ -20220,7 +20220,7 @@ git tag -a v3.0 -m "Release v3.0"
 Use **annotated tags (`-a`)** when creating releases—they include metadata like author, date, and message, which is essential for versioning 🚀
 
 
-### Question #7 💩
+### Question #7
 
 Your company has a project in Azure DevOps.
 
@@ -20433,7 +20433,7 @@ To enable **continuous delivery (CD)** in a classic release pipeline:
 * **The Web Application artifact**
 
 
-### Question #10 💩
+### Question #10
 
 Your company plans to deploy an application to the following endpoints:
 
@@ -20993,7 +20993,7 @@ NOTE: Each correct selection is worth one point.
 
 **<mark>Releases will be made available to users who are grouped by their tolerance for software faults:</mark>**
 
-*   Progressive exposure
+*   Progressive exposure （canary deployment)
 *   Blue/green
 *   Feature flags
 
@@ -21052,7 +21052,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 💩💩🐣
+### Question #19 💩🐣
 
 You have a project in Azure DevOps.
 
@@ -22854,7 +22854,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩💩💩🐣
+### Question #43 💩💩🐣
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
@@ -28686,7 +28686,7 @@ The commit history of the POC branch must replace the history of the default bra
 
 Access to Azure DevOps must be restricted to specific IP addresses. Page load times for App1 must be captured and monitored. Administrative effort must be minimized.
 
-### Question #1  💩💩
+### Question #1  💩
 
 You need to configure the alert for VM1. The solution must meet the technical requirements.
 
@@ -28727,7 +28727,7 @@ Based on the image provided, the two settings you should configure (click on) ar
 
 
 
-### Question 2 💩💩
+### Question 2 💩
 
 You need to meet the technical requirements for controlling access to Azure DevOps. What should you use?
 
@@ -28794,7 +28794,7 @@ Apply policies to:
 
 **C. conditional access policies in Azure AD**
 
-### Question #3 💩💩
+### Question #3 💩
 
 You need to configure Azure Pipelines to control App2 builds. Which authentication method should you use?
 
@@ -28945,7 +28945,7 @@ The requirement states:
 3. Configure the ID and secret for App1
 
 
-### Question #5  💩💩🐣
+### Question #5  💩🐣
 
 | Number | Required data |
 | :--- | :--- |
@@ -28994,7 +28994,7 @@ To meet the technical requirements for the Woodgrove Bank dashboard, you should 
 3.  **Query tile (Metric 3):** When you need to display a specific **total number** (count) of work items resulting from a saved query, the Query tile is the correct tool. While the "Query results" widget shows the list of items, the "Query tile" shows the single summary metric requested.
 
 
-### Question 6 💩💩
+### Question 6 💩
 
 You plan to deploy a new database environment. The solution must meet the technical requirements. You need to prepare the database for the deployment.
 
@@ -29057,7 +29057,7 @@ It is designed for:
 **B. BACPAC**
 
 
-### Question 7 💩💩
+### Question 7 💩
 
 You need to meet the technical requirements for monitoring App1. What should you use?
 
@@ -29125,7 +29125,7 @@ If you see:
 **B. Azure Application Insights**
 
 
-### Question 8 💩💩
+### Question 8 💩
 
 You need to replace the existing DevOps tools to support the planned changes.
 
@@ -29227,7 +29227,7 @@ The goal is to **replace existing DevOps tools** with Azure DevOps + GitHub equi
 * Bamboo → **Azure Pipelines**
 * BitBucket → **GitHub repositories**
 
-### Question #9 💩💩
+### Question #9 💩
 
 You need to the merge the POC branch <mark>into the default branch</mark>. The solution must meet the technical requirements. Which command should you run?
 
@@ -29389,7 +29389,7 @@ Register-AzureRmAutomationDscNode
 -ConfigurationMode 'ApplyOnly'
 ```
 
-### Question #1 💩💩
+### Question #1 💩
 
 **HOTSPOT -**
 How should you complete the code to initialize App Center in the mobile application? To answer, select the appropriate options in the answer area.
@@ -29471,7 +29471,7 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2 💩💩🐣
+### Question #2 💩🐣
 
 How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
@@ -29511,7 +29511,7 @@ Scenario: The mobile applications must be able to call the share pricing service
 The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
 
 
-### Question #3 💩
+### Question #3 💩💩
 
 Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? 
 
@@ -29665,7 +29665,7 @@ Final Answer:
 
 
 
-### Question 5 💩💩🐣
+### Question 5 💩🐣
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29858,7 +29858,7 @@ The requirement clearly states:
 * **Production stage:** Set the stage retention policy to **60 days**
 
 
-### Question 8  💩💩🐣
+### Question 8  💩🐣
 
 HOTSPOT Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
 
