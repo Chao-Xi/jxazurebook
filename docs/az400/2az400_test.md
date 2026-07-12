@@ -9324,8 +9324,7 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 
 
-### Question #3 🐣
-
+### Question #3 
 
 You need to find and and isolate shared code. 
 
@@ -9368,7 +9367,7 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 3.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
 
 
-### Question #4 🐣
+### Question #4 
 
 You are creating a NuGet package.
 
@@ -9471,7 +9470,7 @@ To meet the requirements for **automating code review assignments** in GitHub:
 * The "Clear Never assign" and notification options do not affect workload distribution.
 
 
-### Question-6 💩
+### Question-6
 
 You are designing the development process for your company.
 
@@ -9858,8 +9857,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 🐣
-
+### Question-12 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
 
@@ -10154,7 +10152,7 @@ Even if you change the feed URL or create a new feed, Azure Artifacts requires a
 **Answer: D. Publish the package to a public NuGet repository.**
 
 
-### Question #19 🐣
+### Question #19 
 
 You use GitHub for source control and project-related discussions.
 
@@ -10196,7 +10194,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩🐣
+### Question-20  🐣
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10455,7 +10453,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #25 🐣
+### Question #25
 
 You use Git for source control.
 
@@ -10597,7 +10595,7 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
-### Question #28 🐣
+### Question #28
 
 You use Git for source control. You have an app named App1.
 
@@ -10958,7 +10956,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩🐣
+### Question #34 🐣
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11076,7 +11074,7 @@ When a commit in a public GitHub repository matches a known secret pattern (for 
 The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
 
 
-### Question #36 💩🐣
+### Question #36 🐣
 
 
 You have a GitHub repository.
@@ -11115,7 +11113,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩🐣
+### Question #37  🐣
 
 You create a Git repository named Repo1 in Azure Repos.
 
@@ -11457,7 +11455,7 @@ Why the others are wrong:
 
 
 
-### Question-43 💩🐣
+### Question-43 🐣
 
 You manage code by using GitHub.
 
@@ -11647,7 +11645,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩🐣
+### Question #47  🐣
 
 
 You have a GitHub repository.
@@ -11892,7 +11890,7 @@ Even though the question says “two actions,” the **only valid solution is Gi
 **B**
 
 
-### Question #51 🐣
+### Question #51
 
 You manage source control by using GitHub.
 
@@ -11966,7 +11964,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 💩🐣
+### Question #52 🐣
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -12103,7 +12101,7 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55 🐣
+### Question #55
 
 You have a GitHub repository.
 
@@ -12160,7 +12158,7 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56 🐣
+### Question #56
 
 You have a .NET app named App1.
 
