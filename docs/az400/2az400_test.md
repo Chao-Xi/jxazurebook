@@ -28876,7 +28876,7 @@ Authenticate Azure DevOps with:
 **D. personal access token (PAT)**
 
 
-### Question #4 💩🐣
+### Question #4 💩
 
 You need to configure authentication for App1. The solution must support the planned changes.
 
@@ -28959,7 +28959,7 @@ The requirement states:
 3. Configure the ID and secret for App1
 
 
-### Question #5  💩🐣
+### Question #5 
 
 | Number | Required data |
 | :--- | :--- |
@@ -29485,7 +29485,7 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2 💩🐣
+### Question #2 💩
 
 How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
@@ -29679,7 +29679,7 @@ Final Answer:
 
 
 
-### Question 5 💩🐣
+### Question 5 💩
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -29805,7 +29805,7 @@ Final Answer:
 
 
 
-### Question 7 💩🐣
+### Question 7 💩
 
 How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
 
@@ -29872,9 +29872,9 @@ The requirement clearly states:
 * **Production stage:** Set the stage retention policy to **60 days**
 
 
-### Question 8  💩🐣
+### Question 8  💩
 
-HOTSPOT Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
+Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -29971,7 +29971,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩💩
+### Question #1 
 
 You add the virtual machines as managed nodes in Azure Automation State Configuration. You need to configure the managed computers in Pool7.
 
@@ -30045,7 +30045,7 @@ To ensure ongoing compliance, change LCM configuration to:
 **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
 
 
-### Question #2 💩💩🐣
+### Question #2 💩🐣
 
 You need to implement the code flow strategy for Project2 in Azure DevOps.
 
@@ -30140,7 +30140,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  💩💩🐣
+### Question #3  💩🐣
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
@@ -30231,7 +30231,7 @@ Implement Project3, Project5, Project6, and Project7 based on the planned change
 Implement Project4 and configure the project to push Docker images to Azure Container Registry.
 
 
-### Question #1 💩
+### Question #1
 
 HOTSPOT How should you configure the filters for the Project5 trigger? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -30280,7 +30280,7 @@ You must configure **path filters**, not branch filters.
 ✔️ This ensures the pipeline runs for all changes **except `/folder1`**.
 
 
-### Question #2 💩
+### Question #2 
 
 In Azure DevOps, you create Project3.
 
@@ -30329,7 +30329,7 @@ To integrate Azure DevOps with SonarQube, the **first step** is to establish aut
 **B**
 
 
-### Question #3  💩🐣
+### Question #3  💩
 
 You need to implement Project4. What should you do first?
 
@@ -30380,7 +30380,7 @@ When a **Dockerfile is already provided**, the pipeline configuration (Docker ta
 
 
 
-### Question #4 💩💩🐣
+### Question #4 💩🐣
 
 You need to recommend a procedure to implement the build agent for Project1.
 
@@ -30431,7 +30431,7 @@ To implement a **build agent using Azure resources** (as required), you should d
 2 → Create PAT
 3 → Install & register agent on Azure VM
 
-### Question #5 💩💩🐣
+### Question #5 💩🐣
 
 You need to implement Project6.
 
