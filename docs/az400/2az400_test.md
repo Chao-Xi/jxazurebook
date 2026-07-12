@@ -12358,7 +12358,7 @@ Key Principle
 
 Retrospectives should be **safe, blameless, and team-focused**, encouraging collaboration and continuous improvement.
 
-### Question #3 💩
+### Question #3 
 
 You have a build pipeline in Azure Pipelines.
 
@@ -12458,7 +12458,7 @@ Hot Area:
 
 **Summary:** The most efficient way to capture all PR activity for the project "Contoso App" is a single subscription to the project's root URL.
 
-###  Question #5 💩
+###  Question #5 
 
 You have a project in Azure DevOps named Project1. Project1 contains a published wiki.
 
@@ -12502,7 +12502,7 @@ Why other options are incorrect:
 *   **C (Rename):** Renaming the pages might change their alphabetical order, but it's not the recommended or flexible way to define a custom hierarchy.
 *   **D (Drag and Drop):** This feature is **only** available for the standard "Project Wiki." It is disabled for "Published Wikis" because the portal doesn't have the authority to automatically commit and push changes back to your Git repository.
 
-### Question #6 💩
+### Question #6 
 
 You have a GitHub organization named org1 and an Azure tenant named Tenant1.
 
@@ -12818,7 +12818,7 @@ Key Point
 * Use **supported keywords** like **Completed / Fixes / Resolves** to update state
 
 
-### Question #12 💩
+### Question #12 
 
 You manage projects by using Azure Boards.
 
@@ -13020,14 +13020,14 @@ Key Insight
 * **Board includes:** Active, Resolved, Completed
 * **Completed items are removed from backlog view** but still visible on boards for tracking
 
-### Question #16 💩
+### Question #16 💩🐣
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. 
 
 
 Pipeline1 is used to automate the building of App1.
 
-You have a Slack channel named App1chat that includes an incoming webhook.
+<mark>You have a Slack channel named App1chat that includes an incoming webhook.</mark>
 
 You need to ensure that when a successful build of App1 is created, a notification is sent to App1chat by using the webhook.
 
@@ -13165,8 +13165,7 @@ Key Point
 * Link manually via the **Development section** in Azure Boards
 
 
-### Question #19 💩🐣
-
+### Question #19 
 
 You have a project in Azure DevOps that uses an Azure Boards board and stores code in a GitHub repository. 
 
@@ -13217,7 +13216,7 @@ Key Point
 The **first step** is always to **install the Azure Boards GitHub app** to enable integration.
 
 
-### Question #20 💩
+### Question #20
 
 You manage a project by using Azure Boards, and you manage the project code by using Azure Repos.
 
@@ -13275,7 +13274,7 @@ This will:
 
 
 
-### Question #21 💩🐣
+### Question #21 🐣
 
 You have an Azure DevOps project that is used to build and test an app named App1.
 
@@ -13479,6 +13478,15 @@ Does this meet the goal?
 
 **Answer: B. No** ❌
 
+❌ Solution: You create an email subscription to an Azure DevOps notification.
+
+❌ Solution: You create a service hook subscription that uses the build completed event.
+
+✅ **You create a service hook subscription that uses the code pushed event.**
+
+✅  <mark>Solution: You add a trigger to the build pipeline.</mark>
+
+
 Explanation
 
 The goal is to notify **Jenkins when a developer commits code** to a branch in **Azure Repos**.
@@ -13598,7 +13606,7 @@ Why other options are incorrect:
 *   **B (Pipeline):** While you can use a pipeline to automate documentation, it is not a requirement to create or publish a wiki.
 *   **D (Team configuration):** This handles area paths, iterations, and team members, not documentation storage.
 
-### Question-27 💩
+### Question-27
 
 You manage a project by using Azure Board, and you manage the project code by using Azure Repos.
 
@@ -13701,7 +13709,7 @@ Key takeaway
 * **Cycle time = In Progress → Done**
 
 
-### Question-30. 💩
+### Question-30 
 
 You have a project in Azure DevOps that has a release pipeline.
 
@@ -13751,7 +13759,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 💩🐣
+### Question #31 🐣
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13852,7 +13860,7 @@ Final Answer:
 **B. No** ❌
 
 
-### Question-33 💩🐣
+### Question-33 🐣
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
@@ -13873,9 +13881,12 @@ Does this meet the goal?
 
 ❌ Solution: You create an email subscription to an Azure DevOps notification.
 
+❌ Solution: You create a service hook subscription that uses the build completed event.
+
 ✅ **You create a service hook subscription that uses the code pushed event.**
 
 ✅  <mark>Solution: You add a trigger to the build pipeline.</mark>
+
 
 
 Explanation
@@ -13895,7 +13906,7 @@ Final Answer:
 **A. Yes** ✅
 
 
-### Question-34 💩🐣
+### Question-34
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13974,7 +13985,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  💩🐣
+### Question-36  🐣
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -14030,7 +14041,7 @@ Final Answer:
 **B. upstream sources** ✅
 
 
-### Question-37 💩
+### Question-37 
 
 You plan to onboard 10 new developers.
 
@@ -14086,7 +14097,7 @@ Final Answer:
 
 
 
-### Question-38 💩💩🐣
+### Question-38 💩🐣
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
@@ -14293,8 +14304,7 @@ Final Answer:
 **D. Slack** ✅
 
 
-### Question-42 💩
-
+### Question-42 
 
 You are designing a YAML template for use with Azure Pipelines. **The template will include the outputfile parameter.**
 
@@ -14397,7 +14407,7 @@ Final Answer:
 
 
 
-### Question-44  💩🐣
+### Question-44  🐣
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14496,7 +14506,7 @@ Final Answer:
 
 
 
-### Question-46  💩
+### Question-46  
 
 You use GitHub for source control and Azure Boards for project management. GitHub and Azure Boards are integrated.
 
@@ -14543,7 +14553,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩💩🐣
+### Question-47  💩🐣
 
 You are integrating an Azure Boards project and a GitHub repository.
 
