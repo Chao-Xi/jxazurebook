@@ -212,7 +212,7 @@ Which of the following should also be suggested?
 | **C. Upgrading PowerShell Core to the latest version** | Updating the PowerShell Core software to its most recent release, potentially for compatibility reasons or to access new features. |
 | **D. Using the TFS Integration Platform to perform the upgrade** | Employing a platform designed for integrating and managing changes during the upgrade process in TFS. |
 
-### Question 6 🐣
+### Question 6 
 
 You intend to manage the build and release processes using Azure DevOps. 
 
@@ -944,7 +944,7 @@ Why the other options are incorrect:
 You intend to make use of Azure Artifacts to share packages that you wrote, tested, validated, and deployed.
 
 
-### Question -20 🐣
+### Question -20
 
 You want to use a solitary feed to release several builds of each package. 
 
@@ -1817,7 +1817,7 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩🐣
+### Question - 7 🐣
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -2084,7 +2084,7 @@ Why other options are incorrect:
 *   **D. Enable continuous integration:** CI ensures that builds start automatically when code is pushed. While this triggers builds, **it does not control the logic of the notification system in Teams**.
 
 
-### Question -13 🐣
+### Question -13
 
 You have an Azure DevOps organization named Contoso. （From Azure DevOps）
 
@@ -3002,7 +3002,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 🐣
+### Question-30 
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3694,7 +3694,7 @@ To configure the Azure DevOps dashboard with the correct widgets for each metric
 
 
 
-### Question-41 🐣
+### Question-41
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. The subscription contains an Azure virtual machine scale set named VMSS1 and an Azure Standard Load Balancer named LB1. 
 
@@ -3824,7 +3824,7 @@ Mapping to the options
 
 **A and D**
 
-### Question-43 🐣
+### Question-43
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -4398,7 +4398,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: C. Azure App Configuration**
 
-### Question #56 🐣
+### Question #56
 
 You are planning projects for three customers. Each customer's preferred process for work items is shown in the following table.
 
@@ -4429,7 +4429,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 💩🐣
+### Question #57 🐣
 
 You configure an Azure Application Insights availability test.
 
@@ -4627,7 +4627,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-### Question-61  💩🐣
+### Question-61  🐣
 
 You have an Azure subscription that contains multiple web apps.
 
