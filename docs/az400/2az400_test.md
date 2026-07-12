@@ -5191,7 +5191,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-11 🐣
+### Question-11 
 
 You use GitHub for source control.
 
@@ -5560,7 +5560,7 @@ Explanation
 3. **an RBAC binding**
 
 
-### Question #7 🐣
+### Question #7
 
 HOTSPOT You manage build and release pipelines by using Azure DevOps. Your entire managed environment resides in Azure.
 
@@ -5597,7 +5597,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 💩💩🐣
+### Question #8 💩🐣
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5613,7 +5613,7 @@ B. Modify the application to access the key vault.
 
 C. Configure a Key Vault access policy.
 
-D. Deploy an Azure Desired State Configuration (DSC) extension.  (**Desired State Configuration is used for configuring the operating system and software on the VM**)
+D. Deploy an Azure Desired State Configuration (DSC) extension.  (❌ **Desired State Configuration is used for configuring the operating system and software on the VM**)
 
 E. Deploy a virtual machine that uses a system-assigned managed identity.  
 
@@ -5866,7 +5866,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 💩🐣🐣
+### Question-13 🐣🐣
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -6013,17 +6013,15 @@ Why other options are incorrect:
 *   **C (Modify devDependencies):** The prompt states the libraries are already identified as development-only. Modifying the `package.json` file to move them wouldn't change the scanner's behavior unless you also performed the production-only install and targeted scan.
 
 
-### Question #16 💩🐣
-
-After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.
+### Question #16 🐣
 
 You plan to update the Azure DevOps strategy of your company.
 
 You need to identify the following issues as they occur during the company's development process:
 
-✑ Licensing violations 
+✑ **Licensing violations** 
 
-✑ Prohibited libraries 
+✑ **Prohibited libraries** 
 
 
 <mark>Solution: You implement continuous integration.</mark>
@@ -6467,7 +6465,7 @@ This is the primary command to provision the cluster. You will pass the `appId` 
 Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #26 💩🐣
+### Question #26 🐣
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
@@ -6743,7 +6741,7 @@ Evaluation of options
 
 
 
-### Question #31 🐣
+### Question #31
 
 You have an Azure subscription that uses Azure Monitor and contains a Log Analytics workspace.
 
@@ -7080,7 +7078,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 🐣🐣
+### Question-37 🐣
 
 You have an Azure DevOps organization named Contoso.
 
@@ -8208,7 +8206,7 @@ Why other options are incorrect:
 Answer. C
 
 
-### Question #55 🐣
+### Question #55
 
 DRAG DROP -
 
@@ -8358,7 +8356,7 @@ If the question says:
 * **“open-source libraries” + “vulnerabilities”**  → Think **Mend Bolt (WhiteSource)**
 
 
-### Question #58  🐣
+### Question #58 
 
 You manage code by using GitHub.
 
@@ -9030,7 +9028,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #70 💩🐣
+### Question #70 🐣
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
@@ -10194,7 +10192,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  🐣
+### Question-20
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10817,7 +10815,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #32 🐣
+### Question #32
 
 You have a GitHub repository named repo1.
 
@@ -11074,7 +11072,7 @@ When a commit in a public GitHub repository matches a known secret pattern (for 
 The priority is **fast mitigation of leaked secrets**, so the **service provider (secret scanning partner)** is alerted first.
 
 
-### Question #36 🐣
+### Question #36
 
 
 You have a GitHub repository.
@@ -11455,7 +11453,7 @@ Why the others are wrong:
 
 
 
-### Question-43 🐣
+### Question-43
 
 You manage code by using GitHub.
 
@@ -11645,7 +11643,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  🐣
+### Question #47 
 
 
 You have a GitHub repository.
