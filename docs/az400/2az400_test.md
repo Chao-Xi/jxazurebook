@@ -14871,7 +14871,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  💩🐣
+### Question #2  🐣
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -15167,7 +15167,7 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #7  💩🐣
+### Question #7  🐣🐣
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15231,7 +15231,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 💩🐣
+### Question #8 🐣
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -15288,7 +15288,8 @@ Key Point
 
 * **Accessing Azure Repos from Jenkins = Plugin + PAT (created in Azure DevOps and configured in Jenkins)**
 
-### Question #9  💩🐣
+### Question #9 
+
 
 Your company has four projects. The version control requirements for each project are shown in the following table.
 
@@ -15503,7 +15504,7 @@ Based on the image provided, here is the extracted text content:
 * **An Internet Information Services (IIS) web application that runs in Docker:** **Hosted Windows Container**
 
 
-### Question #12 💩🐣
+### Question #12 🐣
 
 Your company has a project in Azure DevOps for a new application. 
 
@@ -15698,14 +15699,13 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩🐣
+### Question #15  🐣
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
 You need to ensure that pull requests in a branch meet the following criteria before they are merged:
 
 ✑ Committed code must compile successfully.
-
 ✑ Pull requests must have a Quality Gate status of Passed in SonarCloud.
 
 Which policy type should you configure for each requirement? 
@@ -15961,7 +15961,7 @@ A *canary* strategy deploys to a small subset first, validates functionality, an
 * **App1:** rolling
 * **App2:** canary
 
-### Question #21 💩🐣 
+### Question #21 🐣 
 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
@@ -16362,7 +16362,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩🐣
+### Question #29 🐣
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16652,7 +16652,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩🐣
+### Question #34 🐣
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16886,7 +16886,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩🐣
+### Question #38 💩💩🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -17421,7 +17421,7 @@ Explanation:
 
 
 
-### Question #47 🐣
+### Question #47 
 
 You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
 
@@ -17679,7 +17679,7 @@ These checks validate whether the deployment will violate Azure Policy **before 
 <mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51 🐣
+### Question #51 
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17978,7 +17978,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩🐣
+### Question #55 🐣
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18113,7 +18113,7 @@ Final Answer:
 * **Slot 1:** `npm install`
 * **Slot 2:** `ne(variables.CACHE_RESTORED, 'true')`
 
-### Question #57 💩 
+### Question #57 💩 🐣
 
 You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. 
 
@@ -18631,7 +18631,7 @@ Final Answer
 **D. the percentage of overall time spent on rework**
 
 
-### Question-67 🐣
+### Question-67
 
 You are developing an open source solution that uses a GitHub repository.
 
@@ -18856,7 +18856,7 @@ Final Answer
 
 
 
-### Question-71 💩🐣
+### Question-71 🐣
 
 Your company has a project in Azure DevOps for a new web application 
 
@@ -19674,7 +19674,7 @@ Final Answer
 
 
 
-### Question-88 💩🐣
+### Question-88 🐣
 
 You have a project in Azure DevOps.
 
