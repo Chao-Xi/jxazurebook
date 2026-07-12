@@ -7410,7 +7410,7 @@ Final Answer:
 
 **C. Create a variable group in Project1** ✅
 
-### Question #42 💩💩🐣
+### Question #42 💩🐣
 
 Your company has a project in Azure DevOps named Project1.
 
@@ -7804,7 +7804,7 @@ Final Answer:
 **C. WhiteSource Bolt** ✅
 
 
-### Question-48  💩
+### Question-48 
 
 You are designing the security validation strategy for a project in Azure DevOps.
 
@@ -7858,7 +7858,7 @@ Final Answer:
 **D. SonarQube** ✅
 
 
-### Question #49 💩🐣
+### Question #49 🐣
 
 You have a GitHub organization that contains three users named User1, User2, and User3. You have a project that contains a repository named repo1.
 
@@ -8169,9 +8169,9 @@ If it says:
 * **“runtime protection” / “Kubernetes cluster security”** → Think **Defender for Containers**
 
 
-### Question-54 💩
+### Question-54
 
-Your company develops an app for iOS. All users of the app have devices that are members of a private distribution group in Microsoft Visual
+**Your company develops an app for iOS**. All users of the app have devices that are members of a private distribution group in Microsoft Visual
 Studio App Center.
 
 You plan to distribute a new release of the app
@@ -8311,7 +8311,7 @@ There are several versions of this question in the exam. The question has fwo po
 2. White Source Bolt
 
 
-### Question #57  💩
+### Question #57 
 
 You have an app named App1 that is built by using Azure Pipelines. The source code for App1 is stored in Azure Repos and contains open source libraries.
 
@@ -8547,7 +8547,7 @@ Final Answer:
 **A. Third-party application access via OAuth** ✅
 
 
-### Question #62 💩🐣
+### Question #62 🐣
 
 
 You have an Azure Repos repository named Repo1 that is used for source control.
@@ -8714,7 +8714,7 @@ Why the other options are incorrect:
 *   **C. Apply a prefix of secret:** Azure Pipelines does not have a functional feature that masks variables based on their name prefix.
 *   **D. Echo the values:** Echoing a secret is the primary way they accidentally end up in logs. While there is a logging command to *set* a secret (`issecret=true`), the prompt asks how to handle secrets already stored as variables.
 
-### Question-65 💩
+### Question-65
 
 You have an Azure subscription inked to an Azure Active Directory Premium Plan 1 tenant.
 
@@ -8790,13 +8790,13 @@ Final Answer:
 
 **D. Upgrade the license of the Azure Active Directory (Azure AD) tenant.** ✅
 
-### Question #66 💩
+### Question #66
 
 You have a GitHub repository that uses **GitHub Actions and stores access keys by using GitHub encrypted secrets.**
 
 **You plan to update the secrets by using the GitHub REST API.**
 
-You need to wrap the secrets before adding them to a REST-based call.
+<mark>You need to wrap the secrets before adding them to a REST-based call.<mark>
 
 Which encryption library should you use?
 
@@ -8842,7 +8842,7 @@ If you see:
 * **“GitHub secrets + REST API + encrypt”**  → Answer is always **libsodium**
 
 
-### Question-67 💩
+### Question-67
 
 You plan to create a GitHub workflow that will use GitHub Actions. The actions will require a 256-KB secret.
 
@@ -8887,7 +8887,7 @@ This recommendation is based on a specific technical limitation of GitHub Action
 
 Using the repository to store the encrypted blob and the built-in Secrets feature for the key avoids the need to provision, pay for, and manage external third-party tools like Azure Key Vault or HashiCorp Vault.
 
-### Question #68 💩🐣
+### Question #68 🐣
 
 You have a GitHub repository named Repo1 and an app named App1. Repo1 stores the source code for App1.
 
@@ -8971,7 +8971,7 @@ To choose the correct **OWASP ZAP** GitHub Actions, focus on what each scan type
 * **API-specific** → API Scan
 
 
-### Question-69 💩🐣
+### Question-69 🐣
 
 You have a GitHub Enterprise account.
 
