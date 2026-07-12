@@ -19724,7 +19724,7 @@ Final Answer
 
 ## Topic 8 - Question Set 8
 
-### Question #1 🐣
+### Question #1 
 
 You manage the Git repository for a large enterprise application.
 
@@ -20299,7 +20299,7 @@ To answer, drag the appropriate configurations to the correct targets.
 * **Access policy → secret access (who can read secrets)**
 
 
-### Question #8 🐣
+### Question #8
 
 <mark>As part of your application build process, you need to deploy a group of resources to Azure by using an Azure Resource Manager template located on GitHub.</mark>
 
@@ -21063,7 +21063,7 @@ NOTE: Each correct selection is worth one point.
 * **Blue/green → safe deployments with fast rollback** 🚀
 
 
-### Question #19 🐣
+### Question #19 
 
 You have a project in Azure DevOps.
 
@@ -21130,7 +21130,7 @@ To associate an automated test with a test case in Azure DevOps:
 To link automated tests:
 
 
-### Question #20 🐣
+### Question #20 
 
 You have an Azure Kubernetes Service (AKS) cluster.
 
@@ -21207,7 +21207,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 💩🐣
+### Question #21 🐣
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21719,7 +21719,7 @@ By default, in many hardened Linux environments, permissions are restricted.
 
 Modifying system directories like `/etc`, `/usr`, or `/lib` with full `rwx` permissions for a service account would be a severe security risk and is not required for this extension.**
 
-### Question #28 🐣
+### Question #28
 
 You are using PowerShell to administer Azure Log Analytics workspaces.
 
@@ -21796,7 +21796,7 @@ To list Azure resources with details:
 > Use **Get-AzResource + -ResourceType + -ExpandProperties** 🚀
 
 
-### Question-29 💩
+### Question-29
 
 You have a project in Azure DevOps. 
 
@@ -22370,7 +22370,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  💩🐣
+### Question #36  🐣
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22691,7 +22691,7 @@ Example:
 
 
 
-### Question #41  💩
+### Question #41 
 
 
 You have an Azure subscription that uses Azure Automation State Configuration to manage the configuration of virtual machines.
@@ -22772,7 +22772,7 @@ To find noncompliant DSC nodes:
 > Filter by **Category → Operation → ResultType** 🚀
 
 
-### Question #42  🐣
+### Question #42 
 
 You have a project in Azure DevOps that contains a release pipeline. 
 
@@ -22865,7 +22865,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 💩🐣
+### Question #43 🐣
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
