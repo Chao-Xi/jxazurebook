@@ -13017,7 +13017,7 @@ Key Insight
 * **Board includes:** Active, Resolved, Completed
 * **Completed items are removed from backlog view** but still visible on boards for tracking
 
-### Question #16 💩🐣
+### Question #16 🐣
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. 
 
@@ -13271,7 +13271,7 @@ This will:
 
 
 
-### Question #21 🐣
+### Question #21
 
 You have an Azure DevOps project that is used to build and test an app named App1.
 
@@ -13457,7 +13457,7 @@ Final Answer:
 **D. a single long-running branch with multiple short-lived feature branches** ✅
 
 
-### Question-24 💩
+### Question-24 🐣
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
 
@@ -13756,7 +13756,7 @@ Final Answer:
 
 **D. Jira** ✅
 
-### Question #31 🐣
+### Question #31
 
 You use Exabeam Fusion SIEM and the Azure cloud platform.
 
@@ -13857,7 +13857,7 @@ Final Answer:
 **B. No** ❌
 
 
-### Question-33 🐣
+### Question-33
 
 
 You integrate a cloud-hosted Jenkins server and a new Azure DevOps deployment.
@@ -13982,7 +13982,7 @@ Final Answer:
 **B. Git** ✅
 
 
-### Question-36  🐣
+### Question-36 
 
 You have an Azure DevOps project that uses many package feeds.
 
@@ -14094,7 +14094,7 @@ Final Answer:
 
 
 
-### Question-38 💩🐣
+### Question-38 🐣
 
 You have an Azure DevOps organization named Contoso and an Azure subscription.
 
@@ -14404,7 +14404,7 @@ Final Answer:
 
 
 
-### Question-44  🐣
+### Question-44 
 
 You have a project in Azure DevOps named Project that contains a Kanban board named Board1.
 
@@ -14550,7 +14550,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47  💩🐣
+### Question-47 🐣
 
 You are integrating an Azure Boards project and a GitHub repository.
 
