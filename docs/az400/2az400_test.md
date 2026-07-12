@@ -23039,7 +23039,7 @@ For small Docker images:
 
 
 
-### Question #2 💩
+### Question #2
 
 You have an Azure subscription that contains the resources shown in the following table.
 
@@ -23350,7 +23350,7 @@ Available versions:
 
 
 
-### Question #6 💩
+### Question #6
 
 You have an Azure subscription.
 
@@ -23571,7 +23571,7 @@ on:
 * `**/*.md` → ignore markdown files 🚀
 
 
-### Question #8 💩
+### Question #8
 
 You have an Azure subscription that contains an Azure pipeline named Pipeline1 and a GitHub repository named Repo1. 
 
@@ -23616,7 +23616,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9 💩🐣
+### Question #9 🐣
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -23672,7 +23672,7 @@ Based on the given table:
 - **Change2:** Major
 - **Change3:** Patch
 
-### Question #10 💩
+### Question #10
 
 You have an Azure pipeline that is used to deploy a web app. The pipeline includes a test suite named TestSuite1. TestSuite1 is used to validate the operations of the web app.
 
@@ -23974,7 +23974,7 @@ To minimize the troubleshooting effort for flaky tests in Azure Pipelines, you s
 *   **Test Impact Analysis (TIA):** To speed up testing by only running tests affected by code changes.
 
 
-### Question #16 💩
+### Question #16
 
 You have an Azure pipeline that is used to build and deploy an app named App1. The build job uses a Microsoft-hosted Windows agent.
 
@@ -24014,7 +24014,7 @@ Azure Pipelines has specific timeout limits for **Microsoft-hosted agents** base
 
 By purchasing the parallel job, you automatically extend the allowed runtime of your Microsoft-hosted agent from 60 minutes to 360 minutes, resolving the timeout with the least amount of work.
 
-### Question #17 💩
+### Question #17 
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and a user named User1. 
 
@@ -24054,7 +24054,7 @@ Explanation:
 
 To allow User1 to provision environments in ADE while following the principle of least privilege, you should assign them the **Deployment Environments User** role.
 
-### Question #18   💩
+### Question #18 
 
 
 You have an Azure subscription that contains Azure DevOps build pipelines.
@@ -24126,7 +24126,7 @@ Explanation:
 2.  **path (Dropdown 2):** This is a required input that specifies the directory (or file) to be cached and restored. In this case, it points to the variable `$(YARN_CACHE_FOLDER)` defined earlier in the pipeline.
 
 
-### Question #19  💩
+### Question #19 
 
 You have a management group that contains four Azure subscriptions. Each subscription contains four resource groups.
 
@@ -24206,7 +24206,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 💩🐣
+### Question #20 🐣
 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
@@ -24324,7 +24324,7 @@ Explanation:
 *   **C. an Azure Monitor alert:** While an alert can detect a performance issue, it does not inherently have the power to stop a pipeline deployment unless it is integrated into a **Deployment Gate**. Use the alert as the *source* for the gate, but the gate is the solution that controls the release.
 
 
-### Question #22  💩
+### Question #22 
 
 You have an Azure subscription.
 
@@ -24494,7 +24494,7 @@ Summary
 The first step is to **create a service principal**, then create an Azure Resource Manager service connection in Azure DevOps using that service principal. This provides a clean, maintainable, and low-effort authentication method for your self-hosted agent to deploy Bicep templates.
 
 
-### Question #25 💩
+### Question #25
 
 You have an Azure subscription that contains a user named User1.
 
@@ -24559,7 +24559,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 
 
 
-### Question #26 💩🐣
+### Question #26 🐣
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24648,7 +24648,7 @@ Why the other options are less ideal:
 *   **C. Progressive exposure (Canary):** This involves routing a small percentage of users to the new version. While it minimizes risk, users usually access the new version via the *same* production URL, and the promotion process is a gradual ramp-up rather than a single low-effort switch.
 
 
-### Question #28 💩
+### Question #28 
 
 You plan to deploy a solution that will include multiple microservices.
 
@@ -24852,7 +24852,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31 💩💩💩🐣
+### Question #31 💩💩🐣
 
 You have a GitHub organization.
 
@@ -24896,7 +24896,7 @@ Explanation:
 *   **Step 3 (Install App1):** A GitHub App has no permissions until it is **installed** on a specific account or organization. The installation creates the link between the app and the resources (repositories) it is allowed to access.
 *   **Step 4 (Generate an installation access token):** Within the workflow, you use the App ID and Private Key (to create a temporary JWT) and exchange them for an **installation access token**. This token is the final credential used to authorize the actual API requests.
 
-### Question #32 💩
+### Question #32 
 
 You use an Azure Pipelines pipeline to build and deploy an app.
 
@@ -24940,7 +24940,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 💩🐣
+### Question #33 🐣
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -25007,7 +25007,7 @@ If the question mentions:
 * Less efficient than TIA for this goal
 
 
-### Question #34 💩💩🐣
+### Question #34 💩🐣
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -25081,7 +25081,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 💩🐣
+### Question #35 🐣
 
 You manage package feeds by using Azure Artifacts.
 
@@ -25366,7 +25366,7 @@ When you see:
 **B. No**
 
 
-### Question #38 💩
+### Question #38
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -25483,7 +25483,7 @@ This would:
 
 
 
-### Question #39 💩
+### Question #39 
 
 You need to use an Azure Pipelines pipeline to build and test an app and test the database of the app. The solution must meet the following requirements.
 
@@ -26298,7 +26298,7 @@ A. YES
 - failTaskOnFailedTests ✅ : true → required to fail pipeline
 
 
-### Question #48 💩
+### Question #48
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26732,7 +26732,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩💩💩🐣
+### Question #53 💩💩💩💩🐣🐣
 
 HOTSPOT -
 
@@ -26904,7 +26904,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩🐣🐣
+### Question-55 💩🐣
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -27198,7 +27198,7 @@ You can place this gate in two locations within the release pipeline to achieve 
 
 
 
-### Question-62 💩🐣
+### Question-62 🐣
 
 Your company develops an application named App1 that is deployed in production.
 
@@ -27413,7 +27413,7 @@ Why the others are incorrect
 
 
 
-### Question-66 💩💩🐣
+### Question-66 💩🐣
 
 You have a project in Azure DevOps.
 
@@ -27470,7 +27470,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-67 💩🐣
+### Question-67 🐣
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27523,7 +27523,7 @@ Why the other options are incorrect
 ✅ **Answer: B. batch changes**
 
 
-### Question-68 💩
+### Question-68
 
 You are using GitHub as a source code repository.
 
@@ -27629,7 +27629,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 💩🐣
+### Question #70 🐣
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -27968,7 +27968,7 @@ Why the other options are incorrect
 
 
 
-### Question-75 💩
+### Question-75 
 
 You have an on-premises app named App1 that accesses Azure resources by using credentials stored in a configuration file.
 
@@ -28268,7 +28268,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 💩🐣
+###  Question-80 🐣
 
 You have a project in Azure DevOps named Project1.
 
@@ -28585,7 +28585,7 @@ Why the other options are incorrect
 ✅ **Answer: B. Playwright**
 
 
-### Question-85 💩
+### Question-85 
 
 You use Azure Pipelines to build and test code projects.
 
