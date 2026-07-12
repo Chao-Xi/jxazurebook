@@ -1739,7 +1739,7 @@ Answer Area
 *   Since Stakeholder is a lower-privilege level (and is free for unlimited users), it is the correct choice under the **principle of least privilege** for users who are only testing and providing input rather than developing or managing the project.
 
 
-### Question -5   💩
+### Question -5 
 
 Your company wants to use Azure Application Insights to understand how user behaviors affect an application.
 
@@ -1771,7 +1771,7 @@ To analyze user behavior in Azure Application Insights, you should match the too
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 6 💩🐣
+### Question - 6 🐣
 
 Your company is building a <mark>mobile app that targets Android and iOS devices.</mark> 
 
@@ -1817,7 +1817,7 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 💩💩🐣
+### Question - 7 💩🐣
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -1984,7 +1984,7 @@ To ensure that developers receive Microsoft Teams notifications for failures in 
 <mark>`@azure pipelines subscribe https://dev.azure.com/contoso/contoso-app/`</mark>
 
 
-### Question -11 💩
+### Question -11
 
 You have a Microsoft ASP.NET Core web app in Azure that is accessed worldwide. 
 
@@ -2424,7 +2424,7 @@ Why the others are incorrect:
 ✅ **Final answer: D. Smart Detection**
 
 
-### Question #20 💩
+### Question #20
 
 You use Azure DevOps to manage the build and deployment of an app named App1.
 
@@ -2614,7 +2614,7 @@ To enable detailed logging (verbose output) in an Azure DevOps CI/CD pipeline, y
 
 
 
-### Question #24 🐣
+### Question #24
 
 You build an iOS app.
 
@@ -2752,7 +2752,7 @@ Requirement summary:
 ✅ **Final answer: A. the Dependency agent**
 
 
-### Question-26  🐣
+### Question-26
 
 You have multiple teams that work on multiple projects in Azure DevOps. 
 
@@ -2858,7 +2858,7 @@ stateDiagram
     Processing --> Failed
 ```
 
-### Question-28 🐣
+### Question-28
 
 You have an Azure web app named webapp1 that uses the .NET Core runtime stack. 
 
@@ -3002,7 +3002,7 @@ Summary Table:
 **✅ **Final answer: D. OpenTelemetry and E. OpenCensus**
 
 
-### Question-30 💩🐣
+### Question-30 🐣
 
 You have an Azure web app named webapp1 that uses the NET Core runtime stack. 
 
@@ -3109,7 +3109,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: A. appsettings.json**
 
-### Question #32 🐣
+### Question #32
 
 You have an app named App1. You have a Log Analytics workspace named Workspace1 that contains two tables named Events and Logs. App1 manages events in multiple locations and writes logs to Workspace1.
 
@@ -3138,7 +3138,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 *   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
-### Question-33 💩🐣
+### Question-33 🐣
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
@@ -3190,7 +3190,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: C and D**
 
-### Question #34 💩
+### Question #34
 
 You have a web app named App1 that uses Application Insights in Azure Monitor.
 
@@ -3277,7 +3277,7 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
  
 
-### Question-35 💩🐣
+### Question-35 🐣
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
@@ -3471,7 +3471,7 @@ Perf
 | render timechart  // 呈现：画图 ← 最后一步
 ```
 
-### Question-38 🐣
+### Question-38 
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. 
 
@@ -3609,7 +3609,7 @@ requests
 
 
 
-### Question-40 🐣
+### Question-40
 
 You are automating the testing process for your company.
 
@@ -3824,7 +3824,7 @@ Mapping to the options
 
 **A and D**
 
-### Question-43 💩🐣
+### Question-43 🐣
 
 You have a build pipeline in Azure Pipelines that occasionally fails. You discover that a test measuring the response time of an API endpoint causes the failures. 
 
@@ -3886,7 +3886,7 @@ Why the others are incorrect:
 ✅ **Final answer: D and B**
 
 
-### Question #44 🐣
+### Question #44 
 
 You have an app named App1 that uses **Application Insights to monitor application performance**.
 
@@ -4012,7 +4012,7 @@ NOTE: Each correct selection is worth one point.
 **User2:** Monitoring Reader
 
 
-### Question-47 🐣
+### Question-47
 
 You manage a project in Azure DevOps. **You need to prevent the configuration of the project from changing over time**.
 
@@ -4070,7 +4070,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
-### Question #48 💩🐣
+### Question #48 🐣
 
 You have a project in Azure DevOps.
 
@@ -4398,7 +4398,7 @@ Why the others are incorrect:
 
 ✅ **Final answer: C. Azure App Configuration**
 
-### Question #56 💩🐣
+### Question #56 🐣
 
 You are planning projects for three customers. Each customer's preferred process for work items is shown in the following table.
 
@@ -4429,7 +4429,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 💩🐣🐣
+### Question #57 💩🐣
 
 You configure an Azure Application Insights availability test.
 
@@ -4627,7 +4627,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-### Question-61  💩💩🐣
+### Question-61  💩🐣
 
 You have an Azure subscription that contains multiple web apps.
 
