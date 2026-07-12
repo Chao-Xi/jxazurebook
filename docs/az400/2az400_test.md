@@ -13015,7 +13015,7 @@ Key Insight
 * **Board includes:** Active, Resolved, Completed
 * **Completed items are removed from backlog view** but still visible on boards for tracking
 
-### Question #16 🐣
+### Question #16
 
 You have an Azure subscription that contains an Azure Pipelines pipeline named Pipeline1 and an app named App1. 
 
@@ -14869,7 +14869,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  🐣
+### Question #2 
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -15165,7 +15165,7 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #7  🐣🐣
+### Question #7  🐣
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15502,7 +15502,7 @@ Based on the image provided, here is the extracted text content:
 * **An Internet Information Services (IIS) web application that runs in Docker:** **Hosted Windows Container**
 
 
-### Question #12 🐣
+### Question #12 
 
 Your company has a project in Azure DevOps for a new application. 
 
@@ -15704,6 +15704,7 @@ DRAG DROP You are configuring the settings of a new Git repository in Azure Repo
 You need to ensure that pull requests in a branch meet the following criteria before they are merged:
 
 ✑ Committed code must compile successfully.
+
 ✑ Pull requests must have a Quality Gate status of Passed in SonarCloud.
 
 Which policy type should you configure for each requirement? 
@@ -15959,8 +15960,7 @@ A *canary* strategy deploys to a small subset first, validates functionality, an
 * **App1:** rolling
 * **App2:** canary
 
-### Question #21 🐣 
-
+### Question #21 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -16997,7 +16997,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩🐣
+### Question #40 💩🐣
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -17976,7 +17976,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 🐣
+### Question #55
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18111,7 +18111,7 @@ Final Answer:
 * **Slot 1:** `npm install`
 * **Slot 2:** `ne(variables.CACHE_RESTORED, 'true')`
 
-### Question #57 💩 🐣
+### Question #57 🐣
 
 You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. 
 
