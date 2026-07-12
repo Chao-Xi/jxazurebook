@@ -9107,6 +9107,18 @@ The correct answer is:
 
 ❌ <mark>C. service principal → Requires manual secret/cert management ❌ → Does not meet "credentials managed automatically”</mark>
 
+
+Comparison:
+
+| Feature                    | System-assigned | User-assigned |
+| -------------------------- | --------------- | ------------- |
+| Auto credential management | ✅               | ✅             |
+| Shared across multiple VMs | ❌               | ✅             |
+| Central RBAC               | ❌               | ✅             |
+| Lifecycle independent      | ❌               | ✅             |
+
+
+
 Explanation:
 
 To configure **multiple Azure virtual machines** to use a **single identity** while ensuring:
@@ -9145,14 +9157,6 @@ Why the other options are wrong:
 → Not designed for application/service authentication
 → Violates least privilege and automation principles
 
-Comparison:
-
-| Feature                    | System-assigned | User-assigned |
-| -------------------------- | --------------- | ------------- |
-| Auto credential management | ✅               | ✅             |
-| Shared across multiple VMs | ❌               | ✅             |
-| Central RBAC               | ❌               | ✅             |
-| Lifecycle independent      | ❌               | ✅             |
 
 Final Answer:
 
@@ -9263,7 +9267,7 @@ To meet your requirements—storing documents as plain text, simplifying version
 So the combination of **Markdown + Mermaid diagrams** fully satisfies your requirements for plain text, maintainability, and version control.
 
 
-### Question #2  💩
+### Question #2 
 
 You are developing a full Microsoft .NET Framework solution that includes unit tests.
 
@@ -9321,7 +9325,7 @@ To perform code quality validation of C# code using SonarQube in an Azure DevOps
 
 
 
-### Question #3 💩🐣
+### Question #3 🐣
 
 
 You need to find and and isolate shared code. 
@@ -9365,8 +9369,7 @@ Based on the scenario of identifying and isolating shared code to be maintained 
 3.  **Assign ownership to each component group.** (After defining the packages, you need to assign teams or individuals to maintain them.)
 
 
-
-### Question #4 💩🐣
+### Question #4 🐣
 
 You are creating a NuGet package.
 
@@ -9856,7 +9859,7 @@ Final Answer:
 **B. In a Maven build task, select *Run PMD*.** ✅
 
 
-### Question-12 💩🐣
+### Question-12 🐣
 
 
 Your development team is building a new web solution by using the Microsoft Visual Studio integrated development environment (IDE).
@@ -9922,7 +9925,7 @@ Final Answer:
 **A, B, and E** ✅
 
 
-### Question-13 💩
+### Question-13
 
 You have a GitHub repository.
 
@@ -10024,7 +10027,7 @@ To reduce technical debt, you would instead recommend things like:
 So the proposed solution **does not meet the goal**.
 
 
-### Question-15 💩
+### Question-15
 
 The lead developer at your company reports that adding new application features takes longer than expected due to a large accumulated technical debt.
 
@@ -10116,7 +10119,7 @@ Why the others are wrong:
 ✅ PMD is purpose-built for Java static analysis and quality enforcement.
 
 
-### Question-18 💩
+### Question-18
 
 You use Azure Artifacts to host NuGet packages that you create.
 
@@ -10152,7 +10155,7 @@ Even if you change the feed URL or create a new feed, Azure Artifacts requires a
 **Answer: D. Publish the package to a public NuGet repository.**
 
 
-### Question #19 💩🐣
+### Question #19 🐣
 
 You use GitHub for source control and project-related discussions.
 
@@ -10194,7 +10197,7 @@ To only receive email notifications for discussions where you are **involved (co
 
 By clearing these two settings, you will only receive notifications when you are explicitly participating or mentioned.
 
-### Question-20  💩💩🐣
+### Question-20  💩🐣
 
 You have an Azure Automation account that contains a runbook. 
 
@@ -10257,7 +10260,7 @@ Key exam principle
 **C. the Source control settings for the Automation account**
 
 
-### Question #21 💩
+### Question #21
 
 You use Git for source control.
 
@@ -10453,7 +10456,7 @@ git submodule add https://github.com/contoso/afeed
 This ensures the dependency is tracked and versioned correctly within your main repository.
 
 
-### Question #25 💩🐣
+### Question #25 🐣
 
 You use Git for source control.
 
@@ -10559,7 +10562,7 @@ To ensure you can authenticate to **repo1** using SSH in Azure DevOps, you shoul
 
 **Note:** "Save the SSH key to the root of repo1" is incorrect and a severe security risk. You should never store your private or public keys inside a source code repository. "Add the SSH private key" is also incorrect; the private key is never uploaded to Azure DevOps.
 
-### Question #27 💩
+### Question #27
 
 You use Git for source control.
 
@@ -10595,7 +10598,7 @@ To recover a file that was deleted and committed in Git, you should run these th
 2.  **`git checkout [hash]~1 --path/to/file`**: This is the recovery step. By specifying the commit hash where the file was deleted followed by **`~1`**, you are telling Git to look at the state of the repository immediately *before* that commit (where the file still existed). The command then pulls only that specific file into your current working directory and stages it.
 3.  **`git commit -m 'undeleted the file'`**: After you have successfully checked out the file from history, you must perform a new commit to permanently add the file back into the current branch.
 
-### Question #28 💩🐣
+### Question #28 🐣
 
 You use Git for source control. You have an app named App1.
 
@@ -10710,7 +10713,7 @@ In the **GitFlow** workflow strategy, the correct branch assignments for product
 *   **Hotfix branches:** Used to quickly patch production releases (merge into `main` and `develop`).
 
 
-### Question #30 💩🐣
+### Question #30
 
 DRAG DROP -
 
@@ -10775,7 +10778,7 @@ git sparse-checkout set **[ src/web ]**
 3.  <mark>**`git sparse-checkout set [path]`**: This command restricts the working directory to only the specified files or folders</mark>. Since the requirement is to clone only the directory named `src/web`, you provide that path relative to the repository root. This significantly reduces the number of files checked out on your local machine.
 
 
-### Question #31 💩
+### Question #31
 
 You use GitHub for source control and Microsoft Teams for collaboration.
 
@@ -10817,7 +10820,7 @@ D. Use Azure Functions to connect to the GitHub REST API and send a message to t
 Using the built-in integration is the simplest and most efficient solution.
 
 
-### Question #32 💩🐣
+### Question #32 🐣
 
 You have a GitHub repository named repo1.
 
@@ -10892,7 +10895,7 @@ git push origin --all
 
 This ensures repo2 stays updated with changes made in repo1 after migration.
 
-### Question #33 💩
+### Question #33
 
 You have an Azure Repos repository named repo1.
 
@@ -10956,7 +10959,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 💩💩🐣
+### Question #34 💩🐣
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11035,7 +11038,7 @@ git commit -m "track *.psd files using Git LFS"
 
 This ensures both **new and existing PSD files** are managed by Git LFS.
 
-### Question #35 💩
+### Question #35
 
 You have a public GitHub repository named Public1.
 
@@ -11091,8 +11094,9 @@ C. CodeQL actions
 
 D. GitHub Advisory Database databases
 
------
+* **A. Dependabot alerts** ❌ → Only scans **dependencies**, not your actual source code.
 
+-----
 
 **Correct Answer: C. CodeQL actions** ✅
 
@@ -11103,7 +11107,7 @@ D. GitHub Advisory Database databases
 
 **Why others are incorrect:**
 
-* **A. Dependabot alerts** ❌ → Only scans **dependencies**, not your actual source code.
+
 * **B. Branch protection rules** ❌ → Enforce policies (e.g., reviews), not scanning.
 * **D. GitHub Advisory Database** ❌ → A database of known vulnerabilities, not a scanning mechanism.
 
@@ -11112,8 +11116,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  💩💩🐣
-
+### Question #37  💩🐣
 
 You create a Git repository named Repo1 in Azure Repos.
 
@@ -11233,7 +11236,7 @@ Key Point
 * Use **`#AB<ID>`** in PRs/commits OR
 * Link manually via the **Development section** in Azure Boards
 
-### Question #39  💩
+### Question #39 
 
 You plan to use Azure DevOps in development processes.
 
@@ -11354,7 +11357,7 @@ Key exam principle
 
 
 
-### Question-41 💩
+### Question-41
 
 You manage source code control and versioning by using GitHub.
 
@@ -11455,11 +11458,11 @@ Why the others are wrong:
 
 
 
-### Question-43 💩💩🐣
+### Question-43 💩🐣
 
 You manage code by using GitHub.
 
-You need to ensure that repository owners are notified **if a new vulnerable dependency or malware is found in their repository.**
+You need to ensure that repository owners are notified **if a new vulnerable <mark>dependency or malware</mark> is found in their repository.**
 
 What should you do?
 
@@ -11500,7 +11503,7 @@ This is exactly what the requirement describes:
 **B. Configure Dependabot alerts.**
 
 
-### Question-44 💩
+### Question-44
 
 
 You have a 1-TB Azure Repos repository named repo1.
@@ -11597,7 +11600,7 @@ Final Answer:
 **A and B** ✅
 
 
-### Question-46 💩
+### Question-46
 
 You manage source code control and versioning by using GitHub.
 
@@ -11645,7 +11648,7 @@ Final Answer:
 **A. bfg** ✅
 
 
-### Question #47  💩💩🐣
+### Question #47  💩🐣
 
 
 You have a GitHub repository.
@@ -11698,7 +11701,7 @@ This functionality is provided by Dependabot's **Version updates**. Regardless o
 *   **A dependency graph:** This is a tool to visualize your dependencies, not a feature that automates PR creation.
 
 
-### Question #48  💩🐣
+### Question #48 
 
 You have a large repository named Repo1 that contains a directory named directory1.
 
@@ -11820,7 +11823,7 @@ D. pull request permissions
 Use **branch policies** to enforce **quality gates and PR requirements automatically**.
 
 
-### Question #50 💩
+### Question #50
 			
 You use Git for source control.
 
@@ -11890,7 +11893,7 @@ Even though the question says “two actions,” the **only valid solution is Gi
 **B**
 
 
-### Question #51 💩🐣
+### Question #51 🐣
 
 You manage source control by using GitHub.
 
@@ -11964,7 +11967,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 💩💩🐣
+### Question #52 💩🐣
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -12006,7 +12009,7 @@ To enable **CodeQL scanning** in GitHub Enterprise:
 
 CodeQL is enabled by **adding (pushing) a workflow file**, not just configuring settings.
 
-### Question #53 💩🐣
+### Question #53
 
 HOTSPOT -
 
@@ -12054,7 +12057,7 @@ By adding this full URL to your `README.md` file using image syntax (e.g., `![Bu
 
 **Note:** While "Organization name" could be technically correct if the owner *is* an organization, "Repository owner" is the most accurate and universal term used in this context.
 
-### Question #54 💩🐣
+### Question #54 
 
 You have a GitHub repository.
 
@@ -12101,7 +12104,7 @@ To create a tag and make it available in the remote repository:
 
 * Tags are **created locally** and must be **explicitly pushed** to the remote.
 
-### Question #55  💩🐣
+### Question #55 🐣
 
 You have a GitHub repository.
 
@@ -12158,7 +12161,7 @@ Combine:
 
 → Ensures **security team validation before deployment**
 
-### Question #56 💩🐣
+### Question #56 🐣
 
 You have a .NET app named App1.
 
