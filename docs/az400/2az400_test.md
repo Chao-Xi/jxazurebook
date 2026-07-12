@@ -14812,7 +14812,7 @@ Because a **hosted agent** cannot access **on-premises dependency management sys
 
 ## Topic 7 - Question Set 7
 
-### Question #1 💩
+### Question #1
 
 You have a project in Azure DevOps.
 
@@ -14874,7 +14874,7 @@ Key Point
 * Use **`extends`** when you want a template to define the **base pipeline execution (run first)**
 * Use **`template` inclusion** for inserting steps within a pipeline, not for full control flow
 
-### Question #2  💩
+### Question #2  💩🐣
 
 You have an Azure solution that contains a build pipeline in Azure Pipelines. 
 
@@ -15028,7 +15028,7 @@ Key Point
 * **PAT = standard authentication method** for integrating Azure DevOps with external tools and services
 
 
-### Question #5 💩🐣
+### Question #5
 
 You are configuring Azure Pipelines for three projects in Azure DevOps as shown in the following table.
 
@@ -15170,7 +15170,7 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #7  💩 💩
+### Question #7  💩🐣
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15561,7 +15561,7 @@ Let’s evaluate:
 
 **A. Azure Resource Manager templates and the PowerShell Desired State Configuration (DSC) extension for Windows**
 
-### Question #13 💩
+### Question #13
 
 Your company has two virtual machines that run Linux in a third-party public cloud.
 
@@ -15618,7 +15618,7 @@ To onboard Linux VMs to **Azure Automation State Configuration (DSC)** after ins
 * **Install Windows Management Framework 5.1** → Only for Windows, not Linux.
 
 
-### Question #14 💩🐣
+### Question #14
 
 You are creating a container for an **ASP.NET Core app.**
 
@@ -15701,7 +15701,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  💩💩🐣
+### Question #15  💩🐣
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -15836,7 +15836,7 @@ Final Answer:
 **A. squash merge** 🟢
 
 
-### Question-18  💩
+### Question-18 
 
 You are automating the build process for a <mark>Java-based</mark> application by using Azure DevOps.
 
@@ -16256,7 +16256,7 @@ You need to configure:
 
 ✔ So the solution does not meet the goal.
 
-### Question #28 💩🐣
+### Question #28
 
 HOTSPOT You need to deploy Azure Kubernetes Service (AKS) to host an application. 
 
@@ -16365,7 +16365,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 💩💩🐣
+### Question #29 💩🐣
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16431,7 +16431,7 @@ Final Answer:
 
 ✅ **D and E**
 
-### Question #30 💩
+### Question #30
 
 You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant.
 
@@ -16496,7 +16496,7 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #31 💩🐣
+### Question #31 🐣
 
 You are deploying a new application that uses Azure virtual machines.
 
@@ -16601,7 +16601,7 @@ Why other options are incorrect:
 *   **B. AKS pod:** Testing in a pod happens after the image is built and deployed, which is not "inline" with the build process.
 *   **D. Docker Compose:** While useful for integration testing with multiple containers (like an app + a database), it is more complex than a Dockerfile and is typically used for external testing rather than inline build-time validation.
 
-### Question #33 💩
+### Question #33
 
 You are creating a build pipeline in Azure Pipelines.
 
@@ -16655,7 +16655,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 💩💩🐣🐣
+### Question #34 💩🐣
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16889,7 +16889,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩💩💩🐣🐣
+### Question #38 💩💩💩🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -17002,7 +17002,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩💩💩🐣
+### Question #40 💩💩🐣
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -17290,7 +17290,7 @@ Final Answer:
 ✅ **A. Yes**
 
 
-### Question #45 💩
+### Question #45
 
 You have an Azure DevOps project.
 
@@ -17344,7 +17344,7 @@ Final Answer:
 ❌ **B. No**
 
 
-### Question #46 💩
+### Question #46
 
 You are building an application that has the following assets:
 
@@ -17424,7 +17424,7 @@ Explanation:
 
 
 
-### Question #47 💩🐣
+### Question #47 🐣
 
 You plan to share packages that you wrote, tested, validated, and deployed by using Azure Artifacts.
 
@@ -17557,7 +17557,8 @@ Final Answer:
 
 
 
-### Question #49  💩🐣
+### Question #49  
+
 
 Your company uses Team Foundation Server 2013 (TFS 2013).
 
@@ -17623,7 +17624,7 @@ To meet the requirements (preserve changeset and work item revision dates, migra
 * API-based tools → Do not preserve full historical metadata (dates).
 * TFS Integration Platform → Deprecated and does not meet full fidelity requirements.
 
-### Question #50 💩🐣
+### Question #50
 
 You have an Azure subscription named Subscription1 that contains a custom Azure policy named Policy1. 
 
@@ -17681,7 +17682,7 @@ These checks validate whether the deployment will violate Azure Policy **before 
 <mark>To ensure Azure Policy compliance in CI/CD pipelines, you should use **pre-deployment validation**, not post-deployment checks or policy deployment steps.</mark>
 
 
-### Question #51 💩🐣
+### Question #51 🐣
 
 You plan to use Desired State Configuration (DSC) to maintain the configuration state of virtual machines that run Windows Server. '
 
@@ -17792,7 +17793,7 @@ Node 'localhost' {
 
 
 
-### Question #52 💩
+### Question #52
 
 You are creating a YAML-based Azure** pipeline to deploy an Azure Data Factory** instance that has the following requirements: 
 
@@ -17980,7 +17981,7 @@ Final Answer:
 **A. a self-hosted agent** 🟢
 
 
-### Question #55 💩💩🐣
+### Question #55 💩🐣
 
 You have an Azure DevOps release pipeline as shown in the following exhibit.
 
@@ -18037,7 +18038,7 @@ To complete the Azure DevOps release pipeline and configure OWASP ZAP for securi
 **Note:** "Docker CLI installer" and "Build machine image" are not part of the standard *execution and reporting* sequence for an OWASP ZAP container scan in a release pipeline.
 
 
-### Question #56 💩
+### Question #56
 
 
 You have an Azure DevOps pipeline that is used to deploy a Node.js app.
@@ -18178,7 +18179,7 @@ Final Answer:
 ✅ **C and E**
 
 
-### Question-58 💩
+### Question-58
 
 You have a private project in Azure DevOps.
 
@@ -18274,7 +18275,7 @@ Why the others are incorrect
 **A. branch policies of the default branch**
 
 
-### Question-60  - Duplicated  💩
+### Question-60  - Duplicated 
 
 Your company uses Azure DevOps to manage the build and release processes for applications.
 
@@ -18466,7 +18467,7 @@ Why the others are wrong
 **D. Delete `Package-lock.json`.**
 
 
-### Question-64 💩
+### Question-64
 
 Your company deploys applications in Docker containers.
 
@@ -18516,7 +18517,7 @@ Final Answer
 **A. a task executed in the continuous integration pipeline and a scheduled task that analyzes the image registry**
 
 
-### Question-65 💩
+### Question-65
 
 Your company has a hybrid cloud between Azure and Azure Stack.
 
@@ -18633,7 +18634,7 @@ Final Answer
 **D. the percentage of overall time spent on rework**
 
 
-### Question-67 💩🐣
+### Question-67 🐣
 
 You are developing an open source solution that uses a GitHub repository.
 
@@ -18858,7 +18859,7 @@ Final Answer
 
 
 
-### Question-71 💩💩🐣
+### Question-71 💩🐣
 
 Your company has a project in Azure DevOps for a new web application 
 
@@ -18910,7 +18911,7 @@ Summary
 **A. Yes** ✅
 
 
-### Question-72 💩
+### Question-72
 
 Your company has a project in Azure DevOps.
 
@@ -19321,7 +19322,7 @@ Azure Container Registry (ACR) Tasks include a feature specifically designed for
 *   **B. Docker Hub service connection:** This allows Azure Pipelines to *access* Docker Hub, but it does not provide an automated "watch" mechanism to trigger a rebuild when a third-party image changes.
 *   **D. Service hook:** Service hooks in Azure DevOps are used to integrate with external services (like sending a message to Slack when a build fails). They are not designed to monitor external container registries for image updates.
 
-### Question- 81 💩
+### Question- 81
 
 You have an Azure DevOps project.
 
@@ -19676,7 +19677,7 @@ Final Answer
 
 
 
-### Question-88 💩💩🐣
+### Question-88 💩🐣
 
 You have a project in Azure DevOps.
 
