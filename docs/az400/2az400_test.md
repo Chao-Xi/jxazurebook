@@ -23613,7 +23613,7 @@ By adding the "Check Azure Policy compliance" task (`AzurePolicyCheckGate@0`) as
 | **C: Build on pull request creation** | While running checks on pull requests is good for early feedback, this occurs **before** merging and doesn't guarantee compliance against the actual target production environment after all changes are integrated. |
 
 
-### Question #9 🐣
+### Question #9
 
 You use Semantic Versioning (SemVer) as a dependency versioning strategy.
 
@@ -24203,8 +24203,7 @@ Explanation:
     *   `subscription().id`: This would generate the same name for all four resource groups within a single subscription. Since you need to deploy an instance to *each* resource group, the names would collide.
 
 
-### Question #20 🐣
-
+### Question #20 
 
 You use an Azure pipeline to build a .NET app that has NuGet dependencies.
 
@@ -24556,7 +24555,7 @@ By default, Key Vaults do not allow the Azure Resource Manager service to pull s
 
 
 
-### Question #26 🐣
+### Question #26
 
 
 You have an Azure subscription that contains an Azure Traffic Manager profile named ATM1 and a web app named App1. 
@@ -24849,7 +24848,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31 💩💩🐣
+### Question #31 💩🐣
 
 You have a GitHub organization.
 
@@ -24937,7 +24936,7 @@ In Azure Pipelines, when you use tasks like `PublishTestResults@2` or custom tes
 Since the input `testResultsFiles` is looking for `**/TEST-*.trx`, the data must be in the **VSTest** format.
 
 
-### Question #33 🐣
+### Question #33
 
 You use an Azure Pipelines pipeline to build, test, and deploy an app named App1.
 
@@ -25004,7 +25003,7 @@ If the question mentions:
 * Less efficient than TIA for this goal
 
 
-### Question #34 💩🐣
+### Question #34 🐣
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -25078,7 +25077,7 @@ You need to:
 * **Post-deployment gate** = validate environment *after deployment*
 * **Pre-deployment gate** = validate *before entering stage*
 
-### Question #35 🐣
+### Question #35
 
 You manage package feeds by using Azure Artifacts.
 
@@ -25148,7 +25147,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36 💩🐣
+### Question #36 🐣
 
 You have an Azure subscription that includes an app named App1.
 
@@ -26247,7 +26246,7 @@ EnsureSecure -OutputPath C:\temp\
 * **Ensure = 'Present'**
 * **State = 'Running'**
 
-### Question #47  💩
+### Question #47
 
 You need to use an Azure Pipelines pipeline to test an app. The solution meet the following requirements:
 
@@ -26729,7 +26728,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩💩💩🐣🐣
+### Question #53 💩💩💩🐣🐣
 
 HOTSPOT -
 
@@ -26901,7 +26900,7 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 💩🐣
+### Question-55 🐣
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -27195,7 +27194,7 @@ You can place this gate in two locations within the release pipeline to achieve 
 
 
 
-### Question-62 🐣
+### Question-62
 
 Your company develops an application named App1 that is deployed in production.
 
@@ -27345,7 +27344,7 @@ This ensures that all devices in the private distribution group—both previousl
 
 
 
-### Question-65 💩🐣
+### Question-65 🐣
 
 Your company has an **<mark>on-premises Bitbucket Server that is used for Git-based source control</mark>**. 
 
@@ -27410,7 +27409,7 @@ Why the others are incorrect
 
 
 
-### Question-66 💩🐣
+### Question-66 🐣
 
 You have a project in Azure DevOps.
 
@@ -27467,7 +27466,7 @@ Why the other options are not required in the unattended script
 ✅ **Answer: A and D**
 
 
-### Question-67 🐣
+### Question-67 
 
 You have Azure Pipelines and GitHub integrated as a source code repository.
 
@@ -27626,7 +27625,7 @@ Why the other options are incorrect
 ✅ **Answer: A. Select Register devices and sign my app**
 
 
-### Question #70 🐣
+### Question #70 
 
 You need to deploy Internet Information Services (IIS) to an Azure virtual machine that runs Windows Server 2019.
 
@@ -28873,7 +28872,7 @@ Authenticate Azure DevOps with:
 **D. personal access token (PAT)**
 
 
-### Question #4 💩
+### Question #4
 
 You need to configure authentication for App1. The solution must support the planned changes.
 
@@ -29522,7 +29521,7 @@ Scenario: The mobile applications must be able to call the share pricing service
 The investment planning application suite will include one multi-tier web application and two iOS mobile application. One mobile application will be used by employees; the other will be used by customers.
 
 
-### Question #3 💩
+### Question #3
 
 Which package feed access levels should be assigned to the Developers and Team Leaders groups for the investment planning applications suite? 
 
@@ -29676,7 +29675,7 @@ Final Answer:
 
 
 
-### Question 5 💩
+### Question 5
 
 Which branching strategy should you recommend for the investment planning applications suite?
 
@@ -30042,7 +30041,7 @@ To ensure ongoing compliance, change LCM configuration to:
 **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
 
 
-### Question #2 💩🐣
+### Question #2 🐣
 
 You need to implement the code flow strategy for Project2 in Azure DevOps.
 
@@ -30137,7 +30136,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  💩🐣
+### Question #3  🐣
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
@@ -30326,7 +30325,7 @@ To integrate Azure DevOps with SonarQube, the **first step** is to establish aut
 **B**
 
 
-### Question #3  💩
+### Question #3 
 
 You need to implement Project4. What should you do first?
 
@@ -30377,7 +30376,7 @@ When a **Dockerfile is already provided**, the pipeline configuration (Docker ta
 
 
 
-### Question #4 💩🐣
+### Question #4 🐣
 
 You need to recommend a procedure to implement the build agent for Project1.
 
@@ -30428,7 +30427,7 @@ To implement a **build agent using Azure resources** (as required), you should d
 2 → Create PAT
 3 → Install & register agent on Azure VM
 
-### Question #5 💩🐣
+### Question #5 🐣
 
 You need to implement Project6.
 
