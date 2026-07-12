@@ -4804,7 +4804,7 @@ Azure Dashboards are specifically designed to provide a "single pane of glass" v
 
 
 
-### Question #4  💩
+### Question #4 
 
 You are building an ASP.NET Core application.
 
@@ -5138,7 +5138,7 @@ This approach directly monitors **VMSS autoscaling events** and sends emails as 
 ✅ **Final answer: B . No**
 
 
-### Question-9 🐣
+### Question-9 
 
 You have an Azure DevOps organization named Contoso and an Azure subscription. 
 
@@ -5191,7 +5191,7 @@ To achieve the goal, you must perform two steps:
 Because the proposed solution only creates the notification preference but does not configure the logic to monitor the scaling events, it does not meet the goal.
 
 
-### Question-11 💩🐣
+### Question-11 🐣
 
 You use GitHub for source control.
 
