@@ -22,7 +22,8 @@ WHAT YOU'LL GET FROM THIS COURSE
 - • Supply chain optimization
 - • Strategic planning
 
-—-- 
+
+----
 
 - • Safety guardrails
 - • Governance frameworks
@@ -351,7 +352,7 @@ MCP — Originated from Anthropic, adopted by Microsoft Agents securely request 
 * Build your own with Azure Functions or use existing servers
 
 
-#### WHY MCP?
+#### WHY MCP?  🧑‍💻🧑‍💻🧑‍💻
 
 * **Secure Access**:  Central control over what agents can call
 * **Auditability** All tool calls logged and traceable
@@ -359,16 +360,16 @@ MCP — Originated from Anthropic, adopted by Microsoft Agents securely request 
 * **Interoperability** Works across Copilot Studio, Foundry, custom code
 
 
-#### **MCP EXAM EXAMPLE**
+**MCP EXAM EXAMPLE**
 
-"How do you let an Azure Al Foundry agent securely access a private database?"
+> **"How do you let an Azure Al Foundry agent securely access a private database?"**
 
 
-> Answer: Register an MCP server that connects to that database
-> 
-> **Agent → MCP Server → Database (with proper credentials & access control)**
+Answer: Register an MCP server that connects to that database
 
-#### AGENTZAGENT (A2A) PROTOCOL
+**Agent → MCP Server → Database (with proper credentials & access control)**
+
+#### AGENTZAGENT (A2A) PROTOCOL. 👩🏻‍💻👩🏻‍💻👩🏻‍💻
 
 Open protocol — Originated from Google, supported by Microsoft
 
@@ -385,13 +386,13 @@ Multi-agent workflow example:
 2. **Summarizer Agent** → distills key points
 3. **Approver Agent** → validates before surfacing to user
 
-Works cross-platform: Copilot Studio + Azure Al Foundry + custom agents
+Works cross-platform: Copilot Studio + Azure Ai Foundry + custom agents
 
 > INTEGRATION EXAMPLE
 
 ![Alt Image Text](../images/ab100_1_3.png "Body image")
 
-> "Orchestrating multiple agents securely" → AZA + MCP
+> "**Orchestrating multiple agents securely" → AZA + MCP**
 
 - AZA handles agent-to-agent coordination
 - MCP handles agent-to-tool access
@@ -405,11 +406,10 @@ Works cross-platform: Copilot Studio + Azure Al Foundry + custom agents
 - Use both for governance, scalability, or interoperability questions 
 - Together, these protocols enable enterprise-grade agentic systems
 
-### 2-6 When to Build Custom Al Models in Azure Foundry
+### 2-6 Build Custom AI Models in Azure Foundry - Build vs. Buy vs. Extend
 
 #### THE PRAGMATIC HIERARCHY
 
-Start here — the exam expects this approach:
 
 1. **Off-the-shelf models + prompt engineering + RAG**
 2. Only escalate to custom fine-tuning when that fails
@@ -420,33 +420,92 @@ Start here — the exam expects this approach:
 
 | Trigger | Example |
 |---------|---------|
-| Domain accuracy critical | Legal, financial, medical terminology |
-| Privacy/compliance | Data must stay on your infrastructure |
-| Scale demands cost optimization | Thousands of queries daily |
-| Proprietary patterns | Internal jargon, unique business logic |
+| **Domain accuracy critical** | Legal, financial, medical terminology |
+| **Privacy/compliance** | Data must stay on your infrastructure |
+| **Scale demands cost optimization** | Thousands of queries daily |
+| **Proprietary patterns**| Internal jargon, unique business logic |
 
 #### DESIGNING CUSTOM MODELS IN FOUNDRY
 
 | Step | Action | Note |
 |------|--------|------|
-| 1 | Select base model from catalog | GPT-4, Llama, etc. |
-| 2 | Prepare training data | Clean, label, format — 80% of the work |
-| 3 | Fine-tune | Supervised or LoRA adapters |
-| 4 | Evaluate rigorously | Auto-scaling |
-| 5 | Deploy to Agent Service | Accuracy, safety, bias, hallucinations |
-| 6 | Expose via MCP | Other agents can call securely |
+| 1 | Select **base model** from catalog | GPT-4, Llama, etc. |
+| 2 | **Prepare training data** | Clean, label, format — 80% of the work |
+| 3 | **Fine-tune** | Supervised or LoRA adapters |
+| 4 | **Evaluate rigorously** | Auto-scaling |
+| 5 | **Deploy to Agent Service** | Accuracy, safety, bias, hallucinations |
+| 6 | **Expose via MCP** | Other agents can call securely |
 
 
 #### ADVANCED FOUNDRY FEATURES
 
-- Dynamic routing — Simple queries → cheap model, complex → premium
-- Multi-agent orchestration — Custom models participate via A2A
-- Telemetry & governance — Track usage, costs, hallucination rates
+- **Dynamic routing — Simple queries → cheap model, complex → premium**
+- **Multi-agent orchestration** — Custom models participate via A2A
+- **Telemetry & governance** — Track usage, costs, hallucination rates
 
 #### KEY TAKEAWAYS
 
-- Custom models solve domain accuracy and compliance gaps
-- Azure Al Foundry = fine-tuning, evaluation, and hosting
-- Always justify with business trade-offs (cost, governance, performance)
-- Evaluate first, deploy second, monitor continuously 
-- Exam mantra: "Start simple, escalate thoughtfully"
+- Custom models solve **domain accuracy and compliance gaps**
+- Azure AI Foundry = fine-tuning, evaluation, and hosting
+- Always **justify with business trade-offs (cost, governance, performance)**
+- **Evaluate first**, deploy second, monitor continuously 
+- Exam mantra: **"Start simple, escalate thoughtfully"**
+
+
+## 3 Agentic AI Solutions 🤖
+
+### 3-1 Requirement Analysis for Agentic AI Solutions 
+
+#### WHY REQUIREMENT ANALYSIS MATTERS
+
+- First step in the "Plan" domain (25-30% of the exam)
+- Exam scenarios: "A company wants to automate X — should they use agents?"
+- Goal: Determine if agentic Al is the right fit vs. traditional automation
+
+
+**Three key questions:**
+
+- What is the business goal?
+- What are the constraints (budget, timeline, regulation, data)?
+- Does the task need adaptive, multi-step, tool-using
+
+
+#### GOOD FIT FOR AGENTIC AI
+
+
+**Characteristic**
+
+- **Multi-step, decision-heavy tasks**： Customer escalation with research
+- **Ambiguous, variable processes**： Supply chain exception handling
+- **Requires calling tools or APIs**： Query multiple systems and act on results
+- **High compliance needs (with guardrails)**： Financial decision support
+
+
+**Purely repetitive, rule-based tasks** ： Better Alternative： Power Automate flow
+
+**Simple Q&A with no follow-up action**： Standard Copilot or FAQ bot
+
+**Static, single-step processes**： Traditional workflow automation
+
+
+#### REQUIREMENT ANALYSIS FRAMEWORK
+
+> Best answers identify goal first, then constraints, then justif not) with trade-offs.
+
+**Business Goal -> Constraints & Risks -> Agentic Fit -> Recomendedd Solutuon**
+
+**RISK ASSESSMENT FRAMEWORK**
+
+| Dimension   | Question                         | Example (Contract Review Agent)          |
+|-------------|----------------------------------|------------------------------------------|
+| Likelihood  | How probable is this risk?       | Data staleness — Medium                  |
+| Impact      | How severe if it occurs?         | Hallucination on legal clause — High     |
+| Mitigation  | What reduces risk?               | Human review for flagged items           |
+
+
+#### **KEY TAKEAWAYS**
+
+* Always start with business goal and constraints
+* Agentic shines in adaptive, multi-step, tool-dependent processes
+* Assess risks early — likelihood, impact, mitigation 
+* Exam rewards "Is agentic the right tool?" reasoning
