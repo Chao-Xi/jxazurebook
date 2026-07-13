@@ -1153,7 +1153,7 @@ The provided options (A–D) are unrelated to the statement and appear to be fro
 Black Duck Hub and its plugin for Team Foundation Server (TFS) allows you to automatically find and fix open source security vulnerabilities during the build process, so you can proactively manage risk. The integration allows you to receive alerts and fail builds when any Black Duck Hub policy violations are met.
 
 
-### Question -24 🐣
+### Question -24
 
 
 You have created an Azure DevOps project for a new application that will be deployed to a number of Windows Server 2016 Azure virtual machines.
@@ -1771,7 +1771,7 @@ To analyze user behavior in Azure Application Insights, you should match the too
     *   The **Impact** tool is specifically designed to analyze how various properties—most notably performance metrics like page load times—affect conversion rates and the frequency of feature usage.
 
 
-### Question - 6 🐣
+### Question - 6
 
 Your company is building a <mark>mobile app that targets Android and iOS devices.</mark> 
 
@@ -1837,13 +1837,14 @@ NOTE: Each correct selection is worth one point.
 
 A. Modify the load balancer settings of VMSS1.
 
-B. Redeploy VMSS1.  (Not necessarily)
+B. Redeploy VMSS1.  (Not necessarily due to WebApp1 uses stateful sessions.)
 
 C. Upload a custom script file to sa1.
 
 D. Modify the Custom Script extension settings of VMSS1.
 
-E. Update the configuration of a virtual machine in VMSS1. (Required)
+E. Update the configuration of a virtual machine in VMSS1.
+
 
 ----------
 
@@ -3058,7 +3059,7 @@ Why other options are incorrect:
 
 
 
-### Question-31 🐣
+### Question-31
 
 You use Azure Pipelines to build and deploy an app named App1. 
 
@@ -3138,7 +3139,7 @@ To query the Log Analytics workspace correctly for logs related to Asia from the
 *   **Step 5 (`| where continent == 'Asia'`):** Finally, after the tables are joined and the data is combined into a single result set, you apply the filter for the specific continent required.
 
 
-### Question-33 🐣
+### Question-33 
 
 You have an Azure subscription that contains multiple Azure services. **You need to send an SMS alert when scheduled maintenance is planned for the Azure services**.
 
@@ -3277,7 +3278,7 @@ Why the other options are incorrect
 | Before `Threshold = 75` | **extend**                 |
  
 
-### Question-35 🐣
+### Question-35
 
 You are designing a **strategy to monitor the baseline metrics** of Azure virtual machines that run Windows Server. 
 
@@ -4627,7 +4628,7 @@ This ensures you receive an email whenever VMSS1 scales in or out.
 ✅ **Final answer: B. No**
 
 
-### Question-61  🐣
+### Question-61 
 
 You have an Azure subscription that contains multiple web apps.
 
@@ -5597,7 +5598,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 💩🐣
+### Question #8 🐣
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5824,7 +5825,7 @@ Result
 
 
 
-### Question #12 💩🐣
+### Question #12 🐣
 
 You use GitHub Enterprise Server as a source code repository.
 
@@ -5866,7 +5867,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 🐣🐣
+### Question-13 🐣
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -7408,7 +7409,7 @@ Final Answer:
 
 **C. Create a variable group in Project1** ✅
 
-### Question #42 🐣
+### Question #42
 
 Your company has a project in Azure DevOps named Project1.
 
@@ -9077,7 +9078,7 @@ If requirement says:
   → Think **branch policy + status check on main branch**
 
 
-### Question-71  🐣
+### Question-71 
 
 You have an Azure subscription that contains four Azure virtual machines.
 
@@ -10954,7 +10955,7 @@ git branch features/feature11
 
 This sequence successfully recovers the deleted branch.
 
-### Question #34 🐣
+### Question #34
 
 You have an Azure Repos repository that contains large PSD files.
 
@@ -11962,7 +11963,7 @@ To remove sensitive data, you must:
 
 Only **BFG** and **git filter-repo** achieve this properly.
 
-### Question #52 🐣
+### Question #52 
 
 You use GitHub Enterprise for source control repositories. 
 
@@ -15165,7 +15166,7 @@ Key Point
 
 * **Build access to on-prem resources = self-hosted agent**, not Octopus Tentacle
 
-### Question #7  🐣
+### Question #7
 
 You need to recommend an integration strategy for the build process of a Java application. The solution must meet the following requirements:
 
@@ -15697,7 +15698,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 * **Second FROM:** `mcr.microsoft.com/dotnet/aspnet:5.0`
 
 
-### Question #15  🐣
+### Question #15
 
 DRAG DROP You are configuring the settings of a new Git repository in Azure Repos.
 
@@ -16360,7 +16361,7 @@ Final Answer:
 ✅ **D. Delete Package-lock.json**
 
 
-### Question #29 🐣
+### Question #29
 
 Your company has an Azure DevOps project, The source code for the project is stored in an on-premises repository and uses on an on-premises build server. 
 
@@ -16491,7 +16492,7 @@ Final Answer:
 ✅ **A, C, D**
 
 
-### Question #31 🐣
+### Question #31
 
 You are deploying a new application that uses Azure virtual machines.
 
@@ -16884,7 +16885,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩💩🐣
+### Question #38 💩🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -16997,7 +16998,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 💩🐣
+### Question #40 🐣
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -18111,7 +18112,7 @@ Final Answer:
 * **Slot 1:** `npm install`
 * **Slot 2:** `ne(variables.CACHE_RESTORED, 'true')`
 
-### Question #57 🐣
+### Question #57
 
 You have a build pipeline in Azure Pipelines that uses different jobs to compile an application for 10 different architectures. 
 
@@ -19672,7 +19673,7 @@ Final Answer
 
 
 
-### Question-88 🐣
+### Question-88
 
 You have a project in Azure DevOps.
 
@@ -21205,7 +21206,7 @@ Select and Place:
 AKS deployment via Azure DevOps follows:
 
 
-### Question #21 🐣
+### Question #21 
 
 You have an Azure DevOps organization named Contoso.
 
@@ -21270,8 +21271,7 @@ Final answer arrangement:
 > **Note:** Creating a `.zip` file and uploading to Azure Blob storage is not required here because Azure Automation DSC natively stores and manages configurations without needing external blob storage.
 
 
-### Question #22 💩
-
+### Question #22 
 
 You have a free tier of an Azure DevOps organization named Contoso. 
 
@@ -22131,7 +22131,7 @@ performanceCounters
 
 
 
-### Question #33 🐣
+### Question #33 
 
 You have an Azure subscription that contains 50 virtual machines.
 
@@ -22368,7 +22368,7 @@ Correct query flow in Kusto:
 
 > **Filter → Aggregate → Filter → Sort/Top** 🚀
 
-### Question #36  🐣
+### Question #36
 
 You have an Azure subscription that contains two resource groups named ContosoRG and ContosoDev, an Azure data factory named Contoso Data Factory, 
 
@@ -22863,7 +22863,7 @@ Solution:
 * **Prod → enforce decision (gates)** 🚀
 
 
-### Question #43 🐣
+### Question #43
 
 You have a project in Azure DevOps named Project that has a release pipeline in Azure Pipeline named ReleaseP1.
 
@@ -24435,7 +24435,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24 💩🐣
+### Question #24 🐣
 
 You have an Azure subscription.
 
@@ -24846,7 +24846,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31 🐣
+### Question #31
 
 You have a GitHub organization.
 
@@ -25001,7 +25001,7 @@ If the question mentions:
 * Less efficient than TIA for this goal
 
 
-### Question #34 🐣
+### Question #34
 
 You have an app that is deployed to two environments named Production-A and Production-B by using Azure Pipelines.
 
@@ -25145,7 +25145,7 @@ In **Azure Artifacts feeds**, some views are **created automatically**, while ot
 
 **B. @Latest**
 
-### Question #36 🐣
+### Question #36
 
 You have an Azure subscription that includes an app named App1.
 
@@ -26726,7 +26726,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩🐣
+### Question #53 💩🐣
 
 HOTSPOT -
 
@@ -26898,7 +26898,8 @@ This follows the **principle of least privilege** because:
 
 
 
-### Question-55 🐣
+### Question-55
+
 
 You have an Azure DevOps project that contains a release pipeline and a Git repository.
 
@@ -28262,7 +28263,7 @@ Why the other options are incorrect
 
 
 
-###  Question-80 🐣
+###  Question-80
 
 You have a project in Azure DevOps named Project1.
 
@@ -30039,7 +30040,7 @@ To ensure ongoing compliance, change LCM configuration to:
 **C. Modify the ConfigurationMode property of the Local Configuration Manager (LCM).**
 
 
-### Question #2 🐣
+### Question #2
 
 You need to implement the code flow strategy for Project2 in Azure DevOps.
 
@@ -30425,7 +30426,7 @@ To implement a **build agent using Azure resources** (as required), you should d
 2 → Create PAT
 3 → Install & register agent on Azure VM
 
-### Question #5 🐣
+### Question #5
 
 You need to implement Project6.
 
