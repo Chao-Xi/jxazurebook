@@ -5598,7 +5598,7 @@ Based on the requirements to access Azure Key Vault while ensuring that no crede
     *   If you use a Service Principal (OAuth), you have to store a "Client Secret" or certificate in Azure DevOps. By using **Managed Identity**, the build agent uses its own identity (assigned in Azure) to request a token dynamically. This ensures that no sensitive credentials are ever typed into or persisted within the Azure DevOps service connection settings.
 
 
-### Question #8 🐣
+### Question #8
 
 You are deploying a server application that will run on a Server Core installation of Windows Server 2019. You create an Azure key vault and a secret.
 
@@ -5867,7 +5867,7 @@ To link GitHub Enterprise Server (GHES) commits, pull requests, and issues to Az
 *   **Step 2:** Next, you go to the **Organization settings** in Azure DevOps to **add an OAuth configuration**. This is where you register your GHES instance URL along with the Client ID and Client Secret you obtained in Step 1. This "registers" the GHES server as a known, authenticated source for the entire Azure DevOps organization.
 *   **Step 3:** Finally, you navigate to the specific **Project Settings** of Project1 and **add a GitHub connection**. During this step, you select the OAuth configuration created in Step 2, authorize the connection, and then choose the specific repositories you want to link to your project's work items.
 
-### Question-13 🐣
+### Question-13
 
 You are configuring an Azure DevOps deployment pipeline. **The deployed application will authenticate to a web service by using a secret stored in an Azure key vault.**
 
@@ -9029,7 +9029,7 @@ Final Answer:
 
 **A. Purchase a GitHub Advanced Security license.** ✅
 
-### Question #70 🐣
+### Question #70
 
 You use Azure Pipelines pipeline to build and deploy an app named App1.
 
@@ -11112,7 +11112,7 @@ D. GitHub Advisory Database databases
 To scan **all repository code for vulnerabilities**, use **CodeQL actions**.
 
 
-### Question #37  🐣
+### Question #37
 
 You create a Git repository named Repo1 in Azure Repos.
 
@@ -15230,7 +15230,7 @@ Key Point
 
 ✔ Therefore, the solution meets all goals.
 
-### Question #8 🐣
+### Question #8
 
 Your company uses cloud-hosted Jenkins for builds.
 
@@ -16885,7 +16885,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 🐣
+### Question #38
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -24435,7 +24435,7 @@ In Bicep, **modules** are the primary mechanism for code reuse and modularity.
 *   **B. resources:** While `Template3` will ultimately result in resources being deployed, defining them directly would mean rewriting the code rather than *reusing* the logic from `Template1` and `Template2`.
 *   **D. parameters:** While you will likely need parameters in `Template3` to feed the modules, the core structural element required to enable the "reuse" of other templates is the **module** definition.
 
-### Question #24 🐣
+### Question #24
 
 You have an Azure subscription.
 
@@ -26726,7 +26726,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 🐣
+### Question #53
 
 HOTSPOT -
 
