@@ -1817,7 +1817,7 @@ Why other options are incorrect:
 *   **D. Jenkins integration:** Jenkins is a general-purpose automation server. While it can build the app, it does not provide the specific mobile-hosting services for crash analytics or tester distribution out-of-the-box.
 
 
-### Question - 7 🐣
+### Question - 7
 
 You have an Azure DevOps project named Project1 and an Azure subscription named Sub1. 
 
@@ -4071,7 +4071,7 @@ To actually **prevent configuration drift**, you would need solutions such as:
 Reference: https://azsk.azurewebsites.net/04-Continous-Assurance/Readme.html
 
 
-### Question #48 🐣
+### Question #48
 
 You have a project in Azure DevOps.
 
@@ -4430,7 +4430,7 @@ To match the customers with the correct Azure DevOps work item processes based o
     *   *Reasoning:* The **CMMI** (Capability Maturity Model Integration) template is designed for formal process improvement and includes specific work item types like **Change Request**, **Risk**, and **Review**, which are not present in the standard Scrum or Agile templates.
 
 
-### Question #57 🐣
+### Question #57
 
 You configure an Azure Application Insights availability test.
 
@@ -5825,7 +5825,7 @@ Result
 
 
 
-### Question #12 🐣
+### Question #12
 
 You use GitHub Enterprise Server as a source code repository.
 
@@ -6014,7 +6014,7 @@ Why other options are incorrect:
 *   **C (Modify devDependencies):** The prompt states the libraries are already identified as development-only. Modifying the `package.json` file to move them wouldn't change the scanner's behavior unless you also performed the production-only install and targeted scan.
 
 
-### Question #16 🐣
+### Question #16
 
 You plan to update the Azure DevOps strategy of your company.
 
@@ -6466,7 +6466,7 @@ This is the primary command to provision the cluster. You will pass the `appId` 
 Once the cluster is successfully provisioned, you need to connect to it. This command downloads the `kubeconfig` file to your local machine, configuring your local `kubectl` context so you can manage the cluster and deploy containers.
 
 
-### Question #26 🐣
+### Question #26
 
 You have a project in Azure DevOps named Project1 that contains two Azure DevOps pipelines named Pipeline1 and Pipeline2.
 
@@ -7079,7 +7079,7 @@ To assign permissions in **Azure DevOps** using the **principle of least privile
 
 
 
-### Question-37 🐣
+### Question-37
 
 You have an Azure DevOps organization named Contoso.
 
@@ -8014,7 +8014,7 @@ Hub policy violations are met.
 
 
 
-### Question #51  🐣
+### Question #51
 
 You have an Azure key vault named KV1 and three web servers.
 
@@ -14549,7 +14549,7 @@ Final Answer:
 
 **C and E** ✅
 
-### Question-47 🐣
+### Question-47
 
 You are integrating an Azure Boards project and a GitHub repository.
 
@@ -16651,7 +16651,7 @@ Final Answer:
 ✅ **B. Configure flaky tests**
 
 
-### Question #34 🐣
+### Question #34
 
 You have an Azure subscription that contains a resources group named RG1. 
 
@@ -16885,7 +16885,7 @@ Final Answer:
 ✅ **D. build**
 
 
-### Question #38 💩🐣
+### Question #38 🐣
 
 You have a project in Azure DevOps that uses packages from multiple public feeds. 
 
@@ -16998,7 +16998,7 @@ Total = 4 tasks.
 *   The pipeline has: **1** job(s).
 *   The pipeline has: **4** task(s).
 
-### Question #40 🐣
+### Question #40
 
 You need to use Azure Automation State Configuration to manage the ongoing consistency of virtual machine configurations.
 
@@ -18855,7 +18855,7 @@ Final Answer
 
 
 
-### Question-71 🐣
+### Question-71
 
 Your company has a project in Azure DevOps for a new web application 
 
@@ -26726,7 +26726,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩🐣
+### Question #53 🐣
 
 HOTSPOT -
 
