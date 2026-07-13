@@ -21415,7 +21415,7 @@ The **Azure SQL Database Deployment** task in Azure DevOps is designed to deploy
 **B. a DACPAC**
 
 
-### Question #24  🐣
+### Question #24
 
 You have a project in Azure DevOps.
 
@@ -24441,7 +24441,7 @@ You have an Azure subscription.
 
 You use Bicep templates to deploy websites and Azure SQL infrastructure.
 
-**You need to automate the deployments by using Azure Pipelines and a self-hosted agent that runs on two virtual machines.**
+**You need to automate the deployments by using <mark>Azure Pipelines and a self-hosted agent</mark> that runs on two virtual machines.**
 
 The solution must minimize administrative effort.
 
@@ -24846,7 +24846,7 @@ The goal (from the earlier context) is to determine whether **agent pool exhaust
 
 **A and C**
 
-### Question #31 💩🐣
+### Question #31 🐣
 
 You have a GitHub organization.
 
@@ -26726,7 +26726,7 @@ Specifically:
 **B. Configure a branch policy for the main branch**
 
 
-### Question #53 💩💩💩🐣🐣
+### Question #53 💩💩🐣
 
 HOTSPOT -
 
@@ -27342,7 +27342,7 @@ This ensures that all devices in the private distribution group—both previousl
 
 
 
-### Question-65 🐣
+### Question-65 
 
 Your company has an **<mark>on-premises Bitbucket Server that is used for Git-based source control</mark>**. 
 
@@ -27407,7 +27407,7 @@ Why the others are incorrect
 
 
 
-### Question-66 🐣
+### Question-66
 
 You have a project in Azure DevOps.
 
@@ -29479,7 +29479,7 @@ For App Center initialization:
 | Dropdown 2 | `MSCrashes.self]`    |
 
 
-### Question #2 💩
+### Question #2
 
 How should you configure the release retention policy for the investment planning depletions suite? To answer, select the appropriate options in the answer area.
 
@@ -29799,7 +29799,7 @@ Final Answer:
 
 
 
-### Question 7 💩
+### Question 7
 
 How should you configure the release retention policy for the investment planning applications suite? To answer, select the appropriate options in the answer area.
 
@@ -29866,7 +29866,7 @@ The requirement clearly states:
 * **Production stage:** Set the stage retention policy to **60 days**
 
 
-### Question 8  💩
+### Question 8 
 
 Where should the build and release agents for the investment planning applications suite run? To answer, select the appropriate options in the answer area.
 
@@ -30134,7 +30134,7 @@ The requirements for **Project2** are key:
 3. Create a branch
 
 
-### Question #3  🐣
+### Question #3 
 
 DRAG DROP You need to configure Azure Automation for the computers in Pool7.
 
