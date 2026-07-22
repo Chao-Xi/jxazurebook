@@ -1,0 +1,5057 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AB-100 Agentic AI Business Solutions Architect - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ab-100-agentic-ai-business-solutions-architect" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AB-100 Agentic AI Business Solutions Architect
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AB 100
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AB 100
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ab100_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft AB-100 Agentic AI Exam Prep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plan-ai-powered-business-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan AI-powered business solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plan AI-powered business solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testlet-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testlet 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plan-ai-powered-business-solutions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan AI-powered business solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plan AI-powered business solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-sales-cycle-enablement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario: Sales Cycle Enablement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario: Sales Cycle Enablement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sales-cycle-enablement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sales Cycle Enablement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-infrastructure-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario: Infrastructure Migration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario: Infrastructure Migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 9
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 10
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 11
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 12
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 13
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 16
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 17
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 18
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 19
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 20
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 22
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 23
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 24
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 25
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 26
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 27
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ab-100-agentic-ai-business-solutions-architect">AB-100 Agentic AI Business Solutions Architect</h1>
+<h2 id="plan-ai-powered-business-solutions">Plan AI-powered business solutions</h2>
+<h3 id="testlet-1">Testlet 1</h3>
+<p>Case study</p>
+<p><strong>Overview</strong></p>
+<p>Contoso, Ltd. is a high-tech manufacturing company that uses Microsoft Dynamics 365 Finance. Dynamics 365 Supply Chain Management, and Dynamics 365 Commerce for its North American operations. The company designs and develops innovative products that have many patents and proprietary technologies. The patents and engineering designs are closely guarded secrets.</p>
+<p>Contoso executives want to integrate and adopt AI solutions to help scale the company in preparation for an anticipated period of rapid growth.</p>
+<p>The company has multiple legal entities and Azure subscriptions that will be used in the adopted AI solutions.</p>
+<p><strong>Requirements</strong></p>
+<p><strong>AI Adoption</strong></p>
+<p>The following executives will have specific responsibilities in the overall AI adoption:</p>
+<ul>
+<li>
+<p>Chief Technology Officer (CTO): Select one Dynamics 365 Finance, Dynamics 365 Supply Chain Management or Dynamics 365 Commerce prebuilt AI agent and one custom Microsoft Copilot Studio AI agent to prioritize and deploy during the initial AI adoption phase.</p>
+</li>
+<li>
+<p>Chief Information Officer (CIO): Ensure that appropriate security labels are assigned to the data used by the AI agents.</p>
+</li>
+<li>
+<p>Chief Financial Officer (CFO): Analyze the return on investment (ROI) for the AI agents being deployed. Chief Information Security Officer (CISO): Discover and inventory AI resources for auditing.</p>
+</li>
+<li>
+<p>Chief Executive Officer (CEO): Ensure that all solutions adhere to industry-standard responsible AI practices.</p>
+</li>
+</ul>
+<p>All AI initiatives and agents will have a detailed business use case, a defined audience profile, and an estimated ROI that will compare the cost savings of the current process against the estimated costs of using the new AI solutions.</p>
+<p>The company's research and development (R&amp;D) department already has a custom Model Context Protocol (MCP) server that contains comprehensive product specifications and compliance data.</p>
+<p><strong>Prebuilt AI Agent</strong></p>
+<p>The CTO has NOT yet selected which prebuilt AI agent to use in Dynamics 365 Supply Chain Management. The CTO wants to view available agent templates to identify which agent will add the most business value.</p>
+<p>Depending on which high-priority AI agents are identified, its agent capabilities must be previewed in a discovery meeting with the relevant business operation stakeholders.</p>
+<p><strong>Custom AI Agent</strong></p>
+<p>Contoso has identified the following custom AI agent requirements:</p>
+<ul>
+<li>
+<p>The custom AI agent will use data from Dynamics 365 Supply Chain Management to answer questions for the manufacturing team as a low-code solution.</p>
+</li>
+<li>
+<p>The custom AI agent will be accessible from within Microsoft Teams.</p>
+</li>
+<li>
+<p>The custom AI agent must be designed to eventually connect to other agents that can be selected based on their description.</p>
+</li>
+<li>
+<p>The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational.</p>
+</li>
+<li>
+<p>The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&amp;D department.</p>
+</li>
+<li>
+<p>The custom AI agent must be integrated with and accessible from Dynamics 365 Supply Chain Management.</p>
+</li>
+<li>
+<p>The custom AI agent must be able to use Dynamics 365 Supply Chain Management business logic that is stored outside of the application.</p>
+</li>
+</ul>
+<p><strong>Analysis, Reporting, and Troubleshooting</strong></p>
+<p>Contoso has identified the following analysis, reporting, and troubleshooting requirements:</p>
+<p>The CISO will audit all the AI solutions monthly for compliance and security.</p>
+<p>The CFO will analyze all the AI solutions quarterly to compare the estimated ROI against actual measured efficiencies and adoption. The CFO will use the Copilot Studio agent usage estimator to perform this analysis.</p>
+<p>The CISO wants to identify how much sensitive data was accessed for a given AI agent run and who accessed the data. Too much sensitive data accessed by a single user might indicate a high security risk.</p>
+<p>The CTO wants to track user feedback on the quality of the AI agent responses during user interactions with the agents. Consistently poor feedback will trigger an escalated reengineering discussion.</p>
+<p>The CEO wants a quarterly assessment of all the required metrics for their specific responsibilities. The tools used for the assessments must be Microsoft-recommended and must verify reliability, interpretability, fairness, and compliance.</p>
+<p>The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.</p>
+<h3 id="question-1">QUESTION 1</h3>
+<p>Which two components in the custom AI agent design should the CFO evaluate in the quarterly agent analysis? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. the GPT models used for the agent</p>
+<p>B. the average characters in a chat message</p>
+<p>C. the agent orchestration method</p>
+<p>D. the average session time per agent</p>
+<hr />
+<p>C, D</p>
+<p>The CFO’s quarterly analysis is focused on comparing:</p>
+<ul>
+<li>
+<p>estimated ROI</p>
+</li>
+<li>
+<p>actual measured efficiencies</p>
+</li>
+<li>
+<p>actual adoption</p>
+</li>
+</ul>
+<p>The case study explicitly says the CFO will use the Copilot Studio agent usage estimator . For that kind of analysis, the most relevant design components are the ones that affect how the agent is used operationally and how interactions are processed.</p>
+<p><strong>Quarterly Estimated ROI (Forecasting)</strong></p>
+<p>Use the Microsoft Agent Usage Estimator to model quarterly expectations before each period.</p>
+<p>Orchestration Method Input: Select between Classic (logic-driven) or Generative (AI-driven) orchestration. Generative orchestration typically consumes more credits but reduces manual development time.</p>
+<p>Session Time Variables: Model the average session time per agent to estimate total message volume. The estimator uses this to project credit consumption based on interaction depth.</p>
+<p>Target ROI Formula: Define the benchmark as:</p>
+<p>Estimated Savings = (Projected Deflection × Human Agent Cost) - Estimated Credit Cost.</p>
+<p>Why C. the average session time per agent is correct:</p>
+<p>Average session time is a practical usage and adoption indicator. It helps the CFO understand how much users are engaging with the agent and whether the agent is reducing effort efficiently or creating long, costly interactions.</p>
+<p>Why D. the agent orchestration method is correct:</p>
+<p>The orchestration method affects how the agent handles requests, invokes tools, uses knowledge sources, and consumes resources. Since this can influence both operational efficiency and cost, it is important for ROI analysis.</p>
+<p>Why the other options are not the best fit:</p>
+<h3 id="question-2">QUESTION 2</h3>
+<p>What should you configure for the custom AI agent?</p>
+<p>A. AI-assisted evaluators</p>
+<p>B. classic orchestration</p>
+<p>C. generative orchestration</p>
+<p>D. Azure OpenAI reasoning models</p>
+<hr />
+<p>Correct Answer: C</p>
+<p><strong>Explanation/Reference:</strong></p>
+<p><strong>Explanation:</strong></p>
+<p>Generative orchestration is the most appropriate choice for this Microsoft Dynamics 365 AI agent solution. This selection directly addresses your requirements for a low-code, conversational, and interconnected agent ecosystem within the Microsoft Power Platform and Dynamics 365 environment.</p>
+<p><strong>Why Generative Orchestration?</strong></p>
+<p>Generative orchestration (available in Microsoft Copilot Studio) is specifically designed to move away from rigid, trigger-phrase-based logic toward a flexible, intent-based model.</p>
+<p><strong>Mapping to Your Requirements</strong> </p>
+<p>Intent-Based Selection: Unlike "Classic" orchestration which relies on exact trigger phrases, generative orchestration uses Natural Language Understanding (NLU). It selects the correct topic or "sub-agent" based on a description of the purpose, allowing for the conversational flow you requested.</p>
+<p><strong>Low-Code Integration:</strong> Copilot Studio is the primary low-code tool for Dynamics 365. It provides native connectors to Supply Chain Management (SCM) data and can be embedded directly into the SCM interface or deployed to Microsoft Teams.</p>
+<p><strong>External Business Logic</strong>: It can trigger Power Automate flows or API calls to execute business logic stored in external databases or legacy systems, bringing that data back into the conversation.</p>
+<p><strong>Product Specifications</strong>: By using Generative Answers, the agent can crawl "existing technologies" like SharePoint libraries, internal wikis, or SCM data tables to answer complex spec questions without manual topic authoring.</p>
+<p>Incorrect:</p>
+<p><strong>[Not A]</strong></p>
+<p>AI-Assisted Evaluators are testing and diagnostic tools, not runtime execution engines.</p>
+<p>You would use these to measure how well your agent is performing, but they cannot be the agent or manage the logic flow.</p>
+<p><strong>[Not B]</strong></p>
+<p>Classic Orchestration is entirely dependent on trigger phrases.</p>
+<p>It creates a "command-and-control" feel rather than the fluid, conversational interaction you are looking for. </p>
+<p>It also scales poorly when trying to connect multiple agents.</p>
+<p><strong>[Not D]</strong></p>
+<p>Azure OpenAI Models (Reasoning Models) while powerful, this is a pro-code path (API-heavy).</p>
+<p>Using raw Azure OpenAI models would require significant custom development, missing the "low-code" requirement. While Generative Orchestration uses these models under the hood, the orchestration layer itself is what manages the "which agent to call" logic.</p>
+<p><strong>Scenario: Custom AI Agent</strong></p>
+<p>Contoso has identified the following custom AI agent requirements:</p>
+<p>*-&gt; The custom AI agent will use data from Dynamics 365 Supply Chain Management to answer questions for the manufacturing team as a low-code solution.</p>
+<p>The custom AI agent will be accessible from within Microsoft Teams.</p>
+<p>The custom AI agent must be designed to eventually connect to other agents that can be selected based on their description</p>
+<p>*-&gt; The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational.</p>
+<p>The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&amp;D department.</p>
+<p>*-&gt; The custom AI agent must be integrated with and accessible from Dynamics 365 Supply Chain Management.</p>
+<p>*-&gt; The custom AI agent must be able to use Dynamics 365 Supply Chain Management business logic that is stored outside of the application.</p>
+<h2 id="plan-ai-powered-business-solutions_1">Plan AI-powered business solutions</h2>
+<p><strong>Background</strong> </p>
+<p>Fabrikam, Inc., is a global consumer goods company that is undergoing a digital transformation initiative to migrate its entire infrastructure to the Microsoft cloud. As a key element of this cloud migration, the company will implement Microsoft Dynamics 365 Sales, moving away from the current on-premises proprietary technologies used by its business-to-business (B2B) sales team.</p>
+<p>As part of the cloud migration, Fabrikam will adopt an AI-first approach to its business solutions and implement AI solutions, wherever possible, to streamline operations.</p>
+<p><strong>Problem Statements</strong></p>
+<p>Fabrikam's infrastructure currently relies on various on-premises systems that require sales executives to use corporate computers with physical keyboards to access business information during customer interactions. Mobile phones cannot be used for these purposes, as the systems depend on keyboard input. As a result, the sales executives spend a lot of time using keyboards to search for data on several disparate systems and file servers, rather than focusing on the customers. This affects the customer experience.</p>
+<p>Fabrikam stakeholders are concerned that users will be hesitant to adopt AI. If the AI initiatives are NOT adopted, cost savings will never be realized. Additionally, funding for future AI initiatives will depend on demonstrating an increase in AI adoption month over month. As the AI agent initiative for the sales team will be the first for Fabrikam, the rapid adoption of the agent is a high priority</p>
+<p><strong>Planned Initiatives</strong> </p>
+<p>General</p>
+<p>Fabrikam management has prioritized AI-driven projects to improve efficiency, customer engagement, and responsible AI adoption. The current application infrastructure is on-premises and must be migrated to the cloud to support the adoption of these technologies.</p>
+<p><strong>Infrastructure Migration</strong></p>
+<p>Fabrikam plans to migrate from its current on-premises infrastructure to a completely cloud-based topology; this will include user authentication, the security framework, and, primarily, the adoption of the services by end users.</p>
+<p>All the data from the different systems will be consolidated into a single data source - a common data model that will use a Microsoft Dataverse environment as a single source of truth (SSOT) for the sales team.</p>
+<p><strong>Sales Cycle Enablement</strong></p>
+<p>To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle:</p>
+<p>Use low-code development to create a single AI agent that has Dataverse as its core component. Ensure that sales managers can access unanswered correspondence from prospects and intervene as appropriate.</p>
+<p>Replace the previous proprietary software with Dynamics 365 Sales to track sales cycles and customer interactions.</p>
+<p>Have the sales executives use Dynamics 365 Sales to track interactions for open opportunities and send follow-up communications to prospects.</p>
+<p>Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.</p>
+<p>Requirements </p>
+<p><strong>Infrastructure Migration</strong></p>
+<p>Fabrikam has identified the following infrastructure migration requirements:</p>
+<p>Azure must be used for all future infrastructure workloads.</p>
+<p>The company must follow Microsoft-recommended methodologies for infrastructure migration to the cloud.</p>
+<p>Any created AI agents must have their return on investment (ROI) calculated to ensure that the solution will save the company money.</p>
+<p><strong>Sales Cycle Enablement</strong></p>
+<p>Fabrikam has identified the following requirements for sales cycle enablement:</p>
+<p>The final AI agent must follow Microsoft recommendations for a conversational user experience.</p>
+<p>A designated checklist must be reviewed to ensure that the AI agent follows Microsoft deployment recommendations for a compliant solution.</p>
+<p>Detailed telemetry must be logged for the first created AI agent to help troubleshoot and optimize the agent during the initial AI agent adoption process.</p>
+<p>Unexpected AI agent actions must end in an escalation to a live representative. For example, a sales executive must be rerouted to a representative if the agent cannot answer a question after two failed attempts.</p>
+<p>The return on investment (ROI) of switching from the current process to the future process is required for stakeholder sign off.</p>
+<p>The sales team must use Dynamics 365 Sales to correspond with prospects more quickly and efficiently than currently.</p>
+<p>Sales managers must report on the adoption of the AI agent to key Fabrikam stakeholders on a monthly basis.</p>
+<p>Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.</p>
+<h3 id="question-1_1">QUESTION 1</h3>
+<p>Which framework should you use to meet the AI agent requirements for the sales cycle enablement? To answer, select the appropriate options in the answer area.</p>
+<p>Hot Area:</p>
+<p>Answer Area</p>
+<p><strong>For Microsoft Copilot Studio best practices:</strong></p>
+<ul>
+<li>the ALM Accelerator for Microsoft Power Platform  </li>
+<li>Microsoft Cloud Adoption Framework for Azure  </li>
+<li>Microsoft Power Platform Well-Architected framework  </li>
+<li>Success by Design  </li>
+</ul>
+<p><strong>For conversational user experiences:</strong></p>
+<ul>
+<li>the ALM Accelerator for Microsoft Power Platform  </li>
+<li>Microsoft Cloud Adoption Framework for Azure  </li>
+<li>Microsoft Power Platform Well-Architected framework  </li>
+<li>Success by Design</li>
+</ul>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p><strong>Box 1: the ALM Accelerator for Microsoft Power Platform For Microsoft Copilot Studio best practices</strong></p>
+<p>Using the ALM Accelerator for Microsoft Power Platform is a recommended approach for managing the lifecycle of a low-code AI agent (Copilot Studio) that relies on Dataverse. It enables source control, versioning, and automated deployment of AI agents to ensure they follow Microsoft's best practices.</p>
+<p><strong>Box 2: Microsoft Power Platform Well-Architected framework For conversational user experience</strong></p>
+<p>Utilizing the Microsoft Power Platform Well-Architected framework for a low-code AI agent (built in Copilot Studio) with Dataverse as the core data component ensures the solution is secure, reliable, and provides a high-quality conversational user experience (CUX). The framework helps align the agent with Microsoft’s best practices for responsible AI, efficiency, and user satisfaction.</p>
+<h3 id="scenario-sales-cycle-enablement">Scenario: Sales Cycle Enablement</h3>
+<p>Fabrikam has identified the following requirements for sales cycle enablement:</p>
+<p>*-&gt; The final AI agent must follow Microsoft recommendations for a conversational user experience.</p>
+<h4 id="sales-cycle-enablement">Sales Cycle Enablement</h4>
+<p>To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle</p>
+<p>*-&gt; Use low-code development to create a single AI agent that has Dataverse as its core component.</p>
+<h4 id="question-2_1">QUESTION 2</h4>
+<p>Which framework should you use for the infrastructure migration?</p>
+<p>A. Microsoft Cloud Adoption Framework for Azure</p>
+<p>B. Success by Design</p>
+<p>C. Microsoft Power Platform Center of Excellence (CoE)</p>
+<p>D. Microsoft Power Platform Project Setup Wizard</p>
+<p><strong>Correct Answer: A</strong></p>
+<p>Explanation/Reference:</p>
+<p>For migrating a legacy on-premises infrastructure to Microsoft Dynamics 365 Sales with Dataverse as the Single Source of Truth (SSOT), the recommended framework is the Microsoft Cloud Adoption Framework for Azure (CAF), specifically utilized in conjunction with the Data Management Framework (DMF) for Dynamics 365.</p>
+<p>This combined approach ensures a structured transition by focusing on both the strategic adoption of cloud technology and the technical, granular migration of data.</p>
+<p>Recommended Framework: Microsoft Cloud Adoption Framework (CAF) The CAF provides a holistic structure to ensure the migration is secure, compliant, and aligned with business goals.</p>
+<p>Plan: Assess legacy data, prioritize workloads, and define the SSOT requirements.</p>
+<p>Ready: Set up the Dataverse environment (landing zone) and configure security (Azure Active Directory/ Microsoft Entra ID).</p>
+<p>Adopt (Migrate): Perform the technical migration of data using ETL (Extract, Transform, Load) processes.</p>
+<h3 id="scenario-infrastructure-migration">Scenario: Infrastructure Migration</h3>
+<p>Fabrikam plans to migrate from its current on-premises infrastructure to a completely cloud-based topology; this will include user authentication, the security framework, and, primarily, the adoption of the services by end users.</p>
+<p>All the data from the different systems will be consolidated into a single data source - a common data model that will use a Microsoft Dataverse environment as a single source of truth (SSOT) for the sales team.</p>
+<p><strong>Background</strong></p>
+<p>Fabrikam, Inc., is a global consumer goods company that is undergoing a digital transformation initiative to migrate its entire infrastructure to the Microsoft cloud. As a key element of this cloud migration, the company will implement Microsoft Dynamics 365 Sales, moving away from the current on-premises proprietary technologies used by its business-to-business (B2B) sales team.</p>
+<p>Reference:</p>
+<p>Plan AI-powered business solutions</p>
+<h4 id="question-1_2">QUESTION 1</h4>
+<p>A company uses Microsoft Dynamics 365 Sales to manage leads that are stored in a Microsoft Dataverse table named Lead and use non-standard terminology and custom columns.</p>
+<p>You need to configure business terms in the Lead table so that Microsoft Copilot controls can summarize the leads efficiently. The solution must minimize administrative effort.</p>
+<p>How should you configure the business terms?</p>
+<p>A. Combine all the fields into one custom field.</p>
+<p>B. Map the field display names as business terms.</p>
+<p>C. Add the schema names as business terms.</p>
+<p>D. Create new business terms for each field.</p>
+<hr />
+<p>Correct Answer: B</p>
+<p>Explanation/Reference:</p>
+<p>To configure Microsoft Copilot to efficiently summarize leads with non-standard terminology and custom columns in Microsoft Dynamics 365 Sales, you must map these unique fields to business terms within the Sales AI Glossary in Microsoft Copilot Studio.</p>
+<p>Note:</p>
+<p>To map your field display names as business terms:</p>
+<ol>
+<li>
+<p>Access Copilot Studio: Open Microsoft Copilot Studio and select the environment containing your Dynamics 365 Sales instance.</p>
+</li>
+<li>
+<p>Select the Sales Agent: Navigate to Agents and select the agent named Copilot in Dynamics 365 Sales (formerly Sales Copilot Power Virtual Agents Bot).</p>
+</li>
+<li>
+<p>Navigate to Knowledge: Under the Knowledge section, select the SalesSpecificQnA knowledge source.</p>
+</li>
+<li>
+<p>Add Glossary Entries:</p>
+</li>
+</ol>
+<p>Go to the Glossary tab.</p>
+<p>Term: Enter the non-standard or custom field display name (e.g., your custom business term).</p>
+<p>Description: Define how this term relates to the Dataverse schema. This helps Copilot understand the logic behind the custom column.</p>
+<ol>
+<li>
+<p>Configure Synonyms: In the Synonyms section, map your custom field to alternative names that sellers might use in natural language queries (e.g., mapping "Custom Revenue" to "Opportunity Revenue").</p>
+</li>
+<li>
+<p>Publish Changes: Select Publish to apply these mappings, allowing Copilot to use the newly defined terms when generating lead summaries.</p>
+</li>
+</ol>
+<h4 id="question-2_2">QUESTION 2</h4>
+<p>You are designing two Microsoft Copilot Studio agents named Agent1 and Agent2. Each agent must meet the following requirements:</p>
+<p>Each agent must use a standard model.</p>
+<p>Each agent must NOT use generative orchestration.</p>
+<p>Agent1 must support simple and short phrases for a given topic.</p>
+<p>Agent2 must integrate with Microsoft Dynamics 365 Contact Center voice channel.</p>
+<p>You need to recommend language models for the agents.</p>
+<p>What should you recommend for each agent? To answer, drag the appropriate language models to the correct agents. Each language model may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.</p>
+<p>Select and Place:</p>
+<p><strong>Language models</strong></p>
+<ul>
+<li>Azure Language in Foundry Tools</li>
+<li>Azure OpenAI</li>
+<li>Conversational language understanding (CLU)</li>
+<li>Natural language understanding (NLU)</li>
+<li>Natural language understanding + (NLU+)</li>
+</ul>
+<p><strong>Answer Area</strong></p>
+<ul>
+<li>Agent1:</li>
+<li>Agent2:</li>
+</ul>
+<hr />
+<p>Box 1: Natural Language Understanding (NLU)</p>
+<p>Box 2: Natural Language Understanding + (NLU +)</p>
+<p>Explanation/Reference:</p>
+<p><strong>Box 1: Natural Language Understanding (NLU)</strong></p>
+<p>Agent1 must support simple and short phrases for a given topic.</p>
+<p>For a Microsoft Copilot Studio agent that must not use generative orchestration and requires support for simple, short trigger phrases, the best choice is the Classic NLU (Natural Language Understanding) model.</p>
+<p>When you disable generative orchestration (also known as "Generative mode" or "Generative AI" orchestration), the agent reverts to Classic orchestration. In this mode, the agent relies on predefined trigger phrases to map user input directly to specific topics.</p>
+<p><strong>Box 2: Natural Language Understanding + (NLU +)</strong></p>
+<p>Agent2 must integrate with Microsoft Dynamics 365 Contact Center voice channel.</p>
+<p>For a Microsoft Copilot Studio agent using classic orchestration (no generative orchestration) and integrating with the Dynamics 365 Contact Center voice channel, the best language model is NLU+.</p>
+<p>Why NLU+ is the Best Choice While standard agents offer three "classic" Natural Language Understanding (NLU) options, NLU+ is specifically designed for high-performance, enterprise-grade scenarios like voice channels.</p>
+<p>Note:</p>
+<p>Comparison of Classic Models</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">Best For</th>
+<th style="text-align: center;">Key Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">NLU</td>
+<td style="text-align: center;">Simpler bots</td>
+<td style="text-align: center;">Uses 5-20 phrases per topic; basic RegEx/List entities.</td>
+</tr>
+<tr>
+<td style="text-align: left;">NLU+</td>
+<td style="text-align: center;">Voice / Enterprise</td>
+<td style="text-align: center;"><strong>Optimizes speech recognition</strong> and handles large training sets with high accuracy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLU</td>
+<td style="text-align: center;">Advanced devs</td>
+<td style="text-align: center;">Integrates with Azure Conversational Language Understanding for external model management.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-3">QUESTION 3</h3>
+<p>A company uses Microsoft Dynamics 365 finance and operations apps.</p>
+<p>The company plans to use Microsoft Copilot in-app help and guidance to generate responses for internal business processes.</p>
+<p>You need to add an additional knowledge source for the business processes. The solution must NOT add new topics to the Copilot agent for the finance and operations apps.</p>
+<p>Which knowledge source should you add?</p>
+<p>A. Microsoft Dataverse</p>
+<p>B. a public website</p>
+<p>C. Azure AI Search</p>
+<p>D. a file upload</p>
+<hr />
+<p>Correct Answer: D Section: (none)</p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p>To add an additional knowledge source for internal business processes to the Microsoft Copilot in-app experience for Dynamics 365 finance and operations apps—without creating new topics—you should add File Uploads (such as PDF, Word, or text documents) to the "Copilot for finance and operations apps" agent in Copilot Studio.</p>
+<h3 id="question-4">QUESTION 4</h3>
+<p>A company has an AI business solution.</p>
+<p>You need to extend the solution so that Microsoft 365 Copilot can invoke external logic hosted in Azure services.</p>
+<p>What should you include in the solution?</p>
+<p>A. Microsoft Copilot Studio skills</p>
+<p>B. Microsoft Power Platform connectors</p>
+<p>C. custom engine agents</p>
+<hr />
+<p>Correct Answer: B Section: (none)</p>
+<p>Explanation/Reference: </p>
+<p>Explanation:</p>
+<p>To enhance an AI business solution with Microsoft 365 Copilot and integrate external logic hosted in Azure, you should use Copilot Studio to create Actions. These actions act as plugins that allow Copilot to invoke external services through Power Platform components.</p>
+<p><strong>Implementation Strategy</strong></p>
+<p>Azure Logic Hosting: Host your external logic in Azure using services like Azure Functions or Azure Logic Apps. These provide the API endpoints that Copilot will ultimately call.</p>
+<p>*-&gt; Power Platform Connector: Create a Custom Connector in the Power Platform to wrap your Azure service's API. This connector acts as the bridge, translating Copilot's requests into API calls your Azure logic understands.</p>
+<p>Copilot Studio Integration: Within Microsoft Copilot Studio, add the custom connector as a Tool or Action. This makes the logic discoverable and invokable by Microsoft 365 Copilot.</p>
+<p>Deployment: Deploy the action through the Microsoft 365 admin center under Integrated Apps to make it available to users in Teams or other Microsoft 365 apps.</p>
+<p><strong>Key Components *-&gt;</strong></p>
+<p>Connector: Wraps the Azure API using an OpenAPI definition or Postman collection.</p>
+<p>Plugin/Action: Defines how Copilot identifies when to use the connector based on user prompts.</p>
+<p>Authentication: Ensure the connector is configured with appropriate security (e.g., OAuth 2.0) to safely access your Azure resources.</p>
+<h3 id="question-5">QUESTION 5</h3>
+<p>You need to design a shared prompt library that will be used across multiple business units. The solution must meet the following requirements:</p>
+<ul>
+<li>Ensure consistent AI responses with reusable formats. </li>
+<li>Support governance and version control.</li>
+<li>Minimize administrative effort.</li>
+<li>Minimize ongoing costs.</li>
+</ul>
+<p>What should you recommend for each requirement? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p>Answer Area</p>
+<p>Ensure consistent AI responses:</p>
+<ul>
+<li>Delegate department-specific prompt templates.</li>
+<li>Define standardized prompt templates.</li>
+<li>Maintain a prompt history.</li>
+</ul>
+<p>Support governance and version control:</p>
+<ul>
+<li>Define standardized prompt templates.</li>
+<li>Store prompts in a Git repository.</li>
+<li>Categorize prompts by business function.</li>
+</ul>
+<hr />
+<p><strong>Box 1: Define standardized prompt templates</strong></p>
+<p><strong>Box 2: Store prompts in a Git repository</strong></p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p><strong>Box 1: Define standardized prompt templates</strong></p>
+<p>Ensure consistent AI responses with reusable formats.</p>
+<p>To ensure consistent AI responses across multiple business units, your shared prompt library should be built on a foundation of standardized, modular templates that balance centralized governance with unitspecific flexibility.</p>
+<p><strong>Box 2: Store prompts in a Git repository</strong></p>
+<p>Support governance and version control.</p>
+<p>Storing AI prompts in a Git repository allows you to treat prompts as "first-class artifacts" with the same accountability and lifecycle management as source code. For an enterprise solution serving multiple business units, this approach provides the necessary structure for governance, collaboration, and scalability.</p>
+<ol>
+<li>
+<p>Repository Organization for Business Units</p>
+</li>
+<li>
+<p>Governance and Version Control Workflow Branching Strategy: Use a dedicated branch for each experiment or new use case (e.g., feature/ marketing-seo-v2) to ensure the main branch remains stable.</p>
+</li>
+</ol>
+<p>Pull Requests (PRs): Mandate PRs for all changes to enable peer reviews. PRs should include descriptions of changes, linked issues, and test results.</p>
+<p>Semantic Versioning: Apply tags (e.g., v1.0.1) to mark significant updates, allowing business units to pin their applications to specific, stable prompt versions.</p>
+<p>Auditability: Git maintains a full historical record of who changed a prompt, what was modified, and when it occurred.</p>
+<h3 id="question-6">QUESTION 6</h3>
+<p>A company has a Microsoft Foundry project that uses a single agent and a single prompt to complete a series of tasks.</p>
+<p>The agent encounters the following issues:</p>
+<ul>
+<li>It frequently produces incomplete results. </li>
+<li>It struggles with domain-specific reasoning. </li>
+<li>Agent response times are remarkably slow.</li>
+</ul>
+<p>You need to recommend a solution to improve the overall performance and accuracy of the agent.</p>
+<p>What should you include in the recommendation? </p>
+<p>To answer, drag the appropriate actions to the correct requirements. Each action may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Select and Place:</p>
+<p><strong>Actions</strong></p>
+<ul>
+<li>Add a grounding data source.</li>
+<li>Add a prebuilt connector.</li>
+<li>Move to a multi-agent architecture.</li>
+<li>Upgrade to a larger generative AI model.</li>
+</ul>
+<p>Answer Area</p>
+<ul>
+<li>To improve performance: [______]</li>
+<li>To improve accuracy: [______]</li>
+</ul>
+<p>Action</p>
+<ul>
+<li>[______]</li>
+<li>[______]</li>
+</ul>
+<hr />
+<p><strong>Box 1: Move to a multi-agent architecture</strong></p>
+<p><strong>Box 2: Add a grounding data source</strong></p>
+<p><strong>Explanation/Reference:</strong></p>
+<p><strong>Box 1: Move to a multi-agent architecture To improve performance</strong></p>
+<blockquote>
+<p>To improve performance</p>
+</blockquote>
+<p>Moving to a multi-agent architecture in Azure AI Foundry is a highly effective strategy to overcome performance bottlenecks, as single-agent systems often struggle with long-running tasks, leading to high latency and timeout issues. By decomposing complex tasks into smaller, specialized subtasks, you can improve response times through parallel processing and targeted tool usage.</p>
+<p>Incorrect:</p>
+<p><strong>Upgrade to a larger generative AI model</strong> </p>
+<p>To address slow response times in your Microsoft Foundry agent, upgrading to a larger generative AI model is one option, but it may increase latency in some scenarios due to higher processing demands. Instead, a combination of prompt optimization, model selection, and architectural changes in Microsoft Foundry is recommended to improve performance.</p>
+<p><strong>Box 2: Add a grounding data source</strong></p>
+<blockquote>
+<p>To improve accuracy</p>
+</blockquote>
+<p>To improve the performance of an agent in a Microsoft Foundry project experiencing incomplete results, weak domain reasoning, and high latency, adding a grounding data source is a highly effective strategy. Grounding connects the Large Language Model (LLM) to verified external data, ensuring responses are accurate, contextual, and less likely to hallucinate.</p>
+<h3 id="question-7">QUESTION 7</h3>
+<p>A financial services company uses Microsoft Dynamics 365 Finance.</p>
+<p>Currently, the company's support staff manually reviews customer transaction histories to detect potential fraud cases before escalating the cases.</p>
+<p>You need to recommend an automation solution for the review process. The solution must ensure that escalations reach a human analyst for final decision making. What should you recommend?</p>
+<p>A. Deploy an autonomous agent that closes non-fraud cases automatically.</p>
+<p>B. Use Microsoft 365 Copilot in Word to automatically finalize fraud detection policies.</p>
+<p>C. Configure a task agent to generate fraud risk scores for the human analyst to review.</p>
+<p>D. Export the data to a data lake for analysis in Microsoft Power BI.</p>
+<hr />
+<p><strong>Correct Answer: C</strong></p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>Explanation:</p>
+<p>To automate the fraud review process in Microsoft Dynamics 365 Finance while ensuring a human analyst makes the final decision, you should configure the Dynamics 365 Fraud Protection (or integrated Copilot AI agents) to generate risk scores and route high-risk transactions to a manual review queue.</p>
+<p>Here is the configuration approach to achieve this:</p>
+<ol>
+<li>Implement AI-Driven Risk Scoring: Utilize Dynamics 365 Fraud Protection, which uses AI to analyze customer transaction history and assign a risk score (0-999) to each transaction.</li>
+<li>Define Rules for Escalation: Set up fraud rules in the system to determine which transactions require human intervention. For instance, define a threshold (e.g., a "Minimum score value") where transactions with high fraud probability are automatically flagged.</li>
+<li>Establish Manual Review Queues: Configure the Manual Review tool to create queues for suspected fraudulent transactions, allowing human analysts to review the AI-generated risk score and transaction history, such as customer behavior, for final, informed decision-making.</li>
+<li>Use Copilot/AI Agents for Monitoring: Enable AI agents to continuously monitor financial data, such as invoice, payment, and vendor data, and generate alerts for unusual patterns before escalating.</li>
+</ol>
+<p>This setup, particularly through the Manual Review workspace, allows for an automated, intelligent, and scalable approach to fraud management.</p>
+<h3 id="question-8">QUESTION 8</h3>
+<p>A company plans to deploy a Microsoft Copilot Studio agent that will analyze historical business data to predict customer behavior.</p>
+<p>The data is currently stored in an Azure SQL database, flat files, APIs, and logs.</p>
+<p>You need to organize the data into a format that can be used as a knowledge source in Copilot Studio.</p>
+<p>What should you include in the solution?</p>
+<p>A. Azure AI Search</p>
+<p>B. Azure Data Lake Storage</p>
+<p>C. Azure Cosmos DB</p>
+<p>D. Azure Translator in Foundry Tools</p>
+<hr />
+<p>Correct Answer: A</p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>Microsoft Copilot Studio agents can analyze customer behavior by leveraging business data from Azure SQL, files, and APIs by using Azure AI Search as a knowledge source. By importing and vectorizing this structured and unstructured data into an Azure AI Search index, the agent can perform semantic, meaning-based searches to retrieve context-relevant information.</p>
+<h3 id="question-9">QUESTION 9</h3>
+<p>A retail company plans to deploy Microsoft Copilot Studio agents to support:</p>
+<ul>
+<li>Microsoft Dynamics 365 Commerce scenarios.</li>
+<li>A Microsoft Power Apps inventory management solution.</li>
+</ul>
+<p>You need to recommend a solution to organize product catalog data as a consistent source for multiple AI systems.</p>
+<p>What should you recommend?</p>
+<p>A. Let each agent scrape product details from Microsoft SharePoint Online libraries.</p>
+<p>B. Store the product catalog data in a separate custom table for each agent.</p>
+<p>C. Configure prompts to pull product details from the PDFs of external vendors.</p>
+<p>D. Centralize the product catalog data in Microsoft Dataverse and expose the data to both agents.</p>
+<hr />
+<p><strong>Correct Answer: D</strong></p>
+<p>Explanation:</p>
+<p>In the scenario described, centralizing product catalog data in Microsoft Dataverse is the recommended architectural approach to ensure consistency across multiple AI systems. Dataverse acts as a unified "knowledge network" that allows different agents to share a single source of truth for both structured and unstructured data.</p>
+<p><strong>Key Benefits of Centralizing in Dataverse</strong></p>
+<p><strong>Cross-App Consistency</strong>: By storing the catalog in Dataverse, both the Dynamics 365 Commerce agent and the Power Apps inventory management agent access the exact same records. This prevents data silos where inventory levels or product descriptions might drift apart between systems.</p>
+<p><strong>Native Copilot Studio Integration:</strong> You can directly add Dataverse tables as knowledge sources in Microsoft Copilot Studio. This allows agents to use Retrieval-Augmented Generation (RAG) to answer queries grounded in your live product data.</p>
+<p><strong>Security &amp; Governance:</strong> Dataverse enforces Role-Based Access Control (RBAC), ensuring that agents only interact with data they are authorized to see, based on the user's existing permissions.</p>
+<p><strong>Automated Updates:</strong> You can use Power Platform Dataflows to ingest and synchronize catalog data from external sources into Dataverse, keeping the information fresh for all connected AI agents.</p>
+<h3 id="question-10">QUESTION 10</h3>
+<p>A company has a portfolio of AI initiatives at different stages of development.</p>
+<p>You need to recommend a structured approach to evaluating the return on AI investment (ROAI) across all the initiatives. The solution must balance immediate results with long-term values and strategic innovations.</p>
+<p>What should you include in the recommendation?</p>
+<p>A. a simple cost and benefit analysis</p>
+<p>B. a horizon-based framework</p>
+<p>C. the internal rate of return (IRR) function</p>
+<p>D. a prioritization grid</p>
+<hr />
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>In this scenario, a horizon-based framework is best for evaluating the return on AI investment (ROAI). While a prioritization grid is excellent for immediate tactical choices (e.g., effort vs. impact), a horizonbased framework is specifically designed to balance diverse timeframes—mapping immediate efficiency gains alongside the long-term strategic and transformational value required for a comprehensive Microsoft AI portfolio.</p>
+<p><strong>Why the Horizon-Based Framework Wins</strong></p>
+<p>This approach categorizes AI initiatives into three distinct "horizons," allowing you to measure different types of value across the development lifecycle:</p>
+<p><strong>Horizon 1: Core Operations (Immediate ROI)</strong></p>
+<p>Focuses on extending current capabilities for rapid results, such as using Microsoft Copilot to automate routine coding tasks or IT support.</p>
+<p><strong>Horizon 2: Adjacent Opportunities (Mid-Term Value)</strong></p>
+<p>Targets growth by expanding into new areas related to your core, such as developing agentic platforms or AI-driven specialized tools that build on existing infrastructure.</p>
+<p>Comparison for This Scenario</p>
+<p><strong>Horizon 3: Transformational Innovation (Long-Term Strategy)</strong> </p>
+<p>Invests in "future-forward" innovations that may have uncertain immediate returns but offer massive strategic upside or business model reimagination.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Priority Grid (e.g., 2x2 Matrix)</th>
+<th>Horizon-Based Framework</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary Goal</strong></td>
+<td>Selecting "what to do first" based on constraints.</td>
+<td>Managing a balanced portfolio of value over time.</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Tactical, sprint-level feature ranking.</td>
+<td>Strategic roadmap and investment allocation.</td>
+</tr>
+<tr>
+<td><strong>ROAI Focus</strong></td>
+<td>Often emphasizes "quick wins" and high-certainty projects.</td>
+<td>Validates high-risk, high-reward innovations as essential for long-term health.</td>
+</tr>
+</tbody>
+</table>
+<p>Recommendation: Use the Microsoft AI Maturity Model to baseline your current state, then apply the Horizon-Based Framework to structure your ROAI evaluation. This ensures you don't starve long-term innovation in favor of only "low-hanging fruit" efficiency projects.</p>
+<h3 id="question-11">QUESTION 11</h3>
+<p>You need to recommend a Microsoft Power Platform business solution that consolidates data from multiple internal and external data sources. The solution must meet the following requirements:</p>
+<ul>
+<li>Provide the data as a centralized source for multiple AI systems, including Microsoft Copilot Studio agents, Dynamics 365 applications, and external AI models.</li>
+<li>Support built-in data classification and protection policies.</li>
+<li>Provide data for grounding and analytics.</li>
+</ul>
+<p>What should you include in the recommendation?</p>
+<p>A. Microsoft Dataverse</p>
+<p>B. Azure Data Lake Storage</p>
+<p>C. a Microsoft Power BI semantic model</p>
+<p>D. Azure Cosmos DB</p>
+<hr />
+<p><strong>Correct Answer: A</strong></p>
+<p>Explanation/Reference:</p>
+<p>Microsoft Dataverse is the ideal foundational component for this scenario, serving as the secure, centralized data platform for the Microsoft Power Platform, Dynamics 365, and AI integrations. By using Dataverse, the business can consolidate, protect, and utilize data across Copilot Studio agents, Dynamics 365 applications, and analytics tools, addressing all stated requirements.</p>
+<p>Here is how Dataverse fulfills the requirements in the described scenario:</p>
+<p>Centralized Source: It serves as the primary data storage and management engine for Power Platform, Dynamics 365, and Copilot Studio. It consolidates data into a unified data model (Common Data Model), ensuring consistency across internal and external sources.</p>
+<p>Internal &amp; External Integration: Dataverse supports data integration from diverse sources using tools like Power Query, Azure Data Factory, and virtual tables that map external data in real-time.</p>
+<p>Data Classification &amp; Protection: It features built-in, enterprise-grade security.</p>
+<p><strong>AI Grounding &amp; Analytics:</strong></p>
+<ul>
+<li>
+<p>Grounding: It acts as the knowledge source for Copilot Studio agents, providing the necessary business context for accurate generative AI responses.</p>
+</li>
+<li>
+<p>Analytics: It integrates natively with Power BI for reporting and can synchronize with Microsoft Fabric or Azure Synapse for large-scale data modeling and advanced analytics.</p>
+</li>
+</ul>
+<h3 id="question-12">QUESTION 12</h3>
+<p>A company plans to deploy an AI-based customer service app that will autonomously manage interactions, escalate complex cases, and learn from historical ticket data.</p>
+<p>You need to perform a return on AI investment (ROAI) analysis of the app deployment. The solution must ensure that the analysis is accurate.</p>
+<p>What should you do first?</p>
+<p>A. Establish the AI performance metrics.</p>
+<p>B. Conduct an AI market benchmarking study.</p>
+<p>C. Model the customer experience.</p>
+<p>D. Identify and quantify all the development, deployment, and operating costs.</p>
+<hr />
+<p>Correct Answer: D</p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>Explanation:</p>
+<p>To conduct a robust Return on AI Investment (ROAI) analysis for your Microsoft-based AI customer service application, you must first categorize and quantify three distinct cost phases: Development, Deployment, and Operations. For a system capable of managing complex escalations and learning from historical data, your project aligns with "Advanced" or "Agentic" AI profiles.</p>
+<p>1.Development Costs (Upfront Investment)</p>
+<p>This phase covers the creation of the core AI logic, custom integrations, and data preparation.</p>
+<p>2.Deployment Costs (One-Time Setup) </p>
+<p>These are the costs to move the application from a development environment to a live production state.</p>
+<p><strong>3.Operating &amp; Maintenance Costs (Recurring)</strong></p>
+<p>Ongoing expenses are critical for ROAI as they impact the net gain over time.</p>
+<h3 id="question-13">QUESTION 13</h3>
+<p>You are designing end-to-end test scenarios for a business solution that uses Microsoft Dynamics 365 Sales and Dynamics 365 Finance.</p>
+<p>You need to ensure that the business solution meets the following test requirements:</p>
+<ul>
+<li>Properly exchanges data between the Dynamics 365 apps </li>
+<li>Aligns with defined user workflows and business processes</li>
+</ul>
+<p>Which type of testing should you use for each requirement? </p>
+<p>To answer, drag the appropriate testing types to the correct requirements. Each testing type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Select and Place</p>
+<p><strong>Testing types</strong></p>
+<ul>
+<li>Drift</li>
+<li>Exploratory</li>
+<li>Integration</li>
+<li>Performance</li>
+<li>User acceptance</li>
+</ul>
+<p><strong>Answer Area</strong></p>
+<ul>
+<li>Properly exchanges data between the Dynamics 365 apps</li>
+<li>Aligns with defined user workflows and business processes</li>
+</ul>
+<hr />
+<p><strong>Box 1: Integration</strong></p>
+<p><strong>Box 2: User acceptance</strong></p>
+<p>Box 1: Integration </p>
+<p>Properly exchanges data between the Dynamics 365 apps</p>
+<p>For a project involving Dynamics 365 Sales and Dynamics 365 Finance, the best testing type to verify proper data exchange is Integration Testing, specifically within a System Integration Testing (SIT) phase.</p>
+<p><strong>Integration Testing</strong> </p>
+<p>This is the primary method for validating that data flows correctly between Sales (Customer Engagement) and Finance (Finance &amp; Operations).</p>
+<p>Purpose: Ensures seamless information flow, communication protocols, and data synchronization. Example Scenario: Creating a new Account in D365 Sales and verifying it automatically triggers the creation of a Customer in D365 Finance via Dual-write.</p>
+<p><strong>Box 2: User acceptance</strong></p>
+<p>Aligns with defined user workflows and business processes</p>
+<p>The best testing type to ensure a Microsoft Dynamics 365 solution aligns with defined user workflows and business processes is User Acceptance Testing (UAT).</p>
+<p>While other testing phases (like Functional or Integration) verify that the system works technically, UAT is the final "road test" where the business confirms that the solution actually supports their day-to-day operations.</p>
+<h3 id="question-14">QUESTION 14</h3>
+<p>A company has a Microsoft 365 tenant in Canada and multiple Microsoft Power Platform environments in Canada and the United States.</p>
+<p>The company plans to deploy a Microsoft Copilot Studio agent to the Canadian environment that will use:</p>
+<p>Microsoft Dataverse data stored in Canada A connector that connects to an Azure OpenAI instance in the United States</p>
+<p>You need to ensure that the agent adheres to data residency and data movement policies before being deployed.</p>
+<p>What should you do?</p>
+<p>A. Ensure that the data processed by Azure OpenAI is stored in the United States.</p>
+<p>B. From the Microsoft Purview portal, validate the Data loss prevention settings.</p>
+<p>C. Migrate the tenant to the United States.</p>
+<p>D. Ensure that cross-region data movement is enabled for the Canadian environment and connector dependencies.</p>
+<hr />
+<p>Correct Answer: D</p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>Explanation:</p>
+<p><strong>Manage Cross-Geo Data Movement Settings</strong></p>
+<p>Because your agent in Canada connects to Azure OpenAI in USA, data will leave your primary geography.</p>
+<p><strong>Explicit Opt-in</strong>: </p>
+<p>You must navigate to the Power Platform Admin Center and explicitly allow data movement across regions for generative AI features.</p>
+<p><strong>Regional Scope:</strong> </p>
+<p>If this toggle is off, Copilot features requiring the external Azure OpenAI instance will be disabled to protect residency.</p>
+<p>Security Assurance: Microsoft does not log or retain prompt/response data during this cross-region transit for the purpose of training foundation models.</p>
+<h3 id="question-15"><strong>QUESTION 15</strong></h3>
+<p>A company has a Microsoft Copilot Studio agent for customer support. You are reviewing and validating the following prompts:</p>
+<ul>
+<li>
+<p>A prompt that has instructions to "help the customer as best you can"</p>
+</li>
+<li>
+<p>A prompt that helps retrieve product information from a knowledge base You need to ensure that the agent delivers consistent and accurate responses.</p>
+</li>
+</ul>
+<p>What should you do for each prompt? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p><strong>A prompt that has instructions to "help the customer as best you can"</strong>:</p>
+<ul>
+<li>Add filler words to make the prompt sound more natural and conversational.</li>
+<li>Keep the prompt vague to enable model flexibility.</li>
+<li>Rewrite the prompt with clear and task-specific instructions.</li>
+</ul>
+<p><strong>A prompt that helps retrieve product information from a knowledge base:</strong></p>
+<ul>
+<li>Add several open-ended questions to give the model broader context.</li>
+<li>Use responses with only reference sources and limit the response scope.</li>
+<li>Remove the knowledge source so that the model responds freely with general product information.</li>
+</ul>
+<hr />
+<p><strong>Box 1: Rewrite the prompt with clear and task-specific instructions.</strong></p>
+<p><strong>Box 2: Use responses with only reference sources and limit the response scope.</strong></p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p><strong>Box 1: Rewrite the prompt with clear and task-specific instructions.</strong></p>
+<p>To ensure a Microsoft Copilot Studio agent delivers high-quality support, you must move beyond vague instructions like "help as best you can." Generative AI requires constraints, structured data, and persona definitions to remain consistent.</p>
+<p>Here is how to optimize your agent for accuracy and reliability:</p>
+<p>Refine the System Prompt A vague prompt leads to "hallucinations" (made-up facts). Replace the general instruction with a Persona and Boundary script.</p>
+<p>Define the Persona: "You are a professional Support Specialist for [Company Name]. Your tone is empathetic, concise, and helpful."</p>
+<p>Set Boundaries: "Only answer questions based on the provided uploaded documents. If the answer is not in the documentation, politely state you don't know and offer to connect to a human."</p>
+<p>Establish Steps: "Always greet the user, identify their core issue, and provide a step-by-step solution."</p>
+<p><strong>Box 2: Use responses with only reference sources and limit the response scope.</strong></p>
+<p>To ensure your Microsoft Copilot Studio agent remains grounded, accurate, and avoids "hallucinations," you must configure the System Prompt to enforce strict grounding. This tells the AI to act only as a retrieval tool rather than a general-purpose assistant.</p>
+<p>Restrict Search Scope:</p>
+<p>In the Generative Answers node, ensure "Search only selected sources" is toggled on.</p>
+<p>Upload specific PDFs, Manuals, or SharePoint folders rather than using the entire public web</p>
+<h3 id="question-16">QUESTION 16</h3>
+<p>You are designing a testing solution for Microsoft Copilot Studio agents.</p>
+<p>You need to validate prompt engineering best practices to ensure that the agents generate accurate and contextually relevant responses.</p>
+<p>Which prompt validation techniques and metrics should you include in the solution? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Answer Area</p>
+<p>Prompt validation techniques:</p>
+<ul>
+<li>Exclude domain-specific terminology from the prompts.</li>
+<li>Use prompts that have varied phrasing.</li>
+<li>Use only simple, one-word prompts.</li>
+</ul>
+<p>Metrics:</p>
+<ul>
+<li>The number of words generated per response</li>
+<li>Response relevance and accuracy</li>
+<li>The response generation time</li>
+</ul>
+<hr />
+<p><strong>Box 1: Use prompts that have varied phrasing</strong></p>
+<p><strong>Box 2: Response Relevance and accuracy</strong></p>
+<p><strong>Box 1: Use prompts that have varied phrasing</strong></p>
+<p>Here is why this technique is superior to the others for validating prompt engineering best practices: Robustness and Generalization: Using varied phrasing (synonyms, different sentence structures) tests whether the agent understands the underlying intent rather than just matching keywords. This ensures the agent is not brittle and can handle real-world user queries that vary in phrasing.</p>
+<p>Best Practice Validation: Microsoft encourages testing agent responses by iterating and refining prompts. Testing with variations helps identify if a prompt is too rigid or if it correctly captures the context.</p>
+<p>For a comprehensive validation strategy, this technique is typically paired with Batch Testing, where you upload a set of varied test cases to evaluate the AI's consistency and accuracy.</p>
+<p>Incorrect:</p>
+<ul>
+<li>
+<p>Exclude domain-specific terminology This is incorrect. Effective prompting often requires using domain-specific terms to ensure the AI understands the specialized context.</p>
+</li>
+<li>
+<p>Use only simple, one-word prompts This is ineffective. Simple prompts lack the context required for high-quality, accurate responses.</p>
+</li>
+</ul>
+<p><strong>Box 2: Response Relevance and accuracy</strong></p>
+<p>By using Response Relevance and Accuracy as your primary metrics, you ensure the agent remains grounded in its knowledge sources while remaining flexible to user intent.</p>
+<h3 id="question-17">QUESTION 17</h3>
+<p>A company has two Microsoft Power Platform environments named Dev1 and Prod1. A Microsoft Copilot Studio agent named Agent1 is built into a solution in the Dev1 environment.</p>
+<p>You plan to deploy Agent1 to Prod1.</p>
+<p>You need to make Agent1 available to the users in Prod1. The solution must minimize administrative effort.</p>
+<p>What should you do?</p>
+<p>A. Share Agent1 with the users in Prod1.</p>
+<p>B. Export the solution as an unmanaged solution and import the solution into Prod1.</p>
+<p>C. Export the solution as a managed solution and import the solution into Prod1.</p>
+<p>D. Create a new Copilot Studio agent in Prod1 by replicating the configuration of Agent1.</p>
+<p><strong>Correct Answer: C</strong></p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>Explanation:</p>
+<p>To deploy a Microsoft Copilot Studio agent to a second environment while minimizing administrative work, you should use managed solutions and Power Platform Pipelines (or manual export/import if pipelines are not configured).</p>
+<p>Follow these steps to move and share the agent effectively:</p>
+<ol>
+<li><strong>Prepare the Solution (Source Environment)</strong></li>
+</ol>
+<p>Since your agent is already in a solution, ensure all its dependencies are included to avoid "missing component" errors during import.</p>
+<ol>
+<li><strong>Export and Import</strong> </li>
+</ol>
+<p>To minimize manual labor, use a Managed Solution for the target environment. Managed solutions are easier to update or remove later and prevent accidental direct edits in production.</p>
+<h3 id="question-18">QUESTION 18</h3>
+<p>A company has a Microsoft Power Platform environment that contains Microsoft Dataverse data.</p>
+<p>You create a Microsoft Copilot Studio agent named Agent1 that processes the Dataverse data.</p>
+<p>You discover that Agent1 fails to return relevant or accurate results.</p>
+<p>You need to improve the quality and reliability of data grounding.</p>
+<p>What should you do?</p>
+<p>A. Retrain Agent1.</p>
+<p>B. Verify and cleanse the Dataverse data.</p>
+<p>C. Use an adaptive card in Agent1.</p>
+<p>D. Add example user inputs to the training data of Agent1.</p>
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>To improve the reliability and accuracy of a Microsoft Copilot Studio agent grounded in Dataverse, you must focus on Dataverse data preparation, which includes cleaning, structuring, and enriching the data to ensure the agent retrieves relevant information. When Copilot fails to return accurate results, it is often due to poor data quality (garbage in, garbage out), excessive, unstructured data, or misconfigured search indexing.</p>
+<h3 id="question-19">QUESTION 19</h3>
+<p>A company plans to deploy a Microsoft Copilot Studio agent to enhance customer support.</p>
+<p>The company stores customer data across ServiceNow, Microsoft Dynamics 365 Finance, Dynamics 365 Supply Chain Management, and Excel files in SharePoint Online.</p>
+<p>You need to recommend a solution to ensure that the agent can deliver accurate and timely responses.</p>
+<p>What should you recommend?</p>
+<p>A. Implement a model router for query handling.</p>
+<p>B. Create custom prompts.</p>
+<p>C. Implement Microsoft Power Platform connectors.</p>
+<p>D. Enable incremental indexing in Azure AI Search.</p>
+<hr />
+<p><strong>Correct Answer: D</strong></p>
+<p>Explanation/Reference:</p>
+<p>To deploy a Microsoft Copilot Studio agent that delivers accurate responses from ServiceNow, Dynamics 365 (F&amp;O), and SharePoint, you should centralize your data in Azure AI Search and implement incremental indexing to capture updates in real-time or on a schedule.</p>
+<p>Immediate Solution: Enabling Incremental Indexing Incremental indexing ensures only new or modified records are processed, reducing latency and cost. High-Water Mark Detection: Configure your indexers to use a "high-water mark" policy based on a last_modified timestamp field from your sources (ServiceNow/Dynamics).</p>
+<p>Change Tracking: For ServiceNow and Dynamics 365, use the native change tracking features in their respective connectors to signal the indexer which records have changed.</p>
+<p>SharePoint Incremental Crawling: The Azure AI Search SharePoint indexer (currently in preview)</p>
+<p>automatically supports incremental crawling, detecting changes in Excel files by tracking the file's metadata.</p>
+<p>Incorrect:</p>
+<p><strong>[Not C] Microsoft Power Platform connectors does not cover all the data sources.</strong></p>
+<p>Architecture Overview Your agent will use three primary integration methods:</p>
+<p>Knowledge Base Connectors: For high-volume unstructured data (SharePoint, ServiceNow KB).</p>
+<p>Power Platform Connectors: For structured, real-time data (Dynamics 365, ServiceNow Incidents).</p>
+<p>Virtual Entities: For native integration with Dynamics 365 Finance &amp; Supply Chain.</p>
+<h3 id="question-20">QUESTION 20</h3>
+<p>A manufacturing company wants to deploy an agent that will automate supplier invoice processing.</p>
+<p>You are designing a solution to evaluate the financial implications of the deployment. The company is especially concerned about budget overruns.</p>
+<p>You need to ensure that the solution considers the total cost of ownership (TCO), the expected savings from using automation, and whether to extend the existing AI capabilities.</p>
+<p>What should you include in the design?</p>
+<p>A. a break-even analysis only</p>
+<p>B. adopting prebuilt agents to reduce the deployment time</p>
+<p>C. training a custom model</p>
+<p>D. a return on AI investment (ROAI) analysis</p>
+<hr />
+<p>Correct Answer: D</p>
+<p><strong>Explanation/Reference:</strong></p>
+<p>Explanation:</p>
+<p>This design plan outlines the financial and operational framework for deploying a Microsoft-based AI agent for supplier invoice processing. By leveraging current industry benchmarks and Microsoft’s own agentic AI frameworks, this plan focuses on maximizing Return on AI Investment (ROAI) while mitigating the risk of budget overruns.</p>
+<h3 id="question-21">QUESTION 21</h3>
+<p>A company has a Microsoft Power Platform solution that contains the following components:</p>
+<p>Microsoft Dataverse tables A Microsoft Power BI workspace named WS1 A canvas app named App1 that uses Dataverse A Power BI semantic model that connects to Dataverse by using DirectQuery</p>
+<p>You plan to use generative AI to provide answers to queries based on a subset of corporate data.</p>
+<p>You need to ensure that the data is available as a grounding data source for AI systems.</p>
+<p>What should you do?</p>
+<p>A. Populate a Dataverse table.</p>
+<p>B. Share WS1. </p>
+<p>C. Endorse the semantic model.</p>
+<p>D. Export the semantic model.</p>
+<hr />
+<p>Correct Answer: C</p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p>To ensure data is available as a grounding source for generative AI systems within this Power Platform solution, you should endorse the semantic model.</p>
+<p>While populating a Dataverse table and sharing the workspace are necessary for general data accessibility, endorsing the Power BI semantic model (through certification or promotion) specifically helps generative AI systems like Power BI Copilot and Microsoft 365 Copilot prioritize and identify it as a high-quality, trusted source for grounding answers.</p>
+<p>Why Endorsement is Key for Grounding </p>
+<p>Generative AI systems use grounding to reduce "hallucinations" by anchoring their responses in real corporate data. In the Power BI ecosystem:</p>
+<p><strong>Discovery:</strong> Endorsement makes the semantic model more discoverable across the organization.</p>
+<p><strong>Prioritization:</strong> Copilot often prioritizes endorsed (Promoted or Certified) models when searching for relevant data to answer a natural language query.</p>
+<p><strong>Trust:</strong> </p>
+<p>It signals to both the AI and the end-user that the data in this DirectQuery-connected model is verified and authoritative for business queries.</p>
+<h3 id="question-22">QUESTION 22</h3>
+<p>A company plans to implement an AI business solution for a consumer goods company.</p>
+<p>You need to create agents that meet the following requirements:</p>
+<p>Orchestrate the sales order fulfillment and shipping of goods to customers. Analyze historical data and trends to replenish stock.</p>
+<p>Which type of agent should you use for each requirement? To answer, drag the appropriate agent types to the correct requirements. Each agent type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.</p>
+<p>Select and Place</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Agent types</strong></p>
+<ul>
+<li>Autonomous</li>
+<li>Prompt-and-response</li>
+<li>Task</li>
+</ul>
+<p><strong>Answer Area</strong></p>
+<ul>
+<li>Orchestrate the sales order fulfillment and shipping:</li>
+<li>Analyze historical data and trends:</li>
+</ul>
+<hr />
+<p><strong>Box 1: Autonomous</strong></p>
+<p><strong>Box 2: Autonomous</strong></p>
+<p><strong>Box 1: Autonomous</strong></p>
+<p>Orchestrate the sales order fulfillment and shipping of goods to customers.</p>
+<p>An Autonomous Agent is the best choice for orchestrating sales order fulfillment and shipping in a consumer goods (CPG) environment.</p>
+<p>While prompt-and-response agents are good for simple queries and task-based agents are good for linear workflows, an autonomous agent can manage the "many-to-many" variables inherent in supply chains without constant human intervention.</p>
+<p>Why Autonomous is the Best Fit An autonomous agent acts as a reasoning engine rather than a static script. In fulfillment, it excels because it can:</p>
+<p>Handle Exceptions: If a warehouse is out of a specific SKU, the agent can independently look for the next closest facility or suggest a substitute product.</p>
+<p>Multi-Step Reasoning: It can check credit limits, verify inventory, calculate shipping dates, and trigger a logistics pickup in one cohesive flow.</p>
+<p>Proactive Problem Solving: If a weather delay affects a shipping route, the agent can reroute the order and notify the customer before a human even spots the issue.</p>
+<p><strong>Box 2: Autonomous</strong></p>
+<p>Analyze historical data and trends to replenish stock.</p>
+<p>For a consumer goods company managing stock replenishment, an Autonomous Agent is the best fit.</p>
+<p>Stock replenishment requires a system that proactively monitors inventory, analyzes trends in real-time, and takes action (like drafting purchase orders) without waiting for a human to ask. While "Task" and "Prompt-and-response" agents have roles in analysis, they lack the "always-on" orchestration needed for a supply chain.</p>
+<p>Why an Autonomous Agent Wins Proactive Replenishment Unlike prompt-based systems, an autonomous agent in Microsoft Copilot Studio can be triggered by business events—such as a low-stock alert in your ERP—rather than a user's prompt. It can:</p>
+<p>Continuously Monitor: Watch inventory levels across multiple warehouses 24/7.</p>
+<p>Auto-Draft Orders: Apply vendor rules and lead times to create draft purchase orders for approval.</p>
+<p>Sense Disruptions: Adjust supply chain settings before a problem escalates based on real-time data.</p>
+<h3 id="question-23">QUESTION 23</h3>
+<p>A company has an AI agent that automates the review of customer feedback stored in a cloud database.</p>
+<p>You plan to generate monthly reports from the agent's output to provide insights into customer sentiment and guide product development and marketing.</p>
+<p>You need to ensure that the data ingested by the agent is clean and suitable for the intended use.</p>
+<p>What should you do to prepare the data?</p>
+<p>A. Create a workflow in Microsoft Power Automate.</p>
+<p>B. Identify and address biased data.</p>
+<p>C. Create an agent flow in Microsoft Copilot Studio.</p>
+<p>D. Sort the database by customer last name.</p>
+<hr />
+<p><strong>Correct Answer: B</strong></p>
+<h3 id="question-24">QUESTION 24</h3>
+<p>A company is designing a Microsoft Power Platform solution to reduce the manual steps of a business process by deploying an existing AI model.</p>
+<p>You need to calculate the return on AI investment (ROAI) by identifying the metadata and telemetry of the solution.</p>
+<p>What should you use?</p>
+<p>A. Microsoft Power Platform admin center</p>
+<p>B. Success by Design</p>
+<p>C. the Business value toolkit</p>
+<p>D. Microsoft Cloud Adoption Framework for Azure</p>
+<hr />
+<p><strong>Correct Answer: C</strong></p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p>The Business Value Toolkit is the correct resource to use for calculating Return on AI Investment (ROAI) for a Microsoft Power Platform solution.</p>
+<p>Calculating ROAI with the Business Value Toolkit The Business Value Toolkit helps organizations move beyond simple automation by providing structured templates and analytics to justify AI investments.</p>
+<p>Metadata Identification: It captures environment-specific data, such as the number of automated flows, the type of AI models used (e.g., AI Builder), and the business units involved.</p>
+<p>Telemetry Integration: It leverages usage data from the Power Platform admin center and Application Insights to track real-time performance, such as execution frequency and success rates.</p>
+<p>ROI Metrics: It transforms technical telemetry into financial outcomes, such as:</p>
+<ul>
+<li>
+<p>Time saved: Hours recovered from manual data entry or processing.</p>
+</li>
+<li>
+<p>Error reduction: Improvements in accuracy compared to manual steps.</p>
+</li>
+<li>
+<p>Cost avoidance: Savings from reduced reliance on specialized manual labor.</p>
+</li>
+</ul>
+<p>Incorrect:</p>
+<p>[Not D] While the Cloud Adoption Framework (CAF) for Azure provides broad strategic guidance for AI adoption, the Business Value Toolkit is specifically designed to quantify the impact of low-code and AI solutions using solution metadata and telemetry.</p>
+<h3 id="question-25">QUESTION 25</h3>
+<p>A company has a Microsoft Power Platform environment.</p>
+<p>You need to build two agents named Agent1 and Agent2. The solution must meet the following requirements:</p>
+<p>Agent1 must be extendable by using the Semantic Kernel and must connect to multiple business apps and APIs.</p>
+<p>Agent2 must connect directly to data stored in Microsoft Dataverse and must be embeddable in a Microsoft Power Apps canvas app.</p>
+<p>What should you use to build each agent? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area</p>
+<p>Answer Area</p>
+<p><strong>Agent1:</strong></p>
+<ul>
+<li>Microsoft Foundry</li>
+<li>Azure Logic Apps</li>
+<li>Copilot in Power Apps</li>
+<li>Microsoft Copilot Studio</li>
+</ul>
+<p><strong>Agent2:</strong></p>
+<ul>
+<li>Microsoft Foundry</li>
+<li>Azure Logic Apps</li>
+<li>Copilot in Power Apps</li>
+<li>Microsoft Copilot Studio</li>
+</ul>
+<hr />
+<p>Explanation/Reference:</p>
+<p><strong>Box 1: Microsoft Copilot Studio</strong></p>
+<p><strong>Box 2: Microsoft Copilot Studio</strong></p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p><strong>Box 1: Microsoft Copilot Studio</strong></p>
+<p>Agent1 must be extendable by using the Semantic Kernel and must connect to multiple business apps and APIs.</p>
+<p>To build a Microsoft AI agent that integrates Semantic Kernel and connects to various business systems within the Power Platform, you will use Microsoft Copilot Studio as your primary orchestration hub.</p>
+<p>By combining these technologies, you bridge the gap between "low-code" conversational interfaces and "pro-code" LLM orchestration. The Architecture To reach your goal, you will follow a multi-tier integration strategy: Microsoft Copilot Studio: Acts as the "Frontend" and dialog manager.</p>
+<p>Semantic Kernel (SDK): Acts as the "Brain" hosted in an Azure function or web app.</p>
+<p>Power Platform Connectors: Act as the "Hands" to talk to 1,200+ apps.</p>
+<p>Custom APIs: Connected via Semantic Kernel "Plugins" or Copilot Studio "Actions."</p>
+<p><strong>Box 2: Microsoft Copilot Studio</strong></p>
+<p>Agent2 must connect directly to data stored in Microsoft Dataverse and must be embeddable in a Microsoft Power Apps canvas app.</p>
+<p>To build a Microsoft AI agent that connects to Dataverse and is embedded in a Power Apps canvas app, you need to use Microsoft Copilot Studio as the primary development platform.</p>
+<p>Technical Requirements To get started, ensure your environment meets these core prerequisites:</p>
+<p>Copilot Studio Solution: Your environment must have version 2.0.0.649.1 or higher.</p>
+<p>Dataverse Database: The environment must contain a provisioned Microsoft Dataverse database.</p>
+<p>Admin Settings: A tenant administrator must enable "Publish Copilots with AI features" in the Power Platform admin center.</p>
+<p>Unmanaged Customizations: Ensure that the "block unmanaged customizations" setting is disabled in your environment.</p>
+<p>Incorrect:</p>
+<ul>
+<li>
+<p>Azure Logic Apps While Logic Apps can connect to Dataverse, they are a workflow orchestration tool (similar to Power Automate) and do not provide the conversational AI interface or the embedding capabilities required for an "agent."</p>
+</li>
+<li>
+<p>Microsoft Foundry This is not a standard component of the Power Platform for building AI agents; it usually refers to internal Microsoft data management tools or unrelated external products.</p>
+</li>
+<li>
+<p>Copilot in Power Apps This refers to the AI assistant that helps makers build apps or helps users query data through a predefined side pane, but it is not the tool used to build a standalone, customizable agent that you embed yourself.</p>
+</li>
+</ul>
+<p>Copilot in Power Apps is an AI-powered assistant, driven by Azure OpenAI Service, that enables users to create, modify, and manage business applications using natural language instead of code. It allows developers of all skill levels to instantly build apps, design data models, and generate complex formulas by simply describing their needs in everyday language.</p>
+<h3 id="question-26">QUESTION 26</h3>
+<p>A company has an Azure environment that supports multiple business units.</p>
+<p>The company plans to implement an AI solution that will perform sentiment analysis on customer product reviews.</p>
+<p>You need to evaluate the potential cost of the solution to support return on AI investment (ROAI) analysis.</p>
+<p>What should you use?</p>
+<p>A. Cost Management + Billing</p>
+<p>B. Microsoft Fabric SKU Estimator</p>
+<p>C. Total Cost of Ownership (TCO) Calculator</p>
+<p>D. Azure Reservations</p>
+<hr />
+<p>Correct Answer: C</p>
+<p>Explanation/Reference:</p>
+<p>Explanation:</p>
+<p>To evaluate the cost of an Azure sentiment analysis solution and support a Return on AI Investment (ROAI) analysis for multiple business units, you should use the Azure Total Cost of Ownership (TCO) Calculator.</p>
+<p>The TCO Calculator is essential for calculating the financial impact of migrating or implementing a new solution compared to your existing infrastructure.</p>
+<p>Step-by-Step: Using the TCO Calculator for ROAI To perform a comprehensive ROAI analysis, follow these steps to capture the full scope of ownership:</p>
+<ol>
+<li>
+<p>Define Your Current Workload Enter details about your existing infrastructure that the AI solution might replace or augment.</p>
+</li>
+<li>
+<p>Adjust Assumptions Tailor the calculator to your business environment by adjusting key metrics.</p>
+</li>
+<li>
+<p>Review the TCO Report The calculator generates a detailed report comparing your current costs against Azure.</p>
+</li>
+</ol>
+<h3 id="question-27">QUESTION 27</h3>
+<p>You need to recommend a Microsoft Power Platform solution for customer support. The solution must include AI capabilities in Microsoft Power Automate and must meet the following requirements:</p>
+<p>Use a centralized workspace for AI models.</p>
+<p>Generate short overviews from large amounts of unstructured text, such as case notes or transcripts, without requiring additional training or coding.</p>
+<p>What should you include in the recommendation for each requirement? To answer, select the appropriate options in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
