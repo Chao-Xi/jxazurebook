@@ -784,14 +784,11 @@ One of the oldest places to host your source code and was the first to free of c
 
 #### Git vs Github
 
-| | Git | GitHub |
+| Model | Best For | Key Characteristic |
 |:----|:---:|:---:|
-| Nature| Distributed Version control system (DVCS) | Version Control as a Service (VCaaS)|
-| Functionality  | Manages source code history| Provides cloud storage for Git repositories |
-| Access | Local system installation | Accessed via web interface |
-| Scope  | Local repository management| Online collaboration and repository hosting |
-| Collaboration  | Local changes, requires manual sharing | Integrated tools for collaboration (issues, PRs) |
-| Usage  | Command-line interface| Graphical interface and additional features |
+| NLU | Distributed Version control system (DVCS) | Version Control as a Service (VCaaS)|
+| NLU+  | Manages source code history| Provides cloud storage for Git repositories |
+| CLU | Local system installation | Accessed via web interface |
 
 
 #### Github Repo
