@@ -4,7 +4,7 @@
 
 WHAT YOU'LL GET FROM THIS COURSE
 
-- **Foundational Knowledge** — Understand agentic Al architecture and mechanics
+- **Foundational Knowledge** — Understand agentic AI architecture and mechanics
 - **Practical Skills** — Design workflows, patterns, orchestration
 - **Exam Alignment** — Every lecture maps to AB-100 exam blueprint
 - Confidence — Understand the why behind each concept
@@ -65,9 +65,9 @@ IS NOT Testing:
 
 ### DOMAIN AREAS (3 TOTAL)
 
-1. Plan Al-Powered Business Solutions — 25-30%
-2. Design Al-Powered Business Solutions — 25-30%
-3. Deploy Al-Powered Business Solutions — 40-45%
+1. Plan AI-Powered Business Solutions — 25-30%
+2. Design AI-Powered Business Solutions — 25-30%
+3. Deploy AI-Powered Business Solutions — 40-45%
 
 > (includes governance, evaluation, monitoring)
 
@@ -169,7 +169,7 @@ NOT testing deep ML knowledge or coding ability
 #### KEY TAKEAWAYS
 
 
-- Agentic Al is **goal-driven, tool-using, action-taking** Al.
+- Agentic AI is **goal-driven, tool-using, action-taking** AI.
 - Know the terms: **agent, tools, orchestration, planning, memory, guardrail**s.
 - It's not just chat or automation — **it's decision + action + adaptation.**
 - The exam emphasizes **business impact and safe deployment.**
@@ -186,7 +186,7 @@ NOT testing deep ML knowledge or coding ability
 Key platforms:
 
 * **Copilot Studio** → No-code agent building
-* **Azure Al Foundry** → Custom models & advanced orchestration
+* **Azure AI Foundry** → Custom models & advanced orchestration
 * **Power Platform** → Low-code flows & connectors
 * **Dynamics 365** → Industry-specific business apps
 * **Microsoft 365 Copilot** → Productivity & extensibility
@@ -203,7 +203,7 @@ Key platforms:
 
 #### **ECOSYSTEM INTEGRATION FLOW**
 
-* Copilot Studio agents call Azure Al Foundry models via MCP
+* Copilot Studio agents call Azure AI Foundry models via MCP
 * Power Automate triggers Dynamics actions
 * Microsoft 365 Copilot extends with custom agents from Copilot Studio
 
@@ -220,7 +220,7 @@ Key platforms:
 * Microsoft ecosystem is **modular** — mix platforms for the best fit
 * AB-100 tests **platform selection** based on business requirements
 * Always consider **governance, scale, and cost in your answers**
-* Know when to pick **speed (Copilot Studio) vs. customization (Azure Al Foundry)**
+* Know when to pick **speed (Copilot Studio) vs. customization (Azure AI Foundry)**
 
 ### 2-2 Microsoft AI Agent Types & Capabilities Explained
 
@@ -241,7 +241,7 @@ Key platforms:
 
 
 * **Copilot Studio**: All three types + topics, actions, connectors
-* **Azure Al Foundry:** Enhances autonomous agents with custom models & multi-agent orchestration
+* **Azure AI Foundry:** Enhances autonomous agents with custom models & multi-agent orchestration
 * **Power Platform**: Adds grounding & flows for task/autonomous agents
 * **Dynamics 365**: Prebuilt task & autonomous agents (e.g., Sales Copilot)
 * **Microsoft 365 Copilot**: Primarily prompt/response, extensible to task
@@ -295,7 +295,7 @@ GOVERNANCE & SECURITY IN COPILOT STUDIO
 
 #### WHAT IS AZURE AI FOUNDRY?
 
-**Centralized platform for Al model discovery, hosting, and customization — your model headquarters.**
+**Centralized platform for AI model discovery, hosting, and customization — your model headquarters.**
 
 1. **Model Catalog** - Thousands of models: Azure OpenAl (GPT-4), Anthropic Claude, Meta
 Llama, Mistral, and more
@@ -331,7 +331,7 @@ Agent Service hosts your agents with built-in scaling, observability, and cost t
 
 > "Quick deployment" → Copilot Studio. 
 
-> "Custom reasoning and scale" Azure Al Foundry. The answer depends on what the scenario emphasizes.
+> "Custom reasoning and scale" Azure AI Foundry. The answer depends on what the scenario emphasizes.
 
 #### KEY TAKEAWAYS
 
@@ -362,7 +362,7 @@ MCP — Originated from Anthropic, adopted by Microsoft Agents securely request 
 
 **MCP EXAM EXAMPLE**
 
-> **"How do you let an Azure Al Foundry agent securely access a private database?"**
+> **"How do you let an Azure AI Foundry agent securely access a private database?"**
 
 
 Answer: Register an MCP server that connects to that database
@@ -460,7 +460,7 @@ Works cross-platform: Copilot Studio + Azure Ai Foundry + custom agents
 
 - First step in the "Plan" domain (25-30% of the exam)
 - Exam scenarios: "A company wants to automate X — should they use agents?"
-- Goal: Determine if agentic Al is the right fit vs. traditional automation
+- Goal: Determine if agentic AI is the right fit vs. traditional automation
 
 
 **Three key questions:**
@@ -529,7 +529,7 @@ Works cross-platform: Copilot Studio + Azure Ai Foundry + custom agents
 #### GROUNDING SOURCES IN MICROSOFT ECOSYSTEM
 
 - **Copilot Studio Knowledge** — SharePoint, Dataverse, web
-- **Azure Al Foundry** — Custom retrieval pipelines, vector databases
+- **Azure AI Foundry** — Custom retrieval pipelines, vector databases
 - **Power Platform** — Connectors to 1000+ sources
 - **Dynamics 365 / M365** — Native grounding in CRM/ERP data
 - **Planning focus: Assess gaps now**; architect the integration in Lecture 8.
@@ -552,9 +552,9 @@ Exam rewards proactive risk identification in planning
 
 #### CLOUD ADOPTION FRAMEWORK (CAF) FOR AI OVERVIEW
 
-* Microsoft's structured roadmap for Al adoption
+* Microsoft's structured roadmap for AI adoption
 * Phases: Strategy → Plan → Ready → Adopt → Govern
-* Applies to agentic Al: Identify use cases, align tech, scale responsibly
+* Applies to agentic AI: Identify use cases, align tech, scale responsibly
 
 
 > Exam Insight
@@ -577,7 +577,7 @@ Exam rewards proactive risk identification in planning
 
 - Cross-functional team: Business, IT, data, legal
 - Responsibilities: Use case intake, standards, governance
-- Microsoft tools: Purview for compliance, Azure Al Foundry for experimentation
+- Microsoft tools: Purview for compliance, Azure AI Foundry for experimentation
 
 
 > Exam Insight
@@ -773,7 +773,7 @@ Four core techniques:
 - Match each task to the right model based on cost, quality, and speed
 - Simple tasks → lightweight models (lower cost, faster)
 - Complex tasks → premium models (higher accuracy)
-- **Azure Al Foundry enables automatic, dynamic routing**
+- **Azure AI Foundry enables automatic, dynamic routing**
 
 > Definition
 >
@@ -922,7 +922,7 @@ Solution: Sync critical fields (patient ID, insurance status, balance) into Data
 #### WHAT ARE SMALL LANGUAGE MODELS?
 
 - Models like Phi-3 — smaller, faster, cheaper than large models
-- Fine-tune in Azure Al Foundry for domain-specific tasks
+- Fine-tune in Azure AI Foundry for domain-specific tasks
 
 Analogy: GPT-4 is a truck — massive, powerful, hauls anything. Phi-3 is a scooter - nimble, efficient, and faster for most daily tasks.
 
@@ -949,7 +949,7 @@ Analogy: GPT-4 is a truck — massive, powerful, hauls anything. Phi-3 is a scoo
 
 ## 4 Agent Design
 
-### 4-1 Agentic Al System Components & Design Patterns
+### 4-1 Agentic AI System Components & Design Patterns
 
 #### THE SIX CORE COMPONENTS
 
@@ -1015,7 +1015,7 @@ Analogy: GPT-4 is a truck — massive, powerful, hauls anything. Phi-3 is a scoo
 
 - Coordinating steps, tool calls, and agents into a reliable workflow
 - Single agent # orchestration — orchestration starts when multiple steps or agents must cooperate
-- Microsoft tools: Copilot Studio flows, Azure Al Foundry Agent Service, Power Automate
+- Microsoft tools: Copilot Studio flows, Azure AI Foundry Agent Service, Power Automate
 
 
 > Exam Insight
@@ -1425,7 +1425,7 @@ Exam Insight: Extend progressively: configure first → Copilot Studio for logic
 - **DLP policies** — prevent agents from surfacing restricted data
 - **Conditional access** — enforce device, location, and compliance requirements
 - **Audit logging** — every interaction logged: who asked, what was retrieved
-- **Responsible Al** — test for hallucinations and bias before deployment
+- **Responsible AI** — test for hallucinations and bias before deployment
 
 > Exam Insight: Governance depends on sensitivity labels + DLP. If data isn't classified, Copilot can't enforce access boundaries.
 
@@ -1545,7 +1545,7 @@ Retrieval-Augmented Generation flow:
 #### KEY TAKEAWAYS
 
 - Grounding prevents hallucination — every agent must retrieve real data before generating answers
-- Choose knowledge sources by data type: Dataverse for structured, Azure Al Search for documents, Graph for M365 context
+- Choose knowledge sources by data type: Dataverse for structured, Azure AI Search for documents, Graph for M365 context
 - Data processing matters: chunk for precision, embed for semantic search, manage freshness so answers stay current
 - RAG architecture must include citation and verification — if the agent isn't confident, escalate rather than guess
 
@@ -1584,7 +1584,7 @@ Exam Insight
 - Provide an OpenAPI spec, configure auth, the agent calls it as a tool
 - Simpler than MCP for single, straightforward integrations
 
-**Skills** — prebuilt, reusable Al building blocks
+**Skills** — prebuilt, reusable AI building blocks
 
 - Entity extraction, document summarization, language translation
 - Snap into any agent without building from
@@ -1664,7 +1664,7 @@ Five pillars + Responsible AI = the complete design lens
 
 The exam presents scenarios and asks: "Which pillar is most at risk?"
 
-Strong answers apply multiple pillars — especially Security + Responsible Al together
+Strong answers apply multiple pillars — especially Security + Responsible AI together
 
 > Exam Insight
 >
@@ -1672,12 +1672,12 @@ Strong answers apply multiple pillars — especially Security + Responsible Al t
 >
 > You'll see a design and choose which principle to prioritize.
 >
-> Expect Security, Responsible Al, and Reliability most often.
+> Expect Security, Responsible AI, and Reliability most often.
 
-#### WAF PILLARS FOR AGENTIC Al
+#### WAF PILLARS FOR AGENTIC AI
 
 
-| Pillar | Key Al Considerations | Exam Clue |
+| Pillar | Key AI Considerations | Exam Clue |
 |----------------|-------------|-------------|
 | **Reliability** | Uptime, retry logic, fallback | "Agent fails intermittently" |
 | **Security** | Data leakage, prompt injection, over-privileged agents | "Protect sensitive data" |
@@ -1739,12 +1739,12 @@ Strong answers apply multiple pillars — especially Security + Responsible Al t
 
 - **Fairness** — audit models for bias by protected characteristics
 - **Transparency** — explain decisions in plain language
-- **Accountability** - log every decision; assign human owners for Al outcomes
+- **Accountability** - log every decision; assign human owners for AI outcomes
 - **Safety** — content filters + human review for high-stakes decisions
 
 > Exam Insight
 >
-> Responsible Al is tested alongside other pillars. A loan system needs Security (protect credit data) AND Responsible Al (no bias). The best answer addresses both.
+> Responsible AI is tested alongside other pillars. A loan system needs Security (protect credit data) AND Responsible AI (no bias). The best answer addresses both.
 
 ![Alt Image Text](../images/ab100_1_10.png "Body image")
 
@@ -1777,7 +1777,7 @@ Strong answers apply multiple pillars — especially Security + Responsible Al t
 - coverage,
 - necessity run in parallel
 
-**Responsible Al:** 
+**Responsible AI:** 
 
 - Monthly bias audit on denials;
 - explanations + appeal instructions
@@ -1789,43 +1789,43 @@ This is what the exam expects: applying all six lenses to one design.
 
 **Generative pages & agent feed (model-driven apps)**
 
-- Al dynamically renders content — low-code or code-first (React / PCF)
-- Agent feed surfaces Al activity in the app sidebar
-- WAF: Performance Efficiency + Responsible Al (content must be grounded)
+- AI dynamically renders content — low-code or code-first (React / PCF)
+- Agent feed surfaces AI activity in the app sidebar
+- WAF: Performance Efficiency + Responsible AI (content must be grounded)
 
-**Power Platform Al hub (admin dashboard)**
+**Power Platform AI hub (admin dashboard)**
 
 - Visibility into models, token consumption, and policy compliance
 - WAF: Operational Excellence + Cost Optimization
 
 Exam Insight
 
-"Track Al usage across teams" → Al hub. "Custom Al in a model-driven app" → generative pages.
+"Track AI usage across teams" → AI hub. "Custom AI in a model-driven app" → generative pages.
 
 #### AI BUILDER & COPILOT CONTROL IN CANVAS APPS
 
-**Al Builder components** — prebuilt Al for structured tasks:
+**AI Builder components** — prebuilt AI for structured tasks:
 
 - Text recognition, sentiment analysis, object detection, form processing
 - Use when the task is repeatable and well-defined
 
-Copilot control — embedded conversational Al in canvas apps
+Copilot control — embedded conversational AI in canvas apps
 
 - Use when users need freeform, conversational help
 
 
 WAF connections:
 
-- Security — data processed by Al models must follow DLP policies
-- Cost — Al Builder consumes credits; plan capacity and monitor usage via Al hub
+- Security — data processed by AI models must follow DLP policies
+- Cost — AI Builder consumes credits; plan capacity and monitor usage via AI hub
 
 #### KEY TAKEAWAYS
 
-- Five pillars plus Responsible Al — address all six in every agentic design, not just the ones that seem most interesting
+- Five pillars plus Responsible AI — address all six in every agentic design, not just the ones that seem most interesting
 - Reliability and Security are the most critical for agents that call external services — circuit breakers and MCP are must-haves
 - Cost Optimization matters at scale — use model routing, caching, and batch processing to control token spend
-- Responsible Al is not a feature, it's a foundation — fairness, transparency, accountability, and safety apply to every agent that makes or influences decisions
-- Generative pages, Al hub, and Al Builder in canvas apps all connect back to WAF design with performance, security, cost, and responsible Al in mind
+- Responsible AI is not a feature, it's a foundation — fairness, transparency, accountability, and safety apply to every agent that makes or influences decisions
+- Generative pages, AI hub, and AI Builder in canvas apps all connect back to WAF design with performance, security, cost, and responsible AI in mind
 
 ### 4-9 Designing Custom Models in Microsoft Foundry
 
@@ -1897,14 +1897,14 @@ WAF connections:
 ### AI Transformation Framework
 
 - Define business goals
-- Develop Al strategy
+- Develop AI strategy
 - Design architecture
 - Implement solutions
 - Monitor and optimize performance
 
 ![Alt Image Text](../images/ab100_1_13.png "Body image")
 
-### Best Practices for Al Architects
+### Best Practices for AI Architects
 
 - Start with business outcomes focusing on measurable impact.
 - Adopt modular design for flexibility and scalability.
@@ -1912,7 +1912,7 @@ WAF connections:
 - Collaborate across teams: data scientists, developers, business leaders.
 - Leverage Azure AI services for speed and reliability.
 
-### Scaling Al Across the Enterprise
+### Scaling AI Across the Enterprise
 
 - **Automation** to streamline deployment and monitoring.
 - **Standardization** using common frameworks and tools.
@@ -1921,18 +1921,18 @@ WAF connections:
 
 ### **Overview of Microsoft AI Technologies**
 
-- Microsoft Al technologies empower organizations to build intelligent solutions
+- Microsoft AI technologies empower organizations to build intelligent solutions
 - Enhance productivity, improve decision-making, and deliver measurable business value
-- Introduces key Azure Al services, development tools, and Copilot solutions
+- Introduces key Azure AI services, development tools, and Copilot solutions
 - Tools help businesses innovate, automate, and scale processes
 - Support measurable outcomes and enhanced collaboration
 
 
-### Core Components of Microsoft Al Technologies
+### Core Components of Microsoft AI Technologies
 
-- Azure Al Services: **Azure Machine Learning, Azure OpenAl Service, Azure Foundry**
+- Azure AI Services: **Azure Machine Learning, Azure OpenAl Service, Azure Foundry**
 - Tools and SDKs: **Azure Machine Learning Studio, SDKs, APIs, CLI, REST APIs**
-- Microsoft Copilot Solutions: **Embedded Al in Microsoft 365 and Dynamics 365**
+- Microsoft Copilot Solutions: **Embedded AI in Microsoft 365 and Dynamics 365**
 - Copilot automates tasks, generates content, and provides actionable insights
 - Enhances productivity across business processes
 
@@ -1945,7 +1945,7 @@ WAF connections:
 | Tools and SDKs | Enable AI integration and automation | Use SDKs, APIs, CLI, REST APIs for development and workflows | Visual interfaces, multi-language SDKs, automation tools |
 | Copilot Solutions | Embed AI to enhance productivity | Automate tasks, generate content, provide insights | Improved business process efficiency and insights |
 
-#### Microsoft Al Ecosystem
+#### Microsoft AI Ecosystem
 
 
 ![Alt Image Text](../images/ab100_1_14.png "Body image")
@@ -1953,67 +1953,1177 @@ WAF connections:
 ### Best Practices for Business Value
 
 - Start with measurable business outcomes
-- Implement Al responsibly: fairness, reliability, safety, privacy, security, inclusiveness, transparency, accountability
+- Implement AI responsibly: fairness, reliability, safety, privacy, security, inclusiveness, transparency, accountability
 - Leverage cloud scalability for enterprise-wide adoption
 
-### Identify Out-of-the-Box (OOB) Microsoft Al Agent & Resources
+### Identify Out-of-the-Box (OOB) Microsoft AI Agent & Resources
 
 #### Overview
 
-- Microsoft offers out-of-the-box Al agent resources to accelerate Al implementation.
-- Resources include prebuilt agents, templates, and tools integrated vith Azure Al and Copilot Studio.
+- Microsoft offers out-of-the-box AI agent resources to accelerate AI implementation.
+- Resources include prebuilt agents, templates, and tools integrated vith Azure AI and Copilot Studio.
 - These agents reduce development time, ensure compliance, and enable enterprise scalability.
 
-#### Microsoft Al Agent Ecosystem
+#### Microsoft AI Agent Ecosystem
 
 ![Alt Image Text](../images/ab100_1_15.png "Body image")
 
-#### OOB Al Agent Resources
+#### OOB AI Agent Resources
 
 - Prebuilt Agents: Automate common business workflows
-- Copilot Studio: Customize and deploy Al agents
-- Azure Al Services: Vision, Speech, Language, Decision-making capabilities
+- Copilot Studio: Customize and deploy AI agents
+- Azure AI Services: Vision, Speech, Language, Decision-making capabilities
 - Scenario Library: Best practices and adoption guides
 
 #### Best Practices
 
 - Start with business outcomes before selecting tools
 - Use prebuilt agents for quick deployment
-- Ensure Responsible Al principles: Fairness, Reliability and Safety, Privacy and Security, Inclusiveness, Transparency, Accountability
-- Leverage Azure Al for scalability and compliance
+- Ensure Responsible AI principles: Fairness, Reliability and Safety, Privacy and Security, Inclusiveness, Transparency, Accountability
+- Leverage Azure AI for scalability and compliance
 
 ### Summary
 
-#### Introduction to Agentic Al Business Solution Architecture
+#### Introduction to Agentic AI Business Solution Architecture
 
-- Explain the architect's role in driving Al adoption and transformation.
-- Identify key responsibilities of an Al architect in business contexts.
-- Understand how architects align Al solutions with organizational goals.
-- Apply best practices for scaling Al across enterprise environments.
-- Identify core Microsoft Al services and tools.
+- Explain the architect's role in driving AI adoption and transformation.
+- Identify key responsibilities of an AI architect in business contexts.
+- Understand how architects align AI solutions with organizational goals.
+- Apply best practices for scaling AI across enterprise environments.
+- Identify core Microsoft AI services and tools.
 - Explore Microsoft Copilot solutions and their business value.
-- Understand how generative Al unlocks productivity in enterprise environments.
-- Identify OOB Microsoft Al agent resources available for business solutions.
+- Understand how generative AI unlocks productivity in enterprise environments.
+- Identify OOB Microsoft AI agent resources available for business solutions.
 
 
+## 3 Analyze requirements for AI-powered business solutions
 
-## 3 Analyze requirements for Al-powered business solutions
+### 3-1 Assess the Use of Agents in Task Automation, Data Analytics, and Decision-Making
+
+#### Overview
+
+> Introduction to AI agents and Microsoft Copilot capabilities
+
+- **AI agents automate repeatable tasks and provide data-driven insights**
+- Support decision-making by integrating enterprise context with generative AI
+- **Microsoft Copilot integrates AI capabilities into tools like Word, Outlook, Teams,Dynamics 365**
+- Generative AI accelerates productivity by drafting content and enabling natural language interaction
+- Creates original content including text, images, videos, audio, and software code
+
+#### Key activities
+
+> Role of Agents in Task Automation
+
+- Draft documents, emails, or responses based on context
+- Summarize large volumes of data such as emails, meetings, and chats
+- Automate workflows using Microsoft 365, Copilot Studio, Azure Foundry, and PowerPlatform
+- **Trigger multi-step processes including approvals, notifications, and content generation**
+- **Reduce cognitive load to focus teams on strategic work**
+
+#### Phase-by-phase guidance
+
+> Examples of Agent-Driven Task Automation
+
+| Task Area | How Agents Help | Tools |
+|-----------|-----------------|-------|
+| **Communication** | Draft emails, summarize Teams threads, create meeting recaps | Microsoft 365 Copilot |
+| **Documentation** | Generate first-draft reports, rewrite or optimize content | Word, OneNote, Loop, Microsoft 365 Copilot |
+| **Process Automation** | Trigger workflows and multi-step tasks | Copilot Studio, Power Automate |
+| **Knowledge Retrieval** | Answer questions using enterprise data | Copilot Search, Graph grounding |
+
+#### AI Agents in the Analytics Workflow
+
+![Alt Image Text](../images/ab100_1_16.png "Body image")
+
+#### Key activities
+
+> Agents in Decision-Making
+
+- Support strategic and operational decisions with AI input Provide scenario recommendations based on historical data
+- Identify risks through pattern recognition
+- Summarize business context from documents, meetings, and datasets
+- Offer recommendations backed by enterprise knowledge
+
+> → Enables leaders to explore alternatives and evaluate impacts confidently
+
+#### Best practices
+
+> Using AI Agents Effectively and Responsibly
+
+- Start with the business outcome you want to improve
+- Use agent automation to reduce repetitive work, not replace critical thinking
+- **Maintain responsible AI principles: Fairness, Reliability and Safety, Privacy and Security,Inclusiveness, Transparency, Accountability**
+- Monitor performance and refine prompts, workflows, and data inputs
+- **Empower teams with training to use Copilot effectively**
+
+> → These Principles reinforce reliable, secure AI adoption at scale
+
+### Review Data for Grounding (Accuracy, Relevance, Timeliness, Cleanliness, Availability)
+
+#### Overview
+
+> Understanding grounding in AI agents
+
+- **Grounding ensures AI agents use trusted, domain-specific organizational data to increase accuracy and reduce hallucinations**
+- **Microsoft Copilot and Copilot Studio use semantic indexing across Microsoft Graph for precise content retrieval**
+- **AI systems must connect to approved, access-controlled data to produce trustworthy outcomes**
+- Copilot Retrieval API fetches relevant text from SharePoint, OneDrive, and connected sources respecting user permissions
+
+#### Key activities
+
+Evaluating grounding data quality dimensions
+
+- **Assess data accuracy** by verifying facts with SMEs and authoritative sources
+- **Ensure relevance** by matching data to the agent's intended use case and business domain
+- **Maintain timeliness** by updating data regularly and reflecting latest documents and policies
+- **Improve cleanliness** by removing duplicates, irrelevant metadata, and ensuring clear structure
+- **Confirm availability** by managing access controls and indexing in Microsoft Graph
+
+#### Dimension 1: Accuracy
+
+> Evaluating grounding data quality dimensions
+
+- Data should reflect real, verifiable facts. Inaccurate content leads to incorrect or harmful agent outputs.
+- AI agents must use **trusted and validated datasets** during retrieval to avoid generating incorrect responses.
+
+**Indicators of accuracy:**
+
+- Verified by SMEs
+- Matched to authoritative sources
+- Free from errors or outdated assumptions
+
+#### Dimension 2: Relevance
+
+> Evaluating grounding data quality dimensions
+
+
+- Grounding data must match the intended use case of the agent.
+- **When data is irrelevant, semantic search may retrieve conceptually similar—but contextually wrong-content**.
+
+> Relevance ensures the model surfaces information alianed with the user's scenario, workflow, or business domain.
+
+
+#### Dimension 3: Timeliness
+
+> Evaluating grounding data quality dimensions
+
+- AI outputs degrade when data is stale.
+- The **semantic index** in Microsoft 365 continuously updates as content changes, ensuring the grounding layer reflects the latest documents, conversations, and knowledge.
+
+Timeliness includes:
+
+- Modified dates
+- Seasonal or compliance-related updates
+- Data refresh schedules
+
+#### Dimension 4: Cleanliness
+
+> Evaluating grounding data quality dimensions
+
+- Clean data reduces noise and increases retrieval precision.
+- Data Pollution in AI refers to the degradation of data quality that negatively impacts the performance and reliability of AI systems.
+
+**Clean data characteristics:**
+
+- Clear structure
+- No duplicates
+- Minimal irrelevant metadata
+- Stable formatting and predictable layout
+
+
+Cleaner data improves embedding quality and helps the agent retrieve the most appropriate content.
+
+#### Dimension 5: Availability
+
+> Evaluating grounding data quality dimensions
+
+Agents can only ground responses from **data the user has access to**.
+The Retrieval API respects permissions and will not return content beyond a user's access scope.
+
+**Availability depends on:**
+
+- Storage in SharePoint/OneDrive or connected systems
+- Proper indexing in Microsoft Graph
+- Clear access controls
+
+#### Phase-by-phase guidance
+
+> Dimensions of grounding data quality
+
+| Dimension | Definition | Impact on Agent Performance |
+|-----------|------------|----------------------------|
+| **Accuracy** | Data is correct and verified | Reduces hallucinations and misinformation |
+| **Relevance** | Data aligns to the task/intent | **Ensures responses match the intended scenario** |
+| **Timeliness** | Data is current and up to date | **Keeps outputs aligned with latest policies or info** |
+| **Cleanliness** | Data is structured and free of noise | Improves retrieval precision |
+| **Availability** | Data is accessible and indexable | **Ensures agent can ground reliably per permissions** |
+
+
+#### How Microsoft Copilot Grounds AI Responses
+
+Diagram of semantic index and Retrieval API pipeline
+
+![Alt Image Text](../images/ab100_1_17.png "Body image")
+
+
+#### Best Practices for Reviewing Grounding Data
+
+- **Evaluate content quality before upload;** remove outdated or conflicting information
+- **Store authoritative content in SharePoint or OneDrive** to include in semantic index
+- Maintain consistent formatting to improve cleanliness and retrieval precision
+- Regularly review permissions to ensure valid data sources for grounding
+- Collaborate with domain SMEs to validate accuracy and contextual fit
+
+### Organize Business Solution Data to Be Available for Other AI Systems
+
+#### Overview
+
+> **Introduction to organizing business solution data for AI systems**
+
+**Retrieval-Augmented Generation (RAG) is an architecture that separates prototypes from trustworthy systems**
+
+A RAG pipeline is the system that performs all the steps required to make RAG work in a production environment including:
+
+- Handling the data ingestion
+- Streaming, cleaning, chunking, embedding, and indexing
+- Retrieval, prompt assembly, orchestration, and monitoring
+
+There are several advantages of leveraging RAG pipelines:
+
+- Empowering LLM solutions with real-time data access
+- Preserving data privacy
+- Mitigating LLM hallucinations
+
+
+#### Key concepts for organizing AI ready data
+
+Drive transformation with Azure Data & AI platforms
+
+Azure provides the foundational components necessary to centralize, transform, and govern data before AI systems consume it. Key concepts include:
+
+
+- **Unified data estate** consolidates data from apps, logs, CRM, ERP, operations, and documents
+- **Modern data services** include Azure Cosmos DB, Azure SQL, Azure PostgreSQL, and Fabric Lakehouse
+- **Intelligence layers** provide Azure AI Search, semantic ranking, embeddings, and vector search
+- **Interoperability** via APIs, event hubs, and data streaming supports multiple AI systems using the same data
+
+#### Key concepts for organizing AI ready data
+
+| Layer | Purpose |
+|-------|---------|
+| Operational Databases | Store app + business data with structure |
+| Analytical Stores (Lakehouse / Warehouse) | Prepare curated data for AI/ML |
+| Intelligence Layer (Search + Vector Index) | **Enable grounding, retrieval, semantic search** |
+| AI Apps + Agents | **Copilot, custom RAG apps, autonomous agents** |
+
+#### Data architecture for AI agents across the organization
+
+> Designing AI-optimized data architecture per Microsoft Cloud Adoption Framework
+
+- **Centralized knowledge sources** include SharePoint, OneDrive, Dataverse, and Azure Storage
+- **Semantic indexing** converts enterprise content into semantic representations for grounding
+- **Data governance layer** enforces role-based access, sensitivity labels, and Microsoft Purview policies
+- **APIs and connectors** ensure AI agents access structured and unstructured data
+- **RAG ready architecture** includes vector stores, embedding models, and retrieval pipelines
+
+
+![Alt Image Text](../images/ab100_1_18.png "Body image")
+
+#### Key concepts for organizing AI ready data
+
+> Chart: Azure Data Estate for AI
+
+| Layer | Purpose |
+|-------|---------|
+| Operational Databases | Store app + business data with structure |
+| Analytical Stores (Lakehouse / Warehouse) | Prepare curated data for AI/ML |
+| Intelligence Layer (Search + Vector Index) | Enable grounding, retrieval, semantic search |
+| AI Apps + Agents | Copilot, custom RAG apps, autonomous agents |
+
+### Make databases AI ready
+
+Capabilities of Microsoft database technologies for AI applications
+
+- Azure SQL supports vector data, semantic search, and JSON storage
+- Cosmos DB offers low latency and native vector search for AI-driven apps
+- PostgreSQL on Azure supports ML extensions and embeddings
+- **Fabric** provides a unified analytics platform for AI workloads
+
+Use cases:
+
+- Storing embeddings for RAG apps
+- Managing structured and unstructured content
+- Supporting real-time AI agent decisions
+- Performing high-volume transactions required by autonomous agents
+
+### Best practices for organizing business data for AI systems
+
+Key recommendations to optimize data for AI consumption
+
+
+**Centralize your data**
+
+Use Azure, Dataverse, or Fabric to avoid scattered data silos.
+
+
+**Normalize & structure data**
+
+Standardize schema, naming, metadata, and taxonomy.
+
+**Use semantic indexing**
+
+Microsoft 365 Copilot requires semantic indexing.
+
+**Provide multiple access paths**
+
+- APIs
+- Search Indexes
+- RAG Pipelines
+- Graph Connectors
+- SQL Endpoints
+
+**Implement governance early**
+
+Use Purview for:
+
+- Access Policies
+- Sensitivity Labels
+- Lineage
+- Data Quality Rules
+
+#### Keep data authoritative & updated
+
+Timeliness is essential—AI systems must reference the latest information.
+
+### Summary Analyze requirements for AI-powered business solutions
+
 
 ## 4 Design overall AI strategy for business solutions Part 1
 
+### 4-1 Implement the AI Adoption Process from the Cloud Adoption Framework for Azure
+
+![Alt Image Text](../images/ab100_1_19.png "Body image")
+
+#### Unified Model Overview
+
+**Why Unify?**
+
+CAF provides an end-to-end adoption backbone for AI solutions on Azure.
+
+Agent Adoption guidance layers in the **operating model** for planning, governing, building, and operating AI agents.
+
+Aligning CAF and Agent lifecycle frameworks **reduces risk, prevents agent sprawl, and accelerates value realization**.
+
+- CAF AI adoption defines **foundations and operational guardrails**.
+- Agent lifecycle defines **how teams plan, govern, build, and operate agents.**
+
+#### Phase by Phase Guidance and Deliverables
+
+**AI Strategy = Plan Agents**
+
+**Goals**: Document business outcomes, prioritize use cases, select Microsoft AI technologies, decide platform (SaaS vs. custom).
+
+**Key activities:** Identify high impact AI use cases; define success metrics and ROl hypotheses; create technology plan; draft data and Responsible AI strategies.
+
+**Outputs:** AI Strategy brief and Agent Technology Plan (decision tree, platform choice, guardrails).
+
+**Checklist excerpt**: Define AI tech, data, and Responsible AI strategies; **build business plan and rank use cases by impact/feasibility.**
+
+#### <mark>AI Ready 2 Govern & Secure Agents (foundation)</mark>
+
+**Goals:**
+
+- Establish landing zones, resource organization, connectivity, and **AI governance boundaries**.
+- Put **agent governance in place**: roles, standards, and development process.
+
+**Key activities:**
+
+- Build AI environment;
+  - choose reference architectures;
+  - use **Azure landing zones** for scale.
+- Define **agent governance** policies for capability access, data boundaries, approvals, and monitoring.
+- Prepare **data architecture for agents** to operate on authoritative, governed sources.
+
+
+#### AI Ready = Govern & Secure Agents (foundation continued)
+
+Outputs:
+
+- AI landing zones
+- Policy assignments
+- Network segmentation
+- Governance charter
+- Data access model.
+
+**Checklist excerpt**: Establish governance, networking, reliability, foundation; choose architectures and desion areas
+
+#### Build Agents = AI Ready-Adopt (execution on Azure)
+
+**Goals:**
+
+- Standardize agent building process; 
+- prevent architecture drift and security gaps.
+
+**Key activities:**
+
+- Provide **development process guidelines** for Copilot Studio and Foundry
+- Select platform services for AI (PaaS) and follow reference architectures.
+
+**Outputs:**
+
+**Standard agent templates, evaluation gates, environment strategy, and CI/CD with policy guardrails.**
+
+#### Manage AI 2 Operate Agents (run, monitor, improve)
+
+**Goals:**
+
+Operationalize AI workloads and agent fleets with monitoring, cost controls, release practices, and business continuity.
+
+**Key activities:**
+
+- Define deployment authority;
+-  implement monitoring/telemetry and SLOs.
+-  Establish agent operations: rollout patterns, behavior monitoring, performance tuning, lifecycle management.
+
+Outputs:
+
+AI operations baseline (observability, incident response, cost/usage reports) and Agent Ops playbook (SLOs, retraining rules, deprecation).
+
+#### RACI Snapshot Example
+
+![Alt Image Text](../images/ab100_1_20.png "Body image")
+
+![Alt Image Text](../images/ab100_1_21.png "Body image")
+
+#### Agent Governance
+
+
+![Alt Image Text](../images/ab100_1_22.png "Body image")
+
+#### Actionable Checklists: Strategy & Planning
+
+- Use case inventory with quantified outcomes and success metrics.
+- Agent platform decision (SaaS vs. custom) with cost/effort fit.
+- Skills assessment and upskilling plan (architects, data, security).
+
+#### Actionable Checklists: Ready & Foundations
+
+Landing zone(s) with management groups for external vs. internal workloads; baseline policies applied.
+
+Data foundation for agents (authoritative sources, access model, lineage).
+
+
+#### Actionable Checklists: Govern & Secure
+
+- Document AI and agent policies; **define approvals, change control, and evaluation criteria.**
+
+- Implement platform security for models, **data, keys, and endpoints; maintain a complete AI asset inventory**.
+
+#### Actionable Checklists: Build & Operate
+
+- Standardized agent build process, templates, and CI/CD; adopt reference architectures for PaaS AI.
+
+- **Operational telemetry and SLOs for workloads and agents; cost and incident runbooks**.
+
+### 4-2 Design the Strategy for Building AI Agents in Business Solutions
+
+#### Understanding the Role of AI Agents in Business Solutions
+
+**AI agents**: **automate tasks, synthesize information, trigger worktlows, and execute complex multi-step logic**.
+
+**Microsoft's Cloud Adoption Framework**: guides architects on adopting ready-to-use SaaS agents or building custom agents using Foundry, Copilot Studio, or containerized models.
+
+**Dynamics 365 copilots:** provide guided actions, summarization, automated updates, and customer service support as benchmarks.
+
+
+More information:
+
+https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/
+
+#### Technology Decision Framework for Agent Design
+
+> SaaS agent first principle
+
+**Begin with**: Does a SaaS agent meet the functional requirements?
+
+If yes, use it.
+
+If no, determine whether low-code or pro code custom agents are needed.
+
+Microsoft's technology plan emphasizes this decision tree approach.
+
+> Custom agent platform choices: Copilot Studio (Low-code / SaaS)
+
+Best for:
+
+- Fast deployment
+- Direct integration with Dynamics 365 apps
+- Business analyst-driven customization
+- Retrieval and task agents
+
+
+Provides:
+
+- Prebuilt connectors
+- Azure AI Search integration
+- Built-in responsible AI features
+
+
+### 4-3  Technology Decision Framework for Agent Design
+
+> Custom agent platform choices: Microsoft Foundry (Pro-code / PaaS)
+
+Best for:
+
+- Complex orchestrations and multi agent workflows
+- Custom logic, advanced generative behavior
+- Integration with enterprise systems at scale
+
+**Foundry provides:**
+
+- Declarative or code-first agent models
+- Hosted execution environment
+- Model catalog with multiple options
+- Support for Activity Protocol and agent-to-agent interactions
+
+
+#### Technology Decision Framework for Agent Design
+
+> Custom agent platform choices: GPUs & Containers (Pro code / laaS)
+
+Use When:
+
+- You need full control of model execution
+- Agents must run on private, isolated compute
+- Strict compliance environments require BYO model hosting
+
+#### Architectural Design Considerations 
+
+> Plan for single-agent vs multi-agent systems
+
+Start with a single agent. Unless the use case:
+
+- Crosses security or compliance boundaries
+- Requires orchestration across multiple teams
+- Demands modular specialization
+
+Only scale to multi-agent systems after validating complexity drivers.
+
+#### Architectural Design Considerations
+
+> Integrate agents with enterprise data
+
+Data quality, relevance, and accessibility determines agent reliability.
+
+Architects must define:
+
+- Grounding data sources
+- Data quality and freshness expectations
+- Indices and schemas for retrieval
+- Least privilege access models
+
+> Dynamics 365 copilots illustrate how deep domain data integration improves task success rates.
+
+#### Architectural Design Considerations
+
+> Align deployment with operational realities
+
+Choosing the right hosting and security model depends on:
+
+- Required network isolation
+- Expected latency and availability
+- Integration with Azure management and monitoring
+- Operational continuity and change management processes
+
+> Foundry's standard setup supports private networking for sensitive workloads.
+
+#### Agent Architecture Comparison Chart
+
+
+![Alt Image Text](../images/ab100_1_23.png "Body image")
+
+
+
+### 4-4 Design a Multi-Agent Solution
+
+
+#### When to Use Multi-Agent-and When Not To
+
+**Start simple, scale when evidence requires it.**
+
+**Single agent design consolidates logic, reduces coordination overhead, and simplifies governance.**
+
+Multi-agent systems decompose responsibilities across specialized agents to enforce separation of concerns and scale across domains.
+
+Choose multi-agent first if:
+
+- Crossing security/compliance boundaries
+- Multiple teams own distinct data
+- Roadmap demands expansion
+- Multiple dependencies exist
+
+> • Otherwise, validate with a single agent before adding orchestration.
+
+#### Platform Roles in a Multi-Agent Solution
+
+Design multi-agent systems by assigning the right platform to each role
+
+- **Microsoft 365 Copilot (SaaS)**: Domain agents embedded in Microsoft 365 experiences for immediate value with limited customization.
+- **Copilot Studio (low code SaaS):** Rapidly build task and retrieval agents with prebuilt connectors and guardrails; ideal for business-led processes and quick iteration.
+- **Microsoft Foundry (pro code)**: Build connected agents and sophisticated workflows with deeper control; best for strategic, high integration scenarios.
+
+Design guidance: 
+
+**Start with SaaS agents, introduce Copilot Studio for tailored workflows, escalate to Foundry for complex orchestration and custom tools.**
+
+#### Orchestration Patterns with the Microsoft Agent Framework
+
+Sequential orchestration: Deterministic pipeline for staged tasks (plan → enrich → verify → act)
+
+![Alt Image Text](../images/ab100_1_24.png "Body image")
+
+**Concurrent orchestration: Parallel agents tackle independent subtasks; aggregate and reconcile**
+
+![Alt Image Text](../images/ab100_1_25.png "Body image")
+
+**Group chat orchestration: Mediated conversation where agents contribute proposals and a moderator agent arbitrates.**
+
+![Alt Image Text](../images/ab100_1_26.png "Body image")
+
+**Handoff orchestration: Transfer context and control to a specialist agent or human when escalation triggers.**
+
+![Alt Image Text](../images/ab100_1_27.png "Body image")
+
+#### Orchestration Patterns with the Microsoft Agent Framework
+
+Magnetic orchestration: Dynamic specialization where a "magnet" pulls in the right expert agents at runtime.
+
+![Alt Image Text](../images/ab100_1_28.png "Body image")
+
+> Reliability tip: Treat orchestration as workflow with state, branching, and error handling. Avoid "prompt-to-prompt" daisy chains that are brittle and unobservable.
+
+Platform Role Mapping
+
+| Role | Best fit platform | Why | Typical orchestration |
+|------|-------------------|-----|----------------------|
+| Domain assistant (productivity) | Microsoft 365 Copilot | Immediate value in flow of work | Handoff / group chat |
+| Business workflow agent | Copilot Studio | Rapid iteration, connectors, guardrails | Sequential / handoff |
+| Integration/orchestration agent | Foundry | Pro code tools, complex flows, custom evals | Concurrent / sequential / Magnetic |
+
+
+### 4-5 Develop the Use Cases for Prebuilt Agents in the Solution
+
+**Understanding Prebuilt Agents**
+
+**Prebuilt Microsoft 365 Copilot agents** are ready to use intelligent assistants that help employees complete tasks, retrieve information, and accelerate workflows across Microsoft
+365 applications.
+
+Prebuilt agents are especially effective when:
+
+
+- Business processes depend on frequently accessed information
+- Tasks are repetitive and high frequency
+- Manual search or drafting consumes time
+- Standardization of responses improves quality
+- Employees work across Microsott 365 (Teams, Outlook, Word, etc.)
+
+> AI agents deliver value by reducing effort, improving decision accuracy, and accelerating knowledge driven tasks.
+
+#### Mapping Business Processes to Prebuilt Agent Capabilities
+
+1. Process Identification
+
+Architects evaluate:
+
+- Where employees lose time searching for information
+- Steps filled with manual review or drafting
+- Frequent questions routed to support teams
+- Tasks that follow a predictable workflow pattern
+
+2. Task-to-Agent Capability Matching
+
+3. Feasibility Evaluation
+
+Architects confirm:
+
+- Required data exists in Microsoft 365
+- Interaction model fits conversational patterns
+- No advanced multi agent orchestration is required
+- Output accuracy expectations align with retrieval first responses
+
+> This mirrors guidance for quickly deploying prebuilt agents with minimal confiauration while still enablina tailoring
+
+#### Example Use Case Blueprints
+
+**HR Policy Assistant:** 
+
+- Employees frequently ask HR policy questions;
+- agent retrieves relevant policy information, summarizes answers, and provides clear responses;
+- expected outcome is lower HR workload, fast self-service answers, and consistent guidance.
+
+**Operations Daily Summary Assistant:** 
+
+- Managers consolidate updates across dashboards, chats, and email;
+- agent summarizes daily updates and produces consolidated insights for planning;
+- expected outcome is improved operational alignment and decision speed.
+
+**Travel Guidance Assistant:** 
+
+- Employees need consistent guidance for corporate travel; 
+- agent provides travel rules, health/safety guidelines, and documentation requirements; 
+- expected outcome is reduced confusion, faster planning, and fewer support inquiries.
+
+### 4-6 Define the solution rules and constraints when building AI components (with Copilot Studio, Microsoft Foundry, and Foundry Tools)
+
+#### Solution Constraint Pyramid
+
+Behavioral Rules  -> Data & Tool Constraints  -> Env, Gov, Ops Guardrails
+
+#### Behavioral Rules and Responsible AI Constraints
+
+**Behavior Envelopes**
+
+Define what an agent is allowed and not allowed to do.
+
+**Required Constraints**
+
+- Define explicit boundaries: "Agent may summarize," "Agent may not decide," "Agent may not
+- execute financial transactions."Include disallowed behaviors aligned to security, privacy, and safety policies
+- Use structured instructions to prevent unsafe improvisation
+
+Responsible AI (RAI) Controls
+
+- Mandate use of bias and safety evaluation pipelines
+- Apply strict instructions for citing sources, representing facts, and avoiding hallucination
+- Require human in the loop checkpoints for high impact actions
+
+#### Data Constraints and Governance Boundaries
+
+**Data Access Rules**
+
+Solution Architects must define explicit guardrails around data to avoid over exposure or unintended model hallucination
+
+**Rules**
+
+- Provide agents only the data they require
+- Mask sensitive fields where retrieval is needed but full data is unnecessary
+- Limit grounding sources to curated, authoritative datasets
+- Enforce constraints on generative content
+
+**Data Movement and Storage Constraints**
+
+- Prevent persistent storage of messages unless compliance requires it
+- Define memory policy (ephemeral vs. persistent)
+- Restrict cross domain data access (HR, Finance, Legal)
+
+**Compliance and Regulatory Constraints**
+
+- Conform to organizational regulatory obligations
+- Require human review for high risk tasks
+- Enable mandatory auditing for tool invocation
+
+
+#### Environment, Deployment, and Networking Constraints
+
+**Environment Rules**
+
+- Copilot Studio: Operates inside Microsoft 365 tenant boundary; isolated per environment
+- Foundry: Requires architected deployment environment (VNet, private endpoints, region constraints)
+- Microsoft 365 Copilot: Operates inside Microsoft 365 tenant boundary; operates within the company tenant.
+- Ensure separation of development, testing, and production with dedicated configurations
+
+**Networking Constraints**
+
+- For Foundry: use private networking for confidential workloads
+- Restrict external tool calls to whitelisted domains
+- Require API isolation for sensitive system integrations
+
+**Operational Constraints**
+
+- Establish SLOs for reliability, latency, and throughput
+- Require agent health monitoring and incident response plans
+- Mandate rollback and fail safe procedures
+
+
+**Unified Rule Framework Across Platforms**
+
+| Rule Category | Copilot Studio Application | Foundry Application |
+|---------------|----------------------------|---------------------|
+| Data Access | Strict connector scoping | Full control; must define explicit boundaries |
+| Actions | Light task automation | Deep tool integration and orchestration |
+| Governance | Platform enforced | Architect led, customizable |
+| Risk Level | Low medium | Medium high |
+| Evaluation | Built in safety | Requires evaluation pipelines |
+
+### 4-7 Determine the use of generative AI and knowledge sources in agents built with Copilot Studio
+
+#### Generative AI in Copilot Studio
+
+- Generative AI power is activated primarily through generative answers enabling dynamic information surfacing without authored topics which reduces time enabling agents to: Interpret natural language queries
+- Perform multi source retrieval
+- Synthesize answers from enterprise data
+- Provide coherent responses grounded in formal or informal knowledge assets
+
+#### Generative AI in Copilot Studio Generative Orchestration Mode
+
+Generative orchestration determines how broadly and deeply the agent can search across available knowledge. In this mode, Copilot Studio:
+
+Automatically creates a "Conversational boosting" system topic containing a generative answers node
+
+Can search up to **25 knowledge sources**, filtered with GPT based relevance
+
+May optionally include **general knowledge**, enabling the agent to answer out of domain queries when appropriate
+
+> This mode is ideal when users expect flexible, conversational, open-domain support rather than rigid topic-based interaction.
+
+
+#### Comparison: Generative Orchestration vs Classic Orchestration
+
+| Behavior | Generative orchestration | Classic orchestration |
+|----------|--------------------------|----------------------|
+| **Topics** | Selected based on the description of their purpose. | Selected based on matching a user query with trigger phrases. |
+| **Child and connected agents** | Selected based on their description. | Not applicable. |
+| **Tools** | Agent can choose to call tools based on their name and description. | Tools can only be called explicitly from within a topic. |
+| **Knowledge** | Agent can proactively search knowledge to answer a user's query. | Knowledge used as fallback when no topics match or called explicitly. |
+| **Use of multiple topics, tools, knowledge sources** | Agent can use a combination of topics, tools, and knowledge. | Agent tries to select a single topic, falling back to knowledge if configured. |
+| **Asking users for input** | Agent automatically generates questions to prompt users for missing information. | Must use question nodes in topics to prompt users. |
+| **Responding to a user** | Agent automatically generates a response using available information. | Must use message nodes in topics or call a tool. |
+
+#### Knowledge Sources in Copilot Studio
+
+Knowledge sources expand the breadth and depth of enterprise information an agent can reach.
+
+They can be applied at:
+
+- The agent level (global knowledge)
+- The topic level (specific to a conversation flow)
+- A generative answers node (primary or fallback retrieval)
+- Authentication is enforced automatically: agents can only surface
+
+
+content the current user is permitted to access.
+
+
+![Alt Image Text](../images/ab100_1_29.png "Body image")
+
+#### Using Unstructured Data as a Knowledge Source
+
+
+Unstructured data from SharePoint, OneDrive, Salesforce, ServiceNow, Confluence, Zendesk ingested into Dataverse and converted into vector embeddings
+
+This Provides:
+
+- Provides high quality semantic search
+- Rich grounding for generative answers
+- Strong retrieval accuracy, and strict permission checks
+
+
+Architectural Constraints:
+
+- Maximum 500 knowledge objects per agent
+- Maximum 5 unstructured sources per agent appearing simultaneously in retrieval
+- Automatic background synchronization ensures content freshness
+
+→ Unstructured knowledge sources are ideal for teams with large collections of PDFs, PPTX, DOCX, and knowledge base archives.
+
+
+#### Using Azure OpenAl for Generative Answers
+
+Azure OpenAl "on your data" enables generative reasoning over enterprise content through classic connections embedded inside generative answer nodes.
+
+
+This Setup:
+
+- Creates a direct connection to an Azure OpenAl resource
+- Allows answers synthesized using enterprise embeddings and model reasoning
+- Prioritizes node level knowledge sources over agent level sources
+- Supports advanced configuration such as model selection and prompting parameters
+
+Azure OpenAl is best for scenarios requiring:
+
+- Complex reasoning
+- Domain specific conversational understanding
+- Long form answer generation leveraging enterprise indexed embeddings
+
+#### Using Azure AI Search as a Knowledge Source
+
+
+Azure AI Search integrates as a powerful index based information source when vector search or semantic ranking is required.
+
+Capabilities Include:
+
+- Retrieval of enterprise vector indexes
+- Semantic ranking for high precision results
+- Multiple authentication methods including key based, certificate based, or Entra ID-based
+- Metadata based citation mapping through index fields
+
+This is the preferred solution when content volume is large and requires:
+
+- Scalable indexing
+- Enterprise grade search relevance
+- Vector search for embedding aligned retrieval
+
+#### Selecting the Right Generative Knowledge Architecture
+
+**Data Complexity**
+
+- Structured → Dataverse
+- Semi structured → Azure AI Search
+- Unstructured → SharePoint/OneDrive/Salesforce KB via Dataverse
+
+**Retrieval Precision Requirements**
+
+- High precision → Azure AI Search with semantic ranking
+- Broad domain coverage → Generative orchestration with multiple sources
+
+**Governance & Security**
+
+- Sensitive documents → Unstructured data with strict permission inheritance
+- Cross domain search → Generative orchestration with filtering
+
+**Performance & Latency Tolerance**
+
+- High throughput → Dataverse + Azure AI Search
+- Low complexity Q&A → Public site or classic topic embedding
+
+#### Knowledge Source Decision Matrix
+
+| Knowledge Source | Precision | Governance | Data Size | Latency | Best Fit Scenarios |
+|------------------|-----------|------------|-----------|---------|---------------------|
+| Public Website | Medium | Low | Large (External) | Medium | FAQs, product info, public policies |
+| Uploaded Documents | High | Medium | Medium–Large | Medium | Internal docs, SOPs, reports |
+| SharePoint Knowledge | High | High | Large | Medium | Enterprise content, role-based access |
+| Dataverse Knowledge | Very High | Very High | Structured (Med) | Low | Transactional data, precise queries |
+| Enterprise Connectors | Medium–High | High | Very Large | Medium–High | Cross-system search (Salesforce, ServiceNow, etc.) |
+| Azure OpenAI Connected Data | Very High | High | Scalable (Large) | Medium | RAG scenarios, contextual AI, advanced insights |
+
+### 4-8 Determine When to Build Custom Agents or Extend Microsoft 365 Copilot
+
+#### Understanding the Decision Space
+
+AI solutions within the Microsoft ecosystem span two primary approaches:
+
+**1. Extending Microsoft 365 Copilot**
+
+Extend Copilot when:
+
+- Core Copilot capabilities already perform most of the required tasks.
+- The business scenario aligns with productivity workflows inside Microsoft 365 apps.
+- You primarily need Copilot to use organizational knowledge and automate small tasks.
+- The solution benefits from Microsoft's built in Responsible AI guardrails.
+- Custom logic, actions, and data integrations remain simple.
+
+
+Extensions typically include:
+
+- Creating connectors and plugins.
+- Adding organization specific knowledge sources.
+- Automating repetitive document and communication tasks.
+- Enhancing Copilot behavior in existing applications.
+
+
+**2. Building Custom Agents**
+
+- Build custom agents when:
+- You need specialized workflows that Copilot cannot handle.
+- Your scenario requires custom reasoning patterns, multi step logic, or orchestration.
+- Integration requires direct system APls, external applications, or operational autonomy.
+- You need multi-agent collaboration or complex, domain-specific behavior.
+- You require execution outside Microsoft 365 environments.
+
+
+Custom agents provide greater control over:
+
+- Prompt engineering and orchestration.
+- Data routing and grounding.
+- Tooling integration and model selection.
+- Multi-agent collaboration.
+- Operational behavior and lifecycle management.
+
+Custom Model Lifecycle
+
+![Alt Image Text](../images/ab100_1_31.png "Body image")
+
+#### Key Architectural Evaluation Criteria
+
+Below are critical criteria solution architects should consider when selecting an approach:
+
+**Scope and Complexity**
+
+| Criteria | Recommended Approach |
+|----------|----------------------|
+| Simple retrieval or summarization | Extend Copilot |
+| Complex multi-step workflow | Build custom agent |
+| High-volume automation | Build custom agent |
+| Productivity-only context | Extend Copilot |
+
+**Governance, Compliance, and Skill Maturity**
+
+
+| Aspect | Custom Agents | Extend Copilot |
+|--------|---------------|----------------|
+| Governance and Compliance | Custom governance and operational policy definitions; monitoring and model behavior controls | Enterprise-grade safety and Responsible AI guardrails; built-in compliance and security |
+| Skill and Operational Maturity | Strong expertise in Azure AI, agent orchestration, and system architecture required | Low-code approach; rapid enablement preferred |
+
+### 4-9 Determine When Custom AI Models Should Be Created
+
+#### When Prebuilt or Catalog Models Are Sufficient
+
+Before considering custom models, confirm whether existing models from Microsoft Foundry's model catalog or Azure OpenAl already meet requirements.
+
+**Prebuilt or catalog models fit well when:**
+
+- The use case is **general-purpose**
+- **Moderate accuracy** is acceptable.
+- The agent interacts primarily with enterprise knowledge sources
+- The domain data is not complex or does not require deep contextual understanding.
+- Time-to-value is a priority.
+- Teams want low-cost, low-risk deployment.
+
+
+Examples:
+
+- Drafting customer emails
+- Policy Q&A
+- Document summarization
+- Meeting recap
+- Basic conversation automation
+- Knowledge retrieval agents
+
+#### When Custom Al Models Should Be Created
+
+A custom model is recommended in the following situations.
+
+A. **Domain-Specific Intelligence Required**: Highly specialized workflows, industry compliance, proprietary knowledge, unique terminology/business rules
+
+B. **Off-the-Shelf Accuracy Insufficient:** Persistent low precision/recall, high hallucination risk, costly errors, need for deterministic outputs
+— even after advanced tuning
+
+C. **Governance & Compliance Demand Full Control**: Strict explainability, custom guardrails, predictable reasoning, full data residency/sovereignty, transparent lifecycle
+
+D. **High-Scale or High-ROl Scenarios:** Extremely high usage volume, small per-query savings multiply significantly, major revenue/efficiency lift from optimizations
+
+E. **Multi-Agent Systems Needing Custom Reasoning**: Specialized agent roles, multi-step planning, long-horizon tasks, workflow orchestration, explicit memory/collaboration
+
+
+#### Data Requirements for Custom Models
+
+Custom model development requires:
+
+- Large volumes of high-quality labeled domain data
+- Strong data governance and cleaning processes
+- A repeatable pipeline for training, evaluation, and deployment
+- Defined taxonomy and annotation guidelines
+- Continuous retraining and monitoring strategy
+- Access to skilled data scientists and MLOps engineers
+
+> If these requirements are not yet met, extending Microsoft 365 Copilot is often the better starting point.
+
+### 4-10 Develop the Use Cases for Customized Small Language Models
+
+#### Understanding Customized Small Language Models
+
+Customized SLMs can be built by:
+
+- Domain tuning: Adding domain knowledge through structured corpora or curated enterprise documents
+- Behavior tuning: Controlling style, reasoning depth, safety behavior, or operational constraints
+- Task optimization: Specializing the model for retrieval, classification, summarization, planning, or tool use patterns
+
+> SLMs deliver high performance with small memory footprints and low latency. They excel where large models are too costly or unnecessary
+
+
+#### Use Cases for Customized Small Language Models
+
+**Domain-Specific Knowledge Workflows**
+
+Precise, context-specific outputs from proprietary data — compliance analysis, contract risk, medical/legal/financial reasoning. Minimizes hallucinations by constraining behavior around enterprise-validated data.
+
+**Operationally Constrained Environments**
+
+Edge/loT devices, high-volume inference, real-time analytics, and offline scenarios. Reduced memory footprint with cost-predictable inference.
+
+***Enterprise Security & Safety***
+
+Full control over training data, transparent evaluation pipelines, and elimination of external dependencies. Safety guardrails embedded directly into the model.
+
+**Enhanced Productivity**
+
+- Tuned to internal writing styles for operational reports, knowledge base articles, and enterprise-aligned summaries.
+- Outputs feel native to the organization.
+
+**Reasoning-Heavy & Multi-Step Workflows**
+
+- Low-cost chain-of-thought reasoning, multi-agent orchestration, and domain-specific workflow routing. Tuned SLMs 
+- can outperform larger models in specialized environments.
+
+#### Use Cases against Customized Small Language Models
+
+It is important to keep common pitfalls and risks in mind when identifying whether to use an SLM.
+
+Anti-patterns:
+
+- Building a custom SLM when RAG over a general model would suffice
+- Underestimating data curation and evaluation effort
+- Treating SLMs as a silver bullet for hallucinations
+- Using SLMs for broad, creative reasoning tasks better suited to LLMs
+
+Risks:
+
+- Overfitting to narrow data
+- Poor generalization to edge cases
+- Governance gaps if safety tuning is rushed
+
+#### Architecture Considerations for Customized SLM Use Cases
+
+**Data, Safety, and Deployment**
+
+**Data Requirements**
+
+- High quality curated datasets
+- Domain specific terminology and structured examples
+- Clean and labeled text
+
+
+**Safety & Governance Requirements**
+
+- Define safety boundaries and
+- moderation requirements
+- Evaluate model against harmful or noncompliant outputs
+
+**Deployment & Integration**
+
+- Integration with Copilot based orchestration
+- Compatibility with agent tools and enterprise connectors
+- Performance testing under real world user loads
+
+#### Evaluation and Success Metrics for SLMs
+
+When evaluating an SLM, architects can measure its success through specific metrics such as the below that can be included in an SLM Success Scorecard:
+
+- Task accuracy/success rate
+- Latency targets
+- Cost per 1,000 requests
+- Safety incident rates
+- Drift or degradation over time.
+
+
+
 ## 5 Design overall AI strategy for business solutions Part 2
 
-## 6 Evaluate costs and benefits of Al solutions
+
+
+
+## 6 Evaluate costs and benefits of AI solutions
 
 ## 7 Design AI agents for business solutions Part 1
 
 ## 8 Design AI agents for business solutions Part 2
 
 
-## 9 Design extensibility of Al solutions
+## 9 Design extensibility of AI solutions
 ## 10 Orchestrate configuration of prebuilt agents and apps
-## 11 Monitor, analyze, and tune Al agents
-## 12 Manage testing Al-powered business solutions
-## 13 Design ALM process for Al-powered business solutions
-## 14 Design responsible Al security, governance, risk management, and compliance
+## 11 Monitor, analyze, and tune AI agents
+## 12 Manage testing AI-powered business solutions
+## 13 Design ALM process for AI-powered business solutions
+## 14 Design responsible AI security, governance, risk management, and compliance
 ## 15 Course Closeout and next steps
