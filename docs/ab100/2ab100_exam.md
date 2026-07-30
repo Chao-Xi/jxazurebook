@@ -3752,3 +3752,737 @@ Select the checkboxes for the fields you want to include.
 You can select out-of-the-box, custom, and related table fields.
 
 Save: Click Add and then Save your changes to update the summary configuration.
+
+
+## Deploy AI-powered business solutions
+
+Testlet 1
+
+**Overview** 
+
+Contoso, Ltd. is a high-tech manufacturing company that uses Microsoft Dynamics 365 Finance. Dynamics 365 Supply Chain Management, and Dynamics 365 Commerce for its North American operations. The company designs and develops innovative products that have many patents and proprietary technologies. The patents and engineering designs are closely guarded secrets.
+
+Contoso executives want to integrate and adopt AI solutions to help scale the company in preparation for an anticipated period of rapid growth.
+
+The company has multiple legal entities and Azure subscriptions that will be used in the adopted AI solutions.
+
+**Requirements**
+
+- AI Adoption The following executives will have specific responsibilities in the overall AI adoption:
+
+- Chief Technology Officer (CTO): Select one Dynamics 365 Finance, Dynamics 365 Supply Chain Management or Dynamics 365 Commerce prebuilt AI agent and one custom Microsoft Copilot Studio AI agent to prioritize and deploy during the initial AI adoption phase.
+
+- Chief Information Officer (CIO): Ensure that appropriate security labels are assigned to the data used by the AI agents.
+
+- Chief Financial Officer (CFO): Analyze the return on investment (ROI) for the AI agents being deployed. Chief Information Security Officer (CISO): Discover and inventory AI resources for auditing.
+
+- Chief Executive Officer (CEO): Ensure that all solutions adhere to industry-standard responsible AI practices
+
+
+All AI initiatives and agents will have a detailed business use case, a defined audience profile, and an estimated ROI that will compare the cost savings of the current process against the estimated costs of using the new AI solutions.
+
+The company's research and development (R&D) department already has a custom Model Context Protocol (MCP) server that contains comprehensive product specifications and compliance data
+
+
+
+**Prebuilt AI Agent**
+
+The CTO has NOT yet selected which prebuilt AI agent to use in Dynamics 365 Supply Chain Management. The CTO wants to view available agent templates to identify which agent will add the most business value.
+
+Depending on which high-priority AI agents are identified, its agent capabilities must be previewed in a discovery meeting with the relevant business operation stakeholders.
+
+
+**Custom AI Agent**
+
+Contoso has identified the following custom AI agent requirements:
+
+- The custom AI agent will use data from Dynamics 365 Supply Chain Management to answer questions for the manufacturing team as a low-code solution.
+
+- The custom AI agent will be accessible from within Microsoft Teams.
+
+- The custom AI agent must be designed to eventually connect to other agents that can be selected based on their description.
+
+- The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational.
+
+- The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&D department.
+
+- The custom AI agent must be integrated with and accessible from Dynamics 365 Supply Chain Management.
+
+- The custom AI agent must be able to use Dynamics 365 Supply Chain Management business logic that is stored outside of the application.
+
+**Analysis, Reporting, and Troubleshooting**
+
+Contoso has identified the following analysis, reporting, and troubleshooting requirements:
+
+- The CFO will analyze all the AI solutions quarterly to compare the estimated ROI against actual measured efficiencies and adoption. The CFO will use the Copilot Studio agent usage estimator to perform this analysis.
+
+- The CISO wants to identify how much sensitive data was accessed for a given AI agent run and who accessed the data. Too much sensitive data accessed by a single user might indicate a high security risk.
+
+- The CTO wants to track user feedback on the quality of the AI agent responses during user interactions with the agents. Consistently poor feedback will trigger an escalated reengineering discussion.
+
+- The CEO wants a quarterly assessment of all the required metrics for their specific responsibilities. The tools used for the assessments must be Microsoft-recommended and must verify reliability, interpretability, fairness, and compliance.
+
+- The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.
+
+
+### QUESTION 1 
+
+Which two components for the custom AI agent should you include in the application lifecycle management (AIM) process? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. an Azure package
+
+B. a ZIP package
+
+C. a Microsoft Power Platform solution
+
+D. a Cloud Scale Unit (CSU) package
+
+E. an X++model
+
+
+---
+
+Correct Answer: BC Section: (none)
+
+Explanation/Reference: 
+
+- [C] A Microsoft Power Platform solution is the standard container for transporting and managing customizations across the Power Suite (Copilot Studio, Power Automate, and Power Apps). It perfectly aligns with the specific requirements.
+
+- [B] Based on the application lifecycle management (ALM) process for a Microsoft Power Platform solution that integrates with Dynamics 365 Supply Chain Management, you should use a ZIP package.
+
+Recommended ALM Component In the Microsoft Power Platform ecosystem, the standard unit of deployment for ALM is a Solution, which is exported and transported as a ZIP package.
+
+ZIP package: This is the standard format for Power Platform solutions containing Copilot Studio agents, Power Automate flows, and custom connectors used to bridge Dynamics 365 and Teams.
+
+Incorrect:
+
+[Not A] Azure package: Typically refers to Azure-native resources; while used for custom coding, the Power Platform solution itself is handled via ZIP exports.
+
+[Not D] Cloud Scale Unit (CSU) package: Specifically for commerce or edge workloads, not for deploying general AI agents.
+
+[Not E] X++ model is used for core code changes inside Dynamics 365 Finance & Operations, but not for the lowcode Power Platform/Copilot Studio orchestration described.
+
+
+### QUESTION 2
+
+Which tools should you recommend to assist the CISO and the CIO with their specific responsibilities? To answer, drag the appropriate tools to the correct executives. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+| Tools (待拖拽选项) |
+| :--- |
+| Azure Blob Storage |
+| Azure Resource Graph Explorer |
+| Copilot Studio |
+| Microsoft Purview |
+
+**Answer Area (答题区)**
+
+*   **CISO (首席信息安全官):** 
+    *   [ 拖拽目标位置 1 ]
+*   **CIO (首席信息官):** 
+    *   [ 拖拽目标位置 2 ]
+
+
+----
+
+Box 1: Microsoft Purview
+
+Box 2: Microsoft Purview
+
+Box 1: Microsoft Purview CISO
+
+Scenario:
+
+The CISO will audit all the AI solutions monthly for compliance and security.
+
+The CISO wants to identify how much sensitive data was accessed for a given AI agent run and who accessed the data. Too much sensitive data accessed by a single user might indicate a high security risk.
+
+-Microsoft Purview is the primary tool for this scenario. It provides a unified governance and security platform that integrates directly with Microsoft Agent 365 and Dynamics 365 AI agents to audit interactions, track sensitive data access, and identify high-risk user behaviors.
+
+Auditing Sensitive Data in AI Agent Runs Purview uses a combination of automated classification and audit logging to provide a granular view of every AI interaction.
+
+Unified Audit Log: Automatically captures user and agent activities, including who initiated the interaction and when it occurred.
+
+Resource Tracking: Audit records reference specific files, SharePoint sites, or Dataverse tables accessed by the agent during a run.
+
+Data Classification: Identifies Sensitive Information Types (SITs)—such as credit card numbers, PII, or internal trade secrets—within both the user prompt and the agent's response.
+
+Sensitivity Labels: Captures if accessed files have existing sensitivity labels, ensuring protection is maintained even when data is summarized by an agent.
+
+
+Box 2: Microsoft Purview CIO
+
+Scenario:
+
+Chief Information Officer (CIO): Ensure that appropriate security labels are assigned to the data used by the AI agents.
+
+Microsoft Purview is the primary tool for managing and assigning security labels to data used by AI agents in Microsoft Dynamics 365.
+
+Within the Microsoft ecosystem, these "security labels" are formally known as Sensitivity Labels, and they are configured and published via the Microsoft Purview Information Protection service.
+
+
+### QUESTION 3 
+
+
+What should you recommend to assist the CEO with their specific responsibilities?
+
+A. the Microsoft Service Trust Portal
+
+B. Microsoft Foundry Tools
+
+C. Microsoft Purview
+
+D. the Responsible AI dashboard
+
+E. Compliance Center
+
+---
+
+
+Correct Answer: D
+
+
+**Explanation/Reference:**
+
+Explanation:
+
+Scenario: The CEO wants a quarterly assessment of all the required metrics for their specific responsibilities. The tools used for the assessments must be Microsoft-recommended and must verify reliability, interpretability, fairness, and compliance.
+
+To ensure your Microsoft Dynamics 365 AI agent meets quarterly compliance and ethical standards, the Responsible AI (RAI) Dashboard in Azure Machine Learning is the primary recommended tool.
+
+Microsoft recommends aligning quarterly assessments with their Responsible AI Standard v2, which focuses on six core principles: fairness, reliability, safety, privacy, security, inclusiveness, transparency, and accountability.
+
+### QUESTION 4 
+
+Which Copilot Studio analytics metrics should you recommend to assist the executives with their specific responsibilities? To answer, drag the appropriate metrics to the correct executives. Each metric may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Metrics** (Options):
+*   [ Effectiveness ]
+*   [ Tool use ]
+*   [ Satisfaction ]
+*   [ Use ]
+
+**Answer Area:**
+
+*   **CFO concerns about Copilot Studio credit usage:**  [ ____________________ ]
+*   **CTO concerns about poor feedback on AI agent responses:**  [ ____________________ ]
+
+----
+
+Box 1: Effectiveness
+
+
+Box 2: Satisfaction
+
+**Box 1: Effectiveness** 
+
+CFO concerns about Copilot Studio credit usage
+
+Scenario: The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.
+
+To identify how many interactions with AI agents are abandoned compared to resolved, you should use the Effectiveness metrics.
+
+In Microsoft Copilot Studio, Effectiveness specifically tracks Session Outcomes, which categorize every engaged conversation into one of three primary states:
+
+Resolved: The user's issue was addressed, and the session ended successfully.
+
+Abandoned: The user stopped interacting without reaching a resolution or escalation, or the session timed out.
+
+Escalated: The conversation was handed over to a human agent.
+
+**Box 2: Satisfaction** 
+
+CTO concerns about poor feedback on AI agent responses
+
+Scenario: The CTO wants to track user feedback on the quality of the AI agent responses during user interactions with the agents. Consistently poor feedback will trigger an escalated reengineering discussion.
+
+AI Overview To track user feedback on the quality of AI agent responses in Microsoft Copilot Studio (and Dynamics 365), you should use the Satisfaction analytics metric. Specifically, the Reactions chart within the Satisfaction section tracks user-provided feedback, which measures user perception of response quality.
+
+Satisfaction (Reactions): This section captures direct user feedback (thumbs up/down) on individual answers and provides a ratio of positive to negative feedback, including specific user comments for detailed analysis.
+
+
+## Deploy AI-powered business solutions Testlet 2
+
+**Background** 
+
+Fabrikam, Inc., is a global consumer goods company that is undergoing a digital transformation initiative to migrate its entire infrastructure to the Microsoft cloud. As a key element of this cloud migration, the company will implement Microsoft Dynamics 365 Sales, moving away from the current on-premises proprietary technologies used by its business-to-business (B2B) sales team.
+
+As part of the cloud migration, Fabrikam will adopt an AI-first approach to its business solutions and implement AI solutions, wherever possible, to streamline operations.
+
+
+**Problem Statements** 
+
+Fabrikam's infrastructure currently relies on various on-premises systems that require sales executives to use corporate computers with physical keyboards to access business information during customer interactions. Mobile phones cannot be used for these purposes, as the systems depend on keyboard input. As a result, the sales executives spend a lot of time using keyboards to search for data on several disparate systems and file servers, rather than focusing on the customers. This affects the customer experience.
+
+Fabrikam stakeholders are concerned that users will be hesitant to adopt AI. If the AI initiatives are NOT adopted, cost savings will never be realized. Additionally, funding for future AI initiatives will depend on demonstrating an increase in AI adoption month over month. As the AI agent initiative for the sales team will be the first for Fabrikam, the rapid adoption of the agent is a high priority.
+
+
+**Planned Initiatives General**
+
+Fabrikam management has prioritized AI-driven projects to improve efficiency, customer engagement, and responsible AI adoption. The current application infrastructure is on-premises and must be migrated to the cloud to support the adoption of these technologies.
+
+**Infrastructure Migration** 
+
+Fabrikam plans to migrate from its current on-premises infrastructure to a completely cloud-based topology; this will include user authentication, the security framework, and, primarily, the adoption of the services by end users.
+
+All the data from the different systems will be consolidated into a single data source - a common data model that will use a Microsoft Dataverse environment as a single source of truth (SSOT) for the sales team.
+
+**Sales Cycle Enablement** 
+
+To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle:
+
+Use low-code development to create a single AI agent that has Dataverse as its core component. Ensure that sales managers can access unanswered correspondence from prospects and intervene as appropriate.
+
+Replace the previous proprietary software with Dynamics 365 Sales to track sales cycles and customer interactions.
+
+Have the sales executives use Dynamics 365 Sales to track interactions for open opportunities and send follow-up communications to prospects.
+
+Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.
+
+
+**Requirements** 
+
+**Infrastructure Migration**
+
+Fabrikam has identified the following infrastructure migration requirements:
+
+- Azure must be used for all future infrastructure workloads.
+- The company must follow Microsoft-recommended methodologies for infrastructure migration to the cloud.
+- Any created AI agents must have their return on investment (ROI) calculated to ensure that the solution will save the company money.
+
+Sales Cycle Enablement 
+
+Fabrikam has identified the following requirements for sales cycle enablement:
+
+
+- The final AI agent must follow Microsoft recommendations for a conversational user experience.
+
+- A designated checklist must be reviewed to ensure that the AI agent follows Microsoft deployment recommendations for a compliant solution.
+
+- Detailed telemetry must be logged for the first created AI agent to help troubleshoot and optimize the agent during the initial AI agent adoption process.
+
+- Unexpected AI agent actions must end in an escalation to a live representative. For example, a sales executive must be rerouted to a representative if the agent cannot answer a question after two failed attempts.
+
+- The return on investment (ROI) of switching from the current process to the future process is required for stakeholder sign off.
+
+- The sales team must use Dynamics 365 Sales to correspond with prospects more quickly and efficiently than currently.
+
+- Sales managers must report on the adoption of the AI agent to key Fabrikam stakeholders on a monthly basis.
+
+- Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
+
+
+A. the Analytics tab in Microsoft Copilot Studio 
+
+B. Model Context Protocol (MCP)
+
+C. Application Insights
+
+D. Microsoft Foundry Tracing UI
+
+E. Monitoring in Microsoft Foundry
+
+----
+
+Correct Answer: D
+
+Explanation/Reference:
+
+
+
+Fabrikam has identified the following requirements for sales cycle enablement:
+
+Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
+
+In a Microsoft AI solution involving an agent where you must track sensitive information for auditing, you should use the Microsoft Foundry Tracing UI.
+
+Tracking and Auditing with Microsoft Foundry Tracing The Microsoft Foundry Tracing UI (part of Microsoft Foundry) provides end-to-end visibility into agent runs by capturing detailed telemetry through OpenTelemetry.
+
+What is Captured: It automatically logs user inputs, model outputs, and tool arguments, which often contain sensitive information like names or IDs.
+
+Auditing and Debugging: You can search, filter, and sort traces from the last 90 days to observe exactly how your agent responded during specific sessions.
+
+Infrastructure: Traces are stored in Azure Application Insights, allowing you to apply standard enterprise access controls and retention policies.
+
+
+###  QUESTION 2
+
+Which existing tool and data should you use to gather the required metrics for stakeholder signoff for the AI agents? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+*   **Tool:**
+    *   [ ] Microsoft Foundry
+    *   [ ] Azure Resource Monitor (ARM)
+    *   [ ] Dynamics 365 Sales
+    *   [ ] Microsoft Copilot Studio
+
+*   **Data required for the tool:**
+    *   [ ] the cumulative time spent on the task over the past year
+    *   [ ] the current cost to complete the tasks per instance
+    *   [ ] the current time to complete the task today per instance
+    *   [ ] the current cost of the Dynamics 365 Sales licenses
+
+----
+
+
+- Box 1: Microsoft Foundry
+
+- Box 2: the current time to complete the task today per instance
+
+
+Explanation/Reference:
+
+Explanation:
+
+Scenario:
+
+The return on investment (ROI) of switching from the current process to the future process is required for stakeholder sign off.
+
+Box 1: Microsoft Foundry Tool
+
+To secure stakeholder sign-off for a Microsoft AI solution using AI agents and Dataverse, Azure AI Foundry (formerly Azure AI Studio) provides a structured framework to gather metrics across five key "ROI levers":
+
+1. Identify Key ROI Metrics via Foundry Use the Foundry ROI Framework to categorize and collect data that compares the current manual process to the future AI-driven state.
+
+2. Gather Data using Foundry Tools Foundry offers specific technical features to generate the evidence needed for your business case.
+
+3. Calculate the ROI Once metrics are gathered, apply the standard Microsoft-recommended formula for the business case.
+
+Box 2: the current time to complete the task today per instance Data required for the tool
+
+In the Microsoft Foundry ROI framework, the metric for current time required to complete a task today is typically referred to as the Current Time per Instance or Task Duration (Baseline). This value serves as the primary "Before" benchmark to calculate the efficiency gains of the new AI agent solution.
+
+
+### QUESTION 3 
+
+
+Which tool should you recommend to help secure funding for future AI agent development?
+
+A. Evaluations in Microsoft Foundry
+
+B. the Azure Cost Optimization workbook
+
+C. Azure Operator Insights 
+
+D. the Analytics tab in Microsoft Copilot Studio
+
+E. Direct Preference Optimization (DPO)
+
+
+---
+
+Correct Answer: D 
+
+Explanation/Reference:
+
+Explanation:
+
+Scenario Requirements Any created AI agents must have their return on investment (ROI) calculated to ensure that the solution will save the company money.
+
+-In a Microsoft AI migration, calculating the Return on Investment (ROI) for AI agents is essential for justifying costs and securing future funding. You can utilize the Analytics tab in Microsoft Copilot Studio to track these financial and performance metrics directly.
+
+Calculating ROI with Copilot Studio Analytics The Analytics tab provides a dedicated Savings tile (ROI) that allows you to quantify the impact of your agents:
+
+Define Savings Parameters: You can input estimated time saved (in seconds, minutes, or hours) and money saved per successful agent run.
+
+Real-Time Tracking: Total savings are calculated automatically for your selected period based on successful runs of resolved conversations.
+
+Retroactive Application: If you update your savings estimates, the system can apply these changes to previous runs to provide an accurate historical view.
+
+Granular Insights: Savings can be defined at the overall agent-run level or for specific tools used within a run.
+
+
+## Deploy AI-powered business solutions - Question Set 3
+
+### QUESTION 1 
+
+
+You are designing a Microsoft Copilot Studio agent that uses a custom Microsoft Foundry model to generate responses.
+
+You need to ensure that the agent can securely connect to and invoke the custom model during user interactions.
+
+What should you include in the design?
+
+A. Configure the agent to use classic orchestration.
+
+B. Create a connection to Microsoft Foundry in the agent.
+
+C. Add the Microsoft Foundry model as a Copilot Studio skill.
+
+D. Create a custom engine agent.
+
+—--
+
+Correct Answer: B 
+
+Section: (none) 
+
+
+Explanation/Reference:
+
+Explanation:
+
+To create a connection to Microsoft Foundry within a Microsoft Copilot Studio agent and securely invoke a custom model, follow these steps:
+
+1. Connect via the "External Agent" Method This method allows your Copilot Studio agent to orchestrate and call a specific Microsoft Foundry agent directly.
+
+2. Connect via "Bring Your Own Model" (BYOM) If you want to use a specific model from the Foundry model catalog for individual prompt actions.
+
+3. Security and Governance Connecting to Microsoft Foundry ensures enterprise-grade security through:
+
+Entra ID Integration: Agents are assigned a unique Microsoft Entra Agent ID, allowing IT teams to enforce Conditional Access and Identity Governance.
+
+Unified Management: Both your Copilot Studio and Foundry agents can be managed centrally in the Microsoft Entra admin center.
+
+
+### QUESTION 2 
+
+You are designing an AI business solution that contains the following components:
+
+A Microsoft Power Automate workflow A Microsoft Copilot Studio agent A Microsoft Dataverse database A Microsoft Power Apps app
+
+As part of the application lifecycle management (ALM) process, you plan to package the components, so that they can be deployed to other environments as a group.
+
+You need to recommend a solution that supports versioning, dependencies, and deployments.
+
+What should you include in the recommendation?
+
+A. GitHub Actions
+
+B. Azure DevOps
+
+C. Microsoft Power Platform solutions
+
+----
+
+Correct Answer: C Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To package your AI business solution components—including the Power Automate workflow, Copilot Studio agent, Dataverse database, and Power Apps app—you should use Microsoft Power Platform solutions.
+
+While GitHub Actions and Azure DevOps are powerful tools for automating the deployment process (CI/ CD), Solutions are the actual "containers" or packaging mechanism required to bundle these specific Power Platform assets together so they can be moved as a single unit between environments.
+
+
+### QUESTION 3 
+
+A company has Microsoft 365 Copilot agents.
+
+You need to design a security solution for the agents. The solution must meet the following requirements:
+
+Identify and mitigate potential risks that relate to AI use.
+
+Protect AI apps and the sensitive data processed or generated by the agents.
+
+Support responsible AI governance by retaining and logging interactions, detecting policy violations, and investigating incidents.
+
+Which two components should you include in the design? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Microsoft Purview
+
+B. Azure AI Content Safety
+
+C. role-based access control (RBAC) in Microsoft Foundry
+
+D. Microsoft Defender
+
+----
+
+
+Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To secure Microsoft 365 Copilot agents, you can implement a unified solution using Microsoft Purview for data governance and Microsoft Defender for real-time threat protection. This combination identifies risks, protects sensitive data, and ensures responsible AI governance through continuous monitoring and incident investigation.
+
+
+### QUESTION 4 
+
+You are creating validation criteria for a custom generative AI model that produces business reports based on internal enterprise data.
+
+You need to assess whether the model's outputs are appropriate and meaningful for the business reports.
+
+Which metric should you use?
+
+A. the number of active users interacting with the model
+
+B. alignment of the output to domain-specific tasks
+
+C. the average system resource usage during inference
+
+D. the model training duration
+
+---
+
+Correct Answer: B
+
+
+Explanation/Reference:
+
+Explanation:
+
+To validate a custom generative AI model for business reports based on internal data, you should focus on alignment with domain-specific tasks through a mix of automated and human-centric metrics.
+
+Validation Criteria for Business Reports *-> Task-Specific Quality Evaluation (TSQE): This is your primary metric for assessing whether outputs are meaningful for specific business tasks.
+
+* Groundedness and Factuality: Measure the model's ability to provide information strictly referenced from your internal enterprise data. This prevents "hallucinations" that could lead to poor business decisions.
+
+* Domain-Specific Benchmarking: Compare AI outputs against "ground truth" data—verified, accurate reports previously created by human experts.
+
+
+### QUESTION 5 
+
+
+A company has Microsoft Foundry agents that generate responses by using Azure OpenAI resources. The agents are deployed to both the United States and Europe.
+
+A company mandate states that the agents and their grounding data must adhere to data residency and movement regulations.
+
+You need to recommend a governance solution for the agents.
+
+What should you include in the recommendation?
+
+A. Microsoft Defender for Cloud
+
+B. Azure Policy
+
+C. Azure Monitor
+
+D. Microsoft Purview
+
+
+----
+
+
+Correct Answer: D 
+
+Section: (none)
+
+
+Explanation/Reference:
+
+Explanation:
+
+In this scenario, Microsoft Foundry agents and Azure OpenAI resources generate responses by using the Responses API. To ensure these agents adhere to data residency and movement regulations across the United States and Europe, Microsoft Purview should be included to provide the following governance and security controls:
+
+Unified Data Discovery & Classification: Purview's discovery REST API allows orchestrator agents to identify relevant data assets (e.g., in Fabric or Databricks) across the organization's entire data landscape.
+
+Sensitivity Label Enforcement: It ensures that AI-generated responses respect existing access controls by checking document label metadata at query time. This prevents oversharing of sensitive data and restricts users to authorized content.
+
+Data Loss Prevention (DLP): By integrating Purview DLP policies, organizations can monitor, block, or warn when sensitive data is used in AI prompts or responses in real-time.
+
+Data Residency Compliance: For strict European residency (e.g., GDPR), Azure OpenAI resources should be deployed using Data Zone (DZ) SKUs (such as in Sweden Central or Germany West Central), which contractually guarantee that both data storage and processing remain within the specified geography.
+
+Embedded Governance: Admins can enable a native integration within Microsoft AI Foundry at the subscription level. This automatically sends prompt and response data to Purview for auditing and compliance without requiring additional developer code.
+
+
+### QUESTION 6 
+
+A company has a Microsoft Copilot Studio agent that uses custom connectors to interact with enterprise APIs.
+
+You need to recommend an application lifecycle management (ALM) process to ensure that the connectors are deployed consistently across development, test, and production environments and meet governance and traceability requirements.
+
+What should you recommend?
+
+A. Deploy the APIs as Azure Functions.
+
+B. Manage the connectors as solution components and deploy the components by using ALM pipelines.
+
+C. Maintain connector definitions in environment variables.
+
+D. Export and import the connectors between the environments as unmanaged solutions.
+
+---
+
+
+Correct Answer: C
+
+Explanation/Reference:
+
+Explanation:
+
+To implement a robust Application Lifecycle Management (ALM) process for Microsoft Copilot Studio agents using custom connectors, you must leverage Solutions and Environment Variables to ensure consistency and governance.
+
+1. Solution-Based Management
+
+Always develop your custom connectors and Copilot Studio agents within a Power Platform Solution. This allows you to package all related components (connectors, environment variables, and agents) as a single unit for deployment across your ALM pipeline (Dev → Test → Prod).
+
+4. Implementing Environment Variables
+
+To maintain consistent definitions and meet governance requirements, externalize environment-specific values using Environment Variables:
+
+Host and Base URL: Use environment variables for the API endpoint (e.g., api.dev.enterprise.com vs. api.prod.enterprise.com) to avoid manual edits during deployment.
+
+Security Credentials: For OAuth settings like Client ID and Client Secret, use environment variables with the Secret data type.
+
+Azure Key Vault Integration: For high-security enterprise APIs, store secrets in Azure Key Vault and reference them via secret environment variables to ensure traceability and governance.
+
+
+### UESTION 7
+
+A company plans to implement an AI solution that will contain a Microsoft Copilot Studio agent and a Microsoft Foundry agent. The solution will be stored in a source code repository.
+
+You need to recommend a deployment method for each agent. The solution must meet the following requirements:
+
+A test environment must be used before a deployment to production. Production must be isolated from development and testing.
+
+The deployment must be repeatable and fully automated.
+
+The solution must NOT require manual intervention.
+
+Which deployment method should you recommend for each agent? To answer, select the appropriate options in the answer area.
+
+
+Answer Area
+
+*   **Copilot Studio:**
+    *   [ ] Export from the source code repository and import to the target environment.
+    *   [ ] Use a Bicep file.
+    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+
+*   **Microsoft Foundry:**
+    *   [ ] Use a Bicep file.
+    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+    *   [ ] Use an Azure DevOps pipeline.
+
+
+----
+
+
+Explanation/Reference:
+
+Explanation:
+
+Box 1: Use a Microsoft Power Platform deployment pipeline
+
+Box 2: Use a Bicep file
+
+
+Box 1: Use a Microsoft Power Platform deployment pipeline Copilot Studio agent The preferred deployment method is to use a Microsoft Power Platform deployment pipeline.
+
+Microsoft Power Platform pipelines are specifically designed to meet your requirements for a secure, automated, and repeatable application lifecycle management (ALM) process for Copilot Studio agents: Box 2: Use a Bicep file Microsoft Foundry agent In the scenario described for a Microsoft Foundry agent, the preferred deployment method is to use a Bicep file.
+
+This approach is best suited for your requirements because:
+
+Infrastructure as Code (IaC): Azure Bicep allows you to define your entire environment—including the Foundry hub, projects, and model deployments—as code stored in your source repository.
+
+Automation & Repeatability: Bicep files integrate directly with GitHub Actions or Azure Pipelines, enabling fully automated, repeatable deployments without manual intervention.
+
+Environment Isolation: You can use Bicep to provision distinct, isolated resources for development, testing, and production by parameterizing the deployment for each environment.
+
+Suitability: While Power Platform pipelines are used for Copilot Studio agents, Foundry-based agents are Azure resources where Bicep is the native and more powerful automation tool for managing the underlying infrastructure and model endpoints
+
+
