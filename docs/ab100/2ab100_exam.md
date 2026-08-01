@@ -4471,7 +4471,9 @@ Box 1: Use a Microsoft Power Platform deployment pipeline
 Box 2: Use a Bicep file
 
 
-Box 1: Use a Microsoft Power Platform deployment pipeline Copilot Studio agent The preferred deployment method is to use a Microsoft Power Platform deployment pipeline.
+Box 1: Use a Microsoft Power Platform deployment pipeline 
+
+Copilot Studio agent The preferred deployment method is to use a Microsoft Power Platform deployment pipeline.
 
 Microsoft Power Platform pipelines are specifically designed to meet your requirements for a secure, automated, and repeatable application lifecycle management (ALM) process for Copilot Studio agents: Box 2: Use a Bicep file Microsoft Foundry agent In the scenario described for a Microsoft Foundry agent, the preferred deployment method is to use a Bicep file.
 
@@ -4486,3 +4488,1519 @@ Environment Isolation: You can use Bicep to provision distinct, isolated resourc
 Suitability: While Power Platform pipelines are used for Copilot Studio agents, Foundry-based agents are Azure resources where Bicep is the native and more powerful automation tool for managing the underlying infrastructure and model endpoints
 
 
+Box 2: Use a Bicep file 
+
+
+Microsoft Foundry agent 
+
+
+In the scenario described for a Microsoft Foundry agent, the preferred deployment method is to use a Bicep file.
+
+This approach is best suited for your requirements because:
+
+Infrastructure as Code (IaC): Azure Bicep allows you to define your entire environment—including the Foundry hub, projects, and model deployments—as code stored in your source repository.
+
+Automation & Repeatability: Bicep files integrate directly with GitHub Actions or Azure Pipelines, enabling fully automated, repeatable deployments without manual intervention.
+
+Environment Isolation: You can use Bicep to provision distinct, isolated resources for development, testing, and production by parameterizing the deployment for each environment.
+
+Suitability: While Power Platform pipelines are used for Copilot Studio agents, Foundry-based agents are Azure resources where Bicep is the native and more powerful automation tool for managing the underlying infrastructure and model endpoints.
+
+
+### QUESTION 8 
+
+A company has a Microsoft Copilot Studio prompt-and-response agent. You need to ensure that the agent meets the following requirements:
+
+Provides effective and relevant responses
+
+Provides conversational outcomes Which metric should you use for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Answer Area
+
+*   **Copilot Studio:**
+    *   [ ] Export from the source code repository and import to the target environment.
+    *   [ ] Use a Bicep file.
+    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+
+*   **Microsoft Foundry:**
+    *   [ ] Use a Bicep file.
+    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+    *   [ ] Use an Azure DevOps pipeline.
+
+
+----
+
+Box 1: Generated answers rate and quality
+
+Box 2: Satisfaction
+
+
+**Box 1: Generated answers rate and quality** 
+
+Provides effective and relevant responses:
+
+To ensure your Microsoft Copilot Studio agent provides effective and relevant responses, you should focus on the Generated Answer Rate and Quality metrics found in the Analytics dashboard. These metrics help you identify where the agent is succeeding and where knowledge gaps exist.
+
+Key Quality Metrics Generated Answer Rate: Measures the frequency with which the agent successfully triggers a generative response from its knowledge sources.
+
+Response Quality (Good vs. Poor): Copilot Studio automatically labels a sample of responses as "Good" or "Poor" quality based on AI assessment of relevance, completeness, and grounding.
+
+Poor Quality Reasons: If a response is labeled "Poor," the system provides specific reasons, such as being incomplete, irrelevant, or not fully grounded.
+
+Unanswered Questions: Tracks queries the agent could not answer, helping you identify missing documentation or topics.
+
+
+
+**Box 2: Satisfaction**
+
+Provides conversational outcomes
+
+To ensure your Microsoft Copilot Studio prompt-and-response agent provides optimal conversational outcomes, you should use the Customer Satisfaction (CSAT) metric.
+
+
+### QUESTION 9 
+
+A company extends Copilot in Microsoft Dynamics 365 Customer Service.
+
+You need to recommend an automated application lifecycle management (ALM) process so that the Copilot components can be safely developed, tested, and promoted to production.
+
+Which two actions should you include in the ALM process? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Use an unmanaged solution in production.
+
+B. Rebuild the agents in each environment.
+
+C. Use Microsoft Power Platform pipelines.
+
+D. Include the components in a solution.
+
+E. Store the agent transcripts in source control.
+
+
+-----
+
+
+Correct Answer: CD Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To implement an automated Application Lifecycle Management (ALM) process for extending Microsoft Dynamics 365 Customer Service with Copilot, you should leverage Power Platform solutions and pipelines. This approach ensures that custom agents, knowledge sources, and connector actions are developed and promoted safely across environments.
+
+Tools used include:
+
+Power Platform Pipelines: Automates the deployment process across environments.
+
+To automate the application lifecycle management (ALM) for Copilot components within Microsoft Dynamics 365 Customer Service, follow this structured process using Power Platform pipelines and solutions:
+
+1. Solution-Centric Development
+
+All Copilot components (agents, topics, custom actions, and connector plugins) must be developed within a Power Platform solution.
+
+Create or Select a Solution: In Copilot Studio or the Power Apps maker portal, ensure you are working within an unmanaged solution in your Development environment.
+
+Add Components: When you create new agents or actions in Microsoft Copilot Studio, they are automatically associated with the preferred solution you have set, ensuring they are portable.
+
+2. Pipeline Configuration
+
+Power Platform pipelines democratize ALM by providing a built-in CI/CD experience directly within the maker portal.
+
+
+Incorrect:
+
+[Not A] Use Managed Solutions for Production: Export and deploy solutions as managed when promoting to test or production environments to prevent unauthorized direct changes in those environments and ensure a consistent state.
+
+### QUESTION 10 
+
+You are designing a testing solution for a Microsoft Copilot Studio agent that integrates with Microsoft Dynamics 365 Customer Service and Dynamics 365 Sales.
+
+You need to design end-to-end scenarios to test the agent's ability to perform the following actions:
+
+- Coordinate tasks and data interactions across both Dynamics 365 apps.
+- Interpret user input and provide contextually relevant outputs.
+
+Which test scenario and metric should you include in the design? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+*   **Copilot Studio:**
+    *   [ ] Export from the source code repository and import to the target environment.
+    *   [ ] Use a Bicep file.
+    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+
+*   **Microsoft Foundry:**
+    *   [ ] Use a Bicep file.
+    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+    *   [ ] Use an Azure DevOps pipeline.
+
+
+----
+
+Box 1: Run task-based scenarios that involve both apps
+
+Box 2: Track the successful completion of cross-app tasks
+
+
+Box 1: Run task-based scenarios that involve both apps 
+
+Test scenario
+
+Task-Based Testing Scenarios Run these end-to-end scenarios to verify the agent's ability to interpret context and coordinate data: Scenario 1: Cross-Sell Opportunity Discovery Task: While resolving a support case in Customer Service, ask the agent: "Are there any active sales opportunities for this account?".
+
+Success Criteria: The agent retrieves the relevant Opportunity from Sales, summarizes it, and suggests a follow-up action for the sales team.
+
+Scenario 2: Integrated Case/Lead Creation Task: A user mentions a new product interest during a support chat. Command the agent: "Create a lead in Sales based on this support conversation".
+
+Success Criteria: The agent parses the conversation history and creates a Lead record in Sales with the correct customer context.
+
+Scenario 3: Proactive Account Health Check Task: 
+
+
+Before a sales meeting, ask: "Summarize recent support issues for this account".
+
+Success Criteria: The agent identifies open tickets in Customer Service and provides a summary to the Sales professional to prevent walking into a "blind" meeting.
+
+Box 2: Track the successful completion of cross-app tasks Metric
+
+Key Metrics for Success Track these specific metrics in the Copilot Studio Analytics tab or the Power Platform Admin Center:
+
+*-> Resolution Rate (Cross-App): The percentage of sessions where the agent successfully completed a task requiring data from both apps without manual intervention.
+
+Deflection Rate: Reduction in human handoffs for tasks that previously required an agent to switch manually between Sales and Service hubs.
+
+Task Success Threshold: Define a minimum quality score for LLM-based responses to ensure the context provided from the "other" app is accurate.
+
+Agent Assisted Hours Gained: Measure the time saved by the agent performing these cross-app queries versus a human doing so manually.
+
+
+### QUESTION 11 
+
+A company has multiple AI models that support generation of sales transactions.
+
+Each release of the models must be reviewed by a security and compliance team before being deployed to the production environment. The security and compliance team must have access to prior versions to properly determine potential exposures introduced.
+
+You need to recommend a solution to evaluate the impact of each deployment to production. The solution must enhance business continuity.
+
+What should you recommend?
+
+A. Create a central model registry that uses version history.
+
+B. Establish a promotion process by using a quality gate.
+
+C. Implement version control for all the AI system components.
+
+D. Track model retirement schedules to prevent service disruptions.
+
+
+---
+
+
+Correct Answer: C
+
+
+Explanation/Reference:
+
+Explanation:
+
+To ensure business continuity and minimize risks in AI-driven sales transaction systems, implementing comprehensive version control across all system components is a critical requirement. This provides reviewers with a stable baseline to evaluate new releases against older versions, helping identify potential exposures or regressions before they reach production.
+
+Strategic Implementation for AI Version Control Version All Components: Do not limit version control to application code. You must track: *-> Models: Managed iterations including weights and architecture.
+
+Etc.
+
+Benefits for Business Continuity Predictability: Standardized versioning makes AI behavior more auditable and scalable.
+
+Disaster Recovery: Allows teams to quickly reproduce or restore any previous environment state during a failure.
+
+Regulatory Compliance: Provides the necessary evidence of "what the AI was instructed to do" at any given point, which is mandatory for regulated financial environments.
+
+
+### QUESTION 12 
+
+A company has an AI solution that uses a Microsoft Copilot Studio agent.
+
+You need to monitor the agent's performance. The solution must meet the following requirements:
+
+- Monitor the agent's telemetry in near-real-time (NRT).
+- Download transcripts of full conversations.
+- Monitor the agent's usage and performance.
+
+What should you use for each requirement? To answer, drag the appropriate options to the correct requirements. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+**Options**
+
+- Application Insights
+- Copilot Studio
+- Log Analytics
+- Microsoft Power Apps
+
+**Answer Area**
+
+- Monitor the agent's telemetry in NRT:
+- Download transcripts of full conversations:
+- Monitor the agent's usage and performance:
+
+**Options**
+
+--------
+
+Box 1: Application Insights
+
+Box 2: Microsoft Power Apps
+
+
+**Box 1: Application Insights **
+
+
+Monitor the agent's telemetry in near-real-time (NRT).
+
+To monitor Microsoft Copilot Studio agent performance and telemetry in near-real-time (NRT), the best tool to use is Azure Application Insights.
+
+By connecting your Copilot Studio agent to an Azure Application Insights instance, you can capture detailed runtime data, including user messages, topics triggered, and custom events as they happen.
+
+**Box 2: Microsoft Power Apps**
+
+
+Download transcripts of full conversations.
+
+To monitor Microsoft Copilot Studio agent performance, you can download full conversation transcripts for the last 29 days using the Power Apps portal to analyze user interactions. Access Dataverse via Power Apps, navigate to tables, select ConversationTranscript, and export the data as a CSV file to identify engagement, resolution, and escalation patterns.
+
+Steps to Download Transcripts via Power Apps:
+
+1. Sign in to make.powerapps.com.
+
+2. Select the correct environment in the top right corner.
+
+3. In the side menu, select Tables (or Data > Entities in older views).
+
+4. Search for and select the ConversationTranscript table.
+
+5. Select Export data from the top menu.
+
+6. Once compiled, select Download exported data to save the file.
+
+**Box 3: Copilot Studio** 
+
+Monitor the agent's usage and performance.
+
+To monitor a Microsoft Copilot Studio agent's usage and performance, you can use the built-in Analytics page in Copilot Studio, which provides comprehensive data on key metrics, conversation outcomes, and user satisfaction.
+
+
+### QUESTION 13 
+
+A company deploys a Microsoft Copilot Studio agent that integrates with a Microsoft Power Automate desktop flow.
+
+You need to recommend a testing solution that meets the following requirements:
+
+Test cases must validate the most recent changes to the agent before the agent is released.
+
+The flow must be validated as part of the agent's orchestration.
+
+What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
+
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+Answer Area
+
+Validate the most recent changes to the agent before release:
+
+- Publish the agent to a channel and test the agent on live users.
+- Run tests against the latest unpublished version of the agent.
+- Run tests against the production version of the agent.
+
+Validate the flow as part of the agent's orchestration:
+
+- Add the flow to the agent as a tool.
+- Add the flow to a canvas app.
+- Use the Power Automate for desktop console.
+
+------
+
+
+**Box 1: Run test against the latest unpublished version of the agent**
+
+**Box 2: Use the Power Automate for desktop console**
+
+
+The flow must be validated as part of the agent's orchestration.
+
+To ensure your Microsoft Power Automate desktop flow is correctly validated for orchestration within a Microsoft Copilot Studio agent, follow these steps using the Power Automate for desktop console and the Copilot Studio designer:
+
+
+1. Validate via Power Automate for Desktop Console
+
+
+Run a Local Test: Open the Power Automate for desktop console, select your flow, and click the Start button to run it as a "local attended" flow. This confirms that the logic and UI selectors work correctly in your environment.
+
+Check Variables: Ensure that any Input and Output variables are properly defined. These are critical for passing data between the cloud-based agent and the desktop machine.
+
+Monitor Connectivity: Use the Troubleshooter within the console (under Help > Troubleshooter) to diagnose any connectivity issues with the cloud runtime, ensuring the agent can trigger the desktop flow.
+
+2. Validate the Integration in Copilot Studio
+
+
+### QUESTION 14 
+
+
+A company has a Microsoft Copilot Studio agent that provides answers based on a knowledge base for customer support.
+
+Users report that, occasionally, the agent provides inaccurate answers.
+
+You need to use metrics from the Analytics tab in Copilot Studio to identify the cause of the inaccuracies.
+
+Which two options should you use? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. survey results
+
+B. session information and session outcomes
+
+C. topic usage and topics with low resolution
+
+D. engagement, resolution, and escalation rates
+
+E. quality of generated answers
+
+----
+
+Correct Answer: CD
+
+Explanation/Reference:
+
+Explanation:
+
+[C] You can use the Analytics dashboard to identify and fix inaccurate responses by focusing on specific performance signals:
+
+*-> Topics with Low Resolution: This metric identifies individual topics where sessions frequently end without a successful outcome. A low resolution rate often indicates that the topic's logic is flawed, the content is outdated, or it fails to address the user's specific intent.
+
+*-> Topic Usage: High usage of certain topics combined with low resolution or high escalation rates points to critical knowledge gaps. Use this to prioritize which parts of your knowledge base need immediate refinement.
+
+
+Unrecognized Utterances: Review these to find user phrases that didn't trigger any custom topic, indicating missing content or the need for new trigger phrases.
+
+Analyze User Questions by Theme: Copilot Studio uses AI to group generative responses into themes. You can review these clusters to see which themes have poor response quality and need better grounding or data hygiene.
+
+User Feedback (Thumbs Up/Down): Review specific messages with negative feedback in the Analytics tab to understand exactly where the AI is hallucinating or providing incomplete data.
+
+
+[D] In Microsoft Copilot Studio, you can use analytics to pinpoint why your agent is providing inaccurate answers by following a structured improvement checklist.
+
+Using Metrics to Locate Problems *-> Engagement Rate: A low engagement rate often indicates that your triggers are misconfigured or too broad, causing the agent to initiate the wrong topic or fail to recognize user intent entirely.
+
+*-> Resolution Rate: Identify specific topics with low resolution. If a topic has a high volume of sessions but fails to reach a "Resolved" state, it usually means the knowledge source is outdated, mismatched, or the generative answers are not grounded properly.
+
+*-> Escalation Rate: High escalation rates for particular topics are "red flag" drivers. Use the Escalation Rate Drivers chart to see which topics most frequently force a hand-off to a human agent, indicating where the AI's knowledge or logic is insufficient.
+
+
+Incorrect:
+
+[Not B] To locate and resolve inaccuracies in your Microsoft Copilot Studio agent, you can leverage the Analytics tab to examine session data and outcomes.
+
+1. Use Session Outcomes to Identify Failure Points The Analytics dashboard categorizes "Engaged" [D] sessions into three primary outcomes that highlight where the agent is failing:
+
+Escalated: These sessions reached the "Escalate" [D] system topic or a "Transfer Conversation" node. High escalation rates for specific topics often indicate that the knowledge base lacks the depth to answer those queries.
+
+Abandoned: These sessions ended without being resolved or escalated [D]. This often happens when users get frustrated by repetitive or inaccurate answers and close the chat.
+
+Resolved [D]: These are successful sessions. If a session is marked Resolved (Confirmed), the user explicitly verified the answer was helpful. If it is Resolved (Implied), the agent assumed success because the user didn't ask further questions, which can sometimes mask inaccuracies.
+
+
+#### QUESTION 15
+
+
+A company uses a fine-tuned Microsoft Foundry model that requires frequent updates as new customer feedback becomes available.
+
+You need to design an application lifecycle management (ALM) process that meets the following requirements:
+
+Data changes must be tracked and versioned.
+
+The model must be retrained consistently by using approved training data.
+
+Which two actions should you include in the design? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point. 
+
+
+A. Associate the storage location to the fine-tuning job.
+
+B. Create a content filter.
+
+C. Store the training data in Azure Files.
+
+D. Upload the training data to Microsoft Foundry data files
+
+E. Store the training data in Azure Blob Storage that has version control enabled.
+
+-----
+
+
+Correct Answer: DE Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To implement a new Application Lifecycle Management (ALM) process for your fine-tuned Microsoft Foundry model, you can leverage Azure Blob Storage for raw data versioning and Azure AI Foundry (formerly Azure AI Studio) for managed data assets and model retraining.
+
+1. Data Tracking and Versioning in Azure Blob Storage Enable blob versioning to automatically maintain a history of your training data.
+
+Enable Versioning: In the Azure portal, navigate to your storage account under Data management > Data protection and select Enable versioning for blobs.
+
+Immutable Tracking: This ensures that every update to a training file creates a new version, allowing you to restore or reference specific historical states of your dataset for auditability.
+
+2. Uploading and Managing Data in Microsoft Foundry Integrate your versioned blob storage with Microsoft Foundry to create "Data assets" that the model can use for retraining.
+
+Reference:
+
+### QUESTION 16
+
+A company deploys agents that generate responses by using Azure OpenAI resources. The agents are deployed to both the United States and Europe.
+
+You need to recommend a governance solution that meets the following requirements:
+
+Enforces the deployment of the resources to only approved Azure regions Provides continuous compliance verification of the resources
+
+What should you include in the recommendation for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+Hot Area:
+
+Answer Area
+
+Enforces the deployment of the resources to only approved regions:
+
+- Azure Monitor
+- Azure Policy
+- Microsoft Defender for Cloud
+- Microsoft Purview
+- Microsoft Sentinel
+
+Provides continuous compliance verification of the resources:
+
+- Azure Monitor
+- Azure Policy
+- Microsoft Defender for Cloud
+- Microsoft Purview
+
+----
+
+Box 1: Azure Policy
+
+Box 2: Microsoft Purview
+
+
+Box 1: Azure Policy 
+
+
+Enforces the deployment of the resources to only approved Azure regions To enforce the deployment of Azure OpenAI resources to only approved Azure regions (e.g., specific regions in Europe and the USA), you should use Azure Policy with the "Allowed locations" policy definition.
+
+Here is the breakdown of how to implement this control:
+
+Primary Tool: Azure Policy Azure Policy allows you to define rules that restrict where resources can be created.
+
+Policy Rule: Use the Allowed locations policy definition.
+
+Implementation: Assign this policy at the Subscription or Resource Group level to restrict developers to only using permitted regions (e.g., East US, West Europe).
+
+Effect: If a user attempts to deploy an Azure OpenAI resource in a non-approved region, the deployment will be blocked.
+
+
+**Box 2: Microsoft Purview** 
+
+Provides continuous compliance verification of the resources To provide continuous compliance verification for Azure OpenAI resources across Europe and the USA, you should use Microsoft Purview Compliance Manager and Azure Policy.
+
+Microsoft Purview Compliance Manager: This tool provides a risk-based compliance score and continuous monitoring against global regulations such as the EU AI Act, GDPR, and various US standards. It offers specific regulatory templates to help you assess and implement controls for generative AI applications. Azure Policy: Use this to enforce organizational standards and assess compliance at scale. You can apply built-in policy definitions for Azure AI services to automatically audit or deny non-compliant resource configurations, such as ensuring resources are restricted to specific regions (e.g., only EU or USA) or have private network access enabled.
+
+
+### QUESTION 17 
+
+A company has an AI solution that uses Azure OpenAI models.
+
+You need to recommend a governance solution that monitors and audits changes to model configurations and data usage. The solution must minimize administrative effort.
+
+What should you include in the recommendation?
+
+A. Azure Monitor
+
+B. Azure Stream Analytics
+
+C. Azure API Management
+
+D. Azure Policy
+
+E. Microsoft Purview
+
+
+----
+
+
+Correct Answer: A Section: (none) Explanation/Reference:
+
+Explanation:
+
+Azure Monitor is the primary service for monitoring and auditing Azure OpenAI model configurations and data usage. By combining Azure Monitor with diagnostic settings, you can track management operations, analyze token consumption, and audit prompt/response data.
+
+
+### QUESTION 18 
+
+A company uses Azure OpenAI models that use grounding data from Microsoft Fabric for agents. The models are fine-tuned by using proprietary datasets.
+
+You need to design a governance solution that meets the following requirements:
+
+Restricts access to the grounding data to only assigned roles Restricts model fine-tuning to only the AI engineering team What should you include in the design? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+**Answer Area**
+
+Restricts access to the grounding data:
+
+- Azure AI Content Safety  
+- Azure Monitor alerts  
+- Azure Policy compliance rules  
+- Microsoft Purview access policies  
+
+Restricts model fine-tuning:
+
+- Azure Policy compliance rules  
+- Azure Resource Manager (ARM) resource locks  
+- Microsoft Entra Conditional Access  
+- Role-based access control (RBAC) in Microsoft Foundry
+
+**Explanation/Reference:**
+
+Explanation:
+
+Box 1: Microsoft Purview Access Policies Restricts access to the grounding data to only assigned roles
+
+To secure and manage grounding data from Microsoft Fabric for Azure OpenAI agents and fine-tuned models, you can use Microsoft Purview to enforce role-based access and data protection policies.
+
+Note:
+
+Securing Data with Microsoft Purview & RBAC
+
+Access Control Policies: Microsoft Purview enables role-based access controls (RBAC) over Fabric items, ensuring that when an AI agent retrieves data, it only accesses information the user is permitted to see.
+
+Sensitivity Labels: Data in Fabric can be labeled (e.g., "Confidential"). Purview policies can restrict AI agents from accessing or acting upon content that violates these security labels.
+
+OneLake Security: Fine-grained security in Fabric (Row-Level Security and Column-Level Security) is automatically honored by agents, guaranteeing that even with access to a dataset, sensitive PII (Personally Identifiable Information) can be restricted.
+
+Incorrect:
+
+* Azure AI Content safety
+
+You cannot use Azure AI Content Safety to restrict access to grounding data based on assigned roles. Azure AI Content Safety is used for content filtering (detecting harmful text/images, jailbreak attempts, and ungroundedness/hallucinations).
+
+* Azure Policy compliance rules.
+
+Azure Policy can be used to enforce compliance rules, such as restricting model deployments to specific regions or ensuring private networking is used.
+
+Box 2: Role-based access control (RBAC) in Microsoft Foundry Restricts model fine-tuning to only the AI engineering team
+
+Azure role-based access control (Azure RBAC) is used to manage and restrict access to AI resources, including the ability to perform fine-tuning operations. Platform administrators can assign specific roles and permissions (e.g., to AI engineers or data scientists) and use Azure Policy to implement fine-grained control over who can initiate fine-tuning jobs or deploy custom models within the Azure AI Foundry environment. This ensures the governance of the fine-tuning process.
+
+
+### QUESTION 19
+
+A company has a Microsoft Copilot Studio agent that has been in production for three months.
+
+The agent has received positive feedback from users.
+
+You need to identify the number of questions unanswered by the agent and the number of abandoned sessions between the users and the agent.
+
+Which Copilot Studio insights should you use? To answer, drag the appropriate insights to the correct requirements. Each insight may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+Insights
+
+- Conversation outcomes  
+- Generated answer rate and quality  
+- Reactions  
+- Survey results  
+
+Answer Area
+
+- The number of unanswered questions:  
+- The number of abandoned sessions:  
+
+Insight
+
+----
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Generated answer, rate and quality** 
+
+The number of questions unanswered
+
+In Microsoft Copilot Studio, you can find the number of unanswered questions by navigating to the Analytics page and viewing the Generated answer rate and quality section.
+
+This specific analytics area provides insights into how often the agent successfully generates a response versus when it fails to do so.
+
+
+Box 2: Conversation outcomes 
+
+The number of abandoned sessions between the users and the agent
+
+To find the number of abandoned sessions in a Microsoft Copilot Studio agent's analytics, you can use the Conversation outcomes chart within the Analytics dashboard. 
+
+This chart specifically tracks and visualizes sessions with an "Abandoned" outcome.
+
+
+### QUESTION 20 
+
+You are evaluating a Microsoft Copilot Studio agent that supports Microsoft Dynamics 365 Customer Service representatives.
+
+You need to recommend a testing solution that meets the following requirements:
+
+Evaluates agent effectiveness during active sessions Validates whether the agent delivers accurate and helpful responses Provides measurable, actionable insights for continuous improvement
+
+What should you recommend?
+
+A. Track resolution, deflection, and accuracy by using dashboards and use scripts to ensure consistent responses.
+
+B. Perform load testing to validate how the agent scales under a high chat volume.
+
+C. Review historical tickets to find agents that have the shortest resolution times.
+
+D. Measure uptime and page load times.
+
+----
+
+
+Correct Answer: A
+
+
+Explanation/Reference:
+
+Explanation:
+
+To establish a testing and evaluation setup for your Microsoft Copilot Studio agent within Dynamics 365 Customer Service, you should leverage specialized AI-driven evaluation agents and integrated analytics dashboards.
+
+1. Evaluate Effectiveness and Accuracy Use the Quality Evaluation Agent in Dynamics 365 to automate the assessment of agent performance during and after active sessions.
+
+2. Track Measurable Insights with Dashboards Utilize the built-in and customizable dashboards to monitor key performance indicators (KPIs) like resolution and deflection.
+
+3. Ensure Consistency with Agent Scripts To maintain uniform and company-endorsed communication, implement Agent Scripts within the Customer Service Admin center.
+
+
+### QUESTION 21 
+
+A company uses multiple Microsoft Copilot Studio agents across different channels.
+
+You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.
+
+What should you include in the recommendation?
+
+A. Application Insights
+
+B. Azure Advisor
+
+C. Azure DevOps
+
+D. Microsoft Dynamics 365 Customer Voice
+
+
+----
+
+Correct Answer: A Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To achieve comprehensive monitoring, telemetry, and performance insights for Microsoft Copilot Studio agents across different channels, you should integrate them with Azure Application Insights.
+
+Integrating Application Insights provides a centralized view of agent health, user interactions, topic performance, and latency, which is crucial for monitoring multi-channel deployments.
+
+
+
+### QUESTION 22 
+
+A company has an AI solution built by using Microsoft Copilot Studio and Power Platform. The solution is used by the company's sales, marketing, and customer service teams.
+
+You are performing a return on AI investment (ROAI) analysis to evaluate the impact of the solution.
+
+You need to identify which measurable business drivers to include in the analysis.
+
+Which two business drivers should you identify? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. the reduced average case resolution time
+
+B. market capitalization
+
+C. economic market predictability
+
+D. increased employee productivity
+
+E. brand awareness
+
+
+------
+
+Correct Answer: AD Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+[A] Reducing the average case resolution time is a high-impact, measurable business driver for an AI investment (ROAI) analysis, particularly when implementing Microsoft Copilot Studio and Power Platform for local sales, marketing, and customer service teams.
+
+According to Microsoft and industry research, this metric directly translates to reduced operational costs, increased agent productivity, and higher customer satisfaction.
+
+[D] Increased employee productivity is a primary and highly measurable business driver for an AI investment (ROAI) analysis involving Microsoft Copilot Studio and Power Platform, particularly for sales, marketing, and customer service teams. These tools allow organizations to automate manual tasks, streamline workflows, and enhance content generation, directly resulting in time savings and efficiency gains.
+
+Incorrect:
+
+[Not B] While market capitalization is a macro-level indicator that reflects investor confidence in a company's AI maturity, it is generally not considered a direct, measurable business driver for a specific internal project's Return on AI Investment (ROAI). Market cap is influenced by many external factors beyond a single implementation of Microsoft Copilot Studio or Power Platform.
+
+
+### QUESTION 23 
+
+A company has a Microsoft Foundry agent that summarizes customer feedback and recommends products to customers. The agent references data from multiple knowledge sources.
+
+Users report that the agent response time is slow.
+
+Telemetry data shows that the agent frequently reaches its token usage limit.
+
+You need to recommend a solution to reduce token usage without degrading the quality of the generated responses.
+
+What should you recommend?
+
+A. Chunk documents during indexing.
+
+B. Reduce the number of knowledge sources used by the agent.
+
+C. Reconfigure the prompts to limit the amount of retrieved content from the knowledge sources.
+
+D. Lower the maximum token usage limit for the responses.
+
+
+-----
+
+
+Correct Answer: C Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To reduce token usage and improve performance in a Microsoft Foundry agent with slow response times and high token usage, reconfigure the prompts to limit the amount of retrieved content from the knowledge sources. This directly reduces the input token count in the prompt, addressing the bottleneck without removing valuable sources.
+
+To reduce token usage while maintaining quality, you must transition from a "wide-net" retrieval strategy to a highly filtered, multi-stage retrieval process. The goal is to ensure that every token entering the prompt adds unique, high-value information.
+
+The Root Cause Redundancy: Multiple knowledge sources often contain overlapping feedback.
+
+Noise: Raw data often includes metadata or conversational filler.
+
+Context Bloat: Large retrieval windows push the agent toward its limit and slow down processing.
+
+
+## QUESTION 24 
+
+A company has Microsoft Power Platform development, staging, and production environments. Each environment has its own Microsoft Dataverse tables and Azure AI Search index.
+
+You are designing an application lifecycle management (AIM) process to deploy a Microsoft Copilot Studio agent between the environments.
+
+The company has a Copilot Studio agent named Agent1 in development. Agent1 uses the following grounding data sources:
+
+A Dataverse table named CustomerOrders An Azure AI Search index named customer-knowledge
+
+You need to deploy Agent1 to production. The solution must ensure that the agent uses the production grounding data sources, minimizes downtime, and handles credentials and endpoints securely.
+
+What should you include in the deployment package solution, and what should you reconfigure after the deployment? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+
+
+Include in the deployment package solution:
+
+- Agent1 only  
+- The data sources only  
+- Agent1 and the data source connections  
+- Agent1 and references to the data sources  
+- Agent1, the data sources, and the data source connections  
+
+Reconfigure after the deployment:
+
+- The Dataverse connection only  
+- The Azure AI Search connection only  
+- The Dataverse and Azure AI Search connections  
+- The Agent1 configuration  
+- The environment variables
+
+
+-----
+
+Box 1: Agent1 and references to the data sources
+
+Box 2: The environment variables
+
+
+Box 1: Agent1 and references to the data sources 
+
+
+Include in the deployment package solution
+
+To deploy a Microsoft Copilot Studio agent with Dataverse and Azure AI Search dependencies across environments, you must use a Managed Solution as your primary deployment package. This ensures environment-specific configurations are handled without hardcoding, maintaining security and minimizing downtime.
+
+Key Components of the Deployment Package Your solution package must include the following components to ensure a seamless transition between development, staging, and production:
+
+
+*-> Copilot Studio Agent: The core bot configuration and its topics.
+
+*-> Connection References: Placeholders that link the agent to specific connectors (e.g., Azure AI Search, Dataverse) in each environment.
+
+Environment Variables: Used to store the Azure AI Search Endpoint URL and Index Name. Dataverse Table Metadata: If using custom tables, include the table definitions (schema) within the solution.
+
+Power Automate Flows: If flows are used to bridge the agent and search index, they must be included in the same solution.
+
+
+**Box 2: The environment variables** 
+
+Reconfigure after the deployment
+
+To successfully deploy a Copilot Studio agent across environments while maintaining the integrity of its data grounding, you must reconfigure the Connection References and Environment Variables within the target environment.
+
+In a professional ALM (Application Lifecycle Management) pipeline, you should not manually "edit" the agent after deployment. Instead, the solution should be designed to use placeholders that are updated during the import process.
+
+Update Environment Variables Purpose: Swaps out API endpoints and resource names.
+
+Action: Provide the production values for:
+
+Azure AI Search Endpoint: (e.g., https://windows.net) Index Name: The specific name of the production index.
+
+API Keys: Ideally stored in Azure Key Vault and referenced via an environment variable.
+
+Benefit: Allows the same agent logic to run in any environment by simply changing the variable values
+
+
+### QUESTION 25 
+
+A company has a Microsoft Copilot Studio agent that uses generative AI to assist Microsoft Dynamics 365 Customer Service representatives.
+
+The agent currently exhibits a low resolution rate and a high escalation rate.
+
+You need to identify the issue.
+
+What should you use?
+
+A. the Agent dashboard of Dynamics 365 Customer Service historical analytics
+
+B. the Insights tab from the Search & intelligence settings of the Microsoft 365 admin center
+
+C. the Copilot hub in the Power Platform admin center
+
+D. the Analytics tab in Copilot Studio
+
+----
+
+Correct Answer: D Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To locate the problem behind a low resolution and high escalation rate in your Copilot Studio agent, you should focus on a multi-layered diagnostic approach. High escalation typically signals that the agent is hitting a "Fallback" trigger or failing to find grounded answers in its knowledge base.
+
+Core Diagnostic Steps Analyze Analytics Dashboards *-> Use the built-in Copilot Studio Analytics tab to identify high-level trends.
+
+Escalation Rate Drivers: Look for the top 5–10 topics causing escalations. Improving these key topics by even 10% can significantly boost overall deflection
+
+Outcome Reason: Check the outcomeReason in the ConversationTranscript table in Dataverse to see if sessions end due to abandonment, system errors, or explicit user requests for a human.
+
+
+### QUESTION 26 
+
+A company has a Microsoft Foundry generative AI model.
+
+You need to evaluate the model's output to measure the overall quality and coherence of generated responses. The evaluation must use GPT-4o as a judge and return a numeric score for each output. Which type of metric should you use?
+
+A. AI quality (NLP)
+
+B. risk and safety
+
+C. Groundedness
+
+D. AI quality (AI assisted) Correct Answer: D Section: (none) Explanation/Reference:
+
+Explanation:
+
+To evaluate overall quality and coherence in Microsoft Foundry, use AI-assisted quality evaluators. These metrics use a "judge" model (like GPT-4o) to score responses on a numeric Likert scale (typically 1 to 5). Recommended Metric: Coherence The Coherence evaluator is the most direct fit for measuring how well-structured and logical a response is.
+
+What it measures: The collective quality of all sentences and how they flow together.
+
+Numeric Score: Returns an integer from 1 (Poor) to 5 (Excellent).
+
+Output: Includes a coherence score, a coherence_reason (explanation from the judge), and a pass/fail result based on a threshold (default is 3).
+
+
+QUESTION 27 
+
+
+You use Microsoft Copilot Studio analytics to analyze the performance of a deployed Copilot Studio agent. 
+
+You need to identify which performance metrics to use to measure the following:
+
+- The percentage of engaged sessions that are escalated to a live customer service representative 
+
+- The number of agent queries that cause a knowledge source error What should you identify for each requirement?
+
+To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+The percentage of engaged sessions that are escalated to a representative:
+
+- Answer quality
+- Customer Satisfaction (CSAT) score
+- Engagement rate
+- Escalation rate
+
+The number of agent queries that cause a knowledge source error:
+
+- Answer quality
+- Engagement rate
+- Escalation rate
+
+------
+
+
+Box 1: Escalation rate
+
+
+Box 2: Answer quality
+
+
+Box 1: Escalation rate 
+
+
+The percentage of engaged sessions that are escalated to a live customer service representative To measure the percentage of engaged sessions that are escalated to a live customer service representative in Microsoft Copilot Studio analytics, you should use the Escalation rate metric.
+
+Lowering this percentage is a key objective to improve the overall deflection rate and enhance agent performance.
+
+Definition: An escalated session is an engaged session that ends when the Escalate topic is triggered, or when a Transfer to agent node is reached.
+
+Context: This metric helps you understand the proportion of users who requested to speak to a human or were passed to a representative because the agent couldn't solve their issue.
+
+Where to find it: It is available in the Analytics dashboard within Copilot Studio, specifically under "Escalation Rate Drivers" which shows which topics cause the most escalations.
+
+
+Box 2: Answer quality 
+
+The number of agent queries that cause a knowledge source error When analyzing Microsoft Copilot Studio agent performance, the answer quality performance metric should be used to measure queries that cause a knowledge source error. This AI-driven metric assesses if responses are grounded in provided knowledge, helping to identify, evaluate, and reduce errors in generative answers.
+
+Key Aspects of Copilot Studio Analytics:
+
+Answer Quality: Utilizes Large Language Models (LLMs) to categorize chat messages, focusing on grounding, relevance, and accuracy.
+
+
+Explanation/Reference:
+
+Explanation:
+
+To implement an Application Lifecycle Management (ALM) process for Microsoft Foundry agent deployment, you must integrate Foundry Control Plane Observability into your CI/CD pipeline. This ensures the agent is validated against baseline metrics before reaching production and monitored for drift thereafter.
+
+Pre-Deployment: Baseline Evaluation Before a new agent version is deployed, it must pass a rigorous evaluation stage within your ALM pipeline to prevent performance regressions.
+
+Post-Deployment: Drift & Continuous Monitoring Once deployed, the agent’s performance must be continuously validated against the pre-deployment baseline using Observability in the Control Plane.
+
+Continuous Evaluation: Configure the Control Plane to sample live production traffic and run the same evaluators used during development.
+
+Drift Detection: Monitor for changes in Quality Scores and Accuracy Metrics over time. Significant drops indicate "drift," where real-world usage differs from your training/testing assumptions.
+
+Unified Dashboard: Use the Foundry Monitoring Dashboard to visualize trends in latency, token usage, and accuracy side-by-side.
+
+Alerting: Set up Azure Monitor alerts to notify developers immediately if evaluation scores fall below the established baseline.
+
+
+### QUESTION 29 
+
+You need to recommend a security solution for agents in a Microsoft Power Platform environment.
+
+The agents must use only approved connectors and services. The solution must prevent the agents from accessing sensitive data.
+
+What should you recommend?
+
+A. Configure Azure Monitor to capture connector activity logs.
+
+B. Enable a Microsoft Dataverse audit.
+
+C. Deploy data loss prevention (DLP) policies in Power Platform. 
+
+D. Enable customer-managed keys in Microsoft Dataverse.
+
+
+------
+
+Correct Answer: C Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To secure Microsoft Power Platform agents, deploy DLP policies via the Power Platform Admin Center to categorize connectors as Business, Non-business, or Blocked. This prevents unauthorized data exfiltration by separating sensitive connectors and restricting approved services, ensuring agents only use compliant actions.
+
+Note Key Actions for Agent DLP Policies:
+
+Create Policy: Create a new policy in the Power Platform Admin Center and define its scope.
+
+Categorize Connectors: Classify connectors used by agents (e.g., HTTP, SQL) into Business/Nonbusiness to prevent data sharing between them.
+
+Block High-Risk Connectors: Block unauthorized or risky connectors (e.g., public social media, unapproved AI tools).
+
+Configure Endpoint Filtering: Block specific URLs for HTTP connectors to ensure data only travels to trusted domains.
+
+Apply to Agents: According to Platforms of Power, specific connectors for Copilot Studio can be blocked to limit agent capabilities, such as preventing autonomous triggers.
+
+Quarantine Agents: If agents violate Microsoft Learn policies, 365 Copilot Studio allows quarantining the agents to prevent further data exposure.
+
+
+### QUESTION 30 
+
+A company has an AI business solution that uses Microsoft Copilot Studio agents.
+
+You need to recommend prompt best practices to improve the effectiveness of agent interactions.
+
+Which two actions should you include in the recommendation? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Track the duration of the average user session.
+
+B. Analyze the prompt length distribution.
+
+C. Regularly test and refine the prompts based on user input.
+
+D. Use clear and specific instructions in the prompts.
+
+E. Measure system resource usage during prompt processing.
+
+
+----
+
+
+Correct Answer: CD
+
+Explanation/Reference:
+
+Explanation:
+
+To maximize the effectiveness of Microsoft Copilot Studio agents through prompt engineering, the two best practices you mentioned are critical, along with several key refinements:
+
+1. Use Clear and Specific Instructions in Prompts
+
+Define Goal, Context, and Persona: Provide a clear objective (what to do), necessary context (background information), and a defined persona (e.g., "You are an HR assistant...") to set the tone.
+
+Be Specific and Actionable: Use precise verbs like "search," "summarize," "draft," or "list." Avoid vague instructions. For example, instead of "tell me about sales," use "Summarize Q3 sales performance in the North region".
+
+Use Structured Formats: Utilize Markdown (headings, bullet points, numbered lists) to make instructions easy to scan and parse. Organize instructions into sections like # PURPOSE, ## RESTRICTIONS, and ## ACTIONS.
+
+Provide Examples (Few-Shot Prompting): Include examples of inputs and desired outputs to help the agent understand complex tasks or required formatting.
+
+Define Constraints: Explicitly state what the agent should not do, what information to exclude, or when to decline a request.
+
+
+2. Regularly Test and Refine Prompts Based on User Input
+
+Test within Copilot Studio: Utilize the testing pane to simulate user queries and review agent responses. Experiment with different prompt variations to see which yields the best result.
+
+Use Prompt Advisor: Leverage the Prompt Advisor feature to get a confidence score and feedback on your prompts, which helps identify areas for improvement.
+
+Review Analytics: Regularly check conversation logs, customer feedback (thumbs up/down), and user queries in the analytics dashboard to find where the agent struggles.
+
+Iterate and Improve: Treat prompting as a conversation with the agent. If the first output isn't perfect, refine the instructions, add more context, and try again.
+
+Monitor Performance (Red Teaming): Test edge cases and potential failure modes to ensure the agent remains reliable and secure.
+
+By following these practices, you can make agent behavior more predictable, accurate, and useful for end-users
+
+
+### QUESTION 31 
+
+A company has a cloud-based AI solution that uses Azure OpenAI models.
+
+You need to design a monitoring solution that meets the following requirements:
+
+Monitors performance metrics and operational health for the models
+
+Monitors AI apps and agents for compliance
+
+Uses Azure-native capabilities
+
+Minimizes development effort What should you use for each requirement? To answer, drag the appropriate options to the correct requirements. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**Options**
+
+- Azure API Management
+- Azure Policy
+- Microsoft Defender
+- Azure Monitor
+- Azure Stream Analytics
+- Microsoft Purview
+
+**Answer Area**
+
+Monitors AI app and agents for compliance: [______]
+
+Monitors performance metrics and operational health: [______]
+
+
+-----
+
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Microsoft Purview Monitors** 
+
+
+AI apps and agents for compliance
+
+To monitor Azure OpenAI models and agents for compliance with minimal effort, you can leverage Microsoft Purview through its native integration with Azure AI Foundry. This "turn-key" approach allows security administrators to capture and audit AI interactions without requiring developers to write extensive custom code.
+
+Native Integration: The "Zero-Code" Approach The most efficient way to achieve your goal is by enabling the Microsoft Purview integration directly within your Azure subscription or AI Foundry project.
+
+Turn-on-and-go: Azure Admins can enable a single setting at the subscription level.
+
+Automatic Data Flow: Once enabled, prompts and responses from Azure AI-based apps flow into Purview immediately.
+
+Centralized Hub: Use the Microsoft Purview AI Hub to visualize AI activity and detect sensitive data leaks across your entire tenant.
+
+**Box 2: Azure Monitor** 
+
+
+Monitors performance metrics and operational health for the models
+
+For monitoring Azure OpenAI models with an Azure-native approach and minimal effort, the most adequate solution is Azure Monitor. Specifically, utilizing the Azure OpenAI Insights workbook provides a pre-built, comprehensive dashboard for tracking operational health and performance metrics without custom code.
+
+Azure Monitor (Platform Metrics) Azure Monitor automatically collects "Platform Metrics" for every Azure OpenAI resource at no additional cost or configuration. These provide near real-time visibility into basic operational health:
+
+Total Requests: Track volume and status codes (e.g., 200 Success vs. 429 Rate Limited).
+
+Latency: Monitor "Time to Response" to ensure performance meets user expectations.
+
+Token Consumption: View "Processed Inference Tokens" and "Generated Completion Tokens" to manage costs and quota limits.
+
+
+### QUESTION 32 
+
+
+A company has Microsoft Copilot Studio agents.
+
+The company plans to deploy custom connectors across development, test and production environments. You need to design an application lifecycle management (ALM) process to ensure consistency and prevent direct editing in production.
+
+Which two actions should you include in the design? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+
+A. Deploy managed solutions to production.
+
+B. Deploy unmanaged solutions to production.
+
+C. Manually rebuild the agents in each environment.
+
+D. Move the agents between the environments by using data export and import.
+
+E. Include agents and connectors in a solution.
+
+
+-----
+
+Correct Answer: AD Section: (none) Explanation/Reference:
+
+Explanation:
+
+Core ALM Actions To ensure consistency and governace, include these actions in your design:
+
+1. Environment & Solution Strategy
+
+[A] *-> Three-Environment Model: Establish a dedicated Development (unmanaged), Test/UAT (managed), and Production (managed) environment.
+
+Solution Packaging: Create agents and custom connectors directly inside a Power Platform Solution.
+
+[D] *-> Managed Solutions: Always export your solution as Managed when moving to Test and Production. This locks the components, preventing direct editing in those environments.
+
+
+### QUESTION 33 
+
+A company uses multiple Microsoft Copilot Studio agents across different channels.
+
+You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.
+
+What should you include in the recommendation?
+
+A. Application Insights
+
+B. Microsoft Dynamics 365 Customer Voice
+
+C. Log Analytics
+
+D. Microsoft Purview 
+
+----
+
+Correct Answer: A
+
+Explanation/Reference:
+
+Explanation:
+
+Azure Application Insights (part of Azure Monitor) is the best Microsoft solution for monitoring comprehensive telemetry and performance for Copilot Studio agents across multiple channels.
+
+While Copilot Studio has built-in analytics, Application Insights allows you to centralize data from many different agents and channels into one unified view.
+
+Why Use Azure Application Insights?
+
+Connecting your agents to Application Insights provides deeper technical and operational visibility that the standard dashboard lacks:
+
+Centralized Monitoring: View telemetry for all your agents in a single Azure resource rather than checking each agent individually in Copilot Studio.
+
+Custom Kusto Queries: Use KQL (Kusto Query Language) to run complex analyses, such as identifying common errors, measuring specific topic latency, or tracking custom events.
+
+Real-Time Alerts: Set up proactive alerts to notify you if an agent has a high error rate, spike in latency, or fails to respond.
+
+Enhanced Transcripts: Capture detailed message-level logs, including user prompts and agent responses, to troubleshoot specific conversation failures.
+
+
+### QUESTION 34 
+
+A company has an AI solution named Solution1 that is deployed to the production environment. Solution1 uses an Azure OpenAI model to generate marketing emails for existing customers.
+
+During an internal review, you identify that Solution1 creates different emails depending on the customers’ traits.
+
+You need to recommend a strategy to mitigate the bias. The strategy must adhere to Microsoft responsible AI principles.
+
+What should you recommend?
+
+A. Modify Solution1 to randomly generate emails for different traits.
+
+B. Modify the system instructions of Solution1.
+
+C. Retrain the model by using a larger dataset.
+
+D. Modify the contents of the training dataset.
+
+----
+
+
+Correct Answer: B Section: (none) 
+
+Explanation/Reference:
+
+Explanation:
+
+To reduce bias in your Azure OpenAI email generation system while adhering to Microsoft’s Responsible AI (RAI) Principles, you should implement a multi-layered approach within your System Instructions.
+
+The goal is to move from generic prompts to specific, constraint-based instructions that enforce Fairness and Inclusiveness.
+
+
+### QUESTION 35 
+
+A company has a canvas app named App1 in a Microsoft Power Platform environment named Env1. Env1 uses a customer-managed key for data encryption. App1 connects to multiple data sources to retrieve and update customer and order information.
+
+You need to recommend a solution to add Microsoft Copilot components to App1. 
+
+The solution must NOT modify the current security or encryption configurations of Env1.
+
+What should you include in the recommendation?
+
+A. Modify the data sources of App1 to make them compatible with Copilot.
+
+B. Duplicate App1 and republish the app in Env1.
+
+C. Enable Copilot features for Env1.
+
+D. Move App1 to a new environment that uses Microsoft-managed keys.
+
+
+---
+
+
+Correct Answer: D Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To add Microsoft Copilot components to your canvas app without changing the current environment's security or encryption (Customer-Managed Key), you should move the app to a new environment that uses Microsoft-managed keys.
+
+Core Technical Limitation Microsoft Power Platform environments configured with a Customer-Managed Key (CMK) currently do not support certain Copilot and generative AI features. These features continue to rely on Microsoft-managed encryption keys for their specific internal data processing.
+
+
+### QUESTION 37 
+
+
+After you answer a question in this section, you will NOT be able to return. As a result, these questions do not appear on the Review Screen.
+
+A company has a team that analyzes its customers by using a manual process.
+
+You are designing an AI-based agent to automate and improve the process.
+
+You need to recommend on which platform to build the agent. The solution must meet the following requirements:
+
+Use generative AI to answer common questions. Provide analytics to review AI performance. Identify customer demographics.
+
+Minimize custom development.
+
+Solution: You recommend Microsoft Security Copilot.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+Correct Answer: B Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+Correct:
+
+* You recommend Microsoft Copilot Studio.
+
+Copilot Studio is specifically designed to create customizable AI agents that automate business workflows with minimal coding.
+
+Generative AI Answers: It uses "Generative Answers" to scan your specific data (websites, files, or SharePoint) to answer customer-related questions instantly.
+
+Analytics Dashboard: It includes built-in analytics to track resolution rates, customer satisfaction (CSAT), and overall AI performance.
+
+Customer Demographics: You can configure the agent to extract specific entities (like age, location, or industry) from conversations to build demographic profiles.'
+
+Low-Code/No-Code: It minimizes custom development by providing a visual interface to build logic, rather than writing raw code.
+
+Incorrect:
+
+* You recommend GitHub Copilot.
+
+* You recommend Microsoft Security Copilot.
+
+
+Low-Code/No-Code: It minimizes custom development by providing a visual interface to build logic, rather than writing raw code.
+
+Incorrect:
+
+* You recommend GitHub Copilot.
+
+* You recommend Microsoft Security Copilot.
+
+
+### QUESTION 38
+
+After you answer a question in this section, you will NOT be able to return. As a result, these questions do not appear on the Review Screen.
+
+A company has a team that analyzes its customers by using a manual process.
+
+You are designing an AI-based agent to automate and improve the process.
+
+You need to recommend on which platform to build the agent. The solution must meet the following requirements:
+
+Use generative AI to answer common questions. Provide analytics to review AI performance. Identify customer demographics.
+
+Minimize custom development.
+
+Solution: You recommend Microsoft Copilot Studio.
+
+Does this meet the goal?
+
+A. Yes
+
+B. No
+
+
+----
+
+Correct Answer: A Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+Correct:
+
+* You recommend Microsoft Copilot Studio.
+
+Copilot Studio is specifically designed to create customizable AI agents that automate business workflows with minimal coding.
+
+Generative AI Answers: It uses "Generative Answers" to scan your specific data (websites, files, or SharePoint) to answer customer-related questions instantly.
+
+Analytics Dashboard: It includes built-in analytics to track resolution rates, customer satisfaction (CSAT), and overall AI performance.
+
+Customer Demographics: You can configure the agent to extract specific entities (like age, location, or industry) from conversations to build demographic profiles.' Low-Code/No-Code: It minimizes custom development by providing a visual interface to build logic, rather than writing raw code.
+
+Incorrect:
+
+* You recommend GitHub Copilot.
+
+* You recommend Microsoft Security Copilot.
+
+
+### QUESTION 39 
+
+A company uses multiple Microsoft Copilot Studio agents across different channels.
+
+You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.
+
+What should you include in the recommendation?
+
+A. Microsoft Power BI
+
+B. the Analytics tab in Copilot Studio
+
+C. Log Analytics
+
+D. Azure Advisor
+
+Correct Answer: A Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+Correct:
+
+* Application Insights To achieve comprehensive monitoring, telemetry, and performance insights for Microsoft Copilot Studio agents across different channels, you should integrate them with Azure Application Insights.
+
+Integrating Application Insights provides a centralized view of agent health, user interactions, topic performance, and latency, which is crucial for monitoring multi-channel deployments.
+
+* Microsoft Power BI is the best tool for monitoring comprehensive telemetry data and performance insights across multiple Copilot Studio agents and various channels.
+
+Analytics tab within Copilot Studio offers quick, high-level insights for individual agents, Power BI provides the necessary scalability for enterprise-level, multi-agent monitoring.
+
+Centralized Multi-Agent View: Power BI allows you to create custom dashboards that aggregate data from multiple agents and environments (e.g., using the Power-CAT Agent Insights Hub).
+
+Deep Telemetry Integration: Power BI can ingest detailed session data and chat transcripts, enabling deep analysis of topic triggers, tool execution, and user satisfaction (CSAT) across channels.
+
+Customization and Reporting: You can leverage Power BI templates, such as the Copilot Studio agent report, to analyze trends over long periods, which the built-in analytics tab does not support.Enhanced Monitoring with Application Insights: By connecting agents to Azure
+
+*-> Application Insights, you can export detailed telemetry to Power BI for comprehensive, long-term monitoring, including conversation transcripts and custom events.
+
+Incorrect:
+
+* Azure Advisor * Azure DevOps * Log Analytics * Microsoft Dynamics 365 Customer Voice * Microsoft Purview * the Analytics tab in Copilot Studio The built-in Analytics tab within Copilot Studio offers quick, high-level insights for individual agents only.
