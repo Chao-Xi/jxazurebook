@@ -3628,6 +3628,44 @@ D. a Microsoft Copilot Studio agent that uses Microsoft Power Automate workflows
 
 -----
 
+正确答案与详细解析
+
+正确答案：
+
+  - D. a Microsoft Copilot Studio agent that uses Microsoft Power Automate
+    workflows（使用 Microsoft Power Automate 工作流的 Microsoft Copilot Studio Agent）
+
+解析与考点分析
+
+为什么选 D？
+
+1.  业务需求分解：
+
+      - 从订单文件中提取订单明细（Extract order details）： 使用 Power Automate 中内置的 AI  Builder（文档处理 / 表单识别模型） 可以无需代码快速提取文件内容。
+      - 将订单明细保存至数据库并更新状态（Save and update database）： 使用 Power Automate 的内置数据库连接器（如 Dataverse 或 SQL Server Connector）进行操作。
+      - 准备并向客户发送确认电子邮件（Prepare and send confirmation email）： 使用 Power Automate 的  Office 365 Outlook 连接器自动化发送邮件。
+      - 流程编排与智能交互： 使用 Copilot Studio Agent 负责触发和调度整个流程。
+
+2.  核心限制条件：
+
+      - 题目明确要求：“最小化开发工作量（minimize development effort）” 并支持 “智能自动化与解决方案集成（intelligent automation and solution integration）”。
+      - Copilot Studio + Power Automate 是微软 Power Platform  体系下的**低代码/无代码（Low-code/No-code）**智能自动化标准组合，提供数百种现成的连接器与 AI  模块，能以最少的人工编码成本快速构建端到端的业务流。
+
+为什么不选其他选项？
+
+  - B. a multi-agent solution that uses the Semantic Kernel SDK（使用 Semantic
+    Kernel SDK 的多 Agent 方案）：
+  - C. a multi-agent solution that uses Microsoft Foundry Agent Service（使用
+    Microsoft Foundry Agent Service 的多 Agent 方案）：
+      - 这两个选项都属于**专业代码（Pro-code）**开发方案。需要编写代码（C#/Python）、维护 API
+        端点和自定义集成，极大地增加了开发和维护成本，直接违背了“最小化开发工作量”的要求。
+  - A. a workflow in Azure Logic Apps（Azure Logic Apps 工作流）： 属于 Azure
+    开发者级别的集成工具，虽然类似于 Power Automate，但缺乏 Copilot Studio 的智能 Agent 编排交互能力以及 Power
+    Platform 内置开箱即用的 AI 文档处理集成。
+
+
+------
+
 
 Correct Answer: D Section: (none)
 
@@ -4337,19 +4375,40 @@ F. the Dynamics 365 Field Service mobile app
 
 ----
 
+正确答案与详细解析
 
-Correct Answer: BE
+正确答案：
 
-Explanation/Reference:
+  - E. Copilot in Field Service
+  - F. the Dynamics 365 Field Service mobile app
+
+解析与考点分析
+
+为什么选 E 和 F？
+
+题目描述的是典型的 Dynamics 365 Field Service（现场服务） 业务场景，涉及两个核心角色：调度员（Dispatchers） 和
+一线技术人员（Frontline Workers / Technicians）。
+
+对照题目的两大核心需求：
+
+1.  需求一：“提供 AI 驱动的帮助，协助员工组织和解决工单（organize and resolve work orders）”
+
+      - 对应选项 E (Copilot in Field Service)： 专为 Field Service 调度员和管理者设计。Copilot 可以自动汇总工单内容、提取客户需求、智能推荐调度排程，并自动生成工单总结，极大地提升调度员管理和组织工单的效率。
+
+2.  需求二：“在一线员工准备和完成客户预约时，为其提供上下文 AI 支持（Deliver contextual AI support to
+    frontline workers...）”
+
+      - 对应选项 F (the Dynamics 365 Field Service mobile app)： 一线技术人员在前往客户现场（On-site）执行任务时，使用的是 Dynamics 365 Field Service 移动应用。移动应用中嵌入了 Copilot AI 功能，技术人员可以在现场查看 AI 汇总的工单历史、快速撰写客户跟进更新、获取操作步骤指导，从而高效完成现场预约任务。
+
+为什么不选其他选项？
+
+  - A, C, D (Dynamics 365 Customer Service 相关组件)： 适用于呼叫中心/客服代表（Customer Service Agents）处理在线咨询和热线工单，不适用于现场上门服务（Scheduled on-site work）、调度员排程以及一线现场技术人员场景。
+  - B (Copilot in Outlook)： 属于通用的 Outlook 邮件处理助手，无法为现场技术人员在移动端执行上门服务预约时提供专用的现场工作流上下文支持。
 
 
-To enhance Microsoft Dynamics 365 Field Service with Microsoft Copilot for dispatchers and technicians, the following additional components and configurations are needed:
 
-Essential Copilot Enabling Components [E] Dynamics 365 Field Service License: Copilot for Field Service is included within the standard app, but must be enabled by an administrator in the Power Platform admin center.
 
-[B] Copilot in Outlook & Teams: To enable dispatchers to turn emails into work orders and manage schedules directly in their flow of work, the Dynamics 365 Field Service for Outlook and Field Service app in Teams (preview) need to be configured.
 
-New Field Service Mobile Experience: Technicians must have the latest mobile app (available in preview) enabled, which allows for natural language inputs, voice-to-text notes, and photo attachments.
 
 
 ### QUESTION 21 
@@ -6265,7 +6324,10 @@ A company uses Azure OpenAI models that use grounding data from Microsoft Fabric
 
 You need to design a governance solution that meets the following requirements:
 
-Restricts access to the grounding data to only assigned roles Restricts model fine-tuning to only the AI engineering team What should you include in the design? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
+- Restricts access to the grounding data to only assigned roles
+- Restricts model fine-tuning to only the AI engineering team
+
+What should you include in the design? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
 **Answer Area**
 
@@ -6282,6 +6344,45 @@ Restricts model fine-tuning:
 - Azure Resource Manager (ARM) resource locks  
 - Microsoft Entra Conditional Access  
 - Role-based access control (RBAC) in Microsoft Foundry
+
+-------
+
+
+这是该道热点选择题（Hot Area）的正确答案与详细解析：
+
+QUESTION 答案 (Answer Area)
+
+1. Restricts access to the grounding data:
+
+  - 正确选项： Microsoft Purview access policies（Microsoft Purview 访问策略）
+
+2. Restricts model fine-tuning:
+
+  - 正确选项： Role-based access control (RBAC) in Microsoft Foundry（Microsoft Foundry 中的基于角色的访问控制）
+
+解析与考点分析
+
+第一部分分析：限制对接地数据（Grounding Data）的访问
+
+  - 考点： 企业数据资产的数据平面访问控制（Data-plane Access Control）。
+  - 解析：
+      - 题目说明 grounding data 来自 Microsoft Fabric。
+      - Microsoft Purview access policies（Microsoft Purview 访问策略）： 允许企业集中管理和定义针对 Microsoft Fabric、Azure Data Lake 等数据资产的细粒度访问控制策略。通过 Purview 访问策略，可以确保只有获得授权角色（Assigned roles）的人员或 Agent 才能读取和访问这些接地数据。
+
+第二部分分析：限制模型微调（Model Fine-tuning）权限
+
+  - 考点： AI 平台管理操作权限控制（Control-plane & Data-plane RBAC）。
+  - 解析：
+      - 模型微调（Fine-tuning）是 Microsoft Foundry（Azure AI Foundry / Azure OpenAI） 内部的一种高算力消耗且涉及核心资产的操作。
+      - Role-based access control (RBAC) in Microsoft Foundry： 微软在 Foundry 平台中提供了专门的 RBAC 角色（如 Azure AI Developer、Cognitive Services OpenAI Contributor 等）。通过为 AI 工程团队（AI engineering team）分配特定的 Foundry RBAC 角色，可以精准限制只有该团队拥有发起和运行模型微调任务的权限，对其他普通用户进行隔离。
+
+干扰项排除说明
+
+  - Azure AI Content Safety： 用于实时检测和过滤违规内容（如暴恐、仇恨言论），不用于数据访问控制或用户权限管理。
+  - Azure Resource Manager (ARM) resource locks： 用于防止 Azure 资源被意外删除（CanNotDelete）或修改（ReadOnly），无法精细化控制“谁可以进行模型微调”这一业务操作。
+  - Microsoft Entra Conditional Access： 侧重于用户登录时的身份认证条件限制（如 MFA 强制、IP 限制、设备合规要求），不直接管理 Foundry 内部的具体 AI 模型微调权限。
+
+
 
 **Explanation/Reference:**
 
@@ -7009,6 +7110,38 @@ Monitors performance metrics and operational health: [______]
 -----
 
 
+这是该道拖拽匹配题（Select and Place）的正确答案与详细解析：
+
+QUESTION 答案 (Answer Area)
+
+  - Monitors AI app and agents for compliance: 👉 Microsoft Purview
+
+  - Monitors performance metrics and operational health: 👉 Azure Monitor
+
+解析与考点分析
+
+1. 监控 AI 应用和 Agent 的合规性 (Monitors AI app and agents for compliance)
+
+  - 正确选择： Microsoft Purview
+  - 解析：
+      - 在微软的原生云架构中，Microsoft Purview（Purview AI Hub） 是专门用于针对 AI 应用、Azure OpenAI模型及 Copilot Agent 进行合规性监控（Compliance Monitoring）、敏感数据审计、策略违规检测以及交互日志保留的官方原生服务。
+
+2. 监控模型的性能指标和运行健康状况 (Monitors performance metrics and operational health)
+
+  - 正确选择： Azure Monitor
+  - 解析：
+      - Azure Monitor 是 Azure 原生的运维监控服务。
+      - 它原生集成了 Azure OpenAI 模型与 AI 服务，能够自动收集、分析并可视化呈现性能指标与运行健康度（Performance  metrics & operational health），例如：API 响应延迟（Latency）、每分钟 Token  消耗量（TPM）、HTTP 错误率（429 Rate Limit 超限告警）以及服务可用性（Uptime）。
+
+干扰项排除说明
+
+  - Azure API Management： 用于 API 网关控制、限流与路由，非合规监控或原生运维分析服务。
+  - Azure Policy： 用于定义资源部署规则和预防性合规约束，不用于持续监控 AI 应用运行时的合规内容。
+  - Microsoft Defender： 侧重于安全威胁防御与漏洞检测（Security/Threat  Protection），而非合规审计（Compliance）。
+  - Azure Stream Analytics： 用于实时流数据分析处理，需要大量开发工作（违背了 Minimize development effort 的要求）。
+
+----
+
 
 Explanation/Reference:
 
@@ -7176,6 +7309,34 @@ D. Move App1 to a new environment that uses Microsoft-managed keys.
 
 ---
 
+正确答案与详细解析
+
+正确答案：
+
+  - C. Enable Copilot features for Env1.（为 Env1 启用 Copilot 功能。）
+
+解析与考点分析
+
+为什么选 C？
+
+1.  业务需求与限制条件：
+
+      - 需要在 Canvas App（App1）中添加 Microsoft Copilot 组件（控件）。
+      - 限制条件：绝对不能修改 Env1 当前的安全或加密配置（NOT modify the current security or encryption configurations）。当前 Env1 使用的是客户托管密钥（CMK, Customer-Managed Keys）。
+
+2.  微软 Power Platform 配置规范：
+
+      - 要在特定环境中的 Canvas App 中加入 Copilot 控件或让用户使用 Copilot 功能，前提条件是在 Power Platform 管理中心（PPAC） 中对该环境（Env1）开启 Copilot 特性开关（Enable Copilot features for the environment）。
+      - Power Platform 完全支持在开启了 CMK（客户托管密钥）加密的环境中使用 Copilot 功能。
+      - 直接为 Env1 开启 Copilot 开关，既能在不破坏现有 CMK 加密配置和安全架构的前提下满足需求，又是实现该功能的最简单、最符合规范的做法。
+
+为什么不选其他选项？
+
+  - A. Modify the data sources of App1 to make them compatible with Copilot（修改 App1 的数据源）： Copilot 控件能够基于 Canvas App 现有的多种标准数据源工作，无需修改或替换底层数据源。
+  - B. Duplicate App1 and republish the app in Env1（复制 App1 并重新发布）： 如果环境层面的 Copilot 功能开关未开启，复制应用没有任何作用。
+  - D. Move App1 to a new environment that uses Microsoft-managed keys（将 App1  迁移到使用微软托管密钥的新环境）： 这直接违背了“不修改当前加密配置”的要求，属于不必要且破坏现有安全合规性的错误操作。
+
+----
 
 Correct Answer: D Section: (none)
 
