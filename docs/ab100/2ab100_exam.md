@@ -1691,6 +1691,38 @@ D. a return on AI investment (ROAI) analysis
 
 -----
 
+正确答案与详细解析
+
+正确答案：
+
+  - D. a return on AI investment (ROAI) analysis（AI 投资回报率分析）
+
+解析与考点分析
+
+为什么选 D？
+
+1.  业务场景与核心考量：
+
+      - 公司计划部署 AI Agent 来自动化处理供应商发票。
+      - 关注焦点：评估该部署的财务影响（Financial implications），并非常担心预算超支（Budget overruns）。
+      - 评估维度要求：必须综合考量总体拥有成本（TCO）、自动化带来的预期成本节省（Expected savings from using automation），以及是否需要扩展现有的 AI 能力。
+
+2.  方法论匹配：
+
+      - ROAI (Return on AI Investment，AI 投资回报率分析)： 是一种专门针对 AI 项目的全面财务评估方法。
+      - 它将 AI 项目的**总投入成本（TCO，包括 API 调用费、模型训练费、Copilot
+        订阅费及运维成本）与预期收益/节省（通过自动化发票处理节省的人工工时、减少的人为错误成本等）**进行对比计算：
+        \text{ROAI} = \frac{\text{预期自动化节省成本} - \text{TCO总体拥有成本}}{\text{TCO总体拥有成本}} \times 100\%
+      - 进行全面的 ROAI 分析能够帮助管理层在项目启动前精准进行预算建模，从而直接防止预算超支。
+
+为什么不选其他选项？
+
+  - A. a break-even analysis only（仅进行盈亏平衡分析）： 盈亏平衡分析只告诉你在什么时间点“收回本钱”，无法全面评估 TCO 构成、投资回报率（ROI）以及是否扩展现有 AI 能力的财务可行性。
+  - B. adopting prebuilt agents to reduce the deployment time（采用预置 Agent 以减少部署时间）： 这是实施策略选项，而非用于评估财务影响和防止预算超支的分析评估方法。
+  - C. training a custom model（训练自定义模型）： 自定义模型训练通常需要极高的算力和数据标注成本，不仅无法解决预算超支担忧，反而可能增加财务风险。
+
+
+
 
 Correct Answer: D
 
@@ -1699,6 +1731,9 @@ Correct Answer: D
 Explanation:
 
 This design plan outlines the financial and operational framework for deploying a Microsoft-based AI agent for supplier invoice processing. By leveraging current industry benchmarks and Microsoft’s own agentic AI frameworks, this plan focuses on maximizing Return on AI Investment (ROAI) while mitigating the risk of budget overruns.
+
+
+
 
 
 ### QUESTION 21 
@@ -2065,7 +2100,7 @@ What should you include in the recommendation for each requirement? To answer, s
 
 NOTE: Each correct selection is worth one point.
 
-### Answer Area
+Answer Area
 
 * **Use a centralized workspace:**
   * An Microsoft Foundry hub
@@ -2081,8 +2116,35 @@ NOTE: Each correct selection is worth one point.
   * Microsoft Copilot in Power Automate
 
 
+
 ------
 
+
+**答案：**
+
+| Requirement                     | Correct Answer                      | 原因                                                                                         |
+| ------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Use a centralized workspace** | ✅ **A Microsoft Foundry hub**       | Microsoft Foundry Hub 提供集中管理 AI 模型、项目和资源的工作区。                                              |
+| **Generate short overviews**    | ✅ **An AI Builder prebuilt prompt** | AI Builder 的 **Prebuilt Prompt（如 Summarize Text）** 可直接对大量非结构化文本（案例记录、聊天记录等）生成摘要，无需训练或编写代码。 |
+
+为什么其他选项不对？
+
+* ❌ **Azure OpenAI Foundry**：不是用于集中管理 Power Platform AI 工作区。
+* ❌ **Microsoft Copilot Studio**：用于构建 AI Agent，不是 AI 模型管理中心。
+* ❌ **Microsoft Dataverse**：数据存储平台，不是 AI 工作区。
+* ❌ **AI Builder prebuilt model**：主要用于文档处理、预测、分类等模型，不是文本摘要。
+* ❌ **Azure OpenAI**：可以实现摘要，但通常需要自己设计 Prompt 或开发，不符合**无需训练或编码**。
+* ❌ **GitHub Copilot**：开发辅助工具。
+* ❌ **Microsoft Copilot in Power Automate**：帮助创建 Flow，不是用于文本摘要能力。
+
+
+考试记忆
+
+* **集中管理 AI 资源** → ✅ **Microsoft Foundry Hub**
+* **无需训练、直接文本摘要** → ✅ **AI Builder Prebuilt Prompt**
+
+
+------
 
 Box 1: Azure AI Foundry
 
@@ -2957,6 +3019,55 @@ D. Configure Microsoft Graph access
 
 
 ----
+
+
+**答案：✅ 4. Configure Microsoft Graph access**
+
+**解析**
+
+题目要求：
+
+* 使用**自然语言**查询 **SharePoint Online** 和 **Teams** 内容。
+* 在 **Microsoft 365 Copilot** 中获得**与上下文相关**的回答。
+
+Microsoft 365 Copilot 的知识来源就是 **Microsoft Graph**。
+
+通过 **Microsoft Graph**，Copilot 可以安全地访问：
+
+* SharePoint Online
+* Microsoft Teams
+* Outlook
+* OneDrive
+* Microsoft 365 其他数据
+
+并根据用户权限返回上下文相关的内容。
+
+因此，应配置 **Microsoft Graph access**。
+
+为什么其他选项不对？
+
+* ❌ **1. Power Automate desktop flow**
+
+  * 用于 RPA 自动化，不是 Microsoft 365 Copilot 的知识来源。
+
+* ❌ **2. Modify SharePoint settings**
+
+  * 修改 SharePoint 设置不能让 Copilot 具备自然语言检索能力。
+
+* ❌ **3. Create a custom REST API**
+
+  * Microsoft 365 Copilot 已通过 Microsoft Graph 访问 Microsoft 365 数据，无需自行开发爬虫 API。
+
+
+考试记忆
+
+* **Microsoft 365 Copilot 查询 M365 数据** → ✅ **Microsoft Graph**
+* **Copilot Studio 查询企业外部数据** → Knowledge、Connector、MCP
+* **Azure AI Search** → 企业文档检索（RAG）
+
+**最终答案：✅ 4. Configure Microsoft Graph access**
+
+
 
 Correct Answer: D
 
@@ -4486,6 +4597,31 @@ B. No
 
 ------
 
+
+**答案：✅ A. Yes**
+
+解析
+
+在 **Dynamics 365 Sales** 中，Copilot 提供 **Opportunity Summary（商机摘要）**。
+
+管理员可以**自定义摘要内容**，例如：
+
+* 添加或移除字段
+* 调整摘要中显示的信息
+* 根据业务需求展示特定字段
+
+因此，**添加字段到 Opportunity Summary** 就是在**定制 Copilot 生成或呈现商机摘要**，符合题目要求。
+
+考试记忆
+
+* **自定义 Opportunity Summary** → ✅ 可以通过**添加/配置字段**实现。
+* **无需修改模型或编写代码**。
+
+**最终答案：✅ A. Yes**
+
+
+-----
+
 Correct Answer: A
 
 Explanation/Reference:
@@ -4535,6 +4671,38 @@ A. Yes
 B. No
 
 ---
+
+**答案：❌ B. No**
+
+解析
+
+题目要求：
+
+> Customize Copilot by tailoring how opportunity summaries are generated or presented to users.
+
+在 **Dynamics 365 Sales Copilot** 中，自定义 **Opportunity Summary** 通常通过：
+
+* 配置 Copilot 设置
+* 添加/调整摘要字段
+* 调整 Copilot 相关配置
+
+实现。
+
+而 **Power Automate flows**：
+
+* 用于业务流程自动化
+* 触发操作、发送通知、更新数据等
+* **不能修改 Copilot 内置摘要生成逻辑或呈现方式**
+
+所以：
+
+❌ 创建 Power Automate Flow 不能达到定制 Copilot Opportunity Summary 的目标。
+
+**最终答案：B. No**
+
+
+----
+
 
 Correct Answer: B
 
@@ -6443,9 +6611,27 @@ Answer Area
 - The number of unanswered questions:  
 - The number of abandoned sessions:  
 
-Insight
+
 
 ----
+
+**答案：**
+
+| Requirement                            | Correct Insight                         | 原因                                                |
+| -------------------------------------- | --------------------------------------- | ------------------------------------------------- |
+| **The number of unanswered questions** | ✅ **Generated answer rate and quality** | 显示 AI 回答率、未回答问题（Unanswered Questions）及回答质量。       |
+| **The number of abandoned sessions**   | ✅ **Conversation outcomes**             | 显示对话结果，包括 **Resolved、Escalated、Abandoned** 等会话统计。 |
+
+为什么其他选项不对？
+
+* ❌ **Reactions**：统计用户 👍 / 👎 反馈，不统计未回答或放弃会话。
+* ❌ **Survey results**：统计问卷调查结果，不统计会话数据。
+
+考试记忆
+
+* **Unanswered questions** → ✅ **Generated answer rate and quality**
+* **Abandoned sessions** → ✅ **Conversation outcomes**
+
 
 
 Explanation/Reference:
@@ -6878,7 +7064,55 @@ B. risk and safety
 
 C. Groundedness
 
-D. AI quality (AI assisted) Correct Answer: D Section: (none) Explanation/Reference:
+D. AI quality (AI assisted) 
+
+--------
+
+**答案：✅ D. AI quality (AI assisted)**
+
+解析
+
+题目关键词：
+
+* **使用 GPT-4o as a judge**
+* **评估输出质量和连贯性（quality & coherence）**
+* **返回数值评分（numeric score）**
+
+这正是 **AI quality (AI assisted)** 的特点。
+
+它使用 **GPT-4o 作为评审（LLM-as-a-Judge）**，对生成内容进行自动评分，例如：
+
+* Relevance（相关性）
+* Coherence（连贯性）
+* Fluency（流畅性）
+* Overall quality（整体质量）
+
+为什么其他选项不对？
+
+* ❌ **A. AI quality (NLP)**
+
+  * 使用传统 NLP 指标（如 BLEU、ROUGE、F1），**不会使用 GPT-4o 作为评审**。
+
+* ❌ **B. Risk and safety**
+
+  * 评估有害内容、暴力、仇恨、越狱等安全风险，不评估回答质量。
+
+* ❌ **C. Groundedness**
+
+  * 评估回答是否基于提供的数据或知识来源，不是整体质量和连贯性评分。
+
+考试记忆
+
+* **GPT-4o as judge / LLM-as-a-Judge** → ✅ **AI quality (AI assisted)**
+* **BLEU、ROUGE 等传统指标** → AI quality (NLP)
+* **是否基于数据回答** → Groundedness
+* **安全、违规内容** → Risk and safety
+
+**最终答案：✅ D. AI quality (AI assisted)**
+
+----
+
+Correct Answer: D Section: (none) Explanation/Reference:
 
 Explanation:
 
@@ -7276,6 +7510,38 @@ D. Modify the contents of the training dataset.
 
 ----
 
+正确答案与详细解析
+
+正确答案：
+
+  - B. Modify the system instructions of Solution1.（修改 Solution1 的系统指令。）
+
+解析与考点分析
+
+为什么选 B？
+
+1.  业务场景与问题：
+
+      - 系统在使用 Azure OpenAI 模型 为现有的客户自动生成营销电子邮件。
+      - 审阅发现生成的内容存在偏见/不公平现象（Bias）：模型根据客户的特定特征（Traits）生成了不公或带有偏见偏向的邮件内容。
+      - 目标：根据**微软负责任 AI 原则（Microsoft Responsible AI Principles - 公平性 Fairness & 包容性 Inclusiveness）**减缓偏见。
+
+2.  生成式 AI（LLM）缓解偏见的标准做法：
+
+      - 系统指令（System Instructions / Metaprompt）： 在 Azure OpenAI
+        中，系统指令定义了模型的角色、行为准则、语气约束以及安全/公平性边界。
+      - 通过调整系统指令（系统 Prompt），明确要求模型在生成营销内容时“保持公平、包容，不得基于客户的个人特征（如性别、年龄、地域等特征）产生刻板印象或区别对待”，这是在生产环境中缓解生成式 AI 偏见最直接、成本最低且即时生效的官方推荐策略。
+
+为什么不选其他选项？
+
+  - A. Modify Solution1 to randomly generate emails for different
+    traits（随机生成邮件）： 随机生成无法解决偏见问题，反而会导致输出内容不可控且失去营销相关性。
+  - C. Retrain the model by using a larger dataset（使用更大的数据集重新训练模型）：
+  - D. Modify the contents of the training dataset（修改训练数据集的内容）：
+      - Azure OpenAI 使用的是预训练好的大语言基础模型（Foundation Models）。用户在生产环境中通常直接调用 API 或进行 Prompt 调整，而不是从零开始去重训（Retrain）基础大模型。使用系统指令（System   Message）进行安全防护是优先且最标准的方法。
+
+
+----
 
 Correct Answer: B Section: (none) 
 
