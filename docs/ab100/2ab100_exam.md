@@ -8944,6 +8944,19 @@ B. No
 
 ----
 
+✅ 答案：A. Yes
+
+**Microsoft Copilot Studio** 符合要求：
+
+* **Generative AI** → 回答常见问题
+* **Analytics** → 查看 Agent 性能
+* **Customer demographics** → 可连接 Dataverse / 业务数据进行分析
+* **Minimize custom development** → Low-code / no-code
+
+**答案：A. Yes** ✅
+
+---
+
 Correct Answer: A Section: (none)
 
 Explanation/Reference:
