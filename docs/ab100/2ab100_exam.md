@@ -92,49 +92,54 @@ D. the average session time per agent
 -----
 
 
-**QUESTION 1 答案与解析**
+你这个质疑是对的。**如果这是当前版本 Copilot Studio Agent Usage Estimator 的考试题，我会更倾向于 `C + D`，而不是之前给你的 A + C。**
 
-#### **正确答案：**
+正确答案：✅ C、D
 
-* **A. the GPT models used for the agent**（Agent 所使用的 GPT 模型）
-* **C. the agent orchestration method**（Agent 的编排方式）
+| 选项                                          | 判断 | 原因                                                                            |
+| ------------------------------------------- | -- | ----------------------------------------------------------------------------- |
+| **A. GPT models used**                      | ❌  | 属于底层模型实现细节，不是 CFO 进行季度 usage/ROI 分析的主要指标                                      |
+| **B. Average characters in a chat message** | ❌  | 不是主要的 Agent usage 分析指标                                                        |
+| **C. Agent orchestration method**           | ✅  | **Classic vs. Generative orchestration** 会影响 Agent 如何进行推理、调用工具和知识源，从而影响使用量和成本 |
+| **D. Average session time per agent**       | ✅  | 反映用户使用情况和会话效率，可用于分析 adoption、session usage 以及成本效率                             |
 
-**解析与考点分析**
+为什么这题容易误导？
 
-**为什么选 A 和 C？**
+题目不是问：
 
-题目问的是：“CFO 在季度 Agent 分析中应该评估自定义 AI Agent 设计中的哪两个组件？”
+> **“哪些因素会影响模型 token 消耗？”**
 
-从案例中 CFO 的职责和要求来看：
+如果这样问，**GPT model** 很容易成为答案。
 
-1. **CFO 的核心职责：** 分析投资回报率（ROI），评估**成本与效率**（"compare the estimated ROI against actual measured efficiencies"）。
-2. **使用工具：** CFO 需要使用 **Copilot Studio agent usage estimator**（Copilot Studio 用量/额度估算器）来进行分析。
-3. **成本驱动因素：** 在 Microsoft Copilot Studio 的计费与用量估算模型中，直接影响消息消耗（Credits / Message consumption）和成本的核心设计组件是：
-   * **GPT models used for the agent (A)：** 选择不同的底层大语言模型（如标准模型 vs. 高级 GPT-4/GPT-4o 模型，或调用 Azure OpenAI 的自定义模型），每次生成式回答所消耗的 Copilot Studio Credits（额度）或 Token 费用是完全不同的。
-   * **Agent orchestration method (C)：** 编排方式（是使用传统基于触发词的主题编排 Classic Topics，还是使用生成式动态编排 Generative Orchestration / Dynamic Chaining）。生成式编排会在单轮对话中触发多次 LLM 调用和插件检索，大幅增加消息额度的消耗，从而直接影响计算出来的消耗成本和 ROI。
+它实际问的是：
 
-**为什么不选 B 和 D？**
+> **CFO should evaluate in the quarterly agent analysis**
 
-* **B. the average characters in a chat message（聊天消息的平均字符数）：** 虽然字符数影响 Token，但 Copilot Studio 的使用率估算器（Usage Estimator）和计费主要是按 **Billed Messages（计费消息数）** 及模型类型结算，而不是让 CFO 在设计层面去逐字分析平均字符数。
-* **D. the average session time per agent（每个 Agent 的平均会话时间）：** 平均会话时长是运维/用户体验指标，并非 Copilot Studio Agent 用量估算器中关于 Agent **设计架构** 成本的核心决定组件。
+而且明确给了：
 
+> compare estimated ROI against **actual measured efficiencies and adoption**
 
+所以更偏向 **Agent usage / adoption / efficiency analytics**。
 
-**💡 备考提示（针对此 Case Study 的其他潜考点）**
+因此：
 
-1. **CISO / CIO / 安全与合规要求：**
+**C = orchestration / consumption behavior**
 
-   * **敏感数据与访问监控（CISO）：** 对应 **Microsoft Purview**（查看敏感数据标签及 AI 资源审计）以及 **Microsoft Defender for Cloud / Azure AI Content Safety**。
-   * **分配安全标签（CIO）：** 对应 **Microsoft Purview Information Protection (MPIP)** 敏感情报标签。
+**D = session usage / adoption efficiency**
 
-2. **Custom AI Agent 设计要求：**
-   * **低代码/Teams 访问/D365 整合：** 对应 **Microsoft Copilot Studio** 部署到 Teams 及 D365 SCM 嵌入。
-   * **不使用触发词，而是根据描述选择 Topic：** 对应 Copilot Studio 的 **Generative Orchestration（生成式编排）/ Dynamic Chaining**。
-   * **连接已有的 R&D 部门 MCP 服务器/规格说明：** 对应 **Model Context Protocol (MCP)** 或自定义插件（Custom Connectors / Conversational Plugins / Knowledge Sources）。
+📌 考试记忆
 
-3. **CEO / 负责任的 AI (Responsible AI)：**
-   * 对应 **Azure AI Evaluation SDK / Azure Machine Learning Responsible AI Dashboard**（用于评估 Reliability, Interpretability, Fairness, Compliance）。
+看到：
 
+> **CFO + quarterly + ROI + usage estimator + adoption**
+
+优先想到：
+
+> **Orchestration + Session usage**
+
+所以这道题我建议你记：
+
+✅ C + D
 
 ---
 
@@ -173,9 +178,6 @@ D. Azure OpenAI reasoning models
 
 
 ------
-
-
-**QUESTION 2 答案与解析**
 
 - **正确答案：** **C. generative orchestration**（生成式编排）
 
@@ -371,6 +373,11 @@ Answer Area
 
 --------
 
+
+
+
+
+
 Explanation/Reference:
 
 Explanation:
@@ -385,19 +392,19 @@ Utilizing the Microsoft Power Platform Well-Architected framework for a low-code
 
 
 
-###  Scenario: Sales Cycle Enablement
+Scenario: Sales Cycle Enablement
 
 Fabrikam has identified the following requirements for sales cycle enablement:
 
 *-> The final AI agent must follow Microsoft recommendations for a conversational user experience.
 
-#### Sales Cycle Enablement
+Sales Cycle Enablement
 
 To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle
 
 *-> Use low-code development to create a single AI agent that has Dataverse as its core component.
 
-#### QUESTION 2
+### QUESTION 2
 
 Which framework should you use for the infrastructure migration?
 
@@ -409,6 +416,39 @@ C. Microsoft Power Platform Center of Excellence (CoE)
 
 D. Microsoft Power Platform Project Setup Wizard
 
+---
+
+**正确答案：✅ A. Microsoft Cloud Adoption Framework for Azure**
+
+原因
+
+题目问的是：
+
+> **Which framework should you use for the infrastructure migration?**
+
+而案例明确要求：
+
+> follow **Microsoft-recommended methodologies for infrastructure migration to the cloud**
+
+**Microsoft Cloud Adoption Framework for Azure (CAF)** 就是 Microsoft 用于规划和执行 Azure Cloud Adoption / Migration 的推荐框架。
+
+其他选项
+
+* ❌ **B. Success by Design** → 主要针对 **Dynamics 365** 项目的实施方法论。
+* ❌ **C. Power Platform CoE** → 用于治理和管理 Power Platform adoption。
+* ❌ **D. Power Platform Project Setup Wizard** → 用于 Power Platform 项目设置，不是 Azure infrastructure migration framework。
+
+🎯 最终答案
+
+**A. Microsoft Cloud Adoption Framework for Azure**
+
+**记忆：**
+
+> **Cloud migration → CAF**
+> **Dynamics 365 implementation → Success by Design**
+> **Power Platform governance → CoE**
+
+----
 
 **Correct Answer: A**
 
@@ -458,6 +498,35 @@ C. Add the schema names as business terms.
 D. Create new business terms for each field.
 
 ------
+
+**正确答案：✅ B. Map the field display names as business terms.**
+
+原因
+
+题目关键：
+
+* Lead 使用 **non-standard terminology**
+* 有 **custom columns**
+* 需要让 Microsoft Copilot 正确理解字段
+* **minimize administrative effort**
+
+Business Terms 的目的就是把 Copilot 使用的业务术语映射到 Dataverse 字段。
+
+因此直接：
+
+> **Field display name → Business term**
+
+不需要为每个字段重新创建一套独立的业务术语。
+
+其他选项
+
+* ❌ **A**：把字段合并会破坏数据结构。
+* ❌ **C**：Schema name 是技术名称，不是用户/业务使用的术语。
+* ❌ **D**：逐个创建新的 Business Terms，管理成本更高。
+
+**最终答案：B. Map the field display names as business terms.**
+
+----
 
 Correct Answer: B
 
@@ -523,9 +592,11 @@ Select and Place:
 
 ---------
 
-这题考的是 **Copilot Studio Standard Model** 的选择，尤其是 **NLU、NLU+、CLU** 的区别，是新版考试非常喜欢考的知识点。
+**答案：**
 
-**先分析题目**
+* **Agent1:** ✅ **Natural language understanding (NLU)**
+* **Agent2:** ✅ **Natural language understanding + (NLU+)**
+
 
 共同要求：
 
@@ -686,11 +757,6 @@ Azure AI Language 的模型。
 | **CLU**                             | Azure AI Language（不是 Copilot Studio Standard Model） |
 | **Azure OpenAI**                    | Generative Orchestration / LLM                      |
 | **Azure Language in Foundry Tools** | Azure AI Language 服务                                |
-
-**答案：**
-
-* **Agent1:** ✅ **Natural language understanding (NLU)**
-* **Agent2:** ✅ **Natural language understanding + (NLU+)**
 
 
 ----
@@ -1039,6 +1105,32 @@ D. Azure Translator in Foundry Tools
 
 -----
 
+
+**正确答案：✅ A. Azure AI Search**
+
+原因
+
+题目中的关键是：
+
+* 数据来自 **Azure SQL、Flat files、APIs、Logs**
+* 数据来源很多、格式不同
+* 需要整理后作为 **Copilot Studio Knowledge Source**
+* 用于历史数据的检索和分析
+
+**Azure AI Search** 可以把来自不同来源的数据建立索引，并提供搜索/RAG 能力，适合作为 Copilot Studio 的知识来源。
+
+其他选项
+
+* ❌ **Azure Data Lake Storage** → 适合集中存储大量数据，但本身不是知识检索层。
+* ❌ **Azure Cosmos DB** → NoSQL 数据库，不是主要的知识检索方案。
+* ❌ **Azure Translator** → 翻译服务。
+
+**最终答案：A. Azure AI Search**
+
+
+-----
+
+
 Correct Answer: A
 
 **Explanation/Reference:**
@@ -1379,6 +1471,33 @@ D. Ensure that cross-region data movement is enabled for the Canadian environmen
 
 -----
 
+**正确答案：✅ D. Ensure that cross-region data movement is enabled for the Canadian environment and connector dependencies.**
+
+原因
+
+题目核心是：
+
+* Dataverse 数据在 **Canada**
+* Azure OpenAI 在 **United States**
+* Agent 部署在 Canadian Power Platform environment
+* 需要满足 **data residency / data movement**
+
+因为 Agent 需要跨区域访问 Azure OpenAI，所以必须确保该环境允许 **cross-region data movement**，并且相关 connector dependencies 也符合要求。
+
+其他选项
+
+* ❌ **A**：只是说明数据存储位置，并不能确保跨区域数据移动符合策略。
+* ❌ **B**：Purview DLP 主要用于数据治理/防泄漏，不是 Copilot Studio 跨区域数据移动的核心设置。
+* ❌ **C**：没必要把整个 tenant 迁移到美国。
+
+🎯 记忆
+
+> **Copilot Studio + Dataverse Canada + Azure OpenAI US → Cross-region data movement must be enabled**
+
+**答案：D**
+
+----
+
 Correct Answer: D
 
 **Explanation/Reference:**
@@ -1428,6 +1547,27 @@ Hot Area:
 
 
 --------
+
+
+**答案：**
+
+| Requirement                                                                | Correct Answer                                                                | 原因                                     |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
+| **A prompt that has instructions to "help the customer as best you can"**  | ✅ **Rewrite the prompt with clear and task-specific instructions.**           | Prompt 应明确、具体，避免模糊指令，提高回答一致性。          |
+| **A prompt that helps retrieve product information from a knowledge base** | ✅ **Use responses with only reference sources and limit the response scope.** | 限制回答仅基于知识库，可减少幻觉（Hallucination），提高准确性。 |
+
+考试记忆
+
+* **Prompt Engineering**：明确、具体、任务导向（Clear & Task-specific）
+* **RAG / Knowledge Base**：**Only use reference sources**，限制回答范围，减少生成错误信息
+
+**最终答案：**
+
+* **第一空：** ✅ **Rewrite the prompt with clear and task-specific instructions.**
+* **第二空：** ✅ **Use responses with only reference sources and limit the response scope.**
+
+
+----
 
 **Box 1: Rewrite the prompt with clear and task-specific instructions.**
 
@@ -1491,6 +1631,37 @@ Metrics:
 
 
 ------
+
+
+**答案：**
+
+* **Prompt validation techniques:** ✅ **Use prompts that have varied phrasing.**
+* **Metrics:** ✅ **Response relevance and accuracy.**
+
+原因
+
+**Varied phrasing** 可以测试 Agent 对不同自然语言表达方式的鲁棒性，避免只对某一种固定问法有效。
+
+**Response relevance and accuracy** 直接衡量回答是否：
+
+* 与用户问题相关
+* 内容准确
+* 符合上下文
+
+其他选项：
+
+* ❌ Exclude domain-specific terminology → 企业 AI 通常需要正确处理领域术语。
+* ❌ Only simple one-word prompts → 无法充分测试复杂真实场景。
+* ❌ Number of words → 长度不代表质量。
+* ❌ Response generation time → 属于性能指标，不是本题要求的 prompt quality 指标。
+
+🎯 最终
+
+> **Prompt validation → Use prompts that have varied phrasing**
+> **Metric → Response relevance and accuracy**
+
+
+-----
 
 **Box 1: Use prompts that have varied phrasing**
 
@@ -1628,9 +1799,6 @@ B. Create custom prompts.
 C. Implement Microsoft Power Platform connectors.
 
 D. Enable incremental indexing in Azure AI Search.
-
-
-
 
 -----
 
@@ -1825,7 +1993,8 @@ A company plans to implement an AI business solution for a consumer goods compan
 
 You need to create agents that meet the following requirements:
 
-Orchestrate the sales order fulfillment and shipping of goods to customers. Analyze historical data and trends to replenish stock.
+- Orchestrate the sales order fulfillment and shipping of goods to customers.
+- Analyze historical data and trends to replenish stock.
 
 Which type of agent should you use for each requirement? To answer, drag the appropriate agent types to the correct requirements. Each agent type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -1845,8 +2014,34 @@ Select and Place
 - Orchestrate the sales order fulfillment and shipping:
 - Analyze historical data and trends:
 
+-----
 
-----
+**答案：**
+
+* **Orchestrate the sales order fulfillment and shipping:** ✅ **Autonomous**
+* **Analyze historical data and trends:** ✅ **Prompt-and-response**
+
+记忆
+
+* **Autonomous agent** → 能自主执行、协调多个步骤的业务流程 → **订单履约和运输**
+* **Prompt-and-response agent** → 根据用户请求分析/生成信息 → **分析历史数据和趋势**
+
+**最终：Autonomous + Prompt-and-response**
+
+-----
+
+**答案：**
+
+* **Orchestrate the sales order fulfillment and shipping:** ✅ **Autonomous**
+* **Analyze historical data and trends:** ✅ **Prompt-and-response**
+
+记忆
+
+* **Autonomous agent** → 能自主执行、协调多个步骤的业务流程 → **订单履约和运输**
+* **Prompt-and-response agent** → 根据用户请求分析/生成信息 → **分析历史数据和趋势**
+
+**最终：Autonomous + Prompt-and-response**
+
 
 **Box 1: Autonomous**
 
@@ -1907,6 +2102,58 @@ D. Sort the database by customer last name.
 ----
 
 **Correct Answer: B**
+
+
+✅ Correct Answer: **B. Identify and address biased data.**
+
+The key phrase is:
+
+> **“ensure that the data ingested by the agent is clean and suitable for the intended use.”**
+
+This is primarily a **data quality and responsible AI** requirement.
+
+Why B is correct
+
+Before using customer feedback to generate sentiment reports and influence **product development and marketing**, you need to examine the data for **bias** and address it.
+
+For example:
+
+* Certain customer groups may be overrepresented.
+* Feedback may disproportionately come from dissatisfied customers.
+* Some languages, regions, or demographics may be underrepresented.
+* Historical data may contain systematic biases.
+
+If biased data is fed into the AI agent, the resulting sentiment analysis and business recommendations can also be biased.
+
+Therefore:
+
+**Identify → assess → mitigate biased data → use the cleaned dataset for AI processing.**
+
+Why the others are incorrect
+
+| Option                                        | Why incorrect                                                                                                |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **A. Create a workflow in Power Automate**    | Power Automate is for workflow/process automation. It doesn't inherently ensure data quality or remove bias. |
+| **B. Identify and address biased data**       | ✅ Directly addresses **data quality, fairness, and suitability for AI use**.                                 |
+| **C. Create an agent flow in Copilot Studio** | Agent flows automate tasks within an agent; they don't solve the underlying data-quality issue.              |
+| **D. Sort by customer last name**             | Sorting changes the order of records, not their quality, accuracy, or suitability.                           |
+
+🎯 Exam takeaway
+
+For Azure AI / responsible AI questions, watch for wording such as:
+
+* **clean and suitable data**
+* **data quality**
+* **representative data**
+* **fairness**
+* **bias**
+* **underrepresented groups**
+
+These often point toward:
+
+> **Identify and address biased data.**
+
+**Answer: B**.
 
 
 ### QUESTION 24
@@ -2047,45 +2294,28 @@ D. Azure Reservations
 
 -----
 
-**正确答案与详细解析**
+**正确答案：✅ A. Cost Management + Billing**
 
-**正确答案：**
+原因
 
-* **C. Total Cost of Ownership (TCO) Calculator**（总体拥有成本计算器）
+题目关键词：
 
-**解析与考点分析**
+* 已有 **Azure environment**
+* 要实施 AI solution
+* 需要评估**实际 Azure 成本**
+* 用于 **ROAI（Return on AI Investment）分析**
 
-**为什么选 C？**
+**Cost Management + Billing** 可以分析 Azure 资源的实际/预计成本，并按订阅、资源、业务单位等维度进行成本分析。
 
-1. **业务场景：** 公司**计划（Plans）**实现一个全新的 AI 解决方案（进行客户产品评论的情感分析），需要**在部署前评估该方案的潜在成本（Potential Cost）**，以支持 AI 投资回报率（ROAI, Return on AI Investment）分析。
-2. **工具功能定位：**
-   * **Total Cost of Ownership (TCO) Calculator：** 专门用于在项目部署前进行财务建模和 ROI/ROAI 分析。它可以估算拟议解决方案在整个生命周期内的总体成本（包括算力、存储、服务调用及运营维护成本），帮助管理层评估投资效益。
+其他选项
 
-**为什么不选其他选项？**
+* ❌ **B. Microsoft Fabric SKU Estimator** → 用于 Fabric 容量/成本估算。
+* ❌ **C. TCO Calculator** → 主要用于比较 **on-premises vs. Azure** 的总体成本，不适合已经存在的 Azure AI 方案成本分析。
+* ❌ **D. Azure Reservations** → 用于降低长期资源使用成本，不是 ROAI 成本分析工具。
 
-* **A. Cost Management + Billing（成本管理 + 计费）：** 用于监控、分析和管理 Azure 中**已经部署和正在运行**的资源的实际支出与预算，无法评估尚未部署的全新 AI 项目的预估成本。
-* **B. Microsoft Fabric SKU Estimator（Microsoft Fabric SKU 估算器）：** 专门用于估算 Microsoft Fabric 分析平台的容量和 SKU 需求，不适用于评估 Azure AI Services（如语言服务/情感分析）的总体 AI 项目 ROAI。
-* **D. Azure Reservations（Azure 预留）：** 一种折扣购买机制（通过承诺 1 年或 3 年使用期来降低虚拟机或服务成本），属于成本优化手段，而不是用于分析和评估 ROAI 的估算工具。
+🎯 答案
 
-----
-
-Correct Answer: C
-
-Explanation/Reference:
-
-Explanation:
-
-To evaluate the cost of an Azure sentiment analysis solution and support a Return on AI Investment (ROAI) analysis for multiple business units, you should use the Azure Total Cost of Ownership (TCO) Calculator.
-
-The TCO Calculator is essential for calculating the financial impact of migrating or implementing a new solution compared to your existing infrastructure.
-
-Step-by-Step: Using the TCO Calculator for ROAI To perform a comprehensive ROAI analysis, follow these steps to capture the full scope of ownership:
-
-1. Define Your Current Workload Enter details about your existing infrastructure that the AI solution might replace or augment.
-
-2. Adjust Assumptions Tailor the calculator to your business environment by adjusting key metrics.
-
-3. Review the TCO Report The calculator generates a detailed report comparing your current costs against Azure.
+**A. Cost Management + Billing**
 
 
 ### QUESTION 27
@@ -2270,6 +2500,33 @@ D. Sort the database by customer last name.
 
 ------
 
+**正确答案：✅ C. Identify and address biased data.**
+
+原因
+
+题目要求确保 AI ingest 的数据：
+
+> **clean and suitable for the intended use**
+
+而这个 Agent 要分析 **customer sentiment**，如果历史反馈数据存在偏差（例如某类客户、地区、产品被过度代表），会直接导致 sentiment analysis 和后续报告产生偏差。
+
+所以需要在数据准备阶段：
+
+> **Identify and address biased data**
+
+其他选项
+
+* ❌ **A. Database ≤ 100 GB** → 数据库大小与数据质量无关。
+* ❌ **B. Translate into one language** → 多语言数据不一定需要翻译；重点是数据质量和偏差。
+* ❌ **D. Sort by customer last name** → 排序不会改善 AI 数据质量。
+
+🎯 考试记忆
+
+> **AI data preparation → identify/address bias, missing data, duplicates, inconsistencies**
+
+**答案：C**
+
+
 Correct Answer: C
 
 Explanation/Reference:
@@ -2420,6 +2677,24 @@ D. Azure Monitor
 
 
 ----
+
+**正确答案：✅ C. Cost Management + Billing**
+
+原因
+
+题目关键词是 **evaluate potential cost + ROAI analysis**，需要从 Azure 环境的成本角度进行分析。
+
+* **C. Cost Management + Billing** ✅
+  用于分析 Azure 资源成本、按订阅/资源等维度查看成本，并支持成本预测和 ROI 分析。
+
+其他选项：
+
+* ❌ **A. Azure savings plans** → 用于降低长期计算成本，不是成本分析工具。
+* ❌ **B. Microsoft Fabric SKU Estimator** → 针对 Fabric 容量成本估算。
+* ❌ **D. Azure Monitor** → 监控性能和资源指标，不是成本分析工具。
+
+**答案：C. Cost Management + Billing**
+
 
 
 Correct Answer: C 
@@ -2653,6 +2928,42 @@ D. Immersive Home
 
 ----
 
+正确答案与详细解析
+
+正确答案：
+
+  - A. Agent management（Agent 管理）
+
+解析与考点分析
+
+为什么选 A？
+
+1.  对照案例需求（Contoso, Ltd. 案例）：
+
+      - 案例中明确提到 CTO 的职责与痛点：
+        "The CTO has NOT yet selected which prebuilt AI agent to use in
+        Dynamics 365 Supply Chain Management. The CTO wants to view available
+        agent templates to identify which agent will add the most business
+        value."
+        （CTO 尚未选择在 Dynamics 365 Supply Chain Management 中使用哪种预置 AI Agent。CTO
+        希望查看可用的 Agent 模板，以确定哪个 Agent 能增加最大的业务价值。）
+
+2.  微软产品功能定位：
+
+      - 在 Dynamics 365 Finance and Operations（包括 Supply Chain Management
+        供应链管理）应用体系中，微软引入了 Agent management（Agent 管理） 工作区/中心。
+      - Agent management 是专门供 CTO、系统管理员和业务分析师浏览、评估、预览和启用 Dynamics 365 中开箱即用的预置
+        AI Agent 模板（Prebuilt Agent Templates）（如 Supplier Communication
+        Agent、Demand Analysis Agent 等）的集中化管理平台。
+
+为什么不选其他选项？
+
+  - B. Copilot Studio： Copilot Studio 主要用于从零构建或扩展自定义 AI Agent（Custom AI Agent），而不是在 Dynamics 365 内部浏览和选择开箱即用的预置 Agent 模板（案例中 CTO 的另一项任务“自定义    Agent”才使用 Copilot Studio）。
+  - C. Lifecycle Services (LCS)： 是 Dynamics 365 F&O  旧版的环境运维与应用生命周期管理门户，不用于浏览和体验具体的业务 AI Agent 模板。
+  - D. Immersive Home： 属于 Power BI / 应用主页集成展示界面，与 Dynamics 365 的预置 Agent   模板选型和预览管理无关。
+
+------
+
 Correct Answer: A Section: (none)
 
 Explanation/Reference:
@@ -2707,43 +3018,28 @@ Add to the agent:
 
 -----
 
-Box 1: Custom connector
+**答案：**
 
-Box 2: a tool
+* **To expose the data to the agent, create:** ✅ **a custom connector**
+* **Add to the agent:** ✅ **the MCP server**
+
+原因
+
+题目明确说 R&D 已经有一个 **custom MCP server**，里面包含：
+
+* Product specifications
+* Compliance information
+
+因此 Agent 应该直接使用现有的 **MCP server**。
+
+而要让企业数据/API 暴露给 Copilot Studio Agent，通常使用 **Custom Connector**。
+
+**最终答案：**
+
+* Create → **Custom connector**
+* Add → **MCP server**
 
 
-**Explanation/Reference:**
-
-Explanation:
-
-Scenario:
-
-The company's research and development (R&D) department already has a custom Model Context Protocol (MCP) server that contains comprehensive product specifications and compliance data.
-
-The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&D department.
-
-**Box 1: Custom connector To expose the data to the agent, create**
-
-To expose data from a custom Model Context Protocol (MCP) server to a Microsoft Dynamics 365 AI agent (built in Copilot Studio) to answer questions about product specifications, you should create a Custom Connector.
-
-This custom connector acts as the bridge between the custom MCP server and Power Platform/Copilot Studio, enabling the agent to consume the data and tools provided by the MCP server.
-
-
-**Box 2: a tool Add to the agent**
-
-To add a custom Model Context Protocol (MCP) server that contains comprehensive product specifications and compliance data to a Microsoft Dynamics 365 AI agent, you should use Microsoft Copilot Studio and configure the MCP server as a tool (or skill) within the agent.
-
-Here are the specific steps and components to use:
-
-Platform: Use Microsoft Copilot Studio to create or update the custom agent.
-
-*-> Method: In the agent configuration, go to the Tools section and select Add a tool > Model Context Protocol (MCP).
-
-MCP Server Details: Input the required technical details for your custom server, including the Server Name, Description, and Server URL.
-
-Authentication: Configure the necessary authentication type (e.g., OAuth 2.0 or API Key) as required by your custom MCP server to ensure secure access to product specifications and compliance data.
-
-*-> Tool Binding: The MCP server will expose the specifications as tools that the agent can "call" at runtime to answer user questions about products.
 
 
 ## Testlet 2
@@ -2832,6 +3128,31 @@ D. AI chat in Microsoft Foundry
 
 ----
 
+**正确答案：✅ C. Voice in Microsoft Copilot Studio**
+
+原因
+
+题目最关键的需求是：
+
+> **sales executives use handsfree headsets to interact with an AI agent**
+
+也就是需要 **Voice** 交互。
+
+**Voice in Microsoft Copilot Studio** 专门用于构建支持语音交互的 Copilot/Agent，符合销售人员使用免提耳机进行查询的场景。
+
+其他选项
+
+* ❌ **A. IT Helpdesk** → 面向 IT 支持场景。
+* ❌ **B. AI agents in Microsoft Foundry** → 用于开发更复杂的 AI Agent，但不是本题要求的低代码语音模板。
+* ❌ **D. AI chat in Microsoft Foundry** → 面向文本聊天，不符合 hands-free voice requirement。
+
+🎯 最终答案
+
+**C. Voice in Microsoft Copilot Studio**
+
+
+----
+
 Correct Answer: C
 
 Sales Cycle Enablement To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle:
@@ -2860,19 +3181,6 @@ To implement a hands-free AI agent for Dynamics 365 Sales using the Voice agent 
 
 
 ### QUESTION 2 
-
-Which tool should you use for the prospect communication requirements in Dynamics 365 Sales?
-
-A. Azure AI Search
-
-B. Copilot email assist
-
-C. the Voice template Microsoft Copilot Studio
-
-D. Deep Research in Microsoft Foundry Agent Service
-
-
-------
 
 
 Correct Answer: B
@@ -3122,23 +3430,15 @@ D. From the Power Platform admin center, assign the Finance and Operations AI se
 1.  业务场景： 公司使用 Dynamics 365 Finance（财务模块） 管理应付账款（Accounts
     Payable），并希望配置该模块中**预置的 Copilot（Prebuilt Copilot）**来处理发票。
 2.  前置条件与权限控制（Prerequisites）：
-      - Dynamics 365 Finance（属于 Finance & Operations 应用程序体系）内置了预置的生成式 AI /
-        Copilot 功能（如发票自动化处理、应付账款匹配等）。
-      - 要让用户能够使用这些**预置（Prebuilt）**的 Copilot 功能，管理员必须在 Power Platform 管理中心 或
-        Dynamics 365 安全配置中，为相关用户分配 Finance and Operations AI 安全角色（Finance and
-        Operations AI security role） 及对应的 AI 访问权限。
+      - Dynamics 365 Finance（属于 Finance & Operations 应用程序体系）内置了预置的生成式 AI / Copilot 功能（如发票自动化处理、应付账款匹配等）。
+      - 要让用户能够使用这些**预置（Prebuilt）**的 Copilot 功能，管理员必须在 Power Platform 管理中心 或 Dynamics 365 安全配置中，为相关用户分配 Finance and Operations AI 安全角色（Finance and  Operations AI security role） 及对应的 AI 访问权限。
 
 为什么不选其他选项？
 
-  - A. From Microsoft Copilot Studio, create an accounts payable agent（从 Copilot
-    Studio 创建应付账款 Agent）： 这是从零开始开发自定义（Custom） AI Agent
-    的步骤，而题目明确要求配置现有的预置（Prebuilt） Copilot。
-  - B. Extend Microsoft 365 Copilot for Sales to an accounts payable agent（将
-    Copilot for Sales 扩展为应付账款 Agent）： Copilot for Sales 是专门针对 CRM（销售与
+  - A. From Microsoft Copilot Studio, create an accounts payable agent（从 Copilot Studio 创建应付账款 Agent）： 这是从零开始开发自定义（Custom） AI Agent 的步骤，而题目明确要求配置现有的预置（Prebuilt） Copilot。
+  - B. Extend Microsoft 365 Copilot for Sales to an accounts payable agent（将 Copilot for Sales 扩展为应付账款 Agent）： Copilot for Sales 是专门针对 CRM（销售与
     Outlook）场景的，与 Dynamics 365 Finance 的应付账款（AP）无直接关系。
-  - C. Build an AI tool in Microsoft Foundry（在 Microsoft Foundry 中构建 AI 工具）：
-    Azure AI Foundry（前身为 Azure AI Studio）用于专业开发者构建自定义大模型和 RAG 应用，不属于
-    Dynamics 365 预置 Copilot 的低代码/无代码前置配置。
+  - C. Build an AI tool in Microsoft Foundry（在 Microsoft Foundry 中构建 AI 工具）：Azure AI Foundry（前身为 Azure AI Studio）用于专业开发者构建自定义大模型和 RAG 应用，不属于 Dynamics 365 预置 Copilot 的低代码/无代码前置配置。
 
 -----------
 
@@ -3154,9 +3454,7 @@ To configure the prebuilt Copilot for Accounts Payable in Microsoft Dynamics 365
 
 2. Technical Configuration & Data Settings
 
-3. Licensing & Security Roles Licenses
-
-*-> Dataverse Roles: Users must be assigned the Finance and Operations AI and AIB Roles in the Dataverse environment.
+3. Licensing & Security Roles Licenses *-> Dataverse Roles: Users must be assigned the Finance and Operations AI and AIB Roles in the Dataverse environment.
 
 4. Feature Activation
 
@@ -3186,6 +3484,18 @@ E. Customer engagement hub
 
 
 -----
+
+
+**正确答案：✅ B、E**
+
+* **B. Microsoft Copilot Studio** → 创建和配置 Agent，包括 **转人工（human handoff）** 能力。
+* **E. Customer engagement hub** → 提供 Customer Service / Contact Center 的人工客服工作区，用于接管转来的会话。
+
+**考试记忆：**
+
+> **AI Agent → Copilot Studio → Human Agent → Customer engagement hub**
+
+所以答案：**B + E**。
 
 
 
@@ -3224,13 +3534,13 @@ Agent Workspace: Live agents accept the transfer through the Customer Service Wo
 
 ### QUESTION 4
 
-、A company uses Microsoft Dynamics 365 Supply Chain Management.
+A company uses Microsoft Dynamics 365 Supply Chain Management.
 
 You are designing an AI supply chain process that meets the following requirements:
 
-Provides managers with AI-driven insights that surface key information from customer orders
+- Provides managers with AI-driven insights that surface key information from customer orders
 
-Helps planners use AI to anticipate future product needs more accurately You need to recommend which Microsoft Copilot features to include in the design.
+- Helps planners use AI to anticipate future product needs more accurately You need to recommend which Microsoft Copilot features to include in the design.
 
 What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
 
@@ -3257,6 +3567,23 @@ Anticipate future product needs:
 
 -----
 
+
+**答案：**
+
+* **Provide AI-driven insights from customer orders:** ✅ **AI Summaries with Copilot**
+* **Anticipate future product needs:** ✅ **Generative insights for Demand planning**
+
+记忆
+
+* **Customer orders → AI Summaries with Copilot**：从订单等业务数据中快速提取关键摘要和洞察。
+* **Future product needs / Demand forecast → Generative insights for Demand planning**：帮助规划人员分析需求、预测未来产品需求。
+
+**最终答案：**
+
+> ① **AI Summaries with Copilot**
+> ② **Generative insights for Demand planning**
+
+----
 
 **Box 1: AI summaries with Copilot**
 
@@ -4343,6 +4670,27 @@ D. Azure OpenAI and Azure Functions
 
 ----
 
+
+**正确答案：✅ C. Microsoft Copilot Studio and AI Builder**
+
+原因
+
+题目三个关键词：
+
+* **Invoice document analysis** → **AI Builder** 可提取发票字段。
+* **Teams 直接交互、审核和批准** → **Copilot Studio** Agent 可以集成到 Teams。
+* **Minimize development efforts** → 使用 Power Platform 的 **low-code** 能力，减少自定义代码。
+
+其他选项
+
+* ❌ **A. Document Intelligence + Logic Apps** → 可以处理文档和工作流，但 Teams 对话式审批以及低代码 Agent 能力不如 Copilot Studio + AI Builder。
+* ❌ **B. SharePoint agent** → 主要用于 SharePoint 内容问答，不适合完整的发票处理流程。
+* ❌ **D. Azure OpenAI + Azure Functions** → 需要更多自定义开发，不符合 **minimize development efforts**。
+
+**最终答案：C. Microsoft Copilot Studio and AI Builder**
+
+
+
 Correct Answer: C
 
 Explanation/Reference:
@@ -4377,6 +4725,33 @@ C. Use a Microsoft Power Automate desktop flow to screen scrape the warranty dat
 D. Add the warranty data to the Fallback topic.
 
 ----
+
+**正确答案：✅ B. Create a custom connector in Copilot Studio and use the connector to call the API.**
+
+原因
+
+题目关键词：
+
+* **REST API**
+* **securely retrieve data**
+* **minimize development effort**
+
+**Custom Connector** 可以把现有 REST API 封装成 Copilot Studio 可调用的 action/tool，无需自己开发大量 API integration code。
+
+其他选项：
+
+* ❌ **A** → Managed solution 与调用 REST API 无关。
+* ❌ **C** → Desktop flow / screen scraping 复杂且不适合直接调用 REST API。
+* ❌ **D** → Fallback topic 用于处理无法理解的用户输入，不适合访问外部 API。
+
+🎯 记忆
+
+> **Existing REST API + Copilot Studio + Low-code → Custom Connector**
+
+**答案：B**
+
+
+
 
 Correct Answer: B
 
@@ -4515,10 +4890,6 @@ F. the Dynamics 365 Field Service mobile app
 
   - A, C, D (Dynamics 365 Customer Service 相关组件)： 适用于呼叫中心/客服代表（Customer Service Agents）处理在线咨询和热线工单，不适用于现场上门服务（Scheduled on-site work）、调度员排程以及一线现场技术人员场景。
   - B (Copilot in Outlook)： 属于通用的 Outlook 邮件处理助手，无法为现场技术人员在移动端执行上门服务预约时提供专用的现场工作流上下文支持。
-
-
-
-
 
 
 
@@ -4946,6 +5317,20 @@ E. an X++model
 
 ---
 
+**正确答案：✅ C、B**
+
+* **C. Microsoft Power Platform solution** → Copilot Studio Agent 的 ALM 核心载体，用于跨 Dev/Test/Prod 部署。
+* **B. ZIP package** → 用于打包/导入导出 Agent 相关组件。
+
+记忆
+
+**Copilot Studio Agent ALM → Power Platform Solution + ZIP package**
+
+所以答案：**B + C**。
+
+
+----
+
 Correct Answer: BC Section: (none)
 
 Explanation/Reference: 
@@ -4988,40 +5373,60 @@ Which tools should you recommend to assist the CISO and the CIO with their speci
 
 ----
 
-Box 1: Microsoft Purview
+**答案：**
 
-Box 2: Microsoft Purview
+* **CISO:** ✅ **Azure Resource Graph Explorer**
+* **CIO:** ✅ **Microsoft Purview**
 
-Box 1: Microsoft Purview CISO
+原因
 
-Scenario:
+* **CISO → Azure Resource Graph Explorer**
+  题目中 CISO 的职责是 **discover and inventory AI resources for auditing**。Resource Graph Explorer 可以查询和盘点 Azure 资源，适合做 AI resource inventory。
 
-The CISO will audit all the AI solutions monthly for compliance and security.
+* **CIO → Microsoft Purview**
+  CIO 的职责是确保数据有适当的 **security labels / classification**。Microsoft Purview 提供数据发现、分类和敏感度标签（sensitivity labels）能力。
 
-The CISO wants to identify how much sensitive data was accessed for a given AI agent run and who accessed the data. Too much sensitive data accessed by a single user might indicate a high security risk.
+🎯 记忆
 
--Microsoft Purview is the primary tool for this scenario. It provides a unified governance and security platform that integrates directly with Microsoft Agent 365 and Dynamics 365 AI agents to audit interactions, track sensitive data access, and identify high-risk user behaviors.
+> **CISO → Discover / Inventory resources → Azure Resource Graph Explorer**
+> **CIO → Data classification / Sensitivity labels → Microsoft Purview**
 
-Auditing Sensitive Data in AI Agent Runs Purview uses a combination of automated classification and audit logging to provide a granular view of every AI interaction.
-
-Unified Audit Log: Automatically captures user and agent activities, including who initiated the interaction and when it occurred.
-
-Resource Tracking: Audit records reference specific files, SharePoint sites, or Dataverse tables accessed by the agent during a run.
-
-Data Classification: Identifies Sensitive Information Types (SITs)—such as credit card numbers, PII, or internal trade secrets—within both the user prompt and the agent's response.
-
-Sensitivity Labels: Captures if accessed files have existing sensitivity labels, ensuring protection is maintained even when data is summarized by an agent.
+**最终：CISO = Azure Resource Graph Explorer；CIO = Microsoft Purview**
 
 
-Box 2: Microsoft Purview CIO
+----
 
-Scenario:
 
-Chief Information Officer (CIO): Ensure that appropriate security labels are assigned to the data used by the AI agents.
+这是该道针对 Contoso, Ltd. 案例分析 的拖拽匹配题（Select and Place）的正确答案与详细解析：
 
-Microsoft Purview is the primary tool for managing and assigning security labels to data used by AI agents in Microsoft Dynamics 365.
+QUESTION 答案 (Answer Area)
 
-Within the Microsoft ecosystem, these "security labels" are formally known as Sensitivity Labels, and they are configured and published via the Microsoft Purview Information Protection service.
+  - CISO (首席信息安全官): 👉 Azure Resource Graph Explorer (或 Microsoft Purview)
+
+  - CIO (首席信息官): 👉 Microsoft Purview
+
+解析与考点分析（对照案例原题）
+
+在 Contoso, Ltd. 案例中，CISO 与 CIO 拥有非常明确的职责与工具对应关系：
+
+1. CIO (Chief Information Officer - 首席信息官)
+
+  - 案例核心职责要求：
+    "Chief Information Officer (CIO): Ensure that appropriate security label are assigned to the data used by the AI agents."
+    （CIO 职责：确保为 AI Agent 使用的数据分配适当的安全/敏感性标签。）
+  - 对应工具： Microsoft Purview
+  - 解析： 在微软生态中，为数据资产创建、分配和强制执行敏感性标签（Sensitivity Labels / Security
+    Labels）的官方核心工具是 Microsoft Purview Information Protection (MPIP)。
+
+2. CISO (Chief Information Security Officer - 首席信息安全官)
+
+  - 案例核心职责要求：   "Chief Information Security Officer (CISO): Discover and inventory AI resources for auditing."
+    （CISO 职责：发现并清查（盘点）AI 资源以供审计。）
+  - 对应工具： Azure Resource Graph Explorer
+  - 解析： 案例中提到 Contoso 拥有多个法律实体和多个 Azure 订阅（Multiple Azure subscriptions）。要在跨订阅的云端环境中高效地**搜索、发现和盘点（Discover and inventory）**所有已部署的 AI  资源（如 Azure OpenAI 实例、AI Services 资源等），微软推荐的标准工具是 Azure Resource Graph Explorer（支持使用 KQL 快速跨订阅查询和盘点云资源）。
+
+(注：CISO 在后续审计敏感数据访问时也会用到 Microsoft Purview，如果该题每个框只填一个主选工具，CISO 的首选核心工具即为 Azure
+Resource Graph Explorer；若允许选多个，Purview 同样适用。)
 
 
 ### QUESTION 3 
@@ -5081,6 +5486,41 @@ Box 1: Effectiveness
 
 
 Box 2: Satisfaction
+
+
+正确答案
+
+| Requirement                             | 答案                  | 原因                                                                                                              |
+| --------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **CFO – Copilot Studio credit usage**   | ✅ **Effectiveness** | Effectiveness 关注 **Session Outcomes**，包括 **Resolved / Abandoned / Escalated**，正好对应题目要求的 abandoned vs. resolved。 |
+| **CTO – Poor feedback on AI responses** | ✅ **Satisfaction**  | Satisfaction 关注用户反馈，包括 **thumbs up/down（Reactions）**，用于判断回答质量。                                                  |
+
+为什么 CFO 不是 Use？
+
+题目虽然提到：
+
+> Copilot Studio credits are being used inefficiently
+
+但 CFO **实际要测量的指标**是：
+
+> **abandoned sessions vs. resolved conversations**
+
+这是 **Effectiveness → Session Outcomes** 的指标。
+
+而 **Use** 更偏向 Agent 的使用情况/使用量，例如使用次数、sessions 等，并不能直接回答 **Resolved vs. Abandoned**。
+
+考试记忆
+
+* **Resolved / Abandoned / Escalated** → ⭐ **Effectiveness**
+* **Thumbs up / Thumbs down / User feedback** → ⭐ **Satisfaction**
+* **Usage / adoption / how much used** → **Use**
+* **Tool invocation / tool performance** → **Tool use**
+
+所以这道题最终：
+
+> **Box 1: Effectiveness ✅**
+> **Box 2: Satisfaction ✅**
+
 
 **Box 1: Effectiveness** 
 
@@ -5349,7 +5789,10 @@ Unified Management: Both your Copilot Studio and Foundry agents can be managed c
 
 You are designing an AI business solution that contains the following components:
 
-A Microsoft Power Automate workflow A Microsoft Copilot Studio agent A Microsoft Dataverse database A Microsoft Power Apps app
+- A Microsoft Power Automate workflow
+- A Microsoft Copilot Studio agent
+- A Microsoft Dataverse database
+- A Microsoft Power Apps app
 
 As part of the application lifecycle management (ALM) process, you plan to package the components, so that they can be deployed to other environments as a group.
 
@@ -5364,6 +5807,47 @@ B. Azure DevOps
 C. Microsoft Power Platform solutions
 
 ----
+
+**正确答案：✅ C. Microsoft Power Platform solutions**
+
+原因
+
+题目关键词：
+
+* Power Automate
+* Copilot Studio agent
+* Dataverse
+* Power Apps
+* **打包成一个整体**
+* **Versioning**
+* **Dependencies**
+* **Deploy to other environments**
+
+这些正是 **Power Platform Solutions** 的用途。
+
+Solution 可以把多个 Power Platform 组件作为一个逻辑单元管理，并支持：
+
+* 版本管理
+* 组件依赖关系
+* Dev → Test → Production 部署
+* Managed / Unmanaged Solutions
+
+其他选项
+
+* ❌ **GitHub Actions** → CI/CD 自动化工具，不是 Power Platform 组件的打包容器。
+* ❌ **Azure DevOps** → 可以用于 ALM Pipeline，但不是组件本身的打包和依赖管理机制。
+
+🎯 最终答案
+
+**C. Microsoft Power Platform solutions**
+
+**记忆：**
+
+> **Power Apps + Power Automate + Copilot Studio + Dataverse → Solution**
+> **Solution + CI/CD → Power Platform Pipelines / Azure DevOps / GitHub Actions**
+
+
+
 
 Correct Answer: C Section: (none)
 
@@ -5673,12 +6157,42 @@ Answer Area
 
 ----
 
-这是该道热点选择题（Hot Area）的正确答案与详细解析：
 
-QUESTION 7 答案 (Answer Area)
+**正确答案：**
 
-  - Copilot Studio: 👉 Use a Microsoft Power Platform deployment pipeline.（使用
-    Microsoft Power Platform 部署管道。）
+* **Copilot Studio:** ✅ **Use a Microsoft Power Platform deployment pipeline**
+* **Microsoft Foundry:** ✅ **Use an Azure DevOps pipeline**
+
+原因
+
+| Agent                 | 推荐方法                                   | 原因                                                     |
+| --------------------- | -------------------------------------- | ------------------------------------------------------ |
+| **Copilot Studio**    | **Power Platform deployment pipeline** | 支持 Dev → Test → Prod 的环境晋级和隔离，适合自动化 Solution/Agent 部署。 |
+| **Microsoft Foundry** | **Azure DevOps pipeline**              | 适合将 Foundry AI 资源/模型部署纳入 CI/CD，实现可重复、自动化部署。            |
+
+为什么其他选项不选？
+
+**Copilot Studio**
+
+* ❌ Export/import → 通常需要人工操作，不符合 fully automated。
+* ❌ Bicep → 主要用于 Azure infrastructure，不是 Copilot Studio Agent 的主要 ALM 部署方式。
+
+**Microsoft Foundry**
+
+* ❌ Power Platform deployment pipeline → 面向 Power Platform。
+* ❌ Bicep → 可以部署 Azure 资源，但题目强调**源代码仓库 + repeatable automated deployment**，Azure DevOps pipeline 更合适。
+
+🎯 最终
+
+> **Copilot Studio → Microsoft Power Platform deployment pipeline**
+> **Microsoft Foundry → Azure DevOps pipeline**
+
+
+
+
+
+
+  - Copilot Studio: 👉 Use a Microsoft Power Platform deployment pipeline.（使用    Microsoft Power Platform 部署管道。）
 
   - Microsoft Foundry: 👉 Use an Azure DevOps pipeline.（使用 Azure DevOps 管道。）
 
@@ -5839,6 +6353,24 @@ E. Store the agent transcripts in source control.
 
 -----
 
+**正确答案：✅ C、D**
+
+* **C. Use Microsoft Power Platform pipelines.** → 自动化 Dev → Test → Production 的部署和 Promotion。
+* **D. Include the components in a solution.** → 将 Copilot 相关组件统一打包、版本化并管理依赖关系。
+
+### 为什么其他选项不对？
+
+* ❌ **A** → Production 应使用 **managed solution**，不是 unmanaged。
+* ❌ **B** → 不应在每个环境手工重建 Agent。
+* ❌ **E** → Agent transcripts 是运行数据，不是 ALM 组件，不应作为源代码管理。
+
+**记忆：**
+
+> **Copilot ALM = Solution + Power Platform Pipelines**
+
+**答案：C + D**
+
+
 
 Correct Answer: CD Section: (none)
 
@@ -5957,9 +6489,24 @@ D. Track model retirement schedules to prevent service disruptions.
 
 ---
 
+**C. Implement version control for all the AI system components.**
 
-Correct Answer: C
+Here’s why this is the correct recommendation:
 
+- **Access to prior versions:** Version control (for code, data, configurations, and models) gives the security and compliance team direct, immutable access to every prior iteration. This allows them to perform precise "diff" comparisons between the current and previous deployments to pinpoint exactly which changes introduced potential security exposures.
+- **Evaluating impact:** By tracking all components together (not just the model artifact), you can correlate model behavior changes with specific code or data shifts. This enables comprehensive impact analysis—such as A/B testing against historical data or reviewing performance drift—before production cutover.
+- **Enhancing business continuity:** Version control enables instant rollback to a known, stable, and compliant version if the new deployment fails a post-deployment check or introduces unexpected issues. This drastically reduces Mean Time To Recovery (MTTR) and prevents prolonged service disruptions.
+
+**Why the other options are less suitable:**
+
+- **A. Create a central model registry:** While useful for tracking model *artifacts*, a registry alone typically lacks the surrounding code, pipeline scripts, and feature engineering logic needed for a full security impact evaluation.
+- **B. Establish a promotion process by using a quality gate:** This is a crucial *process*, but it does not inherently provide the mechanism to access and compare prior versions. Version control is the foundation upon which quality gates must be built to be effective for this scenario.
+- **D. Track model retirement schedules:** This addresses lifecycle end-of-life issues but does nothing to help evaluate the impact of a *new* deployment or provide access to historical versions for security reviews.
+
+---
+
+
+Version control for all AI system components creates an audit trail of changes and enables rapid identification and rollback of problematic models, data pipelines, and system configurations. This supports security and compliance review of previous states and improves business continuity by allowing restoration of a known-good configurat
 
 Explanation/Reference:
 
@@ -6010,6 +6557,10 @@ NOTE: Each correct selection is worth one point.
 
 --------
 
+
+
+
+
 Box 1: Application Insights
 
 Box 2: Microsoft Power Apps
@@ -6058,9 +6609,9 @@ A company deploys a Microsoft Copilot Studio agent that integrates with a Micros
 
 You need to recommend a testing solution that meets the following requirements:
 
-Test cases must validate the most recent changes to the agent before the agent is released.
+- Test cases must validate the most recent changes to the agent before the agent is released.
 
-The flow must be validated as part of the agent's orchestration.
+- The flow must be validated as part of the agent's orchestration.
 
 What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
 
@@ -6085,10 +6636,36 @@ Validate the flow as part of the agent's orchestration:
 
 ------
 
+正确答案
 
-这是该道热点选择题（Hot Area）的正确答案与详细解析：
+| Requirement                                                      | 答案                                                                   |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Validate the most recent changes to the agent before release** | ✅ **Run tests against the latest unpublished version of the agent.** |
+| **Validate the flow as part of the agent's orchestration**       | ✅ **Add the flow to the agent as a tool.**                           |
 
-QUESTION 答案 (Answer Area)
+原因
+
+**1. Latest unpublished version → Run tests**
+
+Copilot Studio 可以在 Agent **发布之前**测试最新修改，这样可以验证尚未发布的 changes，而不影响 production。
+
+**2. Flow orchestration → Add flow as a tool**
+
+题目要求：
+
+> flow must be validated **as part of the agent's orchestration**
+
+因此需要把 Power Automate flow **作为 Agent 的 Tool**，让 Agent 在测试过程中实际调用该 flow。
+
+🎯 考试记忆
+
+> **Before release → Test latest unpublished version**
+> **Agent + Power Automate flow → Add flow as a Tool**
+
+**答案：① Run tests against latest unpublished version
+② Add the flow to the agent as a tool**
+
+
 
 1. Validate the most recent changes to the agent before release:
 
@@ -6339,7 +6916,24 @@ Provides continuous compliance verification of the resources:
 
 ----
 
-这是一道典型的 **Azure Governance** 考题，考的是 **Azure Policy** 和 **Microsoft Defender for Cloud** 的职责区分。
+
+**答案：**
+
+| Requirement                                      | 正确答案                               | 关键原因                                                             |
+| ------------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------- |
+| **Enforces deployment only to approved regions** | ✅ **Azure Policy**                 | 可以使用 **Allowed locations** Policy，在部署时限制资源只能创建在批准的 Azure Region。 |
+| **Provides continuous compliance verification**  | ✅ **Microsoft Defender for Cloud** | 提供持续安全/合规评估、Compliance Dashboard 和 Regulatory Compliance。        |
+
+ 考试记忆
+
+* **限制 Region / 强制规则 / Prevent deployment** → **Azure Policy**
+* **Continuous compliance / Security posture / Regulatory compliance** → **Microsoft Defender for Cloud**
+
+**最终：**
+
+1. **Azure Policy**
+2. **Microsoft Defender for Cloud**
+
 
 **Requirement 1**
 
@@ -6362,34 +6956,6 @@ Provides continuous compliance verification of the resources:
 * Allowed SKUs
 
 如果有人尝试在未批准的区域（如 East Asia）创建 Azure OpenAI 资源，Azure Policy 可以直接拒绝部署。
-
-**为什么其他选项不对？**
-
-* **Azure Monitor** ❌：监控，不负责治理。
-* **Microsoft Defender for Cloud** ❌：评估安全状态，不会阻止部署。
-* **Microsoft Purview** ❌：数据治理与数据目录。
-* **Microsoft Sentinel** ❌：SIEM/SOAR 安全事件分析。
-
-**Requirement 2**
-
-> **Provides continuous compliance verification of the resources**
-
-关键词：
-
-* **Continuous compliance verification（持续合规验证）**
-
-这里不是要求阻止部署，而是**持续检查**资源是否符合安全与合规要求。
-
-最符合的是：
-
-✅ **Microsoft Defender for Cloud**
-
-它提供：
-
-* Continuous assessment（持续评估）
-* Regulatory compliance dashboard（法规合规仪表板）
-* Secure Score
-* Security recommendations
 
 可以持续检查 Azure OpenAI 等资源是否符合既定安全与合规要求。
 
@@ -6423,8 +6989,6 @@ Azure Policy 也可以评估资源是否符合策略（显示 Compliant / Non-co
 
 * **Enforces the deployment of the resources to only approved regions:** ✅ **Azure Policy**
 * **Provides continuous compliance verification of the resources:** ✅ **Microsoft Defender for Cloud**
-
-
 
 
 ----
@@ -6880,6 +7444,33 @@ D. Lower the maximum token usage limit for the responses.
 -----
 
 
+**正确答案：✅ C. Reconfigure the prompts to limit the amount of retrieved content from the knowledge sources.**
+
+原因
+
+问题是：
+
+* Agent 经常达到 **token usage limit**
+* 导致响应变慢
+* 但要求**不能降低回答质量**
+
+最合适的是控制 **retrieved content 的数量**，让模型只接收与问题最相关的信息。
+
+其他选项
+
+* ❌ **A. Chunk documents during indexing** → 可以改善检索，但不一定直接减少最终传给模型的 token。
+* ❌ **B. Reduce knowledge sources** → 可能丢失有用信息，影响回答质量。
+* ❌ **D. Lower maximum token usage** → 直接限制模型，可能降低回答质量。
+
+记忆
+
+> **Token 太多 + 保持质量 → 减少 Retrieval Context，而不是减少 Knowledge Sources。**
+
+**答案：C**
+
+
+
+
 Correct Answer: C Section: (none)
 
 Explanation/Reference:
@@ -7156,6 +7747,25 @@ The number of agent queries that cause a knowledge source error:
 
 ------
 
+**答案：**
+
+* **Percentage of engaged sessions escalated to a representative:** ✅ **Escalation rate**
+* **Number of agent queries that cause a knowledge source error:** ✅ **Answer quality**
+
+记忆
+
+* **Escalation rate** → 衡量有多少会话被转人工。
+* **Answer quality** → 包含回答失败、知识源错误等质量问题。
+* **Engagement rate** → 用户参与/互动程度。
+* **CSAT** → 用户满意度。
+
+**最终：**
+
+> Escalated sessions → **Escalation rate**
+> Knowledge source errors → **Answer quality**
+
+
+---
 
 Box 1: Escalation rate
 
@@ -7224,6 +7834,37 @@ D. Enable customer-managed keys in Microsoft Dataverse.
 
 ------
 
+**正确答案：✅ C. Deploy data loss prevention (DLP) policies in Power Platform.**
+
+原因
+
+题目两个关键要求：
+
+1. **只能使用 approved connectors and services**
+2. **Prevent agents from accessing sensitive data**
+
+**Power Platform DLP policies** 可以：
+
+* 控制哪些 Connectors 可以使用
+* 将 Connectors 分为 **Business / Non-business / Blocked**
+* 阻止不允许的 Connector 组合和数据流
+* 防止 Power Platform Agent/Flow 将业务数据流向未经批准的服务
+
+其他选项
+
+* ❌ **A. Azure Monitor** → 主要用于监控和日志，不负责阻止访问。
+* ❌ **B. Dataverse audit** → 记录数据访问/变更，但不能实施 Connector 使用限制。
+* ❌ **D. Customer-managed keys** → 主要解决数据加密密钥控制，不负责 Connector/DLP 治理。
+
+ 🎯 考试记忆
+
+> **Approved connectors + prevent data leakage → Power Platform DLP**
+
+**答案：C. Deploy data loss prevention (DLP) policies in Power Platform.**
+
+
+-----
+
 Correct Answer: C Section: (none)
 
 Explanation/Reference:
@@ -7270,6 +7911,22 @@ E. Measure system resource usage during prompt processing.
 
 ----
 
+**正确答案：✅ C、D**
+
+* **C. Regularly test and refine the prompts based on user input.**
+  → 持续根据实际用户反馈优化 Prompt。
+
+* **D. Use clear and specific instructions in the prompts.**
+  → 明确、具体的指令可以提高 Agent 回答的准确性和一致性。
+
+记忆
+
+> **Prompt Best Practices = Clear & Specific + Test & Refine**
+
+**答案：C + D**
+
+
+----
 
 Correct Answer: CD
 
@@ -7434,19 +8091,67 @@ E. Include agents and connectors in a solution.
 
 -----
 
-Correct Answer: AD Section: (none) Explanation/Reference:
+- A. Deploy managed solutions to production.
+- E. Include agents and connectors in a solution.
 
-Explanation:
 
-Core ALM Actions To ensure consistency and governace, include these actions in your design:
+Managed solutions are intended for production deployment and help prevent direct changes to deployed components. Power Platform solutions package components for transport between environments and can include custom connectors; Copilot Studio agents are managed and deployed across environments by using solutions.
 
-1. Environment & Solution Strategy
+**答案：✅ A、E**
 
-[A] *-> Three-Environment Model: Establish a dedicated Development (unmanaged), Test/UAT (managed), and Production (managed) environment.
+解析
 
-Solution Packaging: Create agents and custom connectors directly inside a Power Platform Solution.
+题目要求：
 
-[D] *-> Managed Solutions: Always export your solution as Managed when moving to Test and Production. This locks the components, preventing direct editing in those environments.
+* 在 **Development、Test、Production** 之间一致部署
+* **防止 Production 被直接修改**
+* 符合 **ALM 最佳实践**
+
+
+✅ A. Deploy managed solutions to production
+
+**正确。**
+
+Production 环境应部署 **Managed Solution**：
+
+* 防止直接修改组件
+* 支持版本管理
+* 符合微软 ALM 最佳实践
+
+✅ E. Include agents and connectors in a solution
+
+**正确。**
+
+Copilot Studio Agent 和 Custom Connector 都应放入 **Solution** 中统一管理，便于：
+
+* ALM Pipeline 部署
+* 版本控制
+* 跨环境迁移
+
+为什么其他选项不对？
+
+* ❌ **B. Deploy unmanaged solutions to production**
+
+  * Unmanaged Solution 适用于开发环境，不适合生产环境。
+
+* ❌ **C. Manually rebuild the agents in each environment**
+
+  * 无法保证一致性，也不符合 ALM。
+
+* ❌ **D. Move the agents by using data export/import**
+
+  * 官方推荐使用 **Solutions**，不是手工导入导出数据。
+
+考试记忆
+
+* **Development** → **Unmanaged Solution**
+* **Production** → **Managed Solution**
+* **Agent / Connector** → **放入 Solution 管理**
+* **跨环境部署** → **ALM Pipelines + Solution**
+
+**最终答案：✅ A、E**
+
+
 
 
 ### QUESTION 33 
@@ -7740,30 +8445,326 @@ C. Log Analytics
 
 D. Azure Advisor
 
-Correct Answer: A Section: (none)
+----
 
-Explanation/Reference:
+正确答案与详细解析
 
-Explanation:
+正确答案：
 
-Correct:
+  - B. the Analytics tab in Copilot Studio（Copilot Studio 中的“分析”选项卡）
 
-* Application Insights To achieve comprehensive monitoring, telemetry, and performance insights for Microsoft Copilot Studio agents across different channels, you should integrate them with Azure Application Insights.
+解析与考点分析
 
-Integrating Application Insights provides a centralized view of agent health, user interactions, topic performance, and latency, which is crucial for monitoring multi-channel deployments.
+为什么选 B？
 
-* Microsoft Power BI is the best tool for monitoring comprehensive telemetry data and performance insights across multiple Copilot Studio agents and various channels.
+1.  业务场景： 公司在不同渠道上部署了多个 Microsoft Copilot Studio Agent，需要一个监控解决方案来提供全面的遥测数据（Comprehensive  telemetry data）和性能洞察（Performance insights）。
+2.  开箱即用的原生功能：
+      - Microsoft Copilot Studio 内置了强大的 Analytics（分析）选项卡。
+      - 无需编写代码或进行复杂的 Azure 资源配置，管理员和开发者即可直接在 Analytics 选项卡中查看到跨渠道部署的所有 Agent
+        的开箱即用遥测数据与性能洞察，包括：
+          - Summary（概要）：参与率、解决率、转人工升级率、放弃率。
+          - Topic Usage（主题使用情况）：各 Topic 的触发频率与解决效果。
+          - Customer Satisfaction（客户满意度）：CSAT 评分与用户反馈分析。
+          - Sessions（会话）：完整的会话轨迹（Transcripts）与结果分类。
 
-Analytics tab within Copilot Studio offers quick, high-level insights for individual agents, Power BI provides the necessary scalability for enterprise-level, multi-agent monitoring.
+为什么不选其他选项？
 
-Centralized Multi-Agent View: Power BI allows you to create custom dashboards that aggregate data from multiple agents and environments (e.g., using the Power-CAT Agent Insights Hub).
+  - A. Microsoft Power BI： Power BI 是商业智能报表工具。虽然可以通过导出数据或调用 API 在 Power BI
+    中自定义报表，但它不是 Copilot Studio 原生内置的实时遥测与性能洞察监控入口。
+  - C. Log Analytics（日志解析）： Log Analytics 是 Azure Monitor 的底层日志查询数据库。如果题目选项中包含
+    Application Insights，Application Insights 是捕捉遥测的标准服务；但在不引入额外 Azure
+    运维配置的前提下，Copilot Studio 内置的 Analytics tab 是直接获取 Agent 性能洞察的最直接答案。
+  - D. Azure Advisor（Azure 顾问）： 仅针对 Azure 基础设施架构提供成本、安全性和可用性优化建议，不提供 Copilot
+    Studio Agent 的对话遥测数据。
 
-Deep Telemetry Integration: Power BI can ingest detailed session data and chat transcripts, enabling deep analysis of topic triggers, tool execution, and user satisfaction (CSAT) across channels.
 
-Customization and Reporting: You can leverage Power BI templates, such as the Copilot Studio agent report, to analyze trends over long periods, which the built-in analytics tab does not support.Enhanced Monitoring with Application Insights: By connecting agents to Azure
 
-*-> Application Insights, you can export detailed telemetry to Power BI for comprehensive, long-term monitoring, including conversation transcripts and custom events.
+### Question 40
 
-Incorrect:
+Which tool should be used for the prospect-communication requirements in Dynamics 365 Sales?
 
-* Azure Advisor * Azure DevOps * Log Analytics * Microsoft Dynamics 365 Customer Voice * Microsoft Purview * the Analytics tab in Copilot Studio The built-in Analytics tab within Copilot Studio offers quick, high-level insights for individual agents only.
+
+- A Azure Al Search
+- B Copilot email assist
+- C the Voice template Microsoft Copilot Studio
+- D Deep Research in Microsoft Foundry Agent Service
+
+
+----
+
+B Copilot email assist helps Dynamics 365 Sales sellers compose customer-specific email content and is supported for lead and opportunity records through Dynamics 365 email, directly enabling faster prospect correspondence.
+
+
+**正确答案：✅ B. Copilot email assist**
+
+原因
+
+题目关键词是 **prospect communication（与潜在客户沟通）**，尤其是 Dynamics 365 Sales 中：
+
+* 起草/回复客户邮件
+* 根据销售上下文生成邮件
+* 加快与 prospects 的沟通
+
+这些正是 **Copilot email assist** 的用途。
+
+其他选项：
+
+* ❌ **Azure AI Search** → 企业知识检索
+* ❌ **Copilot Studio Voice template** → 语音 Agent
+* ❌ **Deep Research** → 深度研究/信息收集
+
+**考试记忆：Dynamics 365 Sales + Prospect Email → Copilot email assist。**
+
+
+### Question 41
+
+A company has an Azure environment that supports several business units.
+
+The company intends to implement an Al solution that will perform sentiment analysis on customer product reviews.
+
+You need to assess the solution's potential cost to support return on Al investment (ROAI) analysis.
+
+What should you use?
+
+- A Total Cost of Ownership (TCO) Calculator
+- B Azure Reservations
+- C Azure pricing calculator
+- D Azure Monitor
+
+---
+
+**正确答案：✅ C. Azure pricing calculator**
+
+原因
+
+题目要求：
+
+> **Assess the solution's potential cost**
+> 用于 **ROAI（Return on AI Investment）分析**
+
+需要估算 AI 方案未来可能产生的 Azure 服务成本，例如：
+
+* Azure AI Language / sentiment analysis
+* Storage
+* Compute
+* API usage
+
+**Azure Pricing Calculator** 可以根据预计的资源和使用量估算成本。
+
+其他选项
+
+* ❌ **A. TCO Calculator** → 比较迁移到 Azure 前后的总体拥有成本（TCO），不是针对新 AI 方案的服务成本估算。
+* ❌ **B. Azure Reservations** → 降低长期资源成本，不用于成本预测。
+* ❌ **D. Azure Monitor** → 监控实际运行情况，不是成本估算工具。
+
+记忆
+
+**新方案成本预估 → Azure Pricing Calculator** ✅
+**On-prem → Azure 成本对比 → TCO Calculator** ✅
+
+**答案：C**
+
+### Question 42
+
+A company operates an ecommerce support portal that uses Microsoft Dataverse.
+
+You are designing a Microsoft Copilot Studio agent for the portal. The agent must meet these requirements:
+
+- Respond with a default help message when user input is unclear.
+- Start external processes, such as retrieving order status, when users make specific requests.
+
+
+Generative orchestration will be enabled for the solution.
+
+Recommend a feature for each requirement. Each feature may be used once, more than once, or not at 
+
+**Drag & Drop**
+
+- A tool (connector)
+- A trigger phrase
+- The Fallback topic
+- A skill
+- The Escalate topic
+
+**Answer area**
+
+Respond with a default help message when the user input is unclear: [___]
+
+Initiate external processes when requested: [___]
+
+
+-----
+
+
+**答案：**
+
+* **Respond with a default help message when the user input is unclear:** ✅ **The Fallback topic**
+* **Initiate external processes when requested:** ✅ **A tool (connector)**
+
+关键点
+
+* **Fallback topic** → 当 Agent 无法理解用户输入时提供默认响应。
+* **Tool (connector)** → 在 **generative orchestration** 下，Agent 可以根据用户意图选择并调用 Connector 来执行外部操作，例如查询订单状态。
+
+**最终：**
+
+> Unclear input → **Fallback topic**
+> External process → **Tool (connector)**
+
+
+### Question 43
+
+A company has an Azure environment that supports multiple business units.
+
+The company plans to implement an Al solution that will perform sentiment analysis on customer product reviews.
+
+You need to assess the solution's potential cost to support return on Al investment (ROAI) analysis.
+
+What should you use?
+
+- A Azure Reservations
+- B Microsoft Fabric SKU Estimator
+- C Anomaly Detection in Azure Cost Management
+- D Azure pricing calculator
+
+-----
+
+**正确答案：✅ D. Azure pricing calculator**
+
+原因
+
+题目关键词是：
+
+> **assess the solution's potential cost**
+> **support ROAI analysis**
+
+这是在 AI 方案实施**之前**估算预计成本，因此使用 **Azure Pricing Calculator**。
+
+* **D. Azure Pricing Calculator** ✅ → 估算 Azure 服务的预计成本，适合做 ROI/ROAI 规划。
+* **A. Azure Reservations** ❌ → 用于购买预留容量、降低长期成本。
+* **B. Microsoft Fabric SKU Estimator** ❌ → 用于估算 Fabric 容量，不是一般 Azure AI 方案。
+* **C. Anomaly Detection in Azure Cost Management** ❌ → 用于发现异常成本，不是事前成本估算。
+
+考试记忆
+
+> **Potential / estimated Azure cost → Azure Pricing Calculator**
+> **Actual spending / cost analysis → Cost Management + Billing**
+
+**答案：D. Azure pricing calculator**
+
+
+### Question 44
+
+A company uses a Microsoft Copilot Studio prompt-and-response agent.
+
+You need to ensure that the agent meets these requirements:
+
+- Provides effective and relevant responses
+- Provides conversational outcomes
+
+**Which metric should be used for each requirement?**
+
+
+Provides effective and relevant responses:  []
+
+- Generated answer rate and quality
+- Reactions
+- Tool use
+
+
+Provides conversational outcomes:  []
+
+- Satisfaction
+- Tool use
+- Topics by outcome
+
+
+----
+
+
+答案：
+
+* **Provides effective and relevant responses:** ✅ **Generated answer rate and quality**
+* **Provides conversational outcomes:** ✅ **Topics by outcome**
+
+记忆
+
+* **Generated answer rate and quality** → 看 AI 生成回答是否有效、相关、质量好。
+* **Topics by outcome** → 看不同 Topic 最终是 **resolved / abandoned / escalated** 等结果。
+
+**最终：**
+
+> ① Generated answer rate and quality
+> ② Topics by outcome
+
+###  Question 45
+
+A company intends to deploy a Microsoft Foundry agent.
+
+You need to recommend an application lifecycle management (ALM) process that ensures the agent is evaluated against baseline accuracy metrics before deployment.
+
+What should you recommend?
+
+
+- A Configure GitHub Actions for new agent versions.
+- B Deploy each new agent version directly to production.
+- C Use Observability in Foundry Control Plane with evaluation and drift monitoring.
+- D Enable Application Insights and use Azure Monitor.
+
+-----
+
+
+**正确答案：✅ C. Use Observability in Foundry Control Plane with evaluation and drift monitoring.**
+
+原因
+
+题目的关键是：
+
+> **evaluated against baseline accuracy metrics before deployment**
+
+需要在 Agent 发布前进行**评估（Evaluation）**，并持续监控模型/Agent 是否发生 **drift**。
+
+**C** 正好覆盖：
+
+* Baseline evaluation metrics
+* Evaluation before/around deployment
+* Drift monitoring
+* Agent/AI 生命周期中的质量监控
+
+其他选项
+
+* ❌ **A. GitHub Actions** → 可以做 CI/CD，但本身不提供 baseline accuracy evaluation。
+* ❌ **B. Directly to production** → 明显违反测试/评估后再发布的要求。
+* ❌ **D. Application Insights + Azure Monitor** → 主要用于应用性能、日志和 telemetry monitoring，不是专门的 AI baseline evaluation。
+
+🎯 考试记忆
+
+> **Baseline accuracy + Evaluation + Drift → Foundry Control Plane Observability**
+
+**答案：C**
+
+
+### Question 46 
+
+Which tool should be recommended to address concerns about sensitive information in the sales process?
+
+- A the Analytics tab in Microsoft Copilot Studio
+- B Model Context Protocol (MCP)
+- C Application Insights
+- D Microsoft Foundry Tracing UI
+- E Monitoring in Microsoft Foundry
+
+-----
+
+
+**正确答案：✅ E. Monitoring in Microsoft Foundry**
+
+题目关键词是 **sensitive information / sales process**，需要监控 Agent 运行过程中涉及的数据和安全风险。
+
+* **E. Monitoring in Microsoft Foundry** ✅ → 用于监控 AI Agent 的运行情况，包括安全、数据访问等方面。
+* **A. Copilot Studio Analytics** ❌ → 主要分析 Agent 使用情况、会话、满意度等。
+* **B. MCP** ❌ → 用于连接 Agent 与外部数据/工具，不是监控工具。
+* **C. Application Insights** ❌ → 主要是应用 telemetry/performance。
+* **D. Foundry Tracing UI** ❌ → 主要查看 Agent 执行 trace，不是主要的治理/敏感信息监控工具。
+
+**答案：E. Monitoring in Microsoft Foundry**
