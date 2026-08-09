@@ -1,5 +1,8 @@
 # AB-100 Agentic AI Business Solutions Architect
 
+
+https://www.marks4sure.com/ab-100-agentic-ai-business-solutions-architect-beta-questions.html
+
 ## 1 Plan AI-powered business solutions
 
 
@@ -373,38 +376,43 @@ Answer Area
 
 --------
 
+对，这个解释**比我上一条答案更合理**。我上一条把两个框架的对应关系选反了。
+
+#✅ 正确答案应该是
+
+* **For Microsoft Copilot Studio best practices:** → **Microsoft Power Platform Well-Architected framework**
+* **For conversational user experiences:** → **Success by Design**
+
+为什么？
+
+**1. Copilot Studio best practices → Power Platform Well-Architected**
+
+这个框架关注 Power Platform 解决方案的：
+
+* Security
+* Reliability
+* Operational excellence
+* Performance
+* Cost optimization
+
+因此更适合题目中 AI Agent 的**部署、治理、Telemetry、合规和成本/ROI**等要求。
+
+**2. Conversational user experiences → Success by Design**
+
+Success by Design 更强调 Dynamics 365 / Power Platform 项目的实施方法和用户体验设计，包括 conversational experience、设计检查、实施风险和 adoption 等。
+
+题目明确说：
+
+> **The final AI agent must follow Microsoft recommendations for a conversational user experience.**
+
+因此这里选择 **Success by Design** 更符合题意。
+
+🧠 考试记忆
+
+> **Copilot Studio / Power Platform architecture & best practices → Well-Architected**
+> **Dynamics 365 implementation + conversational experience → Success by Design**
 
 
-
-
-
-Explanation/Reference:
-
-Explanation:
-
-**Box 1: the ALM Accelerator for Microsoft Power Platform** 
-
-> For Microsoft Copilot Studio best practices
-
-Using the ALM Accelerator for Microsoft Power Platform is a recommended approach for managing the lifecycle of a low-code AI agent (Copilot Studio) that relies on Dataverse. It enables source control, versioning, and automated deployment of AI agents to ensure they follow Microsoft's best practices.
-
-**Box 2: Microsoft Power Platform Well-Architected framework For conversational user experience**
-
-Utilizing the Microsoft Power Platform Well-Architected framework for a low-code AI agent (built in Copilot Studio) with Dataverse as the core data component ensures the solution is secure, reliable, and provides a high-quality conversational user experience (CUX). The framework helps align the agent with Microsoft’s best practices for responsible AI, efficiency, and user satisfaction.
-
-
-
-Scenario: Sales Cycle Enablement
-
-Fabrikam has identified the following requirements for sales cycle enablement:
-
-*-> The final AI agent must follow Microsoft recommendations for a conversational user experience.
-
-Sales Cycle Enablement
-
-To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle
-
-*-> Use low-code development to create a single AI agent that has Dataverse as its core component.
 
 ### QUESTION 2
 
@@ -868,6 +876,18 @@ C. custom engine agents
 
 -----
 
+  - B. Microsoft Power Platform connectors（Microsoft Power Platform 连接器）
+
+核心考点速记（备考复习）
+
+  - Microsoft 365 Copilot 插件扩展机制：
+      - 当需要扩展 Microsoft 365 Copilot，使其能够调用托管在 Azure 服务（如 Azure Functions、Azure
+        App Services、API Management 等）中的外部业务逻辑时，最标准、低代码的做法是将 Azure REST API 封装为
+        Microsoft Power Platform connectors（自定义连接器 Custom Connectors）。
+      - 将其配置为 Microsoft 365 Copilot 的 插件（Plugin / Action） 后，Copilot
+        即可在对话过程中自动识别并触发底层的 Azure 业务逻辑。
+
+
 Correct Answer: B Section: (none)
 
 Explanation/Reference: 
@@ -1019,6 +1039,47 @@ Action
 
 
 ------
+
+✅ 答案
+
+* **To improve performance:** → **Move to a multi-agent architecture**
+* **To improve accuracy:** → **Add a grounding data source**
+
+🧠 **记忆：**
+
+* **Performance / slow response → Multi-agent architecture**
+* **Accuracy / domain-specific reasoning → Grounding data source**
+
+
+- To improve performance: 👉 Move to a multi-agent architecture.（改为多 Agent 架构。）
+
+- To improve accuracy: 👉 Add a grounding data source.（添加接地数据源。）
+
+解析与考点分析
+
+1. 提升性能与响应速度 (To improve performance)
+
+  - 对应问题： * Agent 响应时间极慢（Response times are remarkably
+    slow），且频繁产生不完整的结果（frequently produces incomplete results）。
+  - 诊断分析：
+      - 题目说明当前系统使用单个 Agent 和单个 Prompt去完成一连串复杂的任务（"a single agent and a single
+        prompt to complete a series of tasks"）。
+      - 将所有复杂的串行任务塞给单一 Agent 和长 Prompt，会导致模型推理耗时极长、上下文超载（Context Overload）以及
+        Token 限制导致的回答截断（不完整）。
+  - 解决方案： Move to a multi-agent architecture
+      - 改为多 Agent 架构（Multi-Agent System）可以将庞大的任务拆解给多个专门的子 Agent 协作处理（如主管 Agent
+        分发任务给专门的子 Agent 模块）。这能显著降低单个 Prompt 的复杂度，减少推断延时，大幅提升整体系统性能和响应速度。
+
+2. 提高回答与推理准确性 (To improve accuracy)
+
+  - 对应问题： * Agent 在领域特定推理方面存在困难（struggles with domain-specific reasoning）。
+  - 诊断分析：
+      - 通用大语言模型缺乏企业内部特定领域的最新知识、业务逻辑和私有数据。
+  - 解决方案： Add a grounding data source
+      - 引入接地数据源（Grounding Data Source）（如 RAG 检索增强生成，引入企业文档、知识库或领域数据库），能够向 Agent
+        提供精准的领域上下文（Domain-specific context），从而消除模型幻觉，显著提升领域推理的准确性（Accuracy）。
+
+
 
 **Box 1: Move to a multi-agent architecture**
 
@@ -1645,7 +1706,7 @@ If this toggle is off, Copilot features requiring the external Azure OpenAI inst
 Security Assurance: Microsoft does not log or retain prompt/response data during this cross-region transit for the purpose of training foundation models.
 
 
-### **QUESTION 15**
+### QUESTION 15
 
 A company has a Microsoft Copilot Studio agent for customer support. You are reviewing and validating the following prompts:
 
@@ -2404,13 +2465,9 @@ Answer Area
 
 QUESTION 答案 (Answer Area)
 
-1. Agent1:
+1. Agent1:  正确选项： Microsoft Foundry
 
-  - 正确选项： Microsoft Foundry
-
-2. Agent2:
-
-  - 正确选项： Microsoft Copilot Studio
+2. Agent2: 正确选项： Microsoft Copilot Studio
 
 核心考点速记（备考复习）
 
@@ -2486,19 +2543,20 @@ NOTE: Each correct selection is worth one point.
 
 Answer Area
 
-* **Use a centralized workspace:**
-  * An Microsoft Foundry hub
-  * Azure OpenAI Foundry
-  * Microsoft Copilot Studio
-  * Microsoft Dataverse
+**Use a centralized workspace:**
 
-* **Generate short overviews:**
-  * An AI Builder prebuilt model
-  * An AI Builder prebuilt prompt
-  * Azure OpenAI
-  * GitHub Copilot
-  * Microsoft Copilot in Power Automate
+* An Microsoft Foundry hub
+* Azure OpenAI Foundry
+* Microsoft Copilot Studio
+* Microsoft Dataverse
 
+**Generate short overviews:**
+
+* An AI Builder prebuilt model
+* An AI Builder prebuilt prompt
+* Azure OpenAI
+* GitHub Copilot
+* Microsoft Copilot in Power Automate
 
 
 ------
@@ -2757,88 +2815,30 @@ D. Azure Monitor
 ----
 
 
-Correct Answer: C
+正确答案与详细解析
 
-Explanation/Reference:
+正确答案：
 
-Explanation:
+  - C. Azure pricing calculator（Azure 价格计算器）
 
-Correct:
+解析与考点分析
 
-Azure pricing calculator (Best choice) The best tool to evaluate the potential cost of a new AI solution to support ROI analysis is the Azure pricing calculator.
+为什么选 C？
 
-Why Azure Pricing Calculator is BestProactive Estimation: It is specifically designed to estimate the costs of Azure services before they are deployed.
+1.  业务场景： 公司计划（Plans）实现一个新的 AI 解决方案（对客户产品评论进行情感分析），需要在部署前评估该方案在 Azure
+    中的预估/潜在成本（Potential cost），用于 AI 投资回报率（ROAI）分析。
+2.  工具区别与选择：
+      - Azure pricing calculator（Azure 价格计算器）： 用于配置并计算全新规划的 Azure 服务（如 Azure AI
+        Language 情感分析 API、Azure OpenAI 等）根据预计用量（如每月调用的 API 次数、Token
+        数量）所产生的未来预估成本。这是为新 AI 解决方案计算潜在支出并带入 ROAI
+        财务模型的标准工具。
 
-Granular Planning: It allows you to select specific services (e.g., Azure AI Language, Cognitive Services, Azure Machine Learning), define usage patterns, regions, and tiers to create a detailed cost estimate.
+为什么不选其他选项？
 
-Scenario Comparison: You can create different scenarios (e.g., comparing different language models or usage volumes) to estimate the impact on ROAI
-
-Comparison of Tools Azure Pricing Calculator: Estimates costs for new, un-deployed projects. (Best Choice).
-
-
-Total Cost of Ownership (TCO) Calculator: Compares on-premises infrastructure costs against Azure, typically used for large-scale migration strategies, not specific AI service modeling.
-
-Cost Management + Billing: Monitors and analyzes actual, real-time spending on already deployed resources. 
-
-For a complex AI solution involving.
-
-* Total Cost of Ownership (TCO) Calculator (Second best choice)
-
-While Cost Management + Billing is essential for tracking actual spend once a solution is running, the TCO Calculator is specifically designed for the pre-implementation phase to support Return on AI Investment (ROAI) analysis. 
-
-It allows you to estimate and compare the potential costs of moving a workload to Azure —including labor, networking, and storage—against an existing process or alternative solution.
-
-* Cost Management + Billing (Third best)
-
-Azure pricing calculator and Total Cost of Ownership (TCO) Calculator are both better than Cost Management + Billing, as they evaluate the potential cost and support a Return on AI Investment (ROAI) analysis before the solution is built, you need to estimate future expenses based on expected usage. 
-
-Cost Management + Billing does post-deployment tracking.
-
-
-A good tool still for this scenario is Cost Management + Billing. Cost Management + Billing allows you to break down and evaluate costs across many business units using tags and scope filtering. This granular data is essential for calculating the Return on AI Investment (ROAI) for specific departments or the entire organization.
-
-Incorrect
-
-
-* Azure Monitor
-* Azure Reservations
-* Azure savings plans
-
-Is used to reduce costs for compute services via long-term commitment. 
-
-
-It is a way to lower your bill, but not a tool for evaluating or reporting on investment performance.
-
-
-* Microsoft Fabric SKU Estimator
-
-Is used to estimate capacity needs for Fabric-specific data projects. It is eseful only if your sentiment analysis solution is built specifically on the Microsoft Fabric platform.
-
-* **Azure pricing calculator**
-
-To evaluate the potential cost of an AI solution for sentiment analysis on Azure, you should use the Azure Pricing Calculator.This tool allows you to estimate the monthly and annual costs of the specific services required for your solution—such as Azure AI Language (which provides sentiment analysis) or Azure OpenAI Service—based on your expected volume of feedback data.
-
-* Total Cost of Ownership (TCO) Calculator
-
-To evaluate the cost of an Azure sentiment analysis solution and support a Return on AI Investment (ROAI) analysis for multiple business units, you should use the Azure Total Cost of Ownership (TCO) Calculator.
-
-The TCO Calculator is essential for calculating the financial impact of migrating or implementing a new solution compared to your existing infrastructure.
-
-Step-by-Step: Using the TCO Calculator for ROAI 
-
-To perform a comprehensive ROAI analysis, follow these steps to capture the full scope of ownership:
-
-1. Define Your Current Workload
-
-Enter details about your existing infrastructure that the AI solution might replace or augment.
-
-2. Adjust Assumptions
-
-Tailor the calculator to your business environment by adjusting key metrics.
-
-3. Review the TCO Report
-
-The calculator generates a detailed report comparing your current costs against Azure.
+  - A. Total Cost of Ownership (TCO) Calculator（总体拥有成本计算器）： TCO  计算器用于对比“将现有的**本地数据中心（On-premises）**基础架构迁移到 Azure”的长期成本差异（对比硬件、机房电力、IT
+    运维成本等），不适用于单纯估算某个全新 Azure AI 服务的用量成本。
+  - B. Azure Reservations（Azure 预留）： 是一种承诺使用 1 年或 3 年以获取折扣的计费优惠模式，并非成本估算与 ROAI 评估工具。
+  - D. Azure Monitor（Azure 监控）： 用于监控已部署资源的性能和日志，无法对未部署的全新 AI 方案进行事前成本预估。
 
 
 ### QUESTION 31 
@@ -2926,33 +2926,6 @@ It is a way to lower your bill, but not a tool for evaluating or reporting on in
 Is used to estimate capacity needs for Fabric-specific data projects. It is eseful only if your sentiment analysis solution is built specifically on the Microsoft Fabric platform
 
 
-Note:
-
-* Azure pricing calculator
-
-To evaluate the potential cost of an AI solution for sentiment analysis on Azure, you should use the Azure Pricing Calculator.This tool allows you to estimate the monthly and annual costs of the specific services required for your solution—such as Azure AI Language (which provides sentiment analysis) or Azure OpenAI Service—based on your expected volume of feedback data.
-
-* Total Cost of Ownership
-
-(TCO) Calculator To evaluate the cost of an Azure sentiment analysis solution and support a Return on AI Investment (ROAI) analysis for multiple business units, you should use the Azure Total Cost of Ownership (TCO) Calculator.
-
-The TCO Calculator is essential for calculating the financial impact of migrating or implementing a new solution compared to your existing infrastructure.
-
-Step-by-Step: Using the TCO Calculator for ROAI 
-
-To perform a comprehensive ROAI analysis, follow these steps to capture the full scope of ownership:
-
-1. Define Your Current Workload
-
-Enter details about your existing infrastructure that the AI solution might replace or augment.
-
-2. Adjust Assumptions
-
-Tailor the calculator to your business environment by adjusting key metrics.
-
-3. Review the TCO Report
-
-The calculator generates a detailed report comparing your current costs against Azure.
 
 ### QUESTION 32 
 
@@ -2974,65 +2947,45 @@ D. Azure pricing calculator
 
 ----
 
+
+这道题目与上一题一致，以下是正确答案与解析总结：
+
+正确答案：
+
+  - D. Azure pricing calculator（Azure 价格计算器）
+
+核心考点速记（备考复习）
+
+  - Azure 价格计算器（Azure pricing calculator）： 专门用于在项目部署前，根据预计的服务用量（如情感分析 API  的每月调用次数）估算全新的 Azure 云服务（如 Azure AI Services）的潜在成本，从而为 ROAI（AI 投资回报率）分析提供精确的支出数据。
+
+  - 区别辨析：
+
+      - TCO Calculator： 用于“本地数据中心迁移到云端”的总体成本对比。
+      - Cost Management： 用于监控“已部署资源”的实际历史账单与异常费用。
+
+
 Correct Answer: D
 
-Explanation:
+-----
 
-* Azure pricing calculator (Best choice)
 
-The best tool to evaluate the potential cost of a new AI solution to support ROI analysis is the Azure pricing calculator.
+✅ 答案：D. Azure pricing calculator
 
-Why Azure Pricing Calculator is BestProactive Estimation: It is specifically designed to estimate the costs of Azure services before they are deployed.
+**原因：**题目是要在 AI 方案实施前，**估算未来成本**，用于 ROAI 分析。
 
-Granular Planning: It allows you to select specific services (e.g., Azure AI Language, Cognitive Services, Azure Machine Learning), define usage patterns, regions, and tiers to create a detailed cost estimate.
+* **A. Azure Reservations** ❌ → 购买长期资源使用折扣
+* **B. Microsoft Fabric SKU Estimator** ❌ → 估算 Fabric 容量成本
+* **C. Cost Management Anomaly Detection** ❌ → 检测已经产生的异常费用
+* **D. Azure pricing calculator** ✅ → 根据预计用量估算 Azure 服务成本
 
-Scenario Comparison: You can create different scenarios (e.g., comparing different language models or usage volumes) to estimate the impact on ROAI
+🧠 **记忆：**
 
-**Comparison of Tools Azure Pricing Calculator: Estimates costs for new, un-deployed projects. (Best Choice**）
+> **未来成本估算 → Pricing Calculator**
+> **已产生费用监控 → Cost Management**
+> **本地 vs Azure 总成本 → TCO Calculator**
 
-Total Cost of Ownership (TCO) Calculator: Compares on-premises infrastructure costs against Azure, typically used for large-scale migration strategies, not specific AI service modeling.Cost Management + Billing: Monitors and analyzes actual, real-time spending on already deployed resources. For a complex AI solution involvin
+**答案：D** ✅
 
-* Total Cost of Ownership (TCO) Calculator (Second best choice)
-
-While Cost Management + Billing is essential for tracking actual spend once a solution is running, the TCO Calculator is specifically designed for the pre-implementation phase to support Return on AI Investment (ROAI) analysis. It allows you to estimate and compare the potential costs of moving a workload to Azure —including labor, networking, and storage—against an existing process or alternative solution.
-
-* Cost Management + Billing (Third best)
-
-Azure pricing calculator and Total Cost of Ownership (TCO) Calculator are both better than Cost Management + Billing, as they evaluate the potential cost and support a Return on AI Investment (ROAI) analysis before the solution is built, you need to estimate future expenses based on expected usage. Cost Management + Billing does post-deployment tracking.
-
-A good tool still for this scenario is Cost Management + Billing. Cost Management + Billing allows you to break down and evaluate costs across many business units using tags and scope filtering. This granular data is essential for calculating the Return on AI Investment (ROAI) for specific departments or the entire organization.
-
-Incorrect:
-
-* Azure Monitor
-* Azure Reservations
-* Azure savings plans
-
-Is used to reduce costs for compute services via long-term commitment. It is a way to lower your bill, but not a tool for evaluating or reporting on investment performance.
-
-* Microsoft Fabric SKU Estimator
-
-Is used to estimate capacity needs for Fabric-specific data projects. It is eseful only if your sentiment analysis solution is built specifically on the Microsoft Fabric platform.
-
-**Note:**
-
-* Azure pricing calculator
-
-To evaluate the potential cost of an AI solution for sentiment analysis on Azure, you should use the Azure Pricing Calculator.This tool allows you to estimate the monthly and annual costs of the specific services required for your solution—such as Azure AI Language (which provides sentiment analysis) or Azure OpenAI Service—based on your expected volume of feedback data.
-
-* Total Cost of Ownership (TCO) Calculator
-
-To evaluate the cost of an Azure sentiment analysis solution and support a Return on AI Investment (ROAI) analysis for multiple business units, you should use the Azure Total Cost of Ownership (TCO) Calculator.
-
-The TCO Calculator is essential for calculating the financial impact of migrating or implementing a new solution compared to your existing infrastructure.
-
-Step-by-Step: Using the TCO Calculator for ROAI To perform a comprehensive ROAI analysis, follow these steps to capture the full scope of ownership:
-
-1. Define Your Current Workload Enter details about your existing infrastructure that the AI solution might replace or augment.
-
-2. Adjust Assumptions Tailor the calculator to your business environment by adjusting key metrics.
-
-3. Review the TCO Report The calculator generates a detailed report comparing your current costs against Azure.
 
 ## Design AI-powered business solutions
 
@@ -5058,31 +5011,45 @@ Answer Area
 
 ----
 
-Box 1: The Fallback topic
 
-Box 2: A tool (connector)
+ ✅ 答案
+
+* **Define rules and constraints:** → **Conversation topics**
+* **Automate a backend process:** → **Microsoft Power Automate cloud flow**
+
+🧠 记忆
+
+> **Rules / constraints → Topics**
+> **Backend automation → Power Automate cloud flow**
+
+---
+
+QUESTION 答案 (Answer Area)
+
+  - Define rules and constraints (或：当用户输入不明确时回复默认帮助消息): 👉 Conversation  topics（对话主题）
+
+  - Automate a backend process (或：触发检索订单状态等外部后台流程): 👉 Microsoft Power Automate  cloud flow（Microsoft Power Automate 云端流）
+
+解析与考点分析
+
+1. Define rules and constraints / 默认为不明确输入回复帮助消息
+
+  - 对应选择： Conversation topics
+  - 解析：
+      - 在 Microsoft Copilot Studio 中，Conversation topics（对话主题）
+        用于定义对话分支、响应规则以及在特殊情况下的行为约束。
+      - 当用户输入不明确（Unclear input）或触发未知意图时， Copilot Studio
+        会自动路由到系统内置的降级主题——Fallback
+        Topic（降级主题，属于 Conversation topics 的一部分），从而输出默认的帮助信息并引导用户。
+
+2. Automate a backend process / 触发检索订单状态等外部流程
+
+  - 对应选择： Microsoft Power Automate cloud flow
+  - 解析：
+      - 当用户提出具体请求（例如：“查询我的订单状态”或“取消预约”）时，智能体需要调用外部系统或 API 执行数据检索与后台操作。
+      - Microsoft Power Automate cloud flow（云端流）： 是 Copilot Studio 触发外部后台流程（如连接 Dataverse、第三方 ERP、发送通知或调用 Webhook 检索订单状态）的标准工具与插件载体。
 
 
-**Box 1: The Fallback topic**
-
-Respond with a default help message when the user input is unclear.
-
-To ensure your Microsoft Copilot Studio agent responds with a default help message when user input is unclear, you must configure the System Fallback topic. This topic is specifically designed to trigger when the agent cannot match the user's intent to any existing topics or knowledge sources.
-
-
-**Box 2: A tool (connector)**
-
-Initiate external processes, such as retrieving the order status, when users make specific requests.
-
-In Microsoft Copilot Studio, when generative orchestration is enabled, you use Actions (specifically those powered by Power Platform Connectors) to initiate external processes like retrieving an order status. When a user asks a specific request (e.g., "What is the status of my order?"), the generative orchestrator identifies that it cannot fulfill the request with its existing knowledge and looks for an available Action or Tool to bridge the gap.
-
-Key Tool: Power Platform Connectors To retrieve data from an external system, you would typically use one of the following:
-
-Prebuilt Connectors: Microsoft offers over 1,400 ready-to-use connectors for popular systems like SAP, Oracle, or SQL Server.
-
-Custom Connectors: If your order data is in a proprietary or niche API, you can create a custom connector to define exactly how the agent should talk to that external service.
-
-Power Automate Flows: You can wrap complex logic (like multi-step lookups or data formatting) into a flow and add it as an action. The agent can then "call" this flow, pass it an Order ID, and receive the status back.
 
 
 ### QUESTION 20 
@@ -5907,6 +5874,8 @@ Fabrikam has identified the following requirements for sales cycle enablement:
 
 ### Question 1
 
+Which tool should you recommend to address the sensitive information concerns in the sales process?
+
 
 A. the Analytics tab in Microsoft Copilot Studio 
 
@@ -5920,25 +5889,67 @@ E. Monitoring in Microsoft Foundry
 
 ----
 
-Correct Answer: D
+✅ 答案：C. Application Insights
 
-Explanation/Reference:
+**原因：**
+
+题目明确要求：
+
+> **Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.**
+
+**Application Insights** 可以记录 Copilot Studio Agent 的 telemetry，并且可以记录包括 **`userid`、`name`、`text`、`speak`** 等敏感 activity properties。([Microsoft Learn][1])
+
+因此最符合题目要求的是：
+
+**C. Application Insights ✅**
+
+🧠 **考试记忆：**
+
+> **User ID / Name + telemetry + auditing → Application Insights**
+
+另外，这道题和前面的 **“Detailed telemetry must be logged”** 也是同一个方向：
+**Copilot Studio → Application Insights → detailed telemetry**。([Microsoft Learn][2])
+
+-----
 
 
+正确答案与详细解析
 
-Fabrikam has identified the following requirements for sales cycle enablement:
+正确答案：
 
-Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
+  - C. Application Insights
 
-In a Microsoft AI solution involving an agent where you must track sensitive information for auditing, you should use the Microsoft Foundry Tracing UI.
+解析与考点分析
 
-Tracking and Auditing with Microsoft Foundry Tracing The Microsoft Foundry Tracing UI (part of Microsoft Foundry) provides end-to-end visibility into agent runs by capturing detailed telemetry through OpenTelemetry.
+为什么选 C？
 
-What is Captured: It automatically logs user inputs, model outputs, and tool arguments, which often contain sensitive information like names or IDs.
+1.  案例需求对照（Fabrikam, Inc. 案例）：
 
-Auditing and Debugging: You can search, filter, and sort traces from the last 90 days to observe exactly how your agent responded during specific sessions.
+      - 案例中明确提出了以下两条针对 AI Agent 遥测与审计的核心需求：
+        "Detailed telemetry must be logged for the first created AI agent to
+        help troubleshoot and optimize the agent..."
+        （必须为第一个 AI Agent 记录详细的遥测数据，以协助排查故障和优化...） "Any sensitive information,
+        such as user IDs and names, shared via the AI agent must be tracked for
+        future auditing."
+        （通过 AI Agent 共享的任何敏感信息（如用户 ID 和姓名）都必须被追踪并记录，以供未来审计。）
 
-Infrastructure: Traces are stored in Azure Application Insights, allowing you to apply standard enterprise access controls and retention policies.
+2.  微软 Copilot Studio 架构规范：
+
+      - Fabrikam 构建的是基于 Copilot Studio 的低代码 AI Agent。
+      - Copilot Studio 内置的 Analytics 选项卡只提供通用的宏观 KPI 图表（如 CSAT
+        评分、解决率），不会记录原始的用户敏感信息和底层 Trace 轨迹。
+      - 要记录详细的遥测数据（Detailed telemetry）、用户 ID（User IDs）、对话原生日志并进行安全审计，Copilot
+        Studio 官方推荐的标准配置是接入 Azure Application Insights。连接后，所有的交互事件、用户
+        ID、输入文本及错误日志都会安全地存储在底层日志数据库中，以供未来的故障排查与安全审计。
+
+为什么不选其他选项？
+
+  - A. the Analytics tab in Microsoft Copilot Studio：
+    只展示宏观的统计仪表板，出于隐私保护，默认不提供详细的用户敏感数据追踪和底层原始日志审计。
+  - B. Model Context Protocol (MCP)： 是一种用于连接外部数据与工具的通信协议，不具备遥测和审计日志收集功能。
+  - D & E. Microsoft Foundry Tracing UI / Monitoring in Microsoft Foundry： 用于
+    Azure AI Foundry（专业代码 Pro-code）中的大模型监控，而案例中 Fabrikam 构建的是基于 Copilot Studio
+    的低代码 Agent。
 
 
 ###  QUESTION 2
@@ -6484,7 +6495,7 @@ Security Credentials: For OAuth settings like Client ID and Client Secret, use e
 Azure Key Vault Integration: For high-security enterprise APIs, store secrets in Azure Key Vault and reference them via secret environment variables to ensure traceability and governance.
 
 
-### UESTION 7
+### QUESTION 7
 
 A company plans to implement an AI solution that will contain a Microsoft Copilot Studio agent and a Microsoft Foundry agent. The solution will be stored in a source code repository.
 
@@ -6638,53 +6649,61 @@ Suitability: While Power Platform pipelines are used for Copilot Studio agents, 
 
 A company has a Microsoft Copilot Studio prompt-and-response agent. You need to ensure that the agent meets the following requirements:
 
-Provides effective and relevant responses
+- Provides effective and relevant responses
+- Provides conversational outcomes
 
-Provides conversational outcomes Which metric should you use for each requirement? To answer, select the appropriate options in the answer area.
+Which metric should you use for each requirement? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
-Answer Area
+**Provides effective and relevant responses:**
 
-*   **Copilot Studio:**
-    *   [ ] Export from the source code repository and import to the target environment.
-    *   [ ] Use a Bicep file.
-    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+- Generated answer rate and quality
+- Reactions
+- Tool use
 
-*   **Microsoft Foundry:**
-    *   [ ] Use a Bicep file.
-    *   [ ] Use a Microsoft Power Platform deployment pipeline.
-    *   [ ] Use an Azure DevOps pipeline.
+**Provides conversational outcomes:**
 
+- Satisfaction
+- Tool use
+- Topics by outcome
 
-----
+-----
 
-Box 1: Generated answers rate and quality
+✅ 答案
 
-Box 2: Satisfaction
+* **Provides effective and relevant responses:** → **Generated answer rate and quality**
+* **Provides conversational outcomes:** → **Topics by outcome**
 
+🧠 **记忆：**
 
-**Box 1: Generated answers rate and quality** 
-
-Provides effective and relevant responses:
-
-To ensure your Microsoft Copilot Studio agent provides effective and relevant responses, you should focus on the Generated Answer Rate and Quality metrics found in the Analytics dashboard. These metrics help you identify where the agent is succeeding and where knowledge gaps exist.
-
-Key Quality Metrics Generated Answer Rate: Measures the frequency with which the agent successfully triggers a generative response from its knowledge sources.
-
-Response Quality (Good vs. Poor): Copilot Studio automatically labels a sample of responses as "Good" or "Poor" quality based on AI assessment of relevance, completeness, and grounding.
-
-Poor Quality Reasons: If a response is labeled "Poor," the system provides specific reasons, such as being incomplete, irrelevant, or not fully grounded.
-
-Unanswered Questions: Tracks queries the agent could not answer, helping you identify missing documentation or topics.
+> **Answer quality → Generated answer rate and quality**
+> **Conversation outcome → Topics by outcome**
 
 
+1. Provides effective and relevant responses:
 
-**Box 2: Satisfaction**
+  - 正确选项： Generated answer rate and quality（生成答案的比例与质量）
 
-Provides conversational outcomes
+2. Provides conversational outcomes:
 
-To ensure your Microsoft Copilot Studio prompt-and-response agent provides optimal conversational outcomes, you should use the Customer Satisfaction (CSAT) metric.
+  - 正确选项： Topics by outcome（按结果分类的主题）
+
+解析与考点分析
+
+第一部分：提供有效且相关的回答（Provides effective and relevant responses）
+
+  - 考点： Copilot Studio 生成式 AI (Generative Answers) 的分析指标。
+  - 解析：
+      - 在 Copilot Studio 中，当 Agent 使用提示词（Prompts）和生成式回答时，评估其回答是否**有效且相关（effective and relevant）**的核心指标是 Generated answer rate and quality。
+      - 该指标监控生成式回答触发的成功率（Generated answer rate）以及模型输出内容的相关度与质量（Quality），用于衡量 RAG / Prompt 回答的效果。
+
+第二部分：提供对话业务结果（Provides conversational outcomes）
+
+  - 考点： Copilot Studio 主题与会话结果（Topic Outcomes）分析。
+  - 解析：
+      - 在 Copilot Studio 的 Analytics -> Topic Analytics 仪表板中，评估对话是否达成了明确的业务结果（Conversational outcomes）的标准指标是 Topics by outcome。
+      - 该指标会按照具体的对话主题（Topics）对对话结果进行分类统计，展示哪些 Topic 达到了已解决（Resolved）、转人工（Escalated） 或 已放弃（Abandoned） 的结果，从而帮助分析对话流的最终转化率。
 
 
 ### QUESTION 9 
@@ -6715,7 +6734,7 @@ E. Store the agent transcripts in source control.
 * **C. Use Microsoft Power Platform pipelines.** → 自动化 Dev → Test → Production 的部署和 Promotion。
 * **D. Include the components in a solution.** → 将 Copilot 相关组件统一打包、版本化并管理依赖关系。
 
-### 为什么其他选项不对？
+为什么其他选项不对？
 
 * ❌ **A** → Production 应使用 **managed solution**，不是 unmanaged。
 * ❌ **B** → 不应在每个环境手工重建 Agent。
@@ -6773,20 +6792,66 @@ Which test scenario and metric should you include in the design? To answer, sele
 
 NOTE: Each correct selection is worth one point.
 
+**Test scenario:**
+
+- In each app, test isolated tasks without using workflows.
+
+- Run task-based scenarios that involve both apps.
+
+- Test visual consistency across both apps.
 
 
-*   **Copilot Studio:**
-    *   [ ] Export from the source code repository and import to the target environment.
-    *   [ ] Use a Bicep file.
-    *   [ ] Use a Microsoft Power Platform deployment pipeline.
+**Metric:**
 
-*   **Microsoft Foundry:**
-    *   [ ] Use a Bicep file.
-    *   [ ] Use a Microsoft Power Platform deployment pipeline.
-    *   [ ] Use an Azure DevOps pipeline.
+- Measure the initial prompt response time for each app.
+
+- Track the average click rate across both apps.
+
+- Track the successful completion of cross-app tasks.
 
 
 ----
+
+✅ 答案
+
+* **Test scenario:** → **Run task-based scenarios that involve both apps.**
+* **Metric:** → **Track the successful completion of cross-app tasks.**
+
+🧠 **记忆：**
+
+> **Cross-app coordination → Test both apps together**
+> **Task success → Successful completion rate**
+
+
+
+
+1. Test scenario（测试场景）:
+
+  - 正确选项： Run task-based scenarios that involve both apps.（运行涉及这两个应用的基于任务的场景。）
+
+2. Metric（测试指标）:
+
+  - 正确选项： Track the successful completion of cross-app tasks.（追踪跨应用任务的成功完成率。）
+
+解析与考点分析
+
+第一部分分析：Test scenario（测试场景）
+
+  - 需求关键点： 测试 Agent 跨 Dynamics 365 Customer Service 和 Dynamics 365 Sales 协调任务与数据交互的能力（Coordinate tasks and data interactions across
+    both Dynamics 365 apps）。
+  - 解析：
+      - 要验证 Agent 是否能跨不同系统进行数据同步和任务协同（例如：在客服模块中接收问题后，自动在销售模块中创建潜在客户记录），必须设计并执行端到端（End-to-End）的涉及两个应用的多步骤任务场景（Run task-based scenarios that involve both apps）。
+      - 隔离单应用测试（In each app, test isolated tasks）无法验证跨应用交互能力；视觉一致性测试（Visual consistency）测试的是 UI 界面样式，与 Agent 的业务自动化逻辑无关。
+
+第二部分分析：Metric（测试指标）
+
+  - 需求关键点： 评估跨应用协同与意图理解的实际效果。
+  - 解析：
+      - Track the successful completion of cross-app tasks（追踪跨应用任务的成功完成率）：是衡量端到端集成测试成功与否最关键的业务指标。它直接验证了 Agent 是否准确理解了用户的指令，并在两个 Dynamics 365应用中成功完成了全流程的数据更新和任务结案。
+      - 响应时间（Response time）仅衡量网络延时，无法衡量任务是否成功；点击率（Click rate）属于前端网页分析指标，不适用于 Agent 业务自动化测试。
+
+
+
 
 Box 1: Run task-based scenarios that involve both apps
 
@@ -6843,43 +6908,44 @@ C. Implement version control for all the AI system components.
 
 D. Track model retirement schedules to prevent service disruptions.
 
-
----
-
-**C. Implement version control for all the AI system components.**
-
-Here’s why this is the correct recommendation:
-
-- **Access to prior versions:** Version control (for code, data, configurations, and models) gives the security and compliance team direct, immutable access to every prior iteration. This allows them to perform precise "diff" comparisons between the current and previous deployments to pinpoint exactly which changes introduced potential security exposures.
-- **Evaluating impact:** By tracking all components together (not just the model artifact), you can correlate model behavior changes with specific code or data shifts. This enables comprehensive impact analysis—such as A/B testing against historical data or reviewing performance drift—before production cutover.
-- **Enhancing business continuity:** Version control enables instant rollback to a known, stable, and compliant version if the new deployment fails a post-deployment check or introduces unexpected issues. This drastically reduces Mean Time To Recovery (MTTR) and prevents prolonged service disruptions.
-
-**Why the other options are less suitable:**
-
-- **A. Create a central model registry:** While useful for tracking model *artifacts*, a registry alone typically lacks the surrounding code, pipeline scripts, and feature engineering logic needed for a full security impact evaluation.
-- **B. Establish a promotion process by using a quality gate:** This is a crucial *process*, but it does not inherently provide the mechanism to access and compare prior versions. Version control is the foundation upon which quality gates must be built to be effective for this scenario.
-- **D. Track model retirement schedules:** This addresses lifecycle end-of-life issues but does nothing to help evaluate the impact of a *new* deployment or provide access to historical versions for security reviews.
-
----
+----
 
 
-Version control for all AI system components creates an audit trail of changes and enables rapid identification and rollback of problematic models, data pipelines, and system configurations. This supports security and compliance review of previous states and improves business continuity by allowing restoration of a known-good configurat
+✅ 答案：A. Create a central model registry that uses version history.
 
-Explanation/Reference:
+**原因：**
 
-Explanation:
+题目重点是：
 
-To ensure business continuity and minimize risks in AI-driven sales transaction systems, implementing comprehensive version control across all system components is a critical requirement. This provides reviewers with a stable baseline to evaluate new releases against older versions, helping identify potential exposures or regressions before they reach production.
+* 每个模型 release 都要经过 **security/compliance review**
+* 审核团队需要访问 **prior versions**
+* 评估新版本部署到 production 的影响
+* 提高 **business continuity**
 
-Strategic Implementation for AI Version Control Version All Components: Do not limit version control to application code. You must track: *-> Models: Managed iterations including weights and architecture.
+**Central model registry + version history** 可以保存不同模型版本，方便：
 
-Etc.
+* 比较新旧模型
+* 审查潜在安全风险
+* 必要时回滚到之前版本
+* 支持生产环境的连续性
 
-Benefits for Business Continuity Predictability: Standardized versioning makes AI behavior more auditable and scalable.
+🧠 **记忆：**
 
-Disaster Recovery: Allows teams to quickly reproduce or restore any previous environment state during a failure.
+> **Model releases + prior versions + impact review + rollback → Model registry + version history**
 
-Regulatory Compliance: Provides the necessary evidence of "what the AI was instructed to do" at any given point, which is mandatory for regulated financial environments.
+**答案：A** ✅
+
+
+-----
+
+- A. Create a central model registry that uses version history.（创建一个使用版本历史记录的中央模型注册表。）
+
+核心考点速记（备考复习）
+
+  - 中央模型注册表（Central Model Registry）的核心作用： 在 MLOps 和 AI
+    安全合规治理中，当安全团队需要在模型部署前审查新版本并**访问调阅以前的模型历史版本（Access to prior
+    versions）**时，中央模型注册表（Model Registry） 是提供模型版本管理（Version
+    History）、血缘追溯、安全审计以及支持生产快速回滚（保障业务连续性）的标准组件。
 
 
 ### QUESTION 12 
@@ -6914,50 +6980,59 @@ NOTE: Each correct selection is worth one point.
 
 --------
 
+✅ 答案
+
+* **Monitor the agent's telemetry in NRT:** → **Application Insights**
+* **Download transcripts of full conversations:** → **Copilot Studio**
+* **Monitor the agent's usage and performance:** → **Copilot Studio**
+
+🧠 **记忆：**
+
+> **NRT telemetry → Application Insights**
+> **Transcripts → Copilot Studio**
+> **Usage & performance → Copilot Studio**
+
+
+----
+
+- Monitor the agent's telemetry in NRT (Near-Real-Time): 👉 Application Insights
+
+- Download transcripts of full conversations: 👉 Copilot Studio
+
+- Monitor the agent's usage and performance: 👉 Copilot Studio
+
+(注：题目明确提示“Each option may be used once, more than once, or not at all”，因此
+Copilot Studio 被使用了两次。)
+
+解析与考点分析
+
+1. 实时/近实时（NRT）监控 Agent 的遥测数据
+
+  - 正确选择： Application Insights
+  - 解析：
+      - Application Insights 与 Copilot Studio 原生集成。当连接后，Copilot Studio
+        会将底层系统事件、API 调用耗时、异常及实时 Trace 轨迹以**近实时（Near-Real-Time, NRT）**流的形式推送到
+        Application Insights 中，用于实时性能监控与故障排查。
+
+2. 下载完整对话记录（Transcripts of full conversations）
+
+  - 正确选择： Copilot Studio
+  - 解析：
+      - 在 Copilot Studio 门户的 Analytics（分析）-> Sessions（会话）
+        选项卡中，管理员和开发者可以直接查看所有已发生的对话列表，并直接**下载（Download）完整的对话轨迹（Transcripts）**文件进行内容审查与质量分析。
+
+3. 监控 Agent 的使用率与性能（Usage and performance）
+
+  - 正确选择： Copilot Studio
+  - 解析：
+      - Copilot Studio 内置了开箱即用的仪表板（Analytics Tab），可直接提供 Agent
+        的使用率（Usage，如活跃用户数、会话总数、Credits 消耗趋势） 和
+        性能指标（Performance，如解决率 Resolution Rate、转人工率 Escalation
+        Rate、CSAT 满意度评分）。成本最低且无需额外开通云服务。
 
 
 
 
-Box 1: Application Insights
-
-Box 2: Microsoft Power Apps
-
-
-**Box 1: Application Insights **
-
-
-Monitor the agent's telemetry in near-real-time (NRT).
-
-To monitor Microsoft Copilot Studio agent performance and telemetry in near-real-time (NRT), the best tool to use is Azure Application Insights.
-
-By connecting your Copilot Studio agent to an Azure Application Insights instance, you can capture detailed runtime data, including user messages, topics triggered, and custom events as they happen.
-
-**Box 2: Microsoft Power Apps**
-
-
-Download transcripts of full conversations.
-
-To monitor Microsoft Copilot Studio agent performance, you can download full conversation transcripts for the last 29 days using the Power Apps portal to analyze user interactions. Access Dataverse via Power Apps, navigate to tables, select ConversationTranscript, and export the data as a CSV file to identify engagement, resolution, and escalation patterns.
-
-Steps to Download Transcripts via Power Apps:
-
-1. Sign in to make.powerapps.com.
-
-2. Select the correct environment in the top right corner.
-
-3. In the side menu, select Tables (or Data > Entities in older views).
-
-4. Search for and select the ConversationTranscript table.
-
-5. Select Export data from the top menu.
-
-6. Once compiled, select Download exported data to save the file.
-
-**Box 3: Copilot Studio** 
-
-Monitor the agent's usage and performance.
-
-To monitor a Microsoft Copilot Studio agent's usage and performance, you can use the built-in Analytics page in Copilot Studio, which provides comprehensive data on key metrics, conversation outcomes, and user satisfaction.
 
 
 ### QUESTION 13 
@@ -7163,7 +7238,7 @@ Abandoned: These sessions ended without being resolved or escalated [D]. This of
 Resolved [D]: These are successful sessions. If a session is marked Resolved (Confirmed), the user explicitly verified the answer was helpful. If it is Resolved (Implied), the agent assumed success because the user didn't ask further questions, which can sometimes mask inaccuracies.
 
 
-#### QUESTION 15
+### QUESTION 15
 
 
 A company uses a fine-tuned Microsoft Foundry model that requires frequent updates as new customer feedback becomes available.
@@ -7400,12 +7475,31 @@ E. Microsoft Purview
 ----
 
 
-Correct Answer: A Section: (none) Explanation/Reference:
+- E. Microsoft Purview
 
-Explanation:
+解析与考点分析
 
-Azure Monitor is the primary service for monitoring and auditing Azure OpenAI model configurations and data usage. By combining Azure Monitor with diagnostic settings, you can track management operations, analyze token consumption, and audit prompt/response data.
+为什么选 E？
 
+1.  核心需求分析：
+
+      - 需要对 Azure OpenAI 模型及系统的数据使用（Data usage）和模型配置与合规变化进行监控与审计（Monitors and
+        audits）。
+      - 限制条件：必须最小化管理工作量（Minimizes administrative effort）。
+
+2.  产品功能与治理定位：
+
+      - Microsoft Purview（Purview AI Hub & Audit）： 是微软统一的企业级数据治理与合规审计服务。
+      - 开箱即用的 AI 治理能力： Purview 提供了开箱即用的 AI 治理平台，能够自动监控和审计 AI 模型访问了哪些敏感数据（Data  Usage Tracking）、生成式回答的数据使用痕迹以及整体合规策略审计。由于具备内置的自动化扫描和集中式合规仪表板，它能够以最小的管理工作量满足数据使用和模型合规审计要求。
+
+为什么不选其他选项？
+
+  - A. Azure Monitor： 虽然 Azure Monitor 可以通过 Activity Logs 记录配置更改，通过 Diagnostic
+    Logs 记录 API 调用，但要实现对“数据使用（Data usage）”的合规审计和治理分析，需要手动编写大量的 KQL
+    查询、日志路由规则和自定义仪表板，不符合“最小化管理工作量”的要求。
+  - B. Azure Stream Analytics： 属于实时流数据分析服务，用于编写 SQL 实时处理流数据，需要大量手动开发工作量。
+  - C. Azure API Management： 侧重于 API 网关路由、认证和限流，不属于全面的数据使用治理与合规审计平台。
+  - D. Azure Policy： 主要用于控制 Azure 基础设施资源层面（ARM Control Plane）的配置合规性，无法追踪和审计数据平面（Data  Plane）的具体数据使用（Data Usage）情况。
 
 ### QUESTION 18 
 
@@ -7843,7 +7937,7 @@ Noise: Raw data often includes metadata or conversational filler.
 Context Bloat: Large retrieval windows push the agent toward its limit and slow down processing.
 
 
-## QUESTION 24 
+### QUESTION 24 
 
 A company has Microsoft Power Platform development, staging, and production environments. Each environment has its own Microsoft Dataverse tables and Azure AI Search index.
 
