@@ -5129,11 +5129,26 @@ B. No
 
 ---
 
+
+正确答案：❌ B. No
+
+原因
+
+AI Builder lead scoring models 用于对 Lead（潜在客户）进行评分/预测转化可能性，不会用来配置或影响 Dynamics 365 Sales Copilot 的 opportunity summaries。
+
+如果要定制 Opportunity Summary，应该通过 Opportunity Summary 的字段配置/相关 Copilot customization capabilities 来调整内容。
+
+🎯 记忆
+
+- Lead scoring → Lead 优先级/评分
+- Opportunity summary → Opportunity summary configuration
+
+答案：B. No
+
+---
+
+
 Correct Answer: B
-
-Explanation/Reference:
-
-
 
 Correct:
 
@@ -5183,6 +5198,21 @@ B. No
 
 ---
 
+**正确答案：❌ B. No**
+
+原因
+
+把 **Opportunity summary widget** 添加到 Opportunity form，主要是**把已有的摘要组件显示在表单上**，并不能真正定制：
+
+* 摘要是如何生成的
+* 摘要包含哪些内容
+* 摘要如何呈现/定制
+
+所以不能满足题目要求的 **“customize Copilot by tailoring how opportunity summaries are generated or presented”**。
+
+**答案：B. No**
+
+----
 
 Correct Answer: B 
 
@@ -5588,6 +5618,8 @@ Have the sales executives use Dynamics 365 Sales to track interactions for open 
 Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.
 
 
+
+
 **Requirements** 
 
 **Infrastructure Migration**
@@ -5618,6 +5650,9 @@ Fabrikam has identified the following requirements for sales cycle enablement:
 - Sales managers must report on the adoption of the AI agent to key Fabrikam stakeholders on a monthly basis.
 
 - Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
+
+
+### Question 1
 
 
 A. the Analytics tab in Microsoft Copilot Studio 
@@ -5675,32 +5710,49 @@ NOTE: Each correct selection is worth one point.
 ----
 
 
-- Box 1: Microsoft Foundry
+QUESTION 答案 (Answer Area)
 
-- Box 2: the current time to complete the task today per instance
+  - Tool（工具）: 👉 Microsoft Copilot Studio
 
+  - Data required for the tool（该工具所需的数据）: 👉 the current time to complete the
+    task today per instance（目前完成单次任务所需的时间）
 
-Explanation/Reference:
+解析与考点分析
 
-Explanation:
+1. Tool（工具）：Microsoft Copilot Studio
 
-Scenario:
+  - 案例背景需求：
+    "Any created AI agents must have their return on investment (ROI) calculated
+    to ensure that the solution will save the company money."
+    "The return on investment (ROI) of switching from the current process to the
+    future process is required for stakeholder sign off."
+    （必须为创建的 AI Agent 计算投资回报率 ROI，且必须获得干系人对 ROI 的签字确认。）
+  - 解析：
+      - 案例中，Fabrikam 使用低代码构建 AI Agent。在微软 AI 体系中，Microsoft Copilot Studio 内置了专门的
+        Agent Usage Estimator & ROI Calculator（Agent 用量估算与 ROI
+        计算器工具），专门用于帮助企业评估和计算从旧的人工/传统流程切换到
+        Copilot AI Agent 后的预期成本节省和投资回报率（ROI），以获取干系人的签字认可。
 
-The return on investment (ROI) of switching from the current process to the future process is required for stakeholder sign off.
+2. Data required for the tool（该工具所需的数据）：the current time to complete the task today per instance
 
-Box 1: Microsoft Foundry Tool
+  - 估算模型考点：
+      - 在使用 Copilot Studio 估算工具计算 ROI 时，输入模型的基线核心数据是：单次任务在现有流程中的平均耗时（the current
+        time to complete the task today per instance）。
+      - 计算逻辑： 通过对比“目前单次任务耗时（例如：每次人工查询分散系统需耗时 10 分钟）”与“AI Agent 自动化处理后的耗时（如 30
+        秒）”，结合预期的月度任务调用量和人工工时成本，估算工具能够精准计算出 AI Agent 每年能为公司节省的总工时、总成本以及消耗的
+        Copilot Credits，从而得出具体的 ROI 数据供干系人签署。
 
-To secure stakeholder sign-off for a Microsoft AI solution using AI agents and Dataverse, Azure AI Foundry (formerly Azure AI Studio) provides a structured framework to gather metrics across five key "ROI levers":
+干扰项排除说明
 
-1. Identify Key ROI Metrics via Foundry Use the Foundry ROI Framework to categorize and collect data that compares the current manual process to the future AI-driven state.
+  - Tool 干扰项：
+      - Microsoft Foundry / ARM / Dynamics 365 Sales： 均不包含针对 Copilot Studio AI
+        Agent 用量与 ROI 估算的专属计算工具。
+  - Data 干扰项：
+      - the cumulative time spent over the past year（过去一年的累计总时间）：
+        估算器需要的是单次任务的基线单位耗时（Per instance），而非过去一年的宏观累计时间。
+      - the current cost of Dynamics 365 Sales licenses（D365 许可证成本）：
+        许可证属于基础设施成本，并非衡量单个业务任务自动化时间节省与 ROI 的直接基线变量。
 
-2. Gather Data using Foundry Tools Foundry offers specific technical features to generate the evidence needed for your business case.
-
-3. Calculate the ROI Once metrics are gathered, apply the standard Microsoft-recommended formula for the business case.
-
-Box 2: the current time to complete the task today per instance Data required for the tool
-
-In the Microsoft Foundry ROI framework, the metric for current time required to complete a task today is typically referred to as the Current Time per Instance or Task Duration (Baseline). This value serves as the primary "Before" benchmark to calculate the efficiency gains of the new AI agent solution.
 
 
 ### QUESTION 3 
@@ -8171,6 +8223,37 @@ C. Log Analytics
 D. Microsoft Purview 
 
 ----
+
+
+**正确答案：✅ A. Application Insights**
+
+原因
+
+题目关键词是：
+
+> **multiple Copilot Studio agents + different channels + comprehensive telemetry + performance insights**
+
+**Application Insights** 用于收集详细的应用 telemetry，例如：
+
+* 请求和响应
+* 性能指标
+* 错误和异常
+* Agent 运行 telemetry
+* 跨不同渠道的运行情况
+
+所以适合做**详细监控、故障排查和性能分析**。
+
+其他选项
+
+* ❌ **B. Dynamics 365 Customer Voice** → 主要用于调查和客户反馈。
+* ❌ **C. Log Analytics** → 是日志分析平台，但本题强调的是 Agent 的**comprehensive telemetry 和 performance insights**，Application Insights 更直接。
+* ❌ **D. Microsoft Purview** → 数据治理、分类、合规，不是 Agent 性能监控。
+
+🎯 最终答案
+
+**A. Application Insights**
+
+-----
 
 Correct Answer: A
 
