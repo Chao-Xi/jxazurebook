@@ -820,13 +820,32 @@ D. a file upload
 
 -------
 
+**正确答案：✅ D. a file upload**
+
+原因
+
+题目关键是：
+
+> **add an additional knowledge source**
+> **must NOT add new topics**
+
+对于 **Dynamics 365 Finance and Operations 的 Copilot in-app help and guidance**，可以通过添加**文件作为知识源**来提供额外的业务流程信息，而不需要创建新的 Topic。
+
+* ✅ **D. File upload** → 添加额外知识内容，不需要新增 Topic。
+* ❌ **A. Microsoft Dataverse** → 不是该场景下 in-app help and guidance 的合适知识源。
+* ❌ **B. Public website** → 不适合内部业务流程知识。
+* ❌ **C. Azure AI Search** → 更适合自定义 AI/Agent 的外部知识 grounding，不是这里的最佳选择。
+
+🎯 记忆
+
+> **Finance & Operations Copilot + additional knowledge + no new topics → File upload**
+
+**答案：D**
+
+-----
+
 
 Correct Answer: D Section: (none)
-
-
-Explanation/Reference:
-
-Explanation:
 
 To add an additional knowledge source for internal business processes to the Microsoft Copilot in-app experience for Dynamics 365 finance and operations apps—without creating new topics—you should add File Uploads (such as PDF, Word, or text documents) to the "Copilot for finance and operations apps" agent in Copilot Studio.
 
@@ -910,6 +929,19 @@ Support governance and version control:
 
 ------
 
+
+✅ 答案
+
+* **Ensure consistent AI responses:** → **Define standardized prompt templates**
+* **Support governance and version control:** → **Store prompts in a Git repository**
+
+🧠 记忆
+
+* **Consistency → Standardized templates**
+* **Governance + Version control → Git**
+
+
+-----
 
 **Box 1: Define standardized prompt templates**
 
@@ -1287,6 +1319,33 @@ D. Azure Cosmos DB
 
 ----
 
+**正确答案：✅ A. Microsoft Dataverse**
+
+原因
+
+题目几个关键词基本直接指向 **Dataverse**：
+
+* **Centralized source** → 可作为 Power Platform / Dynamics 365 的统一数据平台
+* **Copilot Studio agents** → 原生支持 Dataverse 作为知识/数据来源
+* **Dynamics 365** → Dynamics 365 应用原生建立在 Dataverse 上
+* **External AI models** → 可通过 API/connectors 等方式访问
+* **Data classification & protection policies** → 支持 Power Platform / Purview 等治理和数据保护能力
+* **Grounding + analytics** → 可作为 AI grounding 和业务分析的数据基础
+
+其他选项
+
+* ❌ **B. Azure Data Lake Storage** → 强于大规模数据湖和分析，不是 Power Platform/Dynamics 统一业务数据平台。
+* ❌ **C. Power BI semantic model** → 主要用于分析语义层，不适合作为多个 AI 系统的中央业务数据源。
+* ❌ **D. Azure Cosmos DB** → NoSQL/全球分布式数据库，虽然可以作为 AI 数据源，但不是本题要求的 Power Platform 中央业务数据平台。
+
+🎯 最终答案
+
+**A. Microsoft Dataverse** ✅
+
+
+----
+
+
 **Correct Answer: A**
 
 Explanation/Reference:
@@ -1323,6 +1382,51 @@ B. Conduct an AI market benchmarking study.
 C. Model the customer experience.
 
 D. Identify and quantify all the development, deployment, and operating costs.
+
+
+-----
+
+**正确答案：✅ D. Identify and quantify all the development, deployment, and operating costs.**
+
+原因
+
+ROAI（Return on AI Investment）的基础公式：
+
+[
+ROAI = \frac{\text{Benefits} - \text{Costs}}{\text{Costs}}
+]
+
+因此要进行**准确的 ROAI 分析**，第一步必须先建立成本基线（Cost Baseline），包括：
+
+* Development costs（开发成本）
+* Deployment costs（部署成本）
+* Operating costs（运营成本）
+* Maintenance costs（维护成本）
+
+如果连成本都没有量化，就无法计算投资回报率。
+
+其他选项
+
+* ❌ **A. Establish the AI performance metrics**
+
+  * 有助于评估效果，但不能单独计算 ROAI。
+
+* ❌ **B. Conduct an AI market benchmarking study**
+
+  * 属于市场分析，不是 ROAI 的第一步。
+
+* ❌ **C. Model the customer experience**
+
+  * 用于评估业务影响，不是计算投资回报的起点。
+
+🎯 AB100 / AI-900 类考试记忆
+
+> **ROAI Analysis First Step → Establish Cost Baseline**
+>
+> → **Identify and quantify development, deployment, and operating costs**
+
+**答案：D** ✅
+
 
 
 -----
@@ -1859,8 +1963,6 @@ D. a return on AI investment (ROAI) analysis
 
 -----
 
-正确答案与详细解析
-
 正确答案：
 
   - D. a return on AI investment (ROAI) analysis（AI 投资回报率分析）
@@ -2174,6 +2276,31 @@ D. Microsoft Cloud Adoption Framework for Azure
 
 -----
 
+**正确答案：✅ C. the Business value toolkit**
+
+原因
+
+题目关键词：
+
+> **calculate ROAI**
+> **business process**
+> **metadata and telemetry**
+> **business value**
+
+**Business value toolkit** 用于评估 AI/Power Platform 方案的业务价值，包括 ROI/ROAI、成本、效率提升以及 telemetry 等数据。
+
+其他选项：
+
+* ❌ **Power Platform admin center** → 环境、治理、容量、管理。
+* ❌ **Success by Design** → Dynamics 365 项目实施方法论。
+* ❌ **Cloud Adoption Framework** → Azure 云迁移和 adoption 方法论。
+
+🎯 记忆
+
+> **ROAI / Business value → Business value toolkit**
+
+**答案：C**
+
 **Correct Answer: C**
 
 Explanation/Reference:
@@ -2237,9 +2364,6 @@ Answer Area
 
 -------
 
-
-这是该道热点选择题（Hot Area）的正确答案与详细解析：
-
 QUESTION 答案 (Answer Area)
 
 1. Agent1:
@@ -2250,27 +2374,19 @@ QUESTION 答案 (Answer Area)
 
   - 正确选项： Microsoft Copilot Studio
 
-解析与考点分析
+核心考点速记（备考复习）
 
-第一部分分析：Agent1（使用 Semantic Kernel 扩展并连接多个 API）
+1.  Agent1 (Microsoft Foundry)：
 
-  - 需求关键点： “使用 Semantic Kernel 进行扩展（extendable by using the Semantic Kernel）” 以及 “连接多个业务应用和 API”。
-  - 技术选型： Microsoft Foundry（Azure AI Foundry）
-      - Semantic Kernel（语义内核） 是微软开源的专业代码 SDK，用于开发者构建高级 AI Agent 和 LLM 工作流。
-      - Microsoft Foundry（前身为 Azure AI Studio）是专业开发者（Pro-code）使用 Semantic Kernel、Python/C# SDK 构建、托管、调试和部署代码级 AI Agent 的官方核心平台。
+      - 关键特征： 使用 Semantic Kernel SDK（专业代码 Pro-code 扩展）构建，需要接入多个复杂的企业 API 与业务应用。
+      - 平台选择： Microsoft Foundry（Azure AI Foundry）是专业开发者使用 Semantic Kernel
+        框架构建和托管高级 Agent 的官方平台。
 
-第二部分分析：Agent2（直接连接 Dataverse 且嵌入 Canvas App）
+2.  Agent2 (Microsoft Copilot Studio)：
 
-  - 需求关键点： “直接连接存储在 Microsoft Dataverse 中的数据” 以及 “嵌入到 Microsoft Power Apps
-    canvas app 中”。
-  - 技术选型： Microsoft Copilot Studio
-      - Microsoft Copilot Studio 是 Power Platform 生态下的低代码 Agent 构建平台。
-      - 它原生支持将 Microsoft Dataverse 设定为知识源（Knowledge Source）或数据表连接。
-      - 在 Power Apps Canvas App（画布应用） 中，开发者可以通过内置的 Copilot 控件直接选择并**嵌入（Embed）**在
-        Copilot Studio 中创建和发布的 Agent。
-
-
-
+      - 关键特征： 接入 Microsoft Dataverse 数据，且需要嵌入到 Power Apps 画布应用（Canvas App）中。
+      - 平台选择： Microsoft Copilot Studio 是 Power Platform 生态下的低代码 Agent 构建工具，原生支持
+        Dataverse 知识库与 Canvas App 内置 Copilot 控件的嵌入。
 
 
 ### QUESTION 26
@@ -3249,6 +3365,40 @@ Answer Area
 
 
 ------
+
+答案：
+
+* **For AI agent creation:** ✅ **Microsoft Copilot Studio**
+* **For unexpected AI agent actions:** ✅ **a Fallback topic**
+
+解释
+
+**1. AI agent creation → Copilot Studio**
+
+题目要求：
+
+* low-code
+* Dataverse 为核心
+* Agent 用于销售团队
+* conversational experience
+
+这些都是 **Microsoft Copilot Studio** 的典型场景。
+
+**2. Unexpected AI agent actions → Fallback topic**
+
+题目明确要求 Agent 无法回答时进行处理，例如：
+
+> 连续两次回答失败 → 转人工代表
+
+**Fallback topic** 用于处理无法匹配/无法处理的用户请求，并可以设计后续的 escalation。
+
+🎯 最终答案
+
+| Requirement                 | Answer                       |
+| --------------------------- | ---------------------------- |
+| AI agent creation           | **Microsoft Copilot Studio** |
+| Unexpected AI agent actions | **Fallback topic**           |
+
 
 
 Explanation/Reference:
@@ -5773,6 +5923,44 @@ E. Direct Preference Optimization (DPO)
 
 ---
 
+正确答案与详细解析
+
+正确答案：
+
+  - D. the Analytics tab in Microsoft Copilot Studio（Microsoft Copilot Studio 中的“分析”选项卡）
+
+解析与考点分析
+
+为什么选 D？
+
+1.  对照案例关键需求（Fabrikam, Inc. 案例）：
+
+      - 案例中明确指出了获得后续资金支持的关键条件： "Funding for future AI initiatives will depend on demonstrating an increase in AI adoption month over month."
+        （未来的 AI 项目资金将取决于能否展示 AI 采用率（Adoption）按月增长。）
+      - 案例中的销售管理层职责：  "Sales managers must report on the adoption of the AI agent to key Fabrikam stakeholders on a monthly basis."
+        （销售经理必须每月向关键干系人汇报 AI Agent 的采用率。）
+
+2.  工具功能匹配：
+
+      - 在 Microsoft Copilot Studio 中，Analytics（分析）选项卡 提供了专门的 Usage（使用情况）和
+        Adoption（采用率）仪表板。
+      - 它能够自动统计并可视化呈现 Agent 的月度活跃用户数（MAU）、会话总量、使用趋势增长曲线以及用户参与度。
+      - 销售经理可以直接导出或截图 Analytics tab 中的月度增长图表，向管理层证明“AI 采用率正在逐月稳步增长”，从而为未来的 AI
+        Agent 开发成功申请并确保资金支持（secure funding）。
+
+为什么不选其他选项？
+
+  - A. Evaluations in Microsoft Foundry：
+    用于评估专业代码模型输出的质量（如连贯性、幻觉、安全性），不用于展示端到端用户的月度业务采用率（Adoption）指标。
+  - B. the Azure Cost Optimization workbook： 用于分析 Azure 云基础设施的成本与节省建议，无法呈现
+    Copilot Studio Agent 的用户采用率趋势。
+  - C. Azure Operator Insights： 针对电信运营商大数据的分析服务，与本案例完全无关。
+  - E. Direct Preference Optimization (DPO)：
+    一种大语言模型微调（Fine-tuning）中的偏好优化算法，属于技术训练手段，而非业务汇报与采用率监控工具。
+
+
+------
+
 Correct Answer: D 
 
 Explanation/Reference:
@@ -5814,6 +6002,20 @@ C. Add the Microsoft Foundry model as a Copilot Studio skill.
 D. Create a custom engine agent.
 
 —--
+
+ ✅ 答案：B. Create a connection to Microsoft Foundry in the agent.
+
+**原因：**
+
+* Copilot Studio Agent 需要通过 **connection** 安全访问 Microsoft Foundry 中的自定义模型。
+* **A** Classic orchestration：不是连接模型的方式。
+* **C** Skill：不是用于连接 Foundry custom model。
+* **D** Custom engine agent：不符合题目要求。
+
+🧠 **记忆：**
+
+> **Copilot Studio → Microsoft Foundry model → Connection**
+
 
 Correct Answer: B 
 
@@ -7423,8 +7625,6 @@ E. brand awareness
 
 ------
 
-正确答案与详细解析
-
 正确答案：
 
   - A. the reduced average case resolution time（平均案件解决时间的缩短）
@@ -7679,6 +7879,38 @@ C. the Copilot hub in the Power Platform admin center
 D. the Analytics tab in Copilot Studio
 
 ----
+
+**正确答案：✅ D. the Analytics tab in Copilot Studio**
+
+原因
+
+题目要分析的是 Copilot Studio Agent 的：
+
+* **Low resolution rate**
+* **High escalation rate**
+* 找出 Agent 为什么表现不好
+
+**Copilot Studio → Analytics tab** 提供 Agent 的运行分析，包括：
+
+* Resolution rate
+* Escalation rate
+* Engagement
+* Conversation outcomes
+* Answer quality
+
+因此最直接。
+
+其他选项
+
+* ❌ **A. Dynamics 365 Customer Service historical analytics** → 更偏 Customer Service 整体运营/客服历史数据。
+* ❌ **B. Microsoft 365 admin center** → 不用于 Copilot Studio Agent 的详细运行分析。
+* ❌ **C. Power Platform admin center Copilot hub** → 偏管理、治理和整体 Copilot 管理，不是 Agent performance troubleshooting 的主要工具。
+
+🎯 最终答案
+
+**D. the Analytics tab in Copilot Studio** ✅
+
+---
 
 Correct Answer: D Section: (none)
 
