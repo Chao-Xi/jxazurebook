@@ -50,7 +50,7 @@ Contoso has identified the following custom AI agent requirements:
 
 - The custom AI agent must be designed to eventually connect to other agents that can be selected based on their description.
 
-- The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational.
+- <mark>The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational</mark>.
 
 - The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&D department.
 
@@ -76,7 +76,7 @@ The CFO wants to identify how many interactions with the AI agents are abandoned
 
 ### QUESTION 1 
 
-Which **two components in the custom AI agent design should the CFO evaluate** in the quarterly agent analysis? Each correct answer presents part of the solution.
+Which <mark>**two components in the custom AI agent design should the CFO evaluate**</mark> in the quarterly agent analysis? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -207,7 +207,7 @@ D. Azure OpenAI reasoning models
 **为什么不选其他选项？**
 
 * **A. AI-assisted evaluators（AI 辅助评估器）：** 这是 Azure AI Foundry / Responsible AI 中用于测试和评估模型输出质量（如可靠性、公平性）的工具，用于 CEO/CTO 的季度质量评估，而不是 Agent 运行时的话题匹配机制。
-* **B. classic orchestration（传统编排）：** 与案例要求的“不使用触发词（NOT on a trigger phrase）”直接冲突。
+* <mark>**B. classic orchestration（传统编排）：** 与案例要求的“不使用触发词（NOT on a trigger phrase）”直接冲突。</mark>
 * **D. Azure OpenAI reasoning models（Azure OpenAI 推理模型）：** 指的是 o1/o3 等具备高级推理能力的模型，而题目问的是针对 Agent 话题路由与调用机制的**配置（Orchestration）**。
 
 
@@ -217,11 +217,11 @@ Correct Answer: C
 
 **Explanation:**
 
-Generative orchestration is the most appropriate choice for this Microsoft Dynamics 365 AI agent solution. This selection directly addresses your requirements for a low-code, conversational, and interconnected agent ecosystem within the Microsoft Power Platform and Dynamics 365 environment.
+<mark>Generative orchestration is the most appropriate choice for this Microsoft Dynamics 365 AI agent solution. This selection directly addresses your requirements for a low-code, conversational, and interconnected agent ecosystem within the Microsoft Power Platform and Dynamics 365 environment.<mark>
 
 **Why Generative Orchestration?**
 
-Generative orchestration (available in Microsoft Copilot Studio) is specifically designed to move away from rigid, trigger-phrase-based logic toward a flexible, intent-based model.
+<mark>Generative orchestration (available in Microsoft Copilot Studio) is specifically designed to move away from rigid, trigger-phrase-based logic toward a flexible, intent-based model.</mark>
 
 **Mapping to Your Requirements** 
 
@@ -243,7 +243,7 @@ You would use these to measure how well your agent is performing, but they canno
 
 **[Not B]**
 
-Classic Orchestration is entirely dependent on trigger phrases.
+<mark>Classic Orchestration is entirely dependent on trigger phrases.</mark>
 
 It creates a "command-and-control" feel rather than the fluid, conversational interaction you are looking for. 
 
@@ -350,7 +350,7 @@ Any sensitive information, such as user IDs and names, shared via the AI agent m
 
 ### QUESTION 1
 
-Which framework should you use to meet the AI agent requirements for the sales cycle enablement? To answer, select the appropriate options in the answer area.
+**Which framework should you use to meet the AI agent requirements <mark>for the sales cycle enablement</mark>?** To answer, select the appropriate options in the answer area.
 
 Hot Area:
 
@@ -382,7 +382,9 @@ Explanation/Reference:
 
 Explanation:
 
-**Box 1: the ALM Accelerator for Microsoft Power Platform For Microsoft Copilot Studio best practices**
+**Box 1: the ALM Accelerator for Microsoft Power Platform** 
+
+> For Microsoft Copilot Studio best practices
 
 Using the ALM Accelerator for Microsoft Power Platform is a recommended approach for managing the lifecycle of a low-code AI agent (Copilot Studio) that relies on Dataverse. It enables source control, versioning, and automated deployment of AI agents to ensure they follow Microsoft's best practices.
 
@@ -467,7 +469,7 @@ Ready: Set up the Dataverse environment (landing zone) and configure security (A
 Adopt (Migrate): Perform the technical migration of data using ETL (Extract, Transform, Load) processes.
 
 
-### Scenario: Infrastructure Migration
+## 3 Scenario: Infrastructure Migration
 
 Fabrikam plans to migrate from its current on-premises infrastructure to a completely cloud-based topology; this will include user authentication, the security framework, and, primarily, the adoption of the services by end users.
 
@@ -481,9 +483,9 @@ Reference:
 
 Plan AI-powered business solutions
 
-#### QUESTION 1
+### QUESTION 1
 
-A company uses Microsoft Dynamics 365 Sales to manage leads that are stored in a Microsoft Dataverse table named Lead and use non-standard terminology and custom columns.
+A company uses Microsoft Dynamics 365 **Sales to manage leads that are stored in a Microsoft Dataverse table named Lead and use non-standard terminology and custom columns.**
 
 You need to configure business terms in the Lead table so that Microsoft Copilot controls can summarize the leads efficiently. The solution must minimize administrative effort.
 
@@ -559,17 +561,17 @@ Description: Define how this term relates to the Dataverse schema. This helps Co
 
 
 
-#### QUESTION 2
+### QUESTION 2
 
 You are designing two Microsoft Copilot Studio agents named Agent1 and Agent2. Each agent must meet the following requirements:
 
-Each agent must use a standard model.
+- Each agent must use a standard model.
 
-Each agent must NOT use generative orchestration.
+- <mark>Each agent must NOT use generative orchestration.</mark>
 
-Agent1 must support simple and short phrases for a given topic.
+- <mark>Agent1 must support simple and short phrases for a given topic.</mark>
 
-Agent2 must integrate with Microsoft Dynamics 365 Contact Center voice channel.
+- <mark>Agent2 must integrate with Microsoft Dynamics 365 Contact Center voice channel.</mark>
 
 You need to recommend language models for the agents.
 
@@ -914,13 +916,13 @@ Hot Area:
 
 Answer Area
 
-Ensure consistent AI responses:
+**Ensure consistent AI responses:**
 
 - Delegate department-specific prompt templates.
 - Define standardized prompt templates.
 - Maintain a prompt history.
 
-Support governance and version control:
+**Support governance and version control**:
 
 - Define standardized prompt templates.
 - Store prompts in a Git repository.
@@ -1061,13 +1063,7 @@ C. Configure a task agent to generate fraud risk scores for the human analyst to
 D. Export the data to a data lake for analysis in Microsoft Power BI.
 
 -----
-
-正确答案与详细解析
-
-正确答案：
-
-  - C. Configure a task agent to generate fraud risk scores for the human
-    analyst to review.（配置一个任务 Agent 生成欺诈风险评分，供人工分析师进行审核。）
+C. Configure a task agent to generate fraud risk scores for the human analyst to review.（配置一个任务 Agent 生成欺诈风险评分，供人工分析师进行审核。）
 
 解析与考点分析
 
