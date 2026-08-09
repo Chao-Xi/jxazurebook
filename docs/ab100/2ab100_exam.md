@@ -1261,6 +1261,31 @@ D. a prioritization grid
 
 ----
 
+✅ 答案：B. a horizon-based framework
+
+**原因：**
+
+题目强调：
+
+* 多个不同阶段的 AI initiatives
+* **Immediate results**
+* **Long-term value**
+* **Strategic innovations**
+
+这正是 **Horizon-based framework** 的使用场景：
+
+* **Horizon 1** → 当前业务、短期收益
+* **Horizon 2** → 新业务、成长机会
+* **Horizon 3** → 长期战略创新
+
+🧠 **记忆：**
+
+> **Short-term + Long-term + Innovation → Horizon-based framework**
+
+**答案：B** ✅
+
+---
+
 **Correct Answer: B**
 
 **Explanation/Reference:**
@@ -1878,6 +1903,23 @@ C. Use an adaptive card in Agent1.
 
 D. Add example user inputs to the training data of Agent1.
 
+----
+
+✅ 答案：B. Verify and cleanse the Dataverse data.
+
+**原因：**
+Agent 的 grounding 依赖底层 Dataverse 数据。数据存在错误、重复、缺失或不一致，会直接导致回答不准确。
+
+* **A** ❌ Copilot Studio 不需要通过 retraining 来解决 Dataverse 数据质量问题
+* **B** ✅ **Verify and cleanse the Dataverse data**
+* **C** ❌ Adaptive Card 主要用于交互界面
+* **D** ❌ Example inputs 不能解决 grounding data 本身的问题
+
+🧠 **记忆：**
+
+> **Grounding 不准确 → 先检查和清洗数据**
+
+----
 
 **Correct Answer: B**
 
@@ -2564,9 +2606,40 @@ Answer Area
 
 -----
 
+
+✅ 答案
+
+* **Help identify vendor overdue invoices and outstanding balances:** → **AI Summaries with Copilot**
+* **Reduce how long it takes to review overdue invoices and payment history:** → **Collections coordinator summary**
+
+🧠 **记忆：**
+
+> **Vendor invoices / balances → AI Summaries**
+> **Collections / payment history → Collections coordinator summary**
+
+
 **Box 1: The Account Reconciliation Agent**
 
 **Box 2: Collections coordinator summary**
+
+
+
+1. Help identify vendor overdue invoices and outstanding balances:
+
+  - 正确选项： AI Summaries with Copilot
+
+2. Reduce how long it takes to review overdue invoices and payment history:
+
+  - 正确选项： Collections coordinator summary
+
+核心考点速记（备考复习）
+
+1.  AI Summaries with Copilot（用于应付账款 AP）： 在 Dynamics 365 Finance
+    的发票自动化与供应商工作区中，Copilot 生成的 AI 文本摘要可帮助财务人员快速提取并识别供应商逾期发票和未结余额（Vendor overdue
+    invoices and balances）。
+
+2.  Collections coordinator summary（用于催收与债务回收）： 在 Dynamics 365 Finance
+    的信用与催收模块中，专门用于自动汇总客户的逾期发票、付款历史及信用记录，显著缩短催收人员审查逾期发票和付款历史的时间。
 
 
 Box 1: The Account Reconciliation Agent 
@@ -3901,6 +3974,18 @@ What should you include in the design for each requirement? To answer, drag the 
 
 -----
 
+✅ 答案
+
+* **Supports interactive speech responses:** → **Copilot Studio voice features**
+* **Optimizes decision-making and response accuracy:** → **A deep reasoning model**
+
+🧠 **记忆：**
+
+> **Voice → Copilot Studio voice features**
+> **Reasoning / accuracy → Deep reasoning model**
+
+----
+
 Requirement 1
 
 Supports interactive speech responses
@@ -4166,6 +4251,28 @@ E. Configure the Escalate topic.
 
 
 ----
+
+
+✅ 答案：E. Configure the Escalate topic.
+
+**原因：**
+
+题目关键是：
+
+> 客户要求 escalation → 转交给 live customer service representative
+
+在 **Copilot Studio** 中，**Escalate topic** 专门用于处理人工转接（handoff to a human agent）。
+
+* **A. Agent flow** ❌ 用于自动化流程
+* **B. Conversation Start topic** ❌ 用于对话开始
+* **C. Skill** ❌ 用于扩展 Agent 能力
+* **D. Power Automate connector** ❌ 用于连接外部服务
+* **E. Escalate topic** ✅ 用于转人工
+
+🧠 **记忆：**
+
+> **Customer requests human → Escalate topic**
+
 
 Correct Answer: E Section: (none)
 
@@ -8646,9 +8753,13 @@ You are designing an AI-based agent to automate and improve the process.
 
 You need to recommend on which platform to build the agent. The solution must meet the following requirements:
 
-Use generative AI to answer common questions. Provide analytics to review AI performance. Identify customer demographics.
+- Use generative AI to answer common questions. 
 
-Minimize custom development.
+- Provide analytics to review AI performance. 
+
+- Identify customer demographics.
+
+- Minimize custom development.
 
 Solution: You recommend Microsoft Security Copilot.
 
@@ -8657,6 +8768,30 @@ Does this meet the goal?
 A. Yes
 
 B. No
+
+
+-----
+
+✅ 答案：B. No
+
+**Microsoft Security Copilot** 是面向**网络安全**场景的 AI 平台，不适合用于客户分析、客户 demographics 等业务场景。
+
+题目要求：
+
+* Generative AI 回答常见问题
+* AI performance analytics
+* Customer demographics
+* Minimize custom development
+
+更适合使用 **Microsoft Copilot Studio** 来构建业务 Agent。
+
+🧠 **记忆：**
+
+> **Security Copilot → Cybersecurity**
+> **Business AI Agent → Copilot Studio**
+
+----
+
 
 Correct Answer: B Section: (none)
 
@@ -9083,3 +9218,43 @@ Which tool should be recommended to address concerns about sensitive information
 * **D. Foundry Tracing UI** ❌ → 主要查看 Agent 执行 trace，不是主要的治理/敏感信息监控工具。
 
 **答案：E. Monitoring in Microsoft Foundry**
+
+
+### Question 47
+
+A company has a team that analyzes its customers using a manual process.
+
+You are designing an AI-based agent to automate and improve this process.
+
+You need to recommend which platform to use to build the agent. The solution must meet the following requirements:
+
+- Use generative AI to answer common questions.
+- Provide analytics to review AI performance.
+- Identify customer demographics.
+- Minimize custom development.
+
+
+Solution: Microsoft Copilot Studio is recommended.
+
+Does this satisfy the goal?
+
+- A Yes
+- B No
+
+---
+
+
+✅ 答案：A. Yes
+
+**Microsoft Copilot Studio** 符合要求：
+
+* **Generative AI** → 回答常见问题
+* **Analytics** → 分析 Agent 的性能
+* **Customer demographics** → 可连接业务数据进行客户分析
+* **Minimize custom development** → Low-code / no-code Agent 开发
+
+🧠 **记忆：**
+
+> **Business Agent + Generative AI + Analytics + Low-code → Copilot Studio**
+
+**答案：A. Yes**
