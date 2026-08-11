@@ -376,10 +376,6 @@ Answer Area
 
 --------
 
-对，这个解释**比我上一条答案更合理**。我上一条把两个框架的对应关系选反了。
-
-✅ 正确答案应该是
-
 * **For Microsoft Copilot Studio best practices:** → **Microsoft Power Platform Well-Architected framework**
 * **For conversational user experiences:** → **Success by Design**
 
@@ -409,7 +405,8 @@ Success by Design 更强调 Dynamics 365 / Power Platform 项目的实施方法�
 
 🧠 考试记忆
 
-> **Copilot Studio / Power Platform architecture & best practices → Well-Architected**
+> **Copilot Studio / Power Platform architecture & best practices → Well-Architected**、
+> 
 > **Dynamics 365 implementation + conversational experience → Success by Design**
 
 
@@ -493,9 +490,9 @@ Plan AI-powered business solutions
 
 ### QUESTION 1
 
-A company uses Microsoft Dynamics 365 **Sales to manage leads that are stored in a Microsoft Dataverse table named Lead and use non-standard terminology and custom columns.**
+A company uses Microsoft Dynamics 365 **Sales to manage leads that are stored in a <mark>Microsoft Dataverse table named Lead</mark> and use non-standard terminology and custom columns.**
 
-You need to configure business terms in the Lead table so that Microsoft Copilot controls can summarize the leads efficiently. The solution must minimize administrative effort.
+<mark>You need to configure business terms in the Lead table</mark> so that Microsoft Copilot controls can summarize the leads efficiently. The solution must minimize administrative effort.
 
 How should you configure the business terms?
 
@@ -571,7 +568,7 @@ Description: Define how this term relates to the Dataverse schema. This helps Co
 
 ### QUESTION 2
 
-You are designing two Microsoft Copilot Studio agents named Agent1 and Agent2. Each agent must meet the following requirements:
+You are designing two **Microsoft Copilot Studio agents named Agent1 and Agent2**. Each agent must meet the following requirements:
 
 - Each agent must use a standard model.
 
@@ -705,16 +702,14 @@ Voice Channel 推荐：
 
 很多人容易混淆。
 
-CLU（Conversational Language Understanding）：
-
-属于 Azure AI Language。
+**CLU（Conversational Language Understanding）： 属于 Azure AI Language**。
 
 主要用于：
 
 * Azure Bot
 * Azure AI Language
 
-而不是 Copilot Studio Standard Model。
+<mark>**而不是 Copilot Studio Standard Model**</mark>。
 
 题目已经说明：
 
@@ -729,9 +724,7 @@ Copilot Studio Standard Models：
 
 **为什么其他选项错？**
 
-Azure OpenAI ❌
-
-Generative AI。
+Azure OpenAI ❌ Generative AI。
 
 题目明确：
 
@@ -739,17 +732,14 @@ Generative AI。
 
 排除。
 
+
 Azure Language in Foundry Tools ❌
 
-Azure AI 服务。
-
-不是 Copilot Studio Standard Language Model。
+Azure AI 服务。 不是 Copilot Studio Standard Language Model。
 
 CLU ❌
 
-Azure AI Language 的模型。
-
-不是 Copilot Studio Standard Model。
+Azure AI Language 的模型。 不是 Copilot Studio Standard Model。
 
 最终答案
 
@@ -758,7 +748,7 @@ Azure AI Language 的模型。
 | **Agent1** | ✅ **Natural language understanding (NLU)**    |
 | **Agent2** | ✅ **Natural language understanding + (NLU+)** |
 
-考试速记
+<mark>考试速记</mark>
 
 | 模型                                  | 适用场景                                                |
 | ----------------------------------- | --------------------------------------------------- |
@@ -810,11 +800,13 @@ Comparison of Classic Models
 
 ### QUESTION 3
 
-A company uses Microsoft Dynamics 365 finance and operations apps.
+A company uses **Microsoft Dynamics 365 finance and operations apps**.
 
 The company plans to use Microsoft Copilot in-app help and guidance to generate responses for internal business processes.
 
-You need to add an additional knowledge source for the business processes. The solution must NOT add new topics to the Copilot agent for the finance and operations apps.
+<mark>**You need to add an additional knowledge source for the business processes.**</mark> 
+
+The solution **must NOT add new topics to the Copilot agent** for the finance and operations apps.
 
 Which knowledge source should you add?
 
@@ -832,11 +824,10 @@ D. a file upload
 
 **正确答案：✅ D. a file upload**
 
-原因
-
 题目关键是：
 
 > **add an additional knowledge source**
+> 
 > **must NOT add new topics**
 
 对于 **Dynamics 365 Finance and Operations 的 Copilot in-app help and guidance**，可以通过添加**文件作为知识源**来提供额外的业务流程信息，而不需要创建新的 Topic。
@@ -864,7 +855,7 @@ To add an additional knowledge source for internal business processes to the Mic
 
 A company has an AI business solution.
 
-You need to extend the solution so that Microsoft 365 Copilot can invoke external logic hosted in Azure services.
+You need to extend the solution so that **Microsoft 365 Copilot can invoke external logic hosted in Azure services.**
 
 What should you include in the solution?
 
@@ -876,7 +867,7 @@ C. custom engine agents
 
 -----
 
-  - B. Microsoft Power Platform connectors（Microsoft Power Platform 连接器）
+- B. Microsoft Power Platform connectors（Microsoft Power Platform 连接器）
 
 核心考点速记（备考复习）
 
@@ -999,7 +990,7 @@ Auditability: Git maintains a full historical record of who changed a prompt, wh
 
 ### QUESTION 6
 
-A company has a Microsoft Foundry project that uses a single agent and a single prompt to complete a series of tasks.
+A company has a Microsoft Foundry project that **<mark>uses a single agent and a single prompt to complete a series of tasks</mark>**.
 
 The agent encounters the following issues:
 
@@ -1113,7 +1104,9 @@ A financial services company uses Microsoft Dynamics 365 Finance.
 
 Currently, the company's support staff manually reviews customer transaction histories to detect potential fraud cases before escalating the cases.
 
-You need to recommend an automation solution for the review process. The solution must ensure that escalations reach a human analyst for final decision making. What should you recommend?
+**You need to recommend an automation solution for the review process**. 
+
+<mark>**The solution must ensure that escalations reach a human analyst for final decision making**</mark>. What should you recommend?
 
 A. Deploy an autonomous agent that closes non-fraud cases automatically.
 
@@ -1124,6 +1117,8 @@ C. Configure a task agent to generate fraud risk scores for the human analyst to
 D. Export the data to a data lake for analysis in Microsoft Power BI.
 
 -----
+
+
 C. Configure a task agent to generate fraud risk scores for the human analyst to review.（配置一个任务 Agent 生成欺诈风险评分，供人工分析师进行审核。）
 
 解析与考点分析
@@ -1140,14 +1135,11 @@ C. Configure a task agent to generate fraud risk scores for the human analyst to
 
 为什么不选其他选项？
 
-  - A. Deploy an autonomous agent that closes non-fraud cases
-    automatically（部署一个自主 Agent 自动关闭非欺诈案件）：
+  - A. Deploy an autonomous agent that closes non-fraud cases automatically（部署一个自主 Agent 自动关闭非欺诈案件）：
     完全自主关闭案件缺乏人工监督，在金融欺诈识别这种高风险场景中容易因误判（假阴性）造成重大损失，且违背了题目要求的“由人工分析师做出最终决策”。
-  - B. Use Microsoft 365 Copilot in Word to automatically finalize fraud
-    detection policies（使用 Word 中的 Copilot 自动敲定欺诈检测策略）： 在 Word
+  - B. Use Microsoft 365 Copilot in Word to automatically finalize fraud detection policies（使用 Word 中的 Copilot 自动敲定欺诈检测策略）： 在 Word
     中撰写策略文档无法自动化交易历史的审查与欺诈检测流程。
-  - D. Export the data to a data lake for analysis in Microsoft Power
-    BI（导出数据到数据湖以便在 Power BI 中分析）： 数据报表展示只能提供离线数据可视化，无法提供实时的自动化欺诈风险评分与事件升级工作流。
+  - D. Export the data to a data lake for analysis in Microsoft Power BI（导出数据到数据湖以便在 Power BI 中分析）： 数据报表展示只能提供离线数据可视化，无法提供实时的自动化欺诈风险评分与事件升级工作流。
 
 
 
@@ -1180,7 +1172,7 @@ A company plans to deploy a Microsoft Copilot Studio agent that will analyze his
 
 The data is currently stored in an Azure SQL database, flat files, APIs, and logs.
 
-You need to organize the data into a format that can be used as a knowledge source in Copilot Studio.
+**You need to organize the data into a format that can be used as a knowledge source in Copilot Studio**.
 
 What should you include in the solution?
 
@@ -1234,7 +1226,7 @@ A retail company plans to deploy Microsoft Copilot Studio agents to support:
 - Microsoft Dynamics 365 Commerce scenarios.
 - A Microsoft Power Apps inventory management solution.
 
-You need to recommend a solution to organize product catalog data as a consistent source for multiple AI systems.
+**<mark>You need to recommend a solution to organize product catalog data as a consistent source for multiple AI systems.</mark>**
 
 What should you recommend?
 
@@ -1265,12 +1257,10 @@ D. Centralize the product catalog data in Microsoft Dataverse and expose the dat
 
 2.  微软架构最佳实践：
 
-      - Microsoft Dataverse 是 Power Platform 和 Dynamics 365 体系的核心数据底座（Common
-        Data Model）。
+      - <mark>Microsoft Dataverse 是 Power Platform 和 Dynamics 365 体系的核心数据底座（Common Data Model）</mark>。
       - 将产品目录集中存储在 Dataverse 中，可以实现：
           - 单一事实来源（SSOT）： 避免不同系统和 Agent 之间的数据冗余与不一致。
-          - 原生无缝集成： Dynamics 365 Commerce、Power Apps 和 Copilot Studio
-            均能够以极低的开发成本原生的读写 Dataverse 中的表与数据，确保数据更新实时同步给所有 AI Agent。
+          - <mark>原生无缝集成： Dynamics 365 Commerce、Power Apps 和 Copilot Studio 均能够以极低的开发成本原生的读写 Dataverse 中的表与数据，确保数据更新实时同步给所有 AI Agent</mark>。
 
 为什么不选其他选项？
 
@@ -1304,7 +1294,9 @@ In the scenario described, centralizing product catalog data in Microsoft Datave
 
 A company has a portfolio of AI initiatives at different stages of development.
 
-You need to recommend a structured approach to evaluating the return on AI investment (ROAI) across all the initiatives. The solution must balance immediate results with long-term values and strategic innovations.
+You need to recommend a structured approach to evaluating the **return on AI investment (ROAI) across all the initiatives.** 
+
+The solution must balance immediate results with long-term values and strategic innovations.
 
 What should you include in the recommendation?
 
@@ -1321,8 +1313,6 @@ D. a prioritization grid
 ✅ 答案：B. a horizon-based framework
 
 **原因：**
-
-题目强调：
 
 * 多个不同阶段的 AI initiatives
 * **Immediate results**
@@ -1354,17 +1344,17 @@ In this scenario, a horizon-based framework is best for evaluating the return on
 
 This approach categorizes AI initiatives into three distinct "horizons," allowing you to measure different types of value across the development lifecycle:
 
-**Horizon 1: Core Operations (Immediate ROI)**
+<mark>**Horizon 1: Core Operations (Immediate ROI)**</mark>
 
 Focuses on extending current capabilities for rapid results, such as using Microsoft Copilot to automate routine coding tasks or IT support.
 
-**Horizon 2: Adjacent Opportunities (Mid-Term Value)**
+<mark>***Horizon 2: Adjacent Opportunities (Mid-Term Value)**</mark>
 
 Targets growth by expanding into new areas related to your core, such as developing agentic platforms or AI-driven specialized tools that build on existing infrastructure.
 
 Comparison for This Scenario
 
-**Horizon 3: Transformational Innovation (Long-Term Strategy)** 
+<mark>**Horizon 3: Transformational Innovation (Long-Term Strategy)**</mark>
 
 Invests in "future-forward" innovations that may have uncertain immediate returns but offer massive strategic upside or business model reimagination.
 
@@ -1381,9 +1371,12 @@ Recommendation: Use the Microsoft AI Maturity Model to baseline your current sta
 
 ### QUESTION 11
 
-You need to recommend a Microsoft Power Platform business solution that consolidates data from multiple internal and external data sources. The solution must meet the following requirements:
+You need to recommend a Microsoft Power Platform business solution that **consolidates data from multiple internal and external data sources.** 
 
-- Provide the data as a centralized source for multiple AI systems, including Microsoft Copilot Studio agents, Dynamics 365 applications, and external AI models.
+
+The solution must meet the following requirements:
+
+- **Provide the data as a centralized source for multiple AI systems**, including Microsoft Copilot Studio agents, Dynamics 365 applications, and external AI models.
 - Support built-in data classification and protection policies.
 - Provide data for grounding and analytics.
 
@@ -1403,11 +1396,9 @@ D. Azure Cosmos DB
 
 **正确答案：✅ A. Microsoft Dataverse**
 
-原因
-
 题目几个关键词基本直接指向 **Dataverse**：
 
-* **Centralized source** → 可作为 Power Platform / Dynamics 365 的统一数据平台
+* <mark>**Centralized source** → 可作为 Power Platform / Dynamics 365 的统一数据平台</mark>
 * **Copilot Studio agents** → 原生支持 Dataverse 作为知识/数据来源
 * **Dynamics 365** → Dynamics 365 应用原生建立在 Dataverse 上
 * **External AI models** → 可通过 API/connectors 等方式访问
@@ -1444,7 +1435,7 @@ Data Classification & Protection: It features built-in, enterprise-grade securit
 
 **AI Grounding & Analytics:**
 
-- Grounding: It acts as the knowledge source for Copilot Studio agents, providing the necessary business context for accurate generative AI responses.
+- **Grounding: It acts as the knowledge source for Copilot Studio agents, providing the necessary business context for accurate generative AI responses.**
 
 - Analytics: It integrates natively with Power BI for reporting and can synchronize with Microsoft Fabric or Azure Synapse for large-scale data modeling and advanced analytics.
 
@@ -1489,17 +1480,11 @@ ROAI = \frac{\text{Benefits} - \text{Costs}}{\text{Costs}}
 
 其他选项
 
-* ❌ **A. Establish the AI performance metrics**
+* ❌ **A. Establish the AI performance metrics**  有助于评估效果，但不能单独计算 ROAI。
 
-  * 有助于评估效果，但不能单独计算 ROAI。
+* ❌ **B. Conduct an AI market benchmarking study**  属于市场分析，不是 ROAI 的第一步。
 
-* ❌ **B. Conduct an AI market benchmarking study**
-
-  * 属于市场分析，不是 ROAI 的第一步。
-
-* ❌ **C. Model the customer experience**
-
-  * 用于评估业务影响，不是计算投资回报的起点。
+* ❌ **C. Model the customer experience** 用于评估业务影响，不是计算投资回报的起点。
 
 🎯 AB100 / AI-900 类考试记忆
 
@@ -1643,7 +1628,7 @@ The company plans to deploy a Microsoft Copilot Studio agent to the Canadian env
 
 Microsoft Dataverse data stored in Canada A connector that connects to an Azure OpenAI instance in the United States
 
-You need to ensure that the agent adheres to data residency and data movement policies before being deployed.
+**You need to ensure that the agent adheres to data residency and data movement policies before being deployed**.
 
 What should you do?
 
@@ -1661,14 +1646,12 @@ D. Ensure that cross-region data movement is enabled for the Canadian environmen
 
 原因
 
-题目核心是：
-
 * Dataverse 数据在 **Canada**
 * Azure OpenAI 在 **United States**
 * Agent 部署在 Canadian Power Platform environment
 * 需要满足 **data residency / data movement**
 
-因为 Agent 需要跨区域访问 Azure OpenAI，所以必须确保该环境允许 **cross-region data movement**，并且相关 connector dependencies 也符合要求。
+<mark>因为 Agent 需要跨区域访问 Azure OpenAI，所以必须确保该环境允许 **cross-region data movement**，并且相关 connector dependencies 也符合要求。</mark>
 
 其他选项
 
@@ -1802,14 +1785,13 @@ NOTE: Each correct selection is worth one point.
 
 Answer Area
 
-Prompt validation techniques:
+**Prompt validation techniques**:
 
 - Exclude domain-specific terminology from the prompts.
 - Use prompts that have varied phrasing.
 - Use only simple, one-word prompts.
 
-Metrics:
-
+**Metrics:**
 
 - The number of words generated per response
 - Response relevance and accuracy
@@ -1849,14 +1831,15 @@ Metrics:
 
 -----
 
-**Box 1: Use prompts that have varied phrasing**
-
-**Box 2: Response Relevance and accuracy**
 
 
 **Box 1: Use prompts that have varied phrasing**
 
-Here is why this technique is superior to the others for validating prompt engineering best practices: Robustness and Generalization: Using varied phrasing (synonyms, different sentence structures) tests whether the agent understands the underlying intent rather than just matching keywords. This ensures the agent is not brittle and can handle real-world user queries that vary in phrasing.
+Here is why this technique is superior to the others for validating prompt engineering best practices: 
+
+**Robustness and Generalization: Using varied phrasing (synonyms, different sentence structures) tests whether the agent understands the underlying intent rather than just matching keywords**. 
+
+This ensures the agent is not brittle and can handle real-world user queries that vary in phrasing.
 
 Best Practice Validation: Microsoft encourages testing agent responses by iterating and refining prompts. Testing with variations helps identify if a prompt is too rigid or if it correctly captures the context.
 
@@ -1864,7 +1847,7 @@ For a comprehensive validation strategy, this technique is typically paired with
 
 Incorrect:
 
-* Exclude domain-specific terminology This is incorrect. Effective prompting often requires using domain-specific terms to ensure the AI understands the specialized context.
+* Exclude domain-specific terminology This is incorrect. **Effective prompting often requires using domain-specific terms to ensure the AI understands the specialized context**.
 
 * Use only simple, one-word prompts This is ineffective. Simple prompts lack the context required for high-quality, accurate responses.
 
@@ -1948,7 +1931,7 @@ You create a Microsoft Copilot Studio agent named Agent1 that processes the Data
 
 You discover that Agent1 fails to return relevant or accurate results.
 
-You need to improve the quality and reliability of data grounding.
+<mark>**You need to improve the quality and reliability of data grounding.**</mark>
 
 What should you do?
 
@@ -1983,13 +1966,13 @@ Agent 的 grounding 依赖底层 Dataverse 数据。数据存在错误、重复�
 **Explanation/Reference:**
 
 
-To improve the reliability and accuracy of a Microsoft Copilot Studio agent grounded in Dataverse, you must focus on Dataverse data preparation, which includes cleaning, structuring, and enriching the data to ensure the agent retrieves relevant information. When Copilot fails to return accurate results, it is often due to poor data quality (garbage in, garbage out), excessive, unstructured data, or misconfigured search indexing.
+To improve the reliability and accuracy of a Microsoft Copilot Studio agent grounded in Dataverse, you must focus on Dataverse data preparation, **which includes cleaning, structuring, and enriching the data to ensure the agent retrieves relevant information**. When Copilot fails to return accurate results, it is often due to poor data quality (garbage in, garbage out), excessive, unstructured data, or misconfigured search indexing.
 
 ### QUESTION 19 
 
 A company plans to deploy a Microsoft Copilot Studio agent to enhance customer support.
 
-The company stores customer data across ServiceNow, Microsoft Dynamics 365 Finance, Dynamics 365 Supply Chain Management, and Excel files in SharePoint Online.
+**The company stores customer data across ServiceNow, Microsoft Dynamics 365 Finance, Dynamics 365 Supply Chain Management, and Excel files in SharePoint Online.**
 
 You need to recommend a solution to ensure that the agent can deliver accurate and timely responses.
 
@@ -2019,13 +2002,10 @@ D. Enable incremental indexing in Azure AI Search.
       - 第三方 SaaS 系统：ServiceNow
       - Dynamics 365 企业应用：Dynamics 365 Finance 和 Dynamics 365 Supply ChainManagement
       - 文件与文档：存储在 SharePoint Online 中的 Excel 文件
-2.  技术解决方案： Microsoft Copilot Studio 建立在 Microsoft Power Platform 之上。为了让 Copilot
-    Studio Agent 能够实时跨这些不同的系统检索和读取数据，最标准、最直接且低代码的方式就是使用 Microsoft Power Platform
-    Connectors（连接器）。
-3.  Power Platform 拥有 1,000+ 现成的内置连接器（涵盖 ServiceNow、Dynamics 365
-    各模块、SharePoint/Excel 等）。通过配置这些连接器（作为知识源 Knowledge Sources 或 Plugin
-    Actions），Agent 可以直接调用 API 获取最新的实时数据，从而确保回答的准确性与及时性（accurate and timely
-    responses）。
+2.  技术解决方案： Microsoft Copilot Studio 建立在 Microsoft Power Platform 之上。**为了让 Copilot Studio Agent 能够实时跨这些不同的系统检索和读取数据，最标准、最直接且低代码的方式就是使用 Microsoft Power Platform
+    Connectors（连接器）**。
+3.  Power Platform 拥有 1,000+ 现成的内置连接器（涵盖 ServiceNow、Dynamics 365 各模块、SharePoint/Excel 等）。通过配置这些连接器（作为知识源 Knowledge Sources 或 Plugin
+    Actions），Agent 可以直接调用 API 获取最新的实时数据，从而确保回答的准确性与及时性（accurate and timely responses）。
 
 为什么不选其他选项？
 
@@ -2037,15 +2017,17 @@ D. Enable incremental indexing in Azure AI Search.
     Prompt（提示词）只能指导大模型如何思考或格式化输出，如果模型本身没有连接到包含客户数据的后台系统，Prompt 无法凭空产生准确的企业内部数据。
   - D. Enable incremental indexing in Azure AI Search（在 Azure AI Search
     中启用增量索引）： 增量索引是 Azure AI Search 针对非结构化文档检索的优化手段。虽然 Azure AI Search 可以作为 RAG
-    的向量数据库，但对于 Dynamics 365 Finance/SCM 和 ServiceNow 这类包含大量实时事务型数据（Transactional
-    Data）和复杂业务逻辑的系统，直接通过连接器（Connectors）调用系统 API 才是更合适且能够保证实时准确回答的标准做法。
+    的向量数据库，<mark>但对于 Dynamics 365 Finance/SCM 和 ServiceNow 这类包含大量实时事务型数据（Transactional
+    Data）和复杂业务逻辑的系统，直接通过连接器（Connectors）调用系统 API 才是更合适且能够保证实时准确回答的标准做法</mark>。
 
 
 ### QUESTION 20 
 
 A manufacturing company wants to deploy an agent that will automate supplier invoice processing.
 
-You are designing a solution to evaluate the financial implications of the deployment. The company is especially concerned about budget overruns.
+You are designing a solution to evaluate the financial implications of the deployment. 
+
+<mark>The company is especially concerned about budget overruns.</mark>
 
 You need to ensure that the solution considers the total cost of ownership (TCO), the expected savings from using automation, and whether to extend the existing AI capabilities.
 
