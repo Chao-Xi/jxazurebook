@@ -2093,12 +2093,12 @@ A company has a Microsoft Power Platform solution that contains the following co
 
 - Microsoft Dataverse tables
 - A Microsoft Power BI workspace named WS1
-- A canvas app named App1 that uses Dataverse
+- **A canvas app named App1 that uses Dataverse**
 - A Power BI semantic model that connects to Dataverse by using DirectQuery
 
-You plan to use generative AI to provide answers to queries based on a subset of corporate data.
+**You plan to use generative AI to provide answers to queries based on a subset of corporate data.**
 
-You need to ensure that the data is available as a grounding data source for AI systems.
+You need to ensure that **the data is available as a grounding data source for AI systems.**
 
 What should you do?
 
@@ -2112,35 +2112,22 @@ D. Export the semantic model.
 
 ---
 
-正确答案与详细解析
-
-正确答案：
-
-  - C. Endorse the semantic model.（对语义模型进行背书/认证。）
+✅ C. Endorse the semantic model.（对语义模型进行背书/认证。）
 
 解析与考点分析
 
 为什么选 C？
 
-1.  业务场景： 公司有一个通过 DirectQuery 连接到 Dataverse 的 Power BI 语义模型（Semantic
-    Model），希望使用生成式 AI（如 Power BI Copilot / Microsoft Copilot /
-    Copilot Studio）基于企业数据子集提供查询解答，并确保该数据能够作为 AI 系统的接地数据源（Grounding data source）。
+1.  业务场景： **公司有一个通过 DirectQuery 连接到 Dataverse 的 Power BI 语义模型（Semantic Model），希望使用生成式 AI（如 Power BI Copilot / Microsoft Copilot / Copilot Studio）基于企业数据子集提供查询解答，并确保该数据能够作为 AI 系统的接地数据源（Grounding data source）**
 2.  微软架构与最佳实践：
-      - 在 Power BI / Microsoft Fabric / Copilot 生态系统中，为了让 AI
-        系统识别、信任并优先使用某个语义模型作为可靠的接地数据源（Grounding
-        Source），必须对该语义模型进行背书（Endorse）（即设置为
-        Promoted 提升 或 Certified 认证）。
-      - 对语义模型进行背书可以向 AI 系统和用户表明该数据源经过严格治理、数据准确且属于企业权威数据源（Single Source of
-        Truth），从而授权生成式 AI 基于该模型进行数据回答与分析。
+      - 在 Power BI / Microsoft Fabric / Copilot 生态系统中，为了让 AI 系统识别、信任并优先使用某个语义模型作为可靠的接地数据源（Grounding Source），必须对该语义模型进行背书（Endorse）（即设置为 Promoted 提升 或 Certified 认证）。
+      - 对语义模型进行背书可以向 AI 系统和用户表明该数据源经过严格治理、数据准确且属于企业权威数据源（Single Source of Truth），从而授权生成式 AI 基于该模型进行数据回答与分析。
 
 为什么不选其他选项？
 
-  - A. Populate a Dataverse table（填充 Dataverse 表）： Dataverse 已经是底层的元数据存储，但题目中的
-    AI 问答是基于已建立好的 Power BI 语义模型（包含度量值、关系和计算）。仅填充数据表不能直接将语义模型注册/暴露为受信任的 AI 接地数据源。
-  - B. Share WS1（共享 WS1 工作区）： 共享工作区只是赋予用户对工作区内资源的访问权限，无法将数据模型提升为 AI
-    系统认可的受信任接地数据源。
-  - D. Export the semantic model（导出语义模型）： 导出模型（如导出为文件）会脱离现有的云端 DirectQuery
-    实时连接，断开数据更新，无法作为 AI 系统实时的接地数据源。
+  - A. Populate a Dataverse table（填充 Dataverse 表）： Dataverse 已经是底层的元数据存储，但题目中的AI 问答是基于已建立好的 Power BI 语义模型（包含度量值、关系和计算）。**仅填充数据表不能直接将语义模型注册/暴露为受信任的 AI 接地数据源**。
+  - B. Share WS1（共享 WS1 工作区）： 共享工作区只是赋予用户对工作区内资源的访问权限，**无法将数据模型提升为 AI系统认可的受信任接地数据源。**
+  - D. Export the semantic model（导出语义模型）： 导出模型（如导出为文件）**会脱离现有的云端 DirectQuery实时连接，断开数据更新，无法作为 AI 系统实时的接地数据源**。
 
 
 -----
@@ -2152,11 +2139,11 @@ Explanation/Reference:
 
 Explanation:
 
-To ensure data is available as a grounding source for generative AI systems within this Power Platform solution, you should endorse the semantic model.
+**To ensure data is available as a grounding source for generative AI systems within this Power Platform solution, you should endorse the semantic model.**
 
 While populating a Dataverse table and sharing the workspace are necessary for general data accessibility, endorsing the Power BI semantic model (through certification or promotion) specifically helps generative AI systems like Power BI Copilot and Microsoft 365 Copilot prioritize and identify it as a high-quality, trusted source for grounding answers.
 
-Why Endorsement is Key for Grounding 
+<mark>**Why Endorsement is Key for Grounding**</mark> 
 
 Generative AI systems use grounding to reduce "hallucinations" by anchoring their responses in real corporate data. In the Power BI ecosystem:
 
@@ -2164,9 +2151,7 @@ Generative AI systems use grounding to reduce "hallucinations" by anchoring thei
 
 **Prioritization:** Copilot often prioritizes endorsed (Promoted or Certified) models when searching for relevant data to answer a natural language query.
 
-**Trust:** 
-
-It signals to both the AI and the end-user that the data in this DirectQuery-connected model is verified and authoritative for business queries.
+**Trust:**  It signals to both the AI and the end-user that the data in this DirectQuery-connected model is verified and authoritative for business queries.
 
 
 
@@ -2179,12 +2164,12 @@ You need to create agents that meet the following requirements:
 - Orchestrate the sales order fulfillment and shipping of goods to customers.
 - Analyze historical data and trends to replenish stock.
 
-Which type of agent should you use for each requirement? To answer, drag the appropriate agent types to the correct requirements. Each agent type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+**Which type of agent should you use for each requirement?** 
+
+To answer, drag the appropriate agent types to the correct requirements. Each agent type may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 
 Select and Place
-
-**NOTE:** Each correct selection is worth one point.
 
 **Agent types**
 
@@ -2211,24 +2196,9 @@ Select and Place
 
 **最终：Autonomous + Prompt-and-response**
 
------
-
-**答案：**
-
-* **Orchestrate the sales order fulfillment and shipping:** ✅ **Autonomous**
-* **Analyze historical data and trends:** ✅ **Prompt-and-response**
-
-记忆
-
-* **Autonomous agent** → 能自主执行、协调多个步骤的业务流程 → **订单履约和运输**
-* **Prompt-and-response agent** → 根据用户请求分析/生成信息 → **分析历史数据和趋势**
-
-**最终：Autonomous + Prompt-and-response**
 
 
-**Box 1: Autonomous**
-
-**Box 2: Autonomous**
+-------
 
 
 **Box 1: Autonomous**
@@ -2270,7 +2240,7 @@ A company has an AI agent that automates the review of customer feedback stored 
 
 You plan to generate monthly reports from the agent's output to provide insights into customer sentiment and guide product development and marketing.
 
-You need to ensure that the data ingested by the agent is clean and suitable for the intended use.
+**You need to ensure that the data ingested by the agent is clean and suitable for the intended use.**
 
 What should you do to prepare the data?
 
@@ -2306,7 +2276,7 @@ For example:
 * Some languages, regions, or demographics may be underrepresented.
 * Historical data may contain systematic biases.
 
-If biased data is fed into the AI agent, the resulting sentiment analysis and business recommendations can also be biased.
+<mark>If biased data is fed into the AI agent, the resulting sentiment analysis and business recommendations can also be biased.</mark>
 
 Therefore:
 
@@ -2343,7 +2313,7 @@ These often point toward:
 
 A company is designing a Microsoft Power Platform solution to reduce the manual steps of a business process by deploying an existing AI model.
 
-You need to calculate the return on AI investment (ROAI) by identifying the metadata and telemetry of the solution.
+<mark>You need to calculate the return on AI investment (ROAI) by identifying the metadata and telemetry of the solution.</mark>
 
 What should you use?
 
@@ -2359,21 +2329,21 @@ D. Microsoft Cloud Adoption Framework for Azure
 
 **正确答案：✅ C. the Business value toolkit**
 
-原因
-
-题目关键词：
 
 > **calculate ROAI**
+> 
 > **business process**
+>
 > **metadata and telemetry**
+>
 > **business value**
 
 **Business value toolkit** 用于评估 AI/Power Platform 方案的业务价值，包括 ROI/ROAI、成本、效率提升以及 telemetry 等数据。
 
 其他选项：
 
-* ❌ **Power Platform admin center** → 环境、治理、容量、管理。
-* ❌ **Success by Design** → Dynamics 365 项目实施方法论。
+* ❌ **Power Platform admin center** → **环境、治理、容量、管理**。
+* ❌ <mark>**Success by Design** → Dynamics 365 项目实施方法论</mark>。
 * ❌ **Cloud Adoption Framework** → Azure 云迁移和 adoption 方法论。
 
 🎯 记忆
@@ -2389,7 +2359,7 @@ Explanation/Reference:
 
 Explanation:
 
-The Business Value Toolkit is the correct resource to use for calculating Return on AI Investment (ROAI) for a Microsoft Power Platform solution.
+**The Business Value Toolkit is the correct resource to use for calculating Return on AI Investment (ROAI) for a Microsoft Power Platform solution.**
 
 Calculating ROAI with the Business Value Toolkit The Business Value Toolkit helps organizations move beyond simple automation by providing structured templates and analytics to justify AI investments.
 
@@ -2416,9 +2386,9 @@ A company has a Microsoft Power Platform environment.
 
 You need to build two agents named Agent1 and Agent2. The solution must meet the following requirements:
 
-- Agent1 must be extendable by using the Semantic Kernel and must connect to multiple business apps and APIs.
+- **Agent1 must be extendable by using the Semantic Kernel and must connect to multiple business apps and APIs**.
 
-- Agent2 must connect directly to data stored in Microsoft Dataverse and must be embeddable in a Microsoft Power Apps canvas app.
+- **Agent2 must connect directly to data stored in Microsoft Dataverse and must be embeddable in a Microsoft Power Apps canvas app.**
 
 What should you use to build each agent? To answer, select the appropriate options in the answer area.
 
@@ -2455,15 +2425,13 @@ QUESTION 答案 (Answer Area)
 
 1.  Agent1 (Microsoft Foundry)：
 
-      - 关键特征： 使用 Semantic Kernel SDK（专业代码 Pro-code 扩展）构建，需要接入多个复杂的企业 API 与业务应用。
-      - 平台选择： Microsoft Foundry（Azure AI Foundry）是专业开发者使用 Semantic Kernel
-        框架构建和托管高级 Agent 的官方平台。
+      - **关键特征： 使用 Semantic Kernel SDK（专业代码 Pro-code 扩展）构建，需要接入多个复杂的企业 API 与业务应用**。
+      - 平台选择： Microsoft Foundry（Azure AI Foundry）是专业开发者使用 Semantic Kernel 框架构建和托管高级 Agent 的官方平台。
 
 2.  Agent2 (Microsoft Copilot Studio)：
 
       - 关键特征： 接入 Microsoft Dataverse 数据，且需要嵌入到 Power Apps 画布应用（Canvas App）中。
-      - 平台选择： Microsoft Copilot Studio 是 Power Platform 生态下的低代码 Agent 构建工具，原生支持
-        Dataverse 知识库与 Canvas App 内置 Copilot 控件的嵌入。
+      - 平台选择： Microsoft Copilot Studio 是 Power Platform 生态下的低代码 Agent 构建工具，原生支持 Dataverse 知识库与 Canvas App 内置 Copilot 控件的嵌入。
 
 
 ### QUESTION 26
@@ -2489,10 +2457,6 @@ D. Azure Reservations
 
 **正确答案：✅ A. Cost Management + Billing**
 
-原因
-
-题目关键词：
-
 * 已有 **Azure environment**
 * 要实施 AI solution
 * 需要评估**实际 Azure 成本**
@@ -2503,7 +2467,7 @@ D. Azure Reservations
 其他选项
 
 * ❌ **B. Microsoft Fabric SKU Estimator** → 用于 Fabric 容量/成本估算。
-* ❌ **C. TCO Calculator** → 主要用于比较 **on-premises vs. Azure** 的总体成本，不适合已经存在的 Azure AI 方案成本分析。
+* ❌ <mark>**C. TCO Calculator** → 主要用于比较 **on-premises vs. Azure** 的总体成本，不适合已经存在的 Azure AI 方案成本分析</mark>。
 * ❌ **D. Azure Reservations** → 用于降低长期资源使用成本，不是 ROAI 成本分析工具。
 
 🎯 答案
@@ -2513,11 +2477,13 @@ D. Azure Reservations
 
 ### QUESTION 27
 
-You need to recommend a Microsoft Power Platform solution for customer support. The solution must include AI capabilities in Microsoft Power Automate and must meet the following requirements:
+You need to recommend a Microsoft Power Platform solution for customer support. 
 
-Use a centralized workspace for AI models.
+The solution must include AI capabilities in Microsoft Power Automate and must meet the following requirements:
 
-Generate short overviews from large amounts of unstructured text, such as case notes or transcripts, without requiring additional training or coding.
+- Use a centralized workspace for AI models.
+
+- Generate short overviews from large amounts of unstructured text, such as case notes or transcripts, without requiring additional training or coding.
 
 What should you include in the recommendation for each requirement? To answer, select the appropriate options in the answer area.
 
@@ -2616,7 +2582,7 @@ A company uses Microsoft Dynamics 365 Finance for accounts payable and customer 
 
 You are designing an AI finance process that meets the following requirements:
 
-- Provides AI-driven details to help staff identify overdue vendor invoices and outstanding balances
+- **Provides AI-driven details to help staff identify overdue vendor invoices and outstanding balances**
 - Helps staff reduce how long it takes to review overdue invoices and payment history
 
 You need to recommend which Microsoft Copilot features to include in the design.
@@ -2650,14 +2616,10 @@ Answer Area
 
 🧠 **记忆：**
 
+
 > **Vendor invoices / balances → AI Summaries**
+> 
 > **Collections / payment history → Collections coordinator summary**
-
-
-**Box 1: The Account Reconciliation Agent**
-
-**Box 2: Collections coordinator summary**
-
 
 
 1. Help identify vendor overdue invoices and outstanding balances:
@@ -2670,12 +2632,9 @@ Answer Area
 
 核心考点速记（备考复习）
 
-1.  AI Summaries with Copilot（用于应付账款 AP）： 在 Dynamics 365 Finance
-    的发票自动化与供应商工作区中，Copilot 生成的 AI 文本摘要可帮助财务人员快速提取并识别供应商逾期发票和未结余额（Vendor overdue
-    invoices and balances）。
+1.  AI Summaries with Copilot（用于应付账款 AP）： 在 Dynamics 365 Finance 的发票自动化与供应商工作区中，Copilot 生成的 AI 文本摘要可帮助财务人员快速提取并识别供应商逾期发票和未结余额（Vendor overdue invoices and balances）。
 
-2.  Collections coordinator summary（用于催收与债务回收）： 在 Dynamics 365 Finance
-    的信用与催收模块中，专门用于自动汇总客户的逾期发票、付款历史及信用记录，显著缩短催收人员审查逾期发票和付款历史的时间。
+2.  Collections coordinator summary（用于催收与债务回收）： 在 Dynamics 365 Finance 的信用与催收模块中，专门用于自动汇总客户的逾期发票、付款历史及信用记录，显著缩短催收人员审查逾期发票和付款历史的时间。
 
 
 Box 1: The Account Reconciliation Agent 
@@ -2704,7 +2663,7 @@ To reduce the time spent reviewing overdue invoices and payment history in Micro
 This AI-driven process automates the synthesis of customer financial data, allowing staff to move directly from review to action without manual data digging.
 
 
-### QUESTION 29
+### QUESTION 29 - Duplicated 
 
 A company has an AI agent that automates the review of customer feedback stored in a cloud database.
 
@@ -2752,37 +2711,13 @@ D. Sort the database by customer last name.
 **答案：C**
 
 
-Correct Answer: C
-
-Explanation/Reference:
-
-Explanation:
-
-Correct:
-
-* Identify and address biased data.
-
-To ensure that the customer feedback ingested by your Microsoft AI agent is clean and suitable for monthly sentiment reports, the most effective action is to identify and address biased data.Data bias in sentiment analysis can lead to skewed reports that misrepresent customer satisfaction or ignore the needs of specific demographic groups.‘
-
-
-Incorrect:
-
-* Create a workflow in Microsoft Power Automate
-
-* Create an agent flow in Microsoft Copilot Studio.
-
-* Ensure that the size of the database does not exceed 100 GB.
-
-* Sort the database by customer last name.
-
-
 ### QUESTION 30
 
 A company has an Azure environment that supports multiple business units.
 
 The company plans to implement an AI solution that will perform sentiment analysis on customer product reviews.
 
-You need to evaluate the potential cost of the solution to support return on AI investment (ROAI) analysis.
+**You need to evaluate the potential cost of the solution to support** return on AI investment (ROAI) analysis.
 
 What should you use?
 
@@ -2796,34 +2731,28 @@ D. Azure Monitor
 
 ----
 
-
-正确答案与详细解析
-
 正确答案：
 
-  - C. Azure pricing calculator（Azure 价格计算器）
+- C. Azure pricing calculator（Azure 价格计算器）
 
 解析与考点分析
 
 为什么选 C？
 
-1.  业务场景： 公司计划（Plans）实现一个新的 AI 解决方案（对客户产品评论进行情感分析），需要在部署前评估该方案在 Azure
-    中的预估/潜在成本（Potential cost），用于 AI 投资回报率（ROAI）分析。
+1.  业务场景： 公司计划（Plans）实现一个新的 AI 解决方案（对客户产品评论进行情感分析），需要在部署前评估该方案在 Azur中的预估/潜在成本（Potential cost），用于 AI 投资回报率（ROAI）分析。
 2.  工具区别与选择：
       - Azure pricing calculator（Azure 价格计算器）： 用于配置并计算全新规划的 Azure 服务（如 Azure AI
-        Language 情感分析 API、Azure OpenAI 等）根据预计用量（如每月调用的 API 次数、Token
-        数量）所产生的未来预估成本。这是为新 AI 解决方案计算潜在支出并带入 ROAI
-        财务模型的标准工具。
+        Language 情感分析 API、Azure OpenAI 等）根据预计用量（如每月调用的 API 次数、Token 数量）所产生的未来预估成本。这是为新 AI 解决方案计算潜在支出并带入 ROAI 财务模型的标准工具。
 
 为什么不选其他选项？
 
   - A. Total Cost of Ownership (TCO) Calculator（总体拥有成本计算器）： TCO  计算器用于对比“将现有的**本地数据中心（On-premises）**基础架构迁移到 Azure”的长期成本差异（对比硬件、机房电力、IT
     运维成本等），不适用于单纯估算某个全新 Azure AI 服务的用量成本。
-  - B. Azure Reservations（Azure 预留）： 是一种承诺使用 1 年或 3 年以获取折扣的计费优惠模式，并非成本估算与 ROAI 评估工具。
+  - B. Azure Reservations（Azure 预留）： **是一种承诺使用 1 年或 3 年以获取折扣的计费优惠模式，并非成本估算与 ROAI 评估工具**。
   - D. Azure Monitor（Azure 监控）： 用于监控已部署资源的性能和日志，无法对未部署的全新 AI 方案进行事前成本预估。
 
 
-### QUESTION 31 
+### QUESTION 31 - Duplicated  
 
 A company has an Azure environment that supports multiple business units.
 
@@ -2851,8 +2780,7 @@ D. Azure Monitor
 
 题目关键词是 **evaluate potential cost + ROAI analysis**，需要从 Azure 环境的成本角度进行分析。
 
-* **C. Cost Management + Billing** ✅
-  用于分析 Azure 资源成本、按订阅/资源等维度查看成本，并支持成本预测和 ROI 分析。
+* **C. Cost Management + Billing** ✅ 用于分析 Azure 资源成本、按订阅/资源等维度查看成本，并支持成本预测和 ROI 分析。
 
 其他选项：
 
@@ -2861,35 +2789,6 @@ D. Azure Monitor
 * ❌ **D. Azure Monitor** → 监控性能和资源指标，不是成本分析工具。
 
 **答案：C. Cost Management + Billing**
-
-
-
-Correct Answer: C 
-
-Explanation/Reference:
-
-Correct:
-
-* Azure pricing calculator (Best choice) The best tool to evaluate the potential cost of a new AI solution to support ROI analysis is the Azure pricing calculator.
-
-Why Azure Pricing Calculator is BestProactive Estimation: It is specifically designed to estimate the costs of Azure services before they are deployed.
-
-Granular Planning: It allows you to select specific services (e.g., Azure AI Language, Cognitive Services, Azure Machine Learning), define usage patterns, regions, and tiers to create a detailed cost estimate.
-
-Scenario Comparison: You can create different scenarios (e.g., comparing different language models or usage volumes) to estimate the impact on ROAI
-
-Comparison of Tools Azure Pricing Calculator: Estimates costs for new, un-deployed projects. (Best Choice).
-
-Total Cost of Ownership (TCO) Calculator: Compares on-premises infrastructure costs against Azure, typically used for large-scale migration strategies, not specific AI service modeling.Cost Management + Billing: Monitors and analyzes actual, real-time spending on already deployed resources. For a complex AI solution involvin
-
-* Total Cost of Ownership (TCO) Calculator (Second best choice) While Cost Management + Billing is essential for tracking actual spend once a solution is running, the TCO Calculator is specifically designed for the pre-implementation phase to support Return on AI Investment (ROAI) analysis. It allows you to estimate and compare the potential costs of moving a workload to Azure —including labor, networking, and storage—against an existing process or alternative solution.
-
-* Cost Management + Billing (Third best) Azure pricing calculator and Total Cost of Ownership (TCO) Calculator are both better than Cost Management + Billing, as they evaluate the potential cost and support a Return on AI Investment (ROAI) analysis before the solution is built, you need to estimate future expenses based on expected usage. Cost Management + Billing does post-deployment tracking.
-
-A good tool still for this scenario is Cost Management + Billing. Cost Management + Billing allows you to break down and evaluate costs across many business units using tags and scope filtering. 
-
-
-This granular data is essential for calculating the the Return on AI Investment (ROAI) for specific departments or the entire organization.
 
 
 Incorrect:
@@ -2905,11 +2804,10 @@ It is a way to lower your bill, but not a tool for evaluating or reporting on in
 
 * Microsoft Fabric SKU Estimator
 
-Is used to estimate capacity needs for Fabric-specific data projects. It is eseful only if your sentiment analysis solution is built specifically on the Microsoft Fabric platform
+**Is used to estimate capacity needs for Fabric-specific data projects. It is eseful only if your sentiment analysis solution is built specifically on the Microsoft Fabric platform**
 
 
-
-### QUESTION 32 
+### QUESTION 32 - Duplicated
 
 A company has an Azure environment that supports multiple business units.
 
@@ -2929,12 +2827,7 @@ D. Azure pricing calculator
 
 ----
 
-
-这道题目与上一题一致，以下是正确答案与解析总结：
-
-正确答案：
-
-  - D. Azure pricing calculator（Azure 价格计算器）
+- D. Azure pricing calculator（Azure 价格计算器）
 
 核心考点速记（备考复习）
 
@@ -2993,7 +2886,7 @@ The company's research and development (R&D) department already has a custom Mod
 
 **Prebuilt AI Agent**
 
-The CTO has NOT yet selected which prebuilt AI agent to use in Dynamics 365 Supply Chain Management. The CTO wants to view available agent templates to identify which agent will add the most business value.
+<mark>The CTO has NOT yet selected which prebuilt AI agent to use in Dynamics 365 Supply Chain Management. The CTO wants to view available agent templates to identify which agent will add the most business value.</mark>
 
 Depending on which high-priority AI agents are identified, its agent capabilities must be previewed in a discovery meeting with the relevant business operation stakeholders.
 
@@ -3036,7 +2929,7 @@ Contoso has identified the following analysis, reporting, and troubleshooting re
 
 ### QUESTION 1 
 
-What should you recommend to assist the CTO with the prebuilt agent selection process?
+What should you recommend to **assist the CTO with the prebuilt agent selection process?**
 
 A. Agent management
 
@@ -3061,24 +2954,17 @@ D. Immersive Home
 1.  对照案例需求（Contoso, Ltd. 案例）：
 
       - 案例中明确提到 CTO 的职责与痛点：
-        "The CTO has NOT yet selected which prebuilt AI agent to use in
-        Dynamics 365 Supply Chain Management. The CTO wants to view available
-        agent templates to identify which agent will add the most business
-        value."
-        （CTO 尚未选择在 Dynamics 365 Supply Chain Management 中使用哪种预置 AI Agent。CTO
-        希望查看可用的 Agent 模板，以确定哪个 Agent 能增加最大的业务价值。）
+        "The CTO has NOT yet selected which prebuilt AI agent to use in Dynamics 365 Supply Chain Management. The CTO wants to view available  agent templates to identify which agent will add the most business   value."
+        （CTO 尚未选择在 Dynamics 365 Supply Chain Management 中使用哪种预置 AI Agent。CTO 希望查看可用的 Agent 模板，以确定哪个 Agent 能增加最大的业务价值。）
 
 2.  微软产品功能定位：
 
-      - 在 Dynamics 365 Finance and Operations（包括 Supply Chain Management
-        供应链管理）应用体系中，微软引入了 Agent management（Agent 管理） 工作区/中心。
-      - Agent management 是专门供 CTO、系统管理员和业务分析师浏览、评估、预览和启用 Dynamics 365 中开箱即用的预置
-        AI Agent 模板（Prebuilt Agent Templates）（如 Supplier Communication
-        Agent、Demand Analysis Agent 等）的集中化管理平台。
+      - 在 Dynamics 365 Finance and Operations（包括 Supply Chain Management 供应链管理）应用体系中，微软引入了 Agent management（Agent 管理） 工作区/中心。
+      - Agent management 是专门供 CTO、系统管理员和业务分析师浏览、评估、预览和启用 Dynamics 365 中开箱即用的预置 AI Agent 模板（Prebuilt Agent Templates）（如 Supplier Communication Agent、Demand Analysis Agent 等）的集中化管理平台。
 
 为什么不选其他选项？
 
-  - B. Copilot Studio： Copilot Studio 主要用于从零构建或扩展自定义 AI Agent（Custom AI Agent），而不是在 Dynamics 365 内部浏览和选择开箱即用的预置 Agent 模板（案例中 CTO 的另一项任务“自定义    Agent”才使用 Copilot Studio）。
+  - B. Copilot Studio： Copilot Studio 主要用于从零构建或扩展自定义 AI Agent（Custom AI Agent），**而不是在 Dynamics 365 内部浏览和选择开箱即用的预置 Agent 模板**（案例中 CTO 的另一项任务“自定义    Agent”才使用 Copilot Studio）。
   - C. Lifecycle Services (LCS)： 是 Dynamics 365 F&O  旧版的环境运维与应用生命周期管理门户，不用于浏览和体验具体的业务 AI Agent 模板。
   - D. Immersive Home： 属于 Power BI / 应用主页集成展示界面，与 Dynamics 365 的预置 Agent   模板选型和预览管理无关。
 
@@ -3115,21 +3001,21 @@ The CTO wants to track user feedback on the quality of the AI agent responses du
 
 ### QUESTION 2 
 
-What should you include in the custom AI agent design to meet the R&D product specifications and the compliance information requirements? To answer, select the appropriate options in the answer area.
+What should you include in the custom AI agent design **to meet the R&D product specifications and the compliance information requirements?** To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
 
 Answer Area
 
-To expose the data to the agent, create:
+**To expose the data to the agent, create:**
 
 * an Azure AI Bot Service channel
 * a custom connector
 * a custom OData entity
 * the Semantic Kernel
 
-Add to the agent:
+**Add to the agent:**
 
 * an event trigger
 * the MCP server
@@ -3199,7 +3085,7 @@ All the data from the different systems will be consolidated into a single data 
 
 - Have the sales executives use Dynamics 365 Sales to track interactions for open opportunities and send follow-up communications to prospects.
 
-- Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.
+- Have the **<mark>sales executives use handsfree headsets to interact with an AI agent</mark>** when they have questions about internal policies or customer data.
 
 **Requirements** 
 
@@ -3236,7 +3122,7 @@ Any created AI agents must have their return on investment (ROI) calculated to e
 ### QUESTION 1 
 
 
-Which template should you use for the AI agent to meet the requirements for the sales executives?
+Which template should you use for the AI agent to **meet the requirements for the sales executives?**
 
 A. IT Helpdesk in Microsoft Copilot Studio 
 
@@ -3302,8 +3188,49 @@ To implement a hands-free AI agent for Dynamics 365 Sales using the Voice agent 
 
 ### QUESTION 2 
 
+Which tool should you use for the prospect communication requirements in Dynamics 365 Sales?
 
-Correct Answer: B
+A. Azure AI Search
+
+B. Copilot email assist
+
+C. the Voice template Microsoft Copilot Studio
+
+D. Deep Research in Microsoft Foundry Agent Service
+
+------
+
+✅ 答案：B. Copilot email assist
+
+**原因：**
+
+题目要求的是：
+
+> **Dynamics 365 Sales 中与 prospects 更快速、更高效地进行 correspondence**
+
+**Copilot email assist** 专门帮助销售人员生成和处理销售邮件，例如：
+
+* 生成邮件内容
+* 根据上下文提供回复建议
+* 加快与 prospects 的沟通
+
+其他选项：
+
+* **A. Azure AI Search** ❌ → 搜索和 grounding
+* **B. Copilot email assist** ✅ → Dynamics 365 Sales 邮件沟通
+* **C. Voice template** ❌ → 语音交互，不是 prospect email communication
+* **D. Deep Research** ❌ → 深度研究，不是销售邮件效率工具
+
+🧠 **记忆：**
+
+> **Dynamics 365 Sales + prospect correspondence → Copilot email assist**
+
+**答案：B** ✅
+
+-----
+
+Correct Answer: B Section: (none)
+
 
 Explanation:
 
@@ -3338,7 +3265,7 @@ Seamless Integration: These tools are available directly within the Dynamics 365
 
 ### QUESTION 3 
 
-Which components should you use to meet the sales cycle enablement requirements? To answer, select the appropriate options in the answer area.
+**Which components should you use to meet the sales cycle enablement requirements?** To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
@@ -3494,7 +3421,7 @@ D. Configure Microsoft Graph access
 
 Microsoft 365 Copilot 的知识来源就是 **Microsoft Graph**。
 
-通过 **Microsoft Graph**，Copilot 可以安全地访问：
+<mark>通过 **Microsoft Graph**，Copilot 可以安全地访问</mark>：
 
 * SharePoint Online
 * Microsoft Teams
@@ -3508,17 +3435,11 @@ Microsoft 365 Copilot 的知识来源就是 **Microsoft Graph**。
 
 为什么其他选项不对？
 
-* ❌ **1. Power Automate desktop flow**
+* ❌ **1. Power Automate desktop flow**: 用于 RPA 自动化，不是 Microsoft 365 Copilot 的知识来源。
 
-  * 用于 RPA 自动化，不是 Microsoft 365 Copilot 的知识来源。
+* ❌ **2. Modify SharePoint settings**: 修改 SharePoint 设置不能让 Copilot 具备自然语言检索能力。
 
-* ❌ **2. Modify SharePoint settings**
-
-  * 修改 SharePoint 设置不能让 Copilot 具备自然语言检索能力。
-
-* ❌ **3. Create a custom REST API**
-
-  * Microsoft 365 Copilot 已通过 Microsoft Graph 访问 Microsoft 365 数据，无需自行开发爬虫 API。
+* ❌ **3. Create a custom REST API** Microsoft 365 Copilot 已通过 Microsoft Graph 访问 Microsoft 365 数据，无需自行开发爬虫 API。
 
 
 考试记忆
@@ -3553,9 +3474,9 @@ Direct Referencing: Users can improve response relevance by explicitly naming fi
 
 A company uses Microsoft Dynamics 365 Finance to manage accounts payable.
 
-You are designing an AI invoice processing solution.
+**You are designing an AI invoice processing solution**.
 
-You need to recommend the prerequisites to configure a prebuilt copilot for accounts payable.
+**You need to recommend the prerequisites to configure a prebuilt copilot for accounts payable.**
 
 What should you recommend?
 
@@ -3574,8 +3495,7 @@ D. From the Power Platform admin center, assign the Finance and Operations AI se
 
 正确答案：
 
-  - D. From the Power Platform admin center, assign the Finance and Operations AI security role to users.（在 Power Platform 管理中心，将 Finance and Operations AI
-    安全角色分配给用户。）
+  - D. From the Power Platform admin center, assign the Finance and Operations AI security role to users.（在 Power Platform 管理中心，将 Finance and Operations AI 安全角色分配给用户。）
 
 解析与考点分析
 
@@ -3692,26 +3612,24 @@ A company uses Microsoft Dynamics 365 Supply Chain Management.
 
 You are designing an AI supply chain process that meets the following requirements:
 
-- Provides managers with AI-driven insights that surface key information from customer orders
+- **Provides managers with AI-driven insights that surface key information from customer orders**
 
-- Helps planners use AI to anticipate future product needs more accurately You need to recommend which Microsoft Copilot features to include in the design.
+- **Helps planners use AI to anticipate future product needs more accurately**
+
+- You need to recommend which Microsoft Copilot features to include in the design.
 
 What should you recommend for each requirement? To answer, select the appropriate options in the answer area.
 
-NOTE: Each correct selection is worth one point.
-
-**NOTE:** Each correct selection is worth one point.
-
 Answer Area
 
-Provide AI-driven insights from customer orders:
+**Provide AI-driven insights from customer orders:**
 
 - Al Summaries with Copilot
 - Generative insights for Demand planning
 - The Customer credit and collections workspace
 - Workload insights with Copilot
 
-Anticipate future product needs:
+**Anticipate future product needs:**
 
 - Generative insights for Demand planning
 - Microsoft Power BI
@@ -3765,27 +3683,28 @@ The Copilot Generative insights for Demand planning feature in Microsoft Dynamic
 
 A company has a Microsoft 365 E5 subscription and uses Microsoft Copilot Studio.
 
-The company has a Microsoft SharePoint Online library that contains 10,000 policy PDFs from various departments. The library contains a populated column named Department for each PDF.
+**The company has a Microsoft SharePoint Online library that contains 10,000 policy PDFs from various departments**. 
+
+The library contains a populated column named Department for each PDF.
 
 You need to design a Copilot Studio agent that will use the SharePoint library as a knowledge source. The solution must meet the following requirements:
 
 - Enable the agent to answer user questions about company policies.
 
-- Ensure that the agent can identify which departments and policies are connected.
+- **Ensure that the agent can identify which departments and policies are connected**.
 
 What should you include in the design for each requirement? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
-
-Enable the agent to answer questions about company policies:
+**Enable the agent to answer questions about company policies:**
 
 - Build a custom model in Microsoft Foundry.
 - From Copilot Studio, add SharePoint as a knowledge source.
 - Import the PDFs into Microsoft Dataverse.
 - Use AI Builder to process and feed SharePoint content.
 
-Identify which departments and policies are connected:
+**Identify which departments and policies are connected:**
 
 - Apply Microsoft Purview sensitivity labels.
 - Create a Microsoft Dataverse table for the departments.
@@ -3800,11 +3719,11 @@ QUESTION 答案 (Answer Area)
 
 1. Enable the agent to answer questions about company policies:
 
-  - 正确选项： From Copilot Studio, add SharePoint as a knowledge source.（在 Copilot Studio 中，将 SharePoint 添加为知识源。）
+✅ 正确选项： From Copilot Studio, add SharePoint as a knowledge source.（在 Copilot Studio 中，将 SharePoint 添加为知识源。）
 
 2. Identify which departments and policies are connected:
 
-  - 正确选项： From Copilot Studio, configure the SharePoint tool.（在 Copilot Studio 中，配置 SharePoint 工具。）
+✅ 正确选项： From Copilot Studio, configure the SharePoint tool.（在 Copilot Studio 中，配置 SharePoint 工具。）
 
 解析与考点分析
 
