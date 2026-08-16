@@ -8280,13 +8280,16 @@ A company has a cloud-based AI solution that uses Azure OpenAI models.
 
 You need to design a monitoring solution that meets the following requirements:
 
-Monitors performance metrics and operational health for the models
+- Monitors performance metrics and operational health for the models
 
-Monitors AI apps and agents for compliance
+- Monitors AI apps and agents for compliance
 
-Uses Azure-native capabilities
+- Uses Azure-native capabilities
 
-Minimizes development effort What should you use for each requirement? To answer, drag the appropriate options to the correct requirements. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Minimizes development effort What should you use for each requirement? 
+
+
+To answer, drag the appropriate options to the correct requirements. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
@@ -8315,30 +8318,34 @@ Monitors performance metrics and operational health: [______]
 
 QUESTION 答案 (Answer Area)
 
-  - Monitors AI app and agents for compliance: 👉 Microsoft Purview
+  - **Monitors AI app and agents for compliance: 👉 Microsoft Purview** ✅
 
-  - Monitors performance metrics and operational health: 👉 Azure Monitor
+  - **Monitors performance metrics and operational health: 👉 Azure Monitor** ✅
+
 
 解析与考点分析
 
 1. 监控 AI 应用和 Agent 的合规性 (Monitors AI app and agents for compliance)
 
-  - 正确选择： Microsoft Purview
-  - 解析：
-      - 在微软的原生云架构中，Microsoft Purview（Purview AI Hub） 是专门用于针对 AI 应用、Azure OpenAI模型及 Copilot Agent 进行合规性监控（Compliance Monitoring）、敏感数据审计、策略违规检测以及交互日志保留的官方原生服务。
+
+**正确选择： Microsoft Purview**
+
+
+解析： **在微软的原生云架构中，Microsoft Purview（Purview AI Hub） 是专门用于针对 AI 应用、Azure OpenAI模型及 Copilot Agent 进行合规性监控（Compliance Monitoring）、敏感数据审计、策略违规检测以及交互日志保留的官方原生服务。**
 
 2. 监控模型的性能指标和运行健康状况 (Monitors performance metrics and operational health)
 
-  - 正确选择： Azure Monitor
-  - 解析：
-      - Azure Monitor 是 Azure 原生的运维监控服务。
-      - 它原生集成了 Azure OpenAI 模型与 AI 服务，能够自动收集、分析并可视化呈现性能指标与运行健康度（Performance  metrics & operational health），例如：API 响应延迟（Latency）、每分钟 Token  消耗量（TPM）、HTTP 错误率（429 Rate Limit 超限告警）以及服务可用性（Uptime）。
+正确选择： Azure Monitor
+
+**解析： Azure Monitor 是 Azure 原生的运维监控服务**。
+
+它原生集成了 Azure OpenAI 模型与 AI 服务，能够自动收集、分析并可视化呈现性能指标与运行健康度（Performance  metrics & operational health），例如：API 响应延迟（Latency）、每分钟 Token  消耗量（TPM）、HTTP 错误率（429 Rate Limit 超限告警）以及服务可用性（Uptime）。
 
 干扰项排除说明
 
-  - Azure API Management： 用于 API 网关控制、限流与路由，非合规监控或原生运维分析服务。
-  - Azure Policy： 用于定义资源部署规则和预防性合规约束，不用于持续监控 AI 应用运行时的合规内容。
-  - Microsoft Defender： 侧重于安全威胁防御与漏洞检测（Security/Threat  Protection），而非合规审计（Compliance）。
+  - **Azure API Management： 用于 API 网关控制、限流与路由，非合规监控或原生运维分析服务**。
+  - <mark>Azure Policy： 用于定义资源部署规则和预防性合规约束，不用于持续监控 AI 应用运行时的合规内容</mark>
+  - Microsoft Defender： **侧重于安全威胁防御与漏洞检测（Security/Threat  Protection），而非合规审计（Compliance）**。
   - Azure Stream Analytics： 用于实时流数据分析处理，需要大量开发工作（违背了 Minimize development effort 的要求）。
 
 ----
@@ -8384,7 +8391,10 @@ Token Consumption: View "Processed Inference Tokens" and "Generated Completion T
 
 A company has Microsoft Copilot Studio agents.
 
-The company plans to deploy custom connectors across development, test and production environments. You need to design an application lifecycle management (ALM) process to ensure consistency and prevent direct editing in production.
+The company plans to deploy custom connectors across development, test and production environments. 
+
+
+You need to design an application lifecycle management (ALM) process to **ensure consistency and prevent direct editing in production**.
 
 Which two actions should you include in the design? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
 
@@ -8468,7 +8478,7 @@ Copilot Studio Agent 和 Custom Connector 都应放入 **Solution** 中统一管
 
 A company uses multiple Microsoft Copilot Studio agents across different channels.
 
-You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.
+You need to recommend a monitoring solution that provides **comprehensive telemetry data and performance insights for the agents**.
 
 What should you include in the recommendation?
 
@@ -8540,7 +8550,7 @@ Enhanced Transcripts: Capture detailed message-level logs, including user prompt
 
 A company has an AI solution named Solution1 that is deployed to the production environment. Solution1 uses an Azure OpenAI model to generate marketing emails for existing customers.
 
-During an internal review, you identify that Solution1 creates different emails depending on the customers’ traits.
+**During an internal review, you identify that Solution1 creates different emails depending on the customers’ traits**.
 
 You need to recommend a strategy to mitigate the bias. The strategy must adhere to Microsoft responsible AI principles.
 
@@ -8556,11 +8566,10 @@ D. Modify the contents of the training dataset.
 
 ----
 
-正确答案与详细解析
 
 正确答案：
 
-  - B. Modify the system instructions of Solution1.（修改 Solution1 的系统指令。）
+**B. Modify the system instructions of Solution1.（修改 Solution1 的系统指令。）**
 
 解析与考点分析
 
@@ -8569,13 +8578,12 @@ D. Modify the contents of the training dataset.
 1.  业务场景与问题：
 
       - 系统在使用 Azure OpenAI 模型 为现有的客户自动生成营销电子邮件。
-      - 审阅发现生成的内容存在偏见/不公平现象（Bias）：模型根据客户的特定特征（Traits）生成了不公或带有偏见偏向的邮件内容。
+      - **审阅发现生成的内容存在偏见/不公平现象（Bias）：模型根据客户的特定特征（Traits）生成了不公或带有偏见偏向的邮件内容**。
       - 目标：根据**微软负责任 AI 原则（Microsoft Responsible AI Principles - 公平性 Fairness & 包容性 Inclusiveness）**减缓偏见。
 
 2.  生成式 AI（LLM）缓解偏见的标准做法：
 
-      - 系统指令（System Instructions / Metaprompt）： 在 Azure OpenAI
-        中，系统指令定义了模型的角色、行为准则、语气约束以及安全/公平性边界。
+      - 系统指令（System Instructions / Metaprompt）： 在 Azure OpenAI中，系统指令定义了模型的角色、行为准则、语气约束以及安全/公平性边界。
       - 通过调整系统指令（系统 Prompt），明确要求模型在生成营销内容时“保持公平、包容，不得基于客户的个人特征（如性别、年龄、地域等特征）产生刻板印象或区别对待”，这是在生产环境中缓解生成式 AI 偏见最直接、成本最低且即时生效的官方推荐策略。
 
 为什么不选其他选项？
@@ -8602,9 +8610,11 @@ The goal is to move from generic prompts to specific, constraint-based instructi
 
 ### QUESTION 35 
 
-A company has a canvas app named App1 in a Microsoft Power Platform environment named Env1. Env1 uses a customer-managed key for data encryption. App1 connects to multiple data sources to retrieve and update customer and order information.
+A company has a canvas app named App1 in a Microsoft Power Platform environment named Env1. E**nv1 uses a customer-managed key for data encryption**. 
 
-You need to recommend a solution to add Microsoft Copilot components to App1. 
+**App1 connects to multiple data sources to retrieve and update customer and order information**.
+
+**You need to recommend a solution to add Microsoft Copilot components to App1.** 
 
 The solution must NOT modify the current security or encryption configurations of Env1.
 
@@ -8664,8 +8674,6 @@ Core Technical Limitation Microsoft Power Platform environments configured with 
 ### QUESTION 37 
 
 
-After you answer a question in this section, you will NOT be able to return. As a result, these questions do not appear on the Review Screen.
-
 A company has a team that analyzes its customers by using a manual process.
 
 You are designing an AI-based agent to automate and improve the process.
@@ -8680,7 +8688,7 @@ You need to recommend on which platform to build the agent. The solution must me
 
 - Minimize custom development.
 
-Solution: You recommend Microsoft Security Copilot.
+**Solution: You recommend Microsoft Security Copilot.**
 
 Does this meet the goal?
 
@@ -8714,13 +8722,9 @@ B. No
 
 Correct Answer: B Section: (none)
 
-Explanation/Reference:
-
-Explanation:
-
 Correct:
 
-* You recommend Microsoft Copilot Studio.
+* <mark>**You recommend Microsoft Copilot Studio.**<mark>
 
 Copilot Studio is specifically designed to create customizable AI agents that automate business workflows with minimal coding.
 
@@ -8732,7 +8736,7 @@ Customer Demographics: You can configure the agent to extract specific entities 
 
 Low-Code/No-Code: It minimizes custom development by providing a visual interface to build logic, rather than writing raw code.
 
-Incorrect:
+**Incorrect:**
 
 * You recommend GitHub Copilot.
 
@@ -8743,14 +8747,13 @@ Low-Code/No-Code: It minimizes custom development by providing a visual interfac
 
 Incorrect:
 
-* You recommend GitHub Copilot.
+* **You recommend GitHub Copilot.**
 
-* You recommend Microsoft Security Copilot.
+* **You recommend Microsoft Security Copilot**.
 
 
 ### QUESTION 38
 
-After you answer a question in this section, you will NOT be able to return. As a result, these questions do not appear on the Review Screen.
 
 A company has a team that analyzes its customers by using a manual process.
 
@@ -8904,7 +8907,7 @@ A company has an Azure environment that supports several business units.
 
 The company intends to implement an Al solution that will perform sentiment analysis on customer product reviews.
 
-You need to assess the solution's potential cost to support return on Al investment (ROAI) analysis.
+You need to assess the <mark>**solution's potential cost**</mark> to support return on Al investment (ROAI) analysis.
 
 What should you use?
 
@@ -8952,7 +8955,7 @@ A company operates an ecommerce support portal that uses Microsoft Dataverse.
 
 You are designing a Microsoft Copilot Studio agent for the portal. The agent must meet these requirements:
 
-- Respond with a default help message when user input is unclear.
+- **Respond with a default help message when user input is unclear**.
 - Start external processes, such as retrieving order status, when users make specific requests.
 
 
@@ -9047,14 +9050,14 @@ You need to ensure that the agent meets these requirements:
 **Which metric should be used for each requirement?**
 
 
-Provides effective and relevant responses:  []
+**Provides effective and relevant responses**:  []
 
 - Generated answer rate and quality
 - Reactions
 - Tool use
 
 
-Provides conversational outcomes:  []
+**Provides conversational outcomes:**  []
 
 - Satisfaction
 - Tool use
@@ -9128,7 +9131,7 @@ What should you recommend?
 
 ### Question 46 
 
-Which tool should be recommended to address concerns about sensitive information in the sales process?
+Which tool should be **recommended to address concerns about sensitive information in the sales process**?
 
 - A the Analytics tab in Microsoft Copilot Studio
 - B Model Context Protocol (MCP)
