@@ -3683,7 +3683,7 @@ The Copilot Generative insights for Demand planning feature in Microsoft Dynamic
 
 A company has a Microsoft 365 E5 subscription and uses Microsoft Copilot Studio.
 
-**The company has a Microsoft SharePoint Online library that contains 10,000 policy PDFs from various departments**. 
+<mark>**The company has a Microsoft SharePoint Online library that contains 10,000 policy PDFs from various departments**.</mark> 
 
 The library contains a populated column named Department for each PDF.
 
@@ -3719,11 +3719,11 @@ QUESTION 答案 (Answer Area)
 
 1. Enable the agent to answer questions about company policies:
 
-✅ 正确选项： From Copilot Studio, add SharePoint as a knowledge source.（在 Copilot Studio 中，将 SharePoint 添加为知识源。）
+✅ 正确选项： **From Copilot Studio, add SharePoint as a knowledge source**.（在 Copilot Studio 中，将 SharePoint 添加为知识源。）
 
 2. Identify which departments and policies are connected:
 
-✅ 正确选项： From Copilot Studio, configure the SharePoint tool.（在 Copilot Studio 中，配置 SharePoint 工具。）
+✅ 正确选项： **From Copilot Studio, configure the SharePoint tool**.（在 Copilot Studio 中，配置 SharePoint 工具。）
 
 解析与考点分析
 
@@ -3756,16 +3756,9 @@ QUESTION 答案 (Answer Area)
 
 ----
 
-Explanation/Reference:
-
-Explanation:
-
-Box 1: From Copilot Studio, add SharePoint as a knowledge source
-
-Box 2: From Copilot Studio, configure the SharePoint tool.
 
 
-Box 1: From Copilot Studio, add SharePoint as a knowledge source 
+**Box 1: From Copilot Studio, add SharePoint as a knowledge source **
 
 
 Enable the agent to answer user questions about company policies.
@@ -3778,7 +3771,7 @@ Authentication: Ensure Manual Authentication with Microsoft Entra ID is configur
 
 Indexing: Note that indexing tens of thousands of files can take significant time (days or weeks).
 
-2. Enable Metadata Filtering (Department Column) To ensure the agent only searches policies relevant to a user's department, you must use Advanced Settings to filter the search results based on your custom column
+2. **Enable Metadata Filtering (Department Column) To ensure the agent only searches policies relevant to a user's department**, you must use Advanced Settings to filter the search results based on your custom column
 
 
 Box 2: From Copilot Studio, configure the SharePoint tool.
@@ -3819,7 +3812,7 @@ What should you include in the design for each requirement? To answer, drag the 
 **Answer Area**
 
 - Supports interactive speech responses:
-- Optimizes decision-making and response accuracy:
+- **=**:
 
 
 -----
@@ -3913,9 +3906,7 @@ Azure AI Speech ❌
 
 属于底层 Azure 服务。
 
-题目是在设计 **Copilot Studio Agent**，优先使用：
-
-**Copilot Studio voice features**
+题目是在设计 **Copilot Studio Agent**，优先使用： **Copilot Studio voice features**
 
 Azure Language in Foundry Tools ❌
 
@@ -3927,11 +3918,7 @@ Azure Language in Foundry Tools ❌
 
 不是推理。
 
-SSML ❌
-
-只是：
-
-控制
+SSML ❌ 只是： 控制
 
 * Voice
 * Pitch
@@ -3993,7 +3980,7 @@ Integrating a deep reasoning model (specifically Azure OpenAI o3) into Microsoft
 
 You are designing a low-code AI business solution by using Microsoft Copilot Studio.
 
-The solution must include an agent that automates tasks by simulating user interactions across third-party apps and websites, such as clicking buttons, entering text, and extracting information from screens.
+**The solution must include an agent that automates tasks by simulating user interactions across third-party apps and websites, such as clicking buttons, entering text, and extracting information from screens.**
 
 You need to recommend what to include in the agent.
 
@@ -4016,26 +4003,15 @@ D. Copilot skills
 
 > across **third-party apps and websites**
 
-> **clicking buttons**
-
-> **entering text**
-
-> **extracting information from screens**
+> **clicking buttons** / **entering text** / **extracting information from screens**
 
 这描述的正是微软最新推出的 **Computer Use** 功能。
-
-
-
-正确答案
 
 ✅ **C. Computer Use in Copilot Studio**
 
 
-正确答案与详细解析
 
-正确答案：
-
-  - C. Computer Use in Copilot Studio
+- C. Computer Use in Copilot Studio
 
 解析与考点分析
 
@@ -4085,7 +4061,7 @@ Reference:
 
 You need to recommend a solution to integrate a Microsoft Copilot agent with a Microsoft Dynamics 365 Contact Center chat channel.
 
-The agent must respond to customer questions and hand off the conversation to a live customer service representative when the customer requests an escalation.
+The agent must **respond to customer questions and hand off the conversation to a live customer service representative when the customer requests an escalation.**
 
 What should you recommend?
 
@@ -4151,15 +4127,13 @@ A company has a customer order system that creates sales orders manually.
 
 You need to design an AI solution to automate the following tasks as part of the system:
 
-Save the order details to a database.
+- Save the order details to a database.
+- Update the order status in the database.
+- Extract the order details from an order file.
 
-Update the order status in the database.
+***Prepare and send a confirmation email to customers***.
 
-Extract the order details from an order file.
-
-Prepare and send a confirmation email to customers.
-
-The solution must minimize development effort and support intelligent automation and solution integration.
+The solution **must minimize development effort** and support intelligent automation and solution integration.
 
 What should you include in the design?
 
@@ -4233,7 +4207,9 @@ Storage: Microsoft Dataverse or SQL Server functions as the database to save and
 
 You are designing an AI strategy for Microsoft Dynamics 365 finance and operations apps. You are evaluating the use of Microsoft Copilot Studio to provide in-app help and guidance based on generative AI general knowledge.
 
-You need to recommend which knowledge sources to include in the generative help and guidance agent. The solution must minimize the risk of generating inaccurate responses.
+You need to recommend which knowledge sources to include in the generative help and guidance agent. 
+
+** The solution must minimize the risk of generating inaccurate responses**.
 
 What should you recommend? To answer, select the appropriate options in the answer area.
 
@@ -6004,7 +5980,7 @@ Granular Insights: Savings can be defined at the overall agent-run level or for 
 
 You are designing a Microsoft Copilot Studio agent that uses a custom Microsoft Foundry model to generate responses.
 
-You need to ensure that the agent can securely connect to and invoke the custom model during user interactions.
+**You need to ensure that the agent can securely connect to and invoke the custom model during user interactions**.
 
 What should you include in the design?
 
@@ -6049,7 +6025,7 @@ To create a connection to Microsoft Foundry within a Microsoft Copilot Studio ag
 
 3. Security and Governance Connecting to Microsoft Foundry ensures enterprise-grade security through:
 
-Entra ID Integration: Agents are assigned a unique Microsoft Entra Agent ID, allowing IT teams to enforce Conditional Access and Identity Governance.
+**Entra ID Integration: Agents are assigned a unique Microsoft Entra Agent ID, allowing IT teams to enforce Conditional Access and Identity Governance.**
 
 Unified Management: Both your Copilot Studio and Foundry agents can be managed centrally in the Microsoft Entra admin center.
 
@@ -6063,9 +6039,9 @@ You are designing an AI business solution that contains the following components
 - A Microsoft Dataverse database
 - A Microsoft Power Apps app
 
-As part of the application lifecycle management (ALM) process, you plan to package the components, so that they can be deployed to other environments as a group.
+As part of the **application lifecycle management (ALM)** process, you plan to package the components, so that they can be deployed to other environments as a group.
 
-You need to recommend a solution that supports versioning, dependencies, and deployments.
+You need to recommend a solution that **supports versioning, dependencies, and deployments**.
 
 What should you include in the recommendation?
 
@@ -6113,6 +6089,7 @@ Solution 可以把多个 Power Platform 组件作为一个逻辑单元管理，�
 **记忆：**
 
 > **Power Apps + Power Automate + Copilot Studio + Dataverse → Solution**
+
 > **Solution + CI/CD → Power Platform Pipelines / Azure DevOps / GitHub Actions**
 
 
@@ -6126,7 +6103,7 @@ Explanation:
 
 To package your AI business solution components—including the Power Automate workflow, Copilot Studio agent, Dataverse database, and Power Apps app—you should use Microsoft Power Platform solutions.
 
-While GitHub Actions and Azure DevOps are powerful tools for automating the deployment process (CI/ CD), Solutions are the actual "containers" or packaging mechanism required to bundle these specific Power Platform assets together so they can be moved as a single unit between environments.
+While GitHub Actions and Azure DevOps are powerful tools for automating the deployment process (CI/ CD), Solutions are the **actual "containers" or packaging mechanism** required to bundle these specific Power Platform assets together so they can be moved as a single unit between environments.
 
 
 ### QUESTION 3 
@@ -6139,7 +6116,7 @@ You need to design a security solution for the agents. The solution must meet th
 
 - Protect AI apps and the sensitive data processed or generated by the agents.
 
-- Support responsible AI governance by retaining and logging interactions, detecting policy violations, and investigating incidents.
+- Support responsible AI governance by **retaining and logging interactions, detecting policy violations, and investigating incidents**.
 
 Which two components should you include in the design? Each correct answer presents part of the solution.
 
@@ -6163,7 +6140,6 @@ D. Microsoft Defender
   - A. Microsoft Purview
   - D. Microsoft Defender
 
-解析与考点分析
 
 为什么选 A 和 D？
 
@@ -6172,10 +6148,10 @@ Microsoft 365 Copilot 及 AI Agent 的双壁核心安全解决方案：
 
 1.  Microsoft Purview（数据治理、合规与日志追踪，选 A）：
 
-      - 满足需求： 保留和记录交互（Retaining and logging interactions）、检测策略违规（Detecting policy violations）、保护敏感数据（Protect sensitive data）。
+      - <mark>**满足需求： 保留和记录交互（Retaining and logging interactions）、检测策略违规（Detecting policy violations）、保护敏感数据（Protect sensitive data）**</mark>。
       - 功能作用：
-          - Purview AI Hub / Audit（审计）： 自动记录并保留用户与 AI Copilot/Agent 交互的提示词（Prompts）和生成回答（Responses）日志，供合规审查与事件调查（eDiscovery）。
-          - Data Loss Prevention (DLP) & Information Protection： 识别并保护 Agent 处理或生成的敏感数据（如防止敏感数据泄露到 Agent 回答中），检测违反企业策略的操作。
+          - <mark>Purview AI Hub / Audit（审计）： 自动记录并保留用户与 AI Copilot/Agent 交互的提示词（Prompts）和生成回答（Responses）日志，供合规审查与事件调查（eDiscovery）</mark>。
+          - <mark>Data Loss Prevention (DLP) & Information Protection： 识别并保护 Agent 处理或生成的敏感数据（如防止敏感数据泄露到 Agent 回答中），检测违反企业策略的操作</mark>。
 
 2.  Microsoft Defender（AI 应用威胁防护与风险缓解，选 D）：
 
@@ -6205,7 +6181,7 @@ To secure Microsoft 365 Copilot agents, you can implement a unified solution usi
 
 You are creating validation criteria for a custom generative AI model that produces business reports based on internal enterprise data.
 
-You need to assess whether the model's outputs are appropriate and meaningful for the business reports.
+You need to assess whether the model's **outputs are appropriate and meaningful for the business reports**.
 
 Which metric should you use?
 
@@ -6229,10 +6205,12 @@ D. the model training duration
 
 **为什么选 B？**
 
-1. **题目要求：** 需要评估自定义生成式 AI 模型输出的商业报告是否**合适且有意义（appropriate and meaningful for the business reports）**。
-2. **生成式 AI 的领域评估标准：** 
-   * 企业内部的商业报告通常包含特定行业的术语、业务逻辑、合规要求和特定的格式（即领域特定知识，Domain-specific knowledge）。
-   * 评估生成的报告是否“合适”且“有意义”，核心指标就是评估模型的输出是否与**特定领域任务的要求相匹配/对齐（alignment to domain-specific tasks）**，包括内容的准确性、专业相关性以及是否符合业务规范。
+1 **题目要求：** 需要评估自定义生成式 AI 模型输出的商业报告是否**合适且有意义（appropriate and meaningful for the business reports）**。
+
+2 **生成式 AI 的领域评估标准：** 
+
+* 企业内部的商业报告通常包含特定行业的术语、业务逻辑、合规要求和特定的格式（即领域特定知识，Domain-specific knowledge）。
+* 评估生成的报告是否“合适”且“有意义”，核心指标就是评估模型的输出是否与**特定领域任务的要求相匹配/对齐（alignment to domain-specific tasks）**，包括内容的准确性、专业相关性以及是否符合业务规范。
 
 **为什么不选其他选项？**
 
@@ -6243,22 +6221,6 @@ D. the model training duration
 
 
 
-
----
-Correct Answer: B
-
-
-Explanation/Reference:
-
-Explanation:
-
-To validate a custom generative AI model for business reports based on internal data, you should focus on alignment with domain-specific tasks through a mix of automated and human-centric metrics.
-
-Validation Criteria for Business Reports *-> Task-Specific Quality Evaluation (TSQE): This is your primary metric for assessing whether outputs are meaningful for specific business tasks.
-
-* Groundedness and Factuality: Measure the model's ability to provide information strictly referenced from your internal enterprise data. This prevents "hallucinations" that could lead to poor business decisions.
-
-* Domain-Specific Benchmarking: Compare AI outputs against "ground truth" data—verified, accurate reports previously created by human experts.
 
 
 ### QUESTION 5 
@@ -6293,7 +6255,7 @@ D. Microsoft Purview
 
 为什么选 D？
 
-1.  核心需求： 公司部署在跨国区域（美国和欧洲）的 AI Agent 及其接地数据（Grounding data）必须符合数据驻留（Data residency）和跨国数据流动法规（Data movement regulations）（如 GDPR、欧洲数据边界 EU Data Boundary 等）。
+1.  <mark>核心需求： 公司部署在跨国区域（美国和欧洲）的 AI Agent 及其接地数据（Grounding data）必须符合数据驻留（Data residency）和跨国数据流动法规（Data movement regulations）（如 GDPR、欧洲数据边界 EU Data Boundary 等）</mark>。
 2.  产品功能匹配：
       - Microsoft Purview： 是微软企业级数据治理、风险管理与合规控制的核心平台。
       - 针对 AI 与 Grounding Data 的治理：
@@ -6303,26 +6265,76 @@ D. Microsoft Purview
 为什么不选其他选项？
 
   - A. Microsoft Defender for Cloud（云安全态势管理）： 侧重于基础设施与 AI 应用的云安全威胁防护、漏洞扫描与攻击防御，不负责数据层面的法律合规与跨国数据流动治理。
-  - B. Azure Policy（Azure 策略）： 侧重于基础设施资源（Resource Level）的部署位置限制（如只能在特定 Azure  区域创建 Azure OpenAI 资源），但无法治理和管控数据内容本身及其流向（Grounding Data Movement）。
+  - <mark>**B. Azure Policy（Azure 策略）： 侧重于基础设施资源（Resource Level）的部署位置限制（如只能在特定 Azure  区域创建 Azure OpenAI 资源），但无法治理和管控数据内容本身及其流向（Grounding Data Movement）**</mark>。
   - C. Azure Monitor（Azure 监控）： 用于收集系统运行日志、性能指标与告警，不具备数据治理和合规控制功能。
 
 
 ---
 
-Correct Answer: D 
+
+✅ 正确答案：D. Microsoft Purview
+
+关键在题目新增的 requirement：
+
+> **the agents and their grounding data must adhere to data residency and movement regulations**
+
+这里的核心不是简单的 Azure resource configuration，而是：
+
+* **Data residency**：数据必须存放在哪个 geographic region
+* **Data movement**：数据是否可以跨 region / jurisdiction 移动
+* **Grounding data**：Agent 使用的数据本身
+* **Regulations**：数据相关的法规和合规要求
+
+这些属于 **data governance / compliance** 范畴，因此 Microsoft Purview 更合适。
+
+**为什么不是 Azure Policy？**
+
+**Azure Policy** 非常适合：
+
+> “资源只能部署在 approved regions。”
+
+例如：
+
+```text
+Azure Policy
+    ↓
+Allowed locations
+    ↓
+Azure OpenAI resource
+    ↓
+East US / West Europe only
+```
+
+这是**资源部署治理**。
+
+但本题要求的是：
+
+```text
+Agent
+  ↓
+Grounding data
+  ↓
+Data residency
+  ↓
+Data movement
+  ↓
+Regulatory compliance
+```
+
+关注的是 **data 本身的治理和合规**，所以选择 **Microsoft Purview**。
+
+### 四个选项怎么区分
+
+| Service                          | 主要用途                                                                   | 本题 |
+| -------------------------------- | ---------------------------------------------------------------------- | -- |
+| **Microsoft Defender for Cloud** | Security posture / workload protection                                 | ❌  |
+| **Azure Policy**                 | Resource governance / allowed locations / configuration compliance     | ❌  |
+| **Azure Monitor**                | Metrics / logs / alerts / monitoring                                   | ❌  |
+| **Microsoft Purview**            | **Data governance / data residency / data compliance / data movement** | ✅  |
+
+------
 
 Section: (none)
-
-
-Explanation/Reference:
-
-Explanation:
-
-In this scenario, Microsoft Foundry agents and Azure OpenAI resources generate responses by using the Responses API. To ensure these agents adhere to data residency and movement regulations across the United States and Europe, Microsoft Purview should be included to provide the following governance and security controls:
-
-Unified Data Discovery & Classification: Purview's discovery REST API allows orchestrator agents to identify relevant data assets (e.g., in Fabric or Databricks) across the organization's entire data landscape.
-
-Sensitivity Label Enforcement: It ensures that AI-generated responses respect existing access controls by checking document label metadata at query time. This prevents oversharing of sensitive data and restricts users to authorized content.
 
 Data Loss Prevention (DLP): By integrating Purview DLP policies, organizations can monitor, block, or warn when sensitive data is used in AI prompts or responses in real-time.
 
@@ -6333,9 +6345,9 @@ Embedded Governance: Admins can enable a native integration within Microsoft AI 
 
 ### QUESTION 6 
 
-A company has a Microsoft Copilot Studio agent that uses custom connectors to interact with enterprise APIs.
+A company has a Microsoft Copilot Studio agent that uses **custom connectors** to interact with enterprise APIs.
 
-You need to recommend an application lifecycle management (ALM) process to ensure that the connectors are deployed consistently across development, test, and production environments and meet governance and traceability requirements.
+You need to recommend an **application lifecycle management (ALM) process to ensure that the connectors are deployed consistently across development, test, and production environments and meet governance and traceability requirements.**
 
 What should you recommend?
 
@@ -6396,9 +6408,11 @@ Security Credentials: For OAuth settings like Client ID and Client Secret, use e
 Azure Key Vault Integration: For high-security enterprise APIs, store secrets in Azure Key Vault and reference them via secret environment variables to ensure traceability and governance.
 
 
-### QUESTION 7
+### QUESTION 7  ??
 
-A company plans to implement an AI solution that will contain a Microsoft Copilot Studio agent and a Microsoft Foundry agent. The solution will be stored in a source code repository.
+A company plans to implement an AI solution that will **contain a Microsoft Copilot Studio agent and a Microsoft Foundry agent**. 
+
+**The solution will be stored in a source code repository.**
 
 You need to recommend a deployment method for each agent. The solution must meet the following requirements:
 
@@ -6454,52 +6468,15 @@ Answer Area
 🎯 最终
 
 > **Copilot Studio → Microsoft Power Platform deployment pipeline**
+>
 > **Microsoft Foundry → Azure DevOps pipeline**
-
-
-
-
 
 
   - Copilot Studio: 👉 Use a Microsoft Power Platform deployment pipeline.（使用    Microsoft Power Platform 部署管道。）
 
   - Microsoft Foundry: 👉 Use an Azure DevOps pipeline.（使用 Azure DevOps 管道。）
 
-解析与考点分析
-
-1. Copilot Studio 智能体的部署方法
-
-  - 需求分析： 自动从源码仓库部署，跨 Dev -> Test -> Prod 环境隔离，无须人工干预（NOT require manual
-    intervention）。
-  - 正确选择： Use a Microsoft Power Platform deployment pipeline
-  - 解析：
-      - Copilot Studio 构建在 Microsoft Power Platform 极低代码平台上。
-      - 微软推荐的自动化 ALM（应用生命周期管理）方式是使用 Power Platform Deployment Pipelines（Power
-        Platform
-        部署管道）。它可以实现从开发环境到测试/生产环境的全自动、无缝、可重复的解决方案（Solution）发布，完全不需要手动导出和导入文件。
-
-2. Microsoft Foundry 智能体的部署方法
-
-  - 需求分析： 存储在源码仓库中的 Azure AI Foundry 专业代码/架构，需实现自动化 CI/CD 跨环境发布。
-  - 正确选择： Use an Azure DevOps pipeline
-  - 解析：
-      - Microsoft Foundry（Azure AI Foundry）： 属于 Azure 云端的代码级/专业开发者 AI
-        平台（Pro-code）。其 Agent 代码、Prompt 模板和底层配置存储在 Git 源码仓库中。
-      - 要从源码仓库触发完全自动化（fully automated）且无需人工干预的部署，最标准的方式是使用 Azure DevOps
-        pipeline（或 GitHub Actions）。流水线会自动拉取代码并部署到隔离的 Azure 生产环境中。
-
-干扰项排除说明
-
-  - Export from the source code repository and import to the target
-    environment（手动导出导入）： 需要人工手动介入，违背了“NOT require manual intervention”的要求。
-  - Use a Bicep file（使用 Bicep 文件）： Bicep 是 Azure 声明式基础设施即代码（IaC）模板文件。虽然 Bicep
-    用于定义 Azure 资源，但 Bicep 文件本身不是部署执行工具；必须借助 Azure DevOps pipeline 才能自动触发并运行
-    Bicep 脚本完成无人工干预的部署。
-
-
-
-
-
+-----
 
 Explanation/Reference:
 
@@ -6579,16 +6556,17 @@ NOTE: Each correct selection is worth one point.
 🧠 **记忆：**
 
 > **Answer quality → Generated answer rate and quality**
+>
 > **Conversation outcome → Topics by outcome**
 
 
 1. Provides effective and relevant responses:
 
-  - 正确选项： Generated answer rate and quality（生成答案的比例与质量）
+     - 正确选项： Generated answer rate and quality（生成答案的比例与质量）
 
 2. Provides conversational outcomes:
 
-  - 正确选项： Topics by outcome（按结果分类的主题）
+     - 正确选项： Topics by outcome（按结果分类的主题）
 
 解析与考点分析
 
@@ -6611,7 +6589,7 @@ NOTE: Each correct selection is worth one point.
 
 A company extends Copilot in Microsoft Dynamics 365 Customer Service.
 
-You need to recommend an automated application lifecycle management (ALM) process so that the Copilot components can be safely developed, tested, and promoted to production.
+You need to recommend **an automated application lifecycle management (ALM) process so that the Copilot components can be safely developed,** tested, and promoted to production.
 
 Which two actions should you include in the ALM process? Each correct answer presents part of the solution.
 
@@ -6686,7 +6664,7 @@ You are designing a testing solution for a Microsoft Copilot Studio agent that i
 
 You need to design end-to-end scenarios to test the agent's ability to perform the following actions:
 
-- Coordinate tasks and data interactions across both Dynamics 365 apps.
+- **Coordinate tasks and data interactions across both Dynamics 365 apps.**
 - Interpret user input and provide contextually relevant outputs.
 
 Which test scenario and metric should you include in the design? To answer, select the appropriate options in the answer area.
@@ -6721,18 +6699,19 @@ NOTE: Each correct selection is worth one point.
 🧠 **记忆：**
 
 > **Cross-app coordination → Test both apps together**
+>
 > **Task success → Successful completion rate**
 
 
 
 
-1. Test scenario（测试场景）:
+1. **Test scenario（测试场景**）:
 
-  - 正确选项： Run task-based scenarios that involve both apps.（运行涉及这两个应用的基于任务的场景。）
+     - 正确选项： Run task-based scenarios that involve both apps.（运行涉及这两个应用的基于任务的场景。）
 
-2. Metric（测试指标）:
+2. **Metric（测试指标）**:
 
-  - 正确选项： Track the successful completion of cross-app tasks.（追踪跨应用任务的成功完成率。）
+     - 正确选项： Track the successful completion of cross-app tasks.（追踪跨应用任务的成功完成率。）
 
 解析与考点分析
 
@@ -6759,45 +6738,15 @@ Box 1: Run task-based scenarios that involve both apps
 Box 2: Track the successful completion of cross-app tasks
 
 
-Box 1: Run task-based scenarios that involve both apps 
-
-Test scenario
-
-Task-Based Testing Scenarios Run these end-to-end scenarios to verify the agent's ability to interpret context and coordinate data: Scenario 1: Cross-Sell Opportunity Discovery Task: While resolving a support case in Customer Service, ask the agent: "Are there any active sales opportunities for this account?".
-
-Success Criteria: The agent retrieves the relevant Opportunity from Sales, summarizes it, and suggests a follow-up action for the sales team.
-
-Scenario 2: Integrated Case/Lead Creation Task: A user mentions a new product interest during a support chat. Command the agent: "Create a lead in Sales based on this support conversation".
-
-Success Criteria: The agent parses the conversation history and creates a Lead record in Sales with the correct customer context.
-
-Scenario 3: Proactive Account Health Check Task: 
-
-
-Before a sales meeting, ask: "Summarize recent support issues for this account".
-
-Success Criteria: The agent identifies open tickets in Customer Service and provides a summary to the Sales professional to prevent walking into a "blind" meeting.
-
-Box 2: Track the successful completion of cross-app tasks Metric
-
-Key Metrics for Success Track these specific metrics in the Copilot Studio Analytics tab or the Power Platform Admin Center:
-
-*-> Resolution Rate (Cross-App): The percentage of sessions where the agent successfully completed a task requiring data from both apps without manual intervention.
-
-Deflection Rate: Reduction in human handoffs for tasks that previously required an agent to switch manually between Sales and Service hubs.
-
-Task Success Threshold: Define a minimum quality score for LLM-based responses to ensure the context provided from the "other" app is accurate.
-
-Agent Assisted Hours Gained: Measure the time saved by the agent performing these cross-app queries versus a human doing so manually.
-
-
 ### QUESTION 11 
 
 A company has multiple AI models that support generation of sales transactions.
 
-Each release of the models must be reviewed by a security and compliance team before being deployed to the production environment. The security and compliance team must have access to prior versions to properly determine potential exposures introduced.
+Each release of the models must be reviewed by a security and compliance team before being deployed to the production environment. 
 
-You need to recommend a solution to evaluate the impact of each deployment to production. The solution must enhance business continuity.
+**The security and compliance team must have access to prior versions to properly determine potential exposures introduced***.
+
+You need to **recommend a solution to evaluate the impact of each deployment to production**. The solution must enhance business continuity.
 
 What should you recommend?
 
@@ -6843,10 +6792,7 @@ D. Track model retirement schedules to prevent service disruptions.
 
 核心考点速记（备考复习）
 
-  - 中央模型注册表（Central Model Registry）的核心作用： 在 MLOps 和 AI
-    安全合规治理中，当安全团队需要在模型部署前审查新版本并**访问调阅以前的模型历史版本（Access to prior
-    versions）**时，中央模型注册表（Model Registry） 是提供模型版本管理（Version
-    History）、血缘追溯、安全审计以及支持生产快速回滚（保障业务连续性）的标准组件。
+  - 中央模型注册表（Central Model Registry）的核心作用： <mark>在 MLOps 和 AI 安全合规治理中，当安全团队需要在模型部署前审查新版本并**访问调阅以前的模型历史版本（Access to prior  versions）**时，中央模型注册表（Model Registry） 是提供模型版本管理（VersionHistory）、血缘追溯、安全审计以支持生产快速回滚（保障业务连续性）的标准组件</mark>。
 
 
 ### QUESTION 12 
@@ -6890,7 +6836,9 @@ NOTE: Each correct selection is worth one point.
 🧠 **记忆：**
 
 > **NRT telemetry → Application Insights**
+>
 > **Transcripts → Copilot Studio**
+>
 > **Usage & performance → Copilot Studio**
 
 
@@ -6908,28 +6856,22 @@ Copilot Studio 被使用了两次。)
 解析与考点分析
 
 1. 实时/近实时（NRT）监控 Agent 的遥测数据
-
-  - 正确选择： Application Insights
-  - 解析：
-      - Application Insights 与 Copilot Studio 原生集成。当连接后，Copilot Studio
-        会将底层系统事件、API 调用耗时、异常及实时 Trace 轨迹以**近实时（Near-Real-Time, NRT）**流的形式推送到
+     - 正确选择： Application Insights
+     - 解析：
+      - Application Insights 与 Copilot Studio 原生集成。当连接后，Copilot Studio 会将底层系统事件、API 调用耗时、异常及实时 Trace 轨迹以**近实时（Near-Real-Time, NRT）**流的形式推送到
         Application Insights 中，用于实时性能监控与故障排查。
 
 2. 下载完整对话记录（Transcripts of full conversations）
 
-  - 正确选择： Copilot Studio
-  - 解析：
-      - 在 Copilot Studio 门户的 Analytics（分析）-> Sessions（会话）
-        选项卡中，管理员和开发者可以直接查看所有已发生的对话列表，并直接**下载（Download）完整的对话轨迹（Transcripts）**文件进行内容审查与质量分析。
+     - 正确选择： Copilot Studio
+     - 解析：
+       - 在 Copilot Studio 门户的 Analytics（分析）-> Sessions（会话）选项卡中，管理员和开发者可以直接查看所有已发生的对话列表，并直接**下载（Download）完整的对话轨迹（Transcripts）**文件进行内容审查与质量分析。
 
 3. 监控 Agent 的使用率与性能（Usage and performance）
 
-  - 正确选择： Copilot Studio
-  - 解析：
-      - Copilot Studio 内置了开箱即用的仪表板（Analytics Tab），可直接提供 Agent
-        的使用率（Usage，如活跃用户数、会话总数、Credits 消耗趋势） 和
-        性能指标（Performance，如解决率 Resolution Rate、转人工率 Escalation
-        Rate、CSAT 满意度评分）。成本最低且无需额外开通云服务。
+     - 正确选择： Copilot Studio
+     - 解析：**Copilot Studio 内置了开箱即用的仪表板（Analytics Tab），可直接提供 Agent 的使用率（Usage，如活跃用户数、会话总数、Credits 消耗趋势） 和 性能指标（Performance，如解决率 Resolution Rate、转人工率 Escalation
+        Rate、CSAT 满意度评分）。成本最低且无需额外开通云服务**。
 
 
 
@@ -6951,17 +6893,16 @@ What should you recommend for each requirement? To answer, select the appropriat
 
 NOTE: Each correct selection is worth one point.
 
-Hot Area:
 
 Answer Area
 
-Validate the most recent changes to the agent before release:
+**Validate the most recent changes to the agent before release:**
 
 - Publish the agent to a channel and test the agent on live users.
 - Run tests against the latest unpublished version of the agent.
 - Run tests against the production version of the agent.
 
-Validate the flow as part of the agent's orchestration:
+**Validate the flow as part of the agent's orchestration:**
 
 - Add the flow to the agent as a tool.
 - Add the flow to a canvas app.
@@ -6996,17 +6937,17 @@ Copilot Studio 可以在 Agent **发布之前**测试最新修改，这样可以
 > **Agent + Power Automate flow → Add flow as a Tool**
 
 **答案：① Run tests against latest unpublished version
-② Add the flow to the agent as a tool**
 
+② Add the flow to the agent as a tool**
 
 
 1. Validate the most recent changes to the agent before release:
 
-  - 正确选项： **Run tests against the latest unpublished version of the agen**t.（针对最新的未发布版本 Agent 运行测试。）
+正确选项： **Run tests against the latest unpublished version of the agen**t.（针对最新的未发布版本 Agent 运行测试。）
 
 2. Validate the flow as part of the agent's orchestration:
 
-  - 正确选项： Add the flow to the agent as a tool.（将 Flow 作为工具添加给 Agent。）
+正确选项： Add the flow to the agent as a tool.（将 Flow 作为工具添加给 Agent。）
 
 解析与考点分析
 
@@ -7047,7 +6988,7 @@ A company has a Microsoft Copilot Studio agent that provides answers based on a 
 
 Users report that, occasionally, the agent provides inaccurate answers.
 
-You need to use metrics from the Analytics tab in Copilot Studio to identify the cause of the inaccuracies.
+**You need to use metrics from the Analytics tab in Copilot Studio to identify the cause of the inaccuracie**s.
 
 Which two options should you use? Each correct answer presents part of the solution.
 
@@ -7126,17 +7067,6 @@ Using Metrics to Locate Problems *-> Engagement Rate: A low engagement rate ofte
 *-> Escalation Rate: High escalation rates for particular topics are "red flag" drivers. Use the Escalation Rate Drivers chart to see which topics most frequently force a hand-off to a human agent, indicating where the AI's knowledge or logic is insufficient.
 
 
-Incorrect:
-
-[Not B] To locate and resolve inaccuracies in your Microsoft Copilot Studio agent, you can leverage the Analytics tab to examine session data and outcomes.
-
-1. Use Session Outcomes to Identify Failure Points The Analytics dashboard categorizes "Engaged" [D] sessions into three primary outcomes that highlight where the agent is failing:
-
-Escalated: These sessions reached the "Escalate" [D] system topic or a "Transfer Conversation" node. High escalation rates for specific topics often indicate that the knowledge base lacks the depth to answer those queries.
-
-Abandoned: These sessions ended without being resolved or escalated [D]. This often happens when users get frustrated by repetitive or inaccurate answers and close the chat.
-
-Resolved [D]: These are successful sessions. If a session is marked Resolved (Confirmed), the user explicitly verified the answer was helpful. If it is Resolved (Implied), the agent assumed success because the user didn't ask further questions, which can sometimes mask inaccuracies.
 
 
 ### QUESTION 15
@@ -7171,19 +7101,13 @@ D. Upload the training data to Microsoft Foundry data files
 
 E. Store the training data in Azure Blob Storage that has version control enabled.
 
-
-是的，DE 这个答案是正确的，并且解释非常准确！
-
-比起 A，选 D 和 E 更符合 Microsoft Foundry (Azure AI Studio) 的具体实现机制。以下是为什么 D 比 A 更精准的技术原因：
-
-为什么选择 D 而不是 A？
+**为什么选择 D 而不是 A？**
 
 1.  Microsoft Foundry 模型微调的具体机制（关键点）：
 
       - 在 Microsoft Foundry / Azure OpenAI 中发起模型微调（Fine-tuning job）时，系统并不支持直接给微调任务关联一个“存储位置/文件夹（Storage location）”。
       - 实际上，微调任务接收的输入是一个明确的、经过验证的数据文件（Data File / File ID，例如 file-abc123...）。
-      - 因此，标准的工作流程是：在启用了版本控制的 Blob Storage (E) 中准备好数据后，将该特定的受信任数据上传/注册到
-        Microsoft Foundry data files (D) 中生成 Data Asset，再由微调任务调用该文件。
+      - 因此，标准的工作流程是：**在启用了版本控制的 Blob Storage (E) 中准备好数据后，将该特定的受信任数据上传/注册到 Microsoft Foundry data files (D) 中生成 Data Asset，再由微调任务调用该文件**。
 
 2.  完整的工作流逻辑（E + D）：
 
@@ -7205,15 +7129,15 @@ Explanation:
 
 To implement a new Application Lifecycle Management (ALM) process for your fine-tuned Microsoft Foundry model, you can leverage Azure Blob Storage for raw data versioning and Azure AI Foundry (formerly Azure AI Studio) for managed data assets and model retraining.
 
-1. Data Tracking and Versioning in Azure Blob Storage Enable blob versioning to automatically maintain a history of your training data.
+**1.Data Tracking and Versioning in Azure Blob Storage Enable blob versioning to automatically maintain a history of your training data.**
 
 Enable Versioning: In the Azure portal, navigate to your storage account under Data management > Data protection and select Enable versioning for blobs.
 
 Immutable Tracking: This ensures that every update to a training file creates a new version, allowing you to restore or reference specific historical states of your dataset for auditability.
 
-2. Uploading and Managing Data in Microsoft Foundry Integrate your versioned blob storage with Microsoft Foundry to create "Data assets" that the model can use for retraining.
+**2.Uploading and Managing Data in Microsoft Foundry Integrate your versioned blob storage with Microsoft Foundry to create "Data assets" that the model can use for retraining.**
 
-Reference:
+
 
 ### QUESTION 16
 
@@ -7221,7 +7145,7 @@ A company deploys agents that generate responses by using Azure OpenAI resources
 
 You need to recommend a governance solution that meets the following requirements:
 
-- Enforces the deployment of the resources to only approved Azure regions 
+- **Enforces the deployment of the resources to only approved Azure regions** 
 - Provides continuous compliance verification of the resources
 
 What should you include in the recommendation for each requirement? To answer, select the appropriate options in the answer area.
@@ -7232,7 +7156,7 @@ Hot Area:
 
 Answer Area
 
-Enforces the deployment of the resources to only approved regions:
+**Enforces the deployment of the resources to only approved regions:**
 
 - Azure Monitor
 - Azure Policy
@@ -7240,7 +7164,7 @@ Enforces the deployment of the resources to only approved regions:
 - Microsoft Purview
 - Microsoft Sentinel
 
-Provides continuous compliance verification of the resources:
+**Provides continuous compliance verification of the resources:**
 
 - Azure Monitor
 - Azure Policy
@@ -7250,115 +7174,158 @@ Provides continuous compliance verification of the resources:
 ----
 
 
-**答案：**
+**正确答案是：**
 
-| Requirement                                      | 正确答案                               | 关键原因                                                             |
-| ------------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------- |
-| **Enforces deployment only to approved regions** | ✅ **Azure Policy**                 | 可以使用 **Allowed locations** Policy，在部署时限制资源只能创建在批准的 Azure Region。 |
-| **Provides continuous compliance verification**  | ✅ **Microsoft Defender for Cloud** | 提供持续安全/合规评估、Compliance Dashboard 和 Regulatory Compliance。        |
+| Requirement                                                           | Correct option     | Why                                                                                        |
+| --------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------ |
+| **Enforces the deployment of the resources to only approved regions** | ✅ **Azure Policy** | Azure Policy 可以通过 `Allowed locations` policy 限制 Azure 资源只能部署到指定区域，例如只允许 US 和 Europe 的批准区域。 |
+| **Provides continuous compliance verification of the resources**      | ✅ **Azure Policy** | Azure Policy 会持续评估资源是否符合 policy，并提供 compliance state；不符合要求的资源会被标记为 **Non-compliant**。      |
 
- 考试记忆
+**最终选择**
 
-* **限制 Region / 强制规则 / Prevent deployment** → **Azure Policy**
-* **Continuous compliance / Security posture / Regulatory compliance** → **Microsoft Defender for Cloud**
+**Enforces the deployment of the resources to only approved regions:**
 
-**最终：**
+➡️ **Azure Policy**
 
-1. **Azure Policy**
-2. **Microsoft Defender for Cloud**
+**Provides continuous compliance verification of the resources:**
 
-
-**Requirement 1**
-
-> **Enforces the deployment of the resources to only approved Azure regions**
-
-关键词：
-
-* **Enforces（强制执行）**
-* **Deployment（部署时）**
-* **Approved Azure regions（允许的区域）**
-
-能够在**创建资源时阻止**不符合规则的资源部署的是：
-
-✅ **Azure Policy**
-
-例如可以创建策略：
-
-* Allowed locations
-* Allowed resource types
-* Allowed SKUs
-
-如果有人尝试在未批准的区域（如 East Asia）创建 Azure OpenAI 资源，Azure Policy 可以直接拒绝部署。
-
-可以持续检查 Azure OpenAI 等资源是否符合既定安全与合规要求。
-
-为什么不是 Azure Policy？
-
-Azure Policy 也可以评估资源是否符合策略（显示 Compliant / Non-compliant），但考试中：
-
-* **Enforce Governance** → Azure Policy
-* **Continuous Compliance / Security Posture / Regulatory Compliance** → **Microsoft Defender for Cloud**
-
-微软官方文档也强调 Defender for Cloud 会聚合 Azure Policy 的评估结果，并提供持续的合规报告，因此题目强调 **continuous compliance verification** 时，最佳答案是 Defender for Cloud。
-
-最终答案
-
-| Requirement                                                           | Correct Answer                     |
-| --------------------------------------------------------------------- | ---------------------------------- |
-| **Enforces the deployment of the resources to only approved regions** | ✅ **Azure Policy**                 |
-| **Provides continuous compliance verification of the resources**      | ✅ **Microsoft Defender for Cloud** |
-
-考试速记
-
-| 服务                               | 主要职责                                     |
-| -------------------------------- | ---------------------------------------- |
-| **Azure Policy**                 | **预防性治理（Prevent）**：限制区域、SKU、资源类型，部署时强制执行 |
-| **Microsoft Defender for Cloud** | **持续评估（Assess）**：安全态势、法规合规、持续验证          |
-| **Azure Monitor**                | 监控指标、日志、告警                               |
-| **Microsoft Purview**            | 数据治理、数据分类、数据血缘                           |
-| **Microsoft Sentinel**           | SIEM/SOAR，安全事件检测与响应                      |
-
-**答案：**
-
-* **Enforces the deployment of the resources to only approved regions:** ✅ **Azure Policy**
-* **Provides continuous compliance verification of the resources:** ✅ **Microsoft Defender for Cloud**
+➡️ **Azure Policy**
 
 
-----
+这道题的核心是区分 **Governance / Monitoring / Security**：
 
-Box 1: Azure Policy
+* **Azure Policy** → **Govern / Enforce / Compliance**
+* **Azure Monitor** → Metrics, Logs, Alerts, Performance
+* **Microsoft Defender for Cloud** → Security posture, recommendations, workload protection
+* <mark>**Microsoft Purview** → Data governance, data catalog, classification, lineage</mark>
+* **Microsoft Sentinel** → SIEM / SOAR / security analytics
 
-Box 2: Microsoft Purview
+所以看到：
 
+> **approved regions + continuous compliance**
 
-Box 1: Azure Policy 
+几乎直接联想到：
 
+> **Azure Policy → Allowed locations + Compliance evaluation**
 
-Enforces the deployment of the resources to only approved Azure regions To enforce the deployment of Azure OpenAI resources to only approved Azure regions (e.g., specific regions in Europe and the USA), you should use Azure Policy with the "Allowed locations" policy definition.
-
-Here is the breakdown of how to implement this control:
-
-Primary Tool: Azure Policy Azure Policy allows you to define rules that restrict where resources can be created.
-
-Policy Rule: Use the Allowed locations policy definition.
-
-Implementation: Assign this policy at the Subscription or Resource Group level to restrict developers to only using permitted regions (e.g., East US, West Europe).
-
-Effect: If a user attempts to deploy an Azure OpenAI resource in a non-approved region, the deployment will be blocked.
+而且这里是 **Azure OpenAI resources** 部署到 US 和 Europe，并不改变答案；关键在于题目要求的是**限制资源部署区域并持续检查合规性**。
 
 
-**Box 2: Microsoft Purview** 
+**<mark>为什么 Box 2 不是 Microsoft Purview？</mark>**
 
-Provides continuous compliance verification of the resources To provide continuous compliance verification for Azure OpenAI resources across Europe and the USA, you should use Microsoft Purview Compliance Manager and Azure Policy.
+这里最容易被题目里的 **"compliance"** 误导。
 
-Microsoft Purview Compliance Manager: This tool provides a risk-based compliance score and continuous monitoring against global regulations such as the EU AI Act, GDPR, and various US standards. It offers specific regulatory templates to help you assess and implement controls for generative AI applications. Azure Policy: Use this to enforce organizational standards and assess compliance at scale. You can apply built-in policy definitions for Azure AI services to automatically audit or deny non-compliant resource configurations, such as ensuring resources are restricted to specific regions (e.g., only EU or USA) or have private network access enabled.
+**Microsoft Purview** 的核心定位是：
+
+* Data governance
+* Data catalog
+* Data classification
+* Data lineage
+* Data discovery
+* Compliance / risk management for **data and regulatory requirements**
+
+而题目说的是：
+
+> **continuous compliance verification of the resources**
+
+这里的 **resources** 指 Azure resources，本质上是要求持续检查 Azure 资源是否符合组织定义的配置/治理规则。
+
+这正是 **Azure Policy** 的核心能力：
+
+> **Define → Enforce → Audit → Continuously evaluate compliance**
+
+例如：
+
+```text
+Azure Policy
+     │
+     ├── Allowed locations
+     │      ├── East US
+     │      ├── West Europe
+     │      └── ...
+     │
+     └── Compliance evaluation
+             │
+             ├── Compliant
+             └── Non-compliant
+```
+
+一个很重要的考试陷阱
+
+你看到的答案把：
+
+> **compliance**
+
+自动联想到：
+
+> **Microsoft Purview Compliance Manager**
+
+这是一个很常见的误区。
+
+考试中要看 **compliance 的对象是什么**：
+
+| 题目关键词                              | 首选                                     |
+| ---------------------------------- | -------------------------------------- |
+| Azure resources 的配置是否符合规则          | **Azure Policy**                       |
+| Allowed locations                  | **Azure Policy**                       |
+| Enforce / Deny deployment          | **Azure Policy**                       |
+| Continuous compliance state        | **Azure Policy**                       |
+| Regulatory compliance assessment   | Microsoft Purview / Compliance Manager |
+| Data classification                | Microsoft Purview                      |
+| Data governance / lineage          | Microsoft Purview                      |
+| Security posture / vulnerabilities | Defender for Cloud                     |
+
+所以这道题实际上是一个非常典型的：
+
+> **Azure Policy + Azure Policy**
+
+题目甚至故意把 **Microsoft Purview** 放进去干扰你。
+
+关于原回答中的一个细节
+
+它说：
+
+> "Microsoft Purview Compliance Manager ... continuous monitoring against global regulations..."
+
+这个描述本身并非完全错误。**Purview Compliance Manager 确实可以做 regulatory compliance assessment**。
+
+但它**不符合这道题的 requirement**。
+
+题目不是问：
+
+> “如何持续验证公司是否符合 GDPR / EU AI Act？”
+
+而是：
+
+> **“如何持续验证这些 Azure resources 是否符合治理要求？”**
+
+因此应该选择 **Azure Policy**。
+
+**🧠 AB-100 / Azure Governance 考试记忆**
+
+你可以直接记：
+
+> **Policy = Resource governance & compliance**
+
+看到以下关键词，优先想到 **Azure Policy**：
+
+**Allowed locations / enforce / deny / audit / compliance / resource configuration / organizational standards**
+
+所以最终答案：
+
+**Box 1 → Azure Policy ✅**
+
+**Box 2 → Azure Policy ✅**
+
 
 
 ### QUESTION 17 
 
 A company has an AI solution that uses Azure OpenAI models.
 
-You need to recommend a governance solution that monitors and audits changes to model configurations and data usage. The solution must minimize administrative effort.
+You need to recommend a governance solution that <mark>**monitors and audits changes to model configurations and data usage**.<mark> 
+
+The solution must minimize administrative effort.
 
 What should you include in the recommendation?
 
@@ -7376,22 +7343,21 @@ E. Microsoft Purview
 ----
 
 
-- E. Microsoft Purview
+**E. Microsoft Purview**
 
-解析与考点分析
 
-为什么选 E？
 
 1.  核心需求分析：
 
-      - 需要对 Azure OpenAI 模型及系统的数据使用（Data usage）和模型配置与合规变化进行监控与审计（Monitors and
-        audits）。
+      - 需要对 Azure OpenAI 模型及系统的数据使用（Data usage）和模型配置与合规变化进行监控与审计（Monitors and audits）。
       - 限制条件：必须最小化管理工作量（Minimizes administrative effort）。
 
 2.  产品功能与治理定位：
 
       - Microsoft Purview（Purview AI Hub & Audit）： 是微软统一的企业级数据治理与合规审计服务。
       - 开箱即用的 AI 治理能力： Purview 提供了开箱即用的 AI 治理平台，能够自动监控和审计 AI 模型访问了哪些敏感数据（Data  Usage Tracking）、生成式回答的数据使用痕迹以及整体合规策略审计。由于具备内置的自动化扫描和集中式合规仪表板，它能够以最小的管理工作量满足数据使用和模型合规审计要求。
+
+**这里考的是 治理（governance）+ 审计（audit）+ 数据使用（data usage），而不是单纯的资源配置监控。**
 
 为什么不选其他选项？
 
@@ -7415,14 +7381,14 @@ What should you include in the design? To answer, select the appropriate options
 
 **Answer Area**
 
-Restricts access to the grounding data:
+**Restricts access to the grounding data:**
 
 - Azure AI Content Safety  
 - Azure Monitor alerts  
 - Azure Policy compliance rules  
 - Microsoft Purview access policies  
 
-Restricts model fine-tuning:
+**Restricts model fine-tuning:**
 
 - Azure Policy compliance rules  
 - Azure Resource Manager (ARM) resource locks  
@@ -7432,38 +7398,33 @@ Restricts model fine-tuning:
 -------
 
 
-这是该道热点选择题（Hot Area）的正确答案与详细解析：
-
-QUESTION 答案 (Answer Area)
-
-1. Restricts access to the grounding data:
+**1. Restricts access to the grounding data:**
 
   - 正确选项： Microsoft Purview access policies（Microsoft Purview 访问策略）
 
-2. Restricts model fine-tuning:
+**2. Restricts model fine-tuning:**
 
   - 正确选项： Role-based access control (RBAC) in Microsoft Foundry（Microsoft Foundry 中的基于角色的访问控制）
 
-解析与考点分析
 
-第一部分分析：限制对接地数据（Grounding Data）的访问
+**第一部分分析：限制对接地数据（Grounding Data）的访问**
 
-  - 考点： 企业数据资产的数据平面访问控制（Data-plane Access Control）。
+  - 考点： **企业数据资产的数据平面访问控制（Data-plane Access Control**）。
   - 解析：
       - 题目说明 grounding data 来自 Microsoft Fabric。
       - Microsoft Purview access policies（Microsoft Purview 访问策略）： 允许企业集中管理和定义针对 Microsoft Fabric、Azure Data Lake 等数据资产的细粒度访问控制策略。通过 Purview 访问策略，可以确保只有获得授权角色（Assigned roles）的人员或 Agent 才能读取和访问这些接地数据。
 
-第二部分分析：限制模型微调（Model Fine-tuning）权限
+**第二部分分析：限制模型微调（Model Fine-tuning）权限**
 
-  - 考点： AI 平台管理操作权限控制（Control-plane & Data-plane RBAC）。
+  - **考点： AI 平台管理操作权限控制（Control-plane & Data-plane RBAC）**。
   - 解析：
       - 模型微调（Fine-tuning）是 Microsoft Foundry（Azure AI Foundry / Azure OpenAI） 内部的一种高算力消耗且涉及核心资产的操作。
       - Role-based access control (RBAC) in Microsoft Foundry： 微软在 Foundry 平台中提供了专门的 RBAC 角色（如 Azure AI Developer、Cognitive Services OpenAI Contributor 等）。通过为 AI 工程团队（AI engineering team）分配特定的 Foundry RBAC 角色，可以精准限制只有该团队拥有发起和运行模型微调任务的权限，对其他普通用户进行隔离。
 
 干扰项排除说明
 
-  - Azure AI Content Safety： 用于实时检测和过滤违规内容（如暴恐、仇恨言论），不用于数据访问控制或用户权限管理。
-  - Azure Resource Manager (ARM) resource locks： 用于防止 Azure 资源被意外删除（CanNotDelete）或修改（ReadOnly），无法精细化控制“谁可以进行模型微调”这一业务操作。
+  - **Azure AI Content Safety： 用于实时检测和过滤违规内容（如暴恐、仇恨言论），不用于数据访问控制或用户权限管理**。
+  - **Azure Resource Manager (ARM) resource locks： 用于防止 Azure 资源被意外删除（CanNotDelete）或修改（ReadOnly），无法精细化控制“谁可以进行模型微调”这一业务操作**。
   - Microsoft Entra Conditional Access： 侧重于用户登录时的身份认证条件限制（如 MFA 强制、IP 限制、设备合规要求），不直接管理 Foundry 内部的具体 AI 模型微调权限。
 
 
@@ -7472,13 +7433,13 @@ QUESTION 答案 (Answer Area)
 
 Explanation:
 
-Box 1: Microsoft Purview Access Policies Restricts access to the grounding data to only assigned roles
+**Box 1: Microsoft Purview Access Policies Restricts access to the grounding data to only assigned roles**
 
 To secure and manage grounding data from Microsoft Fabric for Azure OpenAI agents and fine-tuned models, you can use Microsoft Purview to enforce role-based access and data protection policies.
 
 Note:
 
-Securing Data with Microsoft Purview & RBAC
+**Securing Data with Microsoft Purview & RBAC**
 
 Access Control Policies: Microsoft Purview enables role-based access controls (RBAC) over Fabric items, ensuring that when an AI agent retrieves data, it only accesses information the user is permitted to see.
 
@@ -7486,28 +7447,14 @@ Sensitivity Labels: Data in Fabric can be labeled (e.g., "Confidential"). Purvie
 
 OneLake Security: Fine-grained security in Fabric (Row-Level Security and Column-Level Security) is automatically honored by agents, guaranteeing that even with access to a dataset, sensitive PII (Personally Identifiable Information) can be restricted.
 
-Incorrect:
-
-* Azure AI Content safety
-
-You cannot use Azure AI Content Safety to restrict access to grounding data based on assigned roles. Azure AI Content Safety is used for content filtering (detecting harmful text/images, jailbreak attempts, and ungroundedness/hallucinations).
-
-* Azure Policy compliance rules.
-
-Azure Policy can be used to enforce compliance rules, such as restricting model deployments to specific regions or ensuring private networking is used.
-
-Box 2: Role-based access control (RBAC) in Microsoft Foundry Restricts model fine-tuning to only the AI engineering team
-
-Azure role-based access control (Azure RBAC) is used to manage and restrict access to AI resources, including the ability to perform fine-tuning operations. Platform administrators can assign specific roles and permissions (e.g., to AI engineers or data scientists) and use Azure Policy to implement fine-grained control over who can initiate fine-tuning jobs or deploy custom models within the Azure AI Foundry environment. This ensures the governance of the fine-tuning process.
-
 
 ### QUESTION 19
 
-A company has a Microsoft Copilot Studio agent that has been in production for three months.
+A company has a Microsoft Copilot Studio agent that **has been in production for three months.**
 
-The agent has received positive feedback from users.
+**The agent has received positive feedback from users.**
 
-You need to identify the number of questions unanswered by the agent and the number of abandoned sessions between the users and the agent.
+**You need to identify the number of questions unanswered by the agent and the number of abandoned sessions between the users and the agent.**
 
 Which Copilot Studio insights should you use? To answer, drag the appropriate insights to the correct requirements. Each insight may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -7515,14 +7462,14 @@ NOTE: Each correct selection is worth one point.
 
 Select and Place:
 
-Insights
+**Insights**
 
 - Conversation outcomes  
 - Generated answer rate and quality  
 - Reactions  
 - Survey results  
 
-Answer Area
+**Answer Area**
 
 - The number of unanswered questions:  
 - The number of abandoned sessions:  
@@ -7700,11 +7647,11 @@ Integrating Application Insights provides a centralized view of agent health, us
 
 ### QUESTION 22 
 
-A company has an AI solution built by using Microsoft Copilot Studio and Power Platform. The solution is used by the company's sales, marketing, and customer service teams.
+A company has an AI solution built by using **Microsoft Copilot Studio and Power Platform**. The solution is used by the company's sales, marketing, and customer service teams.
 
 You are performing a return on AI investment (ROAI) analysis to evaluate the impact of the solution.
 
-You need to identify which measurable business drivers to include in the analysis.
+You need to identify **which measurable business drivers to include in the analysis**.
 
 Which two business drivers should you identify? Each correct answer presents part of the solution.
 
@@ -7774,9 +7721,9 @@ Incorrect:
 
 A company has a Microsoft Foundry agent that summarizes customer feedback and recommends products to customers. The agent references data from multiple knowledge sources.
 
-Users report that the agent response time is slow.
+**Users report that the agent response time is slow**.
 
-Telemetry data shows that the agent frequently reaches its token usage limit.
+**Telemetry data shows that the agent frequently reaches its token usage limit.**
 
 You need to recommend a solution to reduce token usage without degrading the quality of the generated responses.
 
@@ -7849,7 +7796,7 @@ The company has a Copilot Studio agent named Agent1 in development. Agent1 uses 
 - A Dataverse table named CustomerOrders
 - An Azure AI Search index named customer-knowledge
 
-You need to deploy Agent1 to production. The solution must ensure that the agent uses the production grounding data sources, minimizes downtime, and handles credentials and endpoints securely.
+You need to deploy Agent1 to production. **The solution must ensure that the agent uses the production grounding data sources, minimizes downtime, and handles credentials and endpoints securely.**
 
 What should you include in the deployment package solution, and what should you reconfigure after the deployment? 
 
@@ -7877,13 +7824,9 @@ To answer, select the appropriate options in the answer area. NOTE: Each correct
 
 正确答案
 
-**Include in the deployment package solution**
+**Include in the deployment package solution** :  ✅ **Agent1 and references to the data sources**
 
-✅ **Agent1 and references to the data sources**
-
-**Reconfigure after the deployment**
-
-✅ **The environment variables**
+**Reconfigure after the deployment** : ✅ **The environment variables**
 
 为什么其他答案不对？
 
@@ -7962,7 +7905,7 @@ Benefit: Allows the same agent logic to run in any environment by simply changin
 
 A company has a Microsoft Copilot Studio agent that uses generative AI to assist Microsoft Dynamics 365 Customer Service representatives.
 
-The agent currently exhibits a low resolution rate and a high escalation rate.
+**The agent currently exhibits a low resolution rate and a high escalation rate.**
 
 You need to identify the issue.
 
@@ -8029,7 +7972,11 @@ Outcome Reason: Check the outcomeReason in the ConversationTranscript table in D
 
 A company has a Microsoft Foundry generative AI model.
 
-You need to evaluate the model's output to measure the overall quality and coherence of generated responses. The evaluation must use GPT-4o as a judge and return a numeric score for each output. Which type of metric should you use?
+You need to evaluate the model's output to measure the overall quality and coherence of generated responses. 
+
+**The evaluation must use GPT-4o as a judge and return a numeric score for each output.** 
+
+Which type of metric should you use?
 
 A. AI quality (NLP)
 
@@ -8098,30 +8045,32 @@ Numeric Score: Returns an integer from 1 (Poor) to 5 (Excellent).
 Output: Includes a coherence score, a coherence_reason (explanation from the judge), and a pass/fail result based on a threshold (default is 3).
 
 
-QUESTION 27 
+### QUESTION 27 
 
 
 You use Microsoft Copilot Studio analytics to analyze the performance of a deployed Copilot Studio agent. 
 
 You need to identify which performance metrics to use to measure the following:
 
-- The percentage of engaged sessions that are escalated to a live customer service representative 
+- **The percentage of engaged sessions that are escalated to a live customer service representative** 
 
-- The number of agent queries that cause a knowledge source error What should you identify for each requirement?
+- **The number of agent queries that cause a knowledge source error** 
+
+What should you identify for each requirement?
 
 To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
 
 
-The percentage of engaged sessions that are escalated to a representative:
+**The percentage of engaged sessions that are escalated to a representative**:
 
 - Answer quality
 - Customer Satisfaction (CSAT) score
 - Engagement rate
 - Escalation rate
 
-The number of agent queries that cause a knowledge source error:
+**The number of agent queries that cause a knowledge source error:**
 
 - Answer quality
 - Engagement rate
@@ -8149,11 +8098,6 @@ The number of agent queries that cause a knowledge source error:
 
 ---
 
-Box 1: Escalation rate
-
-
-Box 2: Answer quality
-
 
 Box 1: Escalation rate 
 
@@ -8178,30 +8122,14 @@ Key Aspects of Copilot Studio Analytics:
 Answer Quality: Utilizes Large Language Models (LLMs) to categorize chat messages, focusing on grounding, relevance, and accuracy.
 
 
-Explanation/Reference:
 
-Explanation:
-
-To implement an Application Lifecycle Management (ALM) process for Microsoft Foundry agent deployment, you must integrate Foundry Control Plane Observability into your CI/CD pipeline. This ensures the agent is validated against baseline metrics before reaching production and monitored for drift thereafter.
-
-Pre-Deployment: Baseline Evaluation Before a new agent version is deployed, it must pass a rigorous evaluation stage within your ALM pipeline to prevent performance regressions.
-
-Post-Deployment: Drift & Continuous Monitoring Once deployed, the agent’s performance must be continuously validated against the pre-deployment baseline using Observability in the Control Plane.
-
-Continuous Evaluation: Configure the Control Plane to sample live production traffic and run the same evaluators used during development.
-
-Drift Detection: Monitor for changes in Quality Scores and Accuracy Metrics over time. Significant drops indicate "drift," where real-world usage differs from your training/testing assumptions.
-
-Unified Dashboard: Use the Foundry Monitoring Dashboard to visualize trends in latency, token usage, and accuracy side-by-side.
-
-Alerting: Set up Azure Monitor alerts to notify developers immediately if evaluation scores fall below the established baseline.
-
-
-### QUESTION 29 
+### QUESTION 28
 
 You need to recommend a security solution for agents in a Microsoft Power Platform environment.
 
-The agents must use only approved connectors and services. The solution must prevent the agents from accessing sensitive data.
+**The agents must use only approved connectors and services.** 
+
+The solution must prevent the agents from accessing sensitive data.
 
 What should you recommend?
 
@@ -8274,7 +8202,7 @@ Quarantine Agents: If agents violate Microsoft Learn policies, 365 Copilot Studi
 
 A company has an AI business solution that uses Microsoft Copilot Studio agents.
 
-You need to recommend prompt best practices to improve the effectiveness of agent interactions.
+**You need to recommend prompt best practices to improve the effectiveness of agent interactions.**
 
 Which two actions should you include in the recommendation? Each correct answer presents part of the solution.
 
