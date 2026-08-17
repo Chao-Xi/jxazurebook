@@ -77,9 +77,9 @@ The CEO wants a quarterly assessment of all the required metrics for their speci
 
 The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.
 
-### QUESTION 1 
+### QUESTION 1 💩
 
-Which <mark>**two components in the custom AI agent design should the CFO evaluate**</mark> in the quarterly agent analysis? Each correct answer presents part of the solution.
+Which <mark>two components in the **custom AI agent design should the CFO evaluate**</mark> in the quarterly agent analysis? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -167,7 +167,7 @@ Target ROI Formula: Define the benchmark as:
 Estimated Savings = (Projected Deflection × Human Agent Cost) - Estimated Credit Cost.
 
 
-### QUESTION 2 
+### QUESTION 2 💩💩💩💩💩
 
 What should you configure for the custom AI agent?
 
@@ -351,7 +351,7 @@ Sales managers must report on the adoption of the AI agent to key Fabrikam stake
 
 Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
 
-### QUESTION 1
+### QUESTION 1 💩💩💩
 
 **Which framework should you use to meet the AI agent requirements <mark>for the sales cycle enablement</mark>?** To answer, select the appropriate options in the answer area.
 
@@ -376,8 +376,8 @@ Answer Area
 
 --------
 
-* **For Microsoft Copilot Studio best practices:** → **Microsoft Power Platform Well-Architected framework**
-* **For conversational user experiences:** → **Success by Design**
+* <mark>**For Microsoft Copilot Studio best practices:** → **Microsoft Power Platform Well-Architected framework**<mark>
+* <mark>**For conversational user experiences:** → **Success by Design**<mark>
 
 为什么？
 
@@ -411,11 +411,11 @@ Success by Design 更强调 Dynamics 365 / Power Platform 项目的实施方法�
 
 
 
-### QUESTION 2
+### QUESTION 2 💩💩💩
 
 Which framework should you use for the infrastructure migration?
 
-A. Microsoft Cloud Adoption Framework for Azure
+A. Microsoft Cloud Adoption Framework for Azure (CAF)
 
 B. Success by Design
 
@@ -452,7 +452,9 @@ D. Microsoft Power Platform Project Setup Wizard
 **记忆：**
 
 > **Cloud migration → CAF**
+> 
 > **Dynamics 365 implementation → Success by Design**
+> 
 > **Power Platform governance → CoE**
 
 ----
@@ -488,7 +490,7 @@ Reference:
 
 Plan AI-powered business solutions
 
-### QUESTION 1
+### QUESTION 1. 💩💩💩
 
 A company uses Microsoft Dynamics 365 **Sales to manage leads that are stored in a <mark>Microsoft Dataverse table named Lead</mark> and use non-standard terminology and custom columns.**
 
@@ -566,7 +568,7 @@ Description: Define how this term relates to the Dataverse schema. This helps Co
 
 
 
-### QUESTION 2
+### QUESTION 2 💩💩
 
 You are designing two **Microsoft Copilot Studio agents named Agent1 and Agent2**. Each agent must meet the following requirements:
 
@@ -674,13 +676,9 @@ NLU：
 
 Dynamics 365 Contact Center Voice Agent
 
-使用：
+使用： **NLU+**
 
-**NLU+**
-
-原因：
-
-NLU+：
+<mark>原因： NLU+：</mark>
 
 * 更适合 Voice
 * Better intent detection
@@ -735,11 +733,11 @@ Azure OpenAI ❌ Generative AI。
 
 Azure Language in Foundry Tools ❌
 
-Azure AI 服务。 不是 Copilot Studio Standard Language Model。
+> Azure AI 服务。 不是 Copilot Studio Standard Language Model。
 
-CLU ❌
+CLU ❌ 
 
-Azure AI Language 的模型。 不是 Copilot Studio Standard Model。
+> Azure AI Language 的模型。 不是 Copilot Studio Standard Model。
 
 最终答案
 
@@ -752,8 +750,8 @@ Azure AI Language 的模型。 不是 Copilot Studio Standard Model。
 
 | 模型                                  | 适用场景                                                |
 | ----------------------------------- | --------------------------------------------------- |
-| **NLU**                             | 简单 Trigger Phrase、短语匹配、经典 Topic                     |
-| **NLU+**                            | Voice、Dynamics 365 Contact Center、更自然的意图识别          |
+| **NLU**                             | <mark>简单 Trigger Phrase、短语匹配、经典 Topic<mark>                     |
+| **NLU+**                            | <mark>Voice、Dynamics 365 Contact Center、更自然的意图识别<mark>          |
 | **CLU**                             | Azure AI Language（不是 Copilot Studio Standard Model） |
 | **Azure OpenAI**                    | Generative Orchestration / LLM                      |
 | **Azure Language in Foundry Tools** | Azure AI Language 服务                                |
@@ -798,7 +796,7 @@ Comparison of Classic Models
 | CLU | Advanced devs | Integrates with Azure Conversational Language Understanding for external model management. |
 
 
-### QUESTION 3
+### QUESTION 3 💩💩💩
 
 A company uses **Microsoft Dynamics 365 finance and operations apps**.
 
@@ -855,7 +853,7 @@ To add an additional knowledge source for internal business processes to the Mic
 
 A company has an AI business solution.
 
-You need to extend the solution so that **Microsoft 365 Copilot can invoke external logic hosted in Azure services.**
+You need to extend the solution so that **Microsoft 365 Copilot can <mark>invoke external logic hosted in Azure services</mark>.**
 
 What should you include in the solution?
 
@@ -881,23 +879,11 @@ C. custom engine agents
 
 Correct Answer: B Section: (none)
 
-Explanation/Reference: 
-
-Explanation:
 
 
 To enhance an AI business solution with Microsoft 365 Copilot and integrate external logic hosted in Azure, you should use Copilot Studio to create Actions. These actions act as plugins that allow Copilot to invoke external services through Power Platform components.
 
 **Implementation Strategy**
-
-Azure Logic Hosting: Host your external logic in Azure using services like Azure Functions or Azure Logic Apps. These provide the API endpoints that Copilot will ultimately call.
-
-
-*-> Power Platform Connector: Create a Custom Connector in the Power Platform to wrap your Azure service's API. This connector acts as the bridge, translating Copilot's requests into API calls your Azure logic understands.
-
-Copilot Studio Integration: Within Microsoft Copilot Studio, add the custom connector as a Tool or Action. This makes the logic discoverable and invokable by Microsoft 365 Copilot.
-
-Deployment: Deploy the action through the Microsoft 365 admin center under Integrated Apps to make it available to users in Teams or other Microsoft 365 apps.
 
 **Key Components *->**
 
@@ -910,7 +896,7 @@ Authentication: Ensure the connector is configured with appropriate security (e.
 
 
 
-### QUESTION 5
+### QUESTION 5 💩
 
 You need to design a shared prompt library that will be used across multiple business units. The solution must meet the following requirements:
 
@@ -988,7 +974,7 @@ Semantic Versioning: Apply tags (e.g., v1.0.1) to mark significant updates, allo
 
 Auditability: Git maintains a full historical record of who changed a prompt, what was modified, and when it occurred.
 
-### QUESTION 6
+### QUESTION 6 💩
 
 A company has a Microsoft Foundry project that **<mark>uses a single agent and a single prompt to complete a series of tasks</mark>**.
 
@@ -1050,7 +1036,7 @@ Action
 
 1. 提升性能与响应速度 (To improve performance)
 
-  - 对应问题： * Agent 响应时间极慢（Response times are remarkably
+  - 对应问题： Agent 响应时间极慢（Response times are remarkably
     slow），且频繁产生不完整的结果（frequently produces incomplete results）。
   - 诊断分析：
       - 题目说明当前系统使用单个 Agent 和单个 Prompt去完成一连串复杂的任务（"a single agent and a single
@@ -1063,7 +1049,7 @@ Action
 
 2. 提高回答与推理准确性 (To improve accuracy)
 
-  - 对应问题： * Agent 在领域特定推理方面存在困难（struggles with domain-specific reasoning）。
+  - 对应问题： Agent 在领域特定推理方面存在困难（struggles with domain-specific reasoning）。
   - 诊断分析：
       - 通用大语言模型缺乏企业内部特定领域的最新知识、业务逻辑和私有数据。
   - 解决方案： Add a grounding data source
@@ -1098,7 +1084,7 @@ To address slow response times in your Microsoft Foundry agent, upgrading to a l
 To improve the performance of an agent in a Microsoft Foundry project experiencing incomplete results, weak domain reasoning, and high latency, adding a grounding data source is a highly effective strategy. Grounding connects the Large Language Model (LLM) to verified external data, ensuring responses are accurate, contextual, and less likely to hallucinate.
 
 
-### QUESTION 7
+### QUESTION 7 💩
 
 A financial services company uses Microsoft Dynamics 365 Finance.
 
@@ -1166,7 +1152,7 @@ Here is the configuration approach to achieve this:
 This setup, particularly through the Manual Review workspace, allows for an automated, intelligent, and scalable approach to fraud management.
 
 
-### QUESTION 8
+### QUESTION 8 💩
 
 A company plans to deploy a Microsoft Copilot Studio agent that will analyze historical business data to predict customer behavior.
 
@@ -1219,7 +1205,7 @@ Correct Answer: A
 Microsoft Copilot Studio agents can analyze customer behavior by leveraging business data from Azure SQL, files, and APIs by using Azure AI Search as a knowledge source. By importing and vectorizing this structured and unstructured data into an Azure AI Search index, the agent can perform semantic, meaning-based searches to retrieve context-relevant information.
 
 
-### QUESTION 9
+### QUESTION 9 💩
 
 A retail company plans to deploy Microsoft Copilot Studio agents to support:
 
@@ -1252,8 +1238,8 @@ D. Centralize the product catalog data in Microsoft Dataverse and expose the dat
 1.  业务场景与数据一致性需求：
 
       - 公司需要同时为 Dynamics 365 Commerce（电商/零售场景） 和 Power Apps（库存管理方案） 部署 Copilot Studio Agent。
-      - 核心要求是：建立一个**一致的数据源（Consistent source / Single Source of Truth）**供多个 AI
-        系统共享使用。
+      - <mark>核心要求是：建立一个**一致的数据源（Consistent source / Single Source of Truth）**供多个 AI
+        系统共享使用。<mark>
 
 2.  微软架构最佳实践：
 
@@ -1289,14 +1275,14 @@ In the scenario described, centralizing product catalog data in Microsoft Datave
 **Automated Updates:** You can use Power Platform Dataflows to ingest and synchronize catalog data from external sources into Dataverse, keeping the information fresh for all connected AI agents.
 
 
-### QUESTION 10
+### QUESTION 10 💩💩💩
 
 
 A company has a portfolio of AI initiatives at different stages of development.
 
 You need to recommend a structured approach to evaluating the **return on AI investment (ROAI) across all the initiatives.** 
 
-The solution must balance immediate results with long-term values and strategic innovations.
+The solution must balance **immediate results** with **long-term values** and **strategic innovations**.
 
 What should you include in the recommendation?
 
@@ -1369,7 +1355,7 @@ Invests in "future-forward" innovations that may have uncertain immediate return
 Recommendation: Use the Microsoft AI Maturity Model to baseline your current state, then apply the Horizon-Based Framework to structure your ROAI evaluation. This ensures you don't starve long-term innovation in favor of only "low-hanging fruit" efficiency projects.
 
 
-### QUESTION 11
+### QUESTION 11 💩
 
 You need to recommend a Microsoft Power Platform business solution that **consolidates data from multiple internal and external data sources.** 
 
@@ -1440,11 +1426,11 @@ Data Classification & Protection: It features built-in, enterprise-grade securit
 - Analytics: It integrates natively with Power BI for reporting and can synchronize with Microsoft Fabric or Azure Synapse for large-scale data modeling and advanced analytics.
 
 
-### QUESTION 12 
+### QUESTION 12 💩💩
 
 A company plans to deploy an AI-based customer service app that will autonomously manage interactions, escalate complex cases, and learn from historical ticket data.
 
-You need to perform a return on AI investment (ROAI) analysis of the app deployment. The solution must ensure that the analysis is accurate.
+**You need to perform a return on AI investment (ROAI) analysis of the app deployment**. The solution must ensure that the analysis is accurate.
 
 What should you do first?
 
@@ -1620,7 +1606,7 @@ The best testing type to ensure a Microsoft Dynamics 365 solution aligns with de
 While other testing phases (like Functional or Integration) verify that the system works technically, UAT is the final "road test" where the business confirms that the solution actually supports their day-to-day operations.
 
 
-### QUESTION 14
+### QUESTION 14  💩💩💩
 
 A company has a Microsoft 365 tenant in Canada and multiple Microsoft Power Platform environments in Canada and the United States.
 
@@ -1689,13 +1675,15 @@ If this toggle is off, Copilot features requiring the external Azure OpenAI inst
 Security Assurance: Microsoft does not log or retain prompt/response data during this cross-region transit for the purpose of training foundation models.
 
 
-### QUESTION 15
+### QUESTION 15 💩💩💩
 
 A company has a Microsoft Copilot Studio agent for customer support. You are reviewing and validating the following prompts:
 
 - A prompt that has instructions to "help the customer as best you can"
 
-- A prompt that helps retrieve product information from a knowledge base You need to ensure that the agent delivers consistent and accurate responses.
+- A prompt that helps retrieve product information from a knowledge base
+
+- You need to ensure that the agent delivers consistent and accurate responses.
 
 What should you do for each prompt? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.
 
@@ -1740,14 +1728,6 @@ Hot Area:
 
 **Box 1: Rewrite the prompt with clear and task-specific instructions.**
 
-**Box 2: Use responses with only reference sources and limit the response scope.**
-
-Explanation/Reference:
-
-Explanation:
-
-**Box 1: Rewrite the prompt with clear and task-specific instructions.**
-
 
 To ensure a Microsoft Copilot Studio agent delivers high-quality support, you must move beyond vague instructions like "help as best you can." Generative AI requires constraints, structured data, and persona definitions to remain consistent.
 
@@ -1773,11 +1753,11 @@ In the Generative Answers node, ensure "Search only selected sources" is toggled
 Upload specific PDFs, Manuals, or SharePoint folders rather than using the entire public web
 
 
-### QUESTION 16
+### QUESTION 16 💩💩
 
 You are designing a testing solution for Microsoft Copilot Studio agents.
 
-You need to validate prompt engineering best practices to ensure that the agents generate accurate and contextually relevant responses.
+You need to validate prompt engineering best practices to **ensure that the agents generate accurate and contextually relevant responses.**
 
 Which prompt validation techniques and metrics should you include in the solution? To answer, select the appropriate options in the answer area.
 
@@ -1826,6 +1806,7 @@ Answer Area
 🎯 最终
 
 > **Prompt validation → Use prompts that have varied phrasing**
+> 
 > **Metric → Response relevance and accuracy**
 
 
@@ -1856,7 +1837,7 @@ Incorrect:
 By using Response Relevance and Accuracy as your primary metrics, you ensure the agent remains grounded in its knowledge sources while remaining flexible to user intent.
 
 
-### QUESTION 17
+### QUESTION 17 💩
 
 A company has two Microsoft Power Platform environments named Dev1 and Prod1. A Microsoft Copilot Studio agent named Agent1 is built into a solution in the Dev1 environment.
 
@@ -1923,7 +1904,7 @@ Since your agent is already in a solution, ensure all its dependencies are inclu
 To minimize manual labor, use a Managed Solution for the target environment. Managed solutions are easier to update or remove later and prevent accidental direct edits in production.
 
 
-### QUESTION 18
+### QUESTION 18 💩
 
 A company has a Microsoft Power Platform environment that contains Microsoft Dataverse data.
 
@@ -1968,7 +1949,7 @@ Agent 的 grounding 依赖底层 Dataverse 数据。数据存在错误、重复�
 
 To improve the reliability and accuracy of a Microsoft Copilot Studio agent grounded in Dataverse, you must focus on Dataverse data preparation, **which includes cleaning, structuring, and enriching the data to ensure the agent retrieves relevant information**. When Copilot fails to return accurate results, it is often due to poor data quality (garbage in, garbage out), excessive, unstructured data, or misconfigured search indexing.
 
-### QUESTION 19 
+### QUESTION 19 💩💩💩
 
 A company plans to deploy a Microsoft Copilot Studio agent to enhance customer support.
 
@@ -2087,7 +2068,7 @@ This design plan outlines the financial and operational framework for deploying 
 
 
 
-### QUESTION 21 
+### QUESTION 21  💩💩💩
 
 A company has a Microsoft Power Platform solution that contains the following components:
 
@@ -2155,7 +2136,7 @@ Generative AI systems use grounding to reduce "hallucinations" by anchoring thei
 
 
 
-### QUESTION 22 
+### QUESTION 22  💩💩
 
 A company plans to implement an AI business solution for a consumer goods company.
 
