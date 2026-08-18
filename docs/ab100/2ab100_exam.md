@@ -2712,7 +2712,7 @@ D. Azure Monitor
 
 正确答案：
 
-**C. Azure pricing calculator（Azure 价格计算器）**
+- **C. Azure pricing calculator（Azure 价格计算器）**
 
 解析与考点分析
 
@@ -2906,7 +2906,7 @@ Contoso has identified the following analysis, reporting, and troubleshooting re
 - The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.
 
 
-### QUESTION 1 
+### QUESTION 1 💩💩💩
 
 What should you recommend to **assist the CTO with the prebuilt agent selection process?**
 
@@ -2920,11 +2920,8 @@ D. Immersive Home
 
 ----
 
-正确答案与详细解析
 
-正确答案：
-
-  - A. Agent management（Agent 管理）
+**正确答案： A. Agent management（Agent 管理）** ✅
 
 解析与考点分析
 
@@ -2943,7 +2940,7 @@ D. Immersive Home
 
 为什么不选其他选项？
 
-  - B. Copilot Studio： Copilot Studio 主要用于从零构建或扩展自定义 AI Agent（Custom AI Agent），**而不是在 Dynamics 365 内部浏览和选择开箱即用的预置 Agent 模板**（案例中 CTO 的另一项任务“自定义    Agent”才使用 Copilot Studio）。
+  - B. <mark>Copilot Studio： Copilot Studio 主要用于从零构建或扩展自定义 AI Agent（Custom AI Agent），**而不是在 Dynamics 365 内部浏览和选择开箱即用的预置 Agent 模板</mark>**（案例中 CTO 的另一项任务“自定义    Agent”才使用 Copilot Studio）。
   - C. Lifecycle Services (LCS)： 是 Dynamics 365 F&O  旧版的环境运维与应用生命周期管理门户，不用于浏览和体验具体的业务 AI Agent 模板。
   - D. Immersive Home： 属于 Power BI / 应用主页集成展示界面，与 Dynamics 365 的预置 Agent   模板选型和预览管理无关。
 
@@ -2969,16 +2966,7 @@ Incorrect:
 
 [Not D] Immersive Home: Typically refers to a broader Microsoft 365 or entry-level experience, not the specialized ERP agent management portal.
 
-Scenario: 
-
-**Prebuilt AI Agent**
-
-The CTO has NOT yet selected which prebuilt AI agent to use in Dynamics 365 Supply Chain Management. The CTO wants to view available agent templates to identify which agent will add the most business value.
-
-The CTO wants to track user feedback on the quality of the AI agent responses during user interactions with the agents. Consistently poor feedback will trigger an escalated reengineering discussion.
-
-
-### QUESTION 2 
+### QUESTION 2  💩💩💩
 
 What should you include in the custom AI agent design **to meet the R&D product specifications and the compliance information requirements?** To answer, select the appropriate options in the answer area.
 
@@ -3030,7 +3018,7 @@ Answer Area
 ## Testlet 2
 
 
-**Background **
+**Background**
 
 Fabrikam, Inc., is a global consumer goods company that is undergoing a digital transformation initiative to migrate its entire infrastructure to the Microsoft cloud. As a key element of this cloud migration, the company will implement Microsoft Dynamics 365 Sales, moving away from the current on-premises proprietary technologies used by its business-to-business (B2B) sales team.
 
@@ -3054,7 +3042,7 @@ Fabrikam plans to migrate from its current on-premises infrastructure to a compl
 
 All the data from the different systems will be consolidated into a single data source - a common data model that will use a Microsoft Dataverse environment as a single source of truth (SSOT) for the sales team.
 
-**Sales Cycle Enablement**
+**<mark>Sales Cycle Enablement</mark>**
 
 - To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle:
 
@@ -3092,13 +3080,13 @@ Any created AI agents must have their return on investment (ROI) calculated to e
 
 - The return on investment (ROI) of switching from the current process to the future process is required for stakeholder sign off.
 
-- The sales team must use Dynamics 365 Sales to correspond with prospects more quickly and efficiently than currently.
+- <mark>The sales team must use Dynamics 365 Sales to correspond with prospects more quickly and efficiently than currently.</mark>
 
 - Sales managers must report on the adoption of the AI agent to key Fabrikam stakeholders on a monthly basis.
 
 - Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
 
-### QUESTION 1 
+### QUESTION 1 💩💩💩
 
 
 Which template should you use for the AI agent to **meet the requirements for the sales executives?**
@@ -3146,28 +3134,19 @@ Have the sales executives use Dynamics 365 Sales to track interactions for open 
 
 *-> Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.
 
-To enable handsfree headset interaction with an AI agent for internal policies and customer data in Dynamics 365 Sales, you should use Microsoft Copilot Studio to create a custom agent template.
+**To enable handsfree headset interaction with an AI agent for internal policies and customer data in Dynamics 365 Sales,** you should use Microsoft Copilot Studio to create a custom agent template.
 
 Here is the breakdown of the recommended approach and templates:
 
-Recommended Template Voice-enabled agent template (in Copilot Studio): This template provides the foundational, pre-configured setup for Interactive Voice Response (IVR) capabilities, allowing for natural language voice inputs and text-to-speech output.
+**Recommended Template Voice-enabled agent template (in Copilot Studio)**: This template provides the foundational, pre-configured setup for Interactive Voice Response (IVR) capabilities, allowing for natural language voice inputs and text-to-speech output.
 
 Internal Data Knowledge Source: Within this agent, you will connect to Dataverse (for customer data) and configure Knowledge Sources (for internal policy documents).
 
-Note:
-
-To implement a hands-free AI agent for Dynamics 365 Sales using the Voice agent template in Microsoft Copilot Studio, follow these steps to enable voice-first interactions for internal policies and customer data.
-
-1. Create a Voice-Enabled Agent
-
-2. Configure Hands-Free Interaction
-
-3. Connect to Internal Dat
 
 
-### QUESTION 2 
+### QUESTION 2  💩💩💩
 
-Which tool should you use for the prospect communication requirements in Dynamics 365 Sales?
+Which tool should you use for the **prospect communication requirements in Dynamics 365 Sales**?
 
 A. Azure AI Search
 
@@ -3186,6 +3165,8 @@ D. Deep Research in Microsoft Foundry Agent Service
 题目要求的是：
 
 > **Dynamics 365 Sales 中与 prospects 更快速、更高效地进行 correspondence**
+>
+> The sales team must use Dynamics 365 Sales to correspond with prospects more quickly and efficiently than currently.
 
 **Copilot email assist** 专门帮助销售人员生成和处理销售邮件，例如：
 
@@ -3211,24 +3192,6 @@ D. Deep Research in Microsoft Foundry Agent Service
 Correct Answer: B Section: (none)
 
 
-Explanation:
-
-Scenario:
-
-Requirements 
-
-*-> The sales team must use Dynamics 365 Sales to correspond with prospects more quickly and efficiently than currently.
-
-Sales Cycle Enablement 
-
-To achieve the company's objectives, Fabrikam intends to implement the following strategies to enhance the sales cycle:
-
-Ensure that sales managers can access unanswered correspondence from prospects and intervene as appropriate.
-
-Have the sales executives use Dynamics 365 Sales to track interactions for open opportunities and send follow-up communications to prospects
-
----
-
 In Dynamics 365 Sales, the Copilot email assist feature acts as a powerful accelerator for handling prospects by automating the most time-consuming parts of communication.
 
 Here is how it helps you move faster and more efficiently:
@@ -3242,7 +3205,7 @@ Summarization: When dealing with long email chains, Copilot provides a concise s
 Seamless Integration: These tools are available directly within the Dynamics 365 Email Rich Text Editor and across Microsoft 365 apps like Outlook and Teams, keeping you in your flow of work.
 
 
-### QUESTION 3 
+### QUESTION 3  💩💩
 
 **Which components should you use to meet the sales cycle enablement requirements?** To answer, select the appropriate options in the answer area.
 
@@ -3367,17 +3330,17 @@ Action: Edit the Fallback topic to include a Go to topic node that redirects to 
 ## Question Set 3 -  Design AI-powered business solutions
 
 
-### QUESTION 1 
+### QUESTION 1 💩💩💩
 
 You need to design a Microsoft 365 Copilot solution to optimize employee productivity. The solution must meet the following requirements:
 
-Ensure that the employees can query content stored in a subset of Microsoft SharePoint Online sites and in Teams by using natural language-based prompt actions.
+**Ensure that the employees can query content stored in a subset of Microsoft SharePoint Online sites and in Teams by using natural language-based prompt actions.**
 
 Ensure that employees receive contextually relevant responses in Microsoft 365 Copilot.
 
 What should you include in the design?
 
-A. Build a Microsoft Power Automate desktop flow to read the SharePoint content and post the responses to Teams.
+A. Build a **Microsoft Power Automate desktop flow** to read the SharePoint content and post the responses to Teams.
 
 B. Modify SharePoint settings.
 
@@ -3449,7 +3412,7 @@ To enable Microsoft 365 Copilot to query a specific subset of SharePoint Online 
 Direct Referencing: Users can improve response relevance by explicitly naming files, folders, or Teams channels in their natural language prompts (e.g., "Summarize notes from the 'Product Launch' channel").
 
 
-### QUESTION 2 
+### QUESTION 2  💩💩💩
 
 A company uses Microsoft Dynamics 365 Finance to manage accounts payable.
 
@@ -3470,13 +3433,9 @@ D. From the Power Platform admin center, assign the Finance and Operations AI se
 -----
 
 
-正确答案与详细解析
+正确答案： ✅
 
-正确答案：
-
-  - D. From the Power Platform admin center, assign the Finance and Operations AI security role to users.（在 Power Platform 管理中心，将 Finance and Operations AI 安全角色分配给用户。）
-
-解析与考点分析
+D. From the Power Platform admin center, assign the Finance and Operations AI security role to users.（在 Power Platform 管理中心，将 Finance and Operations AI 安全角色分配给用户。）
 
 为什么选 D？
 
@@ -3515,11 +3474,11 @@ To configure the prebuilt Copilot for Accounts Payable in Microsoft Dynamics 365
 
 
 
-### QUESTION 3 
+### QUESTION 3  💩💩💩
 
 A company plans to deploy a Microsoft Dynamics 365 Contact Center agent.
 
-You need to ensure that the agent can transfer the conversation to a live customer service representative.
+You need to ensure that the **agent can transfer the conversation to a live customer service representative**.
 
 Which two components should you include in the solution? Each correct answer presents part of the solution.
 
@@ -3552,40 +3511,7 @@ E. Customer engagement hub
 
 
 
-Correct Answer: BE
-
-
-Explanation/Reference:
-
-To implement a Microsoft Dynamics 365 Contact Center solution that enables seamless handoff between a virtual agent and a live representative, you must integrate Microsoft Copilot Studio with the Customer Engagement Hub (typically Dynamics 365 Customer Service or Omnichannel).
-
-
-Core Components & Setup
-
-
-1. Copilot Studio Configuration:
-
-Connect to Engagement Hub: In Copilot Studio, navigate to Settings > Customer Engagement Hub and select Dynamics 365 Customer Service.
-
-Enable Agent Transfer: Under the Channels tab, select the Dynamics 365 Customer Service tile and click Connect. This establishes the link between the bot and your live agent environment.
-
-Configure Handoff Topic: Modify the Escalate system topic or create a custom topic. Use the Transfer conversation node to trigger the move to a live representative. You can include a private message to the agent to provide context.
-
-
-2. Customer Engagement Hub (Dynamics 365) Setup:
-
-Workstream Integration: In the Customer Service Admin Center, create or open a workstream (e.g., for Live Chat or Voice). Add your Copilot Studio agent to this workstream to ensure it is the first point of contact.
-
-Routing Rules: Define rules to route the escalated conversation to the correct live agent queue based on context variables passed from the bot.
-
-3. Handoff Experience:
-
-Context Sharing: When a transfer occurs, the live representative receives the full conversation transcript and any variables collected by the bot, allowing them to resume the interaction without asking the customer to repeat information.
-
-Agent Workspace: Live agents accept the transfer through the Customer Service Workspace or Omnichannel for Customer Service.
-
-
-### QUESTION 4
+### QUESTION 4. 💩💩💩
 
 A company uses Microsoft Dynamics 365 Supply Chain Management.
 
@@ -3737,7 +3663,7 @@ QUESTION 答案 (Answer Area)
 
 
 
-**Box 1: From Copilot Studio, add SharePoint as a knowledge source **
+**Box 1: From Copilot Studio, add SharePoint as a knowledge source**
 
 
 Enable the agent to answer user questions about company policies.
