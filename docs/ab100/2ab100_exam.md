@@ -2221,7 +2221,7 @@ A company has an AI agent that automates the review of customer feedback stored 
 
 You plan to generate monthly reports from the agent's output to provide insights into customer sentiment and guide product development and marketing.
 
-**You need to ensure that the data ingested by the agent is clean and suitable for the intended use.**
+**You need to ensure that the <mark>data ingested by the agent is clean and suitable<mark> for the intended use.**
 
 What should you do to prepare the data?
 
@@ -2290,7 +2290,7 @@ These often point toward:
 **Answer: B**.
 
 
-### QUESTION 24
+### QUESTION 24 💩💩💩
 
 A company is designing a Microsoft Power Platform solution to reduce the manual steps of a business process by deploying an existing AI model.
 
@@ -2342,7 +2342,7 @@ Explanation:
 
 **The Business Value Toolkit is the correct resource to use for calculating Return on AI Investment (ROAI) for a Microsoft Power Platform solution.**
 
-Calculating ROAI with the Business Value Toolkit The Business Value Toolkit helps organizations move beyond simple automation by providing structured templates and analytics to justify AI investments.
+**Calculating ROAI with the Business Value Toolkit The Business Value Toolkit helps organizations move beyond simple automation by providing structured templates and analytics to justify AI investments.**
 
 Metadata Identification: It captures environment-specific data, such as the number of automated flows, the type of AI models used (e.g., AI Builder), and the business units involved.
 
@@ -2361,7 +2361,7 @@ Incorrect:
 [Not D] While the Cloud Adoption Framework (CAF) for Azure provides broad strategic guidance for AI adoption, the Business Value Toolkit is specifically designed to quantify the impact of low-code and AI solutions using solution metadata and telemetry.
 
 
-### QUESTION 25
+### QUESTION 25  💩💩💩
 
 A company has a Microsoft Power Platform environment.
 
@@ -2375,9 +2375,6 @@ What should you use to build each agent? To answer, select the appropriate optio
 
 NOTE: Each correct selection is worth one point.
 
-Hot Area
-
-Answer Area
 
 **Agent1:**
 
@@ -2411,17 +2408,17 @@ QUESTION 答案 (Answer Area)
 
 2.  Agent2 (Microsoft Copilot Studio)：
 
-      - 关键特征： 接入 Microsoft Dataverse 数据，且需要嵌入到 Power Apps 画布应用（Canvas App）中。
+      - <mark>**关键特征： 接入 Microsoft Dataverse 数据，且需要嵌入到 Power Apps 画布应用（Canvas App）中**</mark>。
       - 平台选择： Microsoft Copilot Studio 是 Power Platform 生态下的低代码 Agent 构建工具，原生支持 Dataverse 知识库与 Canvas App 内置 Copilot 控件的嵌入。
 
 
-### QUESTION 26
+### QUESTION 26 💩💩💩
 
 A company has an Azure environment that supports multiple business units.
 
 The company plans to implement an AI solution that will perform sentiment analysis on customer product reviews.
 
-You need to evaluate the potential cost of the solution to support return on AI investment (ROAI) analysis.
+You need to evaluate the **potential cost** of the solution to support return on AI investment (ROAI) analysis.
 
 What should you use?
 
@@ -2462,7 +2459,7 @@ You need to recommend a Microsoft Power Platform solution for customer support.
 
 The solution must include AI capabilities in Microsoft Power Automate and must meet the following requirements:
 
-- Use a centralized workspace for AI models.
+- **Use a centralized workspace for AI models**.
 
 - Generate short overviews from large amounts of unstructured text, such as case notes or transcripts, without requiring additional training or coding.
 
@@ -2495,7 +2492,7 @@ Answer Area
 
 | Requirement                     | Correct Answer                      | 原因                                                                                         |
 | ------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
-| **Use a centralized workspace** | ✅ **A Microsoft Foundry hub**       | Microsoft Foundry Hub 提供集中管理 AI 模型、项目和资源的工作区。                                              |
+| **Use a centralized workspace** | ✅ **A Microsoft Foundry hub**       | **Microsoft Foundry Hub 提供集中管理 AI 模型、项目和资源的工作区**。                                              |
 | **Generate short overviews**    | ✅ **An AI Builder prebuilt prompt** | AI Builder 的 **Prebuilt Prompt（如 Summarize Text）** 可直接对大量非结构化文本（案例记录、聊天记录等）生成摘要，无需训练或编写代码。 |
 
 为什么其他选项不对？
@@ -2556,7 +2553,7 @@ Low Code: Can be added to a Power Automate flow as a single "action" step.
 Customizable Length: Allows you to specify if you want a brief summary or a more detailed overview.
 
 
-### QUESTION 28 
+### QUESTION 28  💩💩💩
 
 
 A company uses Microsoft Dynamics 365 Finance for accounts payable and customer debt recovery.
@@ -2574,18 +2571,19 @@ NOTE: Each correct selection is worth one point.
 
 Answer Area
 
-* **Help identify vendor overdue invoices and outstanding balances:**
-  * Agent management
-  * AI Summaries with Copilot
-  * The Account Reconciliation agent
-  * The Supplier Communication agent
+**Help identify vendor overdue invoices and outstanding balances:**
 
-* **Reduce how long it takes to review overdue invoices and payment history:**
-  * Analyze demand plans with Copilot
-  * Collections coordinator summary
-  * The Account Reconciliation agent
-  * The Supplier Communication agent
+* Agent management
+* AI Summaries with Copilot
+* The Account Reconciliation agent
+* The Supplier Communication agent
 
+**Reduce how long it takes to review overdue invoices and payment history:**
+
+* Analyze demand plans with Copilot
+* Collections coordinator summary
+* The Account Reconciliation agent
+* The Supplier Communication agent
 
 -----
 
@@ -2605,11 +2603,11 @@ Answer Area
 
 1. Help identify vendor overdue invoices and outstanding balances:
 
-  - 正确选项： AI Summaries with Copilot
+- 正确选项： AI Summaries with Copilot
 
 2. Reduce how long it takes to review overdue invoices and payment history:
 
-  - 正确选项： Collections coordinator summary
+- 正确选项： Collections coordinator summary
 
 核心考点速记（备考复习）
 
@@ -2714,7 +2712,7 @@ D. Azure Monitor
 
 正确答案：
 
-- C. Azure pricing calculator（Azure 价格计算器）
+**C. Azure pricing calculator（Azure 价格计算器）**
 
 解析与考点分析
 
