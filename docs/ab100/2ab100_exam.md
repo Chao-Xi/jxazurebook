@@ -4175,13 +4175,15 @@ On the Overview tab, find the Knowledge section and set Allow the AI to use its 
 Publish the changes to make this capability available in the D365 F&O sidecar.
 
 
-### QUESTION 11
+### QUESTION 11 💩💩
 
-You need to design a multi-agent solution that will include a custom agent. The solution must meet the following requirements:
+You need to **design a multi-agent solution that will include a custom agent**. 
 
-Define the rules and constraints that the agent must follow.
+The solution must meet the following requirements:
 
-Automate a backend process that involves data movement between services and runs independently of the agent's reasoning steps.
+**Define the rules and constraints that the agent must follow.**
+
+**Automate a backend process that involves data movement between services and runs independently of the agent's reasoning steps.**
 
 What should you include in the design for each requirement? To answer, select the appropriate options in the answer area.
 
@@ -4223,16 +4225,20 @@ Answer Area
 **第一部分分析：定义 Agent 必须遵循的规则和约束**
 
 * **考点：** Copilot Studio Agent 的对话控制与边界约束机制。
-* **解析：**
-  * 在 Microsoft Copilot Studio 中，**Conversation topics（对话主题）** 是定义特定业务场景下对话逻辑、条件分支节点、变量规则以及确定性限制（Guardrails & Constraints）的核心组件。即使在使用生成式 AI 编排（Generative Orchestration）时，通过配置 Topic（主题），开发者依然能够明确限定 Agent 在处理特定业务时的触发规则和行为边界，防止 Agent 偏离预定业务规则。
+
+**解析：**
+
+* 在 Microsoft Copilot Studio 中，**Conversation topics（对话主题）** 是定义特定业务场景下对话逻辑、条件分支节点、变量规则以及确定性限制（Guardrails & Constraints）的核心组件。即使在使用生成式 AI 编排（Generative Orchestration）时，通过配置 Topic（主题），开发者依然能够明确限定 Agent 在处理特定业务时的触发规则和行为边界，防止 Agent 偏离预定业务规则。
 
 **第二部分分析：自动化跨服务数据迁移且独立于 Agent 推理步骤的后台流程**
 
 * **考点：** 后台集成与流程自动化工具。
-* **解析：**
-  * **Microsoft Power Automate cloud flow（云端流）：** 专为跨系统/服务（如 Dataverse、SharePoint、SQL、第三方 API）的数据迁移、异步处理和后台工作流自动化而设计。
-  * 题目明确要求“独立于 Agent 的推理步骤（runs independently of the agent's reasoning steps）”，这意味着该流程属于确定性的后台数据同步或批处理，不需要大语言模型（LLM）参与思考，因此使用 **Power Automate 云端流** 是标准且高效的解决方案。
-  * **Power Pages** 是面向外部用户的网站构建工具，与后台流程自动化无关。
+
+**解析：**
+
+* **Microsoft Power Automate cloud flow（云端流）：** 专为跨系统/服务（如 Dataverse、SharePoint、SQL、第三方 API）的数据迁移、异步处理和后台工作流自动化而设计。
+* 题目明确要求“独立于 Agent 的推理步骤（runs independently of the agent's reasoning steps）”，这意味着该流程属于确定性的后台数据同步或批处理，不需要大语言模型（LLM）参与思考，因此使用 **Power Automate 云端流** 是标准且高效的解决方案。
+* **Power Pages** 是面向外部用户的网站构建工具，与后台流程自动化无关。
 
 
 Box 1: Conversation topics
@@ -4264,7 +4270,7 @@ In a Microsoft multi-agent project, you can use Power Automate cloud flows to ha
 By offloading structured, rule-based tasks to a cloud flow, you ensure that high-volume data operations or multi-service integrations remain deterministic and reliable, while your custom agents focus on dynamic, probabilistic decision-making.
 
 
-### QUESTION 12
+### QUESTION 12 💩💩
 
 A company uses Microsoft 365 and Dynamics 365.
 
@@ -4330,7 +4336,9 @@ Incorrect:
 
 Note:
 
-In the described scenario, Microsoft 365 Copilot for Sales acts as the primary bridge between your productivity tools and CRM data. It integrates directly into Microsoft Outlook and Teams to surface realtime insights from Dynamics 365 Sales or Salesforce.
+In the described scenario, Microsoft 365 Copilot for Sales acts as the primary bridge between your productivity tools and CRM data. 
+
+**It integrates directly into Microsoft Outlook and Teams to surface realtime insights from Dynamics 365 Sales or Salesforce.**
 
 Key capabilities for this specific workflow include:
 
@@ -4392,17 +4400,16 @@ B. No
 Correct Answer: B
 
 
-Explanation/Reference:
-
 Explanation:
 
 Correct:
 
-* You recommend Microsoft 365 Copilot for Sales.
+* **You recommend Microsoft 365 Copilot for Sales.**. ✅
 
 Incorrect:
 
-* You recommend a classic Microsoft Dataverse workflow. * You recommend a Microsoft 365 Copilot agent template.
+* **You recommend a classic Microsoft Dataverse workflow**.   ❌
+* **You recommend a Microsoft 365 Copilot agent template.**. ❌
 
 Note:
 
@@ -4432,7 +4439,7 @@ You need to recommend a solution to automatically summarize email threads, gener
 
 in Microsoft Outlook, and provide meeting preparation summaries that include relevant customer relationship management (CRM) data.
 
-Solution: You recommend a Microsoft 365 Copilot agent template.
+**Solution: You recommend a Microsoft 365 Copilot agent template.**
 
 Does this meet the goal?
 
@@ -4462,45 +4469,15 @@ B. No
 3.  正确方案： 微软针对此场景提供的开箱即用的官方产品是 Microsoft 365 Copilot for Sales（即本系列连续题的第一题方案）。
 
 
------
-Correct Answer: B
-
-Explanation:
-
-Correct:
-
-* You recommend Microsoft 365 Copilot for Sales.
-
-Incorrect:
-
-* You recommend a classic Microsoft Dataverse workflow. * You recommend a Microsoft 365 Copilot agent template.
-
-Note:
-
-In the described scenario, Microsoft 365 Copilot for Sales acts as the primary bridge between your productivity tools and CRM data. It integrates directly into Microsoft Outlook and Teams to surface realtime insights from Dynamics 365 Sales or Salesforce.
-
-Key capabilities for this specific workflow include:
-
-Automated Email Summarization: Copilot scans long email threads in Outlook to extract key points, highlights, and BANT (Budget, Authority, Need, Timeline) data. If the sender is an external contact recognized in your CRM, the summary is automatically enriched with relevant account and opportunity data.
-
-Suggested Email Replies: When replying to customer emails, Copilot generates drafts based on the context of the conversation and existing CRM data. You can use predefined response categories (e.g., "Reply to an inquiry," "Offer a proposal") or custom prompts to include specific opportunity details in the draft.
-
-Meeting Preparation Summaries: Before a scheduled meeting, Copilot for Sales provides a "preparation card" in Teams or Outlook. This summary includes:
-
-- CRM Data: Matched opportunity and account attributes.
-
-- Contextual History: Summaries of past email exchanges and the last three seller notes.
-
-- Strategic Insights: Key risks, follow-up actions, and discussion points from previous interactions.
 
 
-### QUESTION 15 
+### QUESTION 15 💩💩💩 
 
 You need to design an application lifecycle management (ALM) process for a Microsoft Power Platform environment that contains a solution named Solution1.
 
 Solution1 must include a custom connector for Copilot in Microsoft Dynamics 365 Customer Service. Solution1 must meet the following requirements:
 
-Ensure that the custom connector can be deployed consistently across environments as part of the ALM process.
+**Ensure that the custom connector can be deployed consistently across environments as part of the ALM process.**
 
 Allow the custom connector to be edited only in the development environment.
 
@@ -4516,11 +4493,9 @@ D. Add the custom connector to Solution1.
 
 ----
 
-正确答案与详细解析
-
 正确答案：
 
-  - D. Add the custom connector to Solution1.（将自定义连接器添加到 Solution1 中。）
+**D. Add the custom connector to Solution1.（将自定义连接器添加到 Solution1 中。）✅**
 
 解析与考点分析
 
@@ -4557,13 +4532,15 @@ Adding the custom connector as a component of a solution is the standard method 
 
 
 
-### QUESTION 16 
+### QUESTION 16   💩💩 
 
 A company uses a Microsoft Copilot Studio agent to automate tasks in a web app.
 
 During testing, you discover that the automation sometimes fails because of frequent changes to the app's user interface.
 
-You need to recommend a solution to ensure that the agent successfully automates the tasks. The solution must minimize changes to the agent.
+You need to recommend a solution to ensure that the agent successfully automates the tasks. 
+
+The solution must minimize changes to the agent.
 
 What should you include in the recommendation?
 
@@ -4629,7 +4606,7 @@ Natural Language Instructions: You describe the task in plain English (e.g., "Lo
 Self-Healing Properties: Because the agent makes decisions at each step based on the current visual state, it effectively "self-heals" during execution, overcoming obstacles that would typically crash a legacy bot.
 
 
-### QUESTION 17 
+### QUESTION 17 💩💩💩 
 
 A company processes invoices stored across multiple systems in multiple formats. You need to implement an AI solution to automate the invoice processing. The solution must meet the following requirements:
 
@@ -4689,7 +4666,7 @@ Orchestration Layer (Copilot Studio): Hosts "Agent Flows" (advanced workflows) t
 Interaction Layer (Microsoft Teams): Users upload invoices or receive approval cards directly in a chat window, eliminating the need to switch between different accounting apps.
 
 
-### QUESTION 18 
+### QUESTION 18  💩💩
 
 You need to design a Microsoft Copilot Studio agent for customer support.
 
@@ -4717,7 +4694,7 @@ D. Add the warranty data to the Fallback topic.
 * **securely retrieve data**
 * **minimize development effort**
 
-**Custom Connector** 可以把现有 REST API 封装成 Copilot Studio 可调用的 action/tool，无需自己开发大量 API integration code。
+<mark>**Custom Connector** 可以把现有 REST API 封装成 Copilot Studio 可调用的 action/tool，无需自己开发大量 API integration code</mark>
 
 其他选项：
 
@@ -4755,15 +4732,17 @@ You can build this within Power Apps or Power Automate under the Data or Custom 
 Once the connector is created and published, you can add it directly to your agent.
 
 
-### QUESTION 19
+### QUESTION 19 💩
 
-A company has an ecommerce support portal that uses Microsoft Dataverse.
+A company has an ecommerce support portal that **uses Microsoft Dataverse**.
 
 You are designing a Microsoft Copilot Studio agent for the portal. The agent must meet the following requirements:
 
-- Respond with a default help message when the user input is unclear.
+- **Respond with a default help message when the user input is unclear**.
 
-- Initiate external processes, such as retrieving the order status, when users make specific requests. Generative orchestration will be enabled for the solution.
+- Initiate external processes, such as retrieving the order status, when users make specific requests.
+
+- Generative orchestration will be enabled for the solution.
 
 You need to recommend a feature for each requirement.
 
@@ -4795,6 +4774,7 @@ Answer Area
 🧠 记忆
 
 > **Rules / constraints → Topics**
+> 
 > **Backend automation → Power Automate cloud flow**
 
 ---
@@ -4827,15 +4807,19 @@ QUESTION 答案 (Answer Area)
 
 
 
-### QUESTION 20 
+### QUESTION 20 💩💩💩💩💩
 
-A company uses Microsoft Dynamics 365 to manage service operations. Dispatchers coordinate service requests, and technicians perform scheduled on-site work.
+A company uses Microsoft Dynamics 365 to manage service operations. 
 
-You need to design a solution that will use Microsoft Copilot to improve the efficiency of the service operations. The solution must meet the following requirements:
+Dispatchers coordinate service requests, and technicians perform scheduled on-site work.
 
-Provide AI-driven assistance to help staff organize and resolve work orders.
+You need to design a solution that will use Microsoft Copilot to improve the efficiency of the service operations. 
 
-Deliver contextual AI support to frontline workers as they prepare for and complete customer appointments.
+The solution must meet the following requirements:
+
+- **Provide AI-driven assistance to help staff organize and resolve work orders.**
+
+- **Deliver contextual AI support to frontline workers as they prepare for and complete customer appointments**.
 
 Which two components should you include in the design? Each correct answer presents part of the solution.
 
@@ -4946,14 +4930,14 @@ Runtime Discovery: When the agent starts a session, it queries the MCP server fo
 Zero-Update Scaling: You can add new capabilities to the MCP server (e.g., a new database query or API connection), and the agent will automatically "see" and use them in the next turn without any changes to the agent itself.
 
 
-### QUESTION 22
+### QUESTION 22 💩💩💩
 
 
 A company has a Microsoft Dynamics 365 Sales environment that has Microsoft Copilot enabled.
 
 You need to customize Copilot by tailoring how opportunity summaries are generated or how they are presented to users.
 
-Solution: You add fields to the opportunity summary.
+**Solution: You add fields to the opportunity summary.**
 
 Does this meet the goal?
 
@@ -5028,7 +5012,7 @@ A company has a Microsoft Dynamics 365 Sales environment that has Microsoft Copi
 
 You need to customize Copilot by tailoring how opportunity summaries are generated or how they are presented to users.
 
-Solution: You build Microsoft Power Automate flows to trigger customized Copilot summaries.
+**Solution: You build Microsoft Power Automate flows to trigger customized Copilot summaries.**
 
 Does this meet the goal?
 
@@ -5114,7 +5098,7 @@ A company has a Microsoft Dynamics 365 Sales environment that has Microsoft Copi
 
 You need to customize Copilot by tailoring how opportunity summaries are generated or how they are presented to users.
 
-Solution: You configure AI Builder lead scoring models to influence opportunity summaries.
+**Solution: You configure AI Builder lead scoring models to influence opportunity summaries.**
 
 Does this meet the goal?
 
@@ -5323,7 +5307,7 @@ Contoso has identified the following analysis, reporting, and troubleshooting re
 - The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.
 
 
-### QUESTION 1 
+### QUESTION 1  💩💩💩💩💩
 
 Which two components for the custom AI agent should you include in the application lifecycle management (AIM) process? Each correct answer presents part of the solution.
 
