@@ -3584,7 +3584,7 @@ Helps planners use AI to anticipate future product needs more accurately
 The Copilot Generative insights for Demand planning feature in Microsoft Dynamics 365 Supply Chain Management enables demand planners to move from reactive, manual forecasting to proactive, AI-driven demand anticipation. By analyzing, clustering, and interpreting vast datasets, Copilot helps identify patterns such as seasonality and signal correlations to improve accuracy.
 
 
-### QUESTION 5
+### QUESTION 5  💩💩💩
 
 A company has a Microsoft 365 E5 subscription and uses Microsoft Copilot Studio.
 
@@ -3697,11 +3697,12 @@ Incorrect:
 Upgrade to SharePoint Premium Configuring a Microsoft Copilot Studio agent to filter a SharePoint knowledge source using KQL (Keyword Query Language) for a Department column typically requires advanced filtering capabilities, but "SharePoint Premium" is not a strict prerequisite for the KQL configuration itself. Instead, the primary requirement is a Microsoft 365 Copilot or Copilot Studio license to access these advanced features.
 
 
-### QUESTION 6
+### QUESTION 6 💩💩
 
-You need to design a Microsoft Copilot Studio agent that meets the following requirements:
+You need to design a **Microsoft Copilot Studio agent** that meets the following requirements:
 
-Supports interactive speech responses Optimizes decision-making and the accuracy of responses
+- Supports interactive speech responses
+- **Optimizes decision-making and the accuracy of responses**
 
 What should you include in the design for each requirement? To answer, drag the appropriate options to the correct requirements. Each option may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -3717,7 +3718,7 @@ What should you include in the design for each requirement? To answer, drag the 
 **Answer Area**
 
 - Supports interactive speech responses:
-- **=**:
+- **Optimizes decision-making and response accuracy**:
 
 
 -----
@@ -3730,6 +3731,7 @@ What should you include in the design for each requirement? To answer, drag the 
 🧠 **记忆：**
 
 > **Voice → Copilot Studio voice features**
+> 
 > **Reasoning / accuracy → Deep reasoning model**
 
 ----
@@ -3744,29 +3746,23 @@ Supports interactive speech responses
 
 这里是在设计 **Microsoft Copilot Studio agent**。
 
-题目问的是：
-
 **在 Copilot Studio 中应该加入什么功能？**
 
 新版 Copilot Studio 已经内建 **Voice** 能力（Voice-enabled agent）。
 
 Microsoft 官方推荐：
 
-> **Copilot Studio voice features**
-
-它封装了 Azure AI Speech 的能力，让 Agent 可以直接进行语音对话。
+> **Copilot Studio voice features** 它封装了 Azure AI Speech 的能力，让 Agent 可以直接进行语音对话。
 
 因此考试通常会优先选：
 
 ✅ **Copilot Studio voice features**
 
-而不是 Azure AI Speech。
+**而不是 Azure AI Speech。**
 
 如果题目问：
 
-> 哪个 Azure 服务提供 Speech-to-Text？
-
-才会选 Azure AI Speech。
+> 哪个 Azure 服务提供 Speech-to-Text？ 才会选 Azure AI Speech。
 
 ---
 
@@ -3839,8 +3835,6 @@ SSML ❌ 只是： 控制
 | **Supports interactive speech responses**           | ✅ **Copilot Studio voice features** |
 | **Optimizes decision-making and response accuracy** | ✅ **A deep reasoning model**        |
 
-考试技巧（很容易考）
-
 如果选项同时出现：
 
 * Azure AI Speech
@@ -3864,7 +3858,6 @@ SSML ❌ 只是： 控制
 
 **Box 1: Copilot Studio voice features Supports interactive speech responses**
 
-
 **Box 2: A deep reasoning model Optimizes decision-making and the accuracy of responses**
 
 Explanation/Reference:
@@ -3880,7 +3873,7 @@ Box 2: A deep reasoning model Optimizes decision-making and the accuracy of resp
 Integrating a deep reasoning model (specifically Azure OpenAI o3) into Microsoft Copilot Studio optimizes decision-making and accuracy by enabling multi-step analysis, logical deduction, and the handling of complex, multi-turn conversations. This capability, enabled via the "reason" keyword in instructions, allows agents to analyze large datasets and provide context-aware, transparent answers, ideal for scenarios like financial analysis or compliance
 
 
-### QUESTION 7 
+### QUESTION 7  💩💩
 
 
 You are designing a low-code AI business solution by using Microsoft Copilot Studio.
@@ -3962,7 +3955,7 @@ Vision-Based Reasoning: Powered by Computer-Using Agents (CUA), the tool uses AI
 Reference:
 
 
-### QUESTION 8 
+### QUESTION 8  💩💩
 
 You need to recommend a solution to integrate a Microsoft Copilot agent with a Microsoft Dynamics 365 Contact Center chat channel.
 
@@ -4026,7 +4019,7 @@ Include Context (Optional): You can add a Private message to agent within the no
 
 Save and Publish: Save your changes and publish the agent to apply the new escalation logic.
 
-### QUESTION 9
+### QUESTION 9 💩💩
 
 A company has a customer order system that creates sales orders manually.
 
@@ -4114,7 +4107,7 @@ You are designing an AI strategy for Microsoft Dynamics 365 finance and operatio
 
 You need to recommend which knowledge sources to include in the generative help and guidance agent. 
 
-** The solution must minimize the risk of generating inaccurate responses**.
+**The solution must minimize the risk of generating inaccurate responses**.
 
 What should you recommend? To answer, select the appropriate options in the answer area.
 
