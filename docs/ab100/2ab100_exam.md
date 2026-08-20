@@ -5867,7 +5867,7 @@ Granular Insights: Savings can be defined at the overall agent-run level or for 
 
 ## Deploy AI-powered business solutions - Question Set 3
 
-### QUESTION 1 
+### QUESTION 1 💩💩
 
 
 You are designing a Microsoft Copilot Studio agent that uses a custom Microsoft Foundry model to generate responses.
@@ -5891,6 +5891,8 @@ D. Create a custom engine agent.
 **原因：**
 
 * Copilot Studio Agent 需要通过 **connection** 安全访问 Microsoft Foundry 中的自定义模型。
+
+
 * **A** Classic orchestration：不是连接模型的方式。
 * **C** Skill：不是用于连接 Foundry custom model。
 * **D** Custom engine agent：不符合题目要求。
@@ -5922,7 +5924,7 @@ To create a connection to Microsoft Foundry within a Microsoft Copilot Studio ag
 Unified Management: Both your Copilot Studio and Foundry agents can be managed centrally in the Microsoft Entra admin center.
 
 
-### QUESTION 2 
+### QUESTION 2  💩
 
 You are designing an AI business solution that contains the following components:
 
@@ -5955,7 +5957,9 @@ C. Microsoft Power Platform solutions
 * Copilot Studio agent
 * Dataverse
 * Power Apps
-* **打包成一个整体**
+
+**打包成一个整体**
+
 * **Versioning**
 * **Dependencies**
 * **Deploy to other environments**
@@ -6047,8 +6051,7 @@ Microsoft 365 Copilot 及 AI Agent 的双壁核心安全解决方案：
 
 2.  Microsoft Defender（AI 应用威胁防护与风险缓解，选 D）：
 
-      - 满足需求： 识别并缓解与 AI 相关的潜在风险（Identify and mitigate AI risks）、保护 AI
-        应用程序（Protect AI apps）、安全事件调查（Investigating incidents）。
+      - 满足需求： <mark>**识别并缓解与 AI 相关的潜在风险（Identify and mitigate AI risks）、保护 AI应用程序（Protect AI apps）、安全事件调查（Investigating incidents）。**</mark>
       - 功能作用：
           - Defender for Cloud / Defender for Cloud Apps： 提供针对 AI 应用和 AI 工作负载的全面安全防护（AI Security Posture Management, AISPM）。
           - 监控针对 AI 智能体和应用的恶意威胁、影子 AI（Shadow AI）使用风险、越狱（Jailbreak）攻击以及安全事件响应与调查。
@@ -6069,7 +6072,7 @@ Explanation:
 To secure Microsoft 365 Copilot agents, you can implement a unified solution using Microsoft Purview for data governance and Microsoft Defender for real-time threat protection. This combination identifies risks, protects sensitive data, and ensures responsible AI governance through continuous monitoring and incident investigation.
 
 
-### QUESTION 4 
+### QUESTION 4 💩
 
 You are creating validation criteria for a custom generative AI model that produces business reports based on internal enterprise data.
 
@@ -6086,8 +6089,6 @@ C. the average system resource usage during inference
 D. the model training duration
 
 ---
-
-**正确答案与详细解析**
 
 **正确答案：**
 
@@ -6215,7 +6216,7 @@ Regulatory compliance
 
 关注的是 **data 本身的治理和合规**，所以选择 **Microsoft Purview**。
 
-### 四个选项怎么区分
+四个选项怎么区分
 
 | Service                          | 主要用途                                                                   | 本题 |
 | -------------------------------- | ---------------------------------------------------------------------- | -- |
@@ -6257,7 +6258,30 @@ D. Export and import the connectors between the environments as unmanaged soluti
 
 正确答案：
 
-  - B. Manage the connectors as solution components and deploy the components by using ALM pipelines.（将连接器作为解决方案组件进行管理，并使用 ALM 管道部署这些组件。）
+B. Manage the connectors as solution components and deploy the components by using ALM pipelines.（将连接器作为解决方案组件进行管理，并使用 ALM 管道部署这些组件。）
+
+```
+Development
+    │
+    │ Custom Connector
+    ↓
+Solution
+    │
+    ↓
+ALM Pipeline
+    │
+    ├──────────────→ Test
+    │
+    └──────────────→ Production
+```
+
+这样可以获得：
+
+- Consistent deployment：不同环境使用同一套受控组件
+- Version control / traceability
+- Managed deployment
+- Governance
+- 减少手工 export/import
 
 解析与考点分析
 
@@ -6300,7 +6324,7 @@ Security Credentials: For OAuth settings like Client ID and Client Secret, use e
 Azure Key Vault Integration: For high-security enterprise APIs, store secrets in Azure Key Vault and reference them via secret environment variables to ensure traceability and governance.
 
 
-### QUESTION 7  ??
+### QUESTION 7 💩💩
 
 A company plans to implement an AI solution that will **contain a Microsoft Copilot Studio agent and a Microsoft Foundry agent**. 
 
@@ -6344,6 +6368,44 @@ Answer Area
 | --------------------- | -------------------------------------- | ------------------------------------------------------ |
 | **Copilot Studio**    | **Power Platform deployment pipeline** | 支持 Dev → Test → Prod 的环境晋级和隔离，适合自动化 Solution/Agent 部署。 |
 | **Microsoft Foundry** | **Azure DevOps pipeline**              | 适合将 Foundry AI 资源/模型部署纳入 CI/CD，实现可重复、自动化部署。            |
+
+
+2. Microsoft Foundry → Azure DevOps pipeline ✅
+
+Microsoft Foundry agent 属于 Azure / Microsoft Foundry 资源体系。
+
+题目特别告诉你：
+
+The solution will be stored in a source code repository.
+
+而且要求：
+
+repeatable and fully automated
+
+
+因此适合使用 Azure DevOps pipeline 实现 CI/CD：
+
+```
+Source Code Repository
+        │
+        ↓
+Azure DevOps Pipeline
+        │
+        ├── Build / Validate
+        ↓
+      Test
+        │
+        ↓
+   Production
+```
+
+Pipeline 可以把 deployment 定义成代码，并自动执行 Dev → Test → Prod promotion。
+
+因此：
+
+Microsoft Foundry → Use an Azure DevOps pipeline
+
+
 
 为什么其他选项不选？
 
@@ -6415,7 +6477,7 @@ Environment Isolation: You can use Bicep to provision distinct, isolated resourc
 Suitability: While Power Platform pipelines are used for Copilot Studio agents, Foundry-based agents are Azure resources where Bicep is the native and more powerful automation tool for managing the underlying infrastructure and model endpoints.
 
 
-### QUESTION 8 
+### QUESTION 8 💩💩
 
 A company has a Microsoft Copilot Studio prompt-and-response agent. You need to ensure that the agent meets the following requirements:
 
@@ -6550,7 +6612,7 @@ Incorrect:
 
 [Not A] Use Managed Solutions for Production: Export and deploy solutions as managed when promoting to test or production environments to prevent unauthorized direct changes in those environments and ensure a consistent state.
 
-### QUESTION 10 
+### QUESTION 10 💩
 
 You are designing a testing solution for a Microsoft Copilot Studio agent that integrates with Microsoft Dynamics 365 Customer Service and Dynamics 365 Sales.
 
