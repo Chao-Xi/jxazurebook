@@ -5363,7 +5363,7 @@ Incorrect:
 
 ### QUESTION 2
 
-Which tools should you recommend to assist the CISO and the CIO with their specific responsibilities? To answer, drag the appropriate tools to the correct executives. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
+Which tools should you **recommend to assist the CISO and the CIO with their specific responsibilities?** To answer, drag the appropriate tools to the correct executives. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
 | Tools (待拖拽选项) |
 | :--- |
@@ -5390,49 +5390,57 @@ Which tools should you recommend to assist the CISO and the CIO with their speci
 原因
 
 * **CISO → Azure Resource Graph Explorer**
-  题目中 CISO 的职责是 **discover and inventory AI resources for auditing**。Resource Graph Explorer 可以查询和盘点 Azure 资源，适合做 AI resource inventory。
+
+题目中 CISO 的职责是 **discover and inventory AI resources for auditing**。
+
+<mark>**Resource Graph Explorer 可以查询和盘点 Azure 资源，适合做 AI resource inventory。**</mark>
 
 * **CIO → Microsoft Purview**
-  CIO 的职责是确保数据有适当的 **security labels / classification**。Microsoft Purview 提供数据发现、分类和敏感度标签（sensitivity labels）能力。
+
+<mark>CIO 的职责是确保数据有适当的 **security labels / classification**。</mark>
+
+<mark>Microsoft Purview 提供数据发现、分类和敏感度标签（sensitivity labels）能力。</mark>
 
 🎯 记忆
 
 > **CISO → Discover / Inventory resources → Azure Resource Graph Explorer**
+> 
 > **CIO → Data classification / Sensitivity labels → Microsoft Purview**
 
-**最终：CISO = Azure Resource Graph Explorer；CIO = Microsoft Purview**
+**<mark>最终：CISO = Azure Resource Graph Explorer；CIO = Microsoft Purview</mark>**
 
 
 ----
-
 
 这是该道针对 Contoso, Ltd. 案例分析 的拖拽匹配题（Select and Place）的正确答案与详细解析：
 
 QUESTION 答案 (Answer Area)
 
-  - CISO (首席信息安全官): 👉 Azure Resource Graph Explorer (或 Microsoft Purview)
+- CISO (首席信息安全官): 👉 Azure Resource Graph Explorer (或 Microsoft Purview)
 
-  - CIO (首席信息官): 👉 Microsoft Purview
+- CIO (首席信息官): 👉 Microsoft Purview
 
-解析与考点分析（对照案例原题）
+
 
 在 Contoso, Ltd. 案例中，CISO 与 CIO 拥有非常明确的职责与工具对应关系：
 
-1. CIO (Chief Information Officer - 首席信息官)
+CIO (Chief Information Officer - 首席信息官)
 
-  - 案例核心职责要求：
-    "Chief Information Officer (CIO): Ensure that appropriate security label are assigned to the data used by the AI agents."
+- 案例核心职责要求：
+
+"Chief Information Officer (CIO): Ensure that appropriate security label are assigned to the data used by the AI agents."
     （CIO 职责：确保为 AI Agent 使用的数据分配适当的安全/敏感性标签。）
-  - 对应工具： Microsoft Purview
-  - 解析： 在微软生态中，为数据资产创建、分配和强制执行敏感性标签（Sensitivity Labels / Security
-    Labels）的官方核心工具是 Microsoft Purview Information Protection (MPIP)。
 
-2. CISO (Chief Information Security Officer - 首席信息安全官)
+- 对应工具： Microsoft Purview
+  
+- 解析： 在微软生态中，为数据资产创建、分配和强制执行敏感性标签（Sensitivity Labels / Security Labels）的官方核心工具是 Microsoft Purview Information Protection (MPIP)。
 
-  - 案例核心职责要求：   "Chief Information Security Officer (CISO): Discover and inventory AI resources for auditing."
+CISO (Chief Information Security Officer - 首席信息安全官)
+
+- 案例核心职责要求：   "Chief Information Security Officer (CISO): Discover and inventory AI resources for auditing."
     （CISO 职责：发现并清查（盘点）AI 资源以供审计。）
-  - 对应工具： Azure Resource Graph Explorer
-  - 解析： 案例中提到 Contoso 拥有多个法律实体和多个 Azure 订阅（Multiple Azure subscriptions）。要在跨订阅的云端环境中高效地**搜索、发现和盘点（Discover and inventory）**所有已部署的 AI  资源（如 Azure OpenAI 实例、AI Services 资源等），微软推荐的标准工具是 Azure Resource Graph Explorer（支持使用 KQL 快速跨订阅查询和盘点云资源）。
+- **对应工具： Azure Resource Graph Explorer**
+- 解析： 案例中提到 Contoso 拥有多个法律实体和多个 Azure 订阅（Multiple Azure subscriptions）。要在跨订阅的云端环境中高效地**搜索、发现和盘点（Discover and inventory）**所有已部署的 AI  资源（如 Azure OpenAI 实例、AI Services 资源等），微软推荐的标准工具是 Azure Resource Graph Explorer（支持使用 KQL 快速跨订阅查询和盘点云资源）。
 
 (注：CISO 在后续审计敏感数据访问时也会用到 Microsoft Purview，如果该题每个框只填一个主选工具，CISO 的首选核心工具即为 Azure
 Resource Graph Explorer；若允许选多个，Purview 同样适用。)
@@ -5479,6 +5487,7 @@ NOTE: Each correct selection is worth one point.
 Select and Place:
 
 **Metrics** (Options):
+
 *   [ Effectiveness ]
 *   [ Tool use ]
 *   [ Satisfaction ]
@@ -5528,6 +5537,7 @@ Box 2: Satisfaction
 所以这道题最终：
 
 > **Box 1: Effectiveness ✅**
+> 
 > **Box 2: Satisfaction ✅**
 
 
@@ -5631,9 +5641,9 @@ Fabrikam has identified the following requirements for sales cycle enablement:
 - Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
 
 
-### Question 1
+### Question 1 💩💩💩
 
-Which tool should you recommend to address the sensitive information concerns in the sales process?
+Which tool should you recommend to **address the sensitive information concerns** in the sales process?
 
 
 A. the Analytics tab in Microsoft Copilot Studio 
@@ -5711,7 +5721,7 @@ E. Monitoring in Microsoft Foundry
     的低代码 Agent。
 
 
-###  QUESTION 2
+###  QUESTION 2 💩💩💩
 
 Which existing tool and data should you use to gather the required metrics for stakeholder signoff for the AI agents? To answer, select the appropriate options in the answer area.
 
@@ -5781,7 +5791,7 @@ QUESTION 答案 (Answer Area)
 ### QUESTION 3 
 
 
-Which tool should you recommend to help secure funding for future AI agent development?
+Which tool should you recommend to help secure funding for **future AI agent development**?
 
 A. Evaluations in Microsoft Foundry
 
@@ -5800,7 +5810,7 @@ E. Direct Preference Optimization (DPO)
 
 正确答案：
 
-  - D. the Analytics tab in Microsoft Copilot Studio（Microsoft Copilot Studio 中的“分析”选项卡）
+D. the Analytics tab in Microsoft Copilot Studio（Microsoft Copilot Studio 中的“分析”选项卡）
 
 解析与考点分析
 
