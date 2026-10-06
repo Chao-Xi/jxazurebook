@@ -167,7 +167,7 @@ Target ROI Formula: Define the benchmark as:
 Estimated Savings = (Projected Deflection × Human Agent Cost) - Estimated Credit Cost.
 
 
-### QUESTION 2 💩💩💩💩💩
+### QUESTION 2 💩💩💩💩
 
 What should you configure for the custom AI agent?
 
@@ -259,24 +259,7 @@ Azure OpenAI Models (Reasoning Models) while powerful, this is a pro-code path (
 
 Using raw Azure OpenAI models would require significant custom development, missing the "low-code" requirement. While Generative Orchestration uses these models under the hood, the orchestration layer itself is what manages the "which agent to call" logic.
 
-**Scenario: Custom AI Agent**
 
-Contoso has identified the following custom AI agent requirements:
-
-*-> The custom AI agent will use data from Dynamics 365 Supply Chain Management to answer questions for the manufacturing team as a low-code solution.
-
-The custom AI agent will be accessible from within Microsoft Teams.
-
-The custom AI agent must be designed to eventually connect to other agents that can be selected based on their description
-
-
-*-> The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational.
-
-The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&D department.
-
-*-> The custom AI agent must be integrated with and accessible from Dynamics 365 Supply Chain Management.
-
-*-> The custom AI agent must be able to use Dynamics 365 Supply Chain Management business logic that is stored outside of the application.
 
 ## 2 Plan AI-powered business solutions
 
@@ -351,7 +334,7 @@ Sales managers must report on the adoption of the AI agent to key Fabrikam stake
 
 Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
 
-### QUESTION 1 💩💩💩
+### QUESTION 1 💩💩💩💩
 
 **Which framework should you use to meet the AI agent requirements <mark>for the sales cycle enablement</mark>?** To answer, select the appropriate options in the answer area.
 
@@ -541,7 +524,7 @@ Correct Answer: B
 
 Explanation/Reference:
 
-To configure Microsoft Copilot to efficiently summarize leads with non-standard terminology and custom columns in Microsoft Dynamics 365 Sales, you must map these unique fields to business terms within the Sales AI Glossary in Microsoft Copilot Studio.
+To configure Microsoft Copilot to efficiently summarize leads with non-standard terminology and custom columns in Microsoft Dynamics 365 Sales, **you must map these unique fields to business terms** within the Sales AI Glossary in Microsoft Copilot Studio.
 
 Note:
 
@@ -796,7 +779,7 @@ Comparison of Classic Models
 | CLU | Advanced devs | Integrates with Azure Conversational Language Understanding for external model management. |
 
 
-### QUESTION 3 💩💩💩
+### QUESTION 3 💩💩💩💩
 
 A company uses **Microsoft Dynamics 365 finance and operations apps**.
 
@@ -849,7 +832,7 @@ Correct Answer: D Section: (none)
 To add an additional knowledge source for internal business processes to the Microsoft Copilot in-app experience for Dynamics 365 finance and operations apps—without creating new topics—you should add File Uploads (such as PDF, Word, or text documents) to the "Copilot for finance and operations apps" agent in Copilot Studio.
 
 
-### QUESTION 4
+### QUESTION 4 💩💩💩
 
 A company has an AI business solution.
 
@@ -896,7 +879,7 @@ Authentication: Ensure the connector is configured with appropriate security (e.
 
 
 
-### QUESTION 5 💩
+### QUESTION 5 💩💩
 
 You need to design a shared prompt library that will be used across multiple business units. The solution must meet the following requirements:
 
@@ -974,7 +957,7 @@ Semantic Versioning: Apply tags (e.g., v1.0.1) to mark significant updates, allo
 
 Auditability: Git maintains a full historical record of who changed a prompt, what was modified, and when it occurred.
 
-### QUESTION 6 💩
+### QUESTION 6 💩💩
 
 A company has a Microsoft Foundry project that **<mark>uses a single agent and a single prompt to complete a series of tasks</mark>**.
 
@@ -1205,7 +1188,7 @@ Correct Answer: A
 Microsoft Copilot Studio agents can analyze customer behavior by leveraging business data from Azure SQL, files, and APIs by using Azure AI Search as a knowledge source. By importing and vectorizing this structured and unstructured data into an Azure AI Search index, the agent can perform semantic, meaning-based searches to retrieve context-relevant information.
 
 
-### QUESTION 9 💩
+### QUESTION 9 💩💩💩
 
 A retail company plans to deploy Microsoft Copilot Studio agents to support:
 
@@ -1250,7 +1233,7 @@ D. Centralize the product catalog data in Microsoft Dataverse and expose the dat
 
 为什么不选其他选项？
 
-  - A. Let each agent scrape product details from Microsoft SharePoint Online libraries（让每个 Agent 从 SharePoint 抓取产品信息）： 从非结构化文档库抓取产品数据不够精准且响应较慢，无法保证电商和库存系统所需的高一致性结构化数据。
+  - A. Let each agent scrape product details from Microsoft SharePoint Online libraries（让每个 Agent 从 SharePoint 抓取产品信息）： **从非结构化文档库抓取产品数据不够精准且响应较慢，无法保证电商和库存系统所需的高一致性结构化数据**。
   - B. Store the product catalog data in a separate custom table for each agent（为每个 Agent 分别存储在独立的自定义表中）： 这会导致数据孤岛和数据冗余，一旦产品信息更新就需要多处修改，直接违背了“一致的数据源”的要求。
   - C. Configure prompts to pull product details from the PDFs of external vendors（配置 Prompt 从外部供应商的 PDF 中拉取）： 通过 Prompt 实时解析 PDF 属于非结构化文档提取，准确率受限且无法满足零售与库存场景下的结构化业务查询需求。
 
@@ -1275,7 +1258,7 @@ In the scenario described, centralizing product catalog data in Microsoft Datave
 **Automated Updates:** You can use Power Platform Dataflows to ingest and synchronize catalog data from external sources into Dataverse, keeping the information fresh for all connected AI agents.
 
 
-### QUESTION 10 💩💩💩
+### QUESTION 10 💩💩💩💩💩
 
 
 A company has a portfolio of AI initiatives at different stages of development.
@@ -1426,7 +1409,7 @@ Data Classification & Protection: It features built-in, enterprise-grade securit
 - Analytics: It integrates natively with Power BI for reporting and can synchronize with Microsoft Fabric or Azure Synapse for large-scale data modeling and advanced analytics.
 
 
-### QUESTION 12 💩💩
+### QUESTION 12 💩💩💩
 
 A company plans to deploy an AI-based customer service app that will autonomously manage interactions, escalate complex cases, and learn from historical ticket data.
 
@@ -1508,7 +1491,7 @@ These are the costs to move the application from a development environment to a 
 Ongoing expenses are critical for ROAI as they impact the net gain over time.
 
 
-### QUESTION 13
+### QUESTION 13 💩
 
 You are designing end-to-end test scenarios for a business solution that uses Microsoft Dynamics 365 Sales and Dynamics 365 Finance.
 
@@ -1540,10 +1523,6 @@ Select and Place
 - Properly exchanges data between the Dynamics 365 apps.   []
 - Aligns with defined user workflows and business processes. []
 
-
------
-
-这是该道拖拽匹配题（Select and Place）的**正确答案与详细解析**：
 
 ---
 
@@ -1606,7 +1585,7 @@ The best testing type to ensure a Microsoft Dynamics 365 solution aligns with de
 While other testing phases (like Functional or Integration) verify that the system works technically, UAT is the final "road test" where the business confirms that the solution actually supports their day-to-day operations.
 
 
-### QUESTION 14  💩💩💩
+### QUESTION 14  💩💩💩💩
 
 A company has a Microsoft 365 tenant in Canada and multiple Microsoft Power Platform environments in Canada and the United States.
 
@@ -1690,13 +1669,13 @@ What should you do for each prompt? To answer, select the appropriate options in
 Hot Area:
 
 
-**A prompt that has instructions to "help the customer as best you can"**:
+<mark>**A prompt that has instructions to "help the customer as best you can"**<mark>:
 
 - Add filler words to make the prompt sound more natural and conversational.
 - Keep the prompt vague to enable model flexibility.
 - Rewrite the prompt with clear and task-specific instructions.
 
-**A prompt that helps retrieve product information from a knowledge base:**
+<mark>**A prompt that helps retrieve product information from a knowledge base:**<mark>
 
 - Add several open-ended questions to give the model broader context.
 - Use responses with only reference sources and limit the response scope.
@@ -1753,7 +1732,7 @@ In the Generative Answers node, ensure "Search only selected sources" is toggled
 Upload specific PDFs, Manuals, or SharePoint folders rather than using the entire public web
 
 
-### QUESTION 16 💩💩
+### QUESTION 16 💩💩💩
 
 You are designing a testing solution for Microsoft Copilot Studio agents.
 
@@ -2002,7 +1981,7 @@ D. Enable incremental indexing in Azure AI Search.
     Data）和复杂业务逻辑的系统，直接通过连接器（Connectors）调用系统 API 才是更合适且能够保证实时准确回答的标准做法</mark>。
 
 
-### QUESTION 20 
+### QUESTION 20 💩
 
 A manufacturing company wants to deploy an agent that will automate supplier invoice processing.
 
@@ -2068,7 +2047,7 @@ This design plan outlines the financial and operational framework for deploying 
 
 
 
-### QUESTION 21  💩💩💩
+### QUESTION 21  💩💩💩💩💩
 
 A company has a Microsoft Power Platform solution that contains the following components:
 
@@ -2136,7 +2115,7 @@ Generative AI systems use grounding to reduce "hallucinations" by anchoring thei
 
 
 
-### QUESTION 22  💩💩
+### QUESTION 22  💩💩💩
 
 A company plans to implement an AI business solution for a consumer goods company.
 
@@ -2215,7 +2194,8 @@ Auto-Draft Orders: Apply vendor rules and lead times to create draft purchase or
 Sense Disruptions: Adjust supply chain settings before a problem escalates based on real-time data.
 
 
-### QUESTION 23 
+### QUESTION 23 💩
+
 
 A company has an AI agent that automates the review of customer feedback stored in a cloud database.
 
@@ -2361,7 +2341,7 @@ Incorrect:
 [Not D] While the Cloud Adoption Framework (CAF) for Azure provides broad strategic guidance for AI adoption, the Business Value Toolkit is specifically designed to quantify the impact of low-code and AI solutions using solution metadata and telemetry.
 
 
-### QUESTION 25  💩💩💩
+### QUESTION 25  💩💩💩💩💩
 
 A company has a Microsoft Power Platform environment.
 
@@ -2453,7 +2433,7 @@ D. Azure Reservations
 **A. Cost Management + Billing**
 
 
-### QUESTION 27
+### QUESTION 27 💩💩
 
 You need to recommend a Microsoft Power Platform solution for customer support. 
 
@@ -6692,7 +6672,7 @@ Box 1: Run task-based scenarios that involve both apps
 Box 2: Track the successful completion of cross-app tasks
 
 
-### QUESTION 11 
+### QUESTION 11  💩
 
 A company has multiple AI models that support generation of sales transactions.
 
@@ -6749,7 +6729,7 @@ D. Track model retirement schedules to prevent service disruptions.
   - 中央模型注册表（Central Model Registry）的核心作用： <mark>在 MLOps 和 AI 安全合规治理中，当安全团队需要在模型部署前审查新版本并**访问调阅以前的模型历史版本（Access to prior  versions）**时，中央模型注册表（Model Registry） 是提供模型版本管理（VersionHistory）、血缘追溯、安全审计以支持生产快速回滚（保障业务连续性）的标准组件</mark>。
 
 
-### QUESTION 12 
+### QUESTION 12  💩💩💩
 
 A company has an AI solution that uses a Microsoft Copilot Studio agent.
 
@@ -6832,7 +6812,7 @@ Copilot Studio 被使用了两次。)
 
 
 
-### QUESTION 13 
+### QUESTION 13 💩💩
 
 A company deploys a Microsoft Copilot Studio agent that integrates with a Microsoft Power Automate desktop flow.
 
@@ -6890,9 +6870,12 @@ Copilot Studio 可以在 Agent **发布之前**测试最新修改，这样可以
 > **Before release → Test latest unpublished version**
 > **Agent + Power Automate flow → Add flow as a Tool**
 
-**答案：① Run tests against latest unpublished version
+答案：
 
-② Add the flow to the agent as a tool**
+
+**① Run tests against latest unpublished version**
+
+**② Add the flow to the agent as a tool**
 
 
 1. Validate the most recent changes to the agent before release:
@@ -6935,7 +6918,7 @@ Copilot Studio 可以在 Agent **发布之前**测试最新修改，这样可以
 
 
 
-### QUESTION 14 
+### QUESTION 14 💩💩
 
 
 A company has a Microsoft Copilot Studio agent that provides answers based on a knowledge base for customer support.
@@ -6990,40 +6973,9 @@ E. quality of generated answers
   - B. session information and session outcomes（会话信息与会话结果）： 提供整体会话的状态分类（Resolved/Escalated/Abandoned），属于宏观运营数据，无法精细化定位内容准确度问题。
   - D. engagement, resolution, and escalation rates（参与率、解决率和升级率）： 属于 Analytics 首页（Summary）上的顶层宏观 KPI 指标，用于衡量整体运行健康度，无法精细定位到具体的错误回答内容。
 
----
-
-Correct Answer: CD
-
-Explanation/Reference:
-
-Explanation:
-
-[C] You can use the Analytics dashboard to identify and fix inaccurate responses by focusing on specific performance signals:
-
-*-> Topics with Low Resolution: This metric identifies individual topics where sessions frequently end without a successful outcome. A low resolution rate often indicates that the topic's logic is flawed, the content is outdated, or it fails to address the user's specific intent.
-
-*-> Topic Usage: High usage of certain topics combined with low resolution or high escalation rates points to critical knowledge gaps. Use this to prioritize which parts of your knowledge base need immediate refinement.
 
 
-Unrecognized Utterances: Review these to find user phrases that didn't trigger any custom topic, indicating missing content or the need for new trigger phrases.
-
-Analyze User Questions by Theme: Copilot Studio uses AI to group generative responses into themes. You can review these clusters to see which themes have poor response quality and need better grounding or data hygiene.
-
-User Feedback (Thumbs Up/Down): Review specific messages with negative feedback in the Analytics tab to understand exactly where the AI is hallucinating or providing incomplete data.
-
-
-[D] In Microsoft Copilot Studio, you can use analytics to pinpoint why your agent is providing inaccurate answers by following a structured improvement checklist.
-
-Using Metrics to Locate Problems *-> Engagement Rate: A low engagement rate often indicates that your triggers are misconfigured or too broad, causing the agent to initiate the wrong topic or fail to recognize user intent entirely.
-
-*-> Resolution Rate: Identify specific topics with low resolution. If a topic has a high volume of sessions but fails to reach a "Resolved" state, it usually means the knowledge source is outdated, mismatched, or the generative answers are not grounded properly.
-
-*-> Escalation Rate: High escalation rates for particular topics are "red flag" drivers. Use the Escalation Rate Drivers chart to see which topics most frequently force a hand-off to a human agent, indicating where the AI's knowledge or logic is insufficient.
-
-
-
-
-### QUESTION 15
+### QUESTION 15  💩
 
 
 A company uses a fine-tuned Microsoft Foundry model that requires frequent updates as new customer feedback becomes available.
@@ -7049,7 +7001,7 @@ D. Upload the training data to Microsoft Foundry data files
 
 E. Store the training data in Azure Blob Storage that has version control enabled.
 
------
+--------
 
 D. Upload the training data to Microsoft Foundry data files
 
@@ -7093,7 +7045,7 @@ Immutable Tracking: This ensures that every update to a training file creates a 
 
 
 
-### QUESTION 16
+### QUESTION 16 💩💩💩
 
 A company deploys agents that generate responses by using Azure OpenAI resources. The agents are deployed to both the United States and Europe.
 
@@ -7322,7 +7274,7 @@ E. Microsoft Purview
   - C. Azure API Management： 侧重于 API 网关路由、认证和限流，不属于全面的数据使用治理与合规审计平台。
   - D. Azure Policy： 主要用于控制 Azure 基础设施资源层面（ARM Control Plane）的配置合规性，无法追踪和审计数据平面（Data  Plane）的具体数据使用（Data Usage）情况。
 
-### QUESTION 18 
+### QUESTION 18  💩💩
 
 A company uses Azure OpenAI models that use grounding data from Microsoft Fabric for agents. The models are fine-tuned by using proprietary datasets.
 
@@ -7402,7 +7354,7 @@ Sensitivity Labels: Data in Fabric can be labeled (e.g., "Confidential"). Purvie
 OneLake Security: Fine-grained security in Fabric (Row-Level Security and Column-Level Security) is automatically honored by agents, guaranteeing that even with access to a dataset, sensitive PII (Personally Identifiable Information) can be restricted.
 
 
-### QUESTION 19
+### QUESTION 19 💩💩
 
 A company has a Microsoft Copilot Studio agent that **has been in production for three months.**
 
@@ -7599,7 +7551,7 @@ To achieve comprehensive monitoring, telemetry, and performance insights for Mic
 Integrating Application Insights provides a centralized view of agent health, user interactions, topic performance, and latency, which is crucial for monitoring multi-channel deployments.
 
 
-### QUESTION 22 
+### QUESTION 22  💩💩
 
 A company has an AI solution built by using **Microsoft Copilot Studio and Power Platform**. The solution is used by the company's sales, marketing, and customer service teams.
 
@@ -7855,7 +7807,7 @@ API Keys: Ideally stored in Azure Key Vault and referenced via an environment va
 Benefit: Allows the same agent logic to run in any environment by simply changing the variable values
 
 
-### QUESTION 25 
+### QUESTION 25 💩💩💩
 
 A company has a Microsoft Copilot Studio agent that uses generative AI to assist Microsoft Dynamics 365 Customer Service representatives.
 
