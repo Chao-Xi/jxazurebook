@@ -3263,50 +3263,6 @@ Explanation/Reference:
 **Box 2: a Fallback topic**
 
 
-**Box 1: Microsoft Copilot Studio For AI agent creation**
-
-Scenario:
-
-A designated checklist must be reviewed to ensure that the AI agent follows Microsoft deployment recommendations for a compliant solution.
-
-The Microsoft tool that should be used to create the AI agent is Microsoft Copilot Studio.
-
-It is a low-code platform specifically designed for building and managing intelligent agents that integrate with Microsoft Dataverse as a core component for storing data and providing business context. To ensure the agent follows Microsoft's deployment recommendations, users should consult the implementation checklist provided within the Microsoft Copilot Studio documentation.
-
-Key Features of Microsoft Copilot Studio:
-
-Low-Code Interface: Uses a graphical builder or natural language to design agent behaviors and conversation flows.
-
-Dataverse Integration: Leverages Dataverse as the enterprise data platform to ground agents in organizational knowledge and store shared context.
-
-Governance and Compliance: Includes built-in responsible AI features and aligns with enterprise security standards.
-
-Multi-Channel Deployment: Allows publishing agents across Microsoft Teams, websites, and mobile app
-
-**Box 2: a Fallback topic** 
-
-For unexpected AI agent actions.
-
-Scenario:
-
-Unexpected AI agent actions must end in an escalation to a live representative. For example, a sales executive must be rerouted to a representative if the agent cannot answer a question after two failed attempts.
-
-In a low-code environment using Microsoft Copilot Studio with Dataverse, you can ensure unexpected AI actions lead to a live representative by configuring specific system topics.
-
-
-1. Configure the System Fallback Topic
-
-The Fallback system topic triggers when the AI agent cannot match a user's intent to any existing topic or knowledge source with sufficient confidence.
-
-Enable Fallback: In Copilot Studio, navigate to Settings > General Settings > System fallback and click Add.
-
-Action: Edit the Fallback topic to include a Go to topic node that redirects to the Escalate system topic.
-
-2. Implement the Escalate System Topic The Escalate topic is the primary mechanism for handoffs.
-
-3. Handle Errors and Infinite Loops
-
-
 ## Question Set 3 -  Design AI-powered business solutions
 
 
@@ -3392,7 +3348,7 @@ To enable Microsoft 365 Copilot to query a specific subset of SharePoint Online 
 Direct Referencing: Users can improve response relevance by explicitly naming files, folders, or Teams channels in their natural language prompts (e.g., "Summarize notes from the 'Product Launch' channel").
 
 
-### QUESTION 2  💩💩💩
+### QUESTION 2  💩💩💩💩💩
 
 A company uses Microsoft Dynamics 365 Finance to manage accounts payable.
 
@@ -3454,7 +3410,7 @@ To configure the prebuilt Copilot for Accounts Payable in Microsoft Dynamics 365
 
 
 
-### QUESTION 3  💩💩💩
+### QUESTION 3  💩💩💩💩💩
 
 A company plans to deploy a Microsoft Dynamics 365 Contact Center agent.
 
@@ -3491,7 +3447,7 @@ E. Customer engagement hub
 
 
 
-### QUESTION 4. 💩💩💩
+### QUESTION 4. 💩💩
 
 A company uses Microsoft Dynamics 365 Supply Chain Management.
 
@@ -3538,6 +3494,7 @@ Answer Area
 **最终答案：**
 
 > ① **AI Summaries with Copilot**
+> 
 > ② **Generative insights for Demand planning**
 
 ----
@@ -3853,7 +3810,7 @@ Box 2: A deep reasoning model Optimizes decision-making and the accuracy of resp
 Integrating a deep reasoning model (specifically Azure OpenAI o3) into Microsoft Copilot Studio optimizes decision-making and accuracy by enabling multi-step analysis, logical deduction, and the handling of complex, multi-turn conversations. This capability, enabled via the "reason" keyword in instructions, allows agents to analyze large datasets and provide context-aware, transparent answers, ideal for scenarios like financial analysis or compliance
 
 
-### QUESTION 7  💩💩
+### QUESTION 7  💩💩💩💩
 
 
 You are designing a low-code AI business solution by using Microsoft Copilot Studio.
@@ -3935,7 +3892,7 @@ Vision-Based Reasoning: Powered by Computer-Using Agents (CUA), the tool uses AI
 Reference:
 
 
-### QUESTION 8  💩💩
+### QUESTION 8  💩💩💩💩
 
 You need to recommend a solution to integrate a Microsoft Copilot agent with a Microsoft Dynamics 365 Contact Center chat channel.
 
@@ -3999,7 +3956,7 @@ Include Context (Optional): You can add a Private message to agent within the no
 
 Save and Publish: Save your changes and publish the agent to apply the new escalation logic.
 
-### QUESTION 9 💩💩
+### QUESTION 9 💩
 
 A company has a customer order system that creates sales orders manually.
 
@@ -4155,7 +4112,7 @@ On the Overview tab, find the Knowledge section and set Allow the AI to use its 
 Publish the changes to make this capability available in the D365 F&O sidecar.
 
 
-### QUESTION 11 💩💩
+### QUESTION 11 💩
 
 You need to **design a multi-agent solution that will include a custom agent**. 
 
@@ -4171,23 +4128,21 @@ NOTE: Each correct selection is worth one point.
 
 Answer Area
 
-*   **Define rules and constraints:**
+*   <mark>**Define rules and constraints:**<mark>
     *   [ ] Agent flows
     *   [ ] Conversation topics
     *   [ ] Microsoft Power Automate cloud flow
 
-*   **Automate a backend process:**
+*   <mark>**Automate a backend process:**<mark>
     *   [ ] Conversation topics
     *   [ ] Microsoft Power Automate cloud flow
     *   [ ] Microsoft Power Pages
 
 
-----
 
-
-这是该道热点选择题（Hot Area）的**正确答案与详细解析**：
 
 ---
+
 **QUESTION 答案 (Answer Area)**
 
 **1. Define rules and constraints:**
@@ -4314,28 +4269,8 @@ Incorrect:
 * You recommend a Microsoft 365 Copilot agent template.
 
 
-Note:
 
-In the described scenario, Microsoft 365 Copilot for Sales acts as the primary bridge between your productivity tools and CRM data. 
-
-**It integrates directly into Microsoft Outlook and Teams to surface realtime insights from Dynamics 365 Sales or Salesforce.**
-
-Key capabilities for this specific workflow include:
-
-Automated Email Summarization: Copilot scans long email threads in Outlook to extract key points, highlights, and BANT (Budget, Authority, Need, Timeline) data. If the sender is an external contact recognized in your CRM, the summary is automatically enriched with relevant account and opportunity data.
-
-Suggested Email Replies: When replying to customer emails, Copilot generates drafts based on the context of the conversation and existing CRM data. You can use predefined response categories (e.g., "Reply to an inquiry," "Offer a proposal") or custom prompts to include specific opportunity details in the draft.
-
-Meeting Preparation Summaries: Before a scheduled meeting, Copilot for Sales provides a "preparation card" in Teams or Outlook. This summary includes:
-
-- CRM Data: Matched opportunity and account attributes.
-
-- Contextual History: Summaries of past email exchanges and the last three seller notes.
-
-- Strategic Insights: Key risks, follow-up actions, and discussion points from previous interactions.
-
-
-### QUESTION 13
+### QUESTION 13 💩💩
 
 A company uses Microsoft 365 and Dynamics 365.
 
@@ -4391,26 +4326,9 @@ Incorrect:
 * **You recommend a classic Microsoft Dataverse workflow**.   ❌
 * **You recommend a Microsoft 365 Copilot agent template.**. ❌
 
-Note:
-
-In the described scenario, Microsoft 365 Copilot for Sales acts as the primary bridge between your productivity tools and CRM data. It integrates directly into Microsoft Outlook and Teams to surface realtime insights from Dynamics 365 Sales or Salesforce.
-
-Key capabilities for this specific workflow include:
-
-Automated Email Summarization: Copilot scans long email threads in Outlook to extract key points, highlights, and BANT (Budget, Authority, Need, Timeline) data. If the sender is an external contact recognized in your CRM, the summary is automatically enriched with relevant account and opportunity data.
-
-Suggested Email Replies: When replying to customer emails, Copilot generates drafts based on the context of the conversation and existing CRM data. You can use predefined response categories (e.g., "Reply to an inquiry," "Offer a proposal") or custom prompts to include specific opportunity details in the draft.
-
-Meeting Preparation Summaries: Before a scheduled meeting, Copilot for Sales provides a "preparation card" in Teams or Outlook. This summary includes:
-
-- CRM Data: Matched opportunity and account attributes.
-
-- Contextual History: Summaries of past email exchanges and the last three seller notes.
-
-- Strategic Insights: Key risks, follow-up actions, and discussion points from previous interactions.
 
 
-### QUESTION 14
+### QUESTION 14 💩💩
 
 A company uses Microsoft 365 and Dynamics 365.
 
@@ -4446,7 +4364,7 @@ B. No
       - 模板本身并不包含现成的 Dynamics 365 CRM 业务逻辑、数据集集成以及 Outlook
         内置的销售场景工作流。如果使用智能体模板，开发人员需要进行大量自定义编码与数据连接开发，而无法直接实现开箱即用的 CRM
         邮件总结和会议准备功能。
-3.  正确方案： 微软针对此场景提供的开箱即用的官方产品是 Microsoft 365 Copilot for Sales（即本系列连续题的第一题方案）。
+3.  <mark>正确方案： 微软针对此场景提供的开箱即用的官方产品是 Microsoft 365 Copilot for Sales（即本系列连续题的第一题方案）</mark>。
 
 
 
@@ -4547,12 +4465,10 @@ D. an agent flow in Copilot Studio
 1.  业务痛点： 传统的前端自动化（如基于 DOM 元素、XPath 或特定选择器的 RPA/Web 自动化）在目标 Web 应用的 UI
     界面频繁发生变更（frequent changes to the app's user interface） 时极易失效，需要不断人工维护和重新录制。
 2.  解决方案：
-      - Computer Use（计算机使用/视觉 UI 交互能力）： 是生成式 AI Agent
-        的一项突破性能力（允许大语言模型结合多模态视觉能力，像人类一样通过“看”屏幕截图来识别按钮、文本框并操作鼠标/键盘）。
-      - 即使 Web 应用的前端代码、样式（CSS）或元素 ID 频繁改变，Computer Use
-        依然能够通过视觉语义识别目标位置并完成自动化任务，从而无需频繁去修改 Agent
-        的底层规则或重新配置选择器，完美满足**“确保任务成功且最小化对 Agent 的修改（minimize changes to the
-        agent）”**这一要求。
+      - <mark>Computer Use（计算机使用/视觉 UI 交互能力）： 是生成式 AI Agent
+        的一项突破性能力（允许大语言模型结合多模态视觉能力，像人类一样通过“看”屏幕截图来识别按钮、文本框并操作鼠标/键盘）</mark>。
+      - 即使 Web 应用的前端代码、样式（CSS）或元素 ID 频繁改变，Computer Use 依然能够通过视觉语义识别目标位置并完成自动化任务，从而无需频繁去修改 Agent
+        的底层规则或重新配置选择器，完美满足**“确保任务成功且最小化对 Agent 的修改（minimize changes to the agent）”**这一要求。
 
 为什么不选其他选项？
 
@@ -4615,8 +4531,8 @@ D. Azure OpenAI and Azure Functions
 
 题目三个关键词：
 
-* **Invoice document analysis** → **AI Builder** 可提取发票字段。
-* **Teams 直接交互、审核和批准** → **Copilot Studio** Agent 可以集成到 Teams。
+* <mark>**Invoice document analysis** → **AI Builder** 可提取发票字段<mark>。
+* <mark>**Teams 直接交互、审核和批准** → **Copilot Studio** Agent 可以集成到 Teams<mark>。
 * **Minimize development efforts** → 使用 Power Platform 的 **low-code** 能力，减少自定义代码。
 
 其他选项
@@ -4712,7 +4628,7 @@ You can build this within Power Apps or Power Automate under the Data or Custom 
 Once the connector is created and published, you can add it directly to your agent.
 
 
-### QUESTION 19 💩
+### QUESTION 19 - Duplicated 💩
 
 A company has an ecommerce support portal that **uses Microsoft Dataverse**.
 
@@ -4787,7 +4703,7 @@ QUESTION 答案 (Answer Area)
 
 
 
-### QUESTION 20 💩💩💩💩💩
+### QUESTION 20 💩💩💩💩
 
 A company uses Microsoft Dynamics 365 to manage service operations. 
 
@@ -4836,12 +4752,12 @@ F. the Dynamics 365 Field Service mobile app
 
 对照题目的两大核心需求：
 
-1.  需求一：“提供 AI 驱动的帮助，协助员工组织和解决工单（organize and resolve work orders）”
+1.  需求一：<mark>“提供 AI 驱动的帮助，协助员工组织和解决工单（organize and resolve work orders）”</mark>
 
-      - 对应选项 E (Copilot in Field Service)： 专为 Field Service 调度员和管理者设计。Copilot 可以自动汇总工单内容、提取客户需求、智能推荐调度排程，并自动生成工单总结，极大地提升调度员管理和组织工单的效率。
+      - **对应选项 E (Copilot in Field Service)： 专为 Field Service 调度员和管理者设计**。
+      - Copilot 可以自动汇总工单内容、提取客户需求、智能推荐调度排程，并自动生成工单总结，极大地提升调度员管理和组织工单的效率。
 
-2.  需求二：“在一线员工准备和完成客户预约时，为其提供上下文 AI 支持（Deliver contextual AI support to
-    frontline workers...）”
+2.  需求二：<mark>“在一线员工准备和完成客户预约时，为其提供上下文 AI 支持（Deliver contextual AI support to frontline workers...）</mark>”
 
       - 对应选项 F (the Dynamics 365 Field Service mobile app)： 一线技术人员在前往客户现场（On-site）执行任务时，使用的是 Dynamics 365 Field Service 移动应用。移动应用中嵌入了 Copilot AI 功能，技术人员可以在现场查看 AI 汇总的工单历史、快速撰写客户跟进更新、获取操作步骤指导，从而高效完成现场预约任务。
 
@@ -5016,7 +4932,7 @@ B. No
 * 添加/调整摘要字段
 * 调整 Copilot 相关配置
 
-实现。
+**实现**
 
 而 **Power Automate flows**：
 
@@ -5026,7 +4942,7 @@ B. No
 
 所以：
 
-❌ 创建 Power Automate Flow 不能达到定制 Copilot Opportunity Summary 的目标。
+❌ **创建 Power Automate Flow 不能达到定制 Copilot Opportunity Summary 的目标。**
 
 **最终答案：B. No**
 
@@ -5072,11 +4988,11 @@ Add Fields:
 - Save: Click Add and then Save your changes to update the summary configuration.
 
 
-### QUESTION 24
+### QUESTION 24 💩💩
 
 A company has a Microsoft Dynamics 365 Sales environment that has Microsoft Copilot enabled.
 
-You need to customize Copilot by tailoring how opportunity summaries are generated or how they are presented to users.
+**You need to customize Copilot by tailoring how opportunity summaries** are generated or how they are presented to users.
 
 **Solution: You configure AI Builder lead scoring models to influence opportunity summaries.**
 
@@ -5141,13 +5057,13 @@ Add Fields:
 - Save: Click Add and then Save your changes to update the summary configuration.
 
 
-### QUESTION 25
+### QUESTION 25 💩💩
 
 A company has a Microsoft Dynamics 365 Sales environment that has Microsoft Copilot enabled.
 
 You need to customize Copilot by tailoring how opportunity summaries are generated or how they are presented to users.
 
-Solution: You add the opportunity summary widget to the Opportunity form.
+<mark>Solution: You add the opportunity summary widget to the Opportunity form.</mark>
 
 Does this meet the goal?
 
@@ -5182,7 +5098,7 @@ Explanation:
 
 Correct:
 
-* You add fields to the opportunity summary.
+* <mark>**You add fields to the opportunity summary.** <mark>
 
 Incorrect:
 
@@ -5192,28 +5108,6 @@ Incorrect:
 
 * You configure AI Builder lead scoring models to influence opportunity summaries
 
-
-Note:
-
-To customize Microsoft Copilot opportunity summaries and incorporate AI Builder lead scoring data, you must configure the specific fields Copilot uses to ground its generative AI outputs.
-
-By default, Copilot for Sales generates summaries using a set of predefined fields. To "influence" these summaries with scoring data, you need to add the predictive score and grade fields to the Opportunity summary configuration.
-
-Step-by-Step Configuration Switch Area: In the Sales Hub app, select the Change area menu in the bottom-left corner and choose App Settings.
-
-Navigate to Copilot: Under General Settings, select Copilot.
-
-Select Entity: Choose the Opportunities tab.
-
-Add Fields:
-
-Click Add fields.
-
-Select the checkboxes for the fields you want to include.
-
-You can select out-of-the-box, custom, and related table fields.
-
-Save: Click Add and then Save your changes to update the summary configuration.
 
 
 ## Deploy AI-powered business solutions
@@ -5282,14 +5176,14 @@ Contoso has identified the following analysis, reporting, and troubleshooting re
 
 - The CTO wants to track user feedback on the quality of the AI agent responses during user interactions with the agents. Consistently poor feedback will trigger an escalated reengineering discussion.
 
-- The CEO wants a quarterly assessment of all the required metrics for their specific responsibilities. The tools used for the assessments must be Microsoft-recommended and must verify reliability, interpretability, fairness, and compliance.
+- <mark>The CEO wants a quarterly assessment of all the required metrics for their specific responsibilities. The tools used for the assessments must be Microsoft-recommended and must verify reliability, interpretability, fairness, and compliance.</mark>
 
 - The CFO wants to identify how many interactions with the AI agents are abandoned on a given day as compared to resolved conversations. Too many abandoned sessions might indicate that Copilot Studio credits are being used inefficiently by end users.
 
 
 ### QUESTION 1  💩💩💩💩💩
 
-Which two components for the custom AI agent should you include in the application lifecycle management (AIM) process? Each correct answer presents part of the solution.
+Which two components for the custom AI agent should you include <mark>in the application lifecycle management (AIM) process</mark>? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
@@ -5341,7 +5235,7 @@ Incorrect:
 [Not E] X++ model is used for core code changes inside Dynamics 365 Finance & Operations, but not for the lowcode Power Platform/Copilot Studio orchestration described.
 
 
-### QUESTION 2
+### QUESTION 2 💩💩💩
 
 Which tools should you **recommend to assist the CISO and the CIO with their specific responsibilities?** To answer, drag the appropriate tools to the correct executives. Each tool may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.
 
@@ -5426,7 +5320,7 @@ CISO (Chief Information Security Officer - 首席信息安全官)
 Resource Graph Explorer；若允许选多个，Purview 同样适用。)
 
 
-### QUESTION 3 
+### QUESTION 3  💩💩💩
 
 
 What should you recommend to assist the CEO with their specific responsibilities?
