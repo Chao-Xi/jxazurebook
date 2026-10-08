@@ -7386,7 +7386,7 @@ To establish a testing and evaluation setup for your Microsoft Copilot Studio ag
 
 A company uses multiple Microsoft Copilot Studio agents across different channels.
 
-You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.
+You need to recommend a monitoring solution that **provides comprehensive telemetry data and performance insights for the agents.**
 
 What should you include in the recommendation?
 
@@ -7405,7 +7405,7 @@ D. Microsoft Dynamics 365 Customer Voice
 
 正确答案：
 
-  - A. Application Insights
+  - <mark>A. Application Insights</mark>
 
 解析与考点分析
 
@@ -7445,7 +7445,7 @@ To achieve comprehensive monitoring, telemetry, and performance insights for Mic
 Integrating Application Insights provides a centralized view of agent health, user interactions, topic performance, and latency, which is crucial for monitoring multi-channel deployments.
 
 
-### QUESTION 22  💩💩
+### QUESTION 22  💩💩💩
 
 A company has an AI solution built by using **Microsoft Copilot Studio and Power Platform**. The solution is used by the company's sales, marketing, and customer service teams.
 
@@ -7585,11 +7585,13 @@ Noise: Raw data often includes metadata or conversational filler.
 Context Bloat: Large retrieval windows push the agent toward its limit and slow down processing.
 
 
-### QUESTION 24 
+### QUESTION 24 💩💩💩💩💩
 
-A company has Microsoft Power Platform development, staging, and production environments. Each environment has its own Microsoft Dataverse tables and Azure AI Search index.
+A company has Microsoft Power Platform development, staging, and production environments. 
 
-You are designing an application lifecycle management (AIM) process to deploy a Microsoft Copilot Studio agent between the environments.
+**Each environment has its own Microsoft Dataverse tables and Azure AI Search index.**
+
+<mark>**You are designing an application lifecycle management (AIM) process to deploy a Microsoft Copilot Studio agent between the environments**.</mark>*
 
 The company has a Copilot Studio agent named Agent1 in development. Agent1 uses the following grounding data sources:
 
@@ -7731,7 +7733,7 @@ D. the Analytics tab in Copilot Studio
 * **High escalation rate**
 * 找出 Agent 为什么表现不好
 
-**Copilot Studio → Analytics tab** 提供 Agent 的运行分析，包括：
+<mark>**Copilot Studio → Analytics tab** 提供 Agent 的运行分析，包括<mark>
 
 * Resolution rate
 * Escalation rate
@@ -7896,34 +7898,9 @@ NOTE: Each correct selection is worth one point.
 > Knowledge source errors → **Answer quality**
 
 
----
 
 
-Box 1: Escalation rate 
-
-
-The percentage of engaged sessions that are escalated to a live customer service representative To measure the percentage of engaged sessions that are escalated to a live customer service representative in Microsoft Copilot Studio analytics, you should use the Escalation rate metric.
-
-Lowering this percentage is a key objective to improve the overall deflection rate and enhance agent performance.
-
-Definition: An escalated session is an engaged session that ends when the Escalate topic is triggered, or when a Transfer to agent node is reached.
-
-Context: This metric helps you understand the proportion of users who requested to speak to a human or were passed to a representative because the agent couldn't solve their issue.
-
-Where to find it: It is available in the Analytics dashboard within Copilot Studio, specifically under "Escalation Rate Drivers" which shows which topics cause the most escalations.
-
-
-Box 2: Answer quality 
-
-The number of agent queries that cause a knowledge source error When analyzing Microsoft Copilot Studio agent performance, the answer quality performance metric should be used to measure queries that cause a knowledge source error. This AI-driven metric assesses if responses are grounded in provided knowledge, helping to identify, evaluate, and reduce errors in generative answers.
-
-Key Aspects of Copilot Studio Analytics:
-
-Answer Quality: Utilizes Large Language Models (LLMs) to categorize chat messages, focusing on grounding, relevance, and accuracy.
-
-
-
-### QUESTION 28
+### QUESTION 28 💩💩💩
 
 You need to recommend a security solution for agents in a Microsoft Power Platform environment.
 
@@ -7998,7 +7975,7 @@ Apply to Agents: According to Platforms of Power, specific connectors for Copilo
 Quarantine Agents: If agents violate Microsoft Learn policies, 365 Copilot Studio allows quarantining the agents to prevent further data exposure.
 
 
-### QUESTION 30 
+### QUESTION 30  💩
 
 A company has an AI business solution that uses Microsoft Copilot Studio agents.
 
@@ -8013,7 +7990,7 @@ A. Track the duration of the average user session.
 B. Analyze the prompt length distribution.
 
 C. Regularly test and refine the prompts based on user input.
-
+ 
 D. Use clear and specific instructions in the prompts.
 
 E. Measure system resource usage during prompt processing.
