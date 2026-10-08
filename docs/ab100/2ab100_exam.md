@@ -7319,7 +7319,7 @@ To find the number of abandoned sessions in a Microsoft Copilot Studio agent's a
 This chart specifically tracks and visualizes sessions with an "Abandoned" outcome.
 
 
-### QUESTION 20 
+### QUESTION 20 💩
 
 You are evaluating a Microsoft Copilot Studio agent that supports Microsoft Dynamics 365 Customer Service representatives.
 
