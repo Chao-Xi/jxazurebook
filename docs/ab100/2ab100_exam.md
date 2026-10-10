@@ -8023,7 +8023,7 @@ Explanation:
 
 To maximize the effectiveness of Microsoft Copilot Studio agents through prompt engineering, the two best practices you mentioned are critical, along with several key refinements:
 
-1. Use Clear and Specific Instructions in Prompts
+**1. Use Clear and Specific Instructions in Prompts**
 
 Define Goal, Context, and Persona: Provide a clear objective (what to do), necessary context (background information), and a defined persona (e.g., "You are an HR assistant...") to set the tone.
 
@@ -8036,7 +8036,7 @@ Provide Examples (Few-Shot Prompting): Include examples of inputs and desired ou
 Define Constraints: Explicitly state what the agent should not do, what information to exclude, or when to decline a request.
 
 
-2. Regularly Test and Refine Prompts Based on User Input
+**2. Regularly Test and Refine Prompts Based on User Input**
 
 Test within Copilot Studio: Utilize the testing pane to simulate user queries and review agent responses. Experiment with different prompt variations to see which yields the best result.
 
@@ -8163,7 +8163,7 @@ Latency: Monitor "Time to Response" to ensure performance meets user expectation
 Token Consumption: View "Processed Inference Tokens" and "Generated Completion Tokens" to manage costs and quota limits.
 
 
-### QUESTION 32 
+### QUESTION 32 💩💩
 
 
 A company has Microsoft Copilot Studio agents.
@@ -8192,7 +8192,10 @@ E. Include agents and connectors in a solution.
 - E. Include agents and connectors in a solution.
 
 
-Managed solutions are intended for production deployment and help prevent direct changes to deployed components. Power Platform solutions package components for transport between environments and can include custom connectors; Copilot Studio agents are managed and deployed across environments by using solutions.
+Managed solutions are intended for production deployment and help prevent direct changes to deployed components. Power Platform solutions package components for transport between environments and can include custom connectors; 
+
+
+**Copilot Studio agents are managed and deployed across environments by using solutions.**
 
 **答案：✅ A、E**
 
@@ -8247,7 +8250,6 @@ Copilot Studio Agent 和 Custom Connector 都应放入 **Solution** 中统一管
 * **跨环境部署** → **ALM Pipelines + Solution**
 
 **最终答案：✅ A、E**
-
 
 
 
@@ -8310,17 +8312,7 @@ Azure Application Insights (part of Azure Monitor) is the best Microsoft solutio
 
 While Copilot Studio has built-in analytics, Application Insights allows you to centralize data from many different agents and channels into one unified view.
 
-Why Use Azure Application Insights?
 
-Connecting your agents to Application Insights provides deeper technical and operational visibility that the standard dashboard lacks:
-
-Centralized Monitoring: View telemetry for all your agents in a single Azure resource rather than checking each agent individually in Copilot Studio.
-
-Custom Kusto Queries: Use KQL (Kusto Query Language) to run complex analyses, such as identifying common errors, measuring specific topic latency, or tracking custom events.
-
-Real-Time Alerts: Set up proactive alerts to notify you if an agent has a high error rate, spike in latency, or fails to respond.
-
-Enhanced Transcripts: Capture detailed message-level logs, including user prompts and agent responses, to troubleshoot specific conversation failures.
 
 
 ### QUESTION 34 
@@ -8385,7 +8377,7 @@ To reduce bias in your Azure OpenAI email generation system while adhering to Mi
 The goal is to move from generic prompts to specific, constraint-based instructions that enforce Fairness and Inclusiveness.
 
 
-### QUESTION 35 
+### QUESTION 35 💩💩💩
 
 A company has a canvas app named App1 in a Microsoft Power Platform environment named Env1. E**nv1 uses a customer-managed key for data encryption**. 
 
@@ -8448,7 +8440,7 @@ To add Microsoft Copilot components to your canvas app without changing the curr
 Core Technical Limitation Microsoft Power Platform environments configured with a Customer-Managed Key (CMK) currently do not support certain Copilot and generative AI features. These features continue to rely on Microsoft-managed encryption keys for their specific internal data processing.
 
 
-### QUESTION 37 
+### QUESTION 37  💩
 
 
 A company has a team that analyzes its customers by using a manual process.
@@ -8529,20 +8521,25 @@ Incorrect:
 * **You recommend Microsoft Security Copilot**.
 
 
-### QUESTION 38
+### QUESTION 38 💩
 
 
 A company has a team that analyzes its customers by using a manual process.
 
 You are designing an AI-based agent to automate and improve the process.
 
-You need to recommend on which platform to build the agent. The solution must meet the following requirements:
+**You need to recommend on which platform to build the agent**. 
 
-Use generative AI to answer common questions. Provide analytics to review AI performance. Identify customer demographics.
 
-Minimize custom development.
+The solution must meet the following requirements:
 
-Solution: You recommend Microsoft Copilot Studio.
+- Use generative AI to answer common questions.
+- Provide analytics to review AI performance.
+- Identify customer demographics.
+
+**Minimize custom development.**
+
+**Solution: You recommend Microsoft Copilot Studio.**
 
 Does this meet the goal?
 
@@ -8595,7 +8592,7 @@ Incorrect:
 
 A company uses multiple Microsoft Copilot Studio agents across different channels.
 
-You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.
+**You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents.**
 
 What should you include in the recommendation?
 
@@ -8613,7 +8610,7 @@ D. Azure Advisor
 
 正确答案：
 
-  - B. the Analytics tab in Copilot Studio（Copilot Studio 中的“分析”选项卡）
+  - **B. the Analytics tab in Copilot Studio（Copilot Studio 中的“分析”选项卡）**
 
 解析与考点分析
 
@@ -8621,7 +8618,7 @@ D. Azure Advisor
 
 1.  业务场景： 公司在不同渠道上部署了多个 Microsoft Copilot Studio Agent，需要一个监控解决方案来提供全面的遥测数据（Comprehensive  telemetry data）和性能洞察（Performance insights）。
 2.  开箱即用的原生功能：
-      - Microsoft Copilot Studio 内置了强大的 Analytics（分析）选项卡。
+      - **Microsoft Copilot Studio 内置了强大的 Analytics（分析）选项卡**。
       - 无需编写代码或进行复杂的 Azure 资源配置，管理员和开发者即可直接在 Analytics 选项卡中查看到跨渠道部署的所有 Agent
         的开箱即用遥测数据与性能洞察，包括：
           - Summary（概要）：参与率、解决率、转人工升级率、放弃率。
@@ -8631,19 +8628,16 @@ D. Azure Advisor
 
 为什么不选其他选项？
 
-  - A. Microsoft Power BI： Power BI 是商业智能报表工具。虽然可以通过导出数据或调用 API 在 Power BI
-    中自定义报表，但它不是 Copilot Studio 原生内置的实时遥测与性能洞察监控入口。
-  - C. Log Analytics（日志解析）： Log Analytics 是 Azure Monitor 的底层日志查询数据库。如果题目选项中包含
-    Application Insights，Application Insights 是捕捉遥测的标准服务；但在不引入额外 Azure
+  - A. Microsoft Power BI： Power BI 是商业智能报表工具。虽然可以通过导出数据或调用 API 在 Power BI 中自定义报表，但它不是 Copilot Studio 原生内置的实时遥测与性能洞察监控入口。
+  - C. Log Analytics（日志解析）： Log Analytics 是 Azure Monitor 的底层日志查询数据库。如果题目选项中包含 Application Insights，Application Insights 是捕捉遥测的标准服务；但在不引入额外 Azure
     运维配置的前提下，Copilot Studio 内置的 Analytics tab 是直接获取 Agent 性能洞察的最直接答案。
-  - D. Azure Advisor（Azure 顾问）： 仅针对 Azure 基础设施架构提供成本、安全性和可用性优化建议，不提供 Copilot
-    Studio Agent 的对话遥测数据。
+  - D. Azure Advisor（Azure 顾问）： 仅针对 Azure 基础设施架构提供成本、安全性和可用性优化建议，不提供 Copilot Studio Agent 的对话遥测数据。
 
 
 
-### Question 40
+### Question 40 💩💩
 
-Which tool should be used for the prospect-communication requirements in Dynamics 365 Sales?
+Which tool should be used for the **prospect-communication requirements in Dynamics 365 Sales**?
 
 
 - A Azure Al Search
@@ -8678,7 +8672,7 @@ B Copilot email assist helps Dynamics 365 Sales sellers compose customer-specifi
 **考试记忆：Dynamics 365 Sales + Prospect Email → Copilot email assist。**
 
 
-### Question 41
+### Question 41 💩
 
 A company has an Azure environment that supports several business units.
 
@@ -8726,7 +8720,7 @@ What should you use?
 
 **答案：C**
 
-### Question 42
+### Question 42 💩💩💩
 
 A company operates an ecommerce support portal that uses Microsoft Dataverse.
 
@@ -8771,6 +8765,7 @@ Initiate external processes when requested: [___]
 **最终：**
 
 > Unclear input → **Fallback topic**
+> 
 > External process → **Tool (connector)**
 
 
@@ -8859,11 +8854,11 @@ You need to ensure that the agent meets these requirements:
 > ① Generated answer rate and quality
 > ② Topics by outcome
 
-###  Question 45
+###  Question 45 💩💩💩
 
 A company intends to deploy a Microsoft Foundry agent.
 
-You need to recommend an application lifecycle management (ALM) process that ensures the agent is evaluated against baseline accuracy metrics before deployment.
+You need to recommend an application lifecycle management (ALM) process that **ensures the agent is evaluated against baseline accuracy metrics before deployment.**
 
 What should you recommend?
 
@@ -8906,7 +8901,7 @@ What should you recommend?
 **答案：C**
 
 
-### Question 46 
+### Question 46  💩💩
 
 Which tool should be **recommended to address concerns about sensitive information in the sales process**?
 
@@ -8932,7 +8927,7 @@ Which tool should be **recommended to address concerns about sensitive informati
 **答案：E. Monitoring in Microsoft Foundry**
 
 
-### Question 47
+### Question 47 💩
 
 A company has a team that analyzes its customers using a manual process.
 
