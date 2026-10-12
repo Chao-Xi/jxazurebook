@@ -5744,7 +5744,7 @@ Granular Insights: Savings can be defined at the overall agent-run level or for 
 ### QUESTION 1 💩💩
 
 
-You are designing a Microsoft Copilot Studio agent that uses a custom Microsoft Foundry model to generate responses.
+You are designing a **Microsoft Copilot Studio agent** that uses a **custom Microsoft Foundry model** to generate responses.
 
 **You need to ensure that the agent can securely connect to and invoke the custom model during user interactions**.
 
@@ -5798,7 +5798,7 @@ To create a connection to Microsoft Foundry within a Microsoft Copilot Studio ag
 Unified Management: Both your Copilot Studio and Foundry agents can be managed centrally in the Microsoft Entra admin center.
 
 
-### QUESTION 2  💩💩💩
+### QUESTION 2  💩💩
 
 You are designing an AI business solution that contains the following components:
 
@@ -6110,7 +6110,7 @@ Data Residency Compliance: For strict European residency (e.g., GDPR), Azure Ope
 Embedded Governance: Admins can enable a native integration within Microsoft AI Foundry at the subscription level. This automatically sends prompt and response data to Purview for auditing and compliance without requiring additional developer code.
 
 
-### QUESTION 6 
+### QUESTION 6 💩💩💩💩
 
 A company has a Microsoft Copilot Studio agent that uses **custom connectors** to interact with enterprise APIs.
 
@@ -6304,51 +6304,7 @@ Microsoft Foundry → Use an Azure DevOps pipeline
 
   - Microsoft Foundry: 👉 Use an Azure DevOps pipeline.（使用 Azure DevOps 管道。）
 
------
 
-Explanation/Reference:
-
-Explanation:
-
-Box 1: Use a Microsoft Power Platform deployment pipeline
-
-Box 2: Use a Bicep file
-
-
-Box 1: Use a Microsoft Power Platform deployment pipeline 
-
-Copilot Studio agent The preferred deployment method is to use a Microsoft Power Platform deployment pipeline.
-
-Microsoft Power Platform pipelines are specifically designed to meet your requirements for a secure, automated, and repeatable application lifecycle management (ALM) process for Copilot Studio agents: Box 2: Use a Bicep file Microsoft Foundry agent In the scenario described for a Microsoft Foundry agent, the preferred deployment method is to use a Bicep file.
-
-This approach is best suited for your requirements because:
-
-Infrastructure as Code (IaC): Azure Bicep allows you to define your entire environment—including the Foundry hub, projects, and model deployments—as code stored in your source repository.
-
-Automation & Repeatability: Bicep files integrate directly with GitHub Actions or Azure Pipelines, enabling fully automated, repeatable deployments without manual intervention.
-
-Environment Isolation: You can use Bicep to provision distinct, isolated resources for development, testing, and production by parameterizing the deployment for each environment.
-
-Suitability: While Power Platform pipelines are used for Copilot Studio agents, Foundry-based agents are Azure resources where Bicep is the native and more powerful automation tool for managing the underlying infrastructure and model endpoints
-
-
-Box 2: Use a Bicep file 
-
-
-Microsoft Foundry agent 
-
-
-In the scenario described for a Microsoft Foundry agent, the preferred deployment method is to use a Bicep file.
-
-This approach is best suited for your requirements because:
-
-Infrastructure as Code (IaC): Azure Bicep allows you to define your entire environment—including the Foundry hub, projects, and model deployments—as code stored in your source repository.
-
-Automation & Repeatability: Bicep files integrate directly with GitHub Actions or Azure Pipelines, enabling fully automated, repeatable deployments without manual intervention.
-
-Environment Isolation: You can use Bicep to provision distinct, isolated resources for development, testing, and production by parameterizing the deployment for each environment.
-
-Suitability: While Power Platform pipelines are used for Copilot Studio agents, Foundry-based agents are Azure resources where Bicep is the native and more powerful automation tool for managing the underlying infrastructure and model endpoints.
 
 
 ### QUESTION 8 💩💩
@@ -6413,7 +6369,7 @@ NOTE: Each correct selection is worth one point.
       - 该指标会按照具体的对话主题（Topics）对对话结果进行分类统计，展示哪些 Topic 达到了已解决（Resolved）、转人工（Escalated） 或 已放弃（Abandoned） 的结果，从而帮助分析对话流的最终转化率。
 
 
-### QUESTION 9 
+### QUESTION 9  💩💩💩
 
 A company extends Copilot in Microsoft Dynamics 365 Customer Service.
 
