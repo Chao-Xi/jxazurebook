@@ -6522,7 +6522,7 @@ Box 1: Run task-based scenarios that involve both apps
 Box 2: Track the successful completion of cross-app tasks
 
 
-### QUESTION 11  💩
+### QUESTION 11  💩💩
 
 A company has multiple AI models that support generation of sales transactions.
 
@@ -6847,9 +6847,9 @@ B. Create a content filter.
 
 C. Store the training data in Azure Files.
 
-D. Upload the training data to Microsoft Foundry data files
+**D. Upload the training data to Microsoft Foundry data files**
 
-E. Store the training data in Azure Blob Storage that has version control enabled.
+**E. Store the training data in Azure Blob Storage that has version control enabled.**
 
 --------
 
@@ -7079,7 +7079,7 @@ Azure Policy
 
 A company has an AI solution that uses Azure OpenAI models.
 
-You need to recommend a governance solution that <mark>**monitors and audits changes to model configurations and data usage**.<mark> 
+You need to recommend a **governance solution** that <mark>**monitors and audits changes to model configurations and data usage**.<mark> 
 
 The solution must minimize administrative effort.
 
