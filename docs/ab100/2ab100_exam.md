@@ -3810,7 +3810,7 @@ Box 2: A deep reasoning model Optimizes decision-making and the accuracy of resp
 Integrating a deep reasoning model (specifically Azure OpenAI o3) into Microsoft Copilot Studio optimizes decision-making and accuracy by enabling multi-step analysis, logical deduction, and the handling of complex, multi-turn conversations. This capability, enabled via the "reason" keyword in instructions, allows agents to analyze large datasets and provide context-aware, transparent answers, ideal for scenarios like financial analysis or compliance
 
 
-### QUESTION 7  💩💩💩💩
+### QUESTION 7  💩💩💩
 
 
 You are designing a low-code AI business solution by using Microsoft Copilot Studio.
@@ -3892,11 +3892,11 @@ Vision-Based Reasoning: Powered by Computer-Using Agents (CUA), the tool uses AI
 Reference:
 
 
-### QUESTION 8  💩💩💩💩
+### QUESTION 8  💩💩💩
 
 You need to recommend a solution to integrate a Microsoft Copilot agent with a Microsoft Dynamics 365 Contact Center chat channel.
 
-The agent must **respond to customer questions and hand off the conversation to a live customer service representative when the customer requests an escalation.**
+The agent must **respond to customer questions and hand off the conversation to a live customer service representative <mark>when the customer requests an escalation</mark>.**
 
 What should you recommend?
 
@@ -4083,33 +4083,6 @@ NOTE: Each correct selection is worth one point.
 
 * **Custom knowledge sources:** ✅ **Must be uploaded to the agent**
 * **AI general knowledge:** ✅ **Must be disabled for the agent**
-
------
-
- 
-Explanation/Reference: 
-
-Explanation:
-
-Box 1: Must be uploaded to the agent Custom knowledge sources
-
-Box 2: Must be enabled for the agent AI general knowledge
-
-
-To implement a generative AI agent for in-app help in Dynamics 365 Finance and Operations while minimizing inaccuracies, you must configure the agent in Microsoft Copilot Studio by uploading specific knowledge sources and enabling general AI knowled
-
-
-1. Upload Custom Knowledge Sources To ensure the agent provides accurate, organization-specific guidance, upload your internal documentation directly to the agent
-
-2. Enable General AI Knowledge To allow the agent to use its own broad generative AI knowledge for general inquiries:
-
-Open Microsoft Copilot Studio and select the Dataverse environment linked to your Finance and Operations apps.
-
-Navigate to Agents and open the specific agent named Copilot for finance and operations apps.
-
-On the Overview tab, find the Knowledge section and set Allow the AI to use its own general knowledge to Enabled.
-
-Publish the changes to make this capability available in the D365 F&O sidecar.
 
 
 ### QUESTION 11 💩
