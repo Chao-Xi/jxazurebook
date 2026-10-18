@@ -7342,7 +7342,7 @@ To establish a testing and evaluation setup for your Microsoft Copilot Studio ag
 
 A company uses multiple Microsoft Copilot Studio agents across different channels.
 
-You need to recommend a monitoring solution that **provides comprehensive telemetry data and performance insights for the agents.**
+You need to recommend a monitoring solution that **provides comprehensive telemetry data and <mark>performance insights<mark> for the agents.**
 
 What should you include in the recommendation?
 
@@ -7401,7 +7401,7 @@ To achieve comprehensive monitoring, telemetry, and performance insights for Mic
 Integrating Application Insights provides a centralized view of agent health, user interactions, topic performance, and latency, which is crucial for monitoring multi-channel deployments.
 
 
-### QUESTION 22  💩💩💩
+### QUESTION 22  💩💩
 
 A company has an AI solution built by using **Microsoft Copilot Studio and Power Platform**. The solution is used by the company's sales, marketing, and customer service teams.
 
@@ -7473,7 +7473,7 @@ Incorrect:
 [Not B] While market capitalization is a macro-level indicator that reflects investor confidence in a company's AI maturity, it is generally not considered a direct, measurable business driver for a specific internal project's Return on AI Investment (ROAI). Market cap is influenced by many external factors beyond a single implementation of Microsoft Copilot Studio or Power Platform.
 
 
-### QUESTION 23 
+### QUESTION 23 💩
 
 A company has a Microsoft Foundry agent that summarizes customer feedback and recommends products to customers. The agent references data from multiple knowledge sources.
 
@@ -7604,9 +7604,9 @@ To answer, select the appropriate options in the answer area. NOTE: Each correct
 
 **Copilot Studio ALM：**
 
-* **Solution** → Agent + References（引用）
-* **不要打包** → 数据、Search Index 内容、凭据
-* **跨环境切换** → **Environment Variables**
+* <mark>**Solution** → Agent + References（引用）</mark>
+* <mark>**不要打包** → 数据、Search Index 内容、凭据</mark>
+* <mark>**跨环境切换** → **Environment Variables**</mark>
 * **Secrets / Endpoints** → Environment Variables + Connection References
 
 **最终答案：**
@@ -7659,7 +7659,7 @@ API Keys: Ideally stored in Azure Key Vault and referenced via an environment va
 Benefit: Allows the same agent logic to run in any environment by simply changing the variable values
 
 
-### QUESTION 25 💩💩💩
+### QUESTION 25 💩💩
 
 A company has a Microsoft Copilot Studio agent that uses generative AI to assist Microsoft Dynamics 365 Customer Service representatives.
 
@@ -7781,7 +7781,7 @@ D. AI quality (AI assisted)
 
 考试记忆
 
-* **GPT-4o as judge / LLM-as-a-Judge** → ✅ **AI quality (AI assisted)**
+* <mark>**GPT-4o as judge / LLM-as-a-Judge** → ✅ **AI quality (AI assisted)**</mark>
 * **BLEU、ROUGE 等传统指标** → AI quality (NLP)
 * **是否基于数据回答** → Groundedness
 * **安全、违规内容** → Risk and safety
@@ -7856,7 +7856,7 @@ NOTE: Each correct selection is worth one point.
 
 
 
-### QUESTION 28 💩💩💩
+### QUESTION 28 💩💩💩💩
 
 You need to recommend a security solution for agents in a Microsoft Power Platform environment.
 
@@ -7896,7 +7896,7 @@ D. Enable customer-managed keys in Microsoft Dataverse.
 其他选项
 
 * ❌ **A. Azure Monitor** → 主要用于监控和日志，不负责阻止访问。
-* ❌ **B. Dataverse audit** → 记录数据访问/变更，但不能实施 Connector 使用限制。
+* <mark>❌ **B. Dataverse audit** → 记录数据访问/变更，但不能实施 Connector 使用限制</mark>。
 * ❌ **D. Customer-managed keys** → 主要解决数据加密密钥控制，不负责 Connector/DLP 治理。
 
  🎯 考试记忆
@@ -8007,7 +8007,7 @@ Monitor Performance (Red Teaming): Test edge cases and potential failure modes t
 By following these practices, you can make agent behavior more predictable, accurate, and useful for end-users
 
 
-### QUESTION 31 
+### QUESTION 31 💩💩
 
 A company has a cloud-based AI solution that uses Azure OpenAI models.
 
@@ -8196,7 +8196,7 @@ Copilot Studio Agent 和 Custom Connector 都应放入 **Solution** 中统一管
 
 * ❌ **D. Move the agents by using data export/import**
 
-  * 官方推荐使用 **Solutions**，不是手工导入导出数据。
+  * <mark>官方推荐使用 **Solutions**，不是手工导入导出数据。</mark>
 
 考试记忆
 
@@ -8375,7 +8375,7 @@ D. Move App1 to a new environment that uses Microsoft-managed keys.
 
       - 要在特定环境中的 Canvas App 中加入 Copilot 控件或让用户使用 Copilot 功能，前提条件是在 Power Platform 管理中心（PPAC） 中对该环境（Env1）开启 Copilot 特性开关（Enable Copilot features for the environment）。
       - Power Platform 完全支持在开启了 CMK（客户托管密钥）加密的环境中使用 Copilot 功能。
-      - 直接为 Env1 开启 Copilot 开关，既能在不破坏现有 CMK 加密配置和安全架构的前提下满足需求，又是实现该功能的最简单、最符合规范的做法。
+      - <mark>**直接为 Env1 开启 Copilot 开关，既能在不破坏现有 CMK 加密配置和安全架构的前提下满足需求，又是实现该功能的最简单、最符合规范的做法**。</mark>
 
 为什么不选其他选项？
 
@@ -8544,7 +8544,7 @@ Incorrect:
 * You recommend Microsoft Security Copilot.
 
 
-### QUESTION 39 
+### QUESTION 39 💩
 
 A company uses multiple Microsoft Copilot Studio agents across different channels.
 
@@ -8591,7 +8591,7 @@ D. Azure Advisor
 
 
 
-### Question 40 💩💩
+### Question 40 💩💩💩
 
 Which tool should be used for the **prospect-communication requirements in Dynamics 365 Sales**?
 
@@ -8665,7 +8665,7 @@ What should you use?
 
 其他选项
 
-* ❌ **A. TCO Calculator** → 比较迁移到 Azure 前后的总体拥有成本（TCO），不是针对新 AI 方案的服务成本估算。
+* ❌ <mark>**A. TCO Calculator** → 比较迁移到 Azure 前后的总体拥有成本（TCO），不是针对新 AI 方案的服务成本估算。</mark>
 * ❌ **B. Azure Reservations** → 降低长期资源成本，不用于成本预测。
 * ❌ **D. Azure Monitor** → 监控实际运行情况，不是成本估算工具。
 
@@ -8676,7 +8676,7 @@ What should you use?
 
 **答案：C**
 
-### Question 42 💩💩💩
+### Question 42 💩💩
 
 A company operates an ecommerce support portal that uses Microsoft Dataverse.
 
@@ -8766,7 +8766,7 @@ What should you use?
 **答案：D. Azure pricing calculator**
 
 
-### Question 44
+### Question 44 💩
 
 A company uses a Microsoft Copilot Studio prompt-and-response agent.
 
@@ -8857,7 +8857,7 @@ What should you recommend?
 **答案：C**
 
 
-### Question 46  💩💩
+### Question 46  💩💩💩💩
 
 Which tool should be **recommended to address concerns about sensitive information in the sales process**?
 
@@ -8874,7 +8874,7 @@ Which tool should be **recommended to address concerns about sensitive informati
 
 题目关键词是 **sensitive information / sales process**，需要监控 Agent 运行过程中涉及的数据和安全风险。
 
-* **E. Monitoring in Microsoft Foundry** ✅ → 用于监控 AI Agent 的运行情况，包括安全、数据访问等方面。
+* <mark>**E. Monitoring in Microsoft Foundry** ✅ → 用于监控 AI Agent 的运行情况，包括安全、数据访问等方面</mark>。
 * **A. Copilot Studio Analytics** ❌ → 主要分析 Agent 使用情况、会话、满意度等。
 * **B. MCP** ❌ → 用于连接 Agent 与外部数据/工具，不是监控工具。
 * **C. Application Insights** ❌ → 主要是应用 telemetry/performance。
