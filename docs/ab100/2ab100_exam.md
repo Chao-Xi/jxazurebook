@@ -4384,7 +4384,7 @@ D. Add the custom connector to Solution1.
 
   - A. Add the custom connector to GitHub（将自定义连接器添加到 GitHub）： GitHub 是源码托管仓库。虽 ALM 流水线可以使用 GitHub，但如果连接器本身没有被打包进 Power Platform 的 Solution1 中，流水线也无法将其作为解决方案的一部分在环境间迁移。
   - B. Share the custom connector（共享自定义连接器）： 共享只是赋予当前环境中其他用户使用或编辑该连接器的权限，无法实现跨环境的 ALM 部署和托管锁定。
-  - C. Create the custom connector in the default solution（在默认解决方案中创建自定义连接器）：绝对不能在 Default Solution 中创建业务组件！ 默认解决方案（Default Solution）无法作为独立的干净包导出并部署到其他环境，这是 ALM 中的严重违规操作。
+  - C. <mark>Create the custom connector in the default solution（在默认解决方案中创建自定义连接器）：绝对不能在 Default Solution 中创建业务组件！ 默认解决方案（Default Solution）无法作为独立的干净包导出并部署到其他环境，这是 ALM 中的严重违规操作。</mark>
 
 
 ----
@@ -4407,9 +4407,9 @@ Adding the custom connector as a component of a solution is the standard method 
 
 A company uses a Microsoft Copilot Studio agent to automate tasks in a web app.
 
-During testing, you discover that the automation sometimes fails because of frequent changes to the app's user interface.
+**During testing, you discover that the automation sometimes fails because of frequent changes to the app's user interface.**
 
-You need to recommend a solution to ensure that the agent successfully automates the tasks. 
+**You need to recommend a solution to ensure that the agent successfully automates the tasks.** 
 
 The solution must minimize changes to the agent.
 
@@ -4481,7 +4481,7 @@ A company processes invoices stored across multiple systems in multiple formats.
 
 Automate multi-step invoice processing tasks, including document analysis, data validation, and approval routing.
 
-Enable users to interact directly via Microsoft Teams to review and approve invoices.
+**Enable users to interact directly via Microsoft Teams to review and approve invoices.**
 
 Minimize development efforts to define and customize approval workflows.
 
