@@ -53,7 +53,7 @@ Contoso has identified the following custom AI agent requirements:
 
 - The custom AI agent must be designed to eventually connect to other agents that can be selected based on their description.
 
-- <mark>The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational</mark>.
+- <mark>**The topics used in the custom AI agent will be selected based NOT on a trigger phrase, but on a description of the purpose of the query, to make the interactions more conversational**</mark>.
 
 - The custom AI agent must be able to answer questions about product specifications by using existing technologies. The product specifications are maintained by the R&D department.
 
@@ -197,7 +197,7 @@ D. Azure OpenAI reasoning models
 
 > 在 **Microsoft Copilot Studio** 中：
 
-* **Classic Orchestration（传统编排，选项 B）：** 依赖用户输入的**触发词（Trigger Phrases）**来精准匹配并触发特定的 Topic（主题）。
+* **Classic Orchestration（传统编排，选项 B）：** 依赖用户输入的 **触发词Trigger Phrases** 来精准匹配并触发特定的 Topic（主题）。
 * **Generative Orchestration（生成式编排，选项 C）：** 允许 Copilot Studio 使用大语言模型（LLM）理解用户的意图，并根据每个 Topic、Plugin（插件）或 Agent 的**描述（Description）**动态选择并调用最合适的内容，完全不需要预定义触发词。
 
 另外，案例中还提到：
@@ -298,7 +298,7 @@ Replace the previous proprietary software with Dynamics 365 Sales to track sales
 
 Have the sales executives use Dynamics 365 Sales to track interactions for open opportunities and send follow-up communications to prospects.
 
-Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.
+**Have the sales executives use handsfree headsets to interact with an AI agent** when they have questions about internal policies or customer data.
 
 
 Requirements 
@@ -334,7 +334,7 @@ Sales managers must report on the adoption of the AI agent to key Fabrikam stake
 
 Any sensitive information, such as user IDs and names, shared via the AI agent must be tracked for future auditing.
 
-### QUESTION 1 💩💩💩💩
+### QUESTION 1 💩💩💩
 
 **Which framework should you use to meet the AI agent requirements <mark>for the sales cycle enablement</mark>?** To answer, select the appropriate options in the answer area.
 
@@ -434,11 +434,11 @@ D. Microsoft Power Platform Project Setup Wizard
 
 **记忆：**
 
-> **Cloud migration → CAF**
+> <mark>**Cloud migration → CAF**</mark>
 > 
-> **Dynamics 365 implementation → Success by Design**
+> <mark>**Dynamics 365 implementation → Success by Design**</mark>
 > 
-> **Power Platform governance → CoE**
+> <mark>**Power Platform governance → CoE**</mark>
 
 ----
 
@@ -446,7 +446,7 @@ D. Microsoft Power Platform Project Setup Wizard
 
 Explanation/Reference:
 
-For migrating a legacy on-premises infrastructure to Microsoft Dynamics 365 Sales with Dataverse as the Single Source of Truth (SSOT), the recommended framework is the Microsoft Cloud Adoption Framework for Azure (CAF), specifically utilized in conjunction with the Data Management Framework (DMF) for Dynamics 365.
+**For migrating a legacy on-premises infrastructure to Microsoft Dynamics 365 Sales with Dataverse as the Single Source of Truth (SSOT), the recommended framework is the Microsoft Cloud Adoption Framework for Azure (CAF)**, specifically utilized in conjunction with the Data Management Framework (DMF) for Dynamics 365.
 
 This combined approach ensures a structured transition by focusing on both the strategic adoption of cloud technology and the technical, granular migration of data.
 
@@ -779,7 +779,7 @@ Comparison of Classic Models
 | CLU | Advanced devs | Integrates with Azure Conversational Language Understanding for external model management. |
 
 
-### QUESTION 3 💩💩💩💩
+### QUESTION 3 💩💩💩
 
 A company uses **Microsoft Dynamics 365 finance and operations apps**.
 
@@ -832,7 +832,7 @@ Correct Answer: D Section: (none)
 To add an additional knowledge source for internal business processes to the Microsoft Copilot in-app experience for Dynamics 365 finance and operations apps—without creating new topics—you should add File Uploads (such as PDF, Word, or text documents) to the "Copilot for finance and operations apps" agent in Copilot Studio.
 
 
-### QUESTION 4 💩💩💩
+### QUESTION 4 💩💩
 
 A company has an AI business solution.
 
@@ -861,8 +861,6 @@ C. custom engine agents
 
 
 Correct Answer: B Section: (none)
-
-
 
 To enhance an AI business solution with Microsoft 365 Copilot and integrate external logic hosted in Azure, you should use Copilot Studio to create Actions. These actions act as plugins that allow Copilot to invoke external services through Power Platform components.
 
@@ -1822,7 +1820,7 @@ A company has two Microsoft Power Platform environments named Dev1 and Prod1. A 
 
 You plan to deploy Agent1 to Prod1.
 
-You need to make Agent1 available to the users in Prod1. The solution must minimize administrative effort.
+<mark>You need to make Agent1 available to the users in Prod1<mark>. The solution must minimize administrative effort.
 
 What should you do?
 
@@ -2115,7 +2113,7 @@ Generative AI systems use grounding to reduce "hallucinations" by anchoring thei
 
 
 
-### QUESTION 22  💩💩💩
+### QUESTION 22  💩💩
 
 A company plans to implement an AI business solution for a consumer goods company.
 
@@ -4483,7 +4481,7 @@ Automate multi-step invoice processing tasks, including document analysis, data 
 
 **Enable users to interact directly via Microsoft Teams to review and approve invoices.**
 
-Minimize development efforts to define and customize approval workflows.
+**Minimize development efforts to define and customize approval workflows.**
 
 What should you include in the solution?
 
@@ -5451,7 +5449,7 @@ Replace the previous proprietary software with Dynamics 365 Sales to track sales
 
 Have the sales executives use Dynamics 365 Sales to track interactions for open opportunities and send follow-up communications to prospects.
 
-Have the sales executives use handsfree headsets to interact with an AI agent when they have questions about internal policies or customer data.
+**Have the sales executives use handsfree headsets to interact with an AI agent** when they have questions about internal policies or customer data.
 
 
 
