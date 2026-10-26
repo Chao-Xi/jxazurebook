@@ -89,6 +89,7 @@ nav:
     - '2 AB-100 Agentic AI Business Solutions Architect': 'ab100/2ab100_exam.md'
   - 'Azure AB 620':
      - '1 AI Agent Builder Associate (AB-620)': 'ab620/1ab620_intro.md'
+     - '2 AB-620 Designing and Building Integrated AI Agent Solutions Studio in Copilot': 'ab620/2ab620_exam.md'
   - 'Azure DP900':
     - 'Module 1 Explore core data': 'chap5/dp1.md'
     - 'Module 2 Explore fundamental relational data concepts': 'chap5/dp2.md'
