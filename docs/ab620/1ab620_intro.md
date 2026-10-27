@@ -832,3 +832,33 @@ Instead of hard-coding values such as URLs, IDs, API endpoints, or configuration
 | **机密** | 安全存储敏感值 | API 密钥、客户端密钥、访问令牌、集成凭据 | **通常立即可用**，引用它们的动作和连接**无需重新发布** |
 
 
+## QUESTION 4 
+
+A company is preparing an agent flow so that it can be invoked by an agent during conversations.
+
+The agent flow must meet the following requirements:
+
+The agent must be able to trigger the flow. The agent flow must be verified.
+
+You need to prepare an agent flow so that it can be used by the agent.
+
+In which order should you perform the actions to prepare the agent flow? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+Select and Place:
+
+**Agent flow readiness steps (Options)**
+
+* Configure the invocation trigger that allows the agent to call the agent flow.
+* Make the agent flow available for agent usage.
+* Validate the agent flow behavior with representative test runs.
+* Configure the actions that implement the required behavior.
+* Create a new agent flow artifact in the environment.
+
+| Answer Area |
+| :--- |
+| **1** [ 空白框 ] |
+| **2** [ 空白框 ] |
+| **3** [ 空白框 ] |
+| **4** [ 空白框 ] |
+| **5** [ 空白框 ] |

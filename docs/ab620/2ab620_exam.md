@@ -691,7 +691,7 @@ Correct Answers
 Exam tip: Disable → Resubmit → Review Activity history.
 
 
-**Box 1: Disable the flow **
+**Box 1: Disable the flow**
 
 The most appropriate action to address this specific issue is to disable the flow. Immediate Stop: Turning off or disabling the flow completely prevents any new instances from triggering. This satisfies your urgent requirement to halt additional failed executions immediately while you troubleshoot.
 
@@ -710,3 +710,156 @@ Targeted Fix: Since the root cause was a temporary authentication error that is 
 **Box 3: Review the Activity history **
 
 In Microsoft Copilot Studio, the Activity history (specifically within the integrated Power Automate cloud flow management or the Copilot's topic run history) allows you to see the real-time execution status of individual runs. This is the only option that lets you immediately validate if the most recent executions succeeded right after resolving the authentication error.
+
+
+### QUESTION 4 
+
+A company is preparing an agent flow so that it can be invoked by an agent during conversations.
+
+The agent flow must meet the following requirements:
+
+The agent must be able to trigger the flow. The agent flow must be verified.
+
+You need to prepare an agent flow so that it can be used by the agent.
+
+In which order should you perform the actions to prepare the agent flow? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+以下是提取并整理为 Markdown 格式的内容，您可以直接复制：
+
+Select and Place:
+
+**Agent flow readiness steps (Options)**
+
+* Configure the invocation trigger that allows the agent to call the agent flow.
+* Make the agent flow available for agent usage.
+* Validate the agent flow behavior with representative test runs.
+* Configure the actions that implement the required behavior.
+* Create a new agent flow artifact in the environment.
+
+
+
+| Answer Area |
+| :--- |
+| **1** [ 空白框 ] |
+| **2** [ 空白框 ] |
+| **3** [ 空白框 ] |
+| **4** [ 空白框 ] |
+| **5** [ 空白框 ] |
+
+
+----
+
+
+Correct Order
+
+| Step | Action                                                                         |
+| ---- | ------------------------------------------------------------------------------ |
+| 1    | Create a new agent flow artifact in the environment.                           |
+| 2    | Configure the invocation trigger that allows the agent to call the agent flow. |
+| 3    | Configure the actions that implement the required behavior.                    |
+| 4    | Validate the agent flow behavior with representative test runs.                |
+| 5    | Make the agent flow available for agent usage.                                 |
+
+Sequence to remember
+
+**Create → Configure trigger → Add actions → Test and validate → Make available**
+
+Explanation: First create the flow, then configure the agent-invocation trigger and required actions. Test the flow to verify its behavior, and finally make it available for the agent to use.
+
+
+**Step 1: Create a new agent flow artifact in the environment **
+
+You must first initialize the flow container within your Copilot Studio workspace before adding any logic.
+
+**Step 2: Configure the invocation trigger that allows the agent to call the agent flow **
+
+You must set up the specialized trigger first (i.e., "When an agent calls the flow"), because this defines the required input variables that the downstream behavioral actions will rely on.
+
+**Step 3: Configure the actions that implement the required behavior **
+
+With the trigger and input variables established, you build the functional core of the flow (e.g., pulling data, sending approvals) and finalize it with the "Respond to the agent" action.
+
+**Step 4: Validate the agent flow behavior with representative test runs**
+
+The workflow needs to be tested and verified directly within the flow authoring interface using test data to check for errors before exposing it to the orchestrator.
+
+**Step 5: Make the agent flow available for agent usage** 
+
+Once verified, you publish the flow and add it to your agent as an active tool so the conversational orchestrator can dynamically call it during live interactions.
+
+
+### QUESTION 5 
+
+A company uses an agent flow that occasionally requires human input before continuing execution.
+
+Some automated actions must pause until a human provides a decision or additional information. The flow must be configured to:
+
+* Capture a human response for use in later steps.
+
+* Continue processing within the same flow run after the response is submitted. Wait for a manual decision before proceeding.
+
+* You need to configure a human-in-the-loop agent flow.
+
+Which setting should you configure for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+Hot Area:
+
+**Human-in-the-loop flow configuration**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Capture a human response for use in downstream logic. | [ 下拉选项框 ]<br>- Send a notification to a user.<br>- Use the action's response outputs in subsequent steps.<br>- Enable analytics logging for the response. |
+| Continue processing within the same flow run after a response is submitted. | [ 下拉选项框 ]<br>- Republish the flow after the decision is submitted.<br>- Trigger a new flow run when a response is received.<br>- Allow the action to wait for and return a response before continuing. |
+| Wait for a manual decision before proceeding. | [ 下拉选项框 ]<br>- Add a human approval action.<br>- Add a manual trigger to the flow.<br>- Send a message that asks for input. |
+
+
+-----
+
+
+Correct Answers — Human-in-the-Loop Agent Flow
+
+| Requirement                                                                    | Correct configuration                                                 |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| 1. Capture a human response for use in downstream logic.                       | Use the action's response outputs in subsequent steps.                |
+| 2. Continue processing within the same flow run after a response is submitted. | Allow the action to wait for and return a response before continuing. |
+| 3. Wait for a manual decision before proceeding.                               | Add a human approval action.                                          |
+
+**Explanation**
+
+1. Use the action's response outputs in subsequent steps — makes the human's response available to downstream actions and conditions.
+2. Allow the action to wait for and return a response before continuing — pauses execution until the response is received, then continues the same flow run.
+3. Add a human approval action — introduces an explicit approval or rejection decision before the flow proceeds.
+
+Exam tip: Capture the response → wait and resume → use an approval action for the manual decision.
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Use the action's response outputs in subsequent steps**.
+
+The correct configuration is to use the action's response outputs in subsequent steps.
+
+Data Persistence: Pausing for human intervention (often via a Power Automate "Approval" or "Wait for an Action" step) generates dynamic output variables based on the human's decision.
+
+Flow Continuity: To use the decision or additional information later, the flow must explicitly capture these response outputs and map them to subsequent steps or variables within Copilot Studio.
+
+**Box 2: Allow the action to wait for and return a response before continuing **
+
+The valid configuration is to allow the action to wait for and return a response before continuing.
+
+Same Flow Run: This setting explicitly pauses the current execution thread and waits for the human interaction to complete. Once the response is submitted, it resumes processing exactly where it left off within the same run.
+
+**Box 3: Add a human approval action.**
+
+The correct configuration is to add a human approval action.
+
+Built-in pausing: An approval action natively pauses the workflow execution.
+
+State preservation: The flow holds its current state and waits until the user selects an outcome (e.g., Approve or Reject). Simplicity: It does not require complex logic to save data and restart the process from
