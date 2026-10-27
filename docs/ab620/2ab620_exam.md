@@ -863,3 +863,309 @@ The correct configuration is to add a human approval action.
 Built-in pausing: An approval action natively pauses the workflow execution.
 
 State preservation: The flow holds its current state and waits until the user selects an outcome (e.g., Approve or Reject). Simplicity: It does not require complex logic to save data and restart the process from
+
+
+### QUESTION 6
+
+A company uses an agent that invokes an agent flow to exchange information during a conversation. The company requires that the agent send data into the flow and receive structured results back from the same flow run. To support this business need, the flow must be configured to do the following:
+
+* Capture the data provided by the agent.
+
+* Return data results to the agent.
+
+You need to configure the flow so that it can exchange data with the agent.
+
+What should you configure for each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+
+Hot Area:
+
+**Agent flow input and output configuration**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Capture the data provided by the agent. | [ 下拉选项框 ]<br>- Use an internal variable.<br>- Add a text input parameter.<br>- Store values only in the topic. |
+| Return data results to the agent. | [ 下拉选项框 ]<br>- Log values to run history.<br>- Store values only in the flow.<br>- Add a text output parameter. |
+
+-----
+
+**Correct Answers**
+
+| Requirement                                | Correct configuration        |
+| ------------------------------------------ | ---------------------------- |
+| 1. Capture the data provided by the agent. | Add a text input parameter.  |
+| 2. Return data results to the agent.       | Add a text output parameter. |
+
+ Explanation
+
+1. Text input parameter: Defines an input that the agent passes to the agent flow when invoking it.
+2. Text output parameter: Defines an output that the flow returns to the agent after execution.
+
+Exam tip: Agent → Flow = Input parameter; Flow → Agent = Output parameter.
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Add a text input parameter**
+
+To allow a Copilot Studio agent to pass data into a flow and receive structured results back, you must configure a Power Automate flow triggered by the "Run a flow from Copilot" trigger with custom input variables, and concluding with the "Respond to Copilot" action containing structured output parameters.
+
+**Box 2: Add a text output parameter **
+
+To return structured results from an agent flow to your agent in Microsoft Copilot Studio, you should configure the "Respond to the agent" action in your flow with an output parameter.
+
+In Microsoft Copilot Studio, when a topic or bot calls a Power Automate flow, data is sent into the flow via input parameters. To pass data, objects, or structured results back to the copilot during the exact same flow run, you must explicitly define one or more output parameters (such as a text, number, or boolean output) in the "Return value(s) to Power Virtual Agents/Copilot Studio" final step of the flow.
+
+
+### QUESTION 7 
+
+You are configuring an agent in Copilot Studio for an organization. The organization uses Microsoft Dataverse, Dynamics 365, and SharePoint Online.
+
+The agent must retrieve information from enterprise systems and internal documents. The agent must meet the following requirements:
+
+* Must retrieve the current balance of a customer account stored in Dataverse.
+
+* Must retrieve the real-time shipping status of an order that updates throughout the day in Dynamics 365.
+
+* Must answer questions based on the content of a static PDF policy document.
+
+* Must provide a welcome message that does NOT depend on enterprise data.
+
+* You need to configure the agent to meet the requirements.
+
+How should the agent retrieve the data? To answer, move the appropriate solutions to the correct requirements. You may use each solution once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+Select and Place:
+
+**Solutions (Options)**
+
+* Create a manual response in the topic.
+* Connect to a Power Platform connector.
+* Upload a file to Agents Knowledge Base.
+* Configure a generative answer without enterprise data.
+
+
+
+| Requirement | Solution |
+| :--- | :--- |
+| Retrieve the current balance of a customer account stored in Dataverse. | [ 空白框 ] |
+| Retrieve the real-time shipping status of an order that updates throughout the day in Dynamics 365. | [ 空白框 ] |
+| Answer questions based on the content of a static PDF policy document. | [ 空白框 ] |
+| Provide a welcome message that does **NOT** depend on enterprise data. | [ 空白框 ] |
+
+
+-----
+
+答案
+
+| Requirement | Solution |
+| :--- | :--- |
+| Retrieve the current balance of a customer account stored in Dataverse. | **Connect to a Power Platform connector.** |
+| Retrieve the real-time shipping status of an order that updates throughout the day in Dynamics 365. | **Connect to a Power Platform connector.** |
+| Answer questions based on the content of a static PDF policy document. | **Upload a file to Agents Knowledge Base.** |
+| Provide a welcome message that does **NOT** depend on enterprise data. | **Create a manual response in the topic.** |
+
+
+解析与考点说明
+
+1. **Retrieve the current balance... (Dataverse) & Retrieve the real-time shipping status... (Dynamics 365)**
+   * **选择：** `Connect to a Power Platform connector.`（连接到 Power Platform 连接器）
+   * **原因：** Dataverse 和 Dynamics 365 都有现成的 Power Platform 预构建连接器。当需要获取**实时数据**（如当前余额、全天更新的物流状态）时，必须使用连接器实时查询后端系统。不能使用知识库（知识库通常用于静态的非结构化文档）或手动回复。**注意：在此类“选择并放置”题型中，选项可以被重复使用。**
+
+2. **Answer questions based on the content of a static PDF policy document.**
+   * **选择：** `Upload a file to Agents Knowledge Base.`（将文件上传到智能体知识库）
+   * **原因：** 静态的 PDF 文件属于非结构化数据。将其上传到知识库并配合生成式答案（Generative Answers），是 Copilot Studio 处理此类文档并基于其内容回答问题的标准做法。不需要为文档中的每一段内容手动创建主题。
+
+3. **Provide a welcome message that does NOT depend on enterprise data.**
+   * **选择：** `Create a manual response in the topic.`（在主题中创建手动回复）
+   * **原因：** 欢迎语是固定的文本，不需要连接任何企业系统去检索数据。直接在主题（通常是系统默认的问候主题）中添加一个“消息（Message）”节点并输入文本即可。
+
+**未使用的选项：** `Configure a generative answer without enterprise data.`（配置不含企业数据的生成式答案）在这个场景中不需要用到。生成式答案应当与知识库配合使用以提供有依据的回答，而纯粹的固定欢迎语用不上生成式节点。
+
+
+**Box 1: Connect to a Power Platform connector **
+
+
+To enable your Copilot agent to fetch specific, real-time structured data (such as a customer's current balance) directly from Dataverse or Dynamics 365, you should connect to a Power Platform connector (or use native Dataverse plugins/tools).
+
+**Box 2: Connect to a Power Platform connector **
+
+Real-Time Data Access: Dynamics 365 data resides in Microsoft Dataverse. Power Platform connectors (like the Dataverse connector) fetch data live from the source, ensuring the shipping status is perfectly accurate and updated throughout the day.
+
+Box 3: Upload a file to Agents Knowledge Base.
+
+Box 4: Create a manual response in the topic.
+
+
+### QUESTION 8 
+
+An agent calls a flow. The agent requires structured output values to be returned.
+
+The agent receives unexpected or empty values.
+
+You need to configure the agent so that data is exchanged correctly between the agent and the flow.
+
+What should you do?
+
+A. Validate parameter definitions.
+
+B. Change the trigger schema.
+
+C. Review the flow run history.
+
+D. Add a Parse JSON inside the flow.
+
+E. Republish the agent.
+
+---
+
+**Correct Answer: A. Validate parameter definitions.**
+
+Explanation
+
+The agent and flow must have matching input and output parameter definitions to exchange data correctly.
+
+- A. Validate parameter definitions — Correct. Check that the flow's input and output parameters have the correct names, data types, and mappings so the agent receives the expected values.
+- B. Change the trigger schema — Incorrect. The trigger schema is not the first thing to change when the issue may be caused by mismatched input/output definitions.
+- C. Review the flow run history — Incorrect. Useful for troubleshooting, but it does not directly configure the data exchange.
+- D. Add a Parse JSON inside the flow — Incorrect. Only necessary when JSON parsing is required; it does not fix general parameter mapping issues.
+- E. Republish the agent — Incorrect. Republishing alone will not fix incorrect parameter definitions.
+
+Exam tip: Unexpected or empty values between an agent and a flow → first validate the input/output parameter definitions and mappings.
+
+
+**Explanation/Reference:**  Correct Answer: A
+
+Explanation:
+
+Validating your parameter definitions is the correct first step. Unexpected or empty values typically occur because of a schema mismatch or because unsupported, nested data types are passed directly between the agent and the Power Automate flow.
+
+### QUESTION 9 
+
+A company is building an agent in Copilot Studio.
+
+The agent must meet the following requirements:
+
+* Responses must be grounded in approved internal content.
+
+* The agent must be able to retrieve information from configured data sources in a topic.
+
+You need to configure the agent so that topic responses are grounded from custom data sources.
+
+What should you configure?
+
+A. Enable analytics to review which topics users trigger most often.
+
+B. Add a custom prompt that tells the agent to answer only from company data.
+
+C. Configure knowledge sources in a generative answers node.
+
+D. Add SharePoint as a knowledge source only at the agent level.
+
+E. Increase the response length limit to improve answer completeness.
+
+----
+
+**Correct Answer: C Section: (none)**
+
+Explanation/Reference:
+
+Explanation:
+
+To configure a Microsoft Copilot Studio agent so its topic responses are exclusively grounded in your custom data sources, you should leverage the Create generative answers node within a targeted custom topic. This setup ensures the agent strictly retrieves information from your approved internal content.
+
+
+**Correct Answer: C. Configure knowledge sources in a generative answers node.**
+
+Explanation
+
+- C — Correct: Configuring knowledge sources in a generative answers node grounds the topic's responses in approved internal content and lets the node retrieve information from those sources.
+- A — Incorrect: Analytics monitors usage; it does not ground responses.
+- B — Incorrect: Prompt instructions guide behavior but do not configure or connect the actual data sources.
+- D — Incorrect: Agent-level SharePoint knowledge alone does not meet the specific requirement to configure data sources within a topic.
+- E — Incorrect: Increasing response length does not improve grounding or data retrieval.
+
+Exam tip: When a question specifically says “in a topic” and “custom data sources,” choose Generative answers node → Configure knowledge sources.
+
+
+### QUESTION 10
+
+A company is building an agent in Copilot Studio topic that must retrieve real-time status information from an external REST API using a Send HTTP request node.
+
+To meet the business needs, the topic must meet the following requirements:
+
+The request must include the required authentication header.
+
+The request must call the endpoint using the correct HTTP method.
+
+The response must be configured with an appropriate response data type based on a schema and saved so the topic can reuse the returned values.
+
+You need to configure the Send HTTP request node.
+
+Which configuration should you use for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Add required headers to the HTTP request.
+* Set the method to GET in the HTTP request.
+* Select JSON data type and save response to a variable.
+* Set the method to POST and send JSON in a request body.
+
+**HTTP Request node configuration**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Configure authentication for the request. | [ 空白框 ] |
+| Select the correct HTTP method for retrieving data. | [ 空白框 ] |
+| Configure structured data handling and storage of data for reuse in the topic. | [ 空白框 ] |
+
+
+-----
+
+| Requirement                                                                    | Correct configuration                                  |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| Configure authentication for the request.                                      | Add required headers to the HTTP request.              |
+| Select the correct HTTP method for retrieving data.                            | Set the method to GET in the HTTP request.             |
+| Configure structured data handling and storage of data for reuse in the topic. | Select JSON data type and save response to a variable. |
+
+Explanation:
+
+- Headers: Include the required authentication header, such as an API key or bearer token.
+- GET: Retrieves real-time status information from the API.
+- JSON + variable: Parses the structured response and saves it in a variable for reuse in subsequent topic steps.
+
+Unused option: Set the method to POST and send JSON in a request body. POST is typically used to submit data, not retrieve status information.
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Add required headers to the HTTP request**
+
+To configure the Send HTTP request node to include the required authentication header, you should add required headers to the HTTP request.
+
+Authentication details for external REST APIs (such as API keys or Bearer tokens) are almost universally passed inside the metadata of the call, which is managed in the Headers.
+
+**Box 2: Set the method to GET in the HTTP request.**
+
+To retrieve real-time status information from an external REST API using a Send HTTP request node in Copilot Studio, you should set the method to GET in the HTTP request.
+
+The standard HTTP GET method is specifically designed to fetch or retrieve data from a server without modifying it.
+
+**Box 3: Select JSON data type and save response to a variable**
+
+When retrieving real-time data, the primary configuration requirement is telling Copilot Studio how to interpret the incoming data (JSON) and storing it in a custom variable so subsequent nodes in your topic can use it.
