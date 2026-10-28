@@ -1169,3 +1169,612 @@ The standard HTTP GET method is specifically designed to fetch or retrieve data 
 **Box 3: Select JSON data type and save response to a variable**
 
 When retrieving real-time data, the primary configuration requirement is telling Copilot Studio how to interpret the incoming data (JSON) and storing it in a custom variable so subsequent nodes in your topic can use it.
+
+
+### QUESTION 11 
+
+A company is deploying an agent for employees.
+
+The company has the following requirements:
+
+Access must be restricted to the internal employees only. End-user authentication must be enforced.
+
+You need to configure the agent based on the company requirements.
+
+What should you do?
+
+A. Select Authenticate with Microsoft Entra ID for the agent.
+
+B. Enable Require Secure Access in the Web channel security.
+
+C. Publish the agent as a public website experience.
+
+D. Select Authenticate with personal account for the agent.
+
+
+----
+
+
+**Correct Answer: A**
+
+Explanation/Reference:
+
+Explanation:
+
+**To enforce strict internal-only access and require end-user authentication for a Microsoft Copilot Studio agent, you must configure Microsoft Entra ID authentication.**
+
+This setup stops external users from chatting with the agent and forces employees to sign in with their corporate accounts before they can access any data.
+
+The implementation requires a mix of tenant-level governance policies and specific agent security configurations.
+
+Reference:
+
+**Correct answer: A. Select Authenticate with Microsoft Entra ID for the agent.**
+
+Explanation:
+
+- Microsoft Entra ID enforces employee authentication using the company’s organizational identities, restricting access to authorized internal users.
+- B. Require Secure Access applies to Web channel security, but it is not the primary setting for enforcing employee authentication.
+- C. Public website experience does not meet the internal-only access requirement.
+- D. Personal account authentication is intended for personal Microsoft accounts, not organizational employee identities.
+
+Exam tip: For an employee-facing Copilot Studio agent that requires organizational sign-in, choose Microsoft Entra ID authentication.
+
+### QUESTION 12 
+
+ A company is integrating an agent in Copilot Studio into a custom application by using the Microsoft 365 Agents SDK.
+
+The company has the following requirements for the application:
+
+The deployment workflow must follow a dependency driven sequence.
+
+The agent must be published before configuration values are retrieved.
+
+End-to-end validation must occur before production deployment.
+
+You need to plan the deployment workflow to integrate the agent.
+
+In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+
+Select and Place:
+
+**Deployment workflow steps (Options)**
+
+* Configure and enable the agent's target integration channel.
+* Retrieve current agent configuration values.
+* Deploy the web app to production.
+* Implement the Microsoft 365 Agents SDK in the app using the agent configuration.
+* Publish the agent.
+* Validate the end-to-end conversation workflow in a test environment.
+
+
+| Answer Area |
+| :--- |
+| **1** [ 空白框 ] |
+| **2** [ 空白框 ] |
+| **3** [ 空白框 ] |
+| **4** [ 空白框 ] |
+| **5** [ 空白框 ] |
+| **6** [ 空白框 ] |
+
+
+**Step 1: Publish the agent**
+
+Based on the second requirement, the agent must be published first before any configuration values can be generated or retrieved.
+
+**Step 2: Retrieve the current agent configuration values** 
+
+Once published, you can extract the necessary configuration properties (such as the Agent ID and Tenant ID) required to connect your applications and infrastructure.
+
+**Step 3: Configure and enable the agent's target integration channel **
+
+Before configuring the SDK code, you must enable the target channel (such as the Custom App or Mobile App channel) within Copilot Studio Channels to permit incoming external connection requests.
+
+**Step 4: Implement the Microsoft 365 Agents SDK in the app using the agent configuration**
+
+With the channels enabled and configurations in hand, your developers can now write the code to implement the Microsoft 365 Agents SDK into your custom application.
+
+**Step 5: Validate the end-to-end conversation workflow in a test environment**
+
+Following the third requirement, end-to-end validation must happen prior to production deployment. This step ensures the chat interface, authentication, and SDK pipelines function flawlessly.
+
+**Step 6: Deploy the web app to production**
+
+Once validation passes successfully, the final step is to push your custom application live to your production environment.
+
+
+
+### QUESTION 13 
+
+An agent in Copilot Studio already exists in a development environment.
+
+You need to prepare the agent so it can be moved to a production environment using the supported solution-based approach.
+
+You need to create an exportable package that contains the existing agent.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point. A. Remove agent topics directly from the solution to prevent export errors.
+
+B. Convert the solution to a managed solution so it can be exported.
+
+C. Export the unmanaged solution that contains the agent.
+
+D. Publish the agent to a channel and export the channel configuration.
+
+E. Create a custom solution and add the existing agent to the solution.
+
+----
+
+Correct answers: C and E.
+
+\- C. Export the unmanaged solution that contains the agent.\
+Export the solution from the development environment as a package.
+
+\- E. Create a custom solution and add the existing agent to the solution.\
+Add the existing Copilot Studio agent to a solution so it can be exported and moved between environments.
+
+Why not the others?
+
+- A: Do not remove topics just to prevent export errors.
+- B: You can export an unmanaged solution; converting it to managed is not required for export.
+- D: Publishing the agent to a channel and exporting channel configuration is not the solution-based packaging approach.
+
+Exam tip: For solution-based ALM, add the existing agent to a Power Platform solution, then export that solution from development.
+
+----
+
+？？？ 
+
+Correct Answer: BE Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+To move a Copilot Studio agent to a production environment using a solution-based approach, you must create a custom unmanaged solution, add your existing agent [E] and its required objects to it, publish all customizations, and export the solution as a managed package [B] [.zip file].
+
+
+### QUESTION 14 
+
+A company wants to use content from a non-Microsoft enterprise knowledge base to ground agent responses.
+
+To meet the business needs, the knowledge source must meet the following requirements:
+
+* Support grounding from indexed data.
+* Use existing access controls from the source system. Support read-only operations.
+* You need to determine the correct behavior to meet the requirements.
+
+Which behavior meets each requirement? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+以下是提取并整理为 Markdown 格式的内容，您可以直接复制：
+
+Hot Area:
+
+
+**Copilot connector knowledge behavior**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Support grounding from indexed data. | [ 下拉选项框 ]<br>- Retrieve indexed content<br>- Execute runtime operations.<br>- Retrieve live data at runtime. |
+| Use existing access controls from the source system. | [ 下拉选项框 ]<br>- Respect existing permissions.<br>- Bypass permissions for faster retrieval.<br>- Respect existing permissions from agent authors. |
+| Support read-only operations. | [ 下拉选项框 ]<br>- Prevent transactional updates.<br>- Allow authenticated write operations.<br>- Enable updates for enhanced performance. |
+
+
+----
+
+正确答案如下：
+
+| Requirement                                          | Correct option                |
+| ---------------------------------------------------- | ----------------------------- |
+| Support grounding from indexed data.                 | Retrieve indexed content      |
+| Use existing access controls from the source system. | Respect existing permissions  |
+| Support read-only operations.                        | Prevent transactional updates |
+
+解析：
+
+1. Retrieve indexed content：通过 Microsoft 连接器索引的数据检索内容，用于 grounding（回答依据）。
+2. Respect existing permissions：遵循源系统已有的访问权限，避免用户访问未经授权的数据。
+3. Prevent transactional updates：知识源用于只读检索，不执行写入或事务性更新操作。
+
+考试记忆： Indexed data → Retrieve；Source permissions → Respect；Read-only → Prevent updates.
+
+
+----
+
+
+**Box 1: Retrieve indexed content**
+
+To ground a Copilot agent in an external enterprise knowledge base using indexed data, you need to configure Retrieve indexed content.
+
+This process relies on Retrieval-Augmented Generation (RAG). Instead of relying on a pre-trained model or executing live API queries during the conversation, the system references a periodically updated, synchronized index of your knowledge base.
+
+**Box 2: Respect existing permissions.**
+
+To ensure that the Copilot agent responses respect the existing access controls and source-level permissions of your non-Microsoft enterprise knowledge base, you must configure Respect existing permissions.
+
+Respect existing permissions: This setting ensures the agent operates on a user-delegated permission model. The Copilot agent dynamically trims and limits search results at runtime, meaning the end-user will only receive answers derived from data they explicitly have authorization to view in the external source system.
+
+Incorrect:
+
+Respect existing permissions from agent authors: This incorrect option would ground responses based entirely on the author's access level during the creation process, potentially leaking sensitive data to unauthorized end-users.
+
+**Box 3: Prevent transactional updates** 
+
+To ground Microsoft Copilot agent responses using a non-Microsoft enterprise knowledge base with read-only operations, you must configure Prevent transactional updates.
+
+This configuration ensures that the Copilot agent can only fetch, read, and query data from your enterprise knowledge base. It explicitly blocks any modifications, insertions, or deletions, adhering strictly to your read-only requirement and protecting your source data from accidental alterations.
+
+
+### QUESTION 15
+
+
+An agent uses a flow that calls an external service which can occasionally fail or time out. When a failure occurs, the agent must meet the following requirements:
+
+Must not terminate silently.
+
+Must send a notification containing the error details.
+
+You need to configure the agent flow so that failures are handled in a controlled and predictable way. Solution: Retry the failing action without handling failure.
+
+Does the solution meet the goal?
+
+A. Yes
+
+B. No
+
+
+----
+
+Correct answer: B. No.
+
+Explanation: Retrying the failing action can help recover from temporary errors or timeouts, but retrying alone does not handle the failure or send a notification containing error details.
+
+To meet the requirements, configure explicit failure handling in the flow, such as:
+
+- Catch the failure using the appropriate error-handling path.
+- Send a notification containing the error details.
+- Optionally, retry transient failures before triggering the error-handling path.
+
+Exam tip: Retry ≠ error handling. Failures must be handled explicitly, and the required notification must be sent.
+
+Correct:
+
+* Configure run after conditions for failure paths.
+
+You should configure the "Run after" conditions in Power Automate (the underlying flow engine) to handle these failures in a controlled and predictable way.
+
+By default, a cloud flow step only runs if the previous step is successful. If your external service fails or times out, all subsequent steps will normally skip, causing the flow to fail silently from the perspective of the Copilot Studio agent.
+
+How to Configure the Flow for Failure Handling To meet your requirements, you need to create a parallel or sequential failure path using the following steps:
+
+1. Add your Notification Action
+
+2. Configure "Run After" Settings Incorrect:
+
+* Retry the failing action without handling failure.
+
+* Send a notification with relevant error details.
+
+
+### QUESTION 16
+
+An agent uses a flow that calls an external service which can occasionally fail or time out.
+
+When a failure occurs, the agent must meet the following requirements: Must not terminate silently.
+
+Must send a notification containing the error details.
+
+You need to configure the agent flow so that failures are handled in a controlled and predictable way. Solution: Configure run after conditions for failure paths.
+
+Does the solution meet the goal?
+
+A. Yes
+
+B. No
+
+----
+
+
+Correct answer: A. Yes.
+
+Explanation: Configuring Run after conditions in Power Automate allows subsequent actions to run when a previous action fails, times out, or is skipped.
+
+This enables the flow to:
+
+- Detect and handle failures explicitly instead of terminating silently.
+- Execute a notification action containing error details.
+- Provide predictable failure-handling behavior.
+
+Exam tip: Use Configure run after to create failure-handling paths, such as sending an error notification when an external API call fails.
+
+----
+
+
+Correct:
+
+* Configure run after conditions for failure paths.
+
+You should configure the "Run after" conditions in Power Automate (the underlying flow engine) to handle these failures in a controlled and predictable way.
+
+By default, a cloud flow step only runs if the previous step is successful. If your external service fails or times out, all subsequent steps will normally skip, causing the flow to fail silently from the perspective of the Copilot Studio agent.
+
+How to Configure the Flow for Failure Handling To meet your requirements, you need to create a parallel or sequential failure path using the following steps:
+
+1. Add your Notification Action
+
+2. Configure "Run After" Settings Incorrect:
+
+* Retry the failing action without handling failure.
+
+* Send a notification with relevant error details.
+
+
+### QUESTION 17
+
+An agent uses a flow that calls an external service which can occasionally fail or time out. When a failure occurs, the agent must meet the following requirements:
+
+Must not terminate silently.
+
+Must send a notification containing the error details.
+
+You need to configure the agent flow so that failures are handled in a controlled and predictable way. Solution: Send a notification with relevant error details.
+
+Does the solution meet the goal? 
+
+A. Yes
+
+B. No
+
+---
+
+Correct answer: B. No.
+
+Explanation: Sending a notification with error details satisfies the notification requirement, but it does not by itself ensure the flow handles failures in a controlled way or prevents silent termination.
+
+You should also configure Run after conditions to detect failures or timeouts and route execution to the notification action.
+
+Exam tip: A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.
+
+---
+
+Correct answer: B. No.
+
+Explanation: Sending a notification with error details satisfies the notification requirement, but it does not by itself ensure the flow handles failures in a controlled way or prevents silent termination.
+
+You should also configure Run after conditions to detect failures or timeouts and route execution to the notification action.
+
+Exam tip: A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.
+
+
+---
+
+Correct Answer: B 
+
+Explanation/Reference:
+
+Explanation:
+
+Correct:
+
+* Configure run after conditions for failure paths.
+
+You should configure the "Run after" conditions in Power Automate (the underlying flow engine) to handle these failures in a controlled and predictable way.
+
+By default, a cloud flow step only runs if the previous step is successful. If your external service fails or times out, all subsequent steps will normally skip, causing the flow to fail silently from the perspective of the Copilot Studio agent.
+
+How to Configure the Flow for Failure Handling To meet your requirements, you need to create a parallel or sequential failure path using the following steps:
+
+1. Add your Notification Action
+
+2. Configure "Run After" Settings Incorrect:
+
+* Retry the failing action without handling failure.
+
+* Send a notification with relevant error details.
+
+---
+
+
+QUESTION 18 
+
+A company uses an agent in Copilot Studio that produces structured responses using a reusable instruction template. The responses follow the required tone and format. During a compliance review, the team discovers that the responses were generated using a model that is not on the approved list.
+
+The company requires that the reusable instruction template continues to be used and the model used for prompt-driven responses meets governance requirements.
+
+The solution must ensure that prompt-driven responses are generated using an approved model.
+
+You need to configure the solution that meets the requirements.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Select an approved model from the Microsoft Foundry model catalog in the configuration that is used for prompt-driven response generation.
+
+B. Configure Azure AI Search as the grounding source so the approved model requirement is enforced during response generation.
+
+C. Ensure the reusable instruction template is the one applied to the agent that generates the structured response.
+
+D. Publish the agent so that the model used by prompt-driven responses is updated automatically.
+
+E. Enable citations so generated responses can be traced and comply with governance requirements.
+
+F. Add a line to the instruction template that requires the agent to use only approved models when generating responses.
+
+---
+
+
+Correct answers: A and C.
+
+- A. Select an approved model from the Microsoft Foundry model catalog in the configuration used for prompt-driven response generation.
+- C. Ensure the reusable instruction template is the one applied to the agent that generates the structured response.
+
+Explanation:
+
+- A directly addresses model governance by explicitly selecting an approved model.
+- C preserves the reusable instruction template so the responses continue to follow the required tone and format.
+
+Why not the others?
+
+- B: Azure AI Search provides grounding; it does not enforce model approval.
+- D: Publishing does not automatically switch the model to an approved one.
+- E: Citations improve traceability but do not control model selection.
+- F: Instructions cannot enforce which underlying model is used.
+
+Exam tip: Model governance requires configuring the model itself; prompt templates control response behavior, not model selection.
+
+---
+
+To fix the compliance issue in Microsoft Copilot Studio, you must select an approved model from the catalog for generation and ensure the correct template is applied. The two necessary configuration steps are:
+
+[F] Select an approved model from the model catalog in the configuration used for prompt-driven response generation.
+
+[C] Ensure the reusable instruction template is the one applied to the agent that generates the structured response.
+
+Configuration Steps Model Selection: Open your agent settings in Microsoft Copilot Studio and choose a compliant, approved foundation model from the catalog for your prompt responses.
+
+Template Assignment: Verify and re-apply the correct reusable instruction template directly to the specific agent responsible for generating the structured output.
+
+
+### QUESTION 19 
+
+A company needs to ground an agent in Copilot Studio answers using live enterprise data from a supported system via a Microsoft Power Platform connector. To meet the business needs, the builder must meet the following requirements:
+
+● Authenticate using a valid connection.
+
+● Add the connector as a real-time knowledge source.
+
+● Select the tables for knowledge grounding.
+
+You need to add a Power Platform connector as a real-time knowledge source for the agent.
+
+In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+**REST API (Options)**
+
+* Select the tables to include as the knowledge source.
+* Add the connector to the agent.
+* Select a real-time connector from the Add knowledge dialog.
+* Sign in and create a new connection or reuse an existing connection.
+* Add a knowledge source.
+
+
+**Answer Area**
+
+| Step | Action |
+| :--- | :--- |
+| **1** | [ 空白框 ] |
+| **2** | [ 空白框 ] |
+| **3** | [ 空白框 ] |
+| **4** | [ 空白框 ] |
+| **5** | [ 空白框 ] |
+
+
+----
+
+Correct order
+
+| Step | Action                                                               |
+| ---- | -------------------------------------------------------------------- |
+| 1    | Add a knowledge source.                                              |
+| 2    | Select a real-time connector from the Add knowledge dialog.          |
+| 3    | Sign in and create a new connection or reuse an existing connection. |
+| 4    | Select the tables to include as the knowledge source.                |
+| 5    | Add the connector to the agent.                                      |
+
+记忆要点： Add knowledge → Select connector → Authenticate → Select tables → Add to agent.
+
+
+Explanation/Reference:
+
+Explanation:
+
+Step 1: Add a knowledge source 
+
+Initiate: You start in the Knowledge tab to trigger the addition.
+
+Step 2: Select the real-time connector from the Add knowledge dialog 
+
+
+Identify: You pick the specific system/connector from the menu.
+
+Step 3: Sign in and create a new connection or reuse an existing connection 
+
+Authenticate: You log in to ensure permissions to the enterprise data.
+
+Step 4: Select the tables to include as the knowledge source 
+
+Configure: You isolate the exact tables needed for grounding.
+
+Step 5: Add the connector to the agent 
+
+
+Finalize: You save and bind the source to your agent.
+
+### QUESTION 20
+
+
+An agent uses a flow that calls an external service which can occasionally fail or time out.
+
+When a failure occurs, the agent must meet the following requirements:
+
+● Must not terminate silently.
+
+● Must send a notification containing the error details.
+
+You need to configure the agent flow so that failures are handled in a controlled and predictable way.
+
+Solution: Terminate the flow immediately on error.
+
+Does the solution meet the goal?
+
+A. Yes
+
+B. No
+
+---
+
+Correct answer: B. No.
+
+Explanation: Terminating the flow immediately on error stops execution, but it does not ensure a notification containing the error details is sent.
+
+Correct approach: Configure Run after conditions to detect failures or timeouts, then execute a notification action that includes the error details.
+
+Exam tip: `Terminate on error` stops the flow; Run after + notification handles the failure and alerts the appropriate recipient.
+
+---
+
+Correct Answer: B Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+Correct:
+
+* Configure run after conditions for failure paths.
+
+You should configure the "Run after" conditions in Power Automate (the underlying flow engine) to handle these failures in a controlled and predictable way.
+
+By default, a cloud flow step only runs if the previous step is successful. If your external service fails or times out, all subsequent steps will normally skip, causing the flow to fail silently from the perspective of the Copilot Studio agent.
+
+How to Configure the Flow for Failure Handling To meet your requirements, you need to create a parallel or sequential failure path using the following steps:
+
+1. Add your Notification Action
+
+2. Configure "Run After" Settings
+
+Incorrect:
+
+* Retry the failing action without handling failure.
+
+* Send a notification with relevant error details.
+
+* Terminate the flow immediately on error.
