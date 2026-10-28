@@ -1777,4 +1777,640 @@ Incorrect:
 
 * Send a notification with relevant error details.
 
-* Terminate the flow immediately on error.
+* Terminate the flow immediately on error.]
+
+
+### QUESTION 21 
+
+A company requires an agent in Copilot Studio to answer questions using content stored in a third-party knowledge base system and reuse that content for knowledge grounding.
+
+The agent must ground answers using indexed enterprise knowledge from a non-Microsoft system.
+
+You need to choose the correct integration approach.
+
+What should you use?
+
+A. Call the third-party API from a topic for each question.
+
+B. Add a Copilot Studio tool as a real-time knowledge source.
+
+C. Add a Copilot Studio tool and call it from a topic.
+
+D. Add a Copilot connector knowledge source for authorized content.
+
+----
+
+
+Correct answer: D. Add a Copilot connector knowledge source for authorized content.
+
+Explanation: Copilot connectors can index content from non-Microsoft enterprise systems and make that indexed content available for knowledge grounding. They can also respect the source system’s access permissions.
+
+Why not the others?
+
+- A: Calls the API separately for each question rather than reusing indexed enterprise knowledge.
+- B: A Copilot Studio tool is for executing actions, not configuring a real-time knowledge source.
+- C: A tool called from a topic performs an operation rather than directly providing indexed knowledge grounding.
+
+Exam tip: Indexed third-party enterprise knowledge → Copilot connector knowledge source.
+
+---
+
+Correct Answer: D
+
+Adding a Copilot connector is the correct approach to index and ground an agent using authorized nonMicrosoft enterprise knowledge.
+
+Integration and Configuration Indexing data: Copilot connectors (formerly Microsoft Graph connectors) sync and index external data sources into Microsoft Graph.
+
+Adding knowledge: Open your agent in Microsoft Copilot Studio, go to the Overview, Knowledge, or Properties page, and select Add knowledge.
+
+Selecting the source: Choose your configured Copilot connector from the dialog menu and select Add to agent.
+
+
+### QUESTION 22 
+
+A company uses a supported Power Platform connector to provide real-time access to enterprise records for knowledge grounding in an agent in Copilot Studio.
+
+To meet the business needs, the knowledge source must provide the following functionality:
+
+● Avoid copying enterprise data into an index.
+
+● Keep source-system access controls enforced.
+
+● Access data by calling the system at runtime.
+
+You need to configure the connector knowledge source.
+
+What should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+
+以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Use real-time connector.
+* Use existing permissions.
+* Retrieve data without indexing.
+* Add Azure AI Search as a knowledge source.
+
+
+**Knowledge source**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Avoid copying enterprise data into an index. | [ 空白框 ] |
+| Keep source-system access controls enforced. | [ 空白框 ] |
+| Access data by calling the system at runtime. | [ 空白框 ] |
+
+----
+
+
+正确答案如下：
+
+| Requirement                                   | Configuration                   |
+| --------------------------------------------- | ------------------------------- |
+| Avoid copying enterprise data into an index.  | Retrieve data without indexing. |
+| Keep source-system access controls enforced.  | Use existing permissions.       |
+| Access data by calling the system at runtime. | Use real-time connector.        |
+
+解析：
+
+- Retrieve data without indexing：避免将企业数据复制到索引中。
+- Use existing permissions：遵循源系统现有的访问控制权限。
+- Use real-time connector：在运行时调用源系统获取最新数据。
+
+未使用的选项： Add Azure AI Search as a knowledge source。Azure AI Search 通常使用索引来检索数据，不符合避免建立索引的要求。
+
+考试记忆： No index → Retrieve without indexing；Permissions → Use existing permissions；Runtime access → Real-time connector.
+
+### QUESTION 23 
+
+A tenant administrator configures a Copilot connector that indexes content from an external knowledge system into Microsoft Graph.
+
+A builder is building an agent that must:
+
+● Use the indexed enterprise knowledge during answer generation.
+
+● Avoid duplicating or manually uploading the same content.
+
+● Avoid invoking the system as a transactional tool.
+
+You need to configure the agent so that responses are grounded in the authorized knowledge sources.
+
+What should you do?
+
+A. Add the configured enterprise knowledge source to the agent’s knowledge.
+
+B. Create a new custom connector inside the agent configuration.
+
+C. Add the connector as a tool and invoke it from a topic.
+
+D. Upload documents from the external system directly into the agent’s file knowledge store.
+
+---
+
+
+Correct answer: A. Add the configured enterprise knowledge source to the agent’s knowledge.
+
+Explanation:
+
+- The Copilot connector has already indexed the external content into Microsoft Graph.
+- Adding the configured enterprise knowledge source lets the agent use that indexed content for grounding during answer generation.
+- This avoids duplicating or manually uploading documents and does not treat the connector as a transactional tool.
+
+Why not the others?
+
+- B: Creates a new connector unnecessarily; one is already configured.
+- C: A tool invoked from a topic is for executing actions, not directly grounding answers from indexed knowledge.
+- D: Manually uploading documents duplicates content already indexed by the connector.
+
+Exam tip: Existing Microsoft Graph indexed content → Add the configured enterprise knowledge source to the agent’s knowledge.
+
+Section: (none)
+
+Explanation/Reference:
+
+Explanation:
+
+You should add the Copilot connector as a knowledge source for the agent.
+
+Grounding via Microsoft Graph: Since the external knowledge system is already being indexed into Microsoft Graph via a Copilot connector, it is already optimized as a read-only semantic knowledge base. In Copilot Studio or the Agent Builder, you simply enable or select this existing Copilot connector from your available knowledge sources.
+
+Avoids Duplication: Adding it as an existing knowledge source directly references the data already indexed in the Graph, preventing you from manually uploading files or duplicating content.
+
+Avoids Transactional Invocation: Creating a new custom connector inside the agent configuration utilizes Power Platform connectors. Power Platform connectors are designed for tool invocation (real-time API calls, writing data, and performing transactional operations), which violates your requirement to avoid a transactional tool setup.
+
+
+### QUESTION 24 
+
+A solution containing an agent in Copilot Studio is deployed to multiple environments that require different configuration values.
+
+Configuration values must vary by environment without modifying the solution contents.
+
+Configuration values must meet the following requirements:
+
+● Allow values to be set during import.
+
+● Exclude values from the agent definition.
+
+● Run a dedicated agent instance for each individual environment.
+
+You need to associate each requirement with the configuration approach.
+
+What should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Use channel-specific settings.
+* Define environment variables in the solution.
+* Publish distinct agent versions for each environment.
+* Hardcode the configuration values in the agent configuration.
+
+
+**ALM-related configurations**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Allow values to be set during import. | [ 空白框 ] |
+| Exclude values from the agent definition. | [ 空白框 ] |
+| Run a dedicated agent instance for each individual environment. | [ 空白框 ] |
+
+---
+
+
+正确答案如下：
+
+| Requirement                                                     | Configuration                                         |
+| --------------------------------------------------------------- | ----------------------------------------------------- |
+| Allow values to be set during import.                           | Define environment variables in the solution.         |
+| Exclude values from the agent definition.                       | Define environment variables in the solution.         |
+| Run a dedicated agent instance for each individual environment. | Publish distinct agent versions for each environment. |
+
+解析：
+
+- Environment variables：将配置值与 Agent 定义分离，并允许在导入解决方案时为不同环境设置相应的值。
+- Distinct agent versions：对应题目要求的每个环境使用独立的 Agent 配置或版本。
+
+未使用的选项：
+
+- Use channel-specific settings：用于配置特定渠道，不是通用的环境级配置管理方式。
+- Hardcode the configuration values：将值写死在配置中，无法灵活适应不同环境。
+
+-----
+
+
+
+Explanation:
+
+**Box 1: Define environment variables in the solution.**
+
+The correct ALM-related configuration to use for this requirement is Environment Variables.
+
+You must use Environment Variables (specifically with the Current Value left blank in the development solution) to allow different configuration values across multiple environments without modifying the solution contents. When you export the solution as managed and import it into a target environment, the system will explicitly prompt the administrator to set the values during import.
+
+**Box 2: Define environment variables in the solution**
+
+ Define environment variables in the solution is the correct Application Lifecycle Management (ALM) configuration to use for this requirement.
+
+Separates Data from Code: Environment variables act as parameters that store configuration keys and values separately from your agent's definition.
+
+Preserves Solution Integrity: You can transport the same solution across development, testing, and production environments without modifying any of its internal contents.
+
+Excludes Hardcoded Values: They explicitly remove the need to embed sensitive or environment-specific data directly inside the agent, satisfying your exact requirement.
+
+**Box 3: Define environment variables in the solution **
+
+You should use Environment Variables combined with Connection References within Power Platform / Copilot Studio.
+
+Define parameters centrally: Create environment variables inside your solution to act as placeholders for your configuration values (like URLs, IDs, or API keys).
+
+Keep the solution generic: Your Copilot agent references these variables rather than hardcoded values. Set values per deployment: When you import the managed solution into a new environment (Test, Production, etc.), the deployment pipeline prompts you to provide the specific values for that environment. Isolate agent traffic: Because the variables point to environment-specific backend services, data sources, or IDs, a single solution definition naturally spins up and drives a dedicated, isolated agent instance in each environment.
+
+### QUESTION 25 
+
+A company is configuring an agent flow that uses multiple action types to perform operations and process data.
+
+The flow must be configured as follows:
+
+● An HTTP action must connect to an external service.
+
+● A data action must reference the correct data to process.
+
+You need to configure the settings for each action type.
+
+Which setting should you configure for each action? To answer, move the appropriate configuration settings to the correct actions. You may use each configuration setting once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+Select and Place:
+
+**Configuration settings (Options)**
+
+* Input and mapping
+* Table relationships and keys
+* Endpoint and authentication
+* Connection timeout and retry policy
+
+
+**Action level configuration settings**
+
+| Action | Configuration setting |
+| :--- | :--- |
+| HTTP action | [ 空白框 ] |
+| Data action | [ 空白框 ] |
+
+----
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Endpoint and authentication**
+
+Endpoint and authentication is the correct configuration setting to use.
+
+To connect any HTTP action to an external service, the system fundamentally needs to know where to send the request and how to prove it has permission to access it.
+
+Endpoint (URL): Specifies the exact web address of the external API or service.
+
+Authentication: Credentials (like API keys, OAuth tokens, or Basic Auth) that verify the agent's identity.
+
+**Box 2: Input and mapping**
+
+The correct configuration setting to use is Input and mapping, because it directly links and passes the correct source data parameters into the data action
+
+正确答案如下：
+
+| Action      | Configuration setting       |
+| ----------- | --------------------------- |
+| HTTP action | Endpoint and authentication |
+| Data action | Input and mapping           |
+
+解析：
+
+- HTTP action → Endpoint and authentication：配置外部服务的 API 端点和身份验证信息。
+- Data action → Input and mapping：指定需要处理的输入数据，并将数据映射到相应的操作参数。
+
+未使用的选项：
+
+- Table relationships and keys：用于特定的数据表关联场景。
+- Connection timeout and retry policy：用于配置连接超时和失败重试策略。
+
+
+
+### QUESTION 26
+
+A team uses environment variables to separate configuration from an agent so that the same solution can be moved between environments.
+
+The team requires the following scenarios to be addressed:
+
+● An administrator updates a sensitive configuration value and needs the change to take effect at runtime without republishing the agent.
+
+● A builder needs to confirm a configuration value but must not be able to modify it from Copilot Studio.
+
+● An administrator updates a non-secret configuration value and needs the updated value to be used by the published agent at runtime.
+
+You need to apply the correct handling behavior for different environment-variable scenarios.
+
+Which behavior should you apply for each scenario? To answer, select the appropriate options in the answer area.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+Multi environment behavior
+
+| Scenario | Behavior |
+| :--- | :--- |
+| Update a sensitive configuration value; the change takes effect at runtime without republishing the agent. | [ 下拉选项框 ]<br>- Republish the agent to apply the update.<br>- Use a secret environment variable type to allow for runtime resolution.<br>- Make the update directly in Copilot Studio. |
+| Confirm a configuration value but do not modify it from Copilot Studio. | [ 下拉选项框 ]<br>- Environment variables are stored as topic variables.<br>- Environment variables are read-only in Copilot Studio.<br>- Environment variables can be edited by any builder in Copilot Studio. |
+| Update a non-secret configuration value and the updated value needs to be used by the published agent at runtime. | [ 下拉选项框 ]<br>- The value can only be changed by hardcoding it into the agent.<br>- The agent must be republished for the updated value to be effective at runtime.<br>- The agent automatically pulls the updated Current Value from the environment at the start of every session. |
+
+----
+
+
+| Scenario                                                                                                          | Correct behavior                                                                |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Update a sensitive configuration value; the change takes effect at runtime without republishing the agent.        | Use a secret environment variable type to allow for runtime resolution.         |
+| Confirm a configuration value but do not modify it from Copilot Studio.                                           | Environment variables are read-only in Copilot Studio.                          |
+| Update a non-secret configuration value and the updated value needs to be used by the published agent at runtime. | The agent must be republished for the updated value to be effective at runtime. |
+
+解析：
+
+1. 敏感配置值：使用 Secret 类型的环境变量，避免将敏感值直接写入 Agent 定义，并支持运行时解析。
+2. 只查看、不修改：环境变量在 Copilot Studio 中作为配置引用使用，Builder 不应通过 Agent 编辑界面修改其值。
+3. 非敏感配置值：更新环境变量后，通常需要重新发布 Agent，才能确保已发布版本使用更新后的值。
+
+考试记忆： Secret → Runtime resolution；View only → Read-only；Non-secret update → Republish.
+
+### QUESTION 27 
+
+A company has agents in Copilot Studio.
+
+The company needs to prevent the agents from using disallowed connectors and insecure data flows. Administrators must be able to enforce the governance controls to prevent and report violations.
+
+You need to enforce governance controls for agents.
+
+What should you do?
+
+A. Configure Application Insights to collect runtime telemetry.
+
+B. Review security FAQs to understand default protections.
+
+C. Review agent analytics to detect risky connector usage.
+
+D. Configure data policies.
+
+----
+
+
+Correct answer: D. Configure data policies.
+
+Explanation: Power Platform data policies (Data Loss Prevention, or DLP policies) allow administrators to govern Copilot Studio agents by restricting disallowed connectors and preventing insecure data flows. They can enforce these controls and help identify policy violations.
+
+Why not the others?
+
+- A. Application Insights: Monitors runtime telemetry; it does not enforce connector restrictions.
+- B. Security FAQs: Provide guidance but do not enforce governance.
+- C. Agent analytics: Helps monitor agent performance, not enforce connector-level security policies.
+
+Exam tip: Prevent disallowed connectors and enforce data-flow governance → Configure DLP/data policies.
+
+
+**Correct Answer: D **
+
+Section: (none) Explanation/Reference:
+
+Explanation:
+
+To enforce governance controls, prevent Copilot Studio agents from using disallowed connectors, and restrict insecure data flows, the correct action to take is to Configure data policies.
+
+Real-Time Prevention: Data policies (Data Loss Prevention or DLP) function as a critical build-time and runtime boundary. If an agent relies on a blocked or disallowed connector, Microsoft Copilot Studio immediately blocks execution or publishing and surfaces an error to the maker or user.
+
+Connector Isolation: Admins use the Power Platform admin center to categorize connectors into Business, Non-Business, or Blocked groups. This directly prevents insecure data flows by ensuring data cannot be leaked from business systems (like Microsoft Dataverse) to unapproved external channels or APIs. Reporting & Auditing: Violations of these data policies are logged and can be tracked centrally by administrators to report and monitor compliance across environments.
+
+
+### QUESTION 28 
+
+A company is designing an agent flow that includes human in the loop stages during execution. The company requires that the agent flow perform the following actions:
+
+● Must wait for a human decision before it resumes.
+
+● Must collect information and then continue execution.
+
+You need to configure the flow behavior.
+
+Which flow behavior should you configure for each stage? To answer, move the appropriate flow behaviors to the correct stages. You may use each flow behavior once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Flow behaviors (Options)**
+
+* Wait for a response and capture inputs.
+* Send a request and continue immediately.
+* Send a notification for approval and continue.
+* Wait for a response and branch based on the decision.
+
+**Flow behaviors**
+
+| Human in the loop stage | Flow behavior |
+| :--- | :--- |
+| Approval | [ 空白框 ] |
+| Information collection | [ 空白框 ] |
+
+---
+
+正确答案如下：
+
+| Human in the loop stage | Flow behavior                                         |
+| ----------------------- | ----------------------------------------------------- |
+| Approval                | Wait for a response and branch based on the decision. |
+| Information collection  | Wait for a response and capture inputs.               |
+
+解析：
+
+- Approval（审批）：等待人工审批结果，并根据批准或拒绝的决定走不同的执行路径。
+- Information collection（信息收集）：等待人工提交所需信息，捕获输入后继续执行流程。
+
+未使用的选项：
+
+- Send a request and continue immediately.
+- Send a notification for approval and continue.
+
+考试记忆： Approval → Wait + branch；Information collection → Wait + capture inputs.
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Wait for response and branch based on the decision **
+
+The best action to take is Wait for response and branch based on the decision because a binary or multipath approval requires distinct logical paths (such as proceeding if approved or canceling/revising if rejected) rather than just logging the text input.
+
+**Box 2: Wait for response and capture inputs**
+
+The correct answer is Wait for response and capture inputs.
+
+Captures Data: The prompt explicitly states that the agent must "collect information" before moving forward.
+
+Pauses Execution: To collect this information from a human, the workflow must pause ("Wait for response") and hold the collected data ("capture inputs") to use in the subsequent steps.
+
+
+### QUESTION 29 
+
+A company is building an agent topic in Copilot Studio. The agent topic uses a generative answers node to respond to user questions based on authorized knowledge sources.
+
+To meet the business needs, the generative answers node must meet the following requirements:
+
+● Use the user’s message in the generative answers node.
+
+● Scope the topic node to query only designated data.
+
+● Restrict responses to approved enterprise data.
+
+You need to configure the generative answers node to meet the requirements.
+
+What should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+
+以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Select Search only selected sources.
+* Select Activity.Text in the Input field.
+* Enable generative orchestration for the agent.
+* Clear Allow the AI to use its own general knowledge.
+
+
+**Generative answers node configuration settings**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Use the user's message in the generative answers node. | [ 空白框 ] |
+| Scope the topic node to query only designated data. | [ 空白框 ] |
+| Restrict responses to approved enterprise data. | [ 空白框 ] |
+
+---
+
+
+正确答案如下：
+
+| Requirement                                            | Configuration                                        |
+| ------------------------------------------------------ | ---------------------------------------------------- |
+| Use the user's message in the generative answers node. | Select `Activity.Text` in the Input field.           |
+| Scope the topic node to query only designated data.    | Select Search only selected sources.                 |
+| Restrict responses to approved enterprise data.        | Clear Allow the AI to use its own general knowledge. |
+
+解析：
+
+1. `Activity.Text`：将用户当前输入的消息传递给生成式答案节点。
+2. Search only selected sources：将检索范围限制在指定的知识源。
+3. Clear Allow the AI to use its own general knowledge：禁止模型使用自身的一般知识作答，确保回答基于获准的企业数据。
+
+未使用的选项： Enable generative orchestration for the agent。
+
+考试记忆： User message → `Activity.Text`；指定数据源 → Search only selected sources；仅限企业数据 → Disable general knowledge.
+
+
+----
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Select the Activity.**
+
+Text in the Input field To use the user's message inside a generative answers node in Microsoft Copilot Studio, map the node's Input field to the System.Activity.Text system variable. This variable captures the exact text of the user's most recent message or trigger phrase.
+
+**Box 2: Select Search only selected sources.**
+
+To scope a Generative Answers node to query only designated data within a specific topic in Microsoft Copilot Studio, you must use the "Search only selected sources" setting within the node's properties and isolate your knowledge base.
+
+**Box 3: Clear Allow the AI to use its own general knowledge **
+
+You configure this correctly by unchecking/clearing the "Allow the AI to use its own general knowledge" option.
+
+When configuring a Create generative answers node in Microsoft Copilot Studio, the system handles external versus internal knowledge sources based on specific toggles:
+
+Preventing Hallucinations: Leaving "Allow the AI to use its own general knowledge" enabled allows the large language model (LLM) to fall back on its public training data (e.g., ChatGPT data) when it cannot find answers in your custom sources.
+
+Strict Enterprise Grounding: Turning this setting OFF explicitly mandates that the agent uses only the authorized enterprise repositories (like SharePoint sites, uploaded files, or custom databases) attached to your node or agent. If an answer isn't in those specific sources, the node stops and hands the query off to your fallback or error-handling flows instead of guessing.
+
+
+### QUESTION 30 
+
+A company is building an agent topic in Copilot Studio.
+
+The topic must meet the following requirements:
+
+● Collect structured user input in a single step.
+
+● Store the submitted values for use later in the conversation.
+
+You need to configure the topic based on the requirements.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Use the latest Adaptive Card schema version in all channels to ensure full feature support.
+
+B. Paste the card JSON into a Message node to collect the user’s response.
+
+C. Add input fields to the card and include an Action.Submit button.
+
+D. Add an Ask with Adaptive Card node to the topic.
+
+E. Use Action.Execute for the button so the card can run commands across channels.
+
+
+Correct answers: C and D.
+
+- C. Add input fields to the card and include an `Action.Submit` button
+
+
+The input fields collect structured user data, and `Action.Submit` submits the entered values.
+
+- D. Add an Ask with Adaptive Card node to the topic.\
+
+This node displays the Adaptive Card, collects the user's response, and makes the submitted values available for use later in the conversation.
+
+Why not the others?
+
+- A: The latest Adaptive Card schema is not supported across all channels.
+- B: A regular Message node is not the appropriate node for collecting Adaptive Card responses.
+- E: `Action.Execute` is associated with Universal Actions and is not the standard choice for this requirement.
+
+Exam tip: Structured input in one step → Ask with Adaptive Card + input fields and `Action.Submit`.
+
+Explanation/Reference:
+
+Explanation:
+
+To meet your requirements in Copilot Studio, you must use an Adaptive Card with input fields and an Action.Submit button within a Question node. This allows you to collect structured data in a single step, store the responses as variables, and ensure maximum compatibility by using the standard schema.
+
+Step-by-Step Implementation
+
+1. Add a Question Node: In your topic authoring canvas, add a new node and select Ask a question.
+
+2. Set the Text Prompt: Type a brief message introducing the form (e.g., Please fill out the form below).
+
+3. Change the Input Type: Click on the dropdown menu next to Identify in the Question properties panel. Change it from a standard entity type to Adaptive Card.
+
+4. Paste the JSON Schema: Switch the card editor view to JSON edit mode and paste the schema provided below.
+
+5. Map Your Variables: After saving the JSON, Copilot Studio will automatically detect the input fields based on their "id" attributes. Go to the Save response as section of the node to map these inputs to topic variables for later use.
