@@ -2772,4 +2772,397 @@ Generative answers are designed specifically for knowledge retrieval, FAQs, and 
 
 In a Microsoft Copilot Studio agent environment, you use a Tool node (specifically an Action node linked to a reusable Agent flow or connector) to trigger an external process like updating booking details.
 
+## Integrate and extend agents in Copilot Studio - Testlet 2 
 
+Background Fabrikam Inc. is a Canada-based manufacturer with a growing service organization that supports field technicians and internal operations teams. Fabrikam Inc. plans to launch a new internal agent solution named Operations Concierge to reduce time spent searching policy content, retrieving operational metrics, and executing routine transactions.
+
+The agent will be used by three groups:
+
+* Service coordinators who triage incoming service requests 
+* Field technicians who need guided procedures and parts availability 
+* Operations managers who monitor KPIs and exceptions
+
+The agent solution must work in real-world operational conditions. Users often ask questions mid-call with a customer or while coordinating parts shipments. The agents require quick, reliable outcomes. As a result, Fabrikam Inc. requires the solution to:
+
+* Provide grounded answers with traceability when it provides guidance.
+
+* Retrieve real-time metrics when users ask for operational status.
+
+* Execute authenticated updates when users initiate a flow (such as creating a parts request).
+
+Fabrikam Inc. also expects the solution to be maintained by multiple makers and developers across the year. The company has experienced duplicated logic and inconsistent behavior across different agents. This project emphasizes reuse, governance, and maintainability across teams.
+
+**Current environment** 
+
+Fabrikam Inc. runs three Microsoft Power Platform environments for agent development and release: Dev, Test, and Prod.
+
+The team plans to build the agent and validate it in Dev and Test, then promote to Prod by using a controlled release process that supports repeatable deployments.
+
+Fabrikam Inc. already has two assets the team wants to reuse:
+
+* A partially completed Copilot Studio agent named Service Desk Agent, used by IT to create internal tickets and route requests 
+
+* A Microsoft Foundry agent created by a central AI team that performs specialized summarization and classification for long-form text (for example, summarizing call transcripts into an incident narrative) 
+
+Fabrikam Inc. also has operational and knowledge data sources:
+
+* A curated policy library (internal SOPs, service warranty rules, escalation criteria, and standard operating procedures) 
+* A set of indexed documents and procedures in an Azure AI Search service that supports vector search for the policy library 
+* A Microsoft Fabric workspace that includes a semantic model used by operations leadership for reporting
+
+**Business requirements** 
+
+Fabrikam Inc. requires Operations Concierge to meet the following business requirements:
+
+* **Traceability requirement**: When the agent provides policy guidance or procedural recommendations, users must be able to see where the answer came from.
+
+* Metrics requirement: When users ask about service performance (backlog, SLA risk, parts shortages, dispatch delays), the solution must return up-to-date metrics in a structured format that operations managers can use in weekly reviews.
+
+* Transaction requirement: The solution must support authenticated updates initiated during conversations, including creating a parts request and updating a service case status.
+
+In addition, Fabrikam Inc. wants to avoid duplicating common assets across agents:
+
+The team must reuse the same set of escalation topics, MCP tool definitions, and a standard safety disclaimer across three different agents.
+
+Only the platform engineering group as allowed to edit shared assets. However, all agent authors must be able to use them.
+
+**Technical requirements** 
+
+The Fabrikam Inc. solution architecture uses a multi-agent approach so that specialist responsibilities are isolated and can evolve independently.
+
+The Operations Concierge (primary agent) must coordinate the following specialist capabilities:
+
+* **Policy and procedure Q&A**: Use an enterprise knowledge source that supports indexed retrieval across the curated policy library and service procedures.
+
+* **Operational metrics**: Delegate metric queries to a Fabric Data Agent that reads governed business data through the Fabric semantic model.
+
+* **Authenticated updates**: Use tools exposed by an existing internal Model Context Protocol (MCP) server that provides transactional operations for the service organization.
+
+* **Specialized processing**: Delegate summarization and classification requests to an existing Microsoft Foundry agent.
+
+Fabrikam Inc. will onboard two MCP servers as tools:
+
+* **PartsOps MCP server:** exposes tools for parts availability checks and parts request creation. The server requires per-user authentication because actions must be traceable to the requesting user. 
+* **WarrantyRules MCP server**: exposes a read-only tool for validating warranty coverage. The server uses an API key shared by the agent team.
+
+Fabrikam Inc. has also defined a collaboration requirement with the existing Service Desk Agent:
+
+* The primary agent must delegate IT-specific requests to the existing Service Desk Agent rather than reimplement ticket creation logic. Finally, Fabrikarn Inc. plans to support a partner integration:
+
+* For shipment tracking inquiries, Fabrikam Inc. will delegate to a partner-provided agent that is only available through a standardized agent-to-agent endpoint.
+
+**Issues and constraints**
+
+During early testing, Fabrikam Inc. found three recurring problems:
+
+* Makers are copying and modifying the same components across agents, resulting in inconsistent disclaimers and duplicated tools.
+
+* Users can obtain a correct answer, but the response is not consistently traceable to a source when the agent uses knowledge.
+
+* The primary agent can route some requests, but specialist capabilities are not consistently delegated (for example, some metric questions are answered generatively instead of being routed to the Fabric Data Agent).
+
+You are part of the engineering team responsible for correcting the design and configuration to meet the preceding requirements and constraints.
+
+### QUESTION 1 
+
+You need to enable Operations Concierge to delegate shipment tracking inquiries according to Fabrikam Inc.'s defined architecture and technical requirements.
+
+Which integration approach should you use?
+
+A. Configure the partner capability as an enterprise knowledge source with indexed retrieval enabled.
+
+B. Configure the partner capability as an MCP tool and invoke it as a transactional operation.
+
+C. Configure the partner capability as an A2A integration and supply its endpoint information.
+
+D. Configure the primary agent to handle shipment tracking through generative responses after publishing.
+
+---
+
+
+正确答案：C. Configure the partner capability as an A2A integration and supply its endpoint information.
+
+**解析**
+
+题目明确指出，合作伙伴提供的 Agent 只能通过标准化的 Agent-to-Agent (A2A) endpoint 访问。因此，应配置 A2A 集成，并提供对应的 endpoint 信息，让 Operations Concierge 能够将运输跟踪请求委派给合作伙伴 Agent。
+
+| 选项 | 判断 | 原因                                                    |
+| -- | -- | ----------------------------------------------------- |
+| A  | ❌  | Enterprise knowledge source 用于检索文档和知识，不适合委派给外部 Agent。 |
+| B  | ❌  | MCP 适合通过工具调用执行操作，但题目明确要求使用 A2A endpoint。              |
+| C  | ✅  | A2A integration 支持通过标准化 Agent-to-Agent 接口委派任务。        |
+| D  | ❌  | 生成式回答不能满足指定的专业 Agent 委派要求。                            |
+
+考试记忆：
+
+- A2A → 委派任务给其他 Agent。
+- MCP → 调用工具或业务操作。
+- Knowledge source → 检索企业知识并提供依据。
+- Generative responses → 生成回答，不等于显式委派。
+
+---
+
+**Correct Answer: C**
+
+Explanation/Reference:
+
+Explanation:
+
+In Microsoft Copilot Studio, when you need your primary agent to interact with a cross-platform, external agent owned by a partner organization, you use the standardized open Agent2Agent (A2A) protocol.
+
+Scenario:
+
+Fabrikarn Inc. plans to support a partner integration:
+
+For shipment tracking inquiries, Fabrikam Inc. will delegate to a partner-provided agent that is only available through a standardized agent-to-agent endpoint.
+
+
+### QUESTION 2 
+
+You need to integrate Fabrikam Inc.'s existing Foundry agent so Operations Concierge can delegate summarization requests.
+
+Which action should you perform for each requirement? To answer, move the appropriate actions to the correct requirements. You may use each action once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+ Select and Place:
+
+**Actions (Options)**
+
+* Add an external agent of type Microsoft Foundry.
+* Publish the Copilot Studio agent to enable external calls.
+* Add the Foundry output as an indexed knowledge source.
+* Enter the Foundry project endpoint URL to create the connection.
+
+
+**Foundry agent integrations**
+
+| Requirement | Action |
+| :--- | :--- |
+| The main agent must be able to call an external Foundry agent. | [ 空白框 ] |
+| The external Foundry agent must reference the correct Foundry project and agent. | [ 空白框 ] |
+
+
+---
+
+正确答案如下：
+
+| Requirement                                                                      | Action                                                           |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| The main agent must be able to call an external Foundry agent.                   | Add an external agent of type Microsoft Foundry.                 |
+| The external Foundry agent must reference the correct Foundry project and agent. | Enter the Foundry project endpoint URL to create the connection. |
+
+解析
+
+1. 添加外部 Foundry Agent：让 Operations Concierge 能够将摘要生成和文本分类任务委派给现有的 Microsoft Foundry agent。
+2. 配置 Foundry project endpoint URL：建立与正确 Foundry 项目的连接，以便引用对应的 Agent。
+
+考试记忆： 集成现有 Foundry agent，选择 Add an external agent of type Microsoft Foundry；配置连接目标，提供 Foundry project endpoint URL。
+
+另外两个选项不适用：将输出添加为索引知识源不等于委派 Agent；发布主 Agent 也不是配置 Foundry 连接的核心步骤。
+
+
+**Box 1: Add an external agent of type Microsoft Foundry.**
+
+The main agent must be able to call an external Foundry agent.
+
+The best action to take is to add an external agent of type Microsoft Foundry.
+
+Add an external agent of type Microsoft Foundry: In multi-agent ecosystems (such as Microsoft Copilot Studio), connecting to specialized external agent frameworks—like Microsoft Foundry—is natively handled by registering or adding that specific system as an external agent type. This allows the orchestration layer of the main agent to properly discover, authenticate, and call the capabilities of the Foundry agent.
+
+**Box 2: Enter the Foundry project endpoint URL to create the connection, **
+
+The external Foundry agent must reference the correct Foundry project and agent.
+
+### QUESTION 3 
+
+You need to plan how Fabrikam Inc. will reuse shared components across multiple agents while limiting who can change the shared components.
+
+Which approach should you use for each requirement? To answer, move the appropriate components to the correct requirements. You may use each component once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+
+Select and Place:
+
+**Components (Options)**
+
+* Restrict component collection to the primary agent.
+* Create a component collection and move shared components into it.
+* Export the primary agent as a solution and copy assets into other agents.
+* Share the component collection with teammates while controlling edit access.
+
+
+**Reusable components**
+
+| Requirement | Component |
+| :--- | :--- |
+| Prevent shared assets from being modified by most builders. | [ 空白框 ] |
+| Reuse the same set of components across multiple agents without copying. | [ 空白框 ] |
+| Limit a shared set of components so it can be used only by its intended primary agent. | [ 空白框 ] |
+
+---
+
+
+正确答案如下：
+
+| Requirement                                                                            | Component                                                                    |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Prevent shared assets from being modified by most builders.                            | Share the component collection with teammates while controlling edit access. |
+| Reuse the same set of components across multiple agents without copying.               | Create a component collection and move shared components into it.            |
+| Limit a shared set of components so it can be used only by its intended primary agent. | Restrict component collection to the primary agent.                          |
+
+ 解析
+
+1. 控制编辑权限：通过共享组件集合并限制编辑权限，让大多数 Builder 可以使用共享资产，但不能随意修改。
+2. 跨 Agent 复用：创建组件集合，将通用的 escalation topics、MCP tool definitions 和标准安全免责声明放入集合中，供多个 Agent 复用，避免重复复制。
+3. 限制使用范围：将组件集合限制为仅供指定的主 Agent 使用。
+
+考试记忆： 权限控制选 Share + control edit access；跨 Agent 复用选 Component collection；限定单个 Agent 使用选 Restrict component collection。
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Share the component collection with teammates while controlling edit access.**
+
+Prevent shared assets from being modified by most builders.
+
+The best action to take is to share the component collection with teammates while controlling edit access.
+
+In Microsoft Copilot Studio, component collections are designed specifically to centralize and reuse assets (like topics, knowledge sources, and actions) across multiple separate agents. When configuring a component collection, administrators or collection owners can utilize built-in sharing permissions to explicitly assign roles to individual makers or groups:
+
+**Box 2: Create a component collection and move shared components into it**
+
+Reuse the same set of components across multiple agents without copying.
+
+The best action to take is to create a component collection and move shared components into it.
+
+In Microsoft Copilot Studio, Component Collections provide a central container to package and share topics, knowledge bases, actions, and entities across multiple agents without duplicating the assets. Once a collection is created, you can establish governance controls (such as managing it within a managed solution) so that makers on other agents can utilize the shared resources but cannot modify them.
+
+**Box 3: Restrict component collection to the primary agent**
+
+Limits a shared set of components so it can be used only be its intended primary agent.
+
+The best action to take is to restrict component collection to the primary agent. In Microsoft Copilot Studio, you can restrict a shared set of components so that it can be used only by its intended agent. This feature helps teams modularize large or sensitive agents and prevents unauthorized reuse.
+
+Reference:
+
+### QUESTION 4 
+
+You need to configure Operations Concierge so that prompt-driven summarization behavior aligns with Fabrikam Inc.'s architectural requirements.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Configure Azure AI Search as the grounding source for summarization prompts. B. Publish the agent to ensure the selected model is enforced for summarization.
+
+C. Select a model from the Foundry model catalog in the custom prompt configuration.
+
+D. Enable citations to control how summarization output is generated.
+
+E. Create a reusable custom prompt template and apply it where summarization responses are generated.
+
+---
+
+正确答案：C 和 E。
+
+| 选项 | 判断 | 解析  |
+| --- | --- | --- |
+| A  | ❌  | Azure AI Search 适合检索和 grounding 知识，不是控制摘要模型和复用提示词的核心措施。                                                                                 |
+| B  | ❌  | 发布 Agent 不是选择或配置摘要模型的主要步骤。                                                                                                              |
+| C  | ✅  | Select a model from the Foundry model catalog in the custom prompt configuration. 在自定义提示词配置中选择符合架构要求的模型。                                |
+| D  | ❌  | Citations 用于提供来源引用，不能控制摘要生成行为本身。                                                                                                        |
+| E  | ✅  | Create a reusable custom prompt template and apply it where summarization responses are generated. 创建并复用统一的自定义提示词模板，确保不同 Agent 的摘要行为一致。 |
+
+考试记忆：
+
+- 模型治理 → C：选择 Foundry model catalog 中的模型。
+- 提示词复用与行为一致性 → E：创建并应用可复用的 custom prompt template。
+
+
+**Correct Answer: CE** 
+
+Section: (none) Explanation/Reference:
+
+Explanation:
+
+Scenario: Specialized processing: Delegate summarization and classification requests to an existing Microsoft Foundry agent.
+
+[C] Model Selection: Choosing a specific model from the Foundry catalog ensures that your classification and summarization requests are routed directly to the correct, optimized LLM backend within the Microsoft Foundry ecosystem.
+
+[E] Custom Prompt Templates: Creating and applying a reusable template ensures consistent formatting, tone, and logic across all areas where your agent handles summarization and classification tasks.
+
+
+### QUESTION 5
+
+You need to connect Operations Concierge to Fabrikam Inc.'s Azure AI Search knowledge index while complying with security requirements.
+
+Which configuration should you use for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Enable citations for grounded answers.
+* Enter the name of the Azure AI Search index.
+* Select the service principal as the authentication type.
+* Provide the Azure AI Search Endpoint URL in the connection details.
+
+**Azure AI Search knowledge source connection**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Ensure the Azure AI Search connection complies with the governance requirement for authenticated access. | [ 空白框 ] |
+| Ensure policy and procedure Q&A uses the required curated, indexed enterprise knowledge source. | [ 空白框 ] |
+| Ensure the connection targets the Azure AI Search service instance that stores the indexed policy documents. | [ 空白框 ] |
+
+-----
+
+
+正确答案如下：
+
+| Requirement                                                                                                  | Configuration                                                       |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| Ensure the Azure AI Search connection complies with the governance requirement for authenticated access.     | Select the service principal as the authentication type.            |
+| Ensure policy and procedure Q&A uses the required curated, indexed enterprise knowledge source.              | Enter the name of the Azure AI Search index.                        |
+| Ensure the connection targets the Azure AI Search service instance that stores the indexed policy documents. | Provide the Azure AI Search Endpoint URL in the connection details. |
+
+解析
+
+1. Service principal：使用服务主体进行身份验证，满足受控的身份认证与访问治理要求。
+2. Index name：指定存储已索引政策和操作流程文档的索引，让 Agent 检索正确的企业知识。
+3. Endpoint URL：指定 Azure AI Search 服务实例的地址，确保连接到正确的服务。
+
+未使用的选项： Enable citations for grounded answers。引用有助于满足答案可追溯性要求，但它不是配置 Search 连接身份验证、索引或服务端点的设置。
+
+-----
+
+？？？？
+
+
+Explanation:
+
+**Box 1: Select the service principal as the authentication type **
+
+Ensure the Azure AI Search connection complies with the governance requirement for authenticated access.
+
+Scenario:
+
+A set of indexed documents and procedures in an Azure AI Search service that supports vector search for the policy library
+
+**Box 2: Provide the Azure Search Endpoint URL in the connection details.**
+
+Ensure policy and procedure Q&A uses the required curated, indexed enterprise knowledge source.
+
+**Box 3: Provide the Azure Search Endpoint URL in the connection details.**
+
+Ensure the connection targets the Azure AI Search service instance that stores the indexed policy documents.
+
+The best action to take is to Provide the Azure Search Endpoint URL in the connection details.
+
+When connecting a Copilot agent to an external knowledge source like Azure AI Search, establishing the connection requires identifying the specific service host. Providing the Azure AI Search Endpoint URL ensures that the underlying connection infrastructure explicitly targets and authenticates against your specific Azure AI Search service instance. Once this service-level connection is validated, you are prompted in the next step to select or enter the specific index containing your documents.
