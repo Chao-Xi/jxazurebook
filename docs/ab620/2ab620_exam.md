@@ -2414,3 +2414,362 @@ Step-by-Step Implementation
 4. Paste the JSON Schema: Switch the card editor view to JSON edit mode and paste the schema provided below.
 
 5. Map Your Variables: After saving the JSON, Copilot Studio will automatically detect the input fields based on their "id" attributes. Go to the Save response as section of the node to map these inputs to topic variables for later use.
+
+
+## Integrate and extend agents in Copilot Studio
+
+**Background**
+
+Blue Yonder Airlines is a global carrier headquartered in Los Angeles, California, operating domestic and international flights. The company serves millions of passengers annually through its website, mobile app, and call centers. To improve customer service efficiency and reduce call center volume, Blue Yonder is deploying an AI agent in Microsoft Copilot Studio.
+
+The agent will handle customer inquiries across multiple channels – web chat, mobile app, and Microsoft Teams (for internal support staff). It will answer questions, retrieve data from enterprise systems, and escalate to human agents when needed.
+
+The project is led by a cross-function team:
+
+* **Product manager**: Defines requirements and success metrics.
+* **Lead agent author**: Designs topics, intents, and generative behavior.
+* **Flow designers**: Build agent flows and integrations.
+* **IT/security and compliance:** Oversees identity, data protection, and Responsible AI (RAI) compliance.
+
+
+**Current environment Channels**
+
+Public website: Embedded web chat Mobile app: In-app chatbot Microsoft Teams: Internal support agent access
+
+**Identity and access**
+
+* **Customers:** Anonymous access for general inquiries (e.g., flight status, baggage policy). 
+* Authentication is required for personal data access (e.g., bookings, loyalty points). 
+* **Internal staff:** Authenticate via Microsoft Entra ID.
+
+**Data sources**
+
+
+* **Reservation and Ticketing System (internal): **REST API, no prebuilt connector with custom enterprise database.
+* **Flight Status and Weather APIs (external)**: REST APIs with API keys.
+* **Customer Support Knowledge Base: **SharePoint library with PDFs and policy documents. Loyalty Program Data: Stored in Dynamics 365 and Dataverse.
+* **Travel Advisory Content:** Uses REST API with partner services.
+
+**Integration mechanisms**
+
+* Custom connectors must be used for internal APIs that lack prebuilt connectors. 
+* HTTP request nodes may be used for lightweight external APIs.
+* Knowledge sources must be used for unstructured content.
+* Agent flows must be used to encapsulate reusable logic (e.g., rebooking).
+
+
+**Business requirements**
+
+**Omnichannel support**
+
+Deploy the agent across web, mobile, and Teams with a consistent user experience. The Teams deployment must also support internal staff.
+
+**Self-service capabilities** 
+
+The agent must handle common inquiries such as:
+
+- Flight status
+
+- Booking and rebooking
+
+- Loyalty program questions
+
+- Travel policies and baggage rules
+
+**Human escalation** 
+
+If the agent cannot resolve an issue or the user requests help, it must:
+
+- Escalate to a human agent.
+
+- Transfer the conversation transcript and relevant context.
+
+- Redact any sensitive personal data before escalation.
+
+**Knowledge integration**
+
+The agent must use scalable methods for knowledge integration and must not rely on manually authored Q&A topics for each document.
+
+**Performance metrics**
+
+* First-contact resolution: +25% 
+* Tier-1 call deflection: ≥20% 
+* Response time: 90% of queries answered within 30 seconds 
+* Accuracy: ≥95% for known FAQs 
+* CSAT: ≥85% for AI-handled interactions
+
+**Technical requirements**
+
+**Platform constraints**
+
+* No custom code is permitted; only Copilot Studio's built-in tools may be used.
+* All backend logic must be implemented using agent flows.
+* Markdown must be used for formatting (e.g., bold, bullet points); HTML is not supported.
+
+**Authentication** 
+
+* Sign-in is required for personal data access. 
+* Anonymous access is allowed for general inquiries.
+* User identity must be used for data access; shared or builder credentials must not be used.
+
+**Compliance and security**
+
+* Power Platform DLP policies must be enforced to block unauthorized data flows.
+* Responsible AI content moderation filters must be enabled.
+* Prompt modifications must be added to enforce tone, disclaimers, and refusal behavior. 
+* Disclaimers must be applied consistently across all generative responses. Manual edits to individual topics must be avoided.
+
+**Monitoring and maintenance**
+
+* All conversations and actions must be logged for auditing.
+* Weekly reviews of transcripts and metrics must be conducted.
+* Topics, flows, and knowledge sources must be updated as policies or systems evolve.
+
+**Issues and constraints**
+
+* **API rate limits:** External APIs (e.g., flight status) have usage limits. Agent flows must handle retries and caching to avoid exceeding quotas.
+
+* **Knowledge base limits**: Copilot Studio has limits on the number and size of indexed documents. Large files must be split or summarized.
+
+* **Generative answer risks**: Generative responses must be constrained to avoid policy violations. Prompt modifications and filters must be used to enforce tone, safety, and compliance.
+
+* **User input variability**: Users phrase questions in diverse ways. Topics must include varied trigger phrases and fallback handling.
+
+* **Authentication UX**: The agent must clearly explain when sign-in is required and handle transitions smoothly across channels.
+
+**Problem statement** 
+
+Blue Yonder Airlines must deploy a secure, scalable, and policy-compliant AI agent using Microsoft Copilot Studio. The agent must deliver accurate, helpful, and safe responses across multiple channels, integrate with enterprise systems, and support both anonymous and authenticated users. It must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction.
+
+
+### QUESTION 1 
+
+You need to implement tool usage in topics that meet the Blue Yonder design and governance requirements.
+
+Which implementation method should you use for each requirement? To answer, move the appropriate implementation methods to the correct requirements. You may use each implementation method once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+ Select and Place:
+
+**Implementation methods (Options)**
+
+* Add a tool node.
+* Add an Adaptive Card.
+* Enable generative orchestration.
+* Display a static message instead of using a tool.
+* Add a Question node for the user to choose the tool
+
+**Tool usage in topics**
+
+| Requirement | Implementation method |
+| :--- | :--- |
+| Let the agent decide when to run a tool based on user input. | [ 空白框 ] |
+| Run a specific agent flow at a defined step in a topic. | [ 空白框 ] |
+| Use a connector action to retrieve data during a conversation. | [ 空白框 ] |
+
+
+----
+
+
+正确答案如下：
+
+| Requirement                                                    | Implementation method            |
+| -------------------------------------------------------------- | -------------------------------- |
+| Let the agent decide when to run a tool based on user input.   | Enable generative orchestration. |
+| Run a specific agent flow at a defined step in a topic.        | Add a tool node.                 |
+| Use a connector action to retrieve data during a conversation. | Add a tool node.                 |
+
+解析：
+
+- Generative orchestration：让 Agent 根据用户意图和上下文，动态决定何时调用适当的工具。
+- Tool node：在 Topic 的指定步骤显式调用 Agent Flow 或 Connector Action，并将结果用于后续对话。
+
+未使用的选项：
+
+- Add an Adaptive Card.
+- Display a static message instead of using a tool.
+- Add a Question node for the user to choose the tool.
+
+考试记忆： Agent 自主决定调用 → Generative orchestration；Topic 中显式调用 Flow / Connector → Tool node。
+
+----
+
+？？？ 
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Add a Question node for the user to choose the tool.**
+
+Let the agent decide when to run a tool based on user input.
+
+**Box 2: Add an Adaptive card**
+
+Run a specific agent flow at a defined step in a topic.
+
+You can run a specific agent flow at a defined step in your topic by using an Ask with Adaptive card node to collect user input, and then triggering the flow using the submitted data.
+
+**Box 3: Add a tool node**
+
+Use a connector action to retrieve data during a conversation.
+
+### QUESTION 2 
+
+You need to determine how the agent in Copilot Studio should integrate with two different systems in the Blue Yonder environment, based on their characteristics and the tools available.
+
+Which integration mechanism should you use for each system? To answer, move the appropriate integrations to the correct system or data sources. You may use each integration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Integrations (Options)**
+
+* HTTP request
+* Custom connector
+* Dataverse connector
+* Generative AI knowledge
+
+
+**Copilot agent integration**
+
+| System or data source | Integration |
+| :--- | :--- |
+| Internal Reservation | [ 空白框 ] |
+| Flight Status and Weather Service | [ 空白框 ] |
+
+---
+
+
+**Box 1: Custom Connector**
+
+
+A Custom Connector is preferable to a HTTP request in this enterprise environment.
+
+Scenario:
+
+Data sources Reservation and Ticketing System (internal): REST API, no prebuilt connector with custom enterprise database.
+
+Custom connectors must be used for internal APIs that lack prebuilt connectors.
+
+**Box 2: HTTP request** 
+
+Flight Status and Weather Service
+
+Scenario:
+
+Flight Status and Weather APIs (external): REST APIs with API keys HTTP request nodes may be used for lightweight external APIs.
+
+
+正确答案及解析如下：
+
+**答案配置**
+
+| System or data source | Integration |
+| :--- | :--- |
+| Internal Reservation | **Custom connector** |
+| Flight Status and Weather Service | **HTTP request** |
+
+---
+
+
+| System or data source             | Integration      | 原因                                                                |
+| --------------------------------- | ---------------- | ----------------------------------------------------------------- |
+| Internal Reservation              | Custom connector | 内部预订系统通过 REST API 提供服务，且没有现成的连接器，因此应创建自定义连接器。                     |
+| Flight Status and Weather Service | HTTP request     | 航班状态和天气属于外部 REST API，可通过 HTTP request 直接调用，并在请求中配置 API Key 等认证信息。 |
+
+考试记忆要点：
+
+- Custom connector：内部或第三方 API 没有现成连接器，需要封装成可复用的连接器。
+- HTTP request：直接发送 HTTP 请求，适合轻量级 REST API 集成。
+- Dataverse connector：访问 Dataverse 中的业务数据，例如 Loyalty 数据。
+- Generative AI knowledge：检索和利用文档、知识库等内容生成回答，不适合执行预订系统的事务操作。
+
+
+### QUESTION 3 
+
+You need to determine an appropriate implementation related to the use of agent flows that is based on Blue Vender's design and compliance standards.
+
+Which implementation method should you use for each scenario? To answer, move the appropriate implementation methods to the correct scenarios. You may use each implementation method once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Implementation methods (Options)**
+
+* Use a tool node.
+* Use a generative answers node.
+* Use a Go to another topic node.
+* Prompt the user for manual input.
+* Manually rebuild the logic in the topic.
+
+
+**Agent flow implementations**
+
+| Scenario | Implementation method |
+| :--- | :--- |
+| A topic includes a series of steps that replicate logic already defined in another flow. | [ 空白框 ] |
+| A topic provides a natural language explanation of a process but does not execute it. | [ 空白框 ] |
+| A topic includes a step that triggers a reusable process to update booking details. | [ 空白框 ] |
+
+----
+
+
+结合 Blue Yonder Airlines 的设计要求，正确答案如下：
+
+| Scenario                                                                                 | Implementation method          |
+| ---------------------------------------------------------------------------------------- | ------------------------------ |
+| A topic includes a series of steps that replicate logic already defined in another flow. | Use a tool node.               |
+| A topic provides a natural language explanation of a process but does not execute it.    | Use a generative answers node. |
+| A topic includes a step that triggers a reusable process to update booking details.      | Use a tool node.               |
+
+解析
+
+1. 复用已有 Flow → Use a tool node：调用已有的 agent flow，避免在 topic 中重复实现相同逻辑。
+2. 只解释流程，不执行操作 → Use a generative answers node：根据知识来源生成自然语言说明。
+3. 更新预订信息 → Use a tool node：调用可复用的 agent flow 执行预订更新等业务操作。
+
+考试记忆： 复用业务逻辑或执行事务操作，选择 Tool node；只回答问题、解释流程，选择 Generative answers node。
+
+----
+
+**？？？？？？**
+
+Explanation/Reference:
+
+Explanation:
+
+Scenario:
+
+**Compliance and security** 
+
+Disclaimers must be applied consistently across all generative responses. Manual edits to individual topics must be avoided.
+
+**Box 1: Use a Go to another topic node** 
+
+You can use a redirect node (often referred to as a Redirect to another topic node) in Microsoft Copilot Studio.
+
+Eliminate Duplication: Grouping shared conversation messages or logic nodes into a single, dedicated topic prevents you from building the exact same steps multiple times.
+
+Easier Maintenance: When you need to make a change, a single update to the target topic automatically reflects across all the topics that redirect to it.
+
+Maintain Context: You can easily pass variable values or input/output parameters between the topics so the agent doesn't lose track of the conversation.
+
+**Box 2: Use a generative answers node** 
+
+You can use a generative answers node within your agent topic to summarize and deliver natural language explanations.
+
+Generative answers are designed specifically for knowledge retrieval, FAQs, and providing informational summaries. They can instantly process enterprise data, documents, or company websites and convert them into plain-language guidance without you having to manually write branching logic for every scenario.
+
+**Box 3: Use a tool node** 
+
+In a Microsoft Copilot Studio agent environment, you use a Tool node (specifically an Action node linked to a reusable Agent flow or connector) to trigger an external process like updating booking details.
+
+
