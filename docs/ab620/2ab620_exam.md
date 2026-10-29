@@ -3166,3 +3166,344 @@ Ensure the connection targets the Azure AI Search service instance that stores t
 The best action to take is to Provide the Azure Search Endpoint URL in the connection details.
 
 When connecting a Copilot agent to an external knowledge source like Azure AI Search, establishing the connection requires identifying the specific service host. Providing the Azure AI Search Endpoint URL ensures that the underlying connection infrastructure explicitly targets and authenticates against your specific Azure AI Search service instance. Once this service-level connection is validated, you are prompted in the next step to select or enter the specific index containing your documents.
+
+
+### QUESTION 6 
+
+You need to design a solution that provides Fabrikam Inc. with a multi-agent design approach with existing agents.
+
+Which approach should you use for each requirement? To answer, move the appropriate approaches to the correct requirements. You may use each approach once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+Select and Place:
+
+**Approaches (Options)**
+
+* Delegate the request to a tools-first agent.
+* Delegate the request to a data-access agent.
+* Delegate the request to a knowledge-focused agent.
+* Add all logic directly into a single agent and its child agents.
+
+**Multi-agent design patterns**
+
+| Requirement | Approach |
+| :--- | :--- |
+| Answer policy questions based on technical requirements. | [ 空白框 ] |
+| Meet metric requirements. | [ 空白框 ] |
+| Meet transaction requirements. | [ 空白框 ] |
+
+---
+
+
+正确答案如下：
+
+| Requirement                                              | Approach                                           |
+| -------------------------------------------------------- | -------------------------------------------------- |
+| Answer policy questions based on technical requirements. | Delegate the request to a knowledge-focused agent. |
+| Meet metric requirements.                                | Delegate the request to a data-access agent.       |
+| Meet transaction requirements.                           | Delegate the request to a tools-first agent.       |
+
+ 解析
+
+1. Policy questions → Knowledge-focused agent：利用 Azure AI Search 等企业知识源检索政策和操作流程，并提供可追溯的依据。
+2. Operational metrics → Data-access agent：委派给 Fabric Data Agent，通过 Fabric semantic model 获取最新的运营指标。
+3. Transactions → Tools-first agent：通过 MCP 工具执行经过身份验证的业务操作，例如创建零件申请、更新服务工单状态。
+
+考试记忆：
+
+- 知识问答 → Knowledge-focused
+- 数据与指标 → Data-access
+- 业务操作与事务 → Tools-first
+
+不要把所有逻辑都放进单一 Agent；这会增加重复实现和维护成本，不符合 Fabrikam 的模块化与复用要求。
+
+
+
+**Box 1: Delegate the request to a knowledge-focused agent** 
+
+Scenario: Traceability requirement: When the agent provides policy guidance or procedural recommendations, users must be able to see where the answer came from.
+
+The best action to take is to delegate the request to a knowledge-focused agent. Pure Grounding and Citation Support: In Microsoft Copilot Studio and the Power Platform ecosystem, a knowledge-focused agent is explicitly engineered to retrieve information from designated repositories (such as SharePoint sites, Dataverse tables, or uploaded company policy manuals).
+
+Built-in Transparency: When an agent relies on custom knowledge sources via Retrieval-Augmented Generation (RAG) or generative answers, it inherently provides inline citations and source links. This allows users to immediately verify exactly where the policy guidance or procedural recommendations originated.
+
+**Box 2: Delegate the request to a data-access agent.**
+
+Scenario: Metrics requirement: When users ask about service performance (backlog, SLA risk, parts shortages, dispatch delays), the solution must return up-to-date metrics in a structured format that operations managers can use in weekly reviews.
+
+The best action to take is to delegate the request to a data-access agent.
+
+Governed and Current Business Data: Tracking active metrics like backlog, SLA risk, and shortages demands direct, real-time query access to structured enterprise data stores (such as Microsoft Fabric or Microsoft Dataverse).
+
+Optimized for Structured Reporting: Data-access specialists focus specifically on retrieving, grouping, and structuring current operational facts into accurate, review-ready formats for management.
+
+Role Distinction: In contrast, a tools-first agent is designed primarily to trigger transactional processes or workflows across external systems (e.g., executing a parts request or updating a service case ticket) rather than retrieving and aggregating high-level analytics.
+
+**Box 3: Delegate the request to a tools-first agent.**
+
+Scenario: Transaction requirement: The solution must support authenticated updates initiated during conversations, including creating a parts request and updating a service case status.
+
+The best action to take is to delegate the request to a tools-first agent.
+
+Action-Oriented Design: A tools-first agent is specifically optimized to perform tasks, run workflows, and execute transactional actions—such as creating parts requests and updating status fields.
+
+API Integration: It excels at leveraging connectors and Power Automate cloud flows to securely push updates back into your Microsoft Power Platform environment.
+
+Separation of Concerns: Delegating to a specialized tools-first agent keeps your orchestration layer lightweight and prevents a single agent from becoming too complex to maintain.
+
+
+### QUESTION 7
+
+You need to configure generative answers so the agent meets Fabrikam Inc’s business requirements. Which solutions should you use? To answer, move the appropriate solutions to the correct requirements. You may use each solution once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+Select and Place:
+
+**Solutions (Options)**
+
+* Upload documents directly into the agent.
+* Select a model from the Foundry model catalog.
+* Configure Azure AI Search as the grounding data source.
+* Instruct the agent to cite sources in knowledge settings.
+
+
+**Azure AI Search and Foundry model solutions**
+
+| Requirement | Solution |
+| :--- | :--- |
+| Users must be able to trace each answer back to its source. | [ 空白框 ] |
+| The agent must retrieve information from a centralized index. | [ 空白框 ] |
+| Responses must be generated by an enterprise-approved foundation model. | [ 空白框 ] |
+
+---
+
+正确答案如下：
+
+| Requirement                                                             | Solution                                                  |
+| ----------------------------------------------------------------------- | --------------------------------------------------------- |
+| Users must be able to trace each answer back to its source.             | Instruct the agent to cite sources in knowledge settings. |
+| The agent must retrieve information from a centralized index.           | Configure Azure AI Search as the grounding data source.   |
+| Responses must be generated by an enterprise-approved foundation model. | Select a model from the Foundry model catalog.            |
+
+解析
+
+1. 可追溯性 → Cite sources：让用户能够查看政策或流程回答的来源，满足 Traceability requirement。
+2. 集中式知识检索 → Azure AI Search：连接已有的 Azure AI Search 索引，避免重复上传文档，并统一管理企业知识。
+3. 模型治理 → Foundry model catalog：选择企业批准的基础模型，满足模型治理要求。
+
+未使用的选项： Upload documents directly into the agent。因为 Fabrikam 已有集中式 Azure AI Search 索引，直接上传文档会造成知识重复管理。
+
+------
+
+**Box 1: Instructing the agent to cite sources in the knowledge settings**
+
+Traceability requirement: When the agent provides policy guidance or procedural recommendations, users must be able to see where the answer came from.
+
+Instructing the agent to cite sources in the knowledge settings is a correct and effective action to meet this requirement.
+
+In Microsoft Copilot Studio and Power Platform environments, configuring generative answers to include citations ensures transparency and compliance by allowing users to verify policy or procedural data directly from the original source files (such as SharePoint sites or uploaded documents).
+
+**Box 2: Configure Azure AI Search as the grounding data source** 
+
+Configure Azure AI Search as the grounding data source is the best action to meet this requirement.
+
+Centralized Indexing: Azure AI Search is explicitly designed to serve as a centralized external index. It allows you to connect Microsoft Copilot Studio agents directly to existing enterprise vector or keyword indexes rather than siloing information.Enterprise Scaling: Uploading documents directly into individual agents creates fragmented knowledge bases and hits file size limits, which breaks the requirement for a centralized index.Grounding Capabilities: Choosing this option automatically provides the agent with securely mapped data fields for retrieval, serving as the foundational knowledge source to ground the agent's generative answers.
+
+**Box 3: Select a model from the Foundry model catalog**
+
+ To ensure that your Copilot agents generate responses using an enterprise-approved foundation model in Microsoft Power Platform environments, the best action is to select a model from the Foundry model catalog.
+
+Model Selection vs. Grounding Data: The requirement explicitly specifies that the responses must be generated by an enterprise-approved foundation model.
+
+Choosing a specific LLM from the Azure AI Foundry model catalog (or Power Platform's AI Builder models dropdown) directly controls which underlying LLM generates the text.
+
+The alternative choices (such as uploading documents, configuring Azure AI Search, or instructing the agent to cite sources) deal exclusively with grounding data (RAG) and knowledge settings rather than selecting or restricting the actual text-generation foundation model itself.
+
+
+
+### QUESTION 8 
+
+You need to ensure that performance-related questions are handled in accordance with Fabrikam Inc.’s defined architecture and business requirements.
+
+Which capability should Operations Concierge use?
+
+A. A Foundry agent configured for summarization and classification.
+
+B. A data agent integrated into the multi-agent solution.
+
+C. An MCP server tool that executes transactional operations.
+
+D. An Azure AI Search knowledge source configured for enterprise policy retrieval.
+
+---
+
+
+正确答案：
+
+**B. A data agent integrated into the multi-agent solution.**
+
+解析
+
+Fabrikam 的性能相关问题包括 backlog、SLA risk、parts shortages 和 dispatch delays。根据题目架构要求，Operations Concierge 应将这些指标查询委派给 Fabric Data Agent，由它通过 Microsoft Fabric semantic model 访问受治理的业务数据，并返回最新指标。
+
+| 选项 | 判断 | 原因                                     |
+| -- | -- | -------------------------------------- |
+| A  | ❌  | Foundry agent 用于摘要和分类。                 |
+| B  | ✅  | Data agent 用于查询业务数据和运营指标。              |
+| C  | ❌  | MCP 工具用于事务操作，例如创建零件申请。                 |
+| D  | ❌  | Azure AI Search 用于检索政策和流程知识，而不是实时运营指标。 |
+
+考试记忆： 实时运营指标 → Data Agent；文档问答 → Knowledge source；业务事务 → MCP tools；摘要和分类 → Foundry agent。
+
+
+**Correct Answer: B Section: (none)**
+
+Explanation/Reference:
+
+Explanation:
+
+The agent best described by this scenario is a data agent integrated into the multi-agent solution, serving as the orchestrator or "orchestrator agent" that coordinates the other specialist capabilities.
+
+The requirement explicitly states that this specific agent "must coordinate" multiple specialist capabilities (Q&A, metrics, updates, and specialized processing). In a Microsoft Copilot and Power Platform multiagent architecture, an orchestrator agent acts as the central router. It takes user intent and delegates tasks to specific specialized tools and sub-agents (like the Fabric Data Agent and the Foundry agent).
+
+Scenario:
+
+The Operations Concierge (primary agent) must coordinate the following specialist capabilities:
+
+● **Policy and procedure Q&A:** Use an enterprise knowledge source that supports indexed retrieval across the curated policy library and service procedures.
+
+● **Operational metrics**: Delegate metric queries to a Fabric Data Agent that reads governed business data through the Fabric semantic model.
+
+● **Authenticated updates:** Use tools exposed by an existing internal Model Context Protocol (MCP) server that provides transactional operations for the service organization.
+
+● **Specialized processing**: Delegate summarization and classification requests to an existing Microsoft Foundry agent.
+
+
+### QUESTION 9 
+
+You need to enable collaboration requirements for Operations Concierge.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Enable allow connections from other agents on the Service Desk Agent.
+
+B. Replace the Service Desk Agent with an MCP server.
+
+C. Publish Operations Concierge to enable delegation automatically.
+
+D. Add the Service Desk Agent as an indexed knowledge source.
+
+E. Publish the Service Desk Agent.
+
+---
+
+正确答案：A 和 E。
+
+| 选项 | 判断 | 解析                                                                               |
+| -- | -- | -------------------------------------------------------------------------------- |
+| A  | ✅  | 在 Service Desk Agent 上启用 Allow connections from other agents，允许其他 Agent 连接并委派任务。 |
+| B  | ❌  | 不需要用 MCP server 替换现有 Agent。                                                      |
+| C  | ❌  | 发布 Operations Concierge 不会自动启用 Agent 委派。                                         |
+| D  | ❌  | 将 Agent 作为索引知识源只能用于知识检索，不能实现任务委派。                                                |
+| E  | ✅  | Publish the Service Desk Agent，发布被委派的 Agent，使其能够被其他 Agent 调用。                    |
+
+考试记忆： 被委派的 Agent 必须允许其他 Agent 连接，并且需要发布才能参与协作。
+
+**Correct Answer: AE** 
+
+Explanation/Reference:
+
+Explanation:
+
+Publish the Service Desk Agent and Enable "allow connections from other agents" on the Service Desk Agent are the correct actions to take.
+
+To enable agent-to-agent delegation (also known as sub-agents or orchestrating multiple agents) in Microsoft Copilot Studio, the secondary agent must be explicitly configured to accept hand-offs and then be made live.
+
+Enable "allow connections from other agents": This setting acts as the security and architecture toggle. It exposes the Service Desk Agent's capabilities, topics, and actions so that a primary orchestrator agent can discover and communicate with it.
+
+Publish the Service Desk Agent: A Copilot Studio agent cannot be called or utilized by another system or agent until its latest configuration and logic are compiled and made live via publishing.
+
+Scenario:
+
+Fabrikam Inc. plans to launch a new internal agent solution named Operations Concierge to reduce time spent searching policy content, retrieving operational metrics, and executing routine transactions.
+
+Fabrikam Inc. already has two assets the team wants to reuse:
+
+*-> A partially completed Copilot Studio agent named Service Desk Agent, used by IT to create internal tickets and route requests
+
+Fabrikam Inc. has also defined a collaboration requirement with the existing Service Desk Agent: The primary agent must delegate IT-specific requests to the existing Service Desk Agent rather than reimplement ticket creation logic.
+
+
+### QUESTION 10
+
+You need to add Fabrikam Inc.’s MCP servers as a tool so the agent can perform the required operations during conversations.
+
+Which setting should you configure for each requirement? To answer, move the appropriate settings to the correct requirements. You may use each setting once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+以下是提取并整理为 Markdown 格式的内容。由于图片中缺少具体的上下文（比如 PartsOps 或 WarrantyRules 的具体技术要求），以下基于 Copilot Studio 中 MCP (Model Context Protocol) 的一般最佳实践和安全标准提供答案及解析：
+
+Select and Place:
+
+**Settings (Options)**
+
+* Use the same authentication type for the MCP servers.
+* Configure a server description about the MCP server role.
+* Select API key as the authentication type for the MCP server.
+* Select OAuth 2.0 as the authentication type for the MCP server.
+
+**MCP onboarding options**
+
+| Requirement | Setting |
+| :--- | :--- |
+| Implement PartsOps MCP server actions in alignment with the technical requirements. | [ 空白框 ] |
+| Configure the WarrantyRules MCP server in alignment with the technical requirements. | [ 空白框 ] |
+| Ensure that the agent has enough server context to decide when to call the MCP server. | [ 空白框 ] |
+
+---
+
+
+正确答案如下：
+
+| Requirement                                                                            | Setting                                                         |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Implement PartsOps MCP server actions in alignment with the technical requirements.    | Select OAuth 2.0 as the authentication type for the MCP server. |
+| Configure the WarrantyRules MCP server in alignment with the technical requirements.   | Select API key as the authentication type for the MCP server.   |
+| Ensure that the agent has enough server context to decide when to call the MCP server. | Configure a server description about the MCP server role.       |
+
+解析
+
+1. PartsOps → OAuth 2.0：PartsOps 要求按用户身份进行认证，以便追踪是谁执行了零件查询或创建申请等操作。
+2. WarrantyRules → API key：WarrantyRules 使用团队共享的 API Key，符合题目给出的认证要求。
+3. Server description：描述 MCP server 的职责和用途，帮助 Agent 判断何时调用相应工具。
+
+未使用的选项： Use the same authentication type for the MCP servers。两个 MCP server 的认证要求不同，因此不应强制使用相同的认证类型。
+
+**Box 1: Select OAuth 2.0 as the authentication type for the MCP server**
+
+Scenario:
+
+PartsOps MCP server: exposes tools for parts availability checks and parts request creation. The server requires per-user authentication because actions must be traceable to the requesting user.
+
+Select OAuth 2.0 as the authentication type for the MCP server is the best step.
+
+Per-user authentication requirement: The prompt specifies that the server requires per-user authentication so that actions remain traceable to the specific requesting user.
+
+OAuth 2.0 capabilities: OAuth 2.0 delegates user authentication to the identity provider and passes individual user tokens, satisfying the exact tracking requirement.
+
+**Box 2: Select API key as the authentication type for the MCP server**
+
+Scenario:
+
+WarrantyRules MCP server: exposes a read-only tool for validating warranty coverage. The server uses an API key shared by the agent team.
+
+The scenario states that the Model Context Protocol (MCP) server already requires an API key shared by the agent team. When configuring the onboarding options in the Microsoft Copilot Studio MCP onboarding wizard, you must align the authentication type with the credentials your backend server expects. Selecting "API key" ensures that Copilot properly formats and relays the shared team key during execution.
+
+**Box 3: Configure a server description about the MCP server role.**
+
+To ensure a specific Copilot agent knows exactly when to call your Model Context Protocol (MCP) server, you should configure a server description that defines the server's specialized function, its data limitations (read-only), and the specific user intents that trigger its use.
