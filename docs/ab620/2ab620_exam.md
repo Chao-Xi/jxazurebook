@@ -3507,3 +3507,685 @@ The scenario states that the Model Context Protocol (MCP) server already require
 **Box 3: Configure a server description about the MCP server role.**
 
 To ensure a specific Copilot agent knows exactly when to call your Model Context Protocol (MCP) server, you should configure a server description that defines the server's specialized function, its data limitations (read-only), and the specific user intents that trigger its use.
+
+
+## 3 Integrate and extend agents in Copilot Studio Question Set 3 
+
+### QUESTION 1 
+
+A company is building a Copilot Studio solution that must answer policy questions, retrieve operational metrics from structured data, and execute authenticated updates in backend systems. The company decides to use multiple specialized agents rather than a single monolithic agent. Custom agents for each action already exist.
+
+To meet the business needs, the solution must meet the following requirements:
+
+The solution must retrieve up to date metrics from structured data.
+
+The solution must answer policy questions using curated knowledge. The solution must execute authenticated updates during conversations.
+
+You need to select the appropriate agent design for each requirement.
+
+Which approach should you use for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Delegate the request to a single agent.
+* Delegate the request to a tools-first agent.
+* Delegate the request to a data-access agent.
+* Delegate the request to a knowledge-focused agent.
+
+
+**Multi-agent design patterns**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| The solution must retrieve up to date metrics from structured data. | [ 空白框 ] |
+| The solution must answer policy questions using curated data sources. | [ 空白框 ] |
+| The solution must execute authenticated updates during conversations. | [ 空白框 ] |
+
+---
+
+
+正确答案如下：
+
+| Requirement                                         | Configuration                                      |
+| --------------------------------------------------- | -------------------------------------------------- |
+| Retrieve up-to-date metrics from structured data.   | Delegate the request to a data-access agent.       |
+| Answer policy questions using curated data sources. | Delegate the request to a knowledge-focused agent. |
+| Execute authenticated updates during conversations. | Delegate the request to a tools-first agent.       |
+
+ 解析
+
+- Data-access agent：访问结构化数据，获取最新运营指标。
+- Knowledge-focused agent：检索经过整理的政策和知识来源，提供有依据的回答。
+- Tools-first agent：调用已认证的工具执行后端操作，例如创建零件申请、更新服务工单状态。
+
+考试记忆： Metrics → Data-access；Policy Q&A → Knowledge-focused；Authenticated updates → Tools-first。
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Delegate the request to a tools-first agent**
+
+To retrieve up-to-date operational metrics from structured data in a multi-agent Copilot Studio architecture, you should configure the parent system to delegate the request to a tools-first agent.
+
+Specialized Actions: In Copilot Studio, custom connectors and APIs that query or update structured data are configured as tools.
+
+Dynamic Execution: A tools-first agent is specifically designed to evaluate the user's intent, select the correct authenticated API/connector (the tool), and pass parameters to retrieve real-time data.
+
+Delegation Overlap: Knowledge-focused agents are optimized for RAG (retrieval-augmented generation) over static, unstructured files/documents rather than dynamic operational metrics.
+
+**Box 2: Delegate the request to a knowledge-focused agent. **
+
+To meet the requirement of answering policy questions using curated knowledge within a multi-agent Copilot Studio solution, you should delegate the request to a knowledge-focused agent.
+
+**Box 3: Delegate the request to a tools-first agent**
+
+To execute authenticated updates and actions in backend systems, you should delegate the request to a tools-first agent in Copilot Studio. While other specialized agents handle document synthesis or data analysis, a tools-first agent is configured to process API-based actions and plugins with proper end-user authentication.
+
+In multi-agent architecture within Microsoft Copilot Studio, agents are typically categorized by their core operational focus. A tools-first agent is explicitly designed to prioritize taking specific actions—such as executing backend APIs, running plugins, or triggering workflows—making it the designated agent type for processing transactional and authenticated system updates.
+
+### QUESTION 2 
+
+A company has an approved custom connector that uses a REST API for an internal system.
+
+An agent in Copilot Studio must call this connector during conversations to retrieve or update data.
+
+To meet the business needs, the solution must meet the following requirements:
+
+Make the connector actions available for the agent to invoke.
+
+Ensure authentication is handled at the service level, not per user.
+
+Pass conversation context into the connector when it is called.
+
+Surface the returned data of the connector to the user in the conversation.
+
+You need to configure the agent and the connector action to meet the requirements.
+
+What should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Map topic variables to the tool inputs.
+* Parse the JSON response and assign it to a topic variable.
+* Add the connector as a tool in the agent.
+* Create or reuse a connection for the connector.
+
+
+
+**REST API**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Make connector actions available for agent to invoke. | [ 空白框 ] |
+| Handle authentication at service level, not per user. | [ 空白框 ] |
+| Pass conversation context into connector when called. | [ 空白框 ] |
+| Surface connector's returned data to the user. | [ 空白框 ] |
+
+----
+
+
+正确答案如下：
+
+| Requirement                                               | Configuration                                              |
+| --------------------------------------------------------- | ---------------------------------------------------------- |
+| Make connector actions available for the agent to invoke. | Add the connector as a tool in the agent.                  |
+| Handle authentication at service level, not per user.     | Create or reuse a connection for the connector.            |
+| Pass conversation context into the connector when called. | Map topic variables to the tool inputs.                    |
+| Surface the connector's returned data to the user.        | Parse the JSON response and assign it to a topic variable. |
+
+解析
+
+1. Add the connector as a tool：将自定义连接器添加到 Agent，使其能够调用 REST API 操作。
+2. Create or reuse a connection：建立连接并配置连接使用的身份验证方式。要满足服务级认证要求，应使用配置好的共享连接或连接凭据，而不是要求每位用户单独登录。
+3. Map topic variables to tool inputs：把对话中收集的参数或上下文传递给连接器。
+4. Parse JSON response：将 API 返回的 JSON 数据保存到 topic 变量，再通过消息或后续节点展示给用户。
+
+考试记忆： 注册工具 → Add as tool；连接与认证 → Create/reuse connection；传入参数 → Map variables；返回结果 → Parse JSON into variable。
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Add the connector as a tool in the agent** 
+
+To make the custom connector actions available for the agent to invoke, the correct configuration action is to add the connector as a tool in the agent.
+
+**Box 2: Create or reuse a connection for the connector**
+
+The correct configuration action to ensure authentication is handled at the service level (and not per user) is to create or reuse a connection for the connector.
+
+Service-Level Auth: In Copilot Studio, when you use a custom connector, you must establish a connection that determines how credentials are supplied.
+
+Connection Creation: By creating a connection using a fixed service account or API key—and configuring it to be shared or run under that specific context—the agent authenticates at the system/service level.
+
+**Box 3: Map topic variables to the tool inputs**
+
+The correct configuration action is to map topic variables to the tool inputs.
+
+When you add a custom connector to an agent in Microsoft Copilot Studio, it functions as a "tool" or an action. To pass specific data—such as conversation context or user details—from the ongoing chat into that connector, you must map the active Copilot Studio topic variables to the input parameters defined by the connector's REST API.
+
+**Box 4: Parse the JSON response and assign it to a topic variable **
+
+To surface the returned data of the connector to the user in Copilot Studio, the correct configuration action is to parse the JSON response and assign it to a topic variable.
+
+**Data Extraction: Custom connectors return raw JSON data from REST APIs**.
+
+**Variable Storage: Copilot Studio cannot display raw JSON directly to users in a clean way**.
+
+
+### QUESTION 3 
+
+A company has an Azure AI Search vector index that contains enterprise content and wants to use it as a knowledge source for an agent in Copilot Studio.
+
+To meet business needs, the knowledge source must meet the following requirements:
+
+* The agent must connect to the Azure AI Search service.
+
+* The agent must use a supported authentication method for the connection.
+
+* The agent must ensure answers are grounded using the specified Azure AI Search index.
+
+You need to connect to Azure AI Search as a knowledge source for the agent.
+
+In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+
+ Select and Place:
+
+**Azure AI Search knowledge source connection steps (Options)**
+
+* Configure the authentication method and provide the required connection details.
+* Associate the configured knowledge source with the agent.
+* Create a new Azure AI Search connection.
+* Initiate the process to add a knowledge source to the agent.
+* Specify the Azure AI Search index to use for grounding.
+
+
+
+**Answer Area**
+
+| Step | Action |
+| :--- | :--- |
+| **1** | [ 空白框 ] |
+| **2** | [ 空白框 ] |
+| **3** | [ 空白框 ] |
+| **4** | [ 空白框 ] |
+| **5** | [ 空白框 ] |
+
+---
+
+正确顺序如下：
+
+| Step | Action                                                                           |
+| ---- | -------------------------------------------------------------------------------- |
+| 1    | Initiate the process to add a knowledge source to the agent.                     |
+| 2    | Create a new Azure AI Search connection.                                         |
+| 3    | Configure the authentication method and provide the required connection details. |
+| 4    | Specify the Azure AI Search index to use for grounding.                          |
+| 5    | Associate the configured knowledge source with the agent.                        |
+
+解析
+
+1. Add a knowledge source：从 Agent 的知识配置入口启动添加流程。
+2. Create connection：创建 Azure AI Search 连接。
+3. Configure authentication and connection details：设置支持的身份验证方式，并提供 Search 服务的 Endpoint 等信息。
+4. Specify index：选择包含企业内容的指定索引，确保回答基于正确的数据。
+5. Associate with agent：完成配置并将知识源关联到 Agent。
+
+考试记忆： 启动添加 → 创建连接 → 配置认证 → 选择索引 → 关联 Agent。
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Step 1: Initiate the process to add a knowledge source to the agent**
+
+You start inside Copilot Studio by navigating to your agent's settings and choosing to add a new knowledge source.
+
+**Step 2: Create a new Azure AI Search connection** 
+
+From the available knowledge source options, you select Azure AI Search, which prompts the creation of a new connection.
+
+**Step 3: Configure the authentication method and provide the required connection details** 
+
+You input the necessary credentials (such as your Azure AI Search endpoint and API key or OAuth details) to authenticate the connection securely.
+
+**Step 4: Specify the Azure AI Search index to use for grounding** 
+
+Once connected, you select the specific vector index that contains your enterprise content so the model knows where to look.
+
+**Step 5: Associate the configured knowledge source with the agent **
+
+Finally, you save and link this configured search source to the agent, enabling it to ground its responses using your enterprise data.
+
+### QUESTION 4
+
+A company uses a primary agent in Copilot Studio to handle user intake.
+
+For some requests, the company wants the primary agent to delegate work to another Copilot Studio agent that already exists.
+
+To meet the business needs, the solution must allow agents to perform the following on the connected agent:
+
+Must allow calls from other agents.
+
+Must allow agents to use the connected agent for collaboration. Must allow agents to invoke the connected agent in conversations.
+
+You need to integrate the existing Copilot Studio agent with the connected agent.
+
+Which setting should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+
+
+
+Select and Place:
+
+**Configuration (Options)**
+
+* Publish the connected agent.
+* Add the connected agent.
+* Configure connections to the connected agent.
+* Add the connected agent as an indexed knowledge source.
+
+
+
+**Copilot Studio agent-to-agent integrations**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Must allow calls from other agents | [ 空白框 ] |
+| Must allow agents to use the connected agent for collaboration. | [ 空白框 ] |
+| Must allow agents to invoke the connected agent in conversations. | [ 空白框 ] |
+
+
+----
+
+根据 Copilot Studio 中智能体到智能体（Agent-to-Agent）集成的官方机制，以下是该题的正确配置与解析：
+
+正确答案
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Must allow calls from other agents | **Publish the connected agent.** |
+| Must allow agents to use the connected agent for collaboration. | **Add the connected agent.** |
+| Must allow agents to invoke the connected agent in conversations. | **Add the connected agent.** |
+
+详细解析
+
+**1. Must allow calls from other agents（必须允许来自其他智能体的调用）**
+
+*   **正确选项：** `Publish the connected agent.`
+*   **解析：** 在 Copilot Studio 中，一个智能体必须处于**已发布（Published）** 状态，才能被其他智能体发现并调用。Microsoft Learn 文档指出，连接另一个 Copilot Studio 智能体的前提条件之一就是“另一个智能体必须已发布”。此外，主智能体只能在该智能体发布后，才能使用其最新版本。
+
+**2. Must allow agents to use the connected agent for collaboration.（必须允许智能体使用连接智能体进行协作。）**
+*   **正确选项：** `Add the connected agent.`
+*   **解析：** 要让主智能体（父智能体）与另一个独立的智能体进行协作，必须在主智能体的配置中**添加（Add）** 该连接智能体。官方步骤为：在主智能体的“智能体”页面选择“添加智能体”，并在“连接外部智能体”下选择 Copilot Studio，然后从列表中选择目标智能体。添加后，主智能体的编排运行时就能将请求路由到该连接智能体进行协作。
+
+**3. Must allow agents to invoke the connected agent in conversations.（必须允许智能体在对话中调用连接智能体。）**
+*   **正确选项：** `Add the connected agent.`
+*   **解析：** 与上一题逻辑一致。只有在主智能体中**添加**了连接智能体，主智能体的编排器（Orchestrator）才能在对话过程中识别用户请求与哪个专业智能体的领域匹配，并**调用（invoke）** 它来处理任务。添加步骤包括选择智能体并调整其描述，以确保 Copilot Studio 能理解何时应该调用它。
+
+ 为什么不选其他选项
+
+*   **Configure connections to the connected agent**：虽然连接认证是必要配置，但它不是实现“允许调用”或“添加以进行协作/调用”的核心操作。核心操作是发布和添加。
+*   **Add the connected agent as an indexed knowledge source**：连接智能体（Connected Agent）是用于**委托任务和交接推理**的，而不是作为静态知识源被索引。将其添加为知识源是一种误用。
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Publish the connected agent.**
+
+To allow a primary Copilot Studio agent to delegate work to an existing secondary agent, the secondary agent must be published. For an agent to accept calls and be selectable by other agents, you must enable its capability to be used as a connected agent.
+
+**Box 2: Add the connected agent.**
+
+Add the connected agent: This is the configuration action required within the primary agent. By navigating to your primary agent's build/agents panel and choosing to add a connected agent, you establish the relationship that allows the primary agent's orchestration runtime to dynamically invoke and delegate conversation tasks to it.
+
+**Box 3: Add the connected agent.**
+
+In Microsoft Copilot Studio's multi-agent architecture, a primary orchestrator agent routes tasks to independent sub-agents using the Connected agents capability. To make an existing agent available to your primary agent so the orchestrator can autonomously invoke it during conversations, you must go to the primary agent's build tab, navigate to the components panel, and choose to add a connected agent. Incorrect:
+
+Configure connections to the connected agent: While connections exist in Copilot Studio, they are used to securely authenticate external systems, APIs, or tools (such as SharePoint or Dataverse), rather than connecting another standalone conversational agent.
+
+Add the connected agent as an indexed knowledge source: Knowledge sources are used for uploading files, documents, websites, or databases to ground the AI's general knowledge. They are not used for routing workflows to independent agents.
+
+Reference:
+
+### QUESTION 5 
+
+A company uses multiple Copilot Studio agents that perform specialized tasks.
+
+The company needs to enable one agent to directly delegate and invoke another agent within Copilot Studio by using a standard Copilot Studio interface.
+
+You need to configure collaboration among agents by using Copilot Studio.
+
+What should you do?
+
+A. Add the target agent as a Microsoft Fabric Data Agent.
+
+B. Provide A2A endpoint information for the target agent.
+
+C. Upload documentation about the target agent for referencing.
+
+D. Add the target agent as an indexed knowledge source.
+
+---
+
+
+正确答案：B. Provide A2A endpoint information for the target agent.
+
+解析
+
+题目要求一个 Agent 通过标准化接口直接委派并调用另一个 Agent，因此应使用 Agent-to-Agent (A2A) integration，提供目标 Agent 的 endpoint 信息。
+
+| 选项 | 判断 | 原因                                   |
+| -- | -- | ------------------------------------ |
+| A  | ❌  | Fabric Data Agent 用于访问结构化业务数据。       |
+| B  | ✅  | 提供 A2A endpoint 信息，实现跨 Agent 的委派与通信。 |
+| C  | ❌  | 上传文档只能帮助 Agent 了解目标 Agent，不能直接调用它。   |
+| D  | ❌  | 索引知识源用于知识检索，而不是执行 Agent-to-Agent 委派。 |
+
+考试记忆：
+
+- Copilot Studio 内通过标准界面连接现有 Copilot Studio Agent → 添加目标 Agent 并配置连接。
+- 通过标准化的跨 Agent endpoint 委派 → A2A。
+
+
+**Correct Answer: B Section: (none)**
+
+Explanation/Reference:
+
+Explanation:
+
+**The correct step to take is to provide A2A (Agent-to-Agent) endpoint information for the target agent.**
+
+Standard Multi-Agent Protocol: The Agent-to-Agent (A2A) protocol is the open, standard framework specifically designed to allow independent agents to directly communicate, discover capabilities via agent cards, and delegate workflows across standard interfaces. Providing the A2A endpoint information allows the orchestrating agent to securely hand off specialized tasks to the target agent.
+
+Incorrect:
+
+[Not A] Adding the target agent as a Microsoft Fabric Data Agent is a separate, specialized pattern reserved strictly for reasoning over heavy data science pipelines and querying enterprise data lakes (like Lakehouses or Semantic Models). It is not used for standard cross-framework agent collaboration or general delegation within the native Copilot Studio interface.
+
+
+### QUESTION 6 
+
+A company uses an agent in Copilot Studio that produces structured responses using a reusable instruction template. The responses follow the required tone and format. During a compliance review, the team discovers that the responses were generated using a model that is not on the approved list.
+
+The company requires that the reusable instruction template continues to be used and the model used for prompt-driven responses meets governance requirements.
+
+The solution must ensure that prompt-driven responses are generated using an approved model.
+
+You need to configure the solution that meets the requirements.
+
+Which two actions should you perform? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+
+A. Publish the agent so that the model used by prompt-driven responses is updated automatically.
+
+B. Enable citations so generated responses can be traced and comply with governance requirements.
+
+C. Add a line to the instruction template that requires the agent to use only approved models when generating responses.
+
+D. Configure Azure AI Search as the grounding source so the approved model requirement is enforced during response generation.
+
+E. Ensure the reusable instruction template is the one applied to the agent that generates the structured response.
+
+---
+
+正确答案：**A、E**
+
+ 解析
+
+题目要求：**必须继续使用可复用的指令模板**，并且**确保生成响应时使用的是合规批准的模型**。
+
+- **E. Ensure the reusable instruction template is the one applied to the agent that generates the structured response.（确保将可复用的指令模板应用于生成结构化响应的智能体。）**
+  - **正确。** 题目第一句就强调“The company requires that the reusable instruction template continues to be used”，并且要维持原有的语调和格式。因此必须验证正确的模板已应用到目标智能体上。
+
+- **A. Publish the agent so that the model used by prompt-driven responses is updated automatically.（发布智能体，以便提示词驱动响应所使用的模型自动更新。）**
+  - **正确。** 在 Copilot Studio 中，如果修改了智能体所使用的底层模型（例如在生成式 AI 设置或 Prompt Builder 中选择批准的新模型），这些更改在测试画布中虽然可见，但**必须重新发布（Publish）智能体**，新的模型配置才会被编译到运行环境中并生效。
+  - *(注：由于您提供的选项中没有直接出现“从模型目录选择已批准模型”这个最直接的选项，A 是使平台级配置变更生效的必要动作。)*
+
+为什么不选其他选项：
+
+- **C. Add a line to the instruction template that requires the agent to use only approved models when generating responses.（在指令模板中添加一行，要求智能体只使用批准的模型。）**
+  - **错误。** 这是一个常见的技术误区。指令模板（Prompt）只能约束智能体的**语言输出逻辑、语气和格式**，它**无法**改变或约束平台底层所使用的物理大语言模型（LLM）类型。模型的选择是在平台的配置界面完成的，而不是靠提示词控制的。
+- **B. Enable citations...**：引用功能用于显示答案来源，与确保底层模型是否合规无关。
+- **D. Configure Azure AI Search...**：Azure AI Search 是知识检索服务（RAG），它不控制生成响应的大语言模型。
+
+
+Explanation/Reference:
+
+Explanation:
+
+[A] You must publish the agent to ensure that the updated model settings take effect and that all promptdriven responses automatically
+
+
+ transition to using the approved model across your connected channels.
+
+Changing the generative AI model in Microsoft Copilot Studio modifies the configuration in the authoring canvas, but it does not instantly apply to live users. Publishing the agent pushes these metadata changes to production, ensuring data compliance and governance standards are met.
+
+[E] To ensure that prompt-driven responses are generated using an approved model while continuing to use your reusable instruction template, you must ensure the reusable instruction template is the one applied to the agent that generates the structured response (specifically by selecting the compliant model within the Copilot Studio agent's settings where the template is run).
+
+Incorrect:
+
+[Not C] Large Language Models (LLMs) cannot see or change the infrastructure they are running on.
+
+The reality: Adding a text instruction like "Use GPT-4" into a prompt template does not physically change the underlying model being utilized by Copilot Studio. If the agent is configured to use an unapproved model, it will continue to use that model to read your new instruction.
+
+[Not D] Grounding sources provide factual data, not model governance.
+
+Azure AI Search acts as a Retrieval-Augmented Generation (RAG) data source to prevent hallucinations and provide internal documents to the agent. It does not dictate or enforce which underlying LLM orchestrates and generates the final response text.
+
+
+### QUESTION 7 
+
+A team has an agent in Copilot Studio that handles user intake. For some requests, the team wants the agent to delegate work to a Microsoft Foundry agent that performs specialized processing. The Foundry agent already exists.
+
+To meet the business needs, the solution must meet the following requirements:
+
+* The primary agent must be able to call the Foundry agent.
+
+* The external agent connection must reference the correct Foundry project and agent.
+
+You need to integrate the primary agent with the Foundry agent.
+
+Which two actions should you take? Each correct answer presents part of the solution.
+
+
+NOTE: Each correct selection is worth one point.
+
+A. Add an external agent.
+
+B. Configure the Copilot Studio endpoint URL.
+
+C. Configure the project endpoint URL.
+
+D. Add an indexed knowledge source.
+
+E. Publish the Copilot Studio agent.
+
+---
+
+
+正确答案：A 和 C。
+
+| 选项                                            | 判断 | 解析                                                                |
+| --------------------------------------------- | -- | ----------------------------------------------------------------- |
+| A. Add an external agent.                     | ✅  | 将现有 Microsoft Foundry agent 添加为外部 Agent，使主 Agent 能够委派专业处理任务。      |
+| B. Configure the Copilot Studio endpoint URL. | ❌  | 这是针对 Copilot Studio 端点的配置，不是连接 Foundry 项目的关键设置。                   |
+| C. Configure the project endpoint URL.        | ✅  | 配置 Microsoft Foundry project endpoint，确保连接到正确的 Foundry 项目和 Agent。 |
+| D. Add an indexed knowledge source.           | ❌  | 知识源用于检索内容，不用于调用外部 Agent。                                          |
+| E. Publish the Copilot Studio agent.          | ❌  | 发布操作本身不会建立 Foundry Agent 连接。                                      |
+
+考试记忆： 集成现有 Foundry Agent = Add an external agent + Configure the project endpoint URL。
+
+Explanation/Reference:
+
+Explanation:
+
+[A] To perform an agent-to-agent integration where a primary Copilot Studio agent delegates tasks to a specialized Microsoft Foundry agent, you must navigate to the primary agent's configuration pages and select the option to add an agent under the Connect to an external agent feature.
+
+[C] Configuring the project endpoint URL is a nested requirement within the process of adding an external agent. When you create a new connection during the "Add an external agent" workflow, Copilot Studio will prompt you to enter the Foundry project endpoint URL to link to the correct project, followed by entering the specific Agent ID to link the correct agent.
+
+### QUESTION 8 
+
+A company must enable an agent in Copilot Studio to execute operations exposed by an external MCP server.
+
+The MCP server publishes callable tools and requires authentication.
+
+The agent must be able to invoke MCP tools during conversations.
+
+You need to configure MCP tools so the agent can execute MCP tool calls.
+
+What should you do?
+
+A. Upload documentation about the MCP server so the agent can answer questions about it.
+
+B. Enable generative answers so the model can automatically invoke MCP tools.
+
+C. Publish the agent and rely on default settings for tool availability.
+
+D. Add the MCP server to the agent's tool configuration.
+
+---
+
+正确答案：D. Add the MCP server to the agent's tool configuration.
+
+解析
+
+将外部 MCP server 添加到 Agent 的 Tools（工具）配置中，并配置所需的身份验证，Agent 才能在对话过程中调用 MCP server 提供的工具。
+
+| 选项 | 判断 | 原因                                         |
+| -- | -- | ------------------------------------------ |
+| A  | ❌  | 上传文档只能帮助 Agent 了解 MCP server，不能执行工具调用。     |
+| B  | ❌  | Generative answers 用于生成回答，不会自动完成 MCP 工具配置。 |
+| C  | ❌  | 发布 Agent 不会自动添加 MCP 工具。                    |
+| D  | ✅  | 将 MCP server 添加到工具配置，使 Agent 能够调用其工具。      |
+
+考试记忆： MCP 执行业务操作 → Add MCP server as a tool + configure authentication。
+
+
+**Correct Answer: D**
+
+Explanation/Reference:
+
+Explanation:
+
+You must add a new Model Context Protocol tool to your agent and configure it with OAuth 2.0 authentication settings. This registers the server's published capabilities as native actions that the agent can orchestrate during conversation.
+
+
+### QUESTION 9 
+
+A company needs an agent to answer questions using live enterprise records and to execute a limited set of operations in the same system. To meet the business needs, the agent must meet the following requirements:
+
+* The agent must update a record using authenticated access.
+
+* The agent must answer questions using live data at runtime.
+
+* The agent must avoid indexing enterprise data into a search index.
+
+You need to select the correct Power Platform connector approach for each requirement.
+
+Which option should you use for each requirement? To answer, move the appropriate solutions to the correct requirements. You may use each solution once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
+
+Select and Place:
+
+**Solutions (Options)**
+
+* Power Platform connector tool.
+* Power Platform connector as real-time knowledge.
+* Copilot connector knowledge source for indexed content.
+
+
+**Power Platform connector solutions**
+
+| Requirement | Solution |
+| :--- | :--- |
+| The agent must update a record using authenticated access. | [ 空白框 ] |
+| The agent must answer questions using live data at runtime. | [ 空白框 ] |
+| The agent must avoid indexing enterprise data into a search index. | [ 空白框 ] |
+
+---
+
+正确答案如下：
+
+| Requirement                                                        | Solution                                         |
+| ------------------------------------------------------------------ | ------------------------------------------------ |
+| The agent must update a record using authenticated access.         | Power Platform connector tool.                   |
+| The agent must answer questions using live data at runtime.        | Power Platform connector as real-time knowledge. |
+| The agent must avoid indexing enterprise data into a search index. | Power Platform connector as real-time knowledge. |
+
+解析
+
+1. 更新记录 → Power Platform connector tool：通过连接器工具执行创建、更新等操作，并使用配置的连接进行身份验证。
+2. 运行时查询实时数据 → Power Platform connector as real-time knowledge：在回答问题时实时访问数据源，而不是只依赖预先索引的数据。
+3. 避免索引数据 → Power Platform connector as real-time knowledge：实时知识连接器可在运行时检索数据，无需将企业数据复制到搜索索引。
+
+未使用的选项： Copilot connector knowledge source for indexed content，因为它适用于索引内容的检索，与避免索引数据的要求不符。
+
+
+### QUESTION 10 
+
+A company uses an agent in Copilot Studio to coordinate user interactions.
+
+The company wants the agent to delegate requests to a Microsoft Fabric Data Agent that accesses governed business data.
+
+The agent must retrieve structured analytical data while enforcing data security and scope controls. You need to select the integration approach that meets the requirements.
+
+What should you use?
+
+A. A Microsoft Fabric Data Agent and bind it to the model.
+
+B. A REST API action that queries Fabric tables directly.
+
+C. A Power Automate flow and call it from a topic.
+
+D. A Copilot connector knowledge source that indexes Fabric data.
+
+---
+
+
+**正确答案：A. A Microsoft Fabric Data Agent and bind it to the model.**
+
+解析
+
+Microsoft Fabric Data Agent 可以通过 Fabric semantic model 访问受治理的业务数据，并利用数据模型的语义和安全控制来回答结构化分析问题。将其集成到多 Agent 方案中，可以让 Copilot Studio 主 Agent 将指标查询委派给专门的 Data Agent。
+
+| 选项 | 判断 | 原因                                                 |
+| -- | -- | -------------------------------------------------- |
+| A  | ✅  | 使用 Fabric Data Agent 访问结构化分析数据，并遵循相应的数据范围和治理控制。    |
+| B  | ❌  | 直接查询 Fabric 表会绕过题目要求的专用 Data Agent 集成方式。           |
+| C  | ❌  | Power Automate Flow 适合流程自动化，但不是此处指定的分析 Agent 集成方式。 |
+| D  | ❌  | Copilot connector 知识源侧重索引内容检索，不适合实时结构化分析查询。        |
+
+考试记忆： Fabric 结构化分析与受治理的业务指标 → Microsoft Fabric Data Agent。
+
+
+**Correct Answer: A**
+
+ Section: (none) Explanation/Reference:
+
+Explanation:
+
+To coordinate interactions while accessing governed data, you should create a Microsoft Fabric Data Agent and integrate it into Microsoft Copilot Studio using the Add Agent / Generative Orchestration feature. Agent-to-Agent Collaboration: Instead of writing custom APIs, you can publish a specialized Fabric Data Agent in Microsoft Fabric, and then simply bind it as an external agent within Copilot Studio.
+
+Built-in Security & Scope: Fabric enforces existing data constraints. Data access runs under the authenticated user's identity, automatically respecting Power BI model-level read permissions, Row-Level Security (RLS), and Object-Level Security (OLS).
+
+Seamless Context: This enables multi-step agent orchestration where Copilot Studio routes queries to the Fabric agent for complex analytical insights (translating natural language to SQL/DAX/KQL) without exposing raw data.
