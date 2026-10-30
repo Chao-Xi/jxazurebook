@@ -1,0 +1,6864 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Jacob's Azure 103&900 教程">
+      
+      
+        <meta name="author" content="Jacob Xi">
+      
+      
+      
+        <link rel="prev" href="../../ab100/2ab100_exam/">
+      
+      
+        <link rel="next" href="../2ab620_exam/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>1 AI Agent Builder Associate (AB-620) - Jacob Azure103&900 tutorial Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-ai-agent-builder-associate-ab-620" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-header__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jacob Azure103&900 tutorial Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 AI Agent Builder Associate (AB-620)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jacob Azure103&amp;900 tutorial Book" class="md-nav__button md-logo" aria-label="Jacob Azure103&900 tutorial Book" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Jacob Azure103&900 tutorial Book
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Chao-Xi/jxazurebook.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jxazurebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Arch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Arch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arch/1Well_arch_viw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Well Architecture Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Eng)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/6az103_ad_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Azure Administration: Manage Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/7az103_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Azure Administration: Implement and Manage Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/8az103_Vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/9az103_vn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/10az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Azure Administration: Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/11az103_lb_ag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Load Balancers and Application Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AZ103 Adv Tutorial（Chn)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/12az_admin1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （1）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/13az103_admin2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （2）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/14az103_admin3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Administrator认证学习 （3）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 103 interview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 103 interview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/1az103_sub_resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L1 Manage Azure Subscriptions and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/2az103_storage_accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L2 Managing Azure storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/3az103_vms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L3 Deploy and Manage Virtual Machines (VMs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/4az103_VN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L4 Configure and Manage Virtual Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/5az103_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L5 Manage Identities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/6azure_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L6 Azure Review 103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 Test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 104 Test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/1az_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/2az_gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Governance and Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/3indentity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AZ Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/4rbac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Role-Based Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/5az_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Azure Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/6network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Virtual Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/7IntersiteConnectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Intersite Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/8vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Azure Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/9LB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Network Traffic Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/10webapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Web Apps and Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/11monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/12backup_dr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 Backup and Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/13summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ104 Gpt Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/14exam_cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/15exam_cheatsheet2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator Certification (AZ-104) CheatSheet 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/16cheatsheet_all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 104 CheatSheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/17az104QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/18az104QA2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/19az104QA3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/20az103QA4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AZ104 - 原题 Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az104/21az104Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az104 final test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 102
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 102
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/1ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI Engineer Associate Certification - AI102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/2ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Designing and Implementing a Microsoft Azure AI Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/3ai102-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-102 Complete SDK Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai102/4ai102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI-102 Exam Preparation: Technical Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 305 test
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 305 test
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/1az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure Solution Architect & Identity and Access Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/2az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Identity Security / Design a Compute Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/3az305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Networking Strateg / Connectivity & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/5az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AZ305 Summary - 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/6za305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AZ305 Summary - 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/7az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 AZ305 Summary - 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/8az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 AZ305 Summary - 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/9az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 AZ305 Summary - 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/10az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 AZ305 Summary - 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/11az305_summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 AZ305 Summary - 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/12az305_test1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 AZ305 Test1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/az305_test2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 AZ305 Test2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az305/13az305_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 AZ305 Renew - Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure 900 and int
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure 900 and int
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/1az_900_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Az900 Fundamentals + Jam Azure Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/2azure_term_int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure900 面试名词解释面试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AI 900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AI 900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/1ai900_ba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure AI Fundamentals Certification 2024 (AI-900)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/2ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AI Fundamentals certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/3ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 AI900 Practice exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/4ai_900/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Real Exam - Chap 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/5ai_900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 AI900 Exam summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai900/6sum_fin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 AI900 finaL SUMMARY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AZ 400
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AZ 400
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/1az400_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Azure DevOps Engineer Expert Certification (AZ-400)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az400/2az400_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure AZ400 Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AB 100
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AB 100
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ab100/1ab100_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft AB-100 Agentic AI Exam Prep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ab100/2ab100_exam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 AB-100 Agentic AI Business Solutions Architect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure AB 620
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure AB 620
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 AI Agent Builder Associate (AB-620)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 AI Agent Builder Associate (AB-620)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENDA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 WHAT IS AGENT ORCHESTRATION?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 WHAT IS AGENT ORCHESTRATION?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-3-pieces-of-every-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 3 PIECES OF EVERY AGENT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-1 3 PIECES OF EVERY AGENT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 AGENT ORCHESTRATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-2 AGENT ORCHESTRATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENT LEVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topicnode-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TOPIC/NODE LEVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 AGENT ORCHESTRATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 AGENT ORCHESTRATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#child-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHILD AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connected-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONNECTED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#child-agents_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHILD AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connected-agents_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONNECTED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-agent2agent-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 AGENT2AGENT PROTOCOL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 AGENT2AGENT PROTOCOL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connected-agents_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONNECTED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-is-your-agent-calling-incorrect-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 IS YOUR AGENT CALLING INCORRECT RESOURCES?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-4 IS YOUR AGENT CALLING INCORRECT RESOURCES?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-resource-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPDATE RESOURCE DESCRIPTIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-segment-tasks-to-related-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 SEGMENT TASKS TO RELATED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agent-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 AGENT KNOWLEDGE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 AGENT KNOWLEDGE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-power-platform-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 POWER PLATFORM CONNECTORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-copilot-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 COPILOT CONNECTORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-generative-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 GENERATIVE ANSWERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 AZURE AI SEARCH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-4 AZURE AI SEARCH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 CONTENT MODERATION
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agent-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Agent Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Agent Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-understanding-inputs-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 UNDERSTANDING &amp; INPUTS &amp; OUTPUTS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-1 UNDERSTANDING &amp; INPUTS &amp; OUTPUTS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-as-the-maker-maker-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run as the Maker (Maker Connection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-run-as-a-service-account-connection-application-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Run as a Service Account Connection) (Application Identity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 AUTHENTICATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-3 AUTHENTICATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-20-most-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth 2.0 (Most Common)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-agent-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 AGENT TOOLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 CONNECTORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 REST API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-6 REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-7-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-7 HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-8-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-8 CONNECTORS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-8 CONNECTORS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Connectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-9-model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-9 MODEL CONTEXT PROTOCOL (MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-10-agent-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-10 AGENT FLOWS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-10 AGENT FLOWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-11-agentagent-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-11 AGENTAGENT PROTOCOL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-11 AGENTAGENT PROTOCOL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-evaluations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 EVALUATIONS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 EVALUATIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-evaluations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 EVALUATIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 ENVIRONMENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-understanding-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 UNDERSTANDING SOLUTIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 ENVIRONMENT VARIABLES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 ENVIRONMENT VARIABLES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-5 ENVIRONMENT VARIABLES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-secret-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Secret Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secret Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 智能体编排（Agent Orchestration）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 智能体编排（Agent Orchestration）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 什么是智能体编排？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 每个智能体的三大组成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 编排的两个层级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 子智能体 vs 连接智能体（重点考点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-agent2agent-a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Agent2Agent 协议（A2A）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 智能体调用了错误的资源怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agent-knowledge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 智能体知识（Agent Knowledge）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 智能体知识（Agent Knowledge）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-power-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Power Platform 连接器（实时知识）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Copilot 连接器（摄取 + 语义索引）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-generative-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 生成式答案（Generative Answers）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Azure AI Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 内容审核（Content Moderation）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agent-tools_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 智能体工具（Agent Tools）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 智能体工具（Agent Tools）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-inputs-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 输入与输出（Inputs &amp; Outputs）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 工具访问权限管理（两种模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 身份验证方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 智能体工具全景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 各工具详解与选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-evaluations-alm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 评估与应用生命周期管理（Evaluations &amp; ALM）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 评估与应用生命周期管理（Evaluations &amp; ALM）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-evaluations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 评估（Evaluations）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 环境（Environments）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 解决方案（Solutions）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 环境变量（Environment Variables）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 非机密 vs 机密环境变量（重点考点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ab620_exam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 AB-620 Designing and Building Integrated AI Agent Solutions Studio in Copilot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DP900
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DP900
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 Explore core data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 Explore fundamental relational data concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 Non-relational data in Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 Large-scale data warehousing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 data visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Real Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Learn (Cont.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap5/dp900_sum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP900 Exam Points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure UBS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure UBS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/1azure_hybird/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Implementing Hybrid Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/2azure_sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 微软Azure高韧性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap6/3azure_hybird_conn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Hybrid Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/1azhci_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Stack HCI 面向混合云和数据中心现代化的最佳基础设施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubsaz/2Migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Linux OSS Database Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure DevOps: Release Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure DevOps: Release Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/1release_mgmt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Introduction to Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/2iac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Infrastructure as Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/3secuirty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Security, Approval, and Audit Trails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/4Devops_IAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Azure DevOps的Azure资源IaC编排实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/5Devops_go_host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 基于Azure Devops的Golang项目云主机CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/6Devops_go_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 基于Azure DevOps的Golang项目容器化CI/CD实战
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/1log_ana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Microsoft Azure Log Analytics Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/2mon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Azure Monitoring Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../az_mon/3mon_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Monitoring Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENDA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 WHAT IS AGENT ORCHESTRATION?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 WHAT IS AGENT ORCHESTRATION?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-3-pieces-of-every-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1 3 PIECES OF EVERY AGENT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-1 3 PIECES OF EVERY AGENT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2 AGENT ORCHESTRATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-2 AGENT ORCHESTRATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENT LEVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topicnode-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TOPIC/NODE LEVEL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 AGENT ORCHESTRATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 AGENT ORCHESTRATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#child-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHILD AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connected-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONNECTED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#child-agents_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHILD AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connected-agents_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONNECTED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-agent2agent-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3 AGENT2AGENT PROTOCOL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-3 AGENT2AGENT PROTOCOL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connected-agents_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONNECTED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4-is-your-agent-calling-incorrect-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4 IS YOUR AGENT CALLING INCORRECT RESOURCES?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1-4 IS YOUR AGENT CALLING INCORRECT RESOURCES?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-resource-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPDATE RESOURCE DESCRIPTIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5-segment-tasks-to-related-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-5 SEGMENT TASKS TO RELATED AGENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agent-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 AGENT KNOWLEDGE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 AGENT KNOWLEDGE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-power-platform-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1 POWER PLATFORM CONNECTORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-copilot-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2 COPILOT CONNECTORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-generative-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3 GENERATIVE ANSWERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4 AZURE AI SEARCH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-4 AZURE AI SEARCH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5 CONTENT MODERATION
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agent-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Agent Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Agent Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-understanding-inputs-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1 UNDERSTANDING &amp; INPUTS &amp; OUTPUTS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-1 UNDERSTANDING &amp; INPUTS &amp; OUTPUTS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-as-the-maker-maker-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run as the Maker (Maker Connection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-run-as-a-service-account-connection-application-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2 Run as a Service Account Connection) (Application Identity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3 AUTHENTICATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-3 AUTHENTICATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-20-most-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth 2.0 (Most Common)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4-agent-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4 AGENT TOOLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5 CONNECTORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-6 REST API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-6 REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-7-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-7 HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-8-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-8 CONNECTORS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-8 CONNECTORS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Connectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-9-model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-9 MODEL CONTEXT PROTOCOL (MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-10-agent-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-10 AGENT FLOWS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-10 AGENT FLOWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-11-agentagent-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-11 AGENTAGENT PROTOCOL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-11 AGENTAGENT PROTOCOL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value-when-to-use_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value / When to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exam-tips-gotchas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam Tips &amp; Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-evaluations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 EVALUATIONS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 EVALUATIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-evaluations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1 EVALUATIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2 ENVIRONMENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3-understanding-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3 UNDERSTANDING SOLUTIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-4 ENVIRONMENT VARIABLES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-5 ENVIRONMENT VARIABLES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4-5 ENVIRONMENT VARIABLES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-secret-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Secret Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secret Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 智能体编排（Agent Orchestration）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 智能体编排（Agent Orchestration）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 什么是智能体编排？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 每个智能体的三大组成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 编排的两个层级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 子智能体 vs 连接智能体（重点考点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-agent2agent-a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Agent2Agent 协议（A2A）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 智能体调用了错误的资源怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agent-knowledge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 智能体知识（Agent Knowledge）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 智能体知识（Agent Knowledge）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-power-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Power Platform 连接器（实时知识）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Copilot 连接器（摄取 + 语义索引）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-generative-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 生成式答案（Generative Answers）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Azure AI Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 内容审核（Content Moderation）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agent-tools_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 智能体工具（Agent Tools）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 智能体工具（Agent Tools）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-inputs-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 输入与输出（Inputs &amp; Outputs）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 工具访问权限管理（两种模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 身份验证方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 智能体工具全景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 各工具详解与选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-evaluations-alm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 评估与应用生命周期管理（Evaluations &amp; ALM）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 评估与应用生命周期管理（Evaluations &amp; ALM）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-evaluations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 评估（Evaluations）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 环境（Environments）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 解决方案（Solutions）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 环境变量（Environment Variables）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 非机密 vs 机密环境变量（重点考点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QUESTION 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-ai-agent-builder-associate-ab-620">1 AI Agent Builder Associate (AB-620)</h1>
+<h2 id="agenda">AGENDA</h2>
+<p><strong>Agent Orchestration</strong></p>
+<ul>
+<li>3 Pieces of Every Agent</li>
+<li>Agent Ecosystem</li>
+<li>Perfecting Performance</li>
+</ul>
+<p><strong>Agent Knowledge</strong></p>
+<ul>
+<li>Copilot Connectors</li>
+<li>Generative Answers</li>
+<li>Content Moderation</li>
+</ul>
+<p><strong>Agent Tools</strong></p>
+<ul>
+<li>Inputs &amp; Outputs</li>
+<li>Authentication</li>
+<li>What is Available</li>
+</ul>
+<p><strong>Evaluations &amp; ALM</strong></p>
+<ul>
+<li>Evaluations</li>
+<li>Environments</li>
+<li>Solutions</li>
+</ul>
+<h2 id="1-what-is-agent-orchestration">1 WHAT IS AGENT ORCHESTRATION?</h2>
+<p>Agent orchestration is the process of coordinating <strong>multiple specialized tools, capabilities, and Al agents</strong> to work together efficiently on <strong>complex tasks, ensuring seamless collaboration, task allocation, and workflow management.</strong></p>
+<h3 id="1-1-3-pieces-of-every-agent">1-1 3 PIECES OF EVERY AGENT</h3>
+<h4 id="knowledge"><strong>Knowledge</strong></h4>
+<p><strong>Knowledge sources ground your agent's responses in authoritative information from the content and data sources you configure.</strong> </p>
+<p>Knowledge sources are the integration type for answering questions.</p>
+<h4 id="tools">Tools</h4>
+<p><strong>Tools enable your agent to take action in external systems.</strong> </p>
+<p>Tools are the integration type for doing things.</p>
+<h4 id="agents">Agents</h4>
+<p><strong>Agents allow your agent to delegate tasks to other specialized agents.</strong> </p>
+<p>Agent connections are the integration type for handing off reasoning.</p>
+<h3 id="1-2-agent-orchestration">1-2 AGENT ORCHESTRATION</h3>
+<h4 id="agent-level">AGENT LEVEL</h4>
+<ul>
+<li>You can add <strong>knowledge, tools, and agents directly to your agent</strong></li>
+<li>This gives the model (or orchestrator) the ability to call on that resource when it thinks it is necessary</li>
+<li><strong>Some tools can only be called by the agent</strong></li>
+<li><em>More Indeterministic</em></li>
+</ul>
+<h4 id="topicnode-level">TOPIC/NODE LEVEL</h4>
+<ul>
+<li>You can add <strong>knowledge, tools, and agents to the flow of a topic</strong></li>
+<li>This gives you, the author, <strong>the ability to define when specific resources are called on</strong></li>
+<li>Some tools can only be called inside a topic</li>
+<li>More <strong>Deterministic</strong></li>
+</ul>
+<h3 id="1-3-agent-orchestration">1-3 AGENT ORCHESTRATION</h3>
+<h4 id="child-agents">CHILD AGENTS</h4>
+<ul>
+<li>A child agent is a focused workflow created directly <strong>within your parent agent in Copilot Studio</strong>.</li>
+<li><strong>Child agents have their own set of instructions, tools, and knowledge</strong>, and the <strong>parent agent calls it as a subroutine when a relevant request arrives.</strong></li>
+<li><strong>Child agents share the parent's context, which makes passing conversation state and variables between them straightforward</strong></li>
+<li>They don't have an independent publishing lifecycle, so when you update or deploy the parent, the children go with it.</li>
+<li><strong>The same team that builds the parent agent co-owns and co-manages all its child agents.</strong></li>
+</ul>
+<h4 id="connected-agents">CONNECTED AGENTS</h4>
+<ul>
+<li>A connected agent is a separately published agent with its <strong>own orchestration, tools, knowledge, and deployment lifecycle.</strong></li>
+<li><strong>From your main agent's perspective, a connected agent looks like a "tool with a description”:</strong></li>
+<li>your agent routes to it based on that description, and the connected agent uses its own reasoning layer to handle what's been delegated.</li>
+<li>Connected agents can be owned by a different team, released through standard/release processes, and made available to the orchestrating agent.</li>
+</ul>
+<h4 id="child-agents_1"><strong>CHILD AGENTS</strong></h4>
+<p>Build child agents when:</p>
+<ul>
+<li>Your team builds and maintains the full agent solution</li>
+<li><strong>Components don't need to be published separately or accessed directly by users</strong></li>
+<li><strong>No separate authentication, model configuration, or ALM process is required</strong></li>
+<li><strong>The capabilities are specific to this solution and won't be reused by other agents</strong></li>
+</ul>
+<h4 id="connected-agents_1"><strong>CONNECTED AGENTS</strong></h4>
+<p>Build connected agents when:</p>
+<ul>
+<li>Another team already owns and maintains the capability you need</li>
+<li>The agent is already published and should continue operating independently</li>
+<li>You need separate deployment, configuration, or testing cycles for that component</li>
+<li>The capability should be reusable a orchestrators</li>
+</ul>
+<h3 id="1-3-agent2agent-protocol">1-3 AGENT2AGENT PROTOCOL</h3>
+<p>The <strong>AgentAgent (A2A)</strong> protocol is an open standard for agent-to-agent communication across platform boundaries.</p>
+<p>A2A is purpose-built for agent-to-agent delegation: </p>
+<p>scenarios where one agent needs to hand off a task to <strong>another agent that manages its own reasoning, tools, and responses independently.</strong></p>
+<p>When a Copilot Studio orchestrator connects to an <strong>A2A-enabled agent, it doesn't call a function and receive a value back</strong>. </p>
+<p><strong>Instead, it delegates to the external agent that works through it using its own capabilities and its own logic, and returns an agent-generated response.</strong></p>
+<h4 id="connected-agents_2">CONNECTED AGENTS</h4>
+<p>Because the Connected Agent is completely separate from the Parent Agent, <strong>the prompt is processed a second time by the Connected Agent.</strong></p>
+<p>This means:</p>
+<ul>
+<li>Higher Token Usage</li>
+<li>Delays in Performance</li>
+</ul>
+<p>Child agents do not have this consideration.</p>
+<h3 id="1-4-is-your-agent-calling-incorrect-resources">1-4 IS YOUR AGENT CALLING INCORRECT RESOURCES?</h3>
+<ul>
+<li><strong>Update resource descriptions</strong></li>
+</ul>
+<p>The names and descriptions of tools is what tells the agent when to call on each resource.</p>
+<ul>
+<li><strong>Segment tasks into child or connected agents</strong></li>
+</ul>
+<p>If your agent has access to too many options, <strong>it has a higher likelihood of making a mistake</strong>.</p>
+<h4 id="update-resource-descriptions">UPDATE RESOURCE DESCRIPTIONS</h4>
+<ul>
+<li><strong>If your agent isn't using the right tools, knowledge, or resources, review their descriptions</strong>.</li>
+<li>Clear descriptions help the agent understand when each item should be used.</li>
+<li><strong>The agent doesn't rely on names alone</strong>.</li>
+<li><strong>Think of descriptions as instructions for the agent.</strong></li>
+<li>The more accurate and specific they are, the more likely the agent is to select the correct resource at the right time.</li>
+<li><strong>Poor descriptions can lead to missed or incorrect resource calls.</strong></li>
+<li>Updating them can significantly improve your agent's responses and behavior.</li>
+</ul>
+<blockquote>
+<p>When a prompt routes to the wrong child agent, the activity map shows which agent was called instead.</p>
+<p>For Fabrikam, the prompt "Can I track my package?" unexpectedly calls a different agent rather than Order Status.</p>
+<p>A closer look at the descriptions reveals why: "track" and "package" appear in another agent's description but not in Order Status's,</p>
+<p>so the orchestrator found the closest textual match and chose incorrectly.</p>
+</blockquote>
+<h3 id="1-5-segment-tasks-to-related-agents">1-5 SEGMENT TASKS TO RELATED AGENTS</h3>
+<ul>
+<li>The most reliable signal that <strong>a multi-agent architecture is worth considering is routing accuracy degradation in your main agent</strong>.</li>
+<li>As a rule of thumb, when an agent reaches 30-40 choices of action (including topics, tools, and connected agents), the orchestration layer starts to struggle with precision.</li>
+<li><strong>This threshold isn't a hard limit, and agents with fewer actions but similarly described tools can hit the same ceiling</strong>.</li>
+<li>It's a practical threshold, and one you should validate against your own evaluations.</li>
+</ul>
+<h2 id="2-agent-knowledge">2 AGENT KNOWLEDGE</h2>
+<h3 id="2-1-power-platform-connectors">2-1 POWER PLATFORM CONNECTORS</h3>
+<ul>
+<li>Real-time knowledge</li>
+<li><strong>The connector reaches out to the source system on demand</strong>.</li>
+<li>Instead of replicating data into Microsoft Graph, <strong>each query triggers a live API call through the connector at the moment the agent needs an
+answer.</strong></li>
+<li><strong>No data moves into Microsoft 365.</strong></li>
+</ul>
+<h3 id="2-2-copilot-connectors">2-2 COPILOT CONNECTORS</h3>
+<ul>
+<li><strong><mark>Ingesting and semantically indexing external content into Microsoft Graph</mark></strong>.</li>
+<li><strong>Because the content lives in the Graph index, agents retrieve it using semantic search and can cite specific items in their responses.</strong></li>
+<li><strong>An administrator must configure the Copilot connector in the Microsoft 365 admin center before you</strong>, as a maker, can add it to an agent.</li>
+<li>Think of Copilot connectors as a "search and index" pattern:</li>
+<li><strong>content is ingested once and becomes broadly searchable and citable across Microsoft 365 experiences.</strong></li>
+</ul>
+<h3 id="2-3-generative-answers">2-3 GENERATIVE ANSWERS</h3>
+<ul>
+<li><strong>You can only use generative answers inside of topics</strong>.</li>
+<li>When a user asks a question, t<strong>he node searches configured knowledge sources and generates a grounded response</strong>.</li>
+<li>When using generative answers, you are effectively answering, " What does our content say about this?"</li>
+<li>The output is always drawn from a defined corpus of information.</li>
+<li>When a generative answers node has its own sources configured, those sources take priority over the agent-level sources for that node.</li>
+<li><mark><strong>Agent-level sources act as a fallback, used only when a node has no sources of its own</strong>.</mark></li>
+</ul>
+<h3 id="2-4-azure-ai-search">2-4 AZURE AI SEARCH</h3>
+<p><strong>Description:</strong> <strong>A retrieval service that enables agents to ground responses using indexed enterprise content</strong> for more accurate and relevant answers.</p>
+<h4 id="business-value-when-to-use">Business Value / When to Use</h4>
+<ul>
+<li>Used when organizations maintain their own search indexes and vector stores.</li>
+<li><strong>Improves answer quality through Retrieval Augmented Generation (RAG).</strong></li>
+<li><strong>Ideal for large document repositories and enterprise knowledge bases.</strong></li>
+<li><strong>Supports highly relevant responses using semantic and vector search.</strong></li>
+</ul>
+<h4 id="exam-tips-gotchas"><strong>Exam Tips &amp; Gotchas</strong></h4>
+<ul>
+<li>Used when content exists outside Microsoft Graph.</li>
+<li>Often selected when organizations have already invested in Azure search infrastructure.</li>
+<li>Focuses on helping agents answer questions, not perform actions.</li>
+</ul>
+<h3 id="2-5-content-moderation">2-5 CONTENT MODERATION</h3>
+<p>In Copilot Studio, Content Moderation is the safety layer that evaluates both user inputs and Al-generated outputs <strong>to help prevent harmful, unsafe, offensive, or policy-violating content from entering or leaving your agent.</strong></p>
+<p>You'll encounter content moderation in several places:</p>
+<ul>
+<li><strong>Agent-level Generative Al settings</strong></li>
+<li><strong>Al Prompt tools (Prompt Builder)</strong></li>
+<li>Generative Answer nodes</li>
+</ul>
+<p>Microsoft states that content is evaluated both:</p>
+<ul>
+<li><strong>When the user submits a prompt/input</strong>.</li>
+<li>Before the Al response is returned to the user.</li>
+</ul>
+<h2 id="3-agent-tools"><strong>3 Agent Tools</strong></h2>
+<h3 id="3-1-understanding-inputs-outputs">3-1 UNDERSTANDING &amp; INPUTS &amp; OUTPUTS</h3>
+<p>Every action an agent <strong>performs requires inputs and produces outputs</strong> -variables and topics allow you to capture, store, transform, and reuse that information throughout the conversation.</p>
+<h4 id="how-it-works"><strong>How it works</strong></h4>
+<ol>
+<li><strong>Gather Inputs</strong> - Collect information from users through conversation, questions, previous actions, or adaptive cards.</li>
+<li><strong>Store in Variables</strong> - Use topic variables and global variables to hold user responses, action parameters, and business data.</li>
+<li><strong>Execute Actions</strong> - Pass variables as inputs to tools.</li>
+<li><strong>Capture Outputs</strong> - Store returned values such as records, status codes, approvals, or summaries in variables.</li>
+<li><strong>Transform and Reuse</strong> -** Format, parse, combine, conditionally evaluate, or enrich outputs before presenting them to users or the next action.**</li>
+</ol>
+<p><strong>For example:</strong></p>
+<ul>
+<li>User provides an Employee ID.</li>
+<li>Store Employee ID in a variable.</li>
+<li><strong>Pass the variable to an HR connector action</strong>.</li>
+<li>Capture the employee record returned by the connector.</li>
+<li><strong>Extract the employee name, department, and manager.</strong></li>
+<li>Use those values in subsequent actions or responses.</li>
+</ul>
+<blockquote>
+<p>EVERY TOOL MUST AUTHENTICATE WITH THE SYSTEM IT IS CALLING.</p>
+</blockquote>
+<p>HOW IS ACCESS TO EACH TOOL MANAGED?</p>
+<h4 id="run-as-the-maker-maker-connection"><strong>Run as the Maker (Maker Connection)</strong></h4>
+<p>How it works: The action executes using the credentials or connection owned by the agent creator. <strong>All users leverage the same underlying access context.</strong></p>
+<h4 id="business-value"><strong>Business Value:</strong></h4>
+<ul>
+<li>Simplifies access to shared systems.</li>
+<li>Allows users to interact with data sources they may not have direct access to.</li>
+</ul>
+<h3 id="3-2-run-as-a-service-account-connection-application-identity">3-2 Run as a Service Account Connection) (Application Identity)</h3>
+<ul>
+<li><strong>How it works:</strong></li>
+</ul>
+<p><strong>Actions execute using a dedicated service principal, managed identity, or service account rather than an individual person</strong>.</p>
+<ul>
+<li>
+<p><strong>Business Value:</strong></p>
+</li>
+<li>
+<p>Most scalable and enterprise-ready option.</p>
+</li>
+<li>Eliminates dependency on a specific employee account.</li>
+</ul>
+<h3 id="3-3-authentication">3-3 AUTHENTICATION</h3>
+<h4 id="no-authentication">No Authentication</h4>
+<p>No credentials are required and suitable for <strong>when the target endpoint is publicly accessible.</strong></p>
+<h4 id="auth-20-most-common">Auth 2.0 (Most Common)</h4>
+<p>Users sign in with their Microsoft Entra ID and access tokens are issued and used when the agent executes actions.</p>
+<h4 id="api-key-authentication">API Key Authentication</h4>
+<p>A static API key is passed with each request that identifies the application rather than the individual user.</p>
+<h3 id="3-4-agent-tools">3-4 AGENT TOOLS</h3>
+<ul>
+<li><strong>Connectors</strong></li>
+</ul>
+<p>Prebuilt integrations that allow a Copilot Studio agent to <strong>securely access data and perform actions in Microsoft and third-party applications</strong>.</p>
+<ul>
+<li><strong>Custom Connectors</strong></li>
+</ul>
+<p>User-defined connectors that <strong>expose proprietary, internal, or unsupported APis as tools that an agent can invoke</strong>.</p>
+<ul>
+<li><strong>MCP</strong></li>
+</ul>
+<p>Standardized tool endpoints that allow agents to discover and interact with external systems, data sources, and capabilities through the <strong>Model Context Protocol.</strong></p>
+<ul>
+<li><strong>Agent Flows</strong></li>
+</ul>
+<p>Structured, automated workflows that allow agents to execute business processes, orchestrate actions, and manage complex tasks across systems.</p>
+<ul>
+<li><strong>REST APIs and HTTP</strong></li>
+</ul>
+<p>Direct web service calls that enable agents to interact with virtually any application or service that expose an HTTP-based API.</p>
+<ul>
+<li><strong>AgentAgent Protocol</strong></li>
+</ul>
+<p>A communication framework that allows one Al agent to securely collaborate, delegate tasks, and exchange information with other agents.</p>
+<h3 id="3-5-connectors">3-5 CONNECTORS</h3>
+<p><strong>Description</strong> Prebuilt integrations that allow a Copilot Studio agent to securely <strong>access data and perform actions in Microsoft and third-party applications.</strong></p>
+<p><strong>Business Value / When to Use</strong></p>
+<ul>
+<li>Fastest way to integrate with existing business systems.</li>
+<li>Ideal when a Microsoft or Power Platform connector already exists.</li>
+<li>Allows agents to perform actions such as creating tickets, sending emails, updating records, or retrieving business data.</li>
+<li>Common examples include Outlook, Teams, SharePoint, Dataverse, Salesforce, ServiceNow, and Dynamics 365.</li>
+</ul>
+<p><strong>Exam Tips &amp; Gotchas</strong></p>
+<ul>
+<li>Always check whether a prebuilt connector exists before considering a custom connector or API integration.</li>
+<li><strong>Connectors can use End User Authentication or Maker-Provided Authentication</strong>.</li>
+<li><strong>Power Platform connectors provide real-time access to data at runtime.</strong></li>
+<li><strong>Authentication strategy is an important design consideration during solution planning</strong>.</li>
+</ul>
+<h3 id="3-6-rest-api">3-6 REST API</h3>
+<p><strong>Description:</strong> </p>
+<ul>
+<li>
+<p>Reusable agent tools that expose an external application's functionality through </p>
+</li>
+<li>
+<p>REST endpoints, allowing Copilot Studio to invoke business capabilities and exchange structured data.</p>
+</li>
+</ul>
+<h4 id="business-value-when-to-use_1"><strong>Business Value / When to Use</strong></h4>
+<ul>
+<li><strong>Expose application capabilities as reusable agent tools</strong>.</li>
+<li>Allow orchestration to dynamically determine when an API should be called.</li>
+<li>Reduce the need to build extensive topic logic for external system interactions.</li>
+<li><strong>Execute agent-specific integrations</strong></li>
+</ul>
+<h4 id="exam-tips-gotchas_1">Exam Tips &amp; Gotchas</h4>
+<ul>
+<li><strong>REST APIs are exposed as agent-level tools that can be reused across conversations and topics.</strong></li>
+<li>**Most enterprise systems expose REST APIs.</li>
+<li>REST APIs can accept inputs and return structured outputs that become agent variables.</li>
+<li>Authentication considerations (Auth, API Keys, Service Principals) are often part of the design.</li>
+</ul>
+<h3 id="3-7-http">3-7 HTTP</h3>
+<p><strong>Description:</strong> A direct integration method that allows topics and agent flows to send web requests to external services <strong>using HTTP methods such as GET, POST, PUT, and DELETE.</strong></p>
+<p><strong>Business Value / When to Use</strong></p>
+<ul>
+<li>Rapidly integrate with an external endpoint.</li>
+<li>Call APIs when a connector doesn't exist without building reusable assets.</li>
+<li>Prototype integrations before investing in a custom connector.</li>
+<li>Integrate with niche or internal applications</li>
+</ul>
+<p><strong>Exam Tips &amp; Gotchas</strong></p>
+<ul>
+<li><strong>HTTP requests are often implemented directly within Topics</strong>.</li>
+<li>The maker is responsible for defining: <strong>URL, HTTP Method, Headers, Authentication, Request Body, Response Handling</strong></li>
+<li>API responses frequently need parsing and transformation before use.</li>
+<li>HTTP requests as a good option when:</li>
+<li>No connector exists,</li>
+<li>A simple API call is needed,</li>
+<li>The integration is not expected to be broadly reused</li>
+</ul>
+<h3 id="3-8-connectors">3-8 CONNECTORS</h3>
+<h4 id="custom-connectors">Custom Connectors</h4>
+<p>When multiple components (apps, flows, agents, etc.) need to use it.</p>
+<h4 id="rest-apis">REST APIs</h4>
+<p>When one agent needs to use it multiple times.</p>
+<h4 id="http">HTTP</h4>
+<p>When one agent needs to only use it once.(and it is not foreseeable for this to change)</p>
+<h3 id="3-9-model-context-protocol-mcp">3-9 MODEL CONTEXT PROTOCOL (MCP)</h3>
+<p>Description: <strong>Standardized tool endpoints that allow agents to discover and interact with external systems, data sources, and capabilities through the Model Context Protocol</strong>.</p>
+<p><strong>Business Value / When to Use</strong></p>
+<ul>
+<li><strong>Provides a standardized mechanism for exposing tools to Al agents</strong>.</li>
+<li>Reduces custom integration work.</li>
+<li>Promotes interoperability between Al systems and enterprise capabilities.</li>
+<li><strong>Enables agents to discover available tools and invoke them dynamically</strong>.</li>
+</ul>
+<p><strong>Exam Tips &amp; Gotchas</strong></p>
+<ul>
+<li>MCP is about tool access and capability exposure in a scalable way.</li>
+<li><strong>You configure MCP tools directly within Copilot Studio.</strong></li>
+<li><strong>MCP is rapidly becoming a preferred integration standard for Al systems</strong>.</li>
+</ul>
+<h3 id="3-10-agent-flows">3-10 AGENT FLOWS</h3>
+<p>Description: <strong>Structured, automated workflows that allow agents to execute business Processes, orchestrate actions, and manage complex tasks across systems.</strong></p>
+<h4 id="business-value-when-to-use_2">Business Value / When to Use</h4>
+<ul>
+<li><strong>Best for multi-step business processes</strong>.</li>
+<li><strong>Coordinates actions across multiple systems</strong>.</li>
+<li><strong>Enables approvals, human-in-the-loop scenarios, and automation.</strong></li>
+<li>Allows logic, branching, error handling, and orchestration to be separated from the conversation layer.</li>
+</ul>
+<h4 id="exam-tips-gotchas_2">Exam Tips &amp; Gotchas</h4>
+<ul>
+<li>Agent Flows <strong>can accept inputs and return outputs to topics.</strong></li>
+<li>Agent Flows <strong>must respond back to the agent within approximately 100 seconds</strong>.</li>
+<li><strong>A flow can return a response early while additional processing continues in the background</strong>.</li>
+<li>Error handling should be incorporated into flow design.</li>
+<li><strong>Think of Agent Flows as the "process automation" layer.</strong></li>
+</ul>
+<p><mark><strong>BE CAUTIOUS OF AGENT FLOW TIMEOUT.  (100 SECONDS)</strong></mark></p>
+<h3 id="3-11-agentagent-protocol">3-11 AGENTAGENT PROTOCOL</h3>
+<p>Description: A communication framework that allows one Al agent to securely collaborate, delegate tasks, and exchange information with other agents.</p>
+<h4 id="business-value-when-to-use_3">Business Value / When to Use</h4>
+<ul>
+<li>Enables multi-agent architectures.</li>
+<li><strong>Allows specialized agents to perform work on behalf of another agent</strong>.</li>
+<li>Creates scalable agent ecosystems where agents focus on specific domains.</li>
+<li><strong>Useful when individual agents become too large or too complex.</strong></li>
+</ul>
+<h4 id="exam-tips-gotchas_3">Exam Tips &amp; Gotchas</h4>
+<ul>
+<li>A2A is an open standard for agent-to-agent communication.</li>
+<li>When using A2A, the task is fully delegated to the target agent.</li>
+<li>The target agent is responsible for reasoning, execution, security, and tool usage.</li>
+<li>Key concepts:</li>
+<li><strong>Agent Cards = Agent metadata and capabilities (Usually located at /.well-known/agent.json)</strong></li>
+<li><strong>Tasks = Unit of work being delegated</strong></li>
+<li><strong>Context IDs = Conversation tracking across agent boundaries</strong></li>
+</ul>
+<blockquote>
+<p>What do you do AFTER building your agent?</p>
+</blockquote>
+<h2 id="4-evaluations">4 EVALUATIONS</h2>
+<ul>
+<li>Run evaluations and analyze the results to <strong>optimize your agent's behavior and validate that your agent meets your business and quality requirements.</strong></li>
+<li>You can also run a test set multiple times <strong>to see changes over time as you improve your agent.</strong></li>
+<li><strong>An evaluation takes a few minutes to run. Test results are processed in real-time, line by line</strong>.</li>
+<li>You see the result of each evaluation test case appear sequentially as they're generated.</li>
+<li>Live processing of test cases gives you immediate visibility into quality trends and potential failures while the evaluation is running.</li>
+</ul>
+<h3 id="4-1-evaluations">4-1 EVALUATIONS</h3>
+<p>These questions came a surprised and were the most challenging (at least in my opinion)</p>
+<p>(Exercise) Ask yourself:</p>
+<h3 id="4-2-environments">4-2 ENVIRONMENTS</h3>
+<p><strong>Environments are isolated containers within Power Platform that store and manage your Copilot Studio agents, flows, connections, Dataverse data, and related components.</strong></p>
+<p>Why they matter for ALM:</p>
+<ul>
+<li>Separate development, testing, and production workloads.</li>
+<li>Enable safe testing without impacting production users.</li>
+<li>Help enforce governance, security, compliance, anc access controls.</li>
+<li>Support solution-based deployments and promotion between environments.</li>
+<li>Provide environment-specific configurations through environment variables.</li>
+</ul>
+<h3 id="4-3-understanding-solutions">4-3 UNDERSTANDING SOLUTIONS</h3>
+<p><strong>Solutions are the primary ALM mechanism in Power Platform, used to package, transport, and manage Copilot Studio agents and related components across environments.</strong></p>
+<ul>
+<li><strong>Unmanaged Solutions</strong>:</li>
+<li>Used during development and allow makers to modify components.</li>
+<li><strong>Managed Solutions</strong></li>
+<li>Used for production deployments and protect deployed components from direct modification.</li>
+</ul>
+<blockquote>
+<p>All Solutions should be exported as MANAGED</p>
+<p>You cannot "convert" solutions to managed.</p>
+<p>This option is selected on export and cannot be changed.</p>
+</blockquote>
+<h3 id="4-4-environment-variables">4-4 ENVIRONMENT VARIABLES</h3>
+<p>Environment Variables allow you to store configuration values separately from your agent's logic, making solutions portable across Development, Test, and Production environments.</p>
+<p>Instead of hard-coding values such as URLs, IDs, API endpoints, or configuration settings, your agent references a variable whose value can change from one environment to another.</p>
+<p><strong>Common Use Cases</strong></p>
+<ul>
+<li>API endpoints</li>
+<li>Service URLs</li>
+<li>SharePoint site addresses</li>
+<li>Azure resource names</li>
+<li>Agent configuration settings</li>
+<li>Dataverse table references</li>
+<li>Feature flags</li>
+<li>Custom connector configuration</li>
+</ul>
+<blockquote>
+<p>Not all environment variables behave the same way when their values change.</p>
+</blockquote>
+<h3 id="4-5-environment-variables">4-5 ENVIRONMENT VARIABLES</h3>
+<h4 id="non-secret-environment-variables">Non-Secret Environment Variables</h4>
+<p><strong>Purpose</strong>: Store standard (not sensitive) configuration values.</p>
+<p><strong>Examples include</strong>: API URLs, SharePoint site URLs, Environment names, Feature flags, Dataverse table names</p>
+<p><strong>When the Value Changes</strong></p>
+<ul>
+<li>After updating a non-secret environment variable, the change is not immediately reflected in a live Copilot Studio agent.</li>
+<li>The agent must be republished for the updated value to be incorporated into the published version of the agent.</li>
+</ul>
+<h4 id="secret-environment-variables">Secret Environment Variables</h4>
+<p><strong>Purpose</strong>: Store sensitive values securely.</p>
+<p><strong>Examples include</strong>: API Keys, Client Secrets, Access Tokens, Integration Credentials</p>
+<p><strong>When the Value Changes</strong></p>
+<ul>
+<li>Unlike standard environment variables, secret environment variable updates are typically available immediately to actions and connections that reference them.</li>
+<li>No agent republishing is required.</li>
+</ul>
+<h2 id="_1">目录</h2>
+<ol>
+<li>智能体编排（Agent Orchestration）</li>
+<li>智能体知识（Agent Knowledge）</li>
+<li>智能体工具（Agent Tools）</li>
+<li>评估与应用生命周期管理（Evaluations &amp; ALM）</li>
+</ol>
+<h2 id="1-agent-orchestration">1. 智能体编排（Agent Orchestration）</h2>
+<h3 id="11">1.1 什么是智能体编排？</h3>
+<p>智能体编排是<strong>协调多个专业化工具、能力和 AI 智能体协同工作</strong>的过程，以高效完成复杂任务，确保无缝协作、任务分配和工作流管理。</p>
+<h3 id="12">1.2 每个智能体的三大组成</h3>
+<table>
+<thead>
+<tr>
+<th>组成</th>
+<th>作用</th>
+<th>集成类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>知识（Knowledge）</strong></td>
+<td>将智能体回答<strong>扎根于</strong>权威信息源</td>
+<td>用于"回答问题"的集成</td>
+</tr>
+<tr>
+<td><strong>工具（Tools）</strong></td>
+<td>让智能体在外部系统中<strong>执行操作</strong></td>
+<td>用于"做事"的集成</td>
+</tr>
+<tr>
+<td><strong>智能体（Agents）</strong></td>
+<td>将任务<strong>委托</strong>给其他专业智能体</td>
+<td>用于"交接推理"的集成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">1.3 编排的两个层级</h3>
+<p><strong>智能体级别（Agent Level）</strong></p>
+<ul>
+<li><strong>直接在智能体上添加知识、工具和智能体</strong></li>
+<li>由模型（编排器）自行判断何时调用资源</li>
+<li><strong>部分工具只能在智能体级别调用</strong></li>
+<li><strong>更不确定（Indeterministic）</strong></li>
+</ul>
+<p><strong>主题/节点级别（Topic/Node Level）</strong></p>
+<ul>
+<li>在主题流程中添加知识、工具和智能体</li>
+<li>由<strong>作者</strong>定义何时调用特定资源</li>
+<li>部分工具只能在主题内调用</li>
+<li><strong>更确定（Deterministic）</strong></li>
+</ul>
+<h3 id="14-vs">1.4 子智能体 vs 连接智能体（重点考点）</h3>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>子智能体（Child Agent）</th>
+<th>连接智能体（Connected Agent）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>在父智能体内直接创建的聚焦工作流</td>
+<td>独立发布的智能体，有自己的编排、工具、知识和部署生命周期</td>
+</tr>
+<tr>
+<td>上下文</td>
+<td>共享父智能体上下文，状态/变量传递简单</td>
+<td>完全独立，提示会被<strong>二次处理</strong></td>
+</tr>
+<tr>
+<td>发布生命周期</td>
+<td>无独立发布周期，随父智能体一起部署</td>
+<td>独立发布、独立部署</td>
+</tr>
+<tr>
+<td>归属</td>
+<td>同一团队共同拥有和管理</td>
+<td>可由不同团队拥有</td>
+</tr>
+<tr>
+<td>对父智能体而言</td>
+<td>子程序（subroutine）</td>
+<td>"带描述的工具"——按描述路由</td>
+</tr>
+</tbody>
+</table>
+<p><strong>何时用子智能体：</strong></p>
+<ul>
+<li>团队构建并维护完整解决方案</li>
+<li>组件无需单独发布或直接供用户访问</li>
+<li>无需单独认证、模型配置或 ALM 流程</li>
+<li>能力专属本解决方案，不会被其他智能体复用</li>
+</ul>
+<p><strong>何时用连接智能体：</strong></p>
+<ul>
+<li>能力已由其他团队拥有和维护</li>
+<li>智能体已发布，应继续独立运行</li>
+<li>需要单独的部署、配置或测试周期</li>
+<li>能力应可被多个编排器复用</li>
+</ul>
+<p><strong>连接智能体的代价（考点）：</strong></p>
+<ul>
+<li>提示被连接智能体二次处理 → <strong>更高的 Token 消耗</strong> + <strong>性能延迟</strong></li>
+<li>子智能体没有这个问题</li>
+</ul>
+<h3 id="15-agent2agent-a2a">1.5 Agent2Agent 协议（A2A）</h3>
+<ul>
+<li><strong>开放标准</strong>，用于跨平台边界的智能体间通信</li>
+<li>专为<strong>智能体间委托</strong>设计：一个智能体将任务交给另一个拥有自己推理、工具和响应的智能体</li>
+<li>Copilot Studio 编排器连接 A2A 智能体时，<strong>不是调用函数拿返回值</strong>，而是委托给外部智能体，由其用自己的能力处理并返回智能体生成的响应</li>
+</ul>
+<p><strong>核心概念（考点）：</strong></p>
+<ul>
+<li><strong>Agent Cards</strong> = 智能体元数据和能力（通常位于 <code>/well-known/agent.json</code>）</li>
+<li><strong>Tasks</strong> = 被委托的工作单元</li>
+<li><strong>Context IDs</strong> = 跨智能体边界的对话跟踪</li>
+</ul>
+<h3 id="16">1.6 智能体调用了错误的资源怎么办？</h3>
+<p><strong>方法一：更新资源描述</strong></p>
+<ul>
+<li>智能体不只依赖名称，<strong>描述就是给智能体的指令</strong></li>
+<li>描述越准确具体，越可能选对资源；描述差会导致漏调或错调</li>
+<li>当提示路由到错误的子智能体时，<strong>活动图（Activity Map）</strong>会显示实际调用了哪个智能体</li>
+</ul>
+<p><strong>方法二：将任务拆分到子/连接智能体</strong></p>
+<ul>
+<li><strong>经验法则：当智能体达到 30–40 个动作选项（主题、工具、连接智能体）时，编排层开始难以保证精度</strong></li>
+<li>这不是硬性上限；动作更少但描述相似的智能体也可能触顶</li>
+<li>应结合自己的评估验证该阈值</li>
+</ul>
+<h2 id="2-agent-knowledge_1">2. 智能体知识（Agent Knowledge）</h2>
+<h3 id="21-power-platform">2.1 Power Platform 连接器（实时知识）</h3>
+<ul>
+<li>按需实时访问源系统，<strong>不复制数据</strong>到 Microsoft Graph</li>
+<li>每次查询触发连接器的实时 API 调用</li>
+<li>数据不进入 Microsoft 365</li>
+</ul>
+<h3 id="22-copilot">2.2 Copilot 连接器（摄取 + 语义索引）</h3>
+<ul>
+<li>将外部内容<strong>摄取并语义索引</strong>到 Microsoft Graph</li>
+<li>内容存在于 Graph 索引中，智能体用<strong>语义搜索</strong>检索并可<strong>引用</strong>具体条目</li>
+<li><strong>管理员必须先</strong>在 Microsoft 365 管理中心配置 Copilot 连接器，制作者才能将其添加到智能体</li>
+<li>模式："搜索与索引"——内容摄取一次，即可在 Microsoft 365 体验中广泛搜索和引用</li>
+</ul>
+<h3 id="23-generative-answers">2.3 生成式答案（Generative Answers）</h3>
+<ul>
+<li><strong>只能在主题（Topic）内使用</strong></li>
+<li>节点搜索已配置的知识源并生成有依据的响应</li>
+<li>本质是回答："我们的内容对此怎么说？"——输出始终来自<strong>定义好的语料库</strong></li>
+<li><strong>源优先级（考点）：</strong></li>
+<li>节点有自己的源时，<strong>节点源优先于智能体级源</strong></li>
+<li>智能体级源作为<strong>回退（fallback）</strong>，仅在节点无自己的源时使用</li>
+</ul>
+<h3 id="24-azure-ai-search">2.4 Azure AI Search</h3>
+<ul>
+<li><strong>描述：</strong> 检索服务，让智能体用已索引的企业内容扎根响应，获得更准确相关的答案</li>
+<li><strong>业务价值/何时使用：</strong></li>
+<li>组织维护自己的搜索索引和向量存储时</li>
+<li>通过 <strong>RAG（检索增强生成）</strong>提升答案质量</li>
+<li>适合大型文档库和企业知识库</li>
+<li>支持语义和向量搜索</li>
+<li><strong>考试提示与陷阱：</strong></li>
+<li>内容存在于 <strong>Microsoft Graph 之外</strong>时使用</li>
+<li>组织已投资 Azure 搜索基础设施时常选</li>
+<li>重点是帮智能体<strong>回答问题</strong>，不是执行操作</li>
+</ul>
+<h3 id="25-content-moderation">2.5 内容审核（Content Moderation）</h3>
+<ul>
+<li>Copilot Studio 中的<strong>安全层</strong>，评估用户输入和 AI 生成输出，防止有害、不安全、冒犯或违规内容进出智能体</li>
+<li>出现位置：</li>
+<li>智能体级生成式 AI 设置</li>
+<li>AI Prompt 工具（Prompt Builder）</li>
+<li>生成式答案节点</li>
+<li>Microsoft 规定内容在<strong>两个时机</strong>被评估：</li>
+<li>用户提交提示/输入时</li>
+<li>AI 响应返回用户之前</li>
+</ul>
+<h2 id="3-agent-tools_1">3. 智能体工具（Agent Tools）</h2>
+<h3 id="31-inputs-outputs">3.1 输入与输出（Inputs &amp; Outputs）</h3>
+<p>每个动作都需要输入并产生输出——变量和主题用于捕获、存储、转换和复用信息。</p>
+<p><strong>工作流程：</strong></p>
+<ol>
+<li><strong>收集输入</strong>——通过对话、问题、先前动作或自适应卡片</li>
+<li><strong>存入变量</strong>——主题变量和全局变量保存用户响应、动作参数、业务数据</li>
+<li><strong>执行动作</strong>——将变量作为输入传给工具</li>
+<li><strong>捕获输出</strong>——将记录、状态码、审批、摘要等存入变量</li>
+<li><strong>转换与复用</strong>——格式化、解析、组合、条件判断或丰富输出后再呈现或传给下一动作</li>
+</ol>
+<p><strong>示例：</strong> 用户提供员工 ID → 存入变量 → 传给 HR 连接器动作 → 捕获返回的员工记录 → 提取姓名、部门、经理 → 用于后续动作或响应。</p>
+<blockquote>
+<p><strong>每个工具都必须向所调用的系统进行身份验证。</strong></p>
+</blockquote>
+<h3 id="32">3.2 工具访问权限管理（两种模式）</h3>
+<p><strong>以制作者身份运行（Maker Connection）</strong></p>
+<ul>
+<li>使用智能体创建者拥有的凭据/连接执行</li>
+<li>所有用户共享同一底层访问上下文</li>
+<li>价值：简化共享系统访问；让用户能与无直接访问权限的数据源交互</li>
+</ul>
+<p><strong>以服务账户运行（Application Identity）</strong></p>
+<ul>
+<li>使用专用服务主体、托管标识或服务账户执行，而非个人</li>
+<li>价值：<strong>最具扩展性和企业就绪</strong>；消除对特定员工账户的依赖</li>
+</ul>
+<h3 id="33">3.3 身份验证方式</h3>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>无身份验证</strong></td>
+<td>目标端点公开可访问时适用</td>
+</tr>
+<tr>
+<td><strong>Auth 2.0（最常见）</strong></td>
+<td>用户用 Microsoft Entra ID 登录，签发并使用访问令牌</td>
+</tr>
+<tr>
+<td><strong>API 密钥</strong></td>
+<td>每次请求携带静态 API 密钥，标识<strong>应用</strong>而非个人用户</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34">3.4 智能体工具全景</h3>
+<ul>
+<li><strong>连接器（Connectors）</strong>——预构建集成，安全访问 Microsoft 及第三方应用</li>
+<li><strong>自定义连接器（Custom Connectors）</strong>——将专有、内部或不支持的 API 暴露为工具</li>
+<li><strong>MCP</strong>——标准化工具端点，通过 Model Context Protocol 发现和交互外部系统</li>
+<li><strong>智能体流（Agent Flows）</strong>——结构化自动工作流，执行业务流程、编排动作</li>
+<li><strong>REST API 和 HTTP</strong>——直接 Web 服务调用，几乎可对接任何 HTTP API</li>
+<li><strong>Agent2Agent 协议</strong>——智能体间安全协作、委托任务、交换信息</li>
+</ul>
+<h3 id="35">3.5 各工具详解与选择</h3>
+<p><strong>连接器（Connectors）</strong></p>
+<ul>
+<li>集成现有业务系统<strong>最快</strong>的方式；已有 Microsoft/Power Platform 连接器时首选</li>
+<li>常见：Outlook、Teams、SharePoint、Dataverse、Salesforce、ServiceNow、Dynamics 365</li>
+<li><strong>考点：</strong> 考虑自定义连接器或 API 前，<strong>先检查是否有预构建连接器</strong>；支持终端用户认证或制作者提供认证；运行时实时访问数据</li>
+</ul>
+<p><strong>REST API</strong></p>
+<ul>
+<li>通过 REST 端点将外部应用功能暴露为<strong>可复用</strong>的智能体工具</li>
+<li>智能体级工具，可跨对话和主题复用；可接受输入、返回结构化输出成为智能体变量</li>
+<li>认证（Auth、API Key、服务主体）常是设计的一部分</li>
+</ul>
+<p><strong>HTTP</strong></p>
+<ul>
+<li>主题和智能体流直接用 GET/POST/PUT/DELETE 发送 Web 请求</li>
+<li><strong>制作者负责定义：</strong> URL、HTTP 方法、请求头、认证、请求体、响应处理</li>
+<li>API 响应常需解析和转换</li>
+<li>适用：无连接器、只需简单 API 调用、集成不预期广泛复用</li>
+</ul>
+<p><strong>三者选择口诀（考点）：</strong></p>
+<ul>
+<li><strong>自定义连接器</strong> → 多个组件（应用、流、智能体等）都要用</li>
+<li><strong>REST API</strong> → 一个智能体要<strong>多次</strong>使用</li>
+<li><strong>HTTP</strong> → 一个智能体只<strong>用一次</strong>（且预计不会改变）</li>
+</ul>
+<p><strong>MCP（Model Context Protocol）</strong></p>
+<ul>
+<li>标准化工具端点，让智能体发现并动态调用外部系统能力</li>
+<li>价值：标准化工具暴露机制、减少自定义集成、促进互操作、支持动态发现工具</li>
+<li>在 Copilot Studio 中直接配置 MCP 工具；正快速成为 AI 系统首选集成标准</li>
+</ul>
+<p><strong>智能体流（Agent Flows）</strong></p>
+<ul>
+<li>适合<strong>多步骤业务流程</strong>；跨系统协调动作；支持审批、人在回路、自动化</li>
+<li>将逻辑、分支、错误处理、编排与对话层分离</li>
+<li><strong>考点（重要）：</strong></li>
+<li>可接受输入并向主题返回输出</li>
+<li><strong>必须在约 100 秒内响应智能体</strong>（警惕超时！）</li>
+<li>流程可<strong>提前返回响应</strong>，后台继续处理</li>
+<li>设计中应包含错误处理</li>
+<li>定位为"流程自动化层"</li>
+</ul>
+<p><strong>Agent2Agent 协议（A2A）</strong>
+- 支持多智能体架构；专业智能体代另一智能体工作；构建可扩展智能体生态
+- 单个智能体过大或过复杂时适用
+- <strong>考点：</strong> 开放标准；任务<strong>完全委托</strong>给目标智能体，由其负责推理、执行、安全和工具使用</p>
+<h2 id="4-evaluations-alm">4. 评估与应用生命周期管理（Evaluations &amp; ALM）</h2>
+<h3 id="41-evaluations">4.1 评估（Evaluations）</h3>
+<ul>
+<li>运行评估并分析结果，优化智能体行为，验证其满足业务和质量要求</li>
+<li>可多次运行同一测试集，观察改进随时间的变化</li>
+<li><strong>评估只需几分钟</strong>；测试结果<strong>实时逐行处理</strong></li>
+<li>每个测试用例结果按顺序生成显示——运行中即可即时洞察质量趋势和潜在失败</li>
+</ul>
+<h3 id="42-environments">4.2 环境（Environments）</h3>
+<ul>
+<li>Power Platform 中的<strong>隔离容器</strong>，存储和管理智能体、流、连接、Dataverse 数据等</li>
+<li>对 ALM 的意义：</li>
+<li>分离开发、测试、生产工作负载</li>
+<li>安全测试不影响生产用户</li>
+<li>强制治理、安全、合规和访问控制</li>
+<li>支持基于解决方案的部署和环境间提升</li>
+<li>通过环境变量提供环境特定配置</li>
+</ul>
+<h3 id="43-solutions">4.3 解决方案（Solutions）</h3>
+<ul>
+<li>Power Platform 中的<strong>主要 ALM 机制</strong>，用于打包、传输和管理智能体及相关组件</li>
+<li><strong>非托管解决方案（Unmanaged）</strong>：开发期间使用，允许制作者修改组件</li>
+<li><strong>托管解决方案（Managed）</strong>：生产部署使用，保护已部署组件不被直接修改</li>
+<li><strong>所有解决方案都应导出为托管（Managed）</strong></li>
+<li><strong>不能"转换"为托管</strong>——此选项在<strong>导出时</strong>选择，之后不可更改（考点）</li>
+</ul>
+<h3 id="44-environment-variables">4.4 环境变量（Environment Variables）</h3>
+<ul>
+<li>将配置值与智能体逻辑分离，使解决方案可在开发/测试/生产间移植</li>
+<li>避免硬编码 URL、ID、API 端点等</li>
+<li><strong>常见用途：</strong> API 端点、服务 URL、SharePoint 站点地址、Azure 资源名、智能体配置、Dataverse 表引用、功能标志、自定义连接器配置</li>
+<li><strong>并非所有环境变量在值变更时行为相同</strong>（考点）</li>
+</ul>
+<h3 id="45-vs">4.5 非机密 vs 机密环境变量（重点考点）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>用途</th>
+<th>示例</th>
+<th>值变更后的行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>非机密</strong></td>
+<td>标准（非敏感）配置</td>
+<td>API URL、SharePoint 站点 URL、环境名、功能标志、Dataverse 表名</td>
+<td><strong>不会立即生效</strong>，必须<strong>重新发布智能体</strong></td>
+</tr>
+<tr>
+<td><strong>机密</strong></td>
+<td>安全存储敏感值</td>
+<td>API 密钥、客户端密钥、访问令牌、集成凭据</td>
+<td><strong>通常立即可用</strong>，引用它们的动作和连接<strong>无需重新发布</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="question-4">QUESTION 4</h2>
+<p>A company is preparing an agent flow so that it can be invoked by an agent during conversations.</p>
+<p>The agent flow must meet the following requirements:</p>
+<p>The agent must be able to trigger the flow. The agent flow must be verified.</p>
+<p>You need to prepare an agent flow so that it can be used by the agent.</p>
+<p>In which order should you perform the actions to prepare the agent flow? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.</p>
+<p>Select and Place:</p>
+<p><strong>Agent flow readiness steps (Options)</strong></p>
+<ul>
+<li>Configure the invocation trigger that allows the agent to call the agent flow.</li>
+<li>Make the agent flow available for agent usage.</li>
+<li>Validate the agent flow behavior with representative test runs.</li>
+<li>Configure the actions that implement the required behavior.</li>
+<li>Create a new agent flow artifact in the environment.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Answer Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1</strong> [ 空白框 ]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2</strong> [ 空白框 ]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3</strong> [ 空白框 ]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4</strong> [ 空白框 ]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5</strong> [ 空白框 ]</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-9999 Jacob Xi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
