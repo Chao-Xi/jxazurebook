@@ -4189,3 +4189,378 @@ To coordinate interactions while accessing governed data, you should create a Mi
 Built-in Security & Scope: Fabric enforces existing data constraints. Data access runs under the authenticated user's identity, automatically respecting Power BI model-level read permissions, Row-Level Security (RLS), and Object-Level Security (OLS).
 
 Seamless Context: This enables multi-step agent orchestration where Copilot Studio routes queries to the Fabric agent for complex analytical insights (translating natural language to SQL/DAX/KQL) without exposing raw data.
+
+
+### QUESTION 11 
+
+A company is building an agent in Copilot Studio that must answer questions using enterprise systems and must also perform authenticated operations.
+
+* To meet the business needs, the agent must meet the following requirements.
+
+* The agent must provide searchable answers from indexed enterprise content.
+
+* The agent must retrieve up-to-date facts at runtime without indexing data.
+
+The agent must perform an authenticated update operation during the conversation.
+
+You need to select the correct integration approach for each requirement.
+
+Which option should you use for each requirement? To answer, move the appropriate solutions to the correct requirements. You may use each solution once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+Select and Place:
+
+**Solutions (Options)**
+
+* Power Platform connector tool
+* Copilot connector knowledge source
+* Power Platform connector for real-time knowledge
+
+
+
+**Agent integration approaches**
+
+| Requirement | Solution |
+| :--- | :--- |
+| The agent must provide searchable answers from indexed enterprise content. | [ 空白框 ] |
+| The agent must retrieve up-to-date facts at runtime without indexing data. | [ 空白框 ] |
+| The agent must perform an authenticated update operation during the conversation. | [ 空白框 ] |
+
+----
+
+
+正确答案如下：
+
+| Requirement                                                                       | Solution                                         |
+| --------------------------------------------------------------------------------- | ------------------------------------------------ |
+| The agent must provide searchable answers from indexed enterprise content.        | Copilot connector knowledge source               |
+| The agent must retrieve up-to-date facts at runtime without indexing data.        | Power Platform connector for real-time knowledge |
+| The agent must perform an authenticated update operation during the conversation. | Power Platform connector tool                    |
+
+ 解析
+
+1. Indexed enterprise content → Copilot connector knowledge source：通过索引检索企业文档和知识内容。
+2. Real-time facts without indexing → Power Platform connector for real-time knowledge：在运行时直接访问数据源，无需将数据复制到搜索索引。
+3. Authenticated update → Power Platform connector tool：调用连接器执行创建或更新等业务操作，并通过配置的连接处理身份验证。
+
+考试记忆： 索引检索 → Copilot connector knowledge source；实时查询 → Real-time knowledge；执行写入操作 → Connector tool。
+
+
+### QUESTION 12 
+
+A company is extending agents in Copilot Studio with both external capabilities and enterprise content access. Some user requests require grounded answers, while other requests require executing actions. To meet the business needs, the agent must meet the following requirements:
+
+* Ground answers using results from enterprise data.
+
+* Invoke callable functions exposed through a standardized tool interface.
+
+* Write an update to a system by using an authenticated action during the conversation.
+
+You need to integrate the correct approach to meet the requirements.
+
+What should you integrate for each requirement? To answer, move the appropriate integrations to the correct requirements. You may use each integration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view conten
+
+
+以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
+
+Select and Place:
+
+**Integrations (Options)**
+
+* Connect to an MCP server and add its tools to the agent.
+* Add Dataverse tables as a structured data knowledge source.
+* Add a Power Platform connector tool and call it from a topic.
+* Add a Copilot connector knowledge source for indexed content.
+
+
+**Integration approaches**
+
+| Requirement | Integration |
+| :--- | :--- |
+| Ground answers using results from enterprise data. | [ 空白框 ] |
+| Invoke callable functions exposed through a standardized tool interface. | [ 空白框 ] |
+| Write an update to a system by using an authenticated action during the conversation. | [ 空白框 ] |
+
+----
+
+**正确答案**
+
+| Requirement                                                                           | Integration                                                   |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Ground answers using results from enterprise data.                                    | Add a Copilot connector knowledge source for indexed content. |
+| Invoke callable functions exposed through a standardized tool interface.              | Connect to an MCP server and add its tools to the agent.      |
+| Write an update to a system by using an authenticated action during the conversation. | Add a Power Platform connector tool and call it from a topic. |
+
+未使用的选项：
+
+- Add Dataverse tables as a structured data knowledge source.
+
+**解析**
+
+1. Copilot connector knowledge source：用于检索已索引的企业内容，为 Agent 提供 grounding（知识依据）。
+2. MCP server：通过标准化的 Model Context Protocol 接口向 Agent 暴露可调用的工具和函数。
+3. Power Platform connector tool：调用连接器执行操作，例如更新 Dataverse 或其他业务系统中的记录；可以配置身份验证。
+
+考试记忆：
+
+- Knowledge Source → 检索知识、Grounding。
+- MCP Server → 标准化工具调用。
+- Power Platform Connector Tool → 执行业务操作、更新数据。
+- Dataverse structured data knowledge source → 结构化数据查询，不是执行写入操作。
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Add a Copilot connector knowledge source for index content **
+
+To extend a Copilot Studio agent to provide grounded answers using enterprise data (such as ERP, CRM, or document stores), the correct integration action is to add a Copilot connector knowledge source for index content.
+
+Copilot connectors crawl your enterprise content and index it into the search index. This allows the agent's generative answers to quickly retrieve and ground responses in trusted business data.
+
+**Box 2: Connect to an MCP server and add its tools to the agent** 
+
+Standardized Tool Interface: The Model Context Protocol (MCP) is a universal, open standard interface specifically built to let large language models securely interact with external tools and callable functions.
+
+Executing Actions: When you link an MCP server to your Copilot Studio agent, any executable capabilities or functions exposed by that server automatically become functional tools that your agent can invoke.
+
+**Box 3: Add a Power Platform connector tool and call it from a topic**
+
+For extending a Copilot Studio agent to execute authenticated, real-time updates to an external system, the correct action to take is to add a Power Platform connector tool and call it from a topic.
+
+Executing Actions & Writing Data: Power Platform connectors (prebuilt or custom) are explicitly designed to perform actions like creating, reading, updating, or deleting records (CRUD operations) in backend systems.
+
+Authentication: Connectors natively support security configurations, allowing you to easily map credentials so the agent executes the update using either maker-provided or specific end-user Microsoft Entra ID authentication. You can also control access at the topic level to ensure triggers execute precisely when required.
+
+
+### QUESTION 13 
+
+A company plans to use Copilot connectors to ground answers from a third-party system for an agent in Copilot Studio.
+
+To meet the business needs, responsibilities for configuring and using Copilot connectors must be separated, based on the following requirements:
+
+* For tenant administration, the connector must be available at the tenant level. 
+* For agent runtime behavior, answers must be grounded from authorized sources. 
+* For builder configuration, you must add the connector to the agent.
+
+You need to determine how Copilot connector set-up responsibilities are handled across tenant, runtime, and builder stages.
+
+What should you configure for each requirement? To answer, move the appropriate configuration to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Call the connector knowledge source.
+* Add the Copilot connector as a knowledge source.
+* Create a new Copilot connector directly in Copilot Studio.
+* Configure the Copilot connector in Microsoft 365 Admin Center.
+* Configure the Copilot connector in Power Platform Admin Center.
+
+**Copilot connector setup responsibilities.**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Tenant administration | [ 空白框 ] |
+| Agent runtime behavior | [ 空白框 ] |
+| Builder configuration | [ 空白框 ] |
+
+----
+
+正确答案
+
+| Requirement            | Configuration                                                  |
+| ---------------------- | -------------------------------------------------------------- |
+| Tenant administration  | Configure the Copilot connector in Microsoft 365 Admin Center. |
+| Agent runtime behavior | Call the connector knowledge source.                           |
+| Builder configuration  | Add the Copilot connector as a knowledge source.               |
+
+未使用的选项：
+
+- Create a new Copilot connector directly in Copilot Studio.
+- Configure the Copilot connector in Power Platform Admin Center.
+
+解析
+
+1. Microsoft 365 Admin Center（租户管理）：配置 Copilot connector，使其在租户级别可用。
+2. Call the connector knowledge source（运行时）：Agent 在对话过程中调用知识源，从用户有权访问的内容中检索信息，确保权限控制。
+3. Add the Copilot connector as a knowledge source（构建阶段）：Builder 将已经配置好的 Copilot connector 添加到 Copilot Studio Agent 的知识源中。
+
+考试记忆：
+
+- Tenant level → Microsoft 365 Admin Center
+- Runtime → Call knowledge source（检索并遵循授权）
+- Builder → Add knowledge source to agent
+
+注意区分：租户管理员负责配置 Connector，Agent Builder 负责将其添加为知识源，Agent Runtime 负责调用知识源获取答案。
+
+
+Explanation:
+
+**Box 1: Configure the Copilot connector in Microsoft 365 Admin Center **
+
+
+To make a Copilot connector available at the tenant level for grounding agent responses in Microsoft Copilot Studio, you must configure and deploy the connector in the Microsoft 365 Admin Center.
+
+Tenant Administration (Microsoft 365 Admin Center): Tenant administrators must configure and deploy the specific Copilot connector (e.g., ServiceNow, Salesforce, Box) within the Microsoft 365 Admin Center. This process indexes the necessary content from your third-party system across the enterprise so it can be utilized by your organization's agents.
+
+**Box 2: Add the Copilot connector as a knowledge source**
+
+To use a Copilot connector as an enterprise knowledge source in Microsoft Copilot Studio, the prerequisite configuration requires the builder to add the Copilot connector as a knowledge source.
+
+The Builder Stage: While your AI or tenant administrator is responsible for deploying and configuring the Copilot connector in the Microsoft 365 admin center, the builder stage handles agent-specific knowledge mapping. [Box 3 below]
+
+Knowledge Integration: As an agent builder, you must actively select the preconfigured Copilot connector from the available list and add it as a knowledge source to your agent's generative answers node.
+
+Runtime Behavior: Once this is configured, the Copilot engine indexes and queries the third-party data securely at runtime. Because the connector is tied to your tenant's security parameters, the agent will only ground answers using authorized sources and fully respect source-level permissions.
+
+**Box 3: Configure the Copilot connector in Microsoft 365 Admin Center** 
+
+The initial deployment and central management of a Copilot connector must be performed in the Microsoft 365 Admin Center by a tenant administrator. However, completing the builder configuration to add the connector as a knowledge source for a specific agent is done directly within Microsoft Copilot Studio.
+
+
+### QUESTION 14 
+
+A company uses an agent in Copilot Studio to answer questions based on enterprise content.
+
+The content is indexed in Azure AI Search. Responses must be generated by a Microsoft Foundry model.
+
+To meet the business needs, the solution must meet the following requirements:
+
+Users are able to trace each answer back to its source.
+
+The agent retrieves information from a centralized data index. Responses are generated by an enterprise-approved foundation model.
+
+You need to configure generative answers for the agent.
+
+What should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+NOTE: Each correct selection is worth one point.
+
+
+ Select and Place:
+
+**Configurations (Options)**
+
+* Upload documents directly into the agent.
+* Configure Azure AI Search as the grounding data source.
+* Instruct the agent to cite sources in knowledge settings.
+* Deploy a model in Foundry to an agent and connect to Copilot Studio.
+
+
+
+**Evaluations**
+
+| Requirement | Configuration |
+| :--- | :--- |
+| Users trace each answer back to its source. | [ 空白框 ] |
+| The agent retrieves information from a centralized data index. | [ 空白框 ] |
+| Responses are generated by an enterprise-approved foundational model. | [ 空白框 ] |
+
+
+正确答案
+
+| Requirement                                                           | Configuration                                                        |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Users trace each answer back to its source.                           | Instruct the agent to cite sources in knowledge settings.            |
+| The agent retrieves information from a centralized data index.        | Configure Azure AI Search as the grounding data source.              |
+| Responses are generated by an enterprise-approved foundational model. | Deploy a model in Foundry to an agent and connect to Copilot Studio. |
+
+未使用的选项：
+
+- Upload documents directly into the agent.
+
+解析
+
+1. Cite sources：启用来源引用，让用户能够追溯回答所依据的文档或知识来源。
+2. Azure AI Search：作为集中式索引和 grounding 数据源，Agent 从统一索引检索企业内容。
+3. Microsoft Foundry model：部署企业批准的 Foundation Model，并连接到 Copilot Studio，用该模型生成回答。
+
+考试记忆：
+
+- Traceability → Cite sources
+- Centralized index → Azure AI Search
+- Approved model → Foundry model
+
+注意：Azure AI Search 负责检索和提供 grounding 内容；Foundry 模型负责生成回答，两者职责不同。
+
+
+**Box 1: Instruct the agent to cite sources in knowledge settings** 
+
+The specific behavior of how the agent presents that information—such as enforcing citations and tracing links back to the source documents—is controlled by the instructions and configurations within the agent's knowledge and conversation settings. You must explicitly configure the agent's prompt instructions or system settings to format the output with source citations so users can trace the answers.
+
+**Box 2: Configure Azure AI Search as the grounding data source** 
+
+By adding Azure AI Search as a knowledge source Microsoft Copilot Studio enables the RetrievalAugmented Generation (RAG) pattern. This ensures your generative AI model retrieves specific enterprise content from your centralized index and uses it to ground responses.
+
+**Box 3: Deploy a model in Foundry to an agent and connect to Copilot Studio**
+
+Model Control: To strictly guarantee that an enterprise-approved foundation model (such as a specific Microsoft Foundry model) generates the response, you must manually deploy that specific model and link it to your agent.
+
+Connection Workflow: Deploying the custom model in Azure AI Studio (formerly encompassing parts of Azure AI Foundry) and connecting it to Copilot Studio ensures the orchestration layer routes prompts directly to your certified LLM.
+
+
+### QUESTION 15 
+
+A company uses an agent in Copilot Studio to generate structured responses for internal users.
+
+The agent must meet the following requirements:
+
+Consistently follow a reusable instruction template for response tone and structure.
+
+Use an enterprise-approved foundation model for responses generated through the template.
+
+You need to configure custom prompts so the agent uses the Microsoft Foundry model catalog.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+NOTE: Each correct selection is worth one point.
+
+A. Publish the agent to apply the Foundry model selection automatically.
+
+B. Configure Azure AI Search as the grounding source, so the model choice is enforced.
+
+C. Allow topic authors to define tone and structure directly in topic steps.
+
+D. Select a model from the Foundry model catalog for the custom prompt configuration.
+
+E. Create a custom prompt template and apply it where the agent generates the structured response.
+
+F. Enable citations, so the model is restricted to approved outputs.
+
+
+----
+
+
+正确答案：D、E
+
+| 选项 | 判断 | 解析                                                               |
+| -- | -- | ---------------------------------------------------------------- |
+| A  | ❌  | 发布 Agent 不会自动应用 Foundry 模型选择。                                    |
+| B  | ❌  | Azure AI Search 用于知识检索和 Grounding，不负责强制模型选择。                     |
+| C  | ❌  | 直接在 Topic 中定义指令，无法保证跨场景复用统一模板。                                   |
+| D  | ✅  | 从 Microsoft Foundry model catalog 中选择企业批准的模型，并配置到 Custom Prompt。 |
+| E  | ✅  | 创建可复用的 Custom Prompt Template，并将其应用于生成结构化响应的位置。                  |
+
+考试记忆：
+
+- Approved foundation model → Select model from Foundry catalog
+- Reusable tone and structure → Create and apply Custom Prompt Template
+
+核心思路：D 控制使用哪个模型，E 控制模型按照什么模板生成响应。
+
+
+**Correct Answer: DE Section: (none)**
+
+Explanation/Reference:
+
+Explanation:
+
+To configure your Copilot Studio agent to use an enterprise-approved model from the Microsoft Foundry model catalog and apply a consistent, reusable instruction template, follow these exact technical steps:
+
+[D] Step 1: Select and Connect the Model from the Foundry Catalog You must bridge your Microsoft Foundry (Azure AI Foundry) deployment with Copilot Studio via the prompt configuration panel.
+
+[E] Step 2: Create the Template and Apply It to the Agent Flow Now, write the reusable instruction template for structured responses and map it to your conversation topics.
