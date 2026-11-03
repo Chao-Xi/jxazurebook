@@ -7153,7 +7153,7 @@ Hot Area:
 
 正确答案及解析如下：
 
-### 答案配置
+答案配置
 
 | Requirement | Configuration |
 | :--- | :--- |
