@@ -21,7 +21,7 @@ The project is led by a cross-function team:
 
 **Current environment**
 
-Channels
+**Channels**
 
 * **Public website**: Embedded web chat 
 * **Mobile app:** In-app chatbot 
@@ -30,8 +30,8 @@ Channels
 **Identity and access**
 
 * **Customers**: Anonymous access for general inquiries (e.g., flight status, baggage policy). 
-* Authentication is required for personal data access (e.g., bookings, loyalty points). 
-* **Internal staff: Authenticate via Microsoft Entra ID.**
+* **Authentication** is required for personal data access (e.g., bookings, loyalty points). 
+* <mark>**Internal staff: Authenticate via Microsoft Entra ID.**</mark>
 
 
 **Data sources**
@@ -63,21 +63,21 @@ Deploy the agent across web, mobile, and Teams with a consistent user experience
 
 - The agent must handle common inquiries such as:
 
-- Flight status
+	- Flight status
 
-- Booking and rebooking
+	- Booking and rebooking
 
-- Loyalty program questions
+	- Loyalty program questions
 
-- Travel policies and baggage rules
+	- Travel policies and baggage rules
 
 
 **Human escalation** 
 
 - If the agent cannot resolve an issue or the user requests help, it must:
-- Escalate to a human agent.
-- Transfer the conversation transcript and relevant context.
-- Redact any sensitive personal data before escalation.
+	- Escalate to a human agent.
+	- Transfer the conversation transcript and relevant context.
+	- Redact any sensitive personal data before escalation.
 
 
 **Knowledge integration**
@@ -112,8 +112,8 @@ The agent must use scalable methods for knowledge integration and must not rely 
 
 - Power Platform DLP policies must be enforced to block unauthorized data flows.
 - Responsible AI content moderation filters must be enabled.
-- Prompt modifications must be added to enforce tone, disclaimers, and refusal behavior. 
-- Disclaimers must be applied consistently across all generative responses. Manual edits to individual topics must be avoided.
+- <mark>**Prompt modifications must be added to enforce tone, disclaimers, and refusal behavior**. 
+- Disclaimers must be applied consistently across all generative responses. Manual edits to individual topics must be avoided.</mark>
 
 
 **Monitoring and maintenance**
@@ -125,15 +125,15 @@ The agent must use scalable methods for knowledge integration and must not rely 
 
 **Issues and constraints**
 
-* **API rate limits:** External APIs (e.g., flight status) have usage limits. Agent flows must handle retries and caching to avoid exceeding quotas.
+* **API rate limits:** External APIs (e.g., flight status) have usage limits. **Agent flows must handle retries and caching to avoid exceeding quotas**.
 
-* **Knowledge base limits:** Copilot Studio has limits on the number and size of indexed documents. Large files must be split or summarized.
+* **Knowledge base limits:** Copilot Studio **has limits on the number and size of indexed documents. Large files must be split or summarized**.
  
 * **Generative answer risks:** Generative responses must be constrained to avoid policy violations. Prompt modifications and filters must be used to enforce tone, safety, and compliance.
  
-* **User input variability:** Users phrase questions in diverse ways. Topics must include varied trigger phrases and fallback handling.
+* **User input variability:** Users phrase questions in diverse ways. **Topics must include varied trigger phrases and fallback handling.**
  
-* **Authentication UX:** The agent must clearly explain when sign-in is required and handle transitions smoothly across channels.
+* **Authentication UX:** The agent must clearly **explain when sign-in is required and handle transitions smoothly across channels**.
 
 
 **Problem statement** 
@@ -145,16 +145,16 @@ The agent must deliver accurate, helpful, and safe responses across multiple cha
 It must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction
 
 
-### QUESTION 1
+### QUESTION 1 💩
 
-You need to configure the agent in Copilot Studio to meet Blue Vender's Responsible AI and data protection requirements.
+You need to configure the agent in Copilot Studio to **meet Blue Vender's Responsible AI and data protection requirements.**
 
 Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
 
 Select and Place:
 
 
-Responsible AI and data protection requirements
+<mark>**Responsible AI and data protection requirements**</mark>
 
 1. Add custom prompt modifications.
 2. Conduct adversarial testing.
@@ -177,26 +177,32 @@ Explanation/Reference:
 
 Explanation:
 
-Scenario: Problem statement: The agent must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction.
+Scenario: 
+
+<mark>Problem statement: **The agent must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction**.</mark>
 
 **Step 1: Define Data Loss Prevention (DLP) policies** 
 
-Security and compliance must be established at the foundation level. Admins use the Power Platform admin center to configure DLP policies. This establishes environmental guardrails by restricting unauthorized data connectors or preventing the agent from leaking sensitive data.
+Security and compliance must be established at the foundation level. **Admins use the Power Platform admin center to configure DLP policies.** This establishes environmental guardrails by restricting unauthorized data connectors or preventing the agent from leaking sensitive data.
 
 **Step 2: Add custom prompt modifications** 
 
-Once the environment is secure, the maker configures the specific behavior of the agent. Custom prompt modifications and agent instructions shape the tone, define conversational topics, and establish explicit boundaries for the generative model (e.g., instructing the model to strictly stay within its knowledge base).
+Once the environment is secure, the maker configures the specific behavior of the agent. **Custom prompt modifications and agent instructions shape the tone, define conversational topics, and establish explicit boundaries for the generative model** (e.g., instructing the model to strictly stay within its knowledge base).
 
 **Step 3: Conduct adversarial testing**
 
-This is the final evaluation phase before deployment. After the guardrails and custom prompts are in place, you simulate real-world attacks (such as jailbreaks, prompt injections, or malicious user inputs) to verify that the agent reliably adheres to your corporate guidelines and Microsoft's Responsible AI standards.
+This is the final evaluation phase before deployment. 
+
+After the guardrails and custom prompts are in place, **you simulate real-world attacks (such as jailbreaks, prompt injections, or malicious user inputs) to verify that the agent reliably adheres to your corporate guidelines and Microsoft's Responsible AI standards**.
 
 
 ### QUESTION 2
 
 You need to evaluate whether the current configuration decisions for the Blue Yonder Copilot agent comply with the company's security and governance policies.
 
-Which compliance status should you assign to each configuration decision? To answer, move the appropriate compliance statuses to the correct configuration decisions. You may use each compliance status once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+**Which compliance status should you assign to each configuration decision?** 
+
+To answer, move the appropriate compliance statuses to the correct configuration decisions. You may use each compliance status once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
 
 NOTE: Each correct selection is worth one point.
@@ -246,7 +252,7 @@ Box 3: Non-compliant Responsible AI content moderation filters must be enabled.
 Box 4: Non-compliant User identity must be used for data access; shared or builder credentials must not be used. 
 
 
-### QUESTION 3 
+### QUESTION 3 💩
 
 
 You need to deploy the Blue Yonder Copilot agent to the public website and Microsoft Teams while ensuring compliance with the company's security and Responsible AI requirements.
@@ -263,7 +269,7 @@ C. Embed the web channel and then rely on channel-level settings to enforce cont
 
 D. Configure Power Platform DLP policies to restrict unauthorized data connectors.
 
-E. Publish the agent and then enable Responsible AI filters individually for each channel.                           
+E. **Publish the agent and then enable Responsible AI filters** individually for each channel.                           
                              
         
 ------                     
@@ -277,7 +283,7 @@ E. Publish the agent and then enable Responsible AI filters individually for eac
 
 Why not the other options?
 
-- B: Disclaimers should be applied consistently through shared/system-level configuration, not manually added to every topic.
+- B: Disclaimers should be applied consistently through shared/system-level configuration, **not manually added to every topic.**
 - C: Embedding the web channel does not replace agent-level Responsible AI configuration.
 - E: Responsible AI safeguards should be configured before publication, not postponed until afterward.
 
@@ -309,9 +315,9 @@ Exam tip: When the question emphasizes both consistent generative behavior and d
 因此，如果你正在准备考试并且已有可靠的官方答案来源，可以暂时记录 A、E（题库答案），但需要注意：从严格的技术和安全部署顺序来看，E 的措辞并不严谨。
 
 
-### QUESTION 4 
+### QUESTION 4 💩💩
 
-You need to configure the Blue Yonder Copilot agent's responses in accordance with the company's content control and platform requirements.
+You need to configure the Blue Yonder Copilot agent's **responses in accordance with the company's content control and platform requirements.**
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -337,15 +343,15 @@ E. Duplicate disclaimer text across reusable topics.
 
 Explanation
 
-- B — Correct: Prompt instructions can define consistent disclaimer text for generative responses, avoiding manual edits to each individual topic.
+- B — Correct: Prompt instructions can define consistent disclaimer text for generative responses, **avoiding manual edits to each individual topic.**
 - C — Correct: The scenario explicitly requires Markdown formatting and states that HTML is not supported.
-- A — Incorrect: Adding disclaimers to every topic creates unnecessary manual work and does not ensure consistent handling across all generative responses.
-- D — Incorrect: HTML formatting is not supported by the platform requirements.
+- A — Incorrect: **Adding disclaimers to every topic creates unnecessary manual work and does not ensure consistent handling across all generative responses**.
+- D — Incorrect: **HTML formatting is not supported by the platform requirements.**
 
-Exam tip: Consistent disclaimers → prompt instructions; supported formatting → Markdown.
+> Exam tip: Consistent disclaimers → prompt instructions; supported formatting → Markdown.
 
 
-Correct Answer: BC Section: (none) Explanation/Reference:
+Correct Answer: BC
 
 **Explanation:**
 
@@ -361,7 +367,7 @@ The best approach is to configure prompt instructions that include disclaimer te
 
 This method ensures the disclaimer is applied universally to all AI-generated responses without manual duplication across topics. It scales effectively and reduces maintenance overhead.
 
-### QUESTION 5 
+### QUESTION 5 💩
 
 
 You need to configure the agent in Copilot Studio to use internal and external partner knowledge sources to answer user questions about the airline services.
@@ -386,7 +392,7 @@ Data sources include:
 
 Travel Advisory Content: Uses REST API with partner services.
 
-Configuring a Microsoft Graph connector to index your external data and utilizing REST APIs are highly effective and distinct strategies for supplying knowledge and actions in Microsoft Copilot Studio.
+**Configuring a Microsoft Graph connector to index your external data and utilizing REST APIs are highly effective and distinct strategies for supplying knowledge and actions in Microsoft Copilot Studio**.
 
 **[D] Internal Scenario:**
 
@@ -401,19 +407,19 @@ Correct Answers: A and D
 - A. Use a Microsoft Graph connector to index the partner's travel advisory content.
 - D. Add the internal policy documents as a knowledge source.
 
- Explanation
+Explanation
 
 - A — Correct: A Microsoft Graph connector can make external partner content available through Microsoft Graph-based search and knowledge integration, when the partner source and connector are supported.
-- D — Correct: Internal policy documents should be added as a knowledge source so the agent can answer questions using unstructured content.
+- **D — Correct: Internal policy documents should be added as a knowledge source so the agent can answer questions using unstructured content.**
 
 Why the other options are incorrect
 
-- B: Creating individual Q&A topics for every document is not scalable and contradicts the requirement to use knowledge sources.
+- B: Creating individual Q&A topics <mark>for every document is not scalable and contradicts the requirement to use knowledge sources.</mark>
 - C: Unrestricted web search risks introducing unverified information and conflicts with the requirement to constrain generative responses.
 
 Exam tip: Use knowledge sources for internal documents and supported connectors for external partner content.
 
-### QUESTION 6 
+### QUESTION 6 💩💩💩
 
 You need to ensure that every AI-generated response from the agent in Copilot Studio includes a disclaimer that complies with the company's security and governance policies.
 
@@ -433,7 +439,7 @@ E. Edit every topic's first message to include the disclaimer.
 
 -----
 
-**Correct Answer: AB Section: (none)**
+**Correct Answer: A**
 
 Explanation/Reference: 
 
@@ -443,17 +449,26 @@ Explanation:
 
 [B] Using prompt modification in the Generative Answers node settings is an excellent and highly effective strategy for embedding compliance disclaimers into your agent's responses.
 
-### QUESTION 7 
+----- ????
+
+B. Add a prompt modification in the generative answers node settings.
+
+C. Create a disclaimer topic that always runs first.
+
+Prompt modification supplies custom instructions that control the content and format of generated answers, so it can require the disclaimer in generated output. A disclaimer topic that runs first presents the required disclosure consistently at the beginning of the agent interaction, without manually changing individual topics. Microsoft documents that prompt modification adds custom instructions to generative answers and can define what the agent should include in its responses.
+
+### QUESTION 7 💩💩
 
 You need to determine which authentication model should be applied to each Blue Yonder Copilot interaction scenario to comply with the company's security and governance requirements.
 
-Which authentication requirement should you apply to each scenario? To answer, move the appropriate authentication requirements to the correct user scenarios. You may use each authentication requirement once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+Which authentication requirement should you apply to each scenario? 
+
+To answer, move the appropriate authentication requirements to the correct user scenarios. You may use each authentication requirement once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
 
-
-**Authentication requirements (Options)**
+<mark>**Authentication requirements (Options)**</mark>
 
 * Allow anonymous access.
 * Require customer sign-in using an account.
@@ -1416,11 +1431,12 @@ This configuration ensures that the Copilot agent can only fetch, read, and quer
 
 An agent uses a flow that calls an external service which can occasionally fail or time out. When a failure occurs, the agent must meet the following requirements:
 
-Must not terminate silently.
+- Must not terminate silently.
+- Must send a notification containing the error details.
+- You need to configure the agent flow so that failures are handled in a controlled and predictable way. 
 
-Must send a notification containing the error details.
 
-You need to configure the agent flow so that failures are handled in a controlled and predictable way. Solution: Retry the failing action without handling failure.
+**Solution: Retry the failing action without handling failure.**
 
 Does the solution meet the goal?
 
@@ -1466,11 +1482,13 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 
 An agent uses a flow that calls an external service which can occasionally fail or time out.
 
-When a failure occurs, the agent must meet the following requirements: Must not terminate silently.
+When a failure occurs, the agent must meet the following requirements: 
 
-Must send a notification containing the error details.
+- Must not terminate silently.
+- Must send a notification containing the error details.
+- You need to configure the agent flow so that failures are handled in a controlled and predictable way. 
 
-You need to configure the agent flow so that failures are handled in a controlled and predictable way. Solution: Configure run after conditions for failure paths.
+**Solution: Configure run after conditions for failure paths**.
 
 Does the solution meet the goal?
 
@@ -1492,6 +1510,9 @@ This enables the flow to:
 - Provide predictable failure-handling behavior.
 
 Exam tip: Use Configure run after to create failure-handling paths, such as sending an error notification when an external API call fails.
+
+
+> Run-after settings allow a flow to continue on a failure or timeout through a designated error-handling path. That path can send a notification with the failed action’s error details, providing controlled, non-silent failure handling.
 
 ----
 
@@ -1517,13 +1538,17 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 
 ### QUESTION 17
 
-An agent uses a flow that calls an external service which can occasionally fail or time out. When a failure occurs, the agent must meet the following requirements:
+An agent uses a flow that calls an external service which can occasionally fail or time out. 
 
-Must not terminate silently.
 
-Must send a notification containing the error details.
+When a failure occurs, the agent must meet the following requirements:
 
-You need to configure the agent flow so that failures are handled in a controlled and predictable way. Solution: Send a notification with relevant error details.
+- Must not terminate silently.
+- Must send a notification containing the error details.
+- You need to configure the agent flow so that failures are handled in a controlled and predictable way. 
+
+
+**Solution: Send a notification with relevant error details.**
 
 Does the solution meet the goal? 
 
@@ -1532,6 +1557,9 @@ A. Yes
 B. No
 
 ---
+
+
+
 
 Correct answer: B. No.
 
@@ -1578,10 +1606,20 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 
 * Send a notification with relevant error details.
 
----
+----
+
+???? Correct Answer: A
 
 
-QUESTION 18 
+A failure-notification action that includes the error details prevents a flow failure from being silent and provides the required information to recipients. 
+
+
+Power Automate supports configuring an action to run after a preceding action fails or times out, enabling this controlled error-handling path.
+
+
+
+
+###QUESTION 18 
 
 A company uses an agent in Copilot Studio that produces structured responses using a reusable instruction template. The responses follow the required tone and format. During a compliance review, the team discovers that the responses were generated using a model that is not on the approved list.
 
@@ -2509,7 +2547,7 @@ The agent must use scalable methods for knowledge integration and must not rely 
 **Authentication** 
 
 * Sign-in is required for personal data access. 
-* Anonymous access is allowed for general inquiries.
+* <mark>**Anonymous access is allowed for general inquiries.**</mark>
 * User identity must be used for data access; shared or builder credentials must not be used.
 
 **Compliance and security**
@@ -2865,7 +2903,7 @@ You are part of the engineering team responsible for correcting the design and c
 
 ### QUESTION 1 
 
-You need to enable Operations Concierge to delegate shipment tracking inquiries according to Fabrikam Inc.'s defined architecture and technical requirements.
+You need to enable Operations Concierge to delegate shipment tracking inquiries according to Fabrikam Inc.'s defined architecture and **technical requirements**.
 
 Which integration approach should you use?
 
@@ -2900,7 +2938,7 @@ D. Configure the primary agent to handle shipment tracking through generative re
 - Knowledge source → 检索企业知识并提供依据。
 - Generative responses → 生成回答，不等于显式委派。
 
----
+> An A2A integration connects the primary agent to an external agent through its Agent2Agent endpoint, enabling task delegation to the partner-provided shipment-tracking agent. Microsoft Copilot Studio uses A2A to orchestrate with external agents rather than treating them as knowledge sources or MCP tools.
 
 **Correct Answer: C**
 
@@ -4661,7 +4699,8 @@ During testing, the builder must confirm that the automation runs in a supported
 
 To meet the business needs, the solution must:
 
-Execute UI automation in a supported, platform-managed environment. Provide visibility into how automation steps run during agent conversations.
+- Execute UI automation in a supported, platform-managed environment. 
+- Provide visibility into how automation steps run during agent conversations.
 
 You need to configure the agent based on the requirements.
 
@@ -5137,6 +5176,7 @@ In which order should you perform the actions? To answer, move all actions from 
 Select and Place:
 
 **REST API (Options)**
+
 * Add the REST API tool.
 * Test the API configuration.
 * Configure authentication for the API.
@@ -5174,35 +5214,6 @@ Select and Place:
 
 Add Tool → Configure Endpoint → Configure Authentication → Test API
 
------
-
-?????
-
-To add an external REST API to an agent in Copilot Studio, you must follow this exact dependency order:
-
-**Step 1: Configure authentication for the API** 
-
-* Setup security credentials first.
-* This includes API keys or OAuth.
-* Without this, the connection will fail.
-
-Security First: Copilot Studio requires a valid connection object to save and route endpoint requests.
-
-**Step 2: Add the REST API tool.**
-
-Import or create the action connector. This registers the tool in Copilot.
-
-Tool Registration: The agent needs to recognize the tool wrapper before you can customize its internal endpoint paths.
-
-**Step 3: Configure the API endpoint details.**
-
-Define specific paths and methods.
-
-Map input and output parameters.
-
-**Step 4: Test the API configuration** 
-
-Run validation checks in real-time. Ensure data flows correctly.
 
 
 ### QUESTION 24 
@@ -5291,13 +5302,15 @@ A company is configuring an agent in Copilot Studio that uses a generative answe
 
 The company requires responses to meet the following requirements:
 
-Must use an executive summary format.
+- Must use an executive summary format.
 
-Must apply only within a specific topic.
+- Must apply only within a specific topic.
 
-Must continue using configured knowledge sources. Must comply with connector security controls.
+- Must continue using configured knowledge sources. 
 
-You need to configure a custom prompt to meet the formatting requirements.
+- Must comply with connector security controls.
+
+- You need to configure a custom prompt to meet the formatting requirements.
 
 Solution: Add instructions in the custom prompt tool to restrict connector access during runtime.
 
@@ -5358,13 +5371,11 @@ A company is configuring an agent in Copilot Studio that uses a generative answe
 
 The company requires responses to meet the following requirements:
 
-Must use an executive summary format.
-
-Must apply only within a specific topic.
-
-Must continue using configured knowledge sources. Must comply with connector security controls.
-
-You need to configure a custom prompt to meet the formatting requirements.
+* Must use an executive summary format.
+* Must apply only within a specific topic.
+* Must continue using configured knowledge sources. 
+* Must comply with connector security controls.
+* You need to configure a custom prompt to meet the formatting requirements.
 
 **Solution: Create a custom prompt tool in the specific topic that instructs the model to respond using an executive-summary structure.**
 
@@ -5520,17 +5531,20 @@ A company is configuring an agent in Copilot Studio that uses a generative answe
 
 The company requires responses to meet the following requirements:
 
-Must use an executive summary format.
+* Must use an executive summary format.
 
-Must apply only within a specific topic.
+* Must apply only within a specific topic.
 
-Must continue using configured knowledge sources.
+* Must continue using configured knowledge sources.
 
-Must comply with connector security controls.
+* Must comply with connector security controls.
 
-You need to configure a custom prompt to meet the formatting requirements.
+* You need to configure a custom prompt to meet the formatting requirements.
 
-Solution: Configure the custom prompt tool at the topic level so that other topics are not affected. Does the solution meet the goal?
+**Solution: Configure the custom prompt tool at the topic level so that other topics are not affected.**
+
+
+Does the solution meet the goal?
 
 A. Yes
 
@@ -6036,7 +6050,10 @@ To best configure the Model Context Protocol (MCP) tools so the agent can succes
 
 A team is developing an agent in Copilot Studio and wants to evaluate its behavior before expanding access.
 
-The team needs a repeatable, consistent method to test the agent using predefined interactions. You need to ensure that agent responses can be evaluated consistently across multiple test runs. What should you do?
+The team needs a repeatable, consistent method to test the agent using predefined interactions. You need to ensure that agent responses can be evaluated consistently across **multiple test runs.** 
+
+
+What should you do?
 
 A. Review evaluation scores from previous production sessions.
 
@@ -6169,9 +6186,9 @@ You run multiple evaluation tests for an agent in Copilot Studio before expandin
 
 The tests provide the following results:
 
-Each evaluation case is reported as meeting or missing the expected response. Some evaluation cases fail repeatedly across several runs.
-
-Each run displays the expected response and the response generated by the agent.
+- Each evaluation case is reported as meeting or missing the expected response. 
+- Some evaluation cases fail repeatedly across several runs.
+- Each run displays the expected response and the response generated by the agent.
 
 You need to provide a conclusion based on the evaluation results.
 
@@ -6647,7 +6664,9 @@ The team requires a custom solution that includes agents. The solution must supp
 
 You need to create an ALM-ready custom solution in Copilot Studio.
 
-What should you do? A. Publish the agent to a channel and use that channel configuration as the ALM container.
+What should you do? 
+
+A. Publish the agent to a channel and use that channel configuration as the ALM container.
 
 B. Create a new custom solution from the Solutions area.
 
@@ -6790,8 +6809,6 @@ The team needs to implement a pipeline-based deployment process that enforces th
 You need to implement a deployment pipeline and determine the correct sequence of actions.
 
 In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
-
-
 
 Select and Place:
 
