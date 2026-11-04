@@ -7829,3 +7829,421 @@ To handle failures and timeouts explicitly without automatic retries while ensur
 [D] Configure Run After settings on the notification/recovery step to trigger on "has failed" and "has timed out" status options from the primary connector action.
 
 [B] Scope Actions: Grouping your connector action and its immediate steps inside a Scope action allows you to centrally manage errors. You can set the subsequent administrative notification to run only if the entire Scope fails or times out. This satisfies the requirement to handle failure and timeout outcomes explicitly in a clean, predictable way
+
+
+### QUESTION 26 
+
+A team has an existing agent in Copilot Studio and must move it to a different target location without rebuilding the agent. Some builders use Copilot Studio in the web app, while others use Copilot Studio in Microsoft Teams.
+
+You need a supported approach to move the existing agent to the target location using ALM practices. The solution must avoid rebuilding the agent.
+
+You need to move the existing agent to the target location using a supported method.
+
+What should you do? 
+
+A. Remove agent components directly from the solution so that export and import will succeed.
+
+B. Configure pipeline settings first and rely on pipelines to discover and package the agent automatically without adding it to a solution.
+
+C. If the agent is built and managed in Copilot Studio in Teams, export the agent from the source team and import it into the target team using the Teams-based export/import approach.
+
+D. Duplicate the agent in the source and manually recreate the changes in the target to avoid solution dependencies.
+
+
+---
+
+
+Correct answer: C
+
+Explanation:
+
+For an agent built and managed in Copilot Studio in Microsoft Teams, Microsoft supports exporting and importing agents between individual Teams using the Power Apps Teams app.
+
+Steps:
+
+1. Open the Power Apps app in the source Team.
+2. Export customizations and select the existing agent.
+3. Download the exported package.
+4. Open the Power Apps app in the target Team.
+5. Import the customizations.
+6. The existing agent appears in Copilot Studio under the target Team.
+
+This avoids rebuilding the agent from scratch.
+
+Why the other options are incorrect:
+
+- A: Removing agent components directly from a solution can cause export/import failures.
+- B: Pipelines do not automatically discover and package agents without solution configuration.
+- D: Duplicating and manually recreating the agent is unnecessary.
+
+Exam takeaway:
+
+| Agent type              | Supported ALM migration                             |
+| ----------------------- | --------------------------------------------------- |
+| Copilot Studio Web App  | Power Platform Custom Solution (Export/Import)      |
+| Copilot Studio in Teams | Power Apps Teams app (Export/Import customizations) |
+
+
+### QUESTION 27 
+
+A team is preparing to evaluate an agent in Copilot Studio before expanding access to additional users.
+
+The team must select an evaluation method that meets the following requirements:
+
+● Use a fixed set of prepared interactions.
+
+● Determine responses against a predefined baseline.
+
+● Support consistent comparison across repeated test runs.
+
+You need to choose an evaluation method that meets the evaluation requirements.
+
+What should you do?
+
+A. Manually review conversation transcripts to identify successful outcomes.
+
+B. Apply a standardized evaluation matrix.
+
+C. Monitor the Analytics dashboard for session abandonment rates.
+
+D. Launch a limited pilot and evaluate with customer satisfaction score and containment metrics from live users.
+
+---
+
+
+**Correct answer: B. Apply a standardized evaluation matrix.**
+
+Explanation:
+
+A standardized evaluation matrix provides a repeatable way to assess agent performance using predefined test scenarios and expected outcomes.
+
+It supports the requirements:
+
+1. Fixed interactions: Use prepared test questions and conversations.
+2. Predefined baseline: Compare generated responses against expected responses.
+3. Repeatable testing: Reuse the same evaluation test set across multiple runs to measure consistency and improvements.
+
+Copilot Studio supports evaluation test sets with expected responses and scoring methods such as Exact match, Keyword match, and Compare meaning
+
+Why others are incorrect:
+
+- A: Manual transcript review is subjective and difficult to standardize.
+- C: Analytics monitors production usage, not predefined test cases.
+- D: A pilot evaluates real-world user behavior rather than controlled baseline testing.
+
+Exam tip: Fixed test cases + expected responses + repeatable runs = Standardized evaluation matrix.
+
+
+---
+
+
+Correct Answer: B 
+
+Explanation/Reference:
+
+Explanation:
+
+You should apply a standardized evaluation matrix. This method uses reusable test sets and automated scoring to match your fixed interactions and baseline requirements before live user rollout.
+
+
+### QUESTION 28
+
+A solution architect is implementing a governance process for an agent developed in Copilot Studio. Before the agent is moved to production, the organization requires a standardized validation process to ensure that updates to the underlying knowledge base do not cause regressions in response accuracy.
+
+The validation process must satisfy the following technical criteria:
+
+● Consistency: Execute a fixed library of test cases containing specific user prompts.
+
+● Grounding: Measure the quality of the generated output against a verified “golden” response.
+
+● Comparison: Provide a performance delta between the current version and previous test runs.
+
+You need to choose an evaluation method that meets the requirements.
+
+What should you use? A. Use the Test your agent pane to manually enter questions and verify that the correct topic or action triggers for each turn.
+
+B. Publish the agent and use channel usage metrics as the primary evaluation method.
+
+C. Enable Conversation Transcripts in Analytics and perform a keyword search to identify if the agent uses the correct knowledge sources.
+
+D. Use a predefined test set and compare results against expected outcomes across runs.
+
+
+-----
+
+
+
+Correct answer: D
+
+Use a predefined test set and compare results against expected outcomes across runs.
+
+Explanation:
+
+Copilot Studio Agent Evaluation supports all three requirements:
+
+1. Consistency: Create a fixed test set containing predefined user prompts.
+2. Grounding: Configure expected (golden) responses and use evaluation methods such as Compare meaning or Text similarity.
+3. Comparison: Run the same test set multiple times and compare results to identify performance improvements or regressions.
+
+Microsoft documentation confirms that Copilot Studio supports repeated evaluation runs and comparison of test results over time
+
+Why others are incorrect:
+
+- A: Manual testing is not sufficiently repeatable or automated.
+- B: Channel metrics measure usage, not response accuracy.
+- C: Conversation transcripts support troubleshooting, not standardized regression testing.
+
+Exam tip:
+
+Predefined test set + Expected responses + Compare runs = Agent Evaluation (D).
+
+
+----
+
+
+**Correct Answer: D** 
+
+Explanation:
+
+Using a predefined test set (often called a "golden dataset") and comparing results against expected outcomes across runs is the exact industry standard and best practice for this scenario.
+
+In the context of Copilot Studio and LLM governance, this method is known as Regression Testing or Automated Evaluation.
+
+Consistency: A fixed library of test cases (prompts) ensures that the agent is evaluated on the exact same baseline every time the knowledge base changes.
+
+Grounding: By matching the real-time output against a verified "golden" response, you can use semantic similarity metrics (such as BERTscore, BLEU, or LLM-as-a-judge) to score how well the agent stayed grounded in the source material.
+
+Comparison: Storing the evaluation scores of each run allows you to build a deployment dashboard. This gives you a clear performance delta (e.g., "Accuracy dropped by 4% after the June policy update") before approving the production release.
+
+
+### QUESTION 29 
+
+A team is preparing to manage agents in Copilot Studio by using ALM from Power Platform.
+
+A solution must be created before agents and configuration of assets can be managed through ALM.
+
+You need to create a solution that can contain agents and related assets.
+
+Which three actions should you perform in order? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+Select and Place:
+
+**Solution creation sequence (Options)**
+
+* Review the solution details page.
+* Define the solution name and publisher.
+* Save the solution container.
+* Open the Solutions area in Copilot Studio.
+
+**Answer Area**
+
+| Step | Action |
+| :--- | :--- |
+| **1** | [ 空白框 ] |
+| **2** | [ 空白框 ] |
+| **3** | [ 空白框 ] |
+
+---
+
+
+Correct sequence:
+
+| Step | Action                                     |
+| ---- | ------------------------------------------ |
+| 1    | Open the Solutions area in Copilot Studio. |
+| 2    | Define the solution name and publisher.    |
+| 3    | Save the solution container.               |
+
+Explanation:
+
+1. Open Copilot Studio → Solutions.
+2. Select New solution, then specify the solution name and publisher.
+3. Select Create to save the solution.
+
+Why is "Review the solution details page" excluded?
+
+It is a post-creation step, not required to create the solution.
+
+Exam tip: Open Solutions → Define Name & Publisher → Create.
+
+
+---
+
+
+Explanation/Reference:
+
+Explanation:
+
+**Step 1: Open the Solutions area in Copilot Studio** 
+
+To manage or build custom solutions natively, you must first navigate to the Solutions tab using the left sidebar menu (or via the ellipses menu) within the Copilot Studio portal.
+
+**Step 2: Define the solution name and publisher**
+
+When creating a new solution, you must provide critical metadata, including a unique display name and a Publisher. Assigning a custom publisher enforces a specific prefix on all components, identifying ownership and avoiding naming collisions.
+
+**Step 3: Save the solution container**
+
+Once the solution details and publisher configuration are set, you must click Create or Save to generate the unmanaged solution container within the environment, preparing it to hold your agents and assets
+
+
+### QUESTION 30
+
+A team is preparing to assess an agent in Copilot Studio before expanding access to additional users.
+
+The team requires an evaluation that provides controlled, repeatable, and consistently measured test runs.
+
+The evaluation must:
+
+● Be triggered directly by the team to control when testing occurs.
+
+● Determine success based on clearly established acceptance criteria.
+
+● Rely on a predefined set of inputs that ensures consistency across repeated runs.
+
+You need to configure the evaluation to meet the requirements
+
+What should you configure? To answer, move the appropriate configurations to the correct evaluation requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
+以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
+
+Select and Place:
+
+**Configurations (Options)**
+
+* Execute the evaluation on demand.
+* Schedule the evaluation to run automatically at set intervals.
+* Use live user conversations as the interaction source.
+* Compare responses against defined expectations.
+* Use a curated prompt list as the interaction source.
+
+**Pipeline configurations**
+
+| Evaluation Requirement | Configuration |
+| :--- | :--- |
+| Triggered directly by the team to control when testing occurs. | [ 空白框 ] |
+| Determine success based on clearly established acceptance criteria. | [ 空白框 ] |
+| Rely on a predefined source that ensures consistency across repeated runs. | [ 空白框 ] |
+
+---
+
+
+Correct configuration:
+
+| Evaluation Requirement     | Configuration                                        |
+| --- | --- |
+| 1. Triggered directly by the team to control when testing occurs.             | Execute the evaluation on demand.                    |
+| 2. Determine success based on clearly established acceptance criteria.        | Compare responses against defined expectations.      |
+| 3. Rely on a predefined source that ensures consistency across repeated runs. | Use a curated prompt list as the interaction source. |
+
+Explanation:
+
+1. On-demand execution: The team manually starts evaluation when needed, rather than relying on a schedule.
+2. Defined expectations: Compare actual agent responses against expected responses or predefined criteria.
+3. Curated prompt list: Reuse the same prepared test inputs to ensure consistent evaluation across runs.
+
+Microsoft documentation confirms that Copilot Studio supports predefined test sets, expected responses, and repeated evaluation runs.
+
+
+Why the other options are incorrect:
+
+- Schedule automatically: Does not provide direct control over when each test is triggered.
+- Live user conversations: Inputs vary and cannot guarantee consistent repeated testing.
+
+Exam takeaway:
+
+**On-demand + Defined expectations + Curated prompt list = Controlled and repeatable evaluation.**
+
+Explanation/Reference:
+
+Explanation:
+
+**Box 1: Execute the evaluation on demand** 
+
+To trigger structured, repeatable agent evaluations manually inside Microsoft Copilot Studio so your team can precisely control when testing occurs, you should click Evaluate directly from the Evaluate tab within the Copilot Studio user interface.
+
+Selecting this option initiates an on-demand, interactive test run against your defined test sets.
+
+**Box 2: Compare responses against defined expectations** 
+
+Comparing generated responses against defined expectations is exactly how you establish pass/fail signals. Microsoft Copilot Studio automates this process so you can achieve controlled, repeatable, and consistently measured tests before expanding access.
+
+**Box 3: Use a curated prompt list as the interaction source**.
+
+Using a curated prompt list—known as an evaluation test set—is exactly how you ensure consistency. It removes subjective, one-off testing and establishes a structured framework for measuring response quality.
+
+
+### QUESTION 31 
+
+A team has deployed an agent in Copilot Studio and needs to evaluate whether the agent is meeting its intended goals before expanding usage to a broader audience.
+
+The team must evaluate agent performance using a structured and repeatable approach that produces actionable insights.
+
+You need to select and apply an appropriate evaluation method by performing the required actions in the correct order.
+
+In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
+
+
+Select and Place:
+
+**Agent performance evaluation sequence (Options)**
+
+* Collect agent interaction data and evaluation signals.
+* Define the success criteria and evaluation objectives.
+* Select the evaluation method and metrics aligned to the criteria.
+* Review evaluation results and identify improvement opportunities.
+
+**Answer Area**
+
+| Step | Action |
+| :--- | :--- |
+| **1** | [ 空白框 ] |
+| **2** | [ 空白框 ] |
+| **3** | [ 空白框 ] |
+| **4** | [ 空白框 ] |
+
+----
+
+
+Correct sequence:
+
+| Step | Action                                                            |
+| ---- | ----------------------------------------------------------------- |
+| 1    | Define the success criteria and evaluation objectives.            |
+| 2    | Select the evaluation method and metrics aligned to the criteria. |
+| 3    | Collect agent interaction data and evaluation signals.            |
+| 4    | Review evaluation results and identify improvement opportunities. |
+
+Explanation:
+
+1. Define objectives: Establish what success means for the agent.
+2. Select methods and metrics: Choose appropriate evaluation methods, such as resolution rate, accuracy, relevance, and containment rate.
+3. Collect data: Gather agent conversations, usage metrics, and evaluation results.
+4. Review results: Identify performance gaps and opportunities for improvement.
+
+Exam tip:
+
+Define → Select → Collect → Review
+
+This is the standard evaluation lifecycle for measuring and improving agent performance.
+
+Explanation/Reference:
+
+Explanation:
+
+**Step 1: Define the success criteria and evaluation objectives**
+
+You must always start by establishing what "success" looks like and what you are trying to measure. Without clear goals, you cannot choose the right metrics.
+
+**Step 2: Select the evaluation method and metrics aligned to the criteria** 
+
+Once goals are set, you determine how to measure them (e.g., using automated tests, human reviewers, or user satisfaction scores) and define specific key performance indicators (KPIs).
+
+**Step 3: Collect agent interaction data and evaluation signals** 
+
+After setting up your metrics, you run the evaluation by gathering conversational logs, user feedback, and system performance telemetry during agent interactions.
+
+**Step 4: Review evaluation results and identify improvement opportunities**
+
+Finally, you analyze the gathered data against your original criteria to pinpoint bottlenecks, conversational failures, or gaps, allowing you to iterate and improve the agent.
