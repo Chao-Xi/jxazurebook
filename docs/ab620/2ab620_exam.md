@@ -518,7 +518,7 @@ Scenario: **Internal staff:** Authenticate via Microsoft Entra ID.
 
 ## Question Set 2
 
-### QUESTION 1 
+### QUESTION 1 💩💩💩
 
 
 A company has an existing custom connector that is approved and available in the environment. A builder wants an agent in Copilot Studio to call the connector during a conversation to retrieve information from an internal system.
@@ -554,6 +554,31 @@ NOTE: Each correct selection is worth one point.
 
 ----
 
+Correct answers:
+
+| Requirement                                                              | Configuration                                   |
+| ------------------------------------------------------------------------ | ----------------------------------------------- |
+| 1. The agent must make the connector available for topic steps.          | Add the connector as a tool in the agent.       |
+| 2. The agent must run the connector call with a valid connection.        | Create or reuse a connection for the connector. |
+| 3. The connector call must receive the required input values at runtime. | Map topic variables to the tool inputs.         |
+
+Explanation:
+
+1. Add connector as a tool: Makes the custom connector available to the agent and its topics.
+2. Create or reuse connection: Establishes valid authentication credentials for calling the internal system.
+3. Map topic variables: Passes runtime values from topic variables into the connector's required input parameters.
+
+Microsoft documentation confirms that connector tools can be called within topics, require valid connections, and support configurable input parameters.
+
+
+Why the remaining option is incorrect:
+
+\- Add the connector as a knowledge source: Used for retrieving information for grounding answers, not executing connector actions.
+
+Exam takeaway:
+
+Tool = Availability | Connection = Authentication | Variable mapping = Runtime inputs
+
 **Correct Answers**
 
 | Requirement                                                              | Configuration                                   |
@@ -571,41 +596,28 @@ NOTE: Each correct selection is worth one point.
 Unused option: Add the connector as a knowledge source. A connector used to execute API actions is a tool, not a knowledge source.
 
 
-**Correct Answers**
-
-| Requirement                                                              | Configuration                                   |
-| ------------------------------------------------------------------------ | ----------------------------------------------- |
-| 1. The agent must make the connector available for topic steps.          | Add the connector as a tool in the agent.       |
-| 2. The agent must run the connector call with a valid connection.        | Create or reuse a connection for the connector. |
-| 3. The connector call must receive the required input values at runtime. | Map topic variables to the tool inputs.         |
-
-**Explanation**
-
-1. Add the connector as a tool in the agent — makes the custom connector available for the agent to invoke.
-2. Create or reuse a connection for the connector — provides the authenticated connection required to execute the API operation.
-3. Map topic variables to the tool inputs — passes the required runtime values to the connector.
-
-Unused option: Add the connector as a knowledge source. A connector used to execute API actions is a tool, not a knowledge source.
 
 
-### QUESTION 2 
+
+
+### QUESTION 2 💩💩💩
+
 
 A company needs to ground an agent in Copilot Studio answers using live enterprise data from a supported system via a Microsoft Power Platform connector.
 
 To meet the business needs, the builder must meet the following requirements:
 
-Authenticate using a valid connection.
+- Authenticate using a valid connection.
 
-Add the connector as a real-time knowledge source.
+- Add the connector as a real-time knowledge source.
 
-Select the tables for knowledge grounding.
+- Select the tables for knowledge grounding.
 
 You need to add a Power Platform connector as a real-time knowledge source for the agent.
 
 In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
 
 
-以下是提取并整理为 Markdown 格式的内容，您可以直接复制：
 
 Select and Place:
 
@@ -641,22 +653,35 @@ Select and Place:
 
 **Sequence to remember**
 
-Add knowledge → Select connector → Sign in → Select tables → Add to agent
+<mark>**Add knowledge → Select connector → Sign in → Select tables → Add to agent**<mark>
 
-This sequence first starts the knowledge-source setup, then selects the connector, establishes authentication, chooses the data to ground answers, and completes the configuration.
+This sequence first starts the knowledge-source setup, then selects the connector, establishes authentication, **chooses the data to ground answers, and completes the configuration**.
 
 
-Step 1: Select Add knowledge from the agent Knowledge experience Initiate: You start in the Knowledge tab to trigger the addition.
+Step 1: Select Add knowledge from the agent Knowledge experience 
 
-Step 2: Select the real-time connector from the Add knowledge dialog Identify: You pick the specific system/connector from the menu.
+> Initiate: You start in the Knowledge tab to trigger the addition.
 
-Step 3: Select Sign in and create a new connection or reuse an existing connection Authenticate: You log in to ensure permissions to the enterprise data.
+Step 2: Select the real-time connector from the Add knowledge dialog 
 
-Step 4: Select the tables to include as the knowledge source Configure: You isolate the exact tables needed for grounding.
 
-Step 5: Select Add to agent to complete the connection Finalize: You save and bind the source to your agent.
+> Identify: You pick the specific system/connector from the menu.
 
-### QUESTION 3
+Step 3: Select Sign in and create a new connection or reuse an existing connection 
+
+> **Authenticate: You log in to ensure permissions to the enterprise data.**
+
+**Step 4: Select the tables to include as the knowledge source** 
+
+
+> Configure: You isolate the exact tables needed for grounding.
+
+**Step 5: Select Add to agent to complete the connection** 
+
+
+> Finalize: You save and bind the source to your agent.
+
+### QUESTION 3 💩💩
 
 You deploy an agent in Microsoft Copilot Studio that triggers a cloud flow to update customer records in Microsoft Dataverse.
 
@@ -699,16 +724,18 @@ Correct Answers
 
  Explanation
 
-1. Disable the flow — temporarily stops the flow from triggering new executions while you troubleshoot the authentication issue.
-2. Resubmit the run — reruns a failed execution after the authentication issue has been resolved.
-3. Review the Activity history — checks recent flow executions and their statuses to confirm whether the runs succeeded.
+1. **Disable the flow — temporarily stops the flow from triggering new executions while you troubleshoot the authentication issue**.
+2. **Resubmit the run — reruns a failed execution after the authentication issue has been resolved**.
+3. **Review the Activity history — checks recent flow executions and their statuses to confirm whether the runs succeeded.**
 
-Exam tip: Disable → Resubmit → Review Activity history.
+**Exam tip: Disable → Resubmit → Review Activity history.**
 
 
 **Box 1: Disable the flow**
 
-The most appropriate action to address this specific issue is to disable the flow. Immediate Stop: Turning off or disabling the flow completely prevents any new instances from triggering. This satisfies your urgent requirement to halt additional failed executions immediately while you troubleshoot.
+The most appropriate action to address this specific issue is to disable the flow. 
+
+Immediate Stop: Turning off or disabling the flow completely prevents any new instances from triggering. This satisfies your urgent requirement to halt additional failed executions immediately while you troubleshoot.
 
 Safe Troubleshooting: It pauses all activity without deleting or altering the internal logic of your automation, allowing you to safely fix the authentication token or connection issues.
 
@@ -716,13 +743,13 @@ Safe Troubleshooting: It pauses all activity without deleting or altering the in
 
 The best action to address this specific issue is to resubmit the run.
 
-Efficiency: Resubmitting a failed run starts the cloud flow again from the exact same trigger point using the original data.
+**Efficiency: Resubmitting a failed run starts the cloud flow again from the exact same trigger point using the original data.**
 
 No Data Loss: It eliminates the need for the user or the Copilot Studio agent to manually recreate the request.
 
 Targeted Fix: Since the root cause was a temporary authentication error that is now resolved, the original payload is valid and will now process successfully.
 
-**Box 3: Review the Activity history **
+**Box 3: Review the Activity history**
 
 In Microsoft Copilot Studio, the Activity history (specifically within the integrated Power Automate cloud flow management or the Copilot's topic run history) allows you to see the real-time execution status of individual runs. This is the only option that lets you immediately validate if the most recent executions succeeded right after resolving the authentication error.
 
