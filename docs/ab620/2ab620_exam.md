@@ -37,7 +37,7 @@ The project is led by a cross-function team:
 **Data sources**
 
 
-- **Reservation and Ticketing System (internal):** REST API, no prebuilt connector with custom enterprise database.
+- **Reservation and Ticketing System (internal)**:  REST API, no prebuilt connector with custom enterprise database.
 - **Flight Status and Weather APIs (external)**: REST APIs with API keys.
 - **Customer Support Knowledge Base**: SharePoint library with PDFs and policy documents. Loyalty Program Data: Stored in Dynamics 365 and Dataverse.
 - **Travel Advisory Content**: Uses REST API with partner services.
@@ -145,7 +145,7 @@ The agent must deliver accurate, helpful, and safe responses across multiple cha
 It must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction
 
 
-### QUESTION 1 💩
+### QUESTION 1 💩💩💩  ??? 
 
 You need to configure the agent in Copilot Studio to **meet Blue Vender's Responsible AI and data protection requirements.**
 
@@ -187,9 +187,13 @@ Security and compliance must be established at the foundation level. **Admins us
 
 **Step 2: Add custom prompt modifications** 
 
+> → Configure content moderation filters.
+
 Once the environment is secure, the maker configures the specific behavior of the agent. **Custom prompt modifications and agent instructions shape the tone, define conversational topics, and establish explicit boundaries for the generative model** (e.g., instructing the model to strictly stay within its knowledge base).
 
 **Step 3: Conduct adversarial testing**
+
+> → Add custom prompt modifications.  ???
 
 This is the final evaluation phase before deployment. 
 
@@ -1308,6 +1312,34 @@ Select and Place:
 | **5** [ 空白框 ] |
 | **6** [ 空白框 ] |
 
+---
+
+
+Corect sequence confirmed
+
+| Step | Correct action                                                                   |
+| ---- | -------------------------------------------------------------------------------- |
+| 1    | Publish the agent.                                                               |
+| 2    | Retrieve current agent configuration values.                                     |
+| 3    | Configure and enable the agent's target integration channel.                     |
+| 4    | Implement the Microsoft 365 Agents SDK in the app using the agent configuration. |
+| 5    | Validate the end-to-end conversation workflow in a test environment.             |
+| 6    | Deploy the web app to production.                                                |
+
+关键逻辑：
+
+- Publish → Retrieve: 必须先发布 Agent，才能获取集成所需的配置值。
+- Retrieve → Configure Channel: 先获取 Agent 配置，再完成目标集成 Channel 的配置。
+- Implement → Validate → Deploy: 先完成 SDK 集成，在测试环境验证，最后部署生产环境。
+
+考试记忆：
+
+Publish → Retrieve → Configure → Implement → Validate → Deploy
+
+这六个步骤符合题目给出的三个核心要求。
+
+
+----
 
 **Step 1: Publish the agent**
 
@@ -2528,9 +2560,9 @@ Public website: Embedded web chat Mobile app: In-app chatbot Microsoft Teams: In
 **Data sources**
 
 
-* **Reservation and Ticketing System (internal): **REST API, no prebuilt connector with custom enterprise database.
+* **Reservation and Ticketing System (internal)** REST API, no prebuilt connector with custom enterprise database.
 * **Flight Status and Weather APIs (external)**: REST APIs with API keys.
-* **Customer Support Knowledge Base: **SharePoint library with PDFs and policy documents. Loyalty Program Data: Stored in Dynamics 365 and Dataverse.
+* **Customer Support Knowledge Base** SharePoint library with PDFs and policy documents. Loyalty Program Data: Stored in Dynamics 365 and Dataverse.
 * **Travel Advisory Content:** Uses REST API with partner services.
 
 **Integration mechanisms**
@@ -2625,7 +2657,7 @@ The agent must use scalable methods for knowledge integration and must not rely 
 Blue Yonder Airlines must deploy a secure, scalable, and policy-compliant AI agent using Microsoft Copilot Studio. The agent must deliver accurate, helpful, and safe responses across multiple channels, integrate with enterprise systems, and support both anonymous and authenticated users. It must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction.
 
 
-### QUESTION 1 
+### QUESTION 1 💩💩💩💩
 
 You need to implement tool usage in topics that meet the Blue Yonder design and governance requirements.
 
@@ -2667,8 +2699,8 @@ NOTE: Each correct selection is worth one point.
 
 解析：
 
-- Generative orchestration：让 Agent 根据用户意图和上下文，动态决定何时调用适当的工具。
-- Tool node：在 Topic 的指定步骤显式调用 Agent Flow 或 Connector Action，并将结果用于后续对话。
+- <mark>**Generative orchestration：让 Agent 根据用户意图和上下文，动态决定何时调用适当的工具**</mark>。
+- <mark>**Tool node：在 Topic 的指定步骤显式调用 Agent Flow 或 Connector Action，并将结果用于后续对话**</mark>。
 
 未使用的选项：
 
@@ -2676,7 +2708,7 @@ NOTE: Each correct selection is worth one point.
 - Display a static message instead of using a tool.
 - Add a Question node for the user to choose the tool.
 
-考试记忆： Agent 自主决定调用 → Generative orchestration；Topic 中显式调用 Flow / Connector → Tool node。
+考试记忆： **Agent 自主决定调用 → Generative orchestration；Topic 中显式调用 Flow / Connector → Tool node**。
 
 ----
 
@@ -2686,11 +2718,11 @@ Explanation/Reference:
 
 Explanation:
 
-**Box 1: Add a Question node for the user to choose the tool.**
+**Box 1: Add a Question node for the user to choose the tool.**  ？？？
 
 Let the agent decide when to run a tool based on user input.
 
-**Box 2: Add an Adaptive card**
+**Box 2: Add an Adaptive card**  ？？？ 
 
 Run a specific agent flow at a defined step in a topic.
 
@@ -2700,9 +2732,9 @@ You can run a specific agent flow at a defined step in your topic by using an As
 
 Use a connector action to retrieve data during a conversation.
 
-### QUESTION 2 
+### QUESTION 2 💩💩
 
-You need to determine how the agent in Copilot Studio should integrate with two different systems in the Blue Yonder environment, based on their characteristics and the tools available.
+**You need to determine how the agent in Copilot Studio should integrate with two different systems in the Blue Yonder environment, based on their characteristics and the tools available.**
 
 Which integration mechanism should you use for each system? To answer, move the appropriate integrations to the correct system or data sources. You may use each integration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
@@ -2723,8 +2755,8 @@ Select and Place:
 
 | System or data source | Integration |
 | :--- | :--- |
-| Internal Reservation | [ 空白框 ] |
-| Flight Status and Weather Service | [ 空白框 ] |
+| **Internal Reservation** | [ 空白框 ] |
+| **Flight Status and Weather Service** | [ 空白框 ] |
 
 ---
 
@@ -3862,9 +3894,9 @@ For some requests, the company wants the primary agent to delegate work to anoth
 
 To meet the business needs, the solution must allow agents to perform the following on the connected agent:
 
-Must allow calls from other agents.
-
-Must allow agents to use the connected agent for collaboration. Must allow agents to invoke the connected agent in conversations.
+- Must allow calls from other agents.
+- Must allow agents to use the connected agent for collaboration.
+- Must allow agents to invoke the connected agent in conversations.
 
 You need to integrate the existing Copilot Studio agent with the connected agent.
 
@@ -7142,7 +7174,17 @@ You create a test set in Copilot Studio to evaluate an agent that answers policy
 
 You run the evaluation and review the following result for one test case:
 
-Expected response: Digital products are non-refundable after download. Actual response: Digital products cannot be refunded once downloaded. Result: Pass Score: 0.92 Reasoning: The actual response semantically matches the expected response. Knowledge sources used: RefundPolicy_KB Tools invoked: None
+Expected response: Digital products are non-refundable after download. 
+
+Actual response: Digital products cannot be refunded once downloaded. 
+
+Result: Pass Score: 0.92 
+
+Reasoning: The actual response semantically matches the expected response. 
+
+Knowledge sources used: RefundPolicy_KB 
+
+Tools invoked: None
 
 You need to determine whether additional corrective action is required based on the evaluation results.
 
@@ -7760,7 +7802,7 @@ The team requires a consistent way to manage and transport agent assets.
 
 You need to recommend a solution that supports creation and use of ALM scenarios for agents in Copilot Studio.
 
-Solution: Builders can change environment variable values directly in Copilot Studio to complete ALM configuration without administrative tools.
+**Solution: Builders can change environment variable values directly in Copilot Studio to complete ALM configuration without administrative tools**.
 
 Does the solution meet the goal?
 
