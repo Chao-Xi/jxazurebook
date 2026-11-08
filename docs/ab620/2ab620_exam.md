@@ -920,7 +920,9 @@ State preservation: The flow holds its current state and waits until the user se
 
 ### QUESTION 6
 
-A company uses an agent that invokes an agent flow to exchange information during a conversation. The company requires that the agent send data into the flow and receive structured results back from the same flow run. To support this business need, the flow must be configured to do the following:
+A company uses an agent that invokes an agent flow to exchange information during a conversation. 
+
+The company requires that the agent send data into the flow and receive structured results back from the same flow run. To support this business need, the flow must be configured to do the following:
 
 * Capture the data provided by the agent.
 
@@ -2296,7 +2298,7 @@ Why not the others?
 Exam tip: Prevent disallowed connectors and enforce data-flow governance → Configure DLP/data policies.
 
 
-**Correct Answer: D **
+**Correct Answer: D**
 
 Section: (none) Explanation/Reference:
 
@@ -2495,12 +2497,12 @@ E. Use Action.Execute for the button so the card can run commands across channel
 
 Correct answers: C and D.
 
-- C. Add input fields to the card and include an `Action.Submit` button
+- **C. Add input fields to the card and include an `Action.Submit` button**
 
 
 The input fields collect structured user data, and `Action.Submit` submits the entered values.
 
-- D. Add an Ask with Adaptive Card node to the topic.\
+- **D. Add an Ask with Adaptive Card node to the topic.**
 
 This node displays the Adaptive Card, collects the user's response, and makes the submitted values available for use later in the conversation.
 
@@ -2806,7 +2808,7 @@ Flight Status and Weather APIs (external): REST APIs with API keys HTTP request 
 - Generative AI knowledge：检索和利用文档、知识库等内容生成回答，不适合执行预订系统的事务操作。
 
 
-### QUESTION 3 
+### QUESTION 3 ????
 
 You need to determine an appropriate implementation related to the use of agent flows that is based on Blue Vender's design and compliance standards.
 
@@ -2852,6 +2854,9 @@ Select and Place:
 3. 更新预订信息 → Use a tool node：调用可复用的 agent flow 执行预订更新等业务操作。
 
 考试记忆： 复用业务逻辑或执行事务操作，选择 Tool node；只回答问题、解释流程，选择 Generative answers node。
+
+
+> A topic includes a series of steps that replicate logic already defined in another flow.  => → Use a Go to another topic node.
 
 ----
 
@@ -3529,8 +3534,6 @@ E. Publish the Service Desk Agent.
 
 **Correct Answer: AE** 
 
-Explanation/Reference:
-
 Explanation:
 
 Publish the Service Desk Agent and Enable "allow connections from other agents" on the Service Desk Agent are the correct actions to take.
@@ -3714,13 +3717,10 @@ An agent in Copilot Studio must call this connector during conversations to retr
 
 To meet the business needs, the solution must meet the following requirements:
 
-Make the connector actions available for the agent to invoke.
-
-Ensure authentication is handled at the service level, not per user.
-
-Pass conversation context into the connector when it is called.
-
-Surface the returned data of the connector to the user in the conversation.
+- Make the connector actions available for the agent to invoke.
+- Ensure authentication is handled at the service level, not per user.
+- Pass conversation context into the connector when it is called.
+- Surface the returned data of the connector to the user in the conversation.
 
 You need to configure the agent and the connector action to meet the requirements.
 
@@ -3766,7 +3766,8 @@ Select and Place:
 3. Map topic variables to tool inputs：把对话中收集的参数或上下文传递给连接器。
 4. Parse JSON response：将 API 返回的 JSON 数据保存到 topic 变量，再通过消息或后续节点展示给用户。
 
-考试记忆： 注册工具 → Add as tool；连接与认证 → Create/reuse connection；传入参数 → Map variables；返回结果 → Parse JSON into variable。
+
+> **考试记忆： 注册工具 → Add as tool；连接与认证 → Create/reuse connection；传入参数 → Map variables；返回结果 → Parse JSON into variable**。
 
 
 Explanation/Reference:
@@ -4375,9 +4376,6 @@ You need to integrate the correct approach to meet the requirements.
 
 What should you integrate for each requirement? To answer, move the appropriate integrations to the correct requirements. You may use each integration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view conten
 
-
-以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
-
 Select and Place:
 
 **Integrations (Options)**
@@ -4623,9 +4621,9 @@ A company uses an agent in Copilot Studio to generate structured responses for i
 
 The agent must meet the following requirements:
 
-Consistently follow a reusable instruction template for response tone and structure.
+- Consistently follow a reusable instruction template for response tone and structure.
 
-Use an enterprise-approved foundation model for responses generated through the template.
+- Use an enterprise-approved foundation model for responses generated through the template.
 
 You need to configure custom prompts so the agent uses the Microsoft Foundry model catalog.
 
@@ -4702,11 +4700,10 @@ NOTE: Each correct selection is worth one point.
 Select and Place:
 
 **Settings (Options)**
+
 * Server URL
 * API key header X-API-Key
 * CreateTicket, EscalateIncident, GetTicket, UpdateSLA
-
-
 
 **Agent-to-agent integration prerequisites in Copilot Studio**
 
@@ -4904,6 +4901,8 @@ Select and Place:
 
 注意：本题允许重复使用选项，因此 Add a standard connector 使用两次。`Trigger a notification` 不是本题发送 Teams 消息所需的具体连接器配置。
 
+
+> Send a Teams message → Trigger a notification.  ???
 
 **Box 1: Make an HTTPS request.**
 
@@ -5388,7 +5387,7 @@ The company requires responses to meet the following requirements:
 
 - You need to configure a custom prompt to meet the formatting requirements.
 
-Solution: Add instructions in the custom prompt tool to restrict connector access during runtime.
+**Solution: Add instructions in the custom prompt tool to restrict connector access during runtime**.
 
 Does the solution meet the goal?
 
@@ -6959,7 +6958,10 @@ A company needs an agent in Copilot Studio to complete tasks by interacting with
 
 To meet the business needs, the solution must meet the following requirements:
 
-Enable the agent to perform UI automation against the legacy application. Inspect execution details for the automation during conversations. You need to configure the agent based on the requirements.
+- Enable the agent to perform UI automation against the legacy application.
+- Inspect execution details for the automation during conversations.
+
+You need to configure the agent based on the requirements.
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -7730,7 +7732,7 @@ The team requires a consistent way to manage and transport agent assets.
 
 You need to recommend a solution that supports creation and use of ALM scenarios for agents in Copilot Studio.
 
-Solution: Publishing an agent to a channel is the required ALM container for transporting agents between environments.
+**Solution: Publishing an agent to a channel is the required ALM container for transporting agents between environments.**
 
 Does the solution meet the goal?
 
@@ -8350,3 +8352,33 @@ After setting up your metrics, you run the evaluation by gathering conversationa
 **Step 4: Review evaluation results and identify improvement opportunities**
 
 Finally, you analyze the gathered data against your original criteria to pinpoint bottlenecks, conversational failures, or gaps, allowing you to iterate and improve the agent.
+
+
+
+### QUESTION 32
+
+A company is configuring an agent in Copilot Studio that uses a generative answers node inside multiple topics.
+
+The company requires responses to meet the following requirements:
+
+- Must use an executive summary format.
+- Must apply only within a specific topic.
+- Must continue using configured knowledge sources.
+- Must comply with connector security controls.
+- You need to configure a custom prompt to meet the formatting requirements.
+
+**Solution: Configure custom instructions on the existing generative answers node at the topic level so that no other topics are affected.**
+
+Does the solution meet the goal?
+
+- A Yes
+- B No
+
+---
+
+A Yes
+
+Custom instructions on a generative answers node can define the required response format, such as an executive summary. A node is configured within a topic, so the instruction applies only to that topic. Updating the instruction does not replace the node’s configured knowledge sources or bypass connector security controls.
+
+
+
