@@ -2894,23 +2894,33 @@ In a Microsoft Copilot Studio agent environment, you use a Tool node (specifical
 
 ## Integrate and extend agents in Copilot Studio - Testlet 2 
 
-Background Fabrikam Inc. is a Canada-based manufacturer with a growing service organization that supports field technicians and internal operations teams. Fabrikam Inc. plans to launch a new internal agent solution named Operations Concierge to reduce time spent searching policy content, retrieving operational metrics, and executing routine transactions.
+Background Fabrikam Inc. is a Canada-based manufacturer with a growing service organization that supports field technicians and internal operations teams. Fabrikam Inc. 
 
-The agent will be used by three groups:
+plans to launch a new **internal agent solution named Operations Concierge** to  
 
-* Service coordinators who triage incoming service requests 
-* Field technicians who need guided procedures and parts availability 
-* Operations managers who monitor KPIs and exceptions
+**<mark>reduce time spent searching policy content, retrieving operational metrics, and executing routine transactions.</mark>**
 
-The agent solution must work in real-world operational conditions. Users often ask questions mid-call with a customer or while coordinating parts shipments. The agents require quick, reliable outcomes. As a result, Fabrikam Inc. requires the solution to:
+The agent will be used **by three groups**:
 
-* Provide grounded answers with traceability when it provides guidance.
+* Service coordinators who **triage incoming service requests** 
+* Field technicians who need **guided procedures and parts availability** 
+* Operations managers **who monitor KPIs and exceptions**
 
-* Retrieve real-time metrics when users ask for operational status.
+The agent solution must work in real-world operational conditions. Users often ask questions mid-call with a customer or while coordinating parts shipments. The agents require quick, reliable outcomes. 
 
-* Execute authenticated updates when users initiate a flow (such as creating a parts request).
+As a result, Fabrikam Inc. requires the solution to:
 
-Fabrikam Inc. also expects the solution to be maintained by multiple makers and developers across the year. The company has experienced duplicated logic and inconsistent behavior across different agents. This project emphasizes reuse, governance, and maintainability across teams.
+* **Provide grounded answers** with traceability when it provides guidance.
+
+* **Retrieve real-time metrics** when users ask for operational status.
+
+* **Execute authenticated updates when users** initiate a flow (such as creating a parts request).
+
+Fabrikam Inc. also expects the solution to be maintained by multiple makers and developers across the year. 
+
+<mark>The company has experienced duplicated logic and inconsistent behavior across different agents.</mark> 
+
+This project emphasizes reuse, governance, and maintainability across teams.
 
 **Current environment** 
 
@@ -2926,9 +2936,9 @@ Fabrikam Inc. already has two assets the team wants to reuse:
 
 Fabrikam Inc. also has operational and knowledge data sources:
 
-* A curated policy library (internal SOPs, service warranty rules, escalation criteria, and standard operating procedures) 
+* **A curated policy library** (internal SOPs, service warranty rules, escalation criteria, and standard operating procedures) 
 * A set of indexed documents and procedures in an Azure AI Search service that supports vector search for the policy library 
-* A Microsoft Fabric workspace that includes a semantic model used by operations leadership for reporting
+* A Microsoft Fabric workspace that **includes a semantic model used by operations leadership for reporting**
 
 **Business requirements** 
 
@@ -2936,9 +2946,9 @@ Fabrikam Inc. requires Operations Concierge to meet the following business requi
 
 * **Traceability requirement**: When the agent provides policy guidance or procedural recommendations, users must be able to see where the answer came from.
 
-* Metrics requirement: When users ask about service performance (backlog, SLA risk, parts shortages, dispatch delays), the solution must return up-to-date metrics in a structured format that operations managers can use in weekly reviews.
+* **Metrics requirement**: When users ask about service performance (backlog, SLA risk, parts shortages, dispatch delays), the solution must return up-to-date metrics in a structured format that operations managers can use in weekly reviews.
 
-* Transaction requirement: The solution must support authenticated updates initiated during conversations, including creating a parts request and updating a service case status.
+* **Transaction requirement**: The solution must support authenticated updates initiated during conversations, including creating a parts request and updating a service case status.
 
 In addition, Fabrikam Inc. wants to avoid duplicating common assets across agents:
 
@@ -2948,7 +2958,7 @@ Only the platform engineering group as allowed to edit shared assets. However, a
 
 **Technical requirements** 
 
-The Fabrikam Inc. solution architecture uses a multi-agent approach so that specialist responsibilities are isolated and can evolve independently.
+The Fabrikam Inc. solution architecture uses a multi-agent approach so that specialist responsibilities **are isolated and can evolve independently**.
 
 The Operations Concierge (primary agent) must coordinate the following specialist capabilities:
 
@@ -2962,12 +2972,15 @@ The Operations Concierge (primary agent) must coordinate the following specialis
 
 Fabrikam Inc. will onboard two MCP servers as tools:
 
-* **PartsOps MCP server:** exposes tools for parts availability checks and parts request creation. The server requires per-user authentication because actions must be traceable to the requesting user. 
-* **WarrantyRules MCP server**: exposes a read-only tool for validating warranty coverage. The server uses an API key shared by the agent team.
+* **PartsOps MCP server:** exposes tools for parts availability checks and parts request creation. <mark>**The server requires per-user authentication because actions must be traceable to the requesting user**.</mark> 
+* **WarrantyRules MCP server**: exposes a read-only tool for validating warranty coverage. <mark>**The server uses an API key shared by the agent team.**</mark>
 
 Fabrikam Inc. has also defined a collaboration requirement with the existing Service Desk Agent:
 
-* The primary agent must delegate IT-specific requests to the existing Service Desk Agent rather than reimplement ticket creation logic. Finally, Fabrikarn Inc. plans to support a partner integration:
+* The primary agent must delegate IT-specific requests to the existing Service Desk Agent rather than reimplement ticket creation logic.
+
+
+Finally, Fabrikarn Inc. plans to support a partner integration:
 
 * For shipment tracking inquiries, Fabrikam Inc. will delegate to a partner-provided agent that is only available through a standardized agent-to-agent endpoint.
 
@@ -2975,17 +2988,17 @@ Fabrikam Inc. has also defined a collaboration requirement with the existing Ser
 
 During early testing, Fabrikam Inc. found three recurring problems:
 
-* Makers are copying and modifying the same components across agents, resulting in inconsistent disclaimers and duplicated tools.
+* **Makers are copying and modifying the same components across agents**, resulting in inconsistent disclaimers and duplicated tools.
 
-* Users can obtain a correct answer, but the response is not consistently traceable to a source when the agent uses knowledge.
+* **Users can obtain a correct answer, but the response is not consistently traceable to a source when the agent uses knowledg**e.
 
 * The primary agent can route some requests, but specialist capabilities are not consistently delegated (for example, some metric questions are answered generatively instead of being routed to the Fabric Data Agent).
 
 You are part of the engineering team responsible for correcting the design and configuration to meet the preceding requirements and constraints.
 
-### QUESTION 1 
+### QUESTION 1 💩
 
-You need to enable Operations Concierge to delegate shipment tracking inquiries according to Fabrikam Inc.'s defined architecture and **technical requirements**.
+You need to enable Operations Concierge to **delegate shipment tracking inquiries** according to Fabrikam Inc.'s defined architecture and **technical requirements**.
 
 Which integration approach should you use?
 
@@ -3004,7 +3017,7 @@ D. Configure the primary agent to handle shipment tracking through generative re
 
 **解析**
 
-题目明确指出，合作伙伴提供的 Agent 只能通过标准化的 Agent-to-Agent (A2A) endpoint 访问。因此，应配置 A2A 集成，并提供对应的 endpoint 信息，让 Operations Concierge 能够将运输跟踪请求委派给合作伙伴 Agent。
+题目明确指出，合作伙伴提供的 Agent 只能通过标准化的 Agent-to-Agent (A2A) endpoint 访问。因此，应配置 A2A 集成，并提供对应的 endpoint 信息，**让 Operations Concierge 能够将运输跟踪请求委派给合作伙伴 Agent。**
 
 | 选项 | 判断 | 原因                                                    |
 | -- | -- | ----------------------------------------------------- |
@@ -3037,13 +3050,13 @@ Fabrikarn Inc. plans to support a partner integration:
 For shipment tracking inquiries, Fabrikam Inc. will delegate to a partner-provided agent that is only available through a standardized agent-to-agent endpoint.
 
 
-### QUESTION 2 
+### QUESTION 2 💩💩
 
-You need to integrate Fabrikam Inc.'s existing Foundry agent so Operations Concierge can delegate summarization requests.
+You need to integrate Fabrikam Inc.'s existing Foundry agent **so Operations Concierge can delegate summarization requests.**
 
 Which action should you perform for each requirement? To answer, move the appropriate actions to the correct requirements. You may use each action once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
- Select and Place:
+Select and Place:
 
 **Actions (Options)**
 
@@ -3072,10 +3085,12 @@ Which action should you perform for each requirement? To answer, move the approp
 
 解析
 
-1. 添加外部 Foundry Agent：让 Operations Concierge 能够将摘要生成和文本分类任务委派给现有的 Microsoft Foundry agent。
+1. 添加外部 Foundry Agent：**让 Operations Concierge 能够将摘要生成和文本分类任务委派给现有的 Microsoft Foundry agent**。
 2. 配置 Foundry project endpoint URL：建立与正确 Foundry 项目的连接，以便引用对应的 Agent。
 
-考试记忆： 集成现有 Foundry agent，选择 Add an external agent of type Microsoft Foundry；配置连接目标，提供 Foundry project endpoint URL。
+考试记忆： 集成现有 Foundry agent，选择 Add an external agent of type 
+
+Microsoft Foundry；配置连接目标，提供 Foundry project endpoint URL。
 
 另外两个选项不适用：将输出添加为索引知识源不等于委派 Agent；发布主 Agent 也不是配置 Foundry 连接的核心步骤。
 
@@ -3084,7 +3099,7 @@ Which action should you perform for each requirement? To answer, move the approp
 
 The main agent must be able to call an external Foundry agent.
 
-The best action to take is to add an external agent of type Microsoft Foundry.
+**The best action to take is to add an external agent of type Microsoft Foundry.**
 
 Add an external agent of type Microsoft Foundry: In multi-agent ecosystems (such as Microsoft Copilot Studio), connecting to specialized external agent frameworks—like Microsoft Foundry—is natively handled by registering or adding that specific system as an external agent type. This allows the orchestration layer of the main agent to properly discover, authenticate, and call the capabilities of the Foundry agent.
 
@@ -3092,7 +3107,7 @@ Add an external agent of type Microsoft Foundry: In multi-agent ecosystems (such
 
 The external Foundry agent must reference the correct Foundry project and agent.
 
-### QUESTION 3 
+### QUESTION 3 💩
 
 You need to plan how Fabrikam Inc. will reuse shared components across multiple agents while limiting who can change the shared components.
 
@@ -3102,15 +3117,12 @@ NOTE: Each correct selection is worth one point.
 
 Select and Place:
 
-
-Select and Place:
-
 **Components (Options)**
 
 * Restrict component collection to the primary agent.
 * Create a component collection and move shared components into it.
 * Export the primary agent as a solution and copy assets into other agents.
-* Share the component collection with teammates while controlling edit access.
+* Share the component collection with teammates <mark>while controlling edit access.</mark>
 
 
 **Reusable components**
@@ -3129,16 +3141,20 @@ Select and Place:
 | Requirement                                                                            | Component                                                                    |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | Prevent shared assets from being modified by most builders.                            | Share the component collection with teammates while controlling edit access. |
-| Reuse the same set of components across multiple agents without copying.               | Create a component collection and move shared components into it.            |
+| **Reuse the same set of components across multiple agents without copying**.               | Create a component collection and move shared components into it.            |
 | Limit a shared set of components so it can be used only by its intended primary agent. | Restrict component collection to the primary agent.                          |
 
  解析
 
 1. 控制编辑权限：通过共享组件集合并限制编辑权限，让大多数 Builder 可以使用共享资产，但不能随意修改。
-2. 跨 Agent 复用：创建组件集合，将通用的 escalation topics、MCP tool definitions 和标准安全免责声明放入集合中，供多个 Agent 复用，避免重复复制。
+2. <mark>跨 Agent 复用：创建组件集合，将通用的 escalation topics、MCP tool definitions 和标准安全免责声明放入集合中，供多个 Agent 复用，避免重复复制</mark>
 3. 限制使用范围：将组件集合限制为仅供指定的主 Agent 使用。
 
-考试记忆： 权限控制选 Share + control edit access；跨 Agent 复用选 Component collection；限定单个 Agent 使用选 Restrict component collection。
+考试记忆：
+
+- **权限控制选 Share + control edit access**；
+- **跨 Agent 复用选 Component collection**；
+- **限定单个 Agent 使用选 Restrict component collection**。
 
 Explanation/Reference:
 
@@ -3168,15 +3184,17 @@ The best action to take is to restrict component collection to the primary agent
 
 Reference:
 
-### QUESTION 4 
+### QUESTION 4 💩💩💩
 
-You need to configure Operations Concierge so that prompt-driven summarization behavior aligns with Fabrikam Inc.'s architectural requirements.
+You need to configure Operations Concierge so that **prompt-driven summarization behavior aligns with Fabrikam Inc.'s architectural requirements.**
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
 NOTE: Each correct selection is worth one point.
 
-A. Configure Azure AI Search as the grounding source for summarization prompts. B. Publish the agent to ensure the selected model is enforced for summarization.
+A. Configure Azure AI Search as the grounding source for summarization prompts. 
+
+B. Publish the agent to ensure the selected model is enforced for summarization.
 
 C. Select a model from the Foundry model catalog in the custom prompt configuration.
 
@@ -3215,9 +3233,9 @@ Scenario: Specialized processing: Delegate summarization and classification requ
 [E] Custom Prompt Templates: Creating and applying a reusable template ensures consistent formatting, tone, and logic across all areas where your agent handles summarization and classification tasks.
 
 
-### QUESTION 5
+### QUESTION 5 💩💩
 
-You need to connect Operations Concierge to Fabrikam Inc.'s Azure AI Search knowledge index while complying with security requirements.
+You need to connect Operations Concierge to Fabrikam Inc.'s **Azure AI Search knowledge index while complying with security requirements.**
 
 Which configuration should you use for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
@@ -3237,7 +3255,7 @@ Select and Place:
 
 | Requirement | Configuration |
 | :--- | :--- |
-| Ensure the Azure AI Search connection complies with the governance requirement for authenticated access. | [ 空白框 ] |
+| Ensure the Azure AI Search connection **complies with the governance requirement for authenticated access**. | [ 空白框 ] |
 | Ensure policy and procedure Q&A uses the required curated, indexed enterprise knowledge source. | [ 空白框 ] |
 | Ensure the connection targets the Azure AI Search service instance that stores the indexed policy documents. | [ 空白框 ] |
 
@@ -3250,7 +3268,7 @@ Select and Place:
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
 | Ensure the Azure AI Search connection complies with the governance requirement for authenticated access.     | Select the service principal as the authentication type.            |
 | Ensure policy and procedure Q&A uses the required curated, indexed enterprise knowledge source.              | Enter the name of the Azure AI Search index.                        |
-| Ensure the connection targets the Azure AI Search service instance that stores the indexed policy documents. | Provide the Azure AI Search Endpoint URL in the connection details. |
+| Ensure the **connection targets the Azure AI Search service instance that stores the indexed policy documents.** | Provide the Azure AI Search Endpoint URL in the connection details. |
 
 解析
 
@@ -3288,7 +3306,7 @@ The best action to take is to Provide the Azure Search Endpoint URL in the conne
 When connecting a Copilot agent to an external knowledge source like Azure AI Search, establishing the connection requires identifying the specific service host. Providing the Azure AI Search Endpoint URL ensures that the underlying connection infrastructure explicitly targets and authenticates against your specific Azure AI Search service instance. Once this service-level connection is validated, you are prompted in the next step to select or enter the specific index containing your documents.
 
 
-### QUESTION 6 
+### QUESTION 6 💩💩
 
 You need to design a solution that provides Fabrikam Inc. with a multi-agent design approach with existing agents.
 
@@ -3328,24 +3346,24 @@ Select and Place:
  解析
 
 1. Policy questions → Knowledge-focused agent：利用 Azure AI Search 等企业知识源检索政策和操作流程，并提供可追溯的依据。
-2. Operational metrics → Data-access agent：委派给 Fabric Data Agent，通过 Fabric semantic model 获取最新的运营指标。
-3. Transactions → Tools-first agent：通过 MCP 工具执行经过身份验证的业务操作，例如创建零件申请、更新服务工单状态。
+2. Operational metrics → Data-access agent：**委派给 Fabric Data Agent，通过 Fabric semantic model 获取最新的运营指标**。
+3. Transactions → **Tools-first agent：通过 MCP 工具执行经过身份验证的业务操作，例如创建零件申请、更新服务工单状态**。
 
 考试记忆：
 
 - 知识问答 → Knowledge-focused
-- 数据与指标 → Data-access
-- 业务操作与事务 → Tools-first
+- <mark>数据与指标 → Data-access<mark>
+- <mark>业务操作与事务 → Tools-first<mark>
 
 不要把所有逻辑都放进单一 Agent；这会增加重复实现和维护成本，不符合 Fabrikam 的模块化与复用要求。
-
-
 
 **Box 1: Delegate the request to a knowledge-focused agent** 
 
 Scenario: Traceability requirement: When the agent provides policy guidance or procedural recommendations, users must be able to see where the answer came from.
 
-The best action to take is to delegate the request to a knowledge-focused agent. Pure Grounding and Citation Support: In Microsoft Copilot Studio and the Power Platform ecosystem, a knowledge-focused agent is explicitly engineered to retrieve information from designated repositories (such as SharePoint sites, Dataverse tables, or uploaded company policy manuals).
+**The best action to take is to delegate the request to a knowledge-focused agen**t. 
+
+**Pure Grounding and Citation Support: In Microsoft Copilot Studio and the Power Platform ecosystem, a knowledge-focused agent is explicitly engineered to retrieve information from designated repositories (such as SharePoint sites, Dataverse tables, or uploaded company policy manuals).**
 
 Built-in Transparency: When an agent relies on custom knowledge sources via Retrieval-Augmented Generation (RAG) or generative answers, it inherently provides inline citations and source links. This allows users to immediately verify exactly where the policy guidance or procedural recommendations originated.
 
@@ -3353,7 +3371,7 @@ Built-in Transparency: When an agent relies on custom knowledge sources via Retr
 
 Scenario: Metrics requirement: When users ask about service performance (backlog, SLA risk, parts shortages, dispatch delays), the solution must return up-to-date metrics in a structured format that operations managers can use in weekly reviews.
 
-The best action to take is to delegate the request to a data-access agent.
+**The best action to take is to delegate the request to a data-access agent**.
 
 Governed and Current Business Data: Tracking active metrics like backlog, SLA risk, and shortages demands direct, real-time query access to structured enterprise data stores (such as Microsoft Fabric or Microsoft Dataverse).
 
@@ -3363,18 +3381,18 @@ Role Distinction: In contrast, a tools-first agent is designed primarily to trig
 
 **Box 3: Delegate the request to a tools-first agent.**
 
-Scenario: Transaction requirement: The solution must support authenticated updates initiated during conversations, including creating a parts request and updating a service case status.
+Scenario: Transaction requirement: The solution must support authenticated updates initiated during conversations, including creating a parts request and updating a service case status.**
 
 The best action to take is to delegate the request to a tools-first agent.
 
-Action-Oriented Design: A tools-first agent is specifically optimized to perform tasks, run workflows, and execute transactional actions—such as creating parts requests and updating status fields.
+Action-Oriented Design: **A tools-first agent is specifically optimized to perform tasks, run workflows, and execute transactional actions—such as creating parts requests and updating status fields.
 
 API Integration: It excels at leveraging connectors and Power Automate cloud flows to securely push updates back into your Microsoft Power Platform environment.
 
 Separation of Concerns: Delegating to a specialized tools-first agent keeps your orchestration layer lightweight and prevents a single agent from becoming too complex to maintain.
 
 
-### QUESTION 7
+### QUESTION 7 💩💩
 
 You need to configure generative answers so the agent meets Fabrikam Inc’s business requirements. Which solutions should you use? To answer, move the appropriate solutions to the correct requirements. You may use each solution once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
@@ -3392,7 +3410,7 @@ Select and Place:
 
 | Requirement | Solution |
 | :--- | :--- |
-| Users must be able to trace each answer back to its source. | [ 空白框 ] |
+| **Users must be able to trace each answer back to its source**. | [ 空白框 ] |
 | The agent must retrieve information from a centralized index. | [ 空白框 ] |
 | Responses must be generated by an enterprise-approved foundation model. | [ 空白框 ] |
 
@@ -3408,9 +3426,9 @@ Select and Place:
 
 解析
 
-1. 可追溯性 → Cite sources：让用户能够查看政策或流程回答的来源，满足 Traceability requirement。
-2. 集中式知识检索 → Azure AI Search：连接已有的 Azure AI Search 索引，避免重复上传文档，并统一管理企业知识。
-3. 模型治理 → Foundry model catalog：选择企业批准的基础模型，满足模型治理要求。
+1. <mark>可追溯性 → Cite sources：让用户能够查看政策或流程回答的来源，满足 Traceability requirement。 <mark>
+2. <mark>集中式知识检索 → Azure AI Search：连接已有的 Azure AI Search 索引，避免重复上传文档，并统一管理企业知识 <mark>。
+3.  <mark>模型治理 → Foundry model catalog：选择企业批准的基础模型，满足模型治理要求 <mark>。
 
 未使用的选项： Upload documents directly into the agent。因为 Fabrikam 已有集中式 Azure AI Search 索引，直接上传文档会造成知识重复管理。
 
@@ -3442,9 +3460,9 @@ The alternative choices (such as uploading documents, configuring Azure AI Searc
 
 
 
-### QUESTION 8 
+### QUESTION 8 💩💩💩
 
-You need to ensure that performance-related questions are handled in accordance with Fabrikam Inc.’s defined architecture and business requirements.
+You need to ensure** that performance-related question**s are handled in accordance with Fabrikam Inc.’s defined architecture and business requirements.
 
 Which capability should Operations Concierge use?
 
@@ -3465,7 +3483,9 @@ D. An Azure AI Search knowledge source configured for enterprise policy retrieva
 
 解析
 
-Fabrikam 的性能相关问题包括 backlog、SLA risk、parts shortages 和 dispatch delays。根据题目架构要求，Operations Concierge 应将这些指标查询委派给 Fabric Data Agent，由它通过 Microsoft Fabric semantic model 访问受治理的业务数据，并返回最新指标。
+Fabrikam **的性能相关问题**包括 backlog、SLA risk、parts shortages 和 dispatch delays。
+
+根据题目架构要求，Operations Concierge 应将这些指标查询委派给 Fabric Data Agent，**由它通过 Microsoft Fabric semantic model 访问受治理的业务数据，并返回最新指标**。
 
 | 选项 | 判断 | 原因                                     |
 | -- | -- | -------------------------------------- |
@@ -3500,9 +3520,9 @@ The Operations Concierge (primary agent) must coordinate the following specialis
 ● **Specialized processing**: Delegate summarization and classification requests to an existing Microsoft Foundry agent.
 
 
-### QUESTION 9 
+### QUESTION 9 💩💩💩
 
-You need to enable collaboration requirements for Operations Concierge.
+You need to enable **collaboration requirements for Operations Concierge.**
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
@@ -3555,16 +3575,13 @@ Fabrikam Inc. already has two assets the team wants to reuse:
 Fabrikam Inc. has also defined a collaboration requirement with the existing Service Desk Agent: The primary agent must delegate IT-specific requests to the existing Service Desk Agent rather than reimplement ticket creation logic.
 
 
-### QUESTION 10
+### QUESTION 10 💩💩💩💩
 
 You need to add Fabrikam Inc.’s MCP servers as a tool so the agent can perform the required operations during conversations.
 
 Which setting should you configure for each requirement? To answer, move the appropriate settings to the correct requirements. You may use each setting once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
-
-
-以下是提取并整理为 Markdown 格式的内容。由于图片中缺少具体的上下文（比如 PartsOps 或 WarrantyRules 的具体技术要求），以下基于 Copilot Studio 中 MCP (Model Context Protocol) 的一般最佳实践和安全标准提供答案及解析：
 
 Select and Place:
 
@@ -3592,13 +3609,13 @@ Select and Place:
 | -------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | Implement PartsOps MCP server actions in alignment with the technical requirements.    | Select OAuth 2.0 as the authentication type for the MCP server. |
 | Configure the WarrantyRules MCP server in alignment with the technical requirements.   | Select API key as the authentication type for the MCP server.   |
-| Ensure that the agent has enough server context to decide when to call the MCP server. | Configure a server description about the MCP server role.       |
+| **Ensure that the agent has enough server context to decide when to call the MCP server**. | Configure a server description about the MCP server role.       |
 
 解析
 
-1. PartsOps → OAuth 2.0：PartsOps 要求按用户身份进行认证，以便追踪是谁执行了零件查询或创建申请等操作。
-2. WarrantyRules → API key：WarrantyRules 使用团队共享的 API Key，符合题目给出的认证要求。
-3. Server description：描述 MCP server 的职责和用途，帮助 Agent 判断何时调用相应工具。
+1.**PartsOps → OAuth 2.0：PartsOps 要求按用户身份进行认证，以便追踪是谁执行了零件查询或创建申请等操作**。
+2. **WarrantyRules → API key：WarrantyRules 使用团队共享的 API Key，符合题目给出的认证要求**。
+3. **Server description：描述 MCP server 的职责和用途，帮助 Agent 判断何时调用相应工具**。
 
 未使用的选项： Use the same authentication type for the MCP servers。两个 MCP server 的认证要求不同，因此不应强制使用相同的认证类型。
 
