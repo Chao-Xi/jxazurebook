@@ -4257,13 +4257,13 @@ Select and Place:
 未使用的选项： Copilot connector knowledge source for indexed content，因为它适用于索引内容的检索，与避免索引数据的要求不符。
 
 
-### QUESTION 10. 💩 
+### QUESTION 10 💩 
 
-A company uses an agent in Copilot Studio to coordinate user interactions.
+A company uses an agent in Copilot Studio to **coordinate user interactions.**
 
-The company wants the agent to delegate requests to a Microsoft Fabric Data Agent that accesses governed business data.
+The company wants the agent to delegate requests to a **Microsoft Fabric Data Agent that accesses governed business data.**
 
-The agent must retrieve structured analytical data while enforcing data security and scope controls. You need to select the integration approach that meets the requirements.
+The agent must retrieve structured **analytical data while enforcing data security and scope controls**. You need to select the integration approach that meets the requirements.
 
 What should you use?
 
@@ -4286,7 +4286,7 @@ Microsoft Fabric Data Agent 可以通过 Fabric semantic model 访问受治理�
 
 | 选项 | 判断 | 原因                                                 |
 | -- | -- | -------------------------------------------------- |
-| A  | ✅  | 使用 Fabric Data Agent 访问结构化分析数据，并遵循相应的数据范围和治理控制。    |
+| A  | ✅  | **使用 Fabric Data Agent 访问结构化分析数据，并遵循相应的数据范围和治理控制**。    |
 | B  | ❌  | 直接查询 Fabric 表会绕过题目要求的专用 Data Agent 集成方式。           |
 | C  | ❌  | Power Automate Flow 适合流程自动化，但不是此处指定的分析 Agent 集成方式。 |
 | D  | ❌  | Copilot connector 知识源侧重索引内容检索，不适合实时结构化分析查询。        |
@@ -4296,7 +4296,7 @@ Microsoft Fabric Data Agent 可以通过 Fabric semantic model 访问受治理�
 
 **Correct Answer: A**
 
- Section: (none) Explanation/Reference:
+Section: (none) Explanation/Reference:
 
 Explanation:
 
@@ -4309,15 +4309,15 @@ Seamless Context: This enables multi-step agent orchestration where Copilot Stud
 
 ### QUESTION 11 
 
-A company is building an agent in Copilot Studio that must answer questions using enterprise systems and must also perform authenticated operations.
+A company is building an agent in Copilot Studio that **must answer questions using enterprise systems and must also perform authenticated operations.**
 
-* To meet the business needs, the agent must meet the following requirements.
+* To meet the business needs, **the agent must meet the following requirements**.
 
 * The agent must provide searchable answers from indexed enterprise content.
 
 * The agent must retrieve up-to-date facts at runtime without indexing data.
 
-The agent must perform an authenticated update operation during the conversation.
+**The agent must perform an authenticated update operation during the conversation.**
 
 You need to select the correct integration approach for each requirement.
 
@@ -4340,7 +4340,7 @@ Select and Place:
 | Requirement | Solution |
 | :--- | :--- |
 | The agent must provide searchable answers from indexed enterprise content. | [ 空白框 ] |
-| The agent must retrieve up-to-date facts at runtime without indexing data. | [ 空白框 ] |
+| The agent must **retrieve up-to-date facts at runtime without indexing data**. | [ 空白框 ] |
 | The agent must perform an authenticated update operation during the conversation. | [ 空白框 ] |
 
 ----
@@ -4360,18 +4360,27 @@ Select and Place:
 2. Real-time facts without indexing → Power Platform connector for real-time knowledge：在运行时直接访问数据源，无需将数据复制到搜索索引。
 3. Authenticated update → Power Platform connector tool：调用连接器执行创建或更新等业务操作，并通过配置的连接处理身份验证。
 
-考试记忆： 索引检索 → Copilot connector knowledge source；实时查询 → Real-time knowledge；执行写入操作 → Connector tool。
+考试记忆： 
 
 
-### QUESTION 12 
+- **索引检索 → Copilot connector knowledge source**；
+- **实时查询 → Real-time knowledge**；
+- **执行写入操作 → Connector tool**
 
-A company is extending agents in Copilot Studio with both external capabilities and enterprise content access. Some user requests require grounded answers, while other requests require executing actions. To meet the business needs, the agent must meet the following requirements:
+
+### QUESTION 12 💩💩
+
+A company is extending agents in Copilot Studio with both external capabilities and enterprise content access. 
+
+Some user requests require grounded answers, while other requests require executing actions. 
+
+To meet the business needs, the agent must meet the following requirements:
 
 * Ground answers using results from enterprise data.
 
 * Invoke callable functions exposed through a standardized tool interface.
 
-* Write an update to a system by using an authenticated action during the conversation.
+* **Write an update to a system by using an authenticated action during the conversation**.
 
 You need to integrate the correct approach to meet the requirements.
 
@@ -4402,7 +4411,7 @@ Select and Place:
 | Requirement                                                                           | Integration                                                   |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Ground answers using results from enterprise data.                                    | Add a Copilot connector knowledge source for indexed content. |
-| Invoke callable functions exposed through a standardized tool interface.              | Connect to an MCP server and add its tools to the agent.      |
+| Invoke callable functions exposed through **a standardized tool interface**.              | Connect to an **MCP server and add its tools to the agent**.      |
 | Write an update to a system by using an authenticated action during the conversation. | Add a Power Platform connector tool and call it from a topic. |
 
 未使用的选项：
@@ -4411,16 +4420,16 @@ Select and Place:
 
 **解析**
 
-1. Copilot connector knowledge source：用于检索已索引的企业内容，为 Agent 提供 grounding（知识依据）。
+1. <mark>Copilot connector knowledge source：用于检索已索引的企业内容，为 Agent 提供 grounding（知识依据）</mark>。
 2. MCP server：通过标准化的 Model Context Protocol 接口向 Agent 暴露可调用的工具和函数。
-3. Power Platform connector tool：调用连接器执行操作，例如更新 Dataverse 或其他业务系统中的记录；可以配置身份验证。
+3. Power Platform connector tool：**调用连接器执行操作，例如更新 Dataverse 或其他业务系统中的记录；可以配置身份验证**。
 
 考试记忆：
 
-- Knowledge Source → 检索知识、Grounding。
-- MCP Server → 标准化工具调用。
-- Power Platform Connector Tool → 执行业务操作、更新数据。
-- Dataverse structured data knowledge source → 结构化数据查询，不是执行写入操作。
+- **Knowledge Source → 检索知识、Grounding**。
+- **MCP Server → 标准化工具调用**。
+- **Power Platform Connector Tool → 执行业务操作、更新数据。**
+- **Dataverse structured data knowledge source → 结构化数据查询，不是执行写入操作**。
 
 
 Explanation/Reference:
@@ -4448,20 +4457,19 @@ Executing Actions & Writing Data: Power Platform connectors (prebuilt or custom)
 Authentication: Connectors natively support security configurations, allowing you to easily map credentials so the agent executes the update using either maker-provided or specific end-user Microsoft Entra ID authentication. You can also control access at the topic level to ensure triggers execute precisely when required.
 
 
-### QUESTION 13 
+### QUESTION 13 💩💩💩💩
 
 A company plans to use Copilot connectors to ground answers from a third-party system for an agent in Copilot Studio.
 
 To meet the business needs, responsibilities for configuring and using Copilot connectors must be separated, based on the following requirements:
 
 * For tenant administration, the connector must be available at the tenant level. 
-* For agent runtime behavior, answers must be grounded from authorized sources. 
-* For builder configuration, you must add the connector to the agent.
+* **For agent runtime behavior, answers must be grounded from authorized sources**. 
+* **For builder configuration, you must add the connector to the agent**.
 
 You need to determine how Copilot connector set-up responsibilities are handled across tenant, runtime, and builder stages.
 
 What should you configure for each requirement? To answer, move the appropriate configuration to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
-
 
 Select and Place:
 
@@ -4477,7 +4485,7 @@ Select and Place:
 
 | Requirement | Configuration |
 | :--- | :--- |
-| Tenant administration | [ 空白框 ] |
+| **Tenant administration** | [ 空白框 ] |
 | Agent runtime behavior | [ 空白框 ] |
 | Builder configuration | [ 空白框 ] |
 
@@ -4498,7 +4506,7 @@ Select and Place:
 
 解析
 
-1. Microsoft 365 Admin Center（租户管理）：配置 Copilot connector，使其在租户级别可用。
+1. **Microsoft 365 Admin Center（租户管理）：配置 Copilot connector，使其在租户级别可用**。
 2. Call the connector knowledge source（运行时）：Agent 在对话过程中调用知识源，从用户有权访问的内容中检索信息，确保权限控制。
 3. Add the Copilot connector as a knowledge source（构建阶段）：Builder 将已经配置好的 Copilot connector 添加到 Copilot Studio Agent 的知识源中。
 
@@ -4511,50 +4519,29 @@ Select and Place:
 注意区分：租户管理员负责配置 Connector，Agent Builder 负责将其添加为知识源，Agent Runtime 负责调用知识源获取答案。
 
 
-Explanation:
-
-**Box 1: Configure the Copilot connector in Microsoft 365 Admin Center **
 
 
-To make a Copilot connector available at the tenant level for grounding agent responses in Microsoft Copilot Studio, you must configure and deploy the connector in the Microsoft 365 Admin Center.
 
-Tenant Administration (Microsoft 365 Admin Center): Tenant administrators must configure and deploy the specific Copilot connector (e.g., ServiceNow, Salesforce, Box) within the Microsoft 365 Admin Center. This process indexes the necessary content from your third-party system across the enterprise so it can be utilized by your organization's agents.
+### QUESTION 14 💩
 
-**Box 2: Add the Copilot connector as a knowledge source**
+A company uses an agent in **Copilot Studio to answer questions based on enterprise content**.
 
-To use a Copilot connector as an enterprise knowledge source in Microsoft Copilot Studio, the prerequisite configuration requires the builder to add the Copilot connector as a knowledge source.
-
-The Builder Stage: While your AI or tenant administrator is responsible for deploying and configuring the Copilot connector in the Microsoft 365 admin center, the builder stage handles agent-specific knowledge mapping. [Box 3 below]
-
-Knowledge Integration: As an agent builder, you must actively select the preconfigured Copilot connector from the available list and add it as a knowledge source to your agent's generative answers node.
-
-Runtime Behavior: Once this is configured, the Copilot engine indexes and queries the third-party data securely at runtime. Because the connector is tied to your tenant's security parameters, the agent will only ground answers using authorized sources and fully respect source-level permissions.
-
-**Box 3: Configure the Copilot connector in Microsoft 365 Admin Center** 
-
-The initial deployment and central management of a Copilot connector must be performed in the Microsoft 365 Admin Center by a tenant administrator. However, completing the builder configuration to add the connector as a knowledge source for a specific agent is done directly within Microsoft Copilot Studio.
-
-
-### QUESTION 14 
-
-A company uses an agent in Copilot Studio to answer questions based on enterprise content.
-
-The content is indexed in Azure AI Search. Responses must be generated by a Microsoft Foundry model.
+The content is indexed in Azure AI Search. **Responses must be generated by a Microsoft Foundry model**.
 
 To meet the business needs, the solution must meet the following requirements:
 
-Users are able to trace each answer back to its source.
+- Users are able to trace each answer back to its source.
 
-The agent retrieves information from a centralized data index. Responses are generated by an enterprise-approved foundation model.
+- **The agent retrieves information from a centralized data index.**
 
-You need to configure generative answers for the agent.
+- Responses are generated by an enterprise-approved foundation model.
+
+- You need to configure generative answers for the agent.
 
 What should you configure for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
 NOTE: Each correct selection is worth one point.
 
-
- Select and Place:
 
 **Configurations (Options)**
 
@@ -4616,7 +4603,7 @@ Model Control: To strictly guarantee that an enterprise-approved foundation mode
 Connection Workflow: Deploying the custom model in Azure AI Studio (formerly encompassing parts of Azure AI Foundry) and connecting it to Copilot Studio ensures the orchestration layer routes prompts directly to your certified LLM.
 
 
-### QUESTION 15 
+### QUESTION 15 💩
 
 A company uses an agent in Copilot Studio to generate structured responses for internal users.
 
@@ -4679,11 +4666,11 @@ To configure your Copilot Studio agent to use an enterprise-approved model from 
 [E] Step 2: Create the Template and Apply It to the Agent Flow Now, write the reusable instruction template for structured responses and map it to your conversation topics.
 
 
-### QUESTION 16 
+### QUESTION 16 💩
 
 A company integrates an MCP service that exposes ticket-management operations.
 
-The MCP service requires authenticated requests and exposes multiple callable operations that must be selectively governed for agent use.
+**The MCP service requires authenticated requests and exposes multiple callable operations** that must be selectively governed for agent use.
 
 To meet the business needs, the MCP configuration must meet the following requirements:
 
@@ -4765,16 +4752,16 @@ To configure a Copilot agent to send requests to the correct backend service in 
 When adding an MCP server using the onboarding wizard or custom connectors in Microsoft Copilot Studio, the Server URL is the primary endpoint used to establish the connection and discover the available tools. Once connected, Copilot can selectively govern which callable operations (like CreateTicket or EscalateIncident) are enabled for the agent directly through the Tools & Connections UI.
 
 
-### QUESTION 17 
+### QUESTION 17 💩💩💩💩💩
 
-An agent in Copilot Studio must complete tasks by automating interactions with a legacy desktop application that does not use APIs.
+An agent in Copilot Studio must complete tasks by automating **interactions with a legacy desktop application that does not use APIs**.
 
 During testing, the builder must confirm that the automation runs in a supported execution context and can inspect how each automation step executes during conversations.
 
 To meet the business needs, the solution must:
 
 - Execute UI automation in a supported, platform-managed environment. 
-- Provide visibility into how automation steps run during agent conversations.
+- **Provide visibility into how automation steps run during agent conversations**.
 
 You need to configure the agent based on the requirements.
 
@@ -4836,15 +4823,19 @@ Incorrect:
 [Not A] Publishing the agent makes the bot available to end-users on live channels. While it applies settings to production, publishing is a deployment step rather than a diagnostic or setup step used to confirm execution context or inspect granular automation steps while a builder is actively testing.
 
 
-### QUESTION 18 
+### QUESTION 18  💩💩💩💩
 
-A company configures an agent flow that interacts with multiple systems to complete user requests. The company must integrate external services, retrieve data, and notify users as part of the same automated flow run. To support this scenario, the agent flow must be able to do the following:
+A company configures an agent flow that interacts with multiple systems to complete user requests. 
 
-Call an external API.
+The company must integrate external services, retrieve data, and notify users as part of the same automated flow run. 
 
-Retrieve stored data from a supported internal data source.
+To support this scenario, the agent flow must be able to do the following:
 
-Send a Teams message.
+- Call an external API.
+
+- Retrieve stored data from a supported internal data source.
+
+- Send a Teams message.
 
 You need to select a connector or action type for each requirement.
 
@@ -4878,18 +4869,7 @@ Select and Place:
 | ----------------------------------------------------------- | ------------------------- |
 | Call an external API.                                       | Make an HTTPS request.    |
 | Retrieve stored data from a supported internal data source. | Add a standard connector. |
-| Send a Teams message.                                       | Add a standard connector. |
-
-未使用的选项： Trigger a notification.
-
-- Make an HTTPS request：直接向外部 API 发送 HTTP/HTTPS 请求，例如 GET、POST、PUT、DELETE。
-
-
-  Microsoft Learn+1
-
-- Add a standard connector：连接内部支持的数据源，例如 Dataverse、SharePoint，读取已存储的数据。
-
-- Add a standard connector：选择 Microsoft Teams connector，使用 `Post a message in a chat or channel` 等操作发送消息。
+| Send a Teams message.                                       | Trigger a notification. |
 
 
 考试记忆：
@@ -4898,7 +4878,7 @@ Select and Place:
 | ------------- | ------------------------- |
 | 调用外部 REST API | HTTPS Request             |
 | 查询内部数据        | Standard Connector        |
-| 发送 Teams 消息   | Standard Connector（Teams） |
+| 发送 Teams 消息   | Trigger a notification. |
 
 注意：本题允许重复使用选项，因此 Add a standard connector 使用两次。`Trigger a notification` 不是本题发送 Teams 消息所需的具体连接器配置。
 
@@ -4922,17 +4902,19 @@ You should add a standard connector. Standard and custom Power Platform connecto
 **Box 3: Trigger a notification**
 
 
-### QUESTION 19 
+### QUESTION 19  💩
 
-An agent in Copilot Studio must retrieve real-time data from an external system that exposes a REST API. The API returns structured JSON data and requires authentication.
+An agent in Copilot Studio must **retrieve real-time data from an external system that exposes a REST API.** 
 
-The agent must call the API during conversations to fulfill user requests.
+The API returns structured JSON data and requires authentication.
 
-The agent must retrieve real-time data from the external system by calling an authenticated REST API during a conversation.
+- The agent must call the API during conversations to fulfill user requests.
 
-The solution must use a supported mechanism that executes the REST API call and the call must be explicitly configured to run at runtime.
+- The agent must retrieve real-time data from the external system by calling an authenticated REST API during a conversation.
 
-You need to determine which approaches add the REST API to the agent.
+- The solution must use a supported mechanism that executes the REST API call and the call must be explicitly configured to run at runtime.
+
+**You need to determine which approaches add the REST API to the agent.**
 
 Which two solutions meet the goal? Each correct answer is a complete solution.
 
@@ -4966,7 +4948,7 @@ F. Create a global variable to store the API URL and call it using a Redirect no
 
 两种正确方案的区别
 
-A — HTTP Request Node
+**A — HTTP Request Node**
 
 适合在 Topic 中明确控制 API 调用流程，例如：
 
@@ -4982,7 +4964,7 @@ Parse JSON response
 Return result to user
 ```
 
-C — REST API Tool
+**C — REST API Tool**
 
 适合将 REST API 封装成 Agent 可复用的工具：
 
@@ -5032,15 +5014,15 @@ Depending on how your agent architecture is managed, you could also fulfill this
 * Power Automate Flows: You can invoke a Power Automate cloud flow from a topic, using the HTTP connector inside the flow to retrieve and pass back the JSON data.
 
 
-### QUESTION 20 
+### QUESTION 20 💩
 
 A company must enable an agent in Copilot Studio to execute operations exposed by an external MCP server.
 
-The MCP server publishes callable tools and requires authentication.
+**The MCP server publishes callable tools and requires authentication.**
 
 The agent must be able to invoke MCP tools during conversations.
 
-You need to configure MCP tools so the agent can execute MCP tool calls.
+**You need to configure MCP tools so the agent can execute MCP tool calls.**
 
 What should you do?
 
@@ -5070,8 +5052,8 @@ MCP Server 提供可调用的 Tools，并且要求身份验证。要让 Copilot 
 
 考试记忆：
 
-- MCP Tools → 执行操作。
-- MCP Connection Authentication → 确保工具调用通过身份验证。
+- **MCP Tools → 执行操作**。
+- **MCP Connection Authentication → 确保工具调用通过身份验证**。
 - Knowledge Source → 检索知识，而不是执行操作。
 
 注意：实际配置时，还需要将 MCP Server 添加到 Agent 的工具配置中，并选择允许调用的 MCP Tools。
@@ -5084,9 +5066,11 @@ Explanation:
 To best configure the Model Context Protocol (MCP) tools so the agent can successfully invoke operations, you should configure OAuth 2.0 authentication.
 
 
-### QUESTION 21 
+### QUESTION 21 💩💩💩
 
-DRAG DROP An agent in Copilot Studio must retrieve real-time data from an external system that exposes a REST API. The API returns structured JSON responses and requires authentication.
+An agent in Copilot Studio must retrieve real-time data from an external system that exposes a REST API.
+
+The API returns structured JSON responses and requires authentication.
 
 To meet the business needs, the solution must meet the following requirements:
 
@@ -5141,10 +5125,10 @@ NOTE: Each correct selection is worth one point.
 
 考试记忆：
 
-- Execute API → REST Action + Topic
+- **Execute API → REST Action + Topic**
 - Authentication → Authenticated Connection
 - Runtime response → Topic Variable
-- Indexed Knowledge Source → 检索知识，不执行 REST API 调用。
+- **Indexed Knowledge Source → 检索知识，不执行 REST API 调用**。
 
 
 Explanation:
@@ -5162,13 +5146,15 @@ You must establish an authenticated connection for the REST API in Copilot Studi
 You should store the API response in a variable, but you usually map specific JSON properties to individual variables rather than saving the entire raw JSON payload.
 
 
-### QUESTION 22 
+### QUESTION 22 💩💩💩
 
 A company is configuring generative answers for an agent in Copilot Studio agent.
 
 The agent must use Azure AI Search to retrieve enterprise content, and all responses must be generated by a Microsoft Foundry model.
 
-The agent sometimes generates answers that are not grounded in Azure AI Search content. The company requires that the agent only generate responses when relevant indexed content is retrieved.
+The agent sometimes generates answers that are not grounded in Azure AI Search content. 
+
+**The company requires that the agent only generate responses when relevant indexed content is retrieved.**
 
 You need to configure the agent so that its generative answer behavior meets the organization's requirements.
 
@@ -5237,7 +5223,7 @@ Enforces Grounding: Enabling the option to require grounding or disabling the ab
 Prevents Hallucinations: If Azure AI Search does not retrieve relevant document chunks for a specific user query, the agent will gracefully refuse to answer rather than fabricating a response based on pretrained model weights.
 
 
-### QUESTION 23 
+### QUESTION 23 💩
 
 A company wants to extend an agent in Copilot Studio by calling an external REST API to retrieve and update data.
 
@@ -5292,9 +5278,9 @@ Add Tool → Configure Endpoint → Configure Authentication → Test API
 
 
 
-### QUESTION 24 
+### QUESTION 24 💩
 
-A company needs an agent in Copilot Studio to complete tasks by interacting with a legacy desktop application that does NOT have APIs.
+A company needs an agent in Copilot Studio to complete tasks by interacting with a **legacy desktop application that does NOT have APIs.**
 
 To meet the business needs, the solution must meet the following requirements:
 
@@ -5306,7 +5292,7 @@ You need to configure the agent based on the requirements.
 
 Which setting should you configure for each requirement? To answer, move the appropriate settings to the correct requirements. You may use each setting once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
- Select and Place:
+Select and Place:
 
 **Settings (Options)**
 
@@ -5347,8 +5333,8 @@ Which setting should you configure for each requirement? To answer, move the app
 
 
 考试记忆：
-
-- UI automation → Computer Use
+<mark>
+- <mark>**UI automation → Computer Use**</mark>
 - Execution infrastructure → Platform-hosted environment
 - Execution visibility → Runtime Activity / Transcript
 
@@ -5371,7 +5357,7 @@ In Microsoft Copilot Studio, you should configure the agent to use a platform-ho
 **Box 3: Monitor run details in the agent runtime view.**
 
 
-### QUESTION 25 
+### QUESTION 25 💩💩
 
 
 A company is configuring an agent in Copilot Studio that uses a generative answers node inside multiple topics.
@@ -5405,7 +5391,7 @@ Correct Answer: B
 
 解析
 
-在 Custom Prompt 中添加指令，要求模型在运行时限制 Connector 访问，不能真正实施 Connector 的安全权限控制。
+<mark>**在 Custom Prompt 中添加指令，要求模型在运行时限制 Connector 访问，不能真正实施 Connector 的安全权限控制。**</mark>
 
 正确配置应该区分：
 
@@ -5416,7 +5402,7 @@ Correct Answer: B
 
 考试记忆：
 
-Prompt Instructions 控制模型生成内容和格式；不能替代平台级安全策略或访问控制。
+**Prompt Instructions 控制模型生成内容和格式；不能替代平台级安全策略或访问控制**。
 
 因此答案是 B. No。
 
@@ -5473,8 +5459,8 @@ B. No
 
 题目要求同时满足：
 
-- Executive Summary format：定义统一的输出格式。
-- Specific topic only：只影响指定 Topic。
+- **Executive Summary format：定义统一的输出格式**。
+- **Specific topic only：只影响指定 Topic**。
 - Continue using configured knowledge sources：继续使用原有知识检索配置。
 - Connector security：保留现有连接器的安全控制。
 
@@ -5485,39 +5471,13 @@ B. No
 
 考试记忆：
 
-- Format existing Generative Answers → Custom instructions
+- **Format existing Generative Answers → Custom instructions**
 - Topic-specific behavior → Configure the specific node
 - Preserve existing knowledge sources → Modify the existing Generative Answers node, not replace it with a separate Prompt Tool.
 
 因此答案是 B. No。
 
----
-
-？？？？
-
-
-Correct Answer: A Section: (none)
-
-Explanation/Reference:
-
-Explanation:
-
-Correct:
-
-* **Create a custom prompt tool in the specific topic that instructs the model to respond using an executive-summary structure.**
-
-To fulfill all the requirements in the best way, you must configure the custom instructions directly inside the specific Generative Answers node properties within that targeted topic.
-
-By default, editing custom instructions at the global agent level or the Conversational boosting system topic applies globally. To scope formatting changes to only one topic while keeping configured data sources and security intact, you must override the instructions at the node level.
-
-Incorrect:
-
-* Add instructions in the custom prompt tool to restrict connector access during runtime.
-
-* Configure the custom prompt tool at the topic level so that other topics are not affected.
-
-* Remove the generative answers node and rely only on the custom prompt to produce formatted responses.
-
+A custom prompt tool is a separate AI action and does not inherently use the knowledge sources configured on a generative answers node. Formatting instructions that must apply only to a particular topic while retaining the node’s configured knowledge sources should be configured as custom instructions on that topic’s generative answers node.
 
 ### QUESTION 27
 
@@ -5547,8 +5507,6 @@ B. No
 
 正确答案：B. No
 
-解析
-
 移除 Generative Answers Node，只依赖 Custom Prompt，无法满足继续使用已配置 Knowledge Sources 的要求。
 
 原因：
@@ -5560,7 +5518,8 @@ B. No
 
 正确做法
 
-保留原有 Generative Answers Node，在该节点的 Properties → Data source → Custom instructions 中添加：
+**保留原有 Generative Answers Node，在该节点的 Properties → Data source → Custom instructions 中添加**：
+
 
 ```
 Format the response as an executive summary.
@@ -5656,7 +5615,7 @@ Microsoft 文档明确说明，Custom Prompt 可以通过 Knowledge Object 接�
 因此选择 B. No。
 
 
-### QUESTION 29 
+### QUESTION 29 💩💩
 
 A company must enable an agent in Copilot Studio to execute operations exposed by an external MCP server.
 
@@ -5668,7 +5627,9 @@ You need to configure MCP tools so the agent can execute MCP tool calls.
 
 What should you do?
 
-A. Develop a custom connector and migrate the MCP server functionality to connector actions. B. Add the MCP server to the agent’s tool configuration.
+A. Develop a custom connector and migrate the MCP server functionality to connector actions. 
+
+B. Add the MCP server to the agent’s tool configuration.
 
 C. Add a Power Platform connector as real-time knowledge to replace MCP tools.
 
@@ -5690,7 +5651,7 @@ B. Add the MCP server to the agent’s tool configuration.
 
 为什么其他选项错误？
 
-- A：不需要把 MCP Server 重写成 Custom Connector。
+- **A：不需要把 MCP Server 重写成 Custom Connector**。
 - C：Real-time Knowledge 用于实时知识检索，不用于替代 MCP Tools。
 - D：Generative Answers 不会自动获得 MCP 工具调用能力。
 
@@ -5919,7 +5880,7 @@ Map the retrieved system results into structured output parameters back within t
 a simulated diagnostic execution to validate that data transfers correctly and errors are handled before deploying it to production.
 
 
-### QUESTION 33 
+### QUESTION 33 💩💩💩💩
 
 A company is integrating an agent in Copilot Studio into a custom application by using the Microsoft 365 Agents SDK.
 
@@ -6000,7 +5961,7 @@ Step 3: Implement the Microsoft 365 Agents SDK in the custom app by using the re
 Must occur after application implementation and before production deployment per requirement 2.
 
 
-### QUESTION 34 
+### QUESTION 34 💩💩💩💩💩
 
 A company is deploying an agent that uses generative responses. During pilot testing, some responses are blocked by responsible AI filtering. The company has Application Insights enabled.
 
@@ -6073,7 +6034,7 @@ A good action to take is to review conversation transcripts.
 Troubleshooting Blocked Responses Conversation transcripts: Inspecting the downloaded or logged session transcripts allows you to look at the exact turn, user message, or grounded data that caused the Responsible AI filter to trigger the block. Application Insights telemetry: Correlating the Conversation ID from the error with custom events or exceptions in Azure Application Insights helps verify the exact internal code (such as openAIndirectAttack or ContentFiltered).
 
 
-### QUESTION 35 
+### QUESTION 35 💩💩💩
 
 A company must enable an agent in Copilot Studio to execute operations exposed by an external MCP server.
 
