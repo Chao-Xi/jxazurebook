@@ -6345,7 +6345,7 @@ Specific Scope: The failures point directly to specific broken intents, missing 
 
 A team has an existing agent in Copilot Studio and must move it to a different target location without rebuilding the agent. 
 
-**Some builders use Copilot Studio in the web app, while others use Copilot Studio in Microsoft Team**s.
+**Some builders use Copilot Studio in the web app, while others use Copilot Studio in Microsoft Teams**.
 
 You need a supported approach to move the existing agent to the target location using ALM practices
 
@@ -6390,17 +6390,18 @@ Explanation:
 
 Using Power Platform Application Lifecycle Management (ALM) practices, creating a custom solution, packaging the existing agent (and its dependent objects), exporting it, and importing it into the target environment is the standard way to transport a Copilot Studio agent without rebuilding it.
 
-### QUESTION 6
+### QUESTION 6 💩
 
-You are setting up an evaluation for an agent in Copilot Studio before expanding access to more users.
+You are **setting up an evaluation for an agent in Copilot Studio before expanding access to more users**.
 
-You must configure the evaluation so that the agent is tested by using prepared interactions rather than impromptu conversations.
+You must configure the evaluation so that the **agent is tested by using prepared interactions rather than impromptu conversations.**
 
 The evaluation should provide the following functionality for users:
 
-An administrator updates a sensitive configuration value. The administrator requires the change to take effect at runtime without republishing the agent.
-
-A builder needs to confirm a configuration value but must not be able to modify it from Copilot Studio. An administrator updates a non-secret configuration value and requires the updated value to be used by the published agent at runtime.
+- An administrator updates a sensitive configuration value.
+- The administrator requires the change to take effect at runtime without republishing the agent.
+- A builder needs to confirm a configuration value but must not be able to modify it from Copilot Studio.
+- An administrator updates a non-secret configuration value and requires the updated value to be used by the published agent at runtime.
 
 You need to create a test set-based evaluation that supports consistent test runs for each scenario.
 
@@ -6414,8 +6415,8 @@ NOTE: Each correct selection is worth one point.
 | Scenario | Configuration |
 | :--- | :--- |
 | Update a sensitive configuration value and the change takes effect at runtime without republishing the agent. | [ 下拉选项框 ]<br>- Only in production<br>- Only after publishing<br>- Secret environment variable |
-| Confirm a configuration value but not modify it from Copilot Studio. | [ 下拉选项框 ]<br>- Publishing settings<br>- Conversation volume<br>- Managed environment variable |
-| Update a non-secret configuration value and the updated value needs to be used by the published agent at runtime. | [ 下拉选项框 ]<br>- String environment variable<br>- Live chat history<br>- Channel rollout status |
+| **Confirm a configuration value but not modify it** from Copilot Studio. | [ 下拉选项框 ]<br>- Publishing settings<br>- Conversation volume<br>- Managed environment variable |
+| Update a **non-secret configuration value** and the updated value needs to be used by the published agent at runtime. | [ 下拉选项框 ]<br>- String environment variable<br>- Live chat history<br>- Channel rollout status |
 
 ---
 
@@ -6431,13 +6432,14 @@ NOTE: Each correct selection is worth one point.
 解析
 
 1. Secret environment variable：用于存储敏感配置，例如 API Key、密码等。更新 Secret 值后，运行时可以读取新值，无须重新发布 Agent。
-2. Managed environment variable：Managed Solution 中的组件受到管理和保护，Builder 可以查看配置，但不能直接修改受管理的组件。
-3. String environment variable：用于非敏感文本配置。管理员更新环境变量的 Current Value 后，已发布的 Agent 可以在运行时使用更新后的值。
+2. **Managed environment variable：Managed Solution 中的组件受到管理和保护，Builder 可以查看配置，但不能直接修改受管理的组件**。
+3. String environment variable：用于非敏感文本配置。
+   * **管理员更新环境变量的 Current Value 后，已发布的 Agent 可以在运行时使用更新后的值**。
 
 考试记忆：
 
 - 敏感配置 → Secret environment variable
-- 只允许查看、不允许修改 → Managed environment variable
+- **只允许查看、不允许修改 → Managed environment variable**
 - 非敏感文本配置 → String environment variable
 
 
@@ -6450,7 +6452,7 @@ Explanation:
 
 **Box 1: Secret environment variable** 
 
-The correct configuration for updating a sensitive configuration value at runtime without having to republish the agent is a Secret environment variable.
+**The correct configuration for updating a sensitive configuration value at runtime without having to republish the agent is a Secret environment variable.**
 
 Secret environment variables: Securely store secrets (like passwords, keys, or API tokens) within the environment and reference them directly inside the agent. These can be updated dynamically at runtime without needing to republish the bot, as they are evaluated in real-time.
 
@@ -6464,20 +6466,21 @@ A managed environment variable is the specific configuration needed. It enables 
 
 **Box 3: String environment variable** 
 
-The specific configuration that allows an administrator to update a non-secret configuration value and requires the updated value to be used by the published agent at runtime is a string environment variable.
+**The specific configuration that allows an administrator to update a non-secret configuration value and requires the updated value to be used by the published agent at runtime is a string environment variable**.
 
 In Microsoft Copilot Studio, environment variables are used to manage configuration values dynamically. When an administrator updates a non-secret string environment variable, the change takes effect at runtime without requiring the agent to be rebuilt or modified in the authoring canvas.
 
 
-### QUESTION 7 
+### QUESTION 7 💩
 
 A team is preparing to evaluate an agent in Copilot Studio before expanding access to additional users.
 
 The team must select an evaluation method that meets the following requirements:
 
-* Use a fixed set of prepared interactions.
-* Determine responses against a predefined baseline. Support consistent comparison across repeated test runs.
-* You need to determine the evaluation method that satisfies the evaluation requirements.
+* **Use a fixed set of prepared interactions**.
+* Determine responses against a predefined baseline.
+* Support consistent comparison across repeated test runs.
+* **You need to determine the evaluation method that satisfies the evaluation requirements.**
 
 Which evaluation method should you select for each requirement? To answer, select the appropriate option in the answer area.
 
@@ -6505,8 +6508,8 @@ Hot Area:
 | Requirement                                     | Evaluation method                             |
 | ----------------------------------------------- | --------------------------------------------- |
 | Use a fixed set of prepared interactions.       | Use a curated prompt list.                    |
-| Establish a baseline for determining responses. | Compare against predefined expected outcomes. |
-| Support repeatable comparisons across runs.     | Use a consistent scoring evaluation matrix.   |
+| Establish a baseline for determining responses. | **Compare against predefined expected outcomes**. |
+| Support repeatable comparisons across runs.     | **Use a consistent scoring evaluation matrix.**   |
 
 解析
 
@@ -6517,8 +6520,8 @@ Hot Area:
 考试记忆：
 
 - 固定测试输入 → Curated prompt list
-- 预期结果基准 → Predefined expected outcomes
-- 多次运行可比较 → Consistent scoring matrix
+- <mark>**预期结果基准 → Predefined expected outcomes**</mark>
+- <mark>**多次运行可比较 → Consistent scoring matrix**</mark>
 
 
 Explanation/Reference:
@@ -6527,13 +6530,13 @@ Explanation:
 
 **Box 1: Use a curated prompt list.**
 
-The best evaluation method for this requirement is to use a curated prompt list.
+> The best evaluation method for this requirement is to use a curated prompt list.
 
 Using a curated prompt list allows you to test the agent against a fixed, predefined set of prepared interactions. This method ensures consistency, as you can run the exact same test inputs before and after making updates to measure improvements or regressions accurately. Copilot Studio supports automated testing and evaluation precisely through these types of structured test datasets.
 
 **Box 2: Compare against predefined expected outcomes.**
 
-To determine an agent's responses against a predefined baseline before expanding access, the best evaluation method is to compare against predefined expected outcomes.
+> To determine an agent's responses against a predefined baseline before expanding access, the best evaluation method is to compare against predefined expected outcomes.
 
 Structured & Repeatable Validation: By configuring an evaluation set of conversations with exact or partial expected outcomes, you eliminate guesswork.
 
@@ -6541,7 +6544,7 @@ Targeted Graders: You can utilize different graders in the Copilot Studio Evalua
 
 **Box 3: Use a consistent scoring evaluation matrix** 
 
-The best evaluation method to satisfy these requirements is to use a consistent scoring evaluation matrix via the built-in Agent Evaluation tool.
+> The best evaluation method to satisfy these requirements is to use a consistent scoring evaluation matrix via the built-in Agent Evaluation tool.
 
 This method satisfies the need for repeated, reliable, and standardized comparisons across multiple testing cycles:
 
@@ -6555,9 +6558,11 @@ Consistent Baselines: Every evaluation run generates a versioned, auditable scor
 
 A solution containing an agent in Copilot Studio is moved across environments. The agent relies on configuration values that are different between environments and are managed as environment variables.
 
-You must ensure the following: Configuration values are managed through environment variables that supports ALM. Runtime behavior reflects updates to environment variable values.
+You must ensure the following: Configuration values are managed through environment variables that supports ALM.
 
-You need to implement environment-variable usage that supports ALM and ensures correct runtime behavior.
+**Runtime behavior reflects updates to environment variable values.**
+
+**You need to implement environment-variable usage that supports ALM and ensures correct runtime behavior.**
 
 Which three actions should you perform? Each correct answer presents part of the solution.
 
@@ -6585,16 +6590,16 @@ Option	判断	解析
 
 * A	错误	硬编码会破坏环境变量的 ALM 和跨环境配置能力。
 * B	错误	Builder 不应直接在 Copilot Studio 中修改环境变量，应通过管理界面维护。
-* C	正确	在 Copilot Studio 中将环境变量作为只读配置使用，由管理员在适当的管理界面修改。
-* D	正确	将外部引用值存储为环境变量，使同一 Agent Solution 能够部署到不同环境。
+* <mark>**C	正确	在 Copilot Studio 中将环境变量作为只读配置使用，由管理员在适当的管理界面修改**<mark>。
+* <mark>**D	正确	将外部引用值存储为环境变量，使同一 Agent Solution 能够部署到不同环境**<mark>。
 * E	错误	不能假设所有类型的环境变量更新都会立即生效。
-* F	正确	非 Secret 环境变量更新后，需要重新发布使用该变量的 Agent，确保发布版本采用更新后的值。
+* <mark>**F	正确	非 Secret 环境变量更新后，需要重新发布使用该变量的 Agent，确保发布版本采用更新后的值**<mark>。
 
 考试记忆：
 
-- ALM 跨环境配置 → Environment variables
-- 环境变量管理 → Copilot Studio 中只读，管理员维护
-- 非 Secret 变量更新 → Republish agent
+- **ALM 跨环境配置 → Environment variables**
+- **环境变量管理 → Copilot Studio 中只读，管理员维护**
+- **非 Secret 变量更新 → Republish agent**
 - 不要假设所有变量更新都能立即生效。
 
 
@@ -6626,19 +6631,19 @@ An organization uses separate development and production environments for agents
 
 The agent must be deployed to production by using an ALM process.
 
-* You must configure the solution strategy to meet the following requirements:
+You must configure the solution strategy to meet the following requirements:
 
 * Developers continue modifying the agent in development.
 
 * The production deployment prevents direct modification.
 
-The agent is exported from development and imported into production in a deployment-ready state. You need to configure solutions to support deployment and lifecycle management of the agents.
+* The agent is exported from development and imported into production in a deployment-ready state.
+
+You need to configure solutions to support deployment and lifecycle management of the agents.
 
 Which solution type should you use for each requirement? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
-
-
 
 
 Hot Area:
@@ -6669,8 +6674,8 @@ Hot Area:
 考试记忆：
 
 - Development → Unmanaged
-- Production → Managed
-- ALM 部署 → Export Managed → Import Production
+- **Production → Managed**
+- **ALM 部署 → Export Managed → Import Production**
 
 
 
@@ -6694,13 +6699,15 @@ In Power Platform and Copilot Studio Application Lifecycle Management (ALM), a m
 
 
 
-### QUESTION 10 
+### QUESTION 10  💩💩💩💩💩
 
 A team is standardizing ALM for agents in Copilot Studio.
 
-The team requires a custom solution that includes agents. The solution must support ALM scenarios, such as managing and transporting agent assets across environments and pipeline deployments.
+The team requires a custom solution that includes agents. 
 
-You need to create an ALM-ready custom solution in Copilot Studio.
+**The solution must support ALM scenarios, such as managing and transporting agent assets across environments and pipeline deployment**s.
+
+You need to create an **ALM-ready custom solution in Copilot Studio**.
 
 What should you do? 
 
@@ -6721,7 +6728,7 @@ B. Create a new custom solution from the Solutions area.
 
 解析
 
-- B 正确：在 Power Platform 的 Solutions 区域创建 Custom Solution，再将 Copilot Studio Agent 添加到其中，作为 ALM 管理和跨环境部署的容器。
+- B 正确：**在 Power Platform 的 Solutions 区域创建 Custom Solution，再将 Copilot Studio Agent 添加到其中，作为 ALM 管理和跨环境部署的容器。**
 - A 错误：Channel 用于发布和访问 Agent，不是 ALM 容器。
 - C 错误：导出 Managed Solution 是部署阶段的操作，不是创建 ALM-ready Solution 的第一步。
 - D 错误：不应绕过 Solution 直接导出 Agent；Solution 支持依赖管理、版本控制和 Pipeline 部署。
@@ -6802,7 +6809,7 @@ Select and Place:
 
 1. Recurring issue：同一交互连续三次失败，且分数稳定在 0.58–0.61，说明这是重复出现的问题。
 2. Response quality：Reasoning 明确指出响应与预期答案部分匹配，因此可以判断响应质量存在一定程度的匹配，但未达到通过标准。
-3. Evaluation limitations：可以确认 Agent 使用了内部文档知识源，且没有调用工具；但这些信息不足以确定失败的具体根因。
+3. <mark>Evaluation limitations：可以确认 Agent 使用了内部文档知识源，且没有调用工具；但这些信息不足以确定失败的具体根因<mark>。
 
 考试记忆： 重复失败可以确认问题具有持续性；部分匹配可以说明响应质量；使用了某个知识源不等于该知识源就是失败根因。
 
@@ -6838,7 +6845,7 @@ Because no tools are invoked, the agent heavily relies on generative search (ret
 In contrast, specific underlying causes require explicit tool invocations or system error logs to diagnose, which are not present here.
 
 
-### QUESTION 12
+### QUESTION 12 💩💩💩
 
 A team wants to automate solution deployment between environments. Deployments must follow a controlled, repeatable process.
 
@@ -6886,7 +6893,7 @@ Select and Place:
 3. Trigger a pipeline run：启动部署流程，按照 Stage 顺序执行部署。
 4. Review deployment results：检查部署状态、结果及可能出现的错误。
 
-考试记忆： Enable → Assign → Trigger → Review。
+**考试记忆： Enable → Assign → Trigger → Review。**
 
 
 ----
@@ -6921,8 +6928,8 @@ A company needs an agent in Copilot Studio to complete tasks by interacting with
 
 To meet the business needs, the solution must meet the following requirements:
 
-- Enable the agent to perform UI automation against the legacy application.
-- Inspect execution details for the automation during conversations.
+- **Enable the agent to perform UI automation** against the legacy application.
+- **Inspect execution details for the automation during conversations**.
 
 You need to configure the agent based on the requirements.
 
@@ -6960,36 +6967,15 @@ NOTE: Each correct selection is worth one point.
 微软文档说明，Computer use 支持没有 API 的桌面应用；测试体验会显示逐步执行日志和机器操作预览。正式运行后，还可以通过 Activity 和 Transcript 查看执行记录及截图。
 
 
-考试记忆： Legacy desktop app without API → Computer use；测试执行过程 → Testing experience / remote session。
+考试记忆： 
 
------
+- **Legacy desktop app without API → Computer use**；
+- **测试执行过程 → Testing experience / remote session**。
 
-???????
+Computer use enables a Copilot Studio agent to interact with desktop applications through the graphical interface, including systems that have no API. 
 
 
-Explanation/Reference:
-
-Explanation:
-
-**[B] Add a Power Platform Desktop flow to control the desktop app**
-
-Power Automate for Desktop is Microsoft's dedicated Robotic Process Automation (RPA) solution designed specifically to automate legacy desktop applications without APIs.
-
-Fulfills Requirement 1 (UI Automation): You can easily trigger these desktop flows directly from a Copilot Studio agent as an action. The flow runs in either attended or unattended mode within a supported Windows execution context.
-
-Fulfills Requirement 2 (Inspect Execution): Power Automate provides a visual designer and detailed run logs. When testing your agent conversations, you can inspect the exact desktop flow execution logs, variable inputs/outputs, and step-by-step actions to see how the automation behaves.
-
-[E] Direct UI Automation without APIs: 
-
-The query specifically states that the legacy desktop application does not use APIs. The Computer use capability (powered by Computer-Using Agents or CUAs) is designed exactly for this scenario. It allows the AI agent to interact directly with graphical user interfaces (GUIs) by visually interpreting screens, clicking buttons, and entering text just like a human operator.
-
-Incorrect:
-
-[Not A] Custom Connectors require a target application to expose standard APIs (like REST). Since the legacy desktop application does not use APIs, a custom connector cannot interact with it directly.
-
-[Not C] You cannot access a live remote session directly within the testing pane to monitor real-time desktop interactions.
-
-[Not D] Publishing is a final deployment step. You should not publish an untested agent to production simply to validate its behavior; testing and inspection should always happen in the authoring environment before publication.
+Its test experience presents a step-by-step action log and a live preview of activity on the configured machine, allowing execution to be inspected during testing.
 
 
 ### QUESTION 14
@@ -7002,10 +6988,11 @@ A development team is reusing agents in Copilot Studio across development, test,
 
 You need to configure the agents based on the business requirements.
 
-Which configurations should you use for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+Which configurations should you use for each requirement? 
 
 
-以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
+To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
+
 
 Select and Place:
 
@@ -7032,7 +7019,7 @@ Select and Place:
 
 | Requirement                                                                 | Configuration                                        |
 | --------------------------------------------------------------------------- | ---------------------------------------------------- |
-| Share authored topics and prompts across environments.                      | Export as a component collection.                    |
+| **Share authored topics and prompts across environments.**                      | Export as a component collection.                    |
 | Move environment-specific configurations including connections and secrets. | Use connection references and environment variables. |
 | Automate multi-stage deployments with approvals.                            | Use an ALM pipeline.                                 |
 
@@ -7041,7 +7028,7 @@ Select and Place:
 1. Component collection：将 Topics、Knowledge、Actions 等可复用 Agent 组件组织起来，并通过 Solution 导出和导入到其他环境，支持组件复用和 ALM。
 
 
-2. Connection references + Environment variables：Connection references 管理连接配置；Environment variables 管理不同环境的 URL、密钥等配置，避免硬编码。
+2. **Connection references + Environment variables：Connection references 管理连接配置**；Environment variables 管理不同环境的 URL、密钥等配置，避免硬编码。
 
 
 3. ALM pipeline：使用 Power Platform Pipelines 管理 Dev、Test、Production 等阶段，并支持受控部署和审批。
@@ -7073,7 +7060,7 @@ In Microsoft Copilot Studio, Component Collections act as shared containers that
 Power Platform pipelines natively support gated approval extensions. You can implement multi-stage approval workflows that halt a deployment request until your required business rules, automated validation, or stakeholders authorize the promotion to the next stage.
 
 
-### **QUESTION 15**
+### **QUESTION 15** 💩💩💩
 
 An agent calls a flow that intermittently produces unexpected results during execution. The agent behaves inconsistently.
 
@@ -7106,9 +7093,11 @@ F. Increase the connector timeout.
 要诊断智能体流（Agent Flow）间歇性产生的意外结果，关键在于捕获并检查**具体失败那次运行的详细数据**，而不是只看整体趋势。
 
 **A. Inspect failed run details（检查失败运行的详细信息）**
+
 这是定位间歇性问题的核心手段。通过“运行历史”或“活动”视图，选择**特定的某一次失败运行**，可以查看该次执行中**每个动作的精确输入（Inputs）、输出（Outputs）和错误信息**。间歇性问题往往源于某次运行时传入的变量值异常、连接器超时或API返回了非预期结构，只有深入到单次运行的步骤级别，才能找到根本原因。
 
 **C. Check the Error column in the Activity tab（检查“活动”选项卡中的“错误”列）**
+
 “活动”选项卡（Activity tab）记录了流的历史运行列表，包括状态、耗时等关键信息。其中的“错误”列能帮助你**快速筛选出失败的运行**，定位问题发生的时间点，进而结合选项A进行深入排查。
 
 为什么不选其他选项
