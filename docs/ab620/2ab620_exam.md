@@ -6087,7 +6087,9 @@ To best configure the Model Context Protocol (MCP) tools so the agent can succes
 
 A team is developing an agent in Copilot Studio and wants to evaluate its behavior before expanding access.
 
-The team needs a repeatable, consistent method to test the agent using predefined interactions. You need to ensure that agent responses can be evaluated consistently across **multiple test runs.** 
+**The team needs a repeatable, consistent method to test the agent using predefined interactions**. 
+
+You need to ensure that agent responses can be evaluated consistently across **multiple test runs.** 
 
 
 What should you do?
@@ -6112,7 +6114,7 @@ C. Define test sets of prompts and expectations.
 
 解析：
 
-- C 正确：预先定义测试集（Test sets），包含固定的测试 Prompt 和预期结果，可以在多次测试运行中使用相同标准评估 Agent 的响应，确保结果可重复、可比较。
+- <mark>C 正确：预先定义测试集（Test sets），包含固定的测试 Prompt 和预期结果，可以在多次测试运行中使用相同标准评估 Agent 的响应，确保结果可重复、可比较</mark>。
 - A 错误：生产环境历史评分不能替代预先定义的测试。
 - B 错误：Telemetry 用于监控运行情况，不是标准化测试方法。
 - D 错误：定性评估缺乏一致的衡量标准。
@@ -6121,7 +6123,6 @@ C. Define test sets of prompts and expectations.
 考试记忆： 可重复的 Agent 评估 → Test sets + predefined prompts and expected outcomes。
 
 ----
-
 
 **Correct Answer: C**
 
@@ -6134,7 +6135,7 @@ Microsoft Copilot Studio includes a built-in feature specifically designed for t
 
 ### QUESTION 2
 
- A company builds agents in Copilot Studio in a development environment.
+A company builds agents in Copilot Studio in a development environment.
 
 The agents are packaged inside a solution and deployed by using Power Platform Pipelines to test and production environments.
 
@@ -6153,10 +6154,6 @@ What should you configure? To answer, move the appropriate configurations to the
 NOTE: Each correct selection is worth one point.
 
 Select and Place
-
-
-以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
-
 Select and Place:
 
 **Configurations (Options)**
@@ -6217,7 +6214,7 @@ To deploy the exact same solution across all environments without modifying its 
 
 In Microsoft Power Platform, deploying a solution as managed locks down the components in the target environment. Users cannot make direct edits or modifications to the agents or other components in that production environment, ensuring stability, security, and strict application lifecycle management (ALM).
 
-### QUESTION 3 
+### QUESTION 3  💩
 
 You run multiple evaluation tests for an agent in Copilot Studio before expanding user access.
 
@@ -6257,7 +6254,7 @@ Evaluation interpretation
 解析
 
 1. Pass or fail status：根据实际响应是否符合预期响应，判断测试用例通过或失败。
-2. Consistent outcomes：多次运行中同一测试用例反复失败，说明结果具有一致性，可能存在持续性问题，而非偶发错误。
+2. Consistent outcomes：**多次运行中同一测试用例反复失败，说明结果具有一致性，可能存在持续性问题，而非偶发错误**。
 3. Expected and generated responses：每次运行展示预期响应和 Agent 实际生成的响应，便于进行对比分析。
 
 考试记忆：
@@ -6289,7 +6286,7 @@ From the multiple evaluation tests in Microsoft Copilot Studio, the primary conc
 This specific test output allows you to directly assess the alignment between what the AI was anticipated to say (the expected response) and what it actually produced (the generated response). By contrasting these, you can analyze semantic similarity, intent, and overall quality.
 
 
-### QUESTION 4 
+### QUESTION 4  💩
 
 An agent in Copilot Studio is evaluated using a fixed test set and an automated evaluation method.
 
@@ -6344,11 +6341,15 @@ Specific Scope: The failures point directly to specific broken intents, missing 
 
 
 
-### QUESTION 5 
+### QUESTION 5 💩 
 
-A team has an existing agent in Copilot Studio and must move it to a different target location without rebuilding the agent. Some builders use Copilot Studio in the web app, while others use Copilot Studio in Microsoft Teams.
+A team has an existing agent in Copilot Studio and must move it to a different target location without rebuilding the agent. 
 
-You need a supported approach to move the existing agent to the target location using ALM practices. The solution must avoid rebuilding the agent.
+**Some builders use Copilot Studio in the web app, while others use Copilot Studio in Microsoft Team**s.
+
+You need a supported approach to move the existing agent to the target location using ALM practices
+
+The solution must avoid rebuilding the agent.
 
 You need to move the existing agent to the target location using a supported method. What should you do?
 
