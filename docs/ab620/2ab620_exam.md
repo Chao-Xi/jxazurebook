@@ -7122,25 +7122,25 @@ Selecting a specific failed run from the history allows you to view the exact in
 [C] Checking the Activity tab in Microsoft Copilot Studio is a critical diagnostic step. It lets you trace exact interactions, see the decisions the AI made, and check for specific error details to determine why the flow execution failed or behaved inconsistently.
 
 
-### QUESTION 16
+### QUESTION 16  💩💩💩
 
-You create a test set in Copilot Studio to evaluate an agent that answers policy questions and retrieves data from connected knowledge sources.
+You create a test set in Copilot Studio to **evaluate an agent that answers policy questions and retrieves data from connected knowledge sources**.
 
 You run the evaluation and review the following result for one test case:
 
-Expected response: Digital products are non-refundable after download. 
+- Expected response: Digital products are non-refundable after download. 
 
-Actual response: Digital products cannot be refunded once downloaded. 
+- Actual response: Digital products cannot be refunded once downloaded. 
 
-Result: Pass Score: 0.92 
+- Result: Pass Score: 0.92 
 
-Reasoning: The actual response semantically matches the expected response. 
+- Reasoning: The actual response semantically matches the expected response. 
 
-Knowledge sources used: RefundPolicy_KB 
+- Knowledge sources used: RefundPolicy_KB 
 
-Tools invoked: None
+- Tools invoked: None
 
-You need to determine whether additional corrective action is required based on the evaluation results.
+**You need to determine whether additional corrective action is required based on the evaluation results.**
 
 Which two actions should you perform? Each correct answer presents a complete solution.
 
@@ -7148,7 +7148,9 @@ NOTE: Each correct selection is worth one point.
 
 A. Investigate external tool configuration for this test case.
 
-B. Rerun the evaluation because the score is below 1.00. C. Accept the result because semantic matching is sufficient for a passing evaluation.
+B. Rerun the evaluation because the score is below 1.00. 
+
+C. Accept the result because semantic matching is sufficient for a passing evaluation.
 
 D. Confirm that the connected knowledge source is functioning as expected.
 
@@ -7162,10 +7164,10 @@ E. Modify the test case because the response is not an exact match.
 
 | Option | Action                                                                              | Explanation                                                 |
 | ------ | ----------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| C      | Accept the result because semantic matching is sufficient for a passing evaluation. | 预期和实际响应虽然措辞不同，但语义一致，且评估结果为 Pass，分数为 0.92，无须为了追求 1.00 而重复测试。 |
-| D      | Confirm that the connected knowledge source is functioning as expected.             | 结果显示使用了 `RefundPolicy_KB`，应确认 Agent 正确检索并使用了预期的知识源。         |
+| C      | **Accept the result because semantic matching is sufficient for a passing evaluation**. | 预期和实际响应虽然措辞不同，但语义一致，且评估结果为 Pass，分数为 0.92，无须为了追求 1.00 而重复测试。 |
+| D      | **Confirm that the connected knowledge source is functioning as expected**.             | 结果显示使用了 `RefundPolicy_KB`，应确认 Agent 正确检索并使用了预期的知识源。         |
 
-]其他选项
+其他选项
 
 - A 错误：没有调用任何工具（Tools invoked: None），无需调查外部工具配置。
 - B 错误：评分不是必须达到 1.00，0.92 且语义匹配已经通过。
@@ -7173,9 +7175,9 @@ E. Modify the test case because the response is not an exact match.
 
 考试记忆：
 
-- Semantic match + Pass → Accept result.
+- **Semantic match + Pass → Accept result.**
 - Knowledge source used → Verify knowledge source.
-- No tools invoked → 不需要调查工具配置。
+- **No tools invoked → 不需要调查工具配置**。
 
 
 ### QUESTION 17 
@@ -7231,14 +7233,16 @@ Hot Area:
 2. **Identify missing connection references or environment variables before deployment.（在部署过程开始前识别缺失的连接引用或环境变量。）**
 
 
-   * **正确选项：** `Deployment input validation`（部署输入验证）
-   * **解析：** 在部署解决方案时，往往需要在目标环境中提供新的连接引用或环境变量值。"Deployment input validation" 是管道的一项内置检查机制，它会在实际执行部署之前进行预检，确保所有必需的配置项都已提供，从而防止因缺少凭据或配置而导致部署中途失败。
+   * <mark>**正确选项：** `Deployment input validation`（部署输入验证）</mark>
+   * **解析：** 在部署解决方案时，往往需要在目标环境中提供新的连接引用或环境变量值。
+   * "Deployment input validation" 是管道的一项内置检查机制，它会在实际执行部署之前进行预检，确保所有必需的配置项都已提供，从而防止因缺少凭据或配置而导致部署中途失败。
 
-3. **Manage all pipeline stages and security from a single, unified location for linked environments.（从单一的统一位置管理所有链接环境的管道阶段和安全。）**
+3. **Manage all pipeline stages and security from a single, unified location for linked environments.（<mark>从单一的统一位置管理所有链接环境的管道阶段和安全。</mark>）**
 
 
    * **正确选项：** `Centralized pipeline configuration`（集中式管道配置）
-   * **解析：** 在 Power Platform 管理中心（PPAC）中，管理员可以集中配置和管理所有管道。通过集中式配置，你可以在此统一位置控制环境分配、阶段设置以及用户/团队的部署安全权限，而不需要分别登录每个目标环境去进行配置。
+   * **解析：** 在 Power Platform 管理中心（PPAC）中，管理员可以集中配置和管理所有管道。
+   * 通过集中式配置，你可以在此统一位置控制环境分配、阶段设置以及用户/团队的部署安全权限，而不需要分别登录每个目标环境去进行配置。
 
    
 ---
@@ -7279,11 +7283,10 @@ A team is preparing a test set to evaluate an agent in Copilot Studio before exp
 
 The test set must support consistent evaluation across repeated runs and focus on the agent's most important behaviors.
 
-You need to create a test set that enables repeatable and meaningful evaluation.
+**You need to create a test set that enables repeatable and meaningful evaluation.**
 
 In which order should you perform the actions? To answer, move all actions from the list of actions to the answer area and arrange them in the correct order.
 
-以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
 
 Select and Place:
 
@@ -7317,12 +7320,12 @@ Select and Place:
 
 解析
 
-1. Identify intents：先确定 Agent 最重要、必须正确处理的业务意图。
+1. **Identify intents：先确定 Agent 最重要、必须正确处理的业务意图**。
 2. Author prompts：针对每个意图编写有代表性的用户测试问题。
-3. Define expected outcomes：为每个测试问题定义预期响应及成功标准。
+3. **Define expected outcomes：为每个测试问题定义预期响应及成功标准**。
 4. Baseline the test set：建立基准测试集，确保多次运行时使用相同的测试输入和评估标准。
 
-考试记忆： Identify Intents → Create Prompts → Define Expected Outcomes → Baseline Test Set。
+考试记忆： **Identify Intents → Create Prompts → Define Expected Outcomes → Baseline Test Set**。
 
 
 ---
@@ -7356,21 +7359,21 @@ Lock in your test cases and expected outputs to measure future changes accuratel
 
 
 
-### QUESTION 19 
+### QUESTION 19  💩💩💩
 
 A team is preparing to assess an agent in Copilot Studio before expanding access to additional users.
 
-The team requires an evaluation that provides controlled, repeatable, and consistently measured test runs.
+**The team requires an evaluation that provides controlled, repeatable, and consistently measured test runs.**
 
 The evaluation must:
 
-Be triggered directly by the team to control when testing occurs.
+- Be triggered directly by the team to control when testing occurs.
 
-Determine success based on clearly established acceptance criteria.
+- Determine success based on clearly established acceptance criteria.
 
-Rely on a predefined source that ensures consistency across repeated runs.
+- Rely on a predefined source that ensures consistency across repeated runs.
 
-You need to configure the evaluation to meet the requirements.
+- You need to configure the evaluation to meet the requirements.
 
 What should you configure? To answer, move the appropriate configurations to the correct evaluation requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
@@ -7441,7 +7444,7 @@ Comparing generated responses against defined expectations is exactly how you es
 
 Using a curated prompt list—known as an evaluation test set—is exactly how you ensure consistency. It removes subjective, one-off testing and establishes a structured framework for measuring response quality.
 
-### QUESTION 20 
+### QUESTION 20 - Duplicated Question
 
 You run multiple evaluation tests for an agent in Copilot Studio before expanding user access. 
 
@@ -7523,7 +7526,7 @@ Expected and generated responses: The evaluation results explicitly show a side-
 This allows you to conclude exactly how well the agent's outputs align with your test cases.
 
 
-### QUESTION 21
+### QUESTION 21 💩💩💩
 
 A company uses an agent in Copilot Studio in production and requires centralized monitoring for operational visibility and troubleshooting. The team decides to use Application Insights as the monitoring solution.
 
@@ -7605,7 +7608,7 @@ Toggle the monitoring feature to "On" within the agent's configuration panel.
 
  takes effect Changes do not apply to production until the agent is published. Publishing pushes the telemetry setup to the live environment.
 
-### QUESTION 22 
+### QUESTION 22  💩
 
 A team is implementing ALM for agents in Copilot Studio across multiple environments.
 
@@ -7642,29 +7645,8 @@ This enables consistent management and transportation of agent assets across env
 Exam tip: Remember: Custom Solution = Export + Import + ALM across environments.
 
 
----
+> Custom Power Platform solutions provide the ALM mechanism for Copilot Studio agents. An agent can be added to a custom solution, which can then be exported and imported into another environment to manage and transport the agent and its included components.
 
-?????
-
-Correct Answer: B
-
-Explanation/Reference:
-
-Explanation:
-
-Correct:
-
-* Builders can change environment variable values directly in Copilot Studio to complete ALM configuration without administrative tools.
-
-builders can change environment variable values directly during the solution import process to complete Application Lifecycle Management (ALM) configurations.
-
-Native ALM in Copilot StudioMicrosoft Copilot Studio embeds native solution management capabilities directly within the app authoring environment. This design minimizes the reliance on standalone administrative portals or complex external tools for standard deployment tasks.
-
-The Import Process: When you transport your agent by importing its containing solution into a target downstream environment (such as Test or Production), Copilot Studio prompts you for environmentspecific parameters.
-
-Modifying Values: Builders can update the "current value" of environment variables right inside the import wizard panel. Alternatively, you can let them fall back to pre-defined default parameters.
-
-Supported Scenarios: This inline editing mechanism is commonly used to dynamically update variables tied to external resources, such as changing SharePoint URLs or public website links used for generative AI knowledge grounding between sandbox and live states.
 
 Incorrect: 
 
@@ -7672,11 +7654,9 @@ Incorrect:
 
 * Publishing an agent to a channel is not the required or correct ALM container for transporting agents between environments.
 
-* To export, import, and manage agents between environments, you need to create and use a custom solution.
 
 
-
-### QUESTION 23
+### QUESTION 23 💩
 
 A team is implementing ALM for agents in Copilot Studio across multiple environments.
 
@@ -7699,7 +7679,9 @@ B. No
 
 Explanation:
 
-Publishing an agent to a channel (such as Teams or a website) makes the agent available to users. It is not an ALM container for transporting agents between environments.
+Publishing an agent to a channel (such as Teams or a website) makes the agent available to users. 
+
+<mark>**It is not an ALM container for transporting agents between environments.**<mark>*
 
 For Copilot Studio ALM, use Power Platform Solutions:
 
@@ -7748,7 +7730,7 @@ Incorrect:
 
 
 
-### QUESTION 24 
+### QUESTION 24 💩
 
 A team is implementing ALM for agents in Copilot Studio across multiple environments.
 
@@ -7771,12 +7753,14 @@ Correct answer: B. No
 
 Explanation:
 
-Environment variables in Copilot Studio are read-only. Agent builders cannot directly modify their values in Copilot Studio.
+**Environment variables in Copilot Studio are read-only**. 
+
+**Agent builders cannot directly modify their values in Copilot Studio.**
 
 To configure environment variables for ALM:
 
 1. Create environment variables in a Power Platform solution.
-2. Export and import the solution across Dev, Test, and Production.
+2. **Export and import the solution across Dev, Test, and Production.**
 3. Administrators update environment variable values in Power Apps.
 4. Republish the agent for changes to take effect (except secret-type variables, which are retrieved at runtime).
 
@@ -7791,37 +7775,6 @@ Exam tip:
 - Solutions: Package and transport assets across environments.
 
 
----
-
-????
-
-
-**Correct Answer: A**
-
-Explanation/Reference:
-
-Explanation:
-
-Correct:
-
-* Builders can change environment variable values directly in Copilot Studio to complete ALM configuration without administrative tools.
-
-builders can change environment variable values directly during the solution import process to complete Application Lifecycle Management (ALM) configurations.
-
-Native ALM in Copilot StudioMicrosoft Copilot Studio embeds native solution management capabilities directly within the app authoring environment. This design minimizes the reliance on standalone administrative portals or complex external tools for standard deployment tasks.
-
-The Import Process: When you transport your agent by importing its containing solution into a target downstream environment (such as Test or Production), Copilot Studio prompts you for environmentspecific parameters.
-
-Modifying Values: Builders can update the "current value" of environment variables right inside the import wizard panel. Alternatively, you can let them fall back to pre-defined default parameters.
-
-Supported Scenarios: This inline editing mechanism is commonly used to dynamically update variables tied to external resources, such as changing SharePoint URLs or public website links used for generative AI knowledge grounding between sandbox and live states.
-
-Incorrect:
-
- * Publishing an agent to a channel is the required ALM container for transporting agents between environments.
- * Publishing an agent to a channel is not the required or correct ALM container for transporting agents between environments.
- * To export, import, and manage agents between environments, you need to create and use a custom solution.
-
  
 ###  QUESTION 25 
  
@@ -7831,7 +7784,7 @@ Administrators require the following configuration to help troubleshoot and mana
 
 ● Handle failure and timeout outcomes explicitly.
 
-● Continue execution after a failure is handled.
+● ***Continue execution after a failure is handled***.
 
 ● Avoid retrying the failed action automatically.
 
@@ -7888,11 +7841,11 @@ To handle failures and timeouts explicitly without automatic retries while ensur
 [B] Scope Actions: Grouping your connector action and its immediate steps inside a Scope action allows you to centrally manage errors. You can set the subsequent administrative notification to run only if the entire Scope fails or times out. This satisfies the requirement to handle failure and timeout outcomes explicitly in a clean, predictable way
 
 
-### QUESTION 26 
+### QUESTION 26 💩
 
 A team has an existing agent in Copilot Studio and must move it to a different target location without rebuilding the agent. Some builders use Copilot Studio in the web app, while others use Copilot Studio in Microsoft Teams.
 
-You need a supported approach to move the existing agent to the target location using ALM practices. The solution must avoid rebuilding the agent.
+**You need a supported approach to move the existing agent to the target location using ALM practices**. The solution must avoid rebuilding the agent.
 
 You need to move the existing agent to the target location using a supported method.
 
@@ -8005,7 +7958,9 @@ You should apply a standardized evaluation matrix. This method uses reusable tes
 
 ### QUESTION 28
 
-A solution architect is implementing a governance process for an agent developed in Copilot Studio. Before the agent is moved to production, the organization requires a standardized validation process to ensure that updates to the underlying knowledge base do not cause regressions in response accuracy.
+A solution architect is implementing a governance process for an agent developed in Copilot Studio. 
+
+Before the agent is moved to production, the organization requires a standardized validation process to ensure that updates to the underlying knowledge base do not cause regressions in response accuracy.
 
 The validation process must satisfy the following technical criteria:
 
@@ -8017,7 +7972,9 @@ The validation process must satisfy the following technical criteria:
 
 You need to choose an evaluation method that meets the requirements.
 
-What should you use? A. Use the Test your agent pane to manually enter questions and verify that the correct topic or action triggers for each turn.
+What should you use? 
+
+A. Use the Test your agent pane to manually enter questions and verify that the correct topic or action triggers for each turn.
 
 B. Publish the agent and use channel usage metrics as the primary evaluation method.
 
@@ -8073,7 +8030,7 @@ Grounding: By matching the real-time output against a verified "golden" response
 Comparison: Storing the evaluation scores of each run allows you to build a deployment dashboard. This gives you a clear performance delta (e.g., "Accuracy dropped by 4% after the June policy update") before approving the production release.
 
 
-### QUESTION 29 
+### QUESTION 29 💩💩💩
 
 A team is preparing to manage agents in Copilot Studio by using ALM from Power Platform.
 
@@ -8163,7 +8120,6 @@ You need to configure the evaluation to meet the requirements
 
 What should you configure? To answer, move the appropriate configurations to the correct evaluation requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
-以下是提取并整理为 Markdown 格式的内容，附带正确答案及解析：
 
 Select and Place:
 
@@ -8231,7 +8187,7 @@ Comparing generated responses against defined expectations is exactly how you es
 Using a curated prompt list—known as an evaluation test set—is exactly how you ensure consistency. It removes subjective, one-off testing and establishes a structured framework for measuring response quality.
 
 
-### QUESTION 31 
+### QUESTION 31 💩💩💩
 
 A team has deployed an agent in Copilot Studio and needs to evaluate whether the agent is meeting its intended goals before expanding usage to a broader audience.
 
@@ -8332,5 +8288,27 @@ A Yes
 
 Custom instructions on a generative answers node can define the required response format, such as an executive summary. A node is configured within a topic, so the instruction applies only to that topic. Updating the instruction does not replace the node’s configured knowledge sources or bypass connector security controls.
 
+
+### QUESTION 33
+
+An agent uses a flow that calls an external service which can occasionally fail or time out.
+
+When a failure occurs, the agent must meet the following requirements:
+
+- Must not terminate silently.
+- Must send a notification containing the error details.
+- You need to configure the agent flow so that failures are handled in a controlled and predictable way.
+
+Solution: Terminate the flow immediately if an error occurs.
+
+Does the solution meet the goal?
+
+
+---
+
+B No
+
+
+Immediately terminating a flow on error does not ensure that a notification containing the error details is sent. Controlled failure handling requires an error-handling path that performs the notification rather than stopping before it can occur.
 
 
