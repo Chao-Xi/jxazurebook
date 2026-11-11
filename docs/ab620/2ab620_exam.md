@@ -173,31 +173,50 @@ Select and Place:
 ------
 
 
-Explanation/Reference:
+这道题建议选择以下三个动作：
 
-Explanation:
+推荐答案
 
-Scenario: 
+| Step | Action                                      |
+| ---- | ------------------------------------------- |
+| 1    | Define Data Loss Prevention (DLP) policies. |
+| 2    | Add custom prompt modifications.            |
+| 3    | Configure content moderation filters.       |
 
-<mark>Problem statement: **The agent must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction**.</mark>
+解析：
 
-**Step 1: Define Data Loss Prevention (DLP) policies** 
+**1\. Define DLP policies（数据防泄漏策略）**
 
-Security and compliance must be established at the foundation level. **Admins use the Power Platform admin center to configure DLP policies.** This establishes environmental guardrails by restricting unauthorized data connectors or preventing the agent from leaking sensitive data.
+首先在 Power Platform Admin Center 配置 DLP Policies，限制未经授权的 Connector 和数据流，建立平台级安全边界。
 
-**Step 2: Add custom prompt modifications** 
 
-> → Configure content moderation filters.
+**2\. Add custom prompt modifications（自定义提示词修改）**
 
-Once the environment is secure, the maker configures the specific behavior of the agent. **Custom prompt modifications and agent instructions shape the tone, define conversational topics, and establish explicit boundaries for the generative model** (e.g., instructing the model to strictly stay within its knowledge base).
+在 Agent 级别添加统一指令，确保：
 
-**Step 3: Conduct adversarial testing**
+- 使用统一的语气（Tone）。
+- 每次生成式回答都包含免责声明（Disclaimer）。
+- 对不允许的问题执行拒绝策略（Refusal behavior）。
 
-> → Add custom prompt modifications.  ???
+避免逐个修改 Topic。
 
-This is the final evaluation phase before deployment. 
+**3\. Configure content moderation filters（内容审核过滤器）**
 
-After the guardrails and custom prompts are in place, **you simulate real-world attacks (such as jailbreaks, prompt injections, or malicious user inputs) to verify that the agent reliably adheres to your corporate guidelines and Microsoft's Responsible AI standards**.
+配置 Responsible AI 内容审核级别，过滤有害内容，降低不安全回答的风险。
+
+为什么不选其他选项？
+
+| Option                           | 原因                              |
+| -------------------------------- | ------------------------------- |
+| Conduct adversarial testing      | 属于后续安全验证，虽然推荐，但不是这里明确列出的三项配置要求。 |
+| Integrate with Microsoft Purview | 用于更广泛的数据治理与合规管理，不是本题要求的直接配置。    |
+| Disable generative answers       | 与业务要求使用生成式 AI 的场景冲突。            |
+
+考试记忆：
+
+DLP → Prompt Modifications → Content Moderation
+
+注意：Adversarial Testing 仍然是上线前的重要安全测试，但不要与本题要求的三个配置动作混淆。
 
 
 ### QUESTION 2
