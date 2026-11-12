@@ -541,7 +541,7 @@ Scenario: **Internal staff:** Authenticate via Microsoft Entra ID.
 
 ## Question Set 2
 
-### QUESTION 1 💩💩💩
+### QUESTION 1 💩💩💩💩
 
 
 A company has an existing custom connector that is approved and available in the environment. A builder wants an agent in Copilot Studio to call the connector during a conversation to retrieve information from an internal system.
@@ -587,8 +587,8 @@ Correct answers:
 
 Explanation:
 
-1. Add connector as a tool: Makes the custom connector available to the agent and its topics.
-2. Create or reuse connection: Establishes valid authentication credentials for calling the internal system.
+1. Add connector as a tool: **Makes the custom connector available to the agent and its topics.**
+2. Create or reuse connection: **Establishes valid authentication credentials for calling the internal system**.
 3. Map topic variables: Passes runtime values from topic variables into the connector's required input parameters.
 
 Microsoft documentation confirms that connector tools can be called within topics, require valid connections, and support configurable input parameters.
@@ -600,30 +600,11 @@ Why the remaining option is incorrect:
 
 Exam takeaway:
 
-Tool = Availability | Connection = Authentication | Variable mapping = Runtime inputs
-
-**Correct Answers**
-
-| Requirement                                                              | Configuration                                   |
-| ------------------------------------------------------------------------ | ----------------------------------------------- |
-| 1. The agent must make the connector available for topic steps.          | Add the connector as a tool in the agent.       |
-| 2. The agent must run the connector call with a valid connection.        | Create or reuse a connection for the connector. |
-| 3. The connector call must receive the required input values at runtime. | Map topic variables to the tool inputs.         |
-
-**Explanation**
-
-1. Add the connector as a tool in the agent — makes the custom connector available for the agent to invoke.
-2. Create or reuse a connection for the connector — provides the authenticated connection required to execute the API operation.
-3. Map topic variables to the tool inputs — passes the required runtime values to the connector.
-
-Unused option: Add the connector as a knowledge source. A connector used to execute API actions is a tool, not a knowledge source.
+<mark>**Tool = Availability | Connection = Authentication | Variable mapping = Runtime inputs**<mark>
 
 
 
-
-
-
-### QUESTION 2 💩💩💩
+### QUESTION 2 💩💩💩💩
 
 
 A company needs to ground an agent in Copilot Studio answers using live enterprise data from a supported system via a Microsoft Power Platform connector.
@@ -747,16 +728,16 @@ Correct Answers
 
  Explanation
 
-1. **Disable the flow — temporarily stops the flow from triggering new executions while you troubleshoot the authentication issue**.
-2. **Resubmit the run — reruns a failed execution after the authentication issue has been resolved**.
-3. **Review the Activity history — checks recent flow executions and their statuses to confirm whether the runs succeeded.**
+1. <mark>**Disable the flow — temporarily stops the flow from triggering new executions while you troubleshoot the authentication issue**<mark>.
+2. <mark>**Resubmit the run — reruns a failed execution after the authentication issue has been resolved**.<mark>
+3. <mark>**Review the Activity history — checks recent flow executions and their statuses to confirm whether the runs succeeded.**<mark>
 
 **Exam tip: Disable → Resubmit → Review Activity history.**
 
 
 **Box 1: Disable the flow**
 
-The most appropriate action to address this specific issue is to disable the flow. 
+The most appropriate action to address this specific issue is to **disable the flow**. 
 
 Immediate Stop: Turning off or disabling the flow completely prevents any new instances from triggering. This satisfies your urgent requirement to halt additional failed executions immediately while you troubleshoot.
 
@@ -777,7 +758,7 @@ Targeted Fix: Since the root cause was a temporary authentication error that is 
 In Microsoft Copilot Studio, the Activity history (specifically within the integrated Power Automate cloud flow management or the Copilot's topic run history) allows you to see the real-time execution status of individual runs. This is the only option that lets you immediately validate if the most recent executions succeeded right after resolving the authentication error.
 
 
-### QUESTION 4 
+### QUESTION 4 💩
 
 A company is preparing an agent flow so that it can be invoked by an agent during conversations.
 
@@ -785,7 +766,7 @@ The agent flow must meet the following requirements:
 
 - The agent must be able to trigger the flow. 
 - The agent flow must be verified.
-- You need to prepare an agent flow so that it can be used by the agent.
+- You need to **prepare an agent flow so that it can be used by the agent**.
 
 In which order should you perform the actions to prepare the agent flow? 
 
@@ -827,7 +808,7 @@ Correct Order
 
 Sequence to remember
 
-**Create → Configure trigger → Add actions → Test and validate → Make available**
+<mark>**Create → Configure trigger → Add actions → Test and validate → Make available**<mark>
 
 Explanation: 
 
@@ -856,10 +837,10 @@ The workflow needs to be tested and verified directly within the flow authoring 
 
 **Step 5: Make the agent flow available for agent usage** 
 
-Once verified, you publish the flow and add it to your agent as an active tool so the conversational orchestrator can dynamically call it during live interactions.
+<mark>Once verified, you publish the flow and add it to your agent as an active tool so the conversational orchestrator can dynamically call it during live interactions</mark>.
 
 
-### QUESTION 5 💩💩💩
+### QUESTION 5 💩💩
 
 A company uses an agent flow that occasionally requires human input before continuing execution.
 
@@ -922,7 +903,7 @@ Flow Continuity: To use the decision or additional information later, the flow m
 
 **Box 2: Allow the action to wait for and return a response before continuing**
 
-The valid configuration is to allow the action to wait for and return a response before continuing.
+**The valid configuration is to allow the action to wait for and return a response before continuing.**
 
 Same Flow Run: This setting explicitly pauses the current execution thread and waits for the human interaction to complete. 
 
@@ -979,7 +960,7 @@ Hot Area:
 1. Text input parameter: Defines an input that the agent passes to the agent flow when invoking it.
 2. Text output parameter: Defines an output that the flow returns to the agent after execution.
 
-Exam tip: Agent → Flow = Input parameter; Flow → Agent = Output parameter.
+**Exam tip: Agent → Flow = Input parameter; Flow → Agent = Output parameter.**
 
 
 Explanation/Reference:
@@ -1082,13 +1063,13 @@ Box 3: Upload a file to Agents Knowledge Base.
 Box 4: Create a manual response in the topic.
 
 
-### QUESTION 8 💩
+### QUESTION 8 💩💩
 
 An agent calls a flow. The agent requires structured output values to be returned.
 
 The agent receives unexpected or empty values.
 
-You need to configure the agent so that data is exchanged correctly between the agent and the flow.
+**You need to configure the agent so that data is exchanged correctly between the agent and the flow.**
 
 What should you do?
 
@@ -1110,7 +1091,9 @@ Explanation
 
 The agent and flow must have matching input and output parameter definitions to exchange data correctly.
 
-- A. Validate parameter definitions — Correct. Check that the flow's input and output parameters have the correct names, data types, and mappings so the agent receives the expected values.
+<mark>A. Validate parameter definitions — Correct. Check that the flow's input and output parameters have the correct names, data types, and mappings so the agent receives the expected values.</mark>
+
+
 - B. Change the trigger schema — Incorrect. The trigger schema is not the first thing to change when the issue may be caused by mismatched input/output definitions.
 - C. Review the flow run history — Incorrect. Useful for troubleshooting, but it does not directly configure the data exchange.
 - D. Add a Parse JSON inside the flow — Incorrect. Only necessary when JSON parsing is required; it does not fix general parameter mapping issues.
@@ -1131,7 +1114,7 @@ A company is building an agent in Copilot Studio.
 
 The agent must meet the following requirements:
 
-* Responses must be grounded in approved internal content.
+* **Responses must be grounded in approved internal content**.
 
 * The agent must be able to **retrieve information from configured data sources in a topic**.
 
@@ -1151,7 +1134,7 @@ E. Increase the response length limit to improve answer completeness.
 
 ----
 
-**Correct Answer: C Section: (none)**
+**Correct Answer: C**
 
 Explanation/Reference:
 
@@ -1162,9 +1145,23 @@ To configure a Microsoft Copilot Studio agent so its topic responses are exclusi
 
 **Correct Answer: C. Configure knowledge sources in a generative answers node.**
 
+**解析**
+
+题目有两个核心要求：
+
+1. 响应必须基于批准的内部内容（接地/Grounded）。
+2. 智能体必须在**主题（Topic）内**从配置的数据源检索信息。
+
+**选项 C** 完美契合了这两点要求。在 Copilot Studio 中，如果你希望特定主题内的回答基于自定义的数据源（而不是依赖智能体级别的全局知识库），
+
+你可以在该主题的流程中添加一个**生成式答案节点（Generative answers node）**，并在该节点的设置中**配置特定的知识源（Knowledge sources）**。如备考笔记（2-3）所述，当节点配置了自己的源时，这些源会优先于智能体级别的源。
+
+
 Explanation
 
-- C — Correct: Configuring knowledge sources in a generative answers node grounds the topic's responses in approved internal content and lets the node retrieve information from those sources.
+C — Correct: Configuring knowledge sources in a generative answers node grounds the topic's responses in approved internal content and lets the node retrieve information from those sources.
+
+
 - A — Incorrect: Analytics monitors usage; it does not ground responses.
 - B — Incorrect: Prompt instructions guide behavior but do not configure or connect the actual data sources.
 - D — Incorrect: Agent-level SharePoint knowledge alone does not meet the specific requirement to configure data sources within a topic.
@@ -1172,7 +1169,19 @@ Explanation
 
 <mark>**Exam tip: When a question specifically says “in a topic” and “custom data sources,” choose Generative answers node → Configure knowledge sources.**</mark>
 
-### QUESTION 10 💩💩💩
+
+
+
+**为什么不选其他选项：**
+
+- **A. Enable analytics...（启用分析...）**：分析功能用于查看用户的使用趋势和触发频率，无法影响数据检索或内容接地。
+- **B. Add a custom prompt...（添加自定义提示词...）**：提示词只能指导大模型的语气或行为，但**不能**实际连接或检索数据源。没有配置知识源，模型仍然无法获取准确的企业内部数据。
+- **D. Add SharePoint as a knowledge source only at the agent level.（仅在智能体级别添加 SharePoint 作为知识源）**：题目明确要求在**主题内（in a topic）**进行配置和检索。虽然智能体级别的知识源可以作为后备，但针对特定主题的特定数据源，应该在节点级别进行配置。
+- **E. Increase the response length limit...（增加响应长度限制...）**：这只会让生成的回答更长，与是否基于特定数据源检索信息无关。
+
+
+
+### QUESTION 10 💩💩
 
 A company is building an agent in Copilot Studio topic that must retrieve real-time status information from an external REST API using a Send HTTP request node.
 
@@ -1187,8 +1196,6 @@ To meet the business needs, the topic must meet the following requirements:
 **You need to configure the Send HTTP request node**.
 
 Which configuration should you use for each requirement? To answer, move the appropriate configurations to the correct requirements. You may use each configuration once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
-
-
 
 Select and Place:
 
@@ -1218,7 +1225,7 @@ Select and Place:
 
 Explanation:
 
-- Headers: Include the required authentication header, such as an API key or bearer token.
+- Headers: Include the required authentication header, **such as an API key or bearer token**.
 - GET: Retrieves real-time status information from the API.
 - **JSON + variable: Parses the structured response and saves it in a variable for reuse in subsequent topic steps**.
 
@@ -1277,7 +1284,7 @@ Explanation/Reference:
 
 Explanation:
 
-**To enforce strict internal-only access and require end-user authentication for a Microsoft Copilot Studio agent, you must configure Microsoft Entra ID authentication.**
+<mark>**To enforce strict internal-only access and require end-user authentication for a Microsoft Copilot Studio agent, you must configure Microsoft Entra ID authentication.**<mark>
 
 This setup stops external users from chatting with the agent and forces employees to sign in with their corporate accounts before they can access any data.
 
@@ -1289,7 +1296,9 @@ Reference:
 
 Explanation:
 
-- Microsoft Entra ID enforces employee authentication using the company’s organizational identities, restricting access to authorized internal users.
+Microsoft Entra ID enforces employee authentication using the company’s organizational identities, restricting access to authorized internal users.
+
+
 - B. Require Secure Access applies to Web channel security, but it is not the primary setting for enforcing employee authentication.
 - C. Public website experience does not meet the internal-only access requirement.
 - D. Personal account authentication is intended for personal Microsoft accounts, not organizational employee identities.
@@ -1304,7 +1313,7 @@ The company has the following requirements for the application:
 
 - **The deployment workflow must follow a dependency driven sequence.**
 
-- **The agent must be published before configuration values are retrieve**d.
+- **The agent must be published before configuration values are retrieved**.
 
 - **End-to-end validation must occur before production deployment**.
 
@@ -1364,11 +1373,11 @@ Publish → Retrieve → Configure → Implement → Validate → Deploy
 
 **Step 1: Publish the agent**
 
-Based on the second requirement, the agent must be published first before any configuration values can be generated or retrieved.
+**Based on the second requirement, the agent must be published** first before any configuration values can be generated or retrieved.
 
 **Step 2: Retrieve the current agent configuration values** 
 
-Once published, you can extract the necessary configuration properties (such as the Agent ID and Tenant ID) required to connect your applications and infrastructure.
+**Once published, you can extract the necessary configuration properties** (such as the Agent ID and Tenant ID) required to connect your applications and infrastructure.
 
 **Step 3: Configure and enable the agent's target integration channel**
 
@@ -1398,7 +1407,10 @@ You need to prepare the agent so it can be moved to a production environment usi
 
 Which two actions should you perform? Each correct answer presents part of the solution.
 
-NOTE: Each correct selection is worth one point. A. Remove agent topics directly from the solution to prevent export errors.
+NOTE: Each correct selection is worth one point. 
+
+
+A. Remove agent topics directly from the solution to prevent export errors.
 
 B. Convert the solution to a managed solution so it can be exported.
 
@@ -1423,25 +1435,13 @@ Add the existing Copilot Studio agent to a solution so it can be exported and mo
 Why not the others?
 
 - A: Do not remove topics just to prevent export errors.
-- B: You can export an unmanaged solution; converting it to managed is not required for export.
+- **B: You can export an unmanaged solution**; converting it to managed is not required for export.
 - D: Publishing the agent to a channel and exporting channel configuration is not the solution-based packaging approach.
 
 Exam tip: For solution-based ALM, add the existing agent to a Power Platform solution, then export that solution from development.
 
-----
 
-？？？ 
-
-Correct Answer: BE Section: (none)
-
-Explanation/Reference:
-
-Explanation:
-
-To move a Copilot Studio agent to a production environment using a solution-based approach, you must create a custom unmanaged solution, add your existing agent [E] and its required objects to it, publish all customizations, and export the solution as a managed package [B] [.zip file].
-
-
-### QUESTION 14 💩💩
+### QUESTION 14 💩💩💩
 
 A company wants to use content from a non-Microsoft enterprise knowledge base to ground agent responses.
 
@@ -1455,8 +1455,6 @@ To meet the business needs, the knowledge source must meet the following require
 Which behavior meets each requirement? To answer, select the appropriate options in the answer area.
 
 NOTE: Each correct selection is worth one point.
-：Hot Area:
-
 
 **Copilot connector knowledge behavior**
 
@@ -1627,7 +1625,7 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 * Send a notification with relevant error details.
 
 
-### QUESTION 17
+### QUESTION 17 💩
 
 An agent uses a flow that calls an external service which can occasionally fail or time out. 
 
@@ -1650,37 +1648,19 @@ B. No
 ---
 
 
-
-
 Correct answer: B. No.
 
-Explanation: Sending a notification with error details satisfies the notification requirement, but it does not by itself ensure the flow handles failures in a controlled way or prevents silent termination.
+<mark>**Explanation: Sending a notification with error details satisfies the notification requirement, but it does not by itself ensure the flow handles failures in a controlled way or prevents silent termination.**</mark>
 
 You should also configure Run after conditions to detect failures or timeouts and route execution to the notification action.
 
-Exam tip: A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.
-
----
-
-Correct answer: B. No.
-
-Explanation: Sending a notification with error details satisfies the notification requirement, but it does not by itself ensure the flow handles failures in a controlled way or prevents silent termination.
-
-You should also configure Run after conditions to detect failures or timeouts and route execution to the notification action.
-
-Exam tip: A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.
+Exam tip: **A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.**
 
 
----
-
-Correct Answer: B 
-
-
-Explanation:
 
 Correct:
 
-* Configure run after conditions for failure paths.
+* **Configure run after conditions for failure paths**.
 
 You should configure the "Run after" conditions in Power Automate (the underlying flow engine) to handle these failures in a controlled and predictable way.
 
@@ -1695,21 +1675,9 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 
 **Incorrect:**
 
-* Retry the failing action without handling failure.
+* **Retry the failing action without handling failure.**
 
-* Send a notification with relevant error details.
-
-----
-
-???? Correct Answer: A
-
-
-A failure-notification action that includes the error details prevents a flow failure from being silent and provides the required information to recipients. 
-
-
-Power Automate supports configuring an action to run after a preceding action fails or times out, enabling this controlled error-handling path.
-
-
+* S**end a notification with relevant error details**.
 
 
 ### QUESTION 18 💩💩💩💩💩
@@ -1757,23 +1725,10 @@ Why not the others?
 
 - B: Azure AI Search provides grounding; it does not enforce model approval.
 - D: Publishing does not automatically switch the model to an approved one.
-- E: Citations improve traceability but do not control model selection.
+- <mark>E: Citations improve traceability but do not control model selection</mark>.
 - F: Instructions cannot enforce which underlying model is used.
 
-Exam tip: Model governance requires configuring the model itself; prompt templates control response behavior, not model selection.
-
----
-
-To fix the compliance issue in Microsoft Copilot Studio, you must select an approved model from the catalog for generation and ensure the correct template is applied. The two necessary configuration steps are:
-
-[F] Select an approved model from the model catalog in the configuration used for prompt-driven response generation.
-
-[C] Ensure the reusable instruction template is the one applied to the agent that generates the structured response.
-
-Configuration Steps Model Selection: Open your agent settings in Microsoft Copilot Studio and choose a compliant, approved foundation model from the catalog for your prompt responses.
-
-Template Assignment: Verify and re-apply the correct reusable instruction template directly to the specific agent responsible for generating the structured output.
-
+**Exam tip: Model governance requires configuring the model itself; prompt templates control response behavior, not model selection.**
 
 ### QUESTION 19  💩💩💩💩💩
 
@@ -1913,7 +1868,7 @@ Incorrect:
 * **Terminate the flow immediately on error**.
 
 
-### QUESTION 21 💩💩💩
+### QUESTION 21 💩💩
 
 A company requires an agent in Copilot Studio to answer questions using content stored in a third-party knowledge base system and **reuse that content for knowledge grounding**.
 
@@ -1934,7 +1889,9 @@ D. Add a Copilot connector knowledge source for authorized content.
 ----
 
 
-Correct answer: D. Add a Copilot connector knowledge source for authorized content.
+Correct answer: 
+
+**D. Add a Copilot connector knowledge source for authorized content.**
 
 Explanation: Copilot connectors can index content from non-Microsoft enterprise systems and make that indexed content available for knowledge grounding. 
 
@@ -2022,7 +1979,7 @@ Select and Place:
 
 - Runtime access → Real-time connector.
 
-### QUESTION 23 
+### QUESTION 23 💩💩
 
 A tenant administrator configures a Copilot connector that **indexes content from an external knowledge system into Microsoft Graph.**
 
@@ -2138,37 +2095,8 @@ Select and Place:
 - Use channel-specific settings：用于配置特定渠道，不是通用的环境级配置管理方式。
 - Hardcode the configuration values：将值写死在配置中，无法灵活适应不同环境。
 
------
 
-
-
-Explanation:
-
-**Box 1: Define environment variables in the solution.**
-
-The correct ALM-related configuration to use for this requirement is Environment Variables.
-
-You must use Environment Variables (specifically with the Current Value left blank in the development solution) to allow different configuration values across multiple environments without modifying the solution contents. When you export the solution as managed and import it into a target environment, the system will explicitly prompt the administrator to set the values during import.
-
-**Box 2: Define environment variables in the solution**
-
- Define environment variables in the solution is the correct Application Lifecycle Management (ALM) configuration to use for this requirement.
-
-Separates Data from Code: Environment variables act as parameters that store configuration keys and values separately from your agent's definition.
-
-Preserves Solution Integrity: You can transport the same solution across development, testing, and production environments without modifying any of its internal contents.
-
-Excludes Hardcoded Values: They explicitly remove the need to embed sensitive or environment-specific data directly inside the agent, satisfying your exact requirement.
-
-**Box 3: Define environment variables in the solution **
-
-You should use Environment Variables combined with Connection References within Power Platform / Copilot Studio.
-
-Define parameters centrally: Create environment variables inside your solution to act as placeholders for your configuration values (like URLs, IDs, or API keys).
-
-Keep the solution generic: Your Copilot agent references these variables rather than hardcoded values. Set values per deployment: When you import the managed solution into a new environment (Test, Production, etc.), the deployment pipeline prompts you to provide the specific values for that environment. Isolate agent traffic: Because the variables point to environment-specific backend services, data sources, or IDs, a single solution definition naturally spins up and drives a dedicated, isolated agent instance in each environment.
-
-### QUESTION 25 💩💩💩
+### QUESTION 25 💩💩
 
 A company is configuring an agent flow that uses multiple action types to perform operations and process data.
 
@@ -2176,7 +2104,7 @@ The flow must be configured as follows:
 
 ● An HTTP action must connect to an external service.
 
-● A data action must reference the correct data to process.
+● **A data action must reference the correct data to process.**
 
 You need to configure the settings for each action type.
 
@@ -2229,7 +2157,7 @@ The correct configuration setting to use is Input and mapping, because it direct
 解析：
 
 - HTTP action → Endpoint and authentication：配置外部服务的 API 端点和身份验证信息。
-- Data action → Input and mapping：指定需要处理的输入数据，并将数据映射到相应的操作参数。
+- <mark>Data action → Input and mapping：指定需要处理的输入数据，并将数据映射到相应的操作参数<mark>。
 
 未使用的选项：
 
@@ -2238,7 +2166,7 @@ The correct configuration setting to use is Input and mapping, because it direct
 
 
 
-### QUESTION 26 💩💩💩💩💩
+### QUESTION 26 💩💩💩💩
 
 A team uses environment variables to separate configuration from an agent so that the same solution can be moved between environments.
 
@@ -2283,7 +2211,7 @@ Multi environment behavior
 
 考试记忆： Secret → Runtime resolution；View only → Read-only；Non-secret update → Republish.
 
-### QUESTION 27 
+### QUESTION 27 💩💩
 
 A company has agents in Copilot Studio.
 
@@ -2310,7 +2238,7 @@ Explanation: **Power Platform data policies (Data Loss Prevention, or DLP polici
 
 Why not the others?
 
-- A. Application Insights: Monitors runtime telemetry; it does not enforce connector restrictions.
+- A**. Application Insights: Monitors runtime telemetry; it does not enforce connector restrictions**.
 - B. Security FAQs: Provide guidance but do not enforce governance.
 - C. Agent analytics: Helps monitor agent performance, not enforce connector-level security policies.
 
@@ -2387,7 +2315,7 @@ Explanation/Reference:
 
 Explanation:
 
-**Box 1: Wait for response and branch based on the decision **
+**Box 1: Wait for response and branch based on the decision**
 
 The best action to take is Wait for response and branch based on the decision because a binary or multipath approval requires distinct logical paths (such as proceeding if approved or canceling/revising if rejected) rather than just logging the text input.
 
@@ -2420,8 +2348,6 @@ NOTE: Each correct selection is worth one point.
 
 Select and Place:
 
-
-Select and Place:
 
 **Configurations (Options)**
 
@@ -2487,7 +2413,7 @@ Preventing Hallucinations: Leaving "Allow the AI to use its own general knowledg
 Strict Enterprise Grounding: Turning this setting OFF explicitly mandates that the agent uses only the authorized enterprise repositories (like SharePoint sites, uploaded files, or custom databases) attached to your node or agent. If an answer isn't in those specific sources, the node stops and hands the query off to your fallback or error-handling flows instead of guessing.
 
 
-### QUESTION 30 💩💩💩
+### QUESTION 30 💩💩💩💩
 
 A company is building an agent topic in Copilot Studio.
 
