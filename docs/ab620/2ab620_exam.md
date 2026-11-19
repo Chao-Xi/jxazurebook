@@ -4309,7 +4309,7 @@ Select and Place:
 - **执行写入操作 → Connector tool**
 
 
-### QUESTION 12 💩💩
+### QUESTION 12 💩💩💩
 
 A company is extending agents in Copilot Studio with both external capabilities and enterprise content access. 
 
@@ -4377,7 +4377,7 @@ Explanation/Reference:
 
 Explanation:
 
-**Box 1: Add a Copilot connector knowledge source for index content **
+**Box 1: Add a Copilot connector knowledge source for index content**
 
 To extend a Copilot Studio agent to provide grounded answers using enterprise data (such as ERP, CRM, or document stores), the correct integration action is to add a Copilot connector knowledge source for index content.
 
@@ -4385,7 +4385,7 @@ Copilot connectors crawl your enterprise content and index it into the search in
 
 **Box 2: Connect to an MCP server and add its tools to the agent** 
 
-Standardized Tool Interface: The Model Context Protocol (MCP) is a universal, open standard interface specifically built to let large language models securely interact with external tools and callable functions.
+**Standardized Tool Interface: The Model Context Protocol (MCP) is a universal**, open standard interface specifically built to let large language models securely interact with external tools and callable functions.
 
 Executing Actions: When you link an MCP server to your Copilot Studio agent, any executable capabilities or functions exposed by that server automatically become functional tools that your agent can invoke.
 
@@ -4516,15 +4516,15 @@ NOTE: Each correct selection is worth one point.
 
 解析
 
-1. Cite sources：启用来源引用，让用户能够追溯回答所依据的文档或知识来源。
+1. <mark>**Cite sources：启用来源引用，让用户能够追溯回答所依据的文档或知识来源**<mark>
 2. Azure AI Search：作为集中式索引和 grounding 数据源，Agent 从统一索引检索企业内容。
 3. Microsoft Foundry model：部署企业批准的 Foundation Model，并连接到 Copilot Studio，用该模型生成回答。
 
 考试记忆：
 
-- Traceability → Cite sources
-- Centralized index → Azure AI Search
-- Approved model → Foundry model
+- **Traceability → Cite sources**
+- **Centralized index → Azure AI Search**
+- **Approved model → Foundry model**
 
 注意：Azure AI Search 负责检索和提供 grounding 内容；Foundry 模型负责生成回答，两者职责不同。
 
@@ -4566,7 +4566,7 @@ B. Configure Azure AI Search as the grounding source, so the model choice is enf
 
 C. Allow topic authors to define tone and structure directly in topic steps.
 
-D. Select a model from the Foundry model catalog for the custom prompt configuration.
+D. Select a model from the Foundry model catalog for the **custom prompt configuration**.
 
 E. Create a custom prompt template and apply it where the agent generates the structured response.
 
@@ -4693,7 +4693,7 @@ To configure a Copilot agent to send requests to the correct backend service in 
 When adding an MCP server using the onboarding wizard or custom connectors in Microsoft Copilot Studio, the Server URL is the primary endpoint used to establish the connection and discover the available tools. Once connected, Copilot can selectively govern which callable operations (like CreateTicket or EscalateIncident) are enabled for the agent directly through the Tools & Connections UI.
 
 
-### QUESTION 17 💩💩💩💩💩
+### QUESTION 17 💩💩💩💩
 
 An agent in Copilot Studio must complete tasks by automating **interactions with a legacy desktop application that does not use APIs**.
 
@@ -4731,7 +4731,7 @@ E. Configure a custom connector to simulate UI interactions through REST calls.
 | B. Inspect automation execution details by using the agent runtime view. | ✅  | 在 Agent 的 Activity 中选择一次运行，查看执行记录、步骤、截图和操作详情。           |
 | C. Enable computer use for the agent.                                    | ✅  | 使用 Computer Use 在 Windows 环境中模拟鼠标和键盘操作，自动化没有 API 的桌面应用。 |
 | D. Add the desktop application as a knowledge source                     | ❌  | Knowledge Source 用于检索信息，不能执行 UI 操作。                     |
-| E. Configure a custom connector                                          | ❌  | Custom Connector 面向 API 集成，不适用于没有 API 的桌面应用。            |
+| E. Configure a custom connector                                          | ❌  | **Custom Connector 面向 API 集成，不适用于没有 API 的桌面应用**。            |
 
 关键配置说明
 
@@ -4764,7 +4764,7 @@ Incorrect:
 [Not A] Publishing the agent makes the bot available to end-users on live channels. While it applies settings to production, publishing is a deployment step rather than a diagnostic or setup step used to confirm execution context or inspect granular automation steps while a builder is actively testing.
 
 
-### QUESTION 18  💩💩💩💩
+### QUESTION 18  💩💩💩
 
 A company configures an agent flow that interacts with multiple systems to complete user requests. 
 
@@ -4843,7 +4843,7 @@ You should add a standard connector. Standard and custom Power Platform connecto
 **Box 3: Trigger a notification**
 
 
-### QUESTION 19  💩
+### QUESTION 19  💩💩
 
 An agent in Copilot Studio must **retrieve real-time data from an external system that exposes a REST API.** 
 
