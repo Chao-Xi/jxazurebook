@@ -6033,7 +6033,7 @@ Microsoft Copilot Studio includes a built-in feature specifically designed for t
 
 A company builds agents in Copilot Studio in a development environment.
 
-The agents are packaged inside a solution and deployed by using Power Platform Pipelines to test and production environments.
+The agents are packaged inside a solution and deployed by using **Power Platform Pipelines** to test and production environments.
 
 The company has the following requirements that must be met:
 
@@ -6144,19 +6144,19 @@ Evaluation interpretation
 | Evaluation result                                       | Conclusion                       |
 | ------------------------------------------------------- | -------------------------------- |
 | Evaluation case meeting or missing expected response.   | Pass or fail status              |
-| Some evaluation cases fail repeatedly.                  | Consistent outcomes              |
+| Some evaluation cases fail repeatedly.                  | **Consistent outcomes**              |
 | Each run displays expected response and agent response. | Expected and generated responses |
 
 解析
 
 1. Pass or fail status：根据实际响应是否符合预期响应，判断测试用例通过或失败。
-2. Consistent outcomes：**多次运行中同一测试用例反复失败，说明结果具有一致性，可能存在持续性问题，而非偶发错误**。
+2. <mark>Consistent outcomes：**多次运行中同一测试用例反复失败，说明结果具有一致性，可能存在持续性问题，而非偶发错误**</mark>。
 3. Expected and generated responses：每次运行展示预期响应和 Agent 实际生成的响应，便于进行对比分析。
 
 考试记忆：
 
 - Meeting / Missing → Pass / Fail
-- Repeated failures → Consistent outcomes
+- **Repeated failures → Consistent outcomes**
 - Expected vs Actual → Expected and generated responses
 
 
@@ -6174,7 +6174,8 @@ Pass or fail status: This is the primary conclusion. Microsoft Copilot Studio Ag
 The conclusion to make from this is Consistent outcomes.
 
 When evaluation test cases fail repeatedly across several runs, it indicates a stable, reproducible issue with the agent's behavior rather than random variability. Because the agent produces the same failure under the same test conditions, you have consistent outcomes.
-**
+
+
 **Box 3: Expected and generated response** **
 
 From the multiple evaluation tests in Microsoft Copilot Studio, the primary conclusion you can make is regarding the expected and generated responses.
@@ -6269,11 +6270,11 @@ C. Create a custom solution, add the existing agent to the solution, export the 
 - C 正确：通过 Power Platform Solutions 进行 ALM 部署，可以将现有 Agent 打包、导出并导入目标环境，无须重新创建 Agent。
 - A 错误：直接删除 Solution 组件可能破坏依赖关系。
 - B 错误：复制并手动重建不符合避免重建的要求。
-- D 错误：发布到 Channel 只是让 Agent 可供用户访问，不是环境迁移机制。
+- <mark>D 错误：发布到 Channel 只是让 Agent 可供用户访问，不是环境迁移机制</mark>。
 
 考试记忆：
 
-Copilot Studio Agent 跨环境迁移 → Solution + Export + Import。
+**Copilot Studio Agent 跨环境迁移 → Solution + Export + Import**。
 
 注意：使用 Copilot Studio Web App 或 Microsoft Teams 创建的 Agent，具体可用的 ALM 管理方式可能不同；应确认 Agent 支持添加到 Solution 后再执行迁移。
 
@@ -6286,7 +6287,7 @@ Explanation:
 
 Using Power Platform Application Lifecycle Management (ALM) practices, creating a custom solution, packaging the existing agent (and its dependent objects), exporting it, and importing it into the target environment is the standard way to transport a Copilot Studio agent without rebuilding it.
 
-### QUESTION 6 💩
+### QUESTION 6 💩💩
 
 You are **setting up an evaluation for an agent in Copilot Studio before expanding access to more users**.
 
@@ -6330,12 +6331,12 @@ NOTE: Each correct selection is worth one point.
 1. Secret environment variable：用于存储敏感配置，例如 API Key、密码等。更新 Secret 值后，运行时可以读取新值，无须重新发布 Agent。
 2. **Managed environment variable：Managed Solution 中的组件受到管理和保护，Builder 可以查看配置，但不能直接修改受管理的组件**。
 3. String environment variable：用于非敏感文本配置。
-   * **管理员更新环境变量的 Current Value 后，已发布的 Agent 可以在运行时使用更新后的值**。
+     * **管理员更新环境变量的 Current Value 后，已发布的 Agent 可以在运行时使用更新后的值**。
 
 考试记忆：
 
 - 敏感配置 → Secret environment variable
-- **只允许查看、不允许修改 → Managed environment variable**
+- <mark>**只允许查看、不允许修改 → Managed environment variable**</mark>
 - 非敏感文本配置 → String environment variable
 
 
@@ -6403,15 +6404,15 @@ Hot Area:
 
 | Requirement                                     | Evaluation method                             |
 | ----------------------------------------------- | --------------------------------------------- |
-| Use a fixed set of prepared interactions.       | Use a curated prompt list.                    |
-| Establish a baseline for determining responses. | **Compare against predefined expected outcomes**. |
-| Support repeatable comparisons across runs.     | **Use a consistent scoring evaluation matrix.**   |
+| **Use a fixed set of prepared interactions**.       | Use a curated prompt list.                    |
+| **Establish a baseline for determining responses**. | **Compare against predefined expected outcomes**. |
+| **Support repeatable comparisons across runs**.     | **Use a consistent scoring evaluation matrix.**   |
 
 解析
 
 1. Curated prompt list：使用预先准备好的固定测试 Prompt，而不是临时对话。
-2. Predefined expected outcomes：为每个测试用例定义预期结果，作为评估基准（Baseline）。
-3. Consistent scoring evaluation matrix：使用统一的评分标准，确保不同测试运行之间可以重复比较。
+2. <mark>Predefined expected outcomes：为每个测试用例定义预期结果，作为评估基准（Baseline）</mark>。
+3. <mark>Consistent scoring evaluation matrix：使用统一的评分标准，确保不同测试运行之间可以重复比较</mark>。
 
 考试记忆：
 
@@ -6450,7 +6451,7 @@ Consistent Baselines: Every evaluation run generates a versioned, auditable scor
 
 
 
-### QUESTION 8 
+### QUESTION 8 💩💩
 
 A solution containing an agent in Copilot Studio is moved across environments. The agent relies on configuration values that are different between environments and are managed as environment variables.
 
