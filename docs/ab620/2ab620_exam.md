@@ -7031,11 +7031,11 @@ You run the evaluation and review the following result for one test case:
 
 - Actual response: Digital products cannot be refunded once downloaded. 
 
-- Result: Pass Score: 0.92 
+- **Result: Pass Score: 0.92**
 
 - Reasoning: The actual response semantically matches the expected response. 
 
-- Knowledge sources used: RefundPolicy_KB 
+- **Knowledge sources used: `RefundPolicy_KB`**
 
 - Tools invoked: None
 
@@ -7473,7 +7473,7 @@ Correct sequence:
 Explanation:
 
 1. Create Application Insights: Ensure an Azure Application Insights resource exists.
-2. Configure destination: Copy its connection string and enter it in Copilot Studio under Settings → Advanced → Application Insights.
+2. **Configure destination: Copy its connection string and enter it in Copilot Studio under Settings → Advanced → Application Insights.**
 3. Enable monitoring: Enable logging so agent activities and events are captured.
 4. Publish: Publish the agent to apply the configuration to production.
 
@@ -7489,23 +7489,23 @@ Explanation/Reference:
 
 Explanation:
 
-**Step 1: Create or identify the Application Insights destination for telemetry **
+<mark>**Step 1: Create or identify the Application Insights destination for telemetry**<mark>
 
 You need an active Azure Application Insights resource.
 
 You must copy its Connection String or Instrumentation Key.
 
-**Step 2: Configure which monitoring destination the agent uses**
+<mark>**Step 2: Configure which monitoring destination the agent uses**<mark>
 
 Paste the copied connection string into the agent's advanced settings. 
 
-**Step 3: Enable monitoring for the agent** 
+<mark>**Step 3: Enable monitoring for the agent**<mark> 
 
 Toggle the monitoring feature to "On" within the agent's configuration panel.
 
-**Step 4: Publish the agent so the monitoring configuration**
+<mark>**Step 4: Publish the agent so the monitoring configuration**<mark>
 
- takes effect Changes do not apply to production until the agent is published. Publishing pushes the telemetry setup to the live environment.
+takes effect Changes do not apply to production until the agent is published. Publishing pushes the telemetry setup to the live environment.
 
 ### QUESTION 22  💩
 
@@ -7515,7 +7515,7 @@ The team requires a consistent way to manage and transport agent assets.
 
 You need to recommend a solution that supports creation and use of ALM scenarios for agents in Copilot Studio.
 
-Solution: To export, import, and manage agents between environments, you need to create and use a custom solution.
+<mark>**Solution: To export, import, and manage agents between environments, you need to create and use a custom solution**.<mark>
 
 Does the solution meet the goal?
 
@@ -7534,14 +7534,14 @@ A custom Power Platform solution supports ALM for Copilot Studio agents across m
 
 The process is:
 
-1. Create a custom solution in Copilot Studio.
+1. **Create a custom solution in Copilot Studion**.
 2. Add the agent and its required components to the solution.
 3. Export the solution from the source environment (Dev).
 4. Import the solution into the target environment (Test/Production).
 
 This enables consistent management and transportation of agent assets across environments.
 
-Exam tip: Remember: Custom Solution = Export + Import + ALM across environments.
+<mark>**Exam tip: Remember: Custom Solution = Export + Import + ALM across environments**<mark>.
 
 
 > Custom Power Platform solutions provide the ALM mechanism for Copilot Studio agents. An agent can be added to a custom solution, which can then be exported and imported into another environment to manage and transport the agent and its included components.
@@ -7593,8 +7593,8 @@ Microsoft Learn confirms that solutions are used to package and transport agents
 
 Exam tip:
 
-- Solution = ALM, export/import, environment migration.
-- Publish to channel = Make the agent available to end users.
+- **Solution = ALM, export/import, environment migration**.
+- **Publish to channel = Make the agent available to end users.**
 
 
 ---
@@ -7637,7 +7637,7 @@ The team requires a consistent way to manage and transport agent assets.
 
 You need to recommend a solution that supports creation and use of ALM scenarios for agents in Copilot Studio.
 
-**Solution: Builders can change environment variable values directly in Copilot Studio to complete ALM configuration without administrative tools**.
+**Solution: <mark>Builders</mark> can change environment variable values directly in Copilot Studio to complete ALM configuration without administrative tools**.
 
 Does the solution meet the goal?
 
@@ -7660,7 +7660,7 @@ To configure environment variables for ALM:
 
 1. Create environment variables in a Power Platform solution.
 2. **Export and import the solution across Dev, Test, and Production.**
-3. Administrators update environment variable values in Power Apps.
+3. <mark>**Administrators update environment variable values in Power Apps**.</mark>
 4. Republish the agent for changes to take effect (except secret-type variables, which are retrieved at runtime).
 
 Microsoft documentation confirms that administrators manage environment variable values through Power Apps, not directly in Copilot Studio.
@@ -7675,7 +7675,7 @@ Exam tip:
 
 
  
-###  QUESTION 25 
+###  QUESTION 25 💩💩
  
  A company uses an agent flow that calls a connector action. The flow sends an administrative notification if the action fails or times out.
 
@@ -7708,13 +7708,13 @@ Correct answers: B and D
 
 | Option | Action                                                          | Reason                                                                        |
 | ------ | --------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| B      | Add a scope action to group related actions.                    | Supports structured error handling using a Try/Catch pattern.                 |
+| B      | Add a scope action to group related actions.                    | <mark>**Supports structured error handling using a Try/Catch pattern**</mark>                 |
 | D      | Configure the run after conditions for the notification action. | Allows notifications to execute when the connector action fails or times out. |
 
 How to configure:
 
-- Scope: Place the connector action inside a Try scope and use a Catch scope for error handling.
-- Run after: Configure the notification action to run when the previous action has failed or has timed out. This allows the flow to continue through the error-handling path.
+- **Scope: Place the connector action inside a Try scope and use a Catch scope for error handling**.
+- **Run after: Configure the notification action to run when the previous action has failed or has timed out. This allows the flow to continue through the error-handling path**.
 
 
 **Why the other options are incorrect:**
@@ -7770,8 +7770,8 @@ For an agent built and managed in Copilot Studio in Microsoft Teams, Microsoft s
 
 Steps:
 
-1. Open the Power Apps app in the source Team.
-2. Export customizations and select the existing agent.
+1. **Open the Power Apps app in the source Team.**
+2. **Export customizations and select the existing agent&&.
 3. Download the exported package.
 4. Open the Power Apps app in the target Team.
 5. Import the customizations.
@@ -7799,9 +7799,9 @@ A team is preparing to evaluate an agent in Copilot Studio before expanding acce
 
 The team must select an evaluation method that meets the following requirements:
 
-● Use a fixed set of prepared interactions.
+● **Use a fixed set of prepared interactions.**
 
-● Determine responses against a predefined baseline.
+● **Determine responses against a predefined baseline**.
 
 ● Support consistent comparison across repeated test runs.
 
@@ -7824,13 +7824,13 @@ D. Launch a limited pilot and evaluate with customer satisfaction score and cont
 
 Explanation:
 
-A standardized evaluation matrix provides a repeatable way to assess agent performance using predefined test scenarios and expected outcomes.
+A standardized evaluation matrix provides a repeatable way to **assess agent performance using predefined test scenarios and expected outcomes**.
 
 It supports the requirements:
 
 1. Fixed interactions: Use prepared test questions and conversations.
 2. Predefined baseline: Compare generated responses against expected responses.
-3. Repeatable testing: Reuse the same evaluation test set across multiple runs to measure consistency and improvements.
+3. **Repeatable testing: Reuse the same evaluation test set across multiple runs to measure consistency and improvements**.
 
 Copilot Studio supports evaluation test sets with expected responses and scoring methods such as Exact match, Keyword match, and Compare meaning
 
@@ -7844,7 +7844,6 @@ Exam tip: Fixed test cases + expected responses + repeatable runs = Standardized
 
 
 ---
-
 
 Correct Answer: B 
 
@@ -7978,7 +7977,7 @@ Why is "Review the solution details page" excluded?
 
 It is a post-creation step, not required to create the solution.
 
-Exam tip: Open Solutions → Define Name & Publisher → Create.
+<mark>**Exam tip: Open Solutions → Define Name & Publisher → Create.**<mark>
 
 
 ---
