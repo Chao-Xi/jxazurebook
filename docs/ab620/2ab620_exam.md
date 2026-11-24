@@ -6652,7 +6652,7 @@ When building an agent in Microsoft Copilot Studio that requires proper Applicat
 3. Deploy to Target: You then Import it into the Test and Production environments. Using a managed solution locks the components in downstream environments, preventing unmanaged customization drift and maintaining environment stability.
 
 
-### QUESTION 11 
+### QUESTION 11 💩
 
 You run the same fixed test set three times in Copilot Studio.
 
@@ -6672,6 +6672,8 @@ NOTE: Each correct selection is worth one point.
 
 
 Select and Place:
+
+
 
 **Conclusions (Options)**
 
@@ -6957,7 +6959,7 @@ In Microsoft Copilot Studio, Component Collections act as shared containers that
 Power Platform pipelines natively support gated approval extensions. You can implement multi-stage approval workflows that halt a deployment request until your required business rules, automated validation, or stakeholders authorize the promotion to the next stage.
 
 
-### **QUESTION 15** 💩💩💩
+### **QUESTION 15** 💩💩💩💩
 
 An agent calls a flow that intermittently produces unexpected results during execution. The agent behaves inconsistently.
 
@@ -7019,7 +7021,7 @@ Selecting a specific failed run from the history allows you to view the exact in
 [C] Checking the Activity tab in Microsoft Copilot Studio is a critical diagnostic step. It lets you trace exact interactions, see the decisions the AI made, and check for specific error details to determine why the flow execution failed or behaved inconsistently.
 
 
-### QUESTION 16  💩💩💩
+### QUESTION 16  💩💩💩💩
 
 You create a test set in Copilot Studio to **evaluate an agent that answers policy questions and retrieves data from connected knowledge sources**.
 
