@@ -209,12 +209,12 @@ Select and Place:
 | Option                           | 原因                              |
 | -------------------------------- | ------------------------------- |
 | Conduct adversarial testing      | 属于后续安全验证，虽然推荐，但不是这里明确列出的三项配置要求。 |
-| Integrate with Microsoft Purview | 用于更广泛的数据治理与合规管理，不是本题要求的直接配置。    |
+| Integrate with Microsoft Purview | **用于更广泛的数据治理与合规管理，不是本题要求的直接配置**。    |
 | Disable generative answers       | 与业务要求使用生成式 AI 的场景冲突。            |
 
 考试记忆：
 
-DLP → Prompt Modifications → Content Moderation
+**<mark>DLP → Prompt Modifications → Content Moderation<mark>**
 
 注意：Adversarial Testing 仍然是上线前的重要安全测试，但不要与本题要求的三个配置动作混淆。
 
@@ -369,9 +369,9 @@ Explanation
 - B — Correct: Prompt instructions can define consistent disclaimer text for generative responses, **avoiding manual edits to each individual topic.**
 - C — Correct: The scenario explicitly requires Markdown formatting and states that HTML is not supported.
 - A — Incorrect: **Adding disclaimers to every topic creates unnecessary manual work and does not ensure consistent handling across all generative responses**.
-- D — Incorrect: **HTML formatting is not supported by the platform requirements.**
+- <mark>D — Incorrect: **HTML formatting is not supported by the platform requirements.**</mark>
 
-> Exam tip: Consistent disclaimers → prompt instructions; supported formatting → Markdown.
+> Exam tip: **Consistent disclaimers → prompt instructions; supported formatting → Markdown**.
 
 
 Correct Answer: BC
@@ -382,7 +382,7 @@ Scenario: **Platform constraints** No custom code is permitted; only Copilot Stu
 
 **All backend logic must be implemented using agent flows.**
 
-**[C] Markdown must be used for formatting (e.g., bold, bullet points); [Not D] HTML is not supported.**
+<mark>**[C] Markdown must be used for formatting (e.g., bold, bullet points); [Not D] HTML is not supported.**</mark>
 
 **[B] Disclaimer text.**
 
@@ -460,25 +460,19 @@ D. Disable generative answers and use only pre-authored responses.
 
 E. Edit every topic's first message to include the disclaimer.
 
------
 
-**Correct Answer: A**
+---
 
-Explanation/Reference: 
 
-Explanation:
-
-[A]   Adding a mandatory disclaimer to your greeting message is the best practice for agent governance. You can enforce this by configuring your Greeting System Topic **and adding formal "Output Rules" to the agent's core instructions.**
-
-[B] Using prompt modification in the Generative Answers node settings is an excellent and highly effective strategy for embedding compliance disclaimers into your agent's responses.
-
------ ????
+**Correct Answer**
 
 B. Add a prompt modification in the generative answers node settings.
 
 C. Create a disclaimer topic that always runs first.
 
-Prompt modification supplies custom instructions that control the content and format of generated answers, so it can require the disclaimer in generated output. A disclaimer topic that runs first presents the required disclosure consistently at the beginning of the agent interaction, without manually changing individual topics. Microsoft documents that prompt modification adds custom instructions to generative answers and can define what the agent should include in its responses.
+Prompt modification supplies custom instructions that control the content and format of generated answers, so it can require the disclaimer in generated output. 
+
+**A disclaimer topic that runs first presents the required disclosure consistently at the beginning of the agent interaction**, without manually changing individual topics. Microsoft documents that prompt modification adds custom instructions to generative answers and can define what the agent should include in its responses
 
 ### QUESTION 7 💩💩
 
