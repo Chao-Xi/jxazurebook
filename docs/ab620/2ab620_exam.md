@@ -145,7 +145,7 @@ The agent must deliver accurate, helpful, and safe responses across multiple cha
 It must adhere to strict data protection and Responsible AI standards while improving customer service efficiency and satisfaction
 
 
-### QUESTION 1 💩💩💩  ??? 
+### QUESTION 1 💩💩💩 
 
 You need to configure the agent in Copilot Studio to **meet Blue Vender's Responsible AI and data protection requirements.**
 
@@ -535,16 +535,16 @@ Scenario: **Internal staff:** Authenticate via Microsoft Entra ID.
 
 ## Question Set 2
 
-### QUESTION 1 💩💩💩💩
+### QUESTION 1 💩💩💩
 
 
 A company has an existing custom connector that is approved and available in the environment. A builder wants an agent in Copilot Studio to call the connector during a conversation to retrieve information from an internal system.
 
 To meet the business needs, the solution must meet the following requirements:
 
-* The agent must make the connector available for topic steps.
-* The agent must run the connector call with a valid connection.
-* The connector call must receive the required input values at runtime.
+* The agent must **make the connector available for topic steps**.
+* The agent must **run the connector call with a valid connection**.
+* The connector call **must receive the required input values at runtime**.
 
 You need to configure the agent so the custom connector can be used as a tool.
 
@@ -575,7 +575,7 @@ Correct answers:
 
 | Requirement                                                              | Configuration                                   |
 | ------------------------------------------------------------------------ | ----------------------------------------------- |
-| 1. The agent must make the connector available for topic steps.          | Add the connector as a tool in the agent.       |
+| 1. The agent must make the connector available for topic steps.          | <mark>Add the connector as a tool in the agent.</mark>       |
 | 2. The agent must run the connector call with a valid connection.        | Create or reuse a connection for the connector. |
 | 3. The connector call must receive the required input values at runtime. | Map topic variables to the tool inputs.         |
 
@@ -752,7 +752,7 @@ Targeted Fix: Since the root cause was a temporary authentication error that is 
 In Microsoft Copilot Studio, the Activity history (specifically within the integrated Power Automate cloud flow management or the Copilot's topic run history) allows you to see the real-time execution status of individual runs. This is the only option that lets you immediately validate if the most recent executions succeeded right after resolving the authentication error.
 
 
-### QUESTION 4 💩
+### QUESTION 4 💩💩
 
 A company is preparing an agent flow so that it can be invoked by an agent during conversations.
 
@@ -794,11 +794,11 @@ Correct Order
 
 | Step | Action                                                                         |
 | ---- | ------------------------------------------------------------------------------ |
-| 1    | Create a new agent flow artifact in the environment.                           |
-| 2    | Configure the invocation trigger that allows the agent to call the agent flow. |
-| 3    | Configure the actions that implement the required behavior.                    |
-| 4    | Validate the agent flow behavior with representative test runs.                |
-| 5    | Make the agent flow available for agent usage.                                 |
+| 1    | **Create a new agent flow** artifact in the environment.                           |
+| 2    | **Configure the invocation trigger** that allows the agent to call the agent flow. |
+| 3    | Configure the **actions that implement the required behavior**.                    |
+| 4    | **Validate the agent flow behavior** with representative test runs.                |
+| 5    | **Make the agent flow available** for agent usage.                                 |
 
 Sequence to remember
 
@@ -875,11 +875,11 @@ Hot Area:
 
 **Explanation**
 
-1. Use the action's response outputs in subsequent steps — makes the human's response available to downstream actions and conditions.
-2. Allow the action to wait for and return a response before continuing — pauses execution until the response is received, then continues the same flow run.
+1. **Use the action's response outputs in subsequent steps — makes the human's response available to downstream actions and condition**s.
+2. Allow the action to wait for and return a response before continuing — **pauses execution until the response is received, then continues the same flow run.**
 3. Add a human approval action — **introduces an explicit approval or rejection decision before the flow proceeds**.
 
-Exam tip: **Capture the response → wait and resume → use an approval action for the manual decision.**
+<mark>Exam tip: **Capture the response → wait and resume → use an approval action for the manual decision.**</mark>
 
 -----
 
@@ -907,7 +907,7 @@ Once the response is submitted, it resumes processing exactly where it left off 
 
 The correct configuration is to add a human approval action.
 
-Built-in pausing: An approval action natively pauses the workflow execution.
+**Built-in pausing: An approval action natively pauses the workflow execution.**
 
 State preservation: The flow holds its current state and waits until the user selects an outcome (e.g., Approve or Reject). Simplicity: It does not require complex logic to save data and restart the process from
 
@@ -951,8 +951,8 @@ Hot Area:
 
  Explanation
 
-1. Text input parameter: Defines an input that the agent passes to the agent flow when invoking it.
-2. Text output parameter: Defines an output that the flow returns to the agent after execution.
+1. <mark>Text input parameter: Defines an input that the agent passes to the agent flow when invoking it.</mark>
+2. <mark>Text output parameter: Defines an output that the flow returns to the agent after execution.</mark>
 
 **Exam tip: Agent → Flow = Input parameter; Flow → Agent = Output parameter.**
 
@@ -965,14 +965,14 @@ Explanation:
 
 To allow a Copilot Studio agent to pass data into a flow and receive structured results back, you must configure a Power Automate flow triggered by the "Run a flow from Copilot" trigger with custom input variables, and concluding with the "Respond to Copilot" action containing structured output parameters.
 
-**Box 2: Add a text output parameter **
+**Box 2: Add a text output parameter**
 
 To return structured results from an agent flow to your agent in Microsoft Copilot Studio, you should configure the "Respond to the agent" action in your flow with an output parameter.
 
 In Microsoft Copilot Studio, when a topic or bot calls a Power Automate flow, data is sent into the flow via input parameters. To pass data, objects, or structured results back to the copilot during the exact same flow run, you must explicitly define one or more output parameters (such as a text, number, or boolean output) in the "Return value(s) to Power Virtual Agents/Copilot Studio" final step of the flow.
 
 
-### QUESTION 7 💩💩
+### QUESTION 7 💩💩💩
 
 You are configuring an agent in Copilot Studio for an organization. The organization uses Microsoft Dataverse, Dynamics 365, and SharePoint Online.
 
@@ -1028,36 +1028,25 @@ Select and Place:
 
 解析与考点说明
 
-1. **Retrieve the current balance... (Dataverse) & Retrieve the real-time shipping status... (Dynamics 365)**
-   * **选择：** `Connect to a Power Platform connector.`（连接到 Power Platform 连接器）
-   * **原因：** Dataverse 和 Dynamics 365 都有现成的 Power Platform 预构建连接器。当需要获取**实时数据**（如当前余额、全天更新的物流状态）时，必须使用连接器实时查询后端系统。不能使用知识库（知识库通常用于静态的非结构化文档）或手动回复。**注意：在此类“选择并放置”题型中，选项可以被重复使用。**
+1. **<mark>Retrieve the current balance... (Dataverse) & Retrieve the real-time shipping status... (Dynamics 365)</mark>**
 
-2. **Answer questions based on the content of a static PDF policy document.**
-   * **选择：** `Upload a file to Agents Knowledge Base.`（将文件上传到智能体知识库）
-   * **原因：** 静态的 PDF 文件属于非结构化数据。将其上传到知识库并配合生成式答案（Generative Answers），是 Copilot Studio 处理此类文档并基于其内容回答问题的标准做法。不需要为文档中的每一段内容手动创建主题。
+     * **选择：** `Connect to a Power Platform connector.`（连接到 Power Platform 连接器）
+     * <mark>**原因：** Dataverse 和 Dynamics 365 都有现成的 Power Platform 预构建连接器。当需要获取**实时数据**（如当前余额、全天更新的物流状态）时，必须使用连接器实时查询后端系统。不能使用知识库（知识库通常用于静态的非结构化文档）或手动回复。**注意：在此类“选择并放置”题型中，选项可以被重复使用。**</mark>
 
-3. **Provide a welcome message that does NOT depend on enterprise data.**
-   * **选择：** `Create a manual response in the topic.`（在主题中创建手动回复）
-   * **原因：** 欢迎语是固定的文本，不需要连接任何企业系统去检索数据。直接在主题（通常是系统默认的问候主题）中添加一个“消息（Message）”节点并输入文本即可。
+3. **Answer questions based on the content of a static PDF policy document.**
+
+     * **选择：** `Upload a file to Agents Knowledge Base.`（将文件上传到智能体知识库）
+     * **原因：** 静态的 PDF 文件属于非结构化数据。将其上传到知识库并配合生成式答案（Generative Answers），是 Copilot Studio 处理此类文档并基于其内容回答问题的标准做法。不需要为文档中的每一段内容手动创建主题。
+
+5. **Provide a welcome message that does NOT depend on enterprise data.**
+
+     * **选择：** `Create a manual response in the topic.`（在主题中创建手动回复）
+     * <mark>**原因：** 欢迎语是固定的文本，不需要连接任何企业系统去检索数据。直接在主题（通常是系统默认的问候主题）中添加一个“消息（Message）”节点并输入文本即可。</mark>
 
 **未使用的选项：** `Configure a generative answer without enterprise data.`（配置不含企业数据的生成式答案）在这个场景中不需要用到。生成式答案应当与知识库配合使用以提供有依据的回答，而纯粹的固定欢迎语用不上生成式节点。
 
 
-**Box 1: Connect to a Power Platform connector **
-
-
-To enable your Copilot agent to fetch specific, real-time structured data (such as a customer's current balance) directly from Dataverse or Dynamics 365, you should connect to a Power Platform connector (or use native Dataverse plugins/tools).
-
-**Box 2: Connect to a Power Platform connector **
-
-Real-Time Data Access: Dynamics 365 data resides in Microsoft Dataverse. Power Platform connectors (like the Dataverse connector) fetch data live from the source, ensuring the shipping status is perfectly accurate and updated throughout the day.
-
-Box 3: Upload a file to Agents Knowledge Base.
-
-Box 4: Create a manual response in the topic.
-
-
-### QUESTION 8 💩💩
+### QUESTION 8 💩💩💩
 
 An agent calls a flow. The agent requires structured output values to be returned.
 
@@ -1175,7 +1164,7 @@ C — Correct: Configuring knowledge sources in a generative answers node ground
 
 
 
-### QUESTION 10 💩💩
+### QUESTION 10 💩💩💩
 
 A company is building an agent in Copilot Studio topic that must retrieve real-time status information from an external REST API using a Send HTTP request node.
 
@@ -1299,7 +1288,7 @@ Microsoft Entra ID enforces employee authentication using the company’s organi
 
 <mark>**Exam tip: For an employee-facing Copilot Studio agent that requires organizational sign-in, choose Microsoft Entra ID authentication.**<mark>
 
-### QUESTION 12 💩💩💩💩
+### QUESTION 12 💩💩💩💩💩
 
 A company is integrating an agent in Copilot Studio into a custom application by using the Microsoft 365 Agents SDK.
 
@@ -1307,7 +1296,7 @@ The company has the following requirements for the application:
 
 - **The deployment workflow must follow a dependency driven sequence.**
 
-- **The agent must be published before configuration values are retrieved**.
+- <mark>**The agent must be published before configuration values are retrieved**.<mark>
 
 - **End-to-end validation must occur before production deployment**.
 
@@ -1352,13 +1341,13 @@ Corect sequence confirmed
 
 关键逻辑：
 
-- Publish → Retrieve: 必须先发布 Agent，才能获取集成所需的配置值。
-- Retrieve → Configure Channel: 先获取 Agent 配置，再完成目标集成 Channel 的配置。
-- Implement → Validate → Deploy: 先完成 SDK 集成，在测试环境验证，最后部署生产环境。
+- <mark>Publish → Retrieve: 必须先发布 Agent，才能获取集成所需的配置值</mark>
+- <mark>Retrieve → Configure Channel: 先获取 Agent 配置，再完成目标集成 Channel 的配置</mark>。
+- <mark>Implement → Validate → Deploy: 先完成 SDK 集成，在测试环境验证，最后部署生产环境</mark>。
 
 考试记忆：
 
-Publish → Retrieve → Configure → Implement → Validate → Deploy
+<mark>Publish → Retrieve → Configure → Implement → Validate → Deploy</mark>
 
 这六个步骤符合题目给出的三个核心要求。
 
@@ -1391,7 +1380,7 @@ Once validation passes successfully, the final step is to push your custom appli
 
 
 
-### QUESTION 13 💩💩
+### QUESTION 13 💩💩💩
 
 An agent in Copilot Studio already exists in a development environment.
 
@@ -1429,13 +1418,13 @@ Add the existing Copilot Studio agent to a solution so it can be exported and mo
 Why not the others?
 
 - A: Do not remove topics just to prevent export errors.
-- **B: You can export an unmanaged solution**; converting it to managed is not required for export.
+- <mark>**B: You can export an unmanaged solution**; converting it to managed is not required for export.</mark>
 - D: Publishing the agent to a channel and exporting channel configuration is not the solution-based packaging approach.
 
 Exam tip: For solution-based ALM, add the existing agent to a Power Platform solution, then export that solution from development.
 
 
-### QUESTION 14 💩💩💩
+### QUESTION 14 💩💩
 
 A company wants to use content from a non-Microsoft enterprise knowledge base to ground agent responses.
 
@@ -1560,7 +1549,7 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 * **Send a notification with relevant error details**.
 
 
-### QUESTION 16
+### QUESTION 16 💩
 
 An agent uses a flow that calls an external service which can occasionally fail or time out.
 
@@ -1646,9 +1635,9 @@ Correct answer: B. No.
 
 <mark>**Explanation: Sending a notification with error details satisfies the notification requirement, but it does not by itself ensure the flow handles failures in a controlled way or prevents silent termination.**</mark>
 
-You should also configure Run after conditions to detect failures or timeouts and route execution to the notification action.
+**You should also configure Run after conditions to detect failures or timeouts and route execution to the notification action**.
 
-Exam tip: **A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.**
+<mark>Exam tip: **A notification action alone is insufficient; configure the failure path so the notification is triggered when an error occurs.**</mark>
 
 
 
@@ -1671,10 +1660,10 @@ How to Configure the Flow for Failure Handling To meet your requirements, you ne
 
 * **Retry the failing action without handling failure.**
 
-* S**end a notification with relevant error details**.
+* **Send a notification with relevant error details**.
 
 
-### QUESTION 18 💩💩💩💩💩
+### QUESTION 18 💩💩💩💩
 
 A company uses an agent in Copilot Studio that produces structured responses using a reusable instruction template. 
 
