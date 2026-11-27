@@ -2639,7 +2639,7 @@ NOTE: Each correct selection is worth one point.
 - Display a static message instead of using a tool.
 - Add a Question node for the user to choose the tool.
 
-考试记忆： **Agent 自主决定调用 → Generative orchestration；Topic 中显式调用 Flow / Connector → Tool node**。
+考试记忆： **<mark>Agent 自主决定调用 → Generative orchestration；Topic 中显式调用 Flow / Connector → Tool node<mark>**。
 
 ----
 
@@ -2663,7 +2663,7 @@ You can run a specific agent flow at a defined step in your topic by using an As
 
 Use a connector action to retrieve data during a conversation.
 
-### QUESTION 2 💩💩
+### QUESTION 2 💩💩💩
 
 **You need to determine how the agent in Copilot Studio should integrate with two different systems in the Blue Yonder environment, based on their characteristics and the tools available.**
 
@@ -2737,7 +2737,7 @@ Flight Status and Weather APIs (external): REST APIs with API keys HTTP request 
 - Generative AI knowledge：检索和利用文档、知识库等内容生成回答，不适合执行预订系统的事务操作。
 
 
-### QUESTION 3 ????
+### QUESTION 3 💩💩💩
 
 You need to determine an appropriate implementation related to the use of agent flows that is based on Blue Vender's design and compliance standards.
 
@@ -2772,13 +2772,13 @@ Select and Place:
 
 | Scenario                                                                                 | Implementation method          |
 | ---------------------------------------------------------------------------------------- | ------------------------------ |
-| A topic includes a series of steps that replicate logic already defined in another flow. | Use a tool node.               |
+| A topic includes a series of steps that replicate logic already defined in another flow. | Use a Go to another topic node |
 | A topic provides a natural language explanation of a process but does not execute it.    | Use a generative answers node. |
 | A topic includes a step that triggers a reusable process to update booking details.      | Use a tool node.               |
 
 解析
 
-1. 复用已有 Flow → Use a tool node：调用已有的 agent flow，避免在 topic 中重复实现相同逻辑。
+1. A Go to another topic node redirects the conversation to an existing topic, avoiding duplicated topic logic. 
 2. 只解释流程，不执行操作 → Use a generative answers node：根据知识来源生成自然语言说明。
 3. 更新预订信息 → Use a tool node：调用可复用的 agent flow 执行预订更新等业务操作。
 
@@ -2788,8 +2788,6 @@ Select and Place:
 > A topic includes a series of steps that replicate logic already defined in another flow.  => → Use a Go to another topic node.
 
 ----
-
-**？？？？？？**
 
 Explanation/Reference:
 
@@ -2803,9 +2801,9 @@ Disclaimers must be applied consistently across all generative responses. Manual
 
 **Box 1: Use a Go to another topic node** 
 
-You can use a redirect node (often referred to as a Redirect to another topic node) in Microsoft Copilot Studio.
+**You can use a redirect node (often referred to as a Redirect to another topic node) in Microsoft Copilot Studio**.
 
-Eliminate Duplication: Grouping shared conversation messages or logic nodes into a single, dedicated topic prevents you from building the exact same steps multiple times.
+**Eliminate Duplication**: Grouping shared conversation messages or logic nodes into a single, dedicated topic prevents you from building the exact same steps multiple times.
 
 Easier Maintenance: When you need to make a change, a single update to the target topic automatically reflects across all the topics that redirect to it.
 
@@ -2813,7 +2811,7 @@ Maintain Context: You can easily pass variable values or input/output parameters
 
 **Box 2: Use a generative answers node** 
 
-You can use a generative answers node within your agent topic to summarize and deliver natural language explanations.
+<mark>**You can use a generative answers node within your agent topic to summarize and deliver natural language explanations.**</mark>
 
 Generative answers are designed specifically for knowledge retrieval, FAQs, and providing informational summaries. They can instantly process enterprise data, documents, or company websites and convert them into plain-language guidance without you having to manually write branching logic for every scenario.
 
@@ -3032,11 +3030,11 @@ The main agent must be able to call an external Foundry agent.
 
 Add an external agent of type Microsoft Foundry: In multi-agent ecosystems (such as Microsoft Copilot Studio), connecting to specialized external agent frameworks—like Microsoft Foundry—is natively handled by registering or adding that specific system as an external agent type. This allows the orchestration layer of the main agent to properly discover, authenticate, and call the capabilities of the Foundry agent.
 
-**Box 2: Enter the Foundry project endpoint URL to create the connection, **
+**Box 2: Enter the Foundry project endpoint URL to create the connection**
 
 The external Foundry agent must reference the correct Foundry project and agent.
 
-### QUESTION 3 💩
+### QUESTION 3 💩💩
 
 You need to plan how Fabrikam Inc. will reuse shared components across multiple agents while limiting who can change the shared components.
 
@@ -3113,7 +3111,8 @@ The best action to take is to restrict component collection to the primary agent
 
 Reference:
 
-### QUESTION 4 💩💩💩
+### QUESTION 4 💩💩💩💩
+
 
 You need to configure Operations Concierge so that **prompt-driven summarization behavior aligns with Fabrikam Inc.'s architectural requirements.**
 
@@ -3162,7 +3161,7 @@ Scenario: Specialized processing: Delegate summarization and classification requ
 [E] Custom Prompt Templates: Creating and applying a reusable template ensures consistent formatting, tone, and logic across all areas where your agent handles summarization and classification tasks.
 
 
-### QUESTION 5 💩💩
+### QUESTION 5 💩💩💩
 
 You need to connect Operations Concierge to Fabrikam Inc.'s **Azure AI Search knowledge index while complying with security requirements.**
 
@@ -3205,37 +3204,10 @@ Select and Place:
 2. Index name：指定存储已索引政策和操作流程文档的索引，让 Agent 检索正确的企业知识。
 3. Endpoint URL：指定 Azure AI Search 服务实例的地址，确保连接到正确的服务。
 
-未使用的选项： Enable citations for grounded answers。引用有助于满足答案可追溯性要求，但它不是配置 Search 连接身份验证、索引或服务端点的设置。
-
------
-
-？？？？
 
 
-Explanation:
 
-**Box 1: Select the service principal as the authentication type **
-
-Ensure the Azure AI Search connection complies with the governance requirement for authenticated access.
-
-Scenario:
-
-A set of indexed documents and procedures in an Azure AI Search service that supports vector search for the policy library
-
-**Box 2: Provide the Azure Search Endpoint URL in the connection details.**
-
-Ensure policy and procedure Q&A uses the required curated, indexed enterprise knowledge source.
-
-**Box 3: Provide the Azure Search Endpoint URL in the connection details.**
-
-Ensure the connection targets the Azure AI Search service instance that stores the indexed policy documents.
-
-The best action to take is to Provide the Azure Search Endpoint URL in the connection details.
-
-When connecting a Copilot agent to an external knowledge source like Azure AI Search, establishing the connection requires identifying the specific service host. Providing the Azure AI Search Endpoint URL ensures that the underlying connection infrastructure explicitly targets and authenticates against your specific Azure AI Search service instance. Once this service-level connection is validated, you are prompted in the next step to select or enter the specific index containing your documents.
-
-
-### QUESTION 6 💩💩
+### QUESTION 6 💩💩💩
 
 You need to design a solution that provides Fabrikam Inc. with a multi-agent design approach with existing agents.
 
@@ -3321,7 +3293,7 @@ API Integration: It excels at leveraging connectors and Power Automate cloud flo
 Separation of Concerns: Delegating to a specialized tools-first agent keeps your orchestration layer lightweight and prevents a single agent from becoming too complex to maintain.
 
 
-### QUESTION 7 💩💩
+### QUESTION 7 💩💩💩
 
 You need to configure generative answers so the agent meets Fabrikam Inc’s business requirements. Which solutions should you use? To answer, move the appropriate solutions to the correct requirements. You may use each solution once, more than once, or not at all. You may need to move the split bar between panes or scroll to view content.
 
@@ -3391,7 +3363,7 @@ The alternative choices (such as uploading documents, configuring Azure AI Searc
 
 ### QUESTION 8 💩💩💩
 
-You need to ensure** that performance-related question**s are handled in accordance with Fabrikam Inc.’s defined architecture and business requirements.
+You need to ensure **that performance-related questions** are handled in accordance with Fabrikam Inc.’s defined architecture and business requirements.
 
 Which capability should Operations Concierge use?
 
