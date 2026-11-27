@@ -2020,7 +2020,7 @@ Avoids Duplication: Adding it as an existing knowledge source directly reference
 Avoids Transactional Invocation: Creating a new custom connector inside the agent configuration utilizes Power Platform connectors. Power Platform connectors are designed for tool invocation (real-time API calls, writing data, and performing transactional operations), which violates your requirement to avoid a transactional tool setup.
 
 
-### QUESTION 24 💩💩💩💩💩
+### QUESTION 24 💩💩💩💩
 
 A solution containing an agent in Copilot Studio is deployed to multiple environments that require different configuration values.
 
@@ -2112,23 +2112,6 @@ Select and Place:
 
 ----
 
-Explanation/Reference:
-
-Explanation:
-
-**Box 1: Endpoint and authentication**
-
-Endpoint and authentication is the correct configuration setting to use.
-
-To connect any HTTP action to an external service, the system fundamentally needs to know where to send the request and how to prove it has permission to access it.
-
-Endpoint (URL): Specifies the exact web address of the external API or service.
-
-Authentication: Credentials (like API keys, OAuth tokens, or Basic Auth) that verify the agent's identity.
-
-**Box 2: Input and mapping**
-
-The correct configuration setting to use is Input and mapping, because it directly links and passes the correct source data parameters into the data action
 
 正确答案如下：
 
@@ -2148,8 +2131,26 @@ The correct configuration setting to use is Input and mapping, because it direct
 - Connection timeout and retry policy：用于配置连接超时和失败重试策略。
 
 
+Explanation/Reference:
 
-### QUESTION 26 💩💩💩💩
+Explanation:
+
+**Box 1: Endpoint and authentication**
+
+Endpoint and authentication is the correct configuration setting to use.
+
+To connect any HTTP action to an external service, the system fundamentally needs to know where to send the request and how to prove it has permission to access it.
+
+Endpoint (URL): Specifies the exact web address of the external API or service.
+
+Authentication: Credentials (like API keys, OAuth tokens, or Basic Auth) that verify the agent's identity.
+
+**Box 2: Input and mapping**
+
+The correct configuration setting to use is Input and mapping, because it directly links and passes the correct source data parameters into the data action
+
+
+### QUESTION 26 💩💩💩💩💩
 
 A team uses environment variables to separate configuration from an agent so that the same solution can be moved between environments.
 
@@ -2173,9 +2174,9 @@ Multi environment behavior
 
 | Scenario | Behavior |
 | :--- | :--- |
-| Update a sensitive configuration value; the change takes effect at runtime without republishing the agent. | [ 下拉选项框 ]<br>- Republish the agent to apply the update.<br>- Use a secret environment variable type to allow for runtime resolution.<br>- Make the update directly in Copilot Studio. |
-| Confirm a configuration value but do not modify it from Copilot Studio. | [ 下拉选项框 ]<br>- Environment variables are stored as topic variables.<br>- Environment variables are read-only in Copilot Studio.<br>- Environment variables can be edited by any builder in Copilot Studio. |
-| Update a non-secret configuration value and the updated value needs to be used by the published agent at runtime. | [ 下拉选项框 ]<br>- The value can only be changed by hardcoding it into the agent.<br>- The agent must be republished for the updated value to be effective at runtime.<br>- The agent automatically pulls the updated Current Value from the environment at the start of every session. |
+| Update a **sensitive configuration value**; the change takes effect at runtime without republishing the agent. | [ 下拉选项框 ]<br>- Republish the agent to apply the update.<br>- Use a secret environment variable type to allow for runtime resolution.<br>- Make the update directly in Copilot Studio. |
+| Confirm a configuration value but **do not modify it from Copilot Studio.** | [ 下拉选项框 ]<br>- Environment variables are stored as topic variables.<br>- Environment variables are read-only in Copilot Studio.<br>- Environment variables can be edited by any builder in Copilot Studio. |
+| Update a non-secret configuration value and the updated value needs to be used **by the published agent at runtime.** | [ 下拉选项框 ]<br>- The value can only be changed by hardcoding it into the agent.<br>- The agent must be republished for the updated value to be effective at runtime.<br>- The agent automatically pulls the updated Current Value from the environment at the start of every session. |
 
 ----
 
@@ -2190,9 +2191,9 @@ Multi environment behavior
 
 1. 敏感配置值：使用 Secret 类型的环境变量，避免将敏感值直接写入 Agent 定义，并支持运行时解析。
 2. 只查看、不修改：环境变量在 Copilot Studio 中作为配置引用使用，Builder 不应通过 Agent 编辑界面修改其值。
-3. 非敏感配置值：更新环境变量后，通常需要重新发布 Agent，才能确保已发布版本使用更新后的值。
+3. <mark>非敏感配置值：更新环境变量后，通常需要重新发布 Agent，才能确保已发布版本使用更新后的值。</mark>
 
-考试记忆： Secret → Runtime resolution；View only → Read-only；Non-secret update → Republish.
+考试记忆： **Secret → Runtime resolution；View only → Read-only；Non-secret update → Republish.**
 
 ### QUESTION 27 💩💩
 
@@ -2241,11 +2242,11 @@ Real-Time Prevention: Data policies (Data Loss Prevention or DLP) function as a 
 Connector Isolation: Admins use the Power Platform admin center to categorize connectors into Business, Non-Business, or Blocked groups. This directly prevents insecure data flows by ensuring data cannot be leaked from business systems (like Microsoft Dataverse) to unapproved external channels or APIs. Reporting & Auditing: Violations of these data policies are logged and can be tracked centrally by administrators to report and monitor compliance across environments.
 
 
-### QUESTION 28 💩💩💩
+### QUESTION 28 💩💩💩💩
 
 A company is designing an agent flow that includes human in the loop stages during execution. The company requires that the agent flow perform the following actions:
 
-● Must wait for a human decision before it resumes.
+● Must wait for a **human decision** before it resumes.
 
 ● Must collect information and then continue execution.
 
@@ -2278,7 +2279,7 @@ Select and Place:
 
 | Human in the loop stage | Flow behavior                                         |
 | ----------------------- | ----------------------------------------------------- |
-| Approval                | Wait for a response and branch based on the decision. |
+| Approval                | **Wait for a response and branch based on the decision**. |
 | Information collection  | Wait for a response and capture inputs.               |
 
 解析：
@@ -2300,7 +2301,7 @@ Explanation:
 
 **Box 1: Wait for response and branch based on the decision**
 
-The best action to take is Wait for response and branch based on the decision because a binary or multipath approval requires distinct logical paths (such as proceeding if approved or canceling/revising if rejected) rather than just logging the text input.
+The best action to take is Wait for response and branch based on the decision <mark>b**ecause a binary or multipath approval requires distinct logical paths**</mark> (such as proceeding if approved or canceling/revising if rejected) rather than just logging the text input.
 
 **Box 2: Wait for response and capture inputs**
 
@@ -2311,7 +2312,7 @@ Captures Data: The prompt explicitly states that the agent must "collect informa
 Pauses Execution: To collect this information from a human, the workflow must pause ("Wait for response") and hold the collected data ("capture inputs") to use in the subsequent steps.
 
 
-### QUESTION 29 💩💩💩
+### QUESTION 29 💩💩💩💩
 
 A company is building an agent topic in Copilot Studio. The agent topic uses a generative answers node to respond to user questions based on authorized knowledge sources.
 
@@ -2335,7 +2336,7 @@ Select and Place:
 **Configurations (Options)**
 
 * Select Search only selected sources.
-* Select Activity.Text in the Input field.
+* Select `Activity.Text` in the Input field.
 * Enable generative orchestration for the agent.
 * Clear Allow the AI to use its own general knowledge.
 
@@ -2344,7 +2345,7 @@ Select and Place:
 
 | Requirement | Configuration |
 | :--- | :--- |
-| Use the user's message in the generative answers node. | [ 空白框 ] |
+| Use the **user's message** in the generative answers node. | [ 空白框 ] |
 | Scope the topic node to query only designated data. | [ 空白框 ] |
 | Restrict responses to approved enterprise data. | [ 空白框 ] |
 
