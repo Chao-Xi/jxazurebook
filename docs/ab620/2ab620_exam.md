@@ -3609,7 +3609,7 @@ Select and Place:
 -  <mark>Authenticated updates → Tools-first</mark>
 
 
-### QUESTION 2 💩💩💩
+### QUESTION 2 💩💩💩💩
 
 A company has an approved custom connector that uses a REST API for an internal system.
 
@@ -3664,7 +3664,7 @@ Select and Place:
 1. Add the connector as a tool：将自定义连接器添加到 Agent，使其能够调用 REST API 操作。
 2. Create or reuse a connection：**建立连接并配置连接使用的身份验证方式。要满足服务级认证要求，应使用配置好的共享连接或连接凭据，而不是要求每位用户单独登录。**
 3. Map topic variables to tool inputs：把对话中收集的参数或上下文传递给连接器。
-4. Parse JSON response：将 API 返回的 JSON 数据保存到 topic 变量，再通过消息或后续节点展示给用户。
+4. <mark>Parse JSON response：将 API 返回的 JSON 数据保存到 topic 变量，再通过消息或后续节点展示给用户</mark>。
 
 
 > **考试记忆： 注册工具 → Add as tool；连接与认证 → Create/reuse connection；传入参数 → Map variables；返回结果 → Parse JSON into variable**。
@@ -3785,7 +3785,7 @@ Once connected, you select the specific vector index that contains your enterpri
 
 Finally, you save and link this configured search source to the agent, enabling it to ground its responses using your enterprise data.
 
-### QUESTION 4 💩
+### QUESTION 4 💩💩💩
 
 A company uses a primary agent in Copilot Studio to handle user intake.
 
@@ -4006,7 +4006,7 @@ The Foundry agent already exists.
 
 To meet the business needs, the solution must meet the following requirements:
 
-* The primary agent must be able to call the Foundry agent.
+* <mark>**The primary agent must be able to call the Foundry agent**.<mark>
 
 * <mark>**The external agent connection must reference the correct Foundry project and agent**.</mark>
 
@@ -4109,7 +4109,7 @@ To meet the business needs, the agent must meet the following requirements:
 
 * The agent must answer questions using live data at runtime.
 
-* The agent must avoid indexing enterprise data into a search index.
+* <mark>**The agent must avoid indexing enterprise data into a search index.**<mark>
 
 You need to select the correct Power Platform connector approach for each requirement.
 
@@ -4154,7 +4154,7 @@ Select and Place:
 未使用的选项： Copilot connector knowledge source for indexed content，因为它适用于索引内容的检索，与避免索引数据的要求不符。
 
 
-### QUESTION 10 💩💩  
+### QUESTION 10 💩💩💩   
 
 A company uses an agent in Copilot Studio to **coordinate user interactions.**
 
@@ -4298,7 +4298,7 @@ Select and Place:
 | Requirement | Integration |
 | :--- | :--- |
 | Ground answers using results from enterprise data. | [ 空白框 ] |
-| Invoke callable functions exposed through a standardized tool interface. | [ 空白框 ] |
+| Invoke callable functions exposed through a **standardized tool interface**. | [ 空白框 ] |
 | Write an update to a system by using an authenticated action during the conversation. | [ 空白框 ] |
 
 ----
@@ -4354,7 +4354,7 @@ Executing Actions & Writing Data: Power Platform connectors (prebuilt or custom)
 Authentication: Connectors natively support security configurations, allowing you to easily map credentials so the agent executes the update using either maker-provided or specific end-user Microsoft Entra ID authentication. You can also control access at the topic level to ensure triggers execute precisely when required.
 
 
-### QUESTION 13 💩💩💩💩
+### QUESTION 13 💩💩💩💩💩
 
 A company plans to use Copilot connectors to ground answers from a third-party system for an agent in Copilot Studio.
 
@@ -4500,7 +4500,7 @@ Model Control: To strictly guarantee that an enterprise-approved foundation mode
 Connection Workflow: Deploying the custom model in Azure AI Studio (formerly encompassing parts of Azure AI Foundry) and connecting it to Copilot Studio ensures the orchestration layer routes prompts directly to your certified LLM.
 
 
-### QUESTION 15 💩
+### QUESTION 15 💩💩
 
 A company uses an agent in Copilot Studio to generate structured responses for internal users.
 
